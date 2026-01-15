@@ -8,19 +8,74 @@
   <meta name="description" content="Заповніть форму, і ми зв'яжемося з вами для безкоштовної консультації щодо роботи кур'єром у Польщі.">
 </head>
 <body>
-  <header class="site-header"><div class="wrap"><h1>Подати заявку</h1><nav><a href="/">Головна</a></nav></div></header>
-  <main class="wrap">
+  <header><div class="container header-flex"><a class="logo-section" href="/" aria-label="Courier Poland home"><svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g3" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g3)" opacity="0.12"/></svg><div style="display:flex;flex-direction:column;line-height:1;"><span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Courier Poland</span><small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">Робота кур'єром у Польщі</small></div></a><nav><a href="/">Головна</a></nav></div></header>
+  <main class="container">
     <section class="page-content">
+      <h1>Подати заявку</h1>
       <p>Залиште свої контакти і ми допоможемо знайти роботу кур'єром у Польщі.</p>
-      <form action="mailto:example@example.com" method="post" enctype="text/plain">
-        <label>Ім'я<br><input name="name" required></label><br><br>
-        <label>Телефон або email<br><input name="contact" required></label><br><br>
-        <label>Місто<br><input name="city"></label><br><br>
-        <button class="btn" type="submit">Надіслати</button>
+      <form id="applyForm" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <label style="display:block">Ім'я<br><input id="name" name="name" required></label>
+          <label style="display:block">Телефон або email<br><input id="contact" name="contact" required></label>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+          <label>Місто<br><input id="city" name="city" placeholder="Варшава, Краків..."></label>
+          <label>Коли готові почати?<br><input id="start" name="start" type="date"></label>
+        </div>
+        <label style="display:block;margin-top:12px">Досвід (коротко)<br><input id="exp" name="experience"></label>
+        <label style="display:block;margin-top:12px">Повідомлення<br><textarea id="message" name="message" rows="4" placeholder="Додаткова інформація"></textarea></label>
+        <label style="display:block;margin-top:12px"><input id="consent" type="checkbox" required> Я погоджуюсь на обробку моїх контактних даних</label>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn btn-primary" type="submit">Надіслати</button>
+          <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
+        </div>
       </form>
-      <p class="muted">Або напишіть у Telegram: <a href="https://t.me/yourname">@yourname</a></p>
+      <p class="muted" style="margin-top:12px">Або напишіть у Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <div id="formMessage" role="status" aria-live="polite" style="margin-top:12px;display:none;"></div>
     </section>
   </main>
-  <footer class="site-footer"><div class="wrap">&copy; 2026</div></footer>
+  <footer>
+    <div class="container">
+      <p>&copy; ${new Date().getFullYear()} Courier Poland Income. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const form = document.getElementById('applyForm');
+      const clearBtn = document.getElementById('clearBtn');
+      const msg = document.getElementById('formMessage');
+      function show(text, ok){ msg.style.display='block'; msg.textContent = text; msg.style.color = ok ? 'green' : 'crimson'; }
+      clearBtn.addEventListener('click', ()=>{ form.reset(); msg.style.display='none'; });
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        msg.style.display='none';
+        const name = document.getElementById('name').value.trim();
+        const contact = document.getElementById('contact').value.trim();
+        const city = document.getElementById('city').value.trim();
+        const start = document.getElementById('start').value;
+        const exp = document.getElementById('exp').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const consent = document.getElementById('consent').checked;
+        if(!name){ show('Будь ласка, вкажіть своє ім\'я.', false); return; }
+        if(!contact){ show('Будь ласка, вкажіть телефон або email.', false); return; }
+        if(!consent){ show('Потрібна згода на обробку даних.', false); return; }
+        const bodyLines = [
+          `Ім'я: ${name}`,
+          `Контакт: ${contact}`,
+          `Місто: ${city}`,
+          `Готовий почати: ${start || 'не вказано'}`,
+          `Досвід: ${exp}`,
+          `Повідомлення: ${message}`,
+          `Сторінка: ${location.href}`
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        const subject = encodeURIComponent('Заявка на роботу кур\'єром — ' + name);
+        const mailto = `mailto:info@courier-poland.example?subject=${subject}&body=${body}`;
+        // Attempt to open mail client
+        window.location.href = mailto;
+        show('Відкриваємо ваш поштовий клієнт для відправлення заявки...', true);
+      });
+    })();
+  </script>
 </body>
 </html>
