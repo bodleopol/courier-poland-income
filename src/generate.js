@@ -29,6 +29,15 @@ async function build() {
     // no styles provided, continue
   }
 
+  // copy apply.html if present
+  try {
+    const applySrc = path.join(SRC, 'apply.html');
+    const applyContent = await fs.readFile(applySrc, 'utf8');
+    await fs.writeFile(path.join(DIST, 'apply.html'), applyContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear())), 'utf8');
+  } catch (e) {
+    // no apply page, skip
+  }
+
   const links = [];
   for (const page of pages) {
     const tpl = page.body ? articleTpl : pageTpl;
