@@ -62,6 +62,25 @@ async function build() {
     const indexHtml = generateIndex(links);
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
 
+    // write sitemap.xml
+    try {
+      const sitemap = generateSitemap(links);
+      await fs.writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
+    } catch (e) {
+      // ignore sitemap errors
+    }
+
+    // write robots.txt
+    try {
+      const robots = `User-agent: *\nAllow: /\nSitemap: https://rybezh.site/sitemap.xml\nHost: rybezh.site\n`;
+      await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
+    } catch (e) {}
+
+    // write CNAME for GitHub Pages custom domain
+    try {
+      await fs.writeFile(path.join(DIST, 'CNAME'), 'rybezh.site', 'utf8');
+    } catch (e) {}
+
     console.log('Build complete. Pages:', links.length);
   }
 function generateIndex(links) {
@@ -179,6 +198,18 @@ ${cards}
   </script>
 </body>
 </html>`;
+}
+
+function generateSitemap(links) {
+  const base = 'https://rybezh.site';
+  const urls = [
+    `${base}/`,
+    `${base}/apply.html`,
+    ...links.map(l => `${base}/${l.slug}.html`)
+  ];
+  const now = new Date().toISOString();
+  const items = urls.map(u => `  <url>\n    <loc>${u}</loc>\n    <lastmod>${now}</lastmod>\n  </url>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</urlset>`;
 }
 
 function escapeHtml(str) {
