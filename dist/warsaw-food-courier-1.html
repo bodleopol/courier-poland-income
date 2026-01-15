@@ -1,31 +1,332 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Кур&#39;єр у Варшаві — доставка їжі з гнучким графіком</title>
-	<meta name="description" content="Почніть працювати кур&#39;єром у Варшаві: гнучкий графік, щоденні виплати, підтримка українською.">
-	<link rel="stylesheet" href="/styles.css">
-	<link rel="canonical" href="/warsaw-food-courier-1.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Кур&#39;єр у Варшаві — доставка їжі з гнучким графіком</title>
+  <meta name="description" content="Почніть працювати кур&#39;єром у Варшаві: гнучкий графік, щоденні виплати, підтримка українською.">
+  <link rel="canonical" href="/warsaw-food-courier-1.html">
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f8fafc;
+      --color-text: #1a202c;
+      --color-text-light: #64748b;
+      --color-accent: #0f766e;
+      --color-accent-hover: #0d5d56;
+      --color-border: #e2e8f0;
+      --color-success: #16a34a;
+      --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      --max-width: 1100px;
+      --spacing-xs: 0.25rem;
+      --spacing-sm: 0.5rem;
+      --spacing-md: 1rem;
+      --spacing-lg: 1.5rem;
+      --spacing-xl: 2rem;
+      --spacing-2xl: 3rem;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg-alt);
+      color: var(--color-text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+    header {
+      background-color: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+    }
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      gap: var(--spacing-lg);
+      align-items: center;
+    }
+    nav a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    nav a:hover {
+      color: var(--color-accent);
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-accent);
+      transition: width 0.2s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      padding: var(--spacing-2xl) 0;
+    }
+    article {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--spacing-xl);
+    }
+    article h1 {
+      grid-column: 1 / -1;
+      font-size: 2rem;
+      margin-bottom: var(--spacing-lg);
+      color: var(--color-text);
+    }
+    .city-badge {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: white;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-lg);
+    }
+    .content {
+      background-color: var(--color-bg);
+      border-radius: 8px;
+      padding: var(--spacing-xl);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      line-height: 1.8;
+    }
+    .content h2 {
+      font-size: 1.75rem;
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text);
+    }
+    .content h3 {
+      font-size: 1.25rem;
+      margin-top: var(--spacing-lg);
+      margin-bottom: var(--spacing-sm);
+      color: var(--color-accent);
+    }
+    .content p {
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text);
+    }
+    .content a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+    .content a:hover {
+      color: var(--color-accent-hover);
+    }
+    .content ul, .content ol {
+      margin: var(--spacing-md) 0 var(--spacing-md) var(--spacing-xl);
+    }
+    .content li {
+      margin-bottom: var(--spacing-sm);
+    }
+    .content strong {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+    aside {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    .cta-box {
+      background: linear-gradient(135deg, var(--color-accent) 0%, #156064 100%);
+      border-radius: 8px;
+      padding: var(--spacing-lg);
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.15);
+    }
+    .cta-box h3 {
+      color: white;
+      margin-bottom: var(--spacing-md);
+      font-size: 1.25rem;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--color-accent);
+      color: white;
+      padding: var(--spacing-md) var(--spacing-lg);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: 2px solid var(--color-accent);
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+    }
+    .btn:hover {
+      background-color: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+    }
+    .sidebar-info {
+      background-color: var(--color-bg-alt);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 4px;
+      padding: var(--spacing-lg);
+    }
+    .sidebar-info h4 {
+      color: var(--color-accent);
+      margin-bottom: var(--spacing-sm);
+      font-size: 0.95rem;
+    }
+    .sidebar-info p {
+      font-size: 0.9rem;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+    footer {
+      background-color: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+      padding: var(--spacing-xl) 0;
+      margin-top: var(--spacing-2xl);
+      text-align: center;
+      color: var(--color-text-light);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        align-items: flex-start;
+      }
+      header h1 {
+        font-size: 1.25rem;
+      }
+      nav {
+        width: 100%;
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+      nav a {
+        width: 100%;
+        padding: var(--spacing-sm) 0;
+      }
+      main {
+        padding: var(--spacing-xl) 0;
+      }
+      article {
+        grid-template-columns: 1fr;
+      }
+      article h1 {
+        grid-column: 1;
+        font-size: 1.5rem;
+      }
+      .content {
+        padding: var(--spacing-lg);
+      }
+      aside {
+        grid-row: auto;
+      }
+      .cta-box {
+        padding: var(--spacing-lg);
+      }
+      .cta-box h3 {
+        font-size: 1.1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        font-size: 15px;
+      }
+      header .container {
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+      }
+      header h1 {
+        font-size: 1.1rem;
+      }
+      nav {
+        gap: var(--spacing-sm);
+      }
+      article h1 {
+        font-size: 1.25rem;
+      }
+      .content {
+        padding: var(--spacing-md);
+      }
+      .content h2 {
+        font-size: 1.5rem;
+      }
+      .content h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-	<header class="site-header">
-		<div class="wrap">
-			<h1>Кур&#39;єр у Варшаві — доставка їжі з гнучким графіком</h1>
-			<nav><a href="/">Головна</a> — <a href="/apply.html">Подати заявку</a></nav>
-		</div>
-	</header>
-	<main class="wrap article-wrap">
-		<article>
-			<div class="meta">Місто: Варшава</div>
-			<div class="content">Шукаємо кур'єрів для доставки їжі у місті Варшава. Переваги: гнучкий графік, оплата за доставку або погодинно, можливість працювати на велосипеді, скутері або авто. Вимоги: смартфон, базовий польський або англійський, відповідальність та пунктуальність. Ми пропонуємо: навчання, підтримку координації, страхування на час зміни. Щоб почати — натисніть: <a href="/apply.html">Подати заявку</a>.</div>
-		</article>
-		<aside class="cta">
-			<a class="btn" href="/apply.html">Подати заявку</a>
-		</aside>
-	</main>
-	<footer class="site-footer">
-		<div class="wrap">&copy; 2026</div>
-	</footer>
+  <header>
+    <div class="container">
+      <h1>Робота кур'єром у Польщі</h1>
+      <nav>
+        <a href="/">Головна</a>
+        <a href="/apply.html">Подати заявку</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <article>
+      <h1>Кур&#39;єр у Варшаві — доставка їжі з гнучким графіком</h1>
+      <div class="content">
+        <div class="city-badge">Варшава</div>
+        Шукаємо кур'єрів для доставки їжі у місті Варшава. Переваги: гнучкий графік, оплата за доставку або погодинно, можливість працювати на велосипеді, скутері або авто. Вимоги: смартфон, базовий польський або англійський, відповідальність та пунктуальність. Ми пропонуємо: навчання, підтримку координації, страхування на час зміни. Щоб почати — натисніть: <a href="/apply.html">Подати заявку</a>.
+      </div>
+      <aside>
+        <div class="cta-box">
+          <h3>Готові почати?</h3>
+          <a class="btn" href="/apply.html">Подати заявку</a>
+        </div>
+        <div class="sidebar-info">
+          <h4>💡 Чому саме ми?</h4>
+          <p>Перевірена платформа для знаходження роботи кур'єром у Польщі.</p>
+        </div>
+      </aside>
+    </article>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Courier Poland Income. Всі права захищені.</p>
+    </div>
+  </footer>
 </body>
 </html>
