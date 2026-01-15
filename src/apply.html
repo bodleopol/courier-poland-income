@@ -29,28 +29,51 @@
   <!-- End Google Tag Manager (noscript) -->
   <header><div class="container header-flex"><a class="logo-section" href="/" aria-label="Courier Poland home"><svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g3" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g3)" opacity="0.12"/></svg><div style="display:flex;flex-direction:column;line-height:1;"><span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Courier Poland</span><small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">Робота кур'єром у Польщі</small></div></a><nav><a href="/">Головна</a></nav></div></header>
   <main class="container">
-    <section class="page-content">
+    <section class="hero" style="padding-top:1.5rem;padding-bottom:0.5rem;">
       <h1>Подати заявку</h1>
-      <p>Залиште свої контакти і ми допоможемо знайти роботу кур'єром у Польщі.</p>
-      <form id="applyForm" novalidate>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <label style="display:block">Ім'я<br><input id="name" name="name" required></label>
-          <label style="display:block">Телефон або email<br><input id="contact" name="contact" required></label>
+      <p class="lead">Заповніть форму — ми зв'яжемося для швидкого підбору роботи кур'єром у Польщі.</p>
+    </section>
+
+    <section style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;margin-top:1rem;">
+      <div class="page-content" style="padding:24px;">
+        <form id="applyForm" class="apply-form" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <label>Ім'я<input class="" id="name" name="name" required placeholder="Петро" /></label>
+            <label>Телефон або email<input id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com"/></label>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+            <label>Місто<input id="city" name="city" placeholder="Варшава, Краків..."/></label>
+            <label>Готовий почати<input id="start" name="start" type="date"/></label>
+          </div>
+
+          <label style="display:block;margin-top:12px">Досвід (коротко)<input id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці"/></label>
+          <label style="display:block;margin-top:12px">Додаткова інформація<textarea id="message" name="message" rows="4" placeholder="Додайте деталі"></textarea></label>
+
+          <label style="display:flex;align-items:center;gap:8px;margin-top:12px"><input id="consent" type="checkbox" required/> Я погоджуюсь на обробку моїх контактних даних</label>
+
+          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+            <button class="btn btn-primary" type="submit">Надіслати заявку</button>
+            <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
+          </div>
+
+          <div id="formMessage" role="status" aria-live="polite" style="margin-top:12px;display:none;"></div>
+        </form>
+      </div>
+
+      <aside>
+        <div class="cta-section" style="padding:18px;margin:0;">
+          <h3>Потрібна допомога?</h3>
+          <p class="muted">Ми допомагаємо з документами та підбором вакансій. Надішліть заявку і отримаєте консультацію.</p>
+          <a class="btn btn-primary" href="/">Повернутись на головну</a>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-          <label>Місто<br><input id="city" name="city" placeholder="Варшава, Краків..."></label>
-          <label>Коли готові почати?<br><input id="start" name="start" type="date"></label>
+
+        <div style="background:var(--color-bg);padding:12px;border-radius:8px;margin-top:12px;border:1px solid var(--color-border);">
+          <h4>Контакти</h4>
+          <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank">@rybezh_site</a></p>
+          <p class="muted">Поштовий відділ: info@courier-poland.example</p>
         </div>
-        <label style="display:block;margin-top:12px">Досвід (коротко)<br><input id="exp" name="experience"></label>
-        <label style="display:block;margin-top:12px">Повідомлення<br><textarea id="message" name="message" rows="4" placeholder="Додаткова інформація"></textarea></label>
-        <label style="display:block;margin-top:12px"><input id="consent" type="checkbox" required> Я погоджуюсь на обробку моїх контактних даних</label>
-        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
-          <button class="btn btn-primary" type="submit">Надіслати</button>
-          <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
-        </div>
-      </form>
-      <p class="muted" style="margin-top:12px">Або напишіть у Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
-      <div id="formMessage" role="status" aria-live="polite" style="margin-top:12px;display:none;"></div>
+      </aside>
     </section>
   </main>
   <footer>
