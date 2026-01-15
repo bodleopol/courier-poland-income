@@ -40,3 +40,35 @@ nav a:hover{color:var(--color-accent);background:rgba(15,118,110,0.06)}
 footer{background:var(--color-bg);border-top:1px solid var(--color-border);padding:1.5rem 0;text-align:center;color:var(--color-muted)}
 @media(max-width:900px){.jobs-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:1.6rem}}
 @media(max-width:600px){.jobs-grid{grid-template-columns:1fr}.header-flex{flex-direction:column;align-items:flex-start}.search-form{flex-direction:column;align-items:stretch}.search-form input{width:100%}.search-form select{width:100%}.search-form button{width:100%}}
+
+/* Apply page styles */
+.apply-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:1rem;align-items:start}
+.apply-card{background:var(--color-bg);padding:20px;border-radius:12px;border:1px solid var(--color-border);box-shadow:0 10px 30px rgba(15,118,110,0.06)}
+.apply-title{margin:0 0 6px;font-size:1.25rem;color:var(--color-text)}
+.apply-intro{margin:0 0 16px;color:var(--color-muted)}
+.row.two{display:grid;grid-template-columns:1fr;gap:12px}
+.field{display:block;margin-bottom:12px}
+.field-label{display:block;font-weight:700;margin-bottom:8px;color:var(--color-muted);font-size:0.95rem}
+.input{width:100%;padding:12px 14px;border:1px solid var(--color-border);border-radius:10px;background:transparent;font-size:1rem;color:var(--color-text)}
+.input:focus{outline:none;box-shadow:0 0 0 4px rgba(20,184,166,0.06);border-color:var(--color-accent)}
+.textarea{min-height:110px;resize:vertical}
+.consent{display:flex;gap:10px;align-items:center;font-size:0.95rem;color:var(--color-muted);margin-top:8px}
+.form-actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.form-message{margin-top:12px;padding:10px;border-radius:8px}
+
+/* Buttons (extend or override existing site buttons) */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid transparent;cursor:pointer;font-weight:700}
+.btn-primary{background:var(--color-accent);color:#fff;border-color:transparent}
+.btn-secondary{background:transparent;color:var(--color-text);border-color:var(--color-border)}
+.btn-ghost{background:transparent;color:var(--color-accent);border:1px solid rgba(15,118,110,0.08)}
+
+.apply-aside{display:flex;flex-direction:column;gap:16px}
+.card{background:var(--color-bg);padding:16px;border-radius:10px;border:1px solid var(--color-border)}
+.card.small{padding:18px;text-align:left}
+.card.contacts p{margin:8px 0}
+
+@media(min-width:900px){
+  .apply-grid{grid-template-columns:1fr 360px}
+  .row.two{grid-template-columns:1fr 1fr}
+}
+

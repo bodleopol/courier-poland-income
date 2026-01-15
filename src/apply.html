@@ -33,45 +33,70 @@
       <h1>Подати заявку</h1>
       <p class="lead">Заповніть форму — ми зв'яжемося для швидкого підбору роботи кур'єром у Польщі.</p>
     </section>
+    <section class="apply-grid" aria-labelledby="applyHeading">
+      <div class="apply-card">
+        <h2 id="applyHeading" class="apply-title">Швидка заявка</h2>
+        <p class="apply-intro">Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.</p>
 
-    <section style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;margin-top:1rem;">
-      <div class="page-content" style="padding:24px;">
-        <form id="applyForm" class="apply-form" novalidate>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-            <label>Ім'я<input class="" id="name" name="name" required placeholder="Петро" /></label>
-            <label>Телефон або email<input id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com"/></label>
+        <form id="applyForm" class="form" novalidate>
+          <div class="row two">
+            <label class="field">
+              <span class="field-label">Ім'я</span>
+              <input class="input" id="name" name="name" required placeholder="Петро" />
+            </label>
+
+            <label class="field">
+              <span class="field-label">Телефон або email</span>
+              <input class="input" id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com"/>
+            </label>
           </div>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-            <label>Місто<input id="city" name="city" placeholder="Варшава, Краків..."/></label>
-            <label>Готовий почати<input id="start" name="start" type="date"/></label>
+          <div class="row two">
+            <label class="field">
+              <span class="field-label">Місто</span>
+              <input class="input" id="city" name="city" placeholder="Варшава, Краків..."/>
+            </label>
+            <label class="field">
+              <span class="field-label">Готовий почати</span>
+              <input class="input" id="start" name="start" type="date"/>
+            </label>
           </div>
 
-          <label style="display:block;margin-top:12px">Досвід (коротко)<input id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці"/></label>
-          <label style="display:block;margin-top:12px">Додаткова інформація<textarea id="message" name="message" rows="4" placeholder="Додайте деталі"></textarea></label>
+          <label class="field">
+            <span class="field-label">Досвід (коротко)</span>
+            <input class="input" id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці"/>
+          </label>
 
-          <label style="display:flex;align-items:center;gap:8px;margin-top:12px"><input id="consent" type="checkbox" required/> Я погоджуюсь на обробку моїх контактних даних</label>
+          <label class="field">
+            <span class="field-label">Додаткова інформація</span>
+            <textarea class="input textarea" id="message" name="message" rows="5" placeholder="Додайте деталі"></textarea>
+          </label>
 
-          <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+          <label class="consent">
+            <input id="consent" type="checkbox" required/>
+            <span>Я погоджуюсь на обробку моїх контактних даних</span>
+          </label>
+
+          <div class="form-actions">
             <button class="btn btn-primary" type="submit">Надіслати заявку</button>
             <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
           </div>
 
-          <div id="formMessage" role="status" aria-live="polite" style="margin-top:12px;display:none;"></div>
+          <div id="formMessage" role="status" aria-live="polite" class="form-message" hidden></div>
         </form>
       </div>
 
-      <aside>
-        <div class="cta-section" style="padding:18px;margin:0;">
-          <h3>Потрібна допомога?</h3>
-          <p class="muted">Ми допомагаємо з документами та підбором вакансій. Надішліть заявку і отримаєте консультацію.</p>
-          <a class="btn btn-primary" href="/">Повернутись на головну</a>
+      <aside class="apply-aside" aria-labelledby="asideHeading">
+        <div class="card small">
+          <h3 id="asideHeading">Потрібна допомога?</h3>
+          <p class="muted">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
+          <a class="btn btn-ghost" href="/">Повернутись на головну</a>
         </div>
 
-        <div style="background:var(--color-bg);padding:12px;border-radius:8px;margin-top:12px;border:1px solid var(--color-border);">
+        <div class="card contacts">
           <h4>Контакти</h4>
-          <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank">@rybezh_site</a></p>
-          <p class="muted">Поштовий відділ: info@courier-poland.example</p>
+          <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+          <p class="muted">Пошта: info@courier-poland.example</p>
         </div>
       </aside>
     </section>
@@ -86,11 +111,16 @@
       const form = document.getElementById('applyForm');
       const clearBtn = document.getElementById('clearBtn');
       const msg = document.getElementById('formMessage');
-      function show(text, ok){ msg.style.display='block'; msg.textContent = text; msg.style.color = ok ? 'green' : 'crimson'; }
-      clearBtn.addEventListener('click', ()=>{ form.reset(); msg.style.display='none'; });
-      form.addEventListener('submit', function(e){
+      const submitBtn = form.querySelector('button[type="submit"]');
+      function show(text, ok){ msg.hidden = false; msg.textContent = text; msg.style.color = ok ? 'green' : 'crimson'; }
+      function hideMsg(){ msg.hidden = true; msg.textContent = ''; }
+      clearBtn.addEventListener('click', ()=>{ form.reset(); hideMsg(); });
+
+      const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+
+      form.addEventListener('submit', async function(e){
         e.preventDefault();
-        msg.style.display='none';
+        hideMsg();
         const name = document.getElementById('name').value.trim();
         const contact = document.getElementById('contact').value.trim();
         const city = document.getElementById('city').value.trim();
@@ -101,6 +131,12 @@
         if(!name){ show('Будь ласка, вкажіть своє ім\'я.', false); return; }
         if(!contact){ show('Будь ласка, вкажіть телефон або email.', false); return; }
         if(!consent){ show('Потрібна згода на обробку даних.', false); return; }
+
+        const payload = {
+          name, contact, city, start: start || null, experience: exp, message,
+          page: location.href, ts: new Date().toISOString()
+        };
+
         const bodyLines = [
           `Ім'я: ${name}`,
           `Контакт: ${contact}`,
@@ -113,9 +149,33 @@
         const body = encodeURIComponent(bodyLines.join('\n'));
         const subject = encodeURIComponent('Заявка на роботу кур\'єром — ' + name);
         const mailto = `mailto:info@courier-poland.example?subject=${subject}&body=${body}`;
-        // Attempt to open mail client
-        window.location.href = mailto;
-        show('Відкриваємо ваш поштовий клієнт для відправлення заявки...', true);
+
+        // disable submit
+        submitBtn.disabled = true; submitBtn.setAttribute('aria-busy','true');
+        show('Надсилаємо заявку...', true);
+
+        try{
+          // Use a no-cors FormData POST so the browser will send the request
+          // to Google Apps Script even if the endpoint does not allow CORS.
+          const formData = new FormData();
+          Object.keys(payload).forEach(k => {
+            if(payload[k] !== null && payload[k] !== undefined) formData.append(k, payload[k]);
+          });
+
+          // send as no-cors; response will be opaque but request is sent
+          await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
+
+          // assume success (opaque response) and inform the user
+          show('Дякуємо! Заявку отримано. Ми зв\'яжемося найближчим часом.', true);
+          form.reset();
+        } catch(err){
+          console.error('Submit error', err);
+          // network error — fallback to mail client
+          show('Помилка мережі. Відкриваємо ваш поштовий клієнт...', false);
+          window.location.href = mailto;
+        } finally{
+          submitBtn.disabled = false; submitBtn.removeAttribute('aria-busy');
+        }
       });
     })();
   </script>
