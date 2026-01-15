@@ -103,7 +103,7 @@
   </main>
   <footer>
     <div class="container">
-      <p>&copy; ${new Date().getFullYear()} Courier Poland Income. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <p>&copy; <span class="site-year"></span> Courier Poland Income. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
     </div>
   </footer>
   <script>
@@ -179,5 +179,6 @@
       });
     })();
   </script>
+  <script>document.querySelectorAll('.site-year').forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>

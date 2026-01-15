@@ -57,8 +57,9 @@
   </main>
   <footer>
     <div class="container">
-      <p>&copy; ${new Date().getFullYear()} Rybezh. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <p>&copy; <span class="site-year"></span> Rybezh. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
     </div>
   </footer>
+  <script>document.querySelectorAll('.site-year').forEach(e=>e.textContent=new Date().getFullYear());</script>
 </body>
 </html>
