@@ -27,12 +27,29 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header><div class="container header-flex"><a class="logo-section" href="/" aria-label="Courier Poland home"><svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g3" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g3)" opacity="0.12"/></svg><div style="display:flex;flex-direction:column;line-height:1;"><span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Courier Poland</span><small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">Робота кур'єром у Польщі</small></div></a><nav><a href="/">Головна</a></nav></div></header>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Rybezh</a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Вакансії</a>
+        <a href="/about.html" class="nav-link">Про нас</a>
+        <a href="/contact.html" class="nav-link">Контакти</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/" class="nav-link">Вакансії</a>
+      <a href="/about.html" class="nav-link">Про нас</a>
+      <a href="/contact.html" class="nav-link">Контакти</a>
+    </div>
+  </header>
+
   <main class="container">
-    <section class="hero" style="padding-top:1.5rem;padding-bottom:0.5rem;">
-      <h1>Подати заявку</h1>
-      <p class="lead">Заповніть форму — ми зв'яжемося для швидкого підбору роботи кур'єром у Польщі.</p>
-    </section>
     <section class="apply-grid" aria-labelledby="applyHeading">
       <div class="apply-card">
         <h2 id="applyHeading" class="apply-title">Швидка заявка</h2>
@@ -101,9 +118,15 @@
       </aside>
     </section>
   </main>
-  <footer>
+
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span class="site-year"></span> Courier Poland Income. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">Про нас</a>
+        <a href="/contact.html">Контакти</a>
+      </div>
+      <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
     </div>
   </footer>
   <script>
@@ -179,6 +202,6 @@
       });
     })();
   </script>
-  <script>document.querySelectorAll('.site-year').forEach(e=>e.textContent=new Date().getFullYear());</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

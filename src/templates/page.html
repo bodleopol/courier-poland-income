@@ -2,11 +2,10 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{TITLE}}</title>
   <meta name="description" content="{{DESCRIPTION}}">
-  <link rel="canonical" href="/{{SLUG}}.html">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="canonical" href="{{CANONICAL}}">
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -14,7 +13,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
   <!-- End Google Tag Manager -->
-
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
   <script>
@@ -23,43 +21,181 @@
     gtag('js', new Date());
     gtag('config', 'G-J3XSXPYW9K');
   </script>
+  <style>
+    :root {
+      --color-primary: #0f172a;
+      --color-secondary: #475569;
+      --color-accent: #0f766e;
+      --color-accent-hover: #115e59;
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-border: #e2e8f0;
+      --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --max-width: 1100px;
+      --header-height: 72px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-primary);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--color-accent); }
+    
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    .site-header {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: var(--color-secondary);
+      font-size: 0.95rem;
+    }
+    .nav-link:hover { color: var(--color-primary); }
+    .btn-cta {
+      background-color: var(--color-accent);
+      color: white !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background-color 0.2s, transform 0.1s;
+    }
+    .btn-cta:hover {
+      background-color: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary); margin: 5px 0; }
+    .mobile-menu { display: none; position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: 1rem; flex-direction: column; gap: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .mobile-menu.is-open { display: flex; }
+
+    /* Main */
+    main { flex: 1; padding: 2rem 0 4rem; }
+    .hero-section { text-align: center; margin-bottom: 3rem; padding: 2rem 0; }
+    .hero-section h1 { font-size: 2.5rem; margin: 0 0 1rem; line-height: 1.2; color: var(--color-primary); }
+    .content-wrapper { background: var(--color-surface); padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid var(--color-border); }
+    .content-wrapper h2 { margin-top: 2rem; font-size: 1.75rem; }
+    .content-wrapper p { margin-bottom: 1.5rem; color: var(--color-secondary); }
+    .bottom-cta { margin-top: 4rem; text-align: center; padding: 3rem 1.5rem; background: linear-gradient(135deg, var(--color-accent), #14b8a6); border-radius: 16px; color: white; }
+    .bottom-cta h2 { margin: 0 0 1rem; font-size: 2rem; }
+    .btn-white { background: white; color: var(--color-accent) !important; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 700; display: inline-block; }
+    .btn-white:hover { background: #f0fdfa; }
+
+    /* Footer */
+    .site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); padding: 2rem 0; margin-top: auto; text-align: center; color: var(--color-secondary); font-size: 0.9rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+
+    @media (max-width: 768px) {
+      .nav-menu { display: none; }
+      .mobile-toggle { display: block; }
+      .hero-section h1 { font-size: 2rem; }
+      .content-wrapper { padding: 1.5rem; }
+    }
+
+    /* Index Page Styles */
+    .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .job-card { background: var(--color-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--color-border); transition: transform 0.2s; }
+    .job-card:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    .job-card h3 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+    .job-card .muted { color: var(--color-secondary); margin-bottom: 1rem; font-size: 0.9rem; }
+    .card-cta { color: var(--color-accent); font-weight: 600; }
+    .search-form { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; flex-wrap: wrap; }
+    .search-form input, .search-form select { padding: 0.8rem; border: 1px solid var(--color-border); border-radius: 8px; min-width: 200px; font-family: inherit; }
+    .search-form button { padding: 0.8rem 1.5rem; background: var(--color-accent); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .search-form button:hover { background: var(--color-accent-hover); }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header>
-    <div class="container header-flex">
-      <a class="logo-section" href="/" aria-label="Rybezh home">
-        <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g4" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g4)" opacity="0.12"/></svg>
-        <div style="display:flex;flex-direction:column;line-height:1;">
-          <span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Rybezh</span>
-          <small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">rybezh.site — робота кур'єром у Польщі</small>
-        </div>
-      </a>
-      <nav>
-        <a href="/">Головна</a>
-        <a href="/apply.html">Подати заявку</a>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Rybezh</a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Вакансії</a>
+        <a href="/about.html" class="nav-link">Про нас</a>
+        <a href="/contact.html" class="nav-link">Контакти</a>
+        <a href="/apply.html" class="btn-cta">Отримати консультацію</a>
       </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/" class="nav-link">Вакансії</a>
+      <a href="/about.html" class="nav-link">Про нас</a>
+      <a href="/contact.html" class="nav-link">Контакти</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center">Отримати консультацію</a>
     </div>
   </header>
+
   <main class="container">
-    <article>
+    <section class="hero-section">
       <h1>{{TITLE}}</h1>
-      <div class="page-content">
-        {{CONTENT}}
-      </div>
-      <div class="cta-section">
-        <h2>Готові почати?</h2>
-        <a class="btn btn-primary" href="{{CTA_LINK}}">{{CTA_TEXT}}</a>
-      </div>
+    </section>
+    <article class="content-wrapper">
+      {{CONTENT}}
     </article>
+    <section class="bottom-cta">
+      <h2>Готові почати?</h2>
+      <p>Отримайте консультацію та почніть заробляти вже сьогодні.</p>
+      <a class="btn-white" href="/apply.html">Отримати консультацію</a>
+    </section>
   </main>
-  <footer>
+
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span class="site-year"></span> Rybezh. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">Про нас</a>
+        <a href="/contact.html">Контакти</a>
+      </div>
+      <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
     </div>
   </footer>
-  <script>document.querySelectorAll('.site-year').forEach(e=>e.textContent=new Date().getFullYear());</script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

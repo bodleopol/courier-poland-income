@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — Rybezh</title>
+  <meta name="description" content="Зв'яжіться з нами для отримання консультації щодо роботи кур'єром у Польщі. Telegram, Email, підтримка.">
+  <link rel="canonical" href="https://rybezh.site/contact.html">
+  <link rel="stylesheet" href="/styles.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <!-- End Google Tag Manager -->
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .content-wrapper { background: var(--color-surface); padding: 2.5rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border: 1px solid var(--color-border); margin-top: 2rem; }
+    .hero-section { text-align: center; padding: 3rem 0 1rem; }
+    .hero-section h1 { font-size: 2.5rem; margin: 0 0 1rem; color: var(--color-primary); }
+    .contact-list { list-style: none; padding: 0; font-size: 1.1rem; }
+    .contact-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .btn-telegram { display: inline-block; background: #229ED9; color: white; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; margin-top: 1rem; }
+    .btn-telegram:hover { background: #1b8ac0; color: white; }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Rybezh</a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Вакансії</a>
+        <a href="/about.html" class="nav-link">Про нас</a>
+        <a href="/contact.html" class="nav-link">Контакти</a>
+        <a href="/apply.html" class="btn-cta">Отримати консультацію</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/" class="nav-link">Вакансії</a>
+      <a href="/about.html" class="nav-link">Про нас</a>
+      <a href="/contact.html" class="nav-link">Контакти</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center">Отримати консультацію</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1>Контакти</h1>
+    </section>
+    <article class="content-wrapper">
+      <p>Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.</p>
+      <a href="https://t.me/rybezh_site" target="_blank" class="btn-telegram">Написати в Telegram</a>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">Про нас</a>
+        <a href="/contact.html">Контакти</a>
+      </div>
+      <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
