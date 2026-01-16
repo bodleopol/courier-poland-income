@@ -32,71 +32,71 @@
     <div class="container header-inner">
       <a href="/" class="logo">Rybezh</a>
       <nav class="nav-menu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/" class="nav-link">Вакансії</a>
-        <a href="/about.html" class="nav-link">Про нас</a>
-        <a href="/contact.html" class="nav-link">Контакти</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
       </nav>
       <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/" class="nav-link">Вакансії</a>
-      <a href="/about.html" class="nav-link">Про нас</a>
-      <a href="/contact.html" class="nav-link">Контакти</a>
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
     </div>
   </header>
 
   <main class="container">
     <section class="apply-grid" aria-labelledby="applyHeading">
       <div class="apply-card">
-        <h2 id="applyHeading" class="apply-title">Швидка заявка</h2>
-        <p class="apply-intro">Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.</p>
+        <h2 id="applyHeading" class="apply-title" data-i18n="apply.title">Швидка заявка</h2>
+        <p class="apply-intro" data-i18n="apply.intro">Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.</p>
 
         <form id="applyForm" class="form" novalidate>
           <div class="row two">
             <label class="field">
-              <span class="field-label">Ім'я</span>
+              <span class="field-label" data-i18n="label.name">Ім'я</span>
               <input class="input" id="name" name="name" required placeholder="Петро" />
             </label>
 
             <label class="field">
-              <span class="field-label">Телефон або email</span>
+              <span class="field-label" data-i18n="label.contact">Телефон або email</span>
               <input class="input" id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com"/>
             </label>
           </div>
 
           <div class="row two">
             <label class="field">
-              <span class="field-label">Місто</span>
+              <span class="field-label" data-i18n="label.city">Місто</span>
               <input class="input" id="city" name="city" placeholder="Варшава, Краків..."/>
             </label>
             <label class="field">
-              <span class="field-label">Готовий почати</span>
+              <span class="field-label" data-i18n="label.start">Готовий почати</span>
               <input class="input" id="start" name="start" type="date"/>
             </label>
           </div>
 
           <label class="field">
-            <span class="field-label">Досвід (коротко)</span>
-            <input class="input" id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці"/>
+            <span class="field-label" data-i18n="label.exp">Досвід (коротко)</span>
+            <input class="input" id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці" data-i18n="label.exp" data-i18n-attr="placeholder"/>
           </label>
 
           <label class="field">
-            <span class="field-label">Додаткова інформація</span>
+            <span class="field-label" data-i18n="label.message">Додаткова інформація</span>
             <textarea class="input textarea" id="message" name="message" rows="5" placeholder="Додайте деталі"></textarea>
           </label>
 
           <label class="consent">
             <input id="consent" type="checkbox" required/>
-            <span>Я погоджуюсь на обробку моїх контактних даних</span>
+            <span data-i18n="label.consent">Я погоджуюсь на обробку моїх контактних даних</span>
           </label>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Надіслати заявку</button>
-            <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
+            <button class="btn btn-primary" type="submit" data-i18n="btn.submit">Надіслати заявку</button>
+            <button class="btn btn-secondary" type="button" id="clearBtn" data-i18n="btn.clear">Очистити</button>
           </div>
 
           <div id="formMessage" role="status" aria-live="polite" class="form-message" hidden></div>
@@ -105,13 +105,13 @@
 
       <aside class="apply-aside" aria-labelledby="asideHeading">
         <div class="card small">
-          <h3 id="asideHeading">Потрібна допомога?</h3>
-          <p class="muted">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
-          <a class="btn btn-ghost" href="/">Повернутись на головну</a>
+          <h3 id="asideHeading" data-i18n="aside.help">Потрібна допомога?</h3>
+          <p class="muted" data-i18n="aside.text">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
+          <a class="btn btn-ghost" href="/" data-i18n="btn.back">Повернутись на головну</a>
         </div>
 
         <div class="card contacts">
-          <h4>Контакти</h4>
+          <h4 data-i18n="aside.contacts">Контакти</h4>
           <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
           <p class="muted">Пошта: info@courier-poland.example</p>
         </div>
@@ -122,11 +122,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/about.html">Про нас</a>
-        <a href="/contact.html">Контакти</a>
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/about.html" data-i18n="nav.about">Про нас</a>
+        <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
       </div>
-      <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
+      <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
     </div>
   </footer>
   <script>

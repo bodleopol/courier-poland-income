@@ -75,9 +75,16 @@ const I18N_SCRIPT = `\n<script>
     'meta.description': { ua: "Актуальні вакансії кур'\u0115рів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
     'brand.name': { ua: 'Rybezh', pl: 'Rybezh' },
     'brand.tagline': { ua: "rybezh.site — робота кур'\u0115ром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
+    
+    // Navigation
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
+    'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
+    'nav.about': { ua: 'Про нас', pl: 'O nas' },
+    'nav.contact': { ua: 'Контакти', pl: 'Kontakt' },
+    'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
 
+    // Index / Hero
     'hero.title': { ua: "Знайдіть роботу кур'\u0115ром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
     'hero.lead': { ua: "Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy w miastach: Warszawa, Kraków, Gdańsk, Wrocław, Poznań. Elastyczny grafik, codzienne wypłaty.' },
 
@@ -94,11 +101,45 @@ const I18N_SCRIPT = `\n<script>
 
     'jobs.cta': { ua: 'Деталі', pl: 'Szczegóły' },
 
+    // Index / Bottom CTA
     'cta.heading': { ua: 'Потрібна допомога з оформленням?', pl: 'Potrzebujesz pomocy z dokumentami?' },
     'cta.lead': { ua: 'Залиште заявку — ми допоможемо з документами та підбором роботи.', pl: 'Zostaw zgłoszenie — pomożemy z dokumentami i doborem pracy.' },
+    'cta.ready': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
+    'cta.sub': { ua: 'Отримайте консультацію та почніть заробляти вже сьогодні.', pl: 'Uzyskaj konsultację i zacznij zarabiać już dziś.' },
     'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
 
-    'footer.copy': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' }
+    // Footer
+    'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
+
+    // Apply Page
+    'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
+    'apply.intro': { ua: 'Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.', pl: 'Kilka pól — i dobierzemy oferty pracy oraz pomożemy z dokumentami.' },
+    'label.name': { ua: "Ім'я", pl: 'Imię' },
+    'label.contact': { ua: 'Телефон або email', pl: 'Telefon lub email' },
+    'label.city': { ua: 'Місто', pl: 'Miasto' },
+    'label.start': { ua: 'Готовий почати', pl: 'Gotowy do startu' },
+    'label.exp': { ua: 'Досвід (коротко)', pl: 'Doświadczenie (krótko)' },
+    'label.message': { ua: 'Додаткова інформація', pl: 'Dodatkowe informacje' },
+    'label.consent': { ua: 'Я погоджуюсь на обробку моїх контактних даних', pl: 'Wyrażam zgodę na przetwarzanie moich danych kontaktowych' },
+    'btn.submit': { ua: 'Надіслати заявку', pl: 'Wyślij zgłoszenie' },
+    'btn.clear': { ua: 'Очистити', pl: 'Wyczyść' },
+    'aside.help': { ua: 'Потрібна допомога?', pl: 'Potrzebujesz pomocy?' },
+    'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert. Zgłoszenia przetwarzamy w ciągu 24 godzin.' },
+    'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
+    'aside.contacts': { ua: 'Контакти', pl: 'Kontakt' },
+
+    // About Page
+    'about.title': { ua: 'Про нас', pl: 'O nas' },
+    'about.text': { ua: "<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу кур'єром у Польщі. Ми співпрацюємо з провідними логістичними компаніями та сервісами доставки їжі.", pl: "<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę jako kurier w Polsce. Współpracujemy z wiodącymi firmami logistycznymi i serwisami dostawy jedzenia." },
+    'about.mission': { ua: 'Наша місія', pl: 'Nasza misja' },
+    'about.mission_text': { ua: 'Ми прагнемо зробити процес працевлаштування за кордоном простим, прозорим та безпечним. Ми надаємо повний супровід: від першої консультації до підписання договору та виходу на першу зміну.', pl: 'Dążymy do tego, aby proces zatrudnienia za granicą był prosty, przejrzysty i bezpieczny. Zapewniamy pełne wsparcie: od pierwszej konsultacji po podpisanie umowy i pierwszą zmianę.' },
+    'about.why': { ua: 'Чому обирають нас', pl: 'Dlaczego my' },
+    'about.why_text': { ua: 'Ми пропонуємо лише перевірені вакансії, допомагаємо з легалізацією та надаємо підтримку 24/7. З нами ви можете бути впевнені у своєму завтрашньому дні.', pl: 'Oferujemy tylko sprawdzone oferty pracy, pomagamy w legalizacji i zapewniamy wsparcie 24/7. Z nami możesz być pewny swojego jutra.' },
+
+    // Contact Page
+    'contact.title': { ua: 'Контакти', pl: 'Kontakt' },
+    'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
+    'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' }
   };
 
   const DEFAULT_LANG = 'ua';
@@ -125,12 +166,8 @@ const I18N_SCRIPT = `\n<script>
       if (el.tagName === 'INPUT' && el.type === 'text') { el.placeholder = interpolateText(text); return; }
       if (el.tagName === 'OPTION') { el.textContent = interpolateText(text); return; }
       if (el.tagName === 'TITLE' || (el.parentElement && el.parentElement.tagName === 'HEAD')) { document.title = interpolateText(text); el.textContent = interpolateText(text); return; }
-      el.textContent = interpolateText(text);
+      el.innerHTML = interpolateText(text);
     });
-    if (translations['meta.title']) {
-      const t = translations['meta.title'][lang] || translations['meta.title'][DEFAULT_LANG];
-      if (t) document.title = interpolateText(t);
-    }
     document.querySelectorAll('.lang-btn').forEach(btn => {
       if (btn.getAttribute('data-lang') === lang) btn.classList.add('active'); else btn.classList.remove('active');
     });
@@ -217,8 +254,7 @@ async function build() {
       finalHtml += `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>` + I18N_STYLE + I18N_SCRIPT;
     }
 
-    const outFile = path.join(DIST, \
-`${page.slug}.html`);
+    const outFile = path.join(DIST, `${page.slug}.html`);
     await fs.writeFile(outFile, finalHtml, 'utf8');
     links.push({ title: page.title, slug: page.slug, city: page.city || '' });
   }
@@ -232,6 +268,10 @@ async function build() {
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
       .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     
+    // Inject data-i18n into index title and description
+    indexHtml = indexHtml.replace('<title>', '<title data-i18n="meta.title">');
+    indexHtml = indexHtml.replace('<meta name="description" content="', '<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="');
+
     // inject i18n into index
     if (indexHtml.includes('</body>')) {
       const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
@@ -273,19 +313,19 @@ function generateIndexContent(links) {
   }).join('\n');
 
   return `
-    <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);">Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.</p>
+    <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.</p>
     <form class="search-form" action="/" method="get" aria-label="Фільтр вакансій">
-      <label class="sr-only" for="q">Пошук</label>
-      <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" />
+      <label class="sr-only" for="q" data-i18n="search.sr">Пошук</label>
+      <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
       <select id="city" name="city" aria-label="Вибір міста">
-        <option value="">Всі міста</option>
-        <option>Варшава</option>
-        <option>Краків</option>
-        <option>Гданськ</option>
-        <option>Вроцлав</option>
-        <option>Познань</option>
+        <option value="" data-i18n="city.all">Всі міста</option>
+        <option data-i18n="city.warszawa">Варшава</option>
+        <option data-i18n="city.krakow">Краків</option>
+        <option data-i18n="city.gdansk">Гданськ</option>
+        <option data-i18n="city.wroclaw">Вроцлав</option>
+        <option data-i18n="city.poznan">Познань</option>
       </select>
-      <button type="submit">Знайти</button>
+      <button type="submit" data-i18n="search.button">Знайти</button>
     </form>
     <div class="jobs-grid" aria-label="Список вакансій">
 ${cards}

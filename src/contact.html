@@ -41,43 +41,43 @@
     <div class="container header-inner">
       <a href="/" class="logo">Rybezh</a>
       <nav class="nav-menu">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/" class="nav-link">Вакансії</a>
-        <a href="/about.html" class="nav-link">Про нас</a>
-        <a href="/contact.html" class="nav-link">Контакти</a>
-        <a href="/apply.html" class="btn-cta">Отримати консультацію</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="/apply.html" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
       </nav>
       <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link">Home</a>
-      <a href="/" class="nav-link">Вакансії</a>
-      <a href="/about.html" class="nav-link">Про нас</a>
-      <a href="/contact.html" class="nav-link">Контакти</a>
-      <a href="/apply.html" class="btn-cta" style="text-align:center">Отримати консультацію</a>
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
     </div>
   </header>
 
   <main class="container">
     <section class="hero-section">
-      <h1>Контакти</h1>
+      <h1 data-i18n="contact.title">Контакти</h1>
     </section>
     <article class="content-wrapper">
-      <p>Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.</p>
-      <a href="https://t.me/rybezh_site" target="_blank" class="btn-telegram">Написати в Telegram</a>
+      <p data-i18n="contact.text">Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.</p>
+      <a href="https://t.me/rybezh_site" target="_blank" class="btn-telegram" data-i18n="contact.telegram">Написати в Telegram</a>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/about.html">Про нас</a>
-        <a href="/contact.html">Контакти</a>
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/about.html" data-i18n="nav.about">Про нас</a>
+        <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
       </div>
-      <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
+      <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
