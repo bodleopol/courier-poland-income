@@ -148,5 +148,20 @@
     "country": "Poland",
     "title_pl": "Kurier-logistyk w Poznaniu — praca na magazynie i w dostawie",
     "language": "uk"
+  },
+  {
+    "title": "Піший кур'єр у Варшаві — робота в центрі",
+    "city": "Варшава",
+    "slug": "warsaw-walking-courier-3",
+    "excerpt": "Робота пішим кур'єром у Варшаві. Ідеально для старту без транспорту. Наявність велосипеда вітається.",
+    "excerpt_pl": "Praca jako kurier pieszy w Warszawie. Idealna na start bez pojazdu. Rower mile widziany.",
+    "body": "Відкрито вакансію пішого кур'єра у Варшаві. Робота переважно в центрі міста та густонаселених районах, що дозволяє ефективно доставляти замовлення пішки. Вітається наявність велосипеда — це збільшить ваш радіус доставки та заробіток. Умови: вільний графік, щотижневі виплати, відсутність штрафів. Для старту потрібен лише смартфон. Залиште заявку, щоб дізнатися деталі: <a href=\"/apply.html\">Подати заявку</a>.",
+    "body_pl": "Otwarta rekrutacja na stanowisko kuriera pieszego w Warszawie. Praca głównie w centrum miasta i gęsto zaludnionych dzielnicach, co pozwala na efektywne dostarczanie zamówień pieszo. Mile widziany własny rower — zwiększy to Twój zasięg dostaw i zarobki. Warunki: elastyczny grafik, tygodniowe wypłaty, brak kar. Do rozpoczęcia potrzebny jest tylko smartfon. Zostaw zgłoszenie, aby poznać szczegóły: <a href=\"/apply.html\">Złóż wniosek</a>.",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Złóż wniosek",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "title_pl": "Kurier pieszy w Warszawie — praca w centrum",
+    "language": "uk"
   }
 ]
