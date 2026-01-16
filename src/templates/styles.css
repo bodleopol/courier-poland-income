@@ -12,6 +12,7 @@
   --header-height: 72px;
 }
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body {
   margin: 0;
   font-family: var(--font-sans);
