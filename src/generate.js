@@ -213,11 +213,12 @@ async function build() {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
       pContent = pContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
+      const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
       // inject styles and script before </body>
       if (pContent.includes('</body>')) {
-        pContent = pContent.replace('</body>', `${I18N_STYLE}${I18N_SCRIPT}</body>`);
+        pContent = pContent.replace('</body>', `${switcher}${I18N_STYLE}${I18N_SCRIPT}</body>`);
       } else {
-        pContent += I18N_STYLE + I18N_SCRIPT;
+        pContent += switcher + I18N_STYLE + I18N_SCRIPT;
       }
       await fs.writeFile(path.join(DIST, p), pContent, 'utf8');
     } catch (e) {}
@@ -273,11 +274,11 @@ async function build() {
     indexHtml = indexHtml.replace('<meta name="description" content="', '<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="');
 
     // inject i18n into index
+    const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
     if (indexHtml.includes('</body>')) {
-      const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
       indexHtml = indexHtml.replace('</body>', `${switcher}${I18N_STYLE}${I18N_SCRIPT}</body>`);
     } else {
-      indexHtml += I18N_STYLE + I18N_SCRIPT;
+      indexHtml += switcher + I18N_STYLE + I18N_SCRIPT;
     }
 
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');

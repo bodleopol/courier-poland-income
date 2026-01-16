@@ -107,6 +107,11 @@
     .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--color-primary); margin: 5px 0; }
     .mobile-menu { display: none; position: absolute; top: var(--header-height); left: 0; right: 0; background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: 1rem; flex-direction: column; gap: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     .mobile-menu.is-open { display: flex; }
+    
+    .mobile-lang { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
+    .mobile-lang .lang-btn { background: transparent; border: 1px solid var(--color-border); padding: 0.5rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; color: var(--color-secondary); transition: all 0.2s; }
+    .mobile-lang .lang-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .mobile-lang .lang-btn.active { background: var(--color-accent); color: white; border-color: var(--color-accent); }
 
     /* Main */
     main { flex: 1; padding: 2rem 0 4rem; }
@@ -169,6 +174,10 @@
       <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
       <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
       <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
     </div>
   </header>
 
