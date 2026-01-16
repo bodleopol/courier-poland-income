@@ -52,6 +52,7 @@ const I18N_SCRIPT = `\n<script>
 
     // Footer
     'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
+    'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
 
     // Apply Page
     'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
@@ -81,7 +82,15 @@ const I18N_SCRIPT = `\n<script>
     // Contact Page
     'contact.title': { ua: 'Контакти', pl: 'Kontakt' },
     'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
-    'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' }
+    'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' },
+
+    // Privacy Page
+    'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
+    'privacy.text': { ua: '<p>Ми збираємо та обробляємо ваші персональні дані (ім\'я, телефон, місто) виключно для цілей працевлаштування та зворотного зв\'язку. Ваші дані не передаються третім особам без вашої згоди, за винятком випадків, передбачених законодавством.</p><p>Використовуючи цей сайт, ви погоджуєтесь з нашою політикою обробки даних.</p>', pl: '<p>Gromadzimy i przetwarzamy Twoje dane osobowe (imię, telefon, miasto) wyłącznie w celach rekrutacyjnych i kontaktowych. Twoje dane nie są przekazywane osobom trzecim bez Twojej zgody, z wyjątkiem przypadków przewidzianych przez prawo.</p><p>Korzystając z tej witryny, zgadzasz się na naszą politykę przetwarzania danych.</p>' }
+
+    // Cookie Banner
+    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
+    'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' }
   };
 
   // Merge extra translations (jobs)
@@ -172,7 +181,7 @@ async function build() {
   const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
