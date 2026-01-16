@@ -139,13 +139,29 @@ const I18N_SCRIPT = `\n<script>
 
   function setLanguage(lang) { if (!lang) return; localStorage.setItem(STORAGE_KEY, lang); applyTranslations(lang); }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function init() {
     const saved = localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
     applyTranslations(saved);
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', (e) => { const lang = btn.getAttribute('data-lang'); setLanguage(lang); });
     });
-  });
+
+    // Cookie Banner Logic
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+    const cookieAccepted = localStorage.getItem('cookie_accepted');
+
+    if (!cookieAccepted && cookieBanner && cookieAcceptBtn) {
+      cookieBanner.removeAttribute('hidden');
+      cookieAcceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookie_accepted', 'true');
+        cookieBanner.style.display = 'none';
+        cookieBanner.hidden = true;
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })(__EXTRA_TRANSLATIONS__);
 </script>\n`;
 
