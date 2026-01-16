@@ -275,11 +275,21 @@ async function build() {
 }
 
 function generateIndexContent(links) {
+  const cityMap = {
+    'Варшава': 'city.warszawa',
+    'Краків': 'city.krakow',
+    'Гданськ': 'city.gdansk',
+    'Вроцлав': 'city.wroclaw',
+    'Познань': 'city.poznan'
+  };
+
   const cards = links.map(l => {
     const cityAttr = escapeHtml(l.city || '');
+    const cityKey = cityMap[l.city];
+    const cityDisplay = cityKey ? `<span data-i18n="${cityKey}">${cityAttr}</span>` : cityAttr;
     return `    <div class="job-card" data-city="${cityAttr}">
       <h3><a href="./${l.slug}.html" data-i18n="job.${l.slug}.title">${escapeHtml(l.title)}</a></h3>
-      <p class="muted">${cityAttr}</p>
+      <p class="muted">${cityDisplay}</p>
       <a class="card-cta" href="./${l.slug}.html" data-i18n="jobs.cta">Деталі</a>
     </div>`;
   }).join('\n');
@@ -291,11 +301,11 @@ function generateIndexContent(links) {
       <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
       <select id="city" name="city" aria-label="Вибір міста">
         <option value="" data-i18n="city.all">Всі міста</option>
-        <option data-i18n="city.warszawa">Варшава</option>
-        <option data-i18n="city.krakow">Краків</option>
-        <option data-i18n="city.gdansk">Гданськ</option>
-        <option data-i18n="city.wroclaw">Вроцлав</option>
-        <option data-i18n="city.poznan">Познань</option>
+        <option value="Варшава" data-i18n="city.warszawa">Варшава</option>
+        <option value="Краків" data-i18n="city.krakow">Краків</option>
+        <option value="Гданськ" data-i18n="city.gdansk">Гданськ</option>
+        <option value="Вроцлав" data-i18n="city.wroclaw">Вроцлав</option>
+        <option value="Познань" data-i18n="city.poznan">Познань</option>
       </select>
       <button type="submit" data-i18n="search.button">Знайти</button>
     </form>
