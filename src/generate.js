@@ -9,67 +9,9 @@ const SRC = path.join(__dirname);
 const TEMPLATES = path.join(SRC, 'templates');
 const DIST = path.join(process.cwd(), 'dist');
 
-// Simple i18n styles (glassmorphism) and client script will be injected into generated pages
-const I18N_STYLE = `\n<style>
-/* Language switcher - glassmorphism */
-.lang-switcher {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  display: inline-flex;
-  gap: 6px;
-  backdrop-filter: blur(8px) saturate(120%);
-  -webkit-backdrop-filter: blur(8px) saturate(120%);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 999px;
-  padding: 6px;
-  z-index: 9999;
-  box-shadow: 0 6px 18px rgba(8,15,25,0.25);
-  align-items: center;
-  user-select: none;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  font-size: 13px;
-  color: var(--color-text, #fff);
-  transition: transform .12s ease, background .12s ease;
-}
-.lang-switcher:active { transform: translateY(1px); }
-
-.lang-switcher button.lang-btn {
-  appearance: none;
-  border: none;
-  background: transparent;
-  color: inherit;
-  padding: 8px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background .12s ease, color .12s ease;
-  font-weight: 600;
-  letter-spacing: .2px;
-}
-
-.lang-switcher button.lang-btn:focus {
-  outline: 2px solid rgba(255,255,255,0.12);
-  outline-offset: 2px;
-}
-
-.lang-switcher button.lang-btn.active {
-  background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
-  color: var(--color-accent, #ffdd57);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.02);
-}
-
-@media (max-width: 520px) {
-  .lang-switcher { right: 12px; bottom: 12px; padding: 5px; font-size: 12px; }
-}
-</style>\n`;
-
 const I18N_SCRIPT = `\n<script>
 /* i18n client script injected by generate.js */
-(function(){
+(function(extraTranslations){
   const translations = {
     'meta.title': { ua: "Rybezh — Робота кур'\u0115ром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
     'meta.description': { ua: "Актуальні вакансії кур'\u0115рів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
@@ -142,6 +84,9 @@ const I18N_SCRIPT = `\n<script>
     'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' }
   };
 
+  // Merge extra translations (jobs)
+  if(extraTranslations) Object.assign(translations, extraTranslations);
+
   const DEFAULT_LANG = 'ua';
   const STORAGE_KEY = 'site_lang';
 
@@ -168,6 +113,14 @@ const I18N_SCRIPT = `\n<script>
       if (el.tagName === 'TITLE' || (el.parentElement && el.parentElement.tagName === 'HEAD')) { document.title = interpolateText(text); el.textContent = interpolateText(text); return; }
       el.innerHTML = interpolateText(text);
     });
+    // Handle block content toggling
+    document.querySelectorAll('[data-lang-content]').forEach(el => {
+      if (el.getAttribute('data-lang-content') === lang) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
     document.querySelectorAll('.lang-btn').forEach(btn => {
       if (btn.getAttribute('data-lang') === lang) btn.classList.add('active'); else btn.classList.remove('active');
     });
@@ -184,7 +137,7 @@ const I18N_SCRIPT = `\n<script>
       btn.addEventListener('click', (e) => { const lang = btn.getAttribute('data-lang'); setLanguage(lang); });
     });
   });
-})();
+})(__EXTRA_TRANSLATIONS__);
 </script>\n`;
 
 async function build() {
@@ -207,18 +160,28 @@ async function build() {
     // no styles provided, continue
   }
 
+  // Prepare dynamic translations for jobs
+  const jobTranslations = {};
+  pages.forEach(p => {
+    jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
+    jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
+    jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek' };
+  });
+  
+  // Prepare script with injected translations
+  const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
+
   // copy static pages
   const staticPages = ['apply.html', 'about.html', 'contact.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
       pContent = pContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
-      const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
       // inject styles and script before </body>
       if (pContent.includes('</body>')) {
-        pContent = pContent.replace('</body>', `${switcher}${I18N_STYLE}${I18N_SCRIPT}</body>`);
+        pContent = pContent.replace('</body>', `${scriptWithData}</body>`);
       } else {
-        pContent += switcher + I18N_STYLE + I18N_SCRIPT;
+        pContent += scriptWithData;
       }
       await fs.writeFile(path.join(DIST, p), pContent, 'utf8');
     } catch (e) {}
@@ -229,10 +192,15 @@ async function build() {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const content = page.body || page.content || page.excerpt || '';
+    const contentPl = page.body_pl || page.body || '';
+
+    // Wrap content in language toggles
+    const dualContent = `<div data-lang-content="ua">${content}</div><div data-lang-content="pl" style="display:none">${contentPl}</div>`;
+
     const html = tpl
       .replace(/{{TITLE}}/g, escapeHtml(page.title || ''))
       .replace(/{{DESCRIPTION}}/g, escapeHtml(description))
-      .replace(/{{CONTENT}}/g, content)
+      .replace(/{{CONTENT}}/g, dualContent)
       .replace(/{{CANONICAL}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}.html`)
       .replace(/{{CITY}}/g, escapeHtml(page.city || ''))
       .replace(/{{CTA_LINK}}/g, page.cta_link || '/apply.html')
@@ -245,14 +213,18 @@ async function build() {
       if (/data-i18n/.test(open)) return m;
       return open.replace(/>$/, ' data-i18n="jobs.cta">') + (inner || '') + close;
     });
+    
+    // Add data-i18n to H1 and Title
+    finalHtml = finalHtml.replace('<title>', `<title data-i18n="job.${page.slug}.title">`);
+    // Replace H1 content with data-i18n span, or add attribute if simple
+    finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
     // inject lang switcher and scripts before </body>
     if (finalHtml.includes('</body>')) {
-      // add switcher markup + style+script
-      const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
-      finalHtml = finalHtml.replace('</body>', `${switcher}${I18N_STYLE}${I18N_SCRIPT}</body>`);
+      // add script
+      finalHtml = finalHtml.replace('</body>', `${scriptWithData}</body>`);
     } else {
-      finalHtml += `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>` + I18N_STYLE + I18N_SCRIPT;
+      finalHtml += scriptWithData;
     }
 
     const outFile = path.join(DIST, `${page.slug}.html`);
@@ -274,11 +246,10 @@ async function build() {
     indexHtml = indexHtml.replace('<meta name="description" content="', '<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="');
 
     // inject i18n into index
-    const switcher = `\n<div id="lang-switcher" class="lang-switcher" aria-hidden="false" aria-label="Language switcher">\n  <button class="lang-btn" data-lang="ua" id="lang-ua">UA</button>\n  <button class="lang-btn" data-lang="pl" id="lang-pl">PL</button>\n</div>\n`;
     if (indexHtml.includes('</body>')) {
-      indexHtml = indexHtml.replace('</body>', `${switcher}${I18N_STYLE}${I18N_SCRIPT}</body>`);
+      indexHtml = indexHtml.replace('</body>', `${scriptWithData}</body>`);
     } else {
-      indexHtml += switcher + I18N_STYLE + I18N_SCRIPT;
+      indexHtml += scriptWithData;
     }
 
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
@@ -307,9 +278,9 @@ function generateIndexContent(links) {
   const cards = links.map(l => {
     const cityAttr = escapeHtml(l.city || '');
     return `    <div class="job-card" data-city="${cityAttr}">
-      <h3><a href="./${l.slug}.html">${escapeHtml(l.title)}</a></h3>
+      <h3><a href="./${l.slug}.html" data-i18n="job.${l.slug}.title">${escapeHtml(l.title)}</a></h3>
       <p class="muted">${cityAttr}</p>
-      <a class="card-cta" href="./${l.slug}.html">Деталі</a>
+      <a class="card-cta" href="./${l.slug}.html" data-i18n="jobs.cta">Деталі</a>
     </div>`;
   }).join('\n');
 

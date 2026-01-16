@@ -76,6 +76,20 @@ a:hover { color: var(--color-accent); }
   font-size: 0.95rem;
   transition: background-color 0.2s, transform 0.1s;
 }
+.header-lang { display: flex; gap: 8px; margin-left: 1rem; }
+.header-lang .lang-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-secondary);
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.header-lang .lang-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.header-lang .lang-btn.active { background: var(--color-accent); color: white; border-color: var(--color-accent); }
 .btn-cta:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
