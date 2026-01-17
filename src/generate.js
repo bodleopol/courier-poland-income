@@ -327,7 +327,21 @@ async function build() {
 
     // write robots.txt
     try {
-      const robots = `User-agent: *\nAllow: /\nSitemap: https://rybezh.site/sitemap.xml\nHost: rybezh.site\n`;
+      const robots = `# Robots.txt for rybezh.site - Job search platform for couriers in Poland
+User-agent: *
+Allow: /
+Crawl-delay: 1
+Request-rate: 30/1m
+
+# Block junk crawlers
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /
+
+Sitemap: https://rybezh.site/sitemap.xml
+Host: rybezh.site
+`;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
 
@@ -434,30 +448,75 @@ ${cards}
 
 function generateSitemap(links) {
   const base = 'https://rybezh.site';
-  const now = new Date().toISOString();
+  // Format date as YYYY-MM-DD for lastmod (Google recommends this format)
+  const today = new Date().toISOString().split('T')[0];
   
-  // Main pages with higher priority
+  // Main pages with priority based on importance for job seeking platform
   const mainPages = [
-    { url: `${base}/`, priority: '1.0', changefreq: 'daily' },
-    { url: `${base}/apply.html`, priority: '0.9', changefreq: 'weekly' },
-    { url: `${base}/about.html`, priority: '0.7', changefreq: 'monthly' },
-    { url: `${base}/contact.html`, priority: '0.7', changefreq: 'monthly' },
-    { url: `${base}/faq.html`, priority: '0.8', changefreq: 'weekly' },
-    { url: `${base}/privacy.html`, priority: '0.3', changefreq: 'yearly' }
+    { 
+      url: `${base}/`, 
+      priority: '1.0', 
+      changefreq: 'daily',
+      lastmod: today
+    },
+    { 
+      url: `${base}/apply.html`, 
+      priority: '0.95', 
+      changefreq: 'daily',
+      lastmod: today
+    },
+    { 
+      url: `${base}/faq.html`, 
+      priority: '0.85', 
+      changefreq: 'weekly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/about.html`, 
+      priority: '0.8', 
+      changefreq: 'monthly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/contact.html`, 
+      priority: '0.8', 
+      changefreq: 'monthly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/privacy.html`, 
+      priority: '0.5', 
+      changefreq: 'yearly',
+      lastmod: today
+    }
   ];
   
-  // Job pages
-  const jobPages = links.map(l => ({
-    url: `${base}/${l.slug}.html`,
-    priority: '0.8',
-    changefreq: 'weekly'
-  }));
+  // Job pages - prioritize by relevance (multiple job listings = more important)
+  const jobPageCounts = {};
+  links.forEach(l => {
+    const city = l.city || 'unknown';
+    jobPageCounts[city] = (jobPageCounts[city] || 0) + 1;
+  });
+  
+  const jobPages = links.map(l => {
+    // High-demand cities (Warszawa, Kraków) get slightly higher priority
+    const majorCities = ['Warszawa', 'Kraków', 'Gdańsk', 'Wrocław', 'Poznań'];
+    const isPrioritized = majorCities.includes(l.city);
+    const priority = isPrioritized ? '0.85' : '0.75';
+    
+    return {
+      url: `${base}/${l.slug}.html`,
+      priority: priority,
+      changefreq: 'weekly',
+      lastmod: today
+    };
+  });
   
   const allPages = [...mainPages, ...jobPages];
   
   const items = allPages.map(p => `  <url>
     <loc>${p.url}</loc>
-    <lastmod>${now}</lastmod>
+    <lastmod>${p.lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>
   </url>`).join('\n');
