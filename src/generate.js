@@ -216,6 +216,15 @@ async function build() {
     // main.js not found, continue
   }
 
+  // Copy favicon.svg
+  try {
+    const faviconPath = path.join(SRC, 'favicon.svg');
+    const faviconContent = await fs.readFile(faviconPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'favicon.svg'), faviconContent, 'utf8');
+  } catch (e) {
+    // favicon.svg not found, continue
+  }
+
   // Prepare dynamic translations for jobs
   const jobTranslations = {};
   pages.forEach(p => {
@@ -395,14 +404,38 @@ ${cards}
 
 function generateSitemap(links) {
   const base = 'https://rybezh.site';
-  const urls = [
-    `${base}/`,
-    `${base}/apply.html`, `${base}/about.html`, `${base}/contact.html`, `${base}/faq.html`,
-    ...links.map(l => `${base}/${l.slug}.html`)
-  ];
   const now = new Date().toISOString();
-  const items = urls.map(u => `  <url>\n    <loc>${u}</loc>\n    <lastmod>${now}</lastmod>\n  </url>`).join('\n');
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</urlset>`;
+  
+  // Main pages with higher priority
+  const mainPages = [
+    { url: `${base}/`, priority: '1.0', changefreq: 'daily' },
+    { url: `${base}/apply.html`, priority: '0.9', changefreq: 'weekly' },
+    { url: `${base}/about.html`, priority: '0.7', changefreq: 'monthly' },
+    { url: `${base}/contact.html`, priority: '0.7', changefreq: 'monthly' },
+    { url: `${base}/faq.html`, priority: '0.8', changefreq: 'weekly' },
+    { url: `${base}/privacy.html`, priority: '0.3', changefreq: 'yearly' }
+  ];
+  
+  // Job pages
+  const jobPages = links.map(l => ({
+    url: `${base}/${l.slug}.html`,
+    priority: '0.8',
+    changefreq: 'weekly'
+  }));
+  
+  const allPages = [...mainPages, ...jobPages];
+  
+  const items = allPages.map(p => `  <url>
+    <loc>${p.url}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
+  </url>`).join('\n');
+  
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${items}
+</urlset>`;
 }
 
 function escapeHtml(str) {
