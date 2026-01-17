@@ -345,7 +345,22 @@ function generateIndexContent(links) {
     'Краків': 'city.krakow',
     'Гданськ': 'city.gdansk',
     'Вроцлав': 'city.wroclaw',
-    'Познань': 'city.poznan'
+    'Познань': 'city.poznan',
+    'Лодзь': 'city.lodz',
+    'Катовіце': 'city.katowice',
+    'Щецін': 'city.szczecin',
+    'Люблін': 'city.lublin',
+    'Білосток': 'city.bialystok',
+    'Бидгощ': 'city.bydgoszcz',
+    'Жешув': 'city.rzeszow',
+    'Торунь': 'city.torun',
+    'Ченстохова': 'city.czestochowa',
+    'Радом': 'city.radom',
+    'Сосновець': 'city.sosnowiec',
+    'Кельце': 'city.kielce',
+    'Гливіце': 'city.gliwice',
+    'Ольштин': 'city.olsztyn',
+    'Бєльско-Бяла': 'city.bielsko'
   };
 
   const cards = links.map(l => {
@@ -360,7 +375,7 @@ function generateIndexContent(links) {
   }).join('\n');
 
   return `
-    <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.</p>
+    <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.</p>
     <form class="search-form" action="/" method="get" aria-label="Фільтр вакансій">
       <label class="sr-only" for="q" data-i18n="search.sr">Пошук</label>
       <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
@@ -368,9 +383,24 @@ function generateIndexContent(links) {
         <option value="" data-i18n="city.all">Всі міста</option>
         <option value="Варшава" data-i18n="city.warszawa">Варшава</option>
         <option value="Краків" data-i18n="city.krakow">Краків</option>
-        <option value="Гданськ" data-i18n="city.gdansk">Гданськ</option>
+        <option value="Лодзь" data-i18n="city.lodz">Лодзь</option>
         <option value="Вроцлав" data-i18n="city.wroclaw">Вроцлав</option>
         <option value="Познань" data-i18n="city.poznan">Познань</option>
+        <option value="Гданськ" data-i18n="city.gdansk">Гданськ</option>
+        <option value="Щецін" data-i18n="city.szczecin">Щецін</option>
+        <option value="Бидгощ" data-i18n="city.bydgoszcz">Бидгощ</option>
+        <option value="Люблін" data-i18n="city.lublin">Люблін</option>
+        <option value="Білосток" data-i18n="city.bialystok">Білосток</option>
+        <option value="Катовіце" data-i18n="city.katowice">Катовіце</option>
+        <option value="Гливіце" data-i18n="city.gliwice">Гливіце</option>
+        <option value="Ченстохова" data-i18n="city.czestochowa">Ченстохова</option>
+        <option value="Жешув" data-i18n="city.rzeszow">Жешув</option>
+        <option value="Торунь" data-i18n="city.torun">Торунь</option>
+        <option value="Кельце" data-i18n="city.kielce">Кельце</option>
+        <option value="Ольштин" data-i18n="city.olsztyn">Ольштин</option>
+        <option value="Радом" data-i18n="city.radom">Радом</option>
+        <option value="Сосновець" data-i18n="city.sosnowiec">Сосновець</option>
+        <option value="Бєльско-Бяла" data-i18n="city.bielsko">Бєльско-Бяла</option>
       </select>
       <button type="submit" data-i18n="search.button">Знайти</button>
     </form>

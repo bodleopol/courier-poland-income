@@ -19,7 +19,7 @@
     'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
     'hero.title': { ua: "Знайдіть роботу кур'єром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
-    'hero.lead': { ua: "Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань.", pl: 'Aktualne oferty pracy w miastach: Warszawa, Kraków, Gdańsk, Wrocław, Poznań.' },
+    'hero.lead': { ua: "Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy kurierskiej w ponad 20 miastach Polski. Elastyczny grafik, codzienne wypłaty.' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
     'search.button': { ua: 'Знайти', pl: 'Znajdź' },
     'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' },
@@ -63,7 +63,29 @@
     'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' },
     'theme.light': { ua: 'Світла тема', pl: 'Jasny motyw' },
     'theme.dark': { ua: 'Темна тема', pl: 'Ciemny motyw' },
-    'scroll.top': { ua: 'Вгору', pl: 'Do góry' }
+    'scroll.top': { ua: 'Вгору', pl: 'Do góry' },
+    // Cities
+    'city.warszawa': { ua: 'Варшава', pl: 'Warszawa' },
+    'city.krakow': { ua: 'Краків', pl: 'Kraków' },
+    'city.gdansk': { ua: 'Гданськ', pl: 'Gdańsk' },
+    'city.wroclaw': { ua: 'Вроцлав', pl: 'Wrocław' },
+    'city.poznan': { ua: 'Познань', pl: 'Poznań' },
+    'city.lodz': { ua: 'Лодзь', pl: 'Łódź' },
+    'city.katowice': { ua: 'Катовіце', pl: 'Katowice' },
+    'city.szczecin': { ua: 'Щецін', pl: 'Szczecin' },
+    'city.lublin': { ua: 'Люблін', pl: 'Lublin' },
+    'city.bialystok': { ua: 'Білосток', pl: 'Białystok' },
+    'city.bydgoszcz': { ua: 'Бидгощ', pl: 'Bydgoszcz' },
+    'city.rzeszow': { ua: 'Жешув', pl: 'Rzeszów' },
+    'city.torun': { ua: 'Торунь', pl: 'Toruń' },
+    'city.czestochowa': { ua: 'Ченстохова', pl: 'Częstochowa' },
+    'city.radom': { ua: 'Радом', pl: 'Radom' },
+    'city.sosnowiec': { ua: 'Сосновець', pl: 'Sosnowiec' },
+    'city.kielce': { ua: 'Кельце', pl: 'Kielce' },
+    'city.gliwice': { ua: 'Гливіце', pl: 'Gliwice' },
+    'city.olsztyn': { ua: 'Ольштин', pl: 'Olsztyn' },
+    'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała' },
+    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' }
   };
 
   // Get current language
