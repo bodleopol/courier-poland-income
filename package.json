@@ -1,6 +1,5 @@
 {
-  "name": "courier-poland-income",
-  "version": "1.0.0",
+  "name": "courier-poland",
   "type": "module",
   "scripts": {
     "build": "node src/generate.js"
