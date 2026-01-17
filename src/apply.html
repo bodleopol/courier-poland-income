@@ -154,7 +154,7 @@
         <div class="card contacts">
           <h4 data-i18n="aside.contacts">Контакти</h4>
           <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
-          <p class="muted">Пошта: info@courier-poland.example</p>
+          <p class="muted">Пошта: <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
         </div>
       </aside>
     </section>
@@ -214,7 +214,7 @@
         ];
         const body = encodeURIComponent(bodyLines.join('\n'));
         const subject = encodeURIComponent('Заявка на роботу кур\'єром — ' + name);
-        const mailto = `mailto:info@courier-poland.example?subject=${subject}&body=${body}`;
+        const mailto = `mailto:jobs.r@protonmail.com?subject=${subject}&body=${body}`;
 
         // disable submit
         submitBtn.disabled = true; submitBtn.setAttribute('aria-busy','true');
