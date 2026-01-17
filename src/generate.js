@@ -13,10 +13,10 @@ const I18N_SCRIPT = `\n<script>
 /* i18n client script injected by generate.js */
 (function(extraTranslations){
   const translations = {
-    'meta.title': { ua: "Rybezh — Робота кур'\u0115ром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
-    'meta.description': { ua: "Актуальні вакансії кур'\u0115рів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
+    'meta.title': { ua: "Rybezh — Робота кур'єром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
+    'meta.description': { ua: "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
     'brand.name': { ua: 'Rybezh', pl: 'Rybezh' },
-    'brand.tagline': { ua: "rybezh.site — робота кур'\u0115ром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
+    'brand.tagline': { ua: "rybezh.site — робота кур'єром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
     
     // Navigation
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
@@ -28,7 +28,7 @@ const I18N_SCRIPT = `\n<script>
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
 
     // Index / Hero
-    'hero.title': { ua: "Знайдіть роботу кур'\u0115ром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
+    'hero.title': { ua: "Знайдіть роботу кур'єром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
     'hero.lead': { ua: "Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy w miastach: Warszawa, Kraków, Gdańsk, Wrocław, Poznań. Elastyczny grafik, codzienne wypłaty.' },
 
     'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
