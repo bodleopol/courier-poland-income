@@ -1,5 +1,5 @@
 {
-  "name": "courier-poland",
+  "name": "courier-poland-income",
   "type": "module",
   "scripts": {
     "build": "node src/generate.js"
