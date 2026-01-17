@@ -480,11 +480,18 @@ main { flex: 1; padding: 3rem 0 4rem; }
   }
 }
 
-/* FAQ Styles */
+/* FAQ & Content Styles */
 details {
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--color-surface-alt);
+  border-left: 4px solid var(--color-accent);
+  transition: all var(--transition);
+}
+details:hover {
+  box-shadow: 0 2px 8px rgba(0, 166, 126, 0.1);
+  border-left-color: var(--color-accent);
 }
 summary {
   font-weight: 600;
@@ -493,6 +500,11 @@ summary {
   position: relative;
   padding-right: 20px;
   color: var(--color-primary);
+  user-select: none;
+  transition: color var(--transition);
+}
+summary:hover {
+  color: var(--color-accent);
 }
 summary::-webkit-details-marker { display: none; }
 summary::after {
@@ -501,6 +513,94 @@ summary::after {
   right: 0;
   font-weight: 400;
   color: var(--color-accent);
+  transition: transform var(--transition);
 }
-details[open] summary::after { content: '-'; }
-details p { margin-top: 0.5rem; color: var(--color-secondary); }
+details[open] summary::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+details p {
+  margin-top: 0.5rem;
+  color: var(--color-secondary);
+  line-height: 1.6;
+}
+details ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  color: var(--color-secondary);
+}
+details li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Button styles for content */
+.btn-primary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: #00885d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 166, 126, 0.3);
+}
+
+.btn-telegram {
+  display: inline-block;
+  background: #229ED9;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  border: none;
+  cursor: pointer;
+}
+.btn-telegram:hover {
+  background: #1b8ac0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(34, 158, 217, 0.3);
+}
+
+/* Content wrapper enhancements */
+.content-wrapper h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  border-bottom: 2px solid rgba(0, 166, 126, 0.2);
+  padding-bottom: 0.5rem;
+}
+.content-wrapper h3 {
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+.content-wrapper h4 {
+  margin-top: 1rem;
+  color: var(--color-primary);
+}
+.content-wrapper ul {
+  list-style-position: inside;
+  color: var(--color-secondary);
+  line-height: 1.8;
+}
+
+/* Surface alt background */
+.color-surface-alt {
+  background: var(--color-surface-alt);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+
+
