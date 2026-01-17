@@ -2,10 +2,120 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{TITLE}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{TITLE}} — Rybezh</title>
   <meta name="description" content="{{DESCRIPTION}}">
-  <link rel="canonical" href="/{{SLUG}}.html">
+  <meta name="abstract" content="Вакансія кур'єра у {{CITY}}">
+  <meta name="author" content="Rybezh">
+  <meta name="creator" content="Rybezh">
+  <meta name="theme-color" content="#00a67e">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://rybezh.site/{{SLUG}}.html">
+  
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="keywords" content="{{CITY}}, кур'єр, робота кур'єром, вакансія, Польща, доставка, гнучкий графік, щоденні виплати">
+  <meta name="subject" content="Вакансія: {{TITLE}}">
+  <meta name="language" content="Ukrainian, Polish">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rybezh.site/{{SLUG}}.html">
+  <meta property="og:title" content="{{TITLE}} — Rybezh">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:image" content="https://rybezh.site/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:locale:alternate" content="pl_PL">
+  <meta property="og:site_name" content="Rybezh">
+  <meta property="article:published_time" content="2024-01-01">
+  <meta property="article:modified_time" content="2026-01-16">
+  <meta property="article:author" content="Rybezh">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@rybezh_site">
+  <meta name="twitter:title" content="{{TITLE}}">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="https://rybezh.site/og-image.jpg">
+  
+  <!-- Alternate Language Links -->
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/{{SLUG}}.html" />
+  <link rel="alternate" hreflang="pl" href="https://rybezh.site/{{SLUG}}.html" />
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/{{SLUG}}.html" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- JSON-LD Job Posting Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "@id": "https://rybezh.site/{{SLUG}}.html",
+    "title": "{{TITLE}}",
+    "description": "{{DESCRIPTION}}",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Rybezh",
+      "url": "https://rybezh.site",
+      "logo": "https://rybezh.site/favicon.svg"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{CITY}}",
+        "addressCountry": "PL"
+      }
+    },
+    "employmentType": ["FULL_TIME", "PART_TIME"],
+    "baseSalary": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "PLN",
+      "price": "25-40",
+      "unitText": "HOUR"
+    },
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Poland"
+    }
+  }
+  </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Головна",
+        "item": "https://rybezh.site"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{CITY}}",
+        "item": "https://rybezh.site/?city={{CITY}}"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{TITLE}}",
+        "item": "https://rybezh.site/{{SLUG}}.html"
+      }
+    ]
+  }
+  </script>
+  
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
   <!-- Google Tag Manager -->
