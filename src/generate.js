@@ -198,6 +198,24 @@ async function build() {
     // no styles provided, continue
   }
 
+  // Copy features.css
+  try {
+    const featuresPath = path.join(SRC, 'features.css');
+    const featuresContent = await fs.readFile(featuresPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'features.css'), featuresContent, 'utf8');
+  } catch (e) {
+    // features.css not found, continue
+  }
+
+  // Copy main.js
+  try {
+    const mainJsPath = path.join(SRC, 'main.js');
+    const mainJsContent = await fs.readFile(mainJsPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'main.js'), mainJsContent, 'utf8');
+  } catch (e) {
+    // main.js not found, continue
+  }
+
   // Prepare dynamic translations for jobs
   const jobTranslations = {};
   pages.forEach(p => {

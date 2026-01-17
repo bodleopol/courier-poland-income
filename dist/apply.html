@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Подати заявку — робота кур'єром у Польщі</title>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,59 +28,89 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  <header><div class="container header-flex"><a class="logo-section" href="/" aria-label="Courier Poland home"><svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g3" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g3)" opacity="0.12"/></svg><div style="display:flex;flex-direction:column;line-height:1;"><span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Courier Poland</span><small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">Робота кур'єром у Польщі</small></div></a><nav><a href="/">Головна</a></nav></div></header>
+  
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <div class="header-lang">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
-    <section class="hero" style="padding-top:1.5rem;padding-bottom:0.5rem;">
-      <h1>Подати заявку</h1>
-      <p class="lead">Заповніть форму — ми зв'яжемося для швидкого підбору роботи кур'єром у Польщі.</p>
-    </section>
     <section class="apply-grid" aria-labelledby="applyHeading">
       <div class="apply-card">
-        <h2 id="applyHeading" class="apply-title">Швидка заявка</h2>
-        <p class="apply-intro">Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.</p>
+        <h2 id="applyHeading" class="apply-title" data-i18n="apply.title">Швидка заявка</h2>
+        <p class="apply-intro" data-i18n="apply.intro">Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.</p>
 
         <form id="applyForm" class="form" novalidate>
           <div class="row two">
             <label class="field">
-              <span class="field-label">Ім'я</span>
+              <span class="field-label" data-i18n="label.name">Ім'я</span>
               <input class="input" id="name" name="name" required placeholder="Петро" />
             </label>
 
             <label class="field">
-              <span class="field-label">Телефон або email</span>
+              <span class="field-label" data-i18n="label.contact">Телефон або email</span>
               <input class="input" id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com"/>
             </label>
           </div>
 
           <div class="row two">
             <label class="field">
-              <span class="field-label">Місто</span>
+              <span class="field-label" data-i18n="label.city">Місто</span>
               <input class="input" id="city" name="city" placeholder="Варшава, Краків..."/>
             </label>
             <label class="field">
-              <span class="field-label">Готовий почати</span>
+              <span class="field-label" data-i18n="label.start">Готовий почати</span>
               <input class="input" id="start" name="start" type="date"/>
             </label>
           </div>
 
           <label class="field">
-            <span class="field-label">Досвід (коротко)</span>
-            <input class="input" id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці"/>
+            <span class="field-label" data-i18n="label.exp">Досвід (коротко)</span>
+            <input class="input" id="exp" name="experience" placeholder="Наприклад: 2 роки на доставці" data-i18n="label.exp" data-i18n-attr="placeholder"/>
           </label>
 
           <label class="field">
-            <span class="field-label">Додаткова інформація</span>
+            <span class="field-label" data-i18n="label.message">Додаткова інформація</span>
             <textarea class="input textarea" id="message" name="message" rows="5" placeholder="Додайте деталі"></textarea>
           </label>
 
           <label class="consent">
             <input id="consent" type="checkbox" required/>
-            <span>Я погоджуюсь на обробку моїх контактних даних</span>
+            <span data-i18n="label.consent">Я погоджуюсь на обробку моїх контактних даних</span>
           </label>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Надіслати заявку</button>
-            <button class="btn btn-secondary" type="button" id="clearBtn">Очистити</button>
+            <button class="btn btn-primary" type="submit" data-i18n="btn.submit">Надіслати заявку</button>
+            <button class="btn btn-secondary" type="button" id="clearBtn" data-i18n="btn.clear">Очистити</button>
           </div>
 
           <div id="formMessage" role="status" aria-live="polite" class="form-message" hidden></div>
@@ -88,22 +119,30 @@
 
       <aside class="apply-aside" aria-labelledby="asideHeading">
         <div class="card small">
-          <h3 id="asideHeading">Потрібна допомога?</h3>
-          <p class="muted">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
-          <a class="btn btn-ghost" href="/">Повернутись на головну</a>
+          <h3 id="asideHeading" data-i18n="aside.help">Потрібна допомога?</h3>
+          <p class="muted" data-i18n="aside.text">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
+          <a class="btn btn-ghost" href="/" data-i18n="btn.back">Повернутись на головну</a>
         </div>
 
         <div class="card contacts">
-          <h4>Контакти</h4>
+          <h4 data-i18n="aside.contacts">Контакти</h4>
           <p class="muted">Telegram: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
           <p class="muted">Пошта: info@courier-poland.example</p>
         </div>
       </aside>
     </section>
   </main>
-  <footer>
+
+  <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 Courier Poland Income. Всі права захищені. &nbsp; <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+      <div class="footer-links">
+        <a href="/" data-i18n="nav.home">Home</a>
+        <a href="/about.html" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+        <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+      </div>
+      <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
     </div>
   </footer>
   <script>
@@ -179,5 +218,180 @@
       });
     })();
   </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.</p>
+    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+  </div>
+  <script src="/main.js"></script>
+
+<script>
+/* i18n client script injected by generate.js */
+(function(extraTranslations){
+  const translations = {
+    'meta.title': { ua: "Rybezh — Робота кур'ĕром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
+    'meta.description': { ua: "Актуальні вакансії кур'ĕрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
+    'brand.name': { ua: 'Rybezh', pl: 'Rybezh' },
+    'brand.tagline': { ua: "rybezh.site — робота кур'ĕром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
+    
+    // Navigation
+    'nav.home': { ua: 'Головна', pl: 'Strona główna' },
+    'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
+    'nav.about': { ua: 'Про нас', pl: 'O nas' },
+    'nav.faq': { ua: 'FAQ', pl: 'FAQ' },
+    'nav.contact': { ua: 'Контакти', pl: 'Kontakt' },
+    'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
+    'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
+
+    // Index / Hero
+    'hero.title': { ua: "Знайдіть роботу кур'ĕром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
+    'hero.lead': { ua: "Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy w miastach: Warszawa, Kraków, Gdańsk, Wrocław, Poznań. Elastyczny grafik, codzienne wypłaty.' },
+
+    'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
+    'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
+    'search.button': { ua: 'Знайти', pl: 'Znajdź' },
+
+    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' },
+    'city.warszawa': { ua: 'Варшава', pl: 'Warszawa' },
+    'city.krakow': { ua: 'Краків', pl: 'Kraków' },
+    'city.gdansk': { ua: 'Гданськ', pl: 'Gdańsk' },
+    'city.wroclaw': { ua: 'Вроцлав', pl: 'Wrocław' },
+    'city.poznan': { ua: 'Познань', pl: 'Poznań' },
+
+    'jobs.cta': { ua: 'Деталі', pl: 'Szczegóły' },
+
+    // Index / Bottom CTA
+    'cta.heading': { ua: 'Потрібна допомога з оформленням?', pl: 'Potrzebujesz pomocy z dokumentami?' },
+    'cta.lead': { ua: 'Залиште заявку — ми допоможемо з документами та підбором роботи.', pl: 'Zostaw zgłoszenie — pomożemy z dokumentami i doborem pracy.' },
+    'cta.ready': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
+    'cta.sub': { ua: 'Отримайте консультацію та почніть заробляти вже сьогодні.', pl: 'Uzyskaj konsultację i zacznij zarabiać już dziś.' },
+    'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
+
+    // Footer
+    'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
+    'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
+
+    // Apply Page
+    'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
+    'apply.intro': { ua: 'Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.', pl: 'Kilka pól — i dobierzemy oferty pracy oraz pomożemy z dokumentami.' },
+    'label.name': { ua: "Ім'я", pl: 'Imię' },
+    'label.contact': { ua: 'Телефон або email', pl: 'Telefon lub email' },
+    'label.city': { ua: 'Місто', pl: 'Miasto' },
+    'label.start': { ua: 'Готовий почати', pl: 'Gotowy do startu' },
+    'label.exp': { ua: 'Досвід (коротко)', pl: 'Doświadczenie (krótko)' },
+    'label.message': { ua: 'Додаткова інформація', pl: 'Dodatkowe informacje' },
+    'label.consent': { ua: 'Я погоджуюсь на обробку моїх контактних даних', pl: 'Wyrażam zgodę na przetwarzanie moich danych kontaktowych' },
+    'btn.submit': { ua: 'Надіслати заявку', pl: 'Wyślij zgłoszenie' },
+    'btn.clear': { ua: 'Очистити', pl: 'Wyczyść' },
+    'aside.help': { ua: 'Потрібна допомога?', pl: 'Potrzebujesz pomocy?' },
+    'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert. Zgłoszenia przetwarzamy w ciągu 24 godzin.' },
+    'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
+    'aside.contacts': { ua: 'Контакти', pl: 'Kontakt' },
+
+    // About Page
+    'about.title': { ua: 'Про нас', pl: 'O nas' },
+    'about.text': { ua: "<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу кур'єром у Польщі. Ми співпрацюємо з провідними логістичними компаніями та сервісами доставки їжі.", pl: "<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę jako kurier w Polsce. Współpracujemy z wiodącymi firmami logistycznymi i serwisami dostawy jedzenia." },
+    'about.mission': { ua: 'Наша місія', pl: 'Nasza misja' },
+    'about.mission_text': { ua: 'Ми прагнемо зробити процес працевлаштування за кордоном простим, прозорим та безпечним. Ми надаємо повний супровід: від першої консультації до підписання договору та виходу на першу зміну.', pl: 'Dążymy do tego, aby proces zatrudnienia za granicą był prosty, przejrzysty i bezpieczny. Zapewniamy pełne wsparcie: od pierwszej konsultacji po podpisanie umowy i pierwszą zmianę.' },
+    'about.why': { ua: 'Чому обирають нас', pl: 'Dlaczego my' },
+    'about.why_text': { ua: 'Ми пропонуємо лише перевірені вакансії, допомагаємо з легалізацією та надаємо підтримку 24/7. З нами ви можете бути впевнені у своєму завтрашньому дні.', pl: 'Oferujemy tylko sprawdzone oferty pracy, pomagamy w legalizacji i zapewniamy wsparcie 24/7. Z nami możesz być pewny swojego jutra.' },
+
+    // Contact Page
+    'contact.title': { ua: 'Контакти', pl: 'Kontakt' },
+    'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
+    'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' },
+
+    // Privacy Page
+    'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
+    'privacy.text': { ua: "<h2>1. Загальні положення</h2><p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки, використання і розкриття персональних даних користувача. Ми поважаємо вашу конфіденційність і зобов'язуємося захищати ваші персональні дані.</p><h2>2. Збір даних</h2><p>Ми можемо збирати наступні дані: ім'я, прізвище, номер телефону, адреса електронної пошти, місто проживання, інформація про досвід роботи. Ці дані надаються вами добровільно при заповненні форм на сайті.</p><h2>3. Використання даних</h2><p>Зібрані дані використовуються для: зв'язку з вами, надання консультацій щодо працевлаштування, підбору вакансій, покращення роботи нашого сервісу.</p><h2>4. Захист даних</h2><p>Ми вживаємо всіх необхідних технічних та організаційних заходів для захисту ваших даних від несанкціонованого доступу, втрати або зміни.</p><h2>5. Файли Cookie</h2><p>Наш сайт використовує файли cookie для покращення взаємодії з користувачем. Ви можете налаштувати свій браузер для відмови від cookie, але це може вплинути на функціональність сайту.</p><h2>6. Ваші права</h2><p>Ви маєте право на доступ до своїх даних, їх виправлення або видалення. Для цього зв'яжіться з нами через контактні дані на сайті.</p>", pl: "<h2>1. Postanowienia ogólne</h2><p>Niniejsza Polityka prywatności określa zasady gromadzenia, przechowywania, przetwarzania, wykorzystywania i ujawniania danych osobowych użytkownika. Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.</p><h2>2. Gromadzenie danych</h2><p>Możemy gromadzić następujące dane: imię, nazwisko, numer telefonu, adres e-mail, miasto zamieszkania, informacje o doświadczeniu zawodowym. Dane te są podawane dobrowolnie podczas wypełniania formularzy na stronie.</p><h2>3. Wykorzystanie danych</h2><p>Zgromadzone dane są wykorzystywane do: kontaktu z Tobą, udzielania konsultacji w sprawie zatrudnienia, doboru ofert pracy, ulepszania działania naszego serwisu.</p><h2>4. Ochrona danych</h2><p>Podejmujemy wszelkie niezbędne środki techniczne i organizacyjne w celu ochrony Twoich danych przed nieautoryzowanym dostępem, utratą lub zmianą.</p><h2>5. Pliki Cookie</h2><p>Nasza strona używa plików cookie w celu poprawy doświadczeń użytkownika. Możesz skonfigurować swoją przeglądarkę, aby odrzucała pliki cookie, ale może to wpłynąć na funkcjonalność strony.</p><h2>6. Twoje prawa</h2><p>Masz prawo do dostępu do swoich danych, ich poprawiania lub usunięcia. W tym celu skontaktuj się z nami za pośrednictwem danych kontaktowych na stronie.</p>" },
+
+    // FAQ Page
+    'faq.title': { ua: 'Часті запитання', pl: 'Częste pytania' },
+    'faq.text': { ua: "<details><summary>Чи потрібен власний транспорт?</summary><p>Можна працювати на власному авто, велосипеді, скутері або пішки (у деяких містах). Також ми допомагаємо з орендою транспорту.</p></details><details><summary>Коли я отримаю першу виплату?</summary><p>Виплати здійснюються щотижня або щоденно, залежно від обраного партнера та умов.</p></details><details><summary>Чи потрібен досвід роботи?</summary><p>Ні, досвід не обов'язковий. Ми проводимо навчання перед початком роботи.</p></details><details><summary>Які документи потрібні?</summary><p>Паспорт, віза або карта побиту (для іноземців), номер PESEL. Для водіїв — водійське посвідчення.</p></details><details><summary>Скільки можна заробити?</summary><p>Заробіток залежить від кількості годин та доставок. В середньому кур'єри заробляють від 25 до 40 злотих на годину.</p></details>", pl: "<details><summary>Czy potrzebuję własnego pojazdu?</summary><p>Możesz pracować własnym samochodem, rowerem, skuterem lub pieszo (w niektórych miastach). Pomagamy również w wynajmie pojazdów.</p></details><details><summary>Kiedy otrzymam pierwszą wypłatę?</summary><p>Wypłaty są realizowane tygodniowo lub codziennie, w zależności od wybranego partnera i warunków.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie, doświadczenie nie jest wymagane. Zapewniamy szkolenie przed rozpoczęciem pracy.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Paszport, wiza lub karta pobytu (dla obcokrajowców), numer PESEL. Dla kierowców — prawo jazdy.</p></details><details><summary>Ile mogę zarobić?</summary><p>Zarobki zależą od liczby godzin i dostaw. Średnio kurierzy zarabiają od 25 do 40 złotych na godzinę.</p></details>" },
+
+    // Cookie Banner
+    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
+    'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' }
+  };
+
+  // Merge extra translations (jobs)
+  if(extraTranslations) Object.assign(translations, extraTranslations);
+
+  const DEFAULT_LANG = 'ua';
+  const STORAGE_KEY = 'site_lang';
+
+  const safeStorage = {
+    getItem: function(k) { try { return localStorage.getItem(k); } catch(e) { return null; } },
+    setItem: function(k, v) { try { localStorage.setItem(k, v); } catch(e) {} }
+  };
+
+  function interpolateText(t) {
+    if (typeof t !== 'string') return t;
+    return t.replace(/${year}/g, String(new Date().getFullYear()));
+  }
+
+  function applyTranslations(lang) {
+    if (!lang) lang = DEFAULT_LANG;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!key) return;
+      const dict = translations[key];
+      if (!dict) return;
+      const text = (dict[lang] !== undefined) ? dict[lang] : (dict[DEFAULT_LANG] || '');
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) {
+        try { el.setAttribute(attr, interpolateText(text)); } catch (e) { el.textContent = interpolateText(text); }
+        return;
+      }
+      if (el.tagName === 'INPUT' && el.type === 'text') { el.placeholder = interpolateText(text); return; }
+      if (el.tagName === 'OPTION') { el.textContent = interpolateText(text); return; }
+      if (el.tagName === 'TITLE' || (el.parentElement && el.parentElement.tagName === 'HEAD')) { document.title = interpolateText(text); el.textContent = interpolateText(text); return; }
+      el.innerHTML = interpolateText(text);
+    });
+    // Handle block content toggling
+    document.querySelectorAll('[data-lang-content]').forEach(el => {
+      if (el.getAttribute('data-lang-content') === lang) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) btn.classList.add('active'); else btn.classList.remove('active');
+    });
+    const htmlLang = (lang === 'pl') ? 'pl' : 'uk';
+    document.documentElement.lang = htmlLang;
+  }
+
+  function setLanguage(lang) { if (!lang) return; safeStorage.setItem(STORAGE_KEY, lang); applyTranslations(lang); }
+
+  function init() {
+    try {
+      const saved = safeStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+      applyTranslations(saved);
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => { const lang = btn.getAttribute('data-lang'); setLanguage(lang); });
+      });
+
+      // Cookie Banner Logic
+      const cookieBanner = document.getElementById('cookie-banner');
+      const cookieAcceptBtn = document.getElementById('cookie-accept-btn');
+      const cookieAccepted = safeStorage.getItem('cookie_accepted');
+
+      if (!cookieAccepted && cookieBanner && cookieAcceptBtn) {
+        cookieBanner.removeAttribute('hidden');
+        cookieAcceptBtn.addEventListener('click', () => {
+          safeStorage.setItem('cookie_accepted', 'true');
+          cookieBanner.style.display = 'none';
+        });
+      }
+    } catch (e) {
+      console.error('Init error', e);
+    }
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})({"job.warsaw-food-courier-1.title":{"ua":"Кур'єр у Варшаві — доставка їжі з гнучким графіком","pl":"Kurier w Warszawie — dostawa jedzenia z elastycznym grafikiem"},"job.warsaw-food-courier-1.excerpt":{"ua":"Почніть працювати кур'єром у Варшаві: гнучкий графік, щоденні виплати, підтримка українською.","pl":"Zacznij pracę jako kurier w Warszawie: elastyczny grafik, codzienne wypłaty, wsparcie w języku ukraińskim."},"job.warsaw-food-courier-1.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.warsaw-parcel-courier-2.title":{"ua":"Кур'єр-пакетник у Варшаві — робота з посилками","pl":"Kurier paczkowy w Warszawie — praca z przesyłkami"},"job.warsaw-parcel-courier-2.excerpt":{"ua":"Робота кур'єром з посилками у Варшаві: стабільні графіки, бонуси за кількість доставок.","pl":"Praca kuriera z paczkami w Warszawie: stabilne grafiki, premie za liczbę dostaw."},"job.warsaw-parcel-courier-2.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.krakow-food-courier-1.title":{"ua":"Кур'єр у Кракові — швидка доставка їжі","pl":"Kurier w Krakowie — szybka dostawa jedzenia"},"job.krakow-food-courier-1.excerpt":{"ua":"Гнучка робота кур'єром у Кракові для студентів і мешканців: щоденна оплата, змінні години.","pl":"Elastyczna praca kuriera w Krakowie dla studentów i mieszkańców: dzienne wypłaty, zmienne godziny."},"job.krakow-food-courier-1.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.krakow-ecommerce-courier-2.title":{"ua":"Кур'єр для інтернет-магазину в Кракові","pl":"Kurier dla sklepu internetowego w Krakowie"},"job.krakow-ecommerce-courier-2.excerpt":{"ua":"Доставка товарів для інтернет-магазинів у Кракові: стабільні замовлення та робота без вихідних.","pl":"Dostawa towarów dla sklepów internetowych w Krakowie: stabilne zamówienia i praca bez weekendów."},"job.krakow-ecommerce-courier-2.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.gdansk-bike-scooter-courier-1.title":{"ua":"Кур'єр у Гданську — робота на велосипеді та скутері","pl":"Kurier w Gdańsku — praca na rowerze i skuterze"},"job.gdansk-bike-scooter-courier-1.excerpt":{"ua":"Легка робота кур'єром у Гданську: доставка їжі в центрі та набережній, дружня команда.","pl":"Lekka praca kuriera w Gdańsku: dostawa jedzenia w centrum i na nabrzeżu, przyjazny zespół."},"job.gdansk-bike-scooter-courier-1.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.gdansk-express-courier-2.title":{"ua":"Кур'єр-експрес у Гданську — доставка документів та дрібних посилок","pl":"Kurier ekspresowy w Gdańsku — dostawa dokumentów"},"job.gdansk-express-courier-2.excerpt":{"ua":"Експрес-доставка у Гданську: короткі маршрути, висока оплата за термінові замовлення.","pl":"Ekspresowa dostawa w Gdańsku: krótkie trasy, wysoka płaca za pilne zamówienia."},"job.gdansk-express-courier-2.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.wroclaw-night-courier-1.title":{"ua":"Кур'єр у Вроцлаві — вечірні та нічні зміни","pl":"Kurier we Wrocławiu — zmiany wieczorne i nocne"},"job.wroclaw-night-courier-1.excerpt":{"ua":"Робота кур'єром у Вроцлаві з вечірніми змінами — збільшена оплата за нічні години.","pl":"Praca kuriera we Wrocławiu na zmiany wieczorne — wyższa stawka za godziny nocne."},"job.wroclaw-night-courier-1.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.wroclaw-partner-courier-2.title":{"ua":"Кур'єр-партнер у Вроцлаві — гнучка співпраця","pl":"Kurier-partner we Wrocławiu — elastyczna współpraca"},"job.wroclaw-partner-courier-2.excerpt":{"ua":"Станьте партнером-кур'єром у Вроцлаві: працюйте коли зручно, отримуйте бонуси.","pl":"Zostań partnerem-kurierem we Wrocławiu: pracuj kiedy chcesz, otrzymuj bonusy."},"job.wroclaw-partner-courier-2.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.poznan-part-time-courier-1.title":{"ua":"Кур'єр у Познані — робота на часткову зайнятість","pl":"Kurier w Poznaniu — praca na część etatu"},"job.poznan-part-time-courier-1.excerpt":{"ua":"Підробіток кур'єром у Познані: ранкові або вечірні зміни, швидке навчання.","pl":"Praca dorywcza jako kurier w Poznaniu: zmiany poranne lub wieczorne, szybkie szkolenie."},"job.poznan-part-time-courier-1.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.poznan-logistics-courier-2.title":{"ua":"Кур'єр-логістика у Познані — робота на складі і доставці","pl":"Kurier-logistyk w Poznaniu — praca na magazynie i w dostawie"},"job.poznan-logistics-courier-2.excerpt":{"ua":"Комбінована вакансія: робота на складі та кур'єрська доставка у Познані, стабільна зайнятість.","pl":"Oferta łączona: praca na magazynie i dostawa kurierska w Poznaniu, stabilne zatrudnienie."},"job.poznan-logistics-courier-2.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"},"job.warsaw-walking-courier-3.title":{"ua":"Піший кур'єр у Варшаві — робота в центрі","pl":"Kurier pieszy w Warszawie — praca w centrum"},"job.warsaw-walking-courier-3.excerpt":{"ua":"Робота пішим кур'єром у Варшаві. Ідеально для старту без транспорту. Наявність велосипеда вітається.","pl":"Praca jako kurier pieszy w Warszawie. Idealna na start bez pojazdu. Rower mile widziany."},"job.warsaw-walking-courier-3.cta":{"ua":"Подати заявку","pl":"Złóż wniosek"}});
+</script>
 </body>
 </html>
