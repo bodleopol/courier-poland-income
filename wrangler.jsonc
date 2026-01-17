@@ -1,0 +1,16 @@
+{
+  "name": "courier-poland-income",
+  "type": "javascript",
+  "compatibility_date": "2026-01-17",
+  "pages_build_output_dir": "dist",
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "rybezh.site",
+          "zone_name": "rybezh.site"
+        }
+      ]
+    }
+  }
+}
