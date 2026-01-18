@@ -421,6 +421,7 @@
   function initNewsletter() {
     // URL Google Apps Script (той самий, що і для форми заявки)
     const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+    const GEO_URL = 'https://ipapi.co/json/';
 
     document.querySelectorAll('.footer-newsletter-form').forEach(form => {
       form.addEventListener('submit', async (e) => {
@@ -436,9 +437,23 @@
         btn.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px"></div>';
         
         try {
+          let city = '';
+          try {
+            const geoRes = await fetch(GEO_URL, { cache: 'no-store' });
+            if (geoRes.ok) {
+              const geo = await geoRes.json();
+              city = geo && geo.city ? String(geo.city) : '';
+            }
+          } catch (geoErr) {
+            console.warn('Geo lookup failed', geoErr);
+          }
+
           const formData = new FormData();
-          formData.append('email', email);
-          formData.append('type', 'newsletter'); // Мітка, щоб відрізнити від заявок
+          formData.append('contact', email);
+          formData.append('start', new Date().toISOString());
+          formData.append('city', city);
+          formData.append('message', 'suscription');
+          formData.append('type', 'newsletter');
           formData.append('ts', new Date().toISOString());
 
           await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
