@@ -113,35 +113,6 @@
   }
   </script>
   
-  <!-- Job Collection Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Rybezh",
-      "url": "https://rybezh.site",
-      "logo": "https://rybezh.site/favicon.svg"
-    },
-    "title": "Робота кур'єром",
-    "description": "Шукаємо курійерів для роботи у Польщі. Гнучкий графік, щоденні виплати.",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PL"
-      }
-    },
-    "employmentType": ["FULL_TIME", "PART_TIME", "TEMPORARY"],
-    "baseSalary": {
-      "@type": "PriceSpecification",
-      "priceCurrency": "PLN",
-      "price": "25-40"
-    }
-  }
-  </script>
-  
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
   {
@@ -231,12 +202,11 @@
 
   <main class="container">
     <section class="hero-section">
-      <h1>Блог — Rybezh</h1>
+      <h1 data-i18n="blog.title">Блог Rybezh</h1>
     </section>
     <article class="content-wrapper">
       
-      <div class="hero-section" style="padding-bottom: 1rem;">
-        <h1 data-i18n="blog.title">Блог Rybezh</h1>
+      <div class="blog-intro">
         <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
       </div>
       <div class="blog-grid">

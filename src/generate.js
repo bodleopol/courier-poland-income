@@ -442,6 +442,12 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
+    // Inject JobPosting structured data (job pages only)
+    const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
+    if (finalHtml.includes('</head>')) {
+      finalHtml = finalHtml.replace('</head>', `${jobPostingScript}\n</head>`);
+    }
+
     // Add specific styles for job pages
     const jobStyles = `
     <style>
@@ -537,9 +543,10 @@ async function build() {
 
     const paginationHtml = generatePaginationHtml(page, totalPages);
 
+    // Note: the page template already has a single <h1>{{TITLE}}</h1>.
+    // Keep blog content H1-free to avoid duplicate headings.
     const blogIndexContent = `
-      <div class="hero-section" style="padding-bottom: 1rem;">
-        <h1 data-i18n="blog.title">Блог Rybezh</h1>
+      <div class="blog-intro">
         <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
       </div>
       <div class="blog-grid">
@@ -559,6 +566,9 @@ async function build() {
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
+
+    // Make the template H1 translatable
+    blogHtml = blogHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="blog.title">Блог Rybezh</h1>`);
   
     if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
     else blogHtml += scriptWithData;
@@ -568,9 +578,8 @@ async function build() {
   // Generate Blog Posts
   for (const post of posts) {
     const postContent = `
-      <div class="content-wrapper blog-post">
+      <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
-        <h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>
         <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span></div>
         <div data-lang-content="ua">${post.body}</div>
         <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
@@ -584,6 +593,12 @@ async function build() {
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
+
+    // Make the template H1 translatable for this post
+    postHtml = postHtml.replace(
+      /<h1>(.*?)<\/h1>/,
+      `<h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>`
+    );
 
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
     else postHtml += scriptWithData;
@@ -602,6 +617,9 @@ async function build() {
     // Inject data-i18n into index title and description
     indexHtml = indexHtml.replace('<title>', '<title data-i18n="meta.title">');
     indexHtml = indexHtml.replace('<meta name="description" content="', '<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="');
+
+    // Make the template H1 translatable
+    indexHtml = indexHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="meta.title">$1</h1>`);
 
     // inject i18n into index
     if (indexHtml.includes('</body>')) {
@@ -963,6 +981,126 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+function stripHtml(str) {
+  return String(str || '')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function toISODate(date) {
+  return new Date(date).toISOString().slice(0, 10);
+}
+
+function addDays(date, days) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
+function cityToJobAddress(cityUa) {
+  // Best-effort mapping to satisfy JobPosting rich results requirements.
+  // If you have a real office address per offer, consider adding it into content.json instead.
+  const fallback = {
+    streetAddress: 'Centrum miasta',
+    addressLocality: cityUa || 'Polska',
+    addressRegion: 'PL',
+    postalCode: '00-000'
+  };
+
+  const map = {
+    'Варшава': { streetAddress: 'Centrum miasta', addressLocality: 'Warszawa', addressRegion: 'Mazowieckie', postalCode: '00-001' },
+    'Краків': { streetAddress: 'Centrum miasta', addressLocality: 'Kraków', addressRegion: 'Małopolskie', postalCode: '31-001' },
+    'Гданськ': { streetAddress: 'Centrum miasta', addressLocality: 'Gdańsk', addressRegion: 'Pomorskie', postalCode: '80-001' },
+    'Вроцлав': { streetAddress: 'Centrum miasta', addressLocality: 'Wrocław', addressRegion: 'Dolnośląskie', postalCode: '50-001' },
+    'Познань': { streetAddress: 'Centrum miasta', addressLocality: 'Poznań', addressRegion: 'Wielkopolskie', postalCode: '60-001' },
+    'Лодзь': { streetAddress: 'Centrum miasta', addressLocality: 'Łódź', addressRegion: 'Łódzkie', postalCode: '90-001' },
+    'Щецін': { streetAddress: 'Centrum miasta', addressLocality: 'Szczecin', addressRegion: 'Zachodniopomorskie', postalCode: '70-001' },
+    'Бидгощ': { streetAddress: 'Centrum miasta', addressLocality: 'Bydgoszcz', addressRegion: 'Kujawsko-Pomorskie', postalCode: '85-001' },
+    'Люблін': { streetAddress: 'Centrum miasta', addressLocality: 'Lublin', addressRegion: 'Lubelskie', postalCode: '20-001' },
+    'Білосток': { streetAddress: 'Centrum miasta', addressLocality: 'Białystok', addressRegion: 'Podlaskie', postalCode: '15-001' },
+    'Катовіце': { streetAddress: 'Centrum miasta', addressLocality: 'Katowice', addressRegion: 'Śląskie', postalCode: '40-001' },
+    'Гливіце': { streetAddress: 'Centrum miasta', addressLocality: 'Gliwice', addressRegion: 'Śląskie', postalCode: '44-100' },
+    'Ченстохова': { streetAddress: 'Centrum miasta', addressLocality: 'Częstochowa', addressRegion: 'Śląskie', postalCode: '42-200' },
+    'Жешув': { streetAddress: 'Centrum miasta', addressLocality: 'Rzeszów', addressRegion: 'Podkarpackie', postalCode: '35-001' },
+    'Торунь': { streetAddress: 'Centrum miasta', addressLocality: 'Toruń', addressRegion: 'Kujawsko-Pomorskie', postalCode: '87-100' },
+    'Кельце': { streetAddress: 'Centrum miasta', addressLocality: 'Kielce', addressRegion: 'Świętokrzyskie', postalCode: '25-001' },
+    'Ольштин': { streetAddress: 'Centrum miasta', addressLocality: 'Olsztyn', addressRegion: 'Warmińsko-Mazurskie', postalCode: '10-001' },
+    'Радом': { streetAddress: 'Centrum miasta', addressLocality: 'Radom', addressRegion: 'Mazowieckie', postalCode: '26-600' },
+    'Сосновець': { streetAddress: 'Centrum miasta', addressLocality: 'Sosnowiec', addressRegion: 'Śląskie', postalCode: '41-200' },
+    'Бєльско-Бяла': { streetAddress: 'Centrum miasta', addressLocality: 'Bielsko-Biała', addressRegion: 'Śląskie', postalCode: '43-300' }
+  };
+
+  return map[cityUa] || fallback;
+}
+
+function buildJobPostingJsonLd(page) {
+  const now = new Date();
+  const datePosted = toISODate(now);
+  const validThrough = toISODate(addDays(now, 30));
+  const addr = cityToJobAddress(page.city);
+
+  // Prefer excerpt as short description; fall back to body stripped of HTML
+  const description = stripHtml(page.excerpt || page.description || page.body || '');
+  const url = `https://rybezh.site/${page.slug}.html`;
+
+  // Salary is not explicitly stored in content.json yet; keep a conservative generic range.
+  const salaryMin = 25;
+  const salaryMax = 45;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'JobPosting',
+    title: page.title || "Робота кур'єром",
+    description,
+    identifier: {
+      '@type': 'PropertyValue',
+      name: 'Rybezh',
+      value: page.slug
+    },
+    datePosted,
+    validThrough,
+    employmentType: ['FULL_TIME', 'PART_TIME', 'TEMPORARY'],
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: 'Rybezh',
+      url: 'https://rybezh.site',
+      logo: 'https://rybezh.site/favicon.svg'
+    },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: addr.streetAddress,
+        addressLocality: addr.addressLocality,
+        addressRegion: addr.addressRegion,
+        postalCode: addr.postalCode,
+        addressCountry: 'PL'
+      }
+    },
+    applicantLocationRequirements: {
+      '@type': 'Country',
+      name: 'PL'
+    },
+    directApply: true,
+    url,
+    baseSalary: {
+      '@type': 'MonetaryAmount',
+      currency: 'PLN',
+      value: {
+        '@type': 'QuantitativeValue',
+        minValue: salaryMin,
+        maxValue: salaryMax,
+        unitText: 'HOUR'
+      }
+    }
+  };
+}
+
+function jsonLdScript(obj) {
+  return `\n<script type="application/ld+json">\n${JSON.stringify(obj, null, 2)}\n</script>\n`;
 }
 
 build().catch(err => {

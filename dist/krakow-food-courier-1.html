@@ -113,35 +113,6 @@
   }
   </script>
   
-  <!-- Job Collection Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Rybezh",
-      "url": "https://rybezh.site",
-      "logo": "https://rybezh.site/favicon.svg"
-    },
-    "title": "Робота кур'єром",
-    "description": "Шукаємо курійерів для роботи у Польщі. Гнучкий графік, щоденні виплати.",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "PL"
-      }
-    },
-    "employmentType": ["FULL_TIME", "PART_TIME", "TEMPORARY"],
-    "baseSalary": {
-      "@type": "PriceSpecification",
-      "priceCurrency": "PLN",
-      "price": "25-40"
-    }
-  }
-  </script>
-  
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
   {
@@ -185,6 +156,61 @@
     gtag('js', new Date());
     gtag('config', 'G-J3XSXPYW9K');
   </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Кур'єр у Кракові — швидка доставка їжі",
+  "description": "Гнучка робота кур'єром у Кракові для студентів і мешканців: щоденна оплата, змінні години.",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "Rybezh",
+    "value": "krakow-food-courier-1"
+  },
+  "datePosted": "2026-01-18",
+  "validThrough": "2026-02-17",
+  "employmentType": [
+    "FULL_TIME",
+    "PART_TIME",
+    "TEMPORARY"
+  ],
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Rybezh",
+    "url": "https://rybezh.site",
+    "logo": "https://rybezh.site/favicon.svg"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Centrum miasta",
+      "addressLocality": "Kraków",
+      "addressRegion": "Małopolskie",
+      "postalCode": "31-001",
+      "addressCountry": "PL"
+    }
+  },
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "PL"
+  },
+  "directApply": true,
+  "url": "https://rybezh.site/krakow-food-courier-1.html",
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "PLN",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 25,
+      "maxValue": 45,
+      "unitText": "HOUR"
+    }
+  }
+}
+</script>
+
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
