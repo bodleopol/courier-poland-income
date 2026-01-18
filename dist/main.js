@@ -164,6 +164,7 @@
     'article.mistake.safety': { ua: '❌ Ігнорування правил безпеки', pl: '❌ Ignorowanie zasad bezpieczeństwa' },
     'article.cta.title': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
     'article.related': { ua: '📚 Читайте також:', pl: '📚 Zobacz też:' },
+    'article.main.title': { ua: 'Як почати роботу кур\'єром у Польщі за 3 дні', pl: 'Jak rozpocząć pracę kuriera w Polsce w 3 dni' },
     // Job article template
     'job.article.cta_title': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
     'job.article.why': { ua: '💡 Чому саме ми?', pl: '💡 Dlaczego my?' },
@@ -205,11 +206,6 @@
     'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała' },
     'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' }
   };
-
-  const extraTranslations = window.EXTRA_TRANSLATIONS || {};
-  if (extraTranslations && typeof extraTranslations === 'object') {
-    Object.assign(translations, extraTranslations);
-  }
 
   // Get current language
   const STORAGE_KEY = 'site_lang';
@@ -276,6 +272,12 @@
 
   // Initialize language switcher
   function initI18n() {
+    // Merge extra translations injected by generate.js
+    const extraTranslations = window.EXTRA_TRANSLATIONS || {};
+    if (extraTranslations && typeof extraTranslations === 'object') {
+      Object.assign(translations, extraTranslations);
+    }
+    
     const lang = getLang();
     applyTranslations(lang);
     updateLangButtons(lang);
