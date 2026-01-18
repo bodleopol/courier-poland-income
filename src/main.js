@@ -388,23 +388,43 @@
   // 11. NEWSLETTER FORM
   // ============================================
   function initNewsletter() {
+    // URL Google Apps Script (той самий, що і для форми заявки)
+    const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+
     document.querySelectorAll('.footer-newsletter-form').forEach(form => {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = form.querySelector('button');
         const input = form.querySelector('input');
+        const email = input.value.trim();
+        if (!email) return;
+
         const originalContent = btn.innerHTML;
         
         btn.disabled = true;
-        btn.innerHTML = '✓';
-        input.value = '';
-        input.placeholder = translations['footer.newsletter.success'][getLang()] || 'Thanks!';
+        btn.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px"></div>';
         
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.innerHTML = originalContent;
-          input.placeholder = translations['footer.newsletter.placeholder'][getLang()] || 'Email';
-        }, 3000);
+        try {
+          const formData = new FormData();
+          formData.append('email', email);
+          formData.append('type', 'newsletter'); // Мітка, щоб відрізнити від заявок
+          formData.append('ts', new Date().toISOString());
+
+          await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
+
+          btn.innerHTML = '✓';
+          input.value = '';
+          input.placeholder = translations['footer.newsletter.success'][getLang()] || 'Thanks!';
+        } catch (err) {
+          console.error(err);
+          btn.innerHTML = '✕';
+        } finally {
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = originalContent;
+            input.placeholder = translations['footer.newsletter.placeholder'][getLang()] || 'Email';
+          }, 3000);
+        }
       });
     });
   }
