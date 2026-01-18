@@ -580,7 +580,7 @@ ransform 0.3s ease, opacity 0.3s ease, display 0.3s;
 /* Blog Styles */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
 }
@@ -619,4 +619,28 @@ ransform 0.3s ease, opacity 0.3s ease, display 0.3s;
   .calculator-section {
     padding: 1.5rem !important;
   }
+}
+
+/* Blog Image Optimization */
+.blog-icon {
+  margin-bottom: 1rem;
+  line-height: 0;
+}
+
+.blog-icon img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: var(--color-surface-alt); /* Placeholder background */
+}
+
+.blog-hero {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200/600;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  background-color: var(--color-surface-alt);
 }
