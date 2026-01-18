@@ -594,19 +594,12 @@ async function build() {
     // write robots.txt
     try {
       const robots = `# Robots.txt for rybezh.site - Job search platform for couriers in Poland
+# All search engines are allowed to access all pages
+
 User-agent: *
 Allow: /
-Crawl-delay: 1
-Request-rate: 30/1m
-
-# Block junk crawlers
-User-agent: AhrefsBot
-User-agent: SemrushBot
-User-agent: DotBot
-Disallow: /
 
 Sitemap: https://rybezh.site/sitemap.xml
-Host: rybezh.site
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
