@@ -150,6 +150,7 @@ const I18N_SCRIPT = `\n<script>
 
     // Blog
     'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
+    'blog.meta_title': { ua: 'Блог — Rybezh', pl: 'Blog — Rybezh' },
     'blog.subtitle': { ua: 'Корисні статті та новини для кур\'єрів', pl: 'Przydatne artykuły i wiadomości dla kurierów' },
     'blog.read_more': { ua: 'Читати далі →', pl: 'Czytaj więcej →' },
     'blog.back': { ua: '← До списку статей', pl: '← Do listy artykułów' },
@@ -328,6 +329,7 @@ async function build() {
   const jobTranslations = {};
   pages.forEach(p => {
     jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
+    jobTranslations[`job.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
     jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
     jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek' };
   });
@@ -335,6 +337,7 @@ async function build() {
   // Prepare dynamic translations for blog
   posts.forEach(p => {
     jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
+    jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
     jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
   });
   
@@ -438,7 +441,7 @@ async function build() {
     });
     
     // Add data-i18n to H1 and Title
-    finalHtml = finalHtml.replace('<title>', `<title data-i18n="job.${page.slug}.title">`);
+    finalHtml = finalHtml.replace('<title>', `<title data-i18n="job.${page.slug}.meta_title">`);
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
@@ -559,13 +562,16 @@ async function build() {
     const canonicalUrl = page === 1 ? 'https://rybezh.site/blog.html' : `https://rybezh.site/blog-${page}.html`;
 
     let blogHtml = pageTpl
-      .replace(/{{TITLE}}/g, `Блог — Rybezh${page > 1 ? ` (сторінка ${page})` : ''}`)
+      .replace(/{{TITLE}}/g, `Блог${page > 1 ? ` (сторінка ${page})` : ''}`)
       .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
       .replace(/{{CONTENT}}/g, blogIndexContent)
       .replace(/{{CANONICAL}}/g, canonicalUrl)
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
+
+    // Make <title> and template H1 translatable
+    blogHtml = blogHtml.replace('<title>', '<title data-i18n="blog.meta_title">');
 
     // Make the template H1 translatable
     blogHtml = blogHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="blog.title">Блог Rybezh</h1>`);
@@ -593,6 +599,9 @@ async function build() {
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
+
+    // Translate browser tab title for this post
+    postHtml = postHtml.replace('<title>', `<title data-i18n="blog.${post.slug}.meta_title">`);
 
     // Make the template H1 translatable for this post
     postHtml = postHtml.replace(
