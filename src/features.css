@@ -398,13 +398,13 @@ body.loaded {
   }
 }
 
-/* Modern Hero Section Styles */
+/* Modern Hero Section Styles - PRIORITY STYLING */
 .hero-modern {
-  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
   border-radius: 24px;
   padding: 4rem 3rem;
   margin-bottom: 4rem;
-  display: grid;
+  display: grid !important;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 2rem;
   align-items: center;
@@ -412,16 +412,20 @@ body.loaded {
   overflow: hidden;
   border: 1px solid rgba(20, 184, 166, 0.2);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  animation: fadeInDown 0.8s ease-out;
+  animation: fadeInDown 0.6s ease-out 0s !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 [data-theme="dark"] .hero-modern {
-  background: linear-gradient(135deg, #134e4a 0%, #115e59 100%);
+  background: linear-gradient(135deg, #134e4a 0%, #115e59 100%) !important;
   border-color: rgba(20, 184, 166, 0.3);
 }
 
 .hero-content {
   z-index: 2;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .hero-title {
@@ -430,12 +434,16 @@ body.loaded {
   line-height: 1.2;
   margin-bottom: 1.5rem;
   background: linear-gradient(to right, #0f766e, #0d9488);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 [data-theme="dark"] .hero-title {
   background: linear-gradient(to right, #5eead4, #2dd4bf);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
