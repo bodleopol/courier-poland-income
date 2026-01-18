@@ -30,7 +30,7 @@ const I18N_SCRIPT = `\n<script>
 
     // Index / Hero
     'hero.title': { ua: "Знайдіть роботу кур'єром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
-    'hero.lead': { ua: "Актуальні вакансії по містах: Варшава, Краків, Гданськ, Вроцлав, Познань. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy w miastach: Warszawa, Kraków, Gdańsk, Wrocław, Poznań. Elastyczny grafik, codzienne wypłaty.' },
+    'hero.lead': { ua: "Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy kurierskiej w ponad 20 miastach Polski. Elastyczny grafik, codzienne wypłaty.' },
 
     'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
@@ -147,7 +147,8 @@ const I18N_SCRIPT = `\n<script>
     'calc.title': { ua: 'Калькулятор заробітку', pl: 'Kalkulator zarobków' },
     'calc.hours': { ua: 'Годин на тиждень', pl: 'Godzin tygodniowo' },
     'calc.rate': { ua: 'Ставка (PLN/год)', pl: 'Stawka (PLN/h)' },
-    'calc.result': { ua: 'Ваш дохід на місяць:', pl: 'Twój dochód miesięczny:' }
+    'calc.result': { ua: 'Ваш дохід на місяць:', pl: 'Twój dochód miesięczny:' },
+    'calc.note': { ua: '*приблизний розрахунок', pl: '*przybliżone obliczenia' }
   };
 
   // Merge extra translations (jobs)
@@ -629,7 +630,7 @@ function generateIndexContent(links) {
         <div class="calc-result" style="text-align: center; background: var(--color-bg); padding: 1.5rem; border-radius: 12px;">
           <p style="margin: 0; color: var(--color-secondary);" data-i18n="calc.result">Ваш дохід на місяць:</p>
           <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-accent); margin: 0.5rem 0;"><span id="total-earn">5600</span> PLN</div>
-          <p style="font-size: 0.9rem; color: var(--color-secondary); margin: 0;">*приблизний розрахунок</p>
+          <p style="font-size: 0.9rem; color: var(--color-secondary); margin: 0;" data-i18n="calc.note">*приблизний розрахунок</p>
         </div>
       </div>
     </div>
