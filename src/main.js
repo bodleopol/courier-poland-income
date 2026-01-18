@@ -249,7 +249,7 @@
   // 5. SCROLL ANIMATIONS
   // ============================================
   function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.job-card, .content-wrapper, .apply-card, .card, article');
+    const animatedElements = document.querySelectorAll('.job-card, .apply-card, .card, .blog-card');
     
     if (!animatedElements.length) return;
 

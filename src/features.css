@@ -277,9 +277,7 @@ body.loaded {
 
 /* Mobile Menu Animation */
 .mobile-menu {
-  transform: translateY(-10px);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease, display 0.3s;
+ransform 0.3s ease, opacity 0.3s ease, display 0.3s;
 }
 
 .mobile-menu.is-open {

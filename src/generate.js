@@ -275,9 +275,13 @@ async function build() {
     } catch (e) {}
   }
 
-  // Inject Blog link into pageTpl for generated pages
+  // Inject Blog link into pageTpl for generated pages (Header)
   const blogLinkHtml = '<a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>\n        <a href="/contact.html"';
-  const tplWithBlog = pageTpl.replace('<a href="/contact.html"', blogLinkHtml);
+  let tplWithBlog = pageTpl.replace('<a href="/contact.html"', blogLinkHtml);
+
+  // Inject Blog link into pageTpl for generated pages (Footer)
+  const blogFooterLink = '<a href="/about.html" data-i18n="nav.about">Про нас</a>\n          <a href="/blog.html" data-i18n="nav.blog">Блог</a>';
+  tplWithBlog = tplWithBlog.replace('<a href="/about.html" data-i18n="nav.about">Про нас</a>', blogFooterLink);
 
   const links = [];
   for (const page of pages) {
