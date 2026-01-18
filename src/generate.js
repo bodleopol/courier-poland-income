@@ -24,6 +24,7 @@ const I18N_SCRIPT = `\n<script>
     'nav.about': { ua: 'Про нас', pl: 'O nas' },
     'nav.faq': { ua: 'FAQ', pl: 'FAQ' },
     'nav.contact': { ua: 'Контакти', pl: 'Kontakt' },
+    'nav.blog': { ua: 'Блог', pl: 'Blog' },
     'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
 
@@ -85,10 +86,16 @@ const I18N_SCRIPT = `\n<script>
     'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
     'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' },
 
+    // Blog
+    'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
+    'blog.subtitle': { ua: 'Корисні статті та новини для кур\'єрів', pl: 'Przydatne artykuły i wiadomości dla kurierów' },
+    'blog.read_more': { ua: 'Читати далі →', pl: 'Czytaj więcej →' },
+    'blog.back': { ua: '← До списку статей', pl: '← Do listy artykułów' },
+
     // Privacy Page
     'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
     'privacy.text': { ua: "<h2>1. Загальні положення</h2><p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки, використання і розкриття персональних даних користувача. Ми поважаємо вашу конфіденційність і зобов'язуємося захищати ваші персональні дані.</p><h2>2. Збір даних</h2><p>Ми можемо збирати наступні дані: ім'я, прізвище, номер телефону, адреса електронної пошти, місто проживання, інформація про досвід роботи. Ці дані надаються вами добровільно при заповненні форм на сайті.</p><h2>3. Використання даних</h2><p>Зібрані дані використовуються для: зв'язку з вами, надання консультацій щодо працевлаштування, підбору вакансій, покращення роботи нашого сервісу.</p><h2>4. Захист даних</h2><p>Ми вживаємо всіх необхідних технічних та організаційних заходів для захисту ваших даних від несанкціонованого доступу, втрати або зміни.</p><h2>5. Файли Cookie</h2><p>Наш сайт використовує файли cookie для покращення взаємодії з користувачем. Ви можете налаштувати свій браузер для відмови від cookie, але це може вплинути на функціональність сайту.</p><h2>6. Ваші права</h2><p>Ви маєте право на доступ до своїх даних, їх виправлення або видалення. Для цього зв'яжіться з нами через контактні дані на сайті.</p>", pl: "<h2>1. Postanowienia ogólne</h2><p>Niniejsza Polityka prywatności określa zasady gromadzenia, przechowywania, przetwarzania, wykorzystywania i ujawniania danych osobowych użytkownika. Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.</p><h2>2. Gromadzenie danych</h2><p>Możemy gromadzić następujące dane: imię, nazwisko, numer telefonu, adres e-mail, miasto zamieszkania, informacje o doświadczeniu zawodowym. Dane te są podawane dobrowolnie podczas wypełniania formularzy na stronie.</p><h2>3. Wykorzystanie danych</h2><p>Zgromadzone dane są wykorzystywane do: kontaktu z Tobą, udzielania konsultacji w sprawie zatrudnienia, doboru ofert pracy, ulepszania działania naszego serwisu.</p><h2>4. Ochrona danych</h2><p>Podejmujemy wszelkie niezbędne środki techniczne i organizacyjne w celu ochrony Twoich danych przed nieautoryzowanym dostępem, utratą lub zmianą.</p><h2>5. Pliki Cookie</h2><p>Nasza strona używa plików cookie w celu poprawy doświadczeń użytkownika. Możesz skonfigurować swoją przeglądarkę, aby odrzucała pliki cookie, ale może to wpłynąć na funkcjonalność strony.</p><h2>6. Twoje prawa</h2><p>Masz prawo do dostępu do swoich danych, ich poprawiania lub usunięcia. W tym celu skontaktuj się z nami za pośrednictwem danych kontaktowych na stronie.</p>" },
-
+в на 
     // FAQ Page
     'faq.title': { ua: 'Часті запитання', pl: 'Częste pytania' },
     'faq.text': { ua: "<details><summary>Чи потрібен власний транспорт?</summary><p>Можна працювати на власному авто, велосипеді, скутері або пішки (у деяких містах). Також ми допомагаємо з орендою транспорту.</p></details><details><summary>Коли я отримаю першу виплату?</summary><p>Виплати здійснюються щотижня або щоденно, залежно від обраного партнера та умов.</p></details><details><summary>Чи потрібен досвід роботи?</summary><p>Ні, досвід не обов'язковий. Ми проводимо навчання перед початком роботи.</p></details><details><summary>Які документи потрібні?</summary><p>Паспорт, віза або карта побиту (для іноземців), номер PESEL. Для водіїв — водійське посвідчення.</p></details><details><summary>Скільки можна заробити?</summary><p>Заробіток залежить від кількості годин та доставок. В середньому кур'єри заробляють від 25 до 40 злотих на годину.</p></details>", pl: "<details><summary>Czy potrzebuję własnego pojazdu?</summary><p>Możesz pracować własnym samochodem, rowerem, skuterem lub pieszo (w niektórych miastach). Pomagamy również w wynajmie pojazdów.</p></details><details><summary>Kiedy otrzymam pierwszą wypłatę?</summary><p>Wypłaty są realizowane tygodniowo lub codziennie, w zależności od wybranego partnera i warunków.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie, doświadczenie nie jest wymagane. Zapewniamy szkolenie przed rozpoczęciem pracy.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Paszport, wiza lub karta pobytu (dla obcokrajowców), numer PESEL. Dla kierowców — prawo jazdy.</p></details><details><summary>Ile mogę zarobić?</summary><p>Zarobki zależą od liczby godzin i dostaw. Średnio kurierzy zarabiają od 25 do 40 złotych na godzinę.</p></details>" },
@@ -96,7 +103,13 @@ const I18N_SCRIPT = `\n<script>
     // Cookie Banner
     'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
     'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' },
-    'share.title': { ua: 'Поділитися вакансією:', pl: 'Udostępnij ofertę:' }
+    'share.title': { ua: 'Поділитися вакансією:', pl: 'Udostępnij ofertę:' },
+
+    // Calculator
+    'calc.title': { ua: 'Калькулятор заробітку', pl: 'Kalkulator zarobków' },
+    'calc.hours': { ua: 'Годин на тиждень', pl: 'Godzin tygodniowo' },
+    'calc.rate': { ua: 'Ставка (PLN/год)', pl: 'Stawka (PLN/h)' },
+    'calc.result': { ua: 'Ваш дохід на місяць:', pl: 'Twój dochód miesięczny:' }
   };
 
   // Merge extra translations (jobs)
@@ -188,6 +201,10 @@ async function build() {
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
 
+  // Load blog posts
+  const postsPath = path.join(SRC, 'posts.json');
+  const posts = JSON.parse(await fs.readFile(postsPath, 'utf8').catch(() => '[]'));
+
   const pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   const stylesPath = path.join(TEMPLATES, 'styles.css');
   let styles = '';
@@ -233,6 +250,12 @@ async function build() {
     jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
     jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek' };
   });
+
+  // Prepare dynamic translations for blog
+  posts.forEach(p => {
+    jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title || p.title };
+    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
+  });
   
   // Prepare script with injected translations
   const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
@@ -253,9 +276,13 @@ async function build() {
     } catch (e) {}
   }
 
+  // Inject Blog link into pageTpl for generated pages
+  const blogLinkHtml = '<a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>\n        <a href="/contact.html"';
+  const tplWithBlog = pageTpl.replace('<a href="/contact.html"', blogLinkHtml);
+
   const links = [];
   for (const page of pages) {
-    const tpl = pageTpl;
+    const tpl = tplWithBlog;
     const description = page.excerpt || page.description || '';
     const content = page.body || page.content || page.excerpt || '';
     const contentPl = page.body_pl || page.body || '';
@@ -374,9 +401,70 @@ async function build() {
     links.push({ title: page.title, slug: page.slug, city: page.city || '' });
   }
 
+  // Generate Blog Index
+  const blogListHtml = posts.map(p => `
+    <div class="blog-card">
+      <div class="blog-icon">${p.image || '📝'}</div>
+      <div class="blog-content">
+        <div class="blog-date">${p.date}</div>
+        <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
+        <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
+        <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
+      </div>
+    </div>
+  `).join('');
+
+  const blogIndexContent = `
+    <div class="hero-section" style="padding-bottom: 1rem;">
+      <h1 data-i18n="blog.title">Блог Rybezh</h1>
+      <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
+    </div>
+    <div class="blog-grid">
+      ${blogListHtml}
+    </div>
+  `;
+
+  let blogHtml = tplWithBlog
+    .replace(/{{TITLE}}/g, 'Блог — Rybezh')
+    .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
+    .replace(/{{CONTENT}}/g, blogIndexContent)
+    .replace(/{{CANONICAL}}/g, 'https://rybezh.site/blog.html')
+    .replace(/{{CITY}}/g, '')
+    .replace(/{{CTA_LINK}}/g, '/apply.html')
+    .replace(/{{CTA_TEXT}}/g, '');
+  
+  if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
+  else blogHtml += scriptWithData;
+  await fs.writeFile(path.join(DIST, 'blog.html'), blogHtml, 'utf8');
+
+  // Generate Blog Posts
+  for (const post of posts) {
+    const postContent = `
+      <div class="content-wrapper blog-post">
+        <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
+        <h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>
+        <div class="post-meta">📅 ${post.date}</div>
+        <div data-lang-content="ua">${post.body}</div>
+        <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
+      </div>`;
+    
+    let postHtml = tplWithBlog
+      .replace(/{{TITLE}}/g, escapeHtml(post.title))
+      .replace(/{{DESCRIPTION}}/g, escapeHtml(post.excerpt))
+      .replace(/{{CONTENT}}/g, postContent)
+      .replace(/{{CANONICAL}}/g, `https://rybezh.site/post-${post.slug}.html`)
+      .replace(/{{CITY}}/g, '')
+      .replace(/{{CTA_LINK}}/g, '/apply.html')
+      .replace(/{{CTA_TEXT}}/g, '');
+
+    if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
+    else postHtml += scriptWithData;
+    await fs.writeFile(path.join(DIST, `post-${post.slug}.html`), postHtml, 'utf8');
+  }
+
     // generate index
     const indexContent = generateIndexContent(links);
-    let indexHtml = pageTpl
+    let indexHtml = tplWithBlog
       .replace(/{{TITLE}}/g, "Rybezh — Робота кур'єром у Польщі")
       .replace(/{{DESCRIPTION}}/g, "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами та підтримкою.")
       .replace(/{{CONTENT}}/g, indexContent)
@@ -483,6 +571,27 @@ function generateIndexContent(links) {
       </div>
     </div>
 
+    <!-- Calculator Section -->
+    <div class="calculator-section" style="background: var(--color-surface); padding: 2rem; border-radius: 16px; border: 1px solid var(--color-border); margin-bottom: 3rem; box-shadow: var(--shadow-md);">
+      <h3 style="text-align: center; margin-bottom: 2rem; color: var(--color-primary);" data-i18n="calc.title">Калькулятор заробітку</h3>
+      <div class="calc-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;">
+        <div class="calc-inputs">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;" data-i18n="calc.hours">Годин на тиждень</label>
+          <input type="range" id="calc-hours" min="10" max="60" value="40" style="width: 100%; margin-bottom: 0.5rem;">
+          <div style="text-align: right; font-weight: bold; color: var(--color-accent);"><span id="val-hours">40</span> h</div>
+          
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; margin-top: 1rem;" data-i18n="calc.rate">Ставка (PLN/год)</label>
+          <input type="range" id="calc-rate" min="20" max="50" value="35" style="width: 100%; margin-bottom: 0.5rem;">
+          <div style="text-align: right; font-weight: bold; color: var(--color-accent);"><span id="val-rate">35</span> PLN</div>
+        </div>
+        <div class="calc-result" style="text-align: center; background: var(--color-bg); padding: 1.5rem; border-radius: 12px;">
+          <p style="margin: 0; color: var(--color-secondary);" data-i18n="calc.result">Ваш дохід на місяць:</p>
+          <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-accent); margin: 0.5rem 0;"><span id="total-earn">5600</span> PLN</div>
+          <p style="font-size: 0.9rem; color: var(--color-secondary); margin: 0;">*приблизний розрахунок</p>
+        </div>
+      </div>
+    </div>
+
     <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.</p>
     
     <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; text-align: center; color: var(--color-primary);">🔍 Знайди роботу за містом:</h3>
@@ -556,6 +665,16 @@ ${cards}
         form.addEventListener('submit', function(e){ e.preventDefault(); filter(); });
         q.addEventListener('input', filter);
         city.addEventListener('change', filter);
+
+        // Calculator Logic
+        const hInput = document.getElementById('calc-hours');
+        const rInput = document.getElementById('calc-rate');
+        const hVal = document.getElementById('val-hours');
+        const rVal = document.getElementById('val-rate');
+        const total = document.getElementById('total-earn');
+        function calc() { const h = +hInput.value; const r = +rInput.value; hVal.textContent = h; rVal.textContent = r; total.textContent = (h * r * 4).toLocaleString(); }
+        hInput.addEventListener('input', calc);
+        rInput.addEventListener('input', calc);
       })();
     </script>`;
 }

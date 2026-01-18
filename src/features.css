@@ -382,7 +382,7 @@ body.loaded {
   .animate-ready {
     transform: translateY(20px);
   }
-  
+ди  
   .hero-modern {
     grid-template-columns: 1fr !important;
     text-align: center;
@@ -532,5 +532,49 @@ body.loaded {
   .theme-toggle,
   .mobile-toggle {
     display: none !important;
+  }
+}
+
+/* Blog Styles */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.blog-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.blog-icon { font-size: 3rem; margin-bottom: 1rem; }
+.blog-date { font-size: 0.85rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+.blog-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.blog-card p { color: var(--color-secondary); flex-grow: 1; font-size: 0.95rem; }
+.read-more { color: var(--color-accent); font-weight: 600; margin-top: 1rem; display: inline-block; }
+
+.blog-post .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--color-secondary); font-weight: 500; }
+.blog-post .back-link:hover { color: var(--color-accent); }
+.blog-post .post-meta { color: var(--color-secondary); margin-bottom: 2rem; font-size: 0.9rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; }
+
+/* Calculator Responsive */
+@media (max-width: 768px) {
+  .calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .calculator-section {
+    padding: 1.5rem !important;
   }
 }
