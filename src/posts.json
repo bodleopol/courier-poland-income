@@ -218,5 +218,38 @@
     "body_pl": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Career+Growth\" alt=\"Kariera\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>Wielu traktuje pracę kuriera jako tymczasowy zarobek. Ale są też ci, którzy budują na tym długoterminową karierę.</p><h3>Wzrost wertykalny</h3><p>Od kuriera do koordynatora — typowa ścieżka dla aktywnych pracowników. Pensja koordynatora: 5000–8000 PLN.</p><h3>Wzrost horyzontalny</h3><p>Doświadczeni kurierzy często otwierają własne firmy logistyczne lub stają się partnerami dużych platform.</p><h3>Rozwijane umiejętności</h3><ul><li>Time management</li><li>Orientacja w mieście</li><li>Obsługa klienta</li><li>Podstawy logistyki</li></ul><h3>Prawdziwe historie</h3><p>Ołeksandr z Kijowa: zaczął jako kurier w 2019, po 2 latach został koordynatorem 50 kurierów.</p><p>Maria ze Lwowa: pracowała rok jako kurier, otworzyła własną usługę dostaw dla restauracji.</p><h3>Wskazówka</h3><p>Jeśli widzisz siebie w tej branży — inwestuj w naukę logistyki i zarządzania.</p>",
     "date": "2025-12-30",
     "image": "<img src=\"https://placehold.co/600x400?text=Career\" alt=\"Career\" width=\"600\" height=\"400\" loading=\"lazy\" decoding=\"async\" />"
+  },
+  {
+    "title": "Скільки реально залишається на руки: дохід мінус витрати",
+    "title_pl": "Ile realnie zostaje na rękę: dochód minus koszty",
+    "slug": "net-earnings-after-costs",
+    "excerpt": "Паливо, ремонт, амортизація — рахуємо чистий заробіток кур'єра без ілюзій.",
+    "excerpt_pl": "Paliwo, serwis, amortyzacja — liczymy realny zarobek kuriera bez złudzeń.",
+    "body": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Net+Earnings\" alt=\"Чистий дохід\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>Високий оборот — ще не чистий дохід. Нижче — простий спосіб порахувати, скільки реально залишається.</p><h3>1. Паливо або зарядка</h3><p>Авто: закладіть 10–18% обороту. Скутер: 6–10%. Електро — ще менше.</p><h3>2. Амортизація та сервіс</h3><p>Шини, гальма, ланцюг, масло — регулярні витрати. Розділіть річну суму на 12.</p><h3>3. Комісії та податки</h3><p>Деякі платформи утримують комісію. Також врахуйте ZUS та податки.</p><h3>4. Погода та простої</h3><p>Дощ і сніг можуть зменшити продуктивність — це теж «витрата» часу.</p><h3>Формула</h3><p><strong>Чистий дохід = Оборот − (паливо + сервіс + комісії + податки)</strong></p><p>Навіть при 40 PLN/год чистий може бути 28–32 PLN/год — це нормально.</p>",
+    "body_pl": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Net+Earnings\" alt=\"Dochód netto\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>Wysoki obrót to nie zawsze realny zysk. Oto prosty sposób, by policzyć ile zostaje na rękę.</p><h3>1. Paliwo lub ładowanie</h3><p>Auto: 10–18% obrotu. Skuter: 6–10%. Elektryk — mniej.</p><h3>2. Amortyzacja i serwis</h3><p>Opony, hamulce, łańcuch, olej — stałe koszty. Podziel roczny koszt na 12.</p><h3>3. Prowizje i podatki</h3><p>Platformy czasem pobierają prowizję. Uwzględnij też ZUS i podatki.</p><h3>4. Pogoda i przestoje</h3><p>Deszcz i śnieg obniżają produktywność — to realny koszt.</p><h3>Wzór</h3><p><strong>Dochód netto = Obrót − (paliwo + serwis + prowizje + podatki)</strong></p><p>Nawet przy 40 PLN/h netto może wyjść 28–32 PLN/h — to normalne.</p>",
+    "date": "2026-01-18",
+    "image": "<img src=\"https://placehold.co/600x400?text=Net+Earnings\" alt=\"Net\" width=\"600\" height=\"400\" loading=\"lazy\" decoding=\"async\" />"
+  },
+  {
+    "title": "Погодинно чи за доставку: що вигідніше в 2026",
+    "title_pl": "Godzinówka czy za dostawę: co się bardziej opłaca w 2026",
+    "slug": "hourly-vs-per-delivery-2026",
+    "excerpt": "Порівнюємо два формати оплати та підказуємо, коли який обирати.",
+    "excerpt_pl": "Porównujemy dwa modele wynagrodzenia i podpowiadamy, kiedy który wybrać.",
+    "body": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Hourly+vs+Delivery\" alt=\"Формат оплати\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>У 2026 році популярні два формати: погодинна оплата або оплата за доставку. Вигідність залежить від міста та графіку.</p><h3>Погодинно</h3><ul><li>Стабільність у «тихі» години</li><li>Менше стресу через кількість замовлень</li><li>Добре для новачків</li></ul><h3>За доставку</h3><ul><li>Вище дохід у пікові години</li><li>Мотивація оптимізувати маршрути</li><li>Краще для досвідчених</li></ul><h3>Як обирати</h3><p>Якщо працюєте 3–4 години ввечері — вигідніше «за доставку». Якщо повна зміна зранку до вечора — частіше виграє погодинна ставка.</p>",
+    "body_pl": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Hourly+vs+Delivery\" alt=\"Model płatności\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>W 2026 roku dominują dwa modele: stawka godzinowa lub płatność za dostawę. Opłacalność zależy od miasta i grafiku.</p><h3>Godzinówka</h3><ul><li>Stabilność w spokojnych godzinach</li><li>Mniej stresu o liczbę zleceń</li><li>Dobra dla początkujących</li></ul><h3>Za dostawę</h3><ul><li>Wyższy zarobek w szczycie</li><li>Motywacja do optymalizacji tras</li><li>Lepsza dla doświadczonych</li></ul><h3>Jak wybierać</h3><p>Jeśli pracujesz 3–4 godziny wieczorem — lepiej „za dostawę”. Przy dłuższych zmianach często wygrywa godzinówka.</p>",
+    "date": "2026-01-18",
+    "image": "<img src=\"https://placehold.co/600x400?text=Hourly+vs+Delivery\" alt=\"Hourly vs Delivery\" width=\"600\" height=\"400\" loading=\"lazy\" decoding=\"async\" />"
+  },
+  {
+    "title": "Бонуси, піки та погодні доплати: як підняти середню ставку",
+    "title_pl": "Bonusy, szczyty i dopłaty pogodowe: jak podnieść średnią stawkę",
+    "slug": "bonuses-boost-earnings",
+    "excerpt": "Стратегія роботи в пікові години та з бонусами дає +20–40% до доходу.",
+    "excerpt_pl": "Strategia pracy w szczycie i z bonusami potrafi dać +20–40% dochodu.",
+    "body": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Bonuses\" alt=\"Бонуси\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>Найбільші гроші — у пікові години та під бонуси. Головне — правильно планувати зміни.</p><h3>1. Обідній та вечірній пік</h3><p>12:00–15:00 і 18:00–22:00 приносять найбільший потік замовлень.</p><h3>2. Погодні доплати</h3><p>Дощ, сніг, сильний вітер часто дають +10–25% до ставки.</p><h3>3. Серії та челенджі</h3><p>Деякі платформи платять бонус за 5–8 доставок поспіль.</p><h3>4. Географія</h3><p>Центр міста у піки приносить більше коротких доставок = більше заробітку за годину.</p><h3>Підсумок</h3><p>Комбінуйте 2–3 пікові години з бонусами — це найпростіший спосіб підняти середню ставку.</p>",
+    "body_pl": "<img class=\"blog-hero\" src=\"https://placehold.co/1200x600?text=Bonuses\" alt=\"Bonusy\" width=\"1200\" height=\"600\" loading=\"lazy\" decoding=\"async\" /><p>Największe pieniądze są w szczycie i przy bonusach. Klucz to dobre planowanie zmian.</p><h3>1. Szczyt lunchowy i wieczorny</h3><p>12:00–15:00 i 18:00–22:00 to najwięcej zleceń.</p><h3>2. Dopłaty pogodowe</h3><p>Deszcz, śnieg i silny wiatr często dają +10–25% do stawki.</p><h3>3. Serie i wyzwania</h3><p>Niektóre platformy płacą bonus za 5–8 dostaw pod rząd.</p><h3>4. Lokalizacja</h3><p>Centrum miasta w szczycie = więcej krótkich tras i wyższa stawka godzinowa.</p><h3>Podsumowanie</h3><p>Połącz 2–3 godziny szczytu z bonusami — to najprostszy sposób na wyższą średnią stawkę.</p>",
+    "date": "2026-01-18",
+    "image": "<img src=\"https://placehold.co/600x400?text=Bonuses\" alt=\"Bonuses\" width=\"600\" height=\"400\" loading=\"lazy\" decoding=\"async\" />"
   }
 ]

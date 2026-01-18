@@ -456,6 +456,22 @@ async function build() {
       '<meta name="description" content="',
       `<meta name="description" data-i18n="job.${page.slug}.excerpt" data-i18n-attr="content" content="`
     );
+    finalHtml = finalHtml.replace(
+      '<meta property="og:title" content="',
+      `<meta property="og:title" data-i18n="job.${page.slug}.meta_title" data-i18n-attr="content" content="`
+    );
+    finalHtml = finalHtml.replace(
+      '<meta property="og:description" content="',
+      `<meta property="og:description" data-i18n="job.${page.slug}.excerpt" data-i18n-attr="content" content="`
+    );
+    finalHtml = finalHtml.replace(
+      '<meta name="twitter:title" content="',
+      `<meta name="twitter:title" data-i18n="job.${page.slug}.meta_title" data-i18n-attr="content" content="`
+    );
+    finalHtml = finalHtml.replace(
+      '<meta name="twitter:description" content="',
+      `<meta name="twitter:description" data-i18n="job.${page.slug}.excerpt" data-i18n-attr="content" content="`
+    );
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
@@ -596,6 +612,22 @@ async function build() {
       '<meta name="description" content="',
       '<meta name="description" data-i18n="blog.meta_description" data-i18n-attr="content" content="'
     );
+    blogHtml = blogHtml.replace(
+      '<meta property="og:title" content="',
+      '<meta property="og:title" data-i18n="blog.meta_title" data-i18n-attr="content" content="'
+    );
+    blogHtml = blogHtml.replace(
+      '<meta property="og:description" content="',
+      '<meta property="og:description" data-i18n="blog.meta_description" data-i18n-attr="content" content="'
+    );
+    blogHtml = blogHtml.replace(
+      '<meta name="twitter:title" content="',
+      '<meta name="twitter:title" data-i18n="blog.meta_title" data-i18n-attr="content" content="'
+    );
+    blogHtml = blogHtml.replace(
+      '<meta name="twitter:description" content="',
+      '<meta name="twitter:description" data-i18n="blog.meta_description" data-i18n-attr="content" content="'
+    );
 
     // Make the template H1 translatable
     blogHtml = blogHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="blog.title">Блог Rybezh</h1>`);
@@ -632,6 +664,22 @@ async function build() {
       '<meta name="description" content="',
       `<meta name="description" data-i18n="blog.${post.slug}.excerpt" data-i18n-attr="content" content="`
     );
+    postHtml = postHtml.replace(
+      '<meta property="og:title" content="',
+      `<meta property="og:title" data-i18n="blog.${post.slug}.meta_title" data-i18n-attr="content" content="`
+    );
+    postHtml = postHtml.replace(
+      '<meta property="og:description" content="',
+      `<meta property="og:description" data-i18n="blog.${post.slug}.excerpt" data-i18n-attr="content" content="`
+    );
+    postHtml = postHtml.replace(
+      '<meta name="twitter:title" content="',
+      `<meta name="twitter:title" data-i18n="blog.${post.slug}.meta_title" data-i18n-attr="content" content="`
+    );
+    postHtml = postHtml.replace(
+      '<meta name="twitter:description" content="',
+      `<meta name="twitter:description" data-i18n="blog.${post.slug}.excerpt" data-i18n-attr="content" content="`
+    );
 
     // Make the template H1 translatable for this post
     postHtml = postHtml.replace(
@@ -662,6 +710,10 @@ async function build() {
     // Inject data-i18n into index title and description
     indexHtml = indexHtml.replace('<title>', '<title data-i18n="meta.title">');
     indexHtml = indexHtml.replace('<meta name="description" content="', '<meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="');
+    indexHtml = indexHtml.replace('<meta property="og:title" content="', '<meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="');
+    indexHtml = indexHtml.replace('<meta property="og:description" content="', '<meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="');
+    indexHtml = indexHtml.replace('<meta name="twitter:title" content="', '<meta name="twitter:title" data-i18n="meta.title" data-i18n-attr="content" content="');
+    indexHtml = indexHtml.replace('<meta name="twitter:description" content="', '<meta name="twitter:description" data-i18n="meta.description" data-i18n-attr="content" content="');
 
     // Make the template H1 translatable
     indexHtml = indexHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="meta.title">$1</h1>`);
