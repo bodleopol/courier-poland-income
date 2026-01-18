@@ -11,6 +11,9 @@
   // ============================================
   const translations = {
     'meta.title': { ua: "Rybezh — Робота кур'єром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
+    'meta.description': { ua: "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
+    'brand.name': { ua: 'Rybezh', pl: 'Rybezh' },
+    'brand.tagline': { ua: "rybezh.site — робота кур'єром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
     'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
     'nav.about': { ua: 'Про нас', pl: 'O nas' },
@@ -52,6 +55,7 @@
     'home.features.f2.text': { ua: 'Працюй коли захочеш, скільки захочеш', pl: 'Pracuj kiedy chcesz i ile chcesz' },
     'home.features.f3.title': { ua: '🤝 Повна підтримка 24/7', pl: '🤝 Pełne wsparcie 24/7' },
     'home.features.f3.text': { ua: 'Допомога з документами та легалізацією', pl: 'Pomoc z dokumentami i legalizacją' },
+    'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
     'search.button': { ua: 'Знайти', pl: 'Znajdź' },
     'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' },
@@ -71,6 +75,10 @@
     'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.' },
     'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email' },
     'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!' },
+    'calc.title': { ua: 'Калькулятор заробітку', pl: 'Kalkulator zarobków' },
+    'calc.hours': { ua: 'Годин на тиждень', pl: 'Godzin tygodniowo' },
+    'calc.rate': { ua: 'Ставка (PLN/год)', pl: 'Stawka (PLN/h)' },
+    'calc.result': { ua: 'Ваш дохід на місяць:', pl: 'Twój dochód miesięczny:' },
     'calc.note': { ua: '*приблизний розрахунок', pl: '*przybliżone obliczenia' },
     'label.telegram': { ua: 'Telegram', pl: 'Telegram' },
     'label.email': { ua: 'Пошта', pl: 'Poczta' },
@@ -90,27 +98,59 @@
     'btn.submit': { ua: 'Надіслати заявку', pl: 'Wyślij zgłoszenie' },
     'btn.clear': { ua: 'Очистити', pl: 'Wyczyść' },
     'aside.help': { ua: 'Потрібна допомога?', pl: 'Potrzebujesz pomocy?' },
-    'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert.' },
+    'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert. Zgłoszenia przetwarzamy w ciągu 24 godzin.' },
     'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
     'aside.contacts': { ua: 'Контакти', pl: 'Kontakt' },
     'about.title': { ua: 'Про нас', pl: 'O nas' },
-    'about.text': { ua: "<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу кур'єром у Польщі.", pl: "<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę jako kurier w Polsce." },
+    'about.text': { ua: "<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу кур'єром у Польщі. Ми співпрацюємо з провідними логістичними компаніями та сервісами доставки їжі.", pl: "<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę jako kurier w Polsce. Współpracujemy z wiodącymi firmami logistycznymi i serwisami dostawy jedzenia." },
     'about.mission': { ua: 'Наша місія', pl: 'Nasza misja' },
-    'about.mission_text': { ua: 'Ми прагнемо зробити процес працевлаштування за кордоном простим, прозорим та безпечним.', pl: 'Dążymy do tego, aby proces zatrudnienia za granicą był prosty, przejrzysty i bezpieczny.' },
+    'about.mission_text': { ua: 'Ми прагнемо зробити процес працевлаштування за кордоном простим, прозорим та безпечним. Ми надаємо повний супровід: від першої консультації до підписання договору та виходу на першу зміну.', pl: 'Dążymy do tego, aby proces zatrudnienia za granicą był prosty, przejrzysty i bezpieczny. Zapewniamy pełne wsparcie: od pierwszej konsultacji po podpisanie umowy i pierwszą zmianę.' },
     'about.why': { ua: 'Чому обирають нас', pl: 'Dlaczego my' },
-    'about.why_text': { ua: 'Ми пропонуємо лише перевірені вакансії, допомагаємо з легалізацією та надаємо підтримку 24/7.', pl: 'Oferujemy tylko sprawdzone oferty pracy, pomagamy w legalizacji i zapewniamy wsparcie 24/7.' },
+    'about.why_text': { ua: 'Ми пропонуємо лише перевірені вакансії, допомагаємо з легалізацією та надаємо підтримку 24/7. З нами ви можете бути впевнені у своєму завтрашньому дні.', pl: 'Oferujemy tylko sprawdzone oferty pracy, pomagamy w legalizacji i zapewniamy wsparcie 24/7. Z nami możesz być pewny swojego jutra.' },
+    'about.advantages': { ua: 'Наші переваги', pl: 'Nasze zalety' },
+    'about.how_we_work': { ua: 'Як ми працюємо', pl: 'Jak pracujemy' },
+    'about.step1': { ua: '1️⃣ Консультація (Безкоштовно)', pl: '1️⃣ Konsultacja (Bezpłatnie)' },
+    'about.step2': { ua: '2️⃣ Підбір вакансії', pl: '2️⃣ Dobór oferty pracy' },
+    'about.step3': { ua: '3️⃣ Оформлення документів', pl: '3️⃣ Formalizacja dokumentów' },
+    'about.step4': { ua: '4️⃣ Початок роботи', pl: '4️⃣ Rozpoczęcie pracy' },
+    'about.contacts': { ua: 'Контакти', pl: 'Kontakt' },
+    'about.ready': { ua: 'Готові до змін? 🚀', pl: 'Gotowi na zmiany? 🚀' },
     'contact.title': { ua: 'Контакти', pl: 'Kontakt' },
     'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
     'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' },
     'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
-    'privacy.text': { ua: "<h2>1. Загальні положення</h2><p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки персональних даних.</p><h2>2. Збір даних</h2><p>Ми можемо збирати: ім'я, телефон, email, місто, досвід роботи.</p><h2>3. Використання даних</h2><p>Дані використовуються для зв'язку та підбору вакансій.</p><h2>4. Захист даних</h2><p>Ми вживаємо всіх заходів для захисту ваших даних.</p><h2>5. Cookies</h2><p>Сайт використовує cookies для покращення роботи.</p><h2>6. Ваші права</h2><p>Ви маєте право на доступ, виправлення або видалення даних.</p>", pl: "<h2>1. Postanowienia ogólne</h2><p>Niniejsza Polityka prywatności określa zasady przetwarzania danych osobowych.</p><h2>2. Gromadzenie danych</h2><p>Możemy gromadzić: imię, telefon, email, miasto, doświadczenie.</p><h2>3. Wykorzystanie danych</h2><p>Dane są wykorzystywane do kontaktu i doboru ofert.</p><h2>4. Ochrona danych</h2><p>Podejmujemy wszelkie środki w celu ochrony Twoich danych.</p><h2>5. Pliki Cookie</h2><p>Strona używa plików cookie.</p><h2>6. Twoje prawa</h2><p>Masz prawo do dostępu, poprawiania lub usunięcia danych.</p>" },
+    'privacy.text': { ua: "<h2>1. Загальні положення</h2><p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки, використання і розкриття персональних даних користувача. Ми поважаємо вашу конфіденційність і зобов'язуємося захищати ваші персональні дані.</p><h2>2. Збір даних</h2><p>Ми можемо збирати наступні дані: ім'я, прізвище, номер телефону, адреса електронної пошти, місто проживання, інформація про досвід роботи. Ці дані надаються вами добровільно при заповненні форм на сайті.</p><h2>3. Використання даних</h2><p>Зібрані дані використовуються для: зв'язку з вами, надання консультацій щодо працевлаштування, підбору вакансій, покращення роботи нашого сервісу.</p><h2>4. Захист даних</h2><p>Ми вживаємо всіх необхідних технічних та організаційних заходів для захисту ваших даних від несанкціонованого доступу, втрати або зміни.</p><h2>5. Файли Cookie</h2><p>Наш сайт використовує файли cookie для покращення взаємодії з користувачем. Ви можете налаштувати свій браузер для відмови від cookie, але це може вплинути на функціональність сайту.</p><h2>6. Ваші права</h2><p>Ви маєте право на доступ до своїх даних, їх виправлення або видалення. Для цього зв'яжіться з нами через контактні дані на сайті.</p>", pl: "<h2>1. Postanowienia ogólne</h2><p>Niniejsza Polityka prywatności określa zasady gromadzenia, przechowywania, przetwarzania, wykorzystywania i ujawniania danych osobowych użytkownika. Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.</p><h2>2. Gromadzenie danych</h2><p>Możemy gromadzić następujące dane: imię, nazwisko, numer telefonu, adres e-mail, miasto zamieszkania, informacje o doświadczeniu zawodowym. Dane te są podawane dobrowolnie podczas wypełniania formularzy na stronie.</p><h2>3. Wykorzystanie danych</h2><p>Zgromadzone dane są wykorzystywane do: kontaktu z Tobą, udzielania konsultacji w sprawie zatrudnienia, doboru ofert pracy, ulepszania działania naszego serwisu.</p><h2>4. Ochrona danych</h2><p>Podejmujemy wszelkie niezbędne środki techniczne i organizacyjne w celu ochrony Twoich danych przed nieautoryzowanym dostępem, utratą lub zmianą.</p><h2>5. Pliki Cookie</h2><p>Nasza strona używa plików cookie w celu poprawy doświadczeń użytkownika. Możesz skonfigurować swoją przeglądarkę, aby odrzucała pliki cookie, ale może to wpłynąć na funkcjonalność strony.</p><h2>6. Twoje prawa</h2><p>Masz prawo do dostępu do swoich danych, ich poprawiania lub usunięcia. W tym celu skontaktuj się z nami za pośrednictwem danych kontaktowych na stronie.</p>" },
     'faq.title': { ua: 'Часті запитання', pl: 'Częste pytania' },
-    'faq.text': { ua: "<details><summary>Чи потрібен власний транспорт?</summary><p>Можна працювати на авто, велосипеді, скутері або пішки.</p></details><details><summary>Коли я отримаю виплату?</summary><p>Виплати щотижня або щоденно.</p></details><details><summary>Чи потрібен досвід?</summary><p>Ні, ми проводимо навчання.</p></details><details><summary>Які документи потрібні?</summary><p>Паспорт, віза/карта побиту, PESEL.</p></details><details><summary>Скільки можна заробити?</summary><p>В середньому 25-40 злотих на годину.</p></details>", pl: "<details><summary>Czy potrzebuję własnego pojazdu?</summary><p>Możesz pracować samochodem, rowerem, skuterem lub pieszo.</p></details><details><summary>Kiedy otrzymam wypłatę?</summary><p>Wypłaty tygodniowo lub codziennie.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie, zapewniamy szkolenie.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Paszport, wiza/karta pobytu, PESEL.</p></details><details><summary>Ile mogę zarobić?</summary><p>Średnio 25-40 zł na godzinę.</p></details>" },
-    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення досвіду.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia.' },
+    'faq.text': { ua: "<details><summary>Чи потрібен власний транспорт?</summary><p>Можна працювати на власному авто, велосипеді, скутері або пішки (у деяких містах). Також ми допомагаємо з орендою транспорту.</p></details><details><summary>Коли я отримаю першу виплату?</summary><p>Виплати здійснюються щотижня або щоденно, залежно від обраного партнера та умов.</p></details><details><summary>Чи потрібен досвід роботи?</summary><p>Ні, досвід не обов'язковий. Ми проводимо навчання перед початком роботи.</p></details><details><summary>Які документи потрібні?</summary><p>Паспорт, віза або карта побиту (для іноземців), номер PESEL. Для водіїв — водійське посвідчення.</p></details><details><summary>Скільки можна заробити?</summary><p>Заробіток залежить від кількості годин та доставок. В середньому кур'єри заробляють від 25 до 40 злотих на годину.</p></details>", pl: "<details><summary>Czy potrzebuję własnego pojazdu?</summary><p>Możesz pracować własnym samochodem, rowerem, skuterem lub pieszo (w niektórych miastach). Pomagamy również w wynajmie pojazdów.</p></details><details><summary>Kiedy otrzymam pierwszą wypłatę?</summary><p>Wypłaty są realizowane tygodniowo lub codziennie, w zależności od wybranego partnera i warunków.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie, doświadczenie nie jest wymagane. Zapewniamy szkolenie przed rozpoczęciem pracy.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Paszport, wiza lub karta pobytu (dla obcokrajowców), numer PESEL. Dla kierowców — prawo jazdy.</p></details><details><summary>Ile mogę zarobić?</summary><p>Zarobki zależą od liczby godzin i dostaw. Średnio kurierzy zarabiają od 25 do 40 złotych na godzinę.</p></details>" },
+    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
     'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' },
     'theme.light': { ua: 'Світла тема', pl: 'Jasny motyw' },
     'theme.dark': { ua: 'Темна тема', pl: 'Ciemny motyw' },
     'scroll.top': { ua: 'Вгору', pl: 'Do góry' },
+    // Blog
+    'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
+    'blog.meta_title': { ua: 'Блог — Rybezh', pl: 'Blog — Rybezh' },
+    'blog.meta_description': { ua: 'Корисні статті для кур\'єрів у Польщі', pl: 'Przydatne artykuły dla kurierów w Polsce' },
+    'blog.subtitle': { ua: 'Корисні статті та новини для кур\'єрів', pl: 'Przydatne artykuły i wiadomości dla kurierów' },
+    'blog.read_more': { ua: 'Читати далі →', pl: 'Czytaj więcej →' },
+    'blog.back': { ua: '← До списку статей', pl: '← Do listy artykułów' },
+    'blog.pagination.prev': { ua: '← Назад', pl: '← Wstecz' },
+    'blog.pagination.next': { ua: 'Вперед →', pl: 'Dalej →' },
+    // 404 Page
+    '404.title': { ua: 'Сторінка не знайдена — Rybezh', pl: 'Strona nie znaleziona — Rybezh' },
+    '404.heading': { ua: 'Сторінка не знайдена', pl: 'Strona nie znaleziona' },
+    '404.message': { ua: 'На жаль, сторінка, яку ви шукаєте, не існує або була переміщена. Можливо, кур\'єр забув її доставити! 📦', pl: 'Niestety, strona, której szukasz, nie istnieje lub została przeniesiona. Może kurier zapomniał jej dostarczyć! 📦' },
+    '404.home': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
+    '404.jobs': { ua: 'Переглянути вакансії', pl: 'Zobacz oferty pracy' },
+    '404.contact': { ua: 'Зв\'язатися з нами', pl: 'Skontaktuj się z nami' },
+    '404.popular': { ua: 'Популярні розділи:', pl: 'Popularne sekcje:' },
+    '404.link.jobs': { ua: '📋 Актуальні вакансії', pl: '📋 Aktualne oferty pracy' },
+    '404.link.blog': { ua: '📰 Корисні статті в блозі', pl: '📰 Przydatne artykuły w blogu' },
+    '404.link.apply': { ua: '✍️ Подати заявку на роботу', pl: '✍️ Złóż wniosek o pracę' },
+    '404.link.faq': { ua: '❓ Часті запитання (FAQ)', pl: '❓ Często zadawane pytania (FAQ)' },
+    'share.title': { ua: 'Поділитися вакансією:', pl: 'Udostępnij ofertę:' },
+    'footer.contact': { ua: 'Контакти', pl: 'Kontakt' },
+    'footer.legal': { ua: 'Правова інформація', pl: 'Informacje prawne' },
     // Cities
     'city.warszawa': { ua: 'Варшава', pl: 'Warszawa' },
     'city.krakow': { ua: 'Краків', pl: 'Kraków' },
@@ -135,6 +175,11 @@
     'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' }
   };
 
+  const extraTranslations = window.EXTRA_TRANSLATIONS || {};
+  if (extraTranslations && typeof extraTranslations === 'object') {
+    Object.assign(translations, extraTranslations);
+  }
+
   // Get current language
   const STORAGE_KEY = 'site_lang';
   const LEGACY_KEY = 'siteLang';
@@ -151,6 +196,11 @@
   }
 
   // Apply translations to page
+  function interpolateText(text) {
+    if (typeof text !== 'string') return text;
+    return text.replace(/\$\{year\}/g, String(new Date().getFullYear()));
+  }
+
   function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -159,16 +209,16 @@
       const text = (dict[lang] !== undefined) ? dict[lang] : (dict.ua || '');
       const attr = el.getAttribute('data-i18n-attr');
       if (attr) {
-        try { el.setAttribute(attr, text); } catch (e) { el.textContent = text; }
+        try { el.setAttribute(attr, interpolateText(text)); } catch (e) { el.textContent = interpolateText(text); }
         return;
       }
       if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = text;
+        el.placeholder = interpolateText(text);
       } else if (el.tagName === 'TITLE' || (el.parentElement && el.parentElement.tagName === 'HEAD')) {
-        document.title = text;
-        el.textContent = text;
+        document.title = interpolateText(text);
+        el.textContent = interpolateText(text);
       } else {
-        el.innerHTML = text;
+        el.innerHTML = interpolateText(text);
       }
     });
 
