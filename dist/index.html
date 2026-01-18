@@ -233,7 +233,20 @@
     </section>
     <article class="content-wrapper">
       
+    <div class="hero-banner" style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 3rem 2rem; border-radius: 16px; border: 1px solid var(--color-accent); margin-bottom: 3rem; text-align: center;">
+      <h2 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--color-primary);">🚀 Робота мрії чекає тебе!</h2>
+      <p style="font-size: 1.1rem; color: var(--color-secondary); margin: 0 0 1.5rem 0; line-height: 1.6;">
+        <strong>Тисячі курьєрів вже заробляють</strong> у Польщі. 📦 Безплатна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/apply.html" style="display: inline-block; background: var(--color-accent); color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Почати прямо зараз →</a>
+        <a href="#jobs" style="display: inline-block; background: transparent; color: var(--color-accent); padding: 0.9rem 2rem; border: 2px solid var(--color-accent); border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Переглянути вакансії ↓</a>
+      </div>
+    </div>
+
     <p class="lead" style="text-align:center; margin-bottom:2rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.</p>
+    
+    <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; text-align: center; color: var(--color-primary);">🔍 Знайди роботу за містом:</h3>
     <form class="search-form" action="/" method="get" aria-label="Фільтр вакансій">
       <label class="sr-only" for="q" data-i18n="search.sr">Пошук</label>
       <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
@@ -262,7 +275,7 @@
       </select>
       <button type="submit" data-i18n="search.button">Знайти</button>
     </form>
-    <div class="jobs-grid" aria-label="Список вакансій">
+    <div class="jobs-grid" id="jobs" aria-label="Список вакансій" style="margin-top: 2rem;">
     <div class="job-card" data-city="Варшава">
       <h3><a href="./warsaw-walking-courier-3.html" data-i18n="job.warsaw-walking-courier-3.title">Піший кур&#39;єр у Варшаві — робота в центрі</a></h3>
       <p class="muted"><span data-i18n="city.warszawa">Варшава</span></p>
@@ -353,6 +366,24 @@
       <p class="muted"><span data-i18n="city.bydgoszcz">Бидгощ</span></p>
       <a class="card-cta" href="./bydgoszcz-stable-courier-1.html" data-i18n="jobs.cta">Деталі</a>
     </div>
+    </div>
+
+    <div style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--color-accent); margin-top: 3rem; text-align: center;">
+      <h3 style="color: var(--color-primary); margin: 0 0 1rem 0;">✨ Більше ніж просто робота</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">💵 Щоденні виплати</h4>
+          <p style="color: var(--color-secondary); margin: 0;">Отримуй гроші прямо в день роботи</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">⏰ Гнучкий графік</h4>
+          <p style="color: var(--color-secondary); margin: 0;">Працюй коли захочеш, скільки захочеш</p>
+        </div>
+        <div>
+          <h4 style="color: var(--color-primary); margin-bottom: 0.5rem;">🤝 Повна підтримка 24/7</h4>
+          <p style="color: var(--color-secondary); margin: 0;">Допомога з документами та легалізацією</p>
+        </div>
+      </div>
     </div>
     <script>
       (function(){
