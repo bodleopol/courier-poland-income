@@ -1,4 +1,4 @@
-нку /**
+/**
  * Rybezh Site - Main JavaScript
  * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
  */
@@ -20,6 +20,8 @@
     'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
     'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
+    'blog.subtitle': { ua: 'Корисні статті та поради для кур’єрів у Польщі', pl: 'Przydatne artykuły i porady dla kurierów w Polsce' },
+    'blog.read_more': { ua: 'Читати статтю →', pl: 'Czytaj artykuł →' },
     'hero.title': { ua: "Знайдіть роботу кур'єром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
     'hero.lead': { ua: "Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy kurierskiej w ponad 20 miastach Polski. Elastyczny grafik, codzienne wypłaty.' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
@@ -41,6 +43,12 @@
     'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.' },
     'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email' },
     'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!' },
+    'label.telegram': { ua: 'Telegram', pl: 'Telegram' },
+    'label.email': { ua: 'Пошта', pl: 'Poczta' },
+    'placeholder.name': { ua: 'Петро', pl: 'Piotr' },
+    'placeholder.contact': { ua: '+48 123 456 789 або email@mail.com', pl: '+48 123 456 789 lub email@mail.com' },
+    'placeholder.city': { ua: 'Варшава, Краків...', pl: 'Warszawa, Kraków...' },
+    'placeholder.message': { ua: 'Додайте деталі', pl: 'Dodaj szczegóły' },
     'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
     'apply.intro': { ua: 'Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.', pl: 'Kilka pól — i dobierzemy oferty pracy oraz pomożemy z dokumentami.' },
     'label.name': { ua: "Ім'я", pl: 'Imię' },
@@ -99,13 +107,16 @@
   };
 
   // Get current language
+  const STORAGE_KEY = 'site_lang';
+  const LEGACY_KEY = 'siteLang';
   function getLang() {
-    return localStorage.getItem('siteLang') || 'ua';
+    return localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY) || 'ua';
   }
 
   // Set language
   function setLang(lang) {
-    localStorage.setItem('siteLang', lang);
+    localStorage.setItem(STORAGE_KEY, lang);
+    localStorage.setItem(LEGACY_KEY, lang);
     applyTranslations(lang);
     updateLangButtons(lang);
   }
@@ -114,14 +125,33 @@
   function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      if (translations[key] && translations[key][lang]) {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = translations[key][lang];
-        } else {
-          el.innerHTML = translations[key][lang];
-        }
+      const dict = translations[key];
+      if (!dict) return;
+      const text = (dict[lang] !== undefined) ? dict[lang] : (dict.ua || '');
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) {
+        try { el.setAttribute(attr, text); } catch (e) { el.textContent = text; }
+        return;
+      }
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else if (el.tagName === 'TITLE' || (el.parentElement && el.parentElement.tagName === 'HEAD')) {
+        document.title = text;
+        el.textContent = text;
+      } else {
+        el.innerHTML = text;
       }
     });
+
+    document.querySelectorAll('[data-lang-content]').forEach(el => {
+      const target = el.getAttribute('data-lang-content');
+      if (target === lang) {
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
     // Update HTML lang attribute
     document.documentElement.lang = lang === 'ua' ? 'uk' : 'pl';
   }
@@ -158,7 +188,7 @@
     if (!banner) return;
 
     // Check if already accepted
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
+    if (localStorage.getItem('cookiesAccepted') === 'true' || localStorage.getItem('cookie_accepted') === 'true') {
       banner.hidden = true;
       return;
     }
@@ -170,6 +200,7 @@
     if (acceptBtn) {
       acceptBtn.addEventListener('click', () => {
         localStorage.setItem('cookiesAccepted', 'true');
+        localStorage.setItem('cookie_accepted', 'true');
         banner.hidden = true;
         banner.style.animation = 'slideDown 0.3s ease-out';
       });

@@ -56,6 +56,15 @@
       transition: all 0.3s ease;
       cursor: pointer;
     }
+    .blog-thumb {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
     .blog-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 12px 24px rgba(0, 166, 126, 0.15);
@@ -135,58 +144,124 @@
   <main class="container">
     <section class="hero-section">
       <h1 data-i18n="blog.title">Блог Rybezh</h1>
-      <p style="font-size: 1.1rem; color: var(--color-secondary); margin-top: 1rem;">Корисні статті та поради для курьєрів у Польщі</p>
+      <p style="font-size: 1.1rem; color: var(--color-secondary); margin-top: 1rem;" data-i18n="blog.subtitle">Корисні статті та поради для кур’єрів у Польщі</p>
     </section>
 
     <article class="content-wrapper">
-      <div class="blog-grid">
-        <div class="blog-card">
-          <h3>📖 Як почати роботу кур'єром у Польщі за 3 дні</h3>
-          <div class="blog-meta">17 січня 2026 · 8 хв читання</div>
-          <p class="blog-excerpt">Повний гайд від підготовки документів до першого замовлення. Дізнайтеся яку саме документацію потрібно підготувати та як швидко все оформити.</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
+      <div data-lang-content="ua">
+        <div class="blog-grid">
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Start+Courier" srcset="https://placehold.co/320x180/webp?text=Start+Courier 320w, https://placehold.co/640x360/webp?text=Start+Courier 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Як почати роботу кур'єром" />
+            <h3>📖 Як почати роботу кур'єром у Польщі за 3 дні</h3>
+            <div class="blog-meta">17 січня 2026 · 8 хв читання</div>
+            <p class="blog-excerpt">Повний гайд від підготовки документів до першого замовлення. Дізнайтеся яку саме документацію потрібно підготувати та як швидко все оформити.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Earnings" srcset="https://placehold.co/320x180/webp?text=Earnings 320w, https://placehold.co/640x360/webp?text=Earnings 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Реальні заробітки кур'єра" />
+            <h3>💰 Реальні заробітки: скільки можна взяти на місяць?</h3>
+            <div class="blog-meta">15 січня 2026 · 6 хв читання</div>
+            <p class="blog-excerpt">Аналіз реальних доходів курьєрів у різних містах Польщі. Факти від 50+ курьєрів про середній заробіток в залежності від міста та типу роботи.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Documents" srcset="https://placehold.co/320x180/webp?text=Documents 320w, https://placehold.co/640x360/webp?text=Documents 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Документи для кур'єрів" />
+            <h3>🛂 Документи для курьєрів: повний чек-лист</h3>
+            <div class="blog-meta">12 січня 2026 · 10 хв читання</div>
+            <p class="blog-excerpt">Які документи потрібні українцеві для роботи у Польщі? Поетапна інструкція по оформленню паспорта, карти побиту, PESEL та страховки.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Cities" srcset="https://placehold.co/320x180/webp?text=Cities 320w, https://placehold.co/640x360/webp?text=Cities 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Вибір міста для роботи" />
+            <h3>🏙️ Вибір міста: де більше заробляють?</h3>
+            <div class="blog-meta">10 січня 2026 · 7 хв читання</div>
+            <p class="blog-excerpt">Порівняння заробітків та умов роботи в 20+ польських містах. Де найвищі ставки, де найбільше замовлень, де найдешевша оренда?</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Housing" srcset="https://placehold.co/320x180/webp?text=Housing 320w, https://placehold.co/640x360/webp?text=Housing 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Житло для кур'єрів" />
+            <h3>🏠 Житло для курьєрів: як знайти правильну квартиру</h3>
+            <div class="blog-meta">8 січня 2026 · 9 хв читання</div>
+            <p class="blog-excerpt">Практичні поради по пошуку житла у Польщі. Де шукати, скільки коштує, на що звернути увагу, як не попасти на розводи.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Transport" srcset="https://placehold.co/320x180/webp?text=Transport 320w, https://placehold.co/640x360/webp?text=Transport 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Вибір транспорту для кур'єрів" />
+            <h3>🚴 Велосипед чи скутер? Вибір транспорту для курьєрів</h3>
+            <div class="blog-meta">5 січня 2026 · 6 хв читання</div>
+            <p class="blog-excerpt">Аналіз переваг та недоліків різних видів транспорту. Скільки коштує кожен варіант, яка окупаємість, яке краще для новачка?</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Читати статтю →</a>
+          </div>
         </div>
 
-        <div class="blog-card">
-          <h3>💰 Реальні заробітки: скільки можна взяти на місяць?</h3>
-          <div class="blog-meta">15 січня 2026 · 6 хв читання</div>
-          <p class="blog-excerpt">Аналіз реальних доходів курьєрів у різних містах Польщі. Факти від 50+ курьєрів про середній заробіток в залежності від міста та типу роботи.</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
-        </div>
-
-        <div class="blog-card">
-          <h3>🛂 Документи для курьєрів: повний чек-лист</h3>
-          <div class="blog-meta">12 січня 2026 · 10 хв читання</div>
-          <p class="blog-excerpt">Які документи потрібні українцеві для роботи у Польщі? Поетапна інструкція по оформленню паспорта, карти побиту, PESEL та страховки.</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
-        </div>
-
-        <div class="blog-card">
-          <h3>🏙️ Вибір міста: де більше заробляють?</h3>
-          <div class="blog-meta">10 січня 2026 · 7 хв читання</div>
-          <p class="blog-excerpt">Порівняння заробітків та умов роботи в 20+ польських містах. Де найвищі ставки, де найбільше замовлень, де найдешевша оренда?</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
-        </div>
-
-        <div class="blog-card">
-          <h3>🏠 Житло для курьєрів: як знайти правильну квартиру</h3>
-          <div class="blog-meta">8 січня 2026 · 9 хв читання</div>
-          <p class="blog-excerpt">Практичні поради по пошуку житла у Польщі. Де шукати, скільки коштує, на що звернути увагу, як не попасти на розводи.</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
-        </div>
-
-        <div class="blog-card">
-          <h3>🚴 Велосипед чи скутер? Вибір транспорту для курьєрів</h3>
-          <div class="blog-meta">5 січня 2026 · 6 хв читання</div>
-          <p class="blog-excerpt">Аналіз переваг та недоліків різних видів транспорту. Скільки коштує кожен варіант, яка окупаємість, яке краще для новачка?</p>
-          <a href="#" class="blog-cta">Читати статтю →</a>
+        <div style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--color-accent); margin-top: 3rem; text-align: center;">
+          <h3 style="color: var(--color-primary); margin: 0 0 1rem 0;">📬 Цікавить вас тема? Підпишіться на оновлення!</h3>
+          <p style="color: var(--color-secondary); margin: 0 0 1.5rem 0;">Нові статті та поради будуть надходити безпосередньо у ваш Telegram</p>
+          <a href="https://t.me/rybezh_site" target="_blank" style="display: inline-block; background: #229ED9; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Підписатися на Telegram →</a>
         </div>
       </div>
 
-      <div style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--color-accent); margin-top: 3rem; text-align: center;">
-        <h3 style="color: var(--color-primary); margin: 0 0 1rem 0;">📬 Цікавить вас тема? Підпишіться на оновлення!</h3>
-        <p style="color: var(--color-secondary); margin: 0 0 1.5rem 0;">Нові статті та поради будуть надходити безпосередньо у ваш Telegram</p>
-        <a href="https://t.me/rybezh_site" target="_blank" style="display: inline-block; background: #229ED9; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Підписатися на Telegram →</a>
+      <div data-lang-content="pl" style="display:none">
+        <div class="blog-grid">
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Start+Courier" srcset="https://placehold.co/320x180/webp?text=Start+Courier 320w, https://placehold.co/640x360/webp?text=Start+Courier 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Jak zacząć pracę kuriera" />
+            <h3>📖 Jak zacząć pracę kuriera w Polsce w 3 dni</h3>
+            <div class="blog-meta">17 stycznia 2026 · 8 min czytania</div>
+            <p class="blog-excerpt">Kompletny poradnik od dokumentów do pierwszego zlecenia. Sprawdź, co przygotować i jak szybko wszystko załatwić.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Earnings" srcset="https://placehold.co/320x180/webp?text=Earnings 320w, https://placehold.co/640x360/webp?text=Earnings 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Realne zarobki kuriera" />
+            <h3>💰 Realne zarobki: ile można zarobić miesięcznie?</h3>
+            <div class="blog-meta">15 stycznia 2026 · 6 min czytania</div>
+            <p class="blog-excerpt">Analiza realnych dochodów kurierów w różnych miastach Polski. Dane od 50+ kurierów według miasta i rodzaju pracy.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Documents" srcset="https://placehold.co/320x180/webp?text=Documents 320w, https://placehold.co/640x360/webp?text=Documents 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Dokumenty dla kurierów" />
+            <h3>🛂 Dokumenty dla kurierów: pełna lista</h3>
+            <div class="blog-meta">12 stycznia 2026 · 10 min czytania</div>
+            <p class="blog-excerpt">Jakie dokumenty są potrzebne do pracy w Polsce? Instrukcja krok po kroku: paszport, karta pobytu, PESEL, ubezpieczenie.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Cities" srcset="https://placehold.co/320x180/webp?text=Cities 320w, https://placehold.co/640x360/webp?text=Cities 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Wybór miasta do pracy" />
+            <h3>🏙️ Wybór miasta: gdzie zarobisz więcej?</h3>
+            <div class="blog-meta">10 stycznia 2026 · 7 min czytania</div>
+            <p class="blog-excerpt">Porównanie zarobków i warunków pracy w 20+ miastach Polski. Gdzie najlepsze stawki i najwięcej zleceń?</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Housing" srcset="https://placehold.co/320x180/webp?text=Housing 320w, https://placehold.co/640x360/webp?text=Housing 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Mieszkanie dla kurierów" />
+            <h3>🏠 Mieszkanie dla kurierów: jak znaleźć dobre lokum</h3>
+            <div class="blog-meta">8 stycznia 2026 · 9 min czytania</div>
+            <p class="blog-excerpt">Praktyczne wskazówki dotyczące wynajmu w Polsce. Gdzie szukać, ile kosztuje i na co uważać.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+
+          <div class="blog-card">
+            <img class="blog-thumb" src="https://placehold.co/640x360/webp?text=Transport" srcset="https://placehold.co/320x180/webp?text=Transport 320w, https://placehold.co/640x360/webp?text=Transport 640w" sizes="(max-width: 600px) 100vw, 320px" width="640" height="360" loading="lazy" decoding="async" alt="Transport dla kurierów" />
+            <h3>🚴 Rower czy skuter? Wybór transportu kuriera</h3>
+            <div class="blog-meta">5 stycznia 2026 · 6 min czytania</div>
+            <p class="blog-excerpt">Plusy i minusy różnych opcji. Koszty, zwrot inwestycji i co wybrać na start.</p>
+            <a href="#" class="blog-cta" data-i18n="blog.read_more">Czytaj artykuł →</a>
+          </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 2.5rem; border-radius: 12px; border: 1px solid var(--color-accent); margin-top: 3rem; text-align: center;">
+          <h3 style="color: var(--color-primary); margin: 0 0 1rem 0;">📬 Interesuje Cię temat? Zapisz się na aktualizacje!</h3>
+          <p style="color: var(--color-secondary); margin: 0 0 1.5rem 0;">Nowe artykuły i porady trafią bezpośrednio na Twój Telegram</p>
+          <a href="https://t.me/rybezh_site" target="_blank" style="display: inline-block; background: #229ED9; color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Subskrybuj Telegram →</a>
+        </div>
       </div>
     </article>
   </main>

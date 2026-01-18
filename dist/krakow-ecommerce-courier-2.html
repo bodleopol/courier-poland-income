@@ -201,6 +201,7 @@
         <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
         <a href="/#jobs" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
         <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
         <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
         <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
         <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
@@ -218,6 +219,7 @@
       <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
       <a href="/#jobs" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
       <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
       <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
       <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
       <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
@@ -309,6 +311,7 @@
           <a href="/" data-i18n="nav.home">Головна</a>
           <a href="/about.html" data-i18n="nav.about">Про нас</a>
           <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+          <a href="/blog.html" data-i18n="nav.blog">Блог</a>
           <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
           <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
         </div>
@@ -318,6 +321,16 @@
           <a href="/?city=Краків" data-i18n="city.krakow">Краків</a>
           <a href="/?city=Вроцлав" data-i18n="city.wroclaw">Вроцлав</a>
           <a href="/?city=Гданськ" data-i18n="city.gdansk">Гданськ</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.newsletter.title">Підписка</h4>
+          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem" data-i18n="footer.newsletter.text">Нові вакансії та статті.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" required placeholder="Ваш email" data-i18n="footer.newsletter.placeholder" data-i18n-attr="placeholder">
+            <button type="submit" aria-label="Subscribe">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
         </div>
         <div class="footer-col">
           <h4 data-i18n="footer.contact">Контакти</h4>
@@ -403,6 +416,39 @@
     'cta.ready': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
     'cta.sub': { ua: 'Отримайте консультацію та почніть заробляти вже сьогодні.', pl: 'Uzyskaj konsultację i zacznij zarabiać już dziś.' },
     'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
+
+    // Home page custom blocks
+    'home.hero.title': { ua: '🚀 Робота мрії чекає тебе!', pl: '🚀 Praca marzeń czeka na Ciebie!' },
+    'home.hero.subtitle': { ua: '<strong>Тисячі кур'єрів вже заробляють</strong> у Польщі. 📦 Безкоштовна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰', pl: '<strong>Tysiące kurierów już zarabia</strong> w Polsce. 📦 Bezpłatna konsultacja, <strong>codzienne wypłaty</strong> 💰 i <strong>elastyczny grafik</strong> ⏰' },
+    'home.hero.cta_primary': { ua: 'Почати прямо зараз', pl: 'Zacznij teraz' },
+    'home.hero.cta_secondary': { ua: 'Переглянути вакансії', pl: 'Zobacz oferty' },
+    'home.stats.title': { ua: '📊 Статистика успіху', pl: '📊 Statystyki sukcesu' },
+    'home.stats.couriers.line1': { ua: 'Кур'єрів скористалось', pl: 'Kurierów skorzystało' },
+    'home.stats.couriers.line2': { ua: 'нашими послугами', pl: 'z naszych usług' },
+    'home.stats.partners.line1': { ua: 'Партнерських компаній', pl: 'Firm partnerskich' },
+    'home.stats.partners.line2': { ua: 'у Польщі', pl: 'w Polsce' },
+    'home.stats.cities.line1': { ua: 'Міст із вакансіями', pl: 'Miast z ofertami' },
+    'home.stats.cities.line2': { ua: 'від Варшави до Гданська', pl: 'od Warszawy po Gdańsk' },
+    'home.stats.rating.line1': { ua: 'Рейтинг задоволення', pl: 'Ocena zadowolenia' },
+    'home.stats.rating.line2': { ua: 'від кур'єрів', pl: 'od kurierów' },
+    'home.testimonials.title': { ua: '💬 Що кажуть кур'єри', pl: '💬 Co mówią kurierzy' },
+    'home.testimonials.t1.quote': { ua: '"Дуже задоволений! За 3 дні отримав все необхідне та почав роботу. Підтримка команди Rybezh — просто супер!"', pl: '"Jestem bardzo zadowolony! W 3 dni dostałem wszystko, co potrzebne i zacząłem pracę. Wsparcie Rybezh jest świetne!"' },
+    'home.testimonials.t1.name': { ua: 'Ігор К., Варшава', pl: 'Igor K., Warszawa' },
+    'home.testimonials.t1.role': { ua: 'Кур'єр з 6 міс. досвіду', pl: 'Kurier z 6 mies. doświadczenia' },
+    'home.testimonials.t2.quote': { ua: '"Я приїхав з нічим, а за місяць вже купив велосипед. Щоденні виплати як обіцяно. Рекомендую!"', pl: '"Przyjechałem bez niczego, a po miesiącu kupiłem rower. Codzienne wypłaty zgodnie z obietnicą. Polecam!"' },
+    'home.testimonials.t2.name': { ua: 'Максим В., Краків', pl: 'Maksym W., Kraków' },
+    'home.testimonials.t2.role': { ua: 'Кур'єр з 3 міс. досвіду', pl: 'Kurier z 3 mies. doświadczenia' },
+    'home.testimonials.t3.quote': { ua: '"Гнучкий графік дозволяє мені вчитися та одночасно заробляти. Це саме то, що мені потрібно було!"', pl: '"Elastyczny grafik pozwala mi się uczyć i jednocześnie zarabiać. To dokładnie to, czego potrzebowałem!"' },
+    'home.testimonials.t3.name': { ua: 'Софія Л., Вроцлав', pl: 'Sofia L., Wrocław' },
+    'home.testimonials.t3.role': { ua: 'Студентка, 4 міс. досвіду', pl: 'Studentka, 4 mies. doświadczenia' },
+    'home.search.title': { ua: '🔍 Знайди роботу за містом:', pl: '🔍 Znajdź pracę według miasta:' },
+    'home.features.title': { ua: '✨ Більше ніж просто робота', pl: '✨ Więcej niż tylko praca' },
+    'home.features.f1.title': { ua: '💵 Щоденні виплати', pl: '💵 Codzienne wypłaty' },
+    'home.features.f1.text': { ua: 'Отримуй гроші прямо в день роботи', pl: 'Otrzymuj pieniądze tego samego dnia' },
+    'home.features.f2.title': { ua: '⏰ Гнучкий графік', pl: '⏰ Elastyczny grafik' },
+    'home.features.f2.text': { ua: 'Працюй коли захочеш, скільки захочеш', pl: 'Pracuj kiedy chcesz i ile chcesz' },
+    'home.features.f3.title': { ua: '🤝 Повна підтримка 24/7', pl: '🤝 Pełne wsparcie 24/7' },
+    'home.features.f3.text': { ua: 'Допомога з документами та легалізацією', pl: 'Pomoc z dokumentami i legalizacją' },
 
     // Footer
     'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
