@@ -436,41 +436,92 @@ async function build() {
     links.push({ title: page.title, slug: page.slug, city: page.city || '' });
   }
 
-  // Generate Blog Index
-  const blogListHtml = posts.map(p => `
-    <div class="blog-card">
-      <div class="blog-icon">${p.image || '📝'}</div>
-      <div class="blog-content">
-        <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
-        <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
-        <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
-        <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
+  // Pagination for Blog
+  const POSTS_PER_PAGE = 20;
+  const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+
+  function generatePaginationHtml(currentPage, totalPages) {
+    if (totalPages <= 1) return '';
+    
+    let paginationHtml = '<div class="pagination">';
+    
+    // Previous button
+    if (currentPage > 1) {
+      const prevPage = currentPage === 2 ? '/blog.html' : `/blog-${currentPage - 1}.html`;
+      paginationHtml += `<a href="${prevPage}" class="pagination-btn">← Назад</a>`;
+    }
+    
+    // Page numbers
+    paginationHtml += '<div class="pagination-numbers">';
+    
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+        const pageUrl = i === 1 ? '/blog.html' : `/blog-${i}.html`;
+        const activeClass = i === currentPage ? ' active' : '';
+        paginationHtml += `<a href="${pageUrl}" class="pagination-number${activeClass}">${i}</a>`;
+      } else if (i === currentPage - 2 || i === currentPage + 2) {
+        paginationHtml += '<span class="pagination-ellipsis">...</span>';
+      }
+    }
+    
+    paginationHtml += '</div>';
+    
+    // Next button
+    if (currentPage < totalPages) {
+      paginationHtml += `<a href="/blog-${currentPage + 1}.html" class="pagination-btn">Вперед →</a>`;
+    }
+    
+    paginationHtml += '</div>';
+    return paginationHtml;
+  }
+
+  // Generate blog pages with pagination
+  for (let page = 1; page <= totalPages; page++) {
+    const startIdx = (page - 1) * POSTS_PER_PAGE;
+    const endIdx = startIdx + POSTS_PER_PAGE;
+    const pagePosts = posts.slice(startIdx, endIdx);
+
+    const blogListHtml = pagePosts.map(p => `
+      <div class="blog-card">
+        <div class="blog-icon">${p.image || '📝'}</div>
+        <div class="blog-content">
+          <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
+          <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
+          <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
+          <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
 
-  const blogIndexContent = `
-    <div class="hero-section" style="padding-bottom: 1rem;">
-      <h1 data-i18n="blog.title">Блог Rybezh</h1>
-      <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
-    </div>
-    <div class="blog-grid">
-      ${blogListHtml}
-    </div>
-  `;
+    const paginationHtml = generatePaginationHtml(page, totalPages);
 
-  let blogHtml = pageTpl
-    .replace(/{{TITLE}}/g, 'Блог — Rybezh')
-    .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
-    .replace(/{{CONTENT}}/g, blogIndexContent)
-    .replace(/{{CANONICAL}}/g, 'https://rybezh.site/blog.html')
-    .replace(/{{CITY}}/g, '')
-    .replace(/{{CTA_LINK}}/g, '/apply.html')
-    .replace(/{{CTA_TEXT}}/g, '');
+    const blogIndexContent = `
+      <div class="hero-section" style="padding-bottom: 1rem;">
+        <h1 data-i18n="blog.title">Блог Rybezh</h1>
+        <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
+      </div>
+      <div class="blog-grid">
+        ${blogListHtml}
+      </div>
+      ${paginationHtml}
+    `;
+
+    const blogFileName = page === 1 ? 'blog.html' : `blog-${page}.html`;
+    const canonicalUrl = page === 1 ? 'https://rybezh.site/blog.html' : `https://rybezh.site/blog-${page}.html`;
+
+    let blogHtml = pageTpl
+      .replace(/{{TITLE}}/g, `Блог — Rybezh${page > 1 ? ` (сторінка ${page})` : ''}`)
+      .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
+      .replace(/{{CONTENT}}/g, blogIndexContent)
+      .replace(/{{CANONICAL}}/g, canonicalUrl)
+      .replace(/{{CITY}}/g, '')
+      .replace(/{{CTA_LINK}}/g, '/apply.html')
+      .replace(/{{CTA_TEXT}}/g, '');
   
-  if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
-  else blogHtml += scriptWithData;
-  await fs.writeFile(path.join(DIST, 'blog.html'), blogHtml, 'utf8');
+    if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
+    else blogHtml += scriptWithData;
+    await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
+  }
 
   // Generate Blog Posts
   for (const post of posts) {
