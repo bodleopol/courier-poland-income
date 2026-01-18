@@ -260,7 +260,39 @@ async function build() {
     const contentPl = page.body_pl || page.body || '';
 
     // Wrap content in language toggles
-    const dualContent = `<div data-lang-content="ua">${content}</div><div data-lang-content="pl" style="display:none">${contentPl}</div>`;
+    const benefitsUA = `
+      <div class="job-benefits">
+        <h3>Чому варто працювати з Rybezh?</h3>
+        <ul>
+          <li>✅ Офіційне працевлаштування</li>
+          <li>✅ Підтримка координатора 24/7</li>
+          <li>✅ Допомога з легалізацією (Карта побиту)</li>
+        </ul>
+      </div>
+    `;
+    const benefitsPL = `
+      <div class="job-benefits">
+        <h3>Dlaczego warto pracować z Rybezh?</h3>
+        <ul>
+          <li>✅ Oficjalne zatrudnienie</li>
+          <li>✅ Wsparcie koordynatora 24/7</li>
+          <li>✅ Pomoc w legalizacji (Karta pobytu)</li>
+        </ul>
+      </div>
+    `;
+
+    const dualContent = `
+      <div class="job-page-layout">
+        <div class="job-meta">
+          <span class="tag">📍 ${escapeHtml(page.city)}</span>
+          <span class="tag">📅 ${new Date().getFullYear()}</span>
+        </div>
+        <div data-lang-content="ua">${content}${benefitsUA}</div>
+        <div data-lang-content="pl" style="display:none">${contentPl}${benefitsPL}</div>
+        <div class="job-actions">
+          <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
+        </div>
+      </div>`;
 
     const html = tpl
       .replace(/{{TITLE}}/g, escapeHtml(page.title || ''))
@@ -284,12 +316,27 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
+    // Add specific styles for job pages
+    const jobStyles = `
+    <style>
+      .job-page-layout { margin-top: 1rem; }
+      .job-meta { margin-bottom: 1.5rem; display: flex; gap: 10px; }
+      .job-meta .tag { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 99px; font-size: 0.9rem; font-weight: 500; }
+      .job-benefits { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
+      .job-benefits h3 { margin-top: 0; color: #15803d; font-size: 1.2rem; }
+      .job-benefits ul { list-style: none; padding: 0; margin: 0; }
+      .job-benefits li { margin-bottom: 0.5rem; }
+      .job-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+      .btn-secondary { display: inline-block; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; background: #f3f4f6; color: #374151; font-weight: 600; }
+      .btn-secondary:hover { background: #e5e7eb; }
+    </style>`;
+
     // inject lang switcher and scripts before </body>
     if (finalHtml.includes('</body>')) {
       // add script
-      finalHtml = finalHtml.replace('</body>', `${scriptWithData}</body>`);
+      finalHtml = finalHtml.replace('</body>', `${jobStyles}${scriptWithData}</body>`);
     } else {
-      finalHtml += scriptWithData;
+      finalHtml += jobStyles + scriptWithData;
     }
 
     const outFile = path.join(DIST, `${page.slug}.html`);
