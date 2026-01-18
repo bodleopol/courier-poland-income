@@ -151,9 +151,12 @@ const I18N_SCRIPT = `\n<script>
     // Blog
     'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
     'blog.meta_title': { ua: 'Блог — Rybezh', pl: 'Blog — Rybezh' },
+    'blog.meta_description': { ua: 'Корисні статті для кур\'єрів у Польщі', pl: 'Przydatne artykuły dla kurierów w Polsce' },
     'blog.subtitle': { ua: 'Корисні статті та новини для кур\'єрів', pl: 'Przydatne artykuły i wiadomości dla kurierów' },
     'blog.read_more': { ua: 'Читати далі →', pl: 'Czytaj więcej →' },
     'blog.back': { ua: '← До списку статей', pl: '← Do listy artykułów' },
+    'blog.pagination.prev': { ua: '← Назад', pl: '← Wstecz' },
+    'blog.pagination.next': { ua: 'Вперед →', pl: 'Dalej →' },
 
     // Privacy Page
     'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
@@ -190,8 +193,13 @@ const I18N_SCRIPT = `\n<script>
     // Footer
     'footer.desc': { ua: 'Ваш надійний партнер у пошуку роботи кур\'єром у Польщі', pl: 'Twój niezawodny partner w poszukiwaniu pracy kuriera w Polsce' },
     'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
+    'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
     'footer.contact': { ua: 'Контакти', pl: 'Kontakt' },
-    'footer.legal': { ua: 'Правова інформація', pl: 'Informacje prawne' }
+    'footer.legal': { ua: 'Правова інформація', pl: 'Informacje prawne' },
+    'footer.newsletter.title': { ua: 'Підписка', pl: 'Subskrypcja' },
+    'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.' },
+    'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email' },
+    'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!' }
   };
 
   // Merge extra translations (jobs)
@@ -336,9 +344,11 @@ async function build() {
 
   // Prepare dynamic translations for blog
   posts.forEach(p => {
+    const readMinutes = estimateReadingTime(p.body || '');
     jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
     jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
     jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
+    jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania` };
   });
   
   // Prepare script with injected translations
@@ -442,6 +452,10 @@ async function build() {
     
     // Add data-i18n to H1 and Title
     finalHtml = finalHtml.replace('<title>', `<title data-i18n="job.${page.slug}.meta_title">`);
+    finalHtml = finalHtml.replace(
+      '<meta name="description" content="',
+      `<meta name="description" data-i18n="job.${page.slug}.excerpt" data-i18n-attr="content" content="`
+    );
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
@@ -499,7 +513,7 @@ async function build() {
     // Previous button
     if (currentPage > 1) {
       const prevPage = currentPage === 2 ? '/blog.html' : `/blog-${currentPage - 1}.html`;
-      paginationHtml += `<a href="${prevPage}" class="pagination-btn">← Назад</a>`;
+      paginationHtml += `<a href="${prevPage}" class="pagination-btn" data-i18n="blog.pagination.prev">← Назад</a>`;
     }
     
     // Page numbers
@@ -519,7 +533,7 @@ async function build() {
     
     // Next button
     if (currentPage < totalPages) {
-      paginationHtml += `<a href="/blog-${currentPage + 1}.html" class="pagination-btn">Вперед →</a>`;
+      paginationHtml += `<a href="/blog-${currentPage + 1}.html" class="pagination-btn" data-i18n="blog.pagination.next">Вперед →</a>`;
     }
     
     paginationHtml += '</div>';
@@ -532,17 +546,23 @@ async function build() {
     const endIdx = startIdx + POSTS_PER_PAGE;
     const pagePosts = posts.slice(startIdx, endIdx);
 
-    const blogListHtml = pagePosts.map(p => `
+    const blogListHtml = pagePosts.map(p => {
+      const readMinutes = estimateReadingTime(p.body || '');
+      return `
       <div class="blog-card">
         <div class="blog-icon">${p.image || '📝'}</div>
         <div class="blog-content">
-          <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
+          <div class="blog-meta-row">
+            <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
+            <div class="blog-readtime" data-i18n="blog.${p.slug}.read_time">${readMinutes} хв читання</div>
+          </div>
           <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
           <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
           <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     const paginationHtml = generatePaginationHtml(page, totalPages);
 
@@ -572,6 +592,10 @@ async function build() {
 
     // Make <title> and template H1 translatable
     blogHtml = blogHtml.replace('<title>', '<title data-i18n="blog.meta_title">');
+    blogHtml = blogHtml.replace(
+      '<meta name="description" content="',
+      '<meta name="description" data-i18n="blog.meta_description" data-i18n-attr="content" content="'
+    );
 
     // Make the template H1 translatable
     blogHtml = blogHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="blog.title">Блог Rybezh</h1>`);
@@ -583,10 +607,12 @@ async function build() {
 
   // Generate Blog Posts
   for (const post of posts) {
+    const heroImageUrl = extractImageUrl(post.body) || extractImageUrl(post.image);
+    const readMinutes = estimateReadingTime(post.body || '');
     const postContent = `
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
-        <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span></div>
+        <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span> · <span class="post-readtime" data-i18n="blog.${post.slug}.read_time">${readMinutes} хв читання</span></div>
         <div data-lang-content="ua">${post.body}</div>
         <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
       </div>`;
@@ -602,12 +628,22 @@ async function build() {
 
     // Translate browser tab title for this post
     postHtml = postHtml.replace('<title>', `<title data-i18n="blog.${post.slug}.meta_title">`);
+    postHtml = postHtml.replace(
+      '<meta name="description" content="',
+      `<meta name="description" data-i18n="blog.${post.slug}.excerpt" data-i18n-attr="content" content="`
+    );
 
     // Make the template H1 translatable for this post
     postHtml = postHtml.replace(
       /<h1>(.*?)<\/h1>/,
       `<h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>`
     );
+
+    // Inject BlogPosting structured data
+    const blogPostingScript = jsonLdScript(buildBlogPostingJsonLd(post, heroImageUrl));
+    if (postHtml.includes('</head>')) {
+      postHtml = postHtml.replace('</head>', `${blogPostingScript}\n</head>`);
+    }
 
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
     else postHtml += scriptWithData;
@@ -999,6 +1035,16 @@ function stripHtml(str) {
     .trim();
 }
 
+function estimateReadingTime(html) {
+  const words = stripHtml(html).split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+function extractImageUrl(html) {
+  const match = String(html || '').match(/src="([^"]+)"/i);
+  return match ? match[1] : '';
+}
+
 function toISODate(date) {
   return new Date(date).toISOString().slice(0, 10);
 }
@@ -1106,6 +1152,43 @@ function buildJobPostingJsonLd(page) {
       }
     }
   };
+}
+
+function buildBlogPostingJsonLd(post, imageUrl) {
+  const url = `https://rybezh.site/post-${post.slug}.html`;
+  const published = post.date ? toISODate(post.date) : toISODate(new Date());
+  const description = stripHtml(post.excerpt || '');
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title || 'Blog',
+    description,
+    datePublished: published,
+    dateModified: published,
+    author: {
+      '@type': 'Organization',
+      name: 'Rybezh'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Rybezh',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://rybezh.site/favicon.svg'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    }
+  };
+
+  if (imageUrl) {
+    data.image = [imageUrl];
+  }
+
+  return data;
 }
 
 function jsonLdScript(obj) {

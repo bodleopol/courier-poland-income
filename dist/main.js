@@ -508,7 +508,9 @@
   // INITIALIZE ALL
   // ============================================
   function init() {
-    initI18n();
+    if (!window.USE_INLINE_I18N) {
+      initI18n();
+    }
     initCookieBanner();
     initTheme();
     initScrollToTop();

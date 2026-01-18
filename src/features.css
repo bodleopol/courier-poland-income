@@ -602,7 +602,9 @@ body.loaded {
 }
 
 .blog-icon { font-size: 3rem; margin-bottom: 1rem; }
-.blog-date { font-size: 0.85rem; color: var(--color-secondary); margin-bottom: 0.5rem; }
+.blog-meta-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.blog-date { font-size: 0.85rem; color: var(--color-secondary); }
+.blog-readtime { font-size: 0.85rem; color: var(--color-secondary); background: rgba(20, 184, 166, 0.12); padding: 2px 8px; border-radius: 999px; }
 .blog-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
 .blog-card p { color: var(--color-secondary); flex-grow: 1; font-size: 0.95rem; }
 .read-more { color: var(--color-accent); font-weight: 600; margin-top: 1rem; display: inline-block; }
@@ -610,6 +612,7 @@ body.loaded {
 .blog-post .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--color-secondary); font-weight: 500; }
 .blog-post .back-link:hover { color: var(--color-accent); }
 .blog-post .post-meta { color: var(--color-secondary); margin-bottom: 2rem; font-size: 0.9rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; }
+.blog-post .post-readtime { background: rgba(20, 184, 166, 0.12); padding: 2px 8px; border-radius: 999px; }
 
 /* Calculator Responsive */
 @media (max-width: 768px) {
