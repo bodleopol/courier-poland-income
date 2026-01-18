@@ -292,7 +292,7 @@ async function build() {
 
   // Prepare dynamic translations for blog
   posts.forEach(p => {
-    jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title || p.title };
+    jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
     jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
   });
   
@@ -315,17 +315,9 @@ async function build() {
     } catch (e) {}
   }
 
-  // Inject Blog link into pageTpl for generated pages (Header)
-  const blogLinkHtml = '<a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>\n        <a href="/contact.html"';
-  let tplWithBlog = pageTpl.replace('<a href="/contact.html"', blogLinkHtml);
-
-  // Inject Blog link into pageTpl for generated pages (Footer)
-  const blogFooterLink = '<a href="/about.html" data-i18n="nav.about">Про нас</a>\n          <a href="/blog.html" data-i18n="nav.blog">Блог</a>';
-  tplWithBlog = tplWithBlog.replace('<a href="/about.html" data-i18n="nav.about">Про нас</a>', blogFooterLink);
-
   const links = [];
   for (const page of pages) {
-    const tpl = tplWithBlog;
+    const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const content = page.body || page.content || page.excerpt || '';
     const contentPl = page.body_pl || page.body || '';
@@ -467,7 +459,7 @@ async function build() {
     </div>
   `;
 
-  let blogHtml = tplWithBlog
+  let blogHtml = pageTpl
     .replace(/{{TITLE}}/g, 'Блог — Rybezh')
     .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
     .replace(/{{CONTENT}}/g, blogIndexContent)
@@ -491,7 +483,7 @@ async function build() {
         <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
       </div>`;
     
-    let postHtml = tplWithBlog
+    let postHtml = pageTpl
       .replace(/{{TITLE}}/g, escapeHtml(post.title))
       .replace(/{{DESCRIPTION}}/g, escapeHtml(post.excerpt))
       .replace(/{{CONTENT}}/g, postContent)
@@ -507,7 +499,7 @@ async function build() {
 
     // generate index
     const indexContent = generateIndexContent(links);
-    let indexHtml = tplWithBlog
+    let indexHtml = pageTpl
       .replace(/{{TITLE}}/g, "Rybezh — Робота кур'єром у Польщі")
       .replace(/{{DESCRIPTION}}/g, "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами та підтримкою.")
       .replace(/{{CONTENT}}/g, indexContent)

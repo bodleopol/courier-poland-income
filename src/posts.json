@@ -1,6 +1,7 @@
 [
   {
     "title": "Як підготуватися до першої зміни кур'єром?",
+    "title_pl": "Jak przygotować się do pierwszej zmiany kurierskiej?",
     "slug": "how-to-prepare-first-shift",
     "excerpt": "Поради для новачків: що взяти з собою, як одягнутися та як уникнути типових помилок у перший день.",
     "excerpt_pl": "Porady dla początkujących: co zabrać ze sobą, jak się ubrać i jak uniknąć typowych błędów pierwszego dnia.",
@@ -11,6 +12,7 @@
   },
   {
     "title": "Велосипед, скутер чи авто: що обрати?",
+    "title_pl": "Rower, skuter czy samochód: co wybrać?",
     "slug": "bike-scooter-or-car",
     "excerpt": "Порівнюємо види транспорту для роботи кур'єром. Плюси та мінуси кожного варіанту для різних міст.",
     "excerpt_pl": "Porównujemy rodzaje transportu dla pracy kuriera. Zalety i wady każdej opcji dla różnych miast.",
@@ -21,6 +23,7 @@
   },
   {
     "title": "Легалізація в Польщі: Карта побиту крок за кроком",
+    "title_pl": "Legalizacja w Polsce: Karta Pobytu krok po kroku",
     "slug": "legalization-karta-pobytu",
     "excerpt": "Пояснюємо, як робота кур'єром допомагає оформити Карту побиту, і що потрібно підготувати.",
     "excerpt_pl": "Wyjaśniamy, jak praca kuriera pomaga uzyskać Kartę Pobytu i co należy przygotować.",
@@ -31,6 +34,7 @@
   },
   {
     "title": "Реальні заробітки кур'єра: від чого залежать?",
+    "title_pl": "Realne zarobki kuriera: od czego zależą?",
     "slug": "real-earnings-factors",
     "excerpt": "Розкладаємо дохід кур'єра на складові та показуємо, як підняти середню ставку.",
     "excerpt_pl": "Rozkładamy zarobki kuriera na czynniki i pokazujemy, jak podnieść średnią stawkę.",
@@ -41,6 +45,7 @@
   },
   {
     "title": "Податки та ZUS для кур'єрів: короткий гід",
+    "title_pl": "Podatki i ZUS dla kurierów: krótki przewodnik",
     "slug": "taxes-and-zus",
     "excerpt": "Пояснюємо, як працює ZUS, які податки сплачуються та що потрібно знати новачку.",
     "excerpt_pl": "Wyjaśniamy, jak działa ZUS, jakie podatki są płacone i co powinien wiedzieć początkujący.",
@@ -51,6 +56,7 @@
   },
   {
     "title": "Безпека кур'єра: правила, що зберігають здоров'я",
+    "title_pl": "Bezpieczeństwo kuriera: zasady chroniące zdrowie",
     "slug": "courier-safety",
     "excerpt": "Практичні правила безпеки на дорозі та в місті, які знижують ризики.",
     "excerpt_pl": "Praktyczne zasady bezpieczeństwa na drodze i w mieście, które zmniejszają ryzyko.",
@@ -61,6 +67,7 @@
   },
   {
     "title": "Зима для кур'єра: як працювати комфортно",
+    "title_pl": "Zima dla kuriera: jak pracować komfortowo",
     "slug": "winter-courier-tips",
     "excerpt": "Одяг, екіпірування та графік — як зберегти комфорт і дохід узимку.",
     "excerpt_pl": "Odzież, wyposażenie i grafik — jak zachować komfort i dochód zimą.",
@@ -71,6 +78,7 @@
   },
   {
     "title": "Найвигідніші години для доставок",
+    "title_pl": "Najbardziej opłacalne godziny dostaw",
     "slug": "best-hours-for-delivery",
     "excerpt": "Коли виходити на зміну, щоб отримати максимум замовлень і бонусів.",
     "excerpt_pl": "Kiedy wychodzić na zmianę, aby zyskać najwięcej zamówień i bonusów.",
@@ -81,6 +89,7 @@
   },
   {
     "title": "Оренда транспорту та спорядження: що вигідніше",
+    "title_pl": "Wynajem transportu i sprzętu: co się bardziej opłaca",
     "slug": "rent-gear-guide",
     "excerpt": "Розрахунок витрат на оренду і покупку спорядження для кур'єра.",
     "excerpt_pl": "Porównanie kosztów wynajmu i zakupu sprzętu dla kuriera.",
@@ -91,6 +100,7 @@
   },
   {
     "title": "Рейтинг кур'єра: як отримувати більше замовлень",
+    "title_pl": "Ranking kuriera: jak otrzymywać więcej zleceń",
     "slug": "rating-and-orders",
     "excerpt": "Пояснюємо, як працює рейтинг і які дії дають більше замовлень.",
     "excerpt_pl": "Wyjaśniamy, jak działa rating i jakie działania dają więcej zleceń.",
