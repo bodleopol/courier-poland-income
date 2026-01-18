@@ -1,4 +1,4 @@
-/**
+нку /**
  * Rybezh Site - Main JavaScript
  * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
  */
@@ -37,6 +37,10 @@
     'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
     'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
     'footer.contact': { ua: 'Контакти', pl: 'Kontakt' },
+    'footer.newsletter.title': { ua: 'Підписка', pl: 'Subskrypcja' },
+    'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.' },
+    'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email' },
+    'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!' },
     'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
     'apply.intro': { ua: 'Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.', pl: 'Kilka pól — i dobierzemy oferty pracy oraz pomożemy z dokumentami.' },
     'label.name': { ua: "Ім'я", pl: 'Imię' },
@@ -381,6 +385,31 @@
   }
 
   // ============================================
+  // 11. NEWSLETTER FORM
+  // ============================================
+  function initNewsletter() {
+    document.querySelectorAll('.footer-newsletter-form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const input = form.querySelector('input');
+        const originalContent = btn.innerHTML;
+        
+        btn.disabled = true;
+        btn.innerHTML = '✓';
+        input.value = '';
+        input.placeholder = translations['footer.newsletter.success'][getLang()] || 'Thanks!';
+        
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = originalContent;
+          input.placeholder = translations['footer.newsletter.placeholder'][getLang()] || 'Email';
+        }, 3000);
+      });
+    });
+  }
+
+  // ============================================
   // INITIALIZE ALL
   // ============================================
   function init() {
@@ -394,6 +423,7 @@
     initFormEnhancements();
     initPageLoad();
     initTelegramTracking();
+    initNewsletter();
   }
 
   // Run on DOM ready

@@ -397,6 +397,41 @@ ransform 0.3s ease, opacity 0.3s ease, display 0.3s;
   }
 }
 
+/* Newsletter Form in Footer */
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.footer-newsletter-form input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-primary);
+  min-width: 0;
+  font-size: 0.9rem;
+}
+
+.footer-newsletter-form button {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-newsletter-form button:hover {
+  background: var(--color-accent-hover);
+}
+
 /* Modern Hero Section Styles - PRIORITY STYLING */
 .hero-modern {
   background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%) !important;
