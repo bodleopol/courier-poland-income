@@ -169,10 +169,10 @@
   }
 }
 
-/* Page Load Animation */
+/* Page Load Animation (safe default) */
 body {
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 body.loaded {
@@ -380,9 +380,10 @@ body.loaded {
   }
 
   .animate-ready {
-    transform: translateY(20px);
+    opacity: 1 !important;
+    transform: none !important;
   }
-ди  
+
   .hero-modern {
     grid-template-columns: 1fr !important;
     text-align: center;

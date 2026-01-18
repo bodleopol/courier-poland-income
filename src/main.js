@@ -253,6 +253,14 @@
     
     if (!animatedElements.length) return;
 
+    if (!('IntersectionObserver' in window)) {
+      animatedElements.forEach(el => {
+        el.classList.remove('animate-ready');
+        el.classList.add('animate-in');
+      });
+      return;
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
