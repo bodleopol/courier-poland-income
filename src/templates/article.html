@@ -60,6 +60,8 @@
     "@id": "https://rybezh.site/{{SLUG}}.html",
     "title": "{{TITLE}}",
     "description": "{{DESCRIPTION}}",
+    "datePosted": "2024-01-01",
+    "validThrough": "2026-12-31",
     "hiringOrganization": {
       "@type": "Organization",
       "name": "Rybezh",
@@ -70,16 +72,23 @@
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Centrum",
         "addressLocality": "{{CITY}}",
+        "addressRegion": "Mazowieckie",
+        "postalCode": "00-001",
         "addressCountry": "PL"
       }
     },
     "employmentType": ["FULL_TIME", "PART_TIME"],
     "baseSalary": {
-      "@type": "PriceSpecification",
-      "priceCurrency": "PLN",
-      "price": "25-40",
-      "unitText": "HOUR"
+      "@type": "MonetaryAmount",
+      "currency": "PLN",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 25,
+        "maxValue": 45,
+        "unitText": "HOUR"
+      }
     },
     "applicantLocationRequirements": {
       "@type": "Country",
