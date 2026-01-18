@@ -441,7 +441,7 @@ async function build() {
     <div class="blog-card">
       <div class="blog-icon">${p.image || '📝'}</div>
       <div class="blog-content">
-        <div class="blog-date">${p.date}</div>
+        <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
         <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
         <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
         <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
@@ -478,7 +478,7 @@ async function build() {
       <div class="content-wrapper blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
         <h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>
-        <div class="post-meta">📅 ${post.date}</div>
+        <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span></div>
         <div data-lang-content="ua">${post.body}</div>
         <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
       </div>`;
