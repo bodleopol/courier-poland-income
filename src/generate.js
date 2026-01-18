@@ -466,14 +466,20 @@ function generateIndexContent(links) {
   }).join('\n');
 
   return `
-    <div class="hero-banner" style="background: linear-gradient(135deg, rgba(0, 166, 126, 0.1), rgba(15, 118, 110, 0.1)); padding: 3rem 2rem; border-radius: 16px; border: 1px solid var(--color-accent); margin-bottom: 3rem; text-align: center;">
-      <h2 style="font-size: 2rem; margin: 0 0 1rem 0; color: var(--color-primary);">🚀 Робота мрії чекає тебе!</h2>
-      <p style="font-size: 1.1rem; color: var(--color-secondary); margin: 0 0 1.5rem 0; line-height: 1.6;">
-        <strong>Тисячі курьєрів вже заробляють</strong> у Польщі. 📦 Безплатна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰
-      </p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/apply.html" style="display: inline-block; background: var(--color-accent); color: white; padding: 0.9rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Почати прямо зараз →</a>
-        <a href="#jobs" style="display: inline-block; background: transparent; color: var(--color-accent); padding: 0.9rem 2rem; border: 2px solid var(--color-accent); border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Переглянути вакансії ↓</a>
+    <div class="hero-modern">
+      <div class="hero-content">
+        <h2 class="hero-title">🚀 Робота мрії чекає тебе!</h2>
+        <p class="hero-subtitle">
+          <strong>Тисячі кур'єрів вже заробляють</strong> у Польщі. 📦 Безкоштовна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰
+        </p>
+        <div class="hero-actions">
+          <a href="/apply.html" class="btn-primary hero-btn">Почати прямо зараз</a>
+          <a href="#jobs" class="btn-outline hero-btn">Переглянути вакансії</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <div class="hero-icon">🚴‍♂️</div>
       </div>
     </div>
 
