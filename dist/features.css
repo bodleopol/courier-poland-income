@@ -277,7 +277,7 @@ body.loaded {
 
 /* Mobile Menu Animation */
 .mobile-menu {
-ransform 0.3s ease, opacity 0.3s ease, display 0.3s;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .mobile-menu.is-open {

@@ -111,6 +111,7 @@
   },
   {
     "title": "Топ-5 додатків для кур'єрів у Польщі",
+    "title_pl": "Top 5 aplikacji dla kurierów w Polsce",
     "slug": "top-5-apps",
     "excerpt": "Огляд найкращих мобільних додатків, які спрощують роботу кур'єра.",
     "excerpt_pl": "Przegląd najlepszych aplikacji mobilnych, które ułatwiają pracę kuriera.",
@@ -121,6 +122,7 @@
   },
   {
     "title": "Як збільшити чайові: психологія доставки",
+    "title_pl": "Jak zwiększyć napiwki: psychologia dostawy",
     "slug": "tips-psychology",
     "excerpt": "Поведінка, яка підвищує лояльність клієнтів і розмір чайових.",
     "excerpt_pl": "Zachowania, które zwiększają lojalność klientów i wysokość napiwków.",
@@ -131,6 +133,7 @@
   },
   {
     "title": "Робота кур'єром у Варшаві: особливості столиці",
+    "title_pl": "Praca kuriera w Warszawie: specyfika stolicy",
     "slug": "warsaw-courier-guide",
     "excerpt": "Все про доставку в найбільшому місті Польщі: райони, маршрути, заробіток.",
     "excerpt_pl": "Wszystko o dostawie w największym mieście Polski: dzielnice, trasy, zarobki.",
@@ -141,6 +144,7 @@
   },
   {
     "title": "Кур'єрство для студентів: як поєднати з навчанням",
+    "title_pl": "Praca kuriera dla studentów: jak łączyć z nauką",
     "slug": "students-courier",
     "excerpt": "Гнучкий графік, вихідні та вечірні зміни — ідеальний варіант для студентів.",
     "excerpt_pl": "Elastyczny grafik, weekendy i wieczorne zmiany — idealny wariant dla studentów.",
@@ -151,6 +155,7 @@
   },
   {
     "title": "Страхування для кур'єра: що потрібно знати",
+    "title_pl": "Ubezpieczenie dla kuriera: co warto wiedzieć",
     "slug": "courier-insurance",
     "excerpt": "Типи страхування, обов'язкові та рекомендовані полюси для кур'єрів.",
     "excerpt_pl": "Rodzaje ubezpieczeń, obowiązkowe i zalecane polisy dla kurierów.",
@@ -161,6 +166,7 @@
   },
   {
     "title": "Екологічні доставки: тренд чи необхідність?",
+    "title_pl": "Ekologiczne dostawy: trend czy konieczność?",
     "slug": "eco-delivery",
     "excerpt": "Як екологічний транспорт впливає на репутацію та заробіток кур'єра.",
     "excerpt_pl": "Jak ekologiczny transport wpływa na reputację i zarobki kuriera.",
@@ -171,6 +177,7 @@
   },
   {
     "title": "Як уникнути вигорання: баланс роботи та відпочинку",
+    "title_pl": "Jak uniknąć wypalenia: równowaga między pracą a odpoczynkiem",
     "slug": "avoid-burnout",
     "excerpt": "Ознаки перевтоми та практичні способи підтримувати здорову продуктивність.",
     "excerpt_pl": "Oznaki przemęczenia i praktyczne sposoby na utrzymanie zdrowej produktywności.",
@@ -181,6 +188,7 @@
   },
   {
     "title": "Найпоширеніші помилки нових кур'єрів",
+    "title_pl": "Najczęstsze błędy nowych kurierów",
     "slug": "common-mistakes",
     "excerpt": "Топ-7 помилок, які коштують часу, грошей та рейтингу.",
     "excerpt_pl": "Top 7 błędów, które kosztują czas, pieniądze i rating.",
@@ -191,6 +199,7 @@
   },
   {
     "title": "Найпопулярніші запитання нових кур'єрів",
+    "title_pl": "Najczęstsze pytania nowych kurierów",
     "slug": "faq-new-couriers",
     "excerpt": "Відповіді на найчастіші питання від тих, хто тільки починає працювати.",
     "excerpt_pl": "Odpowiedzi na najczęstsze pytania od tych, którzy dopiero zaczynają pracę.",
@@ -201,6 +210,7 @@
   },
   {
     "title": "Кур'єрство як кар'єра: чи є перспектива росту?",
+    "title_pl": "Praca kuriera jako kariera: czy są perspektywy rozwoju?",
     "slug": "courier-career",
     "excerpt": "Від звичайного кур'єра до координатора чи власника бізнесу — реальні історії.",
     "excerpt_pl": "Od zwykłego kuriera do koordynatora lub właściciela firmy — prawdziwe historie.",
