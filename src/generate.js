@@ -495,6 +495,11 @@ Sitemap: https://rybezh.site/sitemap.xml
       await fs.writeFile(path.join(DIST, 'CNAME'), 'rybezh.site', 'utf8');
     } catch (e) {}
 
+    // disable Jekyll processing on GitHub Pages (serve underscore files as-is)
+    try {
+      await fs.writeFile(path.join(DIST, '.nojekyll'), '', 'utf8');
+    } catch (e) {}
+
     // write _redirects to serve custom 404 for unknown paths (Netlify/Cloudflare Pages)
     try {
       const redirects = `/* /404.html 404\n`;
