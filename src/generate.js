@@ -104,6 +104,13 @@ async function build() {
         pContent += scriptWithData;
       }
       await fs.writeFile(path.join(DIST, p), pContent, 'utf8');
+
+      // Also publish /404/index.html so /404 and /404/ resolve on static hosts
+      if (p === '404.html') {
+        const notFoundDir = path.join(DIST, '404');
+        await fs.mkdir(notFoundDir, { recursive: true });
+        await fs.writeFile(path.join(notFoundDir, 'index.html'), pContent, 'utf8');
+      }
     } catch (e) {}
   }
 
