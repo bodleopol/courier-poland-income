@@ -111,6 +111,7 @@ async function build() {
         await fs.mkdir(notFoundDir, { recursive: true });
         await fs.writeFile(path.join(notFoundDir, 'index.html'), pContent, 'utf8');
       }
+      if (p === '404.html') console.log('✅ Generated custom 404 page at dist/404.html');
     } catch (e) {
       console.error(`Error generating static page ${p}:`, e);
     }
@@ -506,6 +507,20 @@ Sitemap: https://rybezh.site/sitemap.xml
     try {
       const htaccess = `ErrorDocument 404 /404.html\n`;
       await fs.writeFile(path.join(DIST, '.htaccess'), htaccess, 'utf8');
+    } catch (e) {}
+
+    // write web.config for IIS servers (Windows hosting / Azure)
+    try {
+      const webConfig = `<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <httpErrors errorMode="Custom">
+            <remove statusCode="404"/>
+            <error statusCode="404" path="/404.html" responseMode="ExecuteURL"/>
+        </httpErrors>
+    </system.webServer>
+</configuration>`;
+      await fs.writeFile(path.join(DIST, 'web.config'), webConfig, 'utf8');
     } catch (e) {}
 
     console.log('Build complete. Pages:', links.length);
