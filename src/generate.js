@@ -516,7 +516,7 @@ Sitemap: https://rybezh.site/sitemap.xml
     <system.webServer>
         <httpErrors errorMode="Custom" existingResponse="Replace">
             <remove statusCode="404"/>
-            <error statusCode="404" path="/404.html" responseMode="ExecuteURL"/>
+            <error statusCode="404" path="404.html" responseMode="File"/>
         </httpErrors>
     </system.webServer>
 </configuration>`;
