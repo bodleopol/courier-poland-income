@@ -69,10 +69,28 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
     }
+    .error-suggestions {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: var(--color-surface);
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      max-width: 500px;
+      width: 100%;
+      text-align: left;
+    }
+    .error-suggestions h3 { color: var(--color-primary); margin-top: 0; }
+    .error-suggestions ul { list-style: none; padding: 0; margin: 0; }
+    .error-suggestions li { margin-bottom: 0.5rem; }
+    .error-suggestions a { color: var(--color-accent); text-decoration: none; font-weight: 500; }
+    .error-suggestions a:hover { text-decoration: underline; }
+
     @media (max-width: 768px) {
+      .error-page { padding: 1rem; min-height: 50vh; }
       .error-code { font-size: 5rem; }
       .error-title { font-size: 1.5rem; }
       .error-illustration { font-size: 3rem; }
+      .error-suggestions { padding: 1rem; margin-top: 2rem; }
     }
   </style>
 </head>
@@ -133,20 +151,20 @@
         <a href="/contact.html" class="btn-outline" data-i18n="404.contact">Зв'язатися з нами</a>
       </div>
       
-      <div style="margin-top: 3rem; padding: 1.5rem; background: var(--color-surface); border-radius: 12px; border: 1px solid var(--color-border); max-width: 500px;">
-        <h3 style="color: var(--color-primary); margin-top: 0;" data-i18n="404.popular">Популярні розділи:</h3>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 0.5rem;">
-            <a href="/#jobs" style="color: var(--color-accent);" data-i18n="404.link.jobs">📋 Актуальні вакансії</a>
+      <div class="error-suggestions">
+        <h3 data-i18n="404.popular">Популярні розділи:</h3>
+        <ul>
+          <li>
+            <a href="/#jobs" data-i18n="404.link.jobs">📋 Актуальні вакансії</a>
           </li>
-          <li style="margin-bottom: 0.5rem;">
-            <a href="/blog.html" style="color: var(--color-accent);" data-i18n="404.link.blog">📰 Корисні статті в блозі</a>
+          <li>
+            <a href="/blog.html" data-i18n="404.link.blog">📰 Корисні статті в блозі</a>
           </li>
-          <li style="margin-bottom: 0.5rem;">
-            <a href="/apply.html" style="color: var(--color-accent);" data-i18n="404.link.apply">✍️ Подати заявку на роботу</a>
+          <li>
+            <a href="/apply.html" data-i18n="404.link.apply">✍️ Подати заявку на роботу</a>
           </li>
-          <li style="margin-bottom: 0.5rem;">
-            <a href="/faq.html" style="color: var(--color-accent);" data-i18n="404.link.faq">❓ Часті запитання (FAQ)</a>
+          <li>
+            <a href="/faq.html" data-i18n="404.link.faq">❓ Часті запитання (FAQ)</a>
           </li>
         </ul>
       </div>
