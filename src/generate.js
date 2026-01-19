@@ -514,7 +514,7 @@ Sitemap: https://rybezh.site/sitemap.xml
       const webConfig = `<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <system.webServer>
-        <httpErrors errorMode="Custom">
+        <httpErrors errorMode="Custom" existingResponse="Replace">
             <remove statusCode="404"/>
             <error statusCode="404" path="/404.html" responseMode="ExecuteURL"/>
         </httpErrors>
