@@ -111,7 +111,9 @@ async function build() {
         await fs.mkdir(notFoundDir, { recursive: true });
         await fs.writeFile(path.join(notFoundDir, 'index.html'), pContent, 'utf8');
       }
-    } catch (e) {}
+    } catch (e) {
+      console.error(`Error generating static page ${p}:`, e);
+    }
   }
 
   const links = [];
@@ -504,6 +506,12 @@ Sitemap: https://rybezh.site/sitemap.xml
     try {
       const redirects = `/* /404.html 404\n`;
       await fs.writeFile(path.join(DIST, '_redirects'), redirects, 'utf8');
+    } catch (e) {}
+
+    // write .htaccess for Apache servers (common shared hosting)
+    try {
+      const htaccess = `ErrorDocument 404 /404.html\n`;
+      await fs.writeFile(path.join(DIST, '.htaccess'), htaccess, 'utf8');
     } catch (e) {}
 
     console.log('Build complete. Pages:', links.length);
