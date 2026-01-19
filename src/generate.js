@@ -495,6 +495,12 @@ Sitemap: https://rybezh.site/sitemap.xml
       await fs.writeFile(path.join(DIST, 'CNAME'), 'rybezh.site', 'utf8');
     } catch (e) {}
 
+    // write _redirects to serve custom 404 for unknown paths (Netlify/Cloudflare Pages)
+    try {
+      const redirects = `/* /404.html 404\n`;
+      await fs.writeFile(path.join(DIST, '_redirects'), redirects, 'utf8');
+    } catch (e) {}
+
     console.log('Build complete. Pages:', links.length);
 }
 
