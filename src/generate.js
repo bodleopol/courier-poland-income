@@ -523,15 +523,6 @@ Sitemap: https://rybezh.site/sitemap.xml
       await fs.writeFile(path.join(DIST, 'web.config'), webConfig, 'utf8');
     } catch (e) {}
 
-    // write _redirects for Cloudflare Pages / Netlify
-    try {
-      const redirects = `/* /404.html 404\n`;
-      await fs.writeFile(path.join(DIST, '_redirects'), redirects, 'utf8');
-      console.log('✅ Created _redirects for Cloudflare Pages');
-    } catch (e) {
-      console.error('Error creating _redirects:', e);
-    }
-
     console.log('Build complete. Pages:', links.length);
 }
 
