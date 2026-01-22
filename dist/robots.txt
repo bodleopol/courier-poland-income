@@ -1,4 +1,7 @@
+# Robots.txt for rybezh.site - Job search platform for couriers in Poland
+# All search engines are allowed to access all pages
+
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://rybezh.site/sitemap.xml
