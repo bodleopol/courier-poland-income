@@ -1,6 +1,8 @@
 name = "courier-poland-income"
 compatibility_date = "2026-01-17"
+main = "src/worker.js"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
 not_found_handling = "404-page"
