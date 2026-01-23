@@ -504,12 +504,6 @@ Sitemap: https://rybezh.site/sitemap.xml
       await fs.writeFile(path.join(DIST, '.nojekyll'), '', 'utf8');
     } catch (e) {}
 
-    // write _redirects for Cloudflare Pages / Netlify
-    try {
-      const redirects = `/* /404.html 404\n`;
-      await fs.writeFile(path.join(DIST, '_redirects'), redirects, 'utf8');
-    } catch (e) {}
-
     // write .htaccess for Apache servers (common shared hosting)
     try {
       const htaccess = `ErrorDocument 404 /404.html\n`;
