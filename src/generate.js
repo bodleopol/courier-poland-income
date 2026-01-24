@@ -336,10 +336,52 @@ async function build() {
       <div class="blog-intro">
         <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
       </div>
-      <div class="blog-grid">
+      <div class="search-panel">
+        <div class="search-panel__header">
+          <h3 data-i18n="blog.search.title">🔎 Пошук у блозі</h3>
+          <div class="search-count">
+            <span class="search-count__label" data-i18n="blog.search.count">Знайдено статей:</span>
+            <span class="search-count__value" id="blog-count">${pagePosts.length}</span>
+          </div>
+        </div>
+        <form class="search-form" id="blog-search-form" aria-label="Пошук статей">
+          <div class="search-field">
+            <span class="search-icon">🔍</span>
+            <input id="blog-search" class="search-input" placeholder="Пошук по темі або місту" aria-label="Пошук статей" data-i18n="blog.search.placeholder" data-i18n-attr="placeholder" />
+          </div>
+          <button type="submit" class="search-button" data-i18n="blog.search.button">Знайти</button>
+        </form>
+        <div class="search-empty" id="blog-empty" data-i18n="blog.search.empty" hidden>Нічого не знайдено</div>
+      </div>
+      <div class="blog-grid" id="blog-grid">
         ${blogListHtml}
       </div>
       ${paginationHtml}
+      <script>
+        (function(){
+          const input = document.getElementById('blog-search');
+          const form = document.getElementById('blog-search-form');
+          const cards = Array.from(document.querySelectorAll('#blog-grid .blog-card'));
+          const countEl = document.getElementById('blog-count');
+          const emptyEl = document.getElementById('blog-empty');
+          function normalize(s){return String(s||'').toLowerCase();}
+          function filter(){
+            const q = normalize(input.value.trim());
+            let visible = 0;
+            cards.forEach(card => {
+              const text = normalize(card.textContent);
+              const match = !q || text.includes(q);
+              card.style.display = match ? '' : 'none';
+              if (match) visible++;
+            });
+            if (countEl) countEl.textContent = String(visible);
+            if (emptyEl) emptyEl.hidden = visible !== 0;
+          }
+          form.addEventListener('submit', function(e){ e.preventDefault(); filter(); });
+          input.addEventListener('input', filter);
+          filter();
+        })();
+      </script>
     `;
 
     const blogFileName = page === 1 ? 'blog.html' : `blog-${page}.html`;
@@ -663,11 +705,21 @@ function generateIndexContent(links) {
 
     <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.</p>
     
-    <h3 style="font-size: 1.5rem; margin: 2rem 0 1rem 0; text-align: center; color: var(--color-primary);" data-i18n="home.search.title">🔍 Знайди роботу за містом:</h3>
-    <form class="search-form" action="/" method="get" aria-label="Фільтр вакансій">
-      <label class="sr-only" for="q" data-i18n="search.sr">Пошук</label>
-      <input id="q" name="q" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
-      <select id="city" name="city" aria-label="Вибір міста">
+    <div class="search-panel">
+      <div class="search-panel__header">
+        <h3 style="margin: 0; color: var(--color-primary);" data-i18n="home.search.title">🔍 Знайди роботу за містом:</h3>
+        <div class="search-count">
+          <span class="search-count__label" data-i18n="jobs.search.count">Знайдено вакансій:</span>
+          <span class="search-count__value" id="jobs-count">0</span>
+        </div>
+      </div>
+      <form class="search-form" action="/" method="get" aria-label="Фільтр вакансій">
+        <label class="sr-only" for="q" data-i18n="search.sr">Пошук</label>
+        <div class="search-field">
+          <span class="search-icon">🔍</span>
+          <input id="q" name="q" class="search-input" placeholder="Пошук за містом або типом роботи" aria-label="Пошук вакансій" data-i18n="search.placeholder" data-i18n-attr="placeholder" />
+        </div>
+        <select id="city" name="city" class="search-select" aria-label="Вибір міста">
         <option value="" data-i18n="city.all">Всі міста</option>
         <option value="Варшава" data-i18n="city.warszawa">Варшава</option>
         <option value="Краків" data-i18n="city.krakow">Краків</option>
@@ -690,8 +742,10 @@ function generateIndexContent(links) {
         <option value="Сосновець" data-i18n="city.sosnowiec">Сосновець</option>
         <option value="Бєльско-Бяла" data-i18n="city.bielsko">Бєльско-Бяла</option>
       </select>
-      <button type="submit" data-i18n="search.button">Знайти</button>
+      <button type="submit" class="search-button" data-i18n="search.button">Знайти</button>
     </form>
+      <div class="search-empty" id="jobs-empty" data-i18n="jobs.search.empty" hidden>Нічого не знайдено</div>
+    </div>
     <div class="jobs-grid" id="jobs" aria-label="Список вакансій" style="margin-top: 2rem;">
 ${cards}
     </div>
@@ -723,17 +777,24 @@ ${cards}
         function filter(){
           const qv = normalize(q.value.trim());
           const cv = normalize(city.value.trim());
+          let visible = 0;
           jobs.forEach(card => {
             const text = normalize(card.textContent);
             const c = normalize(card.dataset.city || '');
             const matchQ = !qv || text.includes(qv);
             const matchC = !cv || c === cv || c.includes(cv);
             card.style.display = (matchQ && matchC) ? '' : 'none';
+            if (matchQ && matchC) visible++;
           });
+          const countEl = document.getElementById('jobs-count');
+          const emptyEl = document.getElementById('jobs-empty');
+          if (countEl) countEl.textContent = String(visible);
+          if (emptyEl) emptyEl.hidden = visible !== 0;
         }
         form.addEventListener('submit', function(e){ e.preventDefault(); filter(); });
         q.addEventListener('input', filter);
         city.addEventListener('change', filter);
+        filter();
 
         // Calculator Logic
         const hInput = document.getElementById('calc-hours');
