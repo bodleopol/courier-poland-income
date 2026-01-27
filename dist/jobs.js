@@ -17,6 +17,7 @@
     // Render categories
     const categoryGrid = document.getElementById('categoryGrid');
     if (window.CATEGORIES && categoryGrid) {
+      categoryGrid.innerHTML = '';
       const lang = localStorage.getItem('site_lang') || 'ua';
       window.CATEGORIES.forEach(cat => {
         const card = document.createElement('a');
@@ -84,6 +85,11 @@
     // Populate category filter
     if (window.CATEGORIES && categoryFilter) {
       const lang = localStorage.getItem('site_lang') || 'ua';
+      const defaultOption = categoryFilter.querySelector('option[value=""]');
+      categoryFilter.innerHTML = '';
+      if (defaultOption) {
+        categoryFilter.appendChild(defaultOption.cloneNode(true));
+      }
       window.CATEGORIES.forEach(cat => {
         const option = document.createElement('option');
         option.value = cat.id;

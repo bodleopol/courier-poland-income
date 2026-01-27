@@ -1,35 +1,35 @@
 <section class="vacancies-page">
   <div class="container">
-    <h1 data-i18n="all_vacancies">Всі вакансії</h1>
+    <h1 data-i18n="vacancies.title">Всі вакансії</h1>
     
     <!-- Filters -->
     <div class="filters">
       <select id="categoryFilter" class="filter-select">
-        <option value="" data-i18n="filter_all_categories">Всі категорії</option>
+        <option value="" data-i18n="filters.all_categories">Всі категорії</option>
       </select>
       
       <select id="cityFilter" class="filter-select">
-        <option value="" data-i18n="filter_all_cities">Всі міста</option>
-        <option value="warsaw">Варшава</option>
-        <option value="krakow">Краків</option>
-        <option value="wroclaw">Вроцлав</option>
-        <option value="poznan">Познань</option>
-        <option value="gdansk">Гданськ</option>
-        <option value="szczecin">Щецін</option>
-        <option value="lodz">Лодзь</option>
-        <option value="katowice">Катовіце</option>
-        <option value="lublin">Люблін</option>
-        <option value="bialystok">Білосток</option>
+        <option value="" data-i18n="city.all">Всі міста</option>
+        <option value="warsaw" data-i18n="city.warszawa">Варшава</option>
+        <option value="krakow" data-i18n="city.krakow">Краків</option>
+        <option value="wroclaw" data-i18n="city.wroclaw">Вроцлав</option>
+        <option value="poznan" data-i18n="city.poznan">Познань</option>
+        <option value="gdansk" data-i18n="city.gdansk">Гданськ</option>
+        <option value="szczecin" data-i18n="city.szczecin">Щецін</option>
+        <option value="lodz" data-i18n="city.lodz">Лодзь</option>
+        <option value="katowice" data-i18n="city.katowice">Катовіце</option>
+        <option value="lublin" data-i18n="city.lublin">Люблін</option>
+        <option value="bialystok" data-i18n="city.bialystok">Білосток</option>
       </select>
       
-      <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input">
+      <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input" data-i18n="filters.salary_placeholder" data-i18n-attr="placeholder">
       
-      <button id="resetFilters" class="btn btn-secondary" data-i18n="reset_filters">Скинути</button>
+      <button id="resetFilters" class="btn btn-secondary" data-i18n="filters.reset">Скинути</button>
     </div>
     
     <!-- Results count -->
     <div class="results-info">
-      <p><span id="resultsCount">0</span> <span data-i18n="vacancies_found">вакансій знайдено</span></p>
+      <p><span id="resultsCount">0</span> <span data-i18n="vacancies.found">вакансій знайдено</span></p>
     </div>
     
     <!-- Jobs Grid -->

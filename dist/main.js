@@ -28,6 +28,10 @@
     'home.hero.subtitle': { ua: '<strong>Тисячі людей вже працюють</strong> у Польщі. 📌 Безкоштовна консультація, <strong>легальне працевлаштування</strong> та <strong>зручний пошук</strong>.', pl: '<strong>Tysiące osób już pracuje</strong> w Polsce. 📌 Bezpłatna konsultacja, <strong>legalne zatrudnienie</strong> i <strong>wygodne wyszukiwanie</strong>.' },
     'home.hero.cta_primary': { ua: 'Почати прямо зараз', pl: 'Zacznij teraz' },
     'home.hero.cta_secondary': { ua: 'Переглянути вакансії', pl: 'Zobacz oferty' },
+    'home.categories.title': { ua: 'Категорії вакансій', pl: 'Kategorie ofert pracy' },
+    'home.cities.title': { ua: 'Популярні міста', pl: 'Popularne miasta' },
+    'home.latest.title': { ua: 'Нові вакансії', pl: 'Nowe oferty' },
+    'home.latest.cta': { ua: 'Переглянути всі вакансії', pl: 'Zobacz wszystkie oferty' },
     'home.stats.title': { ua: '📊 Статистика успіху', pl: '📊 Statystyki sukcesu' },
     'home.stats.couriers.line1': { ua: 'Кандидатів скористалось', pl: 'Kandydatów skorzystało' },
     'home.stats.couriers.line2': { ua: 'нашою платформою', pl: 'z naszej platformy' },
@@ -55,6 +59,8 @@
     'home.features.f2.text': { ua: 'Різні графіки та формати зайнятості', pl: 'Różne grafiki i formy zatrudnienia' },
     'home.features.f3.title': { ua: '🤝 Підтримка', pl: '🤝 Wsparcie' },
     'home.features.f3.text': { ua: 'Консультації з документів і працевлаштування', pl: 'Konsultacje dot. dokumentów i zatrudnienia' },
+    'home.features.f4.title': { ua: '🔍 Зручний пошук', pl: '🔍 Wygodne wyszukiwanie' },
+    'home.features.f4.text': { ua: 'Фільтри за містом, категорією, зарплатою', pl: 'Filtry według miasta, kategorii i wynagrodzenia' },
     'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
     'search.button': { ua: 'Знайти', pl: 'Znajdź' },
@@ -154,6 +160,13 @@
     'blog.pagination.next': { ua: 'Вперед →', pl: 'Dalej →' },
     'jobs.search.count': { ua: 'Знайдено вакансій:', pl: 'Znaleziono ofert:' },
     'jobs.search.empty': { ua: 'Нічого не знайдено', pl: 'Brak wyników' },
+    'vacancies.title': { ua: 'Всі вакансії', pl: 'Wszystkie oferty' },
+    'vacancies.found': { ua: 'вакансій знайдено', pl: 'ofert znaleziono' },
+    'vacancies.meta_title': { ua: 'Всі вакансії — Rybezh', pl: 'Wszystkie oferty — Rybezh' },
+    'vacancies.meta_description': { ua: 'Перегляньте всі актуальні вакансії в Польщі. Фільтри за містом, категорією та зарплатою.', pl: 'Zobacz wszystkie aktualne oferty pracy w Polsce. Filtry według miasta, kategorii i wynagrodzenia.' },
+    'filters.all_categories': { ua: 'Всі категорії', pl: 'Wszystkie kategorie' },
+    'filters.salary_placeholder': { ua: 'Мін. зарплата (PLN)', pl: 'Min. wynagrodzenie (PLN)' },
+    'filters.reset': { ua: 'Скинути', pl: 'Resetuj' },
     // Article template (legacy)
     'article.step1': { ua: 'Крок 1: Перевірте базові документи', pl: 'Krok 1: Sprawdź podstawowe dokumenty' },
     'article.step2': { ua: 'Крок 2: Заповніть анкету на Rybezh', pl: 'Krok 2: Wypełnij formularz Rybezh' },
@@ -227,6 +240,7 @@
     localStorage.setItem(LEGACY_KEY, lang);
     applyTranslations(lang);
     updateLangButtons(lang);
+    window.dispatchEvent(new Event('languageChanged'));
   }
 
   // Apply translations to page

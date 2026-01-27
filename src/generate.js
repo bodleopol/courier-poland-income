@@ -112,7 +112,7 @@ async function build() {
   const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'faq.html', '404.html', 'vacancies.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'faq.html', '404.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -542,6 +542,12 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     // Make the template H1 translatable
     indexHtml = indexHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="meta.title">$1</h1>`);
 
+    if (indexHtml.includes('</head>')) {
+      indexHtml = indexHtml.replace('</head>', `${dataScript}\n</head>`);
+    } else {
+      indexHtml = dataScript + indexHtml;
+    }
+
     // inject i18n into index
     if (indexHtml.includes('</body>')) {
       indexHtml = indexHtml.replace('</body>', `${scriptWithData}</body>`);
@@ -550,6 +556,67 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     }
 
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
+
+    // generate vacancies page
+    try {
+      const vacanciesSrc = await fs.readFile(path.join(SRC, 'vacancies.html'), 'utf8');
+      const vacanciesDataScript = `
+<script>
+window.CATEGORIES = ${JSON.stringify(categories)};
+window.ALL_JOBS = ${JSON.stringify(pages)};
+window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
+</script>`;
+
+      let vacanciesHtml = pageTpl
+        .replace(/{{TITLE}}/g, 'Всі вакансії')
+        .replace(/{{DESCRIPTION}}/g, 'Актуальні вакансії у Польщі з фільтрами за містом, категорією та зарплатою.')
+        .replace(/{{CONTENT}}/g, vacanciesSrc)
+        .replace(/{{CANONICAL}}/g, 'https://rybezh.site/vacancies.html')
+        .replace(/{{CITY}}/g, '')
+        .replace(/{{CTA_LINK}}/g, '/apply.html')
+        .replace(/{{CTA_TEXT}}/g, '')
+        .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
+
+      vacanciesHtml = vacanciesHtml.replace('<title>', '<title data-i18n="vacancies.meta_title">');
+      vacanciesHtml = vacanciesHtml.replace(
+        '<meta name="description" content="',
+        '<meta name="description" data-i18n="vacancies.meta_description" data-i18n-attr="content" content="'
+      );
+      vacanciesHtml = vacanciesHtml.replace(
+        '<meta property="og:title" content="',
+        '<meta property="og:title" data-i18n="vacancies.meta_title" data-i18n-attr="content" content="'
+      );
+      vacanciesHtml = vacanciesHtml.replace(
+        '<meta property="og:description" content="',
+        '<meta property="og:description" data-i18n="vacancies.meta_description" data-i18n-attr="content" content="'
+      );
+      vacanciesHtml = vacanciesHtml.replace(
+        '<meta name="twitter:title" content="',
+        '<meta name="twitter:title" data-i18n="vacancies.meta_title" data-i18n-attr="content" content="'
+      );
+      vacanciesHtml = vacanciesHtml.replace(
+        '<meta name="twitter:description" content="',
+        '<meta name="twitter:description" data-i18n="vacancies.meta_description" data-i18n-attr="content" content="'
+      );
+
+      vacanciesHtml = vacanciesHtml.replace(/<h1>(.*?)<\/h1>/, '<h1 data-i18n="vacancies.title">$1</h1>');
+
+      if (vacanciesHtml.includes('</head>')) {
+        vacanciesHtml = vacanciesHtml.replace('</head>', `${vacanciesDataScript}\n</head>`);
+      } else {
+        vacanciesHtml = vacanciesDataScript + vacanciesHtml;
+      }
+
+      if (vacanciesHtml.includes('</body>')) {
+        vacanciesHtml = vacanciesHtml.replace('</body>', `${scriptWithData}</body>`);
+      } else {
+        vacanciesHtml += scriptWithData;
+      }
+
+      await fs.writeFile(path.join(DIST, 'vacancies.html'), vacanciesHtml, 'utf8');
+    } catch (e) {
+      console.error('Error generating vacancies page:', e);
+    }
 
     // write sitemap.xml
     try {

@@ -1,14 +1,14 @@
 <section class="hero">
   <div class="container">
-    <h1 data-i18n="hero_title">Знайди роботу в Польщі</h1>
-    <p class="subtitle" data-i18n="hero_subtitle">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
+    <h1 data-i18n="hero.title">Знайди роботу в Польщі</h1>
+    <p class="subtitle" data-i18n="hero.lead">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
     
     <!-- Search Bar -->
     <div class="search-container">
       <div class="search-bar">
         <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-        <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія..." data-i18n-placeholder="search_placeholder">
-        <button class="btn btn-primary" id="searchBtn" data-i18n="search_button">Шукати</button>
+        <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія..." data-i18n="search.placeholder" data-i18n-attr="placeholder">
+        <button class="btn btn-primary" id="searchBtn" data-i18n="search.button">Шукати</button>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
 <!-- Categories -->
 <section class="categories">
   <div class="container">
-    <h2 data-i18n="categories_title">Категорії вакансій</h2>
+    <h2 data-i18n="home.categories.title">Категорії вакансій</h2>
     <div class="category-grid" id="categoryGrid">
       <!-- Генерується динамічно з categories.json -->
     </div>
@@ -27,36 +27,36 @@
 <!-- Popular Cities -->
 <section class="cities">
   <div class="container">
-    <h2 data-i18n="cities_title">Популярні міста</h2>
+    <h2 data-i18n="home.cities.title">Популярні міста</h2>
     <div class="cities-grid">
-      <a href="/vacancies/?city=warsaw" class="city-card">
+      <a href="/vacancies.html?city=warsaw" class="city-card">
         <span class="city-icon">🏛️</span>
-        <h3 data-i18n="city_warsaw">Варшава</h3>
+        <h3 data-i18n="city.warszawa">Варшава</h3>
         <p class="city-count" data-city="warsaw">— вакансій</p>
       </a>
-      <a href="/vacancies/?city=krakow" class="city-card">
+      <a href="/vacancies.html?city=krakow" class="city-card">
         <span class="city-icon">🏰</span>
-        <h3 data-i18n="city_krakow">Краків</h3>
+        <h3 data-i18n="city.krakow">Краків</h3>
         <p class="city-count" data-city="krakow">— вакансій</p>
       </a>
-      <a href="/vacancies/?city=wroclaw" class="city-card">
+      <a href="/vacancies.html?city=wroclaw" class="city-card">
         <span class="city-icon">🌉</span>
-        <h3 data-i18n="city_wroclaw">Вроцлав</h3>
+        <h3 data-i18n="city.wroclaw">Вроцлав</h3>
         <p class="city-count" data-city="wroclaw">— вакансій</p>
       </a>
-      <a href="/vacancies/?city=poznan" class="city-card">
+      <a href="/vacancies.html?city=poznan" class="city-card">
         <span class="city-icon">🏢</span>
-        <h3 data-i18n="city_poznan">Познань</h3>
+        <h3 data-i18n="city.poznan">Познань</h3>
         <p class="city-count" data-city="poznan">— вакансій</p>
       </a>
-      <a href="/vacancies/?city=gdansk" class="city-card">
+      <a href="/vacancies.html?city=gdansk" class="city-card">
         <span class="city-icon">⚓</span>
-        <h3 data-i18n="city_gdansk">Гданськ</h3>
+        <h3 data-i18n="city.gdansk">Гданськ</h3>
         <p class="city-count" data-city="gdansk">— вакансій</p>
       </a>
-      <a href="/vacancies/?city=lodz" class="city-card">
+      <a href="/vacancies.html?city=lodz" class="city-card">
         <span class="city-icon">🏭</span>
-        <h3 data-i18n="city_lodz">Лодзь</h3>
+        <h3 data-i18n="city.lodz">Лодзь</h3>
         <p class="city-count" data-city="lodz">— вакансій</p>
       </a>
     </div>
@@ -66,12 +66,12 @@
 <!-- Latest Vacancies -->
 <section class="latest-jobs">
   <div class="container">
-    <h2 data-i18n="latest_jobs_title">Нові вакансії</h2>
+    <h2 data-i18n="home.latest.title">Нові вакансії</h2>
     <div class="jobs-grid" id="latestJobs">
       <!-- Генерується динамічно з content.json -->
     </div>
     <div class="text-center" style="margin-top: 2rem;">
-      <a href="/vacancies.html" class="btn btn-primary" data-i18n="view_all_jobs">Переглянути всі вакансії</a>
+      <a href="/vacancies.html" class="btn btn-primary" data-i18n="home.latest.cta">Переглянути всі вакансії</a>
     </div>
   </div>
 </section>
@@ -79,27 +79,27 @@
 <!-- Features -->
 <section class="features">
   <div class="container">
-    <h2 data-i18n="why_rybezh">Чому Rybezh?</h2>
+    <h2 data-i18n="home.features.title">Чому Rybezh?</h2>
     <div class="features-grid">
       <div class="feature">
         <span class="feature-icon">✅</span>
-        <h3 data-i18n="feature_1_title">Перевірені роботодавці</h3>
-        <p data-i18n="feature_1_desc">Лише легальні вакансії з офіційним працевлаштуванням</p>
+        <h3 data-i18n="home.features.f1.title">Перевірені роботодавці</h3>
+        <p data-i18n="home.features.f1.text">Лише легальні вакансії з офіційним працевлаштуванням</p>
       </div>
       <div class="feature">
         <span class="feature-icon">🇺🇦</span>
-        <h3 data-i18n="feature_2_title">Підтримка українською</h3>
-        <p data-i18n="feature_2_desc">Допомога в пошуку роботи, консультації безкоштовно</p>
+        <h3 data-i18n="home.features.f2.title">Підтримка українською</h3>
+        <p data-i18n="home.features.f2.text">Допомога в пошуку роботи, консультації безкоштовно</p>
       </div>
       <div class="feature">
         <span class="feature-icon">⚡</span>
-        <h3 data-i18n="feature_3_title">Швидкий відгук</h3>
-        <p data-i18n="feature_3_desc">Отримайте відповідь від роботодавця протягом 1-2 днів</p>
+        <h3 data-i18n="home.features.f3.title">Швидкий відгук</h3>
+        <p data-i18n="home.features.f3.text">Отримайте відповідь від роботодавця протягом 1-2 днів</p>
       </div>
       <div class="feature">
         <span class="feature-icon">📱</span>
-        <h3 data-i18n="feature_4_title">Зручний пошук</h3>
-        <p data-i18n="feature_4_desc">Фільтри за містом, категорією, зарплатою</p>
+        <h3 data-i18n="home.features.f4.title">Зручний пошук</h3>
+        <p data-i18n="home.features.f4.text">Фільтри за містом, категорією, зарплатою</p>
       </div>
     </div>
   </div>
@@ -348,3 +348,4 @@
     border-radius: 8px;
   }
 }
+</style>
