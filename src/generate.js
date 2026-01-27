@@ -508,7 +508,8 @@ async function build() {
 
     // generate index
     const indexSrc = await fs.readFile(path.join(SRC, 'index.html'), 'utf8');
-    const latestJobs = pages.slice(0, 12);
+    const shuffledPages = shuffleArray([...pages]);
+    const latestJobs = shuffledPages.slice(0, 12);
 
     // Inject categories and jobs data as JSON
     const dataScript = `
@@ -1044,6 +1045,15 @@ function toISODate(date) {
     return new Date().toISOString().slice(0, 10);
   }
   return d.toISOString().slice(0, 10);
+}
+
+function shuffleArray(items) {
+  const arr = Array.isArray(items) ? items.slice() : [];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
 
 function addDays(date, days) {

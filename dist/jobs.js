@@ -35,7 +35,7 @@
     // Render latest jobs
     const latestJobsGrid = document.getElementById('latestJobs');
     if (window.LATEST_JOBS && latestJobsGrid) {
-      renderJobs(window.LATEST_JOBS, latestJobsGrid);
+      renderJobs(shuffleArray(window.LATEST_JOBS), latestJobsGrid);
     }
 
     // Count jobs by city
@@ -144,6 +144,8 @@
         return true;
       });
 
+      filtered = shuffleArray(filtered);
+
       // Update results count
       if (resultsCount) {
         resultsCount.textContent = filtered.length;
@@ -207,6 +209,15 @@
 
       container.appendChild(card);
     });
+  }
+
+  function shuffleArray(items) {
+    const arr = Array.isArray(items) ? items.slice() : [];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
   }
 
   // Re-render on language change

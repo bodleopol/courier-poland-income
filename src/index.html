@@ -1,14 +1,19 @@
 <section class="hero">
   <div class="container">
-    <h1 data-i18n="hero.title">Знайди роботу в Польщі</h1>
-    <p class="subtitle" data-i18n="hero.lead">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
-    
-    <!-- Search Bar -->
-    <div class="search-container">
-      <div class="search-bar">
-        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-        <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія..." data-i18n="search.placeholder" data-i18n-attr="placeholder">
-        <button class="btn btn-primary" id="searchBtn" data-i18n="search.button">Шукати</button>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 data-i18n="hero.title">Знайди роботу в Польщі</h1>
+        <p class="subtitle" data-i18n="hero.lead">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
+      </div>
+      <div class="hero-search">
+        <div class="search-card">
+          <div class="search-bar">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+            <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія..." data-i18n="search.placeholder" data-i18n-attr="placeholder">
+            <button class="btn btn-primary" id="searchBtn" data-i18n="search.button">Шукати</button>
+          </div>
+          <p class="search-hint" data-i18n="hero.lead">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -107,55 +112,122 @@
 
 <style>
 .hero {
-  background: linear-gradient(135deg, #00a67e 0%, #0f766e 100%);
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(1200px 600px at 10% -20%, rgba(255, 255, 255, 0.25), transparent 60%),
+              linear-gradient(135deg, #00a67e 0%, #0f766e 100%);
   color: white;
-  padding: 4rem 0;
-  text-align: center;
+  padding: 5rem 0;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+  filter: blur(0px);
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.2);
+  top: -140px;
+  right: -120px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  background: rgba(0, 217, 163, 0.35);
+  bottom: -120px;
+  left: -80px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-bottom: 1rem;
   font-weight: 800;
+  line-height: 1.1;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0;
   opacity: 0.95;
+  max-width: 520px;
 }
 
-.search-container {
-  max-width: 700px;
-  margin: 0 auto;
+.hero-search {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  padding: 1.25rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .search-bar {
   display: flex;
   gap: 0.5rem;
-  background: white;
+  background: #ffffff;
   padding: 0.5rem;
-  border-radius: 50px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(15, 118, 110, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  align-items: center;
+}
+
+.search-bar:focus-within {
+  border-color: rgba(15, 118, 110, 0.35);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
 }
 
 .search-icon {
-  color: #666;
-  margin: auto 0 auto 1rem;
+  color: #64748b;
+  margin: 0 0 0 0.75rem;
+  flex-shrink: 0;
 }
 
 .search-bar input {
   flex: 1;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.75rem;
   font-size: 1rem;
   outline: none;
+  background: transparent;
+  color: #0f172a;
 }
 
 .search-bar button {
-  border-radius: 40px;
-  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  padding: 0.75rem 1.75rem;
   white-space: nowrap;
+  box-shadow: none;
+}
+
+.search-hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: #475569;
 }
 
 .categories, .cities, .latest-jobs, .features {
@@ -334,10 +406,27 @@
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+  .hero {
+    padding: 3.5rem 0;
   }
-  
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-search {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    margin: 0 auto;
+  }
+
   .search-bar {
     flex-direction: column;
     border-radius: 12px;
@@ -345,7 +434,7 @@
   
   .search-bar button {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 }
 </style>
