@@ -1,0 +1,350 @@
+<section class="hero">
+  <div class="container">
+    <h1 data-i18n="hero_title">Знайди роботу в Польщі</h1>
+    <p class="subtitle" data-i18n="hero_subtitle">220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців.</p>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+      <div class="search-bar">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
+        <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія..." data-i18n-placeholder="search_placeholder">
+        <button class="btn btn-primary" id="searchBtn" data-i18n="search_button">Шукати</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="container">
+    <h2 data-i18n="categories_title">Категорії вакансій</h2>
+    <div class="category-grid" id="categoryGrid">
+      <!-- Генерується динамічно з categories.json -->
+    </div>
+  </div>
+</section>
+
+<!-- Popular Cities -->
+<section class="cities">
+  <div class="container">
+    <h2 data-i18n="cities_title">Популярні міста</h2>
+    <div class="cities-grid">
+      <a href="/vacancies/?city=warsaw" class="city-card">
+        <span class="city-icon">🏛️</span>
+        <h3 data-i18n="city_warsaw">Варшава</h3>
+        <p class="city-count" data-city="warsaw">— вакансій</p>
+      </a>
+      <a href="/vacancies/?city=krakow" class="city-card">
+        <span class="city-icon">🏰</span>
+        <h3 data-i18n="city_krakow">Краків</h3>
+        <p class="city-count" data-city="krakow">— вакансій</p>
+      </a>
+      <a href="/vacancies/?city=wroclaw" class="city-card">
+        <span class="city-icon">🌉</span>
+        <h3 data-i18n="city_wroclaw">Вроцлав</h3>
+        <p class="city-count" data-city="wroclaw">— вакансій</p>
+      </a>
+      <a href="/vacancies/?city=poznan" class="city-card">
+        <span class="city-icon">🏢</span>
+        <h3 data-i18n="city_poznan">Познань</h3>
+        <p class="city-count" data-city="poznan">— вакансій</p>
+      </a>
+      <a href="/vacancies/?city=gdansk" class="city-card">
+        <span class="city-icon">⚓</span>
+        <h3 data-i18n="city_gdansk">Гданськ</h3>
+        <p class="city-count" data-city="gdansk">— вакансій</p>
+      </a>
+      <a href="/vacancies/?city=lodz" class="city-card">
+        <span class="city-icon">🏭</span>
+        <h3 data-i18n="city_lodz">Лодзь</h3>
+        <p class="city-count" data-city="lodz">— вакансій</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Vacancies -->
+<section class="latest-jobs">
+  <div class="container">
+    <h2 data-i18n="latest_jobs_title">Нові вакансії</h2>
+    <div class="jobs-grid" id="latestJobs">
+      <!-- Генерується динамічно з content.json -->
+    </div>
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="/vacancies.html" class="btn btn-primary" data-i18n="view_all_jobs">Переглянути всі вакансії</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <h2 data-i18n="why_rybezh">Чому Rybezh?</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <span class="feature-icon">✅</span>
+        <h3 data-i18n="feature_1_title">Перевірені роботодавці</h3>
+        <p data-i18n="feature_1_desc">Лише легальні вакансії з офіційним працевлаштуванням</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🇺🇦</span>
+        <h3 data-i18n="feature_2_title">Підтримка українською</h3>
+        <p data-i18n="feature_2_desc">Допомога в пошуку роботи, консультації безкоштовно</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <h3 data-i18n="feature_3_title">Швидкий відгук</h3>
+        <p data-i18n="feature_3_desc">Отримайте відповідь від роботодавця протягом 1-2 днів</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📱</span>
+        <h3 data-i18n="feature_4_title">Зручний пошук</h3>
+        <p data-i18n="feature_4_desc">Фільтри за містом, категорією, зарплатою</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  background: linear-gradient(135deg, #00a67e 0%, #0f766e 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+.search-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.search-icon {
+  color: #666;
+  margin: auto 0 auto 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  border-radius: 40px;
+  padding: 0.75rem 2rem;
+  white-space: nowrap;
+}
+
+.categories, .cities, .latest-jobs, .features {
+  padding: 4rem 0;
+}
+
+.categories h2, .cities h2, .latest-jobs h2, .features h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.category-card:hover {
+  border-color: #00a67e;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 166, 126, 0.1);
+}
+
+.category-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.category-card p {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.city-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.city-card:hover {
+  border-color: #00a67e;
+  transform: translateY(-5px);
+}
+
+.city-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.city-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+}
+
+.city-count {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.job-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.job-card:hover {
+  border-color: #00a67e;
+  box-shadow: 0 5px 20px rgba(0, 166, 126, 0.1);
+}
+
+.job-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.job-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.job-city {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.job-salary {
+  color: #00a67e;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-excerpt {
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.feature p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+    border-radius: 12px;
+  }
+  
+  .search-bar button {
+    width: 100%;
+    border-radius: 8px;
+  }
+}

@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const SRC = path.join(__dirname);
 const TEMPLATES = path.join(SRC, 'templates');
 const DIST = path.join(process.cwd(), 'dist');
+const POSTS_PER_PAGE = 20;
 
 const I18N_SCRIPT = `\n<script>
 /* dynamic i18n keys injected by generate.js */
@@ -28,6 +29,15 @@ async function build() {
   const contentPath = path.join(SRC, 'content.json');
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
+
+  // Load categories
+  const categoriesPath = path.join(SRC, 'categories.json');
+  let categories = [];
+  try {
+    categories = JSON.parse(await fs.readFile(categoriesPath, 'utf8'));
+  } catch (e) {
+    console.warn('No categories.json found, continuing without categories');
+  }
 
   // Load blog posts
   const postsPath = path.join(SRC, 'posts.json');
@@ -51,6 +61,15 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'features.css'), featuresContent, 'utf8');
   } catch (e) {
     // features.css not found, continue
+  }
+
+  // Copy jobs.js
+  try {
+    const jobsJsPath = path.join(SRC, 'jobs.js');
+    const jobsJsContent = await fs.readFile(jobsJsPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'jobs.js'), jobsJsContent, 'utf8');
+  } catch (e) {
+    // jobs.js not found, continue
   }
 
   // Copy main.js
@@ -93,7 +112,7 @@ async function build() {
   const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'faq.html', '404.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'faq.html', '404.html', 'vacancies.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -266,7 +285,6 @@ async function build() {
   }
 
   // Pagination for Blog
-  const POSTS_PER_PAGE = 20;
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
   function generatePaginationHtml(currentPage, totalPages) {
@@ -334,7 +352,7 @@ async function build() {
     // Keep blog content H1-free to avoid duplicate headings.
     const blogIndexContent = `
       <div class="blog-intro">
-        <p data-i18n="blog.subtitle">Корисні статті та новини для кур'єрів</p>
+        <p data-i18n="blog.subtitle">Корисні статті та новини про роботу в Польщі</p>
       </div>
       <div class="search-panel">
         <div class="search-panel__header">
@@ -389,7 +407,7 @@ async function build() {
 
     let blogHtml = pageTpl
       .replace(/{{TITLE}}/g, `Блог${page > 1 ? ` (сторінка ${page})` : ''}`)
-      .replace(/{{DESCRIPTION}}/g, 'Корисні статті для кур\'єрів у Польщі')
+      .replace(/{{DESCRIPTION}}/g, 'Корисні статті про роботу в Польщі та кар\'єру')
       .replace(/{{CONTENT}}/g, blogIndexContent)
       .replace(/{{CANONICAL}}/g, canonicalUrl)
       .replace(/{{CITY}}/g, '')
@@ -489,12 +507,28 @@ async function build() {
   }
 
     // generate index
-    const indexContent = generateIndexContent(links);
+    const indexSrc = await fs.readFile(path.join(SRC, 'index.html'), 'utf8');
+    const latestJobs = pages.slice(0, 12);
+
+    // Inject categories and jobs data as JSON
+    const dataScript = `
+<script>
+window.CATEGORIES = ${JSON.stringify(categories)};
+window.ALL_JOBS = ${JSON.stringify(pages)};
+window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
+</script>`;
+
+    let indexContent = indexSrc;
+    if (indexContent.includes('</head>')) {
+      indexContent = indexContent.replace('</head>', `${dataScript}\n</head>`);
+    }
+
     let indexHtml = pageTpl
-      .replace(/{{TITLE}}/g, "Rybezh — Робота кур'єром у Польщі")
-      .replace(/{{DESCRIPTION}}/g, "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами та підтримкою.")
+      .replace(/{{TITLE}}/g, "Знайди роботу в Польщі — Rybezh")
+      .replace(/{{DESCRIPTION}}/g, "220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців та поляків.")
       .replace(/{{CONTENT}}/g, indexContent)
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
+      .replace(/{{CITY}}/g, "")
       .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     
     // Inject data-i18n into index title and description
@@ -525,7 +559,7 @@ async function build() {
 
     // write robots.txt
     try {
-      const robots = `# Robots.txt for rybezh.site - Job search platform for couriers in Poland
+      const robots = `# Robots.txt for rybezh.site - Job search platform in Poland
 # All search engines are allowed to access all pages
 
 User-agent: *
@@ -609,7 +643,7 @@ function generateIndexContent(links) {
       <div class="hero-content">
         <h2 class="hero-title" data-i18n="home.hero.title">🚀 Робота мрії чекає тебе!</h2>
         <p class="hero-subtitle" data-i18n="home.hero.subtitle">
-          <strong>Тисячі кур'єрів вже заробляють</strong> у Польщі. 📦 Безкоштовна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰
+          <strong>Тисячі людей вже працюють</strong> у Польщі. 📌 Безкоштовна консультація, <strong>легальне працевлаштування</strong> та <strong>зручний пошук</strong>.
         </p>
         <div class="hero-actions">
           <a href="/apply.html" class="btn-primary hero-btn" data-i18n="home.hero.cta_primary">Почати прямо зараз</a>
@@ -649,7 +683,7 @@ function generateIndexContent(links) {
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;">
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">3500+</div>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.couriers.line1">Кур'єрів скористалось</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.couriers.line1">Кандидатів скористалось</p>
           <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.couriers.line2">нашими послугами</p>
         </div>
         <div style="text-align: center;">
@@ -665,14 +699,14 @@ function generateIndexContent(links) {
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">⭐4.8/5</div>
           <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.rating.line1">Рейтинг задоволення</p>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.rating.line2">від кур'єрів</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.rating.line2">від кандидатів</p>
         </div>
       </div>
     </div>
 
     <!-- TESTIMONIALS SECTION -->
     <div style="padding: 2.5rem 0;">
-      <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem; font-size: 1.4rem;" data-i18n="home.testimonials.title">💬 Що кажуть кур'єри</h3>
+      <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem; font-size: 1.4rem;" data-i18n="home.testimonials.title">💬 Що кажуть кандидати</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
         <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
           <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
@@ -680,7 +714,7 @@ function generateIndexContent(links) {
             "Дуже задоволений! За 3 дні отримав все необхідне та почав роботу. Підтримка команди Rybezh — просто супер!"
           </p>
           <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t1.name">Ігор К., Варшава</p>
-          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t1.role">Кур'єр з 6 міс. досвіду</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t1.role">Пакувальник, 6 міс. досвіду</p>
         </div>
         
         <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
@@ -689,7 +723,7 @@ function generateIndexContent(links) {
             "Я приїхав з нічим, а за місяць вже купив велосипед. Щоденні виплати як обіцяно. Рекомендую!"
           </p>
           <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t2.name">Максим В., Краків</p>
-          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t2.role">Кур'єр з 3 міс. досвіду</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t2.role">Працівниця складу, 3 міс. досвіду</p>
         </div>
         
         <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
@@ -703,7 +737,7 @@ function generateIndexContent(links) {
       </div>
     </div>
 
-    <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.</p>
+    <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії у 20+ містах Польщі. Стабільні умови та підтримка.</p>
     
     <div class="search-panel">
       <div class="search-panel__header">
@@ -854,18 +888,24 @@ function generateSitemap(links, posts = []) {
     }
   ];
 
-  const blogPages = [
-    {
-      url: `${base}/blog.html`,
-      priority: '0.75',
+  const totalBlogPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const blogPaginationPages = Array.from({ length: totalBlogPages }, (_, index) => {
+    const page = index + 1;
+    return {
+      url: page === 1 ? `${base}/blog.html` : `${base}/blog-${page}.html`,
+      priority: page === 1 ? '0.75' : '0.6',
       changefreq: 'weekly',
       lastmod: today
-    },
+    };
+  });
+
+  const blogPages = [
+    ...blogPaginationPages,
     ...posts.map(post => ({
       url: `${base}/post-${post.slug}.html`,
       priority: '0.7',
       changefreq: 'monthly',
-      lastmod: (post.date || today)
+      lastmod: post.date ? toISODate(post.date) : today
     }))
   ];
   
@@ -932,7 +972,11 @@ function extractImageUrl(html) {
 }
 
 function toISODate(date) {
-  return new Date(date).toISOString().slice(0, 10);
+  const d = new Date(date);
+  if (Number.isNaN(d.getTime())) {
+    return new Date().toISOString().slice(0, 10);
+  }
+  return d.toISOString().slice(0, 10);
 }
 
 function addDays(date, days) {
@@ -994,7 +1038,7 @@ function buildJobPostingJsonLd(page) {
   return {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: page.title || "Робота кур'єром",
+    title: page.title || "Робота в Польщі",
     description,
     identifier: {
       '@type': 'PropertyValue',

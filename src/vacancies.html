@@ -1,0 +1,136 @@
+<section class="vacancies-page">
+  <div class="container">
+    <h1 data-i18n="all_vacancies">Всі вакансії</h1>
+    
+    <!-- Filters -->
+    <div class="filters">
+      <select id="categoryFilter" class="filter-select">
+        <option value="" data-i18n="filter_all_categories">Всі категорії</option>
+      </select>
+      
+      <select id="cityFilter" class="filter-select">
+        <option value="" data-i18n="filter_all_cities">Всі міста</option>
+        <option value="warsaw">Варшава</option>
+        <option value="krakow">Краків</option>
+        <option value="wroclaw">Вроцлав</option>
+        <option value="poznan">Познань</option>
+        <option value="gdansk">Гданськ</option>
+        <option value="szczecin">Щецін</option>
+        <option value="lodz">Лодзь</option>
+        <option value="katowice">Катовіце</option>
+        <option value="lublin">Люблін</option>
+        <option value="bialystok">Білосток</option>
+      </select>
+      
+      <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input">
+      
+      <button id="resetFilters" class="btn btn-secondary" data-i18n="reset_filters">Скинути</button>
+    </div>
+    
+    <!-- Results count -->
+    <div class="results-info">
+      <p><span id="resultsCount">0</span> <span data-i18n="vacancies_found">вакансій знайдено</span></p>
+    </div>
+    
+    <!-- Jobs Grid -->
+    <div class="jobs-grid" id="allJobs">
+      <!-- Генерується динамічно -->
+    </div>
+    
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <!-- Генерується динамічно -->
+    </div>
+  </div>
+</section>
+
+<style>
+.vacancies-page {
+  padding: 3rem 0;
+}
+
+.vacancies-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-select, .filter-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filter-select {
+  min-width: 200px;
+}
+
+.filter-input {
+  width: 200px;
+}
+
+.filter-select:focus, .filter-input:focus {
+  border-color: #00a67e;
+}
+
+.results-info {
+  margin-bottom: 1.5rem;
+  color: #6b7280;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #00a67e;
+  color: #00a67e;
+}
+
+.pagination button.active {
+  background: #00a67e;
+  color: white;
+  border-color: #00a67e;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+  
+  .filter-select, .filter-input {
+    width: 100%;
+  }
+}
+</style>
+
+<script>
+// Ця сторінка використовує main.js для фільтрації та відображення вакансій
+</script>

@@ -10,10 +10,10 @@
   // 1. TRANSLATIONS (i18n)
   // ============================================
   const translations = {
-    'meta.title': { ua: "Rybezh — Робота кур'єром у Польщі", pl: 'Rybezh — Praca kurierem w Polsce' },
-    'meta.description': { ua: "Актуальні вакансії кур'єрів у містах Польщі. Робота з гнучким графіком, щоденними виплатами.", pl: 'Aktualne oferty pracy kuriera w miastach Polski. Praca na elastyczny grafik, codzienne wypłaty.' },
+    'meta.title': { ua: 'Rybezh — Пошук роботи у Польщі', pl: 'Rybezh — Praca w Polsce' },
+    'meta.description': { ua: 'Актуальні вакансії в різних сферах по всій Польщі. Легальне працевлаштування та підтримка.', pl: 'Aktualne oferty pracy w różnych branżach w całej Polsce. Legalne zatrudnienie i wsparcie.' },
     'brand.name': { ua: 'Rybezh', pl: 'Rybezh' },
-    'brand.tagline': { ua: "rybezh.site — робота кур'єром у Польщі", pl: 'rybezh.site — praca kurierem w Polsce' },
+    'brand.tagline': { ua: 'rybezh.site — робота у Польщі для українців та поляків', pl: 'rybezh.site — praca w Polsce dla Ukraińców i Polaków' },
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
     'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
     'nav.about': { ua: 'Про нас', pl: 'O nas' },
@@ -22,39 +22,39 @@
     'nav.contact': { ua: 'Контакти', pl: 'Kontakt' },
     'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
-    'hero.title': { ua: "Знайдіть роботу кур'єром у Польщі", pl: 'Znajdź pracę kurierem w Polsce' },
-    'hero.lead': { ua: "Актуальні вакансії кур'єрів у 20+ містах Польщі. Гнучкий графік, щоденні виплати.", pl: 'Aktualne oferty pracy kurierskiej w ponad 20 miastach Polski. Elastyczny grafik, codzienne wypłaty.' },
+    'hero.title': { ua: 'Знайдіть роботу в Польщі', pl: 'Znajdź pracę w Polsce' },
+    'hero.lead': { ua: 'Актуальні вакансії в різних сферах по всій Польщі. Легальні умови та підтримка.', pl: 'Aktualne oferty w różnych branżach w całej Polsce. Legalne warunki i wsparcie.' },
     'home.hero.title': { ua: '🚀 Робота мрії чекає тебе!', pl: '🚀 Praca marzeń czeka na Ciebie!' },
-    'home.hero.subtitle': { ua: '<strong>Тисячі кур\'єрів вже заробляють</strong> у Польщі. 📦 Безкоштовна консультація, <strong>щоденні виплати</strong> 💰 та <strong>гнучкий графік</strong> ⏰', pl: '<strong>Tysiące kurierów już zarabia</strong> w Polsce. 📦 Bezpłatna konsultacja, <strong>codzienne wypłaty</strong> 💰 i <strong>elastyczny grafik</strong> ⏰' },
+    'home.hero.subtitle': { ua: '<strong>Тисячі людей вже працюють</strong> у Польщі. 📌 Безкоштовна консультація, <strong>легальне працевлаштування</strong> та <strong>зручний пошук</strong>.', pl: '<strong>Tysiące osób już pracuje</strong> w Polsce. 📌 Bezpłatna konsultacja, <strong>legalne zatrudnienie</strong> i <strong>wygodne wyszukiwanie</strong>.' },
     'home.hero.cta_primary': { ua: 'Почати прямо зараз', pl: 'Zacznij teraz' },
     'home.hero.cta_secondary': { ua: 'Переглянути вакансії', pl: 'Zobacz oferty' },
     'home.stats.title': { ua: '📊 Статистика успіху', pl: '📊 Statystyki sukcesu' },
-    'home.stats.couriers.line1': { ua: 'Кур\'єрів скористалось', pl: 'Kurierów skorzystało' },
-    'home.stats.couriers.line2': { ua: 'нашими послугами', pl: 'z naszych usług' },
+    'home.stats.couriers.line1': { ua: 'Кандидатів скористалось', pl: 'Kandydatów skorzystało' },
+    'home.stats.couriers.line2': { ua: 'нашою платформою', pl: 'z naszej platformy' },
     'home.stats.partners.line1': { ua: 'Партнерських компаній', pl: 'Firm partnerskich' },
     'home.stats.partners.line2': { ua: 'у Польщі', pl: 'w Polsce' },
     'home.stats.cities.line1': { ua: 'Міст із вакансіями', pl: 'Miast z ofertami' },
     'home.stats.cities.line2': { ua: 'від Варшави до Гданська', pl: 'od Warszawy po Gdańsk' },
     'home.stats.rating.line1': { ua: 'Рейтинг задоволення', pl: 'Ocena zadowolenia' },
-    'home.stats.rating.line2': { ua: 'від кур\'єрів', pl: 'od kurierów' },
-    'home.testimonials.title': { ua: '💬 Що кажуть кур\'єри', pl: '💬 Co mówią kurierzy' },
-    'home.testimonials.t1.quote': { ua: '"Дуже задоволений! За 3 дні отримав все необхідне та почав роботу. Підтримка команди Rybezh — просто супер!"', pl: '"Jestem bardzo zadowolony! W 3 dni dostałem wszystko, co potrzebne i zacząłem pracę. Wsparcie Rybezh jest świetne!"' },
+    'home.stats.rating.line2': { ua: 'від кандидатів', pl: 'od kandydatów' },
+    'home.testimonials.title': { ua: '💬 Що кажуть кандидати', pl: '💬 Co mówią kandydaci' },
+    'home.testimonials.t1.quote': { ua: '"Дуже задоволений! За кілька днів отримав пропозицію і швидко стартував."', pl: '"Jestem bardzo zadowolony! W kilka dni dostałem ofertę i szybko zacząłem."' },
     'home.testimonials.t1.name': { ua: 'Ігор К., Варшава', pl: 'Igor K., Warszawa' },
-    'home.testimonials.t1.role': { ua: 'Кур\'єр з 6 міс. досвіду', pl: 'Kurier z 6 mies. doświadczenia' },
-    'home.testimonials.t2.quote': { ua: '"Я приїхав з нічим, а за місяць вже купив велосипед. Щоденні виплати як обіцяно. Рекомендую!"', pl: '"Przyjechałem bez niczego, a po miesiącu kupiłem rower. Codzienne wypłaty zgodnie z obietnicą. Polecam!"' },
+    'home.testimonials.t1.role': { ua: 'Пакувальник, 6 міс. досвіду', pl: 'Pakowacz, 6 mies. doświadczenia' },
+    'home.testimonials.t2.quote': { ua: '"Швидкий відгук від роботодавця і зрозумілі умови. Рекомендую!"', pl: '"Szybka odpowiedź od pracodawcy i jasne warunki. Polecam!"' },
     'home.testimonials.t2.name': { ua: 'Максим В., Краків', pl: 'Maksym W., Kraków' },
-    'home.testimonials.t2.role': { ua: 'Кур\'єр з 3 міс. досвіду', pl: 'Kurier z 3 mies. doświadczenia' },
-    'home.testimonials.t3.quote': { ua: '"Гнучкий графік дозволяє мені вчитися та одночасно заробляти. Це саме то, що мені потрібно було!"', pl: '"Elastyczny grafik pozwala mi się uczyć i jednocześnie zarabiać. To dokładnie to, czego potrzebowałem!"' },
+    'home.testimonials.t2.role': { ua: 'Працівниця складу, 3 міс. досвіду', pl: 'Pracownica magazynu, 3 mies. doświadczenia' },
+    'home.testimonials.t3.quote': { ua: '"Знайшов роботу за спеціальністю і зміг поєднати з навчанням."', pl: '"Znalazłem pracę w zawodzie i mogłem połączyć ją z nauką."' },
     'home.testimonials.t3.name': { ua: 'Софія Л., Вроцлав', pl: 'Sofia L., Wrocław' },
     'home.testimonials.t3.role': { ua: 'Студентка, 4 міс. досвіду', pl: 'Studentka, 4 mies. doświadczenia' },
     'home.search.title': { ua: '🔍 Знайди роботу за містом:', pl: '🔍 Znajdź pracę według miasta:' },
     'home.features.title': { ua: '✨ Більше ніж просто робота', pl: '✨ Więcej niż tylko praca' },
-    'home.features.f1.title': { ua: '💵 Щоденні виплати', pl: '💵 Codzienne wypłaty' },
-    'home.features.f1.text': { ua: 'Отримуй гроші прямо в день роботи', pl: 'Otrzymuj pieniądze tego samego dnia' },
-    'home.features.f2.title': { ua: '⏰ Гнучкий графік', pl: '⏰ Elastyczny grafik' },
-    'home.features.f2.text': { ua: 'Працюй коли захочеш, скільки захочеш', pl: 'Pracuj kiedy chcesz i ile chcesz' },
-    'home.features.f3.title': { ua: '🤝 Повна підтримка 24/7', pl: '🤝 Pełne wsparcie 24/7' },
-    'home.features.f3.text': { ua: 'Допомога з документами та легалізацією', pl: 'Pomoc z dokumentami i legalizacją' },
+    'home.features.f1.title': { ua: '💵 Прозорі умови', pl: '💵 Przejrzyste warunki' },
+    'home.features.f1.text': { ua: 'Чіткі вимоги, стабільні виплати', pl: 'Jasne wymagania, stabilne wypłaty' },
+    'home.features.f2.title': { ua: '⏰ Гнучкість', pl: '⏰ Elastyczność' },
+    'home.features.f2.text': { ua: 'Різні графіки та формати зайнятості', pl: 'Różne grafiki i formy zatrudnienia' },
+    'home.features.f3.title': { ua: '🤝 Підтримка', pl: '🤝 Wsparcie' },
+    'home.features.f3.text': { ua: 'Консультації з документів і працевлаштування', pl: 'Konsultacje dot. dokumentów i zatrudnienia' },
     'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
     'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
     'search.button': { ua: 'Знайти', pl: 'Znajdź' },
@@ -67,7 +67,7 @@
     'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
     'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
     'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
-    'footer.desc': { ua: "Допомагаємо знайти стабільну роботу кур'єром у Польщі. Гнучкий графік, щоденні виплати, підтримка 24/7.", pl: 'Pomagamy znaleźć stabilną pracę kurierem w Polsce. Elastyczny grafik, codzienne wypłaty, wsparcie 24/7.' },
+    'footer.desc': { ua: 'Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.', pl: 'Pomagamy znaleźć pracę w Polsce i dobrać ofertę do doświadczenia. Wsparcie 24/7.' },
     'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
     'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
     'footer.contact': { ua: 'Контакти', pl: 'Kontakt' },
@@ -86,9 +86,9 @@
     'placeholder.contact': { ua: '+48 123 456 789 або email@mail.com', pl: '+48 123 456 789 lub email@mail.com' },
     'placeholder.city': { ua: 'Варшава, Краків...', pl: 'Warszawa, Kraków...' },
     'placeholder.message': { ua: 'Додайте деталі', pl: 'Dodaj szczegóły' },
-    'placeholder.exp': { ua: 'Наприклад: 2 роки на доставці', pl: 'Na przykład: 2 lata w dostawach' },
-    'apply.meta_title': { ua: "Подати заявку — Rybezh | Робота кур'єром у Польщі", pl: 'Złóż wniosek — Rybezh | Praca kurierem w Polsce' },
-    'apply.meta_description': { ua: "Заповніть форму для безкоштовної консультації щодо роботи кур'єром у Польщі. Швидке працевлаштування, гнучкий графік, щоденні виплати!", pl: 'Wypełnij formularz bezpłatnej konsultacji dotyczącej pracy kuriera w Polsce. Szybkie zatrudnienie, elastyczny grafik, codzienne wypłaty!' },
+    'placeholder.exp': { ua: 'Наприклад: 2 роки у сфері складу', pl: 'Na przykład: 2 lata w logistyce' },
+    'apply.meta_title': { ua: 'Подати заявку — Rybezh | Робота у Польщі', pl: 'Złóż wniosek — Rybezh | Praca w Polsce' },
+    'apply.meta_description': { ua: 'Заповніть форму для безкоштовної консультації щодо працевлаштування у Польщі. Підбір вакансій та підтримка.', pl: 'Wypełnij formularz bezpłatnej konsultacji dotyczącej pracy w Polsce. Dobór ofert i wsparcie.' },
     'apply.title': { ua: 'Швидка заявка', pl: 'Szybka aplikacja' },
     'apply.intro': { ua: 'Кілька полів — і ми підберемо варіанти роботи та допоможемо з документами.', pl: 'Kilka pól — i dobierzemy oferty pracy oraz pomożemy z dokumentami.' },
     'label.name': { ua: "Ім'я", pl: 'Imię' },
@@ -104,10 +104,10 @@
     'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert. Zgłoszenia przetwarzamy w ciągu 24 godzin.' },
     'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
     'aside.contacts': { ua: 'Контакти', pl: 'Kontakt' },
-    'about.meta_title': { ua: "Про нас — Rybezh | Робота кур'єром у Польщі", pl: 'O nas — Rybezh | Praca kurierem w Polsce' },
-    'about.meta_description': { ua: "Rybezh — ваш надійний партнер у пошуку роботи кур'єром у Польщі. Ми допомагаємо з працевлаштуванням, документами та адаптацією.", pl: 'Rybezh to Twój zaufany partner w znalezieniu pracy kuriera w Polsce. Pomagamy w zatrudnieniu, dokumentach i adaptacji.' },
+    'about.meta_title': { ua: 'Про нас — Rybezh | Пошук роботи у Польщі', pl: 'O nas — Rybezh | Praca w Polsce' },
+    'about.meta_description': { ua: 'Rybezh — ваш надійний партнер у пошуку роботи у Польщі. Допомагаємо з працевлаштуванням, документами та адаптацією.', pl: 'Rybezh to Twój zaufany partner w znalezieniu pracy w Polsce. Pomagamy w zatrudnieniu, dokumentach i adaptacji.' },
     'about.title': { ua: 'Про нас', pl: 'O nas' },
-    'about.text': { ua: "<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу кур'єром у Польщі. Ми співпрацюємо з провідними логістичними компаніями та сервісами доставки їжі.", pl: "<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę jako kurier w Polsce. Współpracujemy z wiodącymi firmami logistycznymi i serwisami dostawy jedzenia." },
+    'about.text': { ua: '<strong>Rybezh</strong> — це команда професіоналів, яка допомагає українцям та іноземцям знайти стабільну роботу у Польщі. Ми співпрацюємо з роботодавцями в різних сферах.', pl: '<strong>Rybezh</strong> to zespół profesjonalistów pomagający Ukraińcom i obcokrajowcom znaleźć stabilną pracę w Polsce. Współpracujemy z pracodawcami w różnych branżach.' },
     'about.mission': { ua: 'Наша місія', pl: 'Nasza misja' },
     'about.mission_text': { ua: 'Ми прагнемо зробити процес працевлаштування за кордоном простим, прозорим та безпечним. Ми надаємо повний супровід: від першої консультації до підписання договору та виходу на першу зміну.', pl: 'Dążymy do tego, aby proces zatrudnienia za granicą był prosty, przejrzysty i bezpieczny. Zapewniamy pełne wsparcie: od pierwszej konsultacji po podpisanie umowy i pierwszą zmianę.' },
     'about.why': { ua: 'Чому обирають нас', pl: 'Dlaczego my' },
@@ -121,7 +121,7 @@
     'about.contacts': { ua: 'Контакти', pl: 'Kontakt' },
     'about.ready': { ua: 'Готові до змін? 🚀', pl: 'Gotowi na zmiany? 🚀' },
     'contact.meta_title': { ua: "Контакти — Rybezh | Зв'яжіться з нами", pl: 'Kontakt — Rybezh | Skontaktuj się z nami' },
-    'contact.meta_description': { ua: "Зв'яжіться з нами для отримання консультації щодо роботи кур'єром у Польщі. Telegram, Email, підтримка 24/7.", pl: 'Skontaktuj się z nami w sprawie konsultacji dotyczącej pracy kuriera w Polsce. Telegram, email, wsparcie 24/7.' },
+    'contact.meta_description': { ua: 'Зв’яжіться з нами для консультації щодо роботи у Польщі. Telegram, Email, підтримка.', pl: 'Skontaktuj się z nami w sprawie konsultacji dotyczącej pracy w Polsce. Telegram, email, wsparcie.' },
     'contact.title': { ua: 'Контакти', pl: 'Kontakt' },
     'contact.text': { ua: "Маєте запитання? Зв'яжіться з нами будь-яким зручним способом.", pl: 'Masz pytania? Skontaktuj się z nami w dowolny wygodny sposób.' },
     'contact.telegram': { ua: 'Написати в Telegram', pl: 'Napisz na Telegram' },
@@ -129,10 +129,10 @@
     'privacy.meta_description': { ua: 'Політика конфіденційності Rybezh. Дізнайтеся, як ми обробляємо ваші дані та захищаємо вашу приватність.', pl: 'Polityka prywatności Rybezh. Dowiedz się, jak przetwarzamy Twoje dane i chronimy Twoją prywatność.' },
     'privacy.title': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
     'privacy.text': { ua: "<h2>1. Загальні положення</h2><p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки, використання і розкриття персональних даних користувача. Ми поважаємо вашу конфіденційність і зобов'язуємося захищати ваші персональні дані.</p><h2>2. Збір даних</h2><p>Ми можемо збирати наступні дані: ім'я, прізвище, номер телефону, адреса електронної пошти, місто проживання, інформація про досвід роботи. Ці дані надаються вами добровільно при заповненні форм на сайті.</p><h2>3. Використання даних</h2><p>Зібрані дані використовуються для: зв'язку з вами, надання консультацій щодо працевлаштування, підбору вакансій, покращення роботи нашого сервісу.</p><h2>4. Захист даних</h2><p>Ми вживаємо всіх необхідних технічних та організаційних заходів для захисту ваших даних від несанкціонованого доступу, втрати або зміни.</p><h2>5. Файли Cookie</h2><p>Наш сайт використовує файли cookie для покращення взаємодії з користувачем. Ви можете налаштувати свій браузер для відмови від cookie, але це може вплинути на функціональність сайту.</p><h2>6. Ваші права</h2><p>Ви маєте право на доступ до своїх даних, їх виправлення або видалення. Для цього зв'яжіться з нами через контактні дані на сайті.</p>", pl: "<h2>1. Postanowienia ogólne</h2><p>Niniejsza Polityka prywatności określa zasady gromadzenia, przechowywania, przetwarzania, wykorzystywania i ujawniania danych osobowych użytkownika. Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych.</p><h2>2. Gromadzenie danych</h2><p>Możemy gromadzić następujące dane: imię, nazwisko, numer telefonu, adres e-mail, miasto zamieszkania, informacje o doświadczeniu zawodowym. Dane te są podawane dobrowolnie podczas wypełniania formularzy na stronie.</p><h2>3. Wykorzystanie danych</h2><p>Zgromadzone dane są wykorzystywane do: kontaktu z Tobą, udzielania konsultacji w sprawie zatrudnienia, doboru ofert pracy, ulepszania działania naszego serwisu.</p><h2>4. Ochrona danych</h2><p>Podejmujemy wszelkie niezbędne środki techniczne i organizacyjne w celu ochrony Twoich danych przed nieautoryzowanym dostępem, utratą lub zmianą.</p><h2>5. Pliki Cookie</h2><p>Nasza strona używa plików cookie w celu poprawy doświadczeń użytkownika. Możesz skonfigurować swoją przeglądarkę, aby odrzucała pliki cookie, ale może to wpłynąć na funkcjonalność strony.</p><h2>6. Twoje prawa</h2><p>Masz prawo do dostępu do swoich danych, ich poprawiania lub usunięcia. W tym celu skontaktuj się z nami za pośrednictwem danych kontaktowych na stronie.</p>" },
-    'faq.meta_title': { ua: "Часті запитання (FAQ) — Rybezh | Робота кур'єром", pl: 'Częste pytania (FAQ) — Rybezh | Praca kurierem' },
-    'faq.meta_description': { ua: 'Відповіді на поширені запитання про роботу курʼєром у Польщі. Зарплата, графік, документи, вимоги.', pl: 'Odpowiedzi na najczęstsze pytania o pracę kuriera w Polsce. Wynagrodzenie, grafik, dokumenty, wymagania.' },
+    'faq.meta_title': { ua: 'Часті запитання (FAQ) — Rybezh | Робота у Польщі', pl: 'Częste pytania (FAQ) — Rybezh | Praca w Polsce' },
+    'faq.meta_description': { ua: 'Відповіді на поширені запитання про роботу у Польщі. Документи, графік, умови, підтримка.', pl: 'Odpowiedzi na najczęstsze pytania o pracę w Polsce. Dokumenty, grafik, warunki, wsparcie.' },
     'faq.title': { ua: 'Часті запитання', pl: 'Częste pytania' },
-    'faq.text': { ua: "<details><summary>Чи потрібен власний транспорт?</summary><p>Можна працювати на власному авто, велосипеді, скутері або пішки (у деяких містах). Також ми допомагаємо з орендою транспорту.</p></details><details><summary>Коли я отримаю першу виплату?</summary><p>Виплати здійснюються щотижня або щоденно, залежно від обраного партнера та умов.</p></details><details><summary>Чи потрібен досвід роботи?</summary><p>Ні, досвід не обов'язковий. Ми проводимо навчання перед початком роботи.</p></details><details><summary>Які документи потрібні?</summary><p>Паспорт, віза або карта побиту (для іноземців), номер PESEL. Для водіїв — водійське посвідчення.</p></details><details><summary>Скільки можна заробити?</summary><p>Заробіток залежить від кількості годин та доставок. В середньому кур'єри заробляють від 25 до 40 злотих на годину.</p></details>", pl: "<details><summary>Czy potrzebuję własnego pojazdu?</summary><p>Możesz pracować własnym samochodem, rowerem, skuterem lub pieszo (w niektórych miastach). Pomagamy również w wynajmie pojazdów.</p></details><details><summary>Kiedy otrzymam pierwszą wypłatę?</summary><p>Wypłaty są realizowane tygodniowo lub codziennie, w zależności od wybranego partnera i warunków.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie, doświadczenie nie jest wymagane. Zapewniamy szkolenie przed rozpoczęciem pracy.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Paszport, wiza lub karta pobytu (dla obcokrajowców), numer PESEL. Dla kierowców — prawo jazdy.</p></details><details><summary>Ile mogę zarobić?</summary><p>Zarobki zależą od liczby godzin i dostaw. Średnio kurierzy zarabiają od 25 do 40 złotych na godzinę.</p></details>" },
+    'faq.text': { ua: "<details><summary>Як швидко можна знайти роботу?</summary><p>Зазвичай перші пропозиції надходять протягом 1–3 днів після подачі заявки.</p></details><details><summary>Які документи потрібні?</summary><p>Найчастіше потрібні паспорт, віза або карта побиту, PESEL і банківський рахунок.</p></details><details><summary>Чи потрібен досвід?</summary><p>Не завжди. Для багатьох вакансій досвід не обов'язковий.</p></details><details><summary>Який графік?</summary><p>Є повна зайнятість, зміни та часткова зайнятість.</p></details>", pl: "<details><summary>Jak szybko można znaleźć pracę?</summary><p>Zwykle pierwsze oferty pojawiają się w ciągu 1–3 dni po zgłoszeniu.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Najczęściej potrzebne są paszport, wiza lub karta pobytu, PESEL i konto bankowe.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie zawsze. Wiele ofert nie wymaga doświadczenia.</p></details><details><summary>Jaki jest grafik?</summary><p>Dostępne są pełne etaty, zmiany i praca dorywcza.</p></details>" },
     'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
     'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' },
     'theme.light': { ua: 'Світла тема', pl: 'Jasny motyw' },
@@ -140,9 +140,9 @@
     'scroll.top': { ua: 'Вгору', pl: 'Do góry' },
     // Blog
     'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh' },
-    'blog.meta_title': { ua: 'Блог — Rybezh | Поради для кур\'єрів', pl: 'Blog — Rybezh | Porady dla kurierów' },
-    'blog.meta_description': { ua: 'Корисні статті та поради для кур\'єрів у Польщі. Як заробляти більше, документи, адаптація, безпека.', pl: 'Przydatne artykuły i porady dla kurierów w Polsce. Zarobki, dokumenty, adaptacja, bezpieczeństwo.' },
-    'blog.subtitle': { ua: 'Корисні статті та новини для кур\'єрів', pl: 'Przydatne artykuły i wiadomości dla kurierów' },
+    'blog.meta_title': { ua: 'Блог — Rybezh | Робота у Польщі', pl: 'Blog — Rybezh | Praca w Polsce' },
+    'blog.meta_description': { ua: 'Корисні статті та поради про роботу у Польщі: документи, ринок праці, адаптація.', pl: 'Przydatne artykuły i porady o pracy w Polsce: dokumenty, rynek pracy, adaptacja.' },
+    'blog.subtitle': { ua: 'Корисні статті та новини про роботу', pl: 'Przydatne artykuły i wiadomości o pracy' },
     'blog.search.title': { ua: '🔎 Пошук у блозі', pl: '🔎 Szukaj w blogu' },
     'blog.search.placeholder': { ua: 'Пошук по темі або місту', pl: 'Szukaj po temacie lub mieście' },
     'blog.search.button': { ua: 'Знайти', pl: 'Szukaj' },
@@ -155,31 +155,31 @@
     'jobs.search.count': { ua: 'Знайдено вакансій:', pl: 'Znaleziono ofert:' },
     'jobs.search.empty': { ua: 'Нічого не знайдено', pl: 'Brak wyników' },
     // Article template (legacy)
-    'article.step1': { ua: 'Крок 1: Перевірте наявність основних документів', pl: 'Krok 1: Sprawdź podstawowe dokumenty' },
+    'article.step1': { ua: 'Крок 1: Перевірте базові документи', pl: 'Krok 1: Sprawdź podstawowe dokumenty' },
     'article.step2': { ua: 'Крок 2: Заповніть анкету на Rybezh', pl: 'Krok 2: Wypełnij formularz Rybezh' },
-    'article.step3': { ua: 'Крок 3: Отримайте PESEL', pl: 'Krok 3: Uzyskaj PESEL' },
-    'article.step4': { ua: 'Крок 4: Зареєструйтеся на платформі доставки', pl: 'Krok 4: Zarejestruj się na platformie dostaw' },
-    'article.step5': { ua: 'Крок 5: Активуйте рахунок', pl: 'Krok 5: Aktywuj konto' },
-    'article.step6': { ua: 'Крок 6: Отримайте своє перше замовлення', pl: 'Krok 6: Odbierz swoje pierwsze zamówienie' },
-    'article.step7': { ua: 'Крок 7: Отримайте першу виплату', pl: 'Krok 7: Odbierz pierwszą wypłatę' },
-    'article.tip.routes': { ua: '📍 Обирайте знайомі маршрути', pl: '📍 Wybieraj znane trasy' },
-    'article.tip.quality': { ua: '⭐ Забудьте про продуктивність — сконцентруйтеся на якості', pl: '⭐ Zapomnij o produktywności — skup się na jakości' },
-    'article.tip.phone': { ua: '📱 Завжди тримайте телефон зарядженим', pl: '📱 Zawsze trzymaj telefon naładowany' },
-    'article.tip.transport': { ua: '🚴 Виберіть зручний транспорт', pl: '🚴 Wybierz wygodny transport' },
-    'article.mistake.too_many': { ua: '❌ Прийняття занадто багатьох замовлень одночасно', pl: '❌ Przyjmowanie zbyt wielu zamówień naraz' },
-    'article.mistake.communication': { ua: '❌ Не перевіряти комунікацію з клієнтом', pl: '❌ Brak komunikacji z klientem' },
-    'article.mistake.safety': { ua: '❌ Ігнорування правил безпеки', pl: '❌ Ignorowanie zasad bezpieczeństwa' },
+    'article.step3': { ua: 'Крок 3: Отримайте PESEL (за потреби)', pl: 'Krok 3: Uzyskaj PESEL (jeśli potrzebne)' },
+    'article.step4': { ua: 'Крок 4: Оберіть вакансії та надішліть заявки', pl: 'Krok 4: Wybierz oferty i wyślij zgłoszenia' },
+    'article.step5': { ua: 'Крок 5: Підготуйтеся до співбесіди', pl: 'Krok 5: Przygotuj się do rozmowy' },
+    'article.step6': { ua: 'Крок 6: Пройдіть перший робочий день', pl: 'Krok 6: Przejdź pierwszy dzień pracy' },
+    'article.step7': { ua: 'Крок 7: Уточніть графік виплат', pl: 'Krok 7: Ustal harmonogram wypłat' },
+    'article.tip.routes': { ua: '📍 Обирайте вакансії з зручною логістикою', pl: '📍 Wybieraj oferty z wygodną logistyką' },
+    'article.tip.quality': { ua: '⭐ Сфокусуйтеся на якості, а не швидкості', pl: '⭐ Skup się na jakości, nie na szybkości' },
+    'article.tip.phone': { ua: '📱 Тримайте зв\'язок з роботодавцем', pl: '📱 Utrzymuj kontakt z pracodawcą' },
+    'article.tip.transport': { ua: '🧭 Плануйте дорогу та графік', pl: '🧭 Planuj dojazd i grafik' },
+    'article.mistake.too_many': { ua: '❌ Подавати заявки без перевірки умов', pl: '❌ Wysyłać zgłoszenia bez sprawdzenia warunków' },
+    'article.mistake.communication': { ua: '❌ Ігнорувати базову польську', pl: '❌ Ignorować podstawowy polski' },
+    'article.mistake.safety': { ua: '❌ Не читати договір до підпису', pl: '❌ Nie czytać umowy przed podpisaniem' },
     'article.cta.title': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
     'article.related': { ua: '📚 Читайте також:', pl: '📚 Zobacz też:' },
-    'article.main.title': { ua: 'Як почати роботу кур\'єром у Польщі за 3 дні', pl: 'Jak rozpocząć pracę kuriera w Polsce w 3 dni' },
+    'article.main.title': { ua: 'Як почати роботу в Польщі за 3 дні', pl: 'Jak rozpocząć pracę w Polsce w 3 dni' },
     // Job article template
     'job.article.cta_title': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
     'job.article.why': { ua: '💡 Чому саме ми?', pl: '💡 Dlaczego my?' },
     // 404 Page
     '404.title': { ua: 'Сторінка не знайдена — Rybezh', pl: 'Strona nie znaleziona — Rybezh' },
-    '404.meta_description': { ua: "Сторінка не знайдена. Поверніться на головну для пошуку роботи кур'єром у Польщі.", pl: 'Strona nie została znaleziona. Wróć na stronę główną, aby znaleźć pracę kuriera w Polsce.' },
+    '404.meta_description': { ua: 'Сторінка не знайдена. Поверніться на головну для пошуку роботи у Польщі.', pl: 'Strona nie została znaleziona. Wróć na stronę główną, aby znaleźć pracę w Polsce.' },
     '404.heading': { ua: 'Сторінка не знайдена', pl: 'Strona nie znaleziona' },
-    '404.message': { ua: 'На жаль, сторінка, яку ви шукаєте, не існує або була переміщена. Можливо, кур\'єр забув її доставити! 📦', pl: 'Niestety, strona, której szukasz, nie istnieje lub została przeniesiona. Może kurier zapomniał jej dostarczyć! 📦' },
+    '404.message': { ua: 'На жаль, сторінка, яку ви шукаєте, не існує або була переміщена.', pl: 'Niestety, strona, której szukasz, nie istnieje lub została przeniesiona.' },
     '404.home': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
     '404.jobs': { ua: 'Переглянути вакансії', pl: 'Zobacz oferty pracy' },
     '404.contact': { ua: 'Зв\'язатися з нами', pl: 'Skontaktuj się z nami' },
@@ -535,7 +535,35 @@
   }
 
   // ============================================
-  // 11. NEWSLETTER FORM
+  // 11. DATE FORMATTING
+  // ============================================
+  function initDateFormatting() {
+    const lang = getLang();
+    const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+    
+    document.querySelectorAll('[data-format-date]').forEach(el => {
+      const dateStr = el.getAttribute('data-format-date');
+      if (!dateStr) return;
+      
+      try {
+        const date = new Date(dateStr);
+        if (isNaN(date.getTime())) return;
+        
+        const formatted = date.toLocaleDateString(locale, {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+        
+        el.textContent = formatted;
+      } catch (e) {
+        console.warn('Date formatting failed:', e);
+      }
+    });
+  }
+
+  // ============================================
+  // 12. NEWSLETTER FORM
   // ============================================
   function initNewsletter() {
     // URL Google Apps Script (той самий, що і для форми заявки)
@@ -610,6 +638,7 @@
     initFormEnhancements();
     initPageLoad();
     initTelegramTracking();
+    initDateFormatting();
     initNewsletter();
   }
 
