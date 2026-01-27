@@ -111,6 +111,18 @@
 </section>
 
 <style>
+main.container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.content-wrapper {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -325,6 +337,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  width: 100%;
+  min-width: 0;
 }
 
 .job-card {
@@ -336,6 +350,7 @@
   text-decoration: none;
   color: inherit;
   display: block;
+  min-width: 0;
 }
 
 .job-card:hover {
@@ -435,6 +450,25 @@
   .search-bar button {
     width: 100%;
     border-radius: 10px;
+  }
+
+  .search-card {
+    max-width: 100%;
+  }
+
+  .search-bar,
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .jobs-grid,
+  .category-grid,
+  .cities-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
