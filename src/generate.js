@@ -1779,6 +1779,10 @@ function buildUgcSection(lang, seed) {
   const intro = lang === 'pl'
     ? 'Wątki są żywe — czasem się zgadzamy, czasem nie. Tak ma być.'
     : 'Тут є й згода, і суперечки — як у реальному житті.';
+  const countryOptions = UGC_COUNTRIES.map(country => {
+    const selected = (lang === 'pl' ? 'PL' : 'UA') === country.label ? ' selected' : '';
+    return `<option value="${country.label}"${selected}>${country.flag} ${country.label}</option>`;
+  }).join('');
 
   return `
     <section class="post-section post-comments">
@@ -1790,12 +1794,13 @@ function buildUgcSection(lang, seed) {
         <div class="comment-count" data-comment-count>${data.length}</div>
       </div>
       <div class="comment-list js-comment-thread" data-lang="${lang}" aria-live="polite"></div>
-      <div class="comment-form">
-        <input type="text" placeholder="${lang === 'pl' ? 'Imię (demo)' : 'Імʼя (демо)'}" aria-label="${lang === 'pl' ? 'Imię' : 'Імʼя'}" />
-        <textarea placeholder="${lang === 'pl' ? 'Napisz komentarz… (demo)' : 'Напишіть коментар… (демо)'}" aria-label="${lang === 'pl' ? 'Komentarz' : 'Коментар'}"></textarea>
-        <button type="button" class="btn-secondary">${lang === 'pl' ? 'Wyślij (demo)' : 'Надіслати (демо)'}</button>
-        <span class="muted">${lang === 'pl' ? 'Sekcja demonstracyjna — komentarze są symulowane.' : 'Демо‑секція — коментарі симульовані.'}</span>
-      </div>
+      <form class="comment-form js-comment-form" novalidate>
+        <input name="name" type="text" required placeholder="${lang === 'pl' ? 'Imię' : 'Імʼя'}" aria-label="${lang === 'pl' ? 'Imię' : 'Імʼя'}" />
+        <select name="country" aria-label="${lang === 'pl' ? 'Kraj' : 'Країна'}">${countryOptions}</select>
+        <textarea name="comment" required placeholder="${lang === 'pl' ? 'Napisz komentarz…' : 'Напишіть коментар…'}" aria-label="${lang === 'pl' ? 'Komentarz' : 'Коментар'}"></textarea>
+        <button type="submit" class="btn-secondary">${lang === 'pl' ? 'Wyślij' : 'Надіслати'}</button>
+        <div class="form-message" aria-live="polite"></div>
+      </form>
       <script type="application/json" class="comment-data">${JSON.stringify(data)}</script>
     </section>
   `;

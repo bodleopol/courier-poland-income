@@ -6,6 +6,9 @@
 (function() {
   'use strict';
 
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
   // ============================================
   // 1. TRANSLATIONS (i18n)
   // ============================================
@@ -607,10 +610,6 @@
   // 12. NEWSLETTER FORM
   // ============================================
   function initNewsletter() {
-    // URL Google Apps Script (той самий, що і для форми заявки)
-    const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
-    const GEO_URL = 'https://ipapi.co/json/';
-
     document.querySelectorAll('.footer-newsletter-form').forEach(form => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -658,6 +657,72 @@
             btn.innerHTML = originalContent;
             input.placeholder = translations['footer.newsletter.placeholder'][getLang()] || 'Email';
           }, 3000);
+        }
+      });
+    });
+  }
+
+  // ============================================
+  // 12. CONTACT FORM
+  // ============================================
+  function initContactForm() {
+    const forms = document.querySelectorAll('.js-contact-form');
+    if (!forms.length) return;
+
+    forms.forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nameInput = form.querySelector('[name="name"]');
+        const contactInput = form.querySelector('[name="contact"]');
+        const messageInput = form.querySelector('[name="message"]');
+        const status = form.querySelector('.form-message');
+        const button = form.querySelector('button[type="submit"]');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const contact = contactInput ? contactInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        if (!name || !contact) {
+          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : 'Заповніть імʼя та контакт.';
+          return;
+        }
+
+        if (button) button.disabled = true;
+        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : 'Надсилаємо...';
+
+        try {
+          let city = '';
+          try {
+            const geoRes = await fetch(GEO_URL, { cache: 'no-store' });
+            if (geoRes.ok) {
+              const geo = await geoRes.json();
+              city = geo && geo.city ? String(geo.city) : '';
+            }
+          } catch (geoErr) {
+            console.warn('Geo lookup failed', geoErr);
+          }
+
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('contact', contact);
+          formData.append('message', message || '-');
+          formData.append('type', 'contact');
+          formData.append('city', city);
+          formData.append('page', window.location.href);
+          formData.append('lang', getLang());
+          formData.append('ts', new Date().toISOString());
+
+          await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
+
+          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : 'Дякуємо! Ми відповімо найближчим часом.';
+          if (nameInput) nameInput.value = '';
+          if (contactInput) contactInput.value = '';
+          if (messageInput) messageInput.value = '';
+        } catch (err) {
+          console.error(err);
+          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : 'Помилка відправки. Спробуйте ще раз.';
+        } finally {
+          if (button) button.disabled = false;
         }
       });
     });
@@ -718,7 +783,7 @@
 
       const meta = document.createElement('div');
       meta.className = 'comment-meta';
-      const date = randomRecentDate();
+      const date = item.date ? new Date(item.date) : randomRecentDate();
       meta.textContent = `${item.country?.flag || ''} ${item.country?.label || ''} · ${formatDate(date, lang)}`.trim();
 
       metaWrap.appendChild(author);
@@ -754,6 +819,40 @@
       return wrap;
     };
 
+    const getPostSlug = () => {
+      const match = window.location.pathname.match(/post-([^./]+)\.html/i);
+      return match ? match[1] : 'general';
+    };
+
+    const loadStored = (key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    };
+
+    const saveStored = (key, items) => {
+      try {
+        localStorage.setItem(key, JSON.stringify(items));
+      } catch (e) {
+        console.warn('Failed to store comments', e);
+      }
+    };
+
+    const userAvatars = ['🙂', '😊', '🧑‍💼', '👩‍💻', '🧑‍🔧', '👨‍🎓'];
+    const flagMap = {
+      UA: '🇺🇦',
+      PL: '🇵🇱',
+      GE: '🇬🇪',
+      BY: '🇧🇾',
+      MD: '🇲🇩',
+      LT: '🇱🇹',
+      SK: '🇸🇰',
+      RO: '🇷🇴'
+    };
+
     threads.forEach(thread => {
       const parent = thread.closest('.post-comments') || thread.parentElement;
       const dataEl = parent ? parent.querySelector('.comment-data') : null;
@@ -766,12 +865,56 @@
       }
 
       const lang = thread.getAttribute('data-lang') || getLang();
+      const storageKey = `rybezh-comments:${getPostSlug()}:${lang}`;
+      const stored = loadStored(storageKey);
       const shuffled = shuffle(data);
+      const combined = [...stored, ...shuffled];
+
       thread.innerHTML = '';
-      shuffled.forEach(item => thread.appendChild(renderComment(item, lang)));
+      combined.forEach(item => thread.appendChild(renderComment(item, lang)));
 
       const countEl = parent ? parent.querySelector('[data-comment-count]') : null;
-      if (countEl) countEl.textContent = String(shuffled.length);
+      if (countEl) countEl.textContent = String(data.length + stored.length);
+
+      const form = parent ? parent.querySelector('.js-comment-form') : null;
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = form.querySelector('input[name="name"]');
+          const countrySelect = form.querySelector('select[name="country"]');
+          const messageInput = form.querySelector('textarea[name="comment"]');
+          const status = form.querySelector('.form-message');
+
+          const name = nameInput ? nameInput.value.trim() : '';
+          const text = messageInput ? messageInput.value.trim() : '';
+          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : 'UA');
+          const country = { flag: flagMap[countryLabel] || '🌍', label: countryLabel };
+
+          if (!name || !text) {
+            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : 'Вкажіть імʼя та коментар.';
+            return;
+          }
+
+          const newComment = {
+            id: `u-${Date.now()}`,
+            name,
+            country,
+            avatar: userAvatars[Math.floor(Math.random() * userAvatars.length)],
+            text,
+            date: new Date().toISOString()
+          };
+
+          const nextStored = [newComment, ...stored];
+          saveStored(storageKey, nextStored);
+          stored.unshift(newComment);
+          thread.insertBefore(renderComment(newComment, lang), thread.firstChild);
+          if (countEl) countEl.textContent = String(data.length + stored.length);
+          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : 'Коментар додано.';
+
+          if (nameInput) nameInput.value = '';
+          if (messageInput) messageInput.value = '';
+        });
+      }
     });
   }
 
@@ -891,6 +1034,7 @@
     initTelegramTracking();
     initDateFormatting();
     initNewsletter();
+    initContactForm();
     initCalculator();
     initCommentThreads();
     initLiveActivity();

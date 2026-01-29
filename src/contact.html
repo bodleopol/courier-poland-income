@@ -131,15 +131,15 @@
         </div>
 
         <h2>Швидка форма</h2>
-        <form style="display:grid; gap: 0.75rem; max-width: 520px;">
+        <form class="js-contact-form" style="display:grid; gap: 0.75rem; max-width: 520px;">
           <label>Ім'я</label>
-          <input class="input" type="text" placeholder="Олексій" required>
+          <input class="input" name="name" type="text" placeholder="Олексій" required>
           <label>Контакт (телефон або email)</label>
-          <input class="input" type="text" placeholder="+48 123 456 789" required>
+          <input class="input" name="contact" type="text" placeholder="+48 123 456 789" required>
           <label>Ваше питання</label>
-          <textarea class="input textarea" placeholder="Опишіть, яку роботу шукаєте"></textarea>
-          <button type="button" class="btn-primary">Надіслати</button>
-          <p class="muted" style="font-size:0.85rem;">Форма демонстраційна — швидше буде написати в Telegram.</p>
+          <textarea class="input textarea" name="message" placeholder="Опишіть, яку роботу шукаєте"></textarea>
+          <button type="submit" class="btn-primary">Надіслати</button>
+          <div class="form-message" aria-live="polite"></div>
         </form>
 
         <h2>Часті запитання про контакти</h2>
@@ -183,15 +183,15 @@
         </div>
 
         <h2>Szybki formularz</h2>
-        <form style="display:grid; gap: 0.75rem; max-width: 520px;">
+        <form class="js-contact-form" style="display:grid; gap: 0.75rem; max-width: 520px;">
           <label>Imię</label>
-          <input class="input" type="text" placeholder="Kasia" required>
+          <input class="input" name="name" type="text" placeholder="Kasia" required>
           <label>Kontakt (telefon lub email)</label>
-          <input class="input" type="text" placeholder="+48 123 456 789" required>
+          <input class="input" name="contact" type="text" placeholder="+48 123 456 789" required>
           <label>Twoje pytanie</label>
-          <textarea class="input textarea" placeholder="Opisz, jakiej pracy szukasz"></textarea>
-          <button type="button" class="btn-primary">Wyślij</button>
-          <p class="muted" style="font-size:0.85rem;">Formularz demonstracyjny — najszybciej przez Telegram.</p>
+          <textarea class="input textarea" name="message" placeholder="Opisz, jakiej pracy szukasz"></textarea>
+          <button type="submit" class="btn-primary">Wyślij</button>
+          <div class="form-message" aria-live="polite"></div>
         </form>
 
         <h2>Częste pytania o kontakt</h2>
