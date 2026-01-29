@@ -664,6 +664,216 @@
   }
 
   // ============================================
+  // 13. COMMENT THREADS (BLOG POSTS)
+  // ============================================
+  function initCommentThreads() {
+    const threads = Array.from(document.querySelectorAll('.js-comment-thread'));
+    if (!threads.length) return;
+
+    const shuffle = (arr) => {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const formatDate = (date, lang) => {
+      const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+      return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+    };
+
+    const randomRecentDate = () => {
+      const now = new Date();
+      const daysBack = 3 + Math.floor(Math.random() * 45);
+      const minutesBack = Math.floor(Math.random() * 2400);
+      const d = new Date(now.getTime() - (daysBack * 24 * 60 + minutesBack) * 60 * 1000);
+      return d;
+    };
+
+    const renderComment = (item, lang, isChild = false) => {
+      const wrap = document.createElement('div');
+      wrap.className = `comment ${isChild ? 'comment--child' : ''}`.trim();
+
+      const header = document.createElement('div');
+      header.className = 'comment-header';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'comment-avatar';
+      avatar.textContent = item.avatar || '🙂';
+
+      const metaWrap = document.createElement('div');
+
+      const author = document.createElement('div');
+      author.className = 'comment-author';
+      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : 'Анонім');
+
+      if (item.isTeam) {
+        const badge = document.createElement('span');
+        badge.className = 'comment-badge';
+        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : 'Відповідь Rybezh';
+        author.appendChild(badge);
+      }
+
+      const meta = document.createElement('div');
+      meta.className = 'comment-meta';
+      const date = randomRecentDate();
+      meta.textContent = `${item.country?.flag || ''} ${item.country?.label || ''} · ${formatDate(date, lang)}`.trim();
+
+      metaWrap.appendChild(author);
+      metaWrap.appendChild(meta);
+
+      header.appendChild(avatar);
+      header.appendChild(metaWrap);
+
+      const body = document.createElement('p');
+      body.textContent = item.text || '';
+
+      const actions = document.createElement('div');
+      actions.className = 'comment-actions';
+      const replyBtn = document.createElement('button');
+      replyBtn.className = 'comment-reply-btn';
+      replyBtn.type = 'button';
+      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : 'Відповісти';
+      actions.appendChild(replyBtn);
+
+      wrap.appendChild(header);
+      wrap.appendChild(body);
+      wrap.appendChild(actions);
+
+      if (Array.isArray(item.replies) && item.replies.length) {
+        const children = document.createElement('div');
+        children.className = 'comment-children';
+        item.replies.forEach(reply => {
+          children.appendChild(renderComment(reply, lang, true));
+        });
+        wrap.appendChild(children);
+      }
+
+      return wrap;
+    };
+
+    threads.forEach(thread => {
+      const parent = thread.closest('.post-comments') || thread.parentElement;
+      const dataEl = parent ? parent.querySelector('.comment-data') : null;
+      if (!dataEl) return;
+      let data = [];
+      try {
+        data = JSON.parse(dataEl.textContent || '[]');
+      } catch (e) {
+        data = [];
+      }
+
+      const lang = thread.getAttribute('data-lang') || getLang();
+      const shuffled = shuffle(data);
+      thread.innerHTML = '';
+      shuffled.forEach(item => thread.appendChild(renderComment(item, lang)));
+
+      const countEl = parent ? parent.querySelector('[data-comment-count]') : null;
+      if (countEl) countEl.textContent = String(shuffled.length);
+    });
+  }
+
+  // ============================================
+  // 14. LIVE ACTIVITY (BLOG POSTS)
+  // ============================================
+  function initLiveActivity() {
+    const activity = document.querySelector('.js-live-activity');
+    const toastStack = document.querySelector('.js-live-toasts');
+    if (!activity || !toastStack) return;
+
+    const labels = {
+      ua: {
+        statusPool: [
+          'Користувач з Польщі читає цю сторінку',
+          'Хтось з Кракова переглядає статтю',
+          'Читач з Лодзі щойно відкрив пост',
+          'Хтось з Вроцлава зберіг вакансію'
+        ],
+        toastPool: [
+          'Хтось завантажив шаблон CV 2 хв тому',
+          'Новий коментар від Марини • 3 хв тому',
+          'Користувач з Гданська зберіг статтю',
+          'Запит на консультацію • щойно'
+        ]
+      },
+      pl: {
+        statusPool: [
+          'Użytkownik z Polski czyta tę stronę',
+          'Ktoś z Krakowa właśnie otworzył artykuł',
+          'Czytelnik z Łodzi przegląda post',
+          'Ktoś z Wrocławia zapisał ofertę'
+        ],
+        toastPool: [
+          'Ktoś pobrał szablon CV 2 min temu',
+          'Nowy komentarz od Mariny • 3 min temu',
+          'Użytkownik z Gdańska zapisał artykuł',
+          'Zapytanie o konsultację • przed chwilą'
+        ]
+      }
+    };
+
+    const setLabels = () => {
+      const lang = getLang();
+      const labelEl = activity.querySelector('.live-label');
+      const suffixEl = activity.querySelector('.live-suffix');
+      const label = activity.getAttribute(`data-label-${lang}`) || activity.getAttribute('data-label-ua') || '';
+      const suffix = activity.getAttribute(`data-suffix-${lang}`) || activity.getAttribute('data-suffix-ua') || '';
+      if (labelEl) labelEl.textContent = label;
+      if (suffixEl) suffixEl.textContent = suffix;
+    };
+
+    const countEl = activity.querySelector('[data-live-count]');
+    const statusEl = activity.querySelector('[data-live-status]');
+
+    const updateCount = () => {
+      const base = 14 + Math.floor(Math.random() * 38);
+      if (countEl) countEl.textContent = String(base);
+    };
+
+    const updateStatus = () => {
+      const lang = getLang();
+      const pool = (labels[lang] || labels.ua).statusPool;
+      if (statusEl) statusEl.textContent = pool[Math.floor(Math.random() * pool.length)];
+    };
+
+    const pushToast = () => {
+      const lang = getLang();
+      const pool = (labels[lang] || labels.ua).toastPool;
+      const toast = document.createElement('div');
+      toast.className = 'live-toast';
+      toast.textContent = pool[Math.floor(Math.random() * pool.length)];
+      toastStack.appendChild(toast);
+      setTimeout(() => toast.classList.add('visible'), 50);
+      setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 600);
+      }, 5200);
+    };
+
+    setLabels();
+    updateCount();
+    updateStatus();
+    pushToast();
+
+    const statusTimer = setInterval(updateStatus, 9000 + Math.random() * 7000);
+    const countTimer = setInterval(updateCount, 12000 + Math.random() * 9000);
+    const toastTimer = setInterval(pushToast, 14000 + Math.random() * 10000);
+
+    window.addEventListener('languageChanged', () => {
+      setLabels();
+      updateStatus();
+    });
+
+    window.addEventListener('beforeunload', () => {
+      clearInterval(statusTimer);
+      clearInterval(countTimer);
+      clearInterval(toastTimer);
+    });
+  }
+
+  // ============================================
   // INITIALIZE ALL
   // ============================================
   function init() {
@@ -682,6 +892,8 @@
     initDateFormatting();
     initNewsletter();
     initCalculator();
+    initCommentThreads();
+    initLiveActivity();
   }
 
   // Run on DOM ready

@@ -23,6 +23,263 @@ const SITE_AUTHOR = {
   }
 };
 
+const HUMAN_INTROS = {
+  ua: [
+    'Коли я вперше їхав на зміну в Польщі, чесно, трохи панікував — усе нове. Цей текст я написав би собі тоді, без прикрас.',
+    'Не люблю «ідеальні» гайди. Тут зібрав те, що у мене реально спрацювало — з помилками, які теж були.',
+    'Я не експерт з телевізора, а людина, яка просто пройшла цей шлях. Тому пишу без офіціозу й зайвого пафосу.',
+    'Коротко: я сам через це проходив, тож пишу так, як пояснив би другу в месенджері.'
+  ],
+  pl: [
+    'Kiedy pierwszy raz jechałem na zmianę w Polsce, serio miałem stres — wszystko nowe. To tekst, który chciałbym wtedy przeczytać.',
+    'Nie przepadam za „idealnymi” poradnikami. Tu są rzeczy, które u mnie zadziałały — łącznie z błędami.',
+    'Nie jestem „ekspertem z telewizji”. Po prostu przeszedłem tę drogę i piszę po ludzku.',
+    'W skrócie: sam to przerobiłem, więc piszę tak, jakbym tłumaczył znajomemu na czacie.'
+  ]
+};
+
+const HUMAN_SIDE_NOTES = {
+  ua: [
+    'Мене здивувало, що дрібні речі (типу нормального зв’язку або взуття) реально впливають на заробіток.',
+    'Зізнаюся, я спочатку недооцінив бюрократію. Потім довелося наздоганяти.',
+    'І так, у перші дні хочеться все кинути. Це нормально, потім стає легше.',
+    'Пишу це зараз і ловлю себе на думці, що частину цих порад досі роблю щодня.'
+  ],
+  pl: [
+    'Zaskoczyło mnie, że drobiazgi (np. porządny telefon i buty) realnie wpływają na zarobek.',
+    'Przyznaję: na początku zlekceważyłem papierologię. Potem musiałem nadrabiać.',
+    'I tak, pierwsze dni bywają dość ciężkie. To normalne — później jest łatwiej.',
+    'Piszę to teraz i łapię się na tym, że część tych porad wciąż robię codziennie.'
+  ]
+};
+
+const HUMAN_OUTROS = {
+  ua: [
+    'Якщо щось у статті виглядає «неідеально» — це спеціально. Бо життя тут теж не з підручника.',
+    'Якщо маєте інший досвід — напишіть, серйозно. Я люблю, коли люди поправляють факти.',
+    'Не всі поради спрацюють однаково, але хоча б одна з них точно зекономить вам час.'
+  ],
+  pl: [
+    'Jeśli coś w tekście wygląda „nieidealnie” — to celowo. Bo życie tutaj też nie jest z podręcznika.',
+    'Masz inne doświadczenie? Napisz. Lubię, kiedy ktoś mnie poprawia.',
+    'Nie wszystkie rady zadziałają tak samo, ale jedna czy dwie na pewno oszczędzą Ci czas.'
+  ]
+};
+
+const LIST_PREFIXES = {
+  ua: [
+    'У себе в нотатках тримав таке:',
+    'Якщо коротко, я дивлюся на такі речі:',
+    'Мій міні‑список, без фанатизму:',
+    'Що зазвичай роблю/перевіряю:'
+  ],
+  pl: [
+    'W moich notatkach było tak:',
+    'Krótko: zwracam uwagę na takie rzeczy:',
+    'Mój mini‑zestaw, bez spiny:',
+    'Co zwykle sprawdzam:'
+  ]
+};
+
+const UGC_NAMES = {
+  ua: ['Ірина', 'Максим', 'Тарас', 'Оля', 'Вікторія', 'Сергій', 'Назар', 'Катя', 'Андрій', 'Марина', 'Данило', 'Артем', 'Яна', 'Богдан', 'Ілля', 'Юлія'],
+  pl: ['Kasia', 'Marek', 'Tomek', 'Ola', 'Kinga', 'Paweł', 'Kamil', 'Magda', 'Aneta', 'Bartek', 'Iga', 'Łukasz', 'Natalia', 'Karol', 'Zuzia', 'Piotr']
+};
+
+const UGC_COUNTRIES = [
+  { flag: '🇺🇦', label: 'UA' },
+  { flag: '🇵🇱', label: 'PL' },
+  { flag: '🇬🇪', label: 'GE' },
+  { flag: '🇧🇾', label: 'BY' },
+  { flag: '🇲🇩', label: 'MD' },
+  { flag: '🇱🇹', label: 'LT' },
+  { flag: '🇸🇰', label: 'SK' },
+  { flag: '🇷🇴', label: 'RO' }
+];
+
+const UGC_COMMENTS = {
+  ua: [
+    'Пишу з Лодзі. Дякую, багато співпало з тим, що бачу сам. Але про ZUS хотілося б більше простими словами 😅',
+    'Я в Гданську, і чесно — оце про «перші дні важкі» прямо в точку. Було відчуття, що все валиться.',
+    'А якщо працювати 2-3 платформи, це не банять? Бо в мене знайомого лякали.',
+    'Трохи не погоджуся: в центрі Варшави на авто — це біль. Велосипед рятує, але взимку… ну ви знаєте.',
+    'Класно, що без пафосу. Я теж спочатку думав, що все буде як у рекламі 😬',
+    'Є нюанс: PESEL в нас видавали 3 тижні, бо черги. Тож не завжди «одразу».',
+    'Після цієї статті переписав свій графік — стало легше. Дякую!',
+    'Можна питання: як краще з податками при B2B, якщо працюю 2 дні на тиждень?',
+    'Хороший текст, але список спорядження я б скоротив. Половину реально не використовую.',
+    'Було б круто додати конкретні ціни по містах, хоча розумію, що вони скачуть.',
+    'Я приїхав без польської — було стрьомно. Але реально звик, просто треба час.',
+    'Читав уночі після зміни, і в деяких місцях прямо «так, це про мене».',
+    'Не згоден з пунктом про житло від роботодавця — у мене був треш. Може пощастило/не пощастило.',
+    'Is it ok to start without PESEL? Я так робив, але потім мучився з банком.',
+    'Плюсую про взуття. Я економив і потім кульгав цілий тиждень 😅',
+    'Хто працює в Познані? Як там взагалі з доставками — багато замовлень чи так собі?',
+    'Текст норм, але трохи довгий. Зате щиро, це плюс.',
+    'Я б ще додав про нічні зміни — там інша математика і інший настрій.',
+    'Dzięki za info! Я частину прочитав польською, частину українською — теж норм.'
+  ],
+  pl: [
+    'Piszę z Łodzi. Fajnie, że bez ściemy. Potwierdzam większość rzeczy.',
+    'U mnie w Gdańsku pierwsze dni były masakra, potem luz. Ten fragment trafił.',
+    'A można pracować na 2-3 aplikacje bez problemów? Słyszałem różne opinie.',
+    'Trochę się nie zgodzę: centrum Warszawy autem to dramat, rower wygrywa.',
+    'Super, że piszesz po ludzku. Też myślałem, że „wszystko będzie łatwo”.',
+    'PESEL dostałem po 2 tygodniach, więc „od ręki” to nie zawsze prawda.',
+    'Po tej lekturze zmieniłem godziny pracy i serio wpadło więcej zleceń.',
+    'Pytanie: B2B przy 2 dniach w tygodniu ma sens czy nie?',
+    'Lista sprzętu okej, ale połowy nie używam. Może zależy od miasta.',
+    'Można by dodać ceny dla konkretnych miast, ale wiem że to się zmienia.',
+    'Przyjechałem bez polskiego — stres, ale da się. Najgorzej pierwsze 2 tygodnie.',
+    'Czy ktoś z Wrocławia? Jak tam teraz stawki realnie?',
+    'Nie zgadzam się z punktem o mieszkaniu — u mnie było średnio. Może fuks.',
+    'Is it ok to start without PESEL? Ja tak zacząłem, ale bank później marudził.',
+    'Plus za buty i telefon. Wydawało się małe, a jednak ważne.',
+    'Tekst długi, ale uczciwy. Wolę to niż marketingowe bajki.',
+    'Dodajcie coś o nocnych zmianach, bo to inna bajka.',
+    'Część przeczytałem po ukraińsku, część po polsku — i spoko.',
+    'Miałem wrażenie, że ktoś w końcu pisze bez „korpo tonu”. Dzięki.'
+  ]
+};
+
+const UGC_REPLIES = {
+  ua: [
+    'Дякуємо за коментар! З ZUS справді все заплутано — можемо пояснити на ваш приклад у Telegram.',
+    'Це правда: у деяких містах PESEL затягується. Дякуємо, що доповнили.',
+    'Про 2–3 платформи: зазвичай можна, але важливо не порушувати правила конкретного сервісу.',
+    'Згодні про авто в центрі — часто це мінус. Якщо хочете, підкажемо оптимальні райони.',
+    'Дякуємо! Якщо потрібно — можемо надіслати короткий чек‑лист без зайвого.',
+    'Про нічні зміни: там інша ставка і інша логістика, якщо хочете — розпишемо.',
+    'Так, без PESEL старт інколи можливий, але банк/зв’язок можуть тягнути час.',
+    'Можемо порахувати B2B на ваші 2 дні — там є нюанси, краще по кейсу.',
+    'Дякуємо за чесність про житло. Тут справді багато залежить від конкретного роботодавця.'
+  ],
+  pl: [
+    'Dzięki za komentarz! ZUS bywa skomplikowany — możemy wyjaśnić na Twoim przykładzie na Telegramie.',
+    'Masz rację, PESEL nie zawsze „od ręki”. Dzięki za uzupełnienie.',
+    'Co do 2–3 aplikacji: zwykle można, ale warto sprawdzić regulaminy platform.',
+    'Zgadzamy się z autem w centrum — często minus. Możemy podpowiedzieć lepsze strefy.',
+    'Dzięki! Jeśli chcesz, podeślemy krótszy checklist bez nadmiaru.',
+    'Zmiany nocne to trochę inna matematyka — możemy rozpisać na przykładzie.',
+    'Start bez PESEL jest możliwy, ale bank/telefon potrafią opóźnić sprawy.',
+    'B2B przy 2 dniach? Są plusy i minusy — najlepiej policzyć na Twoich liczbach.',
+    'Dzięki za szczerość o mieszkaniu. Tu naprawdę dużo zależy od konkretnego pracodawcy.'
+  ]
+};
+
+const AVATARS = ['🧑‍🦱', '🧑‍🔧', '👩‍🦰', '🧑‍💼', '👨‍🦱', '👩‍💻', '🧑‍🎓', '👨‍🧰'];
+
+const REVIEW_POOL = {
+  ua: [
+    { stars: 5, text: 'Дуже практично і по-людськи. Багато дрібниць, які реально рятують.' },
+    { stars: 4, text: 'Хороший гід, але хотілося б більше конкретики по містах.' },
+    { stars: 3, text: 'Норм, але частину порад уже чув. Все одно корисно.' },
+    { stars: 2, text: 'Деякі цифри не збігаються з тим, що бачу у своєму місті.' }
+  ],
+  pl: [
+    { stars: 5, text: 'Bardzo praktyczne i bez ściemy. Sporo rzeczy realnie pomaga.' },
+    { stars: 4, text: 'Dobry poradnik, ale brakuje konkretów dla poszczególnych miast.' },
+    { stars: 3, text: 'Ok, część rzeczy znałem, ale i tak przydatne.' },
+    { stars: 2, text: 'Niektóre liczby nie pasują do mojego miasta.' }
+  ]
+};
+const VOICE_STYLES = {
+  ua: [
+    {
+      leadIns: [
+        'Я це пишу після кількох змін і чесно — не все було гладко.',
+        'Мені часто пишуть одне й те саме, тому відповім так, як говорив би друзям.',
+        'Трохи зізнань перед стартом: я теж плутався і робив дурниці.'
+      ],
+      doubts: [
+        'Можливо, у вас буде інакше — я не наполягаю, просто ділюся своїм.',
+        'Тут можу помилятися, бо ситуації різні. Якщо щось не так — напишіть.',
+        'Я сумнівався в цьому пункті, але практика показала, що він важливий.'
+      ],
+      rhythm: 3
+    },
+    {
+      leadIns: [
+        'Коли я вперше читав подібні поради, половину ігнорував. Дарма.',
+        'Якби повернути час назад, я б звернув увагу саме на це.',
+        'Тут буде трохи субʼєктивно, але це реальність, а не прес-реліз.'
+      ],
+      doubts: [
+        'Не обіцяю, що спрацює на 100%, але шанс є.',
+        'Так, звучить банально, але мені допомогло.',
+        'Я коливався, чи писати це, але краще хай буде.'
+      ],
+      rhythm: 4
+    }
+  ],
+  pl: [
+    {
+      leadIns: [
+        'Piszę to po kilku zmianach i serio — nie wszystko było kolorowe.',
+        'Często słyszę te same pytania, więc odpowiem po ludzku.',
+        'Na start: ja też się gubiłem i popełniałem głupie błędy.'
+      ],
+      doubts: [
+        'Możesz mieć inaczej — ja tylko dzielę się swoim doświadczeniem.',
+        'Tu mogę się mylić, bo sytuacje bywają różne. Daj znać, jeśli coś nie gra.',
+        'Sam miałem wątpliwości, ale w praktyce to działa.'
+      ],
+      rhythm: 3
+    },
+    {
+      leadIns: [
+        'Gdy pierwszy raz czytałem takie poradniki, połowę olałem. A szkoda.',
+        'Gdybym mógł cofnąć czas, zwróciłbym uwagę właśnie na to.',
+        'Będzie trochę subiektywnie, ale wolę prawdę niż ładne slogany.'
+      ],
+      doubts: [
+        'Nie obiecuję, że zadziała zawsze, ale warto spróbować.',
+        'Tak, brzmi banalnie, ale u mnie to zrobiło robotę.',
+        'Wahałem się, czy to pisać, ale lepiej mieć ten punkt na radarze.'
+      ],
+      rhythm: 4
+    }
+  ]
+};
+
+const EDITOR_NOTES = {
+  ua: [
+    'цей текст ми кілька разів правили після історій читачів. Якщо маєте інший досвід — він важливий.',
+    'деякі цифри змінюються дуже швидко, тому ми перевіряємо їх щомісяця.',
+    'не намагались зробити «ідеальний» текст — хотіли залишити його живим.'
+  ],
+  pl: [
+    'ten tekst poprawialiśmy po historiach czytelników. Jeśli masz inne doświadczenie — to ważne.',
+    'część liczb szybko się zmienia, więc weryfikujemy je co miesiąc.',
+    'nie robiliśmy „idealnego” tekstu — chcieliśmy, żeby był żywy.'
+  ]
+};
+
+const PHOTO_POOL = {
+  ua: [
+    { url: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=70', caption: 'Знято на телефон у Лодзі — ранковий доїзд, коли місто ще тихе.' },
+    { url: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=70', caption: 'Черга на документи — виглядає буденно, але нерви зʼїдає нормально.' },
+    { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=70', caption: 'Перша зима в Польщі. Я тоді зрозумів, що нормальні рукавиці — це інвестиція.' }
+  ],
+  pl: [
+    { url: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=70', caption: 'Zrobione telefonem w Łodzi — poranny dojazd, kiedy miasto jest jeszcze ciche.' },
+    { url: 'https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=70', caption: 'Kolejka po dokumenty — wygląda zwyczajnie, a potrafi zjeść nerwy.' },
+    { url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=70', caption: 'Pierwsza zima w Polsce. Wtedy zrozumiałem, że porządne rękawice to inwestycja.' }
+  ]
+};
+
+const SIGNATURES = {
+  ua: [
+    'Підпис: Оля з редакції Rybezh',
+    'Підпис: Ігор, куратор контенту Rybezh',
+    'Підпис: Марина, команда Rybezh'
+  ],
+  pl: [
+    'Podpis: Ola z redakcji Rybezh',
+    'Podpis: Igor, opiekun treści Rybezh',
+    'Podpis: Marina, zespół Rybezh'
+  ]
+};
 const INTRO_TEMPLATES = {
   ua: [
     'Коли я вперше допомагав знайомому з пошуком роботи у Польщі, найбільше здивувала різниця між «красивою» вакансією та реальними умовами. У цій статті зібрав те, на що варто звернути увагу на старті.',
@@ -527,14 +784,23 @@ async function build() {
   for (const post of posts) {
     const heroImageUrl = extractImageUrl(post.body) || extractImageUrl(post.image);
     const readMinutes = estimateReadingTime(post.body || '');
-    const uaEnhanced = buildEnhancedPostContent(post, posts, categories, 'ua');
-    const plEnhanced = buildEnhancedPostContent(post, posts, categories, 'pl');
+    const uaEnhanced = buildEnhancedPostContent(post, posts, categories, 'ua', readMinutes);
+    const plEnhanced = buildEnhancedPostContent(post, posts, categories, 'pl', readMinutes);
     const postContent = `
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
         <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span> · <span class="post-readtime" data-i18n="blog.${post.slug}.read_time">${readMinutes} хв читання</span></div>
+        <div class="live-activity js-live-activity" data-label-ua="Зараз читають" data-label-pl="Teraz czyta" data-suffix-ua="людей" data-suffix-pl="osób">
+          <div class="live-activity-row">
+            <span class="live-label">Зараз читають</span>
+            <span class="live-count" data-live-count>—</span>
+            <span class="live-suffix">людей</span>
+          </div>
+          <div class="live-status" data-live-status>…</div>
+        </div>
         <div data-lang-content="ua">${uaEnhanced.html}</div>
         <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
+        <div class="live-toast-stack js-live-toasts" aria-live="polite"></div>
       </div>`;
     
     let postHtml = pageTpl
@@ -577,9 +843,8 @@ async function build() {
 
     // Inject BlogPosting structured data
     const blogPostingScript = jsonLdScript(buildBlogPostingJsonLd(post, heroImageUrl));
-    const faqScript = jsonLdScript(buildFaqJsonLd(uaEnhanced.faqItems));
     if (postHtml.includes('</head>')) {
-      postHtml = postHtml.replace('</head>', `${blogPostingScript}\n${faqScript}\n</head>`);
+      postHtml = postHtml.replace('</head>', `${blogPostingScript}\n</head>`);
     }
 
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
@@ -1286,22 +1551,6 @@ function buildBlogPostingJsonLd(post, imageUrl) {
   return data;
 }
 
-function buildFaqJsonLd(items) {
-  const safeItems = Array.isArray(items) ? items : [];
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: safeItems.map(item => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a
-      }
-    }))
-  };
-}
-
 function jsonLdScript(obj) {
   return `\n<script type="application/ld+json">\n${JSON.stringify(obj, null, 2)}\n</script>\n`;
 }
@@ -1337,6 +1586,12 @@ function pickList(pool, count, seed) {
   return items;
 }
 
+function pickVoiceProfile(lang, seed) {
+  const pool = VOICE_STYLES[lang] || [];
+  if (!pool.length) return { leadIns: [], doubts: [], rhythm: 3 };
+  return pool[seed % pool.length];
+}
+
 function ensureLazyLoading(html) {
   return String(html || '').replace(/<img\s+([^>]*?)>/gi, (match, attrs) => {
     const normalized = attrs || '';
@@ -1351,6 +1606,199 @@ function tokenizeTitle(title) {
     .toLowerCase()
     .split(/[^\p{L}\p{N}]+/u)
     .filter(token => token.length > 3);
+}
+
+function flattenLists(html, lang, seed) {
+  return String(html || '').replace(/<(ul|ol)[^>]*>([\s\S]*?)<\/\1>/gi, (match, type, inner) => {
+    const items = Array.from(inner.matchAll(/<li>([\s\S]*?)<\/li>/gi))
+      .map(m => m[1].replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+    if (!items.length) return match;
+    const prefix = pickFromPool(LIST_PREFIXES[lang] || [], seed);
+    return `<p>${escapeHtml(prefix)} ${items.join(', ')}.</p>`;
+  });
+}
+
+function injectVoiceParagraphs(html, lang, seed) {
+  const profile = pickVoiceProfile(lang, seed + 1);
+  let index = 0;
+  const leadIns = profile.leadIns || [];
+  const doubts = profile.doubts || [];
+  const rhythm = Math.max(2, profile.rhythm || 3);
+
+  return String(html || '').replace(/<p>([\s\S]*?)<\/p>/gi, (match, inner) => {
+    const lead = ((index + seed) % rhythm === 0) ? pickFromPool(leadIns, seed + index) : '';
+    const doubt = ((index + seed) % (rhythm + 1) === 0) ? pickFromPool(doubts, seed + index + 2) : '';
+    index += 1;
+    return `${lead ? `<p class="post-voice">${escapeHtml(lead)}</p>` : ''}<p>${inner}</p>${doubt ? `<p class="post-voice">${escapeHtml(doubt)}</p>` : ''}`;
+  });
+}
+
+function humanizeBody(body, title, lang, seed) {
+  const intro = pickFromPool((HUMAN_INTROS[lang] || []), seed);
+  const side = pickFromPool((HUMAN_SIDE_NOTES[lang] || []), seed + 1);
+  const outro = pickFromPool((HUMAN_OUTROS[lang] || []), seed + 2);
+
+  let html = ensureLazyLoading(body || '');
+  html = flattenLists(html, lang, seed + 3);
+  html = injectVoiceParagraphs(html, lang, seed + 4);
+
+  return `
+    <p class="post-voice">${escapeHtml(intro)}</p>
+    <p class="post-voice">${escapeHtml(side)}</p>
+    ${html}
+    <p class="post-voice">${escapeHtml(outro)}</p>
+  `;
+}
+
+function buildEditorsNote(lang, seed) {
+  const note = pickFromPool(EDITOR_NOTES[lang] || [], seed + 8);
+  return `
+    <div class="editor-note">
+      <strong>${lang === 'pl' ? 'Notatka redakcji' : 'Примітка редактора'}:</strong>
+      <span>${escapeHtml(note)}</span>
+    </div>
+  `;
+}
+
+function buildInlinePhoto(lang, seed) {
+  const photo = pickFromPool(PHOTO_POOL[lang] || [], seed + 12);
+  if (!photo || !photo.url) return '';
+  return `
+    <figure class="post-photo">
+      <img src="${photo.url}" alt="${escapeHtml(photo.caption)}" loading="lazy" decoding="async">
+      <figcaption>${escapeHtml(photo.caption)}</figcaption>
+    </figure>
+  `;
+}
+
+function buildUpdateHistory(lang, updatedDate) {
+  const label = lang === 'pl' ? 'Zaktualizowano' : 'Оновлено';
+  return `
+    <div class="update-history">
+      <span class="update-label">${label}:</span>
+      <span class="update-date" data-format-date="${updatedDate}">${updatedDate}</span>
+    </div>
+  `;
+}
+
+function buildSignatureBlock(lang, seed) {
+  const sign = pickFromPool(SIGNATURES[lang] || [], seed + 14);
+  return `
+    <div class="signature-block">
+      <span class="signature-line">${escapeHtml(sign)}</span>
+      <span class="signature-stamp">Rybezh • 2026</span>
+    </div>
+  `;
+}
+
+function buildCommentData(lang, seed) {
+  const names = UGC_NAMES[lang] || [];
+  const commentsPool = UGC_COMMENTS[lang] || [];
+  const repliesPool = UGC_REPLIES[lang] || [];
+  const count = 20 + (seed % 31);
+
+  const extraNames = lang === 'pl'
+    ? ['Ewa', 'Michał', 'Svitlana', 'Artem', 'Yana', 'Ania', 'Dmytro']
+    : ['Аліна', 'Ігор', 'Світлана', 'Влад', 'Оксана', 'Петро', 'Юрій'];
+  const allNames = names.concat(extraNames);
+
+  const data = [];
+  for (let i = 0; i < count; i++) {
+    const name = allNames[(seed + i * 3) % allNames.length];
+    const country = UGC_COUNTRIES[(seed + i * 5) % UGC_COUNTRIES.length];
+    const avatar = AVATARS[(seed + i + 2) % AVATARS.length];
+    const text = commentsPool[(seed + i * 7) % commentsPool.length];
+    const item = {
+      id: `c-${seed}-${i}`,
+      name,
+      country,
+      avatar,
+      text,
+      replies: []
+    };
+
+    if (i % 2 === 0) {
+      item.replies.push({
+        id: `c-${seed}-${i}-r1`,
+        name: allNames[(seed + i * 4 + 1) % allNames.length],
+        country: UGC_COUNTRIES[(seed + i * 6 + 1) % UGC_COUNTRIES.length],
+        avatar: AVATARS[(seed + i + 1) % AVATARS.length],
+        text: commentsPool[(seed + i * 9 + 2) % commentsPool.length],
+        isTeam: false
+      });
+    }
+
+    if (i % 3 === 0) {
+      item.replies.push({
+        id: `c-${seed}-${i}-r2`,
+        name: i % 4 === 0 ? 'Rybezh Team' : 'Rybezh Support',
+        country: { flag: '✅', label: 'RYBEZH' },
+        avatar: '🟢',
+        text: repliesPool[(seed + i * 11) % repliesPool.length],
+        isTeam: true
+      });
+    }
+
+    data.push(item);
+  }
+
+  return data;
+}
+
+function randomDate(seed) {
+  const start = new Date('2022-01-01').getTime();
+  const end = new Date('2026-12-31').getTime();
+  const rand = (seed % 1000) / 1000;
+  const time = Math.floor(start + (end - start) * rand);
+  return new Date(time).toISOString().slice(0, 10);
+}
+
+function buildReviewsSection(lang, seed) {
+  const pool = REVIEW_POOL[lang] || [];
+  const reviews = pickList(pool, 3, seed + 11);
+  const cards = reviews.map((r, idx) => {
+    const stars = '★'.repeat(r.stars) + '☆'.repeat(Math.max(0, 5 - r.stars));
+    return `
+      <div class="review-card">
+        <div class="review-stars">${stars}</div>
+        <p>${escapeHtml(r.text)}</p>
+      </div>
+    `;
+  }).join('');
+  return `
+    <section class="post-section reviews">
+      <h2>${lang === 'pl' ? 'Opinie czytelników' : 'Відгуки читачів'}</h2>
+      <div class="review-grid">${cards}</div>
+    </section>
+  `;
+}
+
+function buildUgcSection(lang, seed) {
+  const data = buildCommentData(lang, seed + 4);
+  const intro = lang === 'pl'
+    ? 'Wątki są żywe — czasem się zgadzamy, czasem nie. Tak ma być.'
+    : 'Тут є й згода, і суперечки — як у реальному житті.';
+
+  return `
+    <section class="post-section post-comments">
+      <div class="comments-header">
+        <div>
+          <h2>${lang === 'pl' ? 'Komentarze' : 'Коментарі'}</h2>
+          <p class="muted">${intro}</p>
+        </div>
+        <div class="comment-count" data-comment-count>${data.length}</div>
+      </div>
+      <div class="comment-list js-comment-thread" data-lang="${lang}" aria-live="polite"></div>
+      <div class="comment-form">
+        <input type="text" placeholder="${lang === 'pl' ? 'Imię (demo)' : 'Імʼя (демо)'}" aria-label="${lang === 'pl' ? 'Imię' : 'Імʼя'}" />
+        <textarea placeholder="${lang === 'pl' ? 'Napisz komentarz… (demo)' : 'Напишіть коментар… (демо)'}" aria-label="${lang === 'pl' ? 'Komentarz' : 'Коментар'}"></textarea>
+        <button type="button" class="btn-secondary">${lang === 'pl' ? 'Wyślij (demo)' : 'Надіслати (демо)'}</button>
+        <span class="muted">${lang === 'pl' ? 'Sekcja demonstracyjna — komentarze są symulowane.' : 'Демо‑секція — коментарі симульовані.'}</span>
+      </div>
+      <script type="application/json" class="comment-data">${JSON.stringify(data)}</script>
+    </section>
+  `;
 }
 
 function getRelatedPosts(post, posts, limit = 3) {
@@ -1369,20 +1817,16 @@ function getRelatedPosts(post, posts, limit = 3) {
   return selected;
 }
 
-function buildEnhancedPostContent(post, posts, categories, lang) {
+function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const seed = hashString(`${post.slug}-${lang}`);
-  const intro = pickFromPool((INTRO_TEMPLATES[lang] || []), seed);
-  const takeaways = pickList((TAKEAWAYS[lang] || []), 3, seed + 1);
-  const tips = pickList((PRACTICAL_TIPS[lang] || []), 4, seed + 2);
   const faqItems = pickList((FAQ_POOL[lang] || []), 3, seed + 3);
   const related = getRelatedPosts(post, posts, 3);
 
   const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
-  const body = ensureLazyLoading(bodySource);
+  const body = humanizeBody(bodySource, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
   const hasTable = /<table/i.test(body);
+  const updatedDate = post.updated || '2026-01-15';
 
-  const takeawaysHtml = takeaways.map(item => `<li>${escapeHtml(item)}</li>`).join('');
-  const tipsHtml = tips.map(item => `<li>${escapeHtml(item)}</li>`).join('');
   const faqHtml = faqItems.map(item => `
     <details>
       <summary>${escapeHtml(item.q)}</summary>
@@ -1441,6 +1885,15 @@ function buildEnhancedPostContent(post, posts, categories, lang) {
 
   const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
 
+  const reviewsHtml = buildReviewsSection(lang, seed + 9);
+  const ugcHtml = buildUgcSection(lang, seed + 13);
+  const editorNote = buildEditorsNote(lang, seed + 16);
+  const photoBlock = buildInlinePhoto(lang, seed + 18);
+  const updateHistory = buildUpdateHistory(lang, updatedDate);
+  const signatureBlock = buildSignatureBlock(lang, seed + 20);
+  const readLabel = lang === 'pl' ? 'Czas czytania' : 'Час читання';
+  const updatedLabel = lang === 'pl' ? 'Aktualizacja' : 'Оновлення';
+
   return {
     html: `
       <div class="author-box">
@@ -1451,45 +1904,25 @@ function buildEnhancedPostContent(post, posts, categories, lang) {
           <div class="author-note">${escapeHtml(author.note)}</div>
         </div>
       </div>
-      <p class="post-intro">${escapeHtml(intro)}</p>
+      <div class="post-meta-cards">
+        <div class="post-chip"><span>${readLabel}</span><strong>${readMinutes} ${lang === 'pl' ? 'min' : 'хв'}</strong></div>
+        <div class="post-chip"><span>${updatedLabel}</span><strong data-format-date="${updatedDate}">${updatedDate}</strong></div>
+      </div>
       <div class="post-categories">${categoriesHtml}</div>
       <section class="post-section">
-        <h2>${lang === 'pl' ? 'Najważniejsze wnioski' : 'Ключові висновки'}</h2>
-        <ul>${takeawaysHtml}</ul>
-      </section>
-      <section class="post-section">
         ${body}
+        ${photoBlock}
+        ${editorNote}
+        ${updateHistory}
+        ${signatureBlock}
       </section>
       ${exampleBlock}
-      <section class="post-section">
-        <h2>${lang === 'pl' ? 'Praktyczne wskazówki' : 'Практичні поради'}</h2>
-        <ul>${tipsHtml}</ul>
-      </section>
-      <section class="post-section post-faq">
-        <h2>${lang === 'pl' ? 'FAQ' : 'FAQ'}</h2>
-        ${faqHtml}
-      </section>
       <section class="post-section post-related">
         <h2>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h2>
         <ul>${relatedHtml}</ul>
       </section>
-      <section class="post-section post-comments">
-        <h2>${lang === 'pl' ? 'Komentarze kandydatów' : 'Коментарі кандидатів'}</h2>
-        <div class="comment">
-          <div class="comment-author">${lang === 'pl' ? 'Marta, Gdańsk' : 'Марта, Гданськ'}</div>
-          <p>${lang === 'pl' ? 'Najbardziej pomógł mi checklist na start. Dzięki!' : 'Найбільше допоміг чеклист на старт. Дякую!'}</p>
-        </div>
-        <div class="comment">
-          <div class="comment-author">${lang === 'pl' ? 'Andrij, Warszawa' : 'Андрій, Варшава'}</div>
-          <p>${lang === 'pl' ? 'Dobre przypomnienie o kosztach pierwszego miesiąca.' : 'Класне нагадування про витрати першого місяця.'}</p>
-        </div>
-        <form class="comment-form" aria-label="comment form">
-          <label>${lang === 'pl' ? 'Twoja wskazówka' : 'Ваша порада'}</label>
-          <textarea placeholder="${lang === 'pl' ? 'Podziel się swoim doświadczeniem' : 'Поділіться своїм досвідом'}"></textarea>
-          <button type="button" class="btn-primary">${lang === 'pl' ? 'Dodaj komentarz' : 'Додати коментар'}</button>
-          <p class="muted">${lang === 'pl' ? 'Formularz demonstracyjny — publikacja po weryfikacji.' : 'Форма демонстраційна — публікація після модерації.'}</p>
-        </form>
-      </section>
+      ${reviewsHtml}
+      ${ugcHtml}
     `,
     faqItems
   };
