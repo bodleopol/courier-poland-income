@@ -26,6 +26,7 @@
   
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -63,6 +64,10 @@
       <nav class="nav-menu">
         <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
         <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <div class="nav-dropdown" aria-label="Категорії">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії</button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
         <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
         <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
         <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
@@ -80,6 +85,7 @@
     <div class="mobile-menu">
       <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
       <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
       <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
       <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
       <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
@@ -98,7 +104,7 @@
     </section>
     <article class="content-wrapper">
       <div data-lang-content="ua">
-        <p><strong>Останнє оновлення:</strong> 16 січня 2026 року</p>
+        <p><strong>Останнє оновлення:</strong> 01 жовтня 2024 року</p>
 
         <h2>1. Загальні положення</h2>
         <p>Ця Політика конфіденційності визначає порядок отримання, зберігання, обробки та використання персональних даних користувачів сайту Rybezh (далі «Сайт»). Rybezh поважає вашу конфіденційність і зобов'язується захищати ваші персональні дані відповідно до чинного законодавства, зокрема Регламенту (ЄС) 2016/679 про захист фізичних осіб при обробці персональних даних (GDPR).</p>
@@ -212,7 +218,7 @@
       </div>
 
       <div data-lang-content="pl" style="display:none">
-        <p><strong>Ostatnia aktualizacja:</strong> 16 stycznia 2026 roku</p>
+        <p><strong>Ostatnia aktualizacja:</strong> 1 października 2024 roku</p>
 
         <h2>1. Postanowienia ogólne</h2>
         <p>Niniejsza Polityka prywatności określa zasady gromadzenia, przechowywania, przetwarzania i wykorzystywania danych osobowych użytkowników strony Rybezh (dalej „Strona”). Rybezh szanuje Twoją prywatność i zobowiązuje się do ochrony Twoich danych osobowych zgodnie z obowiązującym prawem, w szczególności Rozporządzeniem (UE) 2016/679 w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych (RODO).</p>
@@ -381,6 +387,7 @@
         <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
         <div class="footer-bottom-links">
           <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+          <a href="/terms.html" data-i18n="footer.terms">Умови користування</a>
         </div>
       </div>
     </div>

@@ -16,6 +16,7 @@
     'brand.tagline': { ua: 'rybezh.site — робота у Польщі для українців та поляків', pl: 'rybezh.site — praca w Polsce dla Ukraińców i Polaków' },
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
     'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
+    'nav.categories': { ua: 'Категорії', pl: 'Kategorie' },
     'nav.about': { ua: 'Про нас', pl: 'O nas' },
     'nav.blog': { ua: 'Блог', pl: 'Blog' },
     'nav.faq': { ua: 'FAQ', pl: 'FAQ' },
@@ -73,6 +74,7 @@
     'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
     'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
     'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
+    'footer.terms': { ua: 'Умови користування', pl: 'Regulamin' },
     'footer.desc': { ua: 'Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.', pl: 'Pomagamy znaleźć pracę w Polsce i dobrać ofertę do doświadczenia. Wsparcie 24/7.' },
     'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
     'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
@@ -549,6 +551,31 @@
   }
 
   // ============================================
+  // 13. EARNINGS CALCULATOR
+  // ============================================
+  function initCalculator() {
+    const hInput = document.getElementById('calc-hours');
+    const rInput = document.getElementById('calc-rate');
+    const hVal = document.getElementById('val-hours');
+    const rVal = document.getElementById('val-rate');
+    const total = document.getElementById('total-earn');
+
+    if (!hInput || !rInput || !hVal || !rVal || !total) return;
+
+    const calc = () => {
+      const h = Number(hInput.value || 0);
+      const r = Number(rInput.value || 0);
+      hVal.textContent = String(h);
+      rVal.textContent = String(r);
+      total.textContent = (h * r * 4).toLocaleString();
+    };
+
+    hInput.addEventListener('input', calc);
+    rInput.addEventListener('input', calc);
+    calc();
+  }
+
+  // ============================================
   // 11. DATE FORMATTING
   // ============================================
   function initDateFormatting() {
@@ -654,6 +681,7 @@
     initTelegramTracking();
     initDateFormatting();
     initNewsletter();
+    initCalculator();
   }
 
   // Run on DOM ready

@@ -19,6 +19,29 @@
   </div>
 </section>
 
+<section class="calculator-section">
+  <div class="container">
+    <h2 data-i18n="calc.title">Калькулятор заробітку</h2>
+    <p class="section-lead" data-i18n="calc.note">*приблизний розрахунок</p>
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <label for="calc-hours" data-i18n="calc.hours">Годин на тиждень</label>
+        <input type="range" id="calc-hours" min="10" max="60" value="40">
+        <div class="calc-value"><span id="val-hours">40</span> h</div>
+
+        <label for="calc-rate" data-i18n="calc.rate">Ставка (PLN/год)</label>
+        <input type="range" id="calc-rate" min="20" max="50" value="35">
+        <div class="calc-value"><span id="val-rate">35</span> PLN</div>
+      </div>
+      <div class="calc-result">
+        <p data-i18n="calc.result">Ваш дохід на місяць:</p>
+        <div class="calc-total"><span id="total-earn">5600</span> PLN</div>
+        <p class="muted" data-i18n="calc.note">*приблизний розрахунок</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Categories -->
 <section class="categories">
   <div class="container">

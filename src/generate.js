@@ -10,6 +10,81 @@ const TEMPLATES = path.join(SRC, 'templates');
 const DIST = path.join(process.cwd(), 'dist');
 const POSTS_PER_PAGE = 20;
 
+const SITE_AUTHOR = {
+  ua: {
+    name: 'Редакційна команда Rybezh',
+    role: 'Карʼєрні консультації та перевірка умов вакансій',
+    note: 'Ми збираємо досвід кандидатів, відкриті джерела та реальні умови роботодавців, щоб пояснювати все просто і чесно.'
+  },
+  pl: {
+    name: 'Zespół redakcyjny Rybezh',
+    role: 'Doradztwo kariery i weryfikacja warunków pracy',
+    note: 'Łączymy doświadczenia kandydatów i informacje z otwartych źródeł, aby wyjaśniać wszystko prosto i uczciwie.'
+  }
+};
+
+const INTRO_TEMPLATES = {
+  ua: [
+    'Коли я вперше допомагав знайомому з пошуком роботи у Польщі, найбільше здивувала різниця між «красивою» вакансією та реальними умовами. У цій статті зібрав те, на що варто звернути увагу на старті.',
+    'За останні місяці ми розібрали десятки запитів від людей, які їдуть у Польщу вперше. Нижче — коротка і практична інструкція, що реально працює.',
+    'Я записав нотатки після кількох розмов з кандидатами, які вже пройшли адаптацію. У статті — конкретні кроки та типові помилки, які краще обійти.'
+  ],
+  pl: [
+    'Kiedy po raz pierwszy pomagałem znajomemu znaleźć pracę w Polsce, największym zaskoczeniem była różnica między „ładnym” ogłoszeniem a realnymi warunkami. Poniżej zebraliśmy to, na co warto zwrócić uwagę na starcie.',
+    'W ostatnich miesiącach przeanalizowaliśmy dziesiątki zapytań od osób, które wyjeżdżają do Polski po raz pierwszy. Poniżej — krótka, praktyczna instrukcja krok po kroku.',
+    'Zebrałem notatki z rozmów z kandydatami, którzy już przeszli adaptację. W artykule znajdziesz konkretne kroki i typowe błędy, których warto unikać.'
+  ]
+};
+
+const TAKEAWAYS = {
+  ua: [
+    'Спочатку уточніть реальні умови: графік, оплата, проживання.',
+    'Підготуйте документи заздалегідь, щоб не втрачати час після приїзду.',
+    'Домовляйтесь про канал звʼязку та відповідального координатора.',
+    'Перевіряйте, що саме входить у ставку та які є доплати.',
+    'Залишайте запас бюджету на перший місяць адаптації.'
+  ],
+  pl: [
+    'Na start doprecyzuj realne warunki: grafik, stawka, zakwaterowanie.',
+    'Dokumenty przygotuj wcześniej, żeby nie tracić czasu po przyjeździe.',
+    'Ustal kanał kontaktu i osobę odpowiedzialną za wsparcie.',
+    'Sprawdź, co dokładnie jest w stawce i jakie są dodatki.',
+    'Zostaw budżet rezerwowy na pierwszy miesiąc adaptacji.'
+  ]
+};
+
+const PRACTICAL_TIPS = {
+  ua: [
+    'Сфотографуйте документи та збережіть копії у хмарі.',
+    'Попросіть приклад договору до виїзду, якщо це можливо.',
+    'Плануйте дорогу до роботи — це впливає на витрати і час.',
+    'Уточнюйте, чи є аванси/премії та за що вони нараховуються.',
+    'Заздалегідь складіть простий бюджет на місяць.'
+  ],
+  pl: [
+    'Zrób zdjęcia dokumentów i przechowuj kopie w chmurze.',
+    'Poproś o wzór umowy jeszcze przed wyjazdem, jeśli to możliwe.',
+    'Zaplanuj dojazd do pracy — wpływa na koszty i czas.',
+    'Dopytaj o zaliczki/premie i za co są przyznawane.',
+    'Zaplanuj prosty budżet na pierwszy miesiąc.'
+  ]
+};
+
+const FAQ_POOL = {
+  ua: [
+    { q: 'Скільки часу зазвичай займає старт роботи?', a: 'За умови готових документів — від кількох днів до 1–2 тижнів, залежно від вакансії.' },
+    { q: 'Чи потрібен досвід?', a: 'Для багатьох позицій досвід не є обовʼязковим, але він допомагає отримати кращі умови.' },
+    { q: 'Які документи найчастіше потрібні?', a: 'Зазвичай це паспорт, віза або карта побиту, а також PESEL і банківський рахунок.' },
+    { q: 'Чи є житло від роботодавця?', a: 'Залежить від вакансії. Уточнюйте умови та реальну вартість перед стартом.' }
+  ],
+  pl: [
+    { q: 'Ile zwykle trwa start pracy?', a: 'Przy gotowych dokumentach — od kilku dni do 1–2 tygodni, zależnie od oferty.' },
+    { q: 'Czy potrzebne jest doświadczenie?', a: 'W wielu ofertach doświadczenie nie jest wymagane, ale pomaga w lepszych warunkach.' },
+    { q: 'Jakie dokumenty są najczęściej potrzebne?', a: 'Najczęściej: paszport, wiza lub karta pobytu, PESEL i konto bankowe.' },
+    { q: 'Czy pracodawca zapewnia zakwaterowanie?', a: 'To zależy od oferty. Zawsze dopytaj o koszt i standard.' }
+  ]
+};
+
 const I18N_SCRIPT = `\n<script>
 /* dynamic i18n keys injected by generate.js */
 (function(extraTranslations){
@@ -19,6 +94,7 @@ const I18N_SCRIPT = `\n<script>
     window.EXTRA_TRANSLATIONS = extraTranslations || {};
   }
 })(__EXTRA_TRANSLATIONS__);
+window.CATEGORIES = __CATEGORIES__;
 </script>\n`;
 
 async function build() {
@@ -109,10 +185,12 @@ async function build() {
   });
   
   // Prepare script with injected translations
-  const scriptWithData = I18N_SCRIPT.replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations));
+  const scriptWithData = I18N_SCRIPT
+    .replace('__EXTRA_TRANSLATIONS__', JSON.stringify(jobTranslations))
+    .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'faq.html', '404.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'faq.html', '404.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -449,12 +527,14 @@ async function build() {
   for (const post of posts) {
     const heroImageUrl = extractImageUrl(post.body) || extractImageUrl(post.image);
     const readMinutes = estimateReadingTime(post.body || '');
+    const uaEnhanced = buildEnhancedPostContent(post, posts, categories, 'ua');
+    const plEnhanced = buildEnhancedPostContent(post, posts, categories, 'pl');
     const postContent = `
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
         <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span> · <span class="post-readtime" data-i18n="blog.${post.slug}.read_time">${readMinutes} хв читання</span></div>
-        <div data-lang-content="ua">${post.body}</div>
-        <div data-lang-content="pl" style="display:none">${post.body_pl || post.body}</div>
+        <div data-lang-content="ua">${uaEnhanced.html}</div>
+        <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
       </div>`;
     
     let postHtml = pageTpl
@@ -497,8 +577,9 @@ async function build() {
 
     // Inject BlogPosting structured data
     const blogPostingScript = jsonLdScript(buildBlogPostingJsonLd(post, heroImageUrl));
+    const faqScript = jsonLdScript(buildFaqJsonLd(uaEnhanced.faqItems));
     if (postHtml.includes('</head>')) {
-      postHtml = postHtml.replace('</head>', `${blogPostingScript}\n</head>`);
+      postHtml = postHtml.replace('</head>', `${blogPostingScript}\n${faqScript}\n</head>`);
     }
 
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
@@ -953,6 +1034,12 @@ function generateSitemap(links, posts = []) {
       priority: '0.5', 
       changefreq: 'yearly',
       lastmod: today
+    },
+    { 
+      url: `${base}/terms.html`, 
+      priority: '0.5', 
+      changefreq: 'yearly',
+      lastmod: today
     }
   ];
 
@@ -1164,6 +1251,7 @@ function buildJobPostingJsonLd(page) {
 function buildBlogPostingJsonLd(post, imageUrl) {
   const url = `https://rybezh.site/post-${post.slug}.html`;
   const published = post.date ? toISODate(post.date) : toISODate(new Date());
+  const modified = post.updated ? toISODate(post.updated) : published;
   const description = stripHtml(post.excerpt || '');
 
   const data = {
@@ -1172,7 +1260,7 @@ function buildBlogPostingJsonLd(post, imageUrl) {
     headline: post.title || 'Blog',
     description,
     datePublished: published,
-    dateModified: published,
+    dateModified: modified,
     author: {
       '@type': 'Organization',
       name: 'Rybezh'
@@ -1198,8 +1286,213 @@ function buildBlogPostingJsonLd(post, imageUrl) {
   return data;
 }
 
+function buildFaqJsonLd(items) {
+  const safeItems = Array.isArray(items) ? items : [];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: safeItems.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a
+      }
+    }))
+  };
+}
+
 function jsonLdScript(obj) {
   return `\n<script type="application/ld+json">\n${JSON.stringify(obj, null, 2)}\n</script>\n`;
+}
+
+function hashString(value) {
+  let hash = 0;
+  const str = String(value || '');
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+function pickFromPool(pool, seed) {
+  if (!Array.isArray(pool) || pool.length === 0) return '';
+  return pool[seed % pool.length];
+}
+
+function pickList(pool, count, seed) {
+  if (!Array.isArray(pool) || pool.length === 0) return [];
+  const items = [];
+  const used = new Set();
+  let i = 0;
+  while (items.length < Math.min(count, pool.length)) {
+    const idx = (seed + i * 7) % pool.length;
+    if (!used.has(idx)) {
+      items.push(pool[idx]);
+      used.add(idx);
+    }
+    i++;
+  }
+  return items;
+}
+
+function ensureLazyLoading(html) {
+  return String(html || '').replace(/<img\s+([^>]*?)>/gi, (match, attrs) => {
+    const normalized = attrs || '';
+    if (/\sloading=/i.test(normalized)) return match;
+    const safeAttrs = normalized.trim().replace(/\s*\/$/, '');
+    return `<img ${safeAttrs} loading="lazy" decoding="async">`;
+  });
+}
+
+function tokenizeTitle(title) {
+  return stripHtml(title)
+    .toLowerCase()
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(token => token.length > 3);
+}
+
+function getRelatedPosts(post, posts, limit = 3) {
+  const baseTokens = new Set(tokenizeTitle(post.title || ''));
+  const scored = posts
+    .filter(p => p.slug !== post.slug)
+    .map(p => {
+      const tokens = tokenizeTitle(p.title || '');
+      const score = tokens.reduce((acc, t) => acc + (baseTokens.has(t) ? 1 : 0), 0);
+      return { post: p, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  const nonZero = scored.filter(item => item.score > 0);
+  const selected = (nonZero.length ? nonZero : scored).slice(0, limit).map(item => item.post);
+  return selected;
+}
+
+function buildEnhancedPostContent(post, posts, categories, lang) {
+  const seed = hashString(`${post.slug}-${lang}`);
+  const intro = pickFromPool((INTRO_TEMPLATES[lang] || []), seed);
+  const takeaways = pickList((TAKEAWAYS[lang] || []), 3, seed + 1);
+  const tips = pickList((PRACTICAL_TIPS[lang] || []), 4, seed + 2);
+  const faqItems = pickList((FAQ_POOL[lang] || []), 3, seed + 3);
+  const related = getRelatedPosts(post, posts, 3);
+
+  const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
+  const body = ensureLazyLoading(bodySource);
+  const hasTable = /<table/i.test(body);
+
+  const takeawaysHtml = takeaways.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  const tipsHtml = tips.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  const faqHtml = faqItems.map(item => `
+    <details>
+      <summary>${escapeHtml(item.q)}</summary>
+      <p>${escapeHtml(item.a)}</p>
+    </details>
+  `).join('');
+
+  const exampleBlock = hasTable ? '' : `
+    <div class="post-example">
+      <h3>${lang === 'pl' ? 'Przykład planu na pierwszy miesiąc' : 'Приклад плану на перший місяць'}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>${lang === 'pl' ? 'Pozycja' : 'Стаття'}</th>
+            <th>${lang === 'pl' ? 'Szacunek (PLN)' : 'Оцінка (PLN)'}</th>
+            <th>${lang === 'pl' ? 'Uwagi' : 'Коментар'}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>${lang === 'pl' ? 'Zakwaterowanie' : 'Проживання'}</td>
+            <td>900–1400</td>
+            <td>${lang === 'pl' ? 'Zależy od miasta i standardu' : 'Залежить від міста та стандарту'}</td>
+          </tr>
+          <tr>
+            <td>${lang === 'pl' ? 'Transport' : 'Транспорт'}</td>
+            <td>120–220</td>
+            <td>${lang === 'pl' ? 'Bilet miesięczny' : 'Проїзний на місяць'}</td>
+          </tr>
+          <tr>
+            <td>${lang === 'pl' ? 'Jedzenie' : 'Харчування'}</td>
+            <td>600–900</td>
+            <td>${lang === 'pl' ? 'Zakupy + posiłki na mieście' : 'Продукти + інколи кафе'}</td>
+          </tr>
+          <tr>
+            <td>${lang === 'pl' ? 'Rezerwa' : 'Резерв'}</td>
+            <td>300–500</td>
+            <td>${lang === 'pl' ? 'Nieprzewidziane wydatki' : 'Непередбачені витрати'}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  const relatedHtml = related.map(r => {
+    const title = lang === 'pl' ? (r.title_pl || r.title) : r.title;
+    return `<li><a href="/post-${escapeHtml(r.slug)}.html">${escapeHtml(title)}</a></li>`;
+  }).join('');
+
+  const categoriesHtml = Array.isArray(categories) && categories.length
+    ? categories.slice(0, 4).map(cat => {
+        const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
+        return `<a class="category-pill" href="/vacancies.html?category=${escapeHtml(cat.id)}">${escapeHtml(name)}</a>`;
+      }).join('')
+    : '';
+
+  const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
+
+  return {
+    html: `
+      <div class="author-box">
+        <div class="author-avatar">🧭</div>
+        <div>
+          <div class="author-name">${escapeHtml(author.name)}</div>
+          <div class="author-role">${escapeHtml(author.role)}</div>
+          <div class="author-note">${escapeHtml(author.note)}</div>
+        </div>
+      </div>
+      <p class="post-intro">${escapeHtml(intro)}</p>
+      <div class="post-categories">${categoriesHtml}</div>
+      <section class="post-section">
+        <h2>${lang === 'pl' ? 'Najważniejsze wnioski' : 'Ключові висновки'}</h2>
+        <ul>${takeawaysHtml}</ul>
+      </section>
+      <section class="post-section">
+        ${body}
+      </section>
+      ${exampleBlock}
+      <section class="post-section">
+        <h2>${lang === 'pl' ? 'Praktyczne wskazówki' : 'Практичні поради'}</h2>
+        <ul>${tipsHtml}</ul>
+      </section>
+      <section class="post-section post-faq">
+        <h2>${lang === 'pl' ? 'FAQ' : 'FAQ'}</h2>
+        ${faqHtml}
+      </section>
+      <section class="post-section post-related">
+        <h2>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h2>
+        <ul>${relatedHtml}</ul>
+      </section>
+      <section class="post-section post-comments">
+        <h2>${lang === 'pl' ? 'Komentarze kandydatów' : 'Коментарі кандидатів'}</h2>
+        <div class="comment">
+          <div class="comment-author">${lang === 'pl' ? 'Marta, Gdańsk' : 'Марта, Гданськ'}</div>
+          <p>${lang === 'pl' ? 'Najbardziej pomógł mi checklist na start. Dzięki!' : 'Найбільше допоміг чеклист на старт. Дякую!'}</p>
+        </div>
+        <div class="comment">
+          <div class="comment-author">${lang === 'pl' ? 'Andrij, Warszawa' : 'Андрій, Варшава'}</div>
+          <p>${lang === 'pl' ? 'Dobre przypomnienie o kosztach pierwszego miesiąca.' : 'Класне нагадування про витрати першого місяця.'}</p>
+        </div>
+        <form class="comment-form" aria-label="comment form">
+          <label>${lang === 'pl' ? 'Twoja wskazówka' : 'Ваша порада'}</label>
+          <textarea placeholder="${lang === 'pl' ? 'Podziel się swoim doświadczeniem' : 'Поділіться своїм досвідом'}"></textarea>
+          <button type="button" class="btn-primary">${lang === 'pl' ? 'Dodaj komentarz' : 'Додати коментар'}</button>
+          <p class="muted">${lang === 'pl' ? 'Formularz demonstracyjny — publikacja po weryfikacji.' : 'Форма демонстраційна — публікація після модерації.'}</p>
+        </form>
+      </section>
+    `,
+    faqItems
+  };
 }
 
 build().catch(err => {
