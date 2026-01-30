@@ -327,6 +327,176 @@ const PRACTICAL_TIPS = {
   ]
 };
 
+const TOPIC_KEYWORDS = {
+  routes: ['route', 'routes', 'city-map', 'map', 'planning'],
+  adaptation: ['adaptation', 'living', 'housing', 'mieszkanie'],
+  finance: ['financial', 'earnings', 'salary', 'zarobky', 'net-earnings', 'hourly', 'bonuses', 'rating', 'tips'],
+  health: ['health', 'ergonomics', 'burnout', 'safety', 'winter'],
+  gear: ['bike', 'scooter', 'car', 'bafang', 'electric', 'rent-gear'],
+  legal: ['legalization', 'karta', 'tax', 'zus', 'insurance'],
+  start: ['bez-dosvidu', 'first-shift', 'common-mistakes', 'faq-new-couriers'],
+  city: ['warsaw', 'city'],
+  student: ['students'],
+  apps: ['apps']
+};
+
+const TOPIC_NOTES = {
+  routes: {
+    ua: [
+      'Найбільше втрачається не на швидкості, а на “порожніх” хвилинах між замовленнями.',
+      'Я фіксую 2–3 “тихі” точки, щоб не розгубитися, коли пік закінчився.',
+      'Коли почав вести короткі нотатки по районах, доходи стали рівнішими.',
+      'Найкращий маршрут — той, що повертає в теплу зону, а не “викидає” на окраїну.'
+    ],
+    pl: [
+      'Najwięcej traci się nie na prędkości, tylko na pustych minutach między zleceniami.',
+      'Zawsze mam 2–3 “ciche” miejsca, żeby nie błądzić po szczycie.',
+      'Krótkie notatki o dzielnicach dają stabilniejszy zarobek niż “gonitwa”.',
+      'Najlepsza trasa to ta, która wraca do ciepłej strefy, a nie wyrzuca na obrzeża.'
+    ]
+  },
+  adaptation: {
+    ua: [
+      'У перші тижні найбільше нервів забирає не робота, а побутові дрібниці.',
+      'Якщо щось затягується (PESEL, рахунок), краще мати план B і не панікувати.',
+      'Найкраще рішення на старті — зробити 2–3 речі щодня, а не все за один раз.',
+      'Контакти “своїх” людей і сервісів економлять більше часу, ніж здається.'
+    ],
+    pl: [
+      'W pierwszych tygodniach najbardziej męczą nie zlecenia, a sprawy codzienne.',
+      'Gdy coś się przeciąga (PESEL, konto), warto mieć plan B i nie panikować.',
+      'Najlepiej robić 2–3 rzeczy dziennie zamiast wszystkiego na raz.',
+      'Dobre kontakty “na miejscu” oszczędzają mnóstwo czasu.'
+    ]
+  },
+  finance: {
+    ua: [
+      'Я реально почав бачити гроші, коли розділив “оборот” і “чистий дохід”.',
+      'Маленька щотижнева ревізія витрат працює краще, ніж “план на місяць”.',
+      'Найчастіше просідають доходи не через ставки, а через розфокус зміни.',
+      'Коли тримаєш 1–2 пікових години стабільно, цифри стають прогнозованими.'
+    ],
+    pl: [
+      'Dopiero po rozdzieleniu “obrotu” i “dochodu” zobaczyłem realny wynik.',
+      'Mały tygodniowy przegląd kosztów działa lepiej niż wielki plan na miesiąc.',
+      'Spadek zarobków częściej wynika z chaosu, a nie z niskich stawek.',
+      'Stałe 1–2 godziny szczytu dają przewidywalność.'
+    ]
+  },
+  health: {
+    ua: [
+      'Після першого місяця я відчув, що тіло починає “платити рахунок” за темп.',
+      'Коротка розминка працює краще, ніж лікувати спину потім.',
+      'Поганий сон швидше вбиває продуктивність, ніж слабкий день у додатку.',
+      'Коли ввів правило “перерва кожні 2–3 години”, стало легше і по голові, і по тілу.'
+    ],
+    pl: [
+      'Po pierwszym miesiącu ciało zaczyna “wystawiać rachunek” za tempo.',
+      'Krótka rozgrzewka działa lepiej niż leczenie pleców później.',
+      'Zły sen zabija wydajność szybciej niż słabszy dzień w aplikacji.',
+      'Zasada “przerwa co 2–3 godziny” robi robotę.'
+    ]
+  },
+  gear: {
+    ua: [
+      'Я двічі перепłaciв за “дорогу штуку”, яка виявилась незручною в роботі.',
+      'Найкращий апгрейд — не мотор, а нормальна посадка й світло.',
+      'Сервіс і дрібний ремонт завжди виходять дорожче, якщо тягнути до останнього.',
+      'Для старту краще простий і надійний сетап, ніж “преміум все й одразу”.'
+    ],
+    pl: [
+      'Dwa razy przepłaciłem za “fajny sprzęt”, który okazał się niewygodny w pracy.',
+      'Najlepszy upgrade to nie silnik, tylko dobra pozycja i światła.',
+      'Serwis wychodzi drożej, gdy odkłada się go do ostatniej chwili.',
+      'Na start lepiej prosty i pewny sprzęt niż “premium od razu”.'
+    ]
+  },
+  legal: {
+    ua: [
+      'Найбільший стрес — коли немає ясності по документах і термінах.',
+      'Краще один раз розкласти все по папках, ніж шукати довідки в останній день.',
+      'Якщо щось незrozуміло — питаю в координатора, це економить тижні нервів.',
+      'Легальність — це не “формальність”, а ваш захист у конфліктах.'
+    ],
+    pl: [
+      'Najwięcej stresu jest wtedy, gdy nie ma jasności co do dokumentów.',
+      'Lepiej raz uporządkować papiery, niż szukać ich w ostatniej chwili.',
+      'Gdy coś jest niejasne, pytam koordynatora — oszczędza to nerwy.',
+      'Legalność to nie formalność, tylko realna ochrona.'
+    ]
+  },
+  start: {
+    ua: [
+      'Перший тиждень найважливіше — спокій і прості маршрути.',
+      'Я починав з коротких змін, щоб не перегоріти одразу.',
+      'Найкраще навчання — 2–3 реальні зміни, а не десяток відео.',
+      'Одна нормальна звичка (перевірка адреси) економить багато часу.'
+    ],
+    pl: [
+      'Pierwszy tydzień to spokój i proste trasy, bez pośpiechu.',
+      'Zacząłem od krótszych zmian, żeby nie spalić się na starcie.',
+      'Najlepsza nauka to 2–3 realne zmiany, nie dziesięć filmów.',
+      'Jedna dobra rutyna (sprawdzenie adresu) oszczędza masę czasu.'
+    ]
+  },
+  city: {
+    ua: [
+      'У столиці конкуренція більша, але і “теплих зон” реально більше.',
+      'Я б починав з простіших районів, а центр залишив на потім.',
+      'У великому місті графік вирішує більше, ніж транспорт.',
+      'Краще мати 2 стабільні райони, ніж хаотично кататися по всьому місту.'
+    ],
+    pl: [
+      'W stolicy konkurencja jest większa, ale i “ciepłych stref” jest więcej.',
+      'Zacząłbym od spokojniejszych dzielnic, a centrum zostawił później.',
+      'W dużym mieście grafik często ważniejszy niż transport.',
+      'Lepiej mieć 2 stabilne rejony niż jeździć po całym mieście.'
+    ]
+  },
+  student: {
+    ua: [
+      'Гнучкий графік реально рятує під час сесії.',
+      'Краще 2–3 вечірні зміни, ніж один довгий день.',
+      'Стабільний сон дає більше, ніж “дотиснути” ще годину.',
+      'Чесно: навчання + робота — ок, але потрібен режим.'
+    ],
+    pl: [
+      'Elastyczny grafik naprawdę ratuje w czasie sesji.',
+      'Lepiej 2–3 krótkie wieczory niż jeden długi dzień.',
+      'Regularny sen daje więcej niż “jeszcze jedna godzina”.',
+      'Studiowanie i praca są OK, ale potrzebny jest rytm.'
+    ]
+  },
+  apps: {
+    ua: [
+      'Не всі додатки працюють однаково в різних містах — тестуйте.',
+      'Я тримаю 2 навігації: одна для маршрутів, інша — для пробок.',
+      'Зручно мати додаток для витрат — він економить не гроші, а час.',
+      'Чим менше зайвих нотифікацій, тим спокійніша зміна.'
+    ],
+    pl: [
+      'Nie wszystkie aplikacje działają tak samo w różnych miastach — testuj.',
+      'Mam dwie nawigacje: jedną do trasy, drugą do korków.',
+      'Aplikacja do wydatków oszczędza nie tyle pieniądze, co czas.',
+      'Mniej powiadomień = spokojniejsza zmiana.'
+    ]
+  },
+  general: {
+    ua: [
+      'Найбільше працюють прості, повторювані дії, а не “секретні лайфхаки”.',
+      'Стабільність завжди виграє у “разових ривків”.',
+      'Коли плануєш зміни заздалегідь, стресу значно менше.',
+      'У цьому всьому важливі не лише гроші, а й ресурс.'
+    ],
+    pl: [
+      'Najlepiej działają proste, powtarzalne rzeczy, nie “sekretne hacki”.',
+      'Stabilność wygrywa z jednorazowymi zrywami.',
+      'Planowanie zmian z wyprzedzeniem zmniejsza stres.',
+      'W tym wszystkim liczy się nie tylko kasa, ale i kondycja.'
+    ]
+  }
+};
+
 const FAQ_POOL = {
   ua: [
     { q: 'Скільки часу зазвичай займає старт роботи?', a: 'За умови готових документів — від кількох днів до 1–2 тижнів, залежно від вакансії.' },
@@ -340,6 +510,130 @@ const FAQ_POOL = {
     { q: 'Jakie dokumenty są najczęściej potrzebne?', a: 'Najczęściej: paszport, wiza lub karta pobytu, PESEL i konto bankowe.' },
     { q: 'Czy pracodawca zapewnia zakwaterowanie?', a: 'To zależy od oferty. Zawsze dopytaj o koszt i standard.' }
   ]
+};
+
+const TOPIC_FAQ = {
+  routes: {
+    ua: [
+      { q: 'Скільки часу потрібно, щоб “прочитати” своє місто?', a: 'Зазвичай 2–3 тижні стабільних змін у тих самих районах.' },
+      { q: 'Чи варто міняти зони щодня?', a: 'Ні, краще 2–3 базові зони і ротація між ними.' },
+      { q: 'Як уникати “мертвих” адрес?', a: 'Тримайтеся районів із 5–8 активними ресторанами поруч.' }
+    ],
+    pl: [
+      { q: 'Ile trwa “przeczytanie” miasta?', a: 'Zwykle 2–3 tygodnie regularnych zmian w tych samych rejonach.' },
+      { q: 'Czy warto zmieniać strefy codziennie?', a: 'Nie, lepiej 2–3 bazowe rejony i rotacja.' },
+      { q: 'Jak unikać “martwych” adresów?', a: 'Trzymaj się miejsc z 5–8 aktywnymi restauracjami w pobliżu.' }
+    ]
+  },
+  adaptation: {
+    ua: [
+      { q: 'Що зробити в перші 72 години?', a: 'SIM‑картка, адресу проживання, запис на PESEL.' },
+      { q: 'Чи варто починати з кімнати?', a: 'Так, це дешевше і швидше для старту.' },
+      { q: 'Де найчастіше виникають затримки?', a: 'У чергах на документи та відкритті рахунку.' }
+    ],
+    pl: [
+      { q: 'Co zrobić w pierwsze 72 godziny?', a: 'Karta SIM, adres zamieszkania, wniosek o PESEL.' },
+      { q: 'Czy warto zaczynać od pokoju?', a: 'Tak, to tańsze i szybsze na start.' },
+      { q: 'Gdzie najczęściej są opóźnienia?', a: 'W kolejkach do dokumentów i przy zakładaniu konta.' }
+    ]
+  },
+  finance: {
+    ua: [
+      { q: 'З чого почати фінплан?', a: 'З фіксованих витрат: житло, зв’язок, транспорт.' },
+      { q: 'Як часто рахувати витрати?', a: 'Раз на тиждень — цього достатньо для контролю.' },
+      { q: 'Чи варто працювати у дощ?', a: 'Так, якщо ви готові — бонуси часто компенсують.' }
+    ],
+    pl: [
+      { q: 'Od czego zacząć plan finansowy?', a: 'Od kosztów stałych: mieszkanie, telefon, transport.' },
+      { q: 'Jak często liczyć wydatki?', a: 'Raz w tygodniu — to wystarczy.' },
+      { q: 'Czy opłaca się pracować w deszcz?', a: 'Często tak, bonusy potrafią zrekompensować.' }
+    ]
+  },
+  health: {
+    ua: [
+      { q: 'Скільки води брати на зміну?', a: 'В середньому 1–1.5 л, більше влітку.' },
+      { q: 'Коли робити паузу?', a: 'Кожні 2–3 години, навіть якщо все “йде добре”.' },
+      { q: 'Що найбільше шкодить спині?', a: 'Неправильна посадка і важка сумка.' }
+    ],
+    pl: [
+      { q: 'Ile wody brać na zmianę?', a: 'Średnio 1–1.5 l, więcej latem.' },
+      { q: 'Kiedy robić przerwy?', a: 'Co 2–3 godziny, nawet jeśli “wszystko idzie”.' },
+      { q: 'Co najbardziej szkodzi plecom?', a: 'Zła pozycja i ciężka torba.' }
+    ]
+  },
+  gear: {
+    ua: [
+      { q: 'Коли вигідніше оренда?', a: 'Якщо тестуєте роботу до 2–3 місяців.' },
+      { q: 'Чи потрібен другий акумулятор?', a: 'Так, якщо працюєте 6+ годин підряд.' },
+      { q: 'Що найчастіше ламається?', a: 'Гальма, ланцюг і дрібні кріплення.' }
+    ],
+    pl: [
+      { q: 'Kiedy opłaca się wynajem?', a: 'Gdy testujesz pracę do 2–3 miesięcy.' },
+      { q: 'Czy potrzebna jest druga bateria?', a: 'Tak, przy zmianach 6+ godzin.' },
+      { q: 'Co psuje się najczęściej?', a: 'Hamulce, łańcuch i drobne mocowania.' }
+    ]
+  },
+  legal: {
+    ua: [
+      { q: 'Чи можна стартувати без PESEL?', a: 'Іноді так, але з банком та зв’язком буває складніше.' },
+      { q: 'Що найважливіше в договорі?', a: 'Тип договору, ставка, графік, умови проживання.' },
+      { q: 'Коли краще подавати на карту побиту?', a: 'Як тільки є стабільний контракт і адреса.' }
+    ],
+    pl: [
+      { q: 'Czy można zacząć bez PESEL?', a: 'Czasem tak, ale bank i telefon mogą być problemem.' },
+      { q: 'Co najważniejsze w umowie?', a: 'Typ umowy, stawka, grafik, zakwaterowanie.' },
+      { q: 'Kiedy składać wniosek o kartę pobytu?', a: 'Gdy masz stabilny kontrakt i adres.' }
+    ]
+  },
+  start: {
+    ua: [
+      { q: 'Скільки часу до “нормального” темпу?', a: 'У середньому 1–2 тижні практики.' },
+      { q: 'Чи варто брати два додатки одразу?', a: 'Краще спочатку один, потім додати другий.' },
+      { q: 'Що підготувати на першу зміну?', a: 'Павербанк, вода, простий перекус, заряджений телефон.' }
+    ],
+    pl: [
+      { q: 'Ile trwa wejście w rytm?', a: 'Zwykle 1–2 tygodnie praktyki.' },
+      { q: 'Czy brać dwie aplikacje od razu?', a: 'Najpierw jedna, potem druga.' },
+      { q: 'Co przygotować na pierwszą zmianę?', a: 'Powerbank, woda, przekąska, naładowany telefon.' }
+    ]
+  },
+  city: {
+    ua: [
+      { q: 'Де простіше починати у столиці?', a: 'У зонах із короткими доставками та меншою конкуренцією.' },
+      { q: 'Коли найкращий пік?', a: 'Обід і вечір, плюс п’ятниця/вихідні.' },
+      { q: 'Який транспорт вигідніший у центрі?', a: 'Велосипед або скутер через паркування.' }
+    ],
+    pl: [
+      { q: 'Gdzie łatwiej zacząć w stolicy?', a: 'W strefach z krótkimi dostawami i mniejszą konkurencją.' },
+      { q: 'Kiedy najlepszy szczyt?', a: 'Lunch i wieczór, plus piątek/weekendy.' },
+      { q: 'Jaki transport w centrum?', a: 'Rower lub skuter ze względu na parkowanie.' }
+    ]
+  },
+  student: {
+    ua: [
+      { q: 'Який мінімальний графік для студента?', a: '10–15 годин на тиждень дають помітний дохід.' },
+      { q: 'Коли краще працювати?', a: 'Вечори та вихідні — найменше перетинаються з навчанням.' },
+      { q: 'Як не “перегоріти”?', a: 'Плануйте 1–2 повних вихідних на тиждень.' }
+    ],
+    pl: [
+      { q: 'Jaki minimalny grafik dla studenta?', a: '10–15 godzin tygodniowo daje już sensowny wynik.' },
+      { q: 'Kiedy najlepiej pracować?', a: 'Wieczory i weekendy — najmniej kolidują z nauką.' },
+      { q: 'Jak się nie wypalić?', a: 'Planuj 1–2 pełne dni wolne w tygodniu.' }
+    ]
+  },
+  apps: {
+    ua: [
+      { q: 'Яку навігацію вибрати?', a: 'Ту, яка найкраще показує затори у вашому місті.' },
+      { q: 'Чи потрібні фінансові додатки?', a: 'Так, хоча б для простого обліку витрат.' },
+      { q: 'Скільки додатків не “заважає”?', a: '2–4 ключові — більше часто відволікає.' }
+    ],
+    pl: [
+      { q: 'Jaką nawigację wybrać?', a: 'Tę, która najlepiej pokazuje korki w Twoim mieście.' },
+      { q: 'Czy potrzebne są aplikacje finansowe?', a: 'Tak, choćby do prostego budżetu.' },
+      { q: 'Ile aplikacji to jeszcze OK?', a: '2–4 kluczowe — więcej rozprasza.' }
+    ]
+  },
+  general: FAQ_POOL
 };
 
 const I18N_SCRIPT = `\n<script>
@@ -1687,6 +1981,61 @@ function pickList(pool, count, seed) {
   return items;
 }
 
+function detectTopic(post) {
+  const slug = String(post?.slug || '').toLowerCase();
+  for (const [topic, keywords] of Object.entries(TOPIC_KEYWORDS)) {
+    if (keywords.some(key => slug.includes(key))) {
+      return topic;
+    }
+  }
+  return 'general';
+}
+
+function getTopicPool(topic, lang) {
+  const t = TOPIC_NOTES[topic] || TOPIC_NOTES.general;
+  return t?.[lang] || TOPIC_NOTES.general[lang] || [];
+}
+
+function getTopicFaqItems(topic, lang, seed) {
+  const topicFaq = TOPIC_FAQ[topic]?.[lang];
+  const fallback = TOPIC_FAQ.general?.[lang] || FAQ_POOL[lang] || [];
+  const pool = Array.isArray(topicFaq) && topicFaq.length ? topicFaq : fallback;
+  return pickList(pool, 3, seed);
+}
+
+function buildHumanNotesSection(post, lang, seed) {
+  const topic = detectTopic(post);
+  const notesPool = getTopicPool(topic, lang);
+  const notes = pickList(notesPool, 3, seed + 3);
+  if (!notes.length) return '';
+  const heading = lang === 'pl' ? 'Notatki z praktyki' : 'Нотатки з практики';
+  return `
+    <section class="post-section post-notes">
+      <h2>${heading}</h2>
+      <ul>${notes.map(n => `<li>${escapeHtml(n)}</li>`).join('')}</ul>
+    </section>
+  `;
+}
+
+function buildReaderQuestionsSection(post, lang, seed) {
+  const topic = detectTopic(post);
+  const items = getTopicFaqItems(topic, lang, seed + 5);
+  if (!items.length) return '';
+  const heading = lang === 'pl' ? 'Najczęstsze pytania, które dostajemy' : 'Найчастіші питання, які нам ставлять';
+  const details = items.map(item => `
+    <details>
+      <summary>${escapeHtml(item.q)}</summary>
+      <p>${escapeHtml(item.a)}</p>
+    </details>
+  `).join('');
+  return `
+    <section class="post-section post-questions">
+      <h2>${heading}</h2>
+      ${details}
+    </section>
+  `;
+}
+
 function pickVoiceProfile(lang, seed) {
   const pool = VOICE_STYLES[lang] || [];
   if (!pool.length) return { leadIns: [], doubts: [], rhythm: 3 };
@@ -1925,7 +2274,8 @@ function getRelatedPosts(post, posts, limit = 3) {
 
 function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const seed = hashString(`${post.slug}-${lang}`);
-  const faqItems = pickList((FAQ_POOL[lang] || []), 3, seed + 3);
+  const topic = detectTopic(post);
+  const faqItems = getTopicFaqItems(topic, lang, seed + 3);
   const related = getRelatedPosts(post, posts, 3);
 
   const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
@@ -1933,13 +2283,6 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const body = humanizeBody(diversifiedBody, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
   const hasTable = /<table/i.test(body);
   const updatedDate = post.updated || '2026-01-15';
-
-  const faqHtml = faqItems.map(item => `
-    <details>
-      <summary>${escapeHtml(item.q)}</summary>
-      <p>${escapeHtml(item.a)}</p>
-    </details>
-  `).join('');
 
   const exampleBlock = hasTable ? '' : `
     <div class="post-example">
@@ -1996,15 +2339,10 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const photoBlock = buildInlinePhoto(lang, seed + 18);
   const updateHistory = buildUpdateHistory(lang, updatedDate);
   const signatureBlock = buildSignatureBlock(lang, seed + 20);
+  const notesSection = buildHumanNotesSection(post, lang, seed + 21);
+  const questionsSection = buildReaderQuestionsSection(post, lang, seed + 27);
   const readLabel = lang === 'pl' ? 'Czas czytania' : 'Час читання';
   const updatedLabel = lang === 'pl' ? 'Aktualizacja' : 'Оновлення';
-
-  const faqSection = `
-      <section class="post-section post-faq">
-        <h2>${lang === 'pl' ? 'Pytania i odpowiedzi' : 'Питання та відповіді'}</h2>
-        ${faqHtml}
-      </section>
-  `;
 
   return {
     html: `
@@ -2028,12 +2366,13 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
         ${updateHistory}
         ${signatureBlock}
       </section>
+      ${notesSection}
+      ${questionsSection}
       ${exampleBlock}
       <section class="post-section post-related">
         <h2>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h2>
         <ul>${relatedHtml}</ul>
       </section>
-      ${faqSection}
     `,
     faqItems
   };
