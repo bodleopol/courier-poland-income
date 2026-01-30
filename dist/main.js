@@ -6,6 +6,9 @@
 (function() {
   'use strict';
 
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
   // ============================================
   // 1. TRANSLATIONS (i18n)
   // ============================================
@@ -16,6 +19,7 @@
     'brand.tagline': { ua: 'rybezh.site — робота у Польщі для українців та поляків', pl: 'rybezh.site — praca w Polsce dla Ukraińców i Polaków' },
     'nav.home': { ua: 'Головна', pl: 'Strona główna' },
     'nav.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
+    'nav.categories': { ua: 'Категорії', pl: 'Kategorie' },
     'nav.about': { ua: 'Про нас', pl: 'O nas' },
     'nav.blog': { ua: 'Блог', pl: 'Blog' },
     'nav.faq': { ua: 'FAQ', pl: 'FAQ' },
@@ -73,6 +77,7 @@
     'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
     'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
     'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
+    'footer.terms': { ua: 'Умови користування', pl: 'Regulamin' },
     'footer.desc': { ua: 'Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.', pl: 'Pomagamy znaleźć pracę w Polsce i dobrać ofertę do doświadczenia. Wsparcie 24/7.' },
     'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
     'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
@@ -549,6 +554,31 @@
   }
 
   // ============================================
+  // 13. EARNINGS CALCULATOR
+  // ============================================
+  function initCalculator() {
+    const hInput = document.getElementById('calc-hours');
+    const rInput = document.getElementById('calc-rate');
+    const hVal = document.getElementById('val-hours');
+    const rVal = document.getElementById('val-rate');
+    const total = document.getElementById('total-earn');
+
+    if (!hInput || !rInput || !hVal || !rVal || !total) return;
+
+    const calc = () => {
+      const h = Number(hInput.value || 0);
+      const r = Number(rInput.value || 0);
+      hVal.textContent = String(h);
+      rVal.textContent = String(r);
+      total.textContent = (h * r * 4).toLocaleString();
+    };
+
+    hInput.addEventListener('input', calc);
+    rInput.addEventListener('input', calc);
+    calc();
+  }
+
+  // ============================================
   // 11. DATE FORMATTING
   // ============================================
   function initDateFormatting() {
@@ -580,10 +610,6 @@
   // 12. NEWSLETTER FORM
   // ============================================
   function initNewsletter() {
-    // URL Google Apps Script (той самий, що і для форми заявки)
-    const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
-    const GEO_URL = 'https://ipapi.co/json/';
-
     document.querySelectorAll('.footer-newsletter-form').forEach(form => {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -637,6 +663,360 @@
   }
 
   // ============================================
+  // 12. CONTACT FORM
+  // ============================================
+  function initContactForm() {
+    const forms = document.querySelectorAll('.js-contact-form');
+    if (!forms.length) return;
+
+    forms.forEach(form => {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nameInput = form.querySelector('[name="name"]');
+        const contactInput = form.querySelector('[name="contact"]');
+        const messageInput = form.querySelector('[name="message"]');
+        const status = form.querySelector('.form-message');
+        const button = form.querySelector('button[type="submit"]');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const contact = contactInput ? contactInput.value.trim() : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        if (!name || !contact) {
+          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : 'Заповніть імʼя та контакт.';
+          return;
+        }
+
+        if (button) button.disabled = true;
+        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : 'Надсилаємо...';
+
+        try {
+          let city = '';
+          try {
+            const geoRes = await fetch(GEO_URL, { cache: 'no-store' });
+            if (geoRes.ok) {
+              const geo = await geoRes.json();
+              city = geo && geo.city ? String(geo.city) : '';
+            }
+          } catch (geoErr) {
+            console.warn('Geo lookup failed', geoErr);
+          }
+
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('contact', contact);
+          formData.append('message', message || '-');
+          formData.append('type', 'contact');
+          formData.append('city', city);
+          formData.append('page', window.location.href);
+          formData.append('lang', getLang());
+          formData.append('ts', new Date().toISOString());
+
+          await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
+
+          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : 'Дякуємо! Ми відповімо найближчим часом.';
+          if (nameInput) nameInput.value = '';
+          if (contactInput) contactInput.value = '';
+          if (messageInput) messageInput.value = '';
+        } catch (err) {
+          console.error(err);
+          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : 'Помилка відправки. Спробуйте ще раз.';
+        } finally {
+          if (button) button.disabled = false;
+        }
+      });
+    });
+  }
+
+  // ============================================
+  // 13. COMMENT THREADS (BLOG POSTS)
+  // ============================================
+  function initCommentThreads() {
+    const threads = Array.from(document.querySelectorAll('.js-comment-thread'));
+    if (!threads.length) return;
+
+    const shuffle = (arr) => {
+      const copy = arr.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const formatDate = (date, lang) => {
+      const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+      return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+    };
+
+    const randomRecentDate = () => {
+      const now = new Date();
+      const daysBack = 3 + Math.floor(Math.random() * 45);
+      const minutesBack = Math.floor(Math.random() * 2400);
+      const d = new Date(now.getTime() - (daysBack * 24 * 60 + minutesBack) * 60 * 1000);
+      return d;
+    };
+
+    const renderComment = (item, lang, isChild = false) => {
+      const wrap = document.createElement('div');
+      wrap.className = `comment ${isChild ? 'comment--child' : ''}`.trim();
+
+      const header = document.createElement('div');
+      header.className = 'comment-header';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'comment-avatar';
+      avatar.textContent = item.avatar || '🙂';
+
+      const metaWrap = document.createElement('div');
+
+      const author = document.createElement('div');
+      author.className = 'comment-author';
+      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : 'Анонім');
+
+      if (item.isTeam) {
+        const badge = document.createElement('span');
+        badge.className = 'comment-badge';
+        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : 'Відповідь Rybezh';
+        author.appendChild(badge);
+      }
+
+      const meta = document.createElement('div');
+      meta.className = 'comment-meta';
+      const date = item.date ? new Date(item.date) : randomRecentDate();
+      meta.textContent = `${item.country?.flag || ''} ${item.country?.label || ''} · ${formatDate(date, lang)}`.trim();
+
+      metaWrap.appendChild(author);
+      metaWrap.appendChild(meta);
+
+      header.appendChild(avatar);
+      header.appendChild(metaWrap);
+
+      const body = document.createElement('p');
+      body.textContent = item.text || '';
+
+      const actions = document.createElement('div');
+      actions.className = 'comment-actions';
+      const replyBtn = document.createElement('button');
+      replyBtn.className = 'comment-reply-btn';
+      replyBtn.type = 'button';
+      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : 'Відповісти';
+      actions.appendChild(replyBtn);
+
+      wrap.appendChild(header);
+      wrap.appendChild(body);
+      wrap.appendChild(actions);
+
+      if (Array.isArray(item.replies) && item.replies.length) {
+        const children = document.createElement('div');
+        children.className = 'comment-children';
+        item.replies.forEach(reply => {
+          children.appendChild(renderComment(reply, lang, true));
+        });
+        wrap.appendChild(children);
+      }
+
+      return wrap;
+    };
+
+    const getPostSlug = () => {
+      const match = window.location.pathname.match(/post-([^./]+)\.html/i);
+      return match ? match[1] : 'general';
+    };
+
+    const loadStored = (key) => {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    };
+
+    const saveStored = (key, items) => {
+      try {
+        localStorage.setItem(key, JSON.stringify(items));
+      } catch (e) {
+        console.warn('Failed to store comments', e);
+      }
+    };
+
+    const userAvatars = ['🙂', '😊', '🧑‍💼', '👩‍💻', '🧑‍🔧', '👨‍🎓'];
+    const flagMap = {
+      UA: '🇺🇦',
+      PL: '🇵🇱',
+      GE: '🇬🇪',
+      BY: '🇧🇾',
+      MD: '🇲🇩',
+      LT: '🇱🇹',
+      SK: '🇸🇰',
+      RO: '🇷🇴'
+    };
+
+    threads.forEach(thread => {
+      const parent = thread.closest('.post-comments') || thread.parentElement;
+      const dataEl = parent ? parent.querySelector('.comment-data') : null;
+      if (!dataEl) return;
+      let data = [];
+      try {
+        data = JSON.parse(dataEl.textContent || '[]');
+      } catch (e) {
+        data = [];
+      }
+
+      const lang = thread.getAttribute('data-lang') || getLang();
+      const storageKey = `rybezh-comments:${getPostSlug()}:${lang}`;
+      const stored = loadStored(storageKey);
+      const shuffled = shuffle(data);
+      const combined = [...stored, ...shuffled];
+
+      thread.innerHTML = '';
+      combined.forEach(item => thread.appendChild(renderComment(item, lang)));
+
+      const countEl = parent ? parent.querySelector('[data-comment-count]') : null;
+      if (countEl) countEl.textContent = String(data.length + stored.length);
+
+      const form = parent ? parent.querySelector('.js-comment-form') : null;
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = form.querySelector('input[name="name"]');
+          const countrySelect = form.querySelector('select[name="country"]');
+          const messageInput = form.querySelector('textarea[name="comment"]');
+          const status = form.querySelector('.form-message');
+
+          const name = nameInput ? nameInput.value.trim() : '';
+          const text = messageInput ? messageInput.value.trim() : '';
+          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : 'UA');
+          const country = { flag: flagMap[countryLabel] || '🌍', label: countryLabel };
+
+          if (!name || !text) {
+            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : 'Вкажіть імʼя та коментар.';
+            return;
+          }
+
+          const newComment = {
+            id: `u-${Date.now()}`,
+            name,
+            country,
+            avatar: userAvatars[Math.floor(Math.random() * userAvatars.length)],
+            text,
+            date: new Date().toISOString()
+          };
+
+          const nextStored = [newComment, ...stored];
+          saveStored(storageKey, nextStored);
+          stored.unshift(newComment);
+          thread.insertBefore(renderComment(newComment, lang), thread.firstChild);
+          if (countEl) countEl.textContent = String(data.length + stored.length);
+          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : 'Коментар додано.';
+
+          if (nameInput) nameInput.value = '';
+          if (messageInput) messageInput.value = '';
+        });
+      }
+    });
+  }
+
+  // ============================================
+  // 14. LIVE ACTIVITY (BLOG POSTS)
+  // ============================================
+  function initLiveActivity() {
+    const activity = document.querySelector('.js-live-activity');
+    const toastStack = document.querySelector('.js-live-toasts');
+    if (!activity || !toastStack) return;
+
+    const labels = {
+      ua: {
+        statusPool: [
+          'Користувач з Польщі читає цю сторінку',
+          'Хтось з Кракова переглядає статтю',
+          'Читач з Лодзі щойно відкрив пост',
+          'Хтось з Вроцлава зберіг вакансію'
+        ],
+        toastPool: [
+          'Хтось завантажив шаблон CV 2 хв тому',
+          'Новий коментар від Марини • 3 хв тому',
+          'Користувач з Гданська зберіг статтю',
+          'Запит на консультацію • щойно'
+        ]
+      },
+      pl: {
+        statusPool: [
+          'Użytkownik z Polski czyta tę stronę',
+          'Ktoś z Krakowa właśnie otworzył artykuł',
+          'Czytelnik z Łodzi przegląda post',
+          'Ktoś z Wrocławia zapisał ofertę'
+        ],
+        toastPool: [
+          'Ktoś pobrał szablon CV 2 min temu',
+          'Nowy komentarz od Mariny • 3 min temu',
+          'Użytkownik z Gdańska zapisał artykuł',
+          'Zapytanie o konsultację • przed chwilą'
+        ]
+      }
+    };
+
+    const setLabels = () => {
+      const lang = getLang();
+      const labelEl = activity.querySelector('.live-label');
+      const suffixEl = activity.querySelector('.live-suffix');
+      const label = activity.getAttribute(`data-label-${lang}`) || activity.getAttribute('data-label-ua') || '';
+      const suffix = activity.getAttribute(`data-suffix-${lang}`) || activity.getAttribute('data-suffix-ua') || '';
+      if (labelEl) labelEl.textContent = label;
+      if (suffixEl) suffixEl.textContent = suffix;
+    };
+
+    const countEl = activity.querySelector('[data-live-count]');
+    const statusEl = activity.querySelector('[data-live-status]');
+
+    const updateCount = () => {
+      const base = 14 + Math.floor(Math.random() * 38);
+      if (countEl) countEl.textContent = String(base);
+    };
+
+    const updateStatus = () => {
+      const lang = getLang();
+      const pool = (labels[lang] || labels.ua).statusPool;
+      if (statusEl) statusEl.textContent = pool[Math.floor(Math.random() * pool.length)];
+    };
+
+    const pushToast = () => {
+      const lang = getLang();
+      const pool = (labels[lang] || labels.ua).toastPool;
+      const toast = document.createElement('div');
+      toast.className = 'live-toast';
+      toast.textContent = pool[Math.floor(Math.random() * pool.length)];
+      toastStack.appendChild(toast);
+      setTimeout(() => toast.classList.add('visible'), 50);
+      setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.remove(), 600);
+      }, 5200);
+    };
+
+    setLabels();
+    updateCount();
+    updateStatus();
+    pushToast();
+
+    const statusTimer = setInterval(updateStatus, 9000 + Math.random() * 7000);
+    const countTimer = setInterval(updateCount, 12000 + Math.random() * 9000);
+    const toastTimer = setInterval(pushToast, 14000 + Math.random() * 10000);
+
+    window.addEventListener('languageChanged', () => {
+      setLabels();
+      updateStatus();
+    });
+
+    window.addEventListener('beforeunload', () => {
+      clearInterval(statusTimer);
+      clearInterval(countTimer);
+      clearInterval(toastTimer);
+    });
+  }
+
+  // ============================================
   // INITIALIZE ALL
   // ============================================
   function init() {
@@ -654,6 +1034,11 @@
     initTelegramTracking();
     initDateFormatting();
     initNewsletter();
+    initContactForm();
+    initCalculator();
+    initCommentThreads();
+    // Disabled: synthetic "live activity" widget can look deceptive to users/search engines.
+    // initLiveActivity();
   }
 
   // Run on DOM ready

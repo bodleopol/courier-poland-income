@@ -7,9 +7,32 @@
 
   // Wait for DOM and data to be ready
   document.addEventListener('DOMContentLoaded', function() {
+    initCategoryNav();
     initHomePage();
     initVacanciesPage();
   });
+
+  function initCategoryNav() {
+    const desktopNav = document.getElementById('categoryNav');
+    const mobileNav = document.getElementById('mobileCategoryNav');
+    if (!window.CATEGORIES || (!desktopNav && !mobileNav)) return;
+
+    const lang = localStorage.getItem('site_lang') || 'ua';
+    const categories = window.CATEGORIES || [];
+
+    const buildLinks = () => categories.map(cat => {
+      const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
+      return `<a href="/vacancies.html?category=${cat.id}">${name}</a>`;
+    }).join('');
+
+    if (desktopNav) {
+      desktopNav.innerHTML = buildLinks();
+    }
+
+    if (mobileNav) {
+      mobileNav.innerHTML = `<span class="nav-link" style="font-weight:600;">${lang === 'pl' ? 'Kategorie' : 'Категорії'}</span>` + buildLinks();
+    }
+  }
 
   function initHomePage() {
     if (!document.getElementById('categoryGrid')) return;
@@ -222,6 +245,7 @@
 
   // Re-render on language change
   window.addEventListener('languageChanged', function() {
+    initCategoryNav();
     initHomePage();
     initVacanciesPage();
   });

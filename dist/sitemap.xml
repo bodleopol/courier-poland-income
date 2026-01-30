@@ -2,51 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rybezh.site/</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rybezh.site/apply.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://rybezh.site/faq.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rybezh.site/about.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rybezh.site/contact.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rybezh.site/privacy.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/terms.html</loc>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://rybezh.site/blog.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/blog-2.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/post-courier-route-planning-city-map.html</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rybezh.site/post-adaptation-in-poland-living-guide.html</loc>
@@ -248,1351 +260,1381 @@
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-logistics-kierowca-kurier-1.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-logistics-kierowca-kurier-2.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-logistics-kierowca-kurier-3.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-logistics-kierowca-kurier-4.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-logistics-kierowca-kurier-5.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-logistics-kierowca-kurier-6.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-logistics-kierowca-kurier-7.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-logistics-kierowca-kurier-8.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-logistics-kierowca-kurier-9.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-logistics-kierowca-kurier-10.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-logistics-pracownik-magazynowy-11.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-logistics-pracownik-magazynowy-12.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-logistics-pracownik-magazynowy-13.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-logistics-pracownik-magazynowy-14.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-logistics-pracownik-magazynowy-15.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-logistics-pracownik-magazynowy-16.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-logistics-pracownik-magazynowy-17.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-logistics-pracownik-magazynowy-18.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-logistics-pracownik-magazynowy-19.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-logistics-pracownik-magazynowy-20.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-logistics-operator-w-zka-wid-owego-21.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-logistics-operator-w-zka-wid-owego-22.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-logistics-operator-w-zka-wid-owego-23.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-logistics-operator-w-zka-wid-owego-24.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-logistics-operator-w-zka-wid-owego-25.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-logistics-operator-w-zka-wid-owego-26.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-logistics-operator-w-zka-wid-owego-27.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-logistics-operator-w-zka-wid-owego-28.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-logistics-operator-w-zka-wid-owego-29.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-logistics-operator-w-zka-wid-owego-30.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-construction-murarz-31.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-construction-murarz-32.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-construction-murarz-33.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-construction-murarz-34.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-construction-murarz-35.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-construction-murarz-36.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-construction-murarz-37.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-construction-murarz-38.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-construction-murarz-39.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-construction-murarz-40.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-construction-elektryk-budowlany-41.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-construction-elektryk-budowlany-42.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-construction-elektryk-budowlany-43.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-construction-elektryk-budowlany-44.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-construction-elektryk-budowlany-45.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-construction-elektryk-budowlany-46.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-construction-elektryk-budowlany-47.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-construction-elektryk-budowlany-48.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-construction-elektryk-budowlany-49.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-construction-elektryk-budowlany-50.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-construction-hydraulik-51.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-construction-hydraulik-52.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-construction-hydraulik-53.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-construction-hydraulik-54.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-construction-hydraulik-55.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-construction-hydraulik-56.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-construction-hydraulik-57.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-construction-hydraulik-58.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-construction-hydraulik-59.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-construction-hydraulik-60.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-production-pracownik-produkcji-61.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-production-pracownik-produkcji-62.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-production-pracownik-produkcji-63.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-production-pracownik-produkcji-64.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-production-pracownik-produkcji-65.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-production-pracownik-produkcji-66.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-production-pracownik-produkcji-67.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-production-pracownik-produkcji-68.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-production-pracownik-produkcji-69.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-production-pracownik-produkcji-70.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-production-operator-maszyn-71.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-production-operator-maszyn-72.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-production-operator-maszyn-73.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-production-operator-maszyn-74.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-production-operator-maszyn-75.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-production-operator-maszyn-76.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-production-operator-maszyn-77.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-production-operator-maszyn-78.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-production-operator-maszyn-79.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-production-operator-maszyn-80.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-hospitality-kucharz-81.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-hospitality-kucharz-82.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-hospitality-kucharz-83.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-hospitality-kucharz-84.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-hospitality-kucharz-85.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-hospitality-kucharz-86.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-hospitality-kucharz-87.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-hospitality-kucharz-88.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-hospitality-kucharz-89.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-hospitality-kucharz-90.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-hospitality-kelner-91.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-hospitality-kelner-92.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-hospitality-kelner-93.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-hospitality-kelner-94.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-hospitality-kelner-95.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-hospitality-kelner-96.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-hospitality-kelner-97.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-hospitality-kelner-98.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-hospitality-kelner-99.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-hospitality-kelner-100.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-cleaning-sprz-tacz-biur-101.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-cleaning-sprz-tacz-biur-102.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-cleaning-sprz-tacz-biur-103.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-cleaning-sprz-tacz-biur-104.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-cleaning-sprz-tacz-biur-105.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-cleaning-sprz-tacz-biur-106.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-cleaning-sprz-tacz-biur-107.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-cleaning-sprz-tacz-biur-108.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-cleaning-sprz-tacz-biur-109.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-cleaning-sprz-tacz-biur-110.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-cleaning-pokoj-wka-hotelowa-111.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-cleaning-pokoj-wka-hotelowa-112.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-cleaning-pokoj-wka-hotelowa-113.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-cleaning-pokoj-wka-hotelowa-114.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-cleaning-pokoj-wka-hotelowa-115.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-cleaning-pokoj-wka-hotelowa-116.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-cleaning-pokoj-wka-hotelowa-117.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-cleaning-pokoj-wka-hotelowa-118.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-cleaning-pokoj-wka-hotelowa-119.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-cleaning-pokoj-wka-hotelowa-120.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-retail-sprzedawca-doradca-121.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-retail-sprzedawca-doradca-122.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-retail-sprzedawca-doradca-123.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-retail-sprzedawca-doradca-124.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-retail-sprzedawca-doradca-125.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-retail-sprzedawca-doradca-126.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-retail-sprzedawca-doradca-127.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-retail-sprzedawca-doradca-128.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-retail-sprzedawca-doradca-129.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-retail-sprzedawca-doradca-130.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-retail-kasjer-131.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-retail-kasjer-132.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-retail-kasjer-133.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-retail-kasjer-134.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-retail-kasjer-135.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-retail-kasjer-136.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-retail-kasjer-137.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-retail-kasjer-138.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-retail-kasjer-139.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-retail-kasjer-140.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-healthcare-piel-gniarka-141.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-healthcare-piel-gniarka-142.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-healthcare-piel-gniarka-143.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-healthcare-piel-gniarka-144.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-healthcare-piel-gniarka-145.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-healthcare-piel-gniarka-146.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-healthcare-piel-gniarka-147.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-healthcare-piel-gniarka-148.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-healthcare-piel-gniarka-149.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-healthcare-piel-gniarka-150.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-healthcare-opiekun-os-b-starszych-151.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-healthcare-opiekun-os-b-starszych-152.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-healthcare-opiekun-os-b-starszych-153.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-healthcare-opiekun-os-b-starszych-154.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-healthcare-opiekun-os-b-starszych-155.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-healthcare-opiekun-os-b-starszych-156.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-healthcare-opiekun-os-b-starszych-157.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-healthcare-opiekun-os-b-starszych-158.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-healthcare-opiekun-os-b-starszych-159.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-healthcare-opiekun-os-b-starszych-160.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-it-programista-php-161.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-it-programista-php-162.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-it-programista-php-163.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-it-programista-php-164.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-it-programista-php-165.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-it-programista-php-166.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-it-programista-php-167.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-it-programista-php-168.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-it-programista-php-169.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-it-programista-php-170.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-it-tester-qa-171.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-it-tester-qa-172.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-it-tester-qa-173.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-it-tester-qa-174.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-it-tester-qa-175.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-it-tester-qa-176.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-it-tester-qa-177.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-it-tester-qa-178.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-it-tester-qa-179.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-it-tester-qa-180.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-agriculture-pracownik-przy-zbiorach-181.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-agriculture-pracownik-przy-zbiorach-182.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-agriculture-pracownik-przy-zbiorach-183.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-agriculture-pracownik-przy-zbiorach-184.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-agriculture-pracownik-przy-zbiorach-185.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-agriculture-pracownik-przy-zbiorach-186.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-agriculture-pracownik-przy-zbiorach-187.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-agriculture-pracownik-przy-zbiorach-188.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-agriculture-pracownik-przy-zbiorach-189.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-agriculture-pracownik-przy-zbiorach-190.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-education-nauczyciel-j-zyka-angielskiego-191.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-education-nauczyciel-j-zyka-angielskiego-192.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-education-nauczyciel-j-zyka-angielskiego-193.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-education-nauczyciel-j-zyka-angielskiego-194.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-education-nauczyciel-j-zyka-angielskiego-195.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-education-nauczyciel-j-zyka-angielskiego-196.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-education-nauczyciel-j-zyka-angielskiego-197.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-education-nauczyciel-j-zyka-angielskiego-198.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-education-nauczyciel-j-zyka-angielskiego-199.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-education-nauczyciel-j-zyka-angielskiego-200.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-beauty-fryzjer-201.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-beauty-fryzjer-202.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-beauty-fryzjer-203.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-beauty-fryzjer-204.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-beauty-fryzjer-205.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-beauty-fryzjer-206.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-beauty-fryzjer-207.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-beauty-fryzjer-208.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-beauty-fryzjer-209.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-beauty-fryzjer-210.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-security-pracownik-ochrony-211.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/krakow-security-pracownik-ochrony-212.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/wroclaw-security-pracownik-ochrony-213.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/poznan-security-pracownik-ochrony-214.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/gdansk-security-pracownik-ochrony-215.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/szczecin-security-pracownik-ochrony-216.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lodz-security-pracownik-ochrony-217.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/katowice-security-pracownik-ochrony-218.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/lublin-security-pracownik-ochrony-219.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bialystok-security-pracownik-ochrony-220.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/warsaw-hospitality-barman-221.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/rzeszow-hospitality-kucharz-222.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/bydgoszcz-production-pracownik-pomocniczy-223.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/opole-construction-robotnik-budowlany-224.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rybezh.site/torun-retail-sprzedawca-225.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/plock-production-operator-pakowania-226.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/sosnowiec-logistics-pracownik-magazynu-227.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/gdynia-logistics-kierowca-dostaw-b-228.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/lublin-beauty-stylistka-paznokci-229.html</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/krakow-hospitality-recepcjonista-230.html</loc>
+    <lastmod>2026-01-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>

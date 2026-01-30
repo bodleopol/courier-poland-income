@@ -1037,7 +1037,8 @@
     initContactForm();
     initCalculator();
     initCommentThreads();
-    initLiveActivity();
+    // Disabled: synthetic "live activity" widget can look deceptive to users/search engines.
+    // initLiveActivity();
   }
 
   // Run on DOM ready

@@ -354,6 +354,44 @@ const I18N_SCRIPT = `\n<script>
 window.CATEGORIES = __CATEGORIES__;
 </script>\n`;
 
+function buildGoogleVerificationMeta() {
+  const token = String(process.env.GOOGLE_SITE_VERIFICATION_TOKEN || '').trim();
+  if (!token) return '';
+  return `<meta name="google-site-verification" content="${escapeHtml(token)}">`;
+}
+
+function sanitizeStaticHtmlHead(html) {
+  let out = String(html || '');
+
+  // Remove placeholder verification tag (or any static verification tag). If token is supplied via env,
+  // inject it later in the <head>.
+  out = out.replace(/\s*<meta\s+name=["']google-site-verification["'][^>]*>\s*/gi, '\n');
+
+  // Remove keywords meta (spammy / low-signal)
+  out = out.replace(/\s*<meta\s+name=["']keywords["'][^>]*>\s*/gi, '\n');
+
+  // Remove hreflang alternates. The site uses client-side toggles without separate locale URLs.
+  out = out.replace(/\s*<link\s+rel=["']alternate["'][^>]*hreflang=["'][^"']+["'][^>]*>\s*/gi, '\n');
+
+  // Remove apple-touch-icon link if we don't ship a PNG icon.
+  out = out.replace(/\s*<link\s+rel=["']apple-touch-icon["'][^>]*>\s*/gi, '\n');
+
+  // Ensure OG image reference doesn't 404.
+  out = out.replace(/https:\/\/rybezh\.site\/og-image\.jpg/gi, 'https://rybezh.site/og-image.svg');
+  out = out.replace(/\b\/og-image\.jpg\b/gi, '/og-image.svg');
+
+  // If template had JPEG type declared, remove it (SVG is served as image/svg+xml).
+  out = out.replace(/\s*<meta\s+property=["']og:image:type["'][^>]*>\s*/gi, '\n');
+
+  // Inject verification meta if provided
+  const verification = buildGoogleVerificationMeta();
+  if (verification && /<head[^>]*>/i.test(out)) {
+    out = out.replace(/<head[^>]*>/i, match => `${match}\n  ${verification}`);
+  }
+
+  return out;
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -376,7 +414,8 @@ async function build() {
   const postsPath = path.join(SRC, 'posts.json');
   const posts = JSON.parse(await fs.readFile(postsPath, 'utf8').catch(() => '[]'));
 
-  const pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
+  let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
+  pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
   const stylesPath = path.join(TEMPLATES, 'styles.css');
   let styles = '';
   try {
@@ -423,6 +462,15 @@ async function build() {
     // favicon.svg not found, continue
   }
 
+  // Copy og-image.svg
+  try {
+    const ogPath = path.join(SRC, 'og-image.svg');
+    const ogContent = await fs.readFile(ogPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'og-image.svg'), ogContent, 'utf8');
+  } catch (e) {
+    // og-image.svg not found, continue
+  }
+
   // Prepare dynamic translations for jobs
   const jobTranslations = {};
   pages.forEach(p => {
@@ -451,6 +499,7 @@ async function build() {
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
+      pContent = sanitizeStaticHtmlHead(pContent);
       pContent = pContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
       // inject styles and script before </body>
       if (pContent.includes('</body>')) {
@@ -790,17 +839,8 @@ async function build() {
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
         <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span> · <span class="post-readtime" data-i18n="blog.${post.slug}.read_time">${readMinutes} хв читання</span></div>
-        <div class="live-activity js-live-activity" data-label-ua="Зараз читають" data-label-pl="Teraz czyta" data-suffix-ua="людей" data-suffix-pl="osób">
-          <div class="live-activity-row">
-            <span class="live-label">Зараз читають</span>
-            <span class="live-count" data-live-count>—</span>
-            <span class="live-suffix">людей</span>
-          </div>
-          <div class="live-status" data-live-status>…</div>
-        </div>
         <div data-lang-content="ua">${uaEnhanced.html}</div>
         <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
-        <div class="live-toast-stack js-live-toasts" aria-live="polite"></div>
       </div>`;
     
     let postHtml = pageTpl
@@ -871,7 +911,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     }
 
     let indexHtml = pageTpl
-      .replace(/{{TITLE}}/g, "Знайди роботу в Польщі — Rybezh")
+      .replace(/{{TITLE}}/g, "Знайди роботу в Польщі")
       .replace(/{{DESCRIPTION}}/g, "220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців та поляків.")
       .replace(/{{CONTENT}}/g, indexContent)
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
@@ -1510,9 +1550,20 @@ function buildJobPostingJsonLd(page) {
   const description = stripHtml(page.excerpt || page.description || page.body || '');
   const url = `https://rybezh.site/${page.slug}.html`;
 
-  // Salary is not explicitly stored in content.json yet; keep a conservative generic range.
-  const salaryMin = 25;
-  const salaryMax = 45;
+  // Try to parse salary from string like "5000-7000 PLN"
+  let salaryMin = 25;
+  let salaryMax = 45;
+  let unitText = 'HOUR';
+
+  if (page.salary) {
+    const nums = page.salary.match(/\d+/g);
+    if (nums && nums.length >= 2) {
+      salaryMin = parseInt(nums[0]);
+      salaryMax = parseInt(nums[1]);
+      // If salary is large (>1000), assume MONTH, else HOUR
+      unitText = salaryMin > 1000 ? 'MONTH' : 'HOUR';
+    }
+  }
 
   return {
     '@context': 'https://schema.org',
@@ -1557,7 +1608,7 @@ function buildJobPostingJsonLd(page) {
         '@type': 'QuantitativeValue',
         minValue: salaryMin,
         maxValue: salaryMax,
-        unitText: 'HOUR'
+        unitText: unitText
       }
     }
   };
@@ -1941,14 +1992,19 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
 
   const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
 
-  const reviewsHtml = buildReviewsSection(lang, seed + 9);
-  const ugcHtml = buildUgcSection(lang, seed + 13);
   const editorNote = buildEditorsNote(lang, seed + 16);
   const photoBlock = buildInlinePhoto(lang, seed + 18);
   const updateHistory = buildUpdateHistory(lang, updatedDate);
   const signatureBlock = buildSignatureBlock(lang, seed + 20);
   const readLabel = lang === 'pl' ? 'Czas czytania' : 'Час читання';
   const updatedLabel = lang === 'pl' ? 'Aktualizacja' : 'Оновлення';
+
+  const faqSection = `
+      <section class="post-section post-faq">
+        <h2>${lang === 'pl' ? 'Pytania i odpowiedzi' : 'Питання та відповіді'}</h2>
+        ${faqHtml}
+      </section>
+  `;
 
   return {
     html: `
@@ -1977,8 +2033,7 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
         <h2>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h2>
         <ul>${relatedHtml}</ul>
       </section>
-      ${reviewsHtml}
-      ${ugcHtml}
+      ${faqSection}
     `,
     faqItems
   };
