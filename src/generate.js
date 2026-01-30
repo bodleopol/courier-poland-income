@@ -1374,11 +1374,61 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
+function escapeRegExp(str) {
+  return String(str).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function stripHtml(str) {
   return String(str || '')
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function replaceWithOptions(html, needle, options, seed) {
+  if (!needle || !Array.isArray(options) || options.length === 0) return String(html || '');
+  let i = 0;
+  const regex = new RegExp(escapeRegExp(needle), 'g');
+  return String(html || '').replace(regex, () => {
+    const choice = options[(seed + i) % options.length];
+    i += 1;
+    return choice;
+  });
+}
+
+function replaceHeadingText(html, text, options, tags, seed) {
+  if (!text || !Array.isArray(options) || options.length === 0) return String(html || '');
+  let output = String(html || '');
+  const targetTags = Array.isArray(tags) && tags.length ? tags : ['h2', 'h3'];
+  targetTags.forEach((tag, idx) => {
+    let i = 0;
+    const regex = new RegExp(`<${tag}>\\s*${escapeRegExp(text)}\\s*<\\/${tag}>`, 'gi');
+    output = output.replace(regex, () => {
+      const choice = options[(seed + i + idx) % options.length];
+      i += 1;
+      return `<${tag}>${choice}</${tag}>`;
+    });
+  });
+  return output;
+}
+
+function diversifyBodyText(html, lang, seed) {
+  let output = String(html || '');
+  if (lang === 'pl') {
+    output = replaceHeadingText(output, 'Porada', ['Porada od siebie', 'Krótka rada', 'Co warto zapamiętać', 'Notatka z doświadczenia'], ['h2', 'h3'], seed + 1);
+    output = replaceHeadingText(output, 'Podsumowanie', ['Podsumowanie', 'Na koniec', 'W skrócie', 'Co warto wynieść'], ['h2', 'h3'], seed + 2);
+    output = replaceHeadingText(output, 'Wniosek', ['Wniosek', 'Końcowa myśl', 'Na zakończenie', 'Krótki wniosek'], ['h2', 'h3'], seed + 3);
+    output = replaceHeadingText(output, 'Krótki checklist', ['Krótka checklista', 'Szybka lista', 'Mini checklista', 'Krótki spis'], ['h2', 'h3'], seed + 4);
+    output = replaceWithOptions(output, 'Poniżej —', ['Niżej —', 'W skrócie —', 'Krótko —', 'Najważniejsze —'], seed + 5);
+  } else {
+    output = replaceHeadingText(output, 'Порада', ['Порада від себе', 'Коротка порада', 'Що варто памʼятати', 'Нотатка з досвіду'], ['h2', 'h3'], seed + 1);
+    output = replaceHeadingText(output, 'Підсумок', ['Підсумок', 'Коротко', 'На фініші', 'Що важливо винести'], ['h2', 'h3'], seed + 2);
+    output = replaceHeadingText(output, 'Висновок', ['Висновок', 'Фінальна думка', 'Наостанок', 'Короткий висновок'], ['h2', 'h3'], seed + 3);
+    output = replaceHeadingText(output, 'Короткий чек‑лист', ['Стисла памʼятка', 'Швидкий список', 'Міні‑чек‑лист', 'Короткий список'], ['h2', 'h3'], seed + 4);
+    output = replaceHeadingText(output, 'Короткий чек-лист', ['Стисла памʼятка', 'Швидкий список', 'Міні‑чек‑лист', 'Короткий список'], ['h2', 'h3'], seed + 6);
+    output = replaceWithOptions(output, 'Нижче —', ['Далі —', 'Коротко кажучи —', 'Спробую пояснити —', 'Найважливіше —'], seed + 5);
+  }
+  return output;
 }
 
 function estimateReadingTime(html) {
@@ -1828,7 +1878,8 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const related = getRelatedPosts(post, posts, 3);
 
   const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
-  const body = humanizeBody(bodySource, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
+  const diversifiedBody = diversifyBodyText(bodySource, lang, seed + 2);
+  const body = humanizeBody(diversifiedBody, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
   const hasTable = /<table/i.test(body);
   const updatedDate = post.updated || '2026-01-15';
 
