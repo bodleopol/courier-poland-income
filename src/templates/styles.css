@@ -472,8 +472,8 @@ main { flex: 1; padding: 3rem 0 4rem; }
   color: white;
   box-shadow: var(--shadow-xl);
 }
-.bottom-cta h2 { margin: 0 0 1rem; font-size: 2rem; color: white; }
-.bottom-cta p { margin-bottom: 1.5rem; opacity: 0.95; }
+.bottom-cta .cta-title { margin: 0 0 1rem; font-size: 2rem; color: white; opacity: 1; font-weight: 800; }
+.bottom-cta .cta-sub { margin-bottom: 1.5rem; opacity: 0.95; }
 .btn-white {
   background: white;
   color: var(--color-accent) !important;

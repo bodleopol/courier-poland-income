@@ -2089,7 +2089,7 @@ function humanizeBody(body, title, lang, seed) {
   // Content should be unique in posts.json.
   
   let html = ensureLazyLoading(body || '');
-  html = flattenLists(html, lang, seed + 3);
+  // Keep lists as-is. Flattening creates repeated prefixes across many posts.
   // Voice paragraphs injection disabled for uniqueness
   // html = injectVoiceParagraphs(html, lang, seed + 4);
 
@@ -2269,73 +2269,20 @@ function getRelatedPosts(post, posts, limit = 3) {
 
 function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const seed = hashString(`${post.slug}-${lang}`);
-  const topic = detectTopic(post);
-  const faqItems = getTopicFaqItems(topic, lang, seed + 3);
   const related = getRelatedPosts(post, posts, 3);
 
   const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
   const diversifiedBody = diversifyBodyText(bodySource, lang, seed + 2);
   const body = humanizeBody(diversifiedBody, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
-  const hasTable = /<table/i.test(body);
-  const updatedDate = post.updated || '2026-01-15';
 
-  const exampleBlock = hasTable ? '' : `
-    <div class="post-example">
-      <h3>${lang === 'pl' ? 'Przykład planu na pierwszy miesiąc' : 'Приклад плану на перший місяць'}</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>${lang === 'pl' ? 'Pozycja' : 'Стаття'}</th>
-            <th>${lang === 'pl' ? 'Szacunek (PLN)' : 'Оцінка (PLN)'}</th>
-            <th>${lang === 'pl' ? 'Uwagi' : 'Коментар'}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>${lang === 'pl' ? 'Zakwaterowanie' : 'Проживання'}</td>
-            <td>900–1400</td>
-            <td>${lang === 'pl' ? 'Zależy od miasta i standardu' : 'Залежить від міста та стандарту'}</td>
-          </tr>
-          <tr>
-            <td>${lang === 'pl' ? 'Transport' : 'Транспорт'}</td>
-            <td>120–220</td>
-            <td>${lang === 'pl' ? 'Bilet miesięczny' : 'Проїзний на місяць'}</td>
-          </tr>
-          <tr>
-            <td>${lang === 'pl' ? 'Jedzenie' : 'Харчування'}</td>
-            <td>600–900</td>
-            <td>${lang === 'pl' ? 'Zakupy + posiłki na mieście' : 'Продукти + інколи кафе'}</td>
-          </tr>
-          <tr>
-            <td>${lang === 'pl' ? 'Rezerwa' : 'Резерв'}</td>
-            <td>300–500</td>
-            <td>${lang === 'pl' ? 'Nieprzewidziane wydatki' : 'Непередбачені витрати'}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  `;
+  const updatedDate = post.updated || post.date || new Date().toISOString().slice(0, 10);
 
   const relatedHtml = related.map(r => {
     const title = lang === 'pl' ? (r.title_pl || r.title) : r.title;
     return `<li><a href="/post-${escapeHtml(r.slug)}.html">${escapeHtml(title)}</a></li>`;
   }).join('');
 
-  const categoriesHtml = Array.isArray(categories) && categories.length
-    ? categories.slice(0, 4).map(cat => {
-        const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
-        return `<a class="category-pill" href="/vacancies.html?category=${escapeHtml(cat.id)}">${escapeHtml(name)}</a>`;
-      }).join('')
-    : '';
-
   const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
-
-  const editorNote = buildEditorsNote(lang, seed + 16);
-  const photoBlock = buildInlinePhoto(lang, seed + 18);
-  const updateHistory = buildUpdateHistory(lang, updatedDate);
-  const signatureBlock = buildSignatureBlock(lang, seed + 20);
-  const notesSection = buildHumanNotesSection(post, lang, seed + 21);
-  const questionsSection = buildReaderQuestionsSection(post, lang, seed + 27);
   const readLabel = lang === 'pl' ? 'Czas czytania' : 'Час читання';
   const updatedLabel = lang === 'pl' ? 'Aktualizacja' : 'Оновлення';
 
@@ -2353,23 +2300,15 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
         <div class="post-chip"><span>${readLabel}</span><strong>${readMinutes} ${lang === 'pl' ? 'min' : 'хв'}</strong></div>
         <div class="post-chip"><span>${updatedLabel}</span><strong data-format-date="${updatedDate}">${updatedDate}</strong></div>
       </div>
-      <div class="post-categories">${categoriesHtml}</div>
       <section class="post-section">
         ${body}
-        ${photoBlock}
-        ${editorNote}
-        ${updateHistory}
-        ${signatureBlock}
       </section>
-      ${notesSection}
-      ${questionsSection}
-      ${exampleBlock}
       <section class="post-section post-related">
-        <h2>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h2>
+        <h3>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h3>
         <ul>${relatedHtml}</ul>
       </section>
     `,
-    faqItems
+    faqItems: []
   };
 }
 
