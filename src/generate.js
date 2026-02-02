@@ -2085,20 +2085,15 @@ function injectVoiceParagraphs(html, lang, seed) {
 }
 
 function humanizeBody(body, title, lang, seed) {
-  const intro = pickFromPool((HUMAN_INTROS[lang] || []), seed);
-  const side = pickFromPool((HUMAN_SIDE_NOTES[lang] || []), seed + 1);
-  const outro = pickFromPool((HUMAN_OUTROS[lang] || []), seed + 2);
-
+  // Automatic injection removed to avoid repetition across posts.
+  // Content should be unique in posts.json.
+  
   let html = ensureLazyLoading(body || '');
   html = flattenLists(html, lang, seed + 3);
-  html = injectVoiceParagraphs(html, lang, seed + 4);
+  // Voice paragraphs injection disabled for uniqueness
+  // html = injectVoiceParagraphs(html, lang, seed + 4);
 
-  return `
-    <p class="post-voice">${escapeHtml(intro)}</p>
-    <p class="post-voice">${escapeHtml(side)}</p>
-    ${html}
-    <p class="post-voice">${escapeHtml(outro)}</p>
-  `;
+  return html;
 }
 
 function buildEditorsNote(lang, seed) {
