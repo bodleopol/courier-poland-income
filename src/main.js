@@ -233,6 +233,8 @@
     'city.gliwice': { ua: 'Гливіце', pl: 'Gliwice' },
     'city.olsztyn': { ua: 'Ольштин', pl: 'Olsztyn' },
     'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała' },
+    'city.plock': { ua: 'Плоцьк', pl: 'Płock' },
+    'city.gdynia': { ua: 'Гдиня', pl: 'Gdynia' },
     'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' }
   };
 

@@ -73,6 +73,23 @@ const ROLES = {
         ]
       },
       {
+        titles_ua: ["Водій категорії C+E", "Далекобійник", "Водій міжнародник"],
+        titles_pl: ["Kierowca C+E", "Kierowca międzynarodowy", "Kierowca ciągnika siodłowego"],
+        salary: { min: 8000, max: 12000 },
+        desc_ua: [
+          "Міжнародні перевезення (Європа).",
+          "Дотримання режиму праці та відпочинку (тахограф).",
+          "Робота в системі 3/1 або 4/1.",
+          "Сучасний автопарк (Mercedes, Volvo)."
+        ],
+        desc_pl: [
+          "Transport międzynarodowy (Europa).",
+          "Przestrzeganie czasu pracy (tachograf).",
+          "System pracy 3/1 lub 4/1.",
+          "Nowoczesna flota (Mercedes, Volvo)."
+        ]
+      },
+      {
         titles_ua: ["Працівник складу", "Пакувальник одягу", "Сортувальник"],
         titles_pl: ["Pracownik magazynu", "Pakowacz odzieży", "Sortownik"],
         salary: { min: 4200, max: 5800 },
@@ -109,8 +126,8 @@ const ROLES = {
     ]
   },
   construction: {
-    name_ua: "Будівництво",
-    name_pl: "Budownictwo",
+    name_ua: "Будівництво та Ремонт",
+    name_pl: "Budownictwo i Remonty",
     jobs: [
       {
         titles_ua: ["Різноробочий на будову", "Помічник будівельника", "Працівник загальнобудівельний"],
@@ -129,7 +146,7 @@ const ROLES = {
           "Prace rozbiórkowe."
         ]
       },
-       {
+      {
         titles_ua: ["Електрик", "Електромонтажник", "Монтер мереж"],
         titles_pl: ["Elektryk", "Elektromonter", "Monter sieci"],
         salary: { min: 6000, max: 9000 },
@@ -144,6 +161,40 @@ const ROLES = {
           "Montaż gniazdek, włączników i rozdzielnic.",
           "Podłączanie oświetlenia w nowych budynkach.",
           "Czytanie schematów technicznych."
+        ]
+      },
+      {
+        titles_ua: ["Сантехнік", "Гідравлік", "Монтер санітарних систем"],
+        titles_pl: ["Hydraulik", "Monter instalacji sanitarnych", "Instalator wod-kan"],
+        salary: { min: 6000, max: 8500 },
+        desc_ua: [
+          "Монтаж систем водопостачання та каналізації.",
+          "Встановлення котлів та радіаторів.",
+          "Підключення сантехніки (ванни, душові).",
+          "Робота з трубами PEX, PP, мідь."
+        ],
+        desc_pl: [
+          "Montaż instalacji wodno-kanalizacyjnych.",
+          "Instalacja kotłów i grzejników.",
+          "Biały montaż (wanny, prysznice).",
+          "Praca z rurami PEX, PP, miedź."
+        ]
+      },
+      {
+        titles_ua: ["Зварювальник MIG/MAG", "Зварювальник TIG", "Слюсар-зварювальник"],
+        titles_pl: ["Spawacz MIG/MAG", "Spawacz TIG", "Ślusarz-spawacz"],
+        salary: { min: 7000, max: 11000 },
+        desc_ua: [
+          "Зварювання металоконструкцій методом 135/136.",
+          "Читання технічних креслень.",
+          "Підготовка деталей до зварювання (шліфування).",
+          "Контроль якості швів."
+        ],
+        desc_pl: [
+          "Spawanie konstrukcji stalowych metodą 135/136.",
+          "Czytanie rysunku technicznego.",
+          "Szlifowanie i przygotowanie detali.",
+          "Kontrola jakości spoin."
         ]
       }
     ]
@@ -169,7 +220,24 @@ const ROLES = {
           "Pakowanie gotowych wyrobów do kartonów."
         ]
       },
-       {
+      {
+        titles_ua: ["Оператор ЧПУ (CNC)", "Фрезерувальник", "Токар CNC"],
+        titles_pl: ["Operator CNC", "Frezer CNC", "Tokarz CNC"],
+        salary: { min: 6500, max: 9500 },
+        desc_ua: [
+          "Налагодження та обслуговування верстатів ЧПУ.",
+          "Коригування програм (Fanuc, Siemens, Heidenhain).",
+          "Вимірювання готових деталей мікрометром.",
+          "Заміна інструментів."
+        ],
+        desc_pl: [
+          "Ustawianie i obsługa maszyn CNC.",
+          "Korekta programów (Fanuc, Siemens, Heidenhain).",
+          "Pomiary detali mikrometrem.",
+          "Wymiana narzędzi."
+        ]
+      },
+      {
         titles_ua: ["Пакувальник (харчова пром.)", "Працівник на шоколадну фабрику", "Оператор пакування"],
         titles_pl: ["Operator pakowania", "Pracownik fabryki czekolady", "Pakowacz"],
         salary: { min: 3800, max: 4800 },
@@ -187,6 +255,52 @@ const ROLES = {
         ]
       }
     ]
+  },
+  agriculture: {
+    name_ua: "Сезонні роботи (Сільське господарство)",
+    name_pl: "Prace Sezonowe (Rolnictwo)",
+    jobs: [
+       {
+        titles_ua: ["Збирач ягід", "Працівник теплиць", "Помічник садівника"],
+        titles_pl: ["Zbieracz owoców", "Pracownik szklarni", "Pomocnik ogrodnika"],
+        salary: { min: 4000, max: 6000 },
+        desc_ua: [
+          "Збір полуниці/лохини/яблук (залежно від сезону).",
+          "Догляд за рослинами в теплицях.",
+          "Сортування та пакування овочів.",
+          "Робота на свіжому повітрі."
+        ],
+        desc_pl: [
+          "Zbiór truskawek/borówek/jabłek (zależnie od sezonu).",
+          "Pielęgnacja roślin w szklarniach.",
+          "Sortowanie i pakowanie warzyw.",
+          "Praca na świeżym powietrzu."
+        ]
+       }
+    ]
+  },
+  cleaning: {
+     name_ua: "Клінінг та Сервіс",
+     name_pl: "Sprzątanie i Serwis",
+     jobs: [
+      {
+        titles_ua: ["Прибиральниця офісів", "Покоївка в готель", "Клінер"],
+        titles_pl: ["Sprzątaczka biurowa", "Pokojówka", "Osoba sprzątająca"],
+        salary: { min: 3600, max: 4800 },
+        desc_ua: [
+          "Прибирання офісних приміщень (вечірні зміни).",
+          "Підготовка номерів у готелі (зміна білизни).",
+          "Миття вікон та підлоги.",
+          "Робота з професійною хімією."
+        ],
+        desc_pl: [
+          "Sprzątanie biur (zmiany wieczorne).",
+          "Sprzątanie pokoi hotelowych (wymiana pościeli).",
+          "Mycie okien i podłóg.",
+          "Praca z profesjonalną chemią."
+        ]
+      }
+     ]
   },
   hospitality: {
      name_ua: "HoReCa (Готелі та Ресторани)",
@@ -290,8 +404,30 @@ const ROLES = {
         ]
       }
     ]
+  },
+  education: {
+     name_ua: "Освіта та Виховання",
+     name_pl: "Edukacja",
+     jobs: [
+       {
+         titles_ua: ["Помічник вихователя", "Няня в садок", "Асистент вчителя"],
+         titles_pl: ["Pomoc nauczyciela", "Niania", "Asystent w przedszkolu"],
+         salary: {min: 3800, max: 4800},
+         desc_ua: [
+           "Допомога вихователю в проведенні занять.",
+           "Догляд за дітьми під час обіду та прогулянок.",
+           "Підтримання чистоти в ігровій зоні.",
+           "Організація ігор для дітей."
+         ],
+         desc_pl: [
+           "Pomoc w prowadzeniu zajęć.",
+           "Opieka nad dziećmi podczas posiłków.",
+           "Utrzymanie porządku w sali.",
+           "Organizacja zabaw."
+         ]
+       }
+     ]
   }
-
 };
 
 // --- 3. Generator Logic ---
