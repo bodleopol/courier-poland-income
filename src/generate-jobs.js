@@ -58,7 +58,19 @@ const GLOBAL_OFFERS = {
     "Допомога координатора у вирішенні побутових питань.",
     "Підтримка в оформленні Карти Побуту (Karta Pobytu).",
     "Медичне страхування (ZUS) з першого дня.",
-    "Можливість працювати понаднормово (+50% до ставки)."
+    "Можливість працювати понаднормово (+50% до ставки).",
+    "Обіди за символічну ціну (1-5 злотих).",
+    "Безкоштовне проживання або доплата за власне житло (400-600 zł).",
+    "Пакет Multisport (спортзал, басейн - 50% оплачує фірма).",
+    "Курси польської мови для працівників.",
+    "Можливість кар'єрного росту до бригадира.",
+    "Приватна медична опіка (LuxMed).",
+    "Бонуси за продуктивність та відвідуваність.",
+    "Комфортні умови праці (клімат-контроль, кімната відпочинку).",
+    "Довіз до роботи службовим транспортом.",
+    "Премія за за рекомендованого працівника (200-500 zł).",
+    "Допомога у відкритті банківського рахунку та PESEL.",
+    "Святкові подарунки та путівки для дітей."
   ],
   pl: [
     "Oficjalne zatrudnienie (Umowa o pracę / Zlecenie).",
@@ -68,7 +80,19 @@ const GLOBAL_OFFERS = {
     "Wsparcie koordynatora w sprawach codziennych.",
     "Pomoc w uzyskaniu Karty Pobytu.",
     "Ubezpieczenie medyczne (ZUS) od pierwszego dnia.",
-    "Możliwość pracy w nadgodzinach (+50% stawki)."
+    "Możliwość pracy w nadgodzinach (+50% stawki).",
+    "Obiady w symbolicznej cenie (1-5 zł).",
+    "Bezpłatne zakwaterowanie lub dodatek mieszkaniowy (400-600 zł).",
+    "Pakiet Multisport (siłownia, basen - 50% pokrywa firma).",
+    "Kursy języka polskiego dla pracowników.",
+    "Możliwość awansu na brygadzistę.",
+    "Prywatna opieka medyczna (LuxMed).",
+    "Premie za produktywność i frekwencję.",
+    "Komfortowe warunki pracy (klimatyzacja, chillout room).",
+    "Dojazd do pracy transportem firmowym.",
+    "Premia za polecenie pracownika (200-500 zł).",
+    "Pomoc w założeniu konta bankowego i PESEL.",
+    "Paczki świąteczne i wczasy pod gruszą."
   ]
 };
 
