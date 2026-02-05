@@ -49,6 +49,29 @@ const CONTRACT_TYPES = {
   pl: ["Umowa o pracę", "Umowa Zlecenie", "B2B", "Umowa tymczasowa"]
 };
 
+const WORK_PATTERNS = {
+  ua: [
+    "5/2 (Пн–Пт)",
+    "6/1",
+    "4/2",
+    "2/2",
+    "3/1",
+    "7/7",
+    "Вихідні плаваючі",
+    "Вихідні через тиждень"
+  ],
+  pl: [
+    "5/2 (Pn–Pt)",
+    "6/1",
+    "4/2",
+    "2/2",
+    "3/1",
+    "7/7",
+    "Wolne dni ruchome",
+    "Wolne co drugi tydzień"
+  ]
+};
+
 const GLOBAL_OFFERS = {
   ua: [
     "Офіційне працевлаштування (Umowa o pracę / Zlecenie).",
@@ -70,7 +93,15 @@ const GLOBAL_OFFERS = {
     "Довіз до роботи службовим транспортом.",
     "Премія за за рекомендованого працівника (200-500 zł).",
     "Допомога у відкритті банківського рахунку та PESEL.",
-    "Святкові подарунки та путівки для дітей."
+    "Святкові подарунки та путівки для дітей.",
+    "Надбавка за роботу у вихідні (+20%).",
+    "Премія за нічні зміни (2-4 zł/год).",
+    "Оплата заїзду на роботу в першому місяці.",
+    "Можливість переведення на інший об'єкт.",
+    "Фірмова їдальня з знижкою для працівників.",
+    "Компенсація медогляду та навчань BHP.",
+    "Системні бонуси після 3-го місяця роботи.",
+    "Доплата за знання польської мови."
   ],
   pl: [
     "Oficjalne zatrudnienie (Umowa o pracę / Zlecenie).",
@@ -92,7 +123,15 @@ const GLOBAL_OFFERS = {
     "Dojazd do pracy transportem firmowym.",
     "Premia za polecenie pracownika (200-500 zł).",
     "Pomoc w założeniu konta bankowego i PESEL.",
-    "Paczki świąteczne i wczasy pod gruszą."
+    "Paczki świąteczne i wczasy pod gruszą.",
+    "Dodatek za pracę w weekendy (+20%).",
+    "Premia za zmiany nocne (2-4 zł/h).",
+    "Pokrycie kosztów dojazdu w 1. miesiącu.",
+    "Możliwość przeniesienia na inny obiekt.",
+    "Stołówka firmowa ze zniżką dla pracowników.",
+    "Zwrot kosztów badań i szkoleń BHP.",
+    "Bonusy systemowe po 3. miesiącu pracy.",
+    "Dodatek za znajomość języka polskiego."
   ]
 };
 
@@ -353,6 +392,23 @@ const ROLES = {
      name_pl: "HoReCa (Hotele i Restauracje)",
      jobs: [
        {
+         titles_ua: ["Помічник кухаря", "Асистент кухні", "Кухонний працівник"],
+         titles_pl: ["Pomoc kuchenna", "Asystent kuchni", "Pracownik kuchni"],
+         salary: {min: 4200, max: 5600},
+         desc_ua: [
+           "Підготовка продуктів до приготування (нарізка, очищення).",
+           "Дотримання чистоти на кухні та миття інвентарю.",
+           "Допомога кухарю під час сервісу.",
+           "Розкладка інгредієнтів за станціями."
+         ],
+         desc_pl: [
+           "Przygotowanie produktów (krojenie, obieranie).",
+           "Utrzymanie czystości kuchni i mycie sprzętu.",
+           "Wsparcie kucharza podczas serwisu.",
+           "Rozkładanie składników na stanowiskach."
+         ]
+       },
+       {
          titles_ua: ["Кухар", "Помічник на кухню", "Піцайоло"],
          titles_pl: ["Kucharz", "Pomoc kuchenna", "Pizzerman"],
          salary: {min: 5000, max: 7000},
@@ -384,6 +440,40 @@ const ROLES = {
           "Obsługa gości przy barze/stolikach.",
           "Rozliczanie klientów (kasa).",
           "Tworzenie miłej atmosfery."
+        ]
+       },
+       {
+        titles_ua: ["Кондитер", "Помічник кондитера", "Працівник кондитерського цеху"],
+        titles_pl: ["Cukiernik", "Pomoc cukiernika", "Pracownik cukierni"],
+        salary: {min: 4500, max: 6200},
+        desc_ua: [
+          "Приготування тіст і кремів згідно рецептур.",
+          "Оформлення тортів та десертів.",
+          "Контроль якості та температурних режимів.",
+          "Підготовка продукції до вітрини."
+        ],
+        desc_pl: [
+          "Przygotowanie ciast i kremów według receptur.",
+          "Dekorowanie tortów i deserów.",
+          "Kontrola jakości i temperatur.",
+          "Przygotowanie produktów do witryny."
+        ]
+       },
+       {
+        titles_ua: ["Мийник посуду", "Помічник на змив", "Посудомийник"],
+        titles_pl: ["Zmywak", "Pomoc na zmywaku", "Pracownik zmywalni"],
+        salary: {min: 3800, max: 5000},
+        desc_ua: [
+          "Миття посуду та кухонного інвентарю.",
+          "Підтримка чистоти у зоні змиву.",
+          "Сортування посуду та скла.",
+          "Допомога кухні при піковому навантаженні."
+        ],
+        desc_pl: [
+          "Mycie naczyń i sprzętu kuchennego.",
+          "Utrzymanie porządku w zmywalni.",
+          "Segregacja naczyń i szkła.",
+          "Pomoc kuchni w godzinach szczytu."
         ]
        }
      ]
@@ -496,11 +586,18 @@ function generateSalary(min, max) {
   const step = 100;
   const sMin = Math.floor((min + Math.random() * 500) / step) * step;
   const sMax = Math.floor((max + Math.random() * 1000) / step) * step;
+  const useHourly = Math.random() < 0.35;
+  if (useHourly) {
+    const hMin = Math.max(18, Math.round(sMin / 168));
+    const hMax = Math.max(hMin + 2, Math.round(sMax / 168));
+    return `${hMin} - ${hMax} PLN/h`;
+  }
   return `${sMin} - ${sMax} PLN`;
 }
 
 const JOBS_DB = [];
 let jobCounter = 1;
+const usedSignatures = new Set();
 
 // Generating loop
 // We iterate cities, then categories, NOT just categories then cities for everybody.
@@ -517,24 +614,64 @@ Object.keys(ROLES).forEach(catKey => {
       // 10% chance to skip a job in a specific city to make lists uneven/natural
       if (Math.random() > 0.9) return; 
 
-      const titleUA = getRandom(jobTemplate.titles_ua);
-      const titlePL = getRandom(jobTemplate.titles_pl);
-      const salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
-      
-      const company = getRandom(AGENCIES);
-      const shiftsUA = getRandom(SHIFTS.ua);
-      const shiftsPL = getRandom(SHIFTS.pl);
-      const startUA = getRandom(START_DATES.ua);
-      const startPL = getRandom(START_DATES.pl);
-      const contractUA = getRandom(CONTRACT_TYPES.ua);
-      const contractPL = getRandom(CONTRACT_TYPES.pl);
+      let titleUA;
+      let titlePL;
+      let salary;
+      let company;
+      let shiftsUA;
+      let shiftsPL;
+      let startUA;
+      let startPL;
+      let contractUA;
+      let contractPL;
+      let patternUA;
+      let patternPL;
+      let tasksUA;
+      let tasksPL;
+      let offersUA;
+      let offersPL;
+      let signature;
+      let tries = 0;
 
-      // Mix descriptions
-      const tasksUA = getMultipleRandom(jobTemplate.desc_ua, 3).map(t => `<li>${t}</li>`).join('');
-      const tasksPL = getMultipleRandom(jobTemplate.desc_pl, 3).map(t => `<li>${t}</li>`).join('');
+      do {
+        titleUA = getRandom(jobTemplate.titles_ua);
+        titlePL = getRandom(jobTemplate.titles_pl);
+        salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
 
-      const offersUA = getMultipleRandom(GLOBAL_OFFERS.ua, 4).map(o => `<li>${o}</li>`).join('');
-      const offersPL = getMultipleRandom(GLOBAL_OFFERS.pl, 4).map(o => `<li>${o}</li>`).join('');
+        company = getRandom(AGENCIES);
+        shiftsUA = getRandom(SHIFTS.ua);
+        shiftsPL = getRandom(SHIFTS.pl);
+        patternUA = getRandom(WORK_PATTERNS.ua);
+        patternPL = getRandom(WORK_PATTERNS.pl);
+        startUA = getRandom(START_DATES.ua);
+        startPL = getRandom(START_DATES.pl);
+        contractUA = getRandom(CONTRACT_TYPES.ua);
+        contractPL = getRandom(CONTRACT_TYPES.pl);
+
+        // Mix descriptions
+        tasksUA = getMultipleRandom(jobTemplate.desc_ua, 3).map(t => `<li>${t}</li>`).join('');
+        tasksPL = getMultipleRandom(jobTemplate.desc_pl, 3).map(t => `<li>${t}</li>`).join('');
+
+        const offerCount = 4 + Math.floor(Math.random() * 3);
+        offersUA = getMultipleRandom(GLOBAL_OFFERS.ua, offerCount).map(o => `<li>${o}</li>`).join('');
+        offersPL = getMultipleRandom(GLOBAL_OFFERS.pl, offerCount).map(o => `<li>${o}</li>`).join('');
+
+        signature = [
+          city.slug,
+          catKey,
+          titlePL,
+          salary,
+          company,
+          shiftsPL,
+          patternPL,
+          contractPL,
+          offersPL,
+          tasksPL
+        ].join('|');
+        tries += 1;
+      } while (usedSignatures.has(signature) && tries < 8);
+
+      usedSignatures.add(signature);
 
       const slug = `${city.slug}-${catKey}-${titlePL.toLowerCase().replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/[^a-z0-9]+/g, '-')}-${jobCounter++}`;
 
@@ -543,6 +680,7 @@ Object.keys(ROLES).forEach(catKey => {
           <div class="job-meta">
             <p><strong>🏢 Компанія:</strong> ${company}</p>
             <p><strong>🕒 Графік:</strong> ${shiftsUA}</p>
+            <p><strong>📆 Режим:</strong> ${patternUA}</p>
             <p><strong>📅 Початок:</strong> ${startUA}</p>
             <p><strong>📝 Тип договору:</strong> ${contractUA}</p>
           </div>
@@ -561,6 +699,7 @@ Object.keys(ROLES).forEach(catKey => {
           <div class="job-meta">
             <p><strong>🏢 Firma:</strong> ${company}</p>
             <p><strong>🕒 Grafiki:</strong> ${shiftsPL}</p>
+            <p><strong>📆 System:</strong> ${patternPL}</p>
             <p><strong>📅 Start:</strong> ${startPL}</p>
             <p><strong>📝 Umowa:</strong> ${contractPL}</p>
           </div>
@@ -583,8 +722,8 @@ Object.keys(ROLES).forEach(catKey => {
         title_pl: titlePL,
         salary: salary,
         company: company,
-        excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}). ${getRandom(jobTemplate.desc_ua)}`,
-        excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}). ${getRandom(jobTemplate.desc_pl)}`,
+        excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
+        excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
         body_pl: bodyPL,
         cta_text: "Подати заявку",
