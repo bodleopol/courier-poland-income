@@ -27,6 +27,28 @@ const CITIES = [
 
 // --- 2. Data Pools (The Magimix) ---
 
+const AGENCIES = [
+  "FastLogistics Sp. z o.o.", "BudPol Construction", "EuroWork Service", "Randstad Polska", 
+  "ManpowerGroup", "Grafton Recruitment", "Hays Poland", "Adecco Poland", "EWL Group", 
+  "Gremi Personal", "Otto Work Force", "InterKadra", "Work Service", "Personnel Service",
+  "TopStaffing", "ProHR Solutions", "JobImpulse", "Exact Systems", "Contrain Group"
+];
+
+const SHIFTS = {
+  ua: ["Ранок / Вечір", "Тільки нічні", "Позмінно (3 зміни)", "2 дні / 2 дні", "Пн-Пт, 8:00-16:00"],
+  pl: ["Rano / Wieczór", "Tylko nocne", "Zmianowa (3 zmiany)", "2 dni / 2 dni", "Pn-Pt, 8:00-16:00"]
+};
+
+const START_DATES = {
+  ua: ["Терміново", "З наступного тижня", "З 1-го числа", "Протягом місяця", "За домовленістю"],
+  pl: ["Od zaraz", "Od przyszłego tygodnia", "Od 1-go", "W ciągu miesiąca", "Do uzgodnienia"]
+};
+
+const CONTRACT_TYPES = {
+  ua: ["Umowa o pracę", "Umowa Zlecenie", "B2B", "Umowa tymczasowa"],
+  pl: ["Umowa o pracę", "Umowa Zlecenie", "B2B", "Umowa tymczasowa"]
+};
+
 const GLOBAL_OFFERS = {
   ua: [
     "Офіційне працевлаштування (Umowa o pracę / Zlecenie).",
@@ -474,6 +496,14 @@ Object.keys(ROLES).forEach(catKey => {
       const titleUA = getRandom(jobTemplate.titles_ua);
       const titlePL = getRandom(jobTemplate.titles_pl);
       const salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
+      
+      const company = getRandom(AGENCIES);
+      const shiftsUA = getRandom(SHIFTS.ua);
+      const shiftsPL = getRandom(SHIFTS.pl);
+      const startUA = getRandom(START_DATES.ua);
+      const startPL = getRandom(START_DATES.pl);
+      const contractUA = getRandom(CONTRACT_TYPES.ua);
+      const contractPL = getRandom(CONTRACT_TYPES.pl);
 
       // Mix descriptions
       const tasksUA = getMultipleRandom(jobTemplate.desc_ua, 3).map(t => `<li>${t}</li>`).join('');
@@ -486,22 +516,36 @@ Object.keys(ROLES).forEach(catKey => {
 
       const bodyUA = `
         <div class="vacancy-block">
+          <div class="job-meta">
+            <p><strong>🏢 Компанія:</strong> ${company}</p>
+            <p><strong>🕒 Графік:</strong> ${shiftsUA}</p>
+            <p><strong>📅 Початок:</strong> ${startUA}</p>
+            <p><strong>📝 Тип договору:</strong> ${contractUA}</p>
+          </div>
+          <hr>
           <h3>Що ми пропонуємо?</h3>
           <ul>${offersUA}</ul>
           <h3>Ваші обов'язки:</h3>
           <ul>${tasksUA}</ul>
-          <div class="salary-box">💰 Зарплата: <strong>${salary}</strong> (нетто/брутто залежить від договору)</div>
+          <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
       `;
 
       const bodyPL = `
         <div class="vacancy-block">
+          <div class="job-meta">
+            <p><strong>🏢 Firma:</strong> ${company}</p>
+            <p><strong>🕒 Grafiki:</strong> ${shiftsPL}</p>
+            <p><strong>📅 Start:</strong> ${startPL}</p>
+            <p><strong>📝 Umowa:</strong> ${contractPL}</p>
+          </div>
+          <hr>
           <h3>Co oferujemy?</h3>
           <ul>${offersPL}</ul>
           <h3>Twoje obowiązki:</h3>
           <ul>${tasksPL}</ul>
-          <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong> (netto/brutto zal. od umowy)</div>
+          <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
       `;
@@ -514,8 +558,9 @@ Object.keys(ROLES).forEach(catKey => {
         title: titleUA,
         title_pl: titlePL,
         salary: salary,
-        excerpt: `${titleUA} у м. ${city.ua}. ${getRandom(jobTemplate.desc_ua)}`,
-        excerpt_pl: `${titlePL} w m. ${city.pl}. ${getRandom(jobTemplate.desc_pl)}`,
+        company: company,
+        excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}). ${getRandom(jobTemplate.desc_ua)}`,
+        excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
         body_pl: bodyPL,
         cta_text: "Подати заявку",
