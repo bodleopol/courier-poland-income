@@ -135,6 +135,44 @@ const GLOBAL_OFFERS = {
   ]
 };
 
+const SUPPORT_NOTES = {
+  ua: [
+    "Підтримка для кандидатів з України: консультації та супровід.",
+    "Допомога з легалізацією та подачею документів.",
+    "Координатор на зв'язку українською мовою.",
+    "Супровід у перші 7 днів адаптації.",
+    "Інструктаж на старті (BHP + правила об'єкта).",
+    "Підтримка з пошуком житла у місті."
+  ],
+  pl: [
+    "Wsparcie dla kandydatów z Ukrainy: konsultacje i opieka.",
+    "Pomoc w legalizacji i dokumentach.",
+    "Koordynator dostępny po ukraińsku.",
+    "Opieka w pierwszych 7 dniach adaptacji.",
+    "Instruktaż na start (BHP + zasady obiektu).",
+    "Wsparcie w znalezieniu mieszkania w mieście."
+  ]
+};
+
+const WORKPLACE_DETAILS = {
+  ua: [
+    "Сучасне обладнання та інструменти на робочому місці.",
+    "Стабільний обсяг роботи протягом року.",
+    "Чіткі норми та зрозумілі KPI.",
+    "Можливість додаткових годин за бажанням.",
+    "Оплата за кожну відпрацьовану годину без затримок.",
+    "Комунікація через Viber/Telegram для зручності."
+  ],
+  pl: [
+    "Nowoczesny sprzęt i narzędzia na stanowisku.",
+    "Stały wolumen pracy przez cały rok.",
+    "Jasne normy i przejrzyste KPI.",
+    "Możliwość dodatkowych godzin na życzenie.",
+    "Wypłata za każdą przepracowaną godzinę bez opóźnień.",
+    "Kontakt przez Viber/Telegram dla wygody."
+  ]
+};
+
 const ROLES = {
   logistics: {
     name_ua: "Логістика та Склад",
@@ -626,6 +664,12 @@ Object.keys(ROLES).forEach(catKey => {
       let contractPL;
       let patternUA;
       let patternPL;
+      let taskItemsUA;
+      let taskItemsPL;
+      let offerItemsUA;
+      let offerItemsPL;
+      let detailItemsUA;
+      let detailItemsPL;
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -649,12 +693,25 @@ Object.keys(ROLES).forEach(catKey => {
         contractPL = getRandom(CONTRACT_TYPES.pl);
 
         // Mix descriptions
-        tasksUA = getMultipleRandom(jobTemplate.desc_ua, 3).map(t => `<li>${t}</li>`).join('');
-        tasksPL = getMultipleRandom(jobTemplate.desc_pl, 3).map(t => `<li>${t}</li>`).join('');
+        taskItemsUA = getMultipleRandom(jobTemplate.desc_ua, 3);
+        taskItemsPL = getMultipleRandom(jobTemplate.desc_pl, 3);
+        tasksUA = taskItemsUA.map(t => `<li>${t}</li>`).join('');
+        tasksPL = taskItemsPL.map(t => `<li>${t}</li>`).join('');
 
         const offerCount = 4 + Math.floor(Math.random() * 3);
-        offersUA = getMultipleRandom(GLOBAL_OFFERS.ua, offerCount).map(o => `<li>${o}</li>`).join('');
-        offersPL = getMultipleRandom(GLOBAL_OFFERS.pl, offerCount).map(o => `<li>${o}</li>`).join('');
+        offerItemsUA = getMultipleRandom(GLOBAL_OFFERS.ua, offerCount);
+        offerItemsPL = getMultipleRandom(GLOBAL_OFFERS.pl, offerCount);
+        offersUA = offerItemsUA.map(o => `<li>${o}</li>`).join('');
+        offersPL = offerItemsPL.map(o => `<li>${o}</li>`).join('');
+
+        detailItemsUA = [
+          ...getMultipleRandom(SUPPORT_NOTES.ua, 2),
+          ...getMultipleRandom(WORKPLACE_DETAILS.ua, 2)
+        ];
+        detailItemsPL = [
+          ...getMultipleRandom(SUPPORT_NOTES.pl, 2),
+          ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2)
+        ];
 
         signature = [
           city.slug,
@@ -666,7 +723,8 @@ Object.keys(ROLES).forEach(catKey => {
           patternPL,
           contractPL,
           offersPL,
-          tasksPL
+          tasksPL,
+          detailItemsPL.join(' | ')
         ].join('|');
         tries += 1;
       } while (usedSignatures.has(signature) && tries < 8);
@@ -687,6 +745,8 @@ Object.keys(ROLES).forEach(catKey => {
           <hr>
           <h3>Що ми пропонуємо?</h3>
           <ul>${offersUA}</ul>
+          <h3>Додаткова інформація</h3>
+          <ul>${detailItemsUA.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Ваші обов'язки:</h3>
           <ul>${tasksUA}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
@@ -706,6 +766,8 @@ Object.keys(ROLES).forEach(catKey => {
           <hr>
           <h3>Co oferujemy?</h3>
           <ul>${offersPL}</ul>
+          <h3>Dodatkowe informacje</h3>
+          <ul>${detailItemsPL.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Twoje obowiązki:</h3>
           <ul>${tasksPL}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
@@ -722,6 +784,20 @@ Object.keys(ROLES).forEach(catKey => {
         title_pl: titlePL,
         salary: salary,
         company: company,
+        shift_ua: shiftsUA,
+        shift_pl: shiftsPL,
+        pattern_ua: patternUA,
+        pattern_pl: patternPL,
+        start_ua: startUA,
+        start_pl: startPL,
+        contract_ua: contractUA,
+        contract_pl: contractPL,
+        offers_ua: offerItemsUA,
+        offers_pl: offerItemsPL,
+        tasks_ua: taskItemsUA,
+        tasks_pl: taskItemsPL,
+        details_ua: detailItemsUA,
+        details_pl: detailItemsPL,
         excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
         excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,

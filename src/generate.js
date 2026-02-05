@@ -686,6 +686,58 @@ function sanitizeStaticHtmlHead(html) {
   return out;
 }
 
+function buildConditionsBlock(page, lang) {
+  const isPl = lang === 'pl';
+  const labels = isPl ? {
+    title: 'Warunki',
+    salary: 'Wynagrodzenie',
+    contract: 'Umowa',
+    schedule: 'Grafik',
+    pattern: 'System',
+    start: 'Start',
+    bonuses: 'Bonusy',
+    extra: 'Dodatkowe informacje'
+  } : {
+    title: 'Умови',
+    salary: 'Зарплата',
+    contract: 'Контракт',
+    schedule: 'Графік',
+    pattern: 'Режим',
+    start: 'Старт',
+    bonuses: 'Бонуси',
+    extra: 'Додаткова інформація'
+  };
+
+  const salary = page.salary ? String(page.salary) : '';
+  const contract = isPl ? page.contract_pl : page.contract_ua;
+  const schedule = isPl ? page.shift_pl : page.shift_ua;
+  const pattern = isPl ? page.pattern_pl : page.pattern_ua;
+  const start = isPl ? page.start_pl : page.start_ua;
+  const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
+  const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
+
+  const bonuses = bonusesList.slice(0, 3).join(' • ');
+  const extras = extraList.slice(0, 2).join(' • ');
+
+  const rows = [];
+  if (salary) rows.push(`<li><strong>${labels.salary}:</strong> ${escapeHtml(salary)}</li>`);
+  if (contract) rows.push(`<li><strong>${labels.contract}:</strong> ${escapeHtml(contract)}</li>`);
+  if (schedule) rows.push(`<li><strong>${labels.schedule}:</strong> ${escapeHtml(schedule)}</li>`);
+  if (pattern) rows.push(`<li><strong>${labels.pattern}:</strong> ${escapeHtml(pattern)}</li>`);
+  if (start) rows.push(`<li><strong>${labels.start}:</strong> ${escapeHtml(start)}</li>`);
+  if (bonuses) rows.push(`<li><strong>${labels.bonuses}:</strong> ${escapeHtml(bonuses)}</li>`);
+  if (extras) rows.push(`<li><strong>${labels.extra}:</strong> ${escapeHtml(extras)}</li>`);
+
+  return `
+    <div class="job-conditions">
+      <h3>${labels.title}</h3>
+      <ul>
+        ${rows.join('')}
+      </ul>
+    </div>
+  `;
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -823,26 +875,8 @@ async function build() {
     const contentPl = page.body_pl || page.body || '';
 
     // Wrap content in language toggles
-    const benefitsUA = `
-      <div class="job-benefits">
-        <h3>Чому варто працювати з Rybezh?</h3>
-        <ul>
-          <li>✅ Офіційне працевлаштування</li>
-          <li>✅ Підтримка координатора 24/7</li>
-          <li>✅ Допомога з легалізацією (Карта побиту)</li>
-        </ul>
-      </div>
-    `;
-    const benefitsPL = `
-      <div class="job-benefits">
-        <h3>Dlaczego warto pracować z Rybezh?</h3>
-        <ul>
-          <li>✅ Oficjalne zatrudnienie</li>
-          <li>✅ Wsparcie koordynatora 24/7</li>
-          <li>✅ Pomoc w legalizacji (Karta pobytu)</li>
-        </ul>
-      </div>
-    `;
+    const conditionsUA = buildConditionsBlock(page, 'ua');
+    const conditionsPL = buildConditionsBlock(page, 'pl');
 
     const shareUrl = `https://rybezh.site/${escapeHtml(page.slug)}.html`;
     const shareText = encodeURIComponent(page.title);
@@ -870,8 +904,8 @@ async function build() {
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
           <span class="tag">📅 ${new Date().getFullYear()}</span>
         </div>
-        <div data-lang-content="ua">${content}${benefitsUA}</div>
-        <div data-lang-content="pl" style="display:none">${contentPl}${benefitsPL}</div>
+        <div data-lang-content="ua">${content}${conditionsUA}</div>
+        <div data-lang-content="pl" style="display:none">${contentPl}${conditionsPL}</div>
         ${shareButtons}
         <div class="job-actions">
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
@@ -932,10 +966,10 @@ async function build() {
       .job-page-layout { margin-top: 1rem; }
       .job-meta { margin-bottom: 1.5rem; display: flex; gap: 10px; }
       .job-meta .tag { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 99px; font-size: 0.9rem; font-weight: 500; }
-      .job-benefits { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.5rem; border-radius: 12px; margin: 2rem 0; }
-      .job-benefits h3 { margin-top: 0; color: #15803d; font-size: 1.2rem; }
-      .job-benefits ul { list-style: none; padding: 0; margin: 0; }
-      .job-benefits li { margin-bottom: 0.5rem; }
+      .job-conditions { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 12px; margin: 2rem 0; }
+      .job-conditions h3 { margin-top: 0; color: #0f172a; font-size: 1.15rem; }
+      .job-conditions ul { list-style: none; padding: 0; margin: 0; }
+      .job-conditions li { margin-bottom: 0.5rem; }
       .share-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
       .share-title { font-weight: 600; margin-bottom: 1rem; color: var(--color-primary); }
       .share-icons { display: flex; gap: 1rem; }
