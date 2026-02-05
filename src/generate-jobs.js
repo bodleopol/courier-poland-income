@@ -1,4 +1,4 @@
-// Скрипт для генерації різноманітних вакансій (SEO Optimized)
+// Advanced Job Generator 2.0 (High Variety & SEO Optimized)
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const cities = [
+// --- 1. Configuration ---
+const CITIES = [
   { ua: 'Варшава', pl: 'Warszawa', slug: 'warsaw' },
   { ua: 'Краків', pl: 'Kraków', slug: 'krakow' },
   { ua: 'Вроцлав', pl: 'Wrocław', slug: 'wroclaw' },
@@ -16,344 +17,383 @@ const cities = [
   { ua: 'Лодзь', pl: 'Łódź', slug: 'lodz' },
   { ua: 'Катовіце', pl: 'Katowice', slug: 'katowice' },
   { ua: 'Люблін', pl: 'Lublin', slug: 'lublin' },
-  { ua: 'Білосток', pl: 'Białystok', slug: 'bialystok' }
+  { ua: 'Білосток', pl: 'Białystok', slug: 'bialystok' },
+  { ua: 'Ряшів', pl: 'Rzeszów', slug: 'rzeszow' },
+  { ua: 'Торунь', pl: 'Toruń', slug: 'torun' },
+  { ua: 'Плоцьк', pl: 'Płock', slug: 'plock' },
+  { ua: 'Сосновець', pl: 'Sosnowiec', slug: 'sosnowiec' },
+  { ua: 'Гдиня', pl: 'Gdynia', slug: 'gdynia' }
 ];
 
-const jobTemplates = {
-  logistics: [
-    {
-      title_ua: ['Водій-кур\'єр', 'Кур\'єр з власним авто', 'Водій категорії B (доставка)'],
-      title_pl: ['Kierowca-kurier', 'Kurier z własnym autem', 'Kierowca kat. B (dostawy)'],
-      salary: ['5000-7000 PLN', '4800-7200 PLN', '5200-6800 PLN'],
-      description_ua: ['Доставка вантажів по місту та області. Власний автомобіль обов\'язковий.', 'Шукаємо водія для розвезення посилок. Робота на власному авто.', 'Потрібен кур\'єр з авто для доставки замовлень по місту.'],
-      description_pl: ['Dostawa towarów po mieście i okolicach. Własny samochód wymagany.', 'Szukamy kierowcy do doręczania paczek. Praca własnym autem.', 'Potrzebny kurier z samochodem do dostaw miejskich.'],
-      requirements_ua: ['Право категорії B', 'Досвід від 1 року', 'Знання географії міста', 'Відповідальність', 'Пунктуальність'],
-      requirements_pl: ['Prawo jazdy kat. B', 'Doświadczenie min. 1 rok', 'Znajomość geografii miasta', 'Odpowiedzialność', 'Punktualność']
-    },
-    {
-      title_ua: ['Складський працівник', 'Комплектувальник на склад', 'Працівник логістичного центру'],
-      title_pl: ['Pracownik magazynowy', 'Kompletator zamówień', 'Pracownik centrum logistycznego'],
-      salary: ['4500-5500 PLN', '4300-5200 PLN', '4600-5800 PLN'],
-      description_ua: ['Комплектація замовлень, навантаження/розвантаження товарів.', 'Робота зі сканером, збір замовлень на складі.', 'Прийом товару, сортування та підготовка до відправки.'],
-      description_pl: ['Kompletacja zamówień, załadunek/rozładunek towarów.', 'Praca ze skanerem, zbieranie zamówień na magazynie.', 'Przyjęcie towaru, sortowanie i przygotowanie do wysyłki.'],
-      requirements_ua: ['Досвід на складі', 'Фізична витривалість', 'Відповідальність', 'Уважність до деталей', 'Вміння працювати в команді'],
-      requirements_pl: ['Doświadczenie magazynowe', 'Wytrzymałość fizyczna', 'Odpowiedzialność', 'Dbałość o szczegóły', 'Umiejętność pracy w zespole']
-    },
-    {
-      title_ua: ['Оператор навантажувача', 'Водій навантажувача (UDT)', 'Карщик'],
-      title_pl: ['Operator wózka widłowego', 'Kierowca wózka (UDT)', 'Operator wózka jezdniowego'],
-      salary: ['5500-7000 PLN', '5200-6800 PLN', '5800-7500 PLN'],
-      description_ua: ['Робота на навантажувачі, переміщення вантажів по складу.', 'Обслуговування високого складу, робота на навантажувачі.', 'Транспортування палет, завантаження фур.'],
-      description_pl: ['Praca na wózku widłowym, przemieszczanie towarów w magazynie.', 'Obsługa magazynu wysokiego składowania.', 'Transport palet, załadunek ciężarówek.'],
-      requirements_ua: ['Сертифікат UDT', 'Досвід від 2 років', 'Уважність', 'Безпечне водіння', 'Готовність до змін'],
-      requirements_pl: ['Certyfikat UDT', 'Doświadczenie min. 2 lata', 'Uwaga', 'Bezpieczna jazda', 'Gotowość do zmian']
-    }
+// --- 2. Data Pools (The Magimix) ---
+
+const GLOBAL_OFFERS = {
+  ua: [
+    "Офіційне працевлаштування (Umowa o pracę / Zlecenie).",
+    "Стабільна виплата зарплати кожного 10-го числа.",
+    "Можливість отримання авансів після першого тижня.",
+    "Безкоштовна робоча форма та взуття.",
+    "Допомога координатора у вирішенні побутових питань.",
+    "Підтримка в оформленні Карти Побуту (Karta Pobytu).",
+    "Медичне страхування (ZUS) з першого дня.",
+    "Можливість працювати понаднормово (+50% до ставки)."
   ],
-  construction: [
-    {
-      title_ua: ['Будівельник-муляр', 'Муляр', 'Майстер кладки'],
-      title_pl: ['Murarz', 'Murarz budowlany', 'Specjalista murowania'],
-      salary: ['6000-9000 PLN', '6500-9500 PLN', '5500-8500 PLN'],
-      description_ua: ['Мурування стін, роботи з цеглою та блоками.', 'Зведення стін, перегородок, робота з газоблоком.', 'Будівництво житлових будинків, кладка цегли.'],
-      description_pl: ['Murowanie ścian, prace z cegłą i blokami.', 'Wznoszenie ścian, praca z gazobetonem.', 'Budowa domów mieszkalnych, murowanie.'],
-      requirements_ua: ['Досвід від 3 років', 'Вміння читати креслення', 'Власний інструмент', 'Фізична сила', 'Відсутність шкідливих звичок'],
-      requirements_pl: ['Doświadczenie min. 3 lata', 'Umiejętność czytania rysunków', 'Własne narzędzia', 'Siła fizyczna', 'Brak nałogów']
-    },
-    {
-      title_ua: ['Електрик будівельний', 'Електромонтажник', 'Електрик на будову'],
-      title_pl: ['Elektryk budowlany', 'Elektromonter', 'Elektryk na budowę'],
-      salary: ['6500-9500 PLN', '6000-9000 PLN', '7000-10000 PLN'],
-      description_ua: ['Монтаж електропроводки, підключення обладнання.', 'Прокладання кабелів, монтаж розеток та щитків.', 'Електромонтажні роботи в новобудовах.'],
-      description_pl: ['Montaż instalacji elektrycznych, podłączanie urządzeń.', 'Układanie kabli, montaż gniazdek i rozdzielnic.', 'Prace elektromontażowe w nowym budownictwie.'],
-      requirements_ua: ['Кваліфікація SEP', 'Досвід від 2 років', 'Знання норм', 'Вміння читати схеми', 'Допуск до 1кВ'],
-      requirements_pl: ['Uprawnienia SEP', 'Doświadczenie min. 2 lata', 'Znajomość norm', 'Czytanie schematów', 'Uprawnienia do 1kV']
-    },
-    {
-      title_ua: ['Сантехнік', 'Монтажник санітарних систем', 'Гідравлік'],
-      title_pl: ['Hydraulik', 'Monter instalacji sanitarnych', 'Hydraulik budowlany'],
-      salary: ['5500-8000 PLN', '5000-7500 PLN', '6000-9000 PLN'],
-      description_ua: ['Монтаж систем водопостачання та каналізації.', 'Встановлення сантехніки, прокладання труб.', 'Робота з системами опалення та водопостачання.'],
-      description_pl: ['Montaż systemów wodno-kanalizacyjnych.', 'Biały montaż, układanie rur.', 'Praca przy instalacjach grzewczych i wodnych.'],
-      requirements_ua: ['Досвід від 2 років', 'Власний інструмент', 'Комунікабельність', 'Читання проектів', 'Акуратність'],
-      requirements_pl: ['Doświadczenie min. 2 lata', 'Własne narzędzia', 'Komunikatywność', 'Czytanie projektów', 'Dokładność']
-    }
-  ],
-  production: [
-    {
-      title_ua: ['Робітник виробництва', 'Працівник на лінію', 'Оператор виробничої лінії'],
-      title_pl: ['Pracownik produkcji', 'Pracownik liniowy', 'Operator linii produkcyjnej'],
-      salary: ['4200-5500 PLN', '4000-5000 PLN', '4300-5800 PLN'],
-      description_ua: ['Робота на виробничій лінії, упаковка продукції.', 'Контроль якості, пакування готових виробів.', 'Прості мануальні роботи на заводі.'],
-      description_pl: ['Praca na linii produkcyjnej, pakowanie produktów.', 'Kontrola jakości, pakowanie gotowych wyrobów.', 'Proste prace manualne w fabryce.'],
-      requirements_ua: ['Без досвіду', 'Змінний графік', 'Відповідальність', 'Мануальні здібності', 'Хороший зір'],
-      requirements_pl: ['Bez doświadczenia', 'Praca zmianowa', 'Odpowiedzialność', 'Zdolności manualne', 'Dobry wzrok']
-    },
-    {
-      title_ua: ['Оператор верстата', 'Оператор ЧПУ', 'Налагоджувальник верстатів'],
-      title_pl: ['Operator maszyn', 'Operator CNC', 'Ustawiacz maszyn'],
-      salary: ['5000-6500 PLN', '5500-7500 PLN', '4800-6200 PLN'],
-      description_ua: ['Управління верстатами ЧПУ, контроль якості.', 'Налаштування та обслуговування виробничих машин.', 'Робота з металообробним обладнанням.'],
-      description_pl: ['Obsługa maszyn CNC, kontrola jakości.', 'Ustawianie i obsługa maszyn produkcyjnych.', 'Praca z obrabiarkami do metalu.'],
-      requirements_ua: ['Досвід з ЧПУ', 'Технічна освіта', 'Уважність', 'Читання креслень', 'Вміння користуватися вимірювальними приладами'],
-      requirements_pl: ['Doświadczenie z CNC', 'Wykształcenie techniczne', 'Uwaga', 'Czytanie rysunków', 'Obsługa przyrządów pomiarowych']
-    }
-  ],
-  hospitality: [
-    {
-      title_ua: ['Кухар', 'Кухар-універсал', 'Помічник кухаря'],
-      title_pl: ['Kucharz', 'Kucharz uniwersalny', 'Pomoc kuchenna'],
-      salary: ['4500-6500 PLN', '5000-7000 PLN', '4200-6000 PLN'],
-      description_ua: ['Приготування страв за меню, дотримання стандартів.', 'Робота в гарячому/холодному цеху, приготування заготовок.', 'Приготування страв європейської кухні.'],
-      description_pl: ['Przygotowywanie potraw zgodnie z menu, przestrzeganie standardów.', 'Praca na kuchni gorącej/zimnej, przygotowywanie półproduktów.', 'Przygotowywanie dań kuchni europejskiej.'],
-      requirements_ua: ['Досвід від 1 року', 'Знання технології', 'Чистоплотність', 'Санітарна книжка', 'Швидкість роботи'],
-      requirements_pl: ['Doświadczenie min. 1 rok', 'Znajomość technologii', 'Czystość', 'Książeczka sanepidowska', 'Szybkość pracy']
-    },
-    {
-      title_ua: ['Офіціант', 'Офіціант в ресторан', 'Обслуговування гостей'],
-      title_pl: ['Kelner', 'Kelner w restauracji', 'Obsługa gości'],
-      salary: ['3800-5000 PLN', '3500-4800 PLN', '4000-5500 PLN'],
-      description_ua: ['Обслуговування гостей, прийом замовлень.', 'Сервірування столів, консультація по меню.', 'Робота в залі ресторану, подача страв.'],
-      description_pl: ['Obsługa gości, przyjmowanie zamówień.', 'Nakrywanie do stołu, doradztwo w menu.', 'Praca na sali restauracyjnej, podawanie dań.'],
-      requirements_ua: ['Комунікабельність', 'Охайність', 'Англійська базова', 'Ввічливість', 'Стресостійкість'],
-      requirements_pl: ['Komunikatywność', 'Schludność', 'Angielski podstawowy', 'Uprzejmość', 'Odporność na stres']
-    }
-  ],
-  cleaning: [
-    {
-      title_ua: ['Прибиральник офісів', 'Клінер', 'Прибиральниця'],
-      title_pl: ['Sprzątacz biur', 'Personel sprzątający', 'Sprzątaczka'],
-      salary: ['3500-4500 PLN', '3600-4600 PLN', '3400-4400 PLN'],
-      description_ua: ['Прибирання офісних приміщень, підтримання чистоти.', 'Вологе прибирання, винос сміття, догляд за поверхнями.', 'Комплексне прибирання бізнес-центру.'],
-      description_pl: ['Sprzątanie pomieszczeń biurowych, utrzymanie czystości.', 'Mycie podłóg, wynoszenie śmieci, dbanie o powierzchnie.', 'Kompleksowe sprzątanie centrum biznesowego.'],
-      requirements_ua: ['Без досвіду', 'Акуратність', 'Відповідальність', 'Пунктуальність', 'Бажання працювати'],
-      requirements_pl: ['Bez doświadczenia', 'Dokładność', 'Odpowiedzialność', 'Punktualność', 'Chęć do pracy']
-    },
-    {
-      title_ua: ['Прибиральник готелів', 'Покоївка', 'Прибирання номерів'],
-      title_pl: ['Pokojówka hotelowa', 'Pokojowa', 'Sprzątanie pokoi'],
-      salary: ['3800-5000 PLN', '4000-5200 PLN', '3700-4800 PLN'],
-      description_ua: ['Прибирання номерів готелю, зміна білизни.', 'Підготовка номерів до заселення, комплектація міні-бару.', 'Прибирання готельних кімнат та коридорів.'],
-      description_pl: ['Sprzątanie pokoi hotelowych, wymiana pościeli.', 'Przygotowanie pokoi do zameldowania, uzupełnianie barku.', 'Sprzątanie pokoi hotelowych i korytarzy.'],
-      requirements_ua: ['Досвід бажаний', 'Швидкість', 'Чесність', 'Охайність', 'Фізична витривалість'],
-      requirements_pl: ['Doświadczenie mile widziane', 'Szybkość', 'Uczciwość', 'Schludność', 'Wytrzymałość fizyczna']
-    }
-  ],
-  retail: [
-    {
-      title_ua: ['Продавець-консультант', 'Консультант в магазин', 'Продавець'],
-      title_pl: ['Sprzedawca-doradca', 'Doradca klienta', 'Sprzedawca'],
-      salary: ['4000-5500 PLN', '4200-5800 PLN', '3900-5000 PLN'],
-      description_ua: ['Консультування клієнтів, продаж товарів.', 'Допомога у виборі товару, викладка на полиці.', 'Робота в торговому залі, обслуговування покупців.'],
-      description_pl: ['Doradztwo klientom, sprzedaż produktów.', 'Pomoc w wyborze towaru, wykładanie na półki.', 'Praca na sali sprzedaży, obsługa kupujących.'],
-      requirements_ua: ['Комунікабельність', 'Досвід продажів', 'Приємна зовнішність', 'Грамотна мова', 'Активність'],
-      requirements_pl: ['Komunikatywność', 'Doświadczenie w sprzedaży', 'Miły wygląd', 'Poprawna mowa', 'Aktywność']
-    },
-    {
-      title_ua: ['Касир', 'Касир-продавець', 'Працівник каси'],
-      title_pl: ['Kasjer', 'Kasjer-sprzedawca', 'Pracownik kasy'],
-      salary: ['3600-4500 PLN', '3800-4800 PLN', '3500-4400 PLN'],
-      description_ua: ['Робота на касі, обслуговування клієнтів.', 'Розрахунок покупців, ведення касової документації.', 'Сканування товарів, прийом оплати.'],
-      description_pl: ['Praca na kasie, obsługa klientów.', 'Rozliczanie klientów, prowadzenie dokumentacji kasowej.', 'Skanowanie towarów, przyjmowanie płatności.'],
-      requirements_ua: ['Уважність', 'Чесність', 'Швидкість', 'Вміння рахувати', 'Стресостійкість'],
-      requirements_pl: ['Uwaga', 'Uczciwość', 'Szybkość', 'Umiejętność liczenia', 'Odporność na stres']
-    }
-  ],
-  healthcare: [
-    {
-      title_ua: ['Медсестра', 'Медична сестра', 'Медсестра в клініку'],
-      title_pl: ['Pielęgniarka', 'Siostra medyczna', 'Pielęgniarka w klinice'],
-      salary: ['6000-8500 PLN', '6500-9000 PLN', '5800-8000 PLN'],
-      description_ua: ['Догляд за пацієнтами, медичні процедури.', 'Виконання ін\'єкцій, крапельниць, асистування лікарю.', 'Робота в стаціонарі або поліклініці.'],
-      description_pl: ['Opieka nad pacjentami, procedury medyczne.', 'Wykonywanie zastrzyków, kroplówek, asystowanie lekarzowi.', 'Praca w szpitalu lub przychodni.'],
-      requirements_ua: ['Медична освіта', 'Ліцензія', 'Досвід від 1 року', 'Знання польської мови', 'Емпатія'],
-      requirements_pl: ['Wykształcenie medyczne', 'Licencja', 'Doświadczenie min. 1 rok', 'Znajomość języka polskiego', 'Empatia']
-    },
-    {
-      title_ua: ['Опікун літніх людей', 'Доглядальниця', 'Опікун в пансіонат'],
-      title_pl: ['Opiekun osób starszych', 'Opiekunka', 'Opiekun w domu opieki'],
-      salary: ['4500-6500 PLN', '4200-6000 PLN', '4800-7000 PLN'],
-      description_ua: ['Догляд за літніми людьми, допомога в побуті.', 'Гігієнічні процедури, годування, прогулянки.', 'Супровід підопічних, допомога в щоденних справах.'],
-      description_pl: ['Opieka nad osobami starszymi, pomoc w życiu codziennym.', 'Zabiegi higieniczne, karmienie, spacery.', 'Towarzyszenie podopiecznym, pomoc w codziennych czynnościach.'],
-      requirements_ua: ['Терпіння', 'Відповідальність', 'Досвід бажаний', 'Добре серце', 'Фізична витривалість'],
-      requirements_pl: ['Cierpliwość', 'Odpowiedzialność', 'Doświadczenie mile widziane', 'Dobre serce', 'Wytrzymałość fizyczna']
-    }
-  ],
-  it: [
-    {
-      title_ua: ['Програміст PHP', 'PHP Developer', 'Backend розробник (PHP)'],
-      title_pl: ['Programista PHP', 'PHP Developer', 'Backend Developer (PHP)'],
-      salary: ['8000-15000 PLN', '9000-16000 PLN', '7500-14000 PLN'],
-      description_ua: ['Розробка веб-додатків, підтримка проектів.', 'Створення бекенду, інтеграція API, оптимізація коду.', 'Робота над новими модулями системи.'],
-      description_pl: ['Tworzenie aplikacji webowych, wsparcie projektów.', 'Tworzenie backendu, integracja API, optymalizacja kodu.', 'Praca nad nowymi modułami systemu.'],
-      requirements_ua: ['PHP, MySQL', 'Досвід від 2 років', 'Laravel/Symfony', 'Git', 'Англійська B2'],
-      requirements_pl: ['PHP, MySQL', 'Doświadczenie min. 2 lata', 'Laravel/Symfony', 'Git', 'Angielski B2']
-    },
-    {
-      title_ua: ['Тестувальник QA', 'QA Engineer', 'Manual Tester'],
-      title_pl: ['Tester QA', 'QA Engineer', 'Tester Manualny'],
-      salary: ['6000-9000 PLN', '5500-8500 PLN', '6500-10000 PLN'],
-      description_ua: ['Тестування програмного забезпечення, звіти про баги.', 'Ручне тестування веб-сайтів та додатків.', 'Написання тест-кейсів, пошук помилок.'],
-      description_pl: ['Testowanie oprogramowania, raportowanie błędów.', 'Testowanie manualne stron i aplikacji.', 'Pisanie przypadków testowych, szukanie błędów.'],
-      requirements_ua: ['Англійська', 'Логічне мислення', 'Досвід від 1 року', 'Уважність до деталей', 'Jira/Trello'],
-      requirements_pl: ['Angielski', 'Myślenie logiczne', 'Doświadczenie min. 1 rok', 'Dbałość o szczegóły', 'Jira/Trello']
-    }
-  ],
-  agriculture: [
-    {
-      title_ua: ['Робітник на збір урожаю', 'Збирач ягід/овочів', 'Сезонний працівник'],
-      title_pl: ['Pracownik przy zbiorach', 'Zbieracz owoców', 'Pracownik sezonowy'],
-      salary: ['3500-4500 PLN', '3200-4800 PLN', '3600-5000 PLN'],
-      description_ua: ['Збір фруктів та овочів, сезонна робота.', 'Робота в полі/теплиці, збір врожаю.', 'Сортування та пакування овочів.'],
-      description_pl: ['Zbiór owoców i warzyw, praca sezonowa.', 'Praca w polu/szklarni, zbiór plonów.', 'Sortowanie i pakowanie warzyw.'],
-      requirements_ua: ['Фізична витривалість', 'Без досвіду', 'Готовність до сезонної роботи', 'Відсутність алергії', 'Працьовитість'],
-      requirements_pl: ['Wytrzymałość fizyczna', 'Bez doświadczenia', 'Gotowość do pracy sezonowej', 'Brak alergii', 'Pracowitość']
-    }
-  ],
-  education: [
-    {
-      title_ua: ['Вчитель англійської', 'Викладач англійської мови', 'Репетитор англійської'],
-      title_pl: ['Nauczyciel języka angielskiego', 'Lektor angielskiego', 'Korepetytor angielskiego'],
-      salary: ['5000-7500 PLN', '4500-7000 PLN', '5500-8000 PLN'],
-      description_ua: ['Викладання англійської мови дітям та дорослим.', 'Проведення уроків у мовній школі.', 'Підготовка до іспитів, розмовна практика.'],
-      description_pl: ['Nauczanie języka angielskiego dzieci i dorosłych.', 'Prowadzenie lekcji w szkole językowej.', 'Przygotowanie do egzaminów, konwersacje.'],
-      requirements_ua: ['Вища освіта', 'Англійська C1', 'Досвід викладання', 'Любов до дітей', 'Креативність'],
-      requirements_pl: ['Wykształcenie wyższe', 'Angielski C1', 'Doświadczenie w nauczaniu', 'Podejście do dzieci', 'Kreatywność']
-    }
-  ],
-  beauty: [
-    {
-      title_ua: ['Перукар', 'Перукар-стиліст', 'Майстер зачісок'],
-      title_pl: ['Fryzjer', 'Fryzjer-stylista', 'Mistrz fryzjerstwa'],
-      salary: ['4500-7000 PLN', '4000-6500 PLN', '5000-8000 PLN'],
-      description_ua: ['Стрижки, укладки, фарбування волосся.', 'Чоловічі та жіночі стрижки, догляд за волоссям.', 'Робота в салоні краси, створення образів.'],
-      description_pl: ['Strzyżenie, układanie, farbowanie włosów.', 'Strzyżenia damskie i męskie, pielęgnacja włosów.', 'Praca w salonie urody, stylizacja.'],
-      requirements_ua: ['Кваліфікація', 'Досвід від 2 років', 'Креативність', 'Портфоліо', 'Комунікабельність'],
-      requirements_pl: ['Kwalifikacje', 'Doświadczenie min. 2 lata', 'Kreatywność', 'Portfolio', 'Komunikatywność']
-    }
-  ],
-  security: [
-    {
-      title_ua: ['Охоронець', 'Працівник охорони', 'Сек'юріті'],
-      title_pl: ['Pracownik ochrony', 'Ochroniarz', 'Pracownik dozoru'],
-      salary: ['4000-5500 PLN', '3800-5000 PLN', '4200-6000 PLN'],
-      description_ua: ['Охорона об\'єктів, контроль доступу.', 'Відеоспостереження, патрулювання території.', 'Забезпечення безпеки в торговому центрі/офісі.'],
-      description_pl: ['Ochrona obiektów, kontrola dostępu.', 'Monitoring, patrolowanie terenu.', 'Zapewnienie bezpieczeństwa w centrum handlowym/biurze.'],
-      requirements_ua: ['Ліцензія охоронця', 'Відповідальність', 'Чесність', 'Фізична підготовка', 'Уважність'],
-      requirements_pl: ['Licencja ochroniarza', 'Odpowiedzialność', 'Uczciwość', 'Sprawność fizyczna', 'Uwaga']
-    }
+  pl: [
+    "Oficjalne zatrudnienie (Umowa o pracę / Zlecenie).",
+    "Stabilna wypłata wynagrodzenia do 10-go każdego miesiąca.",
+    "Możliwość pobrania zaliczki po pierwszym tygodniu.",
+    "Bezpłatna odzież robocza i obuwie.",
+    "Wsparcie koordynatora w sprawach codziennych.",
+    "Pomoc w uzyskaniu Karty Pobytu.",
+    "Ubezpieczenie medyczne (ZUS) od pierwszego dnia.",
+    "Możliwość pracy w nadgodzinach (+50% stawki)."
   ]
 };
 
-const responsibilityVariations = [
-  { ua: 'Виконання професійних обов\'язків згідно посадової інструкції, дотримання стандартів компанії.', pl: 'Wykonywanie obowiązków zawodowych zgodnie z instrukcją, przestrzeganie standardów firmy.' },
-  { ua: 'Забезпечення якісного виконання поставлених завдань та дотримання внутрішнього розпорядку.', pl: 'Zapewnienie wysokiej jakości realizacji powierzonych zadań i przestrzeganie regulaminu wewnętrznego.' },
-  { ua: 'Робота згідно з встановленими процедурами, дбайливе ставлення до майна компанії.', pl: 'Praca zgodnie z ustalonymi procedurami, dbałość o mienie firmy.' },
-  { ua: 'Виконання поточних завдань керівника, дотримання правил техніки безпеки.', pl: 'Wykonywanie bieżących zadań kierownika, przestrzeganie zasad BHP.' }
-];
-
-const footerVariations = [
-  { ua: 'Працевлаштування легальне, підтримка для українців.', pl: 'Legalne zatrudnienie, wsparcie dla Ukraińców.' },
-  { ua: 'Офіційне працевлаштування, допомога з оформленням документів.', pl: 'Oficjalne zatrudnienie, pomoc w załatwianiu formalności.' },
-  { ua: 'Гарантуємо стабільну роботу та своєчасну оплату праці.', pl: 'Gwarantujemy stabilną pracę i terminowe wynagrodzenie.' },
-  { ua: 'Повний супровід координатора, допомога з житлом (за наявності).', pl: 'Pełne wsparcie koordynatora, pomoc w zakwaterowaniu (jeśli dostępne).' }
-];
-
-// Helper to get random item or return item if not array
-function getOne(item) {
-  if (Array.isArray(item)) {
-    return item[Math.floor(Math.random() * item.length)];
+const ROLES = {
+  logistics: {
+    name_ua: "Логістика та Склад",
+    name_pl: "Logistyka i Magazyn",
+    jobs: [
+      {
+        titles_ua: ["Водій-кур'єр B", "Кур'єр (авто компанії)", "Доставець посилок"],
+        titles_pl: ["Kierowca-kurier kat. B", "Kurier (auto firmowe)", "Dostawca paczek"],
+        salary: { min: 4800, max: 7500 },
+        desc_ua: [
+          "Доставка посилок клієнтам (e-commerce).",
+          "Робота зі сканером та додатком на смартфоні.",
+          "Завантаження посилок на терміналі вранці.",
+          "Дотримання графіку доставки."
+        ],
+        desc_pl: [
+          "Dostarczanie paczek do klientów (e-commerce).",
+          "Praca ze skanerem i aplikacją mobilną.",
+          "Załadunek paczek na terminalu rano.",
+          "Przestrzeganie harmonogramu dostaw."
+        ]
+      },
+      {
+        titles_ua: ["Працівник складу", "Пакувальник одягу", "Сортувальник"],
+        titles_pl: ["Pracownik magazynu", "Pakowacz odzieży", "Sortownik"],
+        salary: { min: 4200, max: 5800 },
+        desc_ua: [
+          "Комплектація замовлень зі сканером.",
+          "Пакування одягу та взуття в коробки.",
+          "Перевірка товару на брак (контроль якості).",
+          "Робота на лінії сортування посилок."
+        ],
+        desc_pl: [
+          "Kompletacja zamówień ze skanerem.",
+          "Pakowanie odzieży i obuwia do kartonów.",
+          "Kontrola jakości towaru.",
+          "Praca na linii sortowniczej."
+        ]
+      },
+      {
+        titles_ua: ["Водій навантажувача (UDT)", "Карщик", "Оператор вилочного навантажувача"],
+        titles_pl: ["Operator wózka widłowego", "Kierowca wózka UDT", "Operator wózka jezdniowego"],
+        salary: { min: 5500, max: 7200 },
+        desc_ua: [
+          "Перевезення палет по складу (високий склад).",
+          "Завантаження та розвантаження вантажівок.",
+          "Розміщення товару на стелажах.",
+          "Дотримання правил безпеки (BHP)."
+        ],
+        desc_pl: [
+          "Transport palet na magazynie (wysoki skład).",
+          "Załadunek i rozładunek ciężarówek.",
+          "Rozmieszczanie towaru na regałach.",
+          "Przestrzeganie zasad BHP."
+        ]
+      }
+    ]
+  },
+  construction: {
+    name_ua: "Будівництво",
+    name_pl: "Budownictwo",
+    jobs: [
+      {
+        titles_ua: ["Різноробочий на будову", "Помічник будівельника", "Працівник загальнобудівельний"],
+        titles_pl: ["Robotnik budowlany", "Pomocnik budowlany", "Pracownik ogólnobudowlany"],
+        salary: { min: 4500, max: 6000 },
+        desc_ua: [
+          "Допомога майстрам на будівельному майданчику.",
+          "Замішування бетону та розчинів.",
+          "Прибирання території та перенесення матеріалів.",
+          "Демонтажні роботи."
+        ],
+        desc_pl: [
+          "Pomoc fachowcom na budowie.",
+          "Mieszanie betonu i zapraw.",
+          "Sprzątanie terenu i noszenie materiałów.",
+          "Prace rozbiórkowe."
+        ]
+      },
+       {
+        titles_ua: ["Електрик", "Електромонтажник", "Монтер мереж"],
+        titles_pl: ["Elektryk", "Elektromonter", "Monter sieci"],
+        salary: { min: 6000, max: 9000 },
+        desc_ua: [
+          "Прокладання кабельних трас.",
+          "Монтаж розеток, вимикачів та щитків.",
+          "Підключення освітлення в нових будинках.",
+          "Читати технічні схеми."
+        ],
+        desc_pl: [
+          "Układanie tras kablowych.",
+          "Montaż gniazdek, włączników i rozdzielnic.",
+          "Podłączanie oświetlenia w nowych budynkach.",
+          "Czytanie schematów technicznych."
+        ]
+      }
+    ]
+  },
+  production: {
+    name_ua: "Виробництво",
+    name_pl: "Produkcja",
+    jobs: [
+      {
+        titles_ua: ["Оператор машин", "Працівник виробничої лінії", "Монтажник деталей"],
+        titles_pl: ["Operator maszyn", "Pracownik linii produkcyjnej", "Monter podzespołów"],
+        salary: { min: 4300, max: 5500 },
+        desc_ua: [
+          "Обслуговування виробничих машин (автоматика).",
+          "Контроль якості готової продукції.",
+          "Монтаж дрібних деталей (аутомотів)",
+          "Пакування готових виробів у коробки."
+        ],
+        desc_pl: [
+          "Obsługa maszyn produkcyjnych (automatyka).",
+          "Kontrola jakości gotowych produktów.",
+          "Montaż drobnych elementów (automotive).",
+          "Pakowanie gotowych wyrobów do kartonów."
+        ]
+      },
+       {
+        titles_ua: ["Пакувальник (харчова пром.)", "Працівник на шоколадну фабрику", "Оператор пакування"],
+        titles_pl: ["Operator pakowania", "Pracownik fabryki czekolady", "Pakowacz"],
+        salary: { min: 3800, max: 4800 },
+        desc_ua: [
+          "Пакування кондитерських виробів на лінії.",
+          "Складання картонних коробок.",
+          "Наклеювання етикеток та маркування.",
+          "Робота в чистому та теплому приміщенні."
+        ],
+        desc_pl: [
+          "Pakowanie wyrobów cukierniczych na linii.",
+          "Składanie kartonów.",
+          "Naklejanie etykiet i oznaczanie.",
+          "Praca w czystym i ciepłym pomieszczeniu."
+        ]
+      }
+    ]
+  },
+  hospitality: {
+     name_ua: "HoReCa (Готелі та Ресторани)",
+     name_pl: "HoReCa (Hotele i Restauracje)",
+     jobs: [
+       {
+         titles_ua: ["Кухар", "Помічник на кухню", "Піцайоло"],
+         titles_pl: ["Kucharz", "Pomoc kuchenna", "Pizzerman"],
+         salary: {min: 5000, max: 7000},
+         desc_ua: [
+           "Приготування страв згідно з технологічними картами.",
+           "Підтримання чистоти на робочому місці (HACCP).",
+           "Заготовка продуктів на зміну.",
+           "Оформлення страв перед подачею."
+         ],
+         desc_pl: [
+           "Przygotowywanie dań zgodnie z recepturami.",
+           "Utrzymanie czystości w miejscu pracy (HACCP).",
+           "Przygotowywanie półproduktów na zmianę.",
+           "Dekorowanie dań przed podaniem."
+         ]
+       },
+       {
+        titles_ua: ["Бармен", "Бариста", "Офіціант"],
+        titles_pl: ["Barman", "Barista", "Kelner"],
+        salary: {min: 4000, max: 5500},
+        desc_ua: [
+          "Приготування кави та напоїв.",
+          "Обслуговування гостей за баром/столиками.",
+          "Розрахунок клієнтів (каса).",
+          "Створення приємної атмосфери."
+        ],
+        desc_pl: [
+          "Przygotowywanie kawy i napojów.",
+          "Obsługa gości przy barze/stolikach.",
+          "Rozliczanie klientów (kasa).",
+          "Tworzenie miłej atmosfery."
+        ]
+       }
+     ]
+  },
+  retail: {
+    name_ua: "Торгівля",
+    name_pl: "Sprzedaż",
+    jobs: [
+      {
+        titles_ua: ["Продавець", "Касир", "Працівник торгового залу"],
+        titles_pl: ["Sprzedawca", "Kasjer", "Pracownik hali sprzedaży"],
+        salary: {min: 3800, max: 5000},
+        desc_ua: [
+          "Викладка товару на полиці (ротація).",
+          "Обслуговування покупців на касі.",
+          "Перевірка термінів придатності.",
+          "Підтримання порядку в магазині."
+        ],
+        desc_pl: [
+          "Wykładanie towaru na półki (rotacja).",
+          "Obsługa klientów na kasie.",
+          "Sprawdzanie terminów ważności.",
+          "Utrzymanie porządku w sklepie."
+        ]
+      },
+      {
+        titles_ua: ["Стиліст-консультант", "Продавець одягу", "Консультант магазину"],
+        titles_pl: ["Sprzedawca", "Stylista-sprzedawca", "Doradca klienta"],
+        salary: {min: 4200, max: 5500},
+        desc_ua: [
+          "Допомога клієнтам у виборі одягу.",
+          "Робота в примірочній зоні.",
+          "Прийом та розпакування нового товару.",
+          "Виконання плану продажів."
+        ],
+        desc_pl: [
+          "Pomoc klientom w doborze odzieży.",
+          "Praca w strefie przymierzalni.",
+          "Przyjęcie i rozpakowanie nowego towaru.",
+          "Realizacja planów sprzedażowych."
+        ]
+      }
+    ]
+  },
+  beauty: {
+    name_ua: "Індустрія краси",
+    name_pl: "Beauty",
+    jobs: [
+      {
+        titles_ua: ["Манікюрниця", "Майстер манікюру", "Stylistka paznokci"],
+        titles_pl: ["Stylistka paznokci", "Manikiurzystka", "Technik paznokci"],
+        salary: {min: 4000, max: 7000},
+        desc_ua: [
+          "Виконання класичного та апаратного манікюру.",
+          "Гель-лак, нарощування, дизайн.",
+          "Стерилізація інструментів.",
+          "Спілкування з клієнтами."
+        ],
+        desc_pl: [
+          "Wykonywanie manicure klasycznego i frezarkowego.",
+          "Hybryda, przedłużanie, zdobienia.",
+          "Sterylizacja narzędzi.",
+          "Kontakt z klientami."
+        ]
+      }
+    ]
   }
-  return item;
+
+};
+
+// --- 3. Generator Logic ---
+
+function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Helper to shuffle array
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
 
-// Helper to pick N random items
-function pickRandom(arr, n) {
-  const shuffled = shuffle([...arr]);
-  return shuffled.slice(0, n);
+function getMultipleRandom(arr, num) {
+  const shuffled = [...arr].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, num);
 }
 
-function generateJob(category, template, city, index) {
-  // Pick random variations
-  const titleUa = getOne(template.title_ua);
-  const titlePl = getOne(template.title_pl);
-  const descUa = getOne(template.description_ua);
-  const descPl = getOne(template.description_pl);
-  const salary = getOne(template.salary);
-  
-  // Pick 3-4 random requirements
-  const reqCount = Math.floor(Math.random() * 2) + 3; // 3 or 4
-  const reqUa = pickRandom(template.requirements_ua, reqCount);
-  const reqPl = pickRandom(template.requirements_pl, reqCount);
-
-  const slug = `${city.slug}-${category}-${titlePl.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${index}`;
-  const resp = getOne(responsibilityVariations);
-  const footer = getOne(footerVariations);
-
-  // Randomize section order to avoid "AI template" look
-  const sectionsUa = [
-    `<h3>Обов'язки</h3><p>${resp.ua}</p>`,
-    `<h3>Вимоги</h3><ul>${reqUa.map(r => `<li>${r}</li>`).join('')}</ul>`,
-    `<h3>Умови</h3><ul><li><strong>Зарплата:</strong> ${salary}</li><li><strong>Контракт:</strong> Umowa o pracę або Umowa zlecenie</li><li><strong>Графік:</strong> 5/2 або змінний</li><li><strong>Бонуси:</strong> за досягнення</li></ul>`
-  ];
-  
-  const sectionsPl = [
-    `<h3>Obowiązki</h3><p>${resp.pl}</p>`,
-    `<h3>Wymagania</h3><ul>${reqPl.map(r => `<li>${r}</li>`).join('')}</ul>`,
-    `<h3>Oferujemy</h3><ul><li><strong>Wynagrodzenie:</strong> ${salary}</li><li><strong>Umowa:</strong> Umowa o pracę lub Umowa zlecenie</li><li><strong>Grafik:</strong> 5/2 lub zmianowy</li><li><strong>Premie:</strong> za osiągnięcia</li></ul>`
-  ];
-
-  // Shuffle sections, but keep "Conditions" last usually looks better, 
-  // but for pure SEO uniqueness, full shuffle is stronger. 
-  // Let's keep Conditions last for UX, shuffle others.
-  const mainSectionsUa = shuffle(sectionsUa.slice(0, 2));
-  mainSectionsUa.push(sectionsUa[2]); // Add conditions back at end
-
-  const mainSectionsPl = shuffle(sectionsPl.slice(0, 2));
-  mainSectionsPl.push(sectionsPl[2]);
-  
-  return {
-    title: `${titleUa} — ${city.ua}`,
-    title_pl: `${titlePl} — ${city.pl}`,
-    city: city.ua,
-    city_pl: city.pl,
-    slug: slug,
-    category: category,
-    excerpt: `${descUa} Зарплата: ${salary}`,
-    excerpt_pl: `${descPl} Wynagrodzenie: ${salary}`,
-    body: `<h3>${titleUa} в місті ${city.ua}</h3><p>${descUa}</p>${mainSectionsUa.join('')}<p>${footer.ua}</p><a href="/apply.html" class="btn btn-primary">Подати заявку</a>`,
-    body_pl: `<h3>${titlePl} w mieście ${city.pl}</h3><p>${descPl}</p>${mainSectionsPl.join('')}<p>${footer.pl}</p><a href="/apply.html" class="btn btn-primary">Aplikuj</a>`,
-    cta_text: "Подати заявку",
-    cta_text_pl: "Aplikuj",
-    cta_link: "/apply.html",
-    country: "Poland",
-    language: "uk",
-    salary: salary,
-    employment_type: "full-time"
-  };
+function generateSalary(min, max) {
+  // Add some randomness like 4500, 4800, 5000 to make it look real
+  const step = 100;
+  const sMin = Math.floor((min + Math.random() * 500) / step) * step;
+  const sMax = Math.floor((max + Math.random() * 1000) / step) * step;
+  return `${sMin} - ${sMax} PLN`;
 }
 
-// Генеруємо вакансії
-const jobs = [];
-let index = 1;
+const JOBS_DB = [];
+let jobCounter = 1;
 
-Object.keys(jobTemplates).forEach(category => {
-  jobTemplates[category].forEach(template => {
-    cities.forEach(city => {
-      jobs.push(generateJob(category, template, city, index++));
+// Generating loop
+// We iterate cities, then categories, NOT just categories then cities for everybody.
+// To add variety, we randomly SKIP some jobs in some cities so they are not identical.
+
+Object.keys(ROLES).forEach(catKey => {
+  const category = ROLES[catKey];
+  
+  category.jobs.forEach(jobTemplate => {
+    
+    // For each template, we pick mostly all cities, but randomize slightly
+    CITIES.forEach(city => {
+      
+      // 10% chance to skip a job in a specific city to make lists uneven/natural
+      if (Math.random() > 0.9) return; 
+
+      const titleUA = getRandom(jobTemplate.titles_ua);
+      const titlePL = getRandom(jobTemplate.titles_pl);
+      const salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
+
+      // Mix descriptions
+      const tasksUA = getMultipleRandom(jobTemplate.desc_ua, 3).map(t => `<li>${t}</li>`).join('');
+      const tasksPL = getMultipleRandom(jobTemplate.desc_pl, 3).map(t => `<li>${t}</li>`).join('');
+
+      const offersUA = getMultipleRandom(GLOBAL_OFFERS.ua, 4).map(o => `<li>${o}</li>`).join('');
+      const offersPL = getMultipleRandom(GLOBAL_OFFERS.pl, 4).map(o => `<li>${o}</li>`).join('');
+
+      const slug = `${city.slug}-${catKey}-${titlePL.toLowerCase().replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/[^a-z0-9]+/g, '-')}-${jobCounter++}`;
+
+      const bodyUA = `
+        <div class="vacancy-block">
+          <h3>Що ми пропонуємо?</h3>
+          <ul>${offersUA}</ul>
+          <h3>Ваші обов'язки:</h3>
+          <ul>${tasksUA}</ul>
+          <div class="salary-box">💰 Зарплата: <strong>${salary}</strong> (нетто/брутто залежить від договору)</div>
+        </div>
+        <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+      `;
+
+      const bodyPL = `
+        <div class="vacancy-block">
+          <h3>Co oferujemy?</h3>
+          <ul>${offersPL}</ul>
+          <h3>Twoje obowiązki:</h3>
+          <ul>${tasksPL}</ul>
+          <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong> (netto/brutto zal. od umowy)</div>
+        </div>
+        <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+      `;
+
+      JOBS_DB.push({
+        slug: slug,
+        category: catKey,
+        city: city.ua,
+        city_pl: city.pl,
+        title: titleUA,
+        title_pl: titlePL,
+        salary: salary,
+        excerpt: `${titleUA} у м. ${city.ua}. ${getRandom(jobTemplate.desc_ua)}`,
+        excerpt_pl: `${titlePL} w m. ${city.pl}. ${getRandom(jobTemplate.desc_pl)}`,
+        body: bodyUA,
+        body_pl: bodyPL,
+        cta_text: "Подати заявку",
+        cta_text_pl: "Aplikuj",
+        cta_link: "/apply.html",
+        country: "Poland",
+        language: "uk",
+        employment_type: "full-time",
+        date_posted: new Date().toISOString()
+      });
+
     });
   });
 });
 
-// Зберігаємо у файл
-fs.writeFileSync(
-  path.join(__dirname, 'content.json'),
-  JSON.stringify(jobs, null, 2),
-  'utf-8'
-);
-
-console.log(`✅ Опубліковано ${jobs.length} вакансій`);
+fs.writeFileSync(path.join(__dirname, 'content.json'), JSON.stringify(JOBS_DB, null, 2));
+console.log(`🎉 Generated ${JOBS_DB.length} unique vacancies across ${CITIES.length} cities.`);

@@ -1,7 +1,0 @@
-# Robots.txt for rybezh.site - Job search platform in Poland
-# All search engines are allowed to access all pages
-
-User-agent: *
-Allow: /
-
-Sitemap: https://rybezh.site/sitemap.xml

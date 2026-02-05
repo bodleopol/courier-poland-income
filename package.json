@@ -3,5 +3,8 @@
   "type": "module",
   "scripts": {
     "build": "node src/generate.js"
+  },
+  "devDependencies": {
+    "firebase-tools": "^15.5.1"
   }
 }
