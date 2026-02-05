@@ -696,7 +696,8 @@ function buildConditionsBlock(page, lang) {
     pattern: 'System',
     start: 'Start',
     bonuses: 'Bonusy',
-    extra: 'Dodatkowe informacje'
+    extra: 'Dodatkowe informacje',
+    requirements: 'Wymagania'
   } : {
     title: 'Умови',
     salary: 'Зарплата',
@@ -705,7 +706,8 @@ function buildConditionsBlock(page, lang) {
     pattern: 'Режим',
     start: 'Старт',
     bonuses: 'Бонуси',
-    extra: 'Додаткова інформація'
+    extra: 'Додаткова інформація',
+    requirements: 'Вимоги'
   };
 
   const salary = page.salary ? String(page.salary) : '';
@@ -715,9 +717,15 @@ function buildConditionsBlock(page, lang) {
   const start = isPl ? page.start_pl : page.start_ua;
   const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
   const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
+  const reqList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
+  const housing = isPl ? page.housing_pl : page.housing_ua;
+  const transport = isPl ? page.transport_pl : page.transport_ua;
+  const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
   const extras = extraList.slice(0, 2).join(' • ');
+  const reqs = reqList.slice(0, 3).join(' • ');
+  const requirements = requirementsList.slice(0, 3).join(' • ');
 
   const rows = [];
   if (salary) rows.push(`<li><strong>${labels.salary}:</strong> ${escapeHtml(salary)}</li>`);
@@ -727,6 +735,10 @@ function buildConditionsBlock(page, lang) {
   if (start) rows.push(`<li><strong>${labels.start}:</strong> ${escapeHtml(start)}</li>`);
   if (bonuses) rows.push(`<li><strong>${labels.bonuses}:</strong> ${escapeHtml(bonuses)}</li>`);
   if (extras) rows.push(`<li><strong>${labels.extra}:</strong> ${escapeHtml(extras)}</li>`);
+  if (reqs) rows.push(`<li><strong>${isPl ? 'Wymagania' : 'Вимоги'}:</strong> ${escapeHtml(reqs)}</li>`);
+  if (housing) rows.push(`<li><strong>${isPl ? 'Zakwaterowanie' : 'Проживання'}:</strong> ${escapeHtml(housing)}</li>`);
+  if (transport) rows.push(`<li><strong>${isPl ? 'Dojazd' : 'Транспорт'}:</strong> ${escapeHtml(transport)}</li>`);
+  if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
 
   return `
     <div class="job-conditions">

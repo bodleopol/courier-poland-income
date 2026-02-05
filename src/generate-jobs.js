@@ -173,6 +173,123 @@ const WORKPLACE_DETAILS = {
   ]
 };
 
+const LANGUAGE_LEVELS = {
+  ua: ["Польська не обов'язкова", "Польська A1-A2", "Польська B1", "Польська B2+", "Українська/російська достатньо"],
+  pl: ["Polski niewymagany", "Polski A1-A2", "Polski B1", "Polski B2+", "Ukraiński/rosyjski wystarczy"]
+};
+
+const EXPERIENCE_LEVELS = {
+  ua: ["Без досвіду", "Мінімальний досвід 1-3 міс.", "Досвід від 6 міс.", "Досвід від 1 року"],
+  pl: ["Bez doświadczenia", "Min. doświadczenie 1-3 mies.", "Doświadczenie 6+ mies.", "Doświadczenie 1+ rok"]
+};
+
+const DOCUMENTS_NEEDED = {
+  ua: ["Паспорт", "PESEL", "Karta Pobytu", "Віза", "Водійські права (для водіїв)", "UDT (для карщиків)"],
+  pl: ["Paszport", "PESEL", "Karta Pobytu", "Wiza", "Prawo jazdy (dla kierowców)", "UDT (dla wózków)" ]
+};
+
+const HOUSING_OPTIONS = {
+  ua: [
+    "Житло надається (кімнати 2-4 особи)",
+    "Доплата за власне житло (400-600 zł)",
+    "Житло поруч з роботою (10-20 хв)",
+    "Без житла від роботодавця (допомога в пошуку)",
+    "Житло за собівартістю (350-450 zł)"
+  ],
+  pl: [
+    "Zakwaterowanie zapewnione (2-4 osoby)",
+    "Dodatek mieszkaniowy (400-600 zł)",
+    "Mieszkanie blisko pracy (10-20 min)",
+    "Bez zakwaterowania (pomoc w znalezieniu)",
+    "Zakwaterowanie po kosztach (350-450 zł)"
+  ]
+};
+
+const TRANSPORT_OPTIONS = {
+  ua: [
+    "Підвіз до роботи службовим транспортом",
+    "Компенсація проїзду міським транспортом",
+    "Паркінг для авто/велосипеда",
+    "Проїзний квиток зі знижкою",
+    "Локація біля зупинки/метро"
+  ],
+  pl: [
+    "Dojazd do pracy transportem firmowym",
+    "Zwrot kosztów komunikacji miejskiej",
+    "Parking dla auta/roweru",
+    "Karta miejska ze zniżką",
+    "Lokalizacja blisko przystanku/metro"
+  ]
+};
+
+const LANGUAGE_REQUIREMENTS = {
+  ua: [
+    "Польська мова: базовий рівень A1/A2.",
+    "Польська мова не обов'язкова — інструктаж українською.",
+    "Потрібна комунікативна польська (A2/B1).",
+    "Можна без польської, але з бажанням навчатися.",
+    "Мінімальна англійська для інструкцій (A1)."
+  ],
+  pl: [
+    "Język polski: poziom podstawowy A1/A2.",
+    "Polski nieobowiązkowy — instruktaż po ukraińsku.",
+    "Wymagana komunikatywna polszczyzna (A2/B1).",
+    "Można bez polskiego, ale z chęcią nauki.",
+    "Minimalny angielski do instrukcji (A1)."
+  ]
+};
+
+const EXPERIENCE_REQUIREMENTS = {
+  ua: [
+    "Досвід не обов'язковий — навчання на місці.",
+    "Бажано 3+ місяців на схожій посаді.",
+    "Досвід у виробництві/складі буде перевагою.",
+    "Потрібна уважність і відповідальність.",
+    "Готовність працювати фізично (12–20 тис. кроків/день)."
+  ],
+  pl: [
+    "Doświadczenie nieobowiązkowe — szkolenie na miejscu.",
+    "Mile widziane 3+ miesiące na podobnym stanowisku.",
+    "Doświadczenie w produkcji/magazynie będzie atutem.",
+    "Wymagana dokładność i odpowiedzialność.",
+    "Gotowość do pracy fizycznej (12–20 tys. kroków/dzień)."
+  ]
+};
+
+const DOCUMENT_REQUIREMENTS = {
+  ua: [
+    "Потрібен PESEL або готовність оформити.",
+    "Допомагаємо з оформленням документів на старті.",
+    "Потрібен дозвіл на роботу або карта побиту.",
+    "Можливий старт без PESEL (допомога на місці).",
+    "Вимога: медичний огляд (компенсуємо)."
+  ],
+  pl: [
+    "Wymagany PESEL lub gotowość do wyrobienia.",
+    "Pomagamy w dokumentach na start.",
+    "Wymagane pozwolenie na pracę lub karta pobytu.",
+    "Możliwy start bez PESEL (pomoc na miejscu).",
+    "Wymagane badania lekarskie (zwrot kosztów)."
+  ]
+};
+
+const HOUSING_REQUIREMENTS = {
+  ua: [
+    "Житло надається (оплата 450–650 zł/міс.).",
+    "Житло не надається — допоможемо з пошуком.",
+    "Можлива доплата за власне житло.",
+    "Кімната 2–3 людини, інтернет включено.",
+    "Заселення за 1–2 дні до старту."
+  ],
+  pl: [
+    "Zakwaterowanie zapewnione (450–650 zł/mies.).",
+    "Zakwaterowania brak — pomagamy znaleźć.",
+    "Możliwy dodatek mieszkaniowy.",
+    "Pokój 2–3 osobowy, internet w cenie.",
+    "Zakwaterowanie 1–2 dni przed startem."
+  ]
+};
+
 const ROLES = {
   logistics: {
     name_ua: "Логістика та Склад",
@@ -670,6 +787,18 @@ Object.keys(ROLES).forEach(catKey => {
       let offerItemsPL;
       let detailItemsUA;
       let detailItemsPL;
+      let requirementItemsUA;
+      let requirementItemsPL;
+      let languageUA;
+      let languagePL;
+      let experienceUA;
+      let experiencePL;
+      let housingUA;
+      let housingPL;
+      let transportUA;
+      let transportPL;
+      let documentsUA;
+      let documentsPL;
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -713,6 +842,28 @@ Object.keys(ROLES).forEach(catKey => {
           ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2)
         ];
 
+        languageUA = getRandom(LANGUAGE_LEVELS.ua);
+        languagePL = getRandom(LANGUAGE_LEVELS.pl);
+        experienceUA = getRandom(EXPERIENCE_LEVELS.ua);
+        experiencePL = getRandom(EXPERIENCE_LEVELS.pl);
+        housingUA = getRandom(HOUSING_OPTIONS.ua);
+        housingPL = getRandom(HOUSING_OPTIONS.pl);
+        transportUA = getRandom(TRANSPORT_OPTIONS.ua);
+        transportPL = getRandom(TRANSPORT_OPTIONS.pl);
+        documentsUA = `Документи: ${getMultipleRandom(DOCUMENTS_NEEDED.ua, 2).join(', ')}`;
+        documentsPL = `Dokumenty: ${getMultipleRandom(DOCUMENTS_NEEDED.pl, 2).join(', ')}`;
+
+        requirementItemsUA = [
+          `Досвід: ${experienceUA}`,
+          `Мова: ${languageUA}`,
+          documentsUA
+        ];
+        requirementItemsPL = [
+          `Doświadczenie: ${experiencePL}`,
+          `Język: ${languagePL}`,
+          documentsPL
+        ];
+
         signature = [
           city.slug,
           catKey,
@@ -724,7 +875,10 @@ Object.keys(ROLES).forEach(catKey => {
           contractPL,
           offersPL,
           tasksPL,
-          detailItemsPL.join(' | ')
+          detailItemsPL.join(' | '),
+          requirementItemsPL.join(' | '),
+          housingPL,
+          transportPL
         ].join('|');
         tries += 1;
       } while (usedSignatures.has(signature) && tries < 8);
@@ -747,6 +901,13 @@ Object.keys(ROLES).forEach(catKey => {
           <ul>${offersUA}</ul>
           <h3>Додаткова інформація</h3>
           <ul>${detailItemsUA.map(d => `<li>${d}</li>`).join('')}</ul>
+          <h3>Вимоги</h3>
+          <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+          <h3>Проживання та транспорт</h3>
+          <ul>
+            <li>${housingUA}</li>
+            <li>${transportUA}</li>
+          </ul>
           <h3>Ваші обов'язки:</h3>
           <ul>${tasksUA}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
@@ -768,6 +929,13 @@ Object.keys(ROLES).forEach(catKey => {
           <ul>${offersPL}</ul>
           <h3>Dodatkowe informacje</h3>
           <ul>${detailItemsPL.map(d => `<li>${d}</li>`).join('')}</ul>
+          <h3>Wymagania</h3>
+          <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+          <h3>Zakwaterowanie i dojazd</h3>
+          <ul>
+            <li>${housingPL}</li>
+            <li>${transportPL}</li>
+          </ul>
           <h3>Twoje obowiązki:</h3>
           <ul>${tasksPL}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
@@ -798,6 +966,18 @@ Object.keys(ROLES).forEach(catKey => {
         tasks_pl: taskItemsPL,
         details_ua: detailItemsUA,
         details_pl: detailItemsPL,
+        requirements_ua: requirementItemsUA,
+        requirements_pl: requirementItemsPL,
+        experience_ua: experienceUA,
+        experience_pl: experiencePL,
+        language_ua: languageUA,
+        language_pl: languagePL,
+        housing_ua: housingUA,
+        housing_pl: housingPL,
+        transport_ua: transportUA,
+        transport_pl: transportPL,
+        documents_ua: documentsUA,
+        documents_pl: documentsPL,
         excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
         excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
