@@ -222,6 +222,82 @@ const TRANSPORT_OPTIONS = {
   ]
 };
 
+const WORKPLACE_TYPES = {
+  ua: [
+    "Тип об’єкта: логістичний центр",
+    "Тип об’єкта: готель 3–4★",
+    "Тип об’єкта: виробничий цех",
+    "Тип об’єкта: ресторан/кафе",
+    "Тип об’єкта: склад e-commerce",
+    "Тип об’єкта: торговий зал"
+  ],
+  pl: [
+    "Typ obiektu: centrum logistyczne",
+    "Typ obiektu: hotel 3–4★",
+    "Typ obiektu: hala produkcyjna",
+    "Typ obiektu: restauracja/kawiarnia",
+    "Typ obiektu: magazyn e-commerce",
+    "Typ obiektu: sala sprzedaży"
+  ]
+};
+
+const TEAM_SIZES = {
+  ua: [
+    "Команда: 6–10 осіб у зміні",
+    "Команда: 12–18 осіб у зміні",
+    "Команда: 20+ осіб на зміні",
+    "Команда: компактна команда до 6 осіб",
+    "Команда: окремий бригадир на кожну зміну"
+  ],
+  pl: [
+    "Zespół: 6–10 osób na zmianie",
+    "Zespół: 12–18 osób na zmianie",
+    "Zespół: 20+ osób na zmianie",
+    "Zespół: mały zespół do 6 osób",
+    "Zespół: brygadzista na każdej zmianie"
+  ]
+};
+
+const ONBOARDING_NOTES = {
+  ua: [
+    "Перший день — навчання та супровід на місці.",
+    "Видаємо чек‑лист по процесах у перший день.",
+    "Є коротке навчання перед стартом зміни.",
+    "Пробна зміна з наставником.",
+    "Швидкий інструктаж та тест безпеки."
+  ],
+  pl: [
+    "Pierwszy dzień — szkolenie i opieka na miejscu.",
+    "Lista kontrolna procesów w pierwszym dniu.",
+    "Krótkie szkolenie przed startem zmiany.",
+    "Zmiana próbna z mentorem.",
+    "Szybki instruktaż i test BHP."
+  ]
+};
+
+const DAILY_TASKS = {
+  ua: [
+    "Короткий щоденний брифінг перед зміною.",
+    "Ротація станцій/зон під час зміни.",
+    "Ведення простих чек‑листів якості.",
+    "Фіксація виконання через сканер/таблет.",
+    "Контроль чистоти робочої зони.",
+    "Дотримання стандартів безпеки на об’єкті.",
+    "Робота з легким ручним інструментом.",
+    "Комунікація з бригадиром/майстром."
+  ],
+  pl: [
+    "Krótki briefing przed zmianą.",
+    "Rotacja stanowisk/stref w trakcie zmiany.",
+    "Proste checklisty jakości.",
+    "Rejestracja wykonania przez skaner/tablet.",
+    "Kontrola porządku na stanowisku.",
+    "Przestrzeganie zasad bezpieczeństwa.",
+    "Praca z lekkimi narzędziami ręcznymi.",
+    "Kontakt z brygadzistą/majstrem."
+  ]
+};
+
 const LANGUAGE_REQUIREMENTS = {
   ua: [
     "Польська мова: базовий рівень A1/A2.",
@@ -799,6 +875,14 @@ Object.keys(ROLES).forEach(catKey => {
       let transportPL;
       let documentsUA;
       let documentsPL;
+      let workplaceUA;
+      let workplacePL;
+      let teamUA;
+      let teamPL;
+      let onboardingUA;
+      let onboardingPL;
+      let dailyUA;
+      let dailyPL;
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -852,6 +936,14 @@ Object.keys(ROLES).forEach(catKey => {
         transportPL = getRandom(TRANSPORT_OPTIONS.pl);
         documentsUA = `Документи: ${getMultipleRandom(DOCUMENTS_NEEDED.ua, 2).join(', ')}`;
         documentsPL = `Dokumenty: ${getMultipleRandom(DOCUMENTS_NEEDED.pl, 2).join(', ')}`;
+        workplaceUA = getRandom(WORKPLACE_TYPES.ua);
+        workplacePL = getRandom(WORKPLACE_TYPES.pl);
+        teamUA = getRandom(TEAM_SIZES.ua);
+        teamPL = getRandom(TEAM_SIZES.pl);
+        onboardingUA = getRandom(ONBOARDING_NOTES.ua);
+        onboardingPL = getRandom(ONBOARDING_NOTES.pl);
+        dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2);
+        dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2);
 
         requirementItemsUA = [
           `Досвід: ${experienceUA}`,
@@ -878,7 +970,11 @@ Object.keys(ROLES).forEach(catKey => {
           detailItemsPL.join(' | '),
           requirementItemsPL.join(' | '),
           housingPL,
-          transportPL
+          transportPL,
+          workplacePL,
+          teamPL,
+          onboardingPL,
+          dailyPL.join(' | ')
         ].join('|');
         tries += 1;
       } while (usedSignatures.has(signature) && tries < 8);
@@ -908,6 +1004,14 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${housingUA}</li>
             <li>${transportUA}</li>
           </ul>
+          <h3>Формат роботи</h3>
+          <ul>
+            <li>${workplaceUA}</li>
+            <li>${teamUA}</li>
+            <li>${onboardingUA}</li>
+          </ul>
+          <h3>Щоденні процеси</h3>
+          <ul>${dailyUA.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Ваші обов'язки:</h3>
           <ul>${tasksUA}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
@@ -936,6 +1040,14 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${housingPL}</li>
             <li>${transportPL}</li>
           </ul>
+          <h3>Format pracy</h3>
+          <ul>
+            <li>${workplacePL}</li>
+            <li>${teamPL}</li>
+            <li>${onboardingPL}</li>
+          </ul>
+          <h3>Codzienne procesy</h3>
+          <ul>${dailyPL.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Twoje obowiązki:</h3>
           <ul>${tasksPL}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
@@ -978,6 +1090,14 @@ Object.keys(ROLES).forEach(catKey => {
         transport_pl: transportPL,
         documents_ua: documentsUA,
         documents_pl: documentsPL,
+        workplace_ua: workplaceUA,
+        workplace_pl: workplacePL,
+        team_ua: teamUA,
+        team_pl: teamPL,
+        onboarding_ua: onboardingUA,
+        onboarding_pl: onboardingPL,
+        daily_ua: dailyUA,
+        daily_pl: dailyPL,
         excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
         excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,

@@ -720,6 +720,9 @@ function buildConditionsBlock(page, lang) {
   const reqList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
   const housing = isPl ? page.housing_pl : page.housing_ua;
   const transport = isPl ? page.transport_pl : page.transport_ua;
+  const workplace = isPl ? page.workplace_pl : page.workplace_ua;
+  const team = isPl ? page.team_pl : page.team_ua;
+  const onboarding = isPl ? page.onboarding_pl : page.onboarding_ua;
   const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
@@ -738,6 +741,9 @@ function buildConditionsBlock(page, lang) {
   if (reqs) rows.push(`<li><strong>${isPl ? 'Wymagania' : 'Вимоги'}:</strong> ${escapeHtml(reqs)}</li>`);
   if (housing) rows.push(`<li><strong>${isPl ? 'Zakwaterowanie' : 'Проживання'}:</strong> ${escapeHtml(housing)}</li>`);
   if (transport) rows.push(`<li><strong>${isPl ? 'Dojazd' : 'Транспорт'}:</strong> ${escapeHtml(transport)}</li>`);
+  if (workplace) rows.push(`<li><strong>${isPl ? 'Typ obiektu' : 'Тип обʼєкта'}:</strong> ${escapeHtml(workplace)}</li>`);
+  if (team) rows.push(`<li><strong>${isPl ? 'Zespół' : 'Команда'}:</strong> ${escapeHtml(team)}</li>`);
+  if (onboarding) rows.push(`<li><strong>${isPl ? 'Onboarding' : 'Адаптація'}:</strong> ${escapeHtml(onboarding)}</li>`);
   if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
 
   return `
