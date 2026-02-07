@@ -44,7 +44,7 @@ async function integrateImprovements() {
       let pageHtml = await fs.readFile(pagePath, 'utf8');
       
       // Add jobs-loader.js script before closing body tag
-      if (!pageHtml.includes('jobs-loader.js')) {
+      if (!pageHtml.includes('<script src="/jobs-loader.js"></script>')) {
         pageHtml = pageHtml.replace(
           '</body>',
           '<script src="/jobs-loader.js"></script>\n</body>'

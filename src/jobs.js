@@ -6,7 +6,12 @@
   'use strict';
 
   // Wait for DOM and data to be ready
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', async function() {
+    // Load jobs data if not already loaded
+    if (typeof window.getJobsData === 'function' && !window.ALL_JOBS) {
+      window.ALL_JOBS = await window.getJobsData();
+    }
+    
     initCategoryNav();
     initHomePage();
     initVacanciesPage();
@@ -95,7 +100,7 @@
     }
   }
 
-  function initVacanciesPage() {
+  async function initVacanciesPage() {
     if (!document.getElementById('allJobs')) return;
 
     const allJobsGrid = document.getElementById('allJobs');
@@ -132,7 +137,11 @@
     if (urlCity && cityFilter) cityFilter.value = urlCity;
 
     // Filter and render
-    function filterAndRender() {
+    async function filterAndRender() {
+      // Wait for jobs data if not already loaded
+      if (!window.ALL_JOBS && typeof window.getJobsData === 'function') {
+        window.ALL_JOBS = await window.getJobsData();
+      }
       if (!window.ALL_JOBS) return;
 
       const category = categoryFilter ? categoryFilter.value : '';
@@ -194,7 +203,7 @@
     }
 
     // Initial render
-    filterAndRender();
+    await filterAndRender();
   }
 
   function renderJobs(jobs, container) {
