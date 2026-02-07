@@ -36,22 +36,25 @@ async function integrateImprovements() {
     console.warn('⚠️  Could not create jobs-data.json:', err.message);
   }
   
-  // 3. Modify index.html to use lazy loading
+  // 3. Modify index.html and vacancies.html to use lazy loading
   try {
-    const indexPath = path.join(DIST, 'index.html');
-    let indexHtml = await fs.readFile(indexPath, 'utf8');
-    
-    // Add jobs-loader.js script before closing body tag
-    if (!indexHtml.includes('jobs-loader.js')) {
-      indexHtml = indexHtml.replace(
-        '</body>',
-        '<script src="/jobs-loader.js"></script>\n</body>'
-      );
-      await fs.writeFile(indexPath, indexHtml, 'utf8');
-      console.log('✅ Modified index.html for lazy loading');
+    const pagesToModify = ['index.html', 'vacancies.html'];
+    for (const page of pagesToModify) {
+      const pagePath = path.join(DIST, page);
+      let pageHtml = await fs.readFile(pagePath, 'utf8');
+      
+      // Add jobs-loader.js script before closing body tag
+      if (!pageHtml.includes('jobs-loader.js')) {
+        pageHtml = pageHtml.replace(
+          '</body>',
+          '<script src="/jobs-loader.js"></script>\n</body>'
+        );
+        await fs.writeFile(pagePath, pageHtml, 'utf8');
+        console.log(`✅ Modified ${page} for lazy loading`);
+      }
     }
   } catch (err) {
-    console.warn('⚠️  Could not modify index.html:', err.message);
+    console.warn('⚠️  Could not modify pages:', err.message);
   }
   
   // 4. Add engagement.css to all vacancy pages
