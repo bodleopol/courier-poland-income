@@ -1,6 +1,16 @@
 <section class="vacancies-page">
   <div class="container">
     <h1 data-i18n="vacancies.title">Всі вакансії</h1>
+
+    <div class="human-note" role="note">
+      <h2 class="human-note__title" data-i18n="human.vacancies.title">Як читати вакансії на Rybezh</h2>
+      <p class="human-note__text" data-i18n="human.vacancies.lead">Ми стараємось писати без «води»: що робити, який графік, які документи і що з житлом/доїздом. Якщо бачите незрозумілий пункт — краще уточнити до старту.</p>
+      <ul class="human-note__list">
+        <li data-i18n="human.vacancies.li1">Фільтруйте за містом і категорією — так швидше знайдете адекватні варіанти.</li>
+        <li data-i18n="human.vacancies.li2">Дивіться на режим роботи та перерви — вони часто важливіші за «гучні бонуси».</li>
+        <li data-i18n="human.vacancies.li3">Під кожну вакансію можна подати заявку — ми допоможемо уточнити деталі.</li>
+      </ul>
+    </div>
     
     <!-- Filters -->
     <div class="filters">
@@ -52,6 +62,31 @@
 <style>
 .vacancies-page {
   padding: 3rem 0;
+}
+
+.human-note {
+  background: #ffffff;
+  border: 1px solid rgba(15, 118, 110, 0.18);
+  border-radius: 16px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+  margin: 0 0 1.75rem;
+}
+
+.human-note__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.human-note__text {
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.human-note__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #475569;
 }
 
 .vacancies-page h1 {

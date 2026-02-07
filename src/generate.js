@@ -764,6 +764,86 @@ function buildConditionsBlock(page, lang) {
   `;
 }
 
+const JOB_CHECKLIST_POOL = {
+  ua: [
+    'Ставка: брутто чи нетто? Є премії/бонуси — за що саме?',
+    'Який тип договору (umowa zlecenie/umowa o pracę/B2B) і хто його підписує?',
+    'Графік: скільки годин на зміну, перерви, нічні/вихідні, понаднормові.',
+    'Житло/доїзд: чи є, скільки коштує, які умови, скільки людей у кімнаті.',
+    'Що входить у задачі на старті: перші 3–5 днів зазвичай найважчі.',
+    'Документи: PESEL, медогляд, санепід, UDT — що потрібно саме тут.',
+    'Форма/взуття/інструменти: що дають, а що треба мати з собою.',
+    'Виплати: як часто, на карту чи готівкою, чи є аванс.'
+  ],
+  pl: [
+    'Stawka: brutto czy netto? Są premie/bonusy — za co konkretnie?',
+    'Jaki typ umowy (umowa zlecenie/umowa o pracę/B2B) i kto ją podpisuje?',
+    'Grafik: ile godzin na zmianę, przerwy, nocki/weekendy, nadgodziny.',
+    'Mieszkanie/dojazd: czy jest, ile kosztuje, jakie warunki, ile osób w pokoju.',
+    'Zakres zadań na start: pierwsze 3–5 dni zwykle robią największą różnicę.',
+    'Dokumenty: PESEL, badania, sanepid, UDT — co jest wymagane tutaj.',
+    'Ubranie/buty/sprzęt: co zapewnia pracodawca, a co musisz mieć.',
+    'Wypłaty: jak często, na konto czy gotówką, czy jest zaliczka.'
+  ]
+};
+
+const JOB_QUESTIONS_POOL = {
+  ua: [
+    'Хто і де зустрічає в перший день? Є контакти координатора?',
+    'Які реальні години старту/фінішу (а не «орієнтовно»)?',
+    'Скільки часу добиратися до обʼєкта і чи компенсують транспорт?',
+    'Який мінімум/максимум годин на тиждень у пікові періоди?',
+    'Чи є навчання/інструктаж і скільки він триває?',
+    'Як виглядає процес заміни зміни/вихідного, якщо щось трапиться?'
+  ],
+  pl: [
+    'Kto i gdzie spotyka pierwszego dnia? Masz kontakt do koordynatora?',
+    'Jakie są realne godziny startu/końca (a nie „orientacyjnie”)?',
+    'Ile trwa dojazd na obiekt i czy transport jest dofinansowany?',
+    'Ile godzin tygodniowo realnie wychodzi w sezonie/pikach?',
+    'Czy jest szkolenie/briefing i ile trwa?',
+    'Jak wygląda zamiana zmiany/dnia wolnego, jeśli coś wypadnie?'
+  ]
+};
+
+function buildJobHumanBlock(page, lang) {
+  const isPl = lang === 'pl';
+  const seed = hashString(`${page?.slug || ''}:${lang}`);
+  const lead = pickFromPool((HUMAN_SIDE_NOTES[lang] || HUMAN_SIDE_NOTES.ua), seed + 13);
+  const prefix = pickFromPool((LIST_PREFIXES[lang] || LIST_PREFIXES.ua), seed + 5);
+  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17);
+  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
+
+  const title = isPl ? 'Po ludzku: co warto doprecyzować' : 'По‑людськи: що варто уточнити';
+  const leftTitle = isPl ? 'Mini‑checklist przed startem' : 'Міні‑чек‑лист перед стартом';
+  const rightTitle = isPl ? 'Pytania, które warto zadać' : 'Питання, які варто задати';
+  const note = isPl
+    ? 'Warunki mogą się zmieniać — jeśli coś brzmi zbyt ogólnie, dopytaj przed wyjazdem.'
+    : 'Умови можуть змінюватися — якщо щось звучить занадто загально, краще уточнити до виїзду.';
+
+  const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  const questionsHtml = questions.map(t => `<li>${escapeHtml(t)}</li>`).join('');
+
+  return `
+    <section class="job-human" aria-label="${escapeHtml(title)}">
+      <h3 class="job-human__title">${escapeHtml(title)}</h3>
+      ${lead ? `<p class="job-human__lead">${escapeHtml(lead)}</p>` : ''}
+      <div class="job-human__grid">
+        <div class="job-human__card">
+          <h4>${escapeHtml(leftTitle)}</h4>
+          <p class="job-human__muted">${escapeHtml(prefix)}</p>
+          <ul>${checklistHtml}</ul>
+        </div>
+        <div class="job-human__card">
+          <h4>${escapeHtml(rightTitle)}</h4>
+          <ul>${questionsHtml}</ul>
+          <p class="job-human__muted">${escapeHtml(note)}</p>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -903,6 +983,8 @@ async function build() {
     // Wrap content in language toggles
     const conditionsUA = buildConditionsBlock(page, 'ua');
     const conditionsPL = buildConditionsBlock(page, 'pl');
+    const humanUA = buildJobHumanBlock(page, 'ua');
+    const humanPL = buildJobHumanBlock(page, 'pl');
 
     const shareUrl = `https://rybezh.site/${escapeHtml(page.slug)}.html`;
     const shareText = encodeURIComponent(page.title);
@@ -930,8 +1012,8 @@ async function build() {
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
           <span class="tag">📅 ${new Date().getFullYear()}</span>
         </div>
-        <div data-lang-content="ua">${content}${conditionsUA}</div>
-        <div data-lang-content="pl" style="display:none">${contentPl}${conditionsPL}</div>
+        <div data-lang-content="ua">${content}${conditionsUA}${humanUA}</div>
+        <div data-lang-content="pl" style="display:none">${contentPl}${conditionsPL}${humanPL}</div>
         ${shareButtons}
         <div class="job-actions">
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
@@ -996,6 +1078,16 @@ async function build() {
       .job-conditions h3 { margin-top: 0; color: #0f172a; font-size: 1.15rem; }
       .job-conditions ul { list-style: none; padding: 0; margin: 0; }
       .job-conditions li { margin-bottom: 0.5rem; }
+      .job-human { margin: 1.5rem 0 2rem; padding: 1.25rem; border-radius: 12px; border: 1px solid #e2e8f0; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
+      .job-human__title { margin: 0 0 .5rem; color: #0f172a; font-size: 1.1rem; }
+      .job-human__lead { margin: 0 0 1rem; color: #334155; }
+      .job-human__grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .job-human__card { background: rgba(255,255,255,.9); border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+      .job-human__card h4 { margin: 0 0 .5rem; font-size: 1rem; color: #111827; }
+      .job-human__card ul { margin: .5rem 0 0; padding-left: 1.1rem; }
+      .job-human__card li { margin: .4rem 0; color: #374151; }
+      .job-human__muted { margin: .5rem 0 0; color: #64748b; font-size: .95rem; }
+      @media (max-width: 760px) { .job-human__grid { grid-template-columns: 1fr; } }
       .share-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
       .share-title { font-weight: 600; margin-bottom: 1rem; color: var(--color-primary); }
       .share-icons { display: flex; gap: 1rem; }
@@ -1266,7 +1358,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
 
     let indexHtml = pageTpl
       .replace(/{{TITLE}}/g, "Знайди роботу в Польщі")
-      .replace(/{{DESCRIPTION}}/g, "220+ актуальних вакансій у всіх сферах. Легальне працевлаштування для українців та поляків.")
+      .replace(/{{DESCRIPTION}}/g, "Актуальні вакансії в різних сферах по всій Польщі. Легальне працевлаштування та підтримка.")
       .replace(/{{CONTENT}}/g, indexContent)
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
       .replace(/{{CITY}}/g, "")
