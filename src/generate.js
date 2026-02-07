@@ -723,6 +723,10 @@ function buildConditionsBlock(page, lang) {
   const workplace = isPl ? page.workplace_pl : page.workplace_ua;
   const team = isPl ? page.team_pl : page.team_ua;
   const onboarding = isPl ? page.onboarding_pl : page.onboarding_ua;
+  const sector = isPl ? page.sector_pl : page.sector_ua;
+  const equipment = isPl ? page.equipment_pl : page.equipment_ua;
+  const physical = isPl ? page.physical_pl : page.physical_ua;
+  const shiftStructure = isPl ? page.shift_structure_pl : page.shift_structure_ua;
   const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
@@ -744,6 +748,10 @@ function buildConditionsBlock(page, lang) {
   if (workplace) rows.push(`<li><strong>${isPl ? 'Typ obiektu' : 'Тип обʼєкта'}:</strong> ${escapeHtml(workplace)}</li>`);
   if (team) rows.push(`<li><strong>${isPl ? 'Zespół' : 'Команда'}:</strong> ${escapeHtml(team)}</li>`);
   if (onboarding) rows.push(`<li><strong>${isPl ? 'Onboarding' : 'Адаптація'}:</strong> ${escapeHtml(onboarding)}</li>`);
+  if (sector) rows.push(`<li><strong>${isPl ? 'Sektor' : 'Сектор'}:</strong> ${escapeHtml(sector)}</li>`);
+  if (equipment) rows.push(`<li><strong>${isPl ? 'Sprzęt' : 'Обладнання'}:</strong> ${escapeHtml(equipment)}</li>`);
+  if (physical) rows.push(`<li><strong>${isPl ? 'Wymagania fizyczne' : 'Фізичні вимоги'}:</strong> ${escapeHtml(physical)}</li>`);
+  if (shiftStructure) rows.push(`<li><strong>${isPl ? 'Struktura zmiany' : 'Структура зміни'}:</strong> ${escapeHtml(shiftStructure)}</li>`);
   if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
 
   return `

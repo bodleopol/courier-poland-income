@@ -298,6 +298,78 @@ const DAILY_TASKS = {
   ]
 };
 
+const INDUSTRY_SECTORS = {
+  ua: [
+    "Сектор: FMCG (повсякденні товари)",
+    "Сектор: automotive (автодеталі)",
+    "Сектор: fashion (одяг/взуття)",
+    "Сектор: food (харчове виробництво)",
+    "Сектор: electronics (електроніка)",
+    "Сектор: pharma (фарма/косметика)"
+  ],
+  pl: [
+    "Sektor: FMCG (towary codzienne)",
+    "Sektor: automotive (części)",
+    "Sektor: fashion (odzież/obuwie)",
+    "Sektor: food (produkcja spożywcza)",
+    "Sektor: electronics (elektronika)",
+    "Sektor: pharma (farmacja/kosmetyki)"
+  ]
+};
+
+const EQUIPMENT_LIST = {
+  ua: [
+    "Обладнання: сканери Zebra/Honeywell",
+    "Обладнання: електричні рокли",
+    "Обладнання: пакувальні машини",
+    "Обладнання: конвеєрні лінії",
+    "Обладнання: професійна посудомийна машина",
+    "Обладнання: інструментальні набори"
+  ],
+  pl: [
+    "Sprzęt: skanery Zebra/Honeywell",
+    "Sprzęt: wózki elektryczne",
+    "Sprzęt: maszyny pakujące",
+    "Sprzęt: linie taśmowe",
+    "Sprzęt: profesjonalna zmywarka",
+    "Sprzęt: zestawy narzędzi"
+  ]
+};
+
+const PHYSICAL_REQUIREMENTS = {
+  ua: [
+    "Фізичні вимоги: піднімання до 10 кг",
+    "Фізичні вимоги: піднімання до 15 кг",
+    "Фізичні вимоги: робота стоячи 6–8 год",
+    "Фізичні вимоги: багато ходьби протягом зміни",
+    "Фізичні вимоги: робота у швидкому темпі"
+  ],
+  pl: [
+    "Wymagania fizyczne: dźwiganie do 10 kg",
+    "Wymagania fizyczne: dźwiganie do 15 kg",
+    "Wymagania fizyczne: praca stojąca 6–8 h",
+    "Wymagania fizyczne: dużo chodzenia w trakcie zmiany",
+    "Wymagania fizyczne: praca w szybkim tempie"
+  ]
+};
+
+const SHIFT_STRUCTURE = {
+  ua: [
+    "Структура зміни: ранкова зона",
+    "Структура зміни: вечірня зона",
+    "Структура зміни: нічна зона",
+    "Структура зміни: ротація зон кожні 2-3 год",
+    "Структура зміни: одна основна зона"
+  ],
+  pl: [
+    "Struktura zmiany: strefa poranna",
+    "Struktura zmiany: strefa wieczorna",
+    "Struktura zmiany: strefa nocna",
+    "Struktura zmiany: rotacja stref co 2-3 h",
+    "Struktura zmiany: jedna główna strefa"
+  ]
+};
+
 const LANGUAGE_REQUIREMENTS = {
   ua: [
     "Польська мова: базовий рівень A1/A2.",
@@ -883,6 +955,14 @@ Object.keys(ROLES).forEach(catKey => {
       let onboardingPL;
       let dailyUA;
       let dailyPL;
+      let sectorUA;
+      let sectorPL;
+      let equipmentUA;
+      let equipmentPL;
+      let physicalUA;
+      let physicalPL;
+      let shiftStructUA;
+      let shiftStructPL;
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -944,6 +1024,14 @@ Object.keys(ROLES).forEach(catKey => {
         onboardingPL = getRandom(ONBOARDING_NOTES.pl);
         dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2);
         dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2);
+        sectorUA = getRandom(INDUSTRY_SECTORS.ua);
+        sectorPL = getRandom(INDUSTRY_SECTORS.pl);
+        equipmentUA = getRandom(EQUIPMENT_LIST.ua);
+        equipmentPL = getRandom(EQUIPMENT_LIST.pl);
+        physicalUA = getRandom(PHYSICAL_REQUIREMENTS.ua);
+        physicalPL = getRandom(PHYSICAL_REQUIREMENTS.pl);
+        shiftStructUA = getRandom(SHIFT_STRUCTURE.ua);
+        shiftStructPL = getRandom(SHIFT_STRUCTURE.pl);
 
         requirementItemsUA = [
           `Досвід: ${experienceUA}`,
@@ -974,7 +1062,11 @@ Object.keys(ROLES).forEach(catKey => {
           workplacePL,
           teamPL,
           onboardingPL,
-          dailyPL.join(' | ')
+          dailyPL.join(' | '),
+          sectorPL,
+          equipmentPL,
+          physicalPL,
+          shiftStructPL
         ].join('|');
         tries += 1;
       } while (usedSignatures.has(signature) && tries < 8);
@@ -1009,6 +1101,13 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${workplaceUA}</li>
             <li>${teamUA}</li>
             <li>${onboardingUA}</li>
+          </ul>
+          <h3>Сектор, обладнання, навантаження</h3>
+          <ul>
+            <li>${sectorUA}</li>
+            <li>${equipmentUA}</li>
+            <li>${physicalUA}</li>
+            <li>${shiftStructUA}</li>
           </ul>
           <h3>Щоденні процеси</h3>
           <ul>${dailyUA.map(d => `<li>${d}</li>`).join('')}</ul>
@@ -1045,6 +1144,13 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${workplacePL}</li>
             <li>${teamPL}</li>
             <li>${onboardingPL}</li>
+          </ul>
+          <h3>Sektor, sprzęt, obciążenie</h3>
+          <ul>
+            <li>${sectorPL}</li>
+            <li>${equipmentPL}</li>
+            <li>${physicalPL}</li>
+            <li>${shiftStructPL}</li>
           </ul>
           <h3>Codzienne procesy</h3>
           <ul>${dailyPL.map(d => `<li>${d}</li>`).join('')}</ul>
@@ -1098,6 +1204,14 @@ Object.keys(ROLES).forEach(catKey => {
         onboarding_pl: onboardingPL,
         daily_ua: dailyUA,
         daily_pl: dailyPL,
+        sector_ua: sectorUA,
+        sector_pl: sectorPL,
+        equipment_ua: equipmentUA,
+        equipment_pl: equipmentPL,
+        physical_ua: physicalUA,
+        physical_pl: physicalPL,
+        shift_structure_ua: shiftStructUA,
+        shift_structure_pl: shiftStructPL,
         excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
         excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
