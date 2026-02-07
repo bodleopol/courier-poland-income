@@ -74,102 +74,182 @@ const WORK_PATTERNS = {
 
 const GLOBAL_OFFERS = {
   ua: [
-    "Офіційне працевлаштування (Umowa o pracę / Zlecenie).",
-    "Стабільна виплата зарплати кожного 10-го числа.",
-    "Можливість отримання авансів після першого тижня.",
-    "Безкоштовна робоча форма та взуття.",
-    "Допомога координатора у вирішенні побутових питань.",
-    "Підтримка в оформленні Карти Побуту (Karta Pobytu).",
-    "Медичне страхування (ZUS) з першого дня.",
-    "Можливість працювати понаднормово (+50% до ставки).",
-    "Обіди за символічну ціну (1-5 злотих).",
-    "Безкоштовне проживання або доплата за власне житло (400-600 zł).",
-    "Пакет Multisport (спортзал, басейн - 50% оплачує фірма).",
-    "Курси польської мови для працівників.",
-    "Можливість кар'єрного росту до бригадира.",
-    "Приватна медична опіка (LuxMed).",
-    "Бонуси за продуктивність та відвідуваність.",
-    "Комфортні умови праці (клімат-контроль, кімната відпочинку).",
-    "Довіз до роботи службовим транспортом.",
-    "Премія за за рекомендованого працівника (200-500 zł).",
-    "Допомога у відкритті банківського рахунку та PESEL.",
-    "Святкові подарунки та путівки для дітей.",
-    "Надбавка за роботу у вихідні (+20%).",
-    "Премія за нічні зміни (2-4 zł/год).",
-    "Оплата заїзду на роботу в першому місяці.",
-    "Можливість переведення на інший об'єкт.",
-    "Фірмова їдальня з знижкою для працівників.",
-    "Компенсація медогляду та навчань BHP.",
-    "Системні бонуси після 3-го місяця роботи.",
-    "Доплата за знання польської мови."
+    "Офіційне працевлаштування з першого дня роботи.",
+    "Стабільні виплати двічі на місяць.",
+    "Можливість авансу після тижня роботи.",
+    "Форма та взуття від компанії безкоштовно.",
+    "Допомога у побутових питаннях.",
+    "Підтримка при оформленні Карти Побуту.",
+    "Медстрахування (ZUS) від першого дня.",
+    "Понаднормові години оплачуються підвищено.",
+    "Харчування на виробництві за символічну ціну.",
+    "Житло надається або компенсується (400-600 zł).",
+    "Multisport зі знижкою 50% від компанії.",
+    "Безкоштовні курси польської мови.",
+    "Перспектива кар'єрного зростання.",
+    "Приватна медицина (LuxMed, Medicover).",
+    "Премії за результати та відвідуваність.",
+    "Комфортне робоче середовище з клімат-контролем.",
+    "Транспорт до місця роботи від компанії.",
+    "Бонус за рекомендацію колеги (200-500 zł).",
+    "Допомога з відкриттям рахунку в банку.",
+    "Подарунки на свята для працівників.",
+    "Доплата за роботу у вихідні дні.",
+    "Підвищена оплата нічних змін.",
+    "Компенсація витрат на переїзд у перший місяць.",
+    "Можливість переводу на інший об'єкт компанії.",
+    "Їдальня з пільговими цінами.",
+    "Оплата медогляду та навчань BHP.",
+    "Системні бонуси через 3 місяці роботи.",
+    "Надбавка за володіння польською мовою.",
+    "Щотижневі виплати для новачків.",
+    "Компенсація проїзду громадським транспортом.",
+    "Страхування від нещасних випадків на виробництві.",
+    "Знижки у партнерських магазинах та сервісах.",
+    "Оплачувані лікарняні та відпустки.",
+    "Гнучкий графік для багатодітних сімей.",
+    "Додаткові премії перед святами.",
+    "Безкоштовні тренінги та курси підвищення кваліфікації.",
+    "Відшкодування вартості дитячого садка.",
+    "Програма адаптації для новачків (7 днів).",
+    "Можливість працювати у зручну зміну після випробувального терміну.",
+    "Сучасні роздягальні та душові на підприємстві.",
+    "Кімната відпочинку з безкоштовною кавою та чаєм.",
+    "Безкоштовний Wi-Fi на території.",
+    "Організовані корпоративи та тімбілдінги.",
+    "Оплата телефонного зв'язку для координаторів.",
+    "Можливість взяти відгул у день народження.",
+    "Програма лояльності зі знижками на послуги компанії.",
+    "Додаткові вихідні за понаднормову роботу.",
+    "Премії за виконання плану (до 1000 zł).",
+    "Безкоштовні снеки та напої під час зміни.",
+    "Компенсація вартості робочого взуття та одягу.",
+    "Щомісячні лотереї призів серед працівників.",
+    "Оплата проїзду на таксі при роботі у нічну зміну.",
+    "Підтримка психолога для працівників безкоштовно."
   ],
   pl: [
-    "Oficjalne zatrudnienie (Umowa o pracę / Zlecenie).",
-    "Stabilna wypłata wynagrodzenia do 10-go każdego miesiąca.",
-    "Możliwość pobrania zaliczki po pierwszym tygodniu.",
-    "Bezpłatna odzież robocza i obuwie.",
-    "Wsparcie koordynatora w sprawach codziennych.",
-    "Pomoc w uzyskaniu Karty Pobytu.",
-    "Ubezpieczenie medyczne (ZUS) od pierwszego dnia.",
-    "Możliwość pracy w nadgodzinach (+50% stawki).",
-    "Obiady w symbolicznej cenie (1-5 zł).",
-    "Bezpłatne zakwaterowanie lub dodatek mieszkaniowy (400-600 zł).",
-    "Pakiet Multisport (siłownia, basen - 50% pokrywa firma).",
-    "Kursy języka polskiego dla pracowników.",
-    "Możliwość awansu na brygadzistę.",
-    "Prywatna opieka medyczna (LuxMed).",
-    "Premie za produktywność i frekwencję.",
-    "Komfortowe warunki pracy (klimatyzacja, chillout room).",
-    "Dojazd do pracy transportem firmowym.",
-    "Premia za polecenie pracownika (200-500 zł).",
-    "Pomoc w założeniu konta bankowego i PESEL.",
-    "Paczki świąteczne i wczasy pod gruszą.",
-    "Dodatek za pracę w weekendy (+20%).",
-    "Premia za zmiany nocne (2-4 zł/h).",
-    "Pokrycie kosztów dojazdu w 1. miesiącu.",
-    "Możliwość przeniesienia na inny obiekt.",
-    "Stołówka firmowa ze zniżką dla pracowników.",
-    "Zwrot kosztów badań i szkoleń BHP.",
-    "Bonusy systemowe po 3. miesiącu pracy.",
-    "Dodatek za znajomość języka polskiego."
+    "Oficjalne zatrudnienie od pierwszego dnia pracy.",
+    "Stabilne wypłaty dwa razy w miesiącu.",
+    "Zaliczka dostępna po tygodniu pracy.",
+    "Odzież i obuwie robocze od firmy za darmo.",
+    "Pomoc w sprawach codziennych.",
+    "Wsparcie przy oformлeniu Karty Pobytu.",
+    "Ubezpieczenie zdrowotne (ZUS) od dnia 1.",
+    "Nadgodziny płatne po wyższej stawce.",
+    "Wyżywienie w zakładzie w symbolicznej cenie.",
+    "Mieszkanie zapewnione lub dopłata (400-600 zł).",
+    "Multisport z 50% zniżką od firmy.",
+    "Bezpłatne kursy języka polskiego.",
+    "Perspektywa awansu zawodowego.",
+    "Prywatna opieka medyczna (LuxMed, Medicover).",
+    "Premie za wyniki i frekwencję.",
+    "Komfortowe środowisko pracy z klimatyzacją.",
+    "Transport do pracy zapewniany przez firmę.",
+    "Bonus za polecenie kolegi (200-500 zł).",
+    "Pomoc z założeniem konta bankowego.",
+    "Prezenty świąteczne dla pracowników.",
+    "Dodatek za pracę w weekendy.",
+    "Podwyższona stawka za zmiany nocne.",
+    "Zwrot kosztów przeprowadzki w pierwszym miesiącu.",
+    "Możliwość transferu do innego oddziału firmy.",
+    "Stołówka z cenami preferencyjnymi.",
+    "Pokrycie kosztów badań lekarskich i szkoleń BHP.",
+    "Bonusy systemowe po 3 miesiącach pracy.",
+    "Dodatek za znajomość języka polskiego.",
+    "Tygodniowe wypłaty dla nowych pracowników.",
+    "Zwrot kosztów komunikacji miejskiej.",
+    "Ubezpieczenie od wypadków w pracy.",
+    "Zniżki u partnerów i w sklepach firmowych.",
+    "Płatne zwolnienia lekarskie i urlopy.",
+    "Elastyczny grafik dla rodzin wielodzietnych.",
+    "Dodatkowe premie przed świętami.",
+    "Bezpłatne szkolenia zawodowe.",
+    "Zwrot kosztów przedszkola.",
+    "Program adaptacji dla nowych (7 dni).",
+    "Możliwość wyboru dogodnej zmiany po okresie próbnym.",
+    "Nowoczesne szatnie i prysznice na zakładzie.",
+    "Pokój relaksu z darmową kawą i herbatą.",
+    "Darmowe Wi-Fi na terenie zakładu.",
+    "Organizowane imprezy integracyjne.",
+    "Zwrot kosztów telefonu dla koordynatorów.",
+    "Dzień wolny w dniu urodzin.",
+    "Program lojalnościowy ze zniżkami.",
+    "Dodatkowe dni wolne za nadgodziny.",
+    "Premie za realizację planu (do 1000 zł).",
+    "Bezpłatne przekąski i napoje podczas zmiany.",
+    "Zwrot kosztów odzieży i obuwia roboczego.",
+    "Comiesięczne loterie nagród.",
+    "Zwrot kosztów taksówki przy pracy nocnej.",
+    "Bezpłatne wsparcie psychologa."
   ]
 };
 
 const SUPPORT_NOTES = {
   ua: [
-    "Підтримка для кандидатів з України: консультації та супровід.",
-    "Допомога з легалізацією та подачею документів.",
-    "Координатор на зв'язку українською мовою.",
-    "Супровід у перші 7 днів адаптації.",
-    "Інструктаж на старті (BHP + правила об'єкта).",
-    "Підтримка з пошуком житла у місті."
+    "Підтримка для кандидатів з України у всіх питаннях.",
+    "Допомога з легалізацією перебування.",
+    "Координатор розмовляє українською.",
+    "Супровід на початковому етапі роботи.",
+    "Повний інструктаж з техніки безпеки на старті.",
+    "Допомагаємо знайти житло поблизу.",
+    "Консультації з оформлення документів.",
+    "Українськомовна підтримка 24/7.",
+    "Адаптація в перші робочі дні з наставником.",
+    "Інформаційна підтримка щодо правил роботи.",
+    "Допомога в побутових питаннях.",
+    "Супровід при оформленні в агенції."
   ],
   pl: [
-    "Wsparcie dla kandydatów z Ukrainy: konsultacje i opieka.",
-    "Pomoc w legalizacji i dokumentach.",
-    "Koordynator dostępny po ukraińsku.",
-    "Opieka w pierwszych 7 dniach adaptacji.",
-    "Instruktaż na start (BHP + zasady obiektu).",
-    "Wsparcie w znalezieniu mieszkania w mieście."
+    "Wsparcie dla pracowników z Ukrainy.",
+    "Pomoc przy legalizacji pobytu.",
+    "Koordynator mówiący po ukraińsku.",
+    "Wsparcie na początku pracy.",
+    "Pełny instruktaż BHP na start.",
+    "Pomoc w szukaniu mieszkania.",
+    "Konsultacje ws. dokumentów.",
+    "Ukraińskojęzyczne wsparcie 24/7.",
+    "Adaptacja z opiekunem w pierwszych dniach.",
+    "Informacje o zasadach pracy.",
+    "Pomoc w sprawach codziennych.",
+    "Opieka przy procedurach zatrudnienia."
   ]
 };
 
 const WORKPLACE_DETAILS = {
   ua: [
-    "Сучасне обладнання та інструменти на робочому місці.",
-    "Стабільний обсяг роботи протягом року.",
-    "Чіткі норми та зрозумілі KPI.",
-    "Можливість додаткових годин за бажанням.",
-    "Оплата за кожну відпрацьовану годину без затримок.",
-    "Комунікація через Viber/Telegram для зручності."
+    "Нове обладнання на робочих місцях.",
+    "Робота є цілий рік, без сезонності.",
+    "Зрозумілі вимоги та показники ефективності.",
+    "Можна працювати понаднормово за бажанням.",
+    "Виплата зарплати вчасно, без затримок.",
+    "Зв'язок через месенджери (Viber/Telegram).",
+    "Сучасні інструменти і техніка.",
+    "Стабільні замовлення весь рік.",
+    "Прозора система оцінки роботи.",
+    "Додаткові зміни доступні за запитом.",
+    "Розрахунок за всі відпрацьовані години.",
+    "Онлайн-підтримка для працівників.",
+    "Обладнання у хорошому стані.",
+    "Постійний потік замовлень.",
+    "Простi та чіткі правила роботи."
   ],
   pl: [
-    "Nowoczesny sprzęt i narzędzia na stanowisku.",
-    "Stały wolumen pracy przez cały rok.",
-    "Jasne normy i przejrzyste KPI.",
-    "Możliwość dodatkowych godzin na życzenie.",
-    "Wypłata za każdą przepracowaną godzinę bez opóźnień.",
-    "Kontakt przez Viber/Telegram dla wygody."
+    "Nowy sprzęt w miejscu pracy.",
+    "Praca przez cały rok, bez sezonowości.",
+    "Przejrzyste wymagania i KPI.",
+    "Nadgodziny dostępne na życzenie.",
+    "Wypłaty terminowe, bez opóźnień.",
+    "Komunikacja przez komunikatory.",
+    "Nowoczesne narzędzia i technologia.",
+    "Stałe zlecenia cały rok.",
+    "Transparentny system oceny pracy.",
+    "Dodatkowe zmiany na życzenie.",
+    "Rozliczenie wszystkich przepracowanych godzin.",
+    "Wsparcie online dla pracowników.",
+    "Sprzęt w dobrym stanie technicznym.",
+    "Ciągły napływ zamówień.",
+    "Proste i jasne zasady współpracy."
   ]
 };
 
@@ -963,6 +1043,9 @@ Object.keys(ROLES).forEach(catKey => {
       let physicalPL;
       let shiftStructUA;
       let shiftStructPL;
+      
+      // Categories that should have sector/equipment fields
+      const categoriesWithSector = ['production', 'construction', 'agriculture', 'cleaning'];
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -1024,14 +1107,19 @@ Object.keys(ROLES).forEach(catKey => {
         onboardingPL = getRandom(ONBOARDING_NOTES.pl);
         dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2);
         dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2);
-        sectorUA = getRandom(INDUSTRY_SECTORS.ua);
-        sectorPL = getRandom(INDUSTRY_SECTORS.pl);
-        equipmentUA = getRandom(EQUIPMENT_LIST.ua);
-        equipmentPL = getRandom(EQUIPMENT_LIST.pl);
-        physicalUA = getRandom(PHYSICAL_REQUIREMENTS.ua);
-        physicalPL = getRandom(PHYSICAL_REQUIREMENTS.pl);
-        shiftStructUA = getRandom(SHIFT_STRUCTURE.ua);
-        shiftStructPL = getRandom(SHIFT_STRUCTURE.pl);
+        
+        // Only add sector/equipment for specific categories (production, construction, agriculture, cleaning)
+        // NOT for logistics, hospitality, retail, beauty, education
+        if (categoriesWithSector.includes(catKey)) {
+          sectorUA = getRandom(INDUSTRY_SECTORS.ua);
+          sectorPL = getRandom(INDUSTRY_SECTORS.pl);
+          equipmentUA = getRandom(EQUIPMENT_LIST.ua);
+          equipmentPL = getRandom(EQUIPMENT_LIST.pl);
+          physicalUA = getRandom(PHYSICAL_REQUIREMENTS.ua);
+          physicalPL = getRandom(PHYSICAL_REQUIREMENTS.pl);
+          shiftStructUA = getRandom(SHIFT_STRUCTURE.ua);
+          shiftStructPL = getRandom(SHIFT_STRUCTURE.pl);
+        }
 
         requirementItemsUA = [
           `Досвід: ${experienceUA}`,
@@ -1062,12 +1150,14 @@ Object.keys(ROLES).forEach(catKey => {
           workplacePL,
           teamPL,
           onboardingPL,
-          dailyPL.join(' | '),
-          sectorPL,
-          equipmentPL,
-          physicalPL,
-          shiftStructPL
+          dailyPL.join(' | ')
         ].join('|');
+        
+        // Add sector/equipment only for specific categories to signature
+        if (categoriesWithSector.includes(catKey)) {
+          signature += `|${sectorPL}|${equipmentPL}|${physicalPL}|${shiftStructPL}`;
+        }
+        
         tries += 1;
       } while (usedSignatures.has(signature) && tries < 8);
 
@@ -1102,13 +1192,13 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${teamUA}</li>
             <li>${onboardingUA}</li>
           </ul>
-          <h3>Сектор, обладнання, навантаження</h3>
+          ${['production', 'construction', 'agriculture', 'cleaning'].includes(catKey) ? `<h3>Сектор, обладнання, навантаження</h3>
           <ul>
             <li>${sectorUA}</li>
             <li>${equipmentUA}</li>
             <li>${physicalUA}</li>
             <li>${shiftStructUA}</li>
-          </ul>
+          </ul>` : ''}
           <h3>Щоденні процеси</h3>
           <ul>${dailyUA.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Ваші обов'язки:</h3>
@@ -1145,13 +1235,13 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${teamPL}</li>
             <li>${onboardingPL}</li>
           </ul>
-          <h3>Sektor, sprzęt, obciążenie</h3>
+          ${['production', 'construction', 'agriculture', 'cleaning'].includes(catKey) ? `<h3>Sektor, sprzęt, obciążenie</h3>
           <ul>
             <li>${sectorPL}</li>
             <li>${equipmentPL}</li>
             <li>${physicalPL}</li>
             <li>${shiftStructPL}</li>
-          </ul>
+          </ul>` : ''}
           <h3>Codzienne procesy</h3>
           <ul>${dailyPL.map(d => `<li>${d}</li>`).join('')}</ul>
           <h3>Twoje obowiązki:</h3>
@@ -1161,7 +1251,7 @@ Object.keys(ROLES).forEach(catKey => {
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
       `;
 
-      JOBS_DB.push({
+      const jobData = {
         slug: slug,
         category: catKey,
         city: city.ua,
@@ -1204,14 +1294,6 @@ Object.keys(ROLES).forEach(catKey => {
         onboarding_pl: onboardingPL,
         daily_ua: dailyUA,
         daily_pl: dailyPL,
-        sector_ua: sectorUA,
-        sector_pl: sectorPL,
-        equipment_ua: equipmentUA,
-        equipment_pl: equipmentPL,
-        physical_ua: physicalUA,
-        physical_pl: physicalPL,
-        shift_structure_ua: shiftStructUA,
-        shift_structure_pl: shiftStructPL,
         excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
         excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
@@ -1223,7 +1305,21 @@ Object.keys(ROLES).forEach(catKey => {
         language: "uk",
         employment_type: "full-time",
         date_posted: new Date().toISOString()
-      });
+      };
+      
+      // Add sector/equipment only for specific categories
+      if (categoriesWithSector.includes(catKey)) {
+        jobData.sector_ua = sectorUA;
+        jobData.sector_pl = sectorPL;
+        jobData.equipment_ua = equipmentUA;
+        jobData.equipment_pl = equipmentPL;
+        jobData.physical_ua = physicalUA;
+        jobData.physical_pl = physicalPL;
+        jobData.shift_structure_ua = shiftStructUA;
+        jobData.shift_structure_pl = shiftStructPL;
+      }
+      
+      JOBS_DB.push(jobData);
 
     });
   });
