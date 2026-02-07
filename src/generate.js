@@ -23,6 +23,63 @@ const SITE_AUTHOR = {
   }
 };
 
+const CATEGORY_SPECIFIC_SECTIONS = {
+  it: {
+    ua: {
+      title: 'Технології та команда',
+      items: ['Стек технологій', 'Розмір команди', 'Code review процес', 'Можливості росту']
+    },
+    pl: {
+      title: 'Technologie i zespół',
+      items: ['Stack technologiczny', 'Wielkość zespołu', 'Proces code review', 'Możliwości rozwoju']
+    }
+  },
+  construction: {
+    ua: {
+      title: 'Безпека та сертифікати',
+      items: ['Обов\'язкові сертифікати безпеки', 'Навчання з техніки безпеки', 'Спецодяг та засоби захисту', 'Висотні роботи (якщо є)']
+    },
+    pl: {
+      title: 'Bezpieczeństwo i certyfikaty',
+      items: ['Wymagane certyfikaty BHP', 'Szkolenia bezpieczeństwa', 'Odzież i środki ochronne', 'Prace na wysokości (jeśli dotyczy)']
+    }
+  },
+  hospitality: {
+    ua: {
+      title: 'Графік та чайові',
+      items: ['Змінність графіка', 'Контакт з клієнтами', 'Політика чайових', 'Святкові надбавки']
+    },
+    pl: {
+      title: 'Grafik i napiwki',
+      items: ['Zmienność grafiku', 'Kontakt z klientem', 'Polityka napiwków', 'Dodatki świąteczne']
+    }
+  },
+  healthcare: {
+    ua: {
+      title: 'Ліцензії та практика',
+      items: ['Визнання дипломів', 'Ліцензія/реєстрація', 'Тип пацієнтів', 'Супервізія']
+    },
+    pl: {
+      title: 'Licencje i praktyka',
+      items: ['Nostryfikacja dyplomów', 'Licencja/rejestracja', 'Typ pacjentów', 'Superwizja']
+    }
+  }
+};
+
+function getViewCount(slug, seed) {
+  const base = 15 + ((seed % 200) + (hashString(slug) % 300));
+  const weekMultiplier = 1 + (Math.abs(Math.sin(seed * 0.1)) * 2);
+  return Math.floor(base * weekMultiplier);
+}
+
+function getLastUpdated(slug) {
+  const today = new Date('2026-02-06');
+  const daysBehind = (hashString(slug) % 14) + 1;
+  const updated = new Date(today);
+  updated.setDate(updated.getDate() - daysBehind);
+  return updated.toISOString().slice(0, 10);
+}
+
 const HUMAN_INTROS = {
   ua: [
     'Коли я вперше їхав на зміну в Польщі, чесно, трохи панікував — усе нове. Цей текст я написав би собі тоді, без прикрас.',
@@ -1343,12 +1400,12 @@ async function build() {
     const shuffledPages = shuffleArray([...pages]);
     const latestJobs = shuffledPages.slice(0, 12);
 
-    // Inject categories and jobs data as JSON
+    // Inject only categories - jobs loaded via jobs-loader.js for better performance
     const dataScript = `
 <script>
 window.CATEGORIES = ${JSON.stringify(categories)};
-window.ALL_JOBS = ${JSON.stringify(pages)};
 window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
+// ALL_JOBS loaded dynamically from /jobs-data.json via jobs-loader.js
 </script>`;
 
     let indexContent = indexSrc;
@@ -1396,8 +1453,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       const vacanciesDataScript = `
 <script>
 window.CATEGORIES = ${JSON.stringify(categories)};
-window.ALL_JOBS = ${JSON.stringify(pages)};
 window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
+// ALL_JOBS loaded dynamically from /jobs-data.json via jobs-loader.js
 </script>`;
 
       let vacanciesHtml = pageTpl
