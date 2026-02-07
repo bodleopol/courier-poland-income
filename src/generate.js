@@ -1373,7 +1373,12 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
+Sitemap: https://rybezh.site/sitemap-index.xml
+Sitemap: https://rybezh.site/sitemap-static.xml
+Sitemap: https://rybezh.site/sitemap-vacancies.xml
+Sitemap: https://rybezh.site/sitemap-blog.xml
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
