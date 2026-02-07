@@ -134,7 +134,7 @@ const GLOBAL_OFFERS = {
     "Zaliczka dostępna po tygodniu pracy.",
     "Odzież i obuwie robocze od firmy za darmo.",
     "Pomoc w sprawach codziennych.",
-    "Wsparcie przy oformлeniu Karty Pobytu.",
+    "Wsparcie przy wyrobieniu Karty Pobytu.",
     "Ubezpieczenie zdrowotne (ZUS) od dnia 1.",
     "Nadgodziny płatne po wyższej stawce.",
     "Wyżywienie w zakładzie w symbolicznej cenie.",
@@ -198,7 +198,27 @@ const SUPPORT_NOTES = {
     "Адаптація в перші робочі дні з наставником.",
     "Інформаційна підтримка щодо правил роботи.",
     "Допомога в побутових питаннях.",
-    "Супровід при оформленні в агенції."
+    "Супровід при оформленні в агенції.",
+    "Пояснюємо умови договору простими словами.",
+    "Допомагаємо з записом на PESEL/візитами (за потреби).",
+    "Надаємо контакт координатора, який відповідає протягом дня.",
+    "Є зрозуміла інструкція щодо першого дня та адреси об’єкта.",
+    "Підказуємо, як доїхати до роботи з житла/центру міста.",
+    "Підтримка при зміні графіка або переведенні на інший об’єкт.",
+    "Допомога з відкриттям рахунку та першим переказом зарплати.",
+    "Пам’ятка з основними словами польською для старту.",
+    "Можна звертатися з питаннями щодо лікаря/страхування.",
+    "Є канал зв’язку в месенджері для швидких питань.",
+    "Підтримка у разі заміни зміни/підміни колеги.",
+    "Підказуємо по місцевій інфраструктурі: аптека, магазин, зупинка.",
+    "Нагадування щодо BHP та вимог об’єкта перед виходом на зміну.",
+    "За потреби — допомога з перекладом базових документів.",
+    "Пояснюємо правила відпусток та лікарняних.",
+    "Підтримка під час першої виплати (перевірка розрахунку годин).",
+    "Організовуємо коротке знайомство з бригадою в перший день.",
+    "Допомагаємо з підбором робочого одягу/взуття по розміру.",
+    "Підказуємо, які документи взяти на перший вихід.",
+    "Є можливість уточнити деталі вакансії перед приїздом."
   ],
   pl: [
     "Wsparcie dla pracowników z Ukrainy.",
@@ -212,7 +232,27 @@ const SUPPORT_NOTES = {
     "Adaptacja z opiekunem w pierwszych dniach.",
     "Informacje o zasadach pracy.",
     "Pomoc w sprawach codziennych.",
-    "Opieka przy procedurach zatrudnienia."
+    "Opieka przy procedurach zatrudnienia.",
+    "Wyjaśniamy warunki umowy w prosty sposób.",
+    "Pomoc w umawianiu wizyt/PESEL (jeśli potrzebne).",
+    "Kontakt do koordynatora dostępny w ciągu dnia.",
+    "Jasna informacja o pierwszym dniu i adresie obiektu.",
+    "Podpowiadamy, jak dojechać do pracy z mieszkania/centrum.",
+    "Wsparcie przy zmianie grafiku lub przeniesieniu na inny obiekt.",
+    "Pomoc w założeniu konta i pierwszej wypłacie.",
+    "Mini-słowniczek PL na start.",
+    "Możesz pytać o lekarza/ubezpieczenie.",
+    "Kanał w komunikatorze do szybkich pytań.",
+    "Wsparcie w razie zamiany zmiany/zastępstw.",
+    "Podpowiadamy lokalnie: apteka, sklep, przystanek.",
+    "Przypomnienia BHP i wymagań obiektu przed startem.",
+    "W razie potrzeby — pomoc w tłumaczeniu podstawowych dokumentów.",
+    "Wyjaśniamy zasady urlopów i L4.",
+    "Wsparcie przy pierwszym rozliczeniu godzin.",
+    "Krótki onboarding zespołowy pierwszego dnia.",
+    "Pomoc w doborze odzieży/obuwia roboczego.",
+    "Podpowiadamy, jakie dokumenty zabrać na pierwszy dzień.",
+    "Możliwość doprecyzowania szczegółów przed przyjazdem."
   ]
 };
 
@@ -232,7 +272,32 @@ const WORKPLACE_DETAILS = {
     "Онлайн-підтримка для працівників.",
     "Обладнання у хорошому стані.",
     "Постійний потік замовлень.",
-    "Простi та чіткі правила роботи."
+    "Простi та чіткі правила роботи.",
+    "Чітко визначені перерви та час на обід.",
+    "Є зрозумілий план задач на кожну зміну.",
+    "Працюємо за стандартами якості — все пояснюють на старті.",
+    "Дружня атмосфера в команді, без «хаосу» на зміні.",
+    "Розподіл задач без «перекосів» між працівниками.",
+    "Внутрішні інструкції доступні у друкованому/онлайн форматі.",
+    "На місці є старший зміни, який допомагає з питаннями.",
+    "Можна уточнювати задачі в процесі — завжди є контакт.",
+    "Стабільне навантаження протягом зміни.",
+    "Комфортна зона відпочинку під час перерв.",
+    "Є можливість підробітків у пікові періоди.",
+    "Завдання розписані по кроках — зручно новачкам.",
+    "Дотримання норм безпеки та порядку на робочому місці.",
+    "Є місце для зберігання особистих речей.",
+    "Реальні години — без «зрізань» у табелях.",
+    "Зручні маршрути всередині об’єкта (логіка руху пояснюється).",
+    "Стабільні зміни, без різких переносів у останній момент.",
+    "Об’єкт працює за графіком — без постійних форс-мажорів.",
+    "Є короткі щотижневі підсумки та зворотний зв’язок.",
+    "Можна обговорити зміну обов’язків після адаптації.",
+    "Підтримка менеджера на місці у робочий час.",
+    "Планування змін наперед (часто на 2–4 тижні).",
+    "Чіткі правила щодо перерв, телефону та форми.",
+    "Підказки та маркування зон допомагають швидко зорієнтуватися.",
+    "Процеси стандартизовані — менше стресу для новачків."
   ],
   pl: [
     "Nowy sprzęt w miejscu pracy.",
@@ -249,7 +314,32 @@ const WORKPLACE_DETAILS = {
     "Wsparcie online dla pracowników.",
     "Sprzęt w dobrym stanie technicznym.",
     "Ciągły napływ zamówień.",
-    "Proste i jasne zasady współpracy."
+    "Proste i jasne zasady współpracy.",
+    "Jasno określone przerwy i czas na posiłek.",
+    "Plan zadań na każdą zmianę.",
+    "Standardy jakości wyjaśnione na starcie.",
+    "Przyjazna atmosfera w zespole.",
+    "Równy podział obowiązków na zmianie.",
+    "Instrukcje dostępne w wersji papierowej/online.",
+    "Na miejscu jest lider zmiany do wsparcia.",
+    "Można dopytać o zadania w trakcie pracy.",
+    "Stabilne tempo pracy w ciągu zmiany.",
+    "Strefa odpoczynku w czasie przerw.",
+    "Możliwość dodatkowych godzin w okresach szczytu.",
+    "Zadania opisane krok po kroku — dobre dla nowych.",
+    "Nacisk na bezpieczeństwo i porządek na stanowisku.",
+    "Miejsce na rzeczy osobiste.",
+    "Rzeczywiste rozliczenie godzin.",
+    "Czytelne trasy i oznaczenia na obiekcie.",
+    "Stabilny grafik bez nagłych zmian w ostatniej chwili.",
+    "Procesy bez ciągłych „awarii organizacyjnych”.",
+    "Krótkie podsumowania i feedback (często co tydzień).",
+    "Możliwość rozmowy o zakresie obowiązków po adaptacji.",
+    "Wsparcie menedżera na miejscu w godzinach pracy.",
+    "Planowanie zmian z wyprzedzeniem (2–4 tyg.).",
+    "Jasne zasady dot. przerw, telefonu i odzieży.",
+    "Oznaczenia stref pomagają szybko się odnaleźć.",
+    "Standaryzacja procesów — mniej stresu dla nowych."
   ]
 };
 
@@ -1053,6 +1143,26 @@ Object.keys(ROLES).forEach(catKey => {
       let signature;
       let tries = 0;
 
+      const headingsUA = {
+        offers: ["Що ми пропонуємо?", "Умови та бонуси", "Переваги роботи", "Що входить у пакет?"],
+        info: ["Додаткова інформація", "Як проходить робота", "Важливі деталі", "Організація процесу"],
+        req: ["Вимоги", "Кого шукаємо", "Очікування до кандидата", "Критерії"],
+        housing: ["Проживання та транспорт", "Житло й доїзд", "Де жити і як доїхати", "Логістика"],
+        format: ["Формат роботи", "Робоче середовище", "Команда і адаптація", "Як усе влаштовано"],
+        daily: ["Щоденні процеси", "Як проходить зміна", "Рутина на об’єкті", "Організація дня"],
+        duties: ["Ваші обов'язки:", "Що потрібно робити:", "Зона відповідальності:", "Основні задачі:"]
+      };
+
+      const headingsPL = {
+        offers: ["Co oferujemy?", "Warunki i bonusy", "Korzyści z pracy", "Pakiet dla pracownika"],
+        info: ["Dodatkowe informacje", "Jak wygląda praca", "Ważne szczegóły", "Organizacja procesu"],
+        req: ["Wymagania", "Kogo szukamy", "Oczekiwania wobec kandydata", "Kryteria"],
+        housing: ["Zakwaterowanie i dojazd", "Mieszkanie i dojazd", "Gdzie mieszkasz i jak dojeżdżasz", "Logistyka"],
+        format: ["Format pracy", "Środowisko pracy", "Zespół i wdrożenie", "Jak to działa"],
+        daily: ["Codzienne procesy", "Jak wygląda zmiana", "Rutyna na obiekcie", "Organizacja dnia"],
+        duties: ["Twoje obowiązki:", "Co będziesz robić:", "Zakres zadań:", "Główne zadania:"]
+      };
+
       do {
         titleUA = getRandom(jobTemplate.titles_ua);
         titlePL = getRandom(jobTemplate.titles_pl);
@@ -1081,12 +1191,12 @@ Object.keys(ROLES).forEach(catKey => {
         offersPL = offerItemsPL.map(o => `<li>${o}</li>`).join('');
 
         detailItemsUA = [
-          ...getMultipleRandom(SUPPORT_NOTES.ua, 2),
-          ...getMultipleRandom(WORKPLACE_DETAILS.ua, 2)
+          ...getMultipleRandom(SUPPORT_NOTES.ua, 2 + Math.floor(Math.random() * 2)),
+          ...getMultipleRandom(WORKPLACE_DETAILS.ua, 2 + Math.floor(Math.random() * 2))
         ];
         detailItemsPL = [
-          ...getMultipleRandom(SUPPORT_NOTES.pl, 2),
-          ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2)
+          ...getMultipleRandom(SUPPORT_NOTES.pl, 2 + Math.floor(Math.random() * 2)),
+          ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2 + Math.floor(Math.random() * 2))
         ];
 
         languageUA = getRandom(LANGUAGE_LEVELS.ua);
@@ -1105,8 +1215,8 @@ Object.keys(ROLES).forEach(catKey => {
         teamPL = getRandom(TEAM_SIZES.pl);
         onboardingUA = getRandom(ONBOARDING_NOTES.ua);
         onboardingPL = getRandom(ONBOARDING_NOTES.pl);
-        dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2);
-        dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2);
+        dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2 + Math.floor(Math.random() * 2));
+        dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2 + Math.floor(Math.random() * 2));
         
         // Only add sector/equipment for specific categories (production, construction, agriculture, cleaning)
         // NOT for logistics, hospitality, retail, beauty, education
@@ -1165,8 +1275,41 @@ Object.keys(ROLES).forEach(catKey => {
 
       const slug = `${city.slug}-${catKey}-${titlePL.toLowerCase().replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/[^a-z0-9]+/g, '-')}-${jobCounter++}`;
 
+      const hUA = {
+        offers: getRandom(headingsUA.offers),
+        info: getRandom(headingsUA.info),
+        req: getRandom(headingsUA.req),
+        housing: getRandom(headingsUA.housing),
+        format: getRandom(headingsUA.format),
+        daily: getRandom(headingsUA.daily),
+        duties: getRandom(headingsUA.duties)
+      };
+      const hPL = {
+        offers: getRandom(headingsPL.offers),
+        info: getRandom(headingsPL.info),
+        req: getRandom(headingsPL.req),
+        housing: getRandom(headingsPL.housing),
+        format: getRandom(headingsPL.format),
+        daily: getRandom(headingsPL.daily),
+        duties: getRandom(headingsPL.duties)
+      };
+
+      const introUA = getRandom([
+        `Коротко про позицію: робота у м. ${city.ua}, старт — ${startUA}.`,
+        `Вакансія від ${company} у м. ${city.ua}. Вихід можливий: ${startUA}.`,
+        `Робота у ${city.ua}: графік ${shiftsUA}, режим ${patternUA}.`,
+        `Шукаємо кандидата у м. ${city.ua}. Початок: ${startUA}, договір: ${contractUA}.`
+      ]);
+      const introPL = getRandom([
+        `Krótko o stanowisku: praca w ${city.pl}, start: ${startPL}.`,
+        `Oferta od ${company} w ${city.pl}. Możliwy start: ${startPL}.`,
+        `Praca w ${city.pl}: grafik ${shiftsPL}, system ${patternPL}.`,
+        `Szukamy osoby w ${city.pl}. Start: ${startPL}, umowa: ${contractPL}.`
+      ]);
+
       const bodyUA = `
         <div class="vacancy-block">
+          <p>${introUA}</p>
           <div class="job-meta">
             <p><strong>🏢 Компанія:</strong> ${company}</p>
             <p><strong>🕒 Графік:</strong> ${shiftsUA}</p>
@@ -1175,18 +1318,18 @@ Object.keys(ROLES).forEach(catKey => {
             <p><strong>📝 Тип договору:</strong> ${contractUA}</p>
           </div>
           <hr>
-          <h3>Що ми пропонуємо?</h3>
+          <h3>${hUA.offers}</h3>
           <ul>${offersUA}</ul>
-          <h3>Додаткова інформація</h3>
+          <h3>${hUA.info}</h3>
           <ul>${detailItemsUA.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>Вимоги</h3>
+          <h3>${hUA.req}</h3>
           <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>Проживання та транспорт</h3>
+          <h3>${hUA.housing}</h3>
           <ul>
             <li>${housingUA}</li>
             <li>${transportUA}</li>
           </ul>
-          <h3>Формат роботи</h3>
+          <h3>${hUA.format}</h3>
           <ul>
             <li>${workplaceUA}</li>
             <li>${teamUA}</li>
@@ -1199,9 +1342,9 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${physicalUA}</li>
             <li>${shiftStructUA}</li>
           </ul>` : ''}
-          <h3>Щоденні процеси</h3>
+          <h3>${hUA.daily}</h3>
           <ul>${dailyUA.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>Ваші обов'язки:</h3>
+          <h3>${hUA.duties}</h3>
           <ul>${tasksUA}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
         </div>
@@ -1210,6 +1353,7 @@ Object.keys(ROLES).forEach(catKey => {
 
       const bodyPL = `
         <div class="vacancy-block">
+          <p>${introPL}</p>
           <div class="job-meta">
             <p><strong>🏢 Firma:</strong> ${company}</p>
             <p><strong>🕒 Grafiki:</strong> ${shiftsPL}</p>
@@ -1218,18 +1362,18 @@ Object.keys(ROLES).forEach(catKey => {
             <p><strong>📝 Umowa:</strong> ${contractPL}</p>
           </div>
           <hr>
-          <h3>Co oferujemy?</h3>
+          <h3>${hPL.offers}</h3>
           <ul>${offersPL}</ul>
-          <h3>Dodatkowe informacje</h3>
+          <h3>${hPL.info}</h3>
           <ul>${detailItemsPL.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>Wymagania</h3>
+          <h3>${hPL.req}</h3>
           <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>Zakwaterowanie i dojazd</h3>
+          <h3>${hPL.housing}</h3>
           <ul>
             <li>${housingPL}</li>
             <li>${transportPL}</li>
           </ul>
-          <h3>Format pracy</h3>
+          <h3>${hPL.format}</h3>
           <ul>
             <li>${workplacePL}</li>
             <li>${teamPL}</li>
@@ -1242,9 +1386,9 @@ Object.keys(ROLES).forEach(catKey => {
             <li>${physicalPL}</li>
             <li>${shiftStructPL}</li>
           </ul>` : ''}
-          <h3>Codzienne procesy</h3>
+          <h3>${hPL.daily}</h3>
           <ul>${dailyPL.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>Twoje obowiązki:</h3>
+          <h3>${hPL.duties}</h3>
           <ul>${tasksPL}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
         </div>
