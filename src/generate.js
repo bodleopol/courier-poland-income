@@ -910,6 +910,9 @@ async function build() {
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
 
+  // Write jobs data for client-side loading
+  await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(pages), 'utf8');
+
   // Load categories
   const categoriesPath = path.join(SRC, 'categories.json');
   let categories = [];
@@ -951,6 +954,15 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'jobs.js'), jobsJsContent, 'utf8');
   } catch (e) {
     // jobs.js not found, continue
+  }
+
+  // Copy jobs-loader.js
+  try {
+    const jobsLoaderPath = path.join(SRC, 'jobs-loader.js');
+    const jobsLoaderContent = await fs.readFile(jobsLoaderPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'jobs-loader.js'), jobsLoaderContent, 'utf8');
+  } catch (e) {
+    // jobs-loader.js not found, continue
   }
 
   // Copy main.js
