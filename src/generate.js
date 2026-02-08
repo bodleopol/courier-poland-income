@@ -1549,6 +1549,12 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       await fs.writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
     } catch (e) {}
 
+    // write sitemap-vacancies.xml
+    try {
+      const vacanciesSitemap = generateVacanciesSitemap(links);
+      await fs.writeFile(path.join(DIST, 'sitemap-vacancies.xml'), vacanciesSitemap, 'utf8');
+    } catch (e) {}
+
     // write robots.txt
     try {
       const robots = `# Robots.txt for rybezh.site - Job search platform in Poland
@@ -1946,6 +1952,23 @@ function generateSitemap(links, posts = []) {
     <priority>${p.priority}</priority>
   </url>`).join('\n');
   
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${items}
+</urlset>`;
+}
+
+function generateVacanciesSitemap(links) {
+  const base = 'https://rybezh.site';
+  const today = new Date().toISOString().split('T')[0];
+
+  const items = links.map(l => `  <url>
+    <loc>${base}/${l.slug}.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n');
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${items}
