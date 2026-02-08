@@ -773,18 +773,18 @@ function buildConditionsBlock(page, lang) {
   const schedule = isPl ? page.shift_pl : page.shift_ua;
   const pattern = isPl ? page.pattern_pl : page.pattern_ua;
   const start = isPl ? page.start_pl : page.start_ua;
-  const bonusesList = isGenerated ? [] : (Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : []);
-  const extraList = isGenerated ? [] : (Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : []);
+  const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
+  const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
   const reqList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
-  const housing = isGenerated ? '' : (isPl ? page.housing_pl : page.housing_ua);
-  const transport = isGenerated ? '' : (isPl ? page.transport_pl : page.transport_ua);
-  const workplace = isGenerated ? '' : (isPl ? page.workplace_pl : page.workplace_ua);
-  const team = isGenerated ? '' : (isPl ? page.team_pl : page.team_ua);
-  const onboarding = isGenerated ? '' : (isPl ? page.onboarding_pl : page.onboarding_ua);
-  const sector = isGenerated ? '' : (isPl ? page.sector_pl : page.sector_ua);
-  const equipment = isGenerated ? '' : (isPl ? page.equipment_pl : page.equipment_ua);
-  const physical = isGenerated ? '' : (isPl ? page.physical_pl : page.physical_ua);
-  const shiftStructure = isGenerated ? '' : (isPl ? page.shift_structure_pl : page.shift_structure_ua);
+  const housing = isPl ? page.housing_pl : page.housing_ua;
+  const transport = isPl ? page.transport_pl : page.transport_ua;
+  const workplace = isPl ? page.workplace_pl : page.workplace_ua;
+  const team = isPl ? page.team_pl : page.team_ua;
+  const onboarding = isPl ? page.onboarding_pl : page.onboarding_ua;
+  const sector = isPl ? page.sector_pl : page.sector_ua;
+  const equipment = isPl ? page.equipment_pl : page.equipment_ua;
+  const physical = isPl ? page.physical_pl : page.physical_ua;
+  const shiftStructure = isPl ? page.shift_structure_pl : page.shift_structure_ua;
   const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
@@ -867,17 +867,15 @@ const JOB_QUESTIONS_POOL = {
 function buildJobHumanBlock(page, lang) {
   const isPl = lang === 'pl';
   const seed = hashString(`${page?.slug || ''}:${lang}`);
-  const lead = pickFromPool((HUMAN_SIDE_NOTES[lang] || HUMAN_SIDE_NOTES.ua), seed + 13);
-  const prefix = pickFromPool((LIST_PREFIXES[lang] || LIST_PREFIXES.ua), seed + 5);
   const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17);
   const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
 
-  const title = isPl ? 'Po ludzku: co warto doprecyzować' : 'По‑людськи: що варто уточнити';
-  const leftTitle = isPl ? 'Mini‑checklist przed startem' : 'Міні‑чек‑лист перед стартом';
-  const rightTitle = isPl ? 'Pytania, które warto zadać' : 'Питання, які варто задати';
+  const title = isPl ? 'Warto wiedzieć przed startem' : 'Що варто знати перед стартом';
+  const leftTitle = isPl ? 'Lista kontrolna' : 'Чек-лист перевірки';
+  const rightTitle = isPl ? 'Pytania do rekrutera' : 'Питання до рекрутера';
   const note = isPl
-    ? 'Warunki mogą się zmieniać — jeśli coś brzmi zbyt ogólnie, dopytaj przed wyjazdem.'
-    : 'Умови можуть змінюватися — якщо щось звучить занадто загально, краще уточнити до виїзду.';
+    ? 'Warunki mogą się różnić w zależności od projektu. Warto dopytać o szczegóły.'
+    : 'Умови можуть відрізнятися залежно від проекту. Варто уточнити деталі.';
 
   const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
   const questionsHtml = questions.map(t => `<li>${escapeHtml(t)}</li>`).join('');
@@ -885,11 +883,9 @@ function buildJobHumanBlock(page, lang) {
   return `
     <section class="job-human" aria-label="${escapeHtml(title)}">
       <h3 class="job-human__title">${escapeHtml(title)}</h3>
-      ${lead ? `<p class="job-human__lead">${escapeHtml(lead)}</p>` : ''}
       <div class="job-human__grid">
         <div class="job-human__card">
           <h4>${escapeHtml(leftTitle)}</h4>
-          <p class="job-human__muted">${escapeHtml(prefix)}</p>
           <ul>${checklistHtml}</ul>
         </div>
         <div class="job-human__card">
@@ -2529,8 +2525,7 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const related = getRelatedPosts(post, posts, 3);
 
   const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
-  const diversifiedBody = diversifyBodyText(bodySource, lang, seed + 2);
-  const body = humanizeBody(diversifiedBody, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
+  const body = humanizeBody(bodySource, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
 
   const updatedDate = post.updated || post.date || new Date().toISOString().slice(0, 10);
 
