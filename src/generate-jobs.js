@@ -1307,45 +1307,38 @@ Object.keys(ROLES).forEach(catKey => {
         `Szukamy osoby w ${city.pl}. Start: ${startPL}, umowa: ${contractPL}.`
       ]);
 
+      const summaryUA = `
+        <ul>
+          <li>Графік: ${shiftsUA}</li>
+          <li>Режим: ${patternUA}</li>
+          <li>Договір: ${contractUA}</li>
+          <li>Старт: ${startUA}</li>
+        </ul>
+      `;
+
+      const summaryPL = `
+        <ul>
+          <li>Grafik: ${shiftsPL}</li>
+          <li>System: ${patternPL}</li>
+          <li>Umowa: ${contractPL}</li>
+          <li>Start: ${startPL}</li>
+        </ul>
+      `;
+
       const bodyUA = `
         <div class="vacancy-block">
           <p>${introUA}</p>
           <div class="job-meta">
             <p><strong>🏢 Компанія:</strong> ${company}</p>
-            <p><strong>🕒 Графік:</strong> ${shiftsUA}</p>
-            <p><strong>📆 Режим:</strong> ${patternUA}</p>
-            <p><strong>📅 Початок:</strong> ${startUA}</p>
-            <p><strong>📝 Тип договору:</strong> ${contractUA}</p>
+            <p><strong>📍 Місто:</strong> ${city.ua}</p>
           </div>
           <hr>
-          <h3>${hUA.offers}</h3>
-          <ul>${offersUA}</ul>
-          <h3>${hUA.info}</h3>
-          <ul>${detailItemsUA.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>${hUA.req}</h3>
-          <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>${hUA.housing}</h3>
-          <ul>
-            <li>${housingUA}</li>
-            <li>${transportUA}</li>
-          </ul>
-          <h3>${hUA.format}</h3>
-          <ul>
-            <li>${workplaceUA}</li>
-            <li>${teamUA}</li>
-            <li>${onboardingUA}</li>
-          </ul>
-          ${['production', 'construction', 'agriculture', 'cleaning'].includes(catKey) ? `<h3>Сектор, обладнання, навантаження</h3>
-          <ul>
-            <li>${sectorUA}</li>
-            <li>${equipmentUA}</li>
-            <li>${physicalUA}</li>
-            <li>${shiftStructUA}</li>
-          </ul>` : ''}
-          <h3>${hUA.daily}</h3>
-          <ul>${dailyUA.map(d => `<li>${d}</li>`).join('')}</ul>
+          <h3>Короткі умови</h3>
+          ${summaryUA}
           <h3>${hUA.duties}</h3>
           <ul>${tasksUA}</ul>
+          <h3>${hUA.req}</h3>
+          <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
@@ -1356,40 +1349,15 @@ Object.keys(ROLES).forEach(catKey => {
           <p>${introPL}</p>
           <div class="job-meta">
             <p><strong>🏢 Firma:</strong> ${company}</p>
-            <p><strong>🕒 Grafiki:</strong> ${shiftsPL}</p>
-            <p><strong>📆 System:</strong> ${patternPL}</p>
-            <p><strong>📅 Start:</strong> ${startPL}</p>
-            <p><strong>📝 Umowa:</strong> ${contractPL}</p>
+            <p><strong>📍 Miasto:</strong> ${city.pl}</p>
           </div>
           <hr>
-          <h3>${hPL.offers}</h3>
-          <ul>${offersPL}</ul>
-          <h3>${hPL.info}</h3>
-          <ul>${detailItemsPL.map(d => `<li>${d}</li>`).join('')}</ul>
-          <h3>${hPL.req}</h3>
-          <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>${hPL.housing}</h3>
-          <ul>
-            <li>${housingPL}</li>
-            <li>${transportPL}</li>
-          </ul>
-          <h3>${hPL.format}</h3>
-          <ul>
-            <li>${workplacePL}</li>
-            <li>${teamPL}</li>
-            <li>${onboardingPL}</li>
-          </ul>
-          ${['production', 'construction', 'agriculture', 'cleaning'].includes(catKey) ? `<h3>Sektor, sprzęt, obciążenie</h3>
-          <ul>
-            <li>${sectorPL}</li>
-            <li>${equipmentPL}</li>
-            <li>${physicalPL}</li>
-            <li>${shiftStructPL}</li>
-          </ul>` : ''}
-          <h3>${hPL.daily}</h3>
-          <ul>${dailyPL.map(d => `<li>${d}</li>`).join('')}</ul>
+          <h3>Krótkie warunki</h3>
+          ${summaryPL}
           <h3>${hPL.duties}</h3>
           <ul>${tasksPL}</ul>
+          <h3>${hPL.req}</h3>
+          <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
@@ -1448,7 +1416,9 @@ Object.keys(ROLES).forEach(catKey => {
         country: "Poland",
         language: "uk",
         employment_type: "full-time",
-        date_posted: new Date().toISOString()
+        date_posted: new Date().toISOString(),
+        is_generated: true,
+        data_source: "generated"
       };
       
       // Add sector/equipment only for specific categories

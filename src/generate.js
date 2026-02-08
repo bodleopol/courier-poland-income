@@ -745,6 +745,7 @@ function sanitizeStaticHtmlHead(html) {
 
 function buildConditionsBlock(page, lang) {
   const isPl = lang === 'pl';
+  const isGenerated = Boolean(page?.is_generated);
   const labels = isPl ? {
     title: 'Warunki',
     salary: 'Wynagrodzenie',
@@ -772,18 +773,18 @@ function buildConditionsBlock(page, lang) {
   const schedule = isPl ? page.shift_pl : page.shift_ua;
   const pattern = isPl ? page.pattern_pl : page.pattern_ua;
   const start = isPl ? page.start_pl : page.start_ua;
-  const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
-  const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
+  const bonusesList = isGenerated ? [] : (Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : []);
+  const extraList = isGenerated ? [] : (Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : []);
   const reqList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
-  const housing = isPl ? page.housing_pl : page.housing_ua;
-  const transport = isPl ? page.transport_pl : page.transport_ua;
-  const workplace = isPl ? page.workplace_pl : page.workplace_ua;
-  const team = isPl ? page.team_pl : page.team_ua;
-  const onboarding = isPl ? page.onboarding_pl : page.onboarding_ua;
-  const sector = isPl ? page.sector_pl : page.sector_ua;
-  const equipment = isPl ? page.equipment_pl : page.equipment_ua;
-  const physical = isPl ? page.physical_pl : page.physical_ua;
-  const shiftStructure = isPl ? page.shift_structure_pl : page.shift_structure_ua;
+  const housing = isGenerated ? '' : (isPl ? page.housing_pl : page.housing_ua);
+  const transport = isGenerated ? '' : (isPl ? page.transport_pl : page.transport_ua);
+  const workplace = isGenerated ? '' : (isPl ? page.workplace_pl : page.workplace_ua);
+  const team = isGenerated ? '' : (isPl ? page.team_pl : page.team_ua);
+  const onboarding = isGenerated ? '' : (isPl ? page.onboarding_pl : page.onboarding_ua);
+  const sector = isGenerated ? '' : (isPl ? page.sector_pl : page.sector_ua);
+  const equipment = isGenerated ? '' : (isPl ? page.equipment_pl : page.equipment_ua);
+  const physical = isGenerated ? '' : (isPl ? page.physical_pl : page.physical_ua);
+  const shiftStructure = isGenerated ? '' : (isPl ? page.shift_structure_pl : page.shift_structure_ua);
   const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
@@ -898,6 +899,21 @@ function buildJobHumanBlock(page, lang) {
         </div>
       </div>
     </section>
+  `;
+}
+
+function buildGeneratedNotice(page, lang) {
+  if (!page?.is_generated) return '';
+  const isPl = lang === 'pl';
+  const title = isPl ? 'Uwaga: strona informacyjna' : 'Увага: інформаційна сторінка';
+  const body = isPl
+    ? 'To opis typowych warunków i zakresu pracy. Konkretne stawki i szczegóły potwierdzamy po kontakcie.'
+    : 'Це опис типових умов і обовʼязків. Конкретні ставки та деталі підтверджуємо після звернення.';
+  return `
+    <div class="job-notice" role="note" aria-label="${escapeHtml(title)}">
+      <strong>${escapeHtml(title)}</strong>
+      <span>${escapeHtml(body)}</span>
+    </div>
   `;
 }
 
@@ -1054,6 +1070,8 @@ async function build() {
     const conditionsPL = buildConditionsBlock(page, 'pl');
     const humanUA = buildJobHumanBlock(page, 'ua');
     const humanPL = buildJobHumanBlock(page, 'pl');
+    const noticeUA = buildGeneratedNotice(page, 'ua');
+    const noticePL = buildGeneratedNotice(page, 'pl');
 
     const shareUrl = `https://rybezh.site/${escapeHtml(page.slug)}.html`;
     const shareText = encodeURIComponent(page.title);
@@ -1081,8 +1099,8 @@ async function build() {
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
           <span class="tag">📅 ${new Date().getFullYear()}</span>
         </div>
-        <div data-lang-content="ua">${content}${conditionsUA}${humanUA}</div>
-        <div data-lang-content="pl" style="display:none">${contentPl}${conditionsPL}${humanPL}</div>
+        <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
+        <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
         ${shareButtons}
         <div class="job-actions">
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
@@ -1131,10 +1149,17 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
-    // Inject JobPosting structured data (job pages only)
-    const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
-    if (finalHtml.includes('</head>')) {
-      finalHtml = finalHtml.replace('</head>', `${jobPostingScript}\n</head>`);
+    // Inject JobPosting structured data (only for verified, non-generated jobs)
+    if (!page?.is_generated) {
+      const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
+      if (finalHtml.includes('</head>')) {
+        finalHtml = finalHtml.replace('</head>', `${jobPostingScript}\n</head>`);
+      }
+    }
+
+    // Prevent indexing of generated template vacancies
+    if (page?.is_generated && finalHtml.includes('</head>')) {
+      finalHtml = finalHtml.replace('</head>', '  <meta name="robots" content="noindex,follow">\n</head>');
     }
 
     // Add specific styles for job pages
@@ -1156,6 +1181,8 @@ async function build() {
       .job-human__card ul { margin: .5rem 0 0; padding-left: 1.1rem; }
       .job-human__card li { margin: .4rem 0; color: #374151; }
       .job-human__muted { margin: .5rem 0 0; color: #64748b; font-size: .95rem; }
+      .job-notice { margin: 1rem 0 1.5rem; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid #f59e0b; background: #fffbeb; color: #92400e; display: flex; gap: .6rem; flex-direction: column; }
+      .job-notice strong { font-weight: 700; }
       @media (max-width: 760px) { .job-human__grid { grid-template-columns: 1fr; } }
       .share-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
       .share-title { font-weight: 600; margin-bottom: 1rem; color: var(--color-primary); }
@@ -1180,7 +1207,7 @@ async function build() {
 
     const outFile = path.join(DIST, `${page.slug}.html`);
     await fs.writeFile(outFile, finalHtml, 'utf8');
-    links.push({ title: page.title, slug: page.slug, city: page.city || '' });
+    links.push({ title: page.title, slug: page.slug, city: page.city || '', indexable: !page?.is_generated });
   }
 
   // Pagination for Blog
@@ -1676,6 +1703,7 @@ function generateIndexContent(links) {
           <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.rating.line2">від кандидатів</p>
         </div>
       </div>
+      <p style="text-align:center; margin-top:1.25rem; color:#64748b; font-size:0.9rem;" data-i18n="home.stats.note">*Оцінки за внутрішнім опитуванням кандидатів</p>
     </div>
 
     <!-- TESTIMONIALS SECTION -->
@@ -1709,6 +1737,7 @@ function generateIndexContent(links) {
           <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t3.role">Студентка, 4 міс. досвіду</p>
         </div>
       </div>
+      <p style="text-align:center; margin-top:1rem; color:#64748b; font-size:0.9rem;" data-i18n="home.testimonials.note">*Досвід кандидатів може відрізнятися залежно від міста та роботодавця</p>
     </div>
 
     <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії у 20+ містах Польщі. Стабільні умови та підтримка.</p>
@@ -1896,7 +1925,9 @@ function generateSitemap(links, posts = []) {
     jobPageCounts[city] = (jobPageCounts[city] || 0) + 1;
   });
   
-  const jobPages = links.map(l => {
+  const jobPages = links
+    .filter(l => l.indexable !== false)
+    .map(l => {
     // High-demand cities (Warszawa, Kraków) get slightly higher priority
     const majorCities = ['Warszawa', 'Kraków', 'Gdańsk', 'Wrocław', 'Poznań'];
     const isPrioritized = majorCities.includes(l.city);
