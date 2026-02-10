@@ -1169,14 +1169,23 @@ Object.keys(ROLES).forEach(catKey => {
         salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
 
         company = getRandom(AGENCIES);
-        shiftsUA = getRandom(SHIFTS.ua);
-        shiftsPL = getRandom(SHIFTS.pl);
-        patternUA = getRandom(WORK_PATTERNS.ua);
-        patternPL = getRandom(WORK_PATTERNS.pl);
-        startUA = getRandom(START_DATES.ua);
-        startPL = getRandom(START_DATES.pl);
-        contractUA = getRandom(CONTRACT_TYPES.ua);
-        contractPL = getRandom(CONTRACT_TYPES.pl);
+        
+        // SYNC UA/PL: Use same index for shifts, patterns, start, contracts
+        const shiftIndex = Math.floor(Math.random() * Math.min(SHIFTS.ua.length, SHIFTS.pl.length));
+        shiftsUA = SHIFTS.ua[shiftIndex];
+        shiftsPL = SHIFTS.pl[shiftIndex];
+        
+        const patternIndex = Math.floor(Math.random() * Math.min(WORK_PATTERNS.ua.length, WORK_PATTERNS.pl.length));
+        patternUA = WORK_PATTERNS.ua[patternIndex];
+        patternPL = WORK_PATTERNS.pl[patternIndex];
+        
+        const startIndex = Math.floor(Math.random() * Math.min(START_DATES.ua.length, START_DATES.pl.length));
+        startUA = START_DATES.ua[startIndex];
+        startPL = START_DATES.pl[startIndex];
+        
+        const contractIndex = Math.floor(Math.random() * Math.min(CONTRACT_TYPES.ua.length, CONTRACT_TYPES.pl.length));
+        contractUA = CONTRACT_TYPES.ua[contractIndex];
+        contractPL = CONTRACT_TYPES.pl[contractIndex];
 
         // Mix descriptions
         taskItemsUA = getMultipleRandom(jobTemplate.desc_ua, 3);
@@ -1199,36 +1208,64 @@ Object.keys(ROLES).forEach(catKey => {
           ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2 + Math.floor(Math.random() * 2))
         ];
 
-        languageUA = getRandom(LANGUAGE_LEVELS.ua);
-        languagePL = getRandom(LANGUAGE_LEVELS.pl);
-        experienceUA = getRandom(EXPERIENCE_LEVELS.ua);
-        experiencePL = getRandom(EXPERIENCE_LEVELS.pl);
-        housingUA = getRandom(HOUSING_OPTIONS.ua);
-        housingPL = getRandom(HOUSING_OPTIONS.pl);
-        transportUA = getRandom(TRANSPORT_OPTIONS.ua);
-        transportPL = getRandom(TRANSPORT_OPTIONS.pl);
-        documentsUA = `Документи: ${getMultipleRandom(DOCUMENTS_NEEDED.ua, 2).join(', ')}`;
-        documentsPL = `Dokumenty: ${getMultipleRandom(DOCUMENTS_NEEDED.pl, 2).join(', ')}`;
-        workplaceUA = getRandom(WORKPLACE_TYPES.ua);
-        workplacePL = getRandom(WORKPLACE_TYPES.pl);
-        teamUA = getRandom(TEAM_SIZES.ua);
-        teamPL = getRandom(TEAM_SIZES.pl);
-        onboardingUA = getRandom(ONBOARDING_NOTES.ua);
-        onboardingPL = getRandom(ONBOARDING_NOTES.pl);
+        // SYNC UA/PL: Use same index for language, experience, housing, transport
+        const langIndex = Math.floor(Math.random() * Math.min(LANGUAGE_LEVELS.ua.length, LANGUAGE_LEVELS.pl.length));
+        languageUA = LANGUAGE_LEVELS.ua[langIndex];
+        languagePL = LANGUAGE_LEVELS.pl[langIndex];
+        
+        const expIndex = Math.floor(Math.random() * Math.min(EXPERIENCE_LEVELS.ua.length, EXPERIENCE_LEVELS.pl.length));
+        experienceUA = EXPERIENCE_LEVELS.ua[expIndex];
+        experiencePL = EXPERIENCE_LEVELS.pl[expIndex];
+        
+        const housingIndex = Math.floor(Math.random() * Math.min(HOUSING_OPTIONS.ua.length, HOUSING_OPTIONS.pl.length));
+        housingUA = HOUSING_OPTIONS.ua[housingIndex];
+        housingPL = HOUSING_OPTIONS.pl[housingIndex];
+        
+        const transportIndex = Math.floor(Math.random() * Math.min(TRANSPORT_OPTIONS.ua.length, TRANSPORT_OPTIONS.pl.length));
+        transportUA = TRANSPORT_OPTIONS.ua[transportIndex];
+        transportPL = TRANSPORT_OPTIONS.pl[transportIndex];
+        // SYNC UA/PL: Use same index for documents, workplace, team, onboarding
+        const docIndices = [];
+        for (let i = 0; i < 2; i++) {
+          const idx = Math.floor(Math.random() * Math.min(DOCUMENTS_NEEDED.ua.length, DOCUMENTS_NEEDED.pl.length));
+          docIndices.push(idx);
+        }
+        documentsUA = `Документи: ${docIndices.map(i => DOCUMENTS_NEEDED.ua[i]).join(', ')}`;
+        documentsPL = `Dokumenty: ${docIndices.map(i => DOCUMENTS_NEEDED.pl[i]).join(', ')}`;
+        
+        const workplaceIndex = Math.floor(Math.random() * Math.min(WORKPLACE_TYPES.ua.length, WORKPLACE_TYPES.pl.length));
+        workplaceUA = WORKPLACE_TYPES.ua[workplaceIndex];
+        workplacePL = WORKPLACE_TYPES.pl[workplaceIndex];
+        
+        const teamIndex = Math.floor(Math.random() * Math.min(TEAM_SIZES.ua.length, TEAM_SIZES.pl.length));
+        teamUA = TEAM_SIZES.ua[teamIndex];
+        teamPL = TEAM_SIZES.pl[teamIndex];
+        
+        const onboardingIndex = Math.floor(Math.random() * Math.min(ONBOARDING_NOTES.ua.length, ONBOARDING_NOTES.pl.length));
+        onboardingUA = ONBOARDING_NOTES.ua[onboardingIndex];
+        onboardingPL = ONBOARDING_NOTES.pl[onboardingIndex];
         dailyUA = getMultipleRandom(DAILY_TASKS.ua, 2 + Math.floor(Math.random() * 2));
         dailyPL = getMultipleRandom(DAILY_TASKS.pl, 2 + Math.floor(Math.random() * 2));
         
         // Only add sector/equipment for specific categories (production, construction, agriculture, cleaning)
         // NOT for logistics, hospitality, retail, beauty, education
+        // SYNC UA/PL: Use same index
         if (categoriesWithSector.includes(catKey)) {
-          sectorUA = getRandom(INDUSTRY_SECTORS.ua);
-          sectorPL = getRandom(INDUSTRY_SECTORS.pl);
-          equipmentUA = getRandom(EQUIPMENT_LIST.ua);
-          equipmentPL = getRandom(EQUIPMENT_LIST.pl);
-          physicalUA = getRandom(PHYSICAL_REQUIREMENTS.ua);
-          physicalPL = getRandom(PHYSICAL_REQUIREMENTS.pl);
-          shiftStructUA = getRandom(SHIFT_STRUCTURE.ua);
-          shiftStructPL = getRandom(SHIFT_STRUCTURE.pl);
+          const sectorIndex = Math.floor(Math.random() * Math.min(INDUSTRY_SECTORS.ua.length, INDUSTRY_SECTORS.pl.length));
+          sectorUA = INDUSTRY_SECTORS.ua[sectorIndex];
+          sectorPL = INDUSTRY_SECTORS.pl[sectorIndex];
+          
+          const equipIndex = Math.floor(Math.random() * Math.min(EQUIPMENT_LIST.ua.length, EQUIPMENT_LIST.pl.length));
+          equipmentUA = EQUIPMENT_LIST.ua[equipIndex];
+          equipmentPL = EQUIPMENT_LIST.pl[equipIndex];
+          
+          const physicalIndex = Math.floor(Math.random() * Math.min(PHYSICAL_REQUIREMENTS.ua.length, PHYSICAL_REQUIREMENTS.pl.length));
+          physicalUA = PHYSICAL_REQUIREMENTS.ua[physicalIndex];
+          physicalPL = PHYSICAL_REQUIREMENTS.pl[physicalIndex];
+          
+          const shiftStructIndex = Math.floor(Math.random() * Math.min(SHIFT_STRUCTURE.ua.length, SHIFT_STRUCTURE.pl.length));
+          shiftStructUA = SHIFT_STRUCTURE.ua[shiftStructIndex];
+          shiftStructPL = SHIFT_STRUCTURE.pl[shiftStructIndex];
         }
 
         requirementItemsUA = [
@@ -1363,13 +1400,18 @@ Object.keys(ROLES).forEach(catKey => {
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
       `;
 
+      // Add city to title for uniqueness (60% chance)
+      const addCityToTitle = Math.random() < 0.6;
+      const finalTitleUA = addCityToTitle ? `${titleUA} у ${city.ua}` : titleUA;
+      const finalTitlePL = addCityToTitle ? `${titlePL} w ${city.pl}` : titlePL;
+
       const jobData = {
         slug: slug,
         category: catKey,
         city: city.ua,
         city_pl: city.pl,
-        title: titleUA,
-        title_pl: titlePL,
+        title: finalTitleUA,
+        title_pl: finalTitlePL,
         salary: salary,
         company: company,
         shift_ua: shiftsUA,
@@ -1406,8 +1448,8 @@ Object.keys(ROLES).forEach(catKey => {
         onboarding_pl: onboardingPL,
         daily_ua: dailyUA,
         daily_pl: dailyPL,
-        excerpt: `${company} шукає: ${titleUA} у м. ${city.ua} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
-        excerpt_pl: `${company} poszukuje: ${titlePL} w m. ${city.pl} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
+        excerpt: `${company} шукає: ${finalTitleUA} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
+        excerpt_pl: `${company} poszukuje: ${finalTitlePL} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
         body: bodyUA,
         body_pl: bodyPL,
         cta_text: "Подати заявку",

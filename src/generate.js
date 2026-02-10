@@ -775,7 +775,7 @@ function buildConditionsBlock(page, lang) {
   const start = isPl ? page.start_pl : page.start_ua;
   const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
   const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
-  const reqList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
+  const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
   const housing = isPl ? page.housing_pl : page.housing_ua;
   const transport = isPl ? page.transport_pl : page.transport_ua;
   const workplace = isPl ? page.workplace_pl : page.workplace_ua;
@@ -785,11 +785,9 @@ function buildConditionsBlock(page, lang) {
   const equipment = isPl ? page.equipment_pl : page.equipment_ua;
   const physical = isPl ? page.physical_pl : page.physical_ua;
   const shiftStructure = isPl ? page.shift_structure_pl : page.shift_structure_ua;
-  const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
 
   const bonuses = bonusesList.slice(0, 3).join(' • ');
   const extras = extraList.slice(0, 2).join(' • ');
-  const reqs = reqList.slice(0, 3).join(' • ');
   const requirements = requirementsList.slice(0, 3).join(' • ');
 
   const rows = [];
@@ -800,7 +798,7 @@ function buildConditionsBlock(page, lang) {
   if (start) rows.push(`<li><strong>${labels.start}:</strong> ${escapeHtml(start)}</li>`);
   if (bonuses) rows.push(`<li><strong>${labels.bonuses}:</strong> ${escapeHtml(bonuses)}</li>`);
   if (extras) rows.push(`<li><strong>${labels.extra}:</strong> ${escapeHtml(extras)}</li>`);
-  if (reqs) rows.push(`<li><strong>${isPl ? 'Wymagania' : 'Вимоги'}:</strong> ${escapeHtml(reqs)}</li>`);
+  if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
   if (housing) rows.push(`<li><strong>${isPl ? 'Zakwaterowanie' : 'Проживання'}:</strong> ${escapeHtml(housing)}</li>`);
   if (transport) rows.push(`<li><strong>${isPl ? 'Dojazd' : 'Транспорт'}:</strong> ${escapeHtml(transport)}</li>`);
   if (workplace) rows.push(`<li><strong>${isPl ? 'Typ obiektu' : 'Тип обʼєкта'}:</strong> ${escapeHtml(workplace)}</li>`);
@@ -810,7 +808,6 @@ function buildConditionsBlock(page, lang) {
   if (equipment) rows.push(`<li><strong>${isPl ? 'Sprzęt' : 'Обладнання'}:</strong> ${escapeHtml(equipment)}</li>`);
   if (physical) rows.push(`<li><strong>${isPl ? 'Wymagania fizyczne' : 'Фізичні вимоги'}:</strong> ${escapeHtml(physical)}</li>`);
   if (shiftStructure) rows.push(`<li><strong>${isPl ? 'Struktura zmiany' : 'Структура зміни'}:</strong> ${escapeHtml(shiftStructure)}</li>`);
-  if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
 
   return `
     <div class="job-conditions">
@@ -864,9 +861,25 @@ const JOB_QUESTIONS_POOL = {
   ]
 };
 
-function buildJobHumanBlock(page, lang) {
+function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
   const seed = hashString(`${page?.slug || ''}:${lang}`);
+  
+  // Variant-based simplified version (for 'simple')
+  if (variant === 'simple') {
+    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + 17);
+    const title = isPl ? 'Warto wiedzieć' : 'Варто знати';
+    const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
+    
+    return `
+    <section class="job-human job-human--simple" aria-label="${escapeHtml(title)}">
+      <h3 class="job-human__title">${escapeHtml(title)}</h3>
+      <ul class="job-human__single-list">${checklistHtml}</ul>
+    </section>
+  `;
+  }
+  
+  // Full version with 2 columns
   const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17);
   const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
 
@@ -1061,11 +1074,28 @@ async function build() {
     const content = page.body || page.content || page.excerpt || '';
     const contentPl = page.body_pl || page.body || '';
 
+    // Choose structure variant (30% short, 40% medium, 30% detailed)
+    const variantRoll = Math.random();
+    let layoutVariant, humanVariant;
+    if (variantRoll < 0.3) {
+      // Short: no job-human section, fewer conditions
+      layoutVariant = 'short';
+      humanVariant = null;
+    } else if (variantRoll < 0.7) {
+      // Medium: simplified job-human
+      layoutVariant = 'medium';
+      humanVariant = 'simple';
+    } else {
+      // Detailed: full structure (current)
+      layoutVariant = 'detailed';
+      humanVariant = 'full';
+    }
+
     // Wrap content in language toggles
     const conditionsUA = buildConditionsBlock(page, 'ua');
     const conditionsPL = buildConditionsBlock(page, 'pl');
-    const humanUA = buildJobHumanBlock(page, 'ua');
-    const humanPL = buildJobHumanBlock(page, 'pl');
+    const humanUA = humanVariant ? buildJobHumanBlock(page, 'ua', humanVariant) : '';
+    const humanPL = humanVariant ? buildJobHumanBlock(page, 'pl', humanVariant) : '';
     const noticeUA = buildGeneratedNotice(page, 'ua');
     const noticePL = buildGeneratedNotice(page, 'pl');
 
@@ -1177,6 +1207,9 @@ async function build() {
       .job-human__card ul { margin: .5rem 0 0; padding-left: 1.1rem; }
       .job-human__card li { margin: .4rem 0; color: #374151; }
       .job-human__muted { margin: .5rem 0 0; color: #64748b; font-size: .95rem; }
+      .job-human--simple { padding: 1rem; }
+      .job-human__single-list { margin: .75rem 0 0; padding-left: 1.2rem; }
+      .job-human__single-list li { margin: .5rem 0; color: #374151; }
       .job-notice { margin: 1rem 0 1.5rem; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid #f59e0b; background: #fffbeb; color: #92400e; display: flex; gap: .6rem; flex-direction: column; }
       .job-notice strong { font-weight: 700; }
       @media (max-width: 760px) { .job-human__grid { grid-template-columns: 1fr; } }
