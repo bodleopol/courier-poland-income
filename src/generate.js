@@ -911,17 +911,32 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   `;
 }
 
+const NOTICE_VARIANTS = {
+  ua: [
+    { title: 'Актуальність', body: 'Умови можуть змінюватися. Зверніться до нас, щоб підтвердити поточні дані.' },
+    { title: 'Важливо', body: 'Деталі вакансії краще уточнити перед оформленням. Напишіть нам — підкажемо.' },
+    { title: 'Про вакансію', body: 'Ставки й графік можуть відрізнятися залежно від проєкту. Звʼяжіться для підтвердження.' },
+    null // 25% chance — no notice at all
+  ],
+  pl: [
+    { title: 'Aktualność', body: 'Warunki mogą się zmieniać. Skontaktuj się z nami, aby potwierdzić aktualne dane.' },
+    { title: 'Ważne', body: 'Szczegóły oferty warto potwierdzić przed aplikacją. Napisz — pomożemy.' },
+    { title: 'O ofercie', body: 'Stawki i grafik mogą się różnić w zależności od projektu. Skontaktuj się w celu potwierdzenia.' },
+    null
+  ]
+};
+
 function buildGeneratedNotice(page, lang) {
   if (!page?.is_generated) return '';
   const isPl = lang === 'pl';
-  const title = isPl ? 'Uwaga: strona informacyjna' : 'Увага: інформаційна сторінка';
-  const body = isPl
-    ? 'To opis typowych warunków i zakresu pracy. Konkretne stawki i szczegóły potwierdzamy po kontakcie.'
-    : 'Це опис типових умов і обовʼязків. Конкретні ставки та деталі підтверджуємо після звернення.';
+  const variants = isPl ? NOTICE_VARIANTS.pl : NOTICE_VARIANTS.ua;
+  const seed = hashString(`${page?.slug || ''}:notice`);
+  const variant = variants[seed % variants.length];
+  if (!variant) return ''; // some pages get no notice at all
   return `
-    <div class="job-notice" role="note" aria-label="${escapeHtml(title)}">
-      <strong>${escapeHtml(title)}</strong>
-      <span>${escapeHtml(body)}</span>
+    <div class="job-notice" role="note" aria-label="${escapeHtml(variant.title)}">
+      <strong>${escapeHtml(variant.title)}</strong>
+      <span>${escapeHtml(variant.body)}</span>
     </div>
   `;
 }
@@ -1119,6 +1134,30 @@ async function build() {
         </div>
       </div>`;
 
+    // Build related vacancies (same city or same category, max 3)
+    const relatedVacancies = pages
+      .filter(p => p.slug !== page.slug && p.is_generated && (
+        (p.city === page.city && p.category !== page.category) ||
+        (p.category === page.category && p.city !== page.city)
+      ))
+      .sort((a, b) => hashString(a.slug + page.slug) - hashString(b.slug + page.slug))
+      .slice(0, 3);
+
+    let relatedHtml = '';
+    if (relatedVacancies.length > 0) {
+      const relatedCards = relatedVacancies.map(rv => `
+        <a href="/${escapeHtml(rv.slug)}.html" class="related-card">
+          <span class="related-title">${escapeHtml(rv.title)}</span>
+          <span class="related-meta">📍 ${escapeHtml(rv.city)} • ${escapeHtml(rv.salary)}</span>
+        </a>`).join('');
+      relatedHtml = `
+        <div class="related-vacancies">
+          <h3 data-lang-content="ua" data-i18n="related.title">Схожі вакансії</h3>
+          <h3 data-lang-content="pl" style="display:none">Podobne oferty</h3>
+          <div class="related-grid">${relatedCards}</div>
+        </div>`;
+    }
+
     const dualContent = `
       <div class="job-page-layout">
         <div class="job-meta">
@@ -1127,8 +1166,10 @@ async function build() {
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
+        ${relatedHtml}
         ${shareButtons}
         <div class="job-actions">
+          <a href="/vacancies.html" class="btn-secondary" data-i18n="btn.all_vacancies">Всі вакансії</a>
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
         </div>
       </div>`;
@@ -1183,9 +1224,14 @@ async function build() {
       }
     }
 
-    // Prevent indexing of generated template vacancies
-    if (page?.is_generated && finalHtml.includes('</head>')) {
-      finalHtml = finalHtml.replace('</head>', '  <meta name="robots" content="noindex,follow">\n</head>');
+    // Generated vacancies should be indexed for organic traffic
+    // Remove duplicate robots meta if template already has one
+    if (page?.is_generated) {
+      // Replace conservative "index, follow" with more specific directives
+      finalHtml = finalHtml.replace(
+        '<meta name="robots" content="index, follow">',
+        '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">'
+      );
     }
 
     // Add specific styles for job pages
@@ -1224,6 +1270,13 @@ async function build() {
       .job-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
       .btn-secondary { display: inline-block; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; background: #f3f4f6; color: #374151; font-weight: 600; }
       .btn-secondary:hover { background: #e5e7eb; }
+      .related-vacancies { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
+      .related-vacancies h3 { font-size: 1.15rem; margin-bottom: 1rem; color: var(--color-primary); }
+      .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+      .related-card { display: flex; flex-direction: column; gap: .3rem; padding: 1rem; border-radius: 10px; background: #f9fafb; border: 1px solid #e5e7eb; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s; }
+      .related-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-2px); }
+      .related-title { font-weight: 600; color: #1e3a5f; }
+      .related-meta { font-size: .88rem; color: #64748b; }
     </style>`;
 
     // inject lang switcher and scripts before </body>

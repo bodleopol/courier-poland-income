@@ -1400,10 +1400,12 @@ Object.keys(ROLES).forEach(catKey => {
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
       `;
 
-      // Add city to title for uniqueness (60% chance)
-      const addCityToTitle = Math.random() < 0.6;
-      const finalTitleUA = addCityToTitle ? `${titleUA} у ${city.ua}` : titleUA;
-      const finalTitlePL = addCityToTitle ? `${titlePL} w ${city.pl}` : titlePL;
+      // Always add city to title for uniqueness and local SEO
+      const cityPrepositions = ['у', 'в', '—'];
+      const prepSeed = slug.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+      const cityPrep = cityPrepositions[prepSeed % cityPrepositions.length];
+      const finalTitleUA = `${titleUA} ${cityPrep} ${city.ua}`;
+      const finalTitlePL = `${titlePL} w ${city.pl}`;
 
       const jobData = {
         slug: slug,
