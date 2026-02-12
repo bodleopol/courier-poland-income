@@ -1580,7 +1580,7 @@ async function build() {
 
     // generate index
     const indexSrc = await fs.readFile(path.join(SRC, 'index.html'), 'utf8');
-    const shuffledPages = shuffleArray([...pages]);
+    const shuffledPages = shuffleArray([...pagesToGenerate]);
     const latestJobs = shuffledPages.slice(0, 12);
 
     // Inject only categories - jobs loaded via jobs-loader.js for better performance
