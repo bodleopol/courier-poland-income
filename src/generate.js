@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import ENRICHMENTS from './vacancy-enrichments.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1224,6 +1225,25 @@ async function build() {
         </div>`;
     }
 
+    // Build enrichment block for unique, human-sounding content
+    const enrichment = ENRICHMENTS[page.slug];
+    let enrichmentHtml = '';
+    if (enrichment) {
+      enrichmentHtml = `
+        <div class="job-enrichment">
+          <div data-lang-content="ua">
+            <blockquote class="job-quote">${enrichment.quote_ua}</blockquote>
+            <div class="job-local-tip"><strong>📍 Район роботи:</strong> ${enrichment.tip_ua}</div>
+            <p class="job-insider">${enrichment.detail_ua}</p>
+          </div>
+          <div data-lang-content="pl" style="display:none">
+            <blockquote class="job-quote">${enrichment.quote_pl}</blockquote>
+            <div class="job-local-tip"><strong>📍 Okolica:</strong> ${enrichment.tip_pl}</div>
+            <p class="job-insider">${enrichment.detail_pl}</p>
+          </div>
+        </div>`;
+    }
+
     const dualContent = `
       <div class="job-page-layout">
         <div class="job-meta">
@@ -1232,6 +1252,7 @@ async function build() {
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
+        ${enrichmentHtml}
         ${relatedHtml}
         ${shareButtons}
         <div class="job-actions">
@@ -1339,6 +1360,10 @@ async function build() {
       .related-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-2px); }
       .related-title { font-weight: 600; color: #1e3a5f; }
       .related-meta { font-size: .88rem; color: #64748b; }
+      .job-enrichment { margin: 2rem 0; padding: 1.5rem; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%); border: 1px solid #d1d5db; }
+      .job-quote { margin: 0 0 1rem; padding: .8rem 1rem; border-left: 4px solid #059669; background: rgba(255,255,255,.7); border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; line-height: 1.6; }
+      .job-local-tip { margin: .75rem 0; padding: .6rem .8rem; background: #fff; border-radius: 8px; color: #334155; line-height: 1.5; border: 1px solid #e5e7eb; }
+      .job-insider { margin: .5rem 0 0; color: #475569; line-height: 1.55; font-size: .95rem; }
     </style>`;
 
     // inject lang switcher and scripts before </body>
