@@ -44,50 +44,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   
-  <!-- JSON-LD Job Posting Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "@id": "https://rybezh.site/{{SLUG}}.html",
-    "title": "{{TITLE}}",
-    "description": "{{DESCRIPTION}}",
-    "datePosted": "2024-01-01",
-    "validThrough": "2026-12-31",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Rybezh",
-      "url": "https://rybezh.site",
-      "logo": "https://rybezh.site/favicon.svg"
-    },
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Centrum",
-        "addressLocality": "{{CITY}}",
-        "addressRegion": "Mazowieckie",
-        "postalCode": "00-001",
-        "addressCountry": "PL"
-      }
-    },
-    "employmentType": ["FULL_TIME", "PART_TIME"],
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": "PLN",
-      "value": {
-        "@type": "QuantitativeValue",
-        "minValue": 25,
-        "maxValue": 45,
-        "unitText": "HOUR"
-      }
-    },
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Poland"
-    }
-  }
-  </script>
+  <!-- JSON-LD injected dynamically by generate.js -->
   
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">

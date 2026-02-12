@@ -992,8 +992,12 @@ async function build() {
 
   const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
 
-  // Write jobs data for client-side loading
-  await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(pages), 'utf8');
+  // Write jobs data for client-side loading (strip internal fields)
+  const publicPages = pages.map(p => {
+    const { is_generated, data_source, ...rest } = p;
+    return rest;
+  });
+  await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(publicPages), 'utf8');
 
   // Load categories
   const categoriesPath = path.join(SRC, 'categories.json');
@@ -1140,8 +1144,10 @@ async function build() {
     }
   }
 
+  // Only generate HTML for indexable vacancies (reduce doorway signals)
+  const pagesToGenerate = pages.filter(p => !p.is_generated || indexableVacancySlugs.has(String(p.slug)));
   const links = [];
-  for (const page of pages) {
+  for (const page of pagesToGenerate) {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const content = page.body || page.content || page.excerpt || '';
@@ -1274,24 +1280,18 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
-    // Inject JobPosting structured data (only for verified, non-generated jobs)
-    if (!page?.is_generated) {
+    // Inject JobPosting structured data for all indexable pages
+    const isIndexable = page?.is_generated ? indexableVacancySlugs.has(String(page.slug)) : true;
+    if (isIndexable) {
       const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
       if (finalHtml.includes('</head>')) {
         finalHtml = finalHtml.replace('</head>', `${jobPostingScript}\n</head>`);
       }
     }
 
-    // Indexing policy for generated vacancies:
-    // - only a limited subset remains indexable (top-N or whitelist)
-    // - the rest are noindex to reduce doorway/scaled-content signals
+    // All generated pages that reach this point are indexable (pre-filtered above)
     if (page?.is_generated) {
-      const isIndexable = indexableVacancySlugs.has(String(page.slug));
-      if (isIndexable) {
-        finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
-      } else {
-        finalHtml = setRobotsMeta(finalHtml, 'noindex, follow');
-      }
+      finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
     }
 
     // Add specific styles for job pages

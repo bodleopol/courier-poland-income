@@ -28,10 +28,10 @@ const CITIES = [
 // --- 2. Data Pools (The Magimix) ---
 
 const AGENCIES = [
-  "FastLogistics Sp. z o.o.", "BudPol Construction", "EuroWork Service", "Randstad Polska", 
-  "ManpowerGroup", "Grafton Recruitment", "Hays Poland", "Adecco Poland", "EWL Group", 
-  "Gremi Personal", "Otto Work Force", "InterKadra", "Work Service", "Personnel Service",
-  "TopStaffing", "ProHR Solutions", "JobImpulse", "Exact Systems", "Contrain Group"
+  "FastLogistics Sp. z o.o.", "BudPol Construction", "EuroStaff Serwis", "ProStaff Polska",
+  "WorkPlus Group", "TalentBridge Recruitment", "NovaHR Poland", "SkillForce Sp. z o.o.", "AlphaKadra",
+  "PrimeKadra", "FlexWork Polska", "InterKadra", "StaffLine Serwis", "PersonnelOne",
+  "TopStaffing", "ProHR Solutions", "JobConnect", "QualityWork Systems", "LabourNet Group"
 ];
 
 const SHIFTS = {
@@ -392,24 +392,39 @@ const TRANSPORT_OPTIONS = {
   ]
 };
 
-const WORKPLACE_TYPES = {
-  ua: [
-    "Тип об’єкта: логістичний центр",
-    "Тип об’єкта: готель 3–4★",
-    "Тип об’єкта: виробничий цех",
-    "Тип об’єкта: ресторан/кафе",
-    "Тип об’єкта: склад e-commerce",
-    "Тип об’єкта: торговий зал"
-  ],
-  pl: [
-    "Typ obiektu: centrum logistyczne",
-    "Typ obiektu: hotel 3–4★",
-    "Typ obiektu: hala produkcyjna",
-    "Typ obiektu: restauracja/kawiarnia",
-    "Typ obiektu: magazyn e-commerce",
-    "Typ obiektu: sala sprzedaży"
-  ]
+const WORKPLACE_TYPES_BY_CAT = {
+  logistics: {
+    ua: ["Тип об’єкта: логістичний центр", "Тип об’єкта: склад e-commerce", "Тип об’єкта: термінал доставки", "Тип об’єкта: розподільчий хаб"],
+    pl: ["Typ obiektu: centrum logistyczne", "Typ obiektu: magazyn e-commerce", "Typ obiektu: terminal dostaw", "Typ obiektu: hub dystrybucyjny"]
+  },
+  production: {
+    ua: ["Тип об’єкта: виробничий цех", "Тип об’єкта: заводська лінія", "Тип об’єкта: пакувальний зал", "Тип об’єкта: монтажний цех"],
+    pl: ["Typ obiektu: hala produkcyjna", "Typ obiektu: linia fabryczna", "Typ obiektu: hala pakowania", "Typ obiektu: sala montażowa"]
+  },
+  construction: {
+    ua: ["Тип об’єкта: будівельний майданчик", "Тип об’єкта: житловий комплекс", "Тип об’єкта: комерційний об’єкт", "Тип об’єкта: реконструкція будівлі"],
+    pl: ["Typ obiektu: plac budowy", "Typ obiektu: osiedle mieszkaniowe", "Typ obiektu: obiekt komercyjny", "Typ obiektu: remont budynku"]
+  },
+  hospitality: {
+    ua: ["Тип об’єкта: готель 3–4★", "Тип об’єкта: ресторан/кафе", "Тип об’єкта: резорт/пансіонат", "Тип об’єкта: кейтерінг-центр"],
+    pl: ["Typ obiektu: hotel 3–4★", "Typ obiektu: restauracja/kawiarnia", "Typ obiektu: resort/pensjonat", "Typ obiektu: centrum cateringowe"]
+  },
+  agriculture: {
+    ua: ["Тип об’єкта: ферма/господарство", "Тип об’єкта: теплиця", "Тип об’єкта: пакувальний цех (овочі/фрукти)", "Тип об’єкта: сад/плантація"],
+    pl: ["Typ obiektu: farma/gospodarstwo", "Typ obiektu: szklarnia", "Typ obiektu: pakowalnia (owoce/warzywa)", "Typ obiektu: sad/plantacja"]
+  },
+  cleaning: {
+    ua: ["Тип об’єкта: офісний центр", "Тип об’єкта: торговий центр", "Тип об’єкта: медичний заклад", "Тип об’єкта: житловий комплекс"],
+    pl: ["Typ obiektu: biurowiec", "Typ obiektu: centrum handlowe", "Typ obiektu: placówka medyczna", "Typ obiektu: osiedle mieszkaniowe"]
+  },
+  retail: {
+    ua: ["Тип об’єкта: торговий зал", "Тип об’єкта: супермаркет", "Тип об’єкта: склад магазину", "Тип об’єкта: аутлет"],
+    pl: ["Typ obiektu: sala sprzedaży", "Typ obiektu: supermarket", "Typ obiektu: magazyn sklepowy", "Typ obiektu: outlet"]
+  }
 };
+function getWorkplaceTypes(catKey) {
+  return WORKPLACE_TYPES_BY_CAT[catKey] || WORKPLACE_TYPES_BY_CAT.logistics;
+}
 
 const TEAM_SIZES = {
   ua: [
@@ -468,60 +483,79 @@ const DAILY_TASKS = {
   ]
 };
 
-const INDUSTRY_SECTORS = {
-  ua: [
-    "Сектор: FMCG (повсякденні товари)",
-    "Сектор: automotive (автодеталі)",
-    "Сектор: fashion (одяг/взуття)",
-    "Сектор: food (харчове виробництво)",
-    "Сектор: electronics (електроніка)",
-    "Сектор: pharma (фарма/косметика)"
-  ],
-  pl: [
-    "Sektor: FMCG (towary codzienne)",
-    "Sektor: automotive (części)",
-    "Sektor: fashion (odzież/obuwie)",
-    "Sektor: food (produkcja spożywcza)",
-    "Sektor: electronics (elektronika)",
-    "Sektor: pharma (farmacja/kosmetyki)"
-  ]
+const INDUSTRY_SECTORS_BY_CAT = {
+  production: {
+    ua: ["Сектор: FMCG (повсякденні товари)", "Сектор: automotive (автодеталі)", "Сектор: fashion (одяг/взуття)", "Сектор: food (харчове виробництво)", "Сектор: electronics (електроніка)", "Сектор: pharma (фарма/косметика)"],
+    pl: ["Sektor: FMCG (towary codzienne)", "Sektor: automotive (części)", "Sektor: fashion (odzież/obuwie)", "Sektor: food (produkcja spożywcza)", "Sektor: electronics (elektronika)", "Sektor: pharma (farmacja/kosmetyki)"]
+  },
+  construction: {
+    ua: ["Сектор: житлове будівництво", "Сектор: комерційне будівництво", "Сектор: дорожнє будівництво", "Сектор: ремонт та реконструкція"],
+    pl: ["Sektor: budownictwo mieszkaniowe", "Sektor: budownictwo komercyjne", "Sektor: budownictwo drogowe", "Sektor: remonty i rekonstrukcje"]
+  },
+  agriculture: {
+    ua: ["Сектор: овочівництво", "Сектор: садівництво", "Сектор: тваринництво", "Сектор: переробка с/г продукції"],
+    pl: ["Sektor: warzywnictwo", "Sektor: sadownictwo", "Sektor: hodowla", "Sektor: przetwórstwo rolne"]
+  },
+  cleaning: {
+    ua: ["Сектор: комерційний клінінг", "Сектор: промисловий клінінг", "Сектор: готельний сервіс", "Сектор: медичний клінінг"],
+    pl: ["Sektor: sprzątanie komercyjne", "Sektor: sprzątanie przemysłowe", "Sektor: serwis hotelowy", "Sektor: sprzątanie medyczne"]
+  }
 };
+function getIndustrySectors(catKey) {
+  return INDUSTRY_SECTORS_BY_CAT[catKey] || INDUSTRY_SECTORS_BY_CAT.production;
+}
 
-const EQUIPMENT_LIST = {
-  ua: [
-    "Обладнання: сканери Zebra/Honeywell",
-    "Обладнання: електричні рокли",
-    "Обладнання: пакувальні машини",
-    "Обладнання: конвеєрні лінії",
-    "Обладнання: професійна посудомийна машина",
-    "Обладнання: інструментальні набори"
-  ],
-  pl: [
-    "Sprzęt: skanery Zebra/Honeywell",
-    "Sprzęt: wózki elektryczne",
-    "Sprzęt: maszyny pakujące",
-    "Sprzęt: linie taśmowe",
-    "Sprzęt: profesjonalna zmywarka",
-    "Sprzęt: zestawy narzędzi"
-  ]
+const EQUIPMENT_LIST_BY_CAT = {
+  production: {
+    ua: ["Обладнання: сканери Zebra/Honeywell", "Обладнання: пакувальні машини", "Обладнання: конвеєрні лінії", "Обладнання: промислові тележки"],
+    pl: ["Sprzęt: skanery Zebra/Honeywell", "Sprzęt: maszyny pakujące", "Sprzęt: linie taśmowe", "Sprzęt: wózki przemysłowe"]
+  },
+  construction: {
+    ua: ["Обладнання: будівельні інструменти", "Обладнання: бетонозмішувач", "Обладнання: буд. ліси та помости", "Обладнання: електроінструменти"],
+    pl: ["Sprzęt: narzędzia budowlane", "Sprzęt: betoniarka", "Sprzęt: rusztowania", "Sprzęt: elektronarzędzia"]
+  },
+  agriculture: {
+    ua: ["Обладнання: с/г техніка", "Обладнання: ручний садовий інструмент", "Обладнання: системи зрошення", "Обладнання: сортувальні лінії"],
+    pl: ["Sprzęt: maszyny rolnicze", "Sprzęt: ręczne narzędzia ogrodnicze", "Sprzęt: systemy nawadniające", "Sprzęt: linie sortujące"]
+  },
+  cleaning: {
+    ua: ["Обладнання: промислові пилососи", "Обладнання: мийні машини", "Обладнання: полірувальники підлоги", "Обладнання: хімічні засоби (надаються)"],
+    pl: ["Sprzęt: odkurzacze przemysłowe", "Sprzęt: maszyny czyszczące", "Sprzęt: polerki do podłóg", "Sprzęt: środki chemiczne (zapewnione)"]
+  },
+  logistics: {
+    ua: ["Обладнання: електричні рокли", "Обладнання: сканери штрих-кодів", "Обладнання: навантажувачі", "Обладнання: сортувальні системи"],
+    pl: ["Sprzęt: wózki elektryczne", "Sprzęt: skanery kodów kreskowych", "Sprzęt: wózki widłowe", "Sprzęt: systemy sortujące"]
+  }
 };
+function getEquipmentList(catKey) {
+  return EQUIPMENT_LIST_BY_CAT[catKey] || EQUIPMENT_LIST_BY_CAT.production;
+}
 
-const PHYSICAL_REQUIREMENTS = {
-  ua: [
-    "Фізичні вимоги: піднімання до 10 кг",
-    "Фізичні вимоги: піднімання до 15 кг",
-    "Фізичні вимоги: робота стоячи 6–8 год",
-    "Фізичні вимоги: багато ходьби протягом зміни",
-    "Фізичні вимоги: робота у швидкому темпі"
-  ],
-  pl: [
-    "Wymagania fizyczne: dźwiganie do 10 kg",
-    "Wymagania fizyczne: dźwiganie do 15 kg",
-    "Wymagania fizyczne: praca stojąca 6–8 h",
-    "Wymagania fizyczne: dużo chodzenia w trakcie zmiany",
-    "Wymagania fizyczne: praca w szybkim tempie"
-  ]
+const PHYSICAL_REQUIREMENTS_BY_CAT = {
+  production: {
+    ua: ["Фізичні вимоги: піднімання до 15 кг", "Фізичні вимоги: робота стоячи 6–8 год", "Фізичні вимоги: робота у швидкому темпі", "Фізичні вимоги: багато ходьби протягом зміни"],
+    pl: ["Wymagania fizyczne: dźwiganie do 15 kg", "Wymagania fizyczne: praca stojąca 6–8 h", "Wymagania fizyczne: praca w szybkim tempie", "Wymagania fizyczne: dużo chodzenia w trakcie zmiany"]
+  },
+  construction: {
+    ua: ["Фізичні вимоги: піднімання до 25 кг", "Фізичні вимоги: робота на висоті", "Фізичні вимоги: робота на відкритому повітрі", "Фізичні вимоги: фізична витривалість"],
+    pl: ["Wymagania fizyczne: dźwiganie do 25 kg", "Wymagania fizyczne: praca na wysokości", "Wymagania fizyczne: praca na zewnątrz", "Wymagania fizyczne: wytrzymałość fizyczna"]
+  },
+  agriculture: {
+    ua: ["Фізичні вимоги: робота на відкритому повітрі", "Фізичні вимоги: нахил/присідання", "Фізичні вимоги: піднімання до 15 кг", "Фізичні вимоги: робота у різних погодних умовах"],
+    pl: ["Wymagania fizyczne: praca na zewnątrz", "Wymagania fizyczne: pochylanie/przysiady", "Wymagania fizyczne: dźwiganie do 15 kg", "Wymagania fizyczne: praca w różnych warunkach pogodowych"]
+  },
+  cleaning: {
+    ua: ["Фізичні вимоги: піднімання до 10 кг", "Фізичні вимоги: робота стоячи 4–6 год", "Фізичні вимоги: багато ходьби протягом зміни", "Фізичні вимоги: робота ротаційна"],
+    pl: ["Wymagania fizyczne: dźwiganie do 10 kg", "Wymagania fizyczne: praca stojąca 4–6 h", "Wymagania fizyczne: dużo chodzenia w trakcie zmiany", "Wymagania fizyczne: praca rotacyjna"]
+  },
+  logistics: {
+    ua: ["Фізичні вимоги: піднімання до 20 кг", "Фізичні вимоги: робота стоячи 6–8 год", "Фізичні вимоги: багато ходьби протягом зміни", "Фізичні вимоги: робота у швидкому темпі"],
+    pl: ["Wymagania fizyczne: dźwiganie do 20 kg", "Wymagania fizyczne: praca stojąca 6–8 h", "Wymagania fizyczne: dużo chodzenia w trakcie zmiany", "Wymagania fizyczne: praca w szybkim tempie"]
+  }
 };
+function getPhysicalRequirements(catKey) {
+  return PHYSICAL_REQUIREMENTS_BY_CAT[catKey] || PHYSICAL_REQUIREMENTS_BY_CAT.production;
+}
 
 const SHIFT_STRUCTURE = {
   ua: [
@@ -606,6 +640,26 @@ const HOUSING_REQUIREMENTS = {
     "Pokój 2–3 osobowy, internet w cenie.",
     "Zakwaterowanie 1–2 dni przed startem."
   ]
+};
+
+
+// City-specific context for unique per-page content
+const CITY_CONTEXT = {
+  warsaw:    { ua: "Варшава — найбільший ринок праці в Польщі, столиця з розвиненою інфраструктурою та високим попитом на робочу силу.", pl: "Warszawa — największy rynek pracy w Polsce, stolica z rozwiniętą infrastrukturą i dużym zapotrzebowaniem na pracowników." },
+  krakow:    { ua: "Краків — друге за величиною місто Польщі, відоме великою кількістю сервісних центрів та туристичною інфраструктурою.", pl: "Kraków — drugie co do wielkości miasto Polski, znane z licznych centrów usługowych i infrastruktury turystycznej." },
+  wroclaw:   { ua: "Вроцлав — динамічне місто з великою кількістю логістичних центрів та виробництв.", pl: "Wrocław — dynamiczne miasto z dużą liczbą centrów logistycznych i zakładów produkcyjnych." },
+  poznan:    { ua: "Познань — потужний промисловий центр на заході Польщі з розвиненою логістикою.", pl: "Poznań — silne centrum przemysłowe w zachodniej Polsce z rozwiniętą logistyką." },
+  gdansk:    { ua: "Гданськ — портове місто з розвиненою судноплавною і логістичною галуззю.", pl: "Gdańsk — miasto portowe z rozwiniętą branżą morską i logistyczną." },
+  szczecin:  { ua: "Щецін — портовий хаб біля кордону з Німеччиною, зручна логістика та доступ до EU.", pl: "Szczecin — hub portowy blisko granicy z Niemcami, wygodna logistyka i dostęp do UE." },
+  lodz:      { ua: "Лодзь — колишня текстильна столиця Польщі, тепер великий логістичний та виробничий центр.", pl: "Łódź — była stolica tekstylna Polski, obecnie duże centrum logistyczne i produkcyjne." },
+  katowice:  { ua: "Катовіце — серце Сілезького регіону з великою кількістю виробничих підприємств.", pl: "Katowice — serce regionu śląskiego z licznymi zakładami produkcyjnymi." },
+  lublin:    { ua: "Люблін — найбільше місто на сході Польщі з розвиненим агро- та харчовим сектором.", pl: "Lublin — największe miasto wschodniej Polski z rozwiniętym sektorem rolno-spożywczym." },
+  bialystok: { ua: "Білосток — місто на північному сході, близькість до кордону, зростаючий ринок праці.", pl: "Białystok — miasto na północnym wschodzie, bliskość granicy, rosnący rynek pracy." },
+  rzeszow:   { ua: "Ряшів — столиця Підкарпаття, динамічно розвивається, зростає попит на працівників.", pl: "Rzeszów — stolica Podkarpacia, dynamicznie się rozwija, rosnące zapotrzebowanie na pracowników." },
+  torun:     { ua: "Торунь — історичне місто з розвиненою харчовою промисловістю та виробництвом.", pl: "Toruń — zabytkowe miasto z rozwiniętym przemysłem spożywczym i produkcją." },
+  plock:     { ua: "Плоцьк — промислове місто на р. Вісла, відоме нафтопереробкою та хімічною промисловістю.", pl: "Płock — miasto przemysłowe nad Wisłą, znane z rafinerii i przemysłu chemicznego." },
+  sosnowiec: { ua: "Сосновець — частина Сілезької агломерації, великий промисловий і логістичний потенціал.", pl: "Sosnowiec — część aglomeracji śląskiej, duży potencjał przemysłowy i logistyczny." },
+  gdynia:    { ua: "Гдиня — портове місто Тріміста, центр морської логістики та контейнерних перевезень.", pl: "Gdynia — miasto portowe Trójmiasta, centrum logistyki morskiej i kontenerowej." }
 };
 
 const ROLES = {
@@ -1135,7 +1189,7 @@ Object.keys(ROLES).forEach(catKey => {
       let shiftStructPL;
       
       // Categories that should have sector/equipment fields
-      const categoriesWithSector = ['production', 'construction', 'agriculture', 'cleaning'];
+      const categoriesWithSector = ['production', 'construction', 'agriculture', 'cleaning', 'logistics'];
       let tasksUA;
       let tasksPL;
       let offersUA;
@@ -1230,12 +1284,13 @@ Object.keys(ROLES).forEach(catKey => {
           const idx = Math.floor(Math.random() * Math.min(DOCUMENTS_NEEDED.ua.length, DOCUMENTS_NEEDED.pl.length));
           docIndices.push(idx);
         }
-        documentsUA = `Документи: ${docIndices.map(i => DOCUMENTS_NEEDED.ua[i]).join(', ')}`;
-        documentsPL = `Dokumenty: ${docIndices.map(i => DOCUMENTS_NEEDED.pl[i]).join(', ')}`;
+        const uniqueDocIndices = [...new Set(docIndices)];
+        documentsUA = `Документи: ${uniqueDocIndices.map(i => DOCUMENTS_NEEDED.ua[i]).join(', ')}`;
+        documentsPL = `Dokumenty: ${uniqueDocIndices.map(i => DOCUMENTS_NEEDED.pl[i]).join(', ')}`;
         
-        const workplaceIndex = Math.floor(Math.random() * Math.min(WORKPLACE_TYPES.ua.length, WORKPLACE_TYPES.pl.length));
-        workplaceUA = WORKPLACE_TYPES.ua[workplaceIndex];
-        workplacePL = WORKPLACE_TYPES.pl[workplaceIndex];
+        const workplaceIndex = Math.floor(Math.random() * Math.min(getWorkplaceTypes(catKey).ua.length, getWorkplaceTypes(catKey).pl.length));
+        workplaceUA = getWorkplaceTypes(catKey).ua[workplaceIndex];
+        workplacePL = getWorkplaceTypes(catKey).pl[workplaceIndex];
         
         const teamIndex = Math.floor(Math.random() * Math.min(TEAM_SIZES.ua.length, TEAM_SIZES.pl.length));
         teamUA = TEAM_SIZES.ua[teamIndex];
@@ -1251,17 +1306,17 @@ Object.keys(ROLES).forEach(catKey => {
         // NOT for logistics, hospitality, retail, beauty, education
         // SYNC UA/PL: Use same index
         if (categoriesWithSector.includes(catKey)) {
-          const sectorIndex = Math.floor(Math.random() * Math.min(INDUSTRY_SECTORS.ua.length, INDUSTRY_SECTORS.pl.length));
-          sectorUA = INDUSTRY_SECTORS.ua[sectorIndex];
-          sectorPL = INDUSTRY_SECTORS.pl[sectorIndex];
+          const sectorIndex = Math.floor(Math.random() * Math.min(getIndustrySectors(catKey).ua.length, getIndustrySectors(catKey).pl.length));
+          sectorUA = getIndustrySectors(catKey).ua[sectorIndex];
+          sectorPL = getIndustrySectors(catKey).pl[sectorIndex];
           
-          const equipIndex = Math.floor(Math.random() * Math.min(EQUIPMENT_LIST.ua.length, EQUIPMENT_LIST.pl.length));
-          equipmentUA = EQUIPMENT_LIST.ua[equipIndex];
-          equipmentPL = EQUIPMENT_LIST.pl[equipIndex];
+          const equipIndex = Math.floor(Math.random() * Math.min(getEquipmentList(catKey).ua.length, getEquipmentList(catKey).pl.length));
+          equipmentUA = getEquipmentList(catKey).ua[equipIndex];
+          equipmentPL = getEquipmentList(catKey).pl[equipIndex];
           
-          const physicalIndex = Math.floor(Math.random() * Math.min(PHYSICAL_REQUIREMENTS.ua.length, PHYSICAL_REQUIREMENTS.pl.length));
-          physicalUA = PHYSICAL_REQUIREMENTS.ua[physicalIndex];
-          physicalPL = PHYSICAL_REQUIREMENTS.pl[physicalIndex];
+          const physicalIndex = Math.floor(Math.random() * Math.min(getPhysicalRequirements(catKey).ua.length, getPhysicalRequirements(catKey).pl.length));
+          physicalUA = getPhysicalRequirements(catKey).ua[physicalIndex];
+          physicalPL = getPhysicalRequirements(catKey).pl[physicalIndex];
           
           const shiftStructIndex = Math.floor(Math.random() * Math.min(SHIFT_STRUCTURE.ua.length, SHIFT_STRUCTURE.pl.length));
           shiftStructUA = SHIFT_STRUCTURE.ua[shiftStructIndex];
@@ -1365,6 +1420,7 @@ Object.keys(ROLES).forEach(catKey => {
       const bodyUA = `
         <div class="vacancy-block">
           <p>${introUA}</p>
+          ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
           <div class="job-meta">
             <p><strong>🏢 Компанія:</strong> ${company}</p>
             <p><strong>📍 Місто:</strong> ${city.ua}</p>
@@ -1384,6 +1440,7 @@ Object.keys(ROLES).forEach(catKey => {
       const bodyPL = `
         <div class="vacancy-block">
           <p>${introPL}</p>
+          ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
           <div class="job-meta">
             <p><strong>🏢 Firma:</strong> ${company}</p>
             <p><strong>📍 Miasto:</strong> ${city.pl}</p>
@@ -1485,3 +1542,33 @@ Object.keys(ROLES).forEach(catKey => {
 
 fs.writeFileSync(path.join(__dirname, 'content.json'), JSON.stringify(JOBS_DB, null, 2));
 console.log(`🎉 Generated ${JOBS_DB.length} unique vacancies across ${CITIES.length} cities.`);
+
+// Auto-select 50 indexable slugs distributed across categories and cities
+const TARGET_INDEXABLE = 50;
+const allCats = [...new Set(JOBS_DB.map(p => p.category))];
+const perCat = Math.max(3, Math.floor(TARGET_INDEXABLE / allCats.length));
+const selectedSlugs = [];
+const usedSlugsSet = new Set();
+
+for (const cat of allCats) {
+  const pool = JOBS_DB.filter(p => p.category === cat);
+  const citySet = new Set();
+  for (const p of pool) {
+    if (selectedSlugs.length >= TARGET_INDEXABLE) break;
+    if (!citySet.has(p.city) && selectedSlugs.filter(s => JOBS_DB.find(j => j.slug === s)?.category === cat).length < perCat) {
+      selectedSlugs.push(p.slug);
+      citySet.add(p.city);
+      usedSlugsSet.add(p.slug);
+    }
+  }
+}
+while (selectedSlugs.length < TARGET_INDEXABLE) {
+  const remaining = JOBS_DB.filter(p => !usedSlugsSet.has(p.slug));
+  if (!remaining.length) break;
+  const pick = remaining[Math.floor(Math.random() * remaining.length)];
+  selectedSlugs.push(pick.slug);
+  usedSlugsSet.add(pick.slug);
+}
+
+fs.writeFileSync(path.join(__dirname, 'indexable-vacancies.json'), JSON.stringify(selectedSlugs.sort(), null, 2));
+console.log(`📌 Selected ${selectedSlugs.length} indexable vacancies across ${allCats.length} categories.`);
