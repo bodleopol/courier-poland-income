@@ -992,8 +992,9 @@ async function build() {
 
   const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
 
-  // Write jobs data for client-side loading (strip internal fields)
-  const publicPages = pages.map(p => {
+  // Write jobs data for client-side loading (only indexable pages, strip internal fields)
+  const indexablePages = pages.filter(p => !p.is_generated || indexableVacancySlugs.has(String(p.slug)));
+  const publicPages = indexablePages.map(p => {
     const { is_generated, data_source, ...rest } = p;
     return rest;
   });
@@ -1199,7 +1200,8 @@ async function build() {
       </div>`;
 
     // Build related vacancies (same city or same category, max 3)
-    const relatedVacancies = pages
+    // Only link to pages that have HTML files (pagesToGenerate)
+    const relatedVacancies = pagesToGenerate
       .filter(p => p.slug !== page.slug && p.is_generated && (
         (p.city === page.city && p.category !== page.category) ||
         (p.category === page.category && p.city !== page.city)
