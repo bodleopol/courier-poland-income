@@ -10,6 +10,44 @@ const TEMPLATES = path.join(SRC, 'templates');
 const DIST = path.join(process.cwd(), 'dist');
 const POSTS_PER_PAGE = 20;
 
+// Indexing strategy for vacancies to reduce doorway/scaled-content risk.
+// Keep a limited set of generated vacancies indexable; mark the rest as noindex.
+const INDEXABLE_VACANCIES_LIMIT = Number.parseInt(process.env.INDEXABLE_VACANCIES_LIMIT || '50', 10);
+
+async function loadIndexableVacancySlugs(allPages) {
+  const whitelistPath = path.join(SRC, 'indexable-vacancies.json');
+  try {
+    const raw = await fs.readFile(whitelistPath, 'utf8');
+    const slugs = JSON.parse(raw);
+    if (Array.isArray(slugs) && slugs.length > 0) {
+      return new Set(slugs.map(String));
+    }
+  } catch (e) {
+    // no whitelist file, fall back to limit
+  }
+
+  const limit = Number.isFinite(INDEXABLE_VACANCIES_LIMIT) ? Math.max(0, INDEXABLE_VACANCIES_LIMIT) : 50;
+  return new Set(allPages.slice(0, limit).map(p => String(p.slug)));
+}
+
+function setRobotsMeta(html, robotsContent) {
+  const out = String(html || '');
+  if (/<meta\s+name=["']robots["'][^>]*>/i.test(out)) {
+    return out.replace(/<meta\s+name=["']robots["'][^>]*>/i, (tag) => {
+      if (/content=/i.test(tag)) {
+        return tag.replace(/content=["'][^"']*["']/i, `content="${robotsContent}"`);
+      }
+      // add content attribute if missing
+      return tag.replace(/>$/, ` content="${robotsContent}">`);
+    });
+  }
+  // If missing, inject before </head>
+  if (/<\/head>/i.test(out)) {
+    return out.replace(/<\/head>/i, `  <meta name="robots" content="${robotsContent}">\n</head>`);
+  }
+  return out;
+}
+
 const SITE_AUTHOR = {
   ua: {
     name: 'Редакційна команда Rybezh',
@@ -727,11 +765,13 @@ function sanitizeStaticHtmlHead(html) {
   // Remove apple-touch-icon link if we don't ship a PNG icon.
   out = out.replace(/\s*<link\s+rel=["']apple-touch-icon["'][^>]*>\s*/gi, '\n');
 
-  // Ensure OG image reference doesn't 404.
-  out = out.replace(/https:\/\/rybezh\.site\/og-image\.jpg/gi, 'https://rybezh.site/og-image.svg');
-  out = out.replace(/\b\/og-image\.jpg\b/gi, '/og-image.svg');
+  // Normalize OG image references to PNG for best social preview compatibility.
+  out = out.replace(/https:\/\/rybezh\.site\/og-image\.jpg/gi, 'https://rybezh.site/og-image.png');
+  out = out.replace(/\b\/og-image\.jpg\b/gi, '/og-image.png');
+  out = out.replace(/https:\/\/rybezh\.site\/og-image\.svg/gi, 'https://rybezh.site/og-image.png');
+  out = out.replace(/\b\/og-image\.svg\b/gi, '/og-image.png');
 
-  // If template had JPEG type declared, remove it (SVG is served as image/svg+xml).
+  // If template had stale OG image type, remove it and let templates provide canonical type.
   out = out.replace(/\s*<meta\s+property=["']og:image:type["'][^>]*>\s*/gi, '\n');
 
   // Inject verification meta if provided
@@ -950,6 +990,8 @@ async function build() {
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
 
+  const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
+
   // Write jobs data for client-side loading
   await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(pages), 'utf8');
 
@@ -1030,6 +1072,22 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'og-image.svg'), ogContent, 'utf8');
   } catch (e) {
     // og-image.svg not found, continue
+  }
+
+  // Copy PNG social image for Open Graph/Twitter (Facebook-friendly).
+  // If dedicated og-image.png is missing, fall back to apple-touch-icon.png.
+  try {
+    const ogPngPath = path.join(SRC, 'og-image.png');
+    const ogPngContent = await fs.readFile(ogPngPath);
+    await fs.writeFile(path.join(DIST, 'og-image.png'), ogPngContent);
+  } catch (e) {
+    try {
+      const appleIconPath = path.join(SRC, 'apple-touch-icon.png');
+      const appleIconContent = await fs.readFile(appleIconPath);
+      await fs.writeFile(path.join(DIST, 'og-image.png'), appleIconContent);
+    } catch (fallbackErr) {
+      // No PNG fallback found, continue
+    }
   }
 
   // Prepare dynamic translations for jobs
@@ -1224,14 +1282,16 @@ async function build() {
       }
     }
 
-    // Generated vacancies should be indexed for organic traffic
-    // Remove duplicate robots meta if template already has one
+    // Indexing policy for generated vacancies:
+    // - only a limited subset remains indexable (top-N or whitelist)
+    // - the rest are noindex to reduce doorway/scaled-content signals
     if (page?.is_generated) {
-      // Replace conservative "index, follow" with more specific directives
-      finalHtml = finalHtml.replace(
-        '<meta name="robots" content="index, follow">',
-        '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">'
-      );
+      const isIndexable = indexableVacancySlugs.has(String(page.slug));
+      if (isIndexable) {
+        finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
+      } else {
+        finalHtml = setRobotsMeta(finalHtml, 'noindex, follow');
+      }
     }
 
     // Add specific styles for job pages
