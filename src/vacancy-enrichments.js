@@ -8,8 +8,8 @@ const ENRICHMENTS = {
     quote_pl: "«Pracuję tu już 8 miesięcy — dzieci się przyzwyczaiły, rodzice ufają. Najbardziej podoba mi się stały grafik i brak zmian wieczornych.» — Oksana, niania",
     tip_ua: "Садок розташований біля парку Планти — влітку діти гуляють там щодня. Від залізничного вокзалу Białystok Główny — 12 хв маршруткою. Поруч є круглосуточний Żabka та аптека.",
     tip_pl: "Przedszkole mieści się przy parku Planty — latem dzieci codziennie wychodzą na spacer. Od dworca Białystok Główny — 12 min autobusem. W pobliżu Żabka czynna 24h i apteka.",
-    detail_ua: "Група складається з 15–18 дітей віком 3–5 років. Є один основний вихователь і один помічник. Обід для персоналу — за символічну ціну в кухні закладу.",
-    detail_pl: "Grupa liczy 15–18 dzieci w wieku 3–5 lat. Jest jeden główny wychowawca i jeden pomocnik. Obiad dla personelu w symbolicznej cenie w kuchni placówki."
+    detail_ua: "Група складається з 15–18 дітей віком 3–5 років. Є один основний вихователь і один помічник. Обід для персоналу — за символічну ціну в кухні закладу. Батьки забирають дітей до 17:00, після чого можна спокійно йти додому.",
+    detail_pl: "Grupa liczy 15–18 dzieci w wieku 3–5 lat. Jest jeden główny wychowawca i jeden pomocnik. Obiad dla personelu w symbolicznej cenie w kuchni placówki. Rodzice odbierają dzieci do 17:00, potem można spokojnie iść do domu."
   },
   "gdansk-agriculture-pomocnik-ogrodnika-148": {
     quote_ua: "«Перший місяць був важкий, але потім звикаєш до ритму. Повітря свіже, колектив — переважно місцеві та українці. Зимою менше роботи, але контракт цілорічний.» — Андрій, помічник садівника",
@@ -40,12 +40,12 @@ const ENRICHMENTS = {
     quote_pl: "«Budujemy osiedle na Przymorzu. Brygada — 12 osób, w tym 5 Ukraińców. Brygadzista rano wyjaśnia zadania, potem pracujemy samodzielnie.» — Serhij, robotnik",
     tip_ua: "Будмайданчик у районі Przymorze Wielkie. Зупинка трамваю Hallera — 5 хв пішки. Поряд — Lidl та Biedronka. Паркінг на об'єкті для працівників.",
     tip_pl: "Plac budowy w dzielnicy Przymorze Wielkie. Przystanek tramwajowy Hallera — 5 min pieszo. Obok Lidl i Biedronka. Parking na obiekcie.",
-    detail_ua: "Робота на свіжому повітрі. Зимою — перерва або внутрішні роботи. Каски, жилети та рукавиці видаються. Інструктаж BHP у перший день (1 год).",
-    detail_pl: "Praca na powietrzu. Zimą — przerwa lub prace wewnętrzne. Kaski, kamizelki i rękawice zapewnione. Instruktaż BHP pierwszego dnia (1h)."
+    detail_ua: "Робота на свіжому повітрі. Зимою — перерва або внутрішні роботи. Каски, жилети та рукавиці видаються. Інструктаж BHP у перший день (1 год). Щомісяця проводиться нарада з прорабом, де обговорюють план на наступний етап.",
+    detail_pl: "Praca na powietrzu. Zimą — przerwa lub prace wewnętrzne. Kaski, kamizelki i rękawice zapewnione. Instruktaż BHP pierwszego dnia (1h). Co miesiąc odbywa się narada z kierownikiem, gdzie omawia się plan na kolejny etap."
   },
   "gdansk-education-pomoc-nauczyciela-287": {
-    quote_ua: "«Діти дуже енергійні, але це надихає. Працюю з двома групами — вранці з малюками, після обіду з дошкільнятами. Колектив дружній, мене підтримували з першого дня.» — Марина, помічник вихователя",
-    quote_pl: "«Dzieci są bardzo energiczne, ale to inspiruje. Pracuję z dwiema grupami — rano z maluchami, po obiedzie z przedszkolakami. Zespół przyjazny, od pierwszego dnia mnie wspierali.» — Maryna, pomoc nauczyciela",
+    quote_ua: "Діти дуже енергійні, але це надихає. Працюю з двома групами — вранці з малюками, після обіду з дошкільнятами. Колектив дружній, мене підтримували з першого дня. — Марина, помічник вихователя",
+    quote_pl: "Dzieci są bardzo energiczne, ale to inspiruje. Pracuję z dwiema grupami — rano z maluchami, po obiedzie z przedszkolakami. Zespół przyjazny, od pierwszego dnia mnie wspierali. — Maryna, pomoc nauczyciela",
     tip_ua: "Садок у районі Oliwa, біля Парку Олівського із знаменитим органом. Від SKM Gdańsk Oliwa — 7 хв пішки. Тихий зелений район з парками.",
     tip_pl: "Przedszkole w dzielnicy Oliwa, przy Parku Oliwskim ze słynnymi organami. Od SKM Gdańsk Oliwa — 7 min pieszo. Cicha zielona dzielnica.",
     detail_ua: "У кожній групі — до 20 дітей. Помічник відповідає за прогулянки, допомогу під час обіду та організацію ігор. Прибирання — окремий персонал.",
@@ -64,8 +64,8 @@ const ENRICHMENTS = {
     quote_pl: "«Montujemy bloki elektroniczne do samochodów. Praca czysta, w rękawiczkach, przy stole. Normę robię do obiadu — po południu spokojniej.» — Dmytro, monter",
     tip_ua: "Завод у промзоні Kowale — автобус 184 від Wrzeszcz, 20 хв. Великий паркінг. Поруч McDonald's та stacja benzynowa. Їдальня на заводі — обід 12 zł.",
     tip_pl: "Fabryka w strefie Kowale — autobus 184 z Wrzeszcza, 20 min. Duży parking. Obok McDonald's i stacja benzynowa. Stołówka — obiad 12 zł.",
-    detail_ua: "Лінія працює у 3 зміни по 8 год. Є план — 120 блоків за зміну, але реально вдається зробити більше. Премія за перевиконання — до 400 zł/міс.",
-    detail_pl: "Linia pracuje na 3 zmiany po 8h. Plan — 120 bloków na zmianę, realnie da się więcej. Premia za przekroczenie planu — do 400 zł/mies."
+    detail_ua: "Лінія працює у 3 зміни по 8 год. Є план — 120 блоків за зміну, але реально вдається зробити більше. Премія за перевиконання — до 400 zł/міс. Раз на квартал — тест якості, за який можна отримати додатковий бонус.",
+    detail_pl: "Linia pracuje na 3 zmiany po 8h. Plan — 120 bloków na zmianę, realnie da się więcej. Premia za przekroczenie planu — do 400 zł/mies. Raz na kwartał test jakości, za który można dostać dodatkowy bonus."
   },
   "gdansk-retail-sprzedawca-246": {
     quote_ua: "«Працюю в магазині одягу в Galeria Bałtycka. Робота — розкладка товару, консультації, каса. У п'ятницю найбільший потік. Є знижка 20% для персоналу.» — Каріна, продавець",
@@ -92,8 +92,8 @@ const ENRICHMENTS = {
     detail_pl: "Dostawczy Mercedes Sprinter lub Renault Master. Obowiązkowy GPS. Płatność za paczkę (1,8–2,2 zł) + stawka bazowa. W grudniu podwójny wolumen."
   },
   "krakow-agriculture-zbieracz-owoc-w-145": {
-    quote_ua: "«Збираємо полуницю з травня по липень, потім малину. Платять за кілограм, мотивація є. У день можна зібрати 50–70 кг, якщо не лінуватися.» — Тарас, збирач",
-    quote_pl: "«Zbieramy truskawki od maja do lipca, potem maliny. Płacą od kilograma, motywacja jest. Dziennie można zebrać 50–70 kg, jeśli się nie lenić.» — Taras, zbieracz",
+    quote_ua: "Збираємо полуницю з травня по липень, потім малину. Платять за кілограм, мотивація є. У день можна зібрати 50–70 кг, якщо не лінуватися. — Тарас, збирач",
+    quote_pl: "Zbieramy truskawki od maja do lipca, potem maliny. Płacą od kilograma, motywacja jest. Dziennie można zebrać 50–70 kg, jeśli się nie lenić. — Taras, zbieracz",
     tip_ua: "Плантація під Краковом, у напрямку Величка (Wieliczka). Від Dworzec Główny — автобус 304, 35 хв. Є підвіз від хостелу щодня о 5:45.",
     tip_pl: "Plantacja pod Krakowem, w kierunku Wieliczki. Od Dworca Głównego — autobus 304, 35 min. Codziennie dowóz z hostelu o 5:45.",
     detail_ua: "Робочий день з 6:00 до 14:00 (спека). Рукавиці та фартухи видаються. Вода і чай — безкоштовно на полі. Виплата раз на тиждень на банківську карту.",
@@ -120,8 +120,8 @@ const ENRICHMENTS = {
     quote_pl: "«Budujemy osiedle na Nowej Hucie. Brygada duża — 20 osób. Zajmuję się murowaniem i tynkowaniem. Co tydzień brygadzista podsumowuje i płaci za nadgodziny.» — Ołeksij, robotnik",
     tip_ua: "Будова на Nowa Huta, район os. Zgody. Трамвай 4 від Dworzec Główny — 30 хв. Є їдальня на об'єкті з обідами по 15 zł. Поруч — duży Kaufland.",
     tip_pl: "Budowa na Nowej Hucie, os. Zgody. Tramwaj nr 4 od Dworca Głównego — 30 min. Stołówka na obiekcie — obiady po 15 zł. Obok duży Kaufland.",
-    detail_ua: "Об'єкт — 4 блоки по 5 поверхів. Зараз етап внутрішніх робіт. Зміна з 7:00 до 15:30. ЗІЗ повністю від компанії (каска, черевики, жилет).",
-    detail_pl: "Obiekt — 4 bloki po 5 pięter. Obecnie etap prac wewnętrznych. Zmiana 7:00–15:30. Środki ochrony od firmy (kask, buty, kamizelka)."
+    detail_ua: "Об'єкт — 4 блоки по 5 поверхів. Зараз етап внутрішніх робіт. Зміна з 7:00 до 15:30. ЗІЗ повністю від компанії (каска, черевики, жилет). На об'єкті є WiFi для працівників та кімната для відпочинку з мікрохвильовкою.",
+    detail_pl: "Obiekt — 4 bloki po 5 pięter. Obecnie etap prac wewnętrznych. Zmiana 7:00–15:30. Środki ochrony od firmy (kask, buty, kamizelka). Na obiekcie WiFi dla pracowników i pokój socjalny z mikrofalówką."
   },
   "krakow-education-asystent-w-przedszkolu-284": {
     quote_ua: "«Садок приватний, групи маленькі — по 12 дітей. Мені подобається, що є творчі заняття — ліпимо, малюємо. Діти звикають швидко, навіть якщо ти нова.» — Ірина, асистент",
@@ -136,8 +136,8 @@ const ENRICHMENTS = {
     quote_pl: "«Restauracja kuchni polskiej, 80 miejsc. Kroję warzywa, gotuję sosy, pomagam szefowi. W porze obiadowej — tempo, ale ciekawie. Po 4 miesiącach awansowałem na pomoc kucharza.» — Bohdan, asystent",
     tip_ua: "Ресторан у самому центрі, біля Rynek Główny. Від Dworzec Główny — 10 хв пішки. Район — серце Кракова, багато туристів. Чайові в ресторані діляться між усіма.",
     tip_pl: "Restauracja w centrum, przy Rynku Głównym. Od Dworca Głównego — 10 min pieszo. Serce Krakowa, dużo turystów. Napiwki dzielone między wszystkich.",
-    detail_ua: "Кухня працює з 9:00 до 22:00 (дві зміни). Персоналу — безкоштовна їжа на кожній зміні. Шеф-кухар — поляк з 15-річним досвідом, дуже терплячий до новачків.",
-    detail_pl: "Kuchnia czynna 9:00–22:00 (dwie zmiany). Darmowy posiłek na każdej zmianie. Szef kuchni — Polak z 15-letnim doświadczeniem, cierpliwy wobec nowych."
+    detail_ua: "Кухня працює з 9:00 до 22:00 (дві зміни). Персоналу — безкоштовна їжа на кожній зміні. Шеф-кухар — поляк з 15-річним досвідом, дуже терплячий до новачків. По четвергах шеф готує нову страву для дегустації — персонал оцінює першим.",
+    detail_pl: "Kuchnia czynna 9:00–22:00 (dwie zmiany). Darmowy posiłek na każdej zmianie. Szef kuchni — Polak z 15-letnim doświadczeniem, cierpliwy wobec nowych. W czwartki szef gotuje nowe danie do degustacji — personel ocenia pierwszy."
   },
   "krakow-production-monter-podzespol-w-102": {
     quote_ua: "«Завод Automotive — збираємо кабельні джгути для BMW. Робота сидяча, чиста. Є кондиціонер. Темп не шалений, головне — якість. Перевірка кожні 50 штук.» — Роман, монтажник",
@@ -148,8 +148,8 @@ const ENRICHMENTS = {
     detail_pl: "3 zmiany: 6:00–14:00, 14:00–22:00, 22:00–6:00. Nocna zmiana +25% do stawki. Stołówka — obiad 10 zł. Automaty z kawą i przekąskami na każdym piętrze."
   },
   "krakow-retail-sprzedawca-243": {
-    quote_ua: "«Працюю у Decathlon біля Galeria Kazimierz. Сама займаюсь спортом, тому розбираюсь у товарах. Клієнти часто питають поради — мені це подобається. Знижка 30% на все.» — Вікторія, продавець",
-    quote_pl: "«Pracuję w Decathlonie przy Galerii Kazimierz. Sama uprawiam sport, więc znam się na produktach. Klienci często pytają o porady — lubię to. Zniżka 30% na wszystko.» — Wiktoria, sprzedawczyni",
+    quote_ua: "Працюю у Decathlon біля Galeria Kazimierz. Сама займаюсь спортом, тому розбираюсь у товарах. Клієнти часто питають поради — мені це подобається. Знижка 30% на все. — Вікторія, продавець",
+    quote_pl: "Pracuję w Decathlonie przy Galerii Kazimierz. Sama uprawiam sport, więc znam się na produktach. Klienci często pytają o porady — lubię to. Zniżka 30% na wszystko. — Wiktoria, sprzedawczyni",
     tip_ua: "Магазин у Galeria Kazimierz, район Podgórze. Трамвай до зупинки Korona — 3 хв пішки. Поруч — Cinema City та фудкорт з 15 кафе.",
     tip_pl: "Sklep w Galerii Kazimierz, Podgórze. Tramwaj do przystanku Korona — 3 min pieszo. Obok Cinema City i food court z 15 restauracjami.",
     detail_ua: "Зміни: 8:00–16:00 або 13:00–21:00. Навчання по товарах — онлайн-платформа (2 год/тиждень, оплачується). Касовий апарат + POS-термінал, навчать за 1 день.",
@@ -196,8 +196,8 @@ const ENRICHMENTS = {
     detail_pl: "Rezerwacje przez Instagram i telefon. Czas na jedną klientkę — 1,5–2h. Pensja: 50% od usługi + baza 2000 zł. W dobrym miesiącu — 5000+ zł."
   },
   "poznan-cleaning-osoba-sprz-taj-ca-159": {
-    quote_ua: "«Прибираю офіси IT-компаній у Malta Office Park. Чисто, сучасно, ніхто не заважає — люди вже пішли з роботи. Роботу закінчую о 21:00, встигаю на трамвай.» — Ганна, клінер",
-    quote_pl: "«Sprzątam biura firm IT w Malta Office Park. Czysto, nowocześnie, nikt nie przeszkadza — ludzie już wyszli. Kończę o 21:00, zdążam na tramwaj.» — Hanna, osoba sprzątająca",
+    quote_ua: "Прибираю офіси IT-компаній у Malta Office Park. Чисто, сучасно, ніхто не заважає — люди вже пішли з роботи. Роботу закінчую о 21:00, встигаю на трамвай. — Ганна, клінер",
+    quote_pl: "Sprzątam biura firm IT w Malta Office Park. Czysto, nowocześnie, nikt nie przeszkadza — ludzie już wyszli. Kończę o 21:00, zdążam na tramwaj. — Hanna, osoba sprzątająca",
     tip_ua: "Malta Office Park — район Nowe Miasto, біля озера Malta. Трамвай до зупинки Rondo Śródka — 7 хв пішки. Район тихий, є великий парк поруч.",
     tip_pl: "Malta Office Park — Nowe Miasto, przy Jeziorze Malta. Tramwaj Rondo Śródka — 7 min pieszo. Cicha dzielnica z dużym parkiem.",
     detail_ua: "4 офіси, загальна площа — 1200 м². Зміна з 17:00 до 21:00. Середа і п'ятниця — генеральне прибирання (мийка вікон). Засоби: Kärcher, Clinex.",
@@ -208,8 +208,8 @@ const ENRICHMENTS = {
     quote_pl: "«Pracuję przy remoncie starej kamienicy w centrum. Praca różnorodna: rozbiórki, murowanie, przygotowanie. Brygadzista Polak, ale rozumie ukraiński.» — Maksym, pomocnik",
     tip_ua: "Об'єкт у Starym Mieście, вул. Wrocławska. Від Rondo Kaponiera — 10 хв пішки. Район старовинний, є кафе та ресторани по дорозі.",
     tip_pl: "Obiekt na Starym Mieście, ul. Wrocławska. Od Ronda Kaponiera — 10 min pieszo. Zabytkowa dzielnica z kawiarniami po drodze.",
-    detail_ua: "Робочий день 7:30–16:00. Обідня перерва — 30 хв. Каски та взуття — від компанії. Зарплата — щотижневі авансові виплати + повний розрахунок 10-го числа.",
-    detail_pl: "Dzień roboczy 7:30–16:00. Przerwa obiadowa 30 min. Kaski i obuwie — od firmy. Wypłata — tygodniowe zaliczki + pełne rozliczenie 10-go."
+    detail_ua: "Робочий день 7:30–16:00. Обідня перерва — 30 хв. Каски та взуття — від компанії. Зарплата — щотижневі авансові виплати + повний розрахунок 10-го числа. Є душові для працівників — можна помитись перед дорогою додому.",
+    detail_pl: "Dzień roboczy 7:30–16:00. Przerwa obiadowa 30 min. Kaski i obuwie — od firmy. Wypłata — tygodniowe zaliczki + pełne rozliczenie 10-go. Prysznice dla pracowników — można się umyć przed drogą do domu."
   },
   "poznan-education-asystent-w-przedszkolu-286": {
     quote_ua: "«Садок двомовний — польська і англійська. Діти вчаться через гру. Мої обов'язки: допомагати з творчими заняттями, одягати дітей на прогулянку, слідкувати за безпекою.» — Катерина, асистент",
@@ -232,8 +232,8 @@ const ENRICHMENTS = {
     quote_pl: "«Fabryka VW w Antoninku — poważne przedsiębiorstwo. Montujemy elementy wnętrza. Wszystko zautomatyzowane, ja kontroluję jakość i wkładam elementy. Czysto, odzież zapewniona.» — Jarosław, monter",
     tip_ua: "Завод у Antoninek (Komorniki), 15 км від центру. Корпоративний автобус відходить з pl. Wiosny Ludów о 5:30 та 13:30. Паркінг 200 місць.",
     tip_pl: "Fabryka w Antoninku (Komorniki), 15 km od centrum. Autobus zakładowy z pl. Wiosny Ludów o 5:30 i 13:30. Parking 200 miejsc.",
-    detail_ua: "Лінія повністю автоматизована: робот подає деталь — ти перевіряєш і закріплюєш. Норма — 200 деталей/зміну. Музика у навушниках дозволена (від лідера зміни).",
-    detail_pl: "Linia w pełni zautomatyzowana: robot podaje detal — sprawdzasz i mocujesz. Norma — 200 detali/zmianę. Słuchawki z muzyką dozwolone (za zgodą lidera)."
+    detail_ua: "Лінія повністю автоматизована: робот подає деталь — ти перевіряєш і закріплюєш. Норма — 200 деталей/зміну. Музика у навушниках дозволена (від лідера зміни). Щовівторка — коротке 15-хвилинне зібрання команди з лідером зміни.",
+    detail_pl: "Linia w pełni zautomatyzowana: robot podaje detal — sprawdzasz i mocujesz. Norma — 200 detali/zmianę. Słuchawki z muzyką dozwolone (za zgodą lidera). We wtorki krótkie 15-minutowe spotkanie zespołu z liderem zmiany."
   },
   "poznan-retail-kasjer-245": {
     quote_ua: "«Працюю в Biedronka на Rataje. Каса + викладка. Ранкова зміна — спокійніше, вечірня — черги. Мені подобається, що є чіткий план задач і не треба імпровізувати.» — Тамара, касирка",
@@ -260,8 +260,8 @@ const ENRICHMENTS = {
     detail_pl: "Dzień roboczy 10:00–19:00. Przerwa obiadowa 45 min (food court w centrum). Materiały: Neonail, Semilac. Rezerwacje przez Booksy. Plan — 5–7 klientek/dzień."
   },
   "szczecin-cleaning-pokoj-wka-161": {
-    quote_ua: "«Працюю в готелі Radisson біля набережної. Стандарти високі, але все прописано — є чек-лист для кожного номера. Перші два тижні працюєш з наставником.» — Наталія, покоївка",
-    quote_pl: "«Pracuję w hotelu Radisson przy nabrzeżu. Standardy wysokie, ale wszystko opisane — checklisty do każdego pokoju. Pierwsze dwa tygodnie z mentorem.» — Natalia, pokojówka",
+    quote_ua: "Працюю в готелі Radisson біля набережної. Стандарти високі, але все прописано — є чек-лист для кожного номера. Перші два тижні працюєш з наставником. — Наталія, покоївка",
+    quote_pl: "Pracuję w hotelu Radisson przy nabrzeżu. Standardy wysokie, ale wszystko opisane — checklisty do każdego pokoju. Pierwsze dwa tygodnie z mentorem. — Natalia, pokojówka",
     tip_ua: "Готель на набережній Odry, район Łasztownia. Від dworzec Szczecin Główny — 15 хв пішки вздовж річки. Красиві краєвиди. Поруч — нова філармонія.",
     tip_pl: "Hotel na nabrzeżu Odry, Łasztownia. Od dworca Szczecin Główny — 15 min pieszo wzdłuż rzeki. Piękne widoki. Obok nowa filharmonia.",
     detail_ua: "12–14 номерів за зміну. Зміна 7:00–15:00. Білизна — від пральні. Є ліфт для візків з приладдям. Кожен номер перевіряється супервайзером.",
@@ -320,8 +320,8 @@ const ENRICHMENTS = {
     quote_pl: "«Budujemy wieżowiec Varso Tower II. Praca na wysokości — dopłata +15%. Brygada 30 osób, połowa Ukraińcy. Brygadzista Polak, ale instrukcje podwojone po ukraińsku.» — Petro, robotnik",
     tip_ua: "Будмайданчик біля dworzec Warszawa Centralna — можна дійти пішки. Район Wola / Śródmieście. Поруч — Złote Tarasy та Hala Mirowska (свіжі продукти).",
     tip_pl: "Plac budowy przy dworcu Warszawa Centralna — można dojść pieszo. Wola / Śródmieście. Obok Złote Tarasy i Hala Mirowska (świeże produkty).",
-    detail_ua: "Зміна: 7:00–15:30. Обідня перерва 30 хв. Каска, черевики S3, жилет, рукавиці — все від компанії. BHP-навчання — 2 год у перший день. Ліфт на поверхи.",
-    detail_pl: "Zmiana: 7:00–15:30. Przerwa obiadowa 30 min. Kask, buty S3, kamizelka, rękawice — od firmy. Szkolenie BHP 2h pierwszego dnia. Winda na piętra."
+    detail_ua: "Зміна: 7:00–15:30. Обідня перерва 30 хв. Каска, черевики S3, жилет, рукавиці — все від компанії. BHP-навчання — 2 год у перший день. Ліфт на поверхи. У обідню перерву багато хто грає в нарди — стало традицією бригади.",
+    detail_pl: "Zmiana: 7:00–15:30. Przerwa obiadowa 30 min. Kask, buty S3, kamizelka, rękawice — od firmy. Szkolenie BHP 2h pierwszego dnia. Winda na piętra. W przerwie obiadowej wielu gra w backgammona — to tradycja brygady."
   },
   "warsaw-hospitality-asystent-kuchni-170": {
     quote_ua: "«Ресторан на Powiśle — модний район. Кухня авторська, шеф — з Італії. Я готую пасту, ріжу інгредієнти, контролюю заготовки. Чайові — 200–400 zł/міс додатково.» — Олексій, асистент",
@@ -344,8 +344,8 @@ const ENRICHMENTS = {
     quote_pl: "«Pracuję w Samsung Electronics w Wólce Kosowskiej. Montuję podzespoły AGD. Wszystko wg instrukcji — 12 kroków na każdy detal. Czysto, cicho, klimatyzacja.» — Anton, monter",
     tip_ua: "Завод у Wólka Kosowska, 25 км від центру. Автобус L20 від Metro Wilanowska — 35 хв. Є корпоративний shuttle + великий паркінг. Поруч — торговий центр GD.",
     tip_pl: "Fabryka w Wólce Kosowskiej, 25 km od centrum. Autobus L20 od Metra Wilanowska — 35 min. Jest shuttle + duży parking. Obok centrum handlowe GD.",
-    detail_ua: "3 зміни по 8 год. План — 80 деталей/зміну. Є ESD-захист (антистатичний одяг). Їдальня — обід 14 zł (салат, суп, друге, компот). Премія якості — до 300 zł/міс.",
-    detail_pl: "3 zmiany po 8h. Plan — 80 podzespołów/zmianę. Ochrona ESD (odzież antystatyczna). Stołówka — obiad 14 zł (sałatka, zupa, drugie, kompot). Premia jakościowa do 300 zł/mies."
+    detail_ua: "3 зміни по 8 год. План — 80 деталей/зміну. Є ESD-захист (антистатичний одяг). Їдальня — обід 14 zł (салат, суп, друге, компот). Премія якості — до 300 zł/міс. Новим працівникам перший тиждень допомагає напарник-ментор зі свого відділу.",
+    detail_pl: "3 zmiany po 8h. Plan — 80 podzespołów/zmianę. Ochrona ESD (odzież antystatyczna). Stołówka — obiad 14 zł (sałatka, zupa, drugie, kompot). Premia jakościowa do 300 zł/mies. Nowi pracownicy pierwszy tydzień mają mentora z własnego działu."
   },
   "warsaw-retail-kasjer-242": {
     quote_ua: "«Працюю в Carrefour біля Arkadia. Каса самообслуговування — моя зона: допомагаю клієнтам, вирішую проблеми зі сканером. Спокійніше, ніж звичайна каса.» — Олена, касирка",
@@ -364,8 +364,8 @@ const ENRICHMENTS = {
     detail_pl: "Płatność za kilogram: truskawki — 1,2 zł/kg, maliny — 1,5 zł/kg. Pojemniki ważone na koniec dnia. Woda i herbata bezpłatnie. Jest wiata na deszcz i słońce."
   },
   "wroclaw-cleaning-pokoj-wka-158": {
-    quote_ua: "«Працюю в ibis Styles на Rynek — красивий готель у самому центрі. Номери компактні, тому прибирання швидке. За зміну — 16–18 номерів, встигаю без поспіху.» — Марта, покоївка",
-    quote_pl: "«Pracuję w ibis Styles na Rynku — piękny hotel w samym centrum. Pokoje kompaktowe, więc sprzątanie szybkie. 16–18 pokoi na zmianę, zdążam bez pośpiechu.» — Marta, pokojówka",
+    quote_ua: "Працюю в ibis Styles на Rynek — красивий готель у самому центрі. Номери компактні, тому прибирання швидке. За зміну — 16–18 номерів, встигаю без поспіху. — Марта, покоївка",
+    quote_pl: "Pracuję w ibis Styles na Rynku — piękny hotel w samym centrum. Pokoje kompaktowe, więc sprzątanie szybkie. 16–18 pokoi na zmianę, zdążam bez pośpiechu. — Marta, pokojówka",
     tip_ua: "Готель прямо на Rynek Wrocławski — головна площа міста. Від Dworzec Główny — трамвай 3 до зупинки Rynek — 8 хв. Район жвавий, з сотнями кав'ярень.",
     tip_pl: "Hotel na Rynku Wrocławskim — główny plac miasta. Z Dworca Głównego — tramwaj 3 na Rynek — 8 min. Żywa dzielnica z setkami kawiarni.",
     detail_ua: "Зміна: 8:00–16:00. Чек-лист у додатку на телефон. Білизна від пральні — не потрібно прати. Хімія — JohnsonDiversey. Шафка з замком у підвалі.",
@@ -392,8 +392,8 @@ const ENRICHMENTS = {
     quote_pl: "«Fabryka LG Chem — produkujemy baterie do aut elektrycznych. Praca na czystej linii w odzieży ochronnej. Przyzwoita pensja, stały grafik, dopłata za nockę.» — Igor, monter",
     tip_ua: "Завод у Kobierzyce (15 км від Вроцлава). Корпоративний автобус з pl. Dominikański о 5:40 і 13:40. Їдальня на заводі, обід — 12 zł. Паркінг безкоштовний.",
     tip_pl: "Fabryka w Kobierzycach (15 km od Wrocławia). Autobus zakładowy z pl. Dominikańskiego o 5:40 i 13:40. Stołówka — obiad 12 zł. Parking bezpłatny.",
-    detail_ua: "Чиста кімната (Clean Room) — обов'язковий спецодяг, коротко стрижені нігті. 3 зміни. Нічна зміна +30%. Обов'язковий медогляд (оплата від компанії).",
-    detail_pl: "Cleanroom — obowiązkowa odzież ochronna, krótko obcięte paznokcie. 3 zmiany. Nocna +30%. Obowiązkowe badania lekarskie (pokrywane przez firmę)."
+    detail_ua: "Чиста кімната (Clean Room) — обов'язковий спецодяг, коротко стрижені нігті. 3 зміни. Нічна зміна +30%. Обов'язковий медогляд (оплата від компанії). Є програма рекомендацій: за кожного нового працівника — бонус 500 zł після місяця.",
+    detail_pl: "Cleanroom — obowiązkowa odzież ochronna, krótko obcięte paznokcie. 3 zmiany. Nocna +30%. Obowiązkowe badania lekarskie (pokrywane przez firmę). Program poleceń: za każdego nowego pracownika bonus 500 zł po miesiącu."
   },
   "wroclaw-retail-kasjer-244": {
     quote_ua: "«Працюю в Kaufland на Gaj. Перші 2 тижні — каса під наглядом, потім самостійно. Темп у годину пік високий, але є й спокійні моменти. Люблю ранкову зміну.» — Наталя, касирка",
