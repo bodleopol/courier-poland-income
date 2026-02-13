@@ -402,6 +402,22 @@ const ENRICHMENTS = {
     tip_pl: "Kaufland na ul. Opolskiej, Gaj. Autobus 126 z Rynku — 15 min. Spokojna dzielnica, obok Castorama i MediaMarkt. Parking dla pracowników od tyłu.",
     detail_ua: "Зміни: 6:30–14:30 або 13:30–21:30. Касирка обслуговує також зону самообслуговування. Різдвяний бонус — одноразово 800 zł. Знижка 5% на покупки в мережі.",
     detail_pl: "Zmiany: 6:30–14:30 lub 13:30–21:30. Kasjerka obsługuje też strefę kas samoobsługowych. Bonus świąteczny — jednorazowo 800 zł. Zniżka 5% na zakupy w sieci."
+  },
+  "krakow-hospitality-pomicnik-kucharza-298": {
+    quote_ua: "«Три місяці тому навіть не знав, як правильно тримати ніж. Зараз вже сам роблю mise en place на 60 порцій і шеф довіряє мені гарячу лінію в спокійні дні. Найкраще — їжа на зміні, бо шеф готує не для галочки.» — Тарас, помічник кухаря",
+    quote_pl: "«Trzy miesiące temu nawet nie wiedziałem, jak prawidłowo trzymać nóż. Teraz sam robię mise en place na 60 porcji, a szef ufa mi gorącą linię w spokojne dni. Najlepsze — jedzenie na zmianie, bo szef gotuje naprawdę.» — Taras, pomocnik kucharza",
+    tip_ua: "Ресторан на вулиці Floriańska — це 5 хвилин пішки від Rynku Głównego. Найближча зупинка трамвая — «Poczta Główna», звідти 3 хвилини. Район повний кав'ярень, де можна перечекати між змінами. Якщо жити в Podgórze — трамваєм 10/24 доїдете за 12 хвилин.",
+    tip_pl: "Restauracja na ul. Floriańskiej — 5 minut pieszo od Rynku Głównego. Najbliższy przystanek tramwajowy «Poczta Główna», stąd 3 minuty. Okolica pełna kawiarni do przeczekania między zmianami. Z Podgórza tramwajem 10/24 dojedziesz w 12 minut.",
+    detail_ua: "Меню змінюється кожні 3–4 тижні залежно від сезону. Заготовки починаються о 7:00, перший сервіс — о 12:00. Середня кількість замовлень у пік — 80–100 порцій за обід. Інвентар от постачальника Makro приїжджає тричі на тиждень. Перерва 30 хвилин із повноцінним обідом. Зарплата виплачується 10-го числа кожного місяця на польський рахунок.",
+    detail_pl: "Menu zmienia się co 3–4 tygodnie w zależności od sezonu. Przygotowania zaczynają się o 7:00, pierwszy serwis o 12:00. Średnio w szczycie — 80–100 porcji na lunch. Dostawa z Makro trzy razy w tygodniu. Przerwa 30 minut z pełnym obiadem. Wypłata 10. dnia każdego miesiąca na polskie konto."
+  },
+  "warsaw-it-wordpress-seo-specialist-299": {
+    quote_ua: "«Два роки тому робив сайти на фрілансі і вічно обдирався на ціні. Тут — стабільна ставка, цікаві проєкти і команда, якій не все одно. Вчора запустив WooCommerce-магазин на 8 000 товарів і він летить на 98/100 у PageSpeed. Такого кайфу на фрілансі не було.» — Максим, WordPress-розробник",
+    quote_pl: "«Dwa lata temu robiłem strony na freelansie i ciągle zaniżałem ceny. Tu — stabilna stawka, ciekawe projekty i zespół, któremu nie jest wszystko jedno. Wczoraj odpaliliśmy WooCommerce na 8 000 produktów i leci 98/100 w PageSpeed. Takiej satysfakcji na freelansie nie było.» — Maksym, programista WordPress",
+    tip_ua: "Офіс у бізнес-центрі на Domaniewska (Mokotów) — 5 хвилин від станції метро Wilanowska. Поруч Galeria Mokotów із фуд-кортом, де вся команда іноді обідає. Є підземний паркінг для тих, хто на авто, і Veturilo-станція для велосипедистів. У гарну погоду частина команди працює з парку Morskie Oko, який за 10 хвилин пішки.",
+    tip_pl: "Biuro w centrum biznesowym na Domaniewskiej (Mokotów) — 5 min od stacji metra Wilanowska. Obok Galeria Mokotów z food courtem, gdzie zespół czasem jada lunch. Parking podziemny i stacja Veturilo dla rowerzystów. W ładną pogodę część zespołu pracuje z parku Morskie Oko, 10 min pieszo.",
+    detail_ua: "Агенція працює в моделі Agile — двотижневі спринти, ретро по п'ятницях. Кожен розробник має доступ до staging-серверів на Kinsta (dev + staging + production). SEO-звіти клієнтам відправляються щомісяця — у команді є шаблон у Google Data Studio, який підтягує дані з GSC і Ahrefs автоматично. Код-ревʼю обов'язкове: мінімум один аппрув перед мерджем. Є Slack-канали під кожного клієнта + загальний #dev для технічних обговорень.",
+    detail_pl: "Agencja działa w modelu Agile — dwutygodniowe sprinty, retro w piątki. Każdy developer ma dostęp do staging na Kinsta (dev + staging + production). Raporty SEO wysyłane co miesiąc — w zespole jest szablon Google Data Studio, który automatycznie ciągnie dane z GSC i Ahrefs. Code review obowiązkowe: minimum jeden approve przed merge. Kanały Slack per klient + ogólny #dev do dyskusji technicznych."
   }
 };
 
