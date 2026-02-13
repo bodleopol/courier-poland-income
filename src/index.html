@@ -49,7 +49,7 @@
 <section class="calculator-section fade-in">
   <div class="container">
     <h2 data-i18n="calc.title">Калькулятор заробітку</h2>
-    <p class="section-lead">Дізнайтеся реальний дохід «на руки» з урахуванням податків та витрат</p>
+    <p class="section-lead" data-i18n="home.calc.lead">Дізнайтеся реальний дохід «на руки» з урахуванням податків та витрат</p>
     <div class="calc-extended">
       <div class="calc-inputs-ext">
         <div class="calc-input-group">
@@ -65,7 +65,7 @@
         </div>
 
         <div class="calc-input-group">
-          <label for="calc-contract">Тип договору</label>
+          <label for="calc-contract" data-i18n="home.calc.contract">Тип договору</label>
           <div class="calc-radio-group">
             <label class="calc-radio"><input type="radio" name="contract" value="zlecenie" checked> Zlecenie</label>
             <label class="calc-radio"><input type="radio" name="contract" value="uop"> UoP</label>
@@ -76,19 +76,19 @@
 
       <div class="calc-results-ext">
         <div class="calc-result-card calc-gross">
-          <span class="calc-result-label">Brutto (до податків)</span>
+          <span class="calc-result-label" data-i18n="home.calc.gross">Brutto (до податків)</span>
           <span class="calc-result-amount"><span id="total-earn">6 067</span> PLN</span>
         </div>
         <div class="calc-result-card calc-tax">
-          <span class="calc-result-label">Податки та внески</span>
+          <span class="calc-result-label" data-i18n="home.calc.tax">Податки та внески</span>
           <span class="calc-result-amount calc-minus">−<span id="total-tax">820</span> PLN</span>
         </div>
         <div class="calc-result-card calc-net">
-          <span class="calc-result-label">Netto (на руки)</span>
+          <span class="calc-result-label" data-i18n="home.calc.net">Netto (на руки)</span>
           <span class="calc-result-amount"><span id="total-net">5 247</span> PLN</span>
         </div>
-        <p class="muted" style="text-align:center;margin-top:0.75rem;">*приблизний розрахунок за 2025 рік</p>
-        <a href="/calculator.html" class="btn btn-primary calc-full-btn">Розширений калькулятор з витратами →</a>
+        <p class="muted" style="text-align:center;margin-top:0.75rem;" data-i18n="home.calc.note">*приблизний розрахунок за 2025 рік</p>
+        <a href="/calculator.html" class="btn btn-primary calc-full-btn" data-i18n="home.calc.full">Розширений калькулятор з витратами →</a>
       </div>
     </div>
   </div>
@@ -97,32 +97,32 @@
 <!-- Tools Showcase -->
 <section class="tools-showcase fade-in">
   <div class="container">
-    <h2>Безкоштовні інструменти</h2>
-    <p class="section-lead">Все, що потрібно для старту роботи в Польщі — в одному місці</p>
+    <h2 data-i18n="home.tools.title">Безкоштовні інструменти</h2>
+    <p class="section-lead" data-i18n="home.tools.lead">Все, що потрібно для старту роботи в Польщі — в одному місці</p>
     <div class="tools-grid">
       <a href="/calculator.html" class="tool-card">
         <div class="tool-icon">💰</div>
-        <h3>Калькулятор зарплати</h3>
-        <p>Розрахуйте реальний дохід з урахуванням податків UoP, Zlecenie, B2B та щоденних витрат</p>
-        <span class="tool-cta">Розрахувати →</span>
+        <h3 data-i18n="home.tools.calc.title">Калькулятор зарплати</h3>
+        <p data-i18n="home.tools.calc.text">Розрахуйте реальний дохід з урахуванням податків UoP, Zlecenie, B2B та щоденних витрат</p>
+        <span class="tool-cta" data-i18n="home.tools.calc.cta">Розрахувати →</span>
       </a>
       <a href="/cv-generator.html" class="tool-card">
         <div class="tool-icon">📄</div>
-        <h3>Генератор CV</h3>
-        <p>Створіть професійне резюме за 4 кроки з RODO-застереженням та супровідним листом</p>
-        <span class="tool-cta">Створити CV →</span>
+        <h3 data-i18n="home.tools.cv.title">Генератор CV</h3>
+        <p data-i18n="home.tools.cv.text">Створіть професійне резюме за 4 кроки з RODO-застереженням та супровідним листом</p>
+        <span class="tool-cta" data-i18n="home.tools.cv.cta">Створити CV →</span>
       </a>
       <a href="/red-flag.html" class="tool-card">
         <div class="tool-icon">🚩</div>
-        <h3>Перевірка вакансій</h3>
-        <p>10 ознак шахрайства — перевірте будь-яке оголошення за 2 хвилини перед відгуком</p>
-        <span class="tool-cta">Перевірити →</span>
+        <h3 data-i18n="home.tools.redflag.title">Перевірка вакансій</h3>
+        <p data-i18n="home.tools.redflag.text">10 ознак шахрайства — перевірте будь-яке оголошення за 2 хвилини перед відгуком</p>
+        <span class="tool-cta" data-i18n="home.tools.redflag.cta">Перевірити →</span>
       </a>
       <a href="/map.html" class="tool-card">
         <div class="tool-icon">🗺️</div>
-        <h3>Карта українців</h3>
-        <p>Знайдіть земляків поруч — інтерактивна карта з контактами по всій Польщі</p>
-        <span class="tool-cta">Відкрити карту →</span>
+        <h3 data-i18n="home.tools.map.title">Карта українців</h3>
+        <p data-i18n="home.tools.map.text">Знайдіть земляків поруч — інтерактивна карта з контактами по всій Польщі</p>
+        <span class="tool-cta" data-i18n="home.tools.map.cta">Відкрити карту →</span>
       </a>
     </div>
   </div>
@@ -133,14 +133,14 @@
   <div class="container">
     <div class="map-preview-inner">
       <div class="map-preview-content">
-        <span class="map-kicker">🗺️ Новинка</span>
-        <h2>Карта українців у Польщі</h2>
-        <p>Знайдіть земляків поруч, додайте себе на карту та створіть спільноту підтримки. Вже зараз на карті відзначені десятки українців у різних містах Польщі.</p>
+        <span class="map-kicker" data-i18n="home.map.kicker">🗺️ Новинка</span>
+        <h2 data-i18n="home.map.title">Карта українців у Польщі</h2>
+        <p data-i18n="home.map.desc">Знайдіть земляків поруч, додайте себе на карту та створіть спільноту підтримки. Вже зараз на карті відзначені десятки українців у різних містах Польщі.</p>
         <ul class="map-features-list">
-          <li>📍 Інтерактивна карта з кластеризацією</li>
-          <li>👤 Додайте себе через Google Форму</li>
-          <li>🔗 Контакти, Telegram, спільноти</li>
-          <li>🆓 Повністю безкоштовно</li>
+          <li data-i18n="home.map.f1">📍 Інтерактивна карта з кластеризацією</li>
+          <li data-i18n="home.map.f2">👤 Додайте себе через Google Форму</li>
+          <li data-i18n="home.map.f3">🔗 Контакти, Telegram, спільноти</li>
+          <li data-i18n="home.map.f4">🆓 Повністю безкоштовно</li>
         </ul>
       </div>
       <div class="map-preview-visual">
@@ -167,8 +167,8 @@
       <div class="map-cta-inner">
         <span class="map-cta-icon">🗺️</span>
         <div class="map-cta-text">
-          <strong>Відкрити мапу українців у Польщі</strong>
-          <span>Знайди земляків поруч · Додай себе на карту!</span>
+          <strong data-i18n="home.map.cta.title">Відкрити мапу українців у Польщі</strong>
+          <span data-i18n="home.map.cta.sub">Знайди земляків поруч · Додай себе на карту!</span>
         </div>
         <span class="map-cta-arrow">→</span>
       </div>

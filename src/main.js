@@ -26,6 +26,18 @@
     'nav.contact': { ua: 'Контакти', pl: 'Kontakt' },
     'nav.cta': { ua: 'Отримати консультацію', pl: 'Uzyskaj konsultację' },
     'nav.apply': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
+    'nav.tools': { ua: '🛠️ Інструменти', pl: '🛠️ Narzędzia' },
+    'nav.tool.calc': { ua: '💰 Калькулятор зарплати', pl: '💰 Kalkulator wynagrodzenia' },
+    'nav.tool.calc.short': { ua: '💰 Калькулятор', pl: '💰 Kalkulator' },
+    'nav.tool.cv': { ua: '📄 Генератор CV', pl: '📄 Generator CV' },
+    'nav.tool.cv.short': { ua: '📄 Генератор CV', pl: '📄 Generator CV' },
+    'nav.tool.redflag': { ua: '🚩 Перевірка вакансій', pl: '🚩 Sprawdzanie ofert' },
+    'nav.tool.map': { ua: '🗺️ Карта українців', pl: '🗺️ Mapa Ukraińców' },
+    'footer.tools': { ua: 'Інструменти', pl: 'Narzędzia' },
+    'footer.tool.calc': { ua: 'Калькулятор', pl: 'Kalkulator' },
+    'footer.tool.cv': { ua: 'Генератор CV', pl: 'Generator CV' },
+    'footer.tool.redflag': { ua: 'Перевірка вакансій', pl: 'Sprawdzanie ofert' },
+    'footer.tool.map': { ua: 'Мапа українців', pl: 'Mapa Ukraińców' },
     'hero.title': { ua: 'Знайдіть роботу в Польщі', pl: 'Znajdź pracę w Polsce' },
     'hero.lead': { ua: 'Актуальні вакансії в різних сферах по всій Польщі. Легальні умови та підтримка.', pl: 'Aktualne oferty w różnych branżach w całej Polsce. Legalne warunki i wsparcie.' },
     'human.home.title': { ua: 'По‑людськи про пошук роботи', pl: 'Po ludzku o szukaniu pracy' },
@@ -302,7 +314,83 @@
     'emp.form.submit': { ua: '🚀 Опублікувати вакансію', pl: '🚀 Opublikuj ofertę' },
     'emp.cta.title': { ua: 'Маєте питання?', pl: 'Masz pytania?' },
     'emp.cta.text': { ua: 'Зв\'яжіться з нами напряму — допоможемо розмістити вакансію та знайти найкращих кандидатів', pl: 'Skontaktuj się z nami — pomożemy opublikować ofertę i znaleźć najlepszych kandydatów' },
-    'emp.cta.telegram': { ua: '💬 Написати в Telegram', pl: '💬 Napisz na Telegram' }
+    'emp.cta.telegram': { ua: '💬 Написати в Telegram', pl: '💬 Napisz na Telegram' },
+
+    // Homepage: calculator mini-widget
+    'home.calc.lead': { ua: 'Дізнайтеся реальний дохід «на руки» з урахуванням податків та витрат', pl: 'Poznaj realny dochód „na rękę" z uwzględnieniem podatków i kosztów' },
+    'home.calc.contract': { ua: 'Тип договору', pl: 'Typ umowy' },
+    'home.calc.gross': { ua: 'Brutto (до податків)', pl: 'Brutto (przed podatkami)' },
+    'home.calc.tax': { ua: 'Податки та внески', pl: 'Podatki i składki' },
+    'home.calc.net': { ua: 'Netto (на руки)', pl: 'Netto (na rękę)' },
+    'home.calc.note': { ua: '*приблизний розрахунок за 2025 рік', pl: '*przybliżone obliczenie za 2025 rok' },
+    'home.calc.full': { ua: 'Розширений калькулятор з витратами →', pl: 'Rozszerzony kalkulator z kosztami →' },
+    'home.calc.city_count': { ua: 'вакансій', pl: 'ofert' },
+
+    // Homepage: tools showcase
+    'home.tools.title': { ua: 'Безкоштовні інструменти', pl: 'Darmowe narzędzia' },
+    'home.tools.lead': { ua: 'Все, що потрібно для старту роботи в Польщі — в одному місці', pl: 'Wszystko, czego potrzebujesz do startu pracy w Polsce — w jednym miejscu' },
+    'home.tools.calc.title': { ua: 'Калькулятор зарплати', pl: 'Kalkulator wynagrodzenia' },
+    'home.tools.calc.text': { ua: 'Розрахуйте реальний дохід з урахуванням податків UoP, Zlecenie, B2B та щоденних витрат', pl: 'Oblicz realny dochód z uwzględnieniem podatków UoP, Zlecenie, B2B i codziennych kosztów' },
+    'home.tools.calc.cta': { ua: 'Розрахувати →', pl: 'Oblicz →' },
+    'home.tools.cv.title': { ua: 'Генератор CV', pl: 'Generator CV' },
+    'home.tools.cv.text': { ua: 'Створіть професійне резюме за 4 кроки з RODO-застереженням та супровідним листом', pl: 'Stwórz profesjonalne CV w 4 krokach z klauzulą RODO i listem motywacyjnym' },
+    'home.tools.cv.cta': { ua: 'Створити CV →', pl: 'Stwórz CV →' },
+    'home.tools.redflag.title': { ua: 'Перевірка вакансій', pl: 'Sprawdzanie ofert' },
+    'home.tools.redflag.text': { ua: '10 ознак шахрайства — перевірте будь-яке оголошення за 2 хвилини перед відгуком', pl: '10 oznak oszustwa — sprawdź dowolne ogłoszenie w 2 minuty przed zgłoszeniem' },
+    'home.tools.redflag.cta': { ua: 'Перевірити →', pl: 'Sprawdź →' },
+    'home.tools.map.title': { ua: 'Карта українців', pl: 'Mapa Ukraińców' },
+    'home.tools.map.text': { ua: 'Знайдіть земляків поруч — інтерактивна карта з контактами по всій Польщі', pl: 'Znajdź rodaków w pobliżu — interaktywna mapa z kontaktami w całej Polsce' },
+    'home.tools.map.cta': { ua: 'Відкрити карту →', pl: 'Otwórz mapę →' },
+
+    // Homepage: map preview
+    'home.map.kicker': { ua: '🗺️ Новинка', pl: '🗺️ Nowość' },
+    'home.map.title': { ua: 'Карта українців у Польщі', pl: 'Mapa Ukraińców w Polsce' },
+    'home.map.desc': { ua: 'Знайдіть земляків поруч, додайте себе на карту та створіть спільноту підтримки. Вже зараз на карті відзначені десятки українців у різних містах Польщі.', pl: 'Znajdź rodaków w okolicy, dodaj się na mapę i stwórz społeczność wsparcia. Już teraz na mapie zaznaczono dziesiątki Ukraińców w różnych miastach Polski.' },
+    'home.map.f1': { ua: '📍 Інтерактивна карта з кластеризацією', pl: '📍 Interaktywna mapa z klasteryzacją' },
+    'home.map.f2': { ua: '👤 Додайте себе через Google Форму', pl: '👤 Dodaj się przez formularz Google' },
+    'home.map.f3': { ua: '🔗 Контакти, Telegram, спільноти', pl: '🔗 Kontakty, Telegram, społeczności' },
+    'home.map.f4': { ua: '🆓 Повністю безкоштовно', pl: '🆓 Całkowicie bezpłatnie' },
+    'home.map.cta.title': { ua: 'Відкрити мапу українців у Польщі', pl: 'Otwórz mapę Ukraińców w Polsce' },
+    'home.map.cta.sub': { ua: 'Знайди земляків поруч · Додай себе на карту!', pl: 'Znajdź rodaków obok · Dodaj się na mapę!' },
+
+    // Tool pages meta
+    'calc.meta_title': { ua: 'Калькулятор зарплати в Польщі — Rybezh', pl: 'Kalkulator wynagrodzenia w Polsce — Rybezh' },
+    'calc.meta_description': { ua: 'Розрахуйте зарплату нетто в Польщі: UoP, Zlecenie, B2B. Податки, ZUS, витрати на житло та транспорт.', pl: 'Oblicz wynagrodzenie netto w Polsce: UoP, Zlecenie, B2B. Podatki, ZUS, koszty mieszkania i transportu.' },
+    'cv.meta_title': { ua: 'Генератор CV для роботи в Польщі — Rybezh', pl: 'Generator CV do pracy w Polsce — Rybezh' },
+    'cv.meta_description': { ua: 'Створіть професійне резюме за 4 кроки з RODO-застереженням та супровідним листом.', pl: 'Stwórz profesjonalne CV w 4 krokach z klauzulą RODO i listem motywacyjnym.' },
+    'redflag.meta_title': { ua: 'Перевірка вакансій на шахрайство — Rybezh', pl: 'Sprawdzanie ofert pod kątem oszustwa — Rybezh' },
+    'redflag.meta_description': { ua: 'Перевірте будь-яку вакансію за 2 хвилини. 10 червоних прапорців шахрайських оголошень.', pl: 'Sprawdź dowolną ofertę w 2 minuty. 10 czerwonych flag oszukańczych ogłoszeń.' },
+    'map.meta_title': { ua: 'Карта українців у Польщі — Rybezh', pl: 'Mapa Ukraińców w Polsce — Rybezh' },
+    'map.meta_description': { ua: 'Інтерактивна карта українців у Польщі. Знайдіть земляків поруч, додайте себе на карту.', pl: 'Interaktywna mapa Ukraińców w Polsce. Znajdź rodaków w pobliżu, dodaj się na mapę.' },
+
+    // Terms page
+    'terms.meta_title': { ua: 'Умови користування — Rybezh', pl: 'Regulamin — Rybezh' },
+    'terms.meta_description': { ua: 'Умови користування сайтом Rybezh: правила, відповідальність, обробка запитів.', pl: 'Regulamin korzystania z serwisu Rybezh: zasady, odpowiedzialność, obsługa zgłoszeń.' },
+    'terms.title': { ua: 'Умови користування', pl: 'Regulamin' },
+
+    // Red-flag analysis results
+    'rf.result.safe': { ua: 'Виглядає нормально', pl: 'Wygląda normalnie' },
+    'rf.result.safe.desc': { ua: 'Жодного червоного прапорця не знайдено. Але все одно перевірте компанію в <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> та вимагайте договір перед виїздом.', pl: 'Nie znaleziono żadnych czerwonych flag. Mimo to sprawdź firmę w <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> i wymagaj umowy przed wyjazdem.' },
+    'rf.result.warn': { ua: 'Є підозрілі ознаки', pl: 'Są podejrzane oznaki' },
+    'rf.result.warn.desc': { ua: 'червоних прапорців. Будьте обережні! Перевірте компанію в KRS та зверніться до PIP (801 002 006) для консультації.', pl: 'czerwonych flag. Bądź ostrożny! Sprawdź firmę w KRS i skontaktuj się z PIP (801 002 006) w celu konsultacji.' },
+    'rf.result.danger': { ua: 'НЕБЕЗПЕЧНО!', pl: 'NIEBEZPIECZNE!' },
+    'rf.result.danger.suffix': { ua: 'прапорців', pl: 'flag' },
+    'rf.result.danger.desc': { ua: 'червоних прапорців! Ця вакансія має всі ознаки шахрайства. <strong>НЕ відправляйте гроші та документи.</strong> Зверніться до Policja (997) або PIP (801 002 006).', pl: 'czerwonych flag! Ta oferta ma wszelkie oznaki oszustwa. <strong>NIE wysyłaj pieniędzy ani dokumentów.</strong> Zgłoś się na Policję (997) lub PIP (801 002 006).' },
+    'rf.share.text': { ua: '🚩 Перевірив вакансію на Rybezh Red Flag Checker', pl: '🚩 Sprawdziłem ofertę w Rybezh Red Flag Checker' },
+    'rf.share.suffix': { ua: 'червоних прапорців!', pl: 'czerwonych flag!' },
+    'rf.share.check': { ua: 'Перевір свою', pl: 'Sprawdź swoją' },
+    'rf.share.tg': { ua: 'Попередити в Telegram', pl: 'Ostrzeż na Telegramie' },
+    'rf.share.fb': { ua: 'Facebook', pl: 'Facebook' },
+
+    // CV generator dynamic labels
+    'cv.exp.position': { ua: 'Посада', pl: 'Stanowisko' },
+    'cv.exp.company': { ua: 'Компанія', pl: 'Firma' },
+    'cv.exp.period': { ua: 'Період', pl: 'Okres' },
+    'cv.exp.duties': { ua: 'Обов\'язки', pl: 'Obowiązki' },
+    'cv.skill.add': { ua: '+ Додати', pl: '+ Dodaj' },
+
+    // Article template
+    'article.sidebar': { ua: 'Перевірена платформа для знаходження роботи у Польщі.', pl: 'Sprawdzona platforma do szukania pracy w Polsce.' }
   };
 
   // Get current language

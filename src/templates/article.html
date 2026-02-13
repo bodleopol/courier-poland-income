@@ -103,12 +103,17 @@
         <svg class="logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><defs><linearGradient id="g5" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#0f766e"/><stop offset="100%" stop-color="#14b8a6"/></linearGradient></defs><rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g5)" opacity="0.12"/></svg>
         <div style="display:flex;flex-direction:column;line-height:1;">
           <span style="font-weight:800;color:var(--color-accent);font-size:1rem;">Rybezh</span>
-          <small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">rybezh.site — робота кур'єром у Польщі</small>
+          <small style="color:var(--color-text-light);font-size:0.78rem;margin-top:2px;">rybezh.site — робота у Польщі</small>
         </div>
       </a>
       <nav>
-        <a href="/">Головна</a>
-        <a href="/apply.html">Подати заявку</a>
+        <a href="/" data-i18n="nav.home">Головна</a>
+        <a href="/vacancies.html" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/apply.html" data-i18n="nav.apply">Подати заявку</a>
+        <div class="header-lang" style="display:inline-flex;gap:4px;margin-left:8px;">
+          <button class="lang-btn" data-lang="ua" style="padding:2px 8px;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.8rem;">UA</button>
+          <button class="lang-btn" data-lang="pl" style="padding:2px 8px;border:1px solid #ccc;border-radius:4px;cursor:pointer;font-size:0.8rem;">PL</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -126,7 +131,7 @@
         </div>
         <div class="sidebar-info">
           <h4 data-i18n="job.article.why">💡 Чому саме ми?</h4>
-          <p>Перевірена платформа для знаходження роботи кур'єром у Польщі.</p>
+          <p data-i18n="article.sidebar">Перевірена платформа для знаходження роботи у Польщі.</p>
         </div>
       </aside>
     </article>
@@ -139,7 +144,7 @@
             <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
             Rybezh
           </a>
-          <p data-i18n="footer.desc">Допомагаємо знайти стабільну роботу кур'єром у Польщі. Гнучкий графік, щоденні виплати, підтримка 24/7.</p>
+          <p data-i18n="footer.desc">Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.</p>
           <div class="footer-social">
             <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>

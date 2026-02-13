@@ -115,10 +115,10 @@
         <div class="nav-dropdown" aria-label="Інструменти">
           <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">🛠️ Інструменти <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
           <div class="nav-dropdown__menu nav-dropdown__menu--tools">
-            <a href="/calculator.html">💰 Калькулятор зарплати</a>
-            <a href="/cv-generator.html">📄 Генератор CV</a>
-            <a href="/red-flag.html">🚩 Перевірка вакансій</a>
-            <a href="/map.html">🗺️ Карта українців</a>
+            <a href="/calculator.html" data-i18n="nav.tool.calc">💰 Калькулятор зарплати</a>
+            <a href="/cv-generator.html" data-i18n="nav.tool.cv">📄 Генератор CV</a>
+            <a href="/red-flag.html" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+            <a href="/map.html" data-i18n="nav.tool.map">🗺️ Карта українців</a>
           </div>
         </div>
         <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
@@ -142,12 +142,12 @@
       <div class="mobile-categories" id="mobileCategoryNav"></div>
 
       <div class="mobile-tools">
-        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Інструменти</button>
+        <button type="button" class="nav-link mobile-tools__toggle" data-i18n="nav.tools" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Інструменти</button>
         <div class="mobile-tools__menu">
-          <a href="/calculator.html" class="nav-link">💰 Калькулятор</a>
-          <a href="/cv-generator.html" class="nav-link">📄 Генератор CV</a>
-          <a href="/red-flag.html" class="nav-link">🚩 Перевірка вакансій</a>
-          <a href="/map.html" class="nav-link">🗺️ Карта українців</a>
+          <a href="/calculator.html" class="nav-link" data-i18n="nav.tool.calc.short">💰 Калькулятор</a>
+          <a href="/cv-generator.html" class="nav-link" data-i18n="nav.tool.cv.short">📄 Генератор CV</a>
+          <a href="/red-flag.html" class="nav-link" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+          <a href="/map.html" class="nav-link" data-i18n="nav.tool.map">🗺️ Карта українців</a>
         </div>
       </div>
       <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
@@ -309,7 +309,7 @@
       <div id="rf-result" style="display:none;">
         <div class="result-panel" id="result-panel">
           <div class="emoji" id="result-emoji">✅</div>
-          <h3 id="result-title">Виглядає нормально</h3>
+          <h3 id="result-title" data-i18n="rf.result.safe">Виглядає нормально</h3>
           <div class="score-bar"><div class="fill" id="score-fill"></div></div>
           <p id="result-desc"></p>
         </div>
@@ -317,7 +317,7 @@
         <div class="share-row">
           <a class="share-btn tg" id="rf-share-tg" href="#" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            Попередити в Telegram
+            <span data-i18n="rf.share.tg">Попередити в Telegram</span>
           </a>
           <a class="share-btn fb" id="rf-share-fb" href="#" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -420,10 +420,10 @@
           <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
         </div>
         <div class="footer-col">
-          <h4>Інструменти</h4>
-          <a href="/calculator.html">Калькулятор</a>
-          <a href="/cv-generator.html">Генератор CV</a>
-          <a href="/red-flag.html">Перевірка вакансій</a>
+          <h4 data-i18n="footer.tools">Інструменти</h4>
+          <a href="/calculator.html" data-i18n="footer.tool.calc">Калькулятор</a>
+          <a href="/cv-generator.html" data-i18n="footer.tool.cv">Генератор CV</a>
+          <a href="/red-flag.html" data-i18n="footer.tool.redflag">Перевірка вакансій</a>
         </div>
         <div class="footer-col">
           <h4 data-i18n="footer.contact">Контакти</h4>
@@ -450,6 +450,24 @@
 
   <script>
   (function() {
+    function getLang() {
+      try { return localStorage.getItem('site_lang') || 'ua'; } catch(e) { return 'ua'; }
+    }
+    var t = {
+      safe: { ua: 'Виглядає нормально', pl: 'Wygląda normalnie' },
+      safeDesc: { ua: 'Жодного червоного прапорця не знайдено. Але все одно перевірте компанію в <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> та вимагайте договір перед виїздом.', pl: 'Nie znaleziono żadnych czerwonych flag. Mimo to sprawdź firmę w <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> i wymagaj umowy przed wyjazdem.' },
+      warn: { ua: 'Є підозрілі ознаки', pl: 'Są podejrzane oznaki' },
+      warnDesc: { ua: 'Знайдено <strong>{n}</strong> червоних прапорців. Будьте обережні! Перевірте компанію в KRS та зверніться до PIP (801 002 006) для консультації.', pl: 'Znaleziono <strong>{n}</strong> czerwonych flag. Bądź ostrożny! Sprawdź firmę w KRS i skontaktuj się z PIP (801 002 006) w celu konsultacji.' },
+      danger: { ua: 'НЕБЕЗПЕЧНО!', pl: 'NIEBEZPIECZNE!' },
+      dangerSuffix: { ua: 'прапорців', pl: 'flag' },
+      dangerDesc: { ua: 'Знайдено <strong>{n}</strong> червоних прапорців! Ця вакансія має всі ознаки шахрайства. <strong>НЕ відправляйте гроші та документи.</strong> Зверніться до Policja (997) або PIP (801 002 006).', pl: 'Znaleziono <strong>{n}</strong> czerwonych flag! Ta oferta ma wszelkie oznaki oszustwa. <strong>NIE wysyłaj pieniędzy ani dokumentów.</strong> Zgłoś się na Policję (997) lub PIP (801 002 006).' },
+      sharePrefix: { ua: '🚩 Перевірив вакансію на Rybezh Red Flag Checker:', pl: '🚩 Sprawdziłem ofertę w Rybezh Red Flag Checker:' },
+      shareSuffix: { ua: 'червоних прапорців!', pl: 'czerwonych flag!' },
+      shareCheck: { ua: 'Перевір свою:', pl: 'Sprawdź swoją:' },
+      suspect: { ua: 'підозріла вакансія', pl: 'podejrzana oferta' }
+    };
+    function tr(key) { var l = getLang(); return (t[key] && t[key][l]) || t[key].ua; }
+
     window.toggleFlag = function(li) {
       const cb = li.querySelector('input[type="checkbox"]');
       cb.checked = !cb.checked;
@@ -476,26 +494,26 @@
       if (flagged === 0) {
         panel.className = 'result-panel safe';
         emoji.textContent = '✅';
-        title.textContent = 'Виглядає нормально';
-        desc.innerHTML = 'Жодного червоного прапорця не знайдено. Але все одно перевірте компанію в <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> та вимагайте договір перед виїздом.';
+        title.textContent = tr('safe');
+        desc.innerHTML = tr('safeDesc');
         fill.style.background = '#16a34a';
       } else if (flagged <= 2) {
         panel.className = 'result-panel warning';
         emoji.textContent = '⚠️';
-        title.textContent = 'Є підозрілі ознаки (' + flagged + '/' + total + ')';
-        desc.innerHTML = 'Знайдено <strong>' + flagged + '</strong> червоних прапорців. Будьте обережні! Перевірте компанію в KRS та зверніться до PIP (801 002 006) для консультації.';
+        title.textContent = tr('warn') + ' (' + flagged + '/' + total + ')';
+        desc.innerHTML = tr('warnDesc').replace('{n}', flagged);
         fill.style.background = '#f59e0b';
       } else {
         panel.className = 'result-panel danger';
         emoji.textContent = '🚨';
-        title.textContent = 'НЕБЕЗПЕЧНО! (' + flagged + '/' + total + ' прапорців)';
-        desc.innerHTML = 'Знайдено <strong>' + flagged + '</strong> червоних прапорців! Ця вакансія має всі ознаки шахрайства. <strong>НЕ відправляйте гроші та документи.</strong> Зверніться до Policja (997) або PIP (801 002 006).';
+        title.textContent = tr('danger') + ' (' + flagged + '/' + total + ' ' + tr('dangerSuffix') + ')';
+        desc.innerHTML = tr('dangerDesc').replace('{n}', flagged);
         fill.style.background = '#dc2626';
       }
 
       // Share links
-      const link = document.getElementById('rf-link').value || 'підозріла вакансія';
-      const shareText = `🚩 Перевірив вакансію на Rybezh Red Flag Checker: ${flagged}/${total} червоних прапорців!\n\n"${link}"\n\nПеревір свою: https://rybezh.site/red-flag.html`;
+      const link = document.getElementById('rf-link').value || tr('suspect');
+      const shareText = tr('sharePrefix') + ' ' + flagged + '/' + total + ' ' + tr('shareSuffix') + '\n\n"' + link + '"\n\n' + tr('shareCheck') + ' https://rybezh.site/red-flag.html';
       const encoded = encodeURIComponent(shareText);
       document.getElementById('rf-share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent('https://rybezh.site/red-flag.html') + '&text=' + encoded;
       document.getElementById('rf-share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://rybezh.site/red-flag.html') + '&quote=' + encoded;
