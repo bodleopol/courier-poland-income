@@ -49,21 +49,113 @@
 <section class="calculator-section">
   <div class="container">
     <h2 data-i18n="calc.title">Калькулятор заробітку</h2>
-    <p class="section-lead" data-i18n="calc.note">*приблизний розрахунок</p>
-    <div class="calc-grid">
-      <div class="calc-inputs">
-        <label for="calc-hours" data-i18n="calc.hours">Годин на тиждень</label>
-        <input type="range" id="calc-hours" min="10" max="60" value="40">
-        <div class="calc-value"><span id="val-hours">40</span> h</div>
+    <p class="section-lead">Дізнайтеся реальний дохід «на руки» з урахуванням податків та витрат</p>
+    <div class="calc-extended">
+      <div class="calc-inputs-ext">
+        <div class="calc-input-group">
+          <label for="calc-hours" data-i18n="calc.hours">Годин на тиждень</label>
+          <input type="range" id="calc-hours" min="10" max="60" value="40">
+          <div class="calc-value"><span id="val-hours">40</span> h</div>
+        </div>
 
-        <label for="calc-rate" data-i18n="calc.rate">Ставка (PLN/год)</label>
-        <input type="range" id="calc-rate" min="20" max="50" value="35">
-        <div class="calc-value"><span id="val-rate">35</span> PLN</div>
+        <div class="calc-input-group">
+          <label for="calc-rate" data-i18n="calc.rate">Ставка (PLN/год)</label>
+          <input type="range" id="calc-rate" min="20" max="50" value="35">
+          <div class="calc-value"><span id="val-rate">35</span> PLN</div>
+        </div>
+
+        <div class="calc-input-group">
+          <label for="calc-contract">Тип договору</label>
+          <div class="calc-radio-group">
+            <label class="calc-radio"><input type="radio" name="contract" value="zlecenie" checked> Zlecenie</label>
+            <label class="calc-radio"><input type="radio" name="contract" value="uop"> UoP</label>
+            <label class="calc-radio"><input type="radio" name="contract" value="b2b"> B2B</label>
+          </div>
+        </div>
       </div>
-      <div class="calc-result">
-        <p data-i18n="calc.result">Ваш дохід на місяць:</p>
-        <div class="calc-total"><span id="total-earn">5600</span> PLN</div>
-        <p class="muted" data-i18n="calc.note">*приблизний розрахунок</p>
+
+      <div class="calc-results-ext">
+        <div class="calc-result-card calc-gross">
+          <span class="calc-result-label">Brutto (до податків)</span>
+          <span class="calc-result-amount"><span id="total-earn">6 067</span> PLN</span>
+        </div>
+        <div class="calc-result-card calc-tax">
+          <span class="calc-result-label">Податки та внески</span>
+          <span class="calc-result-amount calc-minus">−<span id="total-tax">820</span> PLN</span>
+        </div>
+        <div class="calc-result-card calc-net">
+          <span class="calc-result-label">Netto (на руки)</span>
+          <span class="calc-result-amount"><span id="total-net">5 247</span> PLN</span>
+        </div>
+        <p class="muted" style="text-align:center;margin-top:0.75rem;">*приблизний розрахунок за 2025 рік</p>
+        <a href="/calculator.html" class="btn btn-primary calc-full-btn">Розширений калькулятор з витратами →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tools Showcase -->
+<section class="tools-showcase">
+  <div class="container">
+    <h2>Безкоштовні інструменти</h2>
+    <p class="section-lead">Все, що потрібно для старту роботи в Польщі — в одному місці</p>
+    <div class="tools-grid">
+      <a href="/calculator.html" class="tool-card">
+        <div class="tool-icon">💰</div>
+        <h3>Калькулятор зарплати</h3>
+        <p>Розрахуйте реальний дохід з урахуванням податків UoP, Zlecenie, B2B та щоденних витрат</p>
+        <span class="tool-cta">Розрахувати →</span>
+      </a>
+      <a href="/cv-generator.html" class="tool-card">
+        <div class="tool-icon">📄</div>
+        <h3>Генератор CV</h3>
+        <p>Створіть професійне резюме за 4 кроки з RODO-застереженням та супровідним листом</p>
+        <span class="tool-cta">Створити CV →</span>
+      </a>
+      <a href="/red-flag.html" class="tool-card">
+        <div class="tool-icon">🚩</div>
+        <h3>Перевірка вакансій</h3>
+        <p>10 ознак шахрайства — перевірте будь-яке оголошення за 2 хвилини перед відгуком</p>
+        <span class="tool-cta">Перевірити →</span>
+      </a>
+      <a href="/map.html" class="tool-card">
+        <div class="tool-icon">🗺️</div>
+        <h3>Карта українців</h3>
+        <p>Знайдіть земляків поруч — інтерактивна карта з контактами по всій Польщі</p>
+        <span class="tool-cta">Відкрити карту →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Map Preview -->
+<section class="map-preview-section">
+  <div class="container">
+    <div class="map-preview-inner">
+      <div class="map-preview-content">
+        <span class="map-kicker">🗺️ Новинка</span>
+        <h2>Карта українців у Польщі</h2>
+        <p>Знайдіть земляків поруч, додайте себе на карту та створіть спільноту підтримки. Вже зараз на карті відзначені десятки українців у різних містах Польщі.</p>
+        <ul class="map-features-list">
+          <li>📍 Інтерактивна карта з кластеризацією</li>
+          <li>👤 Додайте себе через Google Форму</li>
+          <li>🔗 Контакти, Telegram, спільноти</li>
+          <li>🆓 Повністю безкоштовно</li>
+        </ul>
+        <a href="/map.html" class="btn btn-primary">Відкрити карту →</a>
+      </div>
+      <div class="map-preview-visual">
+        <div class="map-placeholder">
+          <div class="map-pin map-pin-1">📍</div>
+          <div class="map-pin map-pin-2">📍</div>
+          <div class="map-pin map-pin-3">📍</div>
+          <div class="map-pin map-pin-4">📍</div>
+          <div class="map-pin map-pin-5">📍</div>
+          <div class="map-city-label" style="top:20%;left:60%">Warszawa</div>
+          <div class="map-city-label" style="top:55%;left:35%">Kraków</div>
+          <div class="map-city-label" style="top:35%;left:20%">Wrocław</div>
+          <div class="map-city-label" style="top:15%;left:35%">Gdańsk</div>
+        </div>
       </div>
     </div>
   </div>

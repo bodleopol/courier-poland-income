@@ -577,27 +577,60 @@
   }
 
   // ============================================
-  // 13. EARNINGS CALCULATOR
+  // 13. EARNINGS CALCULATOR (Extended)
   // ============================================
   function initCalculator() {
     const hInput = document.getElementById('calc-hours');
     const rInput = document.getElementById('calc-rate');
     const hVal = document.getElementById('val-hours');
     const rVal = document.getElementById('val-rate');
-    const total = document.getElementById('total-earn');
+    const totalEarn = document.getElementById('total-earn');
+    const totalTax = document.getElementById('total-tax');
+    const totalNet = document.getElementById('total-net');
 
-    if (!hInput || !rInput || !hVal || !rVal || !total) return;
+    if (!hInput || !rInput || !hVal || !rVal || !totalEarn) return;
+
+    const fmt = (n) => Math.round(n).toLocaleString('pl-PL');
 
     const calc = () => {
       const h = Number(hInput.value || 0);
       const r = Number(rInput.value || 0);
       hVal.textContent = String(h);
       rVal.textContent = String(r);
-      total.textContent = (h * r * 4).toLocaleString();
+      const gross = h * r * (52 / 12); // avg weeks per month
+
+      // Get contract type
+      const contractEl = document.querySelector('input[name="contract"]:checked');
+      const contract = contractEl ? contractEl.value : 'zlecenie';
+
+      let tax = 0;
+      if (contract === 'zlecenie') {
+        // ~13.5% tax for zlecenie (simplified)
+        tax = gross * 0.135;
+      } else if (contract === 'uop') {
+        // ~23% for UoP (ZUS + tax)
+        tax = gross * 0.23;
+      } else if (contract === 'b2b') {
+        // ~19% flat + ZUS ~1400
+        tax = gross * 0.19;
+        if (gross > 2000) tax = Math.max(tax, 1400);
+      }
+
+      const net = gross - tax;
+
+      totalEarn.textContent = fmt(gross);
+      if (totalTax) totalTax.textContent = fmt(tax);
+      if (totalNet) totalNet.textContent = fmt(net);
     };
 
     hInput.addEventListener('input', calc);
     rInput.addEventListener('input', calc);
+
+    // Contract type radio listeners
+    document.querySelectorAll('input[name="contract"]').forEach(radio => {
+      radio.addEventListener('change', calc);
+    });
+
     calc();
   }
 
