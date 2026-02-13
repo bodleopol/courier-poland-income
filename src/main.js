@@ -400,8 +400,34 @@
     return localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY) || 'ua';
   }
 
-  // Set language
+  // Set language — navigates between UA / PL page variants
   function setLang(lang) {
+    const currentPath = window.location.pathname;
+    const isPlPage = currentPath.endsWith('-pl.html');
+
+    // Navigate to UA page from PL page
+    if (lang === 'ua' && isPlPage) {
+      let uaPath = currentPath.replace(/-pl\.html$/, '.html');
+      if (uaPath === '/index.html') uaPath = '/';
+      window.location.href = uaPath;
+      return;
+    }
+
+    // Navigate to PL page from UA page
+    if (lang === 'pl' && !isPlPage) {
+      let plPath;
+      if (currentPath === '/' || currentPath === '/index.html') {
+        plPath = '/index-pl.html';
+      } else if (currentPath.endsWith('.html')) {
+        plPath = currentPath.replace(/\.html$/, '-pl.html');
+      } else {
+        plPath = currentPath;
+      }
+      window.location.href = plPath;
+      return;
+    }
+
+    // Same language variant — just apply translations
     localStorage.setItem(STORAGE_KEY, lang);
     localStorage.setItem(LEGACY_KEY, lang);
     applyTranslations(lang);
@@ -465,7 +491,15 @@
       Object.assign(translations, extraTranslations);
     }
     
-    const lang = getLang();
+    // Auto-detect language from page URL
+    const isPlPage = window.location.pathname.endsWith('-pl.html');
+    const lang = isPlPage ? 'pl' : getLang();
+
+    if (isPlPage) {
+      localStorage.setItem(STORAGE_KEY, 'pl');
+      localStorage.setItem(LEGACY_KEY, 'pl');
+    }
+
     applyTranslations(lang);
     updateLangButtons(lang);
 

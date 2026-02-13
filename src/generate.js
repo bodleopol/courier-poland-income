@@ -1797,6 +1797,11 @@ Sitemap: https://rybezh.site/sitemap-blog.xml
       await fs.writeFile(path.join(DIST, 'web.config'), webConfig, 'utf8');
     } catch (e) {}
 
+    // ==========================================
+    // Generate Polish (-pl) pages
+    // ==========================================
+    await generatePolishPages(jobTranslations);
+
     console.log('Build complete. Pages:', links.length);
 }
 
@@ -2163,15 +2168,35 @@ function generateSitemap(links, posts = []) {
   
   const allPages = [...mainPages, ...blogPages, ...jobPages];
   
-  const items = allPages.map(p => `  <url>
+  // Generate entries for both UA and PL pages with hreflang xhtml:link
+  const items = allPages.flatMap(p => {
+    const plUrl = p.url === `${base}/`
+      ? `${base}/index-pl.html`
+      : p.url.replace(/\.html$/, '-pl.html');
+    const xhtmlLinks = `
+    <xhtml:link rel="alternate" hreflang="uk" href="${p.url}"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${p.url}"/>`;
+
+    return [
+      `  <url>
     <loc>${p.url}</loc>
     <lastmod>${p.lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
-    <priority>${p.priority}</priority>
-  </url>`).join('\n');
+    <priority>${p.priority}</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${plUrl}</loc>
+    <lastmod>${p.lastmod}</lastmod>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>${xhtmlLinks}
+  </url>`
+    ];
+  }).join('\n');
   
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${items}
 </urlset>`;
 }
@@ -2180,15 +2205,32 @@ function generateVacanciesSitemap(links) {
   const base = 'https://rybezh.site';
   const today = new Date().toISOString().split('T')[0];
 
-  const items = links.map(l => `  <url>
-    <loc>${base}/${l.slug}.html</loc>
+  const items = links.flatMap(l => {
+    const uaUrl = `${base}/${l.slug}.html`;
+    const plUrl = `${base}/${l.slug}-pl.html`;
+    const xhtmlLinks = `
+    <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>`;
+
+    return [
+      `  <url>
+    <loc>${uaUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>`).join('\n');
+    <priority>0.8</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${plUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>${xhtmlLinks}
+  </url>`
+    ];
+  }).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${items}
 </urlset>`;
 }
@@ -2803,6 +2845,298 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
     `,
     faqItems: []
   };
+}
+
+// ==========================================
+// Polish Page Generation (post-build)
+// ==========================================
+
+/**
+ * Extract the main translations object from main.js at build time.
+ */
+async function getMainTranslations() {
+  const mainJs = await fs.readFile(path.join(SRC, 'main.js'), 'utf8');
+  const startMarker = 'const translations = {';
+  const startIdx = mainJs.indexOf(startMarker);
+  if (startIdx === -1) { console.warn('⚠️  translations not found in main.js'); return {}; }
+
+  const braceStart = mainJs.indexOf('{', startIdx);
+  let depth = 0, end = braceStart;
+  for (let i = braceStart; i < mainJs.length; i++) {
+    if (mainJs[i] === '{') depth++;
+    else if (mainJs[i] === '}') { depth--; if (depth === 0) { end = i + 1; break; } }
+  }
+
+  try {
+    return new Function(`return ${mainJs.slice(braceStart, end)}`)();
+  } catch (e) {
+    console.error('❌ Failed to parse translations:', e.message);
+    return {};
+  }
+}
+
+/**
+ * Remove all data-lang-content="<lang>" blocks (element + content) from HTML.
+ */
+function removeLangContentBlocks(html, langToRemove) {
+  const marker = `data-lang-content="${langToRemove}"`;
+  let result = '', pos = 0;
+
+  while (pos < html.length) {
+    const idx = html.indexOf(marker, pos);
+    if (idx === -1) { result += html.slice(pos); break; }
+
+    // Find opening tag start
+    let tagStart = idx;
+    while (tagStart > 0 && html[tagStart] !== '<') tagStart--;
+    result += html.slice(pos, tagStart);
+
+    const tagMatch = html.slice(tagStart).match(/^<(\w+)/);
+    const tagName = tagMatch ? tagMatch[1] : 'div';
+    const openTagEnd = html.indexOf('>', idx);
+    if (openTagEnd === -1) { pos = html.length; break; }
+
+    // Track nesting to find matching close tag
+    let depth = 1, searchPos = openTagEnd + 1;
+    const closeTag = `</${tagName}>`;
+
+    while (depth > 0 && searchPos < html.length) {
+      const closeIdx = html.indexOf(closeTag, searchPos);
+      if (closeIdx === -1) { searchPos = html.length; break; }
+
+      // Count same-tag opens between searchPos and closeIdx
+      const seg = html.slice(searchPos, closeIdx);
+      const openRe = new RegExp(`<${tagName}[\\s>/]`, 'g');
+      let m; while ((m = openRe.exec(seg)) !== null) depth++;
+
+      depth--;
+      searchPos = closeIdx + closeTag.length;
+    }
+
+    pos = searchPos;
+    // Skip trailing newline
+    if (pos < html.length && html[pos] === '\n') pos++;
+  }
+
+  return result;
+}
+
+/**
+ * Show data-lang-content="<lang>" blocks: remove attribute + display:none style.
+ */
+function showLangContentBlocks(html, lang) {
+  // data-lang-content before style
+  html = html.replace(
+    new RegExp(`\\s*data-lang-content="${lang}"(\\s*)style="display:\\s*none;?\\s*"`, 'g'), '$1'
+  );
+  // style before data-lang-content
+  html = html.replace(
+    new RegExp(`\\s*style="display:\\s*none;?\\s*"(\\s*)data-lang-content="${lang}"`, 'g'), '$1'
+  );
+  // Any remaining standalone attribute
+  html = html.replace(new RegExp(`\\s*data-lang-content="${lang}"`, 'g'), '');
+  return html;
+}
+
+/**
+ * Apply PL translations to all data-i18n elements in HTML at build time.
+ */
+function applyI18nTranslationsBuild(html, translations) {
+  // 1. Void elements with data-i18n-attr (meta, input)
+  html = html.replace(
+    /<(meta|input|link)\b([^>]*?)data-i18n="([^"]+)"([^>]*?)>/gi,
+    (match, _tag, before, key, after) => {
+      const fullAttrs = before + ' ' + after;
+      const attrMatch = fullAttrs.match(/data-i18n-attr="([^"]+)"/);
+      if (!attrMatch) return match;
+      const attr = attrMatch[1];
+      const dict = translations[key];
+      if (!dict) return match;
+      const plText = (dict.pl || dict.ua || '').replace(/"/g, '&quot;');
+      return match.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${plText}"`);
+    }
+  );
+
+  // 2. Regular elements with data-i18n (text content or attribute)
+  html = html.replace(
+    /<(\w+)\b(\s[^>]*?data-i18n="([^"]+)"[^>]*?)>([\s\S]*?)<\/\1>/g,
+    (match, tag, attrs, key, content) => {
+      const dict = translations[key];
+      if (!dict) return match;
+
+      if (attrs.includes('data-i18n-attr')) {
+        // Non-void element with attribute replacement
+        const attrMatch = attrs.match(/data-i18n-attr="([^"]+)"/);
+        if (attrMatch) {
+          const attr = attrMatch[1];
+          const plText = (dict.pl || dict.ua || '').replace(/"/g, '&quot;');
+          const newAttrs = attrs.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${plText}"`);
+          return `<${tag}${newAttrs}>${content}</${tag}>`;
+        }
+        return match;
+      }
+
+      // Text/HTML content replacement
+      const plText = dict.pl || dict.ua || content;
+      return `<${tag}${attrs}>${plText}</${tag}>`;
+    }
+  );
+
+  return html;
+}
+
+/**
+ * Update internal navigation links for PL pages: href="/x.html" → href="/x-pl.html"
+ */
+function updateLinksForPolish(html) {
+  // Root → PL index
+  html = html.replace(/href="\/"/g, 'href="/index-pl.html"');
+
+  // .html links → -pl.html (skip already-PL, skip non-page resources)
+  const skipBases = new Set(['styles', 'main', 'jobs', 'jobs-loader', 'features', 'engagement']);
+  html = html.replace(
+    /href="\/([\w][\w\-]*)(\.html)([\?#][^"]*)?"/g,
+    (match, base, ext, suffix) => {
+      if (base.endsWith('-pl') || skipBases.has(base)) return match;
+      return `href="/${base}-pl${ext}${suffix || ''}"`;
+    }
+  );
+
+  return html;
+}
+
+/**
+ * Update full rybezh.site URLs to PL versions.
+ */
+function updateFullUrlsForPolish(html) {
+  html = html.replace(
+    /(https:\/\/rybezh\.site\/)([\w][\w\-]*)(\.html)/g,
+    (match, domain, base, ext) => {
+      if (base.endsWith('-pl')) return match;
+      return `${domain}${base}-pl${ext}`;
+    }
+  );
+  // Root canonical/OG → index-pl.html
+  html = html.replace(
+    /(<(?:link[^>]+rel="canonical"|meta[^>]+property="og:url"|meta[^>]+name="twitter:url")[^>]+(?:href|content)=")https:\/\/rybezh\.site\/"/g,
+    '$1https://rybezh.site/index-pl.html"'
+  );
+  return html;
+}
+
+/**
+ * Add/replace hreflang tags in HTML.
+ */
+function addHreflangTagsPl(html, filename) {
+  let uaUrl, plUrl;
+  if (filename === 'index.html') {
+    uaUrl = 'https://rybezh.site/';
+    plUrl = 'https://rybezh.site/index-pl.html';
+  } else {
+    uaUrl = `https://rybezh.site/${filename}`;
+    plUrl = `https://rybezh.site/${filename.replace('.html', '-pl.html')}`;
+  }
+
+  const tags = `
+  <link rel="alternate" hreflang="uk" href="${uaUrl}">
+  <link rel="alternate" hreflang="pl" href="${plUrl}">
+  <link rel="alternate" hreflang="x-default" href="${uaUrl}">`;
+
+  // Remove existing hreflang tags
+  html = html.replace(/<link\s+rel="alternate"\s+hreflang="[^"]*"\s+href="[^"]*"\s*\/?\s*>\s*\n?/g, '');
+
+  if (html.includes('</head>')) {
+    html = html.replace('</head>', `${tags}\n</head>`);
+  }
+  return html;
+}
+
+/**
+ * Transform a complete HTML page to its Polish version.
+ */
+function transformToPolish(html, translations, filename) {
+  let r = html;
+
+  // 1. Lang attribute
+  r = r.replace(/<html\s+lang="uk"/g, '<html lang="pl"');
+
+  // 2. Data-lang-content blocks
+  r = removeLangContentBlocks(r, 'ua');
+  r = showLangContentBlocks(r, 'pl');
+
+  // 3. Apply i18n translations
+  r = applyI18nTranslationsBuild(r, translations);
+
+  // 4. OG locale
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")uk_UA"/g, '$1pl_PL"');
+  r = r.replace(/(<meta\s+property="og:locale:alternate"\s+content=")pl_PL"/g, '$1uk_UA"');
+  r = r.replace(/(<meta\s+property="og:site_name"\s+content=")[^"]*"/g, '$1Rybezh — Praca w Polsce"');
+
+  // 5. Full URLs
+  r = updateFullUrlsForPolish(r);
+
+  // 6. Internal links
+  r = updateLinksForPolish(r);
+
+  // 7. Hreflang
+  r = addHreflangTagsPl(r, filename);
+
+  // 8. Force PL language on load
+  if (r.includes('</head>')) {
+    r = r.replace('</head>',
+      `<script>if(typeof localStorage!=='undefined'){localStorage.setItem('site_lang','pl');localStorage.setItem('siteLang','pl');}</script>\n</head>`);
+  }
+
+  return r;
+}
+
+/**
+ * Generate Polish versions of all HTML pages in dist/.
+ */
+async function generatePolishPages(dynamicTranslations) {
+  console.log('\n🇵🇱 Generating Polish pages...');
+
+  const mainTranslations = await getMainTranslations();
+  const allTranslations = { ...mainTranslations, ...(dynamicTranslations || {}) };
+
+  let entries;
+  try { entries = await fs.readdir(DIST, { withFileTypes: true }); }
+  catch { console.warn('  ⚠️  dist/ not found'); return; }
+
+  const htmlFiles = entries
+    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html'))
+    .map(e => e.name);
+
+  let generated = 0;
+  for (const file of htmlFiles) {
+    try {
+      const filePath = path.join(DIST, file);
+      const html = await fs.readFile(filePath, 'utf8');
+
+      // Generate PL version
+      const plHtml = transformToPolish(html, allTranslations, file);
+      const plFile = file.replace('.html', '-pl.html');
+      await fs.writeFile(path.join(DIST, plFile), plHtml, 'utf8');
+
+      // Add hreflang tags to the original UA page
+      const uaHtml = addHreflangTagsPl(html, file);
+      await fs.writeFile(filePath, uaHtml, 'utf8');
+
+      generated++;
+    } catch (e) {
+      console.error(`  ❌ ${file}: ${e.message}`);
+    }
+  }
+
+  // PL version of 404 subdirectory
+  try {
+    const dir = path.join(DIST, '404-pl');
+    await fs.mkdir(dir, { recursive: true });
+    const pl404 = await fs.readFile(path.join(DIST, '404-pl.html'), 'utf8');
+    await fs.writeFile(path.join(dir, 'index.html'), pl404, 'utf8');
+  } catch {}
+
+  console.log(`  ✅ Generated ${generated} Polish pages`);
 }
 
 build().catch(err => {
