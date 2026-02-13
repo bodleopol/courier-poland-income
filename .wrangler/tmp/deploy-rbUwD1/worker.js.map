@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../../src/worker.js"],
+  "sourceRoot": "C:\\Users\\Bogdan\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\web-poland-income\\courier-poland-income\\.wrangler\\tmp\\deploy-rbUwD1",
+  "sourcesContent": ["export default {\r\n  async fetch(request, env) {\r\n    const response = await env.ASSETS.fetch(request);\r\n\r\n    if (response.status !== 404) {\r\n      return response;\r\n    }\r\n\r\n    const notFoundUrl = new URL('/404.html', request.url);\r\n    const notFoundResponse = await env.ASSETS.fetch(notFoundUrl);\r\n\r\n    if (notFoundResponse.status === 404) {\r\n      return response;\r\n    }\r\n\r\n    return new Response(notFoundResponse.body, {\r\n      status: 404,\r\n      headers: notFoundResponse.headers\r\n    });\r\n  }\r\n};\r\n"],
+  "mappings": ";AAAA,IAAO,iBAAQ;AAAA,EACb,MAAM,MAAM,SAAS,KAAK;AACxB,UAAM,WAAW,MAAM,IAAI,OAAO,MAAM,OAAO;AAE/C,QAAI,SAAS,WAAW,KAAK;AAC3B,aAAO;AAAA,IACT;AAEA,UAAM,cAAc,IAAI,IAAI,aAAa,QAAQ,GAAG;AACpD,UAAM,mBAAmB,MAAM,IAAI,OAAO,MAAM,WAAW;AAE3D,QAAI,iBAAiB,WAAW,KAAK;AACnC,aAAO;AAAA,IACT;AAEA,WAAO,IAAI,SAAS,iBAAiB,MAAM;AAAA,MACzC,QAAQ;AAAA,MACR,SAAS,iBAAiB;AAAA,IAC5B,CAAC;AAAA,EACH;AACF;",
+  "names": []
+}

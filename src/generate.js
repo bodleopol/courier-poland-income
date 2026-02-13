@@ -1112,6 +1112,7 @@ async function build() {
     jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
     jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
     jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania` };
+    jobTranslations[`blog.${p.slug}.author_role`] = { ua: p.author_role || '', pl: p.author_role_pl || p.author_role || '' };
   });
   
   // Prepare script with injected translations
@@ -1435,6 +1436,7 @@ async function build() {
           </div>
           <h3><a href="/post-${p.slug}.html" data-i18n="blog.${p.slug}.title">${escapeHtml(p.title)}</a></h3>
           <p data-i18n="blog.${p.slug}.excerpt">${escapeHtml(p.excerpt)}</p>
+          <div class="blog-author-line">✍️ ${escapeHtml(p.author || 'Rybezh')} · <span data-i18n="blog.${p.slug}.author_role">${escapeHtml(p.author_role || '')}</span></div>
           <a href="/post-${p.slug}.html" class="read-more" data-i18n="blog.read_more">Читати далі →</a>
         </div>
       </div>
@@ -1550,6 +1552,7 @@ async function build() {
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
         <div class="post-meta">📅 <span data-format-date="${post.date}">${post.date}</span> · <span class="post-readtime" data-i18n="blog.${post.slug}.read_time">${readMinutes} хв читання</span></div>
+        <div class="post-author">✍️ <strong>${escapeHtml(post.author || 'Rybezh')}</strong> <span class="post-author-role" data-i18n="blog.${post.slug}.author_role">${escapeHtml(post.author_role || '')}</span></div>
         <div data-lang-content="ua">${uaEnhanced.html}</div>
         <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
       </div>`;
@@ -2371,8 +2374,8 @@ function buildBlogPostingJsonLd(post, imageUrl) {
     datePublished: published,
     dateModified: modified,
     author: {
-      '@type': 'Organization',
-      name: 'Rybezh'
+      '@type': 'Person',
+      name: post.author || 'Rybezh'
     },
     publisher: {
       '@type': 'Organization',
