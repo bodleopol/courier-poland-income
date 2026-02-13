@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="map.meta_title">Мапа українців у Польщі — Rybezh</title>
+  <meta name="description" data-i18n="map.meta_description" data-i18n-attr="content" content="Інтерактивна карта українців у Польщі. Позначай себе — знаходь земляків, напарників, квартири та роботу поруч.">
+  <link rel="canonical" href="https://rybezh.site/map.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rybezh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rybezh.site/map.html">
+  <meta property="og:title" content="Мапа українців у Польщі — Rybezh">
+  <meta property="og:description" content="Позначай себе на карті — знаходь земляків, напарників, квартири та роботу поруч.">
+  <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Rybezh">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <!-- PapaParse для CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Мапа українців у Польщі",
+    "url": "https://rybezh.site/map.html",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+    "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+  }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .map-page { max-width: 1100px; margin: 0 auto; }
+    .map-hero { text-align: center; padding: 2.5rem 0 1.5rem; }
+    .map-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .map-hero p { color: var(--color-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .map-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .map-add-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 700;
+      background: linear-gradient(135deg, #0ea5e9, #0f766e); color: #fff;
+      border: none; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(14,165,233,0.35);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .map-add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,165,233,0.45); }
+    .map-counter { font-size: 0.95rem; color: var(--color-secondary); font-weight: 600; }
+    .map-counter strong { color: var(--color-accent); font-size: 1.3rem; }
+
+    #map {
+      height: 620px; border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      border: 2px solid var(--color-border);
+      z-index: 1;
+    }
+
+    /* Custom cluster icons */
+    .custom-cluster {
+      background: rgba(14,165,233,0.15); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid #0ea5e9; font-weight: 800; color: #0f766e;
+      font-size: 15px; box-shadow: 0 2px 8px rgba(14,165,233,0.3);
+    }
+    .custom-cluster-large { background: rgba(15,118,110,0.15); border-color: #0f766e; color: #0f766e; }
+
+    /* Custom popup */
+    .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; }
+    .leaflet-popup-content { margin: 14px 16px !important; font-size: 14px; line-height: 1.6; }
+    .popup-name { font-size: 1.1rem; font-weight: 700; color: #0f766e; margin-bottom: 4px; }
+    .popup-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+    .popup-row a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
+    .popup-row a:hover { text-decoration: underline; }
+    .popup-seeking { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 20px; background: rgba(0,166,126,0.1); color: #0f766e; font-size: 0.82rem; font-weight: 600; }
+    .popup-desc { font-size: 0.85rem; color: #6b7280; margin-top: 6px; line-height: 1.5; }
+
+    .map-legend { text-align: center; font-size: 0.9rem; color: var(--color-secondary); margin: 1rem 0 0.5rem; }
+
+    .how-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin: 2rem 0; }
+    .how-card h2 { font-size: 1.3rem; margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .instructions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .instr-step { background: var(--color-surface-alt); border-radius: 12px; padding: 1.25rem; position: relative; }
+    .instr-step .step-num { position: absolute; top: -10px; left: 16px; background: var(--color-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+    .instr-step p { margin: 0.5rem 0 0; font-size: 0.92rem; color: var(--color-secondary); line-height: 1.5; }
+    .instr-step strong { color: var(--color-primary); }
+    .coord-example { display: inline-block; margin-top: 0.3rem; padding: 0.3rem 0.7rem; background: rgba(0,166,126,0.08); border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; }
+
+    .map-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .map-info-item { text-align: center; padding: 1.25rem; border-radius: 12px; background: var(--color-surface); border: 1px solid var(--color-border); }
+    .map-info-item .info-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .map-info-item h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+    .map-info-item p { margin: 0; font-size: 0.85rem; color: var(--color-secondary); }
+
+    .map-loading { text-align: center; padding: 2rem; color: var(--color-secondary); }
+    .map-loading .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 700px) {
+      #map { height: 450px; }
+      .instructions { grid-template-columns: 1fr; }
+      .map-info-grid { grid-template-columns: 1fr; }
+      .map-hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <div class="nav-dropdown" aria-label="Категорії">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії</button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="/apply.html" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
+        <div class="header-lang">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+      <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="map-page">
+      <div class="map-hero">
+        <h1>🗺️ <span data-lang-content="ua" style="display:inline">Мапа українців у Польщі</span><span data-lang-content="pl" style="display:none">Mapa Ukraińców w Polsce</span></h1>
+        <p data-lang-content="ua">Позначай себе — знаходь земляків, напарників, квартири та роботу поруч</p>
+        <p data-lang-content="pl" style="display:none">Zaznacz siebie — znajdź rodaków, współpracowników, mieszkania i pracę w pobliżu</p>
+      </div>
+
+      <!-- Info cards -->
+      <div class="map-info-grid">
+        <div class="map-info-item">
+          <div class="info-icon">🤝</div>
+          <h3 data-lang-content="ua" style="display:block">Знайди земляків</h3>
+          <h3 data-lang-content="pl" style="display:none">Znajdź rodaków</h3>
+          <p data-lang-content="ua">Дізнайся, хто з українців живе поруч з тобою</p>
+          <p data-lang-content="pl" style="display:none">Dowiedz się, kto z Ukraińców mieszka blisko ciebie</p>
+        </div>
+        <div class="map-info-item">
+          <div class="info-icon">🏠</div>
+          <h3 data-lang-content="ua" style="display:block">Квартира / кімната</h3>
+          <h3 data-lang-content="pl" style="display:none">Mieszkanie / pokój</h3>
+          <p data-lang-content="ua">Шукай сусідів або пропонуй місце для проживання</p>
+          <p data-lang-content="pl" style="display:none">Szukaj współlokatorów lub oferuj miejsce do zamieszkania</p>
+        </div>
+        <div class="map-info-item">
+          <div class="info-icon">💼</div>
+          <h3 data-lang-content="ua" style="display:block">Робота поруч</h3>
+          <h3 data-lang-content="pl" style="display:none">Praca w pobliżu</h3>
+          <p data-lang-content="ua">Знайди напарника на зміну або підкажи вакансію</p>
+          <p data-lang-content="pl" style="display:none">Znajdź partnera do zmiany lub poleć ofertę pracy</p>
+        </div>
+      </div>
+
+      <!-- Add button + counter -->
+      <div class="map-actions">
+        <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+          📍 <span data-lang-content="ua" style="display:inline">Додати себе на мапу</span><span data-lang-content="pl" style="display:none">Dodaj siebie na mapę</span>
+        </a>
+        <div class="map-counter" id="map-counter" style="display:none;">
+          <span data-lang-content="ua" style="display:inline">На карті вже</span><span data-lang-content="pl" style="display:none">Na mapie już</span>
+          <strong id="marker-count">0</strong>
+          <span data-lang-content="ua" style="display:inline">українців</span><span data-lang-content="pl" style="display:none">Ukraińców</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div id="map-loading" class="map-loading">
+        <span class="spinner"></span>
+        <span data-lang-content="ua" style="display:inline">Завантаження карти...</span>
+        <span data-lang-content="pl" style="display:none">Ładowanie mapy...</span>
+      </div>
+      <div id="map"></div>
+
+      <div class="map-legend">
+        <span data-lang-content="ua" style="display:inline">Клікни на маркер, щоб побачити контакти • Дані оновлюються кожні 5–10 хвилин</span>
+        <span data-lang-content="pl" style="display:none">Kliknij marker, aby zobaczyć kontakt • Dane są aktualizowane co 5–10 minut</span>
+      </div>
+
+      <!-- How to -->
+      <div class="how-card">
+        <h2>📝 <span data-lang-content="ua" style="display:inline">Як додати себе на карту</span><span data-lang-content="pl" style="display:none">Jak dodać siebie na mapę</span></h2>
+
+        <div data-lang-content="ua">
+          <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+            Привіт! ❤️ Додай себе на мапу, щоб інші українці могли тебе знайти — для спільного житла, роботи, або просто підтримки.
+          </p>
+          <div class="instructions">
+            <div class="instr-step">
+              <div class="step-num">1</div>
+              <strong>Відкрий Google Maps</strong>
+              <p>На телефоні або комп'ютері — знайди своє місто чи вулицю</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">2</div>
+              <strong>Знайди свою точку</strong>
+              <p>Натисни ПКМ (правою кнопкою) → «Що тут?» або довгий натиск на мобільному</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">3</div>
+              <strong>Скопіюй координати</strong>
+              <p>Два числа — широта і довгота<br><span class="coord-example">52.2297, 21.0122</span></p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">4</div>
+              <strong>Заповни форму</strong>
+              <p>Вкажи ім'я, Telegram, місто та координати. Дані з'являться на мапі за 5–10 хвилин!</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-lang-content="pl" style="display:none">
+          <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+            Cześć! ❤️ Dodaj siebie na mapę, żeby inni Ukraińcy mogli cię znaleźć — do wspólnego mieszkania, pracy lub po prostu wsparcia.
+          </p>
+          <div class="instructions">
+            <div class="instr-step">
+              <div class="step-num">1</div>
+              <strong>Otwórz Google Maps</strong>
+              <p>Na telefonie lub komputerze — znajdź swoje miasto lub ulicę</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">2</div>
+              <strong>Znajdź swój punkt</strong>
+              <p>Kliknij PPM (prawym przyciskiem) → „Co tu jest?" lub długie naciśnięcie na telefonie</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">3</div>
+              <strong>Skopiuj współrzędne</strong>
+              <p>Dwie liczby — szerokość i długość<br><span class="coord-example">52.2297, 21.0122</span></p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">4</div>
+              <strong>Wypełnij formularz</strong>
+              <p>Podaj imię, Telegram, miasto i współrzędne. Dane pojawią się na mapie w 5–10 minut!</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:1.5rem;">
+          <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+            ✏️ <span data-lang-content="ua" style="display:inline">Заповнити форму</span><span data-lang-content="pl" style="display:none">Wypełnij formularz</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin:2rem 0;">
+        <a href="/vacancies.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;" data-lang-content="ua">Переглянути вакансії</a>
+        <a href="/vacancies.html" class="btn-primary" style="display:none;padding:0.8rem 2rem;" data-lang-content="pl">Zobacz oferty pracy</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p data-i18n="footer.desc">Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav">Навігація</h4>
+          <a href="/" data-i18n="nav.home">Головна</a>
+          <a href="/about.html" data-i18n="nav.about">Про нас</a>
+          <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+          <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+          <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4>Інструменти</h4>
+          <a href="/calculator.html">Калькулятор</a>
+          <a href="/cv-generator.html">Генератор CV</a>
+          <a href="/red-flag.html">Перевірка вакансій</a>
+          <a href="/map.html">Мапа українців</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Контакти</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply.html" data-i18n="nav.apply">Подати заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
+        <div class="footer-bottom-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+          <a href="/terms.html" data-i18n="footer.terms">Умови користування</a>
+          <a href="/company.html" data-i18n="footer.company">Реквізити</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду.</p>
+    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+  </div>
+
+  <script>
+  (function() {
+    // Init map
+    var map = L.map('map', {
+      scrollWheelZoom: true,
+      zoomControl: true
+    }).setView([52.0, 19.0], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Custom blue/teal marker icon
+    var customIcon = L.divIcon({
+      html: '<div style="background:#0ea5e9;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
+      className: '',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+      popupAnchor: [0, -12]
+    });
+
+    // Marker cluster group
+    var markers = L.markerClusterGroup({
+      maxClusterRadius: 55,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      iconCreateFunction: function(cluster) {
+        var count = cluster.getChildCount();
+        var size = count < 10 ? 40 : count < 50 ? 50 : 60;
+        var cls = count >= 50 ? 'custom-cluster custom-cluster-large' : 'custom-cluster';
+        return L.divIcon({
+          html: '<b>' + count + '</b>',
+          className: cls,
+          iconSize: [size, size]
+        });
+      }
+    });
+
+    // CSV URL from Google Sheets
+    var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCc4KlINKpV0YWnxiaHKbiNgDCYZijGoJACdPTEueq_C-AIeFiFj-eRjOto0BWhz0F_JTBJcefyA-U/pub?output=csv';
+
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        var loadingEl = document.getElementById('map-loading');
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        var count = 0;
+        results.data.forEach(function(row) {
+          var latStr = row['Широта (Lat)'];
+          var lngStr = row['Довгота (Lng)'];
+          if (latStr && lngStr) {
+            var lat = parseFloat(latStr);
+            var lng = parseFloat(lngStr);
+            if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
+              var name = row["Ім'я / Нік"] || 'Анонім';
+              var city = row['Місто'] || '';
+              var telegram = row['Telegram (з @)'] || '';
+              var seeking = row['Що шукаю (робота / квартира / напарник / інше)'] || '';
+              var desc = row['Короткий опис (Скільки шукаю, що пропоную тощо)'] || '';
+
+              var tgClean = telegram.replace('@', '').trim();
+
+              var popup = '<div class="popup-name">' + name + '</div>';
+              if (city) popup += '<div class="popup-row">📍 ' + city + '</div>';
+              if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + tgClean + '" target="_blank" rel="noopener">@' + tgClean + '</a></div>';
+              if (seeking) popup += '<div class="popup-seeking">🔍 ' + seeking + '</div>';
+              if (desc) popup += '<div class="popup-desc">' + desc + '</div>';
+
+              var marker = L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 });
+              markers.addLayer(marker);
+              count++;
+            }
+          }
+        });
+
+        map.addLayer(markers);
+
+        // Update counter
+        if (count > 0) {
+          document.getElementById('marker-count').textContent = count;
+          document.getElementById('map-counter').style.display = 'inline-block';
+        }
+      },
+      error: function(err) {
+        var loadingEl = document.getElementById('map-loading');
+        if (loadingEl) loadingEl.innerHTML = '⚠️ Не вдалося завантажити дані. Спробуйте пізніше.';
+        console.error('CSV error:', err);
+      }
+    });
+  })();
+  </script>
+  <script src="/main.js"></script>
+</body>
+</html>

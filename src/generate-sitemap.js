@@ -94,7 +94,8 @@ function generateStaticSitemap() {
     { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
     { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' }
+    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
+    { url: 'map.html', priority: '0.9', changefreq: 'daily' }
   ];
 
   const urls = staticPages.map(page => {
@@ -146,7 +147,8 @@ function generateMainSitemap() {
     { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
     { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' }
+    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
+    { url: 'map.html', priority: '0.9', changefreq: 'daily' }
   ];
 
   const staticUrls = staticPages.map(page => {

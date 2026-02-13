@@ -1121,7 +1121,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -1555,6 +1555,24 @@ async function build() {
         <div class="post-author">✍️ <strong>${escapeHtml(post.author || 'Rybezh')}</strong> <span class="post-author-role" data-i18n="blog.${post.slug}.author_role">${escapeHtml(post.author_role || '')}</span></div>
         <div data-lang-content="ua">${uaEnhanced.html}</div>
         <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
+      </div>
+      <div class="giscus-comments" style="max-width:800px;margin:2.5rem auto 0;">
+        <h3 style="font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 <span data-lang-content="ua" style="display:inline">Коментарі</span><span data-lang-content="pl" style="display:none">Komentarze</span></h3>
+        <script src="https://giscus.app/client.js"
+          data-repo="bodleopol/courier-poland-income"
+          data-repo-id="R_kgDOQ5cY4Q"
+          data-category="General"
+          data-category-id="DIC_kwDOQ5cY4c4C2VOX"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="uk"
+          crossorigin="anonymous"
+          async>
+        </script>
       </div>`;
     
     let postHtml = pageTpl
@@ -2089,6 +2107,12 @@ function generateSitemap(links, posts = []) {
       url: `${base}/red-flag.html`, 
       priority: '0.85', 
       changefreq: 'monthly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/map.html`, 
+      priority: '0.9', 
+      changefreq: 'daily',
       lastmod: today
     }
   ];
