@@ -1121,7 +1121,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'for-employers.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
