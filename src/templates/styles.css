@@ -1202,4 +1202,25 @@ details li {
   margin: 1.5rem 0;
 }
 
+/* Global fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Giscus comments section */
+.giscus-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  margin-top: 2.5rem;
+}
+.giscus-section h3 {
+  color: var(--color-primary);
+}
+
 

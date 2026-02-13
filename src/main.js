@@ -447,29 +447,45 @@
   function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.job-card, .apply-card, .card, .blog-card');
     
-    if (!animatedElements.length) return;
-
     if (!('IntersectionObserver' in window)) {
       animatedElements.forEach(el => {
         el.classList.remove('animate-ready');
         el.classList.add('animate-in');
       });
+      // Also handle fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('is-visible'));
       return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    if (animatedElements.length) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    animatedElements.forEach(el => {
-      el.classList.add('animate-ready');
-      observer.observe(el);
-    });
+      animatedElements.forEach(el => {
+        el.classList.add('animate-ready');
+        observer.observe(el);
+      });
+    }
+
+    // Fade-in observer for homepage sections
+    const fadeEls = document.querySelectorAll('.fade-in');
+    if (fadeEls.length) {
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      fadeEls.forEach(el => fadeObserver.observe(el));
+    }
   }
 
   // ============================================

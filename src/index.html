@@ -46,7 +46,7 @@
   </div>
 </section>
 
-<section class="calculator-section">
+<section class="calculator-section fade-in">
   <div class="container">
     <h2 data-i18n="calc.title">Калькулятор заробітку</h2>
     <p class="section-lead">Дізнайтеся реальний дохід «на руки» з урахуванням податків та витрат</p>
@@ -95,7 +95,7 @@
 </section>
 
 <!-- Tools Showcase -->
-<section class="tools-showcase">
+<section class="tools-showcase fade-in">
   <div class="container">
     <h2>Безкоштовні інструменти</h2>
     <p class="section-lead">Все, що потрібно для старту роботи в Польщі — в одному місці</p>
@@ -129,7 +129,7 @@
 </section>
 
 <!-- Map Preview -->
-<section class="map-preview-section">
+<section class="map-preview-section fade-in">
   <div class="container">
     <div class="map-preview-inner">
       <div class="map-preview-content">
@@ -158,6 +158,22 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Map CTA Banner -->
+<section class="map-cta-banner fade-in">
+  <div class="container">
+    <a href="/map.html" class="map-cta-link">
+      <div class="map-cta-inner">
+        <span class="map-cta-icon">🗺️</span>
+        <div class="map-cta-text">
+          <strong>Відкрити мапу українців у Польщі</strong>
+          <span>Знайди земляків поруч · Додай себе на карту!</span>
+        </div>
+        <span class="map-cta-arrow">→</span>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -224,7 +240,7 @@
 </section>
 
 <!-- Features -->
-<section class="features">
+<section class="features fade-in">
   <div class="container">
     <h2 data-i18n="home.features.title">Чому Rybezh?</h2>
     <div class="features-grid">
@@ -657,5 +673,72 @@ main.container {
 
 @media (max-width: 900px) {
   .human-grid { grid-template-columns: 1fr; }
+}
+
+/* Map CTA Banner */
+.map-cta-banner {
+  padding: 1rem 0;
+}
+.map-cta-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.map-cta-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0ea5e9, #0f766e);
+  color: white;
+  box-shadow: 0 8px 30px rgba(14, 165, 233, 0.3);
+  transition: all 0.3s;
+}
+.map-cta-inner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(14, 165, 233, 0.4);
+}
+.map-cta-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+.map-cta-text {
+  flex: 1;
+}
+.map-cta-text strong {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+.map-cta-text span {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.map-cta-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.map-cta-inner:hover .map-cta-arrow {
+  transform: translateX(4px);
+}
+@media (max-width: 600px) {
+  .map-cta-inner { padding: 1rem 1.25rem; gap: 0.75rem; }
+  .map-cta-icon { font-size: 1.8rem; }
+  .map-cta-text strong { font-size: 1.05rem; }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

@@ -84,6 +84,8 @@
     }
 
     /* Custom cluster icons */
+    .custom-marker-wrapper { background: none !important; border: none !important; }
+
     .custom-cluster {
       background: rgba(14,165,233,0.15); border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -325,6 +327,27 @@
         <a href="/vacancies.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;" data-lang-content="ua">Переглянути вакансії</a>
         <a href="/vacancies.html" class="btn-primary" style="display:none;padding:0.8rem 2rem;" data-lang-content="pl">Zobacz oferty pracy</a>
       </div>
+
+      <!-- Giscus Comments -->
+      <div class="giscus-section" style="max-width:800px;margin:2.5rem auto 0;">
+        <h3 style="font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 <span data-lang-content="ua" style="display:inline">Коментарі та обговорення</span><span data-lang-content="pl" style="display:none">Komentarze i dyskusja</span></h3>
+        <div id="giscus-comments"></div>
+        <script src="https://giscus.app/client.js"
+          data-repo="bodleopol/courier-poland-income"
+          data-repo-id="R_kgDOQ5cY4Q"
+          data-category="General"
+          data-category-id="DIC_kwDOQ5cY4c4C2VOX"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="uk"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
     </div>
   </main>
 
@@ -392,7 +415,7 @@
     // Custom blue/teal marker icon
     var customIcon = L.divIcon({
       html: '<div style="background:#0ea5e9;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
-      className: '',
+      className: 'custom-marker-wrapper',
       iconSize: [20, 20],
       iconAnchor: [10, 10],
       popupAnchor: [0, -12]
@@ -415,38 +438,95 @@
       }
     });
 
+    // Helper: normalize column header (trim, remove BOM, normalize whitespace)
+    function normHeader(s) {
+      return s ? s.replace(/^\uFEFF/, '').replace(/\s+/g, ' ').trim() : '';
+    }
+
+    // Find column by partial match (handles BOM, extra spaces, encoding diffs)
+    function findCol(row, patterns) {
+      var keys = Object.keys(row);
+      for (var p = 0; p < patterns.length; p++) {
+        for (var k = 0; k < keys.length; k++) {
+          var h = normHeader(keys[k]).toLowerCase();
+          if (h.indexOf(patterns[p].toLowerCase()) !== -1) return keys[k];
+        }
+      }
+      return null;
+    }
+
     // CSV URL from Google Sheets
     var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCc4KlINKpV0YWnxiaHKbiNgDCYZijGoJACdPTEueq_C-AIeFiFj-eRjOto0BWhz0F_JTBJcefyA-U/pub?output=csv';
+
+    var loadingEl = document.getElementById('map-loading');
+    var errorShown = false;
+
+    function showError(msg) {
+      if (errorShown) return;
+      errorShown = true;
+      if (loadingEl) {
+        loadingEl.innerHTML = '<div style="color:#ef4444;font-weight:600;">⚠️ ' + msg + '</div>' +
+          '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Спробувати знову</button>';
+        loadingEl.style.display = 'block';
+      }
+    }
+
+    // Add timeout for CSV loading
+    var csvTimeout = setTimeout(function() {
+      showError('Завантаження даних зайняло надто довго. Перевірте інтернет-з\'єднання.');
+    }, 15000);
 
     Papa.parse(csvUrl, {
       download: true,
       header: true,
       skipEmptyLines: true,
       complete: function(results) {
-        var loadingEl = document.getElementById('map-loading');
+        clearTimeout(csvTimeout);
         if (loadingEl) loadingEl.style.display = 'none';
+
+        if (!results.data || results.data.length === 0) {
+          showError('Дані ще не додано. Будьте першими — додайте себе на карту!');
+          return;
+        }
+
+        // Auto-detect column names from the first row
+        var firstRow = results.data[0];
+        var colLat = findCol(firstRow, ['Широта', 'Lat', 'lat', 'latitude']);
+        var colLng = findCol(firstRow, ['Довгота', 'Lng', 'lng', 'longitude']);
+        var colName = findCol(firstRow, ["Ім'я", 'Нік', 'Name', 'name']);
+        var colCity = findCol(firstRow, ['Місто', 'City', 'city']);
+        var colTg = findCol(firstRow, ['Telegram', 'telegram', 'tg']);
+        var colSeeking = findCol(firstRow, ['Що шукаю', 'seeking', 'szukam']);
+        var colDesc = findCol(firstRow, ['Короткий опис', 'опис', 'description', 'opis']);
+
+        if (!colLat || !colLng) {
+          console.warn('Map CSV: Could not find Lat/Lng columns. Found headers:', Object.keys(firstRow));
+          showError('Не вдалося розпізнати формат даних. Спробуйте пізніше.');
+          return;
+        }
 
         var count = 0;
         results.data.forEach(function(row) {
-          var latStr = row['Широта (Lat)'];
-          var lngStr = row['Довгота (Lng)'];
+          var latStr = row[colLat];
+          var lngStr = row[colLng];
           if (latStr && lngStr) {
-            var lat = parseFloat(latStr);
-            var lng = parseFloat(lngStr);
+            // Handle comma as decimal separator
+            var lat = parseFloat(String(latStr).replace(',', '.'));
+            var lng = parseFloat(String(lngStr).replace(',', '.'));
             if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
-              var name = row["Ім'я / Нік"] || 'Анонім';
-              var city = row['Місто'] || '';
-              var telegram = row['Telegram (з @)'] || '';
-              var seeking = row['Що шукаю (робота / квартира / напарник / інше)'] || '';
-              var desc = row['Короткий опис (Скільки шукаю, що пропоную тощо)'] || '';
+              var name = (colName && row[colName]) ? row[colName] : 'Анонім';
+              var city = (colCity && row[colCity]) ? row[colCity] : '';
+              var telegram = (colTg && row[colTg]) ? row[colTg] : '';
+              var seeking = (colSeeking && row[colSeeking]) ? row[colSeeking] : '';
+              var desc = (colDesc && row[colDesc]) ? row[colDesc] : '';
 
-              var tgClean = telegram.replace('@', '').trim();
+              var tgClean = telegram.replace(/@/g, '').trim();
 
-              var popup = '<div class="popup-name">' + name + '</div>';
-              if (city) popup += '<div class="popup-row">📍 ' + city + '</div>';
-              if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + tgClean + '" target="_blank" rel="noopener">@' + tgClean + '</a></div>';
-              if (seeking) popup += '<div class="popup-seeking">🔍 ' + seeking + '</div>';
-              if (desc) popup += '<div class="popup-desc">' + desc + '</div>';
+              var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
+              if (city) popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
+              if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
+              if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
+              if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
 
               var marker = L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 });
               markers.addLayer(marker);
@@ -458,17 +538,31 @@
         map.addLayer(markers);
 
         // Update counter
-        if (count > 0) {
-          document.getElementById('marker-count').textContent = count;
-          document.getElementById('map-counter').style.display = 'inline-block';
+        var counterEl = document.getElementById('map-counter');
+        var countEl = document.getElementById('marker-count');
+        if (count > 0 && counterEl && countEl) {
+          countEl.textContent = count;
+          counterEl.style.display = 'inline-block';
+        }
+
+        // If no valid markers found
+        if (count === 0) {
+          showError('Жодних маркерів не знайдено. Можливо дані ще не додано — будьте першими!');
         }
       },
       error: function(err) {
-        var loadingEl = document.getElementById('map-loading');
-        if (loadingEl) loadingEl.innerHTML = '⚠️ Не вдалося завантажити дані. Спробуйте пізніше.';
-        console.error('CSV error:', err);
+        clearTimeout(csvTimeout);
+        showError('Не вдалося завантажити дані карти. Спробуйте пізніше.');
+        console.error('CSV parse error:', err);
       }
     });
+
+    // Simple HTML escape
+    function escapeHtml(str) {
+      var d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
   })();
   </script>
   <script src="/main.js"></script>
