@@ -106,15 +106,19 @@
         Rybezh
       </a>
       <nav class="nav-menu">
-        <a href="/" class="nav-link" data-i18n="nav.home">Головна</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
         <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <div class="nav-dropdown" aria-label="Категорії">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
         <div class="nav-dropdown" aria-label="Інструменти">
-          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">Інструменти</button>
-          <div class="nav-dropdown__menu">
-            <a href="/calculator.html" data-i18n="nav.calculator">💰 Калькулятор зарплати</a>
-            <a href="/cv-generator.html" data-i18n="nav.cvgenerator">📄 Генератор CV</a>
-            <a href="/red-flag.html" data-i18n="nav.redflag">🚩 Перевірка вакансій</a>
-            <a href="/map.html" data-i18n="nav.map">🗺️ Карта українців</a>
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">🛠️ Інструменти <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator.html">💰 Калькулятор зарплати</a>
+            <a href="/cv-generator.html">📄 Генератор CV</a>
+            <a href="/red-flag.html">🚩 Перевірка вакансій</a>
+            <a href="/map.html">🗺️ Карта українців</a>
           </div>
         </div>
         <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
@@ -132,8 +136,9 @@
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link" data-i18n="nav.home">Головна</a>
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
       <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
       <div class="mobile-tools">
         <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Інструменти</button>
         <div class="mobile-tools__menu">

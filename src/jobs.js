@@ -25,17 +25,32 @@
     const lang = localStorage.getItem('site_lang') || 'ua';
     const categories = window.CATEGORIES || [];
 
-    const buildLinks = () => categories.map(cat => {
+    // Desktop: mega-menu with icons + descriptions
+    const buildDesktopLinks = () => categories.map(cat => {
       const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
-      return `<a href="/vacancies.html?category=${cat.id}">${name}</a>`;
+      const desc = lang === 'pl' ? cat.description_pl : cat.description_ua;
+      return `<a href="/vacancies.html?category=${cat.id}" class="mega-item">
+        <span class="mega-icon">${cat.icon}</span>
+        <span class="mega-text">
+          <span class="mega-name">${name}</span>
+          <span class="mega-desc">${desc}</span>
+        </span>
+      </a>`;
+    }).join('');
+
+    // Mobile: collapsible with icon grid
+    const buildMobileLinks = () => categories.map(cat => {
+      const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
+      return `<a href="/vacancies.html?category=${cat.id}">${cat.icon} ${name}</a>`;
     }).join('');
 
     if (desktopNav) {
-      desktopNav.innerHTML = buildLinks();
+      desktopNav.innerHTML = buildDesktopLinks();
+      desktopNav.classList.add('mega-menu');
     }
 
     if (mobileNav) {
-      mobileNav.innerHTML = `<span class="nav-link" style="font-weight:600;">${lang === 'pl' ? 'Kategorie' : 'Категорії'}</span>` + buildLinks();
+      mobileNav.innerHTML = `<button type="button" class="nav-link mobile-cat__toggle" onclick="this.parentElement.classList.toggle('is-open')">${lang === 'pl' ? 'Kategorie' : 'Категорії'} <span class="mobile-cat__arrow">▸</span></button><div class="mobile-cat__menu">${buildMobileLinks()}</div>`;
     }
   }
 
