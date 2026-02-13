@@ -1121,7 +1121,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -2071,6 +2071,24 @@ function generateSitemap(links, posts = []) {
       url: `${base}/terms.html`, 
       priority: '0.5', 
       changefreq: 'yearly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/calculator.html`, 
+      priority: '0.9', 
+      changefreq: 'monthly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/cv-generator.html`, 
+      priority: '0.9', 
+      changefreq: 'monthly',
+      lastmod: today
+    },
+    { 
+      url: `${base}/red-flag.html`, 
+      priority: '0.85', 
+      changefreq: 'monthly',
       lastmod: today
     }
   ];

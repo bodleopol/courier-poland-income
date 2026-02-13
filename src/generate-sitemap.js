@@ -91,7 +91,10 @@ function generateStaticSitemap() {
     { url: 'company.html', priority: '0.6', changefreq: 'monthly' },
     { url: 'faq.html', priority: '0.7', changefreq: 'monthly' },
     { url: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' }
+    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
+    { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
+    { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
+    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' }
   ];
 
   const urls = staticPages.map(page => {
@@ -140,7 +143,10 @@ function generateMainSitemap() {
     { url: 'company.html', priority: '0.6', changefreq: 'monthly' },
     { url: 'faq.html', priority: '0.7', changefreq: 'monthly' },
     { url: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' }
+    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
+    { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
+    { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
+    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' }
   ];
 
   const staticUrls = staticPages.map(page => {
