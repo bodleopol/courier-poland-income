@@ -1,4 +1,113 @@
-[
+[ 
+  {
+    "slug": "lodz-logistics-night-sorter-operator-unique-314",
+    "category": "logistics",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Оператор нічного сортування посилок — Лодзь",
+    "title_pl": "Operator nocnego sortowania paczek — Łódź",
+    "salary": "31 - 44 PLN/h",
+    "company": "NordWay Logistics",
+    "shift_ua": "Нд-Чт, 20:00-06:00",
+    "shift_pl": "Nd-Czw, 20:00-06:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Відразу після оформлення",
+    "start_pl": "Od razu po formalnościach",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільний нічний графік без хаотичних переносів.",
+      "Доплата за нічні години згідно з внутрішнім регламентом.",
+      "Тепла зона відпочинку і гарячі напої під час зміни.",
+      "Підтримка координатора українською мовою.",
+      "Можливість перейти на роль старшого оператора після 3 місяців."
+    ],
+    "offers_pl": [
+      "Stabilny nocny grafik bez nagłych zmian.",
+      "Dodatki za godziny nocne zgodnie z regulaminem.",
+      "Strefa odpoczynku i ciepłe napoje na zmianie.",
+      "Wsparcie koordynatora mówiącego po ukraińsku.",
+      "Możliwość awansu na starszego operatora po 3 miesiącach."
+    ],
+    "tasks_ua": [
+      "Сортування посилок за напрямками відправлення.",
+      "Сканування штрих-кодів і перевірка маркування.",
+      "Підготовка кліток/палет до ранкового відвантаження."
+    ],
+    "tasks_pl": [
+      "Sortowanie paczek według kierunków wysyłki.",
+      "Skanowanie kodów i kontrola etykiet.",
+      "Przygotowanie klatek/palet do porannego załadunku."
+    ],
+    "details_ua": [
+      "Навчання на місці в перші 2 зміни.",
+      "Зрозумілі норми без прихованих штрафів.",
+      "Працює змішана команда з досвідченим бригадиром.",
+      "Є можливість брати додаткові години за бажанням."
+    ],
+    "details_pl": [
+      "Szkolenie wdrożeniowe podczas pierwszych 2 zmian.",
+      "Jasne normy bez ukrytych kar.",
+      "Zespół mieszany z doświadczonym brygadzistą.",
+      "Możliwość dodatkowych godzin dla chętnych."
+    ],
+    "requirements_ua": [
+      "Досвід: Без досвіду, навчимо на місці",
+      "Мова: Базова польська або українська",
+      "Документи: Паспорт, PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Bez doświadczenia, szkolenie na miejscu",
+      "Język: Podstawowy polski lub ukraiński",
+      "Dokumenty: Paszport, PESEL"
+    ],
+    "experience_ua": "Без досвіду, навчимо на місці",
+    "experience_pl": "Bez doświadczenia, szkolenie na miejscu",
+    "language_ua": "Базова польська або українська",
+    "language_pl": "Podstawowy polski lub ukraiński",
+    "housing_ua": "Житло не надається, допомагаємо з пошуком кімнати",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, pomagamy w znalezieniu pokoju",
+    "transport_ua": "Зручний доїзд нічними маршрутами та трамваєм",
+    "transport_pl": "Wygodny dojazd nocnymi liniami i tramwajem",
+    "documents_ua": "Документи: Паспорт, PESEL",
+    "documents_pl": "Dokumenty: Paszport, PESEL",
+    "workplace_ua": "Тип об’єкта: сортувальний термінал",
+    "workplace_pl": "Typ obiektu: terminal sortowniczy",
+    "team_ua": "Команда: 10-14 осіб у зміні",
+    "team_pl": "Zespół: 10-14 osób na zmianie",
+    "onboarding_ua": "Покроковий інструктаж і наставник на старті.",
+    "onboarding_pl": "Instruktaż krok po kroku i opiekun na starcie.",
+    "daily_ua": [
+      "Перевірка сканера й робочої зони на початку зміни.",
+      "Передача короткого звіту наприкінці зміни."
+    ],
+    "daily_pl": [
+      "Kontrola skanera i stanowiska na początku zmiany.",
+      "Krótkie przekazanie raportu na koniec zmiany."
+    ],
+    "excerpt": "NordWay Logistics шукає оператора нічного сортування в Лодзі: стабільний графік, офіційний договір і навчання на місці.",
+    "excerpt_pl": "NordWay Logistics szuka operatora nocnego sortowania w Łodzi: stabilny grafik, legalna umowa i szkolenie na miejscu.",
+    "body": "<div class='vacancy-block'><p>Робота підійде тим, хто цінує чіткий нічний ритм і хоче стабільний дохід без сезонних провалів. На терміналі є зрозумілий поділ зон, тому навіть новачок швидко входить у темп.</p><p>Основні задачі: сортування відправлень, сканування кодів, формування ранкових відвантажень. Перші зміни проходять з наставником, а команда допомагає адаптуватися без стресу.</p><p>Важливо: ми шукаємо відповідальність і пунктуальність, а не ідеальне резюме. Якщо у вас є базова комунікація польською або українською, цього достатньо для старту.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>Ta oferta jest dla osób, które cenią stabilny nocny rytm i przewidywalny dochód bez sezonowych spadków. Na terminalu obowiązuje jasny podział stref, więc nawet nowa osoba szybko odnajduje tempo pracy.</p><p>Główne zadania to sortowanie przesyłek, skanowanie kodów i przygotowanie wysyłek porannych. Pierwsze zmiany odbywają się z opiekunem, a zespół pomaga wejść w obowiązki bez niepotrzebnego stresu.</p><p>Najważniejsza jest odpowiedzialność i punktualność, nie idealne CV. Jeśli komunikujesz się podstawowo po polsku lub ukraińsku, to wystarczy na dobry start.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-14T09:30:00.000Z",
+    "is_generated": false,
+    "data_source": "manual",
+    "sector_ua": "Сектор: логістика та сортування",
+    "sector_pl": "Sektor: logistyka i sortowanie",
+    "equipment_ua": "Обладнання: сканери та конвеєрні лінії",
+    "equipment_pl": "Sprzęt: skanery i linie przenośnikowe",
+    "physical_ua": "Фізичні вимоги: активна робота стоячи",
+    "physical_pl": "Wymagania fizyczne: aktywna praca stojąca",
+    "shift_structure_ua": "Структура зміни: нічна зона",
+    "shift_structure_pl": "Struktura zmiany: strefa nocna"
+  },
   {
     "slug": "warsaw-logistics-kierowca-kurier-kat-b-1",
     "category": "logistics",
