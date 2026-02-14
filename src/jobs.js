@@ -53,28 +53,6 @@
     return Math.max(PROOF_MIN_SCORE, Math.min(PROOF_MAX_SCORE, Math.round(numeric)));
   }
 
-  function fallbackProofScoreBySlug(slug) {
-    const raw = String(slug || 'rybezh-proof-fallback');
-    let hash = 0;
-    for (let i = 0; i < raw.length; i++) {
-      hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-    }
-    const span = PROOF_MAX_SCORE - PROOF_MIN_SCORE + 1;
-    return PROOF_MIN_SCORE + (hash % span);
-  }
-
-  function fallbackProofCountBySlug(slug) {
-    const raw = String(slug || 'rybezh-proof-count-fallback');
-    let hash = 0;
-    for (let i = 0; i < raw.length; i++) {
-      hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-    }
-    const min = 5;
-    const max = 30;
-    const span = max - min + 1;
-    return min + (hash % span);
-  }
-
   function getProofDataForJob(job) {
     const map = window.PROOF_AGGREGATES || {};
     const real = map[job.slug];
@@ -85,10 +63,8 @@
       };
     }
 
-    return {
-      score: fallbackProofScoreBySlug(job.slug),
-      count: fallbackProofCountBySlug(job.slug)
-    };
+    // Return null for jobs without real proof data (no fake scores)
+    return null;
   }
 
   function ensureSupabaseReady() {
@@ -376,7 +352,7 @@
 
         if (onlyHighProof) {
           const proof = getProofDataForJob(job);
-          if (Number(proof.score || 0) < 75) return false;
+          if (!proof || Number(proof.score || 0) < 75) return false;
         }
 
         return true;
@@ -423,7 +399,7 @@
     const preparedJobs = onlyHighProof
       ? jobs.filter((job) => {
         const proof = getProofDataForJob(job);
-        return Number(proof.score || 0) >= 75;
+        return proof && Number(proof.score || 0) >= 75;
       })
       : jobs;
 
@@ -453,11 +429,18 @@
       }
 
       const proof = getProofDataForJob(job);
-      const reviewsSuffix = Number(proof.count || 0) > 0
-        ? ` (${proof.count})`
-        : ' (0)';
-      const proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
-           <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
+      let proofLine = '';
+      
+      if (proof) {
+        const reviewsSuffix = Number(proof.count || 0) > 0
+          ? ` (${proof.count})`
+          : ' (0)';
+        proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
+             <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
+      } else {
+        proofLine = `<div class="job-proof-chip proof-gray">🔍 Proof Score: ще немає відгуків</div>
+             <p class="job-proof-note">${lang === 'pl' ? 'Jeszcze brak opinii o tym pracodawcy' : 'Ще немає відгуків про цього роботодавця'}</p>`;
+      }
 
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}

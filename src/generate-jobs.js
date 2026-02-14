@@ -27,12 +27,35 @@ const CITIES = [
 
 // --- 2. Data Pools (The Magimix) ---
 
-const AGENCIES = [
-  "FastLogistics Sp. z o.o.", "BudPol Construction", "EuroStaff Serwis", "ProStaff Polska",
-  "WorkPlus Group", "TalentBridge Recruitment", "NovaHR Poland", "SkillForce Sp. z o.o.", "AlphaKadra",
-  "PrimeKadra", "FlexWork Polska", "InterKadra", "StaffLine Serwis", "PersonnelOne",
-  "TopStaffing", "ProHR Solutions", "JobConnect", "QualityWork Systems", "LabourNet Group"
-];
+// Realistic Polish company names - each job will get a UNIQUE company name generated below
+// These are base templates for generating unique company names
+const COMPANY_PREFIXES = {
+  logistics: ["Marek Transport", "Janusz Logistyka", "Tomek Przewóz", "Piotr Spedycja", "Andrzej Dostawy"],
+  production: ["Fabryka Produkt", "Zakład Tech", "Wytwórnia Premium", "Hala Montaż", "Manufaktura Nova"],
+  construction: ["Budowlanka Kraków", "Remonty Marek", "BudTeam Andrzej", "Konstrukcje Tomasz", "Instalacje Janusz"],
+  hospitality: ["Gastro Kraków", "Restauracja Smaki", "Café Centralny", "Hotel Comfort", "Bistro Pod Lipą"],
+  agriculture: ["Gospodarstwo Rolne Kowalski", "Sad Nowak", "Hurtownia BestFruit", "Plantacja Zielony Raj", "Ferma Agro"],
+  cleaning: ["Sprzątanie Pro", "CleanMaster Serwis", "Czysty Dom s.c.", "Porządek Firma", "Myjnia Perfect"],
+  retail: ["Sklep Centrum", "Market Osiedle", "Butik Moda", "Galeria Styl", "Hurtownia Towar"],
+  beauty: ["Salon Piękność", "Studio Uroda", "Fryzjer Stylowy", "Kosmetyka Bella", "Paznokcie Art"],
+  education: ["Przedszkole Słoneczko", "Żłobek Misie", "Szkoła Podstawowa", "Centrum Edukacja", "Akademia Dzieci"]
+};
+
+const COMPANY_SUFFIXES = ["Sp. z o.o.", "s.c.", "Sp. j.", ""];
+let companyCounter = 0;
+
+function generateUniqueCompany(catKey) {
+  companyCounter++;
+  const prefixes = COMPANY_PREFIXES[catKey] || COMPANY_PREFIXES.logistics;
+  const prefix = prefixes[companyCounter % prefixes.length];
+  const suffix = COMPANY_SUFFIXES[Math.floor(companyCounter / prefixes.length) % COMPANY_SUFFIXES.length];
+  const num = Math.floor(companyCounter / (prefixes.length * COMPANY_SUFFIXES.length));
+  
+  if (num > 0) {
+    return suffix ? `${prefix} ${num} ${suffix}` : `${prefix} ${num}`;
+  }
+  return suffix ? `${prefix} ${suffix}` : prefix;
+}
 
 const SHIFTS = {
   ua: ["Ранок / Вечір", "Тільки нічні", "Позмінно (3 зміни)", "2 дні / 2 дні", "Пн-Пт, 8:00-16:00"],
@@ -72,189 +95,179 @@ const WORK_PATTERNS = {
   ]
 };
 
-const GLOBAL_OFFERS = {
-  ua: [
-    "Офіційне працевлаштування з першого дня роботи.",
-    "Стабільні виплати двічі на місяць.",
-    "Можливість авансу після тижня роботи.",
-    "Форма та взуття від компанії безкоштовно.",
-    "Допомога у побутових питаннях.",
-    "Підтримка при оформленні Карти Побуту.",
-    "Медстрахування (ZUS) від першого дня.",
-    "Понаднормові години оплачуються підвищено.",
-    "Харчування на виробництві за символічну ціну.",
-    "Житло надається або компенсується (400-600 zł).",
-    "Multisport зі знижкою 50% від компанії.",
-    "Безкоштовні курси польської мови.",
-    "Перспектива кар'єрного зростання.",
-    "Приватна медицина (LuxMed, Medicover).",
-    "Премії за результати та відвідуваність.",
-    "Комфортне робоче середовище з клімат-контролем.",
-    "Транспорт до місця роботи від компанії.",
-    "Бонус за рекомендацію колеги (200-500 zł).",
-    "Допомога з відкриттям рахунку в банку.",
-    "Подарунки на свята для працівників.",
-    "Доплата за роботу у вихідні дні.",
-    "Підвищена оплата нічних змін.",
-    "Компенсація витрат на переїзд у перший місяць.",
-    "Можливість переводу на інший об'єкт компанії.",
-    "Їдальня з пільговими цінами.",
-    "Оплата медогляду та навчань BHP.",
-    "Системні бонуси через 3 місяці роботи.",
-    "Надбавка за володіння польською мовою.",
-    "Щотижневі виплати для новачків.",
-    "Компенсація проїзду громадським транспортом.",
-    "Страхування від нещасних випадків на виробництві.",
-    "Знижки у партнерських магазинах та сервісах.",
-    "Оплачувані лікарняні та відпустки.",
-    "Гнучкий графік для багатодітних сімей.",
-    "Додаткові премії перед святами.",
-    "Безкоштовні тренінги та курси підвищення кваліфікації.",
-    "Відшкодування вартості дитячого садка.",
-    "Програма адаптації для новачків (7 днів).",
-    "Можливість працювати у зручну зміну після випробувального терміну.",
-    "Сучасні роздягальні та душові на підприємстві.",
-    "Кімната відпочинку з безкоштовною кавою та чаєм.",
-    "Безкоштовний Wi-Fi на території.",
-    "Організовані корпоративи та тімбілдінги.",
-    "Оплата телефонного зв'язку для координаторів.",
-    "Можливість взяти відгул у день народження.",
-    "Програма лояльності зі знижками на послуги компанії.",
-    "Додаткові вихідні за понаднормову роботу.",
-    "Премії за виконання плану (до 1000 zł).",
-    "Безкоштовні снеки та напої під час зміни.",
-    "Компенсація вартості робочого взуття та одягу.",
-    "Щомісячні лотереї призів серед працівників.",
-    "Оплата проїзду на таксі при роботі у нічну зміну.",
-    "Підтримка психолога для працівників безкоштовно."
-  ],
-  pl: [
-    "Oficjalne zatrudnienie od pierwszego dnia pracy.",
-    "Stabilne wypłaty dwa razy w miesiącu.",
-    "Zaliczka dostępna po tygodniu pracy.",
-    "Odzież i obuwie robocze od firmy za darmo.",
-    "Pomoc w sprawach codziennych.",
-    "Wsparcie przy wyrobieniu Karty Pobytu.",
-    "Ubezpieczenie zdrowotne (ZUS) od dnia 1.",
-    "Nadgodziny płatne po wyższej stawce.",
-    "Wyżywienie w zakładzie w symbolicznej cenie.",
-    "Mieszkanie zapewnione lub dopłata (400-600 zł).",
-    "Multisport z 50% zniżką od firmy.",
-    "Bezpłatne kursy języka polskiego.",
-    "Perspektywa awansu zawodowego.",
-    "Prywatna opieka medyczna (LuxMed, Medicover).",
-    "Premie za wyniki i frekwencję.",
-    "Komfortowe środowisko pracy z klimatyzacją.",
-    "Transport do pracy zapewniany przez firmę.",
-    "Bonus za polecenie kolegi (200-500 zł).",
-    "Pomoc z założeniem konta bankowego.",
-    "Prezenty świąteczne dla pracowników.",
-    "Dodatek za pracę w weekendy.",
-    "Podwyższona stawka za zmiany nocne.",
-    "Zwrot kosztów przeprowadzki w pierwszym miesiącu.",
-    "Możliwość transferu do innego oddziału firmy.",
-    "Stołówka z cenami preferencyjnymi.",
-    "Pokrycie kosztów badań lekarskich i szkoleń BHP.",
-    "Bonusy systemowe po 3 miesiącach pracy.",
-    "Dodatek za znajomość języka polskiego.",
-    "Tygodniowe wypłaty dla nowych pracowników.",
-    "Zwrot kosztów komunikacji miejskiej.",
-    "Ubezpieczenie od wypadków w pracy.",
-    "Zniżki u partnerów i w sklepach firmowych.",
-    "Płatne zwolnienia lekarskie i urlopy.",
-    "Elastyczny grafik dla rodzin wielodzietnych.",
-    "Dodatkowe premie przed świętami.",
-    "Bezpłatne szkolenia zawodowe.",
-    "Zwrot kosztów przedszkola.",
-    "Program adaptacji dla nowych (7 dni).",
-    "Możliwość wyboru dogodnej zmiany po okresie próbnym.",
-    "Nowoczesne szatnie i prysznice na zakładzie.",
-    "Pokój relaksu z darmową kawą i herbatą.",
-    "Darmowe Wi-Fi na terenie zakładu.",
-    "Organizowane imprezy integracyjne.",
-    "Zwrot kosztów telefonu dla koordynatorów.",
-    "Dzień wolny w dniu urodzin.",
-    "Program lojalnościowy ze zniżkami.",
-    "Dodatkowe dni wolne za nadgodziny.",
-    "Premie za realizację planu (do 1000 zł).",
-    "Bezpłatne przekąski i napoje podczas zmiany.",
-    "Zwrot kosztów odzieży i obuwia roboczego.",
-    "Comiesięczne loterie nagród.",
-    "Zwrot kosztów taksówki przy pracy nocnej.",
-    "Bezpłatne wsparcie psychologa."
-  ]
-};
+// Function to generate profession-specific bonuses (NOT from a global pool)
+function generateProfessionBonuses(catKey, jobTitleUA, count = 4) {
+  const bonuses = {
+    ua: [],
+    pl: []
+  };
+  
+  // Base bonuses that apply to most jobs
+  const baseUA = [
+    "Офіційне працевлаштування з першого дня",
+    "Стабільні виплати двічі на місяць"
+  ];
+  const basePL = [
+    "Oficjalne zatrudnienie od pierwszego dnia",
+    "Stabilne wypłaty dwa razy w miesiącu"
+  ];
+  
+  // Category-specific bonuses
+  if (catKey === 'logistics') {
+    bonuses.ua.push(
+      "Сучасні фургони Mercedes/Renault з GPS",
+      "Бензин і паркінг оплачує компанія",
+      "Премія за кількість доставлених посилок",
+      "Телефон і планшет від компанії для роботи"
+    );
+    bonuses.pl.push(
+      "Nowoczesne busy Mercedes/Renault z GPS",
+      "Paliwo i parking pokrywa firma",
+      "Premia za liczbę dostarczonych paczek",
+      "Telefon służbowy i tablet od firmy"
+    );
+  } else if (catKey === 'production') {
+    bonuses.ua.push(
+      "Робоча форма та захисні окуляри видаються безкоштовно",
+      "Обід у їдальні заводу за 10-12 zł",
+      "Премія за виконання плану (до 500 zł/міс)",
+      "Можливість роботи на різних лініях після навчання"
+    );
+    bonuses.pl.push(
+      "Odzież robocza i okulary ochronne bezpłatnie",
+      "Obiad w stołówce zakładu za 10-12 zł",
+      "Premia za realizację planu (do 500 zł/mies)",
+      "Możliwość pracy na różnych liniach po szkoleniu"
+    );
+  } else if (catKey === 'construction') {
+    bonuses.ua.push(
+      "Каска, жилет, рукавиці видаються на об'єкті",
+      "Доплата +25% за роботу на висоті",
+      "Власний інструмент не потрібен — все є",
+      "Оплата проїзду до будмайданчика"
+    );
+    bonuses.pl.push(
+      "Kask, kamizelka, rękawice wydawane na budowie",
+      "Dodatek +25% za pracę na wysokości",
+      "Własne narzędzia nie wymagane — wszystko jest",
+      "Zwrot kosztów dojazdu na plac budowy"
+    );
+  } else if (catKey === 'hospitality') {
+    bonuses.ua.push(
+      "Безкоштовне харчування під час зміни",
+      "Чайові залишаються у вас повністю",
+      "Знижка 30% на меню для персоналу",
+      "Графік без нічних змін (закриття о 23:00)"
+    );
+    bonuses.pl.push(
+      "Darmowe posiłki podczas zmiany",
+      "Napiwki w całości dla Ciebie",
+      "Zniżka 30% na menu dla personelu",
+      "Grafik bez nocnych zmian (zamknięcie o 23:00)"
+    );
+  } else if (catKey === 'agriculture') {
+    bonuses.ua.push(
+      "Оплата від кілограму зібраного врожаю",
+      "Безкоштовна вода та чай на полі",
+      "Рукавиці та фартухи видаються щотижня",
+      "Підвіз від центру міста до плантації"
+    );
+    bonuses.pl.push(
+      "Płatność od kilograma zebranych plonów",
+      "Darmowa woda i herbata na polu",
+      "Rękawice i fartuchy wydawane co tydzień",
+      "Dowóz z centrum miasta na plantację"
+    );
+  } else if (catKey === 'cleaning') {
+    bonuses.ua.push(
+      "Хімія та інвентар від компанії",
+      "Душова та роздягальня для персоналу",
+      "Премія за високу якість прибирання",
+      "Графік без виїздів у вихідні (або +50% доплата)"
+    );
+    bonuses.pl.push(
+      "Chemia i sprzęt sprzątający od firmy",
+      "Prysznic i szatnia dla personelu",
+      "Premia za wysoką jakość sprzątania",
+      "Grafik bez wyjazdów w weekendy (lub +50% dodatku)"
+    );
+  } else if (catKey === 'retail') {
+    bonuses.ua.push(
+      "Знижка для персоналу 20-30% на товари",
+      "Бонус за продажі додаткових товарів",
+      "Навчання за рахунок компанії",
+      "Можливість роботи тільки у вихідні (вища ставка)"
+    );
+    bonuses.pl.push(
+      "Zniżka dla personelu 20-30% na produkty",
+      "Bonus za sprzedaż dodatkowych produktów",
+      "Szkolenia na koszt firmy",
+      "Możliwość pracy tylko w weekendy (wyższa stawka)"
+    );
+  } else if (catKey === 'beauty') {
+    bonuses.ua.push(
+      "Матеріали для роботи надаються (гель-лаки, фрези)",
+      "Відсоток від виручки + базова ставка",
+      "Гнучкий графік (можна обирати зміни)",
+      "Знижка 50% на послуги салону для себе"
+    );
+    bonuses.pl.push(
+      "Materiały zapewnione (hybrydy, frezy)",
+      "Procent od przychodu + stawka bazowa",
+      "Elastyczny grafik (możesz wybierać zmiany)",
+      "Zniżka 50% na usługi salonu dla siebie"
+    );
+  } else if (catKey === 'education') {
+    bonuses.ua.push(
+      "Обід для персоналу безкоштовно",
+      "Робота без вечірніх змін (до 17:00)",
+      "Навчання за рахунок закладу",
+      "Тепла атмосфера — діти та батьки довіряють"
+    );
+    bonuses.pl.push(
+      "Darmowy obiad dla personelu",
+      "Praca bez zmian wieczornych (do 17:00)",
+      "Szkolenia na koszt placówki",
+      "Ciepła atmosfera — dzieci i rodzice ufają"
+    );
+  }
+  
+  // Add base bonuses
+  bonuses.ua = [...baseUA, ...bonuses.ua];
+  bonuses.pl = [...basePL, ...bonuses.pl];
+  
+  // Return requested count (shuffle to add variety)
+  const selectedUA = shuffle([...bonuses.ua]).slice(0, count);
+  const selectedPL = shuffle([...bonuses.pl]).slice(0, count);
+  
+  return { ua: selectedUA, pl: selectedPL };
+}
 
-const SUPPORT_NOTES = {
-  ua: [
-    "Підтримка для кандидатів з України у всіх питаннях.",
-    "Допомога з легалізацією перебування.",
-    "Координатор розмовляє українською.",
-    "Супровід на початковому етапі роботи.",
-    "Повний інструктаж з техніки безпеки на старті.",
-    "Допомагаємо знайти житло поблизу.",
-    "Консультації з оформлення документів.",
-    "Українськомовна підтримка 24/7.",
-    "Адаптація в перші робочі дні з наставником.",
-    "Інформаційна підтримка щодо правил роботи.",
-    "Допомога в побутових питаннях.",
-    "Супровід при оформленні в агенції.",
-    "Пояснюємо умови договору простими словами.",
-    "Допомагаємо з записом на PESEL/візитами (за потреби).",
-    "Надаємо контакт координатора, який відповідає протягом дня.",
-    "Є зрозуміла інструкція щодо першого дня та адреси об’єкта.",
-    "Підказуємо, як доїхати до роботи з житла/центру міста.",
-    "Підтримка при зміні графіка або переведенні на інший об’єкт.",
-    "Допомога з відкриттям рахунку та першим переказом зарплати.",
-    "Пам’ятка з основними словами польською для старту.",
-    "Можна звертатися з питаннями щодо лікаря/страхування.",
-    "Є канал зв’язку в месенджері для швидких питань.",
-    "Підтримка у разі заміни зміни/підміни колеги.",
-    "Підказуємо по місцевій інфраструктурі: аптека, магазин, зупинка.",
-    "Нагадування щодо BHP та вимог об’єкта перед виходом на зміну.",
-    "За потреби — допомога з перекладом базових документів.",
-    "Пояснюємо правила відпусток та лікарняних.",
-    "Підтримка під час першої виплати (перевірка розрахунку годин).",
-    "Організовуємо коротке знайомство з бригадою в перший день.",
-    "Допомагаємо з підбором робочого одягу/взуття по розміру.",
-    "Підказуємо, які документи взяти на перший вихід.",
-    "Є можливість уточнити деталі вакансії перед приїздом."
-  ],
-  pl: [
-    "Wsparcie dla pracowników z Ukrainy.",
-    "Pomoc przy legalizacji pobytu.",
-    "Koordynator mówiący po ukraińsku.",
-    "Wsparcie na początku pracy.",
-    "Pełny instruktaż BHP na start.",
-    "Pomoc w szukaniu mieszkania.",
-    "Konsultacje ws. dokumentów.",
-    "Ukraińskojęzyczne wsparcie 24/7.",
-    "Adaptacja z opiekunem w pierwszych dniach.",
-    "Informacje o zasadach pracy.",
-    "Pomoc w sprawach codziennych.",
-    "Opieka przy procedurach zatrudnienia.",
-    "Wyjaśniamy warunki umowy w prosty sposób.",
-    "Pomoc w umawianiu wizyt/PESEL (jeśli potrzebne).",
-    "Kontakt do koordynatora dostępny w ciągu dnia.",
-    "Jasna informacja o pierwszym dniu i adresie obiektu.",
-    "Podpowiadamy, jak dojechać do pracy z mieszkania/centrum.",
-    "Wsparcie przy zmianie grafiku lub przeniesieniu na inny obiekt.",
-    "Pomoc w założeniu konta i pierwszej wypłacie.",
-    "Mini-słowniczek PL na start.",
-    "Możesz pytać o lekarza/ubezpieczenie.",
-    "Kanał w komunikatorze do szybkich pytań.",
-    "Wsparcie w razie zamiany zmiany/zastępstw.",
-    "Podpowiadamy lokalnie: apteka, sklep, przystanek.",
-    "Przypomnienia BHP i wymagań obiektu przed startem.",
-    "W razie potrzeby — pomoc w tłumaczeniu podstawowych dokumentów.",
-    "Wyjaśniamy zasady urlopów i L4.",
-    "Wsparcie przy pierwszym rozliczeniu godzin.",
-    "Krótki onboarding zespołowy pierwszego dnia.",
-    "Pomoc w doborze odzieży/obuwia roboczego.",
-    "Podpowiadamy, jakie dokumenty zabrać na pierwszy dzień.",
-    "Możliwość doprecyzowania szczegółów przed przyjazdem."
-  ]
-};
+
+// Function to generate human-like support notes (NOT from a template pool)
+function generateSupportNote(catKey, cityName, companyName) {
+  const templates = {
+    ua: [
+      `Якщо їдете вперше до ${cityName} — підкажемо, куди звернутися з питань житла та документів. Координатор на зв'язку щодня.`,
+      `Перший день на об'єкті буде з наставником — покаже все і пояснить. Є чат у месенджері, де можна питати що завгодно.`,
+      `Документи для старту: паспорт, номер PESEL (якщо є), банківська карта. Решту допоможемо оформити вже в ${cityName}.`,
+      `Зустріч можлива на вокзалі або біля метро — домовимося про зручний час. Координатор розмовляє українською.`,
+      `У перші дні покажемо, де ближча аптека, магазини та зупинки транспорту. Не залишимо наодинці з питаннями.`
+    ],
+    pl: [
+      `Jeśli pierwszy raz jedziesz do ${cityName} — podpowiemy, gdzie załatwić mieszkanie i dokumenty. Koordynator dostępny codziennie.`,
+      `Pierwszego dnia będzie opiekun — wszystko pokaże i wytłumaczy. Jest czat, gdzie można pytać o wszystko.`,
+      `Dokumenty na start: paszport, numer PESEL (jeśli masz), karta bankowa. Resztę pomożemy załatwić już w ${cityName}.`,
+      `Możemy się spotkać na dworcu lub przy metrze — umówimy się na wygodną godzinę. Koordynator mówi po ukraińsku.`,
+      `W pierwszych dniach pokażemy, gdzie najbliższa apteka, sklepy i przystanki. Nie zostawimy Cię sam na sam z pytaniami.`
+    ]
+  };
+  
+  const uaNote = templates.ua[Math.floor(Math.random() * templates.ua.length)];
+  const plNote = templates.pl[Math.floor(Math.random() * templates.pl.length)];
+  
+  return { ua: uaNote, pl: plNote };
+}
 
 const WORKPLACE_DETAILS = {
   ua: [
@@ -1222,7 +1235,7 @@ Object.keys(ROLES).forEach(catKey => {
         titlePL = getRandom(jobTemplate.titles_pl);
         salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
 
-        company = getRandom(AGENCIES);
+        company = generateUniqueCompany(catKey);
         
         // SYNC UA/PL: Use same index for shifts, patterns, start, contracts
         const shiftIndex = Math.floor(Math.random() * Math.min(SHIFTS.ua.length, SHIFTS.pl.length));
@@ -1247,18 +1260,20 @@ Object.keys(ROLES).forEach(catKey => {
         tasksUA = taskItemsUA.map(t => `<li>${t}</li>`).join('');
         tasksPL = taskItemsPL.map(t => `<li>${t}</li>`).join('');
 
-        const offerCount = 4 + Math.floor(Math.random() * 3);
-        offerItemsUA = getMultipleRandom(GLOBAL_OFFERS.ua, offerCount);
-        offerItemsPL = getMultipleRandom(GLOBAL_OFFERS.pl, offerCount);
+        const offerCount = 4 + Math.floor(Math.random() * 2);
+        const bonuses = generateProfessionBonuses(catKey, titleUA, offerCount);
+        offerItemsUA = bonuses.ua;
+        offerItemsPL = bonuses.pl;
         offersUA = offerItemsUA.map(o => `<li>${o}</li>`).join('');
         offersPL = offerItemsPL.map(o => `<li>${o}</li>`).join('');
 
+        const supportNote = generateSupportNote(catKey, city.ua, company);
         detailItemsUA = [
-          ...getMultipleRandom(SUPPORT_NOTES.ua, 2 + Math.floor(Math.random() * 2)),
+          supportNote.ua,
           ...getMultipleRandom(WORKPLACE_DETAILS.ua, 2 + Math.floor(Math.random() * 2))
         ];
         detailItemsPL = [
-          ...getMultipleRandom(SUPPORT_NOTES.pl, 2 + Math.floor(Math.random() * 2)),
+          supportNote.pl,
           ...getMultipleRandom(WORKPLACE_DETAILS.pl, 2 + Math.floor(Math.random() * 2))
         ];
 
