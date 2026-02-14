@@ -1,0 +1,13 @@
+# Deployment Trigger
+Timestamp: 2026-02-14 17:02:57 UTC
+Trigger: Manual deployment request
+Status: Initiating deployment workflow
+
+This file triggers the GitHub Actions deployment workflow.
+The workflow will:
+1. Build the site (npm run build)
+2. Generate 101 quality vacancies
+3. Create CNAME file with rybezh.site
+4. Deploy to GitHub Pages
+
+Expected completion: ~5 minutes
