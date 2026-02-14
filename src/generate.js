@@ -982,6 +982,269 @@ function buildGeneratedNotice(page, lang) {
   `;
 }
 
+function buildVacancyProofSummaryBlock(page) {
+  const slug = escapeHtml(page.slug || '');
+  return `
+    <section class="job-proof-summary" data-proof-summary data-vacancy-slug="${slug}" aria-live="polite">
+      <div data-lang-content="ua">
+        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(на основі <span data-proof-count>0</span> відгуків)</small></h3>
+        <p data-proof-verdict>Завантажуємо підтверджені відгуки…</p>
+        <a href="#proof-form-anchor" class="job-proof-summary-btn">Додати свій Proof</a>
+      </div>
+      <div data-lang-content="pl" style="display:none">
+        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(na podstawie <span data-proof-count>0</span> opinii)</small></h3>
+        <p data-proof-verdict>Ładujemy zatwierdzone opinie…</p>
+        <a href="#proof-form-anchor" class="job-proof-summary-btn">Dodaj swój Proof</a>
+      </div>
+    </section>
+  `;
+}
+
+function buildVacancyProofFormBlock(page) {
+  const vacancyUrl = `https://rybezh.site/${escapeHtml(page.slug || '')}.html`;
+  const company = escapeHtml(page.company || '');
+  const city = escapeHtml(page.city || '');
+
+  return `
+    <section class="job-proof" id="proof-form-anchor" aria-label="Rybezh Proof">
+      <h3>🧾 Додати свій Proof</h3>
+      <p>Поділіться реальним досвідом роботи. Відгук буде перевірено модератором перед публікацією.</p>
+      <form class="job-proof-form" data-proof-form novalidate>
+        <div class="job-proof-grid">
+          <label>🔗 Посилання на вакансію *
+            <input type="url" name="vacancy_url" value="${vacancyUrl}" required>
+          </label>
+          <label>🏢 Компанія *
+            <input type="text" name="company" value="${company}" required>
+          </label>
+          <label>📍 Місто *
+            <input type="text" name="city" value="${city}" required>
+          </label>
+          <label>📎 Файли / посилання
+            <input type="text" name="proof_files" placeholder="URL або назви через кому">
+          </label>
+        </div>
+
+        <div class="job-proof-ratings">
+          <label>💰 Зарплата *<select name="salary_rating" required></select></label>
+          <label>🏠 Житло *<select name="housing_rating" required></select></label>
+          <label>🤝 Ставлення *<select name="attitude_rating" required></select></label>
+          <label>⏰ Графік *<select name="schedule_rating" required></select></label>
+          <label>💸 Виплати *<select name="payment_rating" required></select></label>
+          <label>🛡️ Надійність *<select name="fraud_rating" required></select></label>
+          <label>⭐ Рекомендація *<select name="recommendation" required></select></label>
+        </div>
+
+        <label>📝 Коментар *
+          <textarea name="comment" required placeholder="Опишіть ваш досвід коротко і чесно..."></textarea>
+        </label>
+
+        <div class="job-proof-progress">
+          <span>Прогрес: <b data-proof-progress-text>0%</b></span>
+          <div class="job-proof-progressbar"><div data-proof-progress-fill></div></div>
+        </div>
+
+        <button type="submit" class="job-proof-submit" data-proof-submit>🚀 Відправити Proof</button>
+        <div class="job-proof-msg" data-proof-msg aria-live="polite"></div>
+      </form>
+    </section>
+  `;
+}
+
+function buildVacancyProofFormScript() {
+  return `
+  <script>
+  (function(){
+    if (window.__rybezhProofFormInit) return;
+    window.__rybezhProofFormInit = true;
+
+    function computeScore(data) {
+      var salary_rating = Number(data.salary_rating || 0);
+      var housing_rating = Number(data.housing_rating || 0);
+      var attitude_rating = Number(data.attitude_rating || 0);
+      var schedule_rating = Number(data.schedule_rating || 0);
+      var payment_rating = Number(data.payment_rating || 0);
+      var fraud_rating = Number(data.fraud_rating || 0);
+      var recommendation = Number(data.recommendation || 0);
+      return Math.round((salary_rating + housing_rating + attitude_rating + schedule_rating + payment_rating + fraud_rating + recommendation) * 10 / 7);
+    }
+
+    function verdictByScore(score, lang) {
+      if (score >= 80) return lang === 'pl' ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
+      if (score >= 60) return lang === 'pl' ? 'Warunki ogólnie OK, ale warto doprecyzować detale.' : 'Умови загалом ок, але варто уточнити деталі.';
+      return lang === 'pl' ? 'Podwyższone ryzyko — sprawdź warunki przed startem.' : 'Підвищений ризик — перевірте умови перед стартом.';
+    }
+
+    function ensureSupabaseReady() {
+      return new Promise(function(resolve, reject){
+        if (window.supabase && window.supabase.createClient) return resolve(window.supabase);
+        var existing = document.querySelector('script[data-proof-supabase]');
+        if (existing) {
+          existing.addEventListener('load', function(){ resolve(window.supabase); });
+          existing.addEventListener('error', reject);
+          return;
+        }
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+        s.dataset.proofSupabase = '1';
+        s.onload = function(){ resolve(window.supabase); };
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    function fillRatingSelects(form) {
+      ['salary_rating','housing_rating','attitude_rating','schedule_rating','payment_rating','fraud_rating','recommendation'].forEach(function(name){
+        var select = form.elements[name];
+        if (!select || select.options.length > 0) return;
+        var ph = document.createElement('option');
+        ph.value = '';
+        ph.textContent = 'Оберіть';
+        ph.disabled = true;
+        ph.selected = true;
+        select.appendChild(ph);
+        for (var i = 1; i <= 10; i++) {
+          var o = document.createElement('option');
+          o.value = String(i);
+          o.textContent = i + '/10';
+          select.appendChild(o);
+        }
+      });
+    }
+
+    function initForm(form) {
+      fillRatingSelects(form);
+      var msg = form.querySelector('[data-proof-msg]');
+      var submit = form.querySelector('[data-proof-submit]');
+      var progressText = form.querySelector('[data-proof-progress-text]');
+      var progressFill = form.querySelector('[data-proof-progress-fill]');
+      var requiredNames = ['vacancy_url','company','city','salary_rating','housing_rating','attitude_rating','schedule_rating','payment_rating','fraud_rating','recommendation','comment'];
+
+      function updateProgress() {
+        var done = 0;
+        requiredNames.forEach(function(name){
+          var el = form.elements[name];
+          if (el && String(el.value || '').trim()) done++;
+        });
+        var percent = Math.round((done / requiredNames.length) * 100);
+        if (progressText) progressText.textContent = percent + '%';
+        if (progressFill) progressFill.style.width = percent + '%';
+      }
+
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+      updateProgress();
+
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        if (msg) { msg.className = 'job-proof-msg'; msg.textContent = ''; }
+
+        var payload = {
+          vacancy_url: String(form.elements.vacancy_url.value || '').trim(),
+          company: String(form.elements.company.value || '').trim(),
+          city: String(form.elements.city.value || '').trim(),
+          salary_rating: Number(form.elements.salary_rating.value || 0),
+          housing_rating: Number(form.elements.housing_rating.value || 0),
+          attitude_rating: Number(form.elements.attitude_rating.value || 0),
+          schedule_rating: Number(form.elements.schedule_rating.value || 0),
+          payment_rating: Number(form.elements.payment_rating.value || 0),
+          fraud_rating: Number(form.elements.fraud_rating.value || 0),
+          recommendation: Number(form.elements.recommendation.value || 0),
+          comment: String(form.elements.comment.value || '').trim(),
+          proof_files: String(form.elements.proof_files.value || '').trim(),
+          approved: false
+        };
+        payload.proof_score = computeScore(payload);
+
+        if (!payload.vacancy_url || !payload.company || !payload.city || !payload.comment) {
+          if (msg) { msg.classList.add('err'); msg.textContent = '⚠️ Заповніть усі обов’язкові поля.'; }
+          return;
+        }
+
+        var ratings = [payload.salary_rating,payload.housing_rating,payload.attitude_rating,payload.schedule_rating,payload.payment_rating,payload.fraud_rating,payload.recommendation];
+        var ratingsValid = ratings.every(function(v){ return Number.isFinite(v) && v >= 1 && v <= 10; });
+        if (!ratingsValid) {
+          if (msg) { msg.classList.add('err'); msg.textContent = '⚠️ Оцініть усі 7 пунктів від 1 до 10.'; }
+          return;
+        }
+
+        try { new URL(payload.vacancy_url); }
+        catch (_) {
+          if (msg) { msg.classList.add('err'); msg.textContent = '⚠️ Некоректне посилання на вакансію.'; }
+          return;
+        }
+
+        if (submit) { submit.disabled = true; submit.textContent = '⏳ Відправляємо...'; }
+        try {
+          var sb = await ensureSupabaseReady();
+          var createClient = sb.createClient;
+          var supabaseClient = createClient('https://ubygfyksalvwsprvetoc.supabase.co','sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD');
+          var result = await supabaseClient.from('reviews').insert([payload]);
+          if (result.error) throw result.error;
+          if (msg) { msg.classList.add('ok'); msg.textContent = '✅ Дякуємо! Відгук відправлено на модерацію'; }
+          form.reset();
+          updateProgress();
+        } catch (err) {
+          console.error('Vacancy proof submit error:', err);
+          if (msg) { msg.classList.add('err'); msg.textContent = '❌ Помилка відправки. Спробуйте ще раз.'; }
+        } finally {
+          if (submit) { submit.disabled = false; submit.textContent = '🚀 Відправити Proof'; }
+        }
+      });
+    }
+
+    async function initProofSummaries() {
+      var cards = document.querySelectorAll('[data-proof-summary][data-vacancy-slug]');
+      if (!cards.length) return;
+      try {
+        var sb = await ensureSupabaseReady();
+        var createClient = sb.createClient;
+        var supabaseClient = createClient('https://ubygfyksalvwsprvetoc.supabase.co','sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD');
+
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i];
+          var slug = String(card.getAttribute('data-vacancy-slug') || '').trim();
+          if (!slug) continue;
+
+          var query = await supabaseClient
+            .from('reviews')
+            .select('salary_rating,housing_rating,attitude_rating,schedule_rating,payment_rating,fraud_rating,recommendation,vacancy_url')
+            .eq('approved', true)
+            .or('vacancy_url.ilike.%/' + slug + '.html%,vacancy_url.ilike.%/' + slug + '-pl.html%');
+
+          var reviews = (query && query.data) || [];
+          var score = 0;
+          if (reviews.length) {
+            var sum = 0;
+            for (var r = 0; r < reviews.length; r++) sum += computeScore(reviews[r]);
+            score = Math.round(sum / reviews.length);
+          }
+
+          var scoreEls = card.querySelectorAll('[data-proof-score]');
+          var countEls = card.querySelectorAll('[data-proof-count]');
+          var verdictEls = card.querySelectorAll('[data-proof-verdict]');
+
+          for (var s = 0; s < scoreEls.length; s++) scoreEls[s].textContent = String(score || 0);
+          for (var c = 0; c < countEls.length; c++) countEls[c].textContent = String(reviews.length || 0);
+
+          for (var v = 0; v < verdictEls.length; v++) {
+            var lang = verdictEls[v].closest('[data-lang-content="pl"]') ? 'pl' : 'ua';
+            verdictEls[v].textContent = reviews.length
+              ? verdictByScore(score, lang)
+              : (lang === 'pl' ? 'Brak zatwierdzonych opinii. Dodaj swój Proof jako pierwszy.' : 'Поки немає затверджених відгуків. Додайте свій Proof першим.');
+          }
+        }
+      } catch (err) {
+        console.warn('Proof summary load error:', err);
+      }
+    }
+
+    document.querySelectorAll('[data-proof-form]').forEach(initForm);
+    initProofSummaries();
+  })();
+  </script>`;
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -1121,7 +1384,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'for-employers.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -1180,6 +1443,8 @@ async function build() {
     const humanPL = humanVariant ? buildJobHumanBlock(page, 'pl', humanVariant) : '';
     const noticeUA = buildGeneratedNotice(page, 'ua');
     const noticePL = buildGeneratedNotice(page, 'pl');
+    const proofSummaryBlock = buildVacancyProofSummaryBlock(page);
+    const proofFormBlock = buildVacancyProofFormBlock(page);
 
     const shareUrl = `https://rybezh.site/${escapeHtml(page.slug)}.html`;
     const shareText = encodeURIComponent(page.title);
@@ -1253,6 +1518,8 @@ async function build() {
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
+        ${proofSummaryBlock}
+        ${proofFormBlock}
         ${enrichmentHtml}
         ${relatedHtml}
         ${shareButtons}
@@ -1365,14 +1632,40 @@ async function build() {
       .job-quote { margin: 0 0 1rem; padding: .8rem 1rem; border-left: 4px solid #059669; background: rgba(255,255,255,.7); border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; line-height: 1.6; }
       .job-local-tip { margin: .75rem 0; padding: .6rem .8rem; background: #fff; border-radius: 8px; color: #334155; line-height: 1.5; border: 1px solid #e5e7eb; }
       .job-insider { margin: .5rem 0 0; color: #475569; line-height: 1.55; font-size: .95rem; }
+      .job-proof { margin: 2rem 0; padding: 1rem; border-radius: 12px; border: 1px solid #e5e7eb; background: #fff; }
+      .job-proof-summary { margin: 1.3rem 0 1rem; border: 1px solid #fecaca; background: #fff5f5; border-radius: 12px; padding: .95rem 1rem; }
+      .job-proof-summary h3 { margin: 0; color: #7f1d1d; font-size: 1.02rem; }
+      .job-proof-summary h3 small { color: #b45309; font-weight: 600; font-size: .82rem; }
+      .job-proof-summary p { margin: .45rem 0 .7rem; color: #7f1d1d; font-size: .9rem; }
+      .job-proof-summary-btn { display: inline-block; border-radius: 10px; padding: .5rem .8rem; text-decoration: none; background: #e74c3c; color: #fff; font-weight: 700; }
+      .job-proof-summary-btn:hover { background: #c0392b; }
+      .job-proof h3 { margin: 0 0 .35rem; color: #1f2937; }
+      .job-proof p { margin: 0 0 .85rem; color: #64748b; font-size: .92rem; }
+      .job-proof-form { display: grid; gap: .65rem; }
+      .job-proof-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .65rem; }
+      .job-proof-form label { display: grid; gap: .28rem; font-size: .85rem; font-weight: 600; color: #374151; }
+      .job-proof-form input, .job-proof-form select, .job-proof-form textarea { border: 1.5px solid #e5e7eb; border-radius: 10px; padding: .55rem .7rem; font-size: .92rem; font-family: inherit; outline: none; }
+      .job-proof-form input:focus, .job-proof-form select:focus, .job-proof-form textarea:focus { border-color: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,.12); }
+      .job-proof-form textarea { min-height: 90px; resize: vertical; }
+      .job-proof-ratings { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .55rem .65rem; border: 1px solid #f1f5f9; border-radius: 12px; background: #fafafa; padding: .6rem; }
+      .job-proof-progress { display: flex; align-items: center; gap: .7rem; font-size: .82rem; color: #64748b; }
+      .job-proof-progressbar { flex: 1; height: 7px; background: #f1f5f9; border-radius: 999px; overflow: hidden; }
+      .job-proof-progressbar [data-proof-progress-fill] { display: block; width: 0%; height: 100%; border-radius: 999px; background: linear-gradient(135deg,#e74c3c,#c0392b); transition: width .2s ease; }
+      .job-proof-submit { border: none; border-radius: 10px; padding: .7rem 1rem; min-height: 42px; font-weight: 700; color: #fff; background: linear-gradient(135deg,#e74c3c,#c0392b); cursor: pointer; }
+      .job-proof-msg { min-height: 1.1rem; font-size: .9rem; font-weight: 600; }
+      .job-proof-msg.ok { color: #16a34a; }
+      .job-proof-msg.err { color: #dc2626; }
+      @media (max-width: 760px) { .job-proof-grid, .job-proof-ratings { grid-template-columns: 1fr; } }
     </style>`;
+
+    const proofFormScript = buildVacancyProofFormScript();
 
     // inject lang switcher and scripts before </body>
     if (finalHtml.includes('</body>')) {
       // add script
-      finalHtml = finalHtml.replace('</body>', `${jobStyles}${scriptWithData}</body>`);
+      finalHtml = finalHtml.replace('</body>', `${jobStyles}${proofFormScript}${scriptWithData}</body>`);
     } else {
-      finalHtml += jobStyles + scriptWithData;
+      finalHtml += jobStyles + proofFormScript + scriptWithData;
     }
 
     const outFile = path.join(DIST, `${page.slug}.html`);

@@ -5,6 +5,10 @@
 (function() {
   'use strict';
 
+  const SUPABASE_URL = 'https://ubygfyksalvwsprvetoc.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD';
+  let proofAggregatesPromise = null;
+
   // Detect PL page from URL
   function isPlPage() {
     return window.location.pathname.endsWith('-pl.html');
@@ -14,6 +18,114 @@
   }
   function jobUrl(slug) {
     return isPlPage() ? `/${slug}-pl.html` : `/${slug}.html`;
+  }
+
+  function extractSlugFromVacancyUrl(rawUrl) {
+    if (!rawUrl) return '';
+    try {
+      const parsed = new URL(String(rawUrl));
+      const last = (parsed.pathname.split('/').filter(Boolean).pop() || '').toLowerCase();
+      if (!last.endsWith('.html')) return '';
+      const base = last.replace(/\.html$/, '');
+      return base.endsWith('-pl') ? base.slice(0, -3) : base;
+    } catch (_) {
+      return '';
+    }
+  }
+
+  function computeProofScore(review) {
+    return Math.round((
+      Number(review.salary_rating || 0) +
+      Number(review.housing_rating || 0) +
+      Number(review.attitude_rating || 0) +
+      Number(review.schedule_rating || 0) +
+      Number(review.payment_rating || 0) +
+      Number(review.fraud_rating || 0) +
+      Number(review.recommendation || 0)
+    ) * 10 / 7);
+  }
+
+  function ensureSupabaseReady() {
+    return new Promise((resolve, reject) => {
+      if (window.supabase && window.supabase.createClient) {
+        resolve(window.supabase);
+        return;
+      }
+
+      const existing = document.querySelector('script[data-proof-supabase="1"]');
+      if (existing) {
+        existing.addEventListener('load', () => resolve(window.supabase));
+        existing.addEventListener('error', reject);
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+      script.dataset.proofSupabase = '1';
+      script.onload = () => resolve(window.supabase);
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  async function loadProofAggregates() {
+    if (window.PROOF_AGGREGATES) return window.PROOF_AGGREGATES;
+    if (proofAggregatesPromise) return proofAggregatesPromise;
+
+    proofAggregatesPromise = (async () => {
+      try {
+        const sb = await ensureSupabaseReady();
+        const supabaseClient = sb.createClient(SUPABASE_URL, SUPABASE_KEY);
+        const { data, error } = await supabaseClient
+          .from('reviews')
+          .select('vacancy_url,salary_rating,housing_rating,attitude_rating,schedule_rating,payment_rating,fraud_rating,recommendation')
+          .eq('approved', true)
+          .limit(3000);
+
+        if (error) throw error;
+
+        const bucket = {};
+        (data || []).forEach((review) => {
+          const slug = extractSlugFromVacancyUrl(review.vacancy_url);
+          if (!slug) return;
+          const score = computeProofScore(review);
+          if (!bucket[slug]) bucket[slug] = { sum: 0, count: 0 };
+          bucket[slug].sum += score;
+          bucket[slug].count += 1;
+        });
+
+        const aggregates = {};
+        Object.keys(bucket).forEach((slug) => {
+          const item = bucket[slug];
+          aggregates[slug] = {
+            score: Math.round(item.sum / item.count),
+            count: item.count
+          };
+        });
+
+        window.PROOF_AGGREGATES = aggregates;
+        return aggregates;
+      } catch (err) {
+        console.warn('Proof aggregates unavailable:', err);
+        window.PROOF_AGGREGATES = {};
+        return {};
+      }
+    })();
+
+    return proofAggregatesPromise;
+  }
+
+  function getProofVerdict(score, lang) {
+    const isPl = lang === 'pl';
+    if (score >= 80) return isPl ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
+    if (score >= 60) return isPl ? 'Warunki ogólnie OK, warto doprecyzować szczegóły.' : 'Умови загалом ок, але варто уточнити деталі.';
+    return isPl ? 'Podwyższone ryzyko — sprawdź warunki przed startem.' : 'Підвищений ризик — перевірте умови перед стартом.';
+  }
+
+  function getProofColorClass(score) {
+    if (score >= 80) return 'proof-good';
+    if (score >= 60) return 'proof-mid';
+    return 'proof-low';
   }
 
   // Wait for DOM and data to be ready
@@ -88,9 +200,19 @@
 
     // Render latest jobs
     const latestJobsGrid = document.getElementById('latestJobs');
-    if (window.LATEST_JOBS && latestJobsGrid) {
-      renderJobs(shuffleArray(window.LATEST_JOBS), latestJobsGrid);
+    const latestProofFilter = document.getElementById('latestProof75Filter');
+    const renderLatestJobs = () => {
+      if (window.LATEST_JOBS && latestJobsGrid) {
+        const onlyHighProof = !!(latestProofFilter && latestProofFilter.checked);
+        renderJobs(shuffleArray(window.LATEST_JOBS), latestJobsGrid, { onlyHighProof });
+      }
+    };
+
+    renderLatestJobs();
+    if (latestProofFilter) {
+      latestProofFilter.addEventListener('change', renderLatestJobs);
     }
+    loadProofAggregates().then(renderLatestJobs);
 
     // Count jobs by city
     if (window.ALL_JOBS) {
@@ -137,6 +259,7 @@
     const categoryFilter = document.getElementById('categoryFilter');
     const cityFilter = document.getElementById('cityFilter');
     const salaryFilter = document.getElementById('salaryFilter');
+    const proof75Filter = document.getElementById('proof75Filter');
     const resetBtn = document.getElementById('resetFilters');
     const resultsCount = document.getElementById('resultsCount');
 
@@ -177,7 +300,9 @@
       const category = categoryFilter ? categoryFilter.value : '';
       const city = cityFilter ? cityFilter.value : '';
       const minSalary = salaryFilter ? parseInt(salaryFilter.value) || 0 : 0;
+      const onlyHighProof = !!(proof75Filter && proof75Filter.checked);
       const searchQuery = urlQuery ? urlQuery.toLowerCase() : '';
+      const proofMap = await loadProofAggregates();
 
       let filtered = window.ALL_JOBS.filter(job => {
         // Category filter
@@ -203,6 +328,11 @@
           }
         }
 
+        if (onlyHighProof) {
+          const proof = proofMap[job.slug];
+          if (!proof || Number(proof.score || 0) < 75) return false;
+        }
+
         return true;
       });
 
@@ -214,19 +344,21 @@
       }
 
       // Render jobs
-      renderJobs(filtered, allJobsGrid);
+      renderJobs(filtered, allJobsGrid, { onlyHighProof });
     }
 
     // Event listeners
     if (categoryFilter) categoryFilter.addEventListener('change', filterAndRender);
     if (cityFilter) cityFilter.addEventListener('change', filterAndRender);
     if (salaryFilter) salaryFilter.addEventListener('input', filterAndRender);
+    if (proof75Filter) proof75Filter.addEventListener('change', filterAndRender);
     
     if (resetBtn) {
       resetBtn.addEventListener('click', function() {
         if (categoryFilter) categoryFilter.value = '';
         if (cityFilter) cityFilter.value = '';
         if (salaryFilter) salaryFilter.value = '';
+        if (proof75Filter) proof75Filter.checked = false;
         window.history.replaceState({}, '', vacanciesUrl());
         filterAndRender();
       });
@@ -236,13 +368,23 @@
     await filterAndRender();
   }
 
-  function renderJobs(jobs, container) {
+  function renderJobs(jobs, container, options = {}) {
     if (!container) return;
 
     const lang = localStorage.getItem('site_lang') || 'ua';
+    const proofMap = window.PROOF_AGGREGATES || {};
+    const onlyHighProof = !!options.onlyHighProof;
+
+    const preparedJobs = onlyHighProof
+      ? jobs.filter((job) => {
+        const proof = proofMap[job.slug];
+        return proof && Number(proof.score || 0) >= 75;
+      })
+      : jobs;
+
     container.innerHTML = '';
 
-    if (jobs.length === 0) {
+    if (preparedJobs.length === 0) {
       const lang = localStorage.getItem('site_lang') || 'ua';
       const noResultsText = lang === 'pl'
         ? 'Nie znaleziono ofert. Spróbuj zmienić filtry.'
@@ -251,7 +393,7 @@
       return;
     }
 
-    jobs.forEach(job => {
+    preparedJobs.forEach(job => {
       const card = document.createElement('a');
       card.href = jobUrl(job.slug);
       card.className = 'job-card';
@@ -265,11 +407,18 @@
         }
       }
 
+      const proof = proofMap[job.slug];
+      const proofLine = proof
+        ? `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100 (${proof.count})</div>
+           <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`
+        : '';
+
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
         <h3>${lang === 'pl' ? (job.title_pl || job.title) : job.title}</h3>
         <p class="job-city">📍 ${lang === 'pl' ? (job.city_pl || job.city) : job.city}</p>
         ${job.salary ? `<p class="job-salary">💰 ${job.salary}</p>` : ''}
+        ${proofLine}
         <p class="job-excerpt">${lang === 'pl' ? (job.excerpt_pl || job.excerpt) : job.excerpt}</p>
       `;
 

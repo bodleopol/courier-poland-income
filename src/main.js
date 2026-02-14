@@ -204,6 +204,7 @@
     'vacancies.meta_description': { ua: 'Перегляньте всі актуальні вакансії в Польщі. Фільтри за містом, категорією та зарплатою.', pl: 'Zobacz wszystkie aktualne oferty pracy w Polsce. Filtry według miasta, kategorii i wynagrodzenia.' },
     'filters.all_categories': { ua: 'Всі категорії', pl: 'Wszystkie kategorie' },
     'filters.salary_placeholder': { ua: 'Мін. зарплата (PLN)', pl: 'Min. wynagrodzenie (PLN)' },
+    'filters.proof75': { ua: 'Тільки з Proof ≥ 75', pl: 'Tylko z Proof ≥ 75' },
     'filters.reset': { ua: 'Скинути', pl: 'Resetuj' },
     // Article template (legacy)
     'article.step1': { ua: 'Крок 1: Перевірте базові документи', pl: 'Krok 1: Sprawdź podstawowe dokumenty' },
@@ -280,6 +281,8 @@
     'emp.b3.text': { ua: 'Розміщення вакансій повністю безкоштовне. Без прихованих платежів та комісій', pl: 'Publikacja ofert jest całkowicie bezpłatna. Bez ukrytych opłat i prowizji' },
     'emp.b4.title': { ua: '🤝 Без посередників', pl: '🤝 Bez pośredników' },
     'emp.b4.text': { ua: 'Прямий зв\'язок з кандидатами без агенцій та посередницьких комісій', pl: 'Bezpośredni kontakt z kandydatami bez agencji i prowizji pośredników' },
+    'emp.proof.title': { ua: '🔍 Ми перевіряємо всіх через Proof', pl: '🔍 Weryfikujemy wszystkich przez Proof' },
+    'emp.proof.text': { ua: 'Кожна вакансія та компанія отримує Rybezh Proof на основі реальних відгуків кандидатів. Це допомагає роботодавцям формувати довіру, а кандидатам — швидше приймати рішення.', pl: 'Każda oferta i firma otrzymuje Rybezh Proof na podstawie realnych opinii kandydatów. To buduje zaufanie do pracodawcy i pomaga kandydatom szybciej podejmować decyzję.' },
     'emp.stat1': { ua: 'Активних кандидатів', pl: 'Aktywnych kandydatów' },
     'emp.stat2': { ua: 'Вакансій розміщено', pl: 'Opublikowanych ofert' },
     'emp.stat3': { ua: 'Міст покриття', pl: 'Miast w zasięgu' },

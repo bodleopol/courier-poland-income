@@ -654,6 +654,113 @@
       ["Роберт","Žilina",49.2231,18.7395,"@robert_zil","робота","Водій, думаю про PL"]
     ];
 
+    // ===== Extra generated community data (+100) =====
+    // Majority in biggest Polish cities, some scattered around Poland,
+    // and a few in neighboring countries.
+    function seededNoise(n) {
+      var x = Math.sin(n * 9999.91) * 10000;
+      return x - Math.floor(x);
+    }
+
+    function generateExtraCommunityData() {
+      var cityPlan = [
+        // Major population centers in Poland (74)
+        { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 18 },
+        { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 12 },
+        { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 8 },
+        { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 8 },
+        { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 7 },
+        { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 6 },
+        { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 4 },
+        { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 3 },
+        { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 3 },
+        { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 3 },
+        { city: 'Białystok', lat: 53.1325, lng: 23.1688, count: 2 },
+
+        // Scattered around Poland (14)
+        { city: 'Gdynia', lat: 54.5189, lng: 18.5305, count: 2 },
+        { city: 'Sopot', lat: 54.4416, lng: 18.5601, count: 1 },
+        { city: 'Gorzów Wielkopolski', lat: 52.7368, lng: 15.2288, count: 1 },
+        { city: 'Opole', lat: 50.6751, lng: 17.9213, count: 1 },
+        { city: 'Kielce', lat: 50.8661, lng: 20.6286, count: 1 },
+        { city: 'Olsztyn', lat: 53.7784, lng: 20.4801, count: 1 },
+        { city: 'Toruń', lat: 53.0138, lng: 18.5984, count: 1 },
+        { city: 'Radom', lat: 51.4027, lng: 21.1471, count: 1 },
+        { city: 'Rzeszów', lat: 50.0412, lng: 21.9991, count: 2 },
+        { city: 'Zielona Góra', lat: 51.9356, lng: 15.5062, count: 1 },
+        { city: 'Częstochowa', lat: 50.8118, lng: 19.1203, count: 1 },
+        { city: 'Gliwice', lat: 50.2945, lng: 18.6714, count: 1 },
+        { city: 'Zabrze', lat: 50.3249, lng: 18.7857, count: 1 },
+
+        // Neighboring countries (12)
+        { city: 'Berlin', lat: 52.5200, lng: 13.4050, count: 2 },
+        { city: 'Dresden', lat: 51.0504, lng: 13.7373, count: 1 },
+        { city: 'Praha', lat: 50.0755, lng: 14.4378, count: 2 },
+        { city: 'Ostrava', lat: 49.8209, lng: 18.2625, count: 1 },
+        { city: 'Bratislava', lat: 48.1486, lng: 17.1077, count: 2 },
+        { city: 'Košice', lat: 48.7164, lng: 21.2611, count: 1 },
+        { city: 'Lviv', lat: 49.8397, lng: 24.0297, count: 1 },
+        { city: 'Vilnius', lat: 54.6872, lng: 25.2797, count: 1 },
+        { city: 'Minsk', lat: 53.9006, lng: 27.5590, count: 1 }
+      ];
+
+      var firstNames = [
+        'Артем','Олексій','Ігор','Богдан','Роман','Тарас','Максим','Юрій','Микола','Олег',
+        'Владислав','Павло','Дмитро','Сергій','Віталій','Марія','Олена','Ірина','Наталія','Анна',
+        'Катерина','Тетяна','Оксана','Юлія','Світлана','Людмила','Аліна','Вікторія','Дарина','Софія',
+        'Христина','Надія','Леся','Марина','Зоряна','Уляна'
+      ];
+      var seeks = ['робота', 'квартира', 'напарник', 'інше'];
+      var descriptions = [
+        'Шукаю роботу та нові контакти серед українців',
+        'Переїхав(ла) нещодавно, відкритий(а) до знайомств',
+        'Можу підказати з адаптацією та документами',
+        'Шукаю житло/сусідів у районі',
+        'Цікавлять робочі зміни та підробіток поруч'
+      ];
+
+      var extra = [];
+      var idx = 1;
+
+      cityPlan.forEach(function(cfg) {
+        for (var i = 0; i < cfg.count; i++) {
+          var n1 = seededNoise(idx * 3.17);
+          var n2 = seededNoise(idx * 7.91);
+          var lat = cfg.lat + (n1 - 0.5) * 0.12;
+          var lng = cfg.lng + (n2 - 0.5) * 0.18;
+
+          // Keep within map display bounds used later in CSV validation
+          if (lat <= 40) lat = 40.05;
+          if (lat >= 60) lat = 59.95;
+          if (lng <= 10) lng = 10.05;
+          if (lng >= 30) lng = 29.95;
+
+          var firstName = firstNames[idx % firstNames.length];
+          var name = firstName + ' ' + String.fromCharCode(65 + (idx % 24)) + '.';
+          var tg = '@ua_map_' + (1000 + idx);
+          var seek = seeks[idx % seeks.length];
+          var desc = descriptions[idx % descriptions.length];
+
+          extra.push([
+            name,
+            cfg.city,
+            parseFloat(lat.toFixed(4)),
+            parseFloat(lng.toFixed(4)),
+            tg,
+            seek,
+            desc
+          ]);
+
+          idx++;
+        }
+      });
+
+      return extra;
+    }
+
+    // Append generated +100 entries to the seeded dataset
+    sampleData = sampleData.concat(generateExtraCommunityData());
+
     // Helper: add a marker from sample data entry
     function addSampleMarker(entry) {
       var name = entry[0], city = entry[1], lat = entry[2], lng = entry[3];

@@ -95,7 +95,8 @@ function generateStaticSitemap() {
     { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'map.html', priority: '0.9', changefreq: 'daily' }
+    { url: 'map.html', priority: '0.9', changefreq: 'daily' },
+    { url: 'proof.html', priority: '0.9', changefreq: 'daily' }
   ];
 
   const urls = staticPages.map(page => {
@@ -148,7 +149,8 @@ function generateMainSitemap() {
     { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
     { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'map.html', priority: '0.9', changefreq: 'daily' }
+    { url: 'map.html', priority: '0.9', changefreq: 'daily' },
+    { url: 'proof.html', priority: '0.9', changefreq: 'daily' }
   ];
 
   const staticUrls = staticPages.map(page => {
@@ -193,7 +195,8 @@ console.log('🗺️  Generating sitemaps...');
 
 // Main sitemap.xml with all URLs
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateMainSitemap(), 'utf8');
-console.log(`✅ sitemap.xml: ${indexableVacancies.length + posts.length + 10} URLs`);
+const STATIC_PAGES_COUNT = 15;
+console.log(`✅ sitemap.xml: ${indexableVacancies.length + posts.length + STATIC_PAGES_COUNT} URLs`);
 
 // Sitemap index
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-index.xml'), generateSitemapIndex(), 'utf8');
@@ -201,7 +204,7 @@ console.log('✅ sitemap-index.xml');
 
 // Individual sitemaps
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-static.xml'), generateStaticSitemap(), 'utf8');
-console.log('✅ sitemap-static.xml: 10 URLs');
+console.log(`✅ sitemap-static.xml: ${STATIC_PAGES_COUNT} URLs`);
 
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-vacancies.xml'), generateVacanciesSitemap(), 'utf8');
 console.log(`✅ sitemap-vacancies.xml: ${indexableVacancies.length} URLs`);
@@ -210,7 +213,7 @@ fs.writeFileSync(path.join(DIST_DIR, 'sitemap-blog.xml'), generateBlogSitemap(),
 console.log(`✅ sitemap-blog.xml: ${posts.length} URLs`);
 
 console.log('\n🎉 All sitemaps generated successfully!');
-console.log(`\n📊 Total URLs: ${indexableVacancies.length + posts.length + 10}`);
-console.log(`   Static pages: 10`);
+console.log(`\n📊 Total URLs: ${indexableVacancies.length + posts.length + STATIC_PAGES_COUNT}`);
+console.log(`   Static pages: ${STATIC_PAGES_COUNT}`);
 console.log(`   Vacancies: ${indexableVacancies.length} (indexable only)`);
 console.log(`   Blog posts: ${posts.length}`);

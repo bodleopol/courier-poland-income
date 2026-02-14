@@ -38,6 +38,11 @@
       </select>
       
       <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input" data-i18n="filters.salary_placeholder" data-i18n-attr="placeholder">
+
+      <label class="proof-filter-inline">
+        <input type="checkbox" id="proof75Filter">
+        <span data-i18n="filters.proof75">Тільки з Proof ≥ 75</span>
+      </label>
       
       <button id="resetFilters" class="btn btn-secondary" data-i18n="filters.reset">Скинути</button>
     </div>
@@ -109,6 +114,44 @@
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s;
+}
+
+.proof-filter-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid #fecaca;
+  border-radius: 8px;
+  background: #fff5f5;
+  color: #7f1d1d;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.proof-filter-inline input {
+  accent-color: #e74c3c;
+}
+
+.job-proof-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.job-proof-chip.proof-good { background: #ecfdf5; color: #166534; }
+.job-proof-chip.proof-mid { background: #fffbeb; color: #92400e; }
+.job-proof-chip.proof-low { background: #fef2f2; color: #991b1b; }
+
+.job-proof-note {
+  margin: 0 0 0.55rem;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .filter-select {

@@ -229,6 +229,12 @@
 <section class="latest-jobs">
   <div class="container">
     <h2 data-i18n="home.latest.title">Нові вакансії</h2>
+    <div class="proof-filter-row">
+      <label class="proof-filter-label">
+        <input type="checkbox" id="latestProof75Filter">
+        <span data-i18n="filters.proof75">Тільки з Proof ≥ 75</span>
+      </label>
+    </div>
     <div class="jobs-grid" id="latestJobs">
       <!-- Генерується динамічно з content.json -->
     </div>
@@ -548,6 +554,50 @@ main.container {
   color: #4b5563;
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+.proof-filter-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: -1.75rem 0 1.25rem;
+}
+
+.proof-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #fecaca;
+  background: #fff5f5;
+  color: #7f1d1d;
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.proof-filter-label input {
+  accent-color: #e74c3c;
+}
+
+.job-proof-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.job-proof-chip.proof-good { background: #ecfdf5; color: #166534; }
+.job-proof-chip.proof-mid { background: #fffbeb; color: #92400e; }
+.job-proof-chip.proof-low { background: #fef2f2; color: #991b1b; }
+
+.job-proof-note {
+  margin: 0 0 0.55rem;
+  color: #64748b;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .features-grid {
