@@ -1151,8 +1151,8 @@ Object.keys(ROLES).forEach(catKey => {
     // For each template, we pick mostly all cities, but randomize slightly
     CITIES.forEach(city => {
       
-      // 10% chance to skip a job in a specific city to make lists uneven/natural
-      if (Math.random() > 0.9) return; 
+      // 70% chance to skip a job in a specific city to reduce total count and add variety
+      if (Math.random() > 0.3) return; 
 
       let titleUA;
       let titlePL;
