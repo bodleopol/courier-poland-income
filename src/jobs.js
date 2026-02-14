@@ -438,7 +438,9 @@
         proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
              <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
       } else {
-        proofLine = `<div class="job-proof-chip proof-gray">🔍 Proof Score: ще немає відгуків</div>
+        const noReviewTextUA = '🔍 Ще немає відгуків';
+        const noReviewTextPL = '🔍 Jeszcze brak opinii';
+        proofLine = `<div class="job-proof-chip proof-gray">${lang === 'pl' ? noReviewTextPL : noReviewTextUA}</div>
              <p class="job-proof-note">${lang === 'pl' ? 'Jeszcze brak opinii o tym pracodawcy' : 'Ще немає відгуків про цього роботодавця'}</p>`;
       }
 
