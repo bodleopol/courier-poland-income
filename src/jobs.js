@@ -5,6 +5,17 @@
 (function() {
   'use strict';
 
+  // Detect PL page from URL
+  function isPlPage() {
+    return window.location.pathname.endsWith('-pl.html');
+  }
+  function vacanciesUrl() {
+    return isPlPage() ? '/vacancies-pl.html' : '/vacancies.html';
+  }
+  function jobUrl(slug) {
+    return isPlPage() ? `/${slug}-pl.html` : `/${slug}.html`;
+  }
+
   // Wait for DOM and data to be ready
   document.addEventListener('DOMContentLoaded', async function() {
     // Load jobs data if not already loaded
@@ -29,7 +40,7 @@
     const buildDesktopLinks = () => categories.map(cat => {
       const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
       const desc = lang === 'pl' ? cat.description_pl : cat.description_ua;
-      return `<a href="/vacancies.html?category=${cat.id}" class="mega-item">
+      return `<a href="${vacanciesUrl()}?category=${cat.id}" class="mega-item">
         <span class="mega-icon">${cat.icon}</span>
         <span class="mega-text">
           <span class="mega-name">${name}</span>
@@ -41,7 +52,7 @@
     // Mobile: collapsible with icon grid
     const buildMobileLinks = () => categories.map(cat => {
       const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
-      return `<a href="/vacancies.html?category=${cat.id}">${cat.icon} ${name}</a>`;
+      return `<a href="${vacanciesUrl()}?category=${cat.id}">${cat.icon} ${name}</a>`;
     }).join('');
 
     if (desktopNav) {
@@ -64,7 +75,7 @@
       const lang = localStorage.getItem('site_lang') || 'ua';
       window.CATEGORIES.forEach(cat => {
         const card = document.createElement('a');
-        card.href = `/vacancies.html?category=${cat.id}`;
+        card.href = `${vacanciesUrl()}?category=${cat.id}`;
         card.className = 'category-card';
         card.innerHTML = `
           <span class="category-icon">${cat.icon}</span>
@@ -92,7 +103,11 @@
       document.querySelectorAll('[data-city]').forEach(el => {
         const city = el.getAttribute('data-city');
         const count = cityCounts[city] || 0;
-        el.textContent = `${count} ${count === 1 ? 'вакансія' : 'вакансій'}`;
+        const lang = localStorage.getItem('site_lang') || 'ua';
+        const label = lang === 'pl'
+          ? (count === 1 ? 'oferta' : 'ofert')
+          : (count === 1 ? 'вакансія' : 'вакансій');
+        el.textContent = `${count} ${label}`;
       });
     }
 
@@ -103,7 +118,7 @@
       searchBtn.addEventListener('click', function() {
         const query = searchInput.value.trim();
         if (query) {
-          window.location.href = `/vacancies.html?q=${encodeURIComponent(query)}`;
+          window.location.href = `${vacanciesUrl()}?q=${encodeURIComponent(query)}`;
         }
       });
       
@@ -212,7 +227,7 @@
         if (categoryFilter) categoryFilter.value = '';
         if (cityFilter) cityFilter.value = '';
         if (salaryFilter) salaryFilter.value = '';
-        window.history.replaceState({}, '', '/vacancies.html');
+        window.history.replaceState({}, '', vacanciesUrl());
         filterAndRender();
       });
     }
@@ -228,13 +243,17 @@
     container.innerHTML = '';
 
     if (jobs.length === 0) {
-      container.innerHTML = '<p style="text-align: center; padding: 3rem; color: #6b7280;">Вакансій не знайдено. Спробуйте змінити фільтри.</p>';
+      const lang = localStorage.getItem('site_lang') || 'ua';
+      const noResultsText = lang === 'pl'
+        ? 'Nie znaleziono ofert. Spróbuj zmienić filtry.'
+        : 'Вакансій не знайдено. Спробуйте змінити фільтри.';
+      container.innerHTML = `<p style="text-align: center; padding: 3rem; color: #6b7280;">${noResultsText}</p>`;
       return;
     }
 
     jobs.forEach(job => {
       const card = document.createElement('a');
-      card.href = `/${job.slug}.html`;
+      card.href = jobUrl(job.slug);
       card.className = 'job-card';
 
       // Get category name
