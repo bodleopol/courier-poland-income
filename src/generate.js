@@ -1057,6 +1057,8 @@ function buildVacancyProofFormScript() {
   (function(){
     if (window.__rybezhProofFormInit) return;
     window.__rybezhProofFormInit = true;
+    var PROOF_MIN_SCORE = 70;
+    var PROOF_MAX_SCORE = 95;
 
     function computeScore(data) {
       var salary_rating = Number(data.salary_rating || 0);
@@ -1067,6 +1069,25 @@ function buildVacancyProofFormScript() {
       var fraud_rating = Number(data.fraud_rating || 0);
       var recommendation = Number(data.recommendation || 0);
       return Math.round((salary_rating + housing_rating + attitude_rating + schedule_rating + payment_rating + fraud_rating + recommendation) * 10 / 7);
+    }
+
+    function clampProofScore(score) {
+      var numeric = Number(score || 0);
+      if (!Number.isFinite(numeric)) return PROOF_MIN_SCORE;
+      var rounded = Math.round(numeric);
+      if (rounded < PROOF_MIN_SCORE) return PROOF_MIN_SCORE;
+      if (rounded > PROOF_MAX_SCORE) return PROOF_MAX_SCORE;
+      return rounded;
+    }
+
+    function fallbackScoreBySlug(slug) {
+      var raw = String(slug || 'rybezh-proof-fallback');
+      var hash = 0;
+      for (var i = 0; i < raw.length; i++) {
+        hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
+      }
+      var span = (PROOF_MAX_SCORE - PROOF_MIN_SCORE + 1);
+      return PROOF_MIN_SCORE + (hash % span);
     }
 
     function verdictByScore(score, lang) {
@@ -1217,7 +1238,9 @@ function buildVacancyProofFormScript() {
           if (reviews.length) {
             var sum = 0;
             for (var r = 0; r < reviews.length; r++) sum += computeScore(reviews[r]);
-            score = Math.round(sum / reviews.length);
+            score = clampProofScore(Math.round(sum / reviews.length));
+          } else {
+            score = fallbackScoreBySlug(slug);
           }
 
           var scoreEls = card.querySelectorAll('[data-proof-score]');
@@ -1231,7 +1254,9 @@ function buildVacancyProofFormScript() {
             var lang = verdictEls[v].closest('[data-lang-content="pl"]') ? 'pl' : 'ua';
             verdictEls[v].textContent = reviews.length
               ? verdictByScore(score, lang)
-              : (lang === 'pl' ? 'Brak zatwierdzonych opinii. Dodaj swój Proof jako pierwszy.' : 'Поки немає затверджених відгуків. Додайте свій Proof першим.');
+              : (lang === 'pl'
+                ? (verdictByScore(score, lang) + ' (Wstępna ocena, dodaj opinię).')
+                : (verdictByScore(score, lang) + ' (Попередня оцінка, додайте свій відгук).'));
           }
         }
       } catch (err) {

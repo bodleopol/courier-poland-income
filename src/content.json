@@ -109,6 +109,115 @@
     "shift_structure_pl": "Struktura zmiany: strefa nocna"
   },
   {
+    "slug": "gdansk-food-production-quality-checker-unique-315",
+    "category": "production",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Контролер якості на харчовому виробництві — Гданськ",
+    "title_pl": "Kontroler jakości na produkcji spożywczej — Gdańsk",
+    "salary": "32 - 45 PLN/h",
+    "company": "Baltic Fresh Foods",
+    "shift_ua": "Пн-Пт, 06:00-14:00 / 14:00-22:00",
+    "shift_pl": "Pn-Pt, 06:00-14:00 / 14:00-22:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Протягом 5-7 днів після співбесіди",
+    "start_pl": "W ciągu 5-7 dni po rozmowie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільний денний/вечірній графік без нічних змін.",
+      "Оплачуване навчання стандартам HACCP у перший тиждень.",
+      "Безкоштовний гарячий обід під час зміни.",
+      "Премія за уважність і відсутність браку наприкінці місяця.",
+      "Лояльний бригадир і підтримка координатора українською."
+    ],
+    "offers_pl": [
+      "Stabilny grafik dzienny/popłudniowy bez zmian nocnych.",
+      "Płatne szkolenie z zasad HACCP w pierwszym tygodniu.",
+      "Bezpłatny ciepły posiłek podczas zmiany.",
+      "Premia za uważność i brak reklamacji jakościowych.",
+      "Przyjazny brygadzista i wsparcie koordynatora po ukraińsku."
+    ],
+    "tasks_ua": [
+      "Візуальний контроль якості упаковки та маркування.",
+      "Перевірка температурних журналів і базових чек-листів.",
+      "Фіксація відхилень та передача інформації старшому зміни."
+    ],
+    "tasks_pl": [
+      "Wizualna kontrola jakości opakowań i etykiet.",
+      "Sprawdzanie rejestrów temperatur i list kontrolnych.",
+      "Zgłaszanie niezgodności i przekazywanie zmianie starszej osobie."
+    ],
+    "details_ua": [
+      "Робота у чистій виробничій зоні зі зрозумілими правилами.",
+      "Новачки починають у парі з досвідченим працівником.",
+      "Норми реалістичні, без штрафів за дрібні помилки на старті.",
+      "Команда міжнародна, з нормальним людським ставленням."
+    ],
+    "details_pl": [
+      "Praca w czystej strefie produkcyjnej z jasnymi zasadami.",
+      "Nowe osoby zaczynają w duecie z doświadczonym pracownikiem.",
+      "Normy są realne, bez kar za drobne błędy na starcie.",
+      "Zespół międzynarodowy i normalna, ludzka atmosfera."
+    ],
+    "requirements_ua": [
+      "Досвід: Можна без досвіду, важлива уважність",
+      "Мова: Базова польська або українська",
+      "Документи: Паспорт, PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Może być bez doświadczenia, liczy się dokładność",
+      "Język: Podstawowy polski lub ukraiński",
+      "Dokumenty: Paszport, PESEL"
+    ],
+    "experience_ua": "Можна без досвіду, важлива уважність",
+    "experience_pl": "Może być bez doświadczenia, liczy się dokładność",
+    "language_ua": "Базова польська або українська",
+    "language_pl": "Podstawowy polski lub ukraiński",
+    "housing_ua": "Житло не надається, допоможемо з підбором кімнати поруч",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, pomagamy znaleźć pokój w okolicy",
+    "transport_ua": "Зручний доїзд SKM і автобусами, є велопарковка",
+    "transport_pl": "Wygodny dojazd SKM i autobusami, dostępny parking rowerowy",
+    "documents_ua": "Документи: Паспорт, PESEL",
+    "documents_pl": "Dokumenty: Paszport, PESEL",
+    "workplace_ua": "Тип об’єкта: харчове виробництво",
+    "workplace_pl": "Typ obiektu: produkcja spożywcza",
+    "team_ua": "Команда: 8-12 осіб у зміні",
+    "team_pl": "Zespół: 8-12 osób na zmianie",
+    "onboarding_ua": "Вступний день + чек-лист контролю якості на перший тиждень.",
+    "onboarding_pl": "Dzień wdrożeniowy + checklista jakości na pierwszy tydzień.",
+    "daily_ua": [
+      "Короткий брифінг якості на початку зміни.",
+      "Заповнення простого звіту в кінці зміни."
+    ],
+    "daily_pl": [
+      "Krótki briefing jakościowy na początku zmiany.",
+      "Wypełnienie prostego raportu na koniec zmiany."
+    ],
+    "excerpt": "Baltic Fresh Foods шукає контролера якості в Гданську: офіційний договір, навчання HACCP і стабільні зміни без ночей.",
+    "excerpt_pl": "Baltic Fresh Foods szuka kontrolera jakości w Gdańsku: legalna umowa, szkolenie HACCP i stabilne zmiany bez nocy.",
+    "body": "<div class='vacancy-block'><p>Ця вакансія для людей, яким ближча спокійна уважна робота, ніж біг у шаленому темпі. На виробництві важливі акуратність, чистота та відповідальність, а не гучні обіцянки.</p><p>Ви перевіряєте пакування, маркування і прості показники якості. Якщо щось не сходиться — не залишаєтесь самі, є старший зміни й чітка процедура, що робити далі.</p><p>Перший тиждень проходить з наставником: вам показують процес крок за кроком, щоб входження в роботу було без стресу. Команда адекватна, без тиску «роби з першого дня як робот».</p><div class='salary-box'>💰 Зарплата: <strong>32 - 45 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>To oferta dla osób, które wolą spokojną i dokładną pracę zamiast ciągłego pośpiechu. W produkcji liczy się uważność, czystość i odpowiedzialność.</p><p>Twoim zadaniem jest kontrola opakowań, etykiet i podstawowych parametrów jakości. Jeśli coś się nie zgadza, działasz według jasnej procedury ze wsparciem starszej osoby na zmianie.</p><p>W pierwszym tygodniu pracujesz z opiekunem, który pokazuje cały proces krok po kroku. Zespół jest normalny i nastawiony na wdrożenie, a nie na presję od pierwszej godziny.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>32 - 45 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-14T11:20:00.000Z",
+    "is_generated": false,
+    "data_source": "manual",
+    "sector_ua": "Сектор: харчова промисловість",
+    "sector_pl": "Sektor: przemysł spożywczy",
+    "equipment_ua": "Обладнання: контрольні столи, сканери, термометри",
+    "equipment_pl": "Sprzęt: stoły kontrolne, skanery, termometry",
+    "physical_ua": "Фізичні вимоги: уважна робота стоячи",
+    "physical_pl": "Wymagania fizyczne: dokładna praca na stojąco",
+    "shift_structure_ua": "Структура зміни: денна/післяобідня",
+    "shift_structure_pl": "Struktura zmiany: dzienna/popołudniowa"
+  },
+  {
     "slug": "warsaw-logistics-kierowca-kurier-kat-b-1",
     "category": "logistics",
     "city": "Варшава",

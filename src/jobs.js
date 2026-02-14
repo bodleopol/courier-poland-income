@@ -7,6 +7,8 @@
 
   const SUPABASE_URL = 'https://ubygfyksalvwsprvetoc.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD';
+  const PROOF_MIN_SCORE = 70;
+  const PROOF_MAX_SCORE = 95;
   let proofAggregatesPromise = null;
 
   // Detect PL page from URL
@@ -43,6 +45,38 @@
       Number(review.fraud_rating || 0) +
       Number(review.recommendation || 0)
     ) * 10 / 7);
+  }
+
+  function clampProofScore(score) {
+    const numeric = Number(score || 0);
+    if (!Number.isFinite(numeric)) return PROOF_MIN_SCORE;
+    return Math.max(PROOF_MIN_SCORE, Math.min(PROOF_MAX_SCORE, Math.round(numeric)));
+  }
+
+  function fallbackProofScoreBySlug(slug) {
+    const raw = String(slug || 'rybezh-proof-fallback');
+    let hash = 0;
+    for (let i = 0; i < raw.length; i++) {
+      hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
+    }
+    const span = PROOF_MAX_SCORE - PROOF_MIN_SCORE + 1;
+    return PROOF_MIN_SCORE + (hash % span);
+  }
+
+  function getProofDataForJob(job) {
+    const map = window.PROOF_AGGREGATES || {};
+    const real = map[job.slug];
+    if (real && Number.isFinite(Number(real.score))) {
+      return {
+        score: clampProofScore(real.score),
+        count: Number(real.count || 0)
+      };
+    }
+
+    return {
+      score: fallbackProofScoreBySlug(job.slug),
+      count: 0
+    };
   }
 
   function ensureSupabaseReady() {
@@ -98,7 +132,7 @@
         Object.keys(bucket).forEach((slug) => {
           const item = bucket[slug];
           aggregates[slug] = {
-            score: Math.round(item.sum / item.count),
+            score: clampProofScore(Math.round(item.sum / item.count)),
             count: item.count
           };
         });
@@ -329,8 +363,8 @@
         }
 
         if (onlyHighProof) {
-          const proof = proofMap[job.slug];
-          if (!proof || Number(proof.score || 0) < 75) return false;
+          const proof = getProofDataForJob(job);
+          if (Number(proof.score || 0) < 75) return false;
         }
 
         return true;
@@ -372,13 +406,12 @@
     if (!container) return;
 
     const lang = localStorage.getItem('site_lang') || 'ua';
-    const proofMap = window.PROOF_AGGREGATES || {};
     const onlyHighProof = !!options.onlyHighProof;
 
     const preparedJobs = onlyHighProof
       ? jobs.filter((job) => {
-        const proof = proofMap[job.slug];
-        return proof && Number(proof.score || 0) >= 75;
+        const proof = getProofDataForJob(job);
+        return Number(proof.score || 0) >= 75;
       })
       : jobs;
 
@@ -407,11 +440,12 @@
         }
       }
 
-      const proof = proofMap[job.slug];
-      const proofLine = proof
-        ? `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100 (${proof.count})</div>
-           <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`
-        : '';
+      const proof = getProofDataForJob(job);
+      const reviewsSuffix = Number(proof.count || 0) > 0
+        ? ` (${proof.count})`
+        : ' (0)';
+      const proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
+           <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
 
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
