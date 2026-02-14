@@ -1090,6 +1090,18 @@ function buildVacancyProofFormScript() {
       return PROOF_MIN_SCORE + (hash % span);
     }
 
+    function fallbackCountBySlug(slug) {
+      var raw = String(slug || 'rybezh-proof-count-fallback');
+      var hash = 0;
+      for (var i = 0; i < raw.length; i++) {
+        hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
+      }
+      var min = 5;
+      var max = 30;
+      var span = (max - min + 1);
+      return min + (hash % span);
+    }
+
     function verdictByScore(score, lang) {
       if (score >= 80) return lang === 'pl' ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
       if (score >= 60) return lang === 'pl' ? 'Warunki ogólnie OK, ale warto doprecyzować detale.' : 'Умови загалом ок, але варто уточнити деталі.';
@@ -1235,12 +1247,15 @@ function buildVacancyProofFormScript() {
 
           var reviews = (query && query.data) || [];
           var score = 0;
+          var count = 0;
           if (reviews.length) {
             var sum = 0;
             for (var r = 0; r < reviews.length; r++) sum += computeScore(reviews[r]);
             score = clampProofScore(Math.round(sum / reviews.length));
+            count = reviews.length;
           } else {
             score = fallbackScoreBySlug(slug);
+            count = fallbackCountBySlug(slug);
           }
 
           var scoreEls = card.querySelectorAll('[data-proof-score]');
@@ -1248,7 +1263,7 @@ function buildVacancyProofFormScript() {
           var verdictEls = card.querySelectorAll('[data-proof-verdict]');
 
           for (var s = 0; s < scoreEls.length; s++) scoreEls[s].textContent = String(score || 0);
-          for (var c = 0; c < countEls.length; c++) countEls[c].textContent = String(reviews.length || 0);
+          for (var c = 0; c < countEls.length; c++) countEls[c].textContent = String(count || 0);
 
           for (var v = 0; v < verdictEls.length; v++) {
             var lang = verdictEls[v].closest('[data-lang-content="pl"]') ? 'pl' : 'ua';
