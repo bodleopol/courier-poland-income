@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - copilot/fix-job-generation-system
+      - deploy
   workflow_dispatch:
 
 permissions:
