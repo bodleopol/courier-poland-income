@@ -400,30 +400,63 @@
     return localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY) || 'ua';
   }
 
+  function isPolishPath(pathname) {
+    // Supports both static *.html URLs and clean URLs (/about-pl)
+    return /(^|\/)index-pl(?:\.html)?$/.test(pathname)
+      || /(^|\/)[^/]+-pl\.html$/.test(pathname)
+      || /(^|\/)[^/]+-pl$/.test(pathname)
+      || /(^|\/)404-pl(\/index\.html|\/?)$/.test(pathname);
+  }
+
+  function toUaPath(pathname) {
+    if (pathname === '/index-pl.html' || pathname === '/index-pl') return '/';
+    if (/\/404-pl(\/index\.html|\/?)$/.test(pathname)) return '/404/';
+
+    if (pathname.endsWith('-pl.html')) {
+      return pathname.replace(/-pl\.html$/, '.html');
+    }
+
+    if (pathname.endsWith('-pl')) {
+      return pathname.replace(/-pl$/, '');
+    }
+
+    return pathname;
+  }
+
+  function toPlPath(pathname) {
+    if (pathname === '/' || pathname === '/index.html' || pathname === '/index') return '/index-pl.html';
+    if (/\/404(\/index\.html|\/?)$/.test(pathname)) return '/404-pl/';
+
+    if (pathname.endsWith('.html')) {
+      return pathname.replace(/\.html$/, '-pl.html');
+    }
+
+    // Clean URL support: /about -> /about-pl
+    if (!pathname.endsWith('/')) {
+      return `${pathname}-pl`;
+    }
+
+    // Fallback for trailing slash paths
+    return `${pathname.replace(/\/$/, '')}-pl`;
+  }
+
   // Set language — navigates between UA / PL page variants
   function setLang(lang) {
     const currentPath = window.location.pathname;
-    const isPlPage = currentPath.endsWith('-pl.html');
+    const isPlPage = isPolishPath(currentPath);
+    const suffix = `${window.location.search || ''}${window.location.hash || ''}`;
 
     // Navigate to UA page from PL page
     if (lang === 'ua' && isPlPage) {
-      let uaPath = currentPath.replace(/-pl\.html$/, '.html');
-      if (uaPath === '/index.html') uaPath = '/';
-      window.location.href = uaPath;
+      const uaPath = toUaPath(currentPath);
+      window.location.href = `${uaPath}${suffix}`;
       return;
     }
 
     // Navigate to PL page from UA page
     if (lang === 'pl' && !isPlPage) {
-      let plPath;
-      if (currentPath === '/' || currentPath === '/index.html') {
-        plPath = '/index-pl.html';
-      } else if (currentPath.endsWith('.html')) {
-        plPath = currentPath.replace(/\.html$/, '-pl.html');
-      } else {
-        plPath = currentPath;
-      }
-      window.location.href = plPath;
+      const plPath = toPlPath(currentPath);
+      window.location.href = `${plPath}${suffix}`;
       return;
     }
 
@@ -492,7 +525,7 @@
     }
     
     // Auto-detect language from page URL
-    const isPlPage = window.location.pathname.endsWith('-pl.html');
+    const isPlPage = isPolishPath(window.location.pathname);
     const lang = isPlPage ? 'pl' : getLang();
 
     if (isPlPage) {

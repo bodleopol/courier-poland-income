@@ -1399,6 +1399,17 @@ Object.keys(ROLES).forEach(catKey => {
         `Szukamy osoby w ${city.pl}. Start: ${startPL}, umowa: ${contractPL}.`
       ]);
 
+      const humanNoteUA = getRandom([
+        `Реально по навантаженню: темп стабільний, але в пікові години роботи більше — команда попереджає про це завчасно.`,
+        `Це позиція для тих, хто хоче зрозумілі процеси без «сюрпризів»: на старті є наставник і чіткий план зміни.`,
+        `Якщо ви тільки починаєте, тут простіше адаптуватися: задачі пояснюють покроково і дають час увійти в ритм.`
+      ]);
+      const humanNotePL = getRandom([
+        `Uczciwie o tempie: bywa intensywniej w godzinach szczytu, ale zespół uprzedza o tym wcześniej.`,
+        `To oferta dla osób, które wolą jasne zasady bez niespodzianek — na starcie jest opiekun i plan zmiany.`,
+        `Dla osób początkujących to bezpieczny start: zadania są tłumaczone krok po kroku i jest czas na wdrożenie.`
+      ]);
+
       const summaryUA = `
         <ul>
           <li>Графік: ${shiftsUA}</li>
@@ -1417,9 +1428,34 @@ Object.keys(ROLES).forEach(catKey => {
         </ul>
       `;
 
+      const formatItemsUA = [
+        workplaceUA,
+        teamUA,
+        onboardingUA,
+        ...(categoriesWithSector.includes(catKey) ? [sectorUA, equipmentUA, physicalUA, shiftStructUA] : [])
+      ].filter(Boolean);
+      const formatItemsPL = [
+        workplacePL,
+        teamPL,
+        onboardingPL,
+        ...(categoriesWithSector.includes(catKey) ? [sectorPL, equipmentPL, physicalPL, shiftStructPL] : [])
+      ].filter(Boolean);
+
+      const practicalItemsUA = [
+        `Житло: ${housingUA}`,
+        `Транспорт: ${transportUA}`,
+        ...detailItemsUA
+      ];
+      const practicalItemsPL = [
+        `Mieszkanie: ${housingPL}`,
+        `Dojazd: ${transportPL}`,
+        ...detailItemsPL
+      ];
+
       const bodyUA = `
         <div class="vacancy-block">
           <p>${introUA}</p>
+          <p>${humanNoteUA}</p>
           ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
           <div class="job-meta">
             <p><strong>🏢 Компанія:</strong> ${company}</p>
@@ -1432,6 +1468,14 @@ Object.keys(ROLES).forEach(catKey => {
           <ul>${tasksUA}</ul>
           <h3>${hUA.req}</h3>
           <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+          <h3>${hUA.offers}</h3>
+          <ul>${offersUA}</ul>
+          <h3>${hUA.housing}</h3>
+          <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+          <h3>${hUA.format}</h3>
+          <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+          <h3>${hUA.daily}</h3>
+          <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
           <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
@@ -1440,6 +1484,7 @@ Object.keys(ROLES).forEach(catKey => {
       const bodyPL = `
         <div class="vacancy-block">
           <p>${introPL}</p>
+          <p>${humanNotePL}</p>
           ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
           <div class="job-meta">
             <p><strong>🏢 Firma:</strong> ${company}</p>
@@ -1452,6 +1497,14 @@ Object.keys(ROLES).forEach(catKey => {
           <ul>${tasksPL}</ul>
           <h3>${hPL.req}</h3>
           <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+          <h3>${hPL.offers}</h3>
+          <ul>${offersPL}</ul>
+          <h3>${hPL.housing}</h3>
+          <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+          <h3>${hPL.format}</h3>
+          <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+          <h3>${hPL.daily}</h3>
+          <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
           <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
         </div>
         <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
@@ -1507,8 +1560,16 @@ Object.keys(ROLES).forEach(catKey => {
         onboarding_pl: onboardingPL,
         daily_ua: dailyUA,
         daily_pl: dailyPL,
-        excerpt: `${company} шукає: ${finalTitleUA} (${shiftsUA}, ${patternUA}). ${getRandom(jobTemplate.desc_ua)}`,
-        excerpt_pl: `${company} poszukuje: ${finalTitlePL} (${shiftsPL}, ${patternPL}). ${getRandom(jobTemplate.desc_pl)}`,
+        excerpt: getRandom([
+          `${company} шукає: ${finalTitleUA}. Графік: ${shiftsUA}, режим: ${patternUA}. ${getRandom(jobTemplate.desc_ua)}`,
+          `${finalTitleUA} у ${company}: старт ${startUA}, договір ${contractUA}. ${getRandom(jobTemplate.desc_ua)}`,
+          `${company} відкриває набір на ${finalTitleUA}. Формат: ${shiftsUA}, ${patternUA}. ${getRandom(jobTemplate.desc_ua)}`
+        ]),
+        excerpt_pl: getRandom([
+          `${company} poszukuje: ${finalTitlePL}. Grafik: ${shiftsPL}, system: ${patternPL}. ${getRandom(jobTemplate.desc_pl)}`,
+          `${finalTitlePL} w ${company}: start ${startPL}, umowa ${contractPL}. ${getRandom(jobTemplate.desc_pl)}`,
+          `${company} prowadzi rekrutację na ${finalTitlePL}. Tryb pracy: ${shiftsPL}, ${patternPL}. ${getRandom(jobTemplate.desc_pl)}`
+        ]),
         body: bodyUA,
         body_pl: bodyPL,
         cta_text: "Подати заявку",
