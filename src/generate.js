@@ -1611,18 +1611,20 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
+    // Check if this vacancy is in the indexable list
+    const isIndexable = indexableVacancySlugs.has(String(page.slug));
+    
     // Inject JobPosting structured data for all indexable pages
-    const isIndexable = page?.is_generated ? indexableVacancySlugs.has(String(page.slug)) : true;
     if (isIndexable) {
       const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
       if (finalHtml.includes('</head>')) {
         finalHtml = finalHtml.replace('</head>', `${jobPostingScript}\n</head>`);
       }
-    }
-
-    // All generated pages that reach this point are indexable (pre-filtered above)
-    if (page?.is_generated) {
+      // Set robots meta to index for indexable pages
       finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
+    } else {
+      // Set robots meta to noindex for non-indexable pages
+      finalHtml = setRobotsMeta(finalHtml, 'noindex, follow');
     }
 
     // Add specific styles for job pages

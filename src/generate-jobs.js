@@ -1279,104 +1279,6 @@ Object.keys(ROLES).forEach(catKey => {
 
         company = getRandom(AGENCIES);
         
-        // Define parameterized headings after company and city are known
-        const headingsUA = {
-          offers: [
-            `Що пропонує ${company}`,
-            "Наші переваги для вас",
-            "Чому варто приєднатися",
-            `Умови роботи в ${city.ua}`,
-            "Бонуси та компенсації",
-            "Що ми пропонуємо?"
-          ],
-          info: [
-            "Додаткова інформація",
-            "Як проходить робота",
-            "Важливі деталі",
-            "Організація процесу",
-            `Робота в ${city.ua}: деталі`
-          ],
-          req: [
-            "Вимоги",
-            "Кого шукаємо",
-            "Очікування до кандидата",
-            "Критерії відбору"
-          ],
-          housing: [
-            "Проживання та транспорт",
-            "Житло й доїзд",
-            "Де жити і як доїхати",
-            `Логістика в ${city.ua}`
-          ],
-          format: [
-            "Формат роботи",
-            "Робоче середовище",
-            "Команда і адаптація",
-            "Як усе влаштовано",
-            `Робота в ${company}`
-          ],
-          daily: [
-            "Щоденні процеси",
-            "Як проходить зміна",
-            "Рутина на об'єкті",
-            "Організація дня"
-          ],
-          duties: [
-            "Ваші обов'язки:",
-            "Що потрібно робити:",
-            "Зона відповідальності:",
-            "Основні задачі:"
-          ]
-        };
-
-        const headingsPL = {
-          offers: [
-            `Co oferuje ${company}`,
-            "Nasze korzyści dla Ciebie",
-            "Dlaczego warto dołączyć",
-            `Warunki pracy w ${city.pl}`,
-            "Bonusy i świadczenia",
-            "Co oferujemy?"
-          ],
-          info: [
-            "Dodatkowe informacje",
-            "Jak wygląda praca",
-            "Ważne szczegóły",
-            "Organizacja procesu",
-            `Praca w ${city.pl}: szczegóły`
-          ],
-          req: [
-            "Wymagania",
-            "Kogo szukamy",
-            "Oczekiwania wobec kandydata",
-            "Kryteria selekcji"
-          ],
-          housing: [
-            "Zakwaterowanie i dojazd",
-            "Mieszkanie i dojazd",
-            "Gdzie mieszkasz i jak dojeżdżasz",
-            `Logistyka w ${city.pl}`
-          ],
-          format: [
-            "Format pracy",
-            "Środowisko pracy",
-            "Zespół i wdrożenie",
-            "Jak to działa",
-            `Praca w ${company}`
-          ],
-          daily: [
-            "Codzienne procesy",
-            "Jak wygląda zmiana",
-            "Rutyna na obiekcie",
-            "Organizacja dnia"
-          ],
-          duties: [
-            "Twoje obowiązki:",
-            "Co będziesz robić:",
-            "Zakres zadań:",
-            "Główne zadania:"
-          ]
-        };
         
         // SYNC UA/PL: Use same index for shifts, patterns, start, contracts
         const shiftIndex = Math.floor(Math.random() * Math.min(SHIFTS.ua.length, SHIFTS.pl.length));
@@ -1529,6 +1431,105 @@ Object.keys(ROLES).forEach(catKey => {
       usedSignatures.add(signature);
 
       const slug = `${city.slug}-${catKey}-${titlePL.toLowerCase().replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/[^a-z0-9]+/g, '-')}-${jobCounter++}`;
+
+      // Define parameterized headings after company and city are finalized
+      const headingsUA = {
+        offers: [
+          `Що пропонує ${company}`,
+          "Наші переваги для вас",
+          "Чому варто приєднатися",
+          `Умови роботи в ${city.ua}`,
+          "Бонуси та компенсації",
+          "Що ми пропонуємо?"
+        ],
+        info: [
+          "Додаткова інформація",
+          "Як проходить робота",
+          "Важливі деталі",
+          "Організація процесу",
+          `Робота в ${city.ua}: деталі`
+        ],
+        req: [
+          "Вимоги",
+          "Кого шукаємо",
+          "Очікування до кандидата",
+          "Критерії відбору"
+        ],
+        housing: [
+          "Проживання та транспорт",
+          "Житло й доїзд",
+          "Де жити і як доїхати",
+          `Логістика в ${city.ua}`
+        ],
+        format: [
+          "Формат роботи",
+          "Робоче середовище",
+          "Команда і адаптація",
+          "Як усе влаштовано",
+          `Робота в ${company}`
+        ],
+        daily: [
+          "Щоденні процеси",
+          "Як проходить зміна",
+          "Рутина на об'єкті",
+          "Організація дня"
+        ],
+        duties: [
+          "Ваші обов'язки:",
+          "Що потрібно робити:",
+          "Зона відповідальності:",
+          "Основні задачі:"
+        ]
+      };
+
+      const headingsPL = {
+        offers: [
+          `Co oferuje ${company}`,
+          "Nasze korzyści dla Ciebie",
+          "Dlaczego warto dołączyć",
+          `Warunki pracy w ${city.pl}`,
+          "Bonusy i świadczenia",
+          "Co oferujemy?"
+        ],
+        info: [
+          "Dodatkowe informacje",
+          "Jak wygląda praca",
+          "Ważne szczegóły",
+          "Organizacja procesu",
+          `Praca w ${city.pl}: szczegóły`
+        ],
+        req: [
+          "Wymagania",
+          "Kogo szukamy",
+          "Oczekiwania wobec kandydata",
+          "Kryteria selekcji"
+        ],
+        housing: [
+          "Zakwaterowanie i dojazd",
+          "Mieszkanie i dojazd",
+          "Gdzie mieszkasz i jak dojeżdżasz",
+          `Logistyka w ${city.pl}`
+        ],
+        format: [
+          "Format pracy",
+          "Środowisko pracy",
+          "Zespół i wdrożenie",
+          "Jak to działa",
+          `Praca w ${company}`
+        ],
+        daily: [
+          "Codzienne procesy",
+          "Jak wygląda zmiana",
+          "Rutyna na obiekcie",
+          "Organizacja dnia"
+        ],
+        duties: [
+          "Twoje obowiązki:",
+          "Co będziesz robić:",
+          "Zakres zadań:",
+          "Główne zadania:"
+        ]
+      };
 
       const hUA = {
         offers: getRandom(headingsUA.offers),
