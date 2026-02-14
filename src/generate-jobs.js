@@ -82,51 +82,16 @@ const GLOBAL_OFFERS = {
     "Підтримка при оформленні Карти Побуту.",
     "Медстрахування (ZUS) від першого дня.",
     "Понаднормові години оплачуються підвищено.",
-    "Харчування на виробництві за символічну ціну.",
     "Житло надається або компенсується (400-600 zł).",
-    "Multisport зі знижкою 50% від компанії.",
     "Безкоштовні курси польської мови.",
     "Перспектива кар'єрного зростання.",
     "Приватна медицина (LuxMed, Medicover).",
     "Премії за результати та відвідуваність.",
-    "Комфортне робоче середовище з клімат-контролем.",
     "Транспорт до місця роботи від компанії.",
     "Бонус за рекомендацію колеги (200-500 zł).",
-    "Допомога з відкриттям рахунку в банку.",
-    "Подарунки на свята для працівників.",
-    "Доплата за роботу у вихідні дні.",
     "Підвищена оплата нічних змін.",
     "Компенсація витрат на переїзд у перший місяць.",
-    "Можливість переводу на інший об'єкт компанії.",
-    "Їдальня з пільговими цінами.",
-    "Оплата медогляду та навчань BHP.",
-    "Системні бонуси через 3 місяці роботи.",
-    "Надбавка за володіння польською мовою.",
-    "Щотижневі виплати для новачків.",
-    "Компенсація проїзду громадським транспортом.",
-    "Страхування від нещасних випадків на виробництві.",
-    "Знижки у партнерських магазинах та сервісах.",
-    "Оплачувані лікарняні та відпустки.",
-    "Гнучкий графік для багатодітних сімей.",
-    "Додаткові премії перед святами.",
-    "Безкоштовні тренінги та курси підвищення кваліфікації.",
-    "Відшкодування вартості дитячого садка.",
-    "Програма адаптації для новачків (7 днів).",
-    "Можливість працювати у зручну зміну після випробувального терміну.",
-    "Сучасні роздягальні та душові на підприємстві.",
-    "Кімната відпочинку з безкоштовною кавою та чаєм.",
-    "Безкоштовний Wi-Fi на території.",
-    "Організовані корпоративи та тімбілдінги.",
-    "Оплата телефонного зв'язку для координаторів.",
-    "Можливість взяти відгул у день народження.",
-    "Програма лояльності зі знижками на послуги компанії.",
-    "Додаткові вихідні за понаднормову роботу.",
-    "Премії за виконання плану (до 1000 zł).",
-    "Безкоштовні снеки та напої під час зміни.",
-    "Компенсація вартості робочого взуття та одягу.",
-    "Щомісячні лотереї призів серед працівників.",
-    "Оплата проїзду на таксі при роботі у нічну зміну.",
-    "Підтримка психолога для працівників безкоштовно."
+    "Оплата медогляду та навчань BHP."
   ],
   pl: [
     "Oficjalne zatrudnienie od pierwszego dnia pracy.",
@@ -137,52 +102,153 @@ const GLOBAL_OFFERS = {
     "Wsparcie przy wyrobieniu Karty Pobytu.",
     "Ubezpieczenie zdrowotne (ZUS) od dnia 1.",
     "Nadgodziny płatne po wyższej stawce.",
-    "Wyżywienie w zakładzie w symbolicznej cenie.",
     "Mieszkanie zapewnione lub dopłata (400-600 zł).",
-    "Multisport z 50% zniżką od firmy.",
     "Bezpłatne kursy języka polskiego.",
     "Perspektywa awansu zawodowego.",
     "Prywatna opieka medyczna (LuxMed, Medicover).",
     "Premie za wyniki i frekwencję.",
-    "Komfortowe środowisko pracy z klimatyzacją.",
     "Transport do pracy zapewniany przez firmę.",
     "Bonus za polecenie kolegi (200-500 zł).",
-    "Pomoc z założeniem konta bankowego.",
-    "Prezenty świąteczne dla pracowników.",
-    "Dodatek za pracę w weekendy.",
     "Podwyższona stawka za zmiany nocne.",
     "Zwrot kosztów przeprowadzki w pierwszym miesiącu.",
-    "Możliwość transferu do innego oddziału firmy.",
-    "Stołówka z cenami preferencyjnymi.",
-    "Pokrycie kosztów badań lekarskich i szkoleń BHP.",
-    "Bonusy systemowe po 3 miesiącach pracy.",
-    "Dodatek za znajomość języka polskiego.",
-    "Tygodniowe wypłaty dla nowych pracowników.",
-    "Zwrot kosztów komunikacji miejskiej.",
-    "Ubezpieczenie od wypadków w pracy.",
-    "Zniżki u partnerów i w sklepach firmowych.",
-    "Płatne zwolnienia lekarskie i urlopy.",
-    "Elastyczny grafik dla rodzin wielodzietnych.",
-    "Dodatkowe premie przed świętami.",
-    "Bezpłatne szkolenia zawodowe.",
-    "Zwrot kosztów przedszkola.",
-    "Program adaptacji dla nowych (7 dni).",
-    "Możliwość wyboru dogodnej zmiany po okresie próbnym.",
-    "Nowoczesne szatnie i prysznice na zakładzie.",
-    "Pokój relaksu z darmową kawą i herbatą.",
-    "Darmowe Wi-Fi na terenie zakładu.",
-    "Organizowane imprezy integracyjne.",
-    "Zwrot kosztów telefonu dla koordynatorów.",
-    "Dzień wolny w dniu urodzin.",
-    "Program lojalnościowy ze zniżkami.",
-    "Dodatkowe dni wolne za nadgodziny.",
-    "Premie za realizację planu (do 1000 zł).",
-    "Bezpłatne przekąski i napoje podczas zmiany.",
-    "Zwrot kosztów odzieży i obuwia roboczego.",
-    "Comiesięczne loterie nagród.",
-    "Zwrot kosztów taksówki przy pracy nocnej.",
-    "Bezpłatne wsparcie psychologa."
+    "Pokrycie kosztów badań lekarskich i szkoleń BHP."
   ]
+};
+
+// Category-specific offers for better diversity
+const CATEGORY_SPECIFIC_OFFERS = {
+  logistics: {
+    ua: [
+      "Власний автомобіль компенсується (до 2000 zł/міс).",
+      "Бензин за рахунок компанії.",
+      "GPS-навігація та смартфон від роботодавця.",
+      "Сучасний автопарк (до 2 років).",
+      "Паркінг для особистого авто біля офісу.",
+      "Бонуси за швидку доставку.",
+      "Премії за високу якість обслуговування клієнтів.",
+      "Гнучкий графік доставки."
+    ],
+    pl: [
+      "Zwrot kosztów własnego auta (do 2000 zł/mies.).",
+      "Paliwo pokrywane przez firmę.",
+      "GPS i smartfon od pracodawcy.",
+      "Nowoczesna flota (do 2 lat).",
+      "Parking dla auta prywatnego przy biurze.",
+      "Bonusy za szybkie dostawy.",
+      "Premie za wysoką jakość obsługi klientów.",
+      "Elastyczny harmonogram dostaw."
+    ]
+  },
+  construction: {
+    ua: [
+      "Сучасні інструменти та обладнання.",
+      "Спецодяг та захист (каска, рукавиці) безкоштовно.",
+      "Робота на нових об'єктах.",
+      "Доплата за роботу на висоті.",
+      "Система премій за якісну роботу.",
+      "Навчання новим технологіям.",
+      "Можливість роботи у бригаді земляків.",
+      "Оплата за обсяг виконаних робіт."
+    ],
+    pl: [
+      "Nowoczesne narzędzia i sprzęt.",
+      "Odzież ochronna (kask, rękawice) za darmo.",
+      "Praca na nowych obiektach.",
+      "Dodatek za pracę na wysokości.",
+      "System premii za jakość.",
+      "Szkolenia z nowych technologii.",
+      "Możliwość pracy w zespole rodaków.",
+      "Wynagrodzenie akordowe."
+    ]
+  },
+  production: {
+    ua: [
+      "Кондиціонер влітку, опалення взимку.",
+      "Роздягальні з душем на підприємстві.",
+      "Безкоштовна кава та чай на робочому місці.",
+      "Сучасні виробничі лінії.",
+      "Чисте та світле приміщення.",
+      "Комфортна температура в цеху.",
+      "Їдальня з пільговими цінами.",
+      "Регулярні перерви на відпочинок."
+    ],
+    pl: [
+      "Klimatyzacja latem, ogrzewanie zimą.",
+      "Szatnie z prysznicami na zakładzie.",
+      "Darmowa kawa i herbata w miejscu pracy.",
+      "Nowoczesne linie produkcyjne.",
+      "Czyste i jasne pomieszczenia.",
+      "Komfortowa temperatura w hali.",
+      "Stołówka z preferencyjnymi cenami.",
+      "Regularne przerwy na odpoczynek."
+    ]
+  },
+  agriculture: {
+    ua: [
+      "Робота на свіжому повітрі.",
+      "Проживання біля місця роботи.",
+      "Гарантована зайнятість весь сезон.",
+      "Додаткові премії за продуктивність.",
+      "Безкоштовне харчування.",
+      "Зручне житло з усіма зручностями.",
+      "Можливість працювати всією сім'єю.",
+      "Оплата щотижня."
+    ],
+    pl: [
+      "Praca na świeżym powietrzu.",
+      "Zakwaterowanie blisko pracy.",
+      "Gwarantowane zatrudnienie przez cały sezon.",
+      "Premie za wydajność.",
+      "Darmowe wyżywienie.",
+      "Wygodne mieszkanie z pełnym wyposażeniem.",
+      "Możliwość pracy całą rodziną.",
+      "Wypłaty co tydzień."
+    ]
+  },
+  cleaning: {
+    ua: [
+      "Професійна хімія від компанії.",
+      "Сучасне обладнання для прибирання.",
+      "Графік без перевантажень.",
+      "Робота в офісних приміщеннях.",
+      "Зручний час роботи (після 17:00).",
+      "Невеликі об'єкти для прибирання.",
+      "Підтримка супервайзера.",
+      "Додаткові премії за якість."
+    ],
+    pl: [
+      "Profesjonalna chemia od firmy.",
+      "Nowoczesny sprzęt do sprzątania.",
+      "Grafik bez przeciążeń.",
+      "Praca w biurach.",
+      "Wygodne godziny pracy (po 17:00).",
+      "Małe obiekty do sprzątania.",
+      "Wsparcie przełożonego.",
+      "Dodatkowe premie za jakość."
+    ]
+  },
+  hospitality: {
+    ua: [
+      "Робота в чистих та теплих приміщеннях.",
+      "Безкоштовне харчування під час зміни.",
+      "Чайові від гостей.",
+      "Дружня команда.",
+      "Навчання на місці.",
+      "Можливість підробітку на банкетах.",
+      "Зручний графік з можливістю вибору змін.",
+      "Система додаткових премій."
+    ],
+    pl: [
+      "Praca w czystych i ciepłych pomieszczeniach.",
+      "Darmowy posiłek podczas zmiany.",
+      "Napiwki od gości.",
+      "Przyjazny zespół.",
+      "Szkolenie na miejscu.",
+      "Możliwość dodatkowych godzin na bankietach.",
+      "Wygodny grafik z wyborem zmian.",
+      "System dodatkowych premii."
+    ]
+  }
 };
 
 const SUPPORT_NOTES = {
@@ -1122,6 +1188,14 @@ function generateSalary(min, max) {
   return `${sMin} - ${sMax} PLN`;
 }
 
+function generateRandomDate() {
+  // Generate realistic dates with 6-12 month spread (180-365 days ago)
+  const daysAgo = Math.floor(Math.random() * 185 + 180);
+  const randomDate = new Date();
+  randomDate.setDate(randomDate.getDate() - daysAgo);
+  return randomDate.toISOString().split('T')[0];
+}
+
 const JOBS_DB = [];
 let jobCounter = 1;
 const usedSignatures = new Set();
@@ -1197,25 +1271,6 @@ Object.keys(ROLES).forEach(catKey => {
       let signature;
       let tries = 0;
 
-      const headingsUA = {
-        offers: ["Що ми пропонуємо?", "Умови та бонуси", "Переваги роботи", "Що входить у пакет?"],
-        info: ["Додаткова інформація", "Як проходить робота", "Важливі деталі", "Організація процесу"],
-        req: ["Вимоги", "Кого шукаємо", "Очікування до кандидата", "Критерії"],
-        housing: ["Проживання та транспорт", "Житло й доїзд", "Де жити і як доїхати", "Логістика"],
-        format: ["Формат роботи", "Робоче середовище", "Команда і адаптація", "Як усе влаштовано"],
-        daily: ["Щоденні процеси", "Як проходить зміна", "Рутина на об’єкті", "Організація дня"],
-        duties: ["Ваші обов'язки:", "Що потрібно робити:", "Зона відповідальності:", "Основні задачі:"]
-      };
-
-      const headingsPL = {
-        offers: ["Co oferujemy?", "Warunki i bonusy", "Korzyści z pracy", "Pakiet dla pracownika"],
-        info: ["Dodatkowe informacje", "Jak wygląda praca", "Ważne szczegóły", "Organizacja procesu"],
-        req: ["Wymagania", "Kogo szukamy", "Oczekiwania wobec kandydata", "Kryteria"],
-        housing: ["Zakwaterowanie i dojazd", "Mieszkanie i dojazd", "Gdzie mieszkasz i jak dojeżdżasz", "Logistyka"],
-        format: ["Format pracy", "Środowisko pracy", "Zespół i wdrożenie", "Jak to działa"],
-        daily: ["Codzienne procesy", "Jak wygląda zmiana", "Rutyna na obiekcie", "Organizacja dnia"],
-        duties: ["Twoje obowiązki:", "Co będziesz robić:", "Zakres zadań:", "Główne zadania:"]
-      };
 
       do {
         titleUA = getRandom(jobTemplate.titles_ua);
@@ -1223,6 +1278,7 @@ Object.keys(ROLES).forEach(catKey => {
         salary = generateSalary(jobTemplate.salary.min, jobTemplate.salary.max);
 
         company = getRandom(AGENCIES);
+        
         
         // SYNC UA/PL: Use same index for shifts, patterns, start, contracts
         const shiftIndex = Math.floor(Math.random() * Math.min(SHIFTS.ua.length, SHIFTS.pl.length));
@@ -1247,9 +1303,18 @@ Object.keys(ROLES).forEach(catKey => {
         tasksUA = taskItemsUA.map(t => `<li>${t}</li>`).join('');
         tasksPL = taskItemsPL.map(t => `<li>${t}</li>`).join('');
 
-        const offerCount = 4 + Math.floor(Math.random() * 3);
-        offerItemsUA = getMultipleRandom(GLOBAL_OFFERS.ua, offerCount);
-        offerItemsPL = getMultipleRandom(GLOBAL_OFFERS.pl, offerCount);
+        // Mix 3 global offers with 4 category-specific offers for better variety
+        const categoryOffersUA = CATEGORY_SPECIFIC_OFFERS[catKey]?.ua || [];
+        const categoryOffersPL = CATEGORY_SPECIFIC_OFFERS[catKey]?.pl || [];
+        
+        offerItemsUA = [
+          ...getMultipleRandom(GLOBAL_OFFERS.ua, 3),
+          ...getMultipleRandom(categoryOffersUA, Math.min(4, categoryOffersUA.length))
+        ];
+        offerItemsPL = [
+          ...getMultipleRandom(GLOBAL_OFFERS.pl, 3),
+          ...getMultipleRandom(categoryOffersPL, Math.min(4, categoryOffersPL.length))
+        ];
         offersUA = offerItemsUA.map(o => `<li>${o}</li>`).join('');
         offersPL = offerItemsPL.map(o => `<li>${o}</li>`).join('');
 
@@ -1367,6 +1432,105 @@ Object.keys(ROLES).forEach(catKey => {
 
       const slug = `${city.slug}-${catKey}-${titlePL.toLowerCase().replace(/ł/g, 'l').replace(/ń/g, 'n').replace(/[^a-z0-9]+/g, '-')}-${jobCounter++}`;
 
+      // Define parameterized headings after company and city are finalized
+      const headingsUA = {
+        offers: [
+          `Що пропонує ${company}`,
+          "Наші переваги для вас",
+          "Чому варто приєднатися",
+          `Умови роботи в ${city.ua}`,
+          "Бонуси та компенсації",
+          "Що ми пропонуємо?"
+        ],
+        info: [
+          "Додаткова інформація",
+          "Як проходить робота",
+          "Важливі деталі",
+          "Організація процесу",
+          `Робота в ${city.ua}: деталі`
+        ],
+        req: [
+          "Вимоги",
+          "Кого шукаємо",
+          "Очікування до кандидата",
+          "Критерії відбору"
+        ],
+        housing: [
+          "Проживання та транспорт",
+          "Житло й доїзд",
+          "Де жити і як доїхати",
+          `Логістика в ${city.ua}`
+        ],
+        format: [
+          "Формат роботи",
+          "Робоче середовище",
+          "Команда і адаптація",
+          "Як усе влаштовано",
+          `Робота в ${company}`
+        ],
+        daily: [
+          "Щоденні процеси",
+          "Як проходить зміна",
+          "Рутина на об'єкті",
+          "Організація дня"
+        ],
+        duties: [
+          "Ваші обов'язки:",
+          "Що потрібно робити:",
+          "Зона відповідальності:",
+          "Основні задачі:"
+        ]
+      };
+
+      const headingsPL = {
+        offers: [
+          `Co oferuje ${company}`,
+          "Nasze korzyści dla Ciebie",
+          "Dlaczego warto dołączyć",
+          `Warunki pracy w ${city.pl}`,
+          "Bonusy i świadczenia",
+          "Co oferujemy?"
+        ],
+        info: [
+          "Dodatkowe informacje",
+          "Jak wygląda praca",
+          "Ważne szczegóły",
+          "Organizacja procesu",
+          `Praca w ${city.pl}: szczegóły`
+        ],
+        req: [
+          "Wymagania",
+          "Kogo szukamy",
+          "Oczekiwania wobec kandydata",
+          "Kryteria selekcji"
+        ],
+        housing: [
+          "Zakwaterowanie i dojazd",
+          "Mieszkanie i dojazd",
+          "Gdzie mieszkasz i jak dojeżdżasz",
+          `Logistyka w ${city.pl}`
+        ],
+        format: [
+          "Format pracy",
+          "Środowisko pracy",
+          "Zespół i wdrożenie",
+          "Jak to działa",
+          `Praca w ${company}`
+        ],
+        daily: [
+          "Codzienne procesy",
+          "Jak wygląda zmiana",
+          "Rutyna na obiekcie",
+          "Organizacja dnia"
+        ],
+        duties: [
+          "Twoje obowiązki:",
+          "Co będziesz robić:",
+          "Zakres zadań:",
+          "Główne zadania:"
+        ]
+      };
+
       const hUA = {
         offers: getRandom(headingsUA.offers),
         info: getRandom(headingsUA.info),
@@ -1452,63 +1616,302 @@ Object.keys(ROLES).forEach(catKey => {
         ...detailItemsPL
       ];
 
-      const bodyUA = `
-        <div class="vacancy-block">
-          <p>${introUA}</p>
-          <p>${humanNoteUA}</p>
-          ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
-          <div class="job-meta">
-            <p><strong>🏢 Компанія:</strong> ${company}</p>
-            <p><strong>📍 Місто:</strong> ${city.ua}</p>
+      // Create 5 different HTML structure layout variants
+      const layoutVariant = jobCounter % 5;
+      
+      let bodyUA, bodyPL;
+      const cssClass = ['vacancy-block', 'job-info-block', 'vacancy-details', 'position-card', 'job-listing-block'][layoutVariant];
+      
+      if (layoutVariant === 0) {
+        // Layout 1: duties -> offers -> requirements -> housing -> format -> daily
+        bodyUA = `
+          <div class="${cssClass}">
+            <p>${introUA}</p>
+            <p>${humanNoteUA}</p>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
+            <div class="job-meta">
+              <p><strong>🏢 Компанія:</strong> ${company}</p>
+              <p><strong>📍 Місто:</strong> ${city.ua}</p>
+            </div>
+            <hr>
+            <h3>Короткі умови</h3>
+            ${summaryUA}
+            <h3>${hUA.duties}</h3>
+            <ul>${tasksUA}</ul>
+            <h3>${hUA.offers}</h3>
+            <ul>${offersUA}</ul>
+            <h3>${hUA.req}</h3>
+            <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hUA.housing}</h3>
+            <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.format}</h3>
+            <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.daily}</h3>
+            <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
           </div>
-          <hr>
-          <h3>Короткі умови</h3>
-          ${summaryUA}
-          <h3>${hUA.duties}</h3>
-          <ul>${tasksUA}</ul>
-          <h3>${hUA.req}</h3>
-          <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>${hUA.offers}</h3>
-          <ul>${offersUA}</ul>
-          <h3>${hUA.housing}</h3>
-          <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
-          <h3>${hUA.format}</h3>
-          <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
-          <h3>${hUA.daily}</h3>
-          <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
-          <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
-        </div>
-        <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
-      `;
-
-      const bodyPL = `
-        <div class="vacancy-block">
-          <p>${introPL}</p>
-          <p>${humanNotePL}</p>
-          ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
-          <div class="job-meta">
-            <p><strong>🏢 Firma:</strong> ${company}</p>
-            <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+          <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+        `;
+        
+        bodyPL = `
+          <div class="${cssClass}">
+            <p>${introPL}</p>
+            <p>${humanNotePL}</p>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
+            <div class="job-meta">
+              <p><strong>🏢 Firma:</strong> ${company}</p>
+              <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+            </div>
+            <hr>
+            <h3>Krótkie warunki</h3>
+            ${summaryPL}
+            <h3>${hPL.duties}</h3>
+            <ul>${tasksPL}</ul>
+            <h3>${hPL.offers}</h3>
+            <ul>${offersPL}</ul>
+            <h3>${hPL.req}</h3>
+            <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hPL.housing}</h3>
+            <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.format}</h3>
+            <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.daily}</h3>
+            <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
           </div>
-          <hr>
-          <h3>Krótkie warunki</h3>
-          ${summaryPL}
-          <h3>${hPL.duties}</h3>
-          <ul>${tasksPL}</ul>
-          <h3>${hPL.req}</h3>
-          <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
-          <h3>${hPL.offers}</h3>
-          <ul>${offersPL}</ul>
-          <h3>${hPL.housing}</h3>
-          <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
-          <h3>${hPL.format}</h3>
-          <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
-          <h3>${hPL.daily}</h3>
-          <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
-          <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
-        </div>
-        <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
-      `;
+          <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+        `;
+      } else if (layoutVariant === 1) {
+        // Layout 2: offers -> duties -> requirements -> housing -> format -> daily
+        bodyUA = `
+          <div class="${cssClass}">
+            <p>${introUA}</p>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
+            <h3>Короткі умови</h3>
+            ${summaryUA}
+            <p>${humanNoteUA}</p>
+            <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
+            <h3>${hUA.offers}</h3>
+            <ul>${offersUA}</ul>
+            <h3>${hUA.duties}</h3>
+            <ul>${tasksUA}</ul>
+            <h3>${hUA.req}</h3>
+            <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hUA.housing}</h3>
+            <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.format}</h3>
+            <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.daily}</h3>
+            <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="job-meta">
+              <p><strong>🏢 Компанія:</strong> ${company}</p>
+              <p><strong>📍 Місто:</strong> ${city.ua}</p>
+            </div>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+        `;
+        
+        bodyPL = `
+          <div class="${cssClass}">
+            <p>${introPL}</p>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
+            <h3>Krótkie warunki</h3>
+            ${summaryPL}
+            <p>${humanNotePL}</p>
+            <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
+            <h3>${hPL.offers}</h3>
+            <ul>${offersPL}</ul>
+            <h3>${hPL.duties}</h3>
+            <ul>${tasksPL}</ul>
+            <h3>${hPL.req}</h3>
+            <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hPL.housing}</h3>
+            <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.format}</h3>
+            <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.daily}</h3>
+            <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="job-meta">
+              <p><strong>🏢 Firma:</strong> ${company}</p>
+              <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+            </div>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+        `;
+      } else if (layoutVariant === 2) {
+        // Layout 3: requirements -> duties -> offers -> housing -> format -> daily
+        bodyUA = `
+          <div class="${cssClass}">
+            <p>${introUA}</p>
+            <p>${humanNoteUA}</p>
+            <div class="job-meta">
+              <p><strong>🏢 Компанія:</strong> ${company}</p>
+              <p><strong>📍 Місто:</strong> ${city.ua}</p>
+            </div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
+            <h3>Короткі умови</h3>
+            ${summaryUA}
+            <h3>${hUA.req}</h3>
+            <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hUA.duties}</h3>
+            <ul>${tasksUA}</ul>
+            <h3>${hUA.offers}</h3>
+            <ul>${offersUA}</ul>
+            <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
+            <h3>${hUA.housing}</h3>
+            <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.format}</h3>
+            <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.daily}</h3>
+            <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+        `;
+        
+        bodyPL = `
+          <div class="${cssClass}">
+            <p>${introPL}</p>
+            <p>${humanNotePL}</p>
+            <div class="job-meta">
+              <p><strong>🏢 Firma:</strong> ${company}</p>
+              <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+            </div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
+            <h3>Krótkie warunki</h3>
+            ${summaryPL}
+            <h3>${hPL.req}</h3>
+            <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hPL.duties}</h3>
+            <ul>${tasksPL}</ul>
+            <h3>${hPL.offers}</h3>
+            <ul>${offersPL}</ul>
+            <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
+            <h3>${hPL.housing}</h3>
+            <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.format}</h3>
+            <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.daily}</h3>
+            <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+        `;
+      } else if (layoutVariant === 3) {
+        // Layout 4: format -> duties -> offers -> requirements -> housing -> daily
+        bodyUA = `
+          <div class="${cssClass}">
+            <p>${introUA}</p>
+            <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
+            <h3>Короткі умови</h3>
+            ${summaryUA}
+            <p>${humanNoteUA}</p>
+            <h3>${hUA.format}</h3>
+            <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.duties}</h3>
+            <ul>${tasksUA}</ul>
+            <h3>${hUA.offers}</h3>
+            <ul>${offersUA}</ul>
+            <h3>${hUA.req}</h3>
+            <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hUA.housing}</h3>
+            <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.daily}</h3>
+            <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="job-meta">
+              <p><strong>🏢 Компанія:</strong> ${company}</p>
+              <p><strong>📍 Місто:</strong> ${city.ua}</p>
+            </div>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+        `;
+        
+        bodyPL = `
+          <div class="${cssClass}">
+            <p>${introPL}</p>
+            <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
+            <h3>Krótkie warunki</h3>
+            ${summaryPL}
+            <p>${humanNotePL}</p>
+            <h3>${hPL.format}</h3>
+            <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.duties}</h3>
+            <ul>${tasksPL}</ul>
+            <h3>${hPL.offers}</h3>
+            <ul>${offersPL}</ul>
+            <h3>${hPL.req}</h3>
+            <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hPL.housing}</h3>
+            <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.daily}</h3>
+            <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="job-meta">
+              <p><strong>🏢 Firma:</strong> ${company}</p>
+              <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+            </div>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+        `;
+      } else {
+        // Layout 5: housing -> duties -> offers -> requirements -> format -> daily
+        bodyUA = `
+          <div class="${cssClass}">
+            <p>${introUA}</p>
+            <p>${humanNoteUA}</p>
+            <div class="job-meta">
+              <p><strong>🏢 Компанія:</strong> ${company}</p>
+              <p><strong>📍 Місто:</strong> ${city.ua}</p>
+            </div>
+            <hr>
+            <h3>Короткі умови</h3>
+            ${summaryUA}
+            <div class="salary-box">💰 Зарплата: <strong>${salary}</strong></div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].ua + '</p>' : ''}
+            <h3>${hUA.housing}</h3>
+            <ul>${practicalItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.duties}</h3>
+            <ul>${tasksUA}</ul>
+            <h3>${hUA.offers}</h3>
+            <ul>${offersUA}</ul>
+            <h3>${hUA.req}</h3>
+            <ul>${requirementItemsUA.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hUA.format}</h3>
+            <ul>${formatItemsUA.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hUA.daily}</h3>
+            <ul>${dailyUA.map(i => `<li>${i}</li>`).join('')}</ul>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Відгукнутися на вакансію</a>
+        `;
+        
+        bodyPL = `
+          <div class="${cssClass}">
+            <p>${introPL}</p>
+            <p>${humanNotePL}</p>
+            <div class="job-meta">
+              <p><strong>🏢 Firma:</strong> ${company}</p>
+              <p><strong>📍 Miasto:</strong> ${city.pl}</p>
+            </div>
+            <hr>
+            <h3>Krótkie warunki</h3>
+            ${summaryPL}
+            <div class="salary-box">💰 Wynagrodzenie: <strong>${salary}</strong></div>
+            ${CITY_CONTEXT[city.slug] ? '<p class="city-context">' + CITY_CONTEXT[city.slug].pl + '</p>' : ''}
+            <h3>${hPL.housing}</h3>
+            <ul>${practicalItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.duties}</h3>
+            <ul>${tasksPL}</ul>
+            <h3>${hPL.offers}</h3>
+            <ul>${offersPL}</ul>
+            <h3>${hPL.req}</h3>
+            <ul>${requirementItemsPL.map(r => `<li>${r}</li>`).join('')}</ul>
+            <h3>${hPL.format}</h3>
+            <ul>${formatItemsPL.map(i => `<li>${i}</li>`).join('')}</ul>
+            <h3>${hPL.daily}</h3>
+            <ul>${dailyPL.map(i => `<li>${i}</li>`).join('')}</ul>
+          </div>
+          <a href="/apply.html" class="btn btn-primary">Aplikuj teraz</a>
+        `;
+      }
 
       // Always add city to title for uniqueness and local SEO
       const cityPrepositions = ['у', 'в', '—'];
@@ -1561,14 +1964,18 @@ Object.keys(ROLES).forEach(catKey => {
         daily_ua: dailyUA,
         daily_pl: dailyPL,
         excerpt: getRandom([
-          `${company} шукає: ${finalTitleUA}. Графік: ${shiftsUA}, режим: ${patternUA}. ${getRandom(jobTemplate.desc_ua)}`,
-          `${finalTitleUA} у ${company}: старт ${startUA}, договір ${contractUA}. ${getRandom(jobTemplate.desc_ua)}`,
-          `${company} відкриває набір на ${finalTitleUA}. Формат: ${shiftsUA}, ${patternUA}. ${getRandom(jobTemplate.desc_ua)}`
+          `Шукаємо ${finalTitleUA} в ${city.ua}. Заробіток: ${salary}. Графік: ${shiftsUA}. Можливий старт: ${startUA}.`,
+          `${company} запрошує на роботу ${finalTitleUA}. Локація: ${city.ua}. Режим: ${patternUA}. Оплата: ${salary}.`,
+          `Вакансія ${finalTitleUA} у ${city.ua}. Графік ${shiftsUA}, зарплата ${salary}. Виходимо з ${startUA}.`,
+          `Робота в ${city.ua}: ${finalTitleUA}. ${patternUA}, ${salary}. Старт можливий ${startUA}.`,
+          `${company} шукає: ${finalTitleUA}. Графік: ${shiftsUA}, режим: ${patternUA}. ${getRandom(jobTemplate.desc_ua)}`
         ]),
         excerpt_pl: getRandom([
-          `${company} poszukuje: ${finalTitlePL}. Grafik: ${shiftsPL}, system: ${patternPL}. ${getRandom(jobTemplate.desc_pl)}`,
-          `${finalTitlePL} w ${company}: start ${startPL}, umowa ${contractPL}. ${getRandom(jobTemplate.desc_pl)}`,
-          `${company} prowadzi rekrutację na ${finalTitlePL}. Tryb pracy: ${shiftsPL}, ${patternPL}. ${getRandom(jobTemplate.desc_pl)}`
+          `Szukamy ${finalTitlePL} w ${city.pl}. Zarobki: ${salary}. Grafik: ${shiftsPL}. Możliwy start: ${startPL}.`,
+          `${company} zaprasza do pracy ${finalTitlePL}. Lokalizacja: ${city.pl}. System: ${patternPL}. Płatność: ${salary}.`,
+          `Wakaty ${finalTitlePL} w ${city.pl}. Grafik ${shiftsPL}, wynagrodzenie ${salary}. Start od ${startPL}.`,
+          `Praca w ${city.pl}: ${finalTitlePL}. ${patternPL}, ${salary}. Start możliwy ${startPL}.`,
+          `${company} poszukuje: ${finalTitlePL}. Grafik: ${shiftsPL}, system: ${patternPL}. ${getRandom(jobTemplate.desc_pl)}`
         ]),
         body: bodyUA,
         body_pl: bodyPL,
@@ -1578,9 +1985,7 @@ Object.keys(ROLES).forEach(catKey => {
         country: "Poland",
         language: "uk",
         employment_type: "full-time",
-        date_posted: new Date().toISOString(),
-        is_generated: true,
-        data_source: "generated"
+        date_posted: generateRandomDate()
       };
       
       // Add sector/equipment only for specific categories
