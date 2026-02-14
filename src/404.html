@@ -24,74 +24,286 @@
   <!-- End Google Tag Manager -->
   
   <style>
-    .error-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 60vh;
+    /* ── Hero section ── */
+    .error-hero {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .error-hero::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      left: -20%;
+      width: 140%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(0,166,126,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
     .error-code {
-      font-size: 8rem;
+      font-size: 7rem;
       font-weight: 900;
-      color: var(--color-accent);
       line-height: 1;
-      margin: 0;
-      background: linear-gradient(135deg, #00a67e, #0f766e);
+      margin: 0 0 0.5rem;
+      background: linear-gradient(135deg, #00a67e, #0f766e, #065f46);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: -3px;
     }
     .error-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: var(--color-primary);
-      margin: 1rem 0;
+      margin: 0.5rem 0 1rem;
+      font-weight: 700;
     }
     .error-text {
       font-size: 1.1rem;
       color: var(--color-secondary);
-      margin-bottom: 2rem;
-      max-width: 500px;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
     }
     .error-actions {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
-    }
-    .error-illustration {
-      font-size: 5rem;
       margin-bottom: 1rem;
-      animation: float 3s ease-in-out infinite;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+    .error-actions .btn-primary {
+      padding: 0.85rem 2rem;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 14px rgba(0,166,126,0.3);
     }
-    .error-suggestions {
-      margin-top: 3rem;
-      padding: 1.5rem;
-      background: var(--color-surface);
-      border-radius: 12px;
-      border: 1px solid var(--color-border);
-      max-width: 500px;
-      width: 100%;
-      text-align: left;
-    }
-    .error-suggestions h3 { color: var(--color-primary); margin-top: 0; }
-    .error-suggestions ul { list-style: none; padding: 0; margin: 0; }
-    .error-suggestions li { margin-bottom: 0.5rem; }
-    .error-suggestions a { color: var(--color-accent); text-decoration: none; font-weight: 500; }
-    .error-suggestions a:hover { text-decoration: underline; }
 
+    /* ── Stats bar ── */
+    .error-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1.5rem 0;
+      margin: 1rem 0 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .error-stat {
+      text-align: center;
+    }
+    .error-stat__num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      display: block;
+    }
+    .error-stat__label {
+      font-size: 0.85rem;
+      color: var(--color-secondary);
+    }
+
+    /* ── Vacancy cards ── */
+    .error-vacancies {
+      padding: 2.5rem 0;
+    }
+    .error-vacancies__title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--color-primary);
+    }
+    .error-vacancies__subtitle {
+      text-align: center;
+      color: var(--color-secondary);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+    .error-vacancies__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .error-vacancy-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 1.3rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .error-vacancy-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: var(--color-accent);
+    }
+    .error-vacancy-card__title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .error-vacancy-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--color-secondary);
+    }
+    .error-vacancy-card__meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .error-vacancy-card__salary {
+      font-weight: 700;
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+    .error-all-btn {
+      display: block;
+      text-align: center;
+    }
+
+    /* ── Categories ── */
+    .error-categories {
+      padding: 2rem 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .error-categories__title {
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--color-primary);
+    }
+    .error-categories__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.8rem;
+    }
+    .error-category-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 1rem 1.2rem;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .error-category-link:hover {
+      border-color: var(--color-accent);
+      background: #f0fdf4;
+      color: var(--color-accent);
+    }
+    .error-category-link__icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Contact block ── */
+    .error-contact {
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--color-border);
+    }
+    .error-contact__inner {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      border: 1px solid #bbf7d0;
+    }
+    .error-contact__title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--color-primary);
+    }
+    .error-contact__text {
+      color: var(--color-secondary);
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .error-contact__links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .error-contact__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .error-contact__link--tg {
+      background: #0088cc;
+      color: #fff;
+    }
+    .error-contact__link--tg:hover { background: #006daa; }
+    .error-contact__link--email {
+      background: var(--color-accent, #00a67e);
+      color: #fff;
+    }
+    .error-contact__link--email:hover { opacity: 0.9; }
+
+    /* ── Loading state ── */
+    .error-vacancies__loading {
+      text-align: center;
+      padding: 2rem;
+      color: var(--color-secondary);
+    }
+    .error-vacancies__loading .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--color-border);
+      border-top-color: var(--color-accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ── */
     @media (max-width: 768px) {
-      .error-page { padding: 1rem; min-height: 50vh; }
       .error-code { font-size: 5rem; }
-      .error-title { font-size: 1.5rem; }
-      .error-illustration { font-size: 3rem; }
-      .error-suggestions { padding: 1rem; margin-top: 2rem; }
+      .error-title { font-size: 1.4rem; }
+      .error-stats { gap: 1.5rem; }
+      .error-stat__num { font-size: 1.5rem; }
+      .error-vacancies__grid { grid-template-columns: 1fr; }
+      .error-categories__grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+      .error-contact__inner { padding: 1.5rem; }
+      .error-contact__links { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -163,37 +375,144 @@
   </header>
 
   <main class="container">
-    <div class="error-page">
-      <div class="error-illustration">🔍💼</div>
+    <!-- ── Hero section ── -->
+    <section class="error-hero">
+      <div data-lang-content="ua" class="error-badge">💼 Вакансію закрито — але є 300+ інших!</div>
+      <div data-lang-content="pl" style="display:none" class="error-badge">💼 Oferta wygasła — ale jest 300+ innych!</div>
+      
       <h1 class="error-code">404</h1>
-      <h2 class="error-title" data-i18n="404.heading">Сторінка не знайдена</h2>
-      <p class="error-text" data-i18n="404.message">
-        На жаль, сторінка, яку ви шукаєте, не існує або була переміщена.
+      
+      <h2 data-lang-content="ua" class="error-title">Ця сторінка більше не доступна</h2>
+      <h2 data-lang-content="pl" style="display:none" class="error-title">Ta strona nie jest już dostępna</h2>
+      
+      <p data-lang-content="ua" class="error-text">
+        Можливо, вакансія була закрита або сторінку переміщено. Але не хвилюйтесь — у нас щодня з'являються нові пропозиції роботи у Польщі. Перегляньте актуальні вакансії нижче або скористайтесь пошуком.
       </p>
+      <p data-lang-content="pl" style="display:none" class="error-text">
+        Być może oferta pracy została zamknięta lub strona została przeniesiona. Ale nie martw się — codziennie pojawiają się u nas nowe oferty pracy w Polsce. Sprawdź aktualne oferty poniżej lub skorzystaj z wyszukiwarki.
+      </p>
+      
       <div class="error-actions">
-        <a href="/" class="btn-primary" data-i18n="404.home">Повернутись на головну</a>
-        <a href="/vacancies.html" class="btn-outline" data-i18n="404.jobs">Переглянути вакансії</a>
-        <a href="/contact.html" class="btn-outline" data-i18n="404.contact">Зв'язатися з нами</a>
+        <a href="/vacancies.html" class="btn-primary" data-i18n="404.jobs_all">
+          <span data-lang-content="ua">📋 Всі актуальні вакансії</span>
+          <span data-lang-content="pl" style="display:none">📋 Wszystkie aktualne oferty</span>
+        </a>
+        <a href="/apply.html" class="btn-outline" data-i18n="nav.cta">
+          <span data-lang-content="ua">✍️ Отримати консультацію</span>
+          <span data-lang-content="pl" style="display:none">✍️ Uzyskaj konsultację</span>
+        </a>
+      </div>
+
+      <div class="error-stats">
+        <div class="error-stat">
+          <span class="error-stat__num" id="stat-vacancies">300+</span>
+          <span data-lang-content="ua" class="error-stat__label">вакансій</span>
+          <span data-lang-content="pl" style="display:none" class="error-stat__label">ofert pracy</span>
+        </div>
+        <div class="error-stat">
+          <span class="error-stat__num">15+</span>
+          <span data-lang-content="ua" class="error-stat__label">міст Польщі</span>
+          <span data-lang-content="pl" style="display:none" class="error-stat__label">miast w Polsce</span>
+        </div>
+        <div class="error-stat">
+          <span class="error-stat__num">24/7</span>
+          <span data-lang-content="ua" class="error-stat__label">підтримка</span>
+          <span data-lang-content="pl" style="display:none" class="error-stat__label">wsparcie</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Popular vacancies (loaded dynamically) ── -->
+    <section class="error-vacancies">
+      <h2 data-lang-content="ua" class="error-vacancies__title">🔥 Популярні вакансії прямо зараз</h2>
+      <h2 data-lang-content="pl" style="display:none" class="error-vacancies__title">🔥 Popularne oferty pracy teraz</h2>
+      <p data-lang-content="ua" class="error-vacancies__subtitle">Можливо, одна з них — саме те, що ви шукали</p>
+      <p data-lang-content="pl" style="display:none" class="error-vacancies__subtitle">Może jedna z nich to dokładnie to, czego szukasz</p>
+      
+      <div id="error-vacancies-grid" class="error-vacancies__grid">
+        <div class="error-vacancies__loading">
+          <div class="spinner"></div>
+          <span data-lang-content="ua">Завантажуємо вакансії...</span>
+          <span data-lang-content="pl" style="display:none">Ładujemy oferty...</span>
+        </div>
       </div>
       
-      <div class="error-suggestions">
-        <h3 data-i18n="404.popular">Популярні розділи:</h3>
-        <ul>
-          <li>
-            <a href="/vacancies.html" data-i18n="404.link.jobs">📋 Актуальні вакансії</a>
-          </li>
-          <li>
-            <a href="/blog.html" data-i18n="404.link.blog">📰 Корисні статті в блозі</a>
-          </li>
-          <li>
-            <a href="/apply.html" data-i18n="404.link.apply">✍️ Подати заявку на роботу</a>
-          </li>
-          <li>
-            <a href="/faq.html" data-i18n="404.link.faq">❓ Часті запитання (FAQ)</a>
-          </li>
-        </ul>
+      <div class="error-all-btn">
+        <a href="/vacancies.html" class="btn-outline">
+          <span data-lang-content="ua">Переглянути всі вакансії →</span>
+          <span data-lang-content="pl" style="display:none">Zobacz wszystkie oferty →</span>
+        </a>
       </div>
-    </div>
+    </section>
+
+    <!-- ── Categories ── -->
+    <section class="error-categories">
+      <h3 data-lang-content="ua" class="error-categories__title">Шукайте за категоріями</h3>
+      <h3 data-lang-content="pl" style="display:none" class="error-categories__title">Szukaj według kategorii</h3>
+      
+      <div class="error-categories__grid">
+        <a href="/vacancies.html?category=warehouse" class="error-category-link">
+          <span class="error-category-link__icon">📦</span>
+          <span data-lang-content="ua">Склад і логістика</span>
+          <span data-lang-content="pl" style="display:none">Magazyn i logistyka</span>
+        </a>
+        <a href="/vacancies.html?category=production" class="error-category-link">
+          <span class="error-category-link__icon">🏭</span>
+          <span data-lang-content="ua">Виробництво</span>
+          <span data-lang-content="pl" style="display:none">Produkcja</span>
+        </a>
+        <a href="/vacancies.html?category=courier" class="error-category-link">
+          <span class="error-category-link__icon">🚚</span>
+          <span data-lang-content="ua">Кур'єр і доставка</span>
+          <span data-lang-content="pl" style="display:none">Kurier i dostawa</span>
+        </a>
+        <a href="/vacancies.html?category=construction" class="error-category-link">
+          <span class="error-category-link__icon">🔨</span>
+          <span data-lang-content="ua">Будівництво</span>
+          <span data-lang-content="pl" style="display:none">Budownictwo</span>
+        </a>
+        <a href="/vacancies.html?category=hotel" class="error-category-link">
+          <span class="error-category-link__icon">🏨</span>
+          <span data-lang-content="ua">Готелі та ресторани</span>
+          <span data-lang-content="pl" style="display:none">Hotele i restauracje</span>
+        </a>
+        <a href="/vacancies.html?category=cleaning" class="error-category-link">
+          <span class="error-category-link__icon">🧹</span>
+          <span data-lang-content="ua">Прибирання</span>
+          <span data-lang-content="pl" style="display:none">Sprzątanie</span>
+        </a>
+        <a href="/vacancies.html?category=security" class="error-category-link">
+          <span class="error-category-link__icon">🛡️</span>
+          <span data-lang-content="ua">Охорона</span>
+          <span data-lang-content="pl" style="display:none">Ochrona</span>
+        </a>
+        <a href="/vacancies.html?category=agriculture" class="error-category-link">
+          <span class="error-category-link__icon">🌾</span>
+          <span data-lang-content="ua">Сільське господарство</span>
+          <span data-lang-content="pl" style="display:none">Rolnictwo</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── Contact block ── -->
+    <section class="error-contact">
+      <div class="error-contact__inner">
+        <h3 data-lang-content="ua" class="error-contact__title">Не знайшли потрібну вакансію?</h3>
+        <h3 data-lang-content="pl" style="display:none" class="error-contact__title">Nie znalazłeś odpowiedniej oferty?</h3>
+        <p data-lang-content="ua" class="error-contact__text">Напишіть нам — ми підберемо вакансію під ваш досвід і побажання. Відповідаємо протягом декількох годин.</p>
+        <p data-lang-content="pl" style="display:none" class="error-contact__text">Napisz do nas — dobierzemy ofertę pod Twoje doświadczenie i oczekiwania. Odpowiadamy w ciągu kilku godzin.</p>
+        <div class="error-contact__links">
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" class="error-contact__link error-contact__link--tg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Telegram
+          </a>
+          <a href="mailto:contacts@rybezh.site" class="error-contact__link error-contact__link--email">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            contacts@rybezh.site
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -263,5 +582,51 @@
     <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
   </div>
   <script src="/main.js"></script>
+  <script>
+  (function() {
+    var isPl = location.pathname.indexOf('-pl') !== -1 || (localStorage && localStorage.getItem('site_lang') === 'pl');
+    
+    fetch('/jobs-data.json')
+      .then(function(r) { return r.json(); })
+      .then(function(jobs) {
+        // Update vacancy count
+        var statEl = document.getElementById('stat-vacancies');
+        if (statEl) statEl.textContent = jobs.length + '+';
+
+        // Pick 6 random vacancies
+        var shuffled = jobs.sort(function() { return 0.5 - Math.random(); });
+        var selected = shuffled.slice(0, 6);
+        
+        var grid = document.getElementById('error-vacancies-grid');
+        if (!grid) return;
+        
+        var html = '';
+        selected.forEach(function(job) {
+          var title = isPl ? (job.title_pl || job.title) : job.title;
+          var city = isPl ? (job.city_pl || job.city) : job.city;
+          var salary = job.salary || '';
+          var contract = isPl ? (job.contract_pl || job.contract_ua || '') : (job.contract_ua || '');
+          var slug = job.slug || '';
+          var href = '/vacancy-' + slug + '.html';
+          if (isPl) href = '/vacancy-' + slug + '-pl.html';
+          
+          html += '<a href="' + href + '" class="error-vacancy-card">';
+          html += '<h4 class="error-vacancy-card__title">' + title + '</h4>';
+          html += '<div class="error-vacancy-card__meta">';
+          if (city) html += '<span>📍 ' + city + '</span>';
+          if (contract) html += '<span>📄 ' + contract + '</span>';
+          html += '</div>';
+          if (salary) html += '<div class="error-vacancy-card__salary">💰 ' + salary + '</div>';
+          html += '</a>';
+        });
+        
+        grid.innerHTML = html;
+      })
+      .catch(function() {
+        var grid = document.getElementById('error-vacancies-grid');
+        if (grid) grid.innerHTML = '';
+      });
+  })();
+  </script>
 </body>
 </html>

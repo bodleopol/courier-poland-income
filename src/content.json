@@ -32469,5 +32469,130 @@
     "physical_pl": "Wymagania fizyczne: brak",
     "shift_structure_ua": "Структура дня: стендап → робота → code review → демо (пт)",
     "shift_structure_pl": "Struktura dnia: standup → praca → code review → demo (pt)"
+  },
+  {
+    "slug": "poznan-warehouse-pracownik-magazynu-e-commerce-300",
+    "category": "warehouse",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник складу інтернет-магазину — комплектація та пакування (Познань)",
+    "title_pl": "Pracownik magazynu sklepu internetowego — kompletacja i pakowanie (Poznań)",
+    "salary": "28 - 35 PLN/h",
+    "company": "ShopFlow Logistics Sp. z o.o.",
+    "shift_ua": "Пн-Пт 07:00-15:00 або 14:00-22:00 (на вибір)",
+    "shift_pl": "Pn-Pt 07:00-15:00 lub 14:00-22:00 (do wyboru)",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Протягом 2 тижнів",
+    "start_pl": "W ciągu 2 tygodni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Безкоштовний обід у їдальні на території складу.",
+      "Доплата за вечірню зміну (14:00-22:00) — +3 PLN/h.",
+      "Знижка 20% на товари інтернет-магазину для працівників.",
+      "Оплачувані перші 3 дні навчання разом із наставником.",
+      "Медичне страхування від першого дня (пакет Luxmed).",
+      "Премія за стабільність: +500 PLN після 3 місяців без пропусків."
+    ],
+    "offers_pl": [
+      "Bezpłatny obiad w stołówce na terenie magazynu.",
+      "Dodatek za zmianę popołudniową (14:00-22:00) — +3 PLN/h.",
+      "Zniżka 20% na produkty sklepu internetowego dla pracowników.",
+      "Płatne pierwsze 3 dni szkolenia z opiekunem.",
+      "Ubezpieczenie zdrowotne od pierwszego dnia (pakiet Luxmed).",
+      "Premia za stabilność: +500 PLN po 3 miesiącach bez nieobecności."
+    ],
+    "tasks_ua": [
+      "Комплектація замовлень за списком на планшеті (скануєш товар — кладеш у коробку).",
+      "Пакування замовлень: вибір коробки, наповнювач, наклейка етикетки.",
+      "Переміщення зібраних замовлень на зону відвантаження.",
+      "Приймання нового товару та розкладка по стелажах (раз на зміну, ~1 година).",
+      "Контроль якості: перевірка комплектності перед пакуванням."
+    ],
+    "tasks_pl": [
+      "Kompletacja zamówień wg listy na tablecie (skanujesz produkt — wkładasz do kartonu).",
+      "Pakowanie zamówień: wybór kartonu, wypełniacz, naklejenie etykiety.",
+      "Przenoszenie gotowych zamówień do strefy wysyłki.",
+      "Przyjmowanie nowego towaru i rozkładanie na regałach (raz na zmianę, ~1 godzina).",
+      "Kontrola jakości: sprawdzenie kompletności przed pakowaniem."
+    ],
+    "details_ua": [
+      "Склад новий, відкритий у 2025 році — чисто, сучасне обладнання, широкі проходи.",
+      "Українськомовний координатор є на кожній зміні — допоможе з будь-яким питанням.",
+      "Перші 3 дні працюєте разом з наставником, який показує всю систему крок за кроком.",
+      "На території є зона відпочинку з мікрохвильовками, кавоваркою і автоматами з перекусами.",
+      "Паркінг безкоштовний, є стійка для велосипедів (зручно влітку).",
+      "Комунікація через Viber-групу зміни — графіки, новини, питання.",
+      "Ніхто не кричить і не тисне — темп є, але адекватний, без «конвеєрного жаху»."
+    ],
+    "details_pl": [
+      "Magazyn nowy, otwarty w 2025 roku — czysty, nowoczesny sprzęt, szerokie alejki.",
+      "Ukraińskojęzyczny koordynator na każdej zmianie — pomoże w każdej kwestii.",
+      "Pierwsze 3 dni pracujesz z opiekunem, który pokazuje cały system krok po kroku.",
+      "Na terenie jest strefa odpoczynku z mikrofólkami, ekspresem do kawy i automatami z przekąskami.",
+      "Parkíng bezpłatny, jest stojak na rowery (wygodne latem).",
+      "Komunikacja przez Viber-grupę zmiany — grafiki, aktualności, pytania.",
+      "Nikt nie krzyczy i nie naciska — tempo jest, ale rozsądne, bez «taśmowego koszmaru»."
+    ],
+    "requirements_ua": [
+      "Досвід: Не потрібен (навчимо з нуля за 3 дні)",
+      "Мова: Достатньо української або російської, координатор перекладе",
+      "Документи: Паспорт, PESEL (допоможемо оформити, якщо немає)"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Niewymagane (przeszkolimy od zera w 3 dni)",
+      "Język: Wystarczy ukraiński lub rosyjski, koordynator przetłumaczy",
+      "Dokumenty: Paszport, PESEL (pomożemy wyrobić, jeśli nie masz)"
+    ],
+    "experience_ua": "Не потрібен",
+    "experience_pl": "Niewymagane",
+    "language_ua": "Українська/російська достатньо",
+    "language_pl": "Ukraiński/rosyjski wystarczy",
+    "housing_ua": "Допомога з пошуком житла поблизу складу (Познань-Свежече)",
+    "housing_pl": "Pomoc w znalezieniu mieszkania w pobliżu magazynu (Poznań-Śwarzędz)",
+    "transport_ua": "Зупинка трамваю в 5 хв ходи від складу",
+    "transport_pl": "Przystanek tramwajowy 5 min pieszo od magazynu",
+    "documents_ua": "Документи: Паспорт, PESEL",
+    "documents_pl": "Dokumenty: Paszport, PESEL",
+    "workplace_ua": "Тип об'єкта: сучасний логістичний центр e-commerce",
+    "workplace_pl": "Typ obiektu: nowoczesne centrum logistyczne e-commerce",
+    "team_ua": "Команда: 15-20 осіб на зміні, є бригадир і координатор",
+    "team_pl": "Zespół: 15-20 osób na zmianie, jest brygadzista i koordynator",
+    "onboarding_ua": "3 дні навчання з наставником (оплачуються повністю).",
+    "onboarding_pl": "3 dni szkolenia z opiekunem (w pełni płatne).",
+    "daily_ua": [
+      "Ранкова оперативка (5 хв): що нового, скільки замовлень на зміну.",
+      "Робота з планшетом: скануєш штрих-код товару — система підказує полицю і коробку.",
+      "Перерва 30 хв на обід (їдальня безкоштовна) + 2 коротких перерви по 10 хв.",
+      "Наприкінці зміни — коротка прибирка робочої зони і передача наступній зміні."
+    ],
+    "daily_pl": [
+      "Poranna odprawa (5 min): co nowego, ile zamówień na zmianę.",
+      "Praca z tabletem: skanujesz kod produktu — system podpowiada półkę i karton.",
+      "Przerwa 30 min na obiad (stołówka bezpłatna) + 2 krótkie przerwy po 10 min.",
+      "Pod koniec zmiany — krótkie sprzątanie stanowiska i przekazanie następnej zmianie."
+    ],
+    "excerpt": "ShopFlow Logistics Sp. z o.o. шукає: Працівник складу інтернет-магазину в Познань (5/2, обід безкоштовно, навчання 3 дні). Комплектація та пакування замовлень.",
+    "excerpt_pl": "ShopFlow Logistics Sp. z o.o. poszukuje: Pracownik magazynu sklepu internetowego w Poznań (5/2, obiad za darmo, szkolenie 3 dni). Kompletacja i pakowanie zamówień.",
+    "body": "\n        <div class=\"vacancy-block\">\n          <p>Шукаємо людей до нашої складської команди в Познані. Склад обслуговує популярний польський інтернет-магазин — тут не буде «важкої» фізичної роботи з палетами чи автонавантажувачами. Ваша задача — збирати замовлення клієнтів за списком на планшеті, акуратно пакувати їх і відносити на зону відправки. Все досить просто, але потрібна уважність і стабільний темп.</p>\n          <p class=\"city-context\">Познань — одне з найзручніших міст для життя в Польщі: великий вибір житла за адекватний кошт, хороший громадський транспорт, багато українських спільнот і магазинів. Наш склад знаходиться у районі Познань-Свежече, до нього легко дістатися трамваєм.</p>\n          <div class=\"job-meta\">\n            <p><strong>🏢 Компанія:</strong> ShopFlow Logistics Sp. z o.o.</p>\n            <p><strong>📍 Місто:</strong> Познань (район Свежече)</p>\n          </div>\n          <hr>\n          <h3>Умови роботи</h3>\n          <ul>\n            <li>Графік: Пн-Пт 07:00-15:00 або 14:00-22:00 — обираєте самі</li>\n            <li>Режим: 5/2 (стабільні вихідні — субота і неділя)</li>\n            <li>Договір: Umowa o pracę (повний соціальний пакет, лікарняні, відпустка)</li>\n            <li>Старт: Протягом 2 тижнів</li>\n          </ul>\n          <h3>Що саме ви робитимете</h3>\n          <p>Уявіть: клієнт замовив у інтернет-магазині три речі — кросівки, книгу і набір для кухні. Ваша задача — знайти ці товари на стелажах (планшет підказує де), скласти в коробку потрібного розміру, додати наповнювач, наклеїти етикетку і віднести на зону відправки. Усе. Без навантажувачів, без підйому важких палет, без «бігання як у фільмі про Amazon». Темп є, але він людський — ми не штрафуємо за швидкість, важливіше точність і акуратність.</p>\n          <h3>Основні задачі:</h3>\n          <ul><li>Комплектація замовлень за списком на планшеті (скануєш товар — кладеш у коробку).</li><li>Пакування замовлень: вибір коробки, наповнювач, наклейка етикетки.</li><li>Переміщення зібраних замовлень на зону відвантаження.</li><li>Приймання нового товару та розкладка по стелажах (раз на зміну, ~1 година).</li><li>Контроль якості: перевірка комплектності перед пакуванням.</li></ul>\n          <h3>Що ми пропонуємо</h3>\n          <ul><li>Безкоштовний обід у їдальні на території складу.</li><li>Доплата за вечірню зміну (14:00-22:00) — +3 PLN/h.</li><li>Знижка 20% на товари інтернет-магазину для працівників.</li><li>Оплачувані перші 3 дні навчання разом із наставником.</li><li>Медичне страхування від першого дня (пакет Luxmed).</li><li>Премія за стабільність: +500 PLN після 3 місяців без пропусків.</li></ul>\n          <h3>Про склад і команду</h3>\n          <p>Наш складський центр відкрився у 2025 році, тож обладнання нове, стелажі зручні, проходи широкі. На кожній зміні працює 15-20 осіб + бригадир + координатор. У нас є українськомовний координатор, який завжди на зв'язку і допоможе з будь-яким питанням — від «де знайти потрібний товар на полиці» до «як записатися до лікаря». Перші три дні ви працюєте в парі з досвідченим наставником, який покаже все від А до Я. Ніхто не чекає, що ви будете працювати як робот із першої хвилини.</p>\n          <h3>Кого ми шукаємо</h3>\n          <ul><li>Досвід: Не потрібен (навчимо з нуля за 3 дні)</li><li>Мова: Достатньо української або російської, координатор перекладе</li><li>Документи: Паспорт, PESEL (допоможемо оформити, якщо немає)</li></ul>\n          <h3>Як виглядає робочий день</h3>\n          <p>Ранкова оперативка (5 хвилин) — бригадир коротко розповідає, скільки замовлень на зміну і чи є щось нове. Далі берете планшет і починаєте збирати замовлення. Перерва на обід — 30 хвилин (їдальня безкоштовна, є гаряче). Ще дві короткі перерви по 10 хвилин протягом зміни. Наприкінці — коротка прибирка робочої зони і передача наступній зміні. Все, йдете додому.</p>\n          <div class=\"salary-box\">💰 Зарплата: <strong>28 - 35 PLN/h</strong> (+ нічна доплата, + премія за стабільність)</div>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Відгукнутися на вакансію</a>\n      ",
+    "body_pl": "\n        <div class=\"vacancy-block\">\n          <p>Szukamy ludzi do naszego zespołu magazynowego w Poznaniu. Magazyn obsługuje popularny polski sklep internetowy — tu nie ma ciężkiej pracy fizycznej z paletami czy wózkami widłowymi. Twoje zadanie to zbieranie zamówień klientów wg listy na tablecie, staranne pakowanie i odnoszenie do strefy wysyłki. Wszystko dość proste, ale potrzebna jest uważność i stabilne tempo.</p>\n          <p class=\"city-context\">Poznań — jedno z najwygodniejszych miast do życia w Polsce: duży wybór mieszkań w rozsądnych cenach, dobra komunikacja miejska, wiele ukraińskich społeczności i sklepów. Nasz magazyn znajduje się w rejonie Poznań-Swarzędz, łatwo dojechać tramwajem.</p>\n          <div class=\"job-meta\">\n            <p><strong>🏢 Firma:</strong> ShopFlow Logistics Sp. z o.o.</p>\n            <p><strong>📍 Miasto:</strong> Poznań (rejon Swarzędz)</p>\n          </div>\n          <hr>\n          <h3>Warunki pracy</h3>\n          <ul>\n            <li>Grafik: Pn-Pt 07:00-15:00 lub 14:00-22:00 — wybierasz sam</li>\n            <li>System: 5/2 (stabilne weekendy — sobota i niedziela)</li>\n            <li>Umowa: Umowa o pracę (pełny pakiet socjalny, L4, urlop)</li>\n            <li>Start: W ciągu 2 tygodni</li>\n          </ul>\n          <h3>Co dokładnie będziesz robić</h3>\n          <p>Wyobraź sobie: klient zamówił w internecie trzy rzeczy — buty sportowe, książkę i zestaw kuchenny. Twoje zadanie — znaleźć te produkty na regałach (tablet podpowiada, gdzie), włożyć do kartonu odpowiedniego rozmiaru, dodać wypełniacz, nakleić etykietę i zanieść do strefy wysyłki. Tyle. Bez wózków widłowych, bez dźwigania ciężkich palet, bez «biegania jak w filmie o Amazonie». Tempo jest, ale ludzkie — nie karzemy za szybkość, ważniejsza jest dokładność i staranność.</p>\n          <h3>Twoje obowiązki:</h3>\n          <ul><li>Kompletacja zamówień wg listy na tablecie (skanujesz produkt — wkładasz do kartonu).</li><li>Pakowanie zamówień: wybór kartonu, wypełniacz, naklejenie etykiety.</li><li>Przenoszenie gotowych zamówień do strefy wysyłki.</li><li>Przyjmowanie nowego towaru i rozkładanie na regałach (raz na zmianę, ~1 godzina).</li><li>Kontrola jakości: sprawdzenie kompletności przed pakowaniem.</li></ul>\n          <h3>Co oferujemy</h3>\n          <ul><li>Bezpłatny obiad w stołówce na terenie magazynu.</li><li>Dodatek za zmianę popołudniową (14:00-22:00) — +3 PLN/h.</li><li>Zniżka 20% na produkty sklepu internetowego dla pracowników.</li><li>Płatne pierwsze 3 dni szkolenia z opiekunem.</li><li>Ubezpieczenie zdrowotne od pierwszego dnia (pakiet Luxmed).</li><li>Premia za stabilność: +500 PLN po 3 miesiącach bez nieobecności.</li></ul>\n          <h3>O magazynie i zespole</h3>\n          <p>Nasze centrum magazynowe otwarto w 2025 roku, więc sprzęt jest nowy, regały wygodne, alejki szerokie. Na każdej zmianie pracuje 15-20 osób + brygadzista + koordynator. Mamy ukraińskojęzycznego koordynatora, który jest zawsze dostępny i pomoże w każdej kwestii — od «gdzie znaleźć towar na półce» do «jak zapisać się do lekarza». Pierwsze trzy dni pracujesz w parze z doświadczonym opiekunem, który pokaże wszystko od A do Z. Nikt nie oczekuje, że będziesz pracować jak robot od pierwszej minuty.</p>\n          <h3>Kogo szukamy</h3>\n          <ul><li>Doświadczenie: Niewymagane (przeszkolimy od zera w 3 dni)</li><li>Język: Wystarczy ukraiński lub rosyjski, koordynator przetłumaczy</li><li>Dokumenty: Paszport, PESEL (pomożemy wyrobić, jeśli nie masz)</li></ul>\n          <h3>Jak wygląda dzień pracy</h3>\n          <p>Poranna odprawa (5 minut) — brygadzista krótko mówi, ile zamówień na zmianę i czy jest coś nowego. Potem bierzesz tablet i zaczynasz kompletować zamówienia. Przerwa na obiad — 30 minut (stołówka bezpłatna, jest danie gorące). Jeszcze dwie krótkie przerwy po 10 minut w ciągu zmiany. Pod koniec — krótkie sprzątanie stanowiska i przekazanie następnej zmianie. Tyle, idziesz do domu.</p>\n          <div class=\"salary-box\">💰 Wynagrodzenie: <strong>28 - 35 PLN/h</strong> (+ dodatek za zmianę popołudniową, + premia za stabilność)</div>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Aplikuj teraz</a>\n      ",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-13T10:00:00.000Z",
+    "is_generated": false,
+    "data_source": "manual",
+    "sector_ua": "Сектор: e-commerce / інтернет-торгівля",
+    "sector_pl": "Sektor: e-commerce / handel internetowy",
+    "equipment_ua": "Обладнання: планшет, сканер штрих-кодів",
+    "equipment_pl": "Sprzęt: tablet, skaner kodów kreskowych",
+    "physical_ua": "Фізичні вимоги: ходьба по складу, підняття до 10 кг (переважно легкі товари)",
+    "physical_pl": "Wymagania fizyczne: chodzenie po magazynie, podnoszenie do 10 kg (przeważnie lekkie towary)",
+    "shift_structure_ua": "Структура зміни: оперативка → комплектація → перерва → пакування → прибирка",
+    "shift_structure_pl": "Struktura zmiany: odprawa → kompletacja → przerwa → pakowanie → porządek"
   }
 ]
