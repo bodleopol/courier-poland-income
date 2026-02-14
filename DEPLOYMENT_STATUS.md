@@ -26,7 +26,7 @@
 ### Посилання
 
 - **GitHub Actions**: https://github.com/bodleopol/courier-poland-income/actions
-- **Сайт**: https://bodleopol.github.io/courier-poland-income/
+- **Сайт**: https://rybezh.site
 
 ### Очікуваний час
 
@@ -41,7 +41,7 @@
 https://github.com/bodleopol/courier-poland-income/actions
 
 # Або перевірте сайт через ~5 хвилин:
-https://bodleopol.github.io/courier-poland-income/
+https://rybezh.site
 ```
 
 ## 🎉 Успіх!

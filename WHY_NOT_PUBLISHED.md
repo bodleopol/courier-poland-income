@@ -43,7 +43,7 @@ https://github.com/bodleopol/courier-poland-income/actions/workflows/deploy.yml
 
 Відкрийте:
 ```
-https://bodleopol.github.io/courier-poland-income/
+https://rybezh.site
 ```
 
 Має бути:
@@ -109,6 +109,7 @@ on:
 - **Статус деплою**: `DEPLOYMENT_STATUS.md`
 - **GitHub Actions**: https://github.com/bodleopol/courier-poland-income/actions
 - **Settings**: https://github.com/bodleopol/courier-poland-income/settings/pages
+- **Сайт**: https://rybezh.site
 
 ---
 

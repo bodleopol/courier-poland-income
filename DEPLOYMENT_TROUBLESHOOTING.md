@@ -91,7 +91,7 @@ https://github.com/bodleopol/courier-poland-income/settings/pages
 - ✅ "Your site is live at ..."
 
 ### 3. Перевірити сайт
-https://bodleopol.github.io/courier-poland-income/
+https://rybezh.site
 
 Очікується:
 - ✅ Сторінка завантажується
@@ -126,3 +126,4 @@ https://bodleopol.github.io/courier-poland-income/
 - **Actions**: https://github.com/bodleopol/courier-poland-income/actions
 - **Settings**: https://github.com/bodleopol/courier-poland-income/settings
 - **Pages Settings**: https://github.com/bodleopol/courier-poland-income/settings/pages
+- **Сайт**: https://rybezh.site
