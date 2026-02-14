@@ -607,8 +607,8 @@
           var salary = job.salary || '';
           var contract = isPl ? (job.contract_pl || job.contract_ua || '') : (job.contract_ua || '');
           var slug = job.slug || '';
-          var href = '/vacancy-' + slug + '.html';
-          if (isPl) href = '/vacancy-' + slug + '-pl.html';
+          var href = '/' + slug + '.html';
+          if (isPl) href = '/' + slug + '-pl.html';
           
           html += '<a href="' + href + '" class="error-vacancy-card">';
           html += '<h4 class="error-vacancy-card__title">' + title + '</h4>';
