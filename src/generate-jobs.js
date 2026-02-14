@@ -1189,8 +1189,8 @@ function generateSalary(min, max) {
 }
 
 function generateRandomDate() {
-  // Generate realistic dates with 6-12 month spread (30-210 days ago)
-  const daysAgo = Math.floor(Math.random() * 180 + 30);
+  // Generate realistic dates with 6-12 month spread (180-365 days ago)
+  const daysAgo = Math.floor(Math.random() * 185 + 180);
   const randomDate = new Date();
   randomDate.setDate(randomDate.getDate() - daysAgo);
   return randomDate.toISOString().split('T')[0];
@@ -1620,7 +1620,7 @@ Object.keys(ROLES).forEach(catKey => {
       const layoutVariant = jobCounter % 5;
       
       let bodyUA, bodyPL;
-      const cssClass = ['vacancy-block', 'job-info-block', 'vacancy-details', 'position-card', 'vacancy-block'][layoutVariant];
+      const cssClass = ['vacancy-block', 'job-info-block', 'vacancy-details', 'position-card', 'job-listing-block'][layoutVariant];
       
       if (layoutVariant === 0) {
         // Layout 1: duties -> offers -> requirements -> housing -> format -> daily

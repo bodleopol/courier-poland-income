@@ -1614,7 +1614,7 @@ async function build() {
     // Check if this vacancy is in the indexable list
     const isIndexable = indexableVacancySlugs.has(String(page.slug));
     
-    // Inject JobPosting structured data for all indexable pages
+    // Inject JobPosting structured data for indexable pages
     if (isIndexable) {
       const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
       if (finalHtml.includes('</head>')) {
