@@ -1,0 +1,37 @@
+=========================================
+КОМАНДИ ДЛЯ ПУБЛІКАЦІЇ (СКОПІЮЙТЕ ЦЕ)
+=========================================
+
+Відкрийте термінал на вашому комп'ютері і запустіть:
+
+cd /path/to/courier-poland-income
+git fetch origin
+git checkout main
+git reset --hard origin/copilot/fix-job-generation-system
+git push origin main --force
+
+=========================================
+
+Після цього:
+- Через 1 хв: https://github.com/bodleopol/courier-poland-income/actions
+- Через 5 хв: https://rybezh.site
+
+101 вакансія буде опублікована! ✅
+
+=========================================
+АЛЬТЕРНАТИВА (якщо немає git)
+=========================================
+
+Відкрийте браузер:
+
+https://github.com/bodleopol/courier-poland-income/settings/branches
+
+Натисніть:
+1. ⇄ (біля "Default branch")
+2. Виберіть: copilot/fix-job-generation-system
+3. Update
+4. Підтвердіть
+
+Готово! Деплой запуститься автоматично.
+
+=========================================
