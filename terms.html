@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="terms.meta_title">Умови користування — Rybezh</title>
+  <meta name="description" data-i18n="terms.meta_description" data-i18n-attr="content" content="Умови користування сайтом Rybezh: правила, відповідальність, обробка запитів.">
+  <link rel="canonical" href="https://rybezh.site/terms.html">
+  <meta name="google-site-verification" content="GOOGLE_SITE_VERIFICATION_TOKEN">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <div class="nav-dropdown" aria-label="Категорії">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <div class="nav-dropdown" aria-label="Інструменти">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">🛠️ Інструменти <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator.html" data-i18n="nav.tool.calc">💰 Калькулятор зарплати</a>
+            <a href="/cv-generator.html" data-i18n="nav.tool.cv">📄 Генератор CV</a>
+            <a href="/red-flag.html" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+            <a href="/map.html" data-i18n="nav.tool.map">🗺️ Карта українців</a>
+          </div>
+        </div>
+        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="/for-employers.html" class="nav-link" data-i18n="nav.employers">Для роботодавців</a>
+        <a href="/apply.html" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
+        <div class="header-lang">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+
+      <div class="mobile-tools">
+        <button type="button" class="nav-link mobile-tools__toggle" data-i18n="nav.tools" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Інструменти</button>
+        <div class="mobile-tools__menu">
+          <a href="/calculator.html" class="nav-link" data-i18n="nav.tool.calc.short">💰 Калькулятор</a>
+          <a href="/cv-generator.html" class="nav-link" data-i18n="nav.tool.cv.short">📄 Генератор CV</a>
+          <a href="/red-flag.html" class="nav-link" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+          <a href="/map.html" class="nav-link" data-i18n="nav.tool.map">🗺️ Карта українців</a>
+        </div>
+      </div>
+      <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+      <a href="/for-employers.html" class="nav-link" data-i18n="nav.employers">Для роботодавців</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1 data-i18n="terms.title">Умови користування</h1>
+    </section>
+    <article class="content-wrapper">
+      <div data-lang-content="ua">
+        <p><strong>Останнє оновлення:</strong> 01 жовтня 2024 року</p>
+        <h2>1. Прийняття умов</h2>
+        <p>Користуючись сайтом Rybezh, ви погоджуєтеся з цими умовами. Якщо ви не згодні — будь ласка, припиніть користування сайтом.</p>
+        <h2>2. Інформаційний характер</h2>
+        <p>Rybezh надає інформацію про вакансії та загальні поради. Остаточні умови роботи підтверджує роботодавець.</p>
+        <h2>3. Відповідальність</h2>
+        <p>Ми прагнемо оновлювати інформацію, але не гарантуємо абсолютну актуальність кожного оголошення.</p>
+        <h2>4. Поведінка користувача</h2>
+        <p>Заборонено використовувати сайт для спаму, шахрайства або порушення прав інших осіб.</p>
+        <h2>5. Інтелектуальна власність</h2>
+        <p>Тексти та матеріали сайту належать Rybezh або використовуються з дозволу правовласників.</p>
+        <h2>6. Контакти</h2>
+        <p>Питання щодо умов: <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a></p>
+      </div>
+
+      <div data-lang-content="pl" style="display:none">
+        <p><strong>Ostatnia aktualizacja:</strong> 1 października 2024 roku</p>
+        <h2>1. Akceptacja warunków</h2>
+        <p>Korzystając z serwisu Rybezh, akceptujesz niniejsze warunki. Jeśli się nie zgadzasz, prosimy o zaprzestanie korzystania.</p>
+        <h2>2. Charakter informacyjny</h2>
+        <p>Rybezh udostępnia informacje o ofertach i ogólne porady. Ostateczne warunki potwierdza pracodawca.</p>
+        <h2>3. Odpowiedzialność</h2>
+        <p>Dokładamy starań, aby treści były aktualne, ale nie gwarantujemy pełnej aktualności każdego ogłoszenia.</p>
+        <h2>4. Zachowanie użytkownika</h2>
+        <p>Zabronione jest wykorzystywanie serwisu do spamu, oszustw lub naruszania praw innych osób.</p>
+        <h2>5. Własność intelektualna</h2>
+        <p>Treści i materiały serwisu należą do Rybezh lub są wykorzystywane za zgodą właścicieli praw.</p>
+        <h2>6. Kontakt</h2>
+        <p>Pytania dotyczące warunków: <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p data-i18n="footer.desc">Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav">Навігація</h4>
+          <a href="/" data-i18n="nav.home">Головна</a>
+          <a href="/about.html" data-i18n="nav.about">Про нас</a>
+          <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+          <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+          <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Контакти</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply.html" data-i18n="nav.apply">Подати заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
+        <div class="footer-bottom-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+          <a href="/terms.html" data-i18n="footer.terms">Умови користування</a>
+          <a href="/company.html" data-i18n="footer.company">Реквізити</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.</p>
+    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+  </div>
+  <script src="/main.js"></script>
+</body>
+</html>

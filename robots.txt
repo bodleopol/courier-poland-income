@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://rybezh.site/sitemap.xml
-Host: rybezh.site

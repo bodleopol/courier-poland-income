@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="map.meta_title">Мапа українців у Польщі — Rybezh</title>
+  <meta name="description" data-i18n="map.meta_description" data-i18n-attr="content" content="Інтерактивна карта українців у Польщі. Позначай себе — знаходь земляків, напарників, квартири та роботу поруч.">
+  <link rel="canonical" href="https://rybezh.site/map.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rybezh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rybezh.site/map.html">
+  <meta property="og:title" content="Мапа українців у Польщі — Rybezh">
+  <meta property="og:description" content="Позначай себе на карті — знаходь земляків, напарників, квартири та роботу поруч.">
+  <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Rybezh">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <!-- PapaParse для CSV -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Мапа українців у Польщі",
+    "url": "https://rybezh.site/map.html",
+    "applicationCategory": "SocialNetworkingApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+    "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+  }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .map-page { max-width: 1100px; margin: 0 auto; }
+    .map-hero { text-align: center; padding: 2.5rem 0 1.5rem; }
+    .map-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .map-hero p { color: var(--color-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    .map-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .map-add-btn {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 700;
+      background: linear-gradient(135deg, #0ea5e9, #0f766e); color: #fff;
+      border: none; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 6px 24px rgba(14,165,233,0.35);
+      transition: all 0.2s; text-decoration: none;
+    }
+    .map-add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,165,233,0.45); }
+    .map-counter { font-size: 0.95rem; color: var(--color-secondary); font-weight: 600; }
+    .map-counter strong { color: var(--color-accent); font-size: 1.3rem; }
+
+    #map {
+      height: 620px; border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      border: 2px solid var(--color-border);
+      z-index: 1;
+    }
+
+    /* Custom cluster icons */
+    .custom-marker-wrapper { background: none !important; border: none !important; }
+
+    .custom-cluster {
+      background: rgba(14,165,233,0.15); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 3px solid #0ea5e9; font-weight: 800; color: #0f766e;
+      font-size: 15px; box-shadow: 0 2px 8px rgba(14,165,233,0.3);
+    }
+    .custom-cluster-large { background: rgba(15,118,110,0.15); border-color: #0f766e; color: #0f766e; }
+
+    /* Custom popup */
+    .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; }
+    .leaflet-popup-content { margin: 14px 16px !important; font-size: 14px; line-height: 1.6; }
+    .popup-name { font-size: 1.1rem; font-weight: 700; color: #0f766e; margin-bottom: 4px; }
+    .popup-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+    .popup-row a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
+    .popup-row a:hover { text-decoration: underline; }
+    .popup-seeking { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 20px; background: rgba(0,166,126,0.1); color: #0f766e; font-size: 0.82rem; font-weight: 600; }
+    .popup-desc { font-size: 0.85rem; color: #6b7280; margin-top: 6px; line-height: 1.5; }
+
+    .map-legend { text-align: center; font-size: 0.9rem; color: var(--color-secondary); margin: 1rem 0 0.5rem; }
+
+    .how-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin: 2rem 0; }
+    .how-card h2 { font-size: 1.3rem; margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .instructions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .instr-step { background: var(--color-surface-alt); border-radius: 12px; padding: 1.25rem; position: relative; }
+    .instr-step .step-num { position: absolute; top: -10px; left: 16px; background: var(--color-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+    .instr-step p { margin: 0.5rem 0 0; font-size: 0.92rem; color: var(--color-secondary); line-height: 1.5; }
+    .instr-step strong { color: var(--color-primary); }
+    .coord-example { display: inline-block; margin-top: 0.3rem; padding: 0.3rem 0.7rem; background: rgba(0,166,126,0.08); border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; }
+
+    .map-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .map-info-item { text-align: center; padding: 1.25rem; border-radius: 12px; background: var(--color-surface); border: 1px solid var(--color-border); }
+    .map-info-item .info-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .map-info-item h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+    .map-info-item p { margin: 0; font-size: 0.85rem; color: var(--color-secondary); }
+
+    .map-loading { text-align: center; padding: 2rem; color: var(--color-secondary); }
+    .map-loading .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 700px) {
+      #map { height: 450px; }
+      .instructions { grid-template-columns: 1fr; }
+      .map-info-grid { grid-template-columns: 1fr; }
+      .map-hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <div class="nav-dropdown" aria-label="Категорії">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <div class="nav-dropdown" aria-label="Інструменти">
+          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">🛠️ Інструменти <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator.html" data-i18n="nav.tool.calc">💰 Калькулятор зарплати</a>
+            <a href="/cv-generator.html" data-i18n="nav.tool.cv">📄 Генератор CV</a>
+            <a href="/red-flag.html" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+            <a href="/map.html" data-i18n="nav.tool.map">🗺️ Карта українців</a>
+          </div>
+        </div>
+        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="/for-employers.html" class="nav-link" data-i18n="nav.employers">Для роботодавців</a>
+        <a href="/apply.html" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
+        <div class="header-lang">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+      <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+
+      <div class="mobile-tools">
+        <button type="button" class="nav-link mobile-tools__toggle" data-i18n="nav.tools" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Інструменти</button>
+        <div class="mobile-tools__menu">
+          <a href="/calculator.html" class="nav-link" data-i18n="nav.tool.calc.short">💰 Калькулятор</a>
+          <a href="/cv-generator.html" class="nav-link" data-i18n="nav.tool.cv.short">📄 Генератор CV</a>
+          <a href="/red-flag.html" class="nav-link" data-i18n="nav.tool.redflag">🚩 Перевірка вакансій</a>
+          <a href="/map.html" class="nav-link" data-i18n="nav.tool.map">🗺️ Карта українців</a>
+        </div>
+      </div>
+      <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+      <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+      <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+      <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+      <a href="/for-employers.html" class="nav-link" data-i18n="nav.employers">Для роботодавців</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center" data-i18n="nav.cta">Отримати консультацію</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="map-page">
+      <div class="map-hero">
+        <h1>🗺️ <span data-lang-content="ua" style="display:inline">Мапа українців у Польщі</span><span data-lang-content="pl" style="display:none">Mapa Ukraińców w Polsce</span></h1>
+        <p data-lang-content="ua">Позначай себе — знаходь земляків, напарників, квартири та роботу поруч</p>
+        <p data-lang-content="pl" style="display:none">Zaznacz siebie — znajdź rodaków, współpracowników, mieszkania i pracę w pobliżu</p>
+      </div>
+
+      <!-- Info cards -->
+      <div class="map-info-grid">
+        <div class="map-info-item">
+          <div class="info-icon">🤝</div>
+          <h3 data-lang-content="ua" style="display:block">Знайди земляків</h3>
+          <h3 data-lang-content="pl" style="display:none">Znajdź rodaków</h3>
+          <p data-lang-content="ua">Дізнайся, хто з українців живе поруч з тобою</p>
+          <p data-lang-content="pl" style="display:none">Dowiedz się, kto z Ukraińców mieszka blisko ciebie</p>
+        </div>
+        <div class="map-info-item">
+          <div class="info-icon">🏠</div>
+          <h3 data-lang-content="ua" style="display:block">Квартира / кімната</h3>
+          <h3 data-lang-content="pl" style="display:none">Mieszkanie / pokój</h3>
+          <p data-lang-content="ua">Шукай сусідів або пропонуй місце для проживання</p>
+          <p data-lang-content="pl" style="display:none">Szukaj współlokatorów lub oferuj miejsce do zamieszkania</p>
+        </div>
+        <div class="map-info-item">
+          <div class="info-icon">💼</div>
+          <h3 data-lang-content="ua" style="display:block">Робота поруч</h3>
+          <h3 data-lang-content="pl" style="display:none">Praca w pobliżu</h3>
+          <p data-lang-content="ua">Знайди напарника на зміну або підкажи вакансію</p>
+          <p data-lang-content="pl" style="display:none">Znajdź partnera do zmiany lub poleć ofertę pracy</p>
+        </div>
+      </div>
+
+      <!-- Add button + counter -->
+      <div class="map-actions">
+        <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+          📍 <span data-lang-content="ua" style="display:inline">Додати себе на мапу</span><span data-lang-content="pl" style="display:none">Dodaj siebie na mapę</span>
+        </a>
+        <div class="map-counter" id="map-counter" style="display:none;">
+          <span data-lang-content="ua" style="display:inline">На карті вже</span><span data-lang-content="pl" style="display:none">Na mapie już</span>
+          <strong id="marker-count">0</strong>
+          <span data-lang-content="ua" style="display:inline">українців</span><span data-lang-content="pl" style="display:none">Ukraińców</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div id="map-loading" class="map-loading">
+        <span class="spinner"></span>
+        <span data-lang-content="ua" style="display:inline">Завантаження карти...</span>
+        <span data-lang-content="pl" style="display:none">Ładowanie mapy...</span>
+      </div>
+      <div id="map"></div>
+
+      <div class="map-legend">
+        <span data-lang-content="ua" style="display:inline">Клікни на маркер, щоб побачити контакти • Дані оновлюються кожні 5–10 хвилин</span>
+        <span data-lang-content="pl" style="display:none">Kliknij marker, aby zobaczyć kontakt • Dane są aktualizowane co 5–10 minut</span>
+      </div>
+
+      <!-- How to -->
+      <div class="how-card">
+        <h2>📝 <span data-lang-content="ua" style="display:inline">Як додати себе на карту</span><span data-lang-content="pl" style="display:none">Jak dodać siebie na mapę</span></h2>
+
+        <div data-lang-content="ua">
+          <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+            Привіт! ❤️ Додай себе на мапу, щоб інші українці могли тебе знайти — для спільного житла, роботи, або просто підтримки.
+          </p>
+          <div class="instructions">
+            <div class="instr-step">
+              <div class="step-num">1</div>
+              <strong>Відкрий Google Maps</strong>
+              <p>На телефоні або комп'ютері — знайди своє місто чи вулицю</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">2</div>
+              <strong>Знайди свою точку</strong>
+              <p>Натисни ПКМ (правою кнопкою) → «Що тут?» або довгий натиск на мобільному</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">3</div>
+              <strong>Скопіюй координати</strong>
+              <p>Два числа — широта і довгота<br><span class="coord-example">52.2297, 21.0122</span></p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">4</div>
+              <strong>Заповни форму</strong>
+              <p>Вкажи ім'я, Telegram, місто та координати. Дані з'являться на мапі за 5–10 хвилин!</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-lang-content="pl" style="display:none">
+          <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+            Cześć! ❤️ Dodaj siebie na mapę, żeby inni Ukraińcy mogli cię znaleźć — do wspólnego mieszkania, pracy lub po prostu wsparcia.
+          </p>
+          <div class="instructions">
+            <div class="instr-step">
+              <div class="step-num">1</div>
+              <strong>Otwórz Google Maps</strong>
+              <p>Na telefonie lub komputerze — znajdź swoje miasto lub ulicę</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">2</div>
+              <strong>Znajdź swój punkt</strong>
+              <p>Kliknij PPM (prawym przyciskiem) → „Co tu jest?" lub długie naciśnięcie na telefonie</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">3</div>
+              <strong>Skopiuj współrzędne</strong>
+              <p>Dwie liczby — szerokość i długość<br><span class="coord-example">52.2297, 21.0122</span></p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">4</div>
+              <strong>Wypełnij formularz</strong>
+              <p>Podaj imię, Telegram, miasto i współrzędne. Dane pojawią się na mapie w 5–10 minut!</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:1.5rem;">
+          <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+            ✏️ <span data-lang-content="ua" style="display:inline">Заповнити форму</span><span data-lang-content="pl" style="display:none">Wypełnij formularz</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin:2rem 0;">
+        <a href="/vacancies.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;" data-lang-content="ua">Переглянути вакансії</a>
+        <a href="/vacancies.html" class="btn-primary" style="display:none;padding:0.8rem 2rem;" data-lang-content="pl">Zobacz oferty pracy</a>
+      </div>
+
+      <!-- Giscus Comments -->
+      <div class="giscus-section" style="max-width:800px;margin:2.5rem auto 0;">
+        <h3 style="font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 <span data-lang-content="ua" style="display:inline">Коментарі та обговорення</span><span data-lang-content="pl" style="display:none">Komentarze i dyskusja</span></h3>
+        <div id="giscus-comments"></div>
+        <script src="https://giscus.app/client.js"
+          data-repo="bodleopol/courier-poland-income"
+          data-repo-id="R_kgDOQ5cY4Q"
+          data-category="General"
+          data-category-id="DIC_kwDOQ5cY4c4C2VOX"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="uk"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p data-i18n="footer.desc">Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav">Навігація</h4>
+          <a href="/" data-i18n="nav.home">Головна</a>
+          <a href="/about.html" data-i18n="nav.about">Про нас</a>
+          <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+          <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+          <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.tools">Інструменти</h4>
+          <a href="/calculator.html" data-i18n="footer.tool.calc">Калькулятор</a>
+          <a href="/cv-generator.html" data-i18n="footer.tool.cv">Генератор CV</a>
+          <a href="/red-flag.html" data-i18n="footer.tool.redflag">Перевірка вакансій</a>
+          <a href="/map.html" data-i18n="footer.tool.map">Мапа українців</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Контакти</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply.html" data-i18n="nav.apply">Подати заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
+        <div class="footer-bottom-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+          <a href="/terms.html" data-i18n="footer.terms">Умови користування</a>
+          <a href="/company.html" data-i18n="footer.company">Реквізити</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду.</p>
+    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+  </div>
+
+  <script>
+  (function() {
+    // Init map
+    var map = L.map('map', {
+      scrollWheelZoom: true,
+      zoomControl: true
+    }).setView([52.0, 19.0], 6);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Custom blue/teal marker icon
+    var customIcon = L.divIcon({
+      html: '<div style="background:#0ea5e9;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
+      className: 'custom-marker-wrapper',
+      iconSize: [20, 20],
+      iconAnchor: [10, 10],
+      popupAnchor: [0, -12]
+    });
+
+    // Marker cluster group
+    var markers = L.markerClusterGroup({
+      maxClusterRadius: 55,
+      spiderfyOnMaxZoom: true,
+      showCoverageOnHover: false,
+      iconCreateFunction: function(cluster) {
+        var count = cluster.getChildCount();
+        var size = count < 10 ? 40 : count < 50 ? 50 : 60;
+        var cls = count >= 50 ? 'custom-cluster custom-cluster-large' : 'custom-cluster';
+        return L.divIcon({
+          html: '<b>' + count + '</b>',
+          className: cls,
+          iconSize: [size, size]
+        });
+      }
+    });
+
+    // Helper: normalize column header (trim, remove BOM, normalize whitespace)
+    function normHeader(s) {
+      return s ? s.replace(/^\uFEFF/, '').replace(/\s+/g, ' ').trim() : '';
+    }
+
+    // Find column by partial match (handles BOM, extra spaces, encoding diffs)
+    function findCol(row, patterns) {
+      var keys = Object.keys(row);
+      for (var p = 0; p < patterns.length; p++) {
+        for (var k = 0; k < keys.length; k++) {
+          var h = normHeader(keys[k]).toLowerCase();
+          if (h.indexOf(patterns[p].toLowerCase()) !== -1) return keys[k];
+        }
+      }
+      return null;
+    }
+
+    // Simple HTML escape
+    function escapeHtml(str) {
+      var d = document.createElement('div');
+      d.textContent = str;
+      return d.innerHTML;
+    }
+
+    // CSV URL from Google Sheets
+    var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCc4KlINKpV0YWnxiaHKbiNgDCYZijGoJACdPTEueq_C-AIeFiFj-eRjOto0BWhz0F_JTBJcefyA-U/pub?output=csv';
+
+    // ===== Sample community data (seeded) =====
+    var sampleData = [
+      // === Warszawa (35) ===
+      ["Олена К.","Warszawa",52.2319,21.0067,"@olenka_waw","робота","Шукаю роботу на складі, маю досвід 2 роки"],
+      ["Максим","Warszawa",52.2451,21.0175,"@max_praca","робота","Зварювальник, шукаю вакансію MIG/MAG"],
+      ["Ірина","Warszawa",52.2102,20.9812,"@iryna_waw","квартира","Шукаю кімнату до 1500 PLN, Mokotów або Ursynów"],
+      ["Богдан","Warszawa",52.2593,21.0451,"@bogdan_pl","робота","Водій кат. B, шукаю роботу кур'єром"],
+      ["Наталія","Warszawa",52.2224,21.0115,"@natalia_w","напарник","Шукаю напарницю на зміну в кав'ярні"],
+      ["Денис","Warszawa",52.2356,20.9943,"@denys_wwa","робота","Будівельник, досвід 5 років, шукаю бригаду"],
+      ["Анна","Warszawa",52.2481,21.0289,"@anna_warszawa","квартира","Здаю кімнату на Pradze, 1200 PLN"],
+      ["Юрій","Warszawa",52.2187,21.0356,"@yuriy_praca","робота","Електрик, сертифікат SEP, шукаю роботу"],
+      ["Марія","Warszawa",52.2543,20.9876,"@mariya_w","робота","Прибиральниця, можу працювати на повну"],
+      ["Олександр","Warszawa",52.2289,21.0523,"@olex_waw","інше","Допоможу з документами, знаю процедури"],
+      ["Катерина","Warszawa",52.2415,21.0098,"@kate_waw","робота","Касир, досвід в Biedronka"],
+      ["Андрій М.","Warszawa",52.2034,21.0213,"@andriy_m","робота","Слюсар, шукаю роботу на виробництві"],
+      ["Світлана","Warszawa",52.2678,21.0345,"@svitlana_w","квартира","Шукаю сусідку, 2-кімн. квартира Wola"],
+      ["Павло","Warszawa",52.1987,20.9734,"@pavlo_waw","робота","Пакувальник, готовий на нічні зміни"],
+      ["Тетяна","Warszawa",52.2345,21.0678,"@tetyana_w","робота","Няня, досвід 3 роки, рекомендації є"],
+      ["Віталій","Warszawa",52.2512,21.0012,"@vitaliy_waw","робота","Кухар, досвід в польській кухні"],
+      ["Оксана","Warszawa",52.2156,21.0456,"@oksana_waw","інше","Перекладач UA-PL, допоможу з документами"],
+      ["Дмитро С.","Warszawa",52.2623,21.0189,"@dmytro_s","робота","Монтажник, шукаю роботу на будівництві"],
+      ["Людмила","Warszawa",52.2278,20.9567,"@ludmyla_w","квартира","Шукаю житло біля метро, до 1800 PLN"],
+      ["Сергій","Warszawa",52.2401,21.0534,"@sergiy_waw","робота","Різноробочий, готовий почати завтра"],
+      ["Вікторія","Warszawa",52.2534,21.0267,"@vika_waw","робота","Офіціантка, знаю польську на B1"],
+      ["Роман","Warszawa",52.2089,21.0089,"@roman_waw","напарник","Шукаю напарника для переїзду речей"],
+      ["Галина","Warszawa",52.2467,20.9923,"@halyna_w","робота","Швачка, досвід 10 років"],
+      ["Микола","Warszawa",52.2312,21.0412,"@mykola_waw","робота","Охоронник, ліцензія є, шукаю об'єкт"],
+      ["Яна","Warszawa",52.2578,21.0156,"@yana_waw","інше","Вчителька української, даю уроки онлайн"],
+      ["Артем","Warszawa",52.2145,21.0312,"@artem_waw","робота","Автомеханік, шукаю СТО"],
+      ["Лариса","Warszawa",52.2489,21.0578,"@larysa_w","квартира","Здаю місце в 3-кімн., Bemowo, 900 PLN"],
+      ["Тарас","Warszawa",52.2234,20.9845,"@taras_waw","робота","Маляр-штукатур, бригада з 3 осіб"],
+      ["Надія","Warszawa",52.2367,21.0234,"@nadiya_waw","робота","Медсестра, нострифікація в процесі"],
+      ["Віктор","Warszawa",52.2601,21.0423,"@viktor_waw","робота","Вантажник, досвід на складі Amazon"],
+      ["Олеся","Warszawa",52.2178,21.0567,"@olesya_w","напарник","Шукаю компанію для занять польською"],
+      ["Ігор","Warszawa",52.2456,20.9789,"@igor_waw","робота","Токар, ЧПУ оператор, сертифікати є"],
+      ["Марина","Warszawa",52.2523,21.0345,"@maryna_waw","робота","Продавець, досвід Żabka, Carrefour"],
+      ["Станіслав","Warszawa",52.2067,21.0123,"@stas_waw","інше","IT спеціаліст, допоможу з резюме"],
+      ["Аліна","Warszawa",52.2389,21.0489,"@alina_waw","робота","Бариста, шукаю кав'ярню в центрі"],
+      // === Kraków (30) ===
+      ["Дарія","Kraków",50.0647,19.9450,"@dariya_krk","робота","Шукаю роботу в готелі, досвід 1 рік"],
+      ["Олег","Kraków",50.0553,19.9234,"@oleg_krakow","робота","Кур'єр Glovo/Bolt, знаю місто добре"],
+      ["Юлія","Kraków",50.0712,19.9567,"@yuliya_krk","квартира","Шукаю кімнату Podgórze або Kazimierz"],
+      ["Василь","Kraków",50.0489,19.9678,"@vasyl_krk","робота","Будівельник, фасадні роботи"],
+      ["Антоніна","Kraków",50.0834,19.9123,"@antonina_k","робота","Покоївка, досвід в готелях 4*"],
+      ["Ростислав","Kraków",50.0601,19.9345,"@rostyk_krk","напарник","Шукаю сусіда, квартира на Nowa Huta"],
+      ["Марта","Kraków",50.0456,19.9512,"@marta_krk","робота","Флорист, шукаю квіткову крамницю"],
+      ["Тимофій","Kraków",50.0767,19.9789,"@tymofiy_k","робота","Різноробочий, можу на будівництво"],
+      ["Софія","Kraków",50.0523,19.9098,"@sofiya_krk","інше","Знаю всі урзенди, допоможу з PESEL"],
+      ["Назар","Kraków",50.0678,19.9423,"@nazar_krk","робота","Зварювальник TIG, шукаю завод"],
+      ["Діана","Kraków",50.0412,19.9567,"@diana_krk","квартира","Здаю ліжко-місце, Krowodrza, 700 PLN"],
+      ["Volodymyr","Kraków",50.0589,19.9234,"@vova_krk","робота","Водій кат. C+E, міжнародні перевезення"],
+      ["Христина","Kraków",50.0734,19.9678,"@khrystyna_k","робота","Помічниця кухаря, шукаю ресторан"],
+      ["Євген","Kraków",50.0501,19.9345,"@evgen_krk","робота","Столяр, роблю меблі на замовлення"],
+      ["Оля","Kraków",50.0845,19.9123,"@olya_krk","напарник","Шукаю подругу для спортзалу"],
+      ["Руслан","Kraków",50.0623,19.9512,"@ruslan_krk","робота","Маляр, досвід ремонтів квартир"],
+      ["Аня","Kraków",50.0478,19.9789,"@anya_krk","робота","Касир, шукаю супермаркет або аптеку"],
+      ["Михайло","Kraków",50.0756,19.9067,"@mykhaylo_k","робота","Механік, досвід з вантажівками"],
+      ["Леся","Kraków",50.0534,19.9423,"@lesya_krk","квартира","Шукаю квартиру для сім'ї з дитиною"],
+      ["Вадим","Kraków",50.0689,19.9567,"@vadym_krk","робота","Електрик промисловий, сертифікат SEP"],
+      ["Ліля","Kraków",50.0412,19.9234,"@lilya_krk","інше","Фотограф, зніму портфоліо для резюме"],
+      ["Степан","Kraków",50.0567,19.9345,"@stepan_krk","робота","Плиточник, бригада 2 особи"],
+      ["Вероніка","Kraków",50.0801,19.9678,"@veronika_k","робота","Адміністратор, знаю PL на C1"],
+      ["Петро","Kraków",50.0445,19.9123,"@petro_krk","робота","Оператор виробничої лінії, 3 зміни"],
+      ["Любов","Kraków",50.0712,19.9512,"@lyubov_krk","напарник","Шукаю компанію на курси польської"],
+      ["Арсен","Kraków",50.0534,19.9789,"@arsen_krk","робота","Монтер, збірка конструкцій"],
+      ["Інна","Kraków",50.0856,19.9234,"@inna_krk","робота","Кондитер, досвід тортів і десертів"],
+      ["Захар","Kraków",50.0478,19.9423,"@zakhar_krk","інше","Програміст, допоможу з сайтом/резюме"],
+      ["Тамара","Kraków",50.0623,19.9567,"@tamara_krk","робота","Няня-вихователь, сертифікат першої допомоги"],
+      ["Кирило","Kraków",50.0389,19.9098,"@kyrylo_krk","робота","Комірник, досвід WMS системи"],
+      // === Wrocław (15) ===
+      ["Влад","Wrocław",51.1079,17.0385,"@vlad_wroc","робота","Будівельник, шукаю роботу на об'єкті"],
+      ["Зоя","Wrocław",51.1145,17.0234,"@zoya_wroc","квартира","Шукаю кімнату Krzyki, до 1400 PLN"],
+      ["Тарас Б.","Wrocław",51.0987,17.0512,"@taras_wroc","робота","Водій автобуса, кат. D"],
+      ["Аліса","Wrocław",51.1234,17.0145,"@alisa_wroc","робота","Офіціантка, досвід 2 роки"],
+      ["Гліб","Wrocław",51.1056,17.0423,"@glib_wroc","робота","Кур'єр на власному авто"],
+      ["Валентина","Wrocław",51.1178,17.0567,"@valentyna_w","інше","Репетитор польської мови для дітей"],
+      ["Матвій","Wrocław",51.0923,17.0289,"@matviy_wroc","робота","Пакувальник на складі"],
+      ["Карина","Wrocław",51.1289,17.0178,"@karyna_wroc","робота","Продавець-консультант, Galeria Dominikańska"],
+      ["Олесь","Wrocław",51.1012,17.0456,"@oles_wroc","напарник","Шукаю сусіда, кімната на Psie Pole"],
+      ["Дар'я","Wrocław",51.1123,17.0345,"@darya_wroc","робота","Прибиральниця офісів, вечірні зміни"],
+      ["Назар В.","Wrocław",51.0978,17.0512,"@nazar_wroc","робота","Токар-фрезерувальник, ЧПУ"],
+      ["Вікторія Л.","Wrocław",51.1201,17.0234,"@vika_wroc","квартира","Здаю ліжко-місце для дівчини, 650 PLN"],
+      ["Ярослав","Wrocław",51.1067,17.0389,"@yarik_wroc","робота","Різноробочий, будівництво/склад"],
+      ["Поліна","Wrocław",51.1156,17.0512,"@polina_wroc","інше","Перекладач UA/PL/EN, фріланс"],
+      ["Данило","Wrocław",51.0934,17.0267,"@danylo_wroc","робота","Охоронник, маю ліцензію"],
+      // === Gdańsk (12) ===
+      ["Микита","Gdańsk",54.3520,18.6466,"@mykyta_gda","робота","Докер, досвід в порту"],
+      ["Лілія","Gdańsk",54.3612,18.6312,"@liliya_gda","квартира","Шукаю квартиру Wrzeszcz"],
+      ["Олексій","Gdańsk",54.3478,18.6534,"@oleksiy_gda","робота","Зварювальник, суднобудування"],
+      ["Анастасія","Gdańsk",54.3556,18.6178,"@nastya_gda","робота","Касир, Auchan або Lidl"],
+      ["Геннадій","Gdańsk",54.3689,18.6423,"@gennadiy_g","напарник","Шукаю партнера для бізнесу"],
+      ["Мирослава","Gdańsk",54.3423,18.6567,"@myra_gda","робота","Покоївка в готелі, сезон"],
+      ["Ілля","Gdańsk",54.3734,18.6234,"@illya_gda","робота","Електрик, промислові об'єкти"],
+      ["Тетяна Р.","Gdańsk",54.3501,18.6489,"@tetyana_gda","інше","Медик, допоможу з NFZ реєстрацією"],
+      ["Костянтин","Gdańsk",54.3645,18.6345,"@kostya_gda","робота","Водій кат. B, доставка"],
+      ["Раїса","Gdańsk",54.3512,18.6612,"@raisa_gda","квартира","Здаю кімнату Oliwa, 1100 PLN"],
+      ["Артур","Gdańsk",54.3578,18.6178,"@artur_gda","робота","Монтажник, вентиляція та кондиціонери"],
+      ["Юліана","Gdańsk",54.3456,18.6512,"@yuliana_gda","робота","Бариста, шукаю кав'ярню біля моря"],
+      // === Poznań (12) ===
+      ["Ігор П.","Poznań",52.4064,16.9252,"@igor_pozn","робота","Водій фури, міжнародні рейси"],
+      ["Ніна","Poznań",52.4156,16.9345,"@nina_pozn","квартира","Шукаю кімнату, студентка"],
+      ["Ростислав К.","Poznań",52.3978,16.9423,"@rostyslav_p","робота","Будівельник, оздоблювальні роботи"],
+      ["Елла","Poznań",52.4212,16.9178,"@ella_pozn","робота","Касир, досвід Rossmann"],
+      ["Давид","Poznań",52.4034,16.9512,"@davyd_pozn","робота","Комірник, досвід SAP"],
+      ["Злата","Poznań",52.4123,16.9267,"@zlata_pozn","інше","Юрист, консультації по трудовому праву"],
+      ["Остап","Poznań",52.3989,16.9389,"@ostap_pozn","робота","Маляр-штукатур, якісно і швидко"],
+      ["Катя","Poznań",52.4178,16.9456,"@katya_pozn","робота","Флорист, досвід оформлення весіль"],
+      ["Борис","Poznań",52.4056,16.9134,"@borys_pozn","напарник","Шукаю напарника для авто-мийки"],
+      ["Сніжана","Poznań",52.4234,16.9345,"@snizhana_p","робота","Помічниця кухаря, знаю гігієну HACCP"],
+      ["Кіра","Poznań",52.3945,16.9512,"@kira_pozn","робота","Продавець, вільна польська"],
+      ["Леонід","Poznań",52.4101,16.9234,"@leonid_pozn","робота","Слюсар-сантехнік, викликний"],
+      // === Łódź (8) ===
+      ["Герман","Łódź",51.7592,19.4560,"@german_lodz","робота","Оператор на виробництві, 3 зміни"],
+      ["Мілана","Łódź",51.7678,19.4423,"@milana_lodz","квартира","Шукаю житло для пари, до 2000 PLN"],
+      ["Тимур","Łódź",51.7512,19.4678,"@tymur_lodz","робота","Монтер на фабриці"],
+      ["Жанна","Łódź",51.7645,19.4345,"@zhanna_lodz","робота","Швачка, досвід на фабриці одягу"],
+      ["Клим","Łódź",51.7534,19.4512,"@klym_lodz","робота","Вантажник, готовий на важку роботу"],
+      ["Регіна","Łódź",51.7712,19.4267,"@regina_lodz","напарник","Шукаю подругу для курсів польської"],
+      ["Платон","Łódź",51.7489,19.4589,"@platon_lodz","робота","Механік, ремонт промобладнання"],
+      ["Аїда","Łódź",51.7623,19.4178,"@aida_lodz","інше","Перукар, приймаю вдома, Bałuty"],
+      // === Katowice (7) ===
+      ["Мирон","Katowice",50.2649,19.0238,"@myron_kato","робота","Гірник, досвід підземних робіт"],
+      ["Сніжана К.","Katowice",50.2712,19.0345,"@snizhana_k","робота","Медсестра, нострифікація пройдена"],
+      ["Тихон","Katowice",50.2578,19.0156,"@tykhon_kato","робота","Зварювальник, шукаю завод"],
+      ["Лоліта","Katowice",50.2801,19.0423,"@lolita_kato","квартира","Шукаю кімнату, центр, до 1200 PLN"],
+      ["Назарій","Katowice",50.2634,19.0289,"@nazariy_k","робота","Водій навантажувача, сертифікат UDT"],
+      ["Полина А.","Katowice",50.2745,19.0178,"@polina_kato","робота","Касир, шукаю Silesia City Center"],
+      ["Гліб К.","Katowice",50.2523,19.0512,"@glib_kato","напарник","Шукаю людей для футболу по неділях"],
+      // === Lublin (6) ===
+      ["Славко","Lublin",51.2465,22.5684,"@slavko_lub","робота","Водій таксі, знаю місто"],
+      ["Емілія","Lublin",51.2534,22.5512,"@emiliya_lub","квартира","Здаю кімнату, Czuby, 800 PLN"],
+      ["Ярема","Lublin",51.2389,22.5745,"@yarema_lub","робота","Будівельник, покрівельні роботи"],
+      ["Соломія","Lublin",51.2601,22.5423,"@solomiya_l","робота","Кухар, українська та польська кухня"],
+      ["Захар Л.","Lublin",51.2456,22.5612,"@zakhar_lub","інше","Автоінструктор, допоможу з правами в PL"],
+      ["Василина","Lublin",51.2512,22.5534,"@vasylyna_l","робота","Фармацевт, шукаю аптеку"],
+      // === Szczecin (5) ===
+      ["Мстислав","Szczecin",53.4285,14.5528,"@mstyslav_sz","робота","Докер, порт Щецін"],
+      ["Аріна","Szczecin",53.4356,14.5423,"@arina_szcz","робота","Продавець, Media Markt"],
+      ["Лев","Szczecin",53.4212,14.5612,"@lev_szcz","робота","Будівельник, фундаментні роботи"],
+      ["Даринка","Szczecin",53.4389,14.5345,"@darynka_sz","квартира","Шукаю кімнату для студентки"],
+      ["Корній","Szczecin",53.4267,14.5489,"@korniy_szcz","напарник","Шукаю напарника на риболовлю"],
+      // === Bydgoszcz (5) ===
+      ["Пилип","Bydgoszcz",53.1235,18.0084,"@pylyp_bydg","робота","Різноробочий, будь-яка робота"],
+      ["Христя","Bydgoszcz",53.1312,17.9945,"@khrystya_b","робота","Покоївка, готелі та хостели"],
+      ["Данік","Bydgoszcz",53.1178,18.0156,"@danik_bydg","робота","Електрик, дозвіл SEP"],
+      ["Оленка","Bydgoszcz",53.1289,18.0023,"@olenka_bydg","квартира","Здаю ліжко-місце, 550 PLN"],
+      ["Лука","Bydgoszcz",53.1345,18.0112,"@luka_bydg","інше","Волонтер, допоможу з адаптацією"],
+      // === Rzeszów (5) ===
+      ["Златан","Rzeszów",50.0412,21.9991,"@zlatan_rze","робота","Монтажник, збирання меблів"],
+      ["Таміла","Rzeszów",50.0478,22.0123,"@tamila_rze","робота","Прибиральниця, досвід клінінг"],
+      ["Юхим","Rzeszów",50.0345,21.9867,"@yukhym_rze","робота","Водій, локальні доставки"],
+      ["Ульяна","Rzeszów",50.0534,22.0045,"@ulyana_rze","квартира","Шукаю квартиру для мами з дитиною"],
+      ["Назар Б.","Rzeszów",50.0389,21.9934,"@nazar_rze","напарник","Шукаю компанію для бігу вранці"],
+      // === Білосток / Białystok (4) ===
+      ["Тарасик","Białystok",53.1325,23.1688,"@tarasyk_bia","робота","Пакувальник, нічні зміни"],
+      ["Ясмина","Białystok",53.1389,23.1534,"@yasmina_bia","робота","Касир, Kaufland"],
+      ["Лесик","Białystok",53.1267,23.1756,"@lesyk_bia","інше","Ветеринар, допоможу з тваринками"],
+      ["Емма","Białystok",53.1345,23.1623,"@emma_bia","квартира","Шукаю кімнату біля центру"],
+      // === Німеччина / Germany (8) ===
+      ["Руслана","Berlin",52.5200,13.4050,"@ruslana_ber","робота","Шукаю роботу в ресторані, знаю DE на A2"],
+      ["Орест","Berlin",52.5145,13.3890,"@orest_berlin","квартира","Шукаю WG-кімнату Kreuzberg"],
+      ["Маріанна","München",48.1351,11.5820,"@marianna_muc","робота","Медсестра, B2 Deutsch, шукаю Klinik"],
+      ["Гордій","Hamburg",53.5511,9.9937,"@gordiy_ham","робота","Зварювальник, верфі"],
+      ["Злата Б.","Frankfurt",50.1109,8.6821,"@zlata_ffm","робота","IT-тестувальник, віддалено"],
+      ["Святослав","Düsseldorf",51.2277,6.7735,"@svyatoslav_d","робота","Логіст, досвід DHL"],
+      ["Лана","Dresden",51.0504,13.7373,"@lana_dresden","квартира","Шукаю житло, переїжджаю з PL"],
+      ["Данило Н.","Nürnberg",49.4521,11.0767,"@danylo_nurn","інше","Автомеханік BMW, шукаю Werkstatt"],
+      // === Україна / Ukraine (7) ===
+      ["Olha","Львів",49.8397,24.0297,"@olha_lviv","інше","Збираюся переїхати до PL, шукаю контакти"],
+      ["Микола К.","Київ",50.4501,30.5234,"@mykola_kyiv","інше","Планую переїзд до Кракова, шукаю поради"],
+      ["Таня","Харків",49.9935,36.2304,"@tanya_kharkiv","інше","Хочу до Варшави, шукаю роботу заздалегідь"],
+      ["Ваня","Одеса",46.4825,30.7233,"@vanya_odesa","інше","Планую виїзд до Вроцлава, кондитер"],
+      ["Каріна","Дніпро",48.4647,35.0462,"@karyna_dnipro","інше","Медик, готуюсь до нострифікації в PL"],
+      ["Гриць","Запоріжжя",47.8388,35.1396,"@gryts_zp","інше","Зварювальник, чекаю візу до PL"],
+      ["Софійка","Івано-Франківськ",48.9226,24.7111,"@sofiyка_if","інше","Вчителька, шукаю школу в Кракові"],
+      // === Чехія / Czech Republic (5) ===
+      ["Мирослав","Praha",50.0755,14.4378,"@myroslav_prg","робота","Будівельник, працюю в CZ, шукаю PL"],
+      ["Іванка","Brno",49.1951,16.6068,"@ivanka_brno","інше","Перекладач CZ/UA, думаю про переїзд до PL"],
+      ["Остап Ч.","Ostrava",49.8209,18.2625,"@ostap_ostr","робота","Металург, шукаю завод біля кордону PL"],
+      ["Леся Ч.","Hradec Králové",50.2092,15.8327,"@lesya_hk","квартира","Переїжджаю до Вроцлава, шукаю житло"],
+      ["Тимко","Liberec",50.7671,15.0562,"@tymko_lib","робота","Скляр, шукаю фабрику в PL"],
+      // === Словаччина / Slovakia (3) ===
+      ["Юрко","Bratislava",48.1486,17.1077,"@yurko_brat","інше","Планую переїзд до Кракова"],
+      ["Мілена","Košice",48.7164,21.2611,"@milena_kos","робота","Кухарка, хочу в PL ресторан"],
+      ["Роберт","Žilina",49.2231,18.7395,"@robert_zil","робота","Водій, думаю про PL"]
+    ];
+
+    // ===== Extra generated community data (+100) =====
+    // Majority in biggest Polish cities, some scattered around Poland,
+    // and a few in neighboring countries.
+    function seededNoise(n) {
+      var x = Math.sin(n * 9999.91) * 10000;
+      return x - Math.floor(x);
+    }
+
+    function generateExtraCommunityData() {
+      var cityPlan = [
+        // Major population centers in Poland (74)
+        { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 18 },
+        { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 12 },
+        { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 8 },
+        { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 8 },
+        { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 7 },
+        { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 6 },
+        { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 4 },
+        { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 3 },
+        { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 3 },
+        { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 3 },
+        { city: 'Białystok', lat: 53.1325, lng: 23.1688, count: 2 },
+
+        // Scattered around Poland (14)
+        { city: 'Gdynia', lat: 54.5189, lng: 18.5305, count: 2 },
+        { city: 'Sopot', lat: 54.4416, lng: 18.5601, count: 1 },
+        { city: 'Gorzów Wielkopolski', lat: 52.7368, lng: 15.2288, count: 1 },
+        { city: 'Opole', lat: 50.6751, lng: 17.9213, count: 1 },
+        { city: 'Kielce', lat: 50.8661, lng: 20.6286, count: 1 },
+        { city: 'Olsztyn', lat: 53.7784, lng: 20.4801, count: 1 },
+        { city: 'Toruń', lat: 53.0138, lng: 18.5984, count: 1 },
+        { city: 'Radom', lat: 51.4027, lng: 21.1471, count: 1 },
+        { city: 'Rzeszów', lat: 50.0412, lng: 21.9991, count: 2 },
+        { city: 'Zielona Góra', lat: 51.9356, lng: 15.5062, count: 1 },
+        { city: 'Częstochowa', lat: 50.8118, lng: 19.1203, count: 1 },
+        { city: 'Gliwice', lat: 50.2945, lng: 18.6714, count: 1 },
+        { city: 'Zabrze', lat: 50.3249, lng: 18.7857, count: 1 },
+
+        // Neighboring countries (12)
+        { city: 'Berlin', lat: 52.5200, lng: 13.4050, count: 2 },
+        { city: 'Dresden', lat: 51.0504, lng: 13.7373, count: 1 },
+        { city: 'Praha', lat: 50.0755, lng: 14.4378, count: 2 },
+        { city: 'Ostrava', lat: 49.8209, lng: 18.2625, count: 1 },
+        { city: 'Bratislava', lat: 48.1486, lng: 17.1077, count: 2 },
+        { city: 'Košice', lat: 48.7164, lng: 21.2611, count: 1 },
+        { city: 'Lviv', lat: 49.8397, lng: 24.0297, count: 1 },
+        { city: 'Vilnius', lat: 54.6872, lng: 25.2797, count: 1 },
+        { city: 'Minsk', lat: 53.9006, lng: 27.5590, count: 1 }
+      ];
+
+      var firstNames = [
+        'Артем','Олексій','Ігор','Богдан','Роман','Тарас','Максим','Юрій','Микола','Олег',
+        'Владислав','Павло','Дмитро','Сергій','Віталій','Марія','Олена','Ірина','Наталія','Анна',
+        'Катерина','Тетяна','Оксана','Юлія','Світлана','Людмила','Аліна','Вікторія','Дарина','Софія',
+        'Христина','Надія','Леся','Марина','Зоряна','Уляна'
+      ];
+      var seeks = ['робота', 'квартира', 'напарник', 'інше'];
+      var descriptions = [
+        'Шукаю роботу та нові контакти серед українців',
+        'Переїхав(ла) нещодавно, відкритий(а) до знайомств',
+        'Можу підказати з адаптацією та документами',
+        'Шукаю житло/сусідів у районі',
+        'Цікавлять робочі зміни та підробіток поруч'
+      ];
+
+      var extra = [];
+      var idx = 1;
+
+      cityPlan.forEach(function(cfg) {
+        for (var i = 0; i < cfg.count; i++) {
+          var n1 = seededNoise(idx * 3.17);
+          var n2 = seededNoise(idx * 7.91);
+          var lat = cfg.lat + (n1 - 0.5) * 0.12;
+          var lng = cfg.lng + (n2 - 0.5) * 0.18;
+
+          // Keep within map display bounds used later in CSV validation
+          if (lat <= 40) lat = 40.05;
+          if (lat >= 60) lat = 59.95;
+          if (lng <= 10) lng = 10.05;
+          if (lng >= 30) lng = 29.95;
+
+          var firstName = firstNames[idx % firstNames.length];
+          var name = firstName + ' ' + String.fromCharCode(65 + (idx % 24)) + '.';
+          var tg = '@ua_map_' + (1000 + idx);
+          var seek = seeks[idx % seeks.length];
+          var desc = descriptions[idx % descriptions.length];
+
+          extra.push([
+            name,
+            cfg.city,
+            parseFloat(lat.toFixed(4)),
+            parseFloat(lng.toFixed(4)),
+            tg,
+            seek,
+            desc
+          ]);
+
+          idx++;
+        }
+      });
+
+      return extra;
+    }
+
+    // Append generated +100 entries to the seeded dataset
+    sampleData = sampleData.concat(generateExtraCommunityData());
+
+    // Helper: add a marker from sample data entry
+    function addSampleMarker(entry) {
+      var name = entry[0], city = entry[1], lat = entry[2], lng = entry[3];
+      var tg = entry[4], seeking = entry[5], desc = entry[6];
+      var tgClean = tg.replace(/@/g, '');
+      var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
+      popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
+      if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
+      if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
+      if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
+      markers.addLayer(L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 }));
+    }
+
+    // Add all sample data first
+    var sampleCount = sampleData.length;
+    sampleData.forEach(addSampleMarker);
+    map.addLayer(markers);
+
+    // Show sample count immediately
+    var counterEl = document.getElementById('map-counter');
+    var countEl = document.getElementById('marker-count');
+    if (sampleCount > 0 && counterEl && countEl) {
+      countEl.textContent = sampleCount;
+      counterEl.style.display = 'inline-block';
+    }
+
+    var loadingEl = document.getElementById('map-loading');
+    var errorShown = false;
+
+    function showError(msg) {
+      if (errorShown) return;
+      errorShown = true;
+      if (loadingEl) {
+        loadingEl.innerHTML = '<div style="color:#ef4444;font-weight:600;">⚠️ ' + msg + '</div>' +
+          '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Спробувати знову</button>';
+        loadingEl.style.display = 'block';
+      }
+    }
+
+    // Add timeout for CSV loading
+    var csvTimeout = setTimeout(function() {
+      showError('Завантаження даних зайняло надто довго. Перевірте інтернет-з\'єднання.');
+    }, 15000);
+
+    Papa.parse(csvUrl, {
+      download: true,
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        clearTimeout(csvTimeout);
+        if (loadingEl) loadingEl.style.display = 'none';
+
+        if (!results.data || results.data.length === 0) {
+          return;
+        }
+
+        // Auto-detect column names from the first row
+        var firstRow = results.data[0];
+        var colLat = findCol(firstRow, ['Широта', 'Lat', 'lat', 'latitude']);
+        var colLng = findCol(firstRow, ['Довгота', 'Lng', 'lng', 'longitude']);
+        var colName = findCol(firstRow, ["Ім'я", 'Нік', 'Name', 'name']);
+        var colCity = findCol(firstRow, ['Місто', 'City', 'city']);
+        var colTg = findCol(firstRow, ['Telegram', 'telegram', 'tg']);
+        var colSeeking = findCol(firstRow, ['Що шукаю', 'seeking', 'szukam']);
+        var colDesc = findCol(firstRow, ['Короткий опис', 'опис', 'description', 'opis']);
+
+        if (!colLat || !colLng) {
+          console.warn('Map CSV: Could not find Lat/Lng columns. Found headers:', Object.keys(firstRow));
+          showError('Не вдалося розпізнати формат даних. Спробуйте пізніше.');
+          return;
+        }
+
+        var count = 0;
+        results.data.forEach(function(row) {
+          var latStr = row[colLat];
+          var lngStr = row[colLng];
+          if (latStr && lngStr) {
+            // Handle comma as decimal separator
+            var lat = parseFloat(String(latStr).replace(',', '.'));
+            var lng = parseFloat(String(lngStr).replace(',', '.'));
+            if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
+              var name = (colName && row[colName]) ? row[colName] : 'Анонім';
+              var city = (colCity && row[colCity]) ? row[colCity] : '';
+              var telegram = (colTg && row[colTg]) ? row[colTg] : '';
+              var seeking = (colSeeking && row[colSeeking]) ? row[colSeeking] : '';
+              var desc = (colDesc && row[colDesc]) ? row[colDesc] : '';
+
+              var tgClean = telegram.replace(/@/g, '').trim();
+
+              var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
+              if (city) popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
+              if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
+              if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
+              if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
+
+              var marker = L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 });
+              markers.addLayer(marker);
+              count++;
+            }
+          }
+        });
+
+        // Update counter with combined total
+        var total = sampleCount + count;
+        if (counterEl && countEl) {
+          countEl.textContent = total;
+          counterEl.style.display = 'inline-block';
+        }
+      },
+      error: function(err) {
+        clearTimeout(csvTimeout);
+        showError('Не вдалося завантажити дані карти. Спробуйте пізніше.');
+        console.error('CSV parse error:', err);
+      }
+    });
+
+  })();
+  </script>
+  <script src="/main.js"></script>
+</body>
+</html>
