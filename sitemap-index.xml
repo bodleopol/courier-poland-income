@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://rybezh.site/sitemap-static.xml</loc>
+    <lastmod>2026-02-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://rybezh.site/sitemap-vacancies.xml</loc>
+    <lastmod>2026-02-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://rybezh.site/sitemap-blog.xml</loc>
+    <lastmod>2026-02-15</lastmod>
+  </sitemap>
+</sitemapindex>
