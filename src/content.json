@@ -34603,5 +34603,260 @@
     "date_posted": "2026-02-16T21:38:28.828Z",
     "is_generated": true,
     "data_source": "generated"
+  },
+  {
+    "slug": "gdansk-hospitality-pomocnik-kucharza-301",
+    "category": "hospitality",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Помічник кухаря в ресторан",
+    "title_pl": "Pomocnik kucharza w restauracji",
+    "salary": "23 - 28 PLN/h",
+    "company": "Morska Bryza Sp. z o.o.",
+    "shift_ua": "Пн-Пт, зміни 8 годин",
+    "shift_pl": "Pn-Pt, zmiany 8-godzinne",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Робота в престижному ресторані в центрі Гданська.",
+      "Можливість навчатися у досвідчених кухарів.",
+      "Харчування під час зміни.",
+      "Дружня атмосфера та підтримка команди."
+    ],
+    "offers_pl": [
+      "Praca w prestiżowej restauracji w centrum Gdańska.",
+      "Możliwość nauki od doświadczonych kucharzy.",
+      "Wyżywienie w trakcie zmiany.",
+      "Przyjazna atmosfera i wsparcie zespołu."
+    ],
+    "tasks_ua": [
+      "Підготовка інгредієнтів (миття, чищення, нарізка).",
+      "Допомога кухарям у приготуванні страв.",
+      "Підтримка чистоти на кухні.",
+      "Контроль якості та свіжості продуктів."
+    ],
+    "tasks_pl": [
+      "Przygotowywanie składników (mycie, obieranie, krojenie).",
+      "Pomoc kucharzom w przygotowywaniu dań.",
+      "Utrzymanie czystości w kuchni.",
+      "Kontrola jakości i świeżości produktów."
+    ],
+    "details_ua": [
+      "Ресторан розташований у туристичній частині міста, що гарантує стабільний потік гостей.",
+      "Команда складається з 10 осіб, включаючи 4 кухарів.",
+      "Робочий день починається о 10:00 з підготовки.",
+      "Є можливість кар'єрного росту до кухаря."
+    ],
+    "details_pl": [
+      "Restauracja znajduje się w turystycznej części miasta, co gwarantuje stały przepływ gości.",
+      "Zespół składa się z 10 osób, w tym 4 kucharzy.",
+      "Dzień pracy zaczyna się o 10:00 od przygotowań.",
+      "Istnieje możliwość awansu na stanowisko kucharza."
+    ],
+    "requirements_ua": [
+      "Досвід: Досвід не обов'язковий, проводимо навчання.",
+      "Мова: Базове знання польської мови.",
+      "Документи: Санітарна книжка (або готовність її зробити)."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Doświadczenie nie jest wymagane, prowadzimy szkolenia.",
+      "Język: Podstawowa znajomość języka polskiego.",
+      "Dokumenty: Książeczka sanepidowska (lub gotowość do jej wyrobienia)."
+    ],
+    "experience_ua": "Без досвіду",
+    "experience_pl": "Bez doświadczenia",
+    "language_ua": "Польська базова",
+    "language_pl": "Polski podstawowy",
+    "housing_ua": "Не надається",
+    "housing_pl": "Nie zapewniamy",
+    "transport_ua": "Поруч зупинки громадського транспорту",
+    "transport_pl": "W pobliżu przystanki komunikacji miejskiej",
+    "documents_ua": "Санітарна книжка",
+    "documents_pl": "Książeczka sanepidowska",
+    "body": "\n        <div class=\"vacancy-block\">\n          <p>Ресторан \"Морська Бриза\" в самому серці Гданська шукає енергійного та мотивованого помічника кухаря, готового приєднатися до нашої дружньої команди. Ми спеціалізуємося на сучасній європейській кухні з акцентом на свіжі морепродукти, тому ви отримаєте унікальний досвід роботи з якісними інгредієнтами. Ваші обов'язки включатимуть підготовку продуктів, нарізку овочів, допомогу в приготуванні простих страв та підтримку чистоти на робочому місці. Ми не вимагаємо великого досвіду — головне ваше бажання вчитися, відповідальність та любов до кулінарії. Пропонуємо гнучкий графік, гідну оплату та можливість кар'єрного росту до позиції кухаря.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Відгукнутися на вакансію</a>\n      ",
+    "body_pl": "\n        <div class=\"vacancy-block\">\n          <p>Restauracja \"Morska Bryza\" w sercu Gdańska poszukuje energicznego i zmotywowanego pomocnika kucharza, gotowego dołączyć do naszego zgranego zespołu. Specjalizujemy się w nowoczesnej kuchni europejskiej z naciskiem na świeże owoce morza, dzięki czemu zdobędziesz unikalne doświadczenie w pracy z wysokiej jakości składnikami. Do Twoich obowiązków należeć będzie przygotowywanie produktów, krojenie warzyw, pomoc w przygotowywaniu prostych dań oraz utrzymanie czystości w miejscu pracy. Nie wymagamy dużego doświadczenia – liczy się Twoja chęć do nauki, odpowiedzialność i miłość do gotowania. Oferujemy elastyczny grafik, godziwe wynagrodzenie oraz możliwość rozwoju zawodowego na stanowisko kucharza.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Aplikuj teraz</a>\n      ",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-16T22:01:27.373Z",
+    "is_generated": true,
+    "data_source": "generated"
+  },
+  {
+    "slug": "remote-it-data-entry-specialist-302",
+    "category": "it",
+    "city": "Віддалено",
+    "city_pl": "Zdalna",
+    "title": "Спеціаліст з введення даних (віддалено)",
+    "title_pl": "Specjalista ds. wprowadzania danych (praca zdalna)",
+    "salary": "20 - 25 PLN/h",
+    "company": "DataFlow Solutions Sp. z o.o.",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "Пн-Пт",
+    "pattern_pl": "Pn-Pt",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "contract_ua": "Umowa o dzieło",
+    "contract_pl": "Umowa o dzieło",
+    "offers_ua": [
+      "Повністю віддалена робота.",
+      "Гнучкий графік, можливість поєднувати з навчанням.",
+      "Навчання та підтримка на старті.",
+      "Оплата за обсяг виконаної роботи."
+    ],
+    "offers_pl": [
+      "Całkowicie zdalna praca.",
+      "Elastyczny grafik, możliwość łączenia z nauką.",
+      "Szkolenie i wsparcie na starcie.",
+      "Wynagrodzenie za wykonaną pracę."
+    ],
+    "tasks_ua": [
+      "Введення даних з документів у систему.",
+      "Перевірка та корекція даних.",
+      "Дотримання стандартів якості.",
+      "Робота з програмами для обробки даних."
+    ],
+    "tasks_pl": [
+      "Wprowadzanie danych z dokumentów do systemu.",
+      "Weryfikacja i korekta danych.",
+      "Przestrzeganie standardów jakości.",
+      "Praca z programami do przetwarzania danych."
+    ],
+    "details_ua": [
+      "Робота виконується на вашому комп'ютері.",
+      "Зв'язок з командою через месенджери.",
+      "Обсяг роботи залежить від вашої продуктивності.",
+      "Виплати проводяться щотижня."
+    ],
+    "details_pl": [
+      "Praca wykonywana jest na własnym komputerze.",
+      "Komunikacja z zespołem odbywa się za pośrednictwem komunikatorów.",
+      "Zakres pracy zależy od Twojej produktywności.",
+      "Wypłaty realizowane są co tydzień."
+    ],
+    "requirements_ua": [
+      "Досвід: Не обов'язковий.",
+      "Навички: Швидкий набір тексту, уважність.",
+      "Обладнання: Власний комп'ютер та доступ до Інтернету."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Nie jest wymagane.",
+      "Umiejętności: Szybkie pisanie na klawiaturze, dbałość o szczegóły.",
+      "Sprzęt: Własny komputer i dostęp do Internetu."
+    ],
+    "experience_ua": "Без досвіду",
+    "experience_pl": "Bez doświadczenia",
+    "language_ua": "Не вимагається",
+    "language_pl": "Nie jest wymagany",
+    "housing_ua": "Віддалена робота",
+    "housing_pl": "Praca zdalna",
+    "transport_ua": "Віддалена робота",
+    "transport_pl": "Praca zdalna",
+    "documents_ua": "Договір",
+    "documents_pl": "Umowa",
+    "body": "\n        <div class=\"vacancy-block\">\n          <p>Шукаємо уважного до деталей спеціаліста з введення даних для віддаленої роботи в нашій компанії DataFlow Solutions. Ваша основна задача — переносити інформацію з різних джерел (скани, PDF-файли) в нашу систему управління даними. Ця робота вимагає посидючості, точності та вміння працювати з великими обсягами інформації. Ми пропонуємо гнучкий графік, який ви можете підлаштувати під свій ритм життя, та стабільну оплату за виконаний обсяг роботи. Досвід не є обов'язковим, ми надаємо прості інструкції та підтримку на кожному етапі.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Відгукнутися на вакансію</a>\n      ",
+    "body_pl": "\n        <div class=\"vacancy-block\">\n          <p>Poszukujemy uważnego na detale specjalisty ds. wprowadzania danych do pracy zdalnej w naszej firmie DataFlow Solutions. Twoim głównym zadaniem będzie przenoszenie informacji z różnych źródeł (skany, pliki PDF) do naszego systemu zarządzania danymi. Ta praca wymaga cierpliwości, dokładności i umiejętności pracy z dużymi ilościami informacji. Oferujemy elastyczny grafik, który możesz dostosować do swojego rytmu życia, oraz stabilne wynagrodzenie za wykonaną pracę. Doświadczenie nie jest wymagane, zapewniamy proste instrukcje i wsparcie na każdym etapie.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Aplikuj teraz</a>\n      ",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "contract",
+    "date_posted": "2026-02-16T22:11:36.361Z",
+    "is_generated": true,
+    "data_source": "generated"
+  },
+  {
+    "slug": "krakow-security-portier-303",
+    "category": "security",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Вахтер у житловий комплекс",
+    "title_pl": "Portier w kompleksie mieszkalnym",
+    "salary": "22 - 26 PLN/h",
+    "company": "Osiedle \"Cichy Zakątek\"",
+    "shift_ua": "Позмінний графік (доба через дві)",
+    "shift_pl": "Grafik zmianowy (doba przez dwie)",
+    "pattern_ua": "1/2",
+    "pattern_pl": "1/2",
+    "start_ua": "Негайно",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільна робота в новому житловому комплексі.",
+      "Комфортне робоче місце.",
+      "Офіційне працевлаштування.",
+      "Дружній колектив."
+    ],
+    "offers_pl": [
+      "Stabilna praca w nowym kompleksie mieszkalnym.",
+      "Komfortowe miejsce pracy.",
+      "Oficjalne zatrudnienie.",
+      "Przyjazny zespół."
+    ],
+    "tasks_ua": [
+      "Контроль доступу до будівлі.",
+      "Прийом та видача ключів.",
+      "Нагляд за моніторами відеоспостереження.",
+      "Ведення журналу відвідувачів."
+    ],
+    "tasks_pl": [
+      "Kontrola dostępu do budynku.",
+      "Przyjmowanie i wydawanie kluczy.",
+      "Nadzór nad monitorami CCTV.",
+      "Prowadzenie ewidencji gości."
+    ],
+    "details_ua": [
+      "Робота в тихому та спокійному районі.",
+      "Невеликий колектив.",
+      "Робоче місце обладнане всім необхідним.",
+      "Можливість працювати в нічні зміни."
+    ],
+    "details_pl": [
+      "Praca w cichej i spokojnej okolicy.",
+      "Niewielki zespół.",
+      "Miejsce pracy wyposażone we wszystko, co niezbędne.",
+      "Możliwość pracy w godzinach nocnych."
+    ],
+    "requirements_ua": [
+      "Досвід: Не вимагається.",
+      "Особисті якості: Відповідальність, ввічливість.",
+      "Документи: Дозвіл на роботу."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Nie jest wymagane.",
+      "Cechy osobiste: Odpowiedzialność, uprzejmość.",
+      "Dokumenty: Pozwolenie na pracę."
+    ],
+    "experience_ua": "Без досвіду",
+    "experience_pl": "Bez doświadczenia",
+    "language_ua": "Польська комунікативна",
+    "language_pl": "Polski komunikatywny",
+    "housing_ua": "Не надається",
+    "housing_pl": "Nie zapewniamy",
+    "transport_ua": "Поруч зупинки громадського транспорту",
+    "transport_pl": "W pobliżu przystanki komunikacji miejskiej",
+    "documents_ua": "Дозвіл на роботу",
+    "documents_pl": "Pozwolenie na pracę",
+    "body": "\n        <div class=\"vacancy-block\">\n          <p>Житловий комплекс \"Тихий Куточок\" у Кракові шукає відповідального та ввічливого вахтера. Ваша робота полягатиме в забезпеченні спокою та безпеки мешканців, контролі входу та виходу, прийомі кореспонденції та наданні інформаційної підтримки. Ми шукаємо людину з добрими комунікативними навичками, яка вміє зберігати спокій у будь-якій ситуації. Досвід роботи не є обов'язковим, але буде перевагою. Пропонуємо стабільний графік роботи (доба через дві), комфортні умови праці та дружній колектив.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Відгукнутися на вакансію</a>\n      ",
+    "body_pl": "\n        <div class=\"vacancy-block\">\n          <p>Kompleks mieszkalny \"Cichy Zakątek\" w Krakowie poszukuje odpowiedzialnego i uprzejmego portiera. Twoja praca będzie polegać na zapewnieniu spokoju i bezpieczeństwa mieszkańców, kontroli wejść i wyjść, odbieraniu korespondencji oraz udzielaniu wsparcia informacyjnego. Poszukujemy osoby o dobrych umiejętnościach komunikacyjnych, która potrafi zachować spokój w każdej sytuacji. Doświadczenie nie jest wymagane, ale będzie dodatkowym atutem. Oferujemy stabilny grafik pracy (doba przez dwie), komfortowe warunki pracy oraz przyjazny zespół.</p>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Aplikuj teraz</a>\n      ",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-16T22:17:39.065Z",
+    "is_generated": true,
+    "data_source": "generated"
   }
 ]
