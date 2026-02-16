@@ -1,4 +1,4 @@
-[ 
+[
   {
     "slug": "krakow-hospitality-chef-open-kitchen-human-401",
     "category": "hospitality",
@@ -34516,6 +34516,91 @@
     "language": "uk",
     "employment_type": "full-time",
     "date_posted": "2026-02-14T14:35:00.000Z",
+    "is_generated": true,
+    "data_source": "generated"
+  },
+  {
+    "slug": "warsaw-security-pracownik-ochrony-300",
+    "category": "security",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Охоронець на промисловий об'єкт",
+    "title_pl": "Pracownik ochrony w obiekcie przemysłowym",
+    "salary": "25 - 35 PLN/h",
+    "company": "Bezpieczeństwo Plus Sp. z o.o.",
+    "shift_ua": "Пн-Нд, гнучкий графік (12/24)",
+    "shift_pl": "Pn-Nd, elastyczny grafik (12/24)",
+    "pattern_ua": "Доба через дві",
+    "pattern_pl": "Doba przez dwie",
+    "start_ua": "Негайно",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільна зайнятість на повну ставку.",
+      "Медичне страхування (ZUS).",
+      "Форменний одяг та необхідне обладнання.",
+      "Можливість професійного розвитку та підвищення кваліфікації."
+    ],
+    "offers_pl": [
+      "Stabilne zatrudnienie na pełny etat.",
+      "Ubezpieczenie zdrowotne (ZUS).",
+      "Umundurowanie i niezbędny sprzęt.",
+      "Możliwość rozwoju zawodowego i podnoszenia kwalifikacji."
+    ],
+    "tasks_ua": [
+      "Контроль доступу на територію об'єкта.",
+      "Моніторинг системи відеоспостереження.",
+      "Обхід та патрулювання території.",
+      "Ведення службової документації."
+    ],
+    "tasks_pl": [
+      "Kontrola dostępu na teren obiektu.",
+      "Monitorowanie systemu telewizji przemysłowej (CCTV).",
+      "Obchód i patrolowanie terenu.",
+      "Prowadzenie dokumentacji służbowej."
+    ],
+    "details_ua": [
+      "Робота в сучасній будівлі з усіма зручностями.",
+      "Дружній колектив та підтримка на кожному етапі.",
+      "Об'єкт розташований у зручній локації з добрим транспортним сполученням.",
+      "Графік роботи позмінний, що дозволяє планувати вільний час."
+    ],
+    "details_pl": [
+      "Praca w nowoczesnym budynku z pełnym zapleczem socjalnym.",
+      "Przyjazny zespół i wsparcie na każdym etapie.",
+      "Obiekt zlokalizowany w dogodnym miejscu z dobrym dojazdem.",
+      "Grafik zmianowy, co pozwala na elastyczne planowanie czasu wolnego."
+    ],
+    "requirements_ua": [
+      "Досвід: Досвід роботи в охороні вітається, але не є обов'язковим.",
+      "Мова: Комунікативне знання польської мови.",
+      "Документи: Дозвіл на роботу, відсутність судимостей."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Doświadczenie w ochronie mile widziane, ale nie jest wymagane.",
+      "Język: Komunikatywna znajomość języka polskiego.",
+      "Dokumenty: Pozwolenie na pracę, zaświadczenie o niekaralności."
+    ],
+    "experience_ua": "Досвід вітається",
+    "experience_pl": "Doświadczenie mile widziane",
+    "language_ua": "Польська комунікативна",
+    "language_pl": "Polski komunikatywny",
+    "housing_ua": "Допомога в пошуку житла",
+    "housing_pl": "Pomoc w znalezieniu zakwaterowania",
+    "transport_ua": "Зручний доїзд громадським транспортом",
+    "transport_pl": "Dogodny dojazd komunikacją miejską",
+    "documents_ua": "Дозвіл на роботу, довідка про несудимість",
+    "documents_pl": "Pozwolenie na pracę, zaświadczenie o niekaralności",
+    "body": "\n        <div class=\"vacancy-block\">\n          <p>Наша компанія, Bezpieczeństwo Plus, шукає відповідального та уважного охоронця для роботи на сучасному промисловому об'єкті у Варшаві. Ми пропонуємо стабільну роботу в команді професіоналів, де цінують дисципліну та вміння швидко реагувати на нештатні ситуації. Вашим головним завданням буде забезпечення безпеки на території підприємства, контроль доступу працівників та транспортних засобів, а також моніторинг системи відеоспостереження. Ми шукаємо людину, яка не боїться відповідальності та готова працювати за гнучким графіком, включаючи нічні зміни.</p>\n          <p>Досвід роботи в охороні буде перевагою, але ми готові розглянути кандидатів без досвіду, які мають сильну мотивацію та бажання вчитися. Ми пропонуємо повний соціальний пакет, включаючи медичне страхування та оплачувану відпустку. Крім того, ми забезпечуємо працівників форменним одягом та всім необхідним для комфортної роботи обладнанням. Якщо ви шукаєте надійного роботодавця та готові стати частиною нашої команди, надсилайте своє резюме.</p>\n          <div class=\"job-meta\">\n            <p><strong>🏢 Компанія:</strong> Bezpieczeństwo Plus Sp. z o.o.</p>\n            <p><strong>📍 Місто:</strong> Варшава</p>\n          </div>\n          <hr>\n          <h3>Короткі умови</h3>\n          <ul>\n            <li>Графік: Пн-Нд, гнучкий графік (12/24)</li>\n            <li>Режим: Доба через дві</li>\n            <li>Договір: Umowa o pracę</li>\n            <li>Старт: Негайно</li>\n          </ul>\n          <h3>Що робитимете щодня:</h3>\n          <ul><li>Контроль доступу на територію об'єкта.</li><li>Моніторинг системи відеоспостереження.</li><li>Обхід та патрулювання території.</li><li>Ведення службової документації.</li></ul>\n          <h3>Критерії</h3>\n          <ul><li>Досвід: Досвід роботи в охороні вітається, але не є обов'язковим.</li><li>Мова: Комунікативне знання польської мови.</li><li>Документи: Дозвіл на роботу, відсутність судимостей.</li></ul>\n          <div class=\"salary-box\">💰 Зарплата: <strong>25 - 35 PLN/h</strong></div>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Відгукнутися на вакансію</a>\n      ",
+    "body_pl": "\n        <div class=\"vacancy-block\">\n          <p>Nasza firma, Bezpieczeństwo Plus, poszukuje odpowiedzialnego i uważnego pracownika ochrony do pracy w nowoczesnym obiekcie przemysłowym w Warszawie. Oferujemy stabilną pracę w zespole profesjonalistów, gdzie ceni się dyscyplinę i umiejętność szybkiego reagowania na nietypowe sytuacje. Twoim głównym zadaniem będzie zapewnienie bezpieczeństwa na terenie zakładu, kontrola dostępu pracowników i pojazdów oraz monitorowanie systemu telewizji przemysłowej. Szukamy osoby, która nie boi się odpowiedzialności i jest gotowa do pracy w elastycznym grafiku, w tym w porze nocnej.</p>\n          <p>Doświadczenie w ochronie będzie dodatkowym atutem, ale jesteśmy otwarci również na kandydatów bez doświadczenia, którzy mają silną motywację i chęć do nauki. Oferujemy pełny pakiet socjalny, w tym ubezpieczenie zdrowotne i płatny urlop. Ponadto zapewniamy pracownikom umundurowanie i cały niezbędny sprzęt do komfortowej pracy. Jeśli szukasz rzetelnego pracodawcy i chcesz stać się częścią naszego zespołu, prześlij swoje CV.</p>\n          <div class=\"job-meta\">\n            <p><strong>🏢 Firma:</strong> Bezpieczeństwo Plus Sp. z o.o.</p>\n            <p><strong>📍 Miasto:</strong> Warszawa</p>\n          </div>\n          <hr>\n          <h3>Krótkie warunki</h3>\n          <ul>\n            <li>Grafik: Pn-Nd, elastyczny grafik (12/24)</li>\n            <li>System: Doba przez dwie</li>\n            <li>Umowa: Umowa o pracę</li>\n            <li>Start: Od zaraz</li>\n          </ul>\n          <h3>Twoje obowiązki:</h3>\n          <ul><li>Kontrola dostępu na teren obiektu.</li><li>Monitorowanie systemu telewizji przemysłowej (CCTV).</li><li>Obchód i patrolowanie terenu.</li><li>Prowadzenie dokumentacji służbowej.</li></ul>\n          <h3>Oczekiwania wobec kandydata</h3>\n          <ul><li>Doświadczenie: Doświadczenie w ochronie mile widziane, ale nie jest wymagane.</li><li>Język: Komunikatywna znajomość języka polskiego.</li><li>Dokumenty: Pozwolenie na pracę, zaświadczenie o niekaralności.</li></ul>\n          <div class=\"salary-box\">💰 Wynagrodzenie: <strong>25 - 35 PLN/h</strong></div>\n        </div>\n        <a href=\"/apply.html\" class=\"btn btn-primary\">Aplikuj teraz</a>\n      ",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-16T21:38:28.828Z",
     "is_generated": true,
     "data_source": "generated"
   }
