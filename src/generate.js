@@ -1762,9 +1762,13 @@ async function build() {
 
     const blogListHtml = pagePosts.map(p => {
       const readMinutes = estimateReadingTime(p.body || '');
+      const cardImageUrl = extractImageUrl(p.image || '');
+      const cardVisual = cardImageUrl
+        ? `<img src="${escapeHtml(cardImageUrl)}" alt="${escapeHtml(p.title || '')}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/og-image.png';">`
+        : escapeHtml(stripHtml(p.image || '📝'));
       return `
       <div class="blog-card">
-        <div class="blog-icon">${p.image || '📝'}</div>
+        <div class="blog-icon">${cardVisual}</div>
         <div class="blog-content">
           <div class="blog-meta-row">
             <div class="blog-date" data-format-date="${p.date}">${p.date}</div>
