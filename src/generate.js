@@ -1557,7 +1557,7 @@ async function build() {
       <div class="job-page-layout">
         <div class="job-meta">
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
-          <span class="tag">📅 ${escapeHtml(displayDate)}</span>
+          <span class="tag">📅 <span data-format-date="${displayDate}">${displayDate}</span></span>
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
