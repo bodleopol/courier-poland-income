@@ -24,7 +24,15 @@ public/
 .DS_Store
 
 # Security - never commit tokens or credentials
-*token*
-*secret*
-*credential*
+# Note: Be specific with patterns to avoid blocking legitimate files
+*.token
+*.token.txt
+*.secret
+*.secret.json
+*.credential
+*.credentials
+.credentials
+secrets.json
+tokens.txt
+credentials.yml
 !SECURITY.md
