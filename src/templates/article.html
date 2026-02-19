@@ -12,13 +12,23 @@
   <meta name="theme-color" content="#00a67e">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://rybezh.site/{{SLUG}}.html">
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/{{SLUG}}.html">
+  <link rel="alternate" hreflang="pl" href="https://rybezh.site/{{SLUG}}-pl.html">
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/{{SLUG}}.html">
+
+  <!-- Performance: preconnect to critical third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   
   <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <meta name="googlebot" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="subject" content="Вакансія: {{TITLE}}">
   <meta name="language" content="Ukrainian, Polish">
-  <meta name="revisit-after" content="7 days">
+  <meta name="geo.region" content="PL">
+  <meta name="geo.placename" content="{{CITY}}">
   
   <!-- Open Graph -->
   <meta property="og:type" content="article">
@@ -26,12 +36,14 @@
   <meta property="og:title" content="{{TITLE}} — Rybezh">
   <meta property="og:description" content="{{DESCRIPTION}}">
   <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/png">
   <meta property="og:locale" content="uk_UA">
   <meta property="og:locale:alternate" content="pl_PL">
   <meta property="og:site_name" content="Rybezh">
   <meta property="article:published_time" content="2024-01-01">
-  <meta property="article:modified_time" content="2026-01-16">
+  <meta property="article:modified_time" content="2026-02-19">
   <meta property="article:author" content="Rybezh">
   
   <!-- Twitter Card -->
@@ -43,8 +55,8 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  
-  <!-- JSON-LD injected dynamically by generate.js -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Rybezh">
   
   <!-- BreadcrumbList Schema -->
   <script type="application/ld+json">
