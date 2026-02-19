@@ -1550,11 +1550,14 @@ async function build() {
         </div>`;
     }
 
+    // Format date for display
+    const displayDate = page.date_posted || new Date().toISOString().slice(0, 10);
+    
     const dualContent = `
       <div class="job-page-layout">
         <div class="job-meta">
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
-          <span class="tag">📅 ${new Date().getFullYear()}</span>
+          <span class="tag">📅 ${escapeHtml(displayDate)}</span>
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
@@ -2705,7 +2708,8 @@ function cityToJobAddress(cityUa) {
 
 function buildJobPostingJsonLd(page) {
   const now = new Date();
-  const datePosted = toISODate(now);
+  // Use page.date_posted if available, otherwise fall back to current date
+  const datePosted = page.date_posted || toISODate(now);
   const validThrough = toISODate(addDays(now, 30));
   const addr = cityToJobAddress(page.city);
 
