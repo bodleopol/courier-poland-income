@@ -1,6 +1,30 @@
+# Environment variables and secrets
 .env
+.env.*
+*.env
+!.env.example
+
+# Dependencies
 node_modules/
+
+# Build outputs
 dist/
-.firebase/
 public/
+
+# Firebase
+.firebase/
+
+# IDE
 .idx/
+.vscode/settings.json
+
+# Temporary files
+*.log
+*.tmp
+.DS_Store
+
+# Security - never commit tokens or credentials
+*token*
+*secret*
+*credential*
+!SECURITY.md
