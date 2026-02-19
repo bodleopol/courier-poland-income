@@ -888,6 +888,7 @@
 
   function initImageFallbacks() {
     const fallbackSrc = '/og-image.svg';
+    const IMAGE_LOAD_TIMEOUT_MS = 1200;
     document.querySelectorAll('img').forEach((img) => {
       if (img.dataset.fallbackInit === '1') return;
       img.dataset.fallbackInit = '1';
@@ -896,17 +897,27 @@
         this.onerror = null;
         this.src = fallbackSrc;
       };
+      let delayedCheckId = null;
+      const clearDelayedCheck = () => {
+        if (delayedCheckId) {
+          clearTimeout(delayedCheckId);
+          delayedCheckId = null;
+        }
+      };
       img.addEventListener('error', function() {
+        clearDelayedCheck();
         applyFallback.call(this);
       });
-      if (img.complete && Number(img.naturalWidth || 0) === 0) {
+      img.addEventListener('load', clearDelayedCheck);
+      if (img.complete && !img.naturalWidth) {
         applyFallback.call(img);
       } else {
-        setTimeout(() => {
-          if (img.complete && Number(img.naturalWidth || 0) === 0) {
+        delayedCheckId = setTimeout(() => {
+          if (img.complete && !img.naturalWidth) {
             applyFallback.call(img);
           }
-        }, 1200);
+          delayedCheckId = null;
+        }, IMAGE_LOAD_TIMEOUT_MS);
       }
     });
   }
