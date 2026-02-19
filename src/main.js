@@ -448,6 +448,8 @@
     const currentPath = window.location.pathname;
     const isPlPage = isPolishPath(currentPath);
     const suffix = `${window.location.search || ''}${window.location.hash || ''}`;
+    localStorage.setItem(STORAGE_KEY, lang);
+    localStorage.setItem(LEGACY_KEY, lang);
 
     // Navigate to UA page from PL page
     if (lang === 'ua' && isPlPage) {
@@ -464,8 +466,6 @@
     }
 
     // Same language variant — just apply translations
-    localStorage.setItem(STORAGE_KEY, lang);
-    localStorage.setItem(LEGACY_KEY, lang);
     applyTranslations(lang);
     updateLangButtons(lang);
     window.dispatchEvent(new Event('languageChanged'));
