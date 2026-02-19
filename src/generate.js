@@ -1293,6 +1293,44 @@ function buildVacancyProofFormScript() {
   </script>`;
 }
 
+const MIN_VACANCY_EXCERPT_LENGTH = 140;
+
+function firstText(value) {
+  if (Array.isArray(value)) {
+    return String(value.find(item => String(item || '').trim()) || '').trim();
+  }
+  return String(value || '').trim();
+}
+
+function enrichVacancyExcerpt(page, lang) {
+  const isPl = lang === 'pl';
+  const base = firstText(isPl ? (page.excerpt_pl || page.excerpt) : page.excerpt);
+  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return base;
+
+  const parts = [
+    base,
+    firstText((isPl ? page.details_pl : page.details_ua) || page.details),
+    firstText((isPl ? page.tasks_pl : page.tasks_ua) || page.tasks),
+    firstText((isPl ? page.transport_pl : page.transport_ua) || page.transport),
+    firstText((isPl ? page.housing_pl : page.housing_ua) || page.housing)
+  ].filter(Boolean);
+
+  const merged = [];
+  const seen = new Set();
+  let mergedLength = 0;
+  for (const part of parts) {
+    if (!seen.has(part)) {
+      const separatorLength = mergedLength ? 1 : 0;
+      mergedLength += separatorLength + part.length;
+      merged.push(part);
+      seen.add(part);
+    }
+    if (mergedLength >= MIN_VACANCY_EXCERPT_LENGTH) break;
+  }
+
+  return (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -1301,6 +1339,23 @@ async function build() {
   const contentPath = path.join(SRC, 'content.json');
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
+  pages.forEach((page) => {
+    const looksLikeVacancy = (
+      Boolean(firstText(page.tasks_ua)) ||
+      Boolean(firstText(page.tasks_pl)) ||
+      Boolean(firstText(page.details_ua)) ||
+      Boolean(firstText(page.details_pl)) ||
+      Boolean(firstText(page.transport_ua)) ||
+      Boolean(firstText(page.transport_pl)) ||
+      Boolean(firstText(page.transport)) ||
+      Boolean(firstText(page.housing_ua)) ||
+      Boolean(firstText(page.housing_pl)) ||
+      Boolean(firstText(page.housing))
+    );
+    if (!looksLikeVacancy) return;
+    page.excerpt = enrichVacancyExcerpt(page, 'ua');
+    page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
+  });
 
   const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
 
