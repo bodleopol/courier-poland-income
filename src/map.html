@@ -654,7 +654,7 @@
       ["Роберт","Žilina",49.2231,18.7395,"@robert_zil","робота","Водій, думаю про PL"]
     ];
 
-    // ===== Extra generated community data (+100) =====
+    // ===== Extra generated community data (+150) =====
     // Majority in biggest Polish cities, some scattered around Poland,
     // and a few in neighboring countries.
     function seededNoise(n) {
@@ -664,17 +664,17 @@
 
     function generateExtraCommunityData() {
       var cityPlan = [
-        // Major population centers in Poland (74)
-        { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 18 },
-        { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 12 },
-        { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 8 },
-        { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 8 },
-        { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 7 },
-        { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 6 },
-        { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 4 },
-        { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 3 },
-        { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 3 },
-        { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 3 },
+        // Major population centers in Poland (124)
+        { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 32 },
+        { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 21 },
+        { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 14 },
+        { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 14 },
+        { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 12 },
+        { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 10 },
+        { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 6 },
+        { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 5 },
+        { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 4 },
+        { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 4 },
         { city: 'Białystok', lat: 53.1325, lng: 23.1688, count: 2 },
 
         // Scattered around Poland (14)
@@ -758,7 +758,7 @@
       return extra;
     }
 
-    // Append generated +100 entries to the seeded dataset
+    // Append generated +150 entries to the seeded dataset
     sampleData = sampleData.concat(generateExtraCommunityData());
 
     // Helper: add a marker from sample data entry
