@@ -448,6 +448,8 @@
     const currentPath = window.location.pathname;
     const isPlPage = isPolishPath(currentPath);
     const suffix = `${window.location.search || ''}${window.location.hash || ''}`;
+    localStorage.setItem(STORAGE_KEY, lang);
+    localStorage.setItem(LEGACY_KEY, lang);
 
     // Navigate to UA page from PL page
     if (lang === 'ua' && isPlPage) {
@@ -464,8 +466,6 @@
     }
 
     // Same language variant — just apply translations
-    localStorage.setItem(STORAGE_KEY, lang);
-    localStorage.setItem(LEGACY_KEY, lang);
     applyTranslations(lang);
     updateLangButtons(lang);
     window.dispatchEvent(new Event('languageChanged'));
@@ -882,6 +882,42 @@
         el.textContent = formatted;
       } catch (e) {
         console.warn('Date formatting failed:', e);
+      }
+    });
+  }
+
+  function initImageFallbacks() {
+    const fallbackSrc = '/og-image.svg';
+    const IMAGE_LOAD_TIMEOUT_MS = 1200;
+    document.querySelectorAll('img').forEach((img) => {
+      if (img.dataset.fallbackInit === '1') return;
+      img.dataset.fallbackInit = '1';
+      const applyFallback = function() {
+        if (this.getAttribute('src') === fallbackSrc) return;
+        this.onerror = null;
+        this.src = fallbackSrc;
+      };
+      let delayedCheckId = null;
+      const clearDelayedCheck = () => {
+        if (delayedCheckId) {
+          clearTimeout(delayedCheckId);
+          delayedCheckId = null;
+        }
+      };
+      img.addEventListener('error', function() {
+        clearDelayedCheck();
+        applyFallback.call(this);
+      });
+      img.addEventListener('load', clearDelayedCheck);
+      if (img.complete && !img.naturalWidth) {
+        applyFallback.call(img);
+      } else {
+        delayedCheckId = setTimeout(() => {
+          if (img.complete && !img.naturalWidth) {
+            applyFallback.call(img);
+          }
+          delayedCheckId = null;
+        }, IMAGE_LOAD_TIMEOUT_MS);
       }
     });
   }
@@ -1313,6 +1349,7 @@
     initPageLoad();
     initTelegramTracking();
     initDateFormatting();
+    initImageFallbacks();
     initNewsletter();
     initContactForm();
     initCalculator();

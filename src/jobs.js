@@ -458,12 +458,16 @@
         : ' (0)';
       const proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
            <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
+      const dateLine = job.date_posted
+        ? `<p class="job-date">📅 ${lang === 'pl' ? 'Dodano' : 'Додано'} <span data-format-date="${job.date_posted}">${job.date_posted}</span></p>`
+        : '';
 
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
         <h3>${lang === 'pl' ? (job.title_pl || job.title) : job.title}</h3>
         <p class="job-city">📍 ${lang === 'pl' ? (job.city_pl || job.city) : job.city}</p>
         ${job.salary ? `<p class="job-salary">💰 ${job.salary}</p>` : ''}
+        ${dateLine}
         ${proofLine}
         <p class="job-excerpt">${lang === 'pl' ? (job.excerpt_pl || job.excerpt) : job.excerpt}</p>
       `;
