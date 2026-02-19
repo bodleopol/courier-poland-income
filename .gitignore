@@ -1,6 +1,30 @@
+# Environment variables and secrets
 .env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Dependencies
 node_modules/
+
+# Build output
 dist/
-.firebase/
 public/
+
+# Firebase
+.firebase/
+
+# IDE
 .idx/
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+.cache/

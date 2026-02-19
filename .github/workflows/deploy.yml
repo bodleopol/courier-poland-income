@@ -1,5 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Security: This workflow uses GitHub's built-in GITHUB_TOKEN
+# No custom tokens or secrets are required for deployment
+# The workflow has minimal permissions (read contents, write pages)
+
 on:
   push:
     branches:
