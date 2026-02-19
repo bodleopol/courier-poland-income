@@ -886,6 +886,18 @@
     });
   }
 
+  function initImageFallbacks() {
+    document.querySelectorAll('img').forEach((img) => {
+      if (img.dataset.fallbackInit === '1') return;
+      img.dataset.fallbackInit = '1';
+      img.addEventListener('error', function() {
+        if (this.getAttribute('src') === '/og-image.png') return;
+        this.onerror = null;
+        this.src = '/og-image.png';
+      });
+    });
+  }
+
   // ============================================
   // 12. NEWSLETTER FORM
   // ============================================
@@ -1313,6 +1325,7 @@
     initPageLoad();
     initTelegramTracking();
     initDateFormatting();
+    initImageFallbacks();
     initNewsletter();
     initContactForm();
     initCalculator();
