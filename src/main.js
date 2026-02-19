@@ -887,14 +887,27 @@
   }
 
   function initImageFallbacks() {
+    const fallbackSrc = '/og-image.svg';
     document.querySelectorAll('img').forEach((img) => {
       if (img.dataset.fallbackInit === '1') return;
       img.dataset.fallbackInit = '1';
-      img.addEventListener('error', function() {
-        if (this.getAttribute('src') === '/og-image.png') return;
+      const applyFallback = function() {
+        if (this.getAttribute('src') === fallbackSrc) return;
         this.onerror = null;
-        this.src = '/og-image.png';
+        this.src = fallbackSrc;
+      };
+      img.addEventListener('error', function() {
+        applyFallback.call(this);
       });
+      if (img.complete && Number(img.naturalWidth || 0) === 0) {
+        applyFallback.call(img);
+      } else {
+        setTimeout(() => {
+          if (img.complete && Number(img.naturalWidth || 0) === 0) {
+            applyFallback.call(img);
+          }
+        }, 1200);
+      }
     });
   }
 
