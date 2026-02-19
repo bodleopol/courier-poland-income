@@ -40292,5 +40292,2375 @@
     "date_posted": "2026-02-16",
     "is_generated": false,
     "data_source": "manual-expanded"
+  },
+  {
+    "slug": "krakow-logistics-warehouse-order-picker-human-551",
+    "category": "logistics",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Комплектувальник замовлень на складі побутових товарів — Краків",
+    "title_pl": "Kompletujący zamówienia w magazynie artykułów domowych — Kraków",
+    "salary": "31 - 43 PLN/h",
+    "company": "NorthGate Fulfillment",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "NorthGate Fulfillment шукає комплектувальник замовлень на складі побутових товарів у Краків: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "NorthGate Fulfillment szuka kompletujący zamówienia w magazynie artykułów domowych w Kraków: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У NorthGate Fulfillment у місті Краків відкрита позиція «комплектувальник замовлень на складі побутових товарів». Команда працює у спокійному темпі й чітко планує зміну: на початку короткий брифінг, в середині контрольний чек, наприкінці передача задач без «пожеж».</p><p>Команда зацікавлена втримувати людей надовго, тому умови не «одноразові»: нормально пояснюють вимоги, дають час на вхід і не тиснуть нереалістичними планами.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W NorthGate Fulfillment w mieście Kraków otwarte jest stanowisko „kompletujący zamówienia w magazynie artykułów domowych”. Zespół pracuje w spokojnym rytmie i dobrze planuje zmianę: krótki briefing na start, kontrola w połowie dnia i czytelne przekazanie zadań na koniec.</p><p>Po okresie wdrożenia można omówić wygodniejsze zmiany i rozszerzenie zakresu zadań z dodatkiem finansowym. To dobra opcja dla osób, które cenią przewidywalny budżet.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-19",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-construction-masonry-renovation-worker-human-552",
+    "category": "construction",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Муляр у бригаду на житлові реконструкції — Гданськ",
+    "title_pl": "Murarz do brygady przy remontach mieszkań — Gdańsk",
+    "salary": "35 - 50 PLN/h",
+    "company": "SolidMur Projekt",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "SolidMur Projekt шукає муляр у бригаду на житлові реконструкції у Гданськ: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "SolidMur Projekt szuka murarz do brygady przy remontach mieszkań w Gdańsk: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У SolidMur Projekt у місті Гданськ відкрита позиція «муляр у бригаду на житлові реконструкції». На об’єкті цінують людську комунікацію: якщо виникає питання по процесу, старший зміни пояснює на місці, а не залишає нових людей розбиратись самостійно.</p><p>Якщо важливо уникнути токсичної атмосфери, тут із цим порядок: зворотний зв’язок спокійний, помилки розбирають по ділу, а не через емоції.</p><div class='salary-box'>💰 Зарплата: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W SolidMur Projekt w mieście Gdańsk otwarte jest stanowisko „murarz do brygady przy remontach mieszkań”. Na obiekcie liczy się normalna komunikacja: gdy pojawia się pytanie, starszy zmiany tłumaczy od razu, a nie zostawia nowych osób samych z problemem.</p><p>Koordynator po ukraińsku prowadzi pierwszy etap i pomaga w drobnych formalnościach, dzięki czemu możesz skupić się na pracy, a nie na papierach.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-18",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-production-packaging-line-operator-human-553",
+    "category": "production",
+    "city": "Щецін",
+    "city_pl": "Szczecin",
+    "title": "Оператор лінії фасування на харчовому виробництві — Щецін",
+    "title_pl": "Operator linii pakowania w produkcji spożywczej — Szczecin",
+    "salary": "30 - 42 PLN/h",
+    "company": "Vistula Foods",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Vistula Foods шукає оператор лінії фасування на харчовому виробництві у Щецін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Vistula Foods szuka operator linii pakowania w produkcji spożywczej w Szczecin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Vistula Foods у місті Щецін відкрита позиція «оператор лінії фасування на харчовому виробництві». Графік погоджують заздалегідь, тому легко планувати побут, курси мови або підробіток. Несподіваних переносів майже не буває, а зміни закривають без хаосу.</p><p>Для новачків є реальна підтримка в перші тижні, а для досвідчених — шанс взяти на себе складніші ділянки та підтягнути дохід без різких стрибків навантаження.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Vistula Foods w mieście Szczecin otwarte jest stanowisko „operator linii pakowania w produkcji spożywczej”. Grafik ustalany jest wcześniej, więc łatwo zaplanować życie prywatne, kurs językowy albo dodatkowe sprawy po pracy. Nagłe zmiany zdarzają się rzadko.</p><p>Dużym plusem jest przewidywalność: grafik i zadania są znane wcześniej, więc łatwiej pogodzić pracę z dokumentami i życiem prywatnym.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-17",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-hospitality-hot-kitchen-cook-human-554",
+    "category": "hospitality",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Кухар гарячого цеху у міському бістро — Вроцлав",
+    "title_pl": "Kucharz sekcji gorącej w miejskim bistro — Wrocław",
+    "salary": "33 - 48 PLN/h",
+    "company": "Miejski Stół",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Miejski Stół шукає кухар гарячого цеху у міському бістро у Вроцлав: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Miejski Stół szuka kucharz sekcji gorącej w miejskim bistro w Wrocław: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Miejski Stół у місті Вроцлав відкрита позиція «кухар гарячого цеху у міському бістро». Позиція розрахована на довшу співпрацю: тут дивляться не тільки на швидкість, а й на акуратність, відповідальність і нормальну взаємодію в команді.</p><p>Після адаптації можна обговорити зручніші зміни та розширення задач із доплатою. Це варіант для людей, яким потрібен прогнозований дохід і зрозумілі правила на щодень.</p><div class='salary-box'>💰 Зарплата: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Miejski Stół w mieście Wrocław otwarte jest stanowisko „kucharz sekcji gorącej w miejskim bistro”. To oferta nastawiona na dłuższą współpracę: ważna jest nie tylko szybkość, ale też dokładność, odpowiedzialność i spokojna praca zespołowa.</p><p>Wynagrodzenie jest rozliczane na podstawie przejrzystej ewidencji godzin, bez niejasnych korekt. Jeśli szukasz miejsca do spokojnej pracy i rozwoju, ta oferta ma solidne podstawy.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-16",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-cleaning-cleaning-team-coordinator-human-555",
+    "category": "cleaning",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Координатор бригади прибирання в бізнес-центрі — Лодзь",
+    "title_pl": "Koordynator zespołu sprzątającego w centrum biznesowym — Łódź",
+    "salary": "29 - 40 PLN/h",
+    "company": "CleanFlow Service",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "CleanFlow Service шукає координатор бригади прибирання в бізнес-центрі у Лодзь: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "CleanFlow Service szuka koordynator zespołu sprzątającego w centrum biznesowym w Łódź: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У CleanFlow Service у місті Лодзь відкрита позиція «координатор бригади прибирання в бізнес-центрі». Робочий процес налаштований практично: є чек-листи, зрозумілий розподіл ролей і людина, до якої можна звернутись із питанням у будь-який момент зміни.</p><p>Координатор українською мовою супроводжує перший етап і допомагає закрити організаційні дрібниці, щоб ви могли зосередитись на роботі, а не на бюрократії.</p><div class='salary-box'>💰 Зарплата: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W CleanFlow Service w mieście Łódź otwarte jest stanowisko „koordynator zespołu sprzątającego w centrum biznesowym”. Proces jest praktycznie ułożony: checklisty, jasny podział ról i konkretna osoba, do której można zgłosić się z pytaniem w każdej chwili.</p><p>W praktyce to praca bez pustych obietnic: konkretne obowiązki, rozsądna kontrola jakości i możliwość ustalania zmian przy wcześniejszej informacji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-15",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "warszawa-retail-senior-cashier-human-556",
+    "category": "retail",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Старший касир у мережевому маркеті — Варшава",
+    "title_pl": "Starszy kasjer w markecie sieciowym — Warszawa",
+    "salary": "30 - 41 PLN/h",
+    "company": "Market Nova",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Market Nova шукає старший касир у мережевому маркеті у Варшава: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Market Nova szuka starszy kasjer w markecie sieciowym w Warszawa: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Market Nova у місті Варшава відкрита позиція «старший касир у мережевому маркеті». У цій вакансії важлива стабільність: керівник тримає рівний ритм роботи, а навантаження розподіляють так, щоб команда не вигорала в перший місяць.</p><p>Окремий плюс — передбачуваність: графік і задачі видно наперед, тож простіше тримати баланс між роботою, документами та особистими справами.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Market Nova w mieście Warszawa otwarte jest stanowisko „starszy kasjer w markecie sieciowym”. W tej roli stawia się na stabilność: kierownik utrzymuje równe tempo, a obciążenie rozdzielane jest tak, żeby zespół nie wypalał się po kilku tygodniach.</p><p>Oferta pasuje osobom, które wolą stabilny rytm bez ciągłych sytuacji awaryjnych i chcą mieć jasność, za co odpowiadają na swojej zmianie.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-14",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-healthcare-day-caregiver-assistant-human-557",
+    "category": "healthcare",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Опікун літніх людей у денному центрі — Познань",
+    "title_pl": "Opiekun osób starszych w dziennym centrum — Poznań",
+    "salary": "32 - 46 PLN/h",
+    "company": "CareBridge Plus",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "CareBridge Plus шукає опікун літніх людей у денному центрі у Познань: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "CareBridge Plus szuka opiekun osób starszych w dziennym centrum w Poznań: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У CareBridge Plus у місті Познань відкрита позиція «опікун літніх людей у денному центрі». Компанія бере людей у команду поступово: перші дні йдете поруч із досвідченим колегою, щоб спокійно ввійти в процес і не втрачати темп.</p><p>Оплата на цій позиції прив’язана до прозорого обліку годин, без «сірого» перерахунку. Якщо шукаєте місце, де можна спокійно працювати й поступово рости, ця вакансія виглядає практичною і реальною.</p><div class='salary-box'>💰 Зарплата: <strong>32 - 46 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W CareBridge Plus w mieście Poznań otwarte jest stanowisko „opiekun osób starszych w dziennym centrum”. Firma wdraża stopniowo: pierwsze dni pracujesz obok doświadczonej osoby, żeby spokojnie wejść w proces bez utraty jakości i tempa.</p><p>Warunki są zdrowe na dłuższy okres: stałe tempo, uczciwe rozliczenie czasu i zespół, w którym ważna jest współpraca, a nie ciągła rywalizacja.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>32 - 46 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-13",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lublin-it-junior-qa-engineer-human-558",
+    "category": "it",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Junior QA інженер у продуктову команду — Люблін",
+    "title_pl": "Junior QA inżynier w zespole produktowym — Lublin",
+    "salary": "38 - 55 PLN/h",
+    "company": "BitPort Labs",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "BitPort Labs шукає junior qa інженер у продуктову команду у Люблін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "BitPort Labs szuka junior qa inżynier w zespole produktowym w Lublin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У BitPort Labs у місті Люблін відкрита позиція «junior qa інженер у продуктову команду». Робота організована без зайвої бюрократії: усе, що стосується завдань, перерв і якості, обговорюють просто та по суті, без формальних відписок.</p><p>На практиці це робота без зайвих обіцянок: чіткі обов’язки, адекватний контроль якості та можливість домовлятися про зміни, якщо попереджати завчасно.</p><div class='salary-box'>💰 Зарплата: <strong>38 - 55 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W BitPort Labs w mieście Lublin otwarte jest stanowisko „junior qa inżynier w zespole produktowym”. Praca jest zorganizowana bez zbędnej biurokracji: kwestie zadań, przerw i standardu jakości omawia się jasno i konkretnie.</p><p>Zespół chce zatrzymywać ludzi na dłużej, dlatego warunki nie są „na chwilę”: wymagania są jasno tłumaczone, a wejście w obowiązki odbywa się bez presji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>38 - 55 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-12",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-agriculture-greenhouse-worker-human-559",
+    "category": "agriculture",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Працівник теплиці на вирощуванні зелені — Краків",
+    "title_pl": "Pracownik szklarni przy uprawie ziół — Kraków",
+    "salary": "29 - 39 PLN/h",
+    "company": "GreenRoute Farms",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "GreenRoute Farms шукає працівник теплиці на вирощуванні зелені у Краків: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "GreenRoute Farms szuka pracownik szklarni przy uprawie ziół w Kraków: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У GreenRoute Farms у місті Краків відкрита позиція «працівник теплиці на вирощуванні зелені». Тут добре заходять кандидати, які люблять порядок і передбачуваність: є ясні правила, зрозумілий обсяг задач і нормальний зворотний зв’язок від зміни.</p><p>Вакансія підійде тим, хто хоче працювати в нормальному ритмі без постійних форс-мажорів і мати ясне розуміння, за що саме відповідає в зміні.</p><div class='salary-box'>💰 Зарплата: <strong>29 - 39 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W GreenRoute Farms w mieście Kraków otwarte jest stanowisko „pracownik szklarni przy uprawie ziół”. Dobrze odnajdą się tu osoby, które lubią porządek i przewidywalność: jasne zasady, zrozumiały zakres obowiązków i normalny feedback od zespołu.</p><p>Jeśli zależy Ci na spokojnej atmosferze, tutaj to działa: feedback jest rzeczowy, błędy omawia się merytorycznie, bez niepotrzebnych emocji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>29 - 39 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-11",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-education-polish-teaching-assistant-human-560",
+    "category": "education",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Асистент викладача польської для новоприбулих — Гданськ",
+    "title_pl": "Asystent lektora języka polskiego dla nowych migrantów — Gdańsk",
+    "salary": "31 - 44 PLN/h",
+    "company": "Lingua Start",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Lingua Start шукає асистент викладача польської для новоприбулих у Гданськ: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Lingua Start szuka asystent lektora języka polskiego dla nowych migrantów w Gdańsk: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Lingua Start у місті Гданськ відкрита позиція «асистент викладача польської для новоприбулих». У колективі багато українців, тож адаптація проходить м’якше: на старті допомагають із робочими нюансами та підказують по місту поза роботою.</p><p>Умови виглядають здоровими для довгого горизонту: стабільний темп, чесний облік часу і команда, де важлива співпраця, а не постійна конкуренція між людьми.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Lingua Start w mieście Gdańsk otwarte jest stanowisko „asystent lektora języka polskiego dla nowych migrantów”. W zespole pracuje wielu Ukraińców, dlatego wdrożenie przebiega łagodniej: na starcie można liczyć na praktyczne wsparcie także poza samymi zadaniami.</p><p>Dla nowych osób jest realne wsparcie w pierwszych tygodniach, a bardziej doświadczone mogą przejmować trudniejsze odcinki i zwiększać stawkę.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-10",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-beauty-nail-master-human-561",
+    "category": "beauty",
+    "city": "Щецін",
+    "city_pl": "Szczecin",
+    "title": "Майстер манікюру в салон біля центру — Щецін",
+    "title_pl": "Stylistka paznokci w salonie blisko centrum — Szczecin",
+    "salary": "34 - 52 PLN/h",
+    "company": "Studio Aura",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Studio Aura шукає майстер манікюру в салон біля центру у Щецін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Studio Aura szuka stylistka paznokci w salonie blisko centrum w Szczecin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Studio Aura у місті Щецін відкрита позиція «майстер манікюру в салон біля центру». Команда працює у спокійному темпі й чітко планує зміну: на початку короткий брифінг, в середині контрольний чек, наприкінці передача задач без «пожеж».</p><p>Команда зацікавлена втримувати людей надовго, тому умови не «одноразові»: нормально пояснюють вимоги, дають час на вхід і не тиснуть нереалістичними планами.</p><div class='salary-box'>💰 Зарплата: <strong>34 - 52 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Studio Aura w mieście Szczecin otwarte jest stanowisko „stylistka paznokci w salonie blisko centrum”. Zespół pracuje w spokojnym rytmie i dobrze planuje zmianę: krótki briefing na start, kontrola w połowie dnia i czytelne przekazanie zadań na koniec.</p><p>Po okresie wdrożenia można omówić wygodniejsze zmiany i rozszerzenie zakresu zadań z dodatkiem finansowym. To dobra opcja dla osób, które cenią przewidywalny budżet.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>34 - 52 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-09",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-security-day-shift-security-guard-human-562",
+    "category": "security",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Охоронець денних змін у логістичному парку — Вроцлав",
+    "title_pl": "Pracownik ochrony na zmiany dzienne w parku logistycznym — Wrocław",
+    "salary": "30 - 40 PLN/h",
+    "company": "SafeLine Patrol",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "SafeLine Patrol шукає охоронець денних змін у логістичному парку у Вроцлав: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "SafeLine Patrol szuka pracownik ochrony na zmiany dzienne w parku logistycznym w Wrocław: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У SafeLine Patrol у місті Вроцлав відкрита позиція «охоронець денних змін у логістичному парку». На об’єкті цінують людську комунікацію: якщо виникає питання по процесу, старший зміни пояснює на місці, а не залишає нових людей розбиратись самостійно.</p><p>Якщо важливо уникнути токсичної атмосфери, тут із цим порядок: зворотний зв’язок спокійний, помилки розбирають по ділу, а не через емоції.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W SafeLine Patrol w mieście Wrocław otwarte jest stanowisko „pracownik ochrony na zmiany dzienne w parku logistycznym”. Na obiekcie liczy się normalna komunikacja: gdy pojawia się pytanie, starszy zmiany tłumaczy od razu, a nie zostawia nowych osób samych z problemem.</p><p>Koordynator po ukraińsku prowadzi pierwszy etap i pomaga w drobnych formalnościach, dzięki czemu możesz skupić się na pracy, a nie na papierach.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-08",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-logistics-warehouse-order-picker-human-563",
+    "category": "logistics",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Комплектувальник замовлень на складі побутових товарів — Лодзь",
+    "title_pl": "Kompletujący zamówienia w magazynie artykułów domowych — Łódź",
+    "salary": "31 - 43 PLN/h",
+    "company": "NorthGate Fulfillment",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "NorthGate Fulfillment шукає комплектувальник замовлень на складі побутових товарів у Лодзь: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "NorthGate Fulfillment szuka kompletujący zamówienia w magazynie artykułów domowych w Łódź: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У NorthGate Fulfillment у місті Лодзь відкрита позиція «комплектувальник замовлень на складі побутових товарів». Графік погоджують заздалегідь, тому легко планувати побут, курси мови або підробіток. Несподіваних переносів майже не буває, а зміни закривають без хаосу.</p><p>Для новачків є реальна підтримка в перші тижні, а для досвідчених — шанс взяти на себе складніші ділянки та підтягнути дохід без різких стрибків навантаження.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W NorthGate Fulfillment w mieście Łódź otwarte jest stanowisko „kompletujący zamówienia w magazynie artykułów domowych”. Grafik ustalany jest wcześniej, więc łatwo zaplanować życie prywatne, kurs językowy albo dodatkowe sprawy po pracy. Nagłe zmiany zdarzają się rzadko.</p><p>Dużym plusem jest przewidywalność: grafik i zadania są znane wcześniej, więc łatwiej pogodzić pracę z dokumentami i życiem prywatnym.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-07",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "warszawa-construction-masonry-renovation-worker-human-564",
+    "category": "construction",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Муляр у бригаду на житлові реконструкції — Варшава",
+    "title_pl": "Murarz do brygady przy remontach mieszkań — Warszawa",
+    "salary": "35 - 50 PLN/h",
+    "company": "SolidMur Projekt",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "SolidMur Projekt шукає муляр у бригаду на житлові реконструкції у Варшава: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "SolidMur Projekt szuka murarz do brygady przy remontach mieszkań w Warszawa: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У SolidMur Projekt у місті Варшава відкрита позиція «муляр у бригаду на житлові реконструкції». Позиція розрахована на довшу співпрацю: тут дивляться не тільки на швидкість, а й на акуратність, відповідальність і нормальну взаємодію в команді.</p><p>Після адаптації можна обговорити зручніші зміни та розширення задач із доплатою. Це варіант для людей, яким потрібен прогнозований дохід і зрозумілі правила на щодень.</p><div class='salary-box'>💰 Зарплата: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W SolidMur Projekt w mieście Warszawa otwarte jest stanowisko „murarz do brygady przy remontach mieszkań”. To oferta nastawiona na dłuższą współpracę: ważna jest nie tylko szybkość, ale też dokładność, odpowiedzialność i spokojna praca zespołowa.</p><p>Wynagrodzenie jest rozliczane na podstawie przejrzystej ewidencji godzin, bez niejasnych korekt. Jeśli szukasz miejsca do spokojnej pracy i rozwoju, ta oferta ma solidne podstawy.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-06",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-production-packaging-line-operator-human-565",
+    "category": "production",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Оператор лінії фасування на харчовому виробництві — Познань",
+    "title_pl": "Operator linii pakowania w produkcji spożywczej — Poznań",
+    "salary": "30 - 42 PLN/h",
+    "company": "Vistula Foods",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Vistula Foods шукає оператор лінії фасування на харчовому виробництві у Познань: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Vistula Foods szuka operator linii pakowania w produkcji spożywczej w Poznań: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Vistula Foods у місті Познань відкрита позиція «оператор лінії фасування на харчовому виробництві». Робочий процес налаштований практично: є чек-листи, зрозумілий розподіл ролей і людина, до якої можна звернутись із питанням у будь-який момент зміни.</p><p>Координатор українською мовою супроводжує перший етап і допомагає закрити організаційні дрібниці, щоб ви могли зосередитись на роботі, а не на бюрократії.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Vistula Foods w mieście Poznań otwarte jest stanowisko „operator linii pakowania w produkcji spożywczej”. Proces jest praktycznie ułożony: checklisty, jasny podział ról i konkretna osoba, do której można zgłosić się z pytaniem w każdej chwili.</p><p>W praktyce to praca bez pustych obietnic: konkretne obowiązki, rozsądna kontrola jakości i możliwość ustalania zmian przy wcześniejszej informacji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-19",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lublin-hospitality-hot-kitchen-cook-human-566",
+    "category": "hospitality",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Кухар гарячого цеху у міському бістро — Люблін",
+    "title_pl": "Kucharz sekcji gorącej w miejskim bistro — Lublin",
+    "salary": "33 - 48 PLN/h",
+    "company": "Miejski Stół",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Miejski Stół шукає кухар гарячого цеху у міському бістро у Люблін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Miejski Stół szuka kucharz sekcji gorącej w miejskim bistro w Lublin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Miejski Stół у місті Люблін відкрита позиція «кухар гарячого цеху у міському бістро». У цій вакансії важлива стабільність: керівник тримає рівний ритм роботи, а навантаження розподіляють так, щоб команда не вигорала в перший місяць.</p><p>Окремий плюс — передбачуваність: графік і задачі видно наперед, тож простіше тримати баланс між роботою, документами та особистими справами.</p><div class='salary-box'>💰 Зарплата: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Miejski Stół w mieście Lublin otwarte jest stanowisko „kucharz sekcji gorącej w miejskim bistro”. W tej roli stawia się na stabilność: kierownik utrzymuje równe tempo, a obciążenie rozdzielane jest tak, żeby zespół nie wypalał się po kilku tygodniach.</p><p>Oferta pasuje osobom, które wolą stabilny rytm bez ciągłych sytuacji awaryjnych i chcą mieć jasność, za co odpowiadają na swojej zmianie.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-18",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-cleaning-cleaning-team-coordinator-human-567",
+    "category": "cleaning",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Координатор бригади прибирання в бізнес-центрі — Краків",
+    "title_pl": "Koordynator zespołu sprzątającego w centrum biznesowym — Kraków",
+    "salary": "29 - 40 PLN/h",
+    "company": "CleanFlow Service",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "CleanFlow Service шукає координатор бригади прибирання в бізнес-центрі у Краків: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "CleanFlow Service szuka koordynator zespołu sprzątającego w centrum biznesowym w Kraków: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У CleanFlow Service у місті Краків відкрита позиція «координатор бригади прибирання в бізнес-центрі». Компанія бере людей у команду поступово: перші дні йдете поруч із досвідченим колегою, щоб спокійно ввійти в процес і не втрачати темп.</p><p>Оплата на цій позиції прив’язана до прозорого обліку годин, без «сірого» перерахунку. Якщо шукаєте місце, де можна спокійно працювати й поступово рости, ця вакансія виглядає практичною і реальною.</p><div class='salary-box'>💰 Зарплата: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W CleanFlow Service w mieście Kraków otwarte jest stanowisko „koordynator zespołu sprzątającego w centrum biznesowym”. Firma wdraża stopniowo: pierwsze dni pracujesz obok doświadczonej osoby, żeby spokojnie wejść w proces bez utraty jakości i tempa.</p><p>Warunki są zdrowe na dłuższy okres: stałe tempo, uczciwe rozliczenie czasu i zespół, w którym ważna jest współpraca, a nie ciągła rywalizacja.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-17",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-retail-senior-cashier-human-568",
+    "category": "retail",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Старший касир у мережевому маркеті — Гданськ",
+    "title_pl": "Starszy kasjer w markecie sieciowym — Gdańsk",
+    "salary": "30 - 41 PLN/h",
+    "company": "Market Nova",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Market Nova шукає старший касир у мережевому маркеті у Гданськ: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Market Nova szuka starszy kasjer w markecie sieciowym w Gdańsk: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Market Nova у місті Гданськ відкрита позиція «старший касир у мережевому маркеті». Робота організована без зайвої бюрократії: усе, що стосується завдань, перерв і якості, обговорюють просто та по суті, без формальних відписок.</p><p>На практиці це робота без зайвих обіцянок: чіткі обов’язки, адекватний контроль якості та можливість домовлятися про зміни, якщо попереджати завчасно.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Market Nova w mieście Gdańsk otwarte jest stanowisko „starszy kasjer w markecie sieciowym”. Praca jest zorganizowana bez zbędnej biurokracji: kwestie zadań, przerw i standardu jakości omawia się jasno i konkretnie.</p><p>Zespół chce zatrzymywać ludzi na dłużej, dlatego warunki nie są „na chwilę”: wymagania są jasno tłumaczone, a wejście w obowiązki odbywa się bez presji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-16",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-healthcare-day-caregiver-assistant-human-569",
+    "category": "healthcare",
+    "city": "Щецін",
+    "city_pl": "Szczecin",
+    "title": "Опікун літніх людей у денному центрі — Щецін",
+    "title_pl": "Opiekun osób starszych w dziennym centrum — Szczecin",
+    "salary": "32 - 46 PLN/h",
+    "company": "CareBridge Plus",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "CareBridge Plus шукає опікун літніх людей у денному центрі у Щецін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "CareBridge Plus szuka opiekun osób starszych w dziennym centrum w Szczecin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У CareBridge Plus у місті Щецін відкрита позиція «опікун літніх людей у денному центрі». Тут добре заходять кандидати, які люблять порядок і передбачуваність: є ясні правила, зрозумілий обсяг задач і нормальний зворотний зв’язок від зміни.</p><p>Вакансія підійде тим, хто хоче працювати в нормальному ритмі без постійних форс-мажорів і мати ясне розуміння, за що саме відповідає в зміні.</p><div class='salary-box'>💰 Зарплата: <strong>32 - 46 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W CareBridge Plus w mieście Szczecin otwarte jest stanowisko „opiekun osób starszych w dziennym centrum”. Dobrze odnajdą się tu osoby, które lubią porządek i przewidywalność: jasne zasady, zrozumiały zakres obowiązków i normalny feedback od zespołu.</p><p>Jeśli zależy Ci na spokojnej atmosferze, tutaj to działa: feedback jest rzeczowy, błędy omawia się merytorycznie, bez niepotrzebnych emocji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>32 - 46 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-15",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-it-junior-qa-engineer-human-570",
+    "category": "it",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Junior QA інженер у продуктову команду — Вроцлав",
+    "title_pl": "Junior QA inżynier w zespole produktowym — Wrocław",
+    "salary": "38 - 55 PLN/h",
+    "company": "BitPort Labs",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "BitPort Labs шукає junior qa інженер у продуктову команду у Вроцлав: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "BitPort Labs szuka junior qa inżynier w zespole produktowym w Wrocław: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У BitPort Labs у місті Вроцлав відкрита позиція «junior qa інженер у продуктову команду». У колективі багато українців, тож адаптація проходить м’якше: на старті допомагають із робочими нюансами та підказують по місту поза роботою.</p><p>Умови виглядають здоровими для довгого горизонту: стабільний темп, чесний облік часу і команда, де важлива співпраця, а не постійна конкуренція між людьми.</p><div class='salary-box'>💰 Зарплата: <strong>38 - 55 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W BitPort Labs w mieście Wrocław otwarte jest stanowisko „junior qa inżynier w zespole produktowym”. W zespole pracuje wielu Ukraińców, dlatego wdrożenie przebiega łagodniej: na starcie można liczyć na praktyczne wsparcie także poza samymi zadaniami.</p><p>Dla nowych osób jest realne wsparcie w pierwszych tygodniach, a bardziej doświadczone mogą przejmować trudniejsze odcinki i zwiększać stawkę.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>38 - 55 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-14",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-agriculture-greenhouse-worker-human-571",
+    "category": "agriculture",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник теплиці на вирощуванні зелені — Лодзь",
+    "title_pl": "Pracownik szklarni przy uprawie ziół — Łódź",
+    "salary": "29 - 39 PLN/h",
+    "company": "GreenRoute Farms",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "GreenRoute Farms шукає працівник теплиці на вирощуванні зелені у Лодзь: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "GreenRoute Farms szuka pracownik szklarni przy uprawie ziół w Łódź: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У GreenRoute Farms у місті Лодзь відкрита позиція «працівник теплиці на вирощуванні зелені». Команда працює у спокійному темпі й чітко планує зміну: на початку короткий брифінг, в середині контрольний чек, наприкінці передача задач без «пожеж».</p><p>Команда зацікавлена втримувати людей надовго, тому умови не «одноразові»: нормально пояснюють вимоги, дають час на вхід і не тиснуть нереалістичними планами.</p><div class='salary-box'>💰 Зарплата: <strong>29 - 39 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W GreenRoute Farms w mieście Łódź otwarte jest stanowisko „pracownik szklarni przy uprawie ziół”. Zespół pracuje w spokojnym rytmie i dobrze planuje zmianę: krótki briefing na start, kontrola w połowie dnia i czytelne przekazanie zadań na koniec.</p><p>Po okresie wdrożenia można omówić wygodniejsze zmiany i rozszerzenie zakresu zadań z dodatkiem finansowym. To dobra opcja dla osób, które cenią przewidywalny budżet.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>29 - 39 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-13",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "warszawa-education-polish-teaching-assistant-human-572",
+    "category": "education",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Асистент викладача польської для новоприбулих — Варшава",
+    "title_pl": "Asystent lektora języka polskiego dla nowych migrantów — Warszawa",
+    "salary": "31 - 44 PLN/h",
+    "company": "Lingua Start",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Lingua Start шукає асистент викладача польської для новоприбулих у Варшава: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Lingua Start szuka asystent lektora języka polskiego dla nowych migrantów w Warszawa: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Lingua Start у місті Варшава відкрита позиція «асистент викладача польської для новоприбулих». На об’єкті цінують людську комунікацію: якщо виникає питання по процесу, старший зміни пояснює на місці, а не залишає нових людей розбиратись самостійно.</p><p>Якщо важливо уникнути токсичної атмосфери, тут із цим порядок: зворотний зв’язок спокійний, помилки розбирають по ділу, а не через емоції.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Lingua Start w mieście Warszawa otwarte jest stanowisko „asystent lektora języka polskiego dla nowych migrantów”. Na obiekcie liczy się normalna komunikacja: gdy pojawia się pytanie, starszy zmiany tłumaczy od razu, a nie zostawia nowych osób samych z problemem.</p><p>Koordynator po ukraińsku prowadzi pierwszy etap i pomaga w drobnych formalnościach, dzięki czemu możesz skupić się na pracy, a nie na papierach.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 44 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-12",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-beauty-nail-master-human-573",
+    "category": "beauty",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Майстер манікюру в салон біля центру — Познань",
+    "title_pl": "Stylistka paznokci w salonie blisko centrum — Poznań",
+    "salary": "34 - 52 PLN/h",
+    "company": "Studio Aura",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Studio Aura шукає майстер манікюру в салон біля центру у Познань: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Studio Aura szuka stylistka paznokci w salonie blisko centrum w Poznań: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Studio Aura у місті Познань відкрита позиція «майстер манікюру в салон біля центру». Графік погоджують заздалегідь, тому легко планувати побут, курси мови або підробіток. Несподіваних переносів майже не буває, а зміни закривають без хаосу.</p><p>Для новачків є реальна підтримка в перші тижні, а для досвідчених — шанс взяти на себе складніші ділянки та підтягнути дохід без різких стрибків навантаження.</p><div class='salary-box'>💰 Зарплата: <strong>34 - 52 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Studio Aura w mieście Poznań otwarte jest stanowisko „stylistka paznokci w salonie blisko centrum”. Grafik ustalany jest wcześniej, więc łatwo zaplanować życie prywatne, kurs językowy albo dodatkowe sprawy po pracy. Nagłe zmiany zdarzają się rzadko.</p><p>Dużym plusem jest przewidywalność: grafik i zadania są znane wcześniej, więc łatwiej pogodzić pracę z dokumentami i życiem prywatnym.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>34 - 52 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-11",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lublin-security-day-shift-security-guard-human-574",
+    "category": "security",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Охоронець денних змін у логістичному парку — Люблін",
+    "title_pl": "Pracownik ochrony na zmiany dzienne w parku logistycznym — Lublin",
+    "salary": "30 - 40 PLN/h",
+    "company": "SafeLine Patrol",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "SafeLine Patrol шукає охоронець денних змін у логістичному парку у Люблін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "SafeLine Patrol szuka pracownik ochrony na zmiany dzienne w parku logistycznym w Lublin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У SafeLine Patrol у місті Люблін відкрита позиція «охоронець денних змін у логістичному парку». Позиція розрахована на довшу співпрацю: тут дивляться не тільки на швидкість, а й на акуратність, відповідальність і нормальну взаємодію в команді.</p><p>Після адаптації можна обговорити зручніші зміни та розширення задач із доплатою. Це варіант для людей, яким потрібен прогнозований дохід і зрозумілі правила на щодень.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W SafeLine Patrol w mieście Lublin otwarte jest stanowisko „pracownik ochrony na zmiany dzienne w parku logistycznym”. To oferta nastawiona na dłuższą współpracę: ważna jest nie tylko szybkość, ale też dokładność, odpowiedzialność i spokojna praca zespołowa.</p><p>Wynagrodzenie jest rozliczane na podstawie przejrzystej ewidencji godzin, bez niejasnych korekt. Jeśli szukasz miejsca do spokojnej pracy i rozwoju, ta oferta ma solidne podstawy.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-10",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-logistics-warehouse-order-picker-human-575",
+    "category": "logistics",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Комплектувальник замовлень на складі побутових товарів — Краків",
+    "title_pl": "Kompletujący zamówienia w magazynie artykułów domowych — Kraków",
+    "salary": "31 - 43 PLN/h",
+    "company": "NorthGate Fulfillment",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "NorthGate Fulfillment шукає комплектувальник замовлень на складі побутових товарів у Краків: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "NorthGate Fulfillment szuka kompletujący zamówienia w magazynie artykułów domowych w Kraków: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У NorthGate Fulfillment у місті Краків відкрита позиція «комплектувальник замовлень на складі побутових товарів». Робочий процес налаштований практично: є чек-листи, зрозумілий розподіл ролей і людина, до якої можна звернутись із питанням у будь-який момент зміни.</p><p>Координатор українською мовою супроводжує перший етап і допомагає закрити організаційні дрібниці, щоб ви могли зосередитись на роботі, а не на бюрократії.</p><div class='salary-box'>💰 Зарплата: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W NorthGate Fulfillment w mieście Kraków otwarte jest stanowisko „kompletujący zamówienia w magazynie artykułów domowych”. Proces jest praktycznie ułożony: checklisty, jasny podział ról i konkretna osoba, do której można zgłosić się z pytaniem w każdej chwili.</p><p>W praktyce to praca bez pustych obietnic: konkretne obowiązki, rozsądna kontrola jakości i możliwość ustalania zmian przy wcześniejszej informacji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>31 - 43 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-09",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-construction-masonry-renovation-worker-human-576",
+    "category": "construction",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Муляр у бригаду на житлові реконструкції — Гданськ",
+    "title_pl": "Murarz do brygady przy remontach mieszkań — Gdańsk",
+    "salary": "35 - 50 PLN/h",
+    "company": "SolidMur Projekt",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "SolidMur Projekt шукає муляр у бригаду на житлові реконструкції у Гданськ: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "SolidMur Projekt szuka murarz do brygady przy remontach mieszkań w Gdańsk: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У SolidMur Projekt у місті Гданськ відкрита позиція «муляр у бригаду на житлові реконструкції». У цій вакансії важлива стабільність: керівник тримає рівний ритм роботи, а навантаження розподіляють так, щоб команда не вигорала в перший місяць.</p><p>Окремий плюс — передбачуваність: графік і задачі видно наперед, тож простіше тримати баланс між роботою, документами та особистими справами.</p><div class='salary-box'>💰 Зарплата: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W SolidMur Projekt w mieście Gdańsk otwarte jest stanowisko „murarz do brygady przy remontach mieszkań”. W tej roli stawia się na stabilność: kierownik utrzymuje równe tempo, a obciążenie rozdzielane jest tak, żeby zespół nie wypalał się po kilku tygodniach.</p><p>Oferta pasuje osobom, które wolą stabilny rytm bez ciągłych sytuacji awaryjnych i chcą mieć jasność, za co odpowiadają na swojej zmianie.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>35 - 50 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-08",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-production-packaging-line-operator-human-577",
+    "category": "production",
+    "city": "Щецін",
+    "city_pl": "Szczecin",
+    "title": "Оператор лінії фасування на харчовому виробництві — Щецін",
+    "title_pl": "Operator linii pakowania w produkcji spożywczej — Szczecin",
+    "salary": "30 - 42 PLN/h",
+    "company": "Vistula Foods",
+    "shift_ua": "5/2, плаваючі вихідні",
+    "shift_pl": "5/2, wolne dni ruchome",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Початок після короткого навчання",
+    "start_pl": "Początek po krótkim szkoleniu",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Vistula Foods шукає оператор лінії фасування на харчовому виробництві у Щецін: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Vistula Foods szuka operator linii pakowania w produkcji spożywczej w Szczecin: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Vistula Foods у місті Щецін відкрита позиція «оператор лінії фасування на харчовому виробництві». Компанія бере людей у команду поступово: перші дні йдете поруч із досвідченим колегою, щоб спокійно ввійти в процес і не втрачати темп.</p><p>Оплата на цій позиції прив’язана до прозорого обліку годин, без «сірого» перерахунку. Якщо шукаєте місце, де можна спокійно працювати й поступово рости, ця вакансія виглядає практичною і реальною.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Vistula Foods w mieście Szczecin otwarte jest stanowisko „operator linii pakowania w produkcji spożywczej”. Firma wdraża stopniowo: pierwsze dni pracujesz obok doświadczonej osoby, żeby spokojnie wejść w proces bez utraty jakości i tempa.</p><p>Warunki są zdrowe na dłuższy okres: stałe tempo, uczciwe rozliczenie czasu i zespół, w którym ważna jest współpraca, a nie ciągła rywalizacja.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 42 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-07",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-hospitality-hot-kitchen-cook-human-578",
+    "category": "hospitality",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Кухар гарячого цеху у міському бістро — Вроцлав",
+    "title_pl": "Kucharz sekcji gorącej w miejskim bistro — Wrocław",
+    "salary": "33 - 48 PLN/h",
+    "company": "Miejski Stół",
+    "shift_ua": "Пн-Сб, 7:00-16:00",
+    "shift_pl": "Pn-Sb, 7:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Вихід після медогляду",
+    "start_pl": "Start po badaniach lekarskich",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Miejski Stół шукає кухар гарячого цеху у міському бістро у Вроцлав: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Miejski Stół szuka kucharz sekcji gorącej w miejskim bistro w Wrocław: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Miejski Stół у місті Вроцлав відкрита позиція «кухар гарячого цеху у міському бістро». Робота організована без зайвої бюрократії: усе, що стосується завдань, перерв і якості, обговорюють просто та по суті, без формальних відписок.</p><p>На практиці це робота без зайвих обіцянок: чіткі обов’язки, адекватний контроль якості та можливість домовлятися про зміни, якщо попереджати завчасно.</p><div class='salary-box'>💰 Зарплата: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Miejski Stół w mieście Wrocław otwarte jest stanowisko „kucharz sekcji gorącej w miejskim bistro”. Praca jest zorganizowana bez zbędnej biurokracji: kwestie zadań, przerw i standardu jakości omawia się jasno i konkretnie.</p><p>Zespół chce zatrzymywać ludzi na dłużej, dlatego warunki nie są „na chwilę”: wymagania są jasno tłumaczone, a wejście w obowiązki odbywa się bez presji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>33 - 48 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-06",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-cleaning-cleaning-team-coordinator-human-579",
+    "category": "cleaning",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Координатор бригади прибирання в бізнес-центрі — Лодзь",
+    "title_pl": "Koordynator zespołu sprzątającego w centrum biznesowym — Łódź",
+    "salary": "29 - 40 PLN/h",
+    "company": "CleanFlow Service",
+    "shift_ua": "Пн-Пт, 8:00-17:00",
+    "shift_pl": "Pn-Pt, 8:00-17:00",
+    "pattern_ua": "4/2",
+    "pattern_pl": "4/2",
+    "start_ua": "Вихід протягом 5-7 днів",
+    "start_pl": "Start w ciągu 5-7 dni",
+    "contract_ua": "Umowa zlecenie",
+    "contract_pl": "Umowa zlecenie",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "CleanFlow Service шукає координатор бригади прибирання в бізнес-центрі у Лодзь: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "CleanFlow Service szuka koordynator zespołu sprzątającego w centrum biznesowym w Łódź: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У CleanFlow Service у місті Лодзь відкрита позиція «координатор бригади прибирання в бізнес-центрі». Тут добре заходять кандидати, які люблять порядок і передбачуваність: є ясні правила, зрозумілий обсяг задач і нормальний зворотний зв’язок від зміни.</p><p>Вакансія підійде тим, хто хоче працювати в нормальному ритмі без постійних форс-мажорів і мати ясне розуміння, за що саме відповідає в зміні.</p><div class='salary-box'>💰 Зарплата: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W CleanFlow Service w mieście Łódź otwarte jest stanowisko „koordynator zespołu sprzątającego w centrum biznesowym”. Dobrze odnajdą się tu osoby, które lubią porządek i przewidywalność: jasne zasady, zrozumiały zakres obowiązków i normalny feedback od zespołu.</p><p>Jeśli zależy Ci na spokojnej atmosferze, tutaj to działa: feedback jest rzeczowy, błędy omawia się merytorycznie, bez niepotrzebnych emocji.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>29 - 40 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-19",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "warszawa-retail-senior-cashier-human-580",
+    "category": "retail",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Старший касир у мережевому маркеті — Варшава",
+    "title_pl": "Starszy kasjer w markecie sieciowym — Warszawa",
+    "salary": "30 - 41 PLN/h",
+    "company": "Market Nova",
+    "shift_ua": "2 зміни: 6:00-14:00 / 14:00-22:00",
+    "shift_pl": "2 zmiany: 6:00-14:00 / 14:00-22:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Старт наступного тижня",
+    "start_pl": "Start od przyszłego tygodnia",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня.",
+      "Допомога координатора українською мовою.",
+      "Прозорий облік годин і виплат."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia.",
+      "Wsparcie koordynatora w języku ukraińskim.",
+      "Przejrzyste rozliczanie godzin i wypłat."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за стандартами об’єкта.",
+      "Взаємодія з командою та дотримання правил безпеки.",
+      "Передача зміни й короткий звіт по виконаній роботі."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań zgodnie ze standardem obiektu.",
+      "Współpraca z zespołem i przestrzeganie zasad bezpieczeństwa.",
+      "Przekazanie zmiany i krótki raport z wykonanej pracy."
+    ],
+    "details_ua": [
+      "Команда змішана: українці та поляки, адаптація проходить у робочому темпі.",
+      "Координатор допомагає з документами та побутовими питаннями в перший тиждень."
+    ],
+    "details_pl": [
+      "Zespół mieszany: Ukraińcy i Polacy, wdrożenie przebiega w spokojnym rytmie.",
+      "Koordynator pomaga z dokumentami i sprawami organizacyjnymi w pierwszym tygodniu."
+    ],
+    "requirements_ua": [
+      "Досвід: базовий або від 3 місяців на схожій посаді",
+      "Мова: українська; польська буде плюсом",
+      "Документи: паспорт і PESEL"
+    ],
+    "requirements_pl": [
+      "Doświadczenie: podstawowe lub min. 3 miesiące na podobnym stanowisku",
+      "Język: ukraiński; polski mile widziany",
+      "Dokumenty: paszport i PESEL"
+    ],
+    "experience_ua": "базовий або від 3 місяців",
+    "experience_pl": "podstawowe lub min. 3 miesiące",
+    "language_ua": "Українська; польська буде плюсом",
+    "language_pl": "Ukraiński; polski mile widziany",
+    "housing_ua": "Житло не надається, підкажемо перевірені варіанти",
+    "housing_pl": "Zakwaterowanie we własnym zakresie, podpowiadamy sprawdzone opcje",
+    "transport_ua": "Зручний доїзд міським транспортом",
+    "transport_pl": "Wygodny dojazd komunikacją miejską",
+    "documents_ua": "Документи: паспорт і PESEL",
+    "documents_pl": "Dokumenty: paszport i PESEL",
+    "excerpt": "Market Nova шукає старший касир у мережевому маркеті у Варшава: стабільний графік, прозорі виплати та нормальна адаптація в команді.",
+    "excerpt_pl": "Market Nova szuka starszy kasjer w markecie sieciowym w Warszawa: stabilny grafik, przejrzyste wypłaty i spokojne wdrożenie.",
+    "body": "<div class='vacancy-block'><p>У Market Nova у місті Варшава відкрита позиція «старший касир у мережевому маркеті». У колективі багато українців, тож адаптація проходить м’якше: на старті допомагають із робочими нюансами та підказують по місту поза роботою.</p><p>Умови виглядають здоровими для довгого горизонту: стабільний темп, чесний облік часу і команда, де важлива співпраця, а не постійна конкуренція між людьми.</p><div class='salary-box'>💰 Зарплата: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>W Market Nova w mieście Warszawa otwarte jest stanowisko „starszy kasjer w markecie sieciowym”. W zespole pracuje wielu Ukraińców, dlatego wdrożenie przebiega łagodniej: na starcie można liczyć na praktyczne wsparcie także poza samymi zadaniami.</p><p>Dla nowych osób jest realne wsparcie w pierwszych tygodniach, a bardziej doświadczone mogą przejmować trudniejsze odcinki i zwiększać stawkę.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>30 - 41 PLN/h</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-02-18",
+    "is_generated": false,
+    "data_source": "manual"
   }
 ]
