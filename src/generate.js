@@ -1293,6 +1293,37 @@ function buildVacancyProofFormScript() {
   </script>`;
 }
 
+const MIN_VACANCY_EXCERPT_LENGTH = 140;
+
+function firstText(value) {
+  if (Array.isArray(value)) {
+    return String(value.find(item => String(item || '').trim()) || '').trim();
+  }
+  return String(value || '').trim();
+}
+
+function enrichVacancyExcerpt(page, lang) {
+  const isPl = lang === 'pl';
+  const base = firstText(isPl ? page.excerpt_pl : page.excerpt);
+  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return base;
+
+  const parts = [
+    base,
+    firstText(isPl ? page.details_pl : page.details_ua),
+    firstText(isPl ? page.tasks_pl : page.tasks_ua),
+    firstText(isPl ? page.transport_pl : page.transport_ua),
+    firstText(isPl ? page.housing_pl : page.housing_ua)
+  ].filter(Boolean);
+
+  const merged = [];
+  for (const part of parts) {
+    if (!merged.includes(part)) merged.push(part);
+    if (merged.join(' ').length >= MIN_VACANCY_EXCERPT_LENGTH) break;
+  }
+
+  return (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+}
+
 async function build() {
   // clean dist to avoid stale files
   await fs.rm(DIST, { recursive: true, force: true }).catch(() => {});
@@ -1301,6 +1332,11 @@ async function build() {
   const contentPath = path.join(SRC, 'content.json');
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
+  pages.forEach((page) => {
+    if (!Array.isArray(page.tasks_ua) && !Array.isArray(page.tasks_pl)) return;
+    page.excerpt = enrichVacancyExcerpt(page, 'ua');
+    page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
+  });
 
   const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
 
