@@ -1304,21 +1304,28 @@ function firstText(value) {
 
 function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
-  const base = firstText(isPl ? page.excerpt_pl : page.excerpt);
+  const base = firstText(isPl ? (page.excerpt_pl || page.excerpt) : page.excerpt);
   if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return base;
 
   const parts = [
     base,
-    firstText(isPl ? page.details_pl : page.details_ua),
-    firstText(isPl ? page.tasks_pl : page.tasks_ua),
-    firstText(isPl ? page.transport_pl : page.transport_ua),
-    firstText(isPl ? page.housing_pl : page.housing_ua)
+    firstText((isPl ? page.details_pl : page.details_ua) || page.details),
+    firstText((isPl ? page.tasks_pl : page.tasks_ua) || page.tasks),
+    firstText((isPl ? page.transport_pl : page.transport_ua) || page.transport),
+    firstText((isPl ? page.housing_pl : page.housing_ua) || page.housing)
   ].filter(Boolean);
 
   const merged = [];
+  const seen = new Set();
+  let mergedLength = 0;
   for (const part of parts) {
-    if (!merged.includes(part)) merged.push(part);
-    if (merged.join(' ').length >= MIN_VACANCY_EXCERPT_LENGTH) break;
+    if (!seen.has(part)) {
+      const separatorLength = mergedLength ? 1 : 0;
+      mergedLength += separatorLength + part.length;
+      merged.push(part);
+      seen.add(part);
+    }
+    if (mergedLength >= MIN_VACANCY_EXCERPT_LENGTH) break;
   }
 
   return (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
@@ -1333,7 +1340,19 @@ async function build() {
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
   pages.forEach((page) => {
-    if (!Array.isArray(page.tasks_ua) && !Array.isArray(page.tasks_pl)) return;
+    const looksLikeVacancy = (
+      Boolean(firstText(page.tasks_ua)) ||
+      Boolean(firstText(page.tasks_pl)) ||
+      Boolean(firstText(page.details_ua)) ||
+      Boolean(firstText(page.details_pl)) ||
+      Boolean(firstText(page.transport_ua)) ||
+      Boolean(firstText(page.transport_pl)) ||
+      Boolean(firstText(page.transport)) ||
+      Boolean(firstText(page.housing_ua)) ||
+      Boolean(firstText(page.housing_pl)) ||
+      Boolean(firstText(page.housing))
+    );
+    if (!looksLikeVacancy) return;
     page.excerpt = enrichVacancyExcerpt(page, 'ua');
     page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
   });
