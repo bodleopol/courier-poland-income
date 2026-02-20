@@ -221,7 +221,167 @@ function toRussianFallbackText(input) {
     [/\bтыжня\b/gi, 'недели'],
     [/\bзаявка\b/gi, 'заявка'],
     [/\bвідгук\b/gi, 'отзыв'],
-    [/\bвідгуки\b/gi, 'отзывы']
+    [/\bвідгуки\b/gi, 'отзывы'],
+    // Additional Ukrainian words that commonly appear in vacancy content
+    [/\bпісля\b/gi, 'после'],
+    [/\bобіцяємо\b/gi, 'обещаем'],
+    [/\bобіцяти\b/gi, 'обещать'],
+    [/\bзрозумілі\b/gi, 'понятные'],
+    [/\bзрозуміло\b/gi, 'понятно'],
+    [/\bзрозумілий\b/gi, 'понятный'],
+    [/\bреальні\b/gi, 'реальные'],
+    [/\bреальний\b/gi, 'реальный'],
+    [/\bчіткий\b/gi, 'чёткий'],
+    [/\bчіткі\b/gi, 'чёткие'],
+    [/\bзнайти\b/gi, 'найти'],
+    [/\bзнайте\b/gi, 'знайте'],
+    [/\bзнайдіть\b/gi, 'найдите'],
+    [/\bпочати\b/gi, 'начать'],
+    [/\bпочинати\b/gi, 'начинать'],
+    [/\bпочатку\b/gi, 'начала'],
+    [/\bпочаток\b/gi, 'начало'],
+    [/\bпереглянути\b/gi, 'посмотреть'],
+    [/\bпереглядати\b/gi, 'просматривать'],
+    [/\bотримати\b/gi, 'получить'],
+    [/\bотримуєте\b/gi, 'получаете'],
+    [/\bотримав\b/gi, 'получил'],
+    [/\bотримавши\b/gi, 'получив'],
+    [/\bобирати\b/gi, 'выбирать'],
+    [/\bобрати\b/gi, 'выбрать'],
+    [/\bобирайте\b/gi, 'выбирайте'],
+    [/\bрадимо\b/gi, 'советуем'],
+    [/\bраджу\b/gi, 'советую'],
+    [/\bпитайте\b/gi, 'спрашивайте'],
+    [/\bпитання\b/gi, 'вопрос'],
+    [/\bпитань\b/gi, 'вопросов'],
+    [/\bдивіться\b/gi, 'смотрите'],
+    [/\bдивитися\b/gi, 'смотреть'],
+    [/\bважливіше\b/gi, 'важнее'],
+    [/\bважливіший\b/gi, 'важнее'],
+    [/\bважливо\b/gi, 'важно'],
+    [/\bгнучкий\b/gi, 'гибкий'],
+    [/\bгнучкість\b/gi, 'гибкость'],
+    [/\bзручний\b/gi, 'удобный'],
+    [/\bзручно\b/gi, 'удобно'],
+    [/\bзручна\b/gi, 'удобная'],
+    [/\bзручних\b/gi, 'удобных'],
+    [/\bпрозорий\b/gi, 'прозрачный'],
+    [/\bпрозорі\b/gi, 'прозрачные'],
+    [/\bстабільний\b/gi, 'стабильный'],
+    [/\bстабільна\b/gi, 'стабильная'],
+    [/\bстабільні\b/gi, 'стабильные'],
+    [/\bпопулярні\b/gi, 'популярные'],
+    [/\bпопулярний\b/gi, 'популярный'],
+    [/\bбезкоштовна\b/gi, 'бесплатная'],
+    [/\bбезкоштовно\b/gi, 'бесплатно'],
+    [/\bбезкоштовний\b/gi, 'бесплатный'],
+    [/\bлегальне\b/gi, 'легальное'],
+    [/\bлегальна\b/gi, 'легальная'],
+    [/\bлегальні\b/gi, 'легальные'],
+    [/\bактуальні\b/gi, 'актуальные'],
+    [/\bактуальний\b/gi, 'актуальный'],
+    [/\bактуально\b/gi, 'актуально'],
+    [/\bтисячі\b/gi, 'тысячи'],
+    [/\bтисяча\b/gi, 'тысяча'],
+    [/\bлюдей\b/gi, 'людей'],
+    [/\bпрацюють\b/gi, 'работают'],
+    [/\bпрацювати\b/gi, 'работать'],
+    [/\bпрацює\b/gi, 'работает'],
+    [/\bфільтруйте\b/gi, 'фильтруйте'],
+    [/\bфільтри\b/gi, 'фильтры'],
+    [/\bзаробіток\b/gi, 'заработок'],
+    [/\bзаробітку\b/gi, 'заработка'],
+    [/\bзаробляти\b/gi, 'зарабатывать'],
+    [/\bзарплата\b/gi, 'зарплата'],
+    [/\bзарплати\b/gi, 'зарплаты'],
+    [/\bзарплату\b/gi, 'зарплату'],
+    [/\bдокументи\b/gi, 'документы'],
+    [/\bдокументів\b/gi, 'документов'],
+    [/\bдокументах\b/gi, 'документах'],
+    [/\bдокумент\b/gi, 'документ'],
+    [/\bпояснення\b/gi, 'пояснения'],
+    [/\bуточнення\b/gi, 'уточнение'],
+    [/\bнюанси\b/gi, 'нюансы'],
+    [/\bнюанс\b/gi, 'нюанс'],
+    [/\bвиїзду\b/gi, 'отъезда'],
+    [/\bвиїзд\b/gi, 'отъезд'],
+    [/\bрозуміємо\b/gi, 'понимаем'],
+    [/\bрозуміти\b/gi, 'понимать'],
+    [/\bкорисні\b/gi, 'полезные'],
+    [/\bкорисний\b/gi, 'полезный'],
+    [/\bкорисно\b/gi, 'полезно'],
+    [/\bстатті\b/gi, 'статьи'],
+    [/\bстатья\b/gi, 'статья'],
+    [/\bстаттях\b/gi, 'статьях'],
+    [/\bновини\b/gi, 'новости'],
+    [/\bновина\b/gi, 'новость'],
+    [/\bадаптація\b/gi, 'адаптация'],
+    [/\bадаптації\b/gi, 'адаптации'],
+    [/\bринок\b/gi, 'рынок'],
+    [/\bринку\b/gi, 'рынка'],
+    [/\bдвічі\b/gi, 'дважды'],
+    [/\bтеж\b/gi, 'тоже'],
+    [/\bтакож\b/gi, 'также'],
+    [/\bналаштування\b/gi, 'настройки'],
+    [/\bнадійний\b/gi, 'надёжный'],
+    [/\bнадійна\b/gi, 'надёжная'],
+    [/\bнадійні\b/gi, 'надёжные'],
+    [/\bпартнер\b/gi, 'партнёр'],
+    [/\bпрацевлаштування\b/gi, 'трудоустройство'],
+    [/\bпрацевлаштуванням\b/gi, 'трудоустройством'],
+    [/\bпрацевлаштуванні\b/gi, 'трудоустройстве'],
+    [/\bобробку\b/gi, 'обработку'],
+    [/\bданих\b/gi, 'данных'],
+    [/\bконтактних\b/gi, 'контактных'],
+    [/\bпогоджуюсь\b/gi, 'соглашаюсь'],
+    [/\bнадіслати\b/gi, 'отправить'],
+    [/\bнадіслати\b/gi, 'отправить'],
+    [/\bочистити\b/gi, 'очистить'],
+    [/\bсторінка\b/gi, 'страница'],
+    [/\bсторінку\b/gi, 'страницу'],
+    [/\bсторінки\b/gi, 'страницы'],
+    [/\bзнайдена\b/gi, 'найдена'],
+    [/\bпереміщена\b/gi, 'перемещена'],
+    [/\bповернутись\b/gi, 'вернуться'],
+    [/\bзвʼязатися\b/gi, 'связаться'],
+    [/\bзв'язатися\b/gi, 'связаться'],
+    [/\bзв\'язатися\b/gi, 'связаться'],
+    [/\bнаписати\b/gi, 'написать'],
+    [/\bпоширені\b/gi, 'частые'],
+    [/\bчасті\b/gi, 'частые'],
+    [/\bвідповіді\b/gi, 'ответы'],
+    [/\bвідповідь\b/gi, 'ответ'],
+    [/\bумови\b/gi, 'условия'],
+    [/\bumov\b/gi, 'условий'],
+    [/\bшвидко\b/gi, 'быстро'],
+    [/\bшвидкий\b/gi, 'быстрый'],
+    [/\bшвидке\b/gi, 'быстрое'],
+    [/\bзаявку\b/gi, 'заявку'],
+    [/\bзаявок\b/gi, 'заявок'],
+    [/\bподати\b/gi, 'подать'],
+    [/\bподайте\b/gi, 'подайте'],
+    [/\bполів\b/gi, 'полей'],
+    [/\bполе\b/gi, 'поле'],
+    [/\bкілька\b/gi, 'несколько'],
+    [/\bпідберемо\b/gi, 'подберём'],
+    [/\bпідбір\b/gi, 'подбор'],
+    [/\bпідбором\b/gi, 'подбором'],
+    [/\bдопоможемо\b/gi, 'поможем'],
+    [/\bтелефон\b/gi, 'телефон'],
+    [/\bмісяць\b/gi, 'месяц'],
+    [/\bмісяці\b/gi, 'месяцы'],
+    [/\bмісяця\b/gi, 'месяца'],
+    [/\bтиждень\b/gi, 'неделя'],
+    [/\bтижні\b/gi, 'недели'],
+    [/\bгодин\b/gi, 'часов'],
+    [/\bгодина\b/gi, 'час'],
+    [/\bгодини\b/gi, 'часы'],
+    [/\bставка\b/gi, 'ставка'],
+    [/\bставки\b/gi, 'ставки'],
+    [/\bприблизний\b/gi, 'приблизительный'],
+    [/\bрозрахунок\b/gi, 'расчёт'],
+    [/\bдохід\b/gi, 'доход'],
+    [/\bдоходу\b/gi, 'дохода']
   ];
   for (const [pattern, replacement] of wordReplacements) {
     text = text.replace(pattern, replacement);
@@ -235,14 +395,49 @@ function toRussianFallbackText(input) {
     .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
       і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
     }[ch] || ch))
-    .replace(/[ʼ’]/g, '\'')
+    .replace(/[ʼ']/g, '\'')
     .replace(/\bПольщи\b/gi, 'Польше')
     .replace(/\bЗнайдить\b/gi, 'Найдите')
     .replace(/\bризних\b/gi, 'разных')
     .replace(/\bвсий\b/gi, 'всей')
-    .replace(/\bЛегальне\b/gi, 'Легальные')
+    .replace(/\bЛегальне\b/gi, 'Легальное')
     .replace(/\bумови\b/gi, 'условия')
-    .replace(/\bпидтримка\b/gi, 'поддержка');
+    .replace(/\bпидтримка\b/gi, 'поддержка')
+    .replace(/\bпидтримку\b/gi, 'поддержку')
+    .replace(/\bпидтримки\b/gi, 'поддержки')
+    .replace(/\bмрии\b/gi, 'мечты')
+    .replace(/\bмрию\b/gi, 'мечту')
+    .replace(/\bмрия\b/gi, 'мечта')
+    .replace(/\bчекае\b/gi, 'ждёт')
+    .replace(/\bчекають\b/gi, 'ждут')
+    .replace(/\bчекати\b/gi, 'ждать')
+    .replace(/\bпрацюе\b/gi, 'работает')
+    .replace(/\bпрацюють\b/gi, 'работают')
+    .replace(/\bпрацювати\b/gi, 'работать')
+    .replace(/\bобицяемо\b/gi, 'обещаем')
+    .replace(/\bзрозумили\b/gi, 'понятные')
+    .replace(/\bзрозумило\b/gi, 'понятно')
+    .replace(/\bзрозумилий\b/gi, 'понятный')
+    .replace(/\bреальни\b/gi, 'реальные')
+    .replace(/\bчиткий\b/gi, 'чёткий')
+    .replace(/\bчитки\b/gi, 'чёткие')
+    .replace(/\bписля\b/gi, 'после')
+    .replace(/\bзнайти\b/gi, 'найти')
+    .replace(/\bпочати\b/gi, 'начать')
+    .replace(/\bотримати\b/gi, 'получить')
+    .replace(/\bпереглянути\b/gi, 'посмотреть')
+    .replace(/\bгнучкисть\b/gi, 'гибкость')
+    .replace(/\bзручний\b/gi, 'удобный')
+    .replace(/\bзручна\b/gi, 'удобная')
+    .replace(/\bстабильни\b/gi, 'стабильные')
+    .replace(/\bпопулярни\b/gi, 'популярные')
+    .replace(/\bбезкоштовна\b/gi, 'бесплатная')
+    .replace(/\bбезкоштовно\b/gi, 'бесплатно')
+    .replace(/\bактуальни\b/gi, 'актуальные')
+    .replace(/\bтисячи\b/gi, 'тысячи')
+    .replace(/\bдвичи\b/gi, 'дважды')
+    .replace(/\bнадийний\b/gi, 'надёжный')
+    .replace(/\bнадийна\b/gi, 'надёжная');
 }
 
 function toRussianContentValue(value) {
@@ -2816,6 +3011,7 @@ async function build() {
       .replace(/{{CONTENT}}/g, postContent)
       .replace(/{{CANONICAL}}/g, `https://rybezh.site/post-${post.slug}.html`)
       .replace(/{{CANONICAL_PL}}/g, `https://rybezh.site/post-${post.slug}-pl.html`)
+      .replace(/{{CANONICAL_RU}}/g, `https://rybezh.site/post-${post.slug}-ru.html`)
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
@@ -3475,14 +3671,18 @@ function generateSitemap(links, posts = []) {
   
   const allPages = [...mainPages, ...blogPages, ...jobPages];
   
-  // Generate entries for both UA and PL pages with hreflang xhtml:link
+  // Generate entries for UA, PL, and RU pages with hreflang xhtml:link
   const items = allPages.flatMap(p => {
     const plUrl = p.url === `${base}/`
       ? `${base}/index-pl.html`
       : p.url.replace(/\.html$/, '-pl.html');
+    const ruUrl = p.url === `${base}/`
+      ? `${base}/index-ru.html`
+      : p.url.replace(/\.html$/, '-ru.html');
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${p.url}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${p.url}"/>`;
 
     return [
@@ -3494,6 +3694,12 @@ function generateSitemap(links, posts = []) {
   </url>`,
       `  <url>
     <loc>${plUrl}</loc>
+    <lastmod>${p.lastmod}</lastmod>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${ruUrl}</loc>
     <lastmod>${p.lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority}</priority>${xhtmlLinks}
@@ -3515,9 +3721,12 @@ function generateVacanciesSitemap(links) {
   const items = links.flatMap(l => {
     const uaUrl = `${base}/${l.slug}.html`;
     const plUrl = `${base}/${l.slug}-pl.html`;
+    const ruUrl = `${base}/${l.slug}-ru.html`;
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
-    <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>`;
+    <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
 
     return [
       `  <url>
@@ -3528,6 +3737,12 @@ function generateVacanciesSitemap(links) {
   </url>`,
       `  <url>
     <loc>${plUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${ruUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>${xhtmlLinks}
