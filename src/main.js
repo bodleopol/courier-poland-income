@@ -1041,14 +1041,15 @@
         const name = nameInput ? nameInput.value.trim() : '';
         const contact = contactInput ? contactInput.value.trim() : '';
         const message = messageInput ? messageInput.value.trim() : '';
+        const currentLang = getLang();
 
         if (!name || !contact) {
-          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : (getLang() === 'ru' ? 'Заполните имя и контакт.' : 'Заповніть імʼя та контакт.');
+          if (status) status.textContent = currentLang === 'pl' ? 'Uzupełnij imię i kontakt.' : (currentLang === 'ru' ? 'Заполните имя и контакт.' : 'Заповніть імʼя та контакт.');
           return;
         }
 
         if (button) button.disabled = true;
-        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : (getLang() === 'ru' ? 'Отправляем...' : 'Надсилаємо...');
+        if (status) status.textContent = currentLang === 'pl' ? 'Wysyłanie...' : (currentLang === 'ru' ? 'Отправляем...' : 'Надсилаємо...');
 
         try {
           let city = '';
@@ -1069,18 +1070,18 @@
           formData.append('type', 'contact');
           formData.append('city', city);
           formData.append('page', window.location.href);
-          formData.append('lang', getLang());
+          formData.append('lang', currentLang);
           formData.append('ts', new Date().toISOString());
 
           await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
 
-          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : (getLang() === 'ru' ? 'Спасибо! Мы свяжемся с вами в ближайшее время.' : 'Дякуємо! Ми відповімо найближчим часом.');
+          if (status) status.textContent = currentLang === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : (currentLang === 'ru' ? 'Спасибо! Мы свяжемся с вами в ближайшее время.' : 'Дякуємо! Ми відповімо найближчим часом.');
           if (nameInput) nameInput.value = '';
           if (contactInput) contactInput.value = '';
           if (messageInput) messageInput.value = '';
         } catch (err) {
           console.error(err);
-          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : (getLang() === 'ru' ? 'Ошибка отправки. Попробуйте ещё раз.' : 'Помилка відправки. Спробуйте ще раз.');
+          if (status) status.textContent = currentLang === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : (currentLang === 'ru' ? 'Ошибка отправки. Попробуйте ещё раз.' : 'Помилка відправки. Спробуйте ще раз.');
         } finally {
           if (button) button.disabled = false;
         }
