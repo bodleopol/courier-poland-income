@@ -587,7 +587,18 @@
       .replace(/\bвсий\b/gi, 'всей')
       .replace(/\bЛегальне\b/gi, 'Легальные')
       .replace(/\bумови\b/gi, 'условия')
-      .replace(/\bпидтримка\b/gi, 'поддержка');
+      .replace(/\bпидтримка\b/gi, 'поддержка')
+      .replace(/\bшукае\b/gi, 'ищет')
+      .replace(/\bдоговир\b/gi, 'договор')
+      .replace(/\bдосвид\b/gi, 'опыт')
+      .replace(/\bпрацивник\b/gi, 'сотрудник')
+      .replace(/\bкоманди\b/gi, 'команды')
+      .replace(/\bзагалом\b/gi, 'в целом')
+      .replace(/\bуточнити\b/gi, 'уточнить')
+      .replace(/\bгданськ\b/gi, 'Гданьск')
+      .replace(/\bкракив\b/gi, 'Краков')
+      .replace(/\bвроцлав\b/gi, 'Вроцлав')
+      .replace(/\bсосновець\b/gi, 'Сосновец');
   }
 
   function getTranslationText(dict, lang) {

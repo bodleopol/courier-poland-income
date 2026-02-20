@@ -154,8 +154,26 @@ function toRussianFallbackText(input) {
     [/\bробочий\b/gi, 'рабочий'],
     [/\bробоча\b/gi, 'рабочая'],
     [/\bдоговир\b/gi, 'договор'],
+    [/\bробота\b/gi, 'работа'],
+    [/\bроботи\b/gi, 'работы'],
+    [/\bшукае\b/gi, 'ищет'],
+    [/\bшукає\b/gi, 'ищет'],
+    [/\bдосвид\b/gi, 'опыт'],
+    [/\bвидгук\b/gi, 'отклик'],
+    [/\bвидгуками\b/gi, 'отзывам'],
+    [/\bпрацивник\b/gi, 'сотрудник'],
+    [/\bпрацивникив\b/gi, 'сотрудников'],
+    [/\bстабильний\b/gi, 'стабильной'],
     [/\bкоманди\b/gi, 'команды'],
+    [/\bзагалом\b/gi, 'в целом'],
     [/\bуточнити\b/gi, 'уточнить'],
+    [/\bвакансия за видгуками\b/gi, 'вакансия по отзывам'],
+    [/\bвси\b/gi, 'все'],
+    [/\bкракив\b/gi, 'Краков'],
+    [/\bгданськ\b/gi, 'Гданьск'],
+    [/\bвроцлав\b/gi, 'Вроцлав'],
+    [/\bсосновець\b/gi, 'Сосновец'],
+    [/\bпольщи\b/gi, 'Польше'],
     [/\bварто\b/gi, 'стоит'],
     [/\bграфик\b/gi, 'график'],
     [/\bпрацюе\b/gi, 'работает'],
@@ -241,6 +259,16 @@ function enrichRussianFields(item, fields) {
     const ruKey = `${field}_ru`;
     if (item[ruKey] !== undefined && item[ruKey] !== null && String(item[ruKey]).trim() !== '') continue;
     const source = item[`${field}_ua`] ?? item[field] ?? item[`${field}_pl`];
+    if (source === undefined || source === null) continue;
+    item[ruKey] = toRussianContentValue(source);
+  }
+}
+
+function normalizeRussianFields(item, fields) {
+  if (!item || typeof item !== 'object') return;
+  for (const field of fields) {
+    const ruKey = `${field}_ru`;
+    const source = item[ruKey] ?? item[`${field}_ua`] ?? item[field] ?? item[`${field}_pl`];
     if (source === undefined || source === null) continue;
     item[ruKey] = toRussianContentValue(source);
   }
@@ -2028,6 +2056,13 @@ async function build() {
     'city', 'cta_text'
   ];
   pages.forEach((page) => enrichRussianFields(page, vacancyRuFields));
+  // Manual batch polishing: force-normalize first 50 vacancy-like pages for literary RU
+  const batchVacancies = pages
+    .filter(page => page && page.slug && page.is_generated)
+    // Stable alphabetical batching makes iterative 50-page review reproducible.
+    .sort((a, b) => String(a.slug).localeCompare(String(b.slug)))
+    .slice(0, 50);
+  batchVacancies.forEach((page) => normalizeRussianFields(page, vacancyRuFields));
   pages.forEach((page) => {
     const looksLikeVacancy = (
       Boolean(firstText(page.tasks_ua)) ||
@@ -2080,6 +2115,10 @@ async function build() {
   const postsPath = path.join(SRC, 'posts.json');
   const posts = JSON.parse(await fs.readFile(postsPath, 'utf8').catch(() => '[]'));
   posts.forEach((post) => enrichRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
+  // Manual batch polishing: force-normalize first 50 posts/entries for literary RU
+  posts
+    .slice(0, 50)
+    .forEach((post) => normalizeRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
 
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
