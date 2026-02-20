@@ -4123,18 +4123,21 @@ function updateFullUrlsForPolish(html) {
 /**
  * Add/replace hreflang tags in HTML.
  */
-function addHreflangTagsPl(html, filename) {
-  let uaUrl, plUrl;
+function addHreflangTags(html, filename, hasRuVersion) {
+  let uaUrl, plUrl, ruUrl;
   if (filename === 'index.html') {
     uaUrl = 'https://rybezh.site/';
     plUrl = 'https://rybezh.site/index-pl.html';
+    ruUrl = 'https://rybezh.site/index-ru.html';
   } else {
     uaUrl = `https://rybezh.site/${filename}`;
     plUrl = `https://rybezh.site/${filename.replace('.html', '-pl.html')}`;
+    ruUrl = `https://rybezh.site/${filename.replace('.html', '-ru.html')}`;
   }
 
+  const ruTag = hasRuVersion ? `\n  <link rel="alternate" hreflang="ru" href="${ruUrl}">` : '';
   const tags = `
-  <link rel="alternate" hreflang="uk" href="${uaUrl}">
+  <link rel="alternate" hreflang="uk" href="${uaUrl}">${ruTag}
   <link rel="alternate" hreflang="pl" href="${plUrl}">
   <link rel="alternate" hreflang="x-default" href="${uaUrl}">`;
 
@@ -4175,7 +4178,7 @@ function transformToPolish(html, translations, filename) {
   r = updateLinksForPolish(r);
 
   // 7. Hreflang
-  r = addHreflangTagsPl(r, filename);
+  r = addHreflangTags(r, filename, PAGES_WITH_RU_VERSION.has(filename));
 
   // 8. Force PL language on load
   if (r.includes('</head>')) {
@@ -4185,6 +4188,14 @@ function transformToPolish(html, translations, filename) {
 
   return r;
 }
+
+// Pages that have a Russian (-ru) counterpart
+const PAGES_WITH_RU_VERSION = new Set([
+  'index.html', 'vacancies.html', 'blog.html', 'about.html', 'apply.html',
+  'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html',
+  'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html',
+  'proof.html', 'for-employers.html'
+]);
 
 /**
  * Generate Polish versions of all HTML pages in dist/.
@@ -4200,7 +4211,7 @@ async function generatePolishPages(dynamicTranslations) {
   catch { console.warn('  ⚠️  dist/ not found'); return; }
 
   const htmlFiles = entries
-    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html'))
+    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html') && !e.name.endsWith('-ru.html'))
     .map(e => e.name);
 
   let generated = 0;
@@ -4215,7 +4226,7 @@ async function generatePolishPages(dynamicTranslations) {
       await fs.writeFile(path.join(DIST, plFile), plHtml, 'utf8');
 
       // Add hreflang tags to the original UA page
-      const uaHtml = addHreflangTagsPl(html, file);
+      const uaHtml = addHreflangTags(html, file, PAGES_WITH_RU_VERSION.has(file));
       await fs.writeFile(filePath, uaHtml, 'utf8');
 
       generated++;
