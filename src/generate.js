@@ -1953,7 +1953,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -2170,6 +2170,7 @@ async function build() {
       .replace(/{{CONTENT}}/g, dualContent)
       .replace(/{{CANONICAL}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}.html`)
       .replace(/{{CANONICAL_PL}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}-pl.html`)
+      .replace(/{{CANONICAL_RU}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}-ru.html`)
       .replace(/{{CITY}}/g, escapeHtml(page.city || ''))
       .replace(/{{CTA_LINK}}/g, page.cta_link || '/apply.html')
       .replace(/{{CTA_TEXT}}/g, page.cta_text || 'Подати заявку');
@@ -2617,6 +2618,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       .replace(/{{CONTENT}}/g, indexContent)
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
       .replace(/{{CANONICAL_PL}}/g, "https://rybezh.site/index-pl.html")
+      .replace(/{{CANONICAL_RU}}/g, "https://rybezh.site/index-ru.html")
       .replace(/{{CITY}}/g, "")
       .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     
@@ -2662,6 +2664,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
         .replace(/{{CONTENT}}/g, vacanciesSrc)
         .replace(/{{CANONICAL}}/g, 'https://rybezh.site/vacancies.html')
         .replace(/{{CANONICAL_PL}}/g, 'https://rybezh.site/vacancies-pl.html')
+        .replace(/{{CANONICAL_RU}}/g, 'https://rybezh.site/vacancies-ru.html')
         .replace(/{{CITY}}/g, '')
         .replace(/{{CTA_LINK}}/g, '/apply.html')
         .replace(/{{CTA_TEXT}}/g, '')
