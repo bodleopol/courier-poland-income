@@ -20,11 +20,31 @@
   }
   function toRuText(input) {
     if (input === null || input === undefined) return '';
-    return String(input)
-      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({ і:'и', І:'И', ї:'и', Ї:'И', є:'е', Є:'Е', ґ:'г', Ґ:'Г' }[ch] || ch))
-      .replace(/Вси/g, 'Все')
-      .replace(/Краків/g, 'Краков')
-      .replace(/Польщі/g, 'Польше');
+    const replacements = [
+      [/\bВси\b/gi, 'Все'],
+      [/\bКраків\b/gi, 'Краков'],
+      [/\bПольщі\b/gi, 'Польше'],
+      [/\bСтабільна\b/gi, 'Стабильная'],
+      [/\bбезпечна\b/gi, 'безопасная'],
+      [/\bвакансія\b/gi, 'вакансия'],
+      [/\bвідгуками\b/gi, 'отзывам'],
+      [/\bУмови\b/gi, 'Условия'],
+      [/\bзагалом\b/gi, 'в целом'],
+      [/\bварто\b/gi, 'стоит'],
+      [/\bуточнити\b/gi, 'уточнить'],
+      [/\bшукае\b/gi, 'ищет'],
+      [/\bдоговир\b/gi, 'договор'],
+      [/\bробота\b/gi, 'работа'],
+      [/\bкоманди\b/gi, 'команды']
+    ];
+    let text = String(input)
+      .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+      .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.')
+      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({ і:'и', І:'И', ї:'и', Ї:'И', є:'е', Є:'Е', ґ:'г', Ґ:'Г' }[ch] || ch));
+    for (const [pattern, replacement] of replacements) {
+      text = text.replace(pattern, replacement);
+    }
+    return text;
   }
   function getLocalizedValue(item, base, lang) {
     if (!item) return '';
@@ -185,10 +205,19 @@
   }
 
   function getProofVerdict(score, lang) {
-    const isPl = lang === 'pl';
-    if (score >= 80) return isPl ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
-    if (score >= 60) return isPl ? 'Warunki ogólnie OK, warto doprecyzować szczegóły.' : 'Умови загалом ок, але варто уточнити деталі.';
-    return isPl ? 'Podwyższone ryzyko — sprawdź warunki przed startem.' : 'Підвищений ризик — перевірте умови перед стартом.';
+    if (lang === 'pl') {
+      if (score >= 80) return 'Stabilna i bezpieczna oferta według opinii.';
+      if (score >= 60) return 'Warunki ogólnie OK, warto doprecyzować szczegóły.';
+      return 'Podwyższone ryzyko — sprawdź warunki przed startem.';
+    }
+    if (lang === 'ru') {
+      if (score >= 80) return 'Стабильная и безопасная вакансия по отзывам.';
+      if (score >= 60) return 'Условия в целом хорошие, но стоит уточнить детали.';
+      return 'Повышенный риск — проверьте условия перед стартом.';
+    }
+    if (score >= 80) return 'Стабільна та безпечна вакансія за відгуками.';
+    if (score >= 60) return 'Умови загалом ок, але варто уточнити деталі.';
+    return 'Підвищений ризик — перевірте умови перед стартом.';
   }
 
   function getProofColorClass(score) {

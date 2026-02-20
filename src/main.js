@@ -573,18 +573,21 @@
     for (const [from, to] of replacements) {
       text = text.split(from).join(to);
     }
+    text = text
+      .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+      .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.');
     return text
       .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
         і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
       }[ch] || ch))
       .replace(/[ʼ’]/g, '\'')
-      .replace(/\bПольщи\b/g, 'Польше')
-      .replace(/\bЗнайдить\b/g, 'Найдите')
-      .replace(/\bризних\b/g, 'разных')
-      .replace(/\bвсий\b/g, 'всей')
-      .replace(/\bЛегальне\b/g, 'Легальные')
-      .replace(/\bумови\b/g, 'условия')
-      .replace(/\bпидтримка\b/g, 'поддержка');
+      .replace(/\bПольщи\b/gi, 'Польше')
+      .replace(/\bЗнайдить\b/gi, 'Найдите')
+      .replace(/\bризних\b/gi, 'разных')
+      .replace(/\bвсий\b/gi, 'всей')
+      .replace(/\bЛегальне\b/gi, 'Легальные')
+      .replace(/\bумови\b/gi, 'условия')
+      .replace(/\bпидтримка\b/gi, 'поддержка');
   }
 
   function getTranslationText(dict, lang) {

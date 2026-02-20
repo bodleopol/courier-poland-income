@@ -132,7 +132,11 @@ const RU_FALLBACK_REPLACEMENTS = [
   ['Адаптація', 'Адаптация'],
   ['Обладнання', 'Оборудование'],
   ['Фізичні вимоги', 'Физические требования'],
-  ['Структура зміни', 'Структура смены']
+  ['Структура зміни', 'Структура смены'],
+  ['Стабільна та безпечна вакансія за відгуками.', 'Стабильная и безопасная вакансия по отзывам.'],
+  ['Умови загалом ок, але варто уточнити деталі.', 'Условия в целом хорошие, но стоит уточнить детали.'],
+  ['Ресторанний бизнес', 'Ресторанный бизнес'],
+  ['Повернутись на головну', 'Вернуться на главную']
 ];
 
 function toRussianFallbackText(input) {
@@ -149,6 +153,19 @@ function toRussianFallbackText(input) {
     [/\bроботу\b/gi, 'работу'],
     [/\bробочий\b/gi, 'рабочий'],
     [/\bробоча\b/gi, 'рабочая'],
+    [/\bдоговир\b/gi, 'договор'],
+    [/\bкоманди\b/gi, 'команды'],
+    [/\bуточнити\b/gi, 'уточнить'],
+    [/\bварто\b/gi, 'стоит'],
+    [/\bграфик\b/gi, 'график'],
+    [/\bпрацюе\b/gi, 'работает'],
+    [/\bдопомога\b/gi, 'помощь'],
+    [/\bдопомагаемо\b/gi, 'помогаем'],
+    [/\bдопоможемо\b/gi, 'поможем'],
+    [/\bперевирка\b/gi, 'проверка'],
+    [/\bконтроль якости\b/gi, 'контроль качества'],
+    [/\bвидпусток\b/gi, 'отпусков'],
+    [/\bликарняних\b/gi, 'больничных'],
     [/\bПошук\b/gi, 'Поиск'],
     [/\bЗнайдіть\b/gi, 'Найдите'],
     [/\bЗнайди\b/gi, 'Найди'],
@@ -192,18 +209,41 @@ function toRussianFallbackText(input) {
     text = text.replace(pattern, replacement);
   }
 
+  text = text
+    .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+    .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.');
+
   return text
     .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
       і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
     }[ch] || ch))
     .replace(/[ʼ’]/g, '\'')
-    .replace(/\bПольщи\b/g, 'Польше')
-    .replace(/\bЗнайдить\b/g, 'Найдите')
-    .replace(/\bризних\b/g, 'разных')
-    .replace(/\bвсий\b/g, 'всей')
-    .replace(/\bЛегальне\b/g, 'Легальные')
-    .replace(/\bумови\b/g, 'условия')
-    .replace(/\bпидтримка\b/g, 'поддержка');
+    .replace(/\bПольщи\b/gi, 'Польше')
+    .replace(/\bЗнайдить\b/gi, 'Найдите')
+    .replace(/\bризних\b/gi, 'разных')
+    .replace(/\bвсий\b/gi, 'всей')
+    .replace(/\bЛегальне\b/gi, 'Легальные')
+    .replace(/\bумови\b/gi, 'условия')
+    .replace(/\bпидтримка\b/gi, 'поддержка');
+}
+
+function toRussianContentValue(value) {
+  if (Array.isArray(value)) {
+    return value.map(item => toRussianContentValue(item));
+  }
+  if (value === null || value === undefined) return value;
+  return toRussianFallbackText(value);
+}
+
+function enrichRussianFields(item, fields) {
+  if (!item || typeof item !== 'object') return;
+  for (const field of fields) {
+    const ruKey = `${field}_ru`;
+    if (item[ruKey] !== undefined && item[ruKey] !== null && String(item[ruKey]).trim() !== '') continue;
+    const source = item[`${field}_ua`] ?? item[field] ?? item[`${field}_pl`];
+    if (source === undefined || source === null) continue;
+    item[ruKey] = toRussianContentValue(source);
+  }
 }
 
 const CATEGORY_SPECIFIC_SECTIONS = {
@@ -1981,6 +2021,13 @@ async function build() {
   const contentPath = path.join(SRC, 'content.json');
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
+  const vacancyRuFields = [
+    'title', 'excerpt', 'body', 'tasks', 'requirements', 'offers', 'details',
+    'contract', 'shift', 'pattern', 'start', 'housing', 'transport', 'workplace',
+    'team', 'onboarding', 'sector', 'equipment', 'physical', 'shift_structure',
+    'city', 'cta_text'
+  ];
+  pages.forEach((page) => enrichRussianFields(page, vacancyRuFields));
   pages.forEach((page) => {
     const looksLikeVacancy = (
       Boolean(firstText(page.tasks_ua)) ||
@@ -2024,6 +2071,7 @@ async function build() {
   let categories = [];
   try {
     categories = JSON.parse(await fs.readFile(categoriesPath, 'utf8'));
+    categories.forEach((category) => enrichRussianFields(category, ['name', 'description']));
   } catch (e) {
     console.warn('No categories.json found, continuing without categories');
   }
@@ -2031,6 +2079,7 @@ async function build() {
   // Load blog posts
   const postsPath = path.join(SRC, 'posts.json');
   const posts = JSON.parse(await fs.readFile(postsPath, 'utf8').catch(() => '[]'));
+  posts.forEach((post) => enrichRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
 
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
