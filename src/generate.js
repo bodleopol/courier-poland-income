@@ -1815,6 +1815,16 @@ async function build() {
 
   const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
 
+  // Log indexing stats to help track doorway risk
+  const generatedPages = pages.filter(p => p.is_generated);
+  const indexedGenerated = generatedPages.filter(p => indexableVacancySlugs.has(String(p.slug)));
+  console.log(`📊 Vacancy indexing: ${indexedGenerated.length}/${generatedPages.length} generated vacancies will be indexed (${generatedPages.length - indexedGenerated.length} noindex/skipped)`);
+  // Doorway risk warning: flag when many similar generated pages are indexed without unique differentiation.
+  // Threshold is higher than 50 (default limit) since one-per-city-category is a valid strategy.
+  if (indexedGenerated.length > 200) {
+    console.warn('  ⚠️  Doorway risk: more than 200 generated vacancies are indexable. Ensure each page has genuinely unique content (enrichments, company details) or reduce the indexable-vacancies.json whitelist.');
+  }
+
   // Write jobs data for client-side loading (only indexable pages, strip internal fields)
   const indexablePages = pages.filter(p => !p.is_generated || indexableVacancySlugs.has(String(p.slug)));
   const publicPages = indexablePages.map(p => {
@@ -2467,10 +2477,19 @@ async function build() {
     await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
   }
 
+  // Minimum word count threshold below which blog posts are marked noindex
+  const BLOG_NOINDEX_THRESHOLD = 300;
+  // Word count below which a warning is logged
+  const BLOG_WARN_THRESHOLD = 800;
+
   // Generate Blog Posts
   for (const post of posts) {
     const heroImageUrl = extractImageUrl(post.body) || extractImageUrl(post.image);
     const readMinutes = estimateReadingTime(post.body || '');
+    const postBodyWords = stripHtml(post.body || '').split(/\s+/).filter(Boolean).length;
+    if (postBodyWords < BLOG_WARN_THRESHOLD) {
+      console.warn(`  ⚠️  Thin blog content: post-${post.slug}.html has ${postBodyWords} words (threshold: ${BLOG_WARN_THRESHOLD})`);
+    }
     const uaEnhanced = buildEnhancedPostContent(post, posts, categories, 'ua', readMinutes);
     const plEnhanced = buildEnhancedPostContent(post, posts, categories, 'pl', readMinutes);
     const postContent = `
@@ -2541,8 +2560,32 @@ async function build() {
 
     // Inject BlogPosting structured data
     const blogPostingScript = jsonLdScript(buildBlogPostingJsonLd(post, heroImageUrl));
+
+    // Replace 2-level BreadcrumbList with 3-level: Home → Blog → Post
+    const blogBreadcrumb = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Головна', item: 'https://rybezh.site' },
+        { '@type': 'ListItem', position: 2, name: 'Блог', item: 'https://rybezh.site/blog.html' },
+        { '@type': 'ListItem', position: 3, name: post.title, item: `https://rybezh.site/post-${post.slug}.html` }
+      ]
+    };
+    const blogBreadcrumbScript = `<!-- BreadcrumbList Schema -->\n<script type="application/ld+json">\n${JSON.stringify(blogBreadcrumb, null, 2)}\n</script>`;
+    const bcPattern = /<!-- BreadcrumbList Schema -->[\s\S]*?<\/script>/;
+    if (bcPattern.test(postHtml)) {
+      postHtml = postHtml.replace(bcPattern, blogBreadcrumbScript);
+    } else if (postHtml.includes('</head>')) {
+      postHtml = postHtml.replace('</head>', `${blogBreadcrumbScript}\n</head>`);
+    }
+
     if (postHtml.includes('</head>')) {
       postHtml = postHtml.replace('</head>', `${blogPostingScript}\n</head>`);
+    }
+
+    // Mark as noindex if body word count is below threshold
+    if (postBodyWords < BLOG_NOINDEX_THRESHOLD) {
+      postHtml = setRobotsMeta(postHtml, 'noindex, follow');
     }
 
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
