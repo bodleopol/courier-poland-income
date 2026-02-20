@@ -1749,7 +1749,7 @@ function buildVacancyProofFormScript() {
   </script>`;
 }
 
-const MIN_VACANCY_EXCERPT_LENGTH = 140;
+const MIN_VACANCY_EXCERPT_LENGTH = 180;
 
 function firstText(value) {
   if (Array.isArray(value)) {
