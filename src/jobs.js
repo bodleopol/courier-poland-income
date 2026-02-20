@@ -426,7 +426,7 @@
         // Search query
         if (searchQuery) {
           const lang = localStorage.getItem('site_lang') || 'ua';
-          const searchTexts = [
+          const searchTexts = [...new Set([
             getLocalizedValue(job, 'title', lang),
             getLocalizedValue(job, 'excerpt', lang),
             job.title,
@@ -437,8 +437,8 @@
             job.excerpt_ua,
             job.excerpt_pl,
             job.excerpt_ru
-          ]
-            .filter(Boolean)
+          ])]
+            .filter((text) => text && String(text).trim())
             .join(' ')
             .toLowerCase();
           if (!searchTexts.includes(searchQuery)) {
