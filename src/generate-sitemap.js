@@ -79,27 +79,45 @@ ${urls}
 </urlset>`;
 }
 
+// Static pages for sitemap (both UA originals and Russian -ru versions)
+const STATIC_SITEMAP_PAGES = [
+  { url: '', priority: '1.0', changefreq: 'daily' },
+  { url: 'vacancies.html', priority: '0.9', changefreq: 'daily' },
+  { url: 'blog.html', priority: '0.9', changefreq: 'weekly' },
+  { url: 'about.html', priority: '0.6', changefreq: 'monthly' },
+  { url: 'apply.html', priority: '0.8', changefreq: 'monthly' },
+  { url: 'contact.html', priority: '0.6', changefreq: 'monthly' },
+  { url: 'company.html', priority: '0.6', changefreq: 'monthly' },
+  { url: 'faq.html', priority: '0.7', changefreq: 'monthly' },
+  { url: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
+  { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
+  { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
+  { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
+  { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
+  { url: 'map.html', priority: '0.9', changefreq: 'daily' },
+  { url: 'proof.html', priority: '0.9', changefreq: 'daily' },
+  // Russian (-ru) versions
+  { url: 'index-ru.html', priority: '0.9', changefreq: 'daily' },
+  { url: 'vacancies-ru.html', priority: '0.85', changefreq: 'daily' },
+  { url: 'blog-ru.html', priority: '0.8', changefreq: 'weekly' },
+  { url: 'about-ru.html', priority: '0.6', changefreq: 'monthly' },
+  { url: 'apply-ru.html', priority: '0.75', changefreq: 'monthly' },
+  { url: 'contact-ru.html', priority: '0.6', changefreq: 'monthly' },
+  { url: 'company-ru.html', priority: '0.5', changefreq: 'monthly' },
+  { url: 'faq-ru.html', priority: '0.7', changefreq: 'monthly' },
+  { url: 'privacy-ru.html', priority: '0.3', changefreq: 'yearly' },
+  { url: 'terms-ru.html', priority: '0.3', changefreq: 'yearly' },
+  { url: 'calculator-ru.html', priority: '0.8', changefreq: 'monthly' },
+  { url: 'cv-generator-ru.html', priority: '0.8', changefreq: 'monthly' },
+  { url: 'red-flag-ru.html', priority: '0.75', changefreq: 'monthly' },
+  { url: 'map-ru.html', priority: '0.85', changefreq: 'daily' },
+  { url: 'proof-ru.html', priority: '0.85', changefreq: 'daily' },
+  { url: 'for-employers-ru.html', priority: '0.7', changefreq: 'monthly' }
+];
+
 // Generate sitemap for static pages
 function generateStaticSitemap() {
-  const staticPages = [
-    { url: '', priority: '1.0', changefreq: 'daily' },
-    { url: 'vacancies.html', priority: '0.9', changefreq: 'daily' },
-    { url: 'blog.html', priority: '0.9', changefreq: 'weekly' },
-    { url: 'about.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'apply.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'contact.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'company.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'faq.html', priority: '0.7', changefreq: 'monthly' },
-    { url: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'map.html', priority: '0.9', changefreq: 'daily' },
-    { url: 'proof.html', priority: '0.9', changefreq: 'daily' }
-  ];
-
-  const urls = staticPages.map(page => {
+  const urls = STATIC_SITEMAP_PAGES.map(page => {
     return `  <url>
     <loc>${DOMAIN}/${page.url}</loc>
     <lastmod>${today}</lastmod>
@@ -135,25 +153,7 @@ function generateSitemapIndex() {
 
 // Generate main sitemap.xml (all URLs in one file for simplicity)
 function generateMainSitemap() {
-  const staticPages = [
-    { url: '', priority: '1.0', changefreq: 'daily' },
-    { url: 'vacancies.html', priority: '0.9', changefreq: 'daily' },
-    { url: 'blog.html', priority: '0.9', changefreq: 'weekly' },
-    { url: 'about.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'apply.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'contact.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'company.html', priority: '0.6', changefreq: 'monthly' },
-    { url: 'faq.html', priority: '0.7', changefreq: 'monthly' },
-    { url: 'privacy.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'terms.html', priority: '0.3', changefreq: 'yearly' },
-    { url: 'calculator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'cv-generator.html', priority: '0.85', changefreq: 'monthly' },
-    { url: 'red-flag.html', priority: '0.8', changefreq: 'monthly' },
-    { url: 'map.html', priority: '0.9', changefreq: 'daily' },
-    { url: 'proof.html', priority: '0.9', changefreq: 'daily' }
-  ];
-
-  const staticUrls = staticPages.map(page => {
+  const staticUrls = STATIC_SITEMAP_PAGES.map(page => {
     return `  <url>
     <loc>${DOMAIN}/${page.url}</loc>
     <lastmod>${today}</lastmod>
@@ -195,7 +195,7 @@ console.log('🗺️  Generating sitemaps...');
 
 // Main sitemap.xml with all URLs
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateMainSitemap(), 'utf8');
-const STATIC_PAGES_COUNT = 15;
+const STATIC_PAGES_COUNT = STATIC_SITEMAP_PAGES.length;
 console.log(`✅ sitemap.xml: ${indexableVacancies.length + posts.length + STATIC_PAGES_COUNT} URLs`);
 
 // Sitemap index

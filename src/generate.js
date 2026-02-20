@@ -1953,7 +1953,7 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -2170,6 +2170,7 @@ async function build() {
       .replace(/{{CONTENT}}/g, dualContent)
       .replace(/{{CANONICAL}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}.html`)
       .replace(/{{CANONICAL_PL}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}-pl.html`)
+      .replace(/{{CANONICAL_RU}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}-ru.html`)
       .replace(/{{CITY}}/g, escapeHtml(page.city || ''))
       .replace(/{{CTA_LINK}}/g, page.cta_link || '/apply.html')
       .replace(/{{CTA_TEXT}}/g, page.cta_text || 'Подати заявку');
@@ -2617,6 +2618,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       .replace(/{{CONTENT}}/g, indexContent)
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
       .replace(/{{CANONICAL_PL}}/g, "https://rybezh.site/index-pl.html")
+      .replace(/{{CANONICAL_RU}}/g, "https://rybezh.site/index-ru.html")
       .replace(/{{CITY}}/g, "")
       .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     
@@ -2662,6 +2664,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
         .replace(/{{CONTENT}}/g, vacanciesSrc)
         .replace(/{{CANONICAL}}/g, 'https://rybezh.site/vacancies.html')
         .replace(/{{CANONICAL_PL}}/g, 'https://rybezh.site/vacancies-pl.html')
+        .replace(/{{CANONICAL_RU}}/g, 'https://rybezh.site/vacancies-ru.html')
         .replace(/{{CITY}}/g, '')
         .replace(/{{CTA_LINK}}/g, '/apply.html')
         .replace(/{{CTA_TEXT}}/g, '')
@@ -4120,18 +4123,21 @@ function updateFullUrlsForPolish(html) {
 /**
  * Add/replace hreflang tags in HTML.
  */
-function addHreflangTagsPl(html, filename) {
-  let uaUrl, plUrl;
+function addHreflangTags(html, filename, hasRuVersion) {
+  let uaUrl, plUrl, ruUrl;
   if (filename === 'index.html') {
     uaUrl = 'https://rybezh.site/';
     plUrl = 'https://rybezh.site/index-pl.html';
+    ruUrl = 'https://rybezh.site/index-ru.html';
   } else {
     uaUrl = `https://rybezh.site/${filename}`;
     plUrl = `https://rybezh.site/${filename.replace('.html', '-pl.html')}`;
+    ruUrl = `https://rybezh.site/${filename.replace('.html', '-ru.html')}`;
   }
 
+  const ruTag = hasRuVersion ? `\n  <link rel="alternate" hreflang="ru" href="${ruUrl}">` : '';
   const tags = `
-  <link rel="alternate" hreflang="uk" href="${uaUrl}">
+  <link rel="alternate" hreflang="uk" href="${uaUrl}">${ruTag}
   <link rel="alternate" hreflang="pl" href="${plUrl}">
   <link rel="alternate" hreflang="x-default" href="${uaUrl}">`;
 
@@ -4172,7 +4178,7 @@ function transformToPolish(html, translations, filename) {
   r = updateLinksForPolish(r);
 
   // 7. Hreflang
-  r = addHreflangTagsPl(r, filename);
+  r = addHreflangTags(r, filename, PAGES_WITH_RU_VERSION.has(filename));
 
   // 8. Force PL language on load
   if (r.includes('</head>')) {
@@ -4182,6 +4188,14 @@ function transformToPolish(html, translations, filename) {
 
   return r;
 }
+
+// Pages that have a Russian (-ru) counterpart
+const PAGES_WITH_RU_VERSION = new Set([
+  'index.html', 'vacancies.html', 'blog.html', 'about.html', 'apply.html',
+  'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html',
+  'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html',
+  'proof.html', 'for-employers.html'
+]);
 
 /**
  * Generate Polish versions of all HTML pages in dist/.
@@ -4197,7 +4211,7 @@ async function generatePolishPages(dynamicTranslations) {
   catch { console.warn('  ⚠️  dist/ not found'); return; }
 
   const htmlFiles = entries
-    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html'))
+    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html') && !e.name.endsWith('-ru.html'))
     .map(e => e.name);
 
   let generated = 0;
@@ -4212,7 +4226,7 @@ async function generatePolishPages(dynamicTranslations) {
       await fs.writeFile(path.join(DIST, plFile), plHtml, 'utf8');
 
       // Add hreflang tags to the original UA page
-      const uaHtml = addHreflangTagsPl(html, file);
+      const uaHtml = addHreflangTags(html, file, PAGES_WITH_RU_VERSION.has(file));
       await fs.writeFile(filePath, uaHtml, 'utf8');
 
       generated++;

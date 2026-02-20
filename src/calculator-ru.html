@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор зарплаты в Польше 2026 — Rybezh</title>
+  <meta name="description" content="Рассчитайте чистый доход в Польше с учётом налогов и расходов. Умова злецения, UoP, B2B — реальные суммы на руки.">
+  <link rel="canonical" href="https://rybezh.site/calculator-ru.html">
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/calculator.html">
+  <link rel="alternate" hreflang="ru" href="https://rybezh.site/calculator-ru.html">
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/calculator.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rybezh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rybezh.site/calculator-ru.html">
+  <meta property="og:title" content="Калькулятор зарплаты в Польше 2026 — Rybezh">
+  <meta property="og:description" content="Рассчитайте чистый доход в Польше с учётом налогов и расходов. Умова злецения, UoP, B2B — реальные суммы на руки.">
+  <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Rybezh">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Калькулятор зарплаты в Польше 2026 — Rybezh">
+  <meta name="twitter:description" content="Рассчитай доход: брутто → нетто → на руки после расходов.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Калькулятор зарплаты в Польше",
+    "url": "https://rybezh.site/calculator-ru.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+    "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+  }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .tool-page { max-width: 800px; margin: 0 auto; }
+    .tool-hero { text-align: center; padding: 2.5rem 0 1rem; }
+    .tool-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .tool-hero p { color: var(--color-secondary); font-size: 1.1rem; }
+    .calc-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
+    .calc-card h2 { font-size: 1.3rem; margin: 0 0 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .input-group { margin-bottom: 1rem; }
+    .input-group label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.95rem; }
+    .input-group .hint { font-size: 0.82rem; color: var(--color-secondary); margin-top: 0.2rem; }
+    .input-row { display: flex; gap: 1rem; }
+    .input-row .input-group { flex: 1; }
+    .input-group input[type="number"], .input-group select {
+      width: 100%; padding: 0.65rem 0.85rem; border-radius: 10px;
+      border: 1px solid var(--color-border); background: var(--color-surface-alt);
+      font-size: 1rem; color: var(--color-primary); transition: border-color 0.2s;
+    }
+    .input-group input:focus, .input-group select:focus { border-color: var(--color-accent); outline: none; }
+    .range-row { display: flex; align-items: center; gap: 1rem; }
+    .range-row input[type="range"] { flex: 1; accent-color: var(--color-accent); }
+    .range-val { min-width: 70px; text-align: right; font-weight: 700; font-size: 1.1rem; color: var(--color-accent); }
+    .result-card { background: linear-gradient(135deg, rgba(0,166,126,0.08), rgba(15,118,110,0.08)); border: 2px solid var(--color-accent); border-radius: 16px; padding: 2rem; text-align: center; }
+    .result-card h2 { justify-content: center; }
+    .result-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1.5rem 0; text-align: left; }
+    .result-item { background: var(--color-surface); border-radius: 10px; padding: 0.85rem 1rem; }
+    .result-item .label { font-size: 0.82rem; color: var(--color-secondary); }
+    .result-item .value { font-size: 1.25rem; font-weight: 700; color: var(--color-primary); }
+    .result-item.highlight .value { color: var(--color-accent); font-size: 1.6rem; }
+    .result-item.highlight { grid-column: 1 / -1; text-align: center; background: var(--color-surface); border: 2px dashed var(--color-accent); }
+    .result-flow { display: flex; align-items: center; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0; font-size: 1rem; }
+    .result-flow .arrow { color: var(--color-accent); font-weight: 700; }
+    .result-flow .amount { font-weight: 700; font-size: 1.15rem; }
+    .share-row { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap; }
+    .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border-radius: 10px; font-size: 0.95rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+    .share-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .share-btn.tg { background: #0088cc; color: #fff; }
+    .share-btn.fb { background: #1877f2; color: #fff; }
+    .share-btn.copy { background: var(--color-surface-alt); color: var(--color-primary); border: 1px solid var(--color-border); }
+    .expense-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 600px) {
+      .input-row, .result-breakdown, .expense-grid { grid-template-columns: 1fr; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+        <div class="nav-dropdown" aria-label="Категории">
+          <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <div class="nav-dropdown" aria-label="Инструменты">
+          <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
+            <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
+            <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
+            <a href="/map-ru.html">🗺️ Карта земляков</a>
+          </div>
+        </div>
+        <a href="/blog-ru.html" class="nav-link">Блог</a>
+        <a href="/about-ru.html" class="nav-link">О нас</a>
+        <a href="/faq-ru.html" class="nav-link">FAQ</a>
+        <a href="/contact-ru.html" class="nav-link">Контакты</a>
+        <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+        <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
+        <div class="header-lang">
+          <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+          <button class="lang-btn lang-btn--active">RU</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Главная</a>
+      <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+      <div class="mobile-tools">
+        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
+        <div class="mobile-tools__menu">
+          <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
+          <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
+          <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
+          <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
+        </div>
+      </div>
+      <a href="/blog-ru.html" class="nav-link">Блог</a>
+      <a href="/about-ru.html" class="nav-link">О нас</a>
+      <a href="/faq-ru.html" class="nav-link">FAQ</a>
+      <a href="/contact-ru.html" class="nav-link">Контакты</a>
+      <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+        <button class="lang-btn lang-btn--active">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tool-page">
+      <div class="tool-hero">
+        <h1>💰 Калькулятор чистого дохода</h1>
+        <p>Брутто → нетто → сколько реально остаётся после всех расходов</p>
+      </div>
+
+      <!-- Income -->
+      <div class="calc-card">
+        <h2>📊 Доход</h2>
+        <div class="input-row">
+          <div class="input-group">
+            <label>Часов в неделю</label>
+            <div class="range-row">
+              <input type="range" id="c-hours" min="10" max="60" value="40">
+              <span class="range-val" id="v-hours">40 h</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Ставка (PLN/ч)</label>
+            <div class="range-row">
+              <input type="range" id="c-rate" min="15" max="80" value="35">
+              <span class="range-val" id="v-rate">35 zł</span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label>Тип договора</label>
+          <select id="c-contract">
+            <option value="zlecenie">Umowa Zlecenie</option>
+            <option value="praca" selected>Umowa o pracę</option>
+            <option value="b2b">B2B (самозанятость)</option>
+          </select>
+          <div class="hint">Zlecenie — меньше отчислений, но меньше прав. UoP — полный соцпакет.</div>
+        </div>
+      </div>
+
+      <!-- Expenses -->
+      <div class="calc-card">
+        <h2>🏠 Расходы в месяц</h2>
+        <div class="expense-grid">
+          <div class="input-group">
+            <label>🏡 Аренда жилья</label>
+            <input type="number" id="c-housing" value="1200" min="0" step="50">
+            <div class="hint">Комната: 800–1500 zł, квартира: 2000–3500 zł</div>
+          </div>
+          <div class="input-group">
+            <label>🍽️ Еда и быт</label>
+            <input type="number" id="c-food" value="800" min="0" step="50">
+            <div class="hint">Экономно: 600 zł, обычно: 800–1200 zł</div>
+          </div>
+          <div class="input-group">
+            <label>🚌 Транспорт</label>
+            <input type="number" id="c-transport" value="150" min="0" step="10">
+            <div class="hint">Проездной: 100–200 zł, авто: 400–600 zł</div>
+          </div>
+          <div class="input-group">
+            <label>📱 Телефон + прочее</label>
+            <input type="number" id="c-other" value="100" min="0" step="10">
+            <div class="hint">Мобильная связь, гигиена, мелкие расходы</div>
+          </div>
+        </div>
+        <div class="input-group" style="margin-top:1rem;">
+          <label>🏦 Комиссия банка / перевод</label>
+          <input type="number" id="c-bank" value="50" min="0" step="10">
+          <div class="hint">Перевод на карту: 30–80 zł/мес (Wise, SWIFT)</div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="result-card" id="calcResult">
+        <h2>📋 Результат</h2>
+
+        <div class="result-flow">
+          <span id="r-gross" class="amount">5 600 zł</span>
+          <span class="arrow">→</span>
+          налоги
+          <span class="arrow">→</span>
+          <span id="r-net" class="amount" style="color:var(--color-accent);">4 432 zł</span>
+          <span class="arrow">→</span>
+          расходы
+          <span class="arrow">→</span>
+          <span id="r-pocket" class="amount" style="color:#16a34a; font-size:1.3rem;">2 132 zł</span>
+        </div>
+
+        <div class="result-breakdown">
+          <div class="result-item">
+            <div class="label">Брутто / месяц</div>
+            <div class="value" id="rb-gross">5 600 zł</div>
+          </div>
+          <div class="result-item">
+            <div class="label">Налоги и ZUS</div>
+            <div class="value" id="rb-tax" style="color:#dc2626">−1 168 zł</div>
+          </div>
+          <div class="result-item">
+            <div class="label">Нетто (чистыми)</div>
+            <div class="value" id="rb-net">4 432 zł</div>
+          </div>
+          <div class="result-item">
+            <div class="label">Расходы всего</div>
+            <div class="value" id="rb-expenses" style="color:#dc2626">−2 300 zł</div>
+          </div>
+          <div class="result-item highlight">
+            <div class="label">💰 На руки после всех расходов</div>
+            <div class="value" id="rb-pocket">2 132 zł</div>
+          </div>
+        </div>
+
+        <div class="share-row">
+          <a class="share-btn tg" id="share-tg" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Поделиться в Telegram
+          </a>
+          <a class="share-btn fb" id="share-fb" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Поделиться в Facebook
+          </a>
+          <button class="share-btn copy" id="share-copy">
+            📋 Скопировать ссылку
+          </button>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="calc-card" style="margin-top:1.5rem;">
+        <h2>ℹ️ Как считаем</h2>
+        <p style="color:var(--color-secondary);line-height:1.7;">
+          <strong>Umowa o pracę:</strong> работник платит ~13.71% ZUS (пенсионное, больничное, инвалидное) + здоровье 9% + налог PIT 12% (после вычета 300 zł квоты). Всего отчисления — примерно 20–23% от брутто.<br>
+          <strong>Umowa Zlecenie:</strong> для лиц до 26 лет — без PIT. Остальные: ~20% ZUS + PIT 12%. Всего ~18–22%.<br>
+          <strong>B2B:</strong> фиксированный ZUS (~1600 zł/мес) + линейный PIT 19% от прибыли. Выгодно от ~8000 zł/мес брутто.<br><br>
+          ⚠️ Это упрощённый калькулятор для ориентировочной оценки. Точную сумму посчитает бухгалтер. Данные актуальны на 2026 год.
+        </p>
+      </div>
+
+      <div style="text-align:center;margin:2rem 0;">
+        <a href="/vacancies-ru.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;">Посмотреть вакансии</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p>Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.</p>
+          <div class="footer-social">
+            <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="mailto:contacts@rybezh.site" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <a href="/">Главная</a>
+          <a href="/about-ru.html">О нас</a>
+          <a href="/blog-ru.html">Блог</a>
+          <a href="/faq-ru.html">FAQ</a>
+          <a href="/contact-ru.html">Контакты</a>
+          <a href="/for-employers-ru.html">Для работодателей</a>
+        </div>
+        <div class="footer-col">
+          <h4>Вакансии</h4>
+          <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
+          <a href="/vacancies-ru.html?city=krakow">Краков</a>
+          <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
+          <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
+        </div>
+        <div class="footer-col">
+          <h4>Рассылка</h4>
+          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" required placeholder="Ваш email">
+            <button type="submit" aria-label="Subscribe">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply-ru.html">Подать заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy-ru.html">Политика конфиденциальности</a>
+          <a href="/terms-ru.html">Условия использования</a>
+          <a href="/company-ru.html">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
+    <button id="cookie-accept-btn">Принять</button>
+  </div>
+  <script src="/main.js"></script>
+
+  <script>
+  (function() {
+    const $ = id => document.getElementById(id);
+    const fmt = n => n.toLocaleString('pl-PL') + ' zł';
+
+    function calc() {
+      const hours = +$('c-hours').value;
+      const rate = +$('c-rate').value;
+      const contract = $('c-contract').value;
+      const housing = +$('c-housing').value;
+      const food = +$('c-food').value;
+      const transport = +$('c-transport').value;
+      const other = +$('c-other').value;
+      const bank = +$('c-bank').value;
+
+      $('v-hours').textContent = hours + ' h';
+      $('v-rate').textContent = rate + ' zł';
+
+      const gross = Math.round(hours * rate * 4.33);
+      let net, taxAmount;
+
+      if (contract === 'praca') {
+        const zus = gross * 0.1371;
+        const healthBase = gross - zus;
+        const health = healthBase * 0.09;
+        const taxBase = Math.max(0, healthBase - 250 - 300);
+        const pit = taxBase * 0.12;
+        taxAmount = Math.round(zus + health + pit);
+        net = gross - taxAmount;
+      } else if (contract === 'zlecenie') {
+        const zus = gross * 0.1371;
+        const healthBase = gross - zus;
+        const health = healthBase * 0.09;
+        const costDeduction = gross * 0.20;
+        const taxBase = Math.max(0, gross - zus - costDeduction);
+        const pit = taxBase * 0.12;
+        taxAmount = Math.round(zus + health + pit);
+        net = gross - taxAmount;
+      } else {
+        const zusFixed = 1600;
+        const profit = Math.max(0, gross - zusFixed);
+        const pit = Math.round(profit * 0.19);
+        taxAmount = zusFixed + pit;
+        net = gross - taxAmount;
+      }
+
+      net = Math.round(net);
+      const expenses = housing + food + transport + other + bank;
+      const pocket = net - expenses;
+
+      $('r-gross').textContent = fmt(gross);
+      $('r-net').textContent = fmt(net);
+      $('r-pocket').textContent = fmt(pocket);
+      $('r-pocket').style.color = pocket >= 0 ? '#16a34a' : '#dc2626';
+
+      $('rb-gross').textContent = fmt(gross);
+      $('rb-tax').textContent = '−' + fmt(taxAmount);
+      $('rb-net').textContent = fmt(net);
+      $('rb-expenses').textContent = '−' + fmt(expenses);
+      $('rb-pocket').textContent = fmt(pocket);
+      $('rb-pocket').style.color = pocket >= 0 ? 'var(--color-accent)' : '#dc2626';
+
+      const shareText = `💰 Калькулятор зарплаты Rybezh\n${hours}h × ${rate} zł = ${fmt(gross)} брутто\n→ ${fmt(net)} нетто\n→ ${fmt(pocket)} на руки после расходов\n\nРассчитай свой доход: https://rybezh.site/calculator-ru.html`;
+      const encoded = encodeURIComponent(shareText);
+      $('share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent('https://rybezh.site/calculator-ru.html') + '&text=' + encoded;
+      $('share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://rybezh.site/calculator-ru.html') + '&quote=' + encoded;
+      $('share-copy').onclick = () => {
+        navigator.clipboard.writeText(shareText).then(() => {
+          $('share-copy').innerHTML = '✅ <span>Скопировано!</span>';
+          setTimeout(() => { $('share-copy').innerHTML = '📋 <span>Скопировать ссылку</span>'; }, 2000);
+        });
+      };
+    }
+
+    ['c-hours', 'c-rate', 'c-contract', 'c-housing', 'c-food', 'c-transport', 'c-other', 'c-bank'].forEach(id => {
+      $(id).addEventListener('input', calc);
+    });
+
+    calc();
+  })();
+  </script>
+</body>
+</html>

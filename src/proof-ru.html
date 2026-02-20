@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Верификация вакансий — Rybezh | Proof-система</title>
+  <meta name="description" content="Как мы проверяем вакансии на Rybezh. Система рейтинга надёжности работодателей.">
+  <link rel="canonical" href="https://rybezh.site/proof-ru.html">
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/proof.html">
+  <link rel="alternate" hreflang="ru" href="https://rybezh.site/proof-ru.html">
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/proof.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#e74c3c">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <style>
+    :root {
+      --proof-accent: #e74c3c;
+      --proof-accent-dark: #c0392b;
+      --proof-warn: #f39c12;
+      --proof-good: #2ecc71;
+      --proof-card: #ffffff;
+      --proof-bg: #f9fafb;
+      --proof-border: #e5e7eb;
+      --proof-muted: #6b7280;
+    }
+
+    .proof-page {
+      padding: 2.5rem 0 3rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .proof-hero {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      padding: 2.2rem 1rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(231, 76, 60, 0.10), rgba(231, 76, 60, 0.03));
+      border: 1px solid rgba(231, 76, 60, 0.22);
+    }
+
+    .proof-hero h1 {
+      margin: 0 0 0.5rem;
+      color: #1f2937;
+      font-size: clamp(1.7rem, 3vw, 2.45rem);
+      line-height: 1.2;
+    }
+
+    .proof-hero p {
+      margin: 0;
+      color: #374151;
+      font-size: 1.06rem;
+    }
+
+    .proof-filters {
+      background: var(--proof-card);
+      border: 1px solid var(--proof-border);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .proof-filter-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr auto;
+      gap: 0.7rem;
+      align-items: center;
+    }
+
+    .proof-input,
+    .proof-select {
+      width: 100%;
+      min-height: 44px;
+      border: 1.5px solid var(--proof-border);
+      border-radius: 10px;
+      padding: 0.6rem 0.85rem;
+      font-size: 0.95rem;
+      outline: none;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .proof-input:focus,
+    .proof-select:focus {
+      border-color: var(--proof-accent);
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.12);
+    }
+
+    .score-filter {
+      display: grid;
+      gap: 0.15rem;
+    }
+
+    .score-filter label {
+      font-size: 0.78rem;
+      color: var(--proof-muted);
+      font-weight: 600;
+      margin-left: 0.15rem;
+    }
+
+    .score-filter input[type="range"] {
+      width: 100%;
+      accent-color: var(--proof-accent);
+    }
+
+    .score-value {
+      font-size: 0.85rem;
+      color: #111827;
+      font-weight: 700;
+      text-align: right;
+      margin-right: 0.1rem;
+    }
+
+    .proof-refresh {
+      min-height: 44px;
+      border: none;
+      border-radius: 10px;
+      padding: 0 1rem;
+      background: linear-gradient(135deg, var(--proof-accent), var(--proof-accent-dark));
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .16s ease, box-shadow .2s;
+      white-space: nowrap;
+    }
+
+    .proof-refresh:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(231, 76, 60, 0.25);
+    }
+
+    .proof-headline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.85rem 0 1rem;
+      color: var(--proof-muted);
+      font-size: 0.9rem;
+    }
+
+    .proof-admin-bar {
+      margin: 0 0 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      border: 1px solid #fecaca;
+      background: #fff5f5;
+      color: #7f1d1d;
+      border-radius: 12px;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.86rem;
+    }
+
+    .proof-admin-bar b { color: #991b1b; }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .proof-card {
+      border: 1px solid var(--proof-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.045);
+      overflow: hidden;
+      display: grid;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+
+    .proof-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .proof-company {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #111827;
+      line-height: 1.25;
+    }
+
+    .proof-city {
+      margin: 0.15rem 0 0;
+      color: var(--proof-muted);
+      font-size: 0.9rem;
+    }
+
+    .proof-score-box {
+      min-width: 98px;
+      text-align: right;
+    }
+
+    .proof-score-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-good { color: var(--proof-good); }
+    .score-mid { color: var(--proof-warn); }
+    .score-bad { color: var(--proof-accent); }
+
+    .proof-score-bar {
+      margin-top: 0.35rem;
+      height: 8px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      overflow: hidden;
+    }
+
+    .proof-score-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width .25s ease;
+    }
+
+    .proof-verdict {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      border-radius: 10px;
+      padding: 0.58rem 0.72rem;
+      background: #fff7f6;
+      border: 1px solid rgba(231, 76, 60, 0.18);
+      color: #7f1d1d;
+    }
+
+    .proof-ratings {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.35rem 0.7rem;
+      font-size: 0.82rem;
+    }
+
+    .proof-rating-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      color: #374151;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 0.15rem;
+    }
+
+    .proof-rating-row b {
+      color: #111827;
+    }
+
+    .proof-comment {
+      margin: 0;
+      color: #1f2937;
+      background: #f8fafc;
+      border: 1px solid #eef2f7;
+      border-radius: 10px;
+      padding: 0.7rem 0.8rem;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .proof-meta {
+      color: var(--proof-muted);
+      font-size: 0.79rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-top: 1px solid #f3f4f6;
+      padding-top: 0.55rem;
+    }
+
+    .proof-admin-actions {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .proof-admin-btn {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0.35rem 0.55rem;
+      font-size: 0.79rem;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .proof-admin-btn.approve {
+      background: #ecfdf5;
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+
+    .proof-admin-btn.reject {
+      background: #fef2f2;
+      color: #991b1b;
+      border-color: #fecaca;
+    }
+
+    .proof-status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border-radius: 999px;
+      padding: 0.2rem 0.55rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .proof-status-chip.approved { background: #ecfdf5; color: #166534; }
+    .proof-status-chip.pending { background: #fffbeb; color: #92400e; }
+
+    details.proof-discuss {
+      border: 1px solid #eef2f7;
+      border-radius: 10px;
+      background: #fafbff;
+      padding: 0.3rem 0.5rem;
+    }
+
+    details.proof-discuss > summary {
+      cursor: pointer;
+      color: #374151;
+      font-size: 0.85rem;
+      font-weight: 600;
+      list-style: none;
+    }
+
+    details.proof-discuss > summary::-webkit-details-marker { display: none; }
+
+    .proof-giscus-slot {
+      margin-top: 0.6rem;
+      min-height: 36px;
+    }
+
+    .proof-empty {
+      margin-top: 1rem;
+      text-align: center;
+      color: var(--proof-muted);
+      padding: 1.4rem;
+      border: 1px dashed #d1d5db;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .proof-add {
+      margin-top: 1.5rem;
+      background: #fff;
+      border: 1px solid var(--proof-border);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .proof-add h2 {
+      margin: 0 0 0.25rem;
+      font-size: 1.2rem;
+      color: #111827;
+    }
+
+    .proof-add p {
+      margin: 0 0 0.8rem;
+      color: var(--proof-muted);
+      font-size: 0.9rem;
+    }
+
+    .proof-form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .proof-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .proof-form label {
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .proof-form input,
+    .proof-form textarea,
+    .proof-form select {
+      border: 1.5px solid var(--proof-border);
+      border-radius: 10px;
+      padding: 0.58rem 0.75rem;
+      font-size: 0.93rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      background: #fff;
+    }
+
+    .proof-form input:focus,
+    .proof-form textarea:focus,
+    .proof-form select:focus {
+      border-color: var(--proof-accent);
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.12);
+    }
+
+    .proof-form textarea { min-height: 90px; resize: vertical; }
+
+    .proof-ratings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.55rem 0.7rem;
+      padding: 0.6rem;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      background: #fafafa;
+    }
+
+    .proof-progress {
+      margin-top: 0.2rem;
+      font-size: 0.82rem;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .proof-progress-bar {
+      flex: 1;
+      height: 7px;
+      background: #f1f5f9;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .proof-progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      transition: width .2s ease;
+    }
+
+    .proof-submit {
+      border: none;
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 44px;
+      transition: transform .16s ease, box-shadow .2s;
+    }
+
+    .proof-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(231, 76, 60, 0.25);
+    }
+
+    .proof-form-msg {
+      font-size: 0.9rem;
+      font-weight: 600;
+      min-height: 1.25rem;
+    }
+
+    .proof-form-msg.ok { color: #16a34a; }
+    .proof-form-msg.err { color: #dc2626; }
+
+    @media (max-width: 980px) {
+      .proof-filter-grid { grid-template-columns: 1fr 1fr; }
+      .proof-refresh { width: 100%; }
+    }
+
+    @media (max-width: 640px) {
+      .proof-filter-grid { grid-template-columns: 1fr; }
+      .proof-ratings { grid-template-columns: 1fr; }
+      .proof-meta { flex-direction: column; gap: 0.25rem; }
+      .proof-top { flex-direction: column; }
+      .proof-score-box { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+        <div class="nav-dropdown" aria-label="Категории">
+          <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <div class="nav-dropdown" aria-label="Инструменты">
+          <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
+            <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
+            <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
+            <a href="/map-ru.html">🗺️ Карта земляков</a>
+          </div>
+        </div>
+        <a href="/blog-ru.html" class="nav-link">Блог</a>
+        <a href="/about-ru.html" class="nav-link">О нас</a>
+        <a href="/faq-ru.html" class="nav-link">FAQ</a>
+        <a href="/contact-ru.html" class="nav-link">Контакты</a>
+        <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+        <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
+        <div class="header-lang">
+          <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+          <button class="lang-btn lang-btn--active">RU</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Главная</a>
+      <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+      <div class="mobile-tools">
+        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
+        <div class="mobile-tools__menu">
+          <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
+          <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
+          <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
+          <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
+        </div>
+      </div>
+      <a href="/blog-ru.html" class="nav-link">Блог</a>
+      <a href="/about-ru.html" class="nav-link">О нас</a>
+      <a href="/faq-ru.html" class="nav-link">FAQ</a>
+      <a href="/contact-ru.html" class="nav-link">Контакты</a>
+      <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+        <button class="lang-btn lang-btn--active">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="proof-page">
+      <div class="proof-hero">
+        <h1>Rybezh Proof — честный рейтинг компаний Польши</h1>
+        <p>Только реальные отзывы от русскоязычных, которые там работали</p>
+      </div>
+
+      <div class="proof-filters" aria-label="Фильтры отзывов">
+        <div class="proof-filter-grid">
+          <input id="proofSearch" class="proof-input" type="search" placeholder="Поиск: компания, город, комментарий...">
+
+          <select id="proofCity" class="proof-select" aria-label="Фильтр город">
+            <option value="">Все города</option>
+          </select>
+
+          <div class="score-filter">
+            <label for="proofMinScore">Мин. Proof Score</label>
+            <input id="proofMinScore" type="range" min="60" max="100" step="1" value="60">
+            <div class="score-value">≥ <span id="proofMinScoreValue">60</span></div>
+          </div>
+
+          <select id="proofSort" class="proof-select" aria-label="Сортировка">
+            <option value="new">Новые</option>
+            <option value="best">Лучший score</option>
+            <option value="worst">Худший score</option>
+          </select>
+
+          <button id="proofRefresh" class="proof-refresh" type="button">Обновить</button>
+        </div>
+      </div>
+
+      <div class="proof-headline">
+        <div>Отзывов найдено: <b id="proofCount">0</b></div>
+        <div id="proofUpdated">Обновлено: —</div>
+      </div>
+
+      <div id="proofAdminBar" class="proof-admin-bar" hidden>
+        <span>🛡️ Режим модерации: <b>Admin</b>. Показаны все отзывы, включая pending.</span>
+        <span id="proofAdminUser">—</span>
+      </div>
+
+      <div id="proofGrid" class="proof-grid" aria-live="polite"></div>
+      <div id="proofEmpty" class="proof-empty" hidden>По выбранным фильтрам отзывов не найдено.</div>
+
+      <section class="proof-add" aria-label="Добавить Proof">
+        <h2>➕ Добавить Proof</h2>
+        <p>Заполните форму — отзыв пройдёт модерацию перед публикацией.</p>
+
+        <form id="proofAddForm" class="proof-form" novalidate>
+          <div class="proof-form-grid">
+            <label>🔗 Ссылка на вакансию *
+              <input type="url" name="vacancy_url" placeholder="https://rybezh.site/..." required>
+            </label>
+            <label>🏢 Компания *
+              <input type="text" name="company" placeholder="Название компании" required>
+            </label>
+            <label>📍 Город *
+              <input type="text" name="city" placeholder="Напр. Warszawa" required>
+            </label>
+            <label>📎 Доказательства (файлы/ссылки)
+              <input type="text" name="proof_files" placeholder="URL или названия файлов через запятую">
+            </label>
+          </div>
+
+          <div class="proof-ratings-grid">
+            <label>💰 Зарплата (1-10) *
+              <select name="salary_rating" required></select>
+            </label>
+            <label>🏠 Жильё (1-10) *
+              <select name="housing_rating" required></select>
+            </label>
+            <label>🤝 Отношение (1-10) *
+              <select name="attitude_rating" required></select>
+            </label>
+            <label>⏰ График (1-10) *
+              <select name="schedule_rating" required></select>
+            </label>
+            <label>💸 Выплаты (1-10) *
+              <select name="payment_rating" required></select>
+            </label>
+            <label>🛡️ Надёжность / anti-fraud (1-10) *
+              <select name="fraud_rating" required></select>
+            </label>
+            <label>⭐ Рекомендация (1-10) *
+              <select name="recommendation" required></select>
+            </label>
+          </div>
+
+          <label>📝 Комментарий *
+            <textarea name="comment" placeholder="Кратко опишите ваш реальный опыт..." required></textarea>
+          </label>
+
+          <div class="proof-progress">
+            <span>Прогресс заполнения: <b id="proofFormProgressValue">0%</b></span>
+            <div class="proof-progress-bar"><div id="proofFormProgressFill" class="proof-progress-fill"></div></div>
+          </div>
+
+          <button type="submit" id="proofSubmitBtn" class="proof-submit">🚀 Отправить Proof</button>
+          <div id="proofFormMsg" class="proof-form-msg" aria-live="polite"></div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p>Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.</p>
+          <div class="footer-social">
+            <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="mailto:contacts@rybezh.site" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <a href="/">Главная</a>
+          <a href="/about-ru.html">О нас</a>
+          <a href="/blog-ru.html">Блог</a>
+          <a href="/faq-ru.html">FAQ</a>
+          <a href="/contact-ru.html">Контакты</a>
+          <a href="/for-employers-ru.html">Для работодателей</a>
+        </div>
+        <div class="footer-col">
+          <h4>Вакансии</h4>
+          <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
+          <a href="/vacancies-ru.html?city=krakow">Краков</a>
+          <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
+          <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
+        </div>
+        <div class="footer-col">
+          <h4>Рассылка</h4>
+          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" required placeholder="Ваш email">
+            <button type="submit" aria-label="Subscribe">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply-ru.html">Подать заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy-ru.html">Политика конфиденциальности</a>
+          <a href="/terms-ru.html">Условия использования</a>
+          <a href="/company-ru.html">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
+    <button id="cookie-accept-btn">Принять</button>
+  </div>
+
+  <script>
+    // Supabase client (existing project credentials)
+    const { createClient } = supabase;
+    const supabaseClient = createClient(
+      "https://ubygfyksalvwsprvetoc.supabase.co",
+      "sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD"
+    );
+
+    const ratingsKeys = [
+      ['salary_rating', 'Зарплата'],
+      ['housing_rating', 'Жильё'],
+      ['attitude_rating', 'Отношение'],
+      ['schedule_rating', 'График'],
+      ['payment_rating', 'Выплаты'],
+      ['fraud_rating', 'Риск мошенничества'],
+      ['recommendation', 'Рекомендация']
+    ];
+
+    let reviewsState = [];
+    let isAdminMode = false;
+    let realtimeChannel = null;
+    let realtimeDebounce = null;
+    const ADMIN_EMAILS = ['contacts@rybezh.site'];
+
+    const GISCUS_CONFIG = {
+      repo: 'bodleopol/courier-poland-income',
+      repoId: 'R_kgDOQ5cY4Q',
+      category: 'General',
+      categoryId: 'DIC_kwDOQ5cY4c4C2VOX'
+    };
+
+    function stars(value) {
+      const v = Math.max(0, Math.min(10, Number(value) || 0));
+      const full = Math.round(v / 2);
+      return '★'.repeat(full) + '☆'.repeat(5 - full);
+    }
+
+    function verdictByScore(score) {
+      if (score >= 80) return '✅ AI-вердикт: высокий уровень доверия. Условия выглядят стабильными и прозрачными.';
+      if (score >= 60) return '⚠️ AI-вердикт: средний уровень доверия. Перед стартом уточните график, проживание и оплату.';
+      return '🚩 AI-вердикт: повышенный риск. Рекомендуем дополнительную проверку компании и документов.';
+    }
+
+    function scoreClass(score) {
+      if (score >= 80) return 'score-good';
+      if (score >= 60) return 'score-mid';
+      return 'score-bad';
+    }
+
+    function scoreBarColor(score) {
+      if (score >= 80) return 'var(--proof-good)';
+      if (score >= 60) return 'var(--proof-warn)';
+      return 'var(--proof-accent)';
+    }
+
+    function fileCount(proofFiles) {
+      if (!proofFiles || !String(proofFiles).trim()) return 0;
+      return String(proofFiles)
+        .split(/[\n,;]+/)
+        .map(s => s.trim())
+        .filter(Boolean).length;
+    }
+
+    function formatDate(value) {
+      const d = new Date(value);
+      if (Number.isNaN(d.getTime())) return '—';
+      return d.toLocaleDateString('ru-RU');
+    }
+
+    function computeProofScore(row) {
+      const salary_rating = Number(row.salary_rating || 0);
+      const housing_rating = Number(row.housing_rating || 0);
+      const attitude_rating = Number(row.attitude_rating || 0);
+      const schedule_rating = Number(row.schedule_rating || 0);
+      const payment_rating = Number(row.payment_rating || 0);
+      const fraud_rating = Number(row.fraud_rating || 0);
+      const recommendation = Number(row.recommendation || 0);
+
+      return Math.round(
+        (salary_rating + housing_rating + attitude_rating +
+         schedule_rating + payment_rating + fraud_rating + recommendation) * 10 / 7
+      );
+    }
+
+    async function detectAdminMode() {
+      try {
+        const { data, error } = await supabaseClient.auth.getSession();
+        if (error) throw error;
+
+        const session = data && data.session;
+        const user = session && session.user;
+        const email = String(user && user.email || '').toLowerCase();
+        const role = String((user && (user.app_metadata?.role || user.user_metadata?.role)) || '').toLowerCase();
+
+        const isAdmin = Boolean(user) && (
+          role === 'admin' ||
+          role === 'owner' ||
+          ADMIN_EMAILS.includes(email)
+        );
+
+        isAdminMode = isAdmin;
+
+        const bar = document.getElementById('proofAdminBar');
+        const userEl = document.getElementById('proofAdminUser');
+        if (bar) bar.hidden = !isAdmin;
+        if (userEl) userEl.textContent = user ? `👤 ${user.email || 'admin'}` : '—';
+      } catch (e) {
+        isAdminMode = false;
+      }
+    }
+
+    async function fetchReviews() {
+      let query = supabaseClient
+        .from('reviews')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (!isAdminMode) query = query.eq('approved', true);
+
+      const { data, error } = await query;
+
+      if (error) throw error;
+
+      return (data || []).map(row => ({
+        ...row,
+        proof_score: computeProofScore(row)
+      }));
+    }
+
+    function buildCityOptions(data) {
+      const select = document.getElementById('proofCity');
+      select.innerHTML = '<option value="">Все города</option>';
+      const cities = [...new Set(data.map(r => r.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ru'));
+      cities.forEach(city => {
+        const o = document.createElement('option');
+        o.value = city;
+        o.textContent = city;
+        select.appendChild(o);
+      });
+    }
+
+    function applyFilters(data) {
+      const q = (document.getElementById('proofSearch').value || '').trim().toLowerCase();
+      const city = document.getElementById('proofCity').value;
+      const min = Number(document.getElementById('proofMinScore').value || 60);
+      const sort = document.getElementById('proofSort').value;
+
+      let out = data.filter(row => {
+        const inSearch = !q || [row.company, row.city, row.comment].join(' ').toLowerCase().includes(q);
+        const inCity = !city || row.city === city;
+        const inScore = Number(row.proof_score || 0) >= min;
+        return inSearch && inCity && inScore;
+      });
+
+      if (sort === 'best') out.sort((a, b) => (b.proof_score || 0) - (a.proof_score || 0));
+      else if (sort === 'worst') out.sort((a, b) => (a.proof_score || 0) - (b.proof_score || 0));
+      else out.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+      return out;
+    }
+
+    function render(data) {
+      const grid = document.getElementById('proofGrid');
+      const empty = document.getElementById('proofEmpty');
+      const count = document.getElementById('proofCount');
+      const updated = document.getElementById('proofUpdated');
+
+      const filtered = applyFilters(data);
+      count.textContent = String(filtered.length);
+      updated.textContent = 'Обновлено: ' + new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+
+      if (!filtered.length) {
+        grid.innerHTML = '';
+        empty.hidden = false;
+        return;
+      }
+      empty.hidden = true;
+
+      grid.innerHTML = filtered.map(row => {
+        const score = Number(row.proof_score || 0);
+        const sClass = scoreClass(score);
+        const barColor = scoreBarColor(score);
+        const files = fileCount(row.proof_files);
+        const rowStatus = row.approved ? 'approved' : 'pending';
+        const rowStatusLabel = row.approved ? 'approved' : 'pending';
+        const adminControls = isAdminMode ? `
+          <div class="proof-admin-actions">
+            ${row.approved ? '' : `<button class="proof-admin-btn approve" data-proof-action="approve" data-proof-id="${row.id}">Approve</button>`}
+            <button class="proof-admin-btn reject" data-proof-action="reject" data-proof-id="${row.id}">Reject</button>
+          </div>
+        ` : '';
+        const discussBlock = row.id ? `
+          <details class="proof-discuss" data-proof-discuss>
+            <summary>💬 Обсуждение отзыва</summary>
+            <div class="proof-giscus-slot" data-giscus-term="proof-review-${row.id}"></div>
+          </details>
+        ` : '';
+
+        const ratings = ratingsKeys.map(([key, label]) => {
+          const val = Number(row[key] || 0);
+          return `<div class="proof-rating-row"><span>${label}</span><b>${val}/10 ${stars(val)}</b></div>`;
+        }).join('');
+
+        return `
+          <article class="proof-card">
+            <div class="proof-top">
+              <div>
+                <h3 class="proof-company">${row.company || '—'}</h3>
+                <p class="proof-city">📍 ${row.city || '—'}</p>
+              </div>
+              <div class="proof-score-box">
+                <div class="proof-score-num ${sClass}">${score}/100</div>
+                <div class="proof-score-bar">
+                  <div class="proof-score-fill" style="width:${Math.max(0, Math.min(100, score))}%; background:${barColor}"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="proof-verdict">${verdictByScore(score)}</div>
+            <div class="proof-ratings">${ratings}</div>
+            <p class="proof-comment">${row.comment || 'Без комментария'}</p>
+            <div class="proof-meta">
+              <span>📅 ${formatDate(row.created_at)} ${isAdminMode ? `<span class="proof-status-chip ${rowStatus}">${rowStatusLabel}</span>` : ''}</span>
+              <span>📎 Файлов: ${files}</span>
+            </div>
+            ${adminControls}
+            ${discussBlock}
+          </article>
+        `;
+      }).join('');
+
+      if (isAdminMode) {
+        bindAdminActions();
+      }
+      bindGiscusOnDemand();
+    }
+
+    async function moderateReview(id, action) {
+      if (!id || !action) return;
+      try {
+        if (action === 'approve') {
+          const { error } = await supabaseClient
+            .from('reviews')
+            .update({ approved: true })
+            .eq('id', id);
+          if (error) throw error;
+        } else if (action === 'reject') {
+          const { error } = await supabaseClient
+            .from('reviews')
+            .delete()
+            .eq('id', id);
+          if (error) throw error;
+        }
+        await loadReviews({ hard: false });
+      } catch (e) {
+        console.error('Moderation error:', e);
+        alert('Не удалось выполнить модерацию. Проверьте права доступа.');
+      }
+    }
+
+    function bindAdminActions() {
+      document.querySelectorAll('[data-proof-action][data-proof-id]').forEach(btn => {
+        if (btn.dataset.bound === '1') return;
+        btn.dataset.bound = '1';
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-proof-id');
+          const action = btn.getAttribute('data-proof-action');
+          moderateReview(id, action);
+        });
+      });
+    }
+
+    function mountGiscus(container, term) {
+      if (!container || container.dataset.loaded === '1') return;
+      container.dataset.loaded = '1';
+
+      const script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.setAttribute('data-repo', GISCUS_CONFIG.repo);
+      script.setAttribute('data-repo-id', GISCUS_CONFIG.repoId);
+      script.setAttribute('data-category', GISCUS_CONFIG.category);
+      script.setAttribute('data-category-id', GISCUS_CONFIG.categoryId);
+      script.setAttribute('data-mapping', 'specific');
+      script.setAttribute('data-term', term);
+      script.setAttribute('data-strict', '1');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'bottom');
+      script.setAttribute('data-theme', 'preferred_color_scheme');
+      script.setAttribute('data-lang', 'uk');
+      container.appendChild(script);
+    }
+
+    function bindGiscusOnDemand() {
+      document.querySelectorAll('[data-proof-discuss]').forEach(details => {
+        if (details.dataset.bound === '1') return;
+        details.dataset.bound = '1';
+        details.addEventListener('toggle', () => {
+          if (!details.open) return;
+          const slot = details.querySelector('[data-giscus-term]');
+          if (!slot) return;
+          const term = slot.getAttribute('data-giscus-term');
+          mountGiscus(slot, term);
+        });
+      });
+    }
+
+    async function loadReviews(options = {}) {
+      const refreshBtn = document.getElementById('proofRefresh');
+      const hard = Boolean(options.hard);
+
+      if (hard && refreshBtn) {
+        refreshBtn.disabled = true;
+        refreshBtn.textContent = 'Обновляем...';
+      }
+
+      try {
+        const rows = await fetchReviews();
+        reviewsState = rows;
+        buildCityOptions(reviewsState);
+        render(reviewsState);
+      } catch (e) {
+        console.error('Proof fetch error:', e);
+        const grid = document.getElementById('proofGrid');
+        const empty = document.getElementById('proofEmpty');
+        grid.innerHTML = '';
+        empty.hidden = false;
+        empty.textContent = 'Не удалось загрузить отзывы из базы. Попробуйте ещё раз.';
+      } finally {
+        if (hard && refreshBtn) {
+          refreshBtn.disabled = false;
+          refreshBtn.textContent = 'Обновить';
+        }
+      }
+    }
+
+    function initRealtime() {
+      if (realtimeChannel) return;
+      realtimeChannel = supabaseClient
+        .channel('proof-reviews-live')
+        .on('postgres_changes', {
+          event: '*',
+          schema: 'public',
+          table: 'reviews'
+        }, () => {
+          if (realtimeDebounce) clearTimeout(realtimeDebounce);
+          realtimeDebounce = setTimeout(() => loadReviews({ hard: false }), 450);
+        })
+        .subscribe();
+    }
+
+    const minScore = document.getElementById('proofMinScore');
+    const minScoreValue = document.getElementById('proofMinScoreValue');
+
+    function setupRatingSelects(form) {
+      const names = [
+        'salary_rating','housing_rating','attitude_rating','schedule_rating',
+        'payment_rating','fraud_rating','recommendation'
+      ];
+      names.forEach(name => {
+        const select = form.elements[name];
+        if (!select || select.options.length > 0) return;
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Выберите';
+        placeholder.selected = true;
+        placeholder.disabled = true;
+        select.appendChild(placeholder);
+        for (let i = 1; i <= 10; i++) {
+          const o = document.createElement('option');
+          o.value = String(i);
+          o.textContent = `${i}/10`;
+          select.appendChild(o);
+        }
+      });
+    }
+
+    function setupProofForm() {
+      const form = document.getElementById('proofAddForm');
+      const msg = document.getElementById('proofFormMsg');
+      const submitBtn = document.getElementById('proofSubmitBtn');
+      const progressFill = document.getElementById('proofFormProgressFill');
+      const progressValue = document.getElementById('proofFormProgressValue');
+      if (!form) return;
+
+      setupRatingSelects(form);
+
+      const requiredNames = [
+        'vacancy_url','company','city','salary_rating','housing_rating','attitude_rating',
+        'schedule_rating','payment_rating','fraud_rating','recommendation','comment'
+      ];
+
+      function updateProgress() {
+        let done = 0;
+        requiredNames.forEach(name => {
+          const el = form.elements[name];
+          if (el && String(el.value || '').trim()) done++;
+        });
+        const percent = Math.round((done / requiredNames.length) * 100);
+        progressFill.style.width = `${percent}%`;
+        progressValue.textContent = `${percent}%`;
+      }
+
+      form.addEventListener('input', updateProgress);
+      form.addEventListener('change', updateProgress);
+      updateProgress();
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        msg.className = 'proof-form-msg';
+        msg.textContent = '';
+
+        const vacancyUrl = String(form.elements.vacancy_url.value || '').trim();
+        const company = String(form.elements.company.value || '').trim();
+        const city = String(form.elements.city.value || '').trim();
+        const comment = String(form.elements.comment.value || '').trim();
+
+        if (!vacancyUrl || !company || !city || !comment) {
+          msg.classList.add('err');
+          msg.textContent = '⚠️ Заполните все обязательные поля.';
+          return;
+        }
+
+        let validUrl = true;
+        try { new URL(vacancyUrl); } catch (_) { validUrl = false; }
+        if (!validUrl) {
+          msg.classList.add('err');
+          msg.textContent = '⚠️ Ссылка на вакансию должна быть корректным URL.';
+          return;
+        }
+
+        const payload = {
+          vacancy_url: vacancyUrl,
+          company,
+          city,
+          salary_rating: Number(form.elements.salary_rating.value || 0),
+          housing_rating: Number(form.elements.housing_rating.value || 0),
+          attitude_rating: Number(form.elements.attitude_rating.value || 0),
+          schedule_rating: Number(form.elements.schedule_rating.value || 0),
+          payment_rating: Number(form.elements.payment_rating.value || 0),
+          fraud_rating: Number(form.elements.fraud_rating.value || 0),
+          recommendation: Number(form.elements.recommendation.value || 0),
+          comment,
+          proof_files: String(form.elements.proof_files.value || '').trim(),
+          proof_score: computeProofScore(form.elements),
+          approved: false
+        };
+
+        const ratingsValid = [
+          payload.salary_rating, payload.housing_rating, payload.attitude_rating,
+          payload.schedule_rating, payload.payment_rating, payload.fraud_rating, payload.recommendation
+        ].every(v => Number.isFinite(v) && v >= 1 && v <= 10);
+
+        if (!ratingsValid) {
+          msg.classList.add('err');
+          msg.textContent = '⚠️ Все рейтинги должны быть в диапазоне 1–10.';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Отправляем...';
+
+        try {
+          const { error } = await supabaseClient.from('reviews').insert([payload]);
+          if (error) throw error;
+
+          msg.classList.add('ok');
+          msg.textContent = '✅ Спасибо! Отзыв отправлен на модерацию';
+          form.reset();
+          updateProgress();
+        } catch (err) {
+          console.error('Proof submit error:', err);
+          msg.classList.add('err');
+          msg.textContent = '❌ Не удалось отправить отзыв. Попробуйте ещё раз.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '🚀 Отправить Proof';
+        }
+      });
+    }
+
+    ['proofSearch', 'proofCity', 'proofSort'].forEach(id => {
+      document.getElementById(id).addEventListener('input', () => render(reviewsState));
+      document.getElementById(id).addEventListener('change', () => render(reviewsState));
+    });
+
+    minScore.addEventListener('input', () => {
+      minScoreValue.textContent = minScore.value;
+      render(reviewsState);
+    });
+
+    document.getElementById('proofRefresh').addEventListener('click', () => loadReviews({ hard: true }));
+
+    // Initial load + polling every 30s + realtime subscription
+    setupProofForm();
+    detectAdminMode().then(() => {
+      loadReviews({ hard: true });
+      initRealtime();
+    });
+    setInterval(() => loadReviews({ hard: false }), 30000);
+  </script>
+
+  <script src="/main.js"></script>
+</body>
+</html>
