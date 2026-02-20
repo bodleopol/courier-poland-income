@@ -59,8 +59,220 @@ const SITE_AUTHOR = {
     name: 'Zespół redakcyjny Rybezh',
     role: 'Doradztwo kariery i weryfikacja warunków pracy',
     note: 'Łączymy doświadczenia kandydatów i informacje z otwartych źródeł, aby wyjaśniać wszystko prosto i uczciwie.'
+  },
+  ru: {
+    name: 'Редакционная команда Rybezh',
+    role: 'Карьерные консультации и проверка условий вакансий',
+    note: 'Мы собираем опыт кандидатов и данные из открытых источников, чтобы объяснять всё просто и честно.'
   }
 };
+
+const RU_FALLBACK_REPLACEMENTS = [
+  ['Пошук роботи у Польщі', 'Поиск работы в Польше'],
+  ['Знайдіть роботу в Польщі', 'Найдите работу в Польше'],
+  ['Актуальні вакансії в різних сферах по всій Польщі.', 'Актуальные вакансии в разных сферах по всей Польше.'],
+  ['Легальні умови та підтримка.', 'Легальные условия и поддержка.'],
+  ['Пошук за містом або типом роботи', 'Поиск по городу или типу работы'],
+  ['Пошук за мистом або типом роботи', 'Поиск по городу или типу работы'],
+  ['Знайти', 'Найти'],
+  ['Прийняти', 'Принять'],
+  ['Готові почати?', 'Готовы начать?'],
+  ['Отримайте консультацію та почніть заробляти вже сьогодні.', 'Получите консультацию и начните зарабатывать уже сегодня.'],
+  ['Вси вакансии', 'Все вакансии'],
+  ['Як читати вакансии на Rybezh', 'Как читать вакансии на Rybezh'],
+  ['Ми стараемось писати без «води»: що робити, який график, яки документи и що з житлом/доиздом. Якщо бачите незрозумилий пункт — краще уточнити до старту.', 'Мы стараемся писать без «воды»: что делать, какой график, какие документы и что с жильем/проездом. Если видите непонятный пункт — лучше уточнить перед стартом.'],
+  ['Фильтруйте за мистом и категориею — так швидше знайдете адекватни варианти.', 'Фильтруйте по городу и категории — так быстрее найдете адекватные варианты.'],
+  ['Дивиться на режим роботи та перерви — вони часто важливиши за «гучни бонуси».', 'Смотрите на режим работы и перерывы — они часто важнее «громких бонусов».'],
+  ['Пид кожну вакансию можна подати заявку — ми допоможемо уточнити детали.', 'Под каждую вакансию можно подать заявку — мы поможем уточнить детали.'],
+  ['Допомагаемо знайти роботу в Польщи та пидибрати вакансию пид ваш досвид. Пидтримка 24/7.', 'Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.'],
+  ['Нови вакансии та статти.', 'Новые вакансии и статьи.'],
+  ['Вси категории', 'Все категории'],
+  ['Вси миста', 'Все города'],
+  ['Логистика та доставка', 'Логистика и доставка'],
+  ['Будивництво', 'Строительство'],
+  ['Виробництво', 'Производство'],
+  ['Прибирання', 'Уборка'],
+  ['Роздрибна торгивля', 'Розничная торговля'],
+  ['Медицина та догляд', 'Медицина и уход'],
+  ['IT та технологии', 'IT и технологии'],
+  ['Сильське господарство', 'Сельское хозяйство'],
+  ['Освита', 'Образование'],
+  ['Краса та здоров\'я', 'Красота и здоровье'],
+  ['Безпека', 'Безопасность'],
+  ['Кракив', 'Краков'],
+  ['Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', 'Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь на их использование.'],
+  ['Головна', 'Главная'],
+  ['Вакансії', 'Вакансии'],
+  ['Категорії', 'Категории'],
+  ['Інструменти', 'Инструменты'],
+  ['Про нас', 'О нас'],
+  ['Контакти', 'Контакты'],
+  ['Для роботодавців', 'Для работодателей'],
+  ['Отримати консультацію', 'Получить консультацию'],
+  ['Подати заявку', 'Подать заявку'],
+  ['Навігація', 'Навигация'],
+  ['Підписка', 'Подписка'],
+  ['Політика конфіденційності', 'Политика конфиденциальности'],
+  ['Умови користування', 'Условия использования'],
+  ['Реквізити', 'Реквизиты'],
+  ['Всі права захищені', 'Все права защищены'],
+  ['Схожі вакансії', 'Похожие вакансии'],
+  ['Повернутись на головну', 'Вернуться на главную'],
+  ['Умови', 'Условия'],
+  ['Зарплата', 'Зарплата'],
+  ['Контракт', 'Договор'],
+  ['Графік', 'График'],
+  ['Режим', 'Режим'],
+  ['Старт', 'Старт'],
+  ['Бонуси', 'Бонусы'],
+  ['Додаткова інформація', 'Дополнительная информация'],
+  ['Вимоги', 'Требования'],
+  ['Проживання', 'Проживание'],
+  ['Тип обʼєкта', 'Тип объекта'],
+  ['Адаптація', 'Адаптация'],
+  ['Обладнання', 'Оборудование'],
+  ['Фізичні вимоги', 'Физические требования'],
+  ['Структура зміни', 'Структура смены'],
+  ['Стабільна та безпечна вакансія за відгуками.', 'Стабильная и безопасная вакансия по отзывам.'],
+  ['Умови загалом ок, але варто уточнити деталі.', 'Условия в целом хорошие, но стоит уточнить детали.'],
+  ['Ресторанний бизнес', 'Ресторанный бизнес'],
+  ['Повернутись на головну', 'Вернуться на главную']
+];
+
+function toRussianFallbackText(input) {
+  if (input === null || input === undefined) return '';
+  let text = String(input);
+  for (const [from, to] of RU_FALLBACK_REPLACEMENTS) {
+    text = text.split(from).join(to);
+  }
+
+  const wordReplacements = [
+    [/\bпрацевлаштування\b/gi, 'трудоустройства'],
+    [/\bробота\b/gi, 'работа'],
+    [/\bроботи\b/gi, 'работы'],
+    [/\bроботу\b/gi, 'работу'],
+    [/\bробочий\b/gi, 'рабочий'],
+    [/\bробоча\b/gi, 'рабочая'],
+    [/\bдоговир\b/gi, 'договор'],
+    [/\bробота\b/gi, 'работа'],
+    [/\bроботи\b/gi, 'работы'],
+    [/\bшукае\b/gi, 'ищет'],
+    [/\bшукає\b/gi, 'ищет'],
+    [/\bдосвид\b/gi, 'опыт'],
+    [/\bвидгук\b/gi, 'отклик'],
+    [/\bвидгуками\b/gi, 'отзывам'],
+    [/\bпрацивник\b/gi, 'сотрудник'],
+    [/\bпрацивникив\b/gi, 'сотрудников'],
+    [/\bстабильний\b/gi, 'стабильной'],
+    [/\bкоманди\b/gi, 'команды'],
+    [/\bзагалом\b/gi, 'в целом'],
+    [/\bуточнити\b/gi, 'уточнить'],
+    [/\bвакансия за видгуками\b/gi, 'вакансия по отзывам'],
+    [/\bвси\b/gi, 'все'],
+    [/\bкракив\b/gi, 'Краков'],
+    [/\bгданськ\b/gi, 'Гданьск'],
+    [/\bвроцлав\b/gi, 'Вроцлав'],
+    [/\bсосновець\b/gi, 'Сосновец'],
+    [/\bпольщи\b/gi, 'Польше'],
+    [/\bварто\b/gi, 'стоит'],
+    [/\bграфик\b/gi, 'график'],
+    [/\bпрацюе\b/gi, 'работает'],
+    [/\bдопомога\b/gi, 'помощь'],
+    [/\bдопомагаемо\b/gi, 'помогаем'],
+    [/\bдопоможемо\b/gi, 'поможем'],
+    [/\bперевирка\b/gi, 'проверка'],
+    [/\bконтроль якости\b/gi, 'контроль качества'],
+    [/\bвидпусток\b/gi, 'отпусков'],
+    [/\bликарняних\b/gi, 'больничных'],
+    [/\bПошук\b/gi, 'Поиск'],
+    [/\bЗнайдіть\b/gi, 'Найдите'],
+    [/\bЗнайди\b/gi, 'Найди'],
+    [/\bмістом\b/gi, 'городу'],
+    [/\bмісто\b/gi, 'город'],
+    [/\bмістах\b/gi, 'городах'],
+    [/\bземляків\b/gi, 'земляков'],
+    [/\bдодайте\b/gi, 'добавьте'],
+    [/\bстворіть\b/gi, 'создайте'],
+    [/\bінтерактивна\b/gi, 'интерактивная'],
+    [/\bспільноту\b/gi, 'сообщество'],
+    [/\bпідтримки\b/gi, 'поддержки'],
+    [/\bкарта\b/gi, 'карта'],
+    [/\bкарти\b/gi, 'карте'],
+    [/\bдесятки українців\b/gi, 'десятки украинцев'],
+    [/\bвидзначені\b/gi, 'отмечены'],
+    [/\bмайстер\b/gi, 'мастер'],
+    [/\bшукае\b/gi, 'ищет'],
+    [/\bважливи\b/gi, 'важны'],
+    [/\bвминня\b/gi, 'умение'],
+    [/\bспилкуватися\b/gi, 'общаться'],
+    [/\bвиконання\b/gi, 'выполнение'],
+    [/\bинструментив\b/gi, 'инструментов'],
+    [/\bнарощування\b/gi, 'наращивание'],
+    [/\bпропонуе\b/gi, 'предлагает'],
+    [/\bпрацивникив\b/gi, 'сотрудников'],
+    [/\bзростаючий\b/gi, 'растущий'],
+    [/\bпраци\b/gi, 'труда'],
+    [/\bвидгукнутися\b/gi, 'откликнуться'],
+    [/\bвидгук\b/gi, 'отзыв'],
+    [/\bдосвид\b/gi, 'опыт'],
+    [/\bзмина\b/gi, 'смена'],
+    [/\bдоихати\b/gi, 'доехать'],
+    [/\bжитла\b/gi, 'жилья'],
+    [/\bтыжня\b/gi, 'недели'],
+    [/\bзаявка\b/gi, 'заявка'],
+    [/\bвідгук\b/gi, 'отзыв'],
+    [/\bвідгуки\b/gi, 'отзывы']
+  ];
+  for (const [pattern, replacement] of wordReplacements) {
+    text = text.replace(pattern, replacement);
+  }
+
+  text = text
+    .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+    .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.');
+
+  return text
+    .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
+      і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
+    }[ch] || ch))
+    .replace(/[ʼ’]/g, '\'')
+    .replace(/\bПольщи\b/gi, 'Польше')
+    .replace(/\bЗнайдить\b/gi, 'Найдите')
+    .replace(/\bризних\b/gi, 'разных')
+    .replace(/\bвсий\b/gi, 'всей')
+    .replace(/\bЛегальне\b/gi, 'Легальные')
+    .replace(/\bумови\b/gi, 'условия')
+    .replace(/\bпидтримка\b/gi, 'поддержка');
+}
+
+function toRussianContentValue(value) {
+  if (Array.isArray(value)) {
+    return value.map(item => toRussianContentValue(item));
+  }
+  if (value === null || value === undefined) return value;
+  return toRussianFallbackText(value);
+}
+
+function enrichRussianFields(item, fields) {
+  if (!item || typeof item !== 'object') return;
+  for (const field of fields) {
+    const ruKey = `${field}_ru`;
+    if (item[ruKey] !== undefined && item[ruKey] !== null && String(item[ruKey]).trim() !== '') continue;
+    const source = item[`${field}_ua`] ?? item[field] ?? item[`${field}_pl`];
+    if (source === undefined || source === null) continue;
+    item[ruKey] = toRussianContentValue(source);
+  }
+}
+
+function normalizeRussianFields(item, fields) {
+  if (!item || typeof item !== 'object') return;
+  for (const field of fields) {
+    const ruKey = `${field}_ru`;
+    const source = item[ruKey] ?? item[`${field}_ua`] ?? item[field] ?? item[`${field}_pl`];
+    if (source === undefined || source === null) continue;
+    item[ruKey] = toRussianContentValue(source);
+  }
+}
 
 const CATEGORY_SPECIFIC_SECTIONS = {
   it: {
@@ -1241,6 +1453,7 @@ function diversifyOffer(phrase, slug) {
 
 function buildConditionsBlock(page, lang) {
   const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
   const isGenerated = Boolean(page?.is_generated);
   const labels = isPl ? {
     title: 'Warunki',
@@ -1252,6 +1465,16 @@ function buildConditionsBlock(page, lang) {
     bonuses: 'Bonusy',
     extra: 'Dodatkowe informacje',
     requirements: 'Wymagania'
+  } : isRu ? {
+    title: 'Условия',
+    salary: 'Зарплата',
+    contract: 'Договор',
+    schedule: 'График',
+    pattern: 'Режим',
+    start: 'Старт',
+    bonuses: 'Бонусы',
+    extra: 'Дополнительная информация',
+    requirements: 'Требования'
   } : {
     title: 'Умови',
     salary: 'Зарплата',
@@ -1265,54 +1488,75 @@ function buildConditionsBlock(page, lang) {
   };
 
   const salary = page.salary ? String(page.salary) : '';
-  const contract = isPl ? page.contract_pl : page.contract_ua;
-  const schedule = isPl ? page.shift_pl : page.shift_ua;
-  const pattern = isPl ? page.pattern_pl : page.pattern_ua;
-  const start = isPl ? page.start_pl : page.start_ua;
-  const bonusesList = Array.isArray(isPl ? page.offers_pl : page.offers_ua) ? (isPl ? page.offers_pl : page.offers_ua) : [];
-  const extraList = Array.isArray(isPl ? page.details_pl : page.details_ua) ? (isPl ? page.details_pl : page.details_ua) : [];
-  const requirementsList = Array.isArray(isPl ? page.requirements_pl : page.requirements_ua) ? (isPl ? page.requirements_pl : page.requirements_ua) : [];
-  const housing = isPl ? page.housing_pl : page.housing_ua;
-  const transport = isPl ? page.transport_pl : page.transport_ua;
-  const workplace = isPl ? page.workplace_pl : page.workplace_ua;
-  const team = isPl ? page.team_pl : page.team_ua;
-  const onboarding = isPl ? page.onboarding_pl : page.onboarding_ua;
-  const sector = isPl ? page.sector_pl : page.sector_ua;
-  const equipment = isPl ? page.equipment_pl : page.equipment_ua;
-  const physical = isPl ? page.physical_pl : page.physical_ua;
-  const shiftStructure = isPl ? page.shift_structure_pl : page.shift_structure_ua;
+  const contract = isPl ? page.contract_pl : (isRu ? (page.contract_ru || page.contract_ua) : page.contract_ua);
+  const schedule = isPl ? page.shift_pl : (isRu ? (page.shift_ru || page.shift_ua) : page.shift_ua);
+  const pattern = isPl ? page.pattern_pl : (isRu ? (page.pattern_ru || page.pattern_ua) : page.pattern_ua);
+  const start = isPl ? page.start_pl : (isRu ? (page.start_ru || page.start_ua) : page.start_ua);
+  const bonusesSource = isPl ? page.offers_pl : (isRu ? (page.offers_ru || page.offers_ua) : page.offers_ua);
+  const bonusesList = Array.isArray(bonusesSource) ? bonusesSource : [];
+  const extraSource = isPl ? page.details_pl : (isRu ? (page.details_ru || page.details_ua) : page.details_ua);
+  const extraList = Array.isArray(extraSource) ? extraSource : [];
+  const requirementsSource = isPl ? page.requirements_pl : (isRu ? (page.requirements_ru || page.requirements_ua) : page.requirements_ua);
+  const requirementsList = Array.isArray(requirementsSource) ? requirementsSource : [];
+  const housing = isPl ? page.housing_pl : (isRu ? (page.housing_ru || page.housing_ua) : page.housing_ua);
+  const transport = isPl ? page.transport_pl : (isRu ? (page.transport_ru || page.transport_ua) : page.transport_ua);
+  const workplace = isPl ? page.workplace_pl : (isRu ? (page.workplace_ru || page.workplace_ua) : page.workplace_ua);
+  const team = isPl ? page.team_pl : (isRu ? (page.team_ru || page.team_ua) : page.team_ua);
+  const onboarding = isPl ? page.onboarding_pl : (isRu ? (page.onboarding_ru || page.onboarding_ua) : page.onboarding_ua);
+  const sector = isPl ? page.sector_pl : (isRu ? (page.sector_ru || page.sector_ua) : page.sector_ua);
+  const equipment = isPl ? page.equipment_pl : (isRu ? (page.equipment_ru || page.equipment_ua) : page.equipment_ua);
+  const physical = isPl ? page.physical_pl : (isRu ? (page.physical_ru || page.physical_ua) : page.physical_ua);
+  const shiftStructure = isPl ? page.shift_structure_pl : (isRu ? (page.shift_structure_ru || page.shift_structure_ua) : page.shift_structure_ua);
+
+  const toRu = (value) => isRu ? toRussianFallbackText(value) : value;
+  const bonusesListPrepared = isRu ? bonusesList.map(item => toRussianFallbackText(item)) : bonusesList;
+  const extraListPrepared = isRu ? extraList.map(item => toRussianFallbackText(item)) : extraList;
+  const requirementsListPrepared = isRu ? requirementsList.map(item => toRussianFallbackText(item)) : requirementsList;
+  const contractPrepared = toRu(contract);
+  const schedulePrepared = toRu(schedule);
+  const patternPrepared = toRu(pattern);
+  const startPrepared = toRu(start);
+  const housingPrepared = toRu(housing);
+  const transportPrepared = toRu(transport);
+  const workplacePrepared = toRu(workplace);
+  const teamPrepared = toRu(team);
+  const onboardingPrepared = toRu(onboarding);
+  const sectorPrepared = toRu(sector);
+  const equipmentPrepared = toRu(equipment);
+  const physicalPrepared = toRu(physical);
+  const shiftStructurePrepared = toRu(shiftStructure);
 
   const effectiveBonusesList = (isGenerated && !isPl)
-    ? bonusesList.map(phrase => diversifyOffer(phrase, page.slug || ''))
-    : bonusesList;
+    ? bonusesListPrepared.map(phrase => diversifyOffer(phrase, page.slug || ''))
+    : bonusesListPrepared;
   const bonuses = effectiveBonusesList.slice(0, 3).join(' • ');
   const effectiveExtraList = (isGenerated && !isPl)
-    ? extraList.map(phrase => diversifyOffer(phrase, page.slug || ''))
-    : extraList;
+    ? extraListPrepared.map(phrase => diversifyOffer(phrase, page.slug || ''))
+    : extraListPrepared;
   const extras = effectiveExtraList.slice(0, 2).join(' • ');
-  const effectiveOnboarding = (isGenerated && !isPl && onboarding)
-    ? diversifyOffer(onboarding, page.slug || '')
-    : onboarding;
-  const requirements = requirementsList.slice(0, 3).join(' • ');
+  const effectiveOnboarding = (isGenerated && !isPl && onboardingPrepared)
+    ? diversifyOffer(onboardingPrepared, page.slug || '')
+    : onboardingPrepared;
+  const requirements = requirementsListPrepared.slice(0, 3).join(' • ');
 
   const rows = [];
   if (salary) rows.push(`<li><strong>${labels.salary}:</strong> ${escapeHtml(salary)}</li>`);
-  if (contract) rows.push(`<li><strong>${labels.contract}:</strong> ${escapeHtml(contract)}</li>`);
-  if (schedule) rows.push(`<li><strong>${labels.schedule}:</strong> ${escapeHtml(schedule)}</li>`);
-  if (pattern) rows.push(`<li><strong>${labels.pattern}:</strong> ${escapeHtml(pattern)}</li>`);
-  if (start) rows.push(`<li><strong>${labels.start}:</strong> ${escapeHtml(start)}</li>`);
+  if (contractPrepared) rows.push(`<li><strong>${labels.contract}:</strong> ${escapeHtml(contractPrepared)}</li>`);
+  if (schedulePrepared) rows.push(`<li><strong>${labels.schedule}:</strong> ${escapeHtml(schedulePrepared)}</li>`);
+  if (patternPrepared) rows.push(`<li><strong>${labels.pattern}:</strong> ${escapeHtml(patternPrepared)}</li>`);
+  if (startPrepared) rows.push(`<li><strong>${labels.start}:</strong> ${escapeHtml(startPrepared)}</li>`);
   if (bonuses) rows.push(`<li><strong>${labels.bonuses}:</strong> ${escapeHtml(bonuses)}</li>`);
   if (extras) rows.push(`<li><strong>${labels.extra}:</strong> ${escapeHtml(extras)}</li>`);
   if (requirements) rows.push(`<li><strong>${labels.requirements}:</strong> ${escapeHtml(requirements)}</li>`);
-  if (housing) rows.push(`<li><strong>${isPl ? 'Zakwaterowanie' : 'Проживання'}:</strong> ${escapeHtml(housing)}</li>`);
-  if (transport) rows.push(`<li><strong>${isPl ? 'Dojazd' : 'Транспорт'}:</strong> ${escapeHtml(transport)}</li>`);
-  if (workplace) rows.push(`<li><strong>${isPl ? 'Typ obiektu' : 'Тип обʼєкта'}:</strong> ${escapeHtml(workplace)}</li>`);
-  if (team) rows.push(`<li><strong>${isPl ? 'Zespół' : 'Команда'}:</strong> ${escapeHtml(team)}</li>`);
-  if (onboarding) rows.push(`<li><strong>${isPl ? 'Onboarding' : 'Адаптація'}:</strong> ${escapeHtml(effectiveOnboarding)}</li>`);
-  if (sector) rows.push(`<li><strong>${isPl ? 'Sektor' : 'Сектор'}:</strong> ${escapeHtml(sector)}</li>`);
-  if (equipment) rows.push(`<li><strong>${isPl ? 'Sprzęt' : 'Обладнання'}:</strong> ${escapeHtml(equipment)}</li>`);
-  if (physical) rows.push(`<li><strong>${isPl ? 'Wymagania fizyczne' : 'Фізичні вимоги'}:</strong> ${escapeHtml(physical)}</li>`);
-  if (shiftStructure) rows.push(`<li><strong>${isPl ? 'Struktura zmiany' : 'Структура зміни'}:</strong> ${escapeHtml(shiftStructure)}</li>`);
+  if (housingPrepared) rows.push(`<li><strong>${isPl ? 'Zakwaterowanie' : (isRu ? 'Проживание' : 'Проживання')}:</strong> ${escapeHtml(housingPrepared)}</li>`);
+  if (transportPrepared) rows.push(`<li><strong>${isPl ? 'Dojazd' : 'Транспорт'}:</strong> ${escapeHtml(transportPrepared)}</li>`);
+  if (workplacePrepared) rows.push(`<li><strong>${isPl ? 'Typ obiektu' : (isRu ? 'Тип объекта' : 'Тип обʼєкта')}:</strong> ${escapeHtml(workplacePrepared)}</li>`);
+  if (teamPrepared) rows.push(`<li><strong>${isPl ? 'Zespół' : 'Команда'}:</strong> ${escapeHtml(teamPrepared)}</li>`);
+  if (onboarding) rows.push(`<li><strong>${isPl ? 'Onboarding' : (isRu ? 'Адаптация' : 'Адаптація')}:</strong> ${escapeHtml(effectiveOnboarding)}</li>`);
+  if (sectorPrepared) rows.push(`<li><strong>${isPl ? 'Sektor' : 'Сектор'}:</strong> ${escapeHtml(sectorPrepared)}</li>`);
+  if (equipmentPrepared) rows.push(`<li><strong>${isPl ? 'Sprzęt' : (isRu ? 'Оборудование' : 'Обладнання')}:</strong> ${escapeHtml(equipmentPrepared)}</li>`);
+  if (physicalPrepared) rows.push(`<li><strong>${isPl ? 'Wymagania fizyczne' : (isRu ? 'Физические требования' : 'Фізичні вимоги')}:</strong> ${escapeHtml(physicalPrepared)}</li>`);
+  if (shiftStructurePrepared) rows.push(`<li><strong>${isPl ? 'Struktura zmiany' : (isRu ? 'Структура смены' : 'Структура зміни')}:</strong> ${escapeHtml(shiftStructurePrepared)}</li>`);
 
   return `
     <div class="job-conditions">
@@ -1368,12 +1612,13 @@ const JOB_QUESTIONS_POOL = {
 
 function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
   const seed = hashString(`${page?.slug || ''}:${lang}`);
   
   // Variant-based simplified version (for 'simple')
   if (variant === 'simple') {
     const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + 17);
-    const title = isPl ? 'Warto wiedzieć' : 'Варто знати';
+    const title = isPl ? 'Warto wiedzieć' : (isRu ? 'Важно знать' : 'Варто знати');
     const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
     
     return `
@@ -1388,11 +1633,13 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17);
   const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
 
-  const title = isPl ? 'Warto wiedzieć przed startem' : 'Що варто знати перед стартом';
-  const leftTitle = isPl ? 'Lista kontrolna' : 'Чек-лист перевірки';
-  const rightTitle = isPl ? 'Pytania do rekrutera' : 'Питання до рекрутера';
+  const title = isPl ? 'Warto wiedzieć przed startem' : (isRu ? 'Что важно знать перед стартом' : 'Що варто знати перед стартом');
+  const leftTitle = isPl ? 'Lista kontrolna' : (isRu ? 'Проверочный список' : 'Чек-лист перевірки');
+  const rightTitle = isPl ? 'Pytania do rekrutera' : (isRu ? 'Вопросы рекрутеру' : 'Питання до рекрутера');
   const note = isPl
     ? 'Warunki mogą się różnić w zależności od projektu. Warto dopytać o szczegóły.'
+    : isRu
+      ? 'Условия могут отличаться в зависимости от проекта. Уточняйте детали заранее.'
     : 'Умови можуть відрізнятися залежно від проекту. Варто уточнити деталі.';
 
   const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
@@ -1428,13 +1675,18 @@ const NOTICE_VARIANTS = {
     { title: 'Ważne', body: 'Szczegóły oferty warto potwierdzić przed aplikacją. Napisz — pomożemy.' },
     { title: 'O ofercie', body: 'Stawki i grafik mogą się różnić w zależności od projektu. Skontaktuj się w celu potwierdzenia.' },
     null
+  ],
+  ru: [
+    { title: 'Актуальность', body: 'Условия могут меняться. Свяжитесь с нами, чтобы подтвердить текущие данные.' },
+    { title: 'Важно', body: 'Детали вакансии лучше уточнить перед откликом. Напишите нам — поможем.' },
+    { title: 'О вакансии', body: 'Ставки и график могут отличаться в зависимости от проекта. Свяжитесь для подтверждения.' },
+    null
   ]
 };
 
 function buildGeneratedNotice(page, lang) {
   if (!page?.is_generated) return '';
-  const isPl = lang === 'pl';
-  const variants = isPl ? NOTICE_VARIANTS.pl : NOTICE_VARIANTS.ua;
+  const variants = NOTICE_VARIANTS[lang] || NOTICE_VARIANTS.ua;
   const seed = hashString(`${page?.slug || ''}:notice`);
   const variant = variants[seed % variants.length];
   if (!variant) return ''; // some pages get no notice at all
@@ -1707,7 +1959,7 @@ function buildVacancyProofFormScript() {
             .from('reviews')
             .select('salary_rating,housing_rating,attitude_rating,schedule_rating,payment_rating,fraud_rating,recommendation,vacancy_url')
             .eq('approved', true)
-            .or('vacancy_url.ilike.%/' + slug + '.html%,vacancy_url.ilike.%/' + slug + '-pl.html%');
+            .or('vacancy_url.ilike.%/' + slug + '.html%,vacancy_url.ilike.%/' + slug + '-pl.html%,vacancy_url.ilike.%/' + slug + '-ru.html%');
 
           var reviews = (query && query.data) || [];
           var score = 0;
@@ -1760,15 +2012,16 @@ function firstText(value) {
 
 function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
-  const base = firstText(isPl ? (page.excerpt_pl || page.excerpt) : page.excerpt);
-  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return base;
+  const isRu = lang === 'ru';
+  const base = firstText(isPl ? (page.excerpt_pl || page.excerpt) : (isRu ? (page.excerpt_ru || page.excerpt) : page.excerpt));
+  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return isRu ? toRussianFallbackText(base) : base;
 
   const parts = [
     base,
-    firstText((isPl ? page.details_pl : page.details_ua) || page.details),
-    firstText((isPl ? page.tasks_pl : page.tasks_ua) || page.tasks),
-    firstText((isPl ? page.transport_pl : page.transport_ua) || page.transport),
-    firstText((isPl ? page.housing_pl : page.housing_ua) || page.housing)
+    firstText((isPl ? page.details_pl : (isRu ? (page.details_ru || page.details_ua) : page.details_ua)) || page.details),
+    firstText((isPl ? page.tasks_pl : (isRu ? (page.tasks_ru || page.tasks_ua) : page.tasks_ua)) || page.tasks),
+    firstText((isPl ? page.transport_pl : (isRu ? (page.transport_ru || page.transport_ua) : page.transport_ua)) || page.transport),
+    firstText((isPl ? page.housing_pl : (isRu ? (page.housing_ru || page.housing_ua) : page.housing_ua)) || page.housing)
   ].filter(Boolean);
 
   const merged = [];
@@ -1784,7 +2037,8 @@ function enrichVacancyExcerpt(page, lang) {
     if (mergedLength >= MIN_VACANCY_EXCERPT_LENGTH) break;
   }
 
-  return (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+  const normalized = (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+  return isRu ? toRussianFallbackText(normalized) : normalized;
 }
 
 async function build() {
@@ -1795,6 +2049,20 @@ async function build() {
   const contentPath = path.join(SRC, 'content.json');
   const contentRaw = await fs.readFile(contentPath, 'utf8');
   const pages = JSON.parse(contentRaw);
+  const vacancyRuFields = [
+    'title', 'excerpt', 'body', 'tasks', 'requirements', 'offers', 'details',
+    'contract', 'shift', 'pattern', 'start', 'housing', 'transport', 'workplace',
+    'team', 'onboarding', 'sector', 'equipment', 'physical', 'shift_structure',
+    'city', 'cta_text'
+  ];
+  pages.forEach((page) => enrichRussianFields(page, vacancyRuFields));
+  // Manual batch polishing: force-normalize first 50 vacancy-like pages for literary RU
+  const batchVacancies = pages
+    .filter(page => page && page.slug && page.is_generated)
+    // Stable alphabetical batching makes iterative 50-page review reproducible.
+    .sort((a, b) => String(a.slug).localeCompare(String(b.slug)))
+    .slice(0, 50);
+  batchVacancies.forEach((page) => normalizeRussianFields(page, vacancyRuFields));
   pages.forEach((page) => {
     const looksLikeVacancy = (
       Boolean(firstText(page.tasks_ua)) ||
@@ -1838,6 +2106,7 @@ async function build() {
   let categories = [];
   try {
     categories = JSON.parse(await fs.readFile(categoriesPath, 'utf8'));
+    categories.forEach((category) => enrichRussianFields(category, ['name', 'description']));
   } catch (e) {
     console.warn('No categories.json found, continuing without categories');
   }
@@ -1845,6 +2114,11 @@ async function build() {
   // Load blog posts
   const postsPath = path.join(SRC, 'posts.json');
   const posts = JSON.parse(await fs.readFile(postsPath, 'utf8').catch(() => '[]'));
+  posts.forEach((post) => enrichRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
+  // Manual batch polishing: force-normalize first 50 posts/entries for literary RU
+  posts
+    .slice(0, 50)
+    .forEach((post) => normalizeRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
 
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
@@ -1931,20 +2205,23 @@ async function build() {
   // Prepare dynamic translations for jobs
   const jobTranslations = {};
   pages.forEach(p => {
-    jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
-    jobTranslations[`job.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
-    jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
-    jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek' };
+    const titleRu = toRussianFallbackText(p.title_ru || p.title);
+    const excerptRu = toRussianFallbackText(enrichVacancyExcerpt(p, 'ru'));
+    jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
+    jobTranslations[`job.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
+    jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: excerptRu };
+    jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek', ru: p.cta_text_ru || 'Подать заявку' };
   });
 
   // Prepare dynamic translations for blog
   posts.forEach(p => {
     const readMinutes = estimateReadingTime(p.body || '');
-    jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title };
-    jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh` };
-    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt };
-    jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania` };
-    jobTranslations[`blog.${p.slug}.author_role`] = { ua: p.author_role || '', pl: p.author_role_pl || p.author_role || '' };
+    const titleRu = toRussianFallbackText(p.title_ru || p.title);
+    jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
+    jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
+    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: toRussianFallbackText(p.excerpt_ru || p.excerpt) };
+    jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania`, ru: `${readMinutes} мин чтения` };
+    jobTranslations[`blog.${p.slug}.author_role`] = { ua: p.author_role || '', pl: p.author_role_pl || p.author_role || '', ru: p.author_role_ru || p.author_role || '' };
   });
   
   // Prepare script with injected translations
@@ -2050,6 +2327,7 @@ async function build() {
     const description = page.excerpt || page.description || '';
     const content = page.body || page.content || page.excerpt || '';
     const contentPl = page.body_pl || page.body || '';
+    const contentRu = toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
     const variantRoll = Math.random();
@@ -2071,10 +2349,13 @@ async function build() {
     // Wrap content in language toggles
     const conditionsUA = buildConditionsBlock(page, 'ua');
     const conditionsPL = buildConditionsBlock(page, 'pl');
+    const conditionsRU = buildConditionsBlock(page, 'ru');
     const humanUA = humanVariant ? buildJobHumanBlock(page, 'ua', humanVariant) : '';
     const humanPL = humanVariant ? buildJobHumanBlock(page, 'pl', humanVariant) : '';
+    const humanRU = humanVariant ? buildJobHumanBlock(page, 'ru', humanVariant) : '';
     const noticeUA = buildGeneratedNotice(page, 'ua');
     const noticePL = buildGeneratedNotice(page, 'pl');
+    const noticeRU = buildGeneratedNotice(page, 'ru');
     const proofSummaryBlock = buildVacancyProofSummaryBlock(page);
     const proofFormBlock = buildVacancyProofFormBlock(page);
 
@@ -2119,6 +2400,7 @@ async function build() {
         <div class="related-vacancies">
           <h3 data-lang-content="ua" data-i18n="related.title">Схожі вакансії</h3>
           <h3 data-lang-content="pl" style="display:none">Podobne oferty</h3>
+          <h3 data-lang-content="ru" style="display:none">Похожие вакансии</h3>
           <div class="related-grid">${relatedCards}</div>
         </div>`;
     }
@@ -2139,6 +2421,11 @@ async function build() {
             <div class="job-local-tip"><strong>📍 Okolica:</strong> ${enrichment.tip_pl}</div>
             <p class="job-insider">${enrichment.detail_pl}</p>
           </div>
+          <div data-lang-content="ru" style="display:none">
+            <blockquote class="job-quote">${enrichment.quote_ru || enrichment.quote_ua}</blockquote>
+            <div class="job-local-tip"><strong>📍 Район:</strong> ${enrichment.tip_ru || enrichment.tip_ua}</div>
+            <p class="job-insider">${enrichment.detail_ru || enrichment.detail_ua}</p>
+          </div>
         </div>`;
     }
 
@@ -2153,6 +2440,7 @@ async function build() {
         </div>
         <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
+        <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}${conditionsRU}${humanRU}</div>
         ${proofSummaryBlock}
         ${proofFormBlock}
         ${enrichmentHtml}
@@ -2493,6 +2781,7 @@ async function build() {
     }
     const uaEnhanced = buildEnhancedPostContent(post, posts, categories, 'ua', readMinutes);
     const plEnhanced = buildEnhancedPostContent(post, posts, categories, 'pl', readMinutes);
+    const ruEnhanced = buildEnhancedPostContent(post, posts, categories, 'ru', readMinutes);
     const postContent = `
       <div class="blog-post">
         <a href="/blog.html" class="back-link" data-i18n="blog.back">← До списку статей</a>
@@ -2500,9 +2789,10 @@ async function build() {
         <div class="post-author">✍️ <strong>${escapeHtml(post.author || 'Rybezh')}</strong> <span class="post-author-role" data-i18n="blog.${post.slug}.author_role">${escapeHtml(post.author_role || '')}</span></div>
         <div data-lang-content="ua">${uaEnhanced.html}</div>
         <div data-lang-content="pl" style="display:none">${plEnhanced.html}</div>
+        <div data-lang-content="ru" style="display:none">${ruEnhanced.html}</div>
       </div>
       <div class="giscus-comments" style="max-width:800px;margin:2.5rem auto 0;">
-        <h3 style="font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 <span data-lang-content="ua" style="display:inline">Коментарі</span><span data-lang-content="pl" style="display:none">Komentarze</span></h3>
+        <h3 style="font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">💬 <span data-lang-content="ua" style="display:inline">Коментарі</span><span data-lang-content="pl" style="display:none">Komentarze</span><span data-lang-content="ru" style="display:none">Комментарии</span></h3>
         <script src="https://giscus.app/client.js"
           data-repo="bodleopol/courier-poland-income"
           data-repo-id="R_kgDOQ5cY4Q"
@@ -2805,6 +3095,7 @@ Sitemap: https://rybezh.site/sitemap-blog.xml
     // Generate Polish (-pl) pages
     // ==========================================
     await generatePolishPages(jobTranslations);
+    await generateRussianPages(jobTranslations);
 
     console.log('Build complete. Pages:', links.length);
 }
@@ -3902,20 +4193,29 @@ function getRelatedPosts(post, posts, limit = 3) {
 function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const seed = hashString(`${post.slug}-${lang}`);
   const related = getRelatedPosts(post, posts, 3);
+  const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
 
-  const bodySource = lang === 'pl' ? (post.body_pl || post.body || '') : (post.body || '');
-  const body = humanizeBody(bodySource, lang === 'pl' ? (post.title_pl || post.title) : post.title, lang, seed + 5);
+  const bodySource = isPl
+    ? (post.body_pl || post.body || '')
+    : (isRu ? (post.body_ru || toRussianFallbackText(post.body || '')) : (post.body || ''));
+  const bodyTitle = isPl
+    ? (post.title_pl || post.title)
+    : (isRu ? (post.title_ru || toRussianFallbackText(post.title || '')) : post.title);
+  const body = humanizeBody(bodySource, bodyTitle, lang, seed + 5);
 
   const updatedDate = post.updated || post.date || new Date().toISOString().slice(0, 10);
 
   const relatedHtml = related.map(r => {
-    const title = lang === 'pl' ? (r.title_pl || r.title) : r.title;
+    const title = isPl
+      ? (r.title_pl || r.title)
+      : (isRu ? (r.title_ru || toRussianFallbackText(r.title || '')) : r.title);
     return `<li><a href="/post-${escapeHtml(r.slug)}.html">${escapeHtml(title)}</a></li>`;
   }).join('');
 
   const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
-  const readLabel = lang === 'pl' ? 'Czas czytania' : 'Час читання';
-  const updatedLabel = lang === 'pl' ? 'Aktualizacja' : 'Оновлення';
+  const readLabel = isPl ? 'Czas czytania' : (isRu ? 'Время чтения' : 'Час читання');
+  const updatedLabel = isPl ? 'Aktualizacja' : (isRu ? 'Обновление' : 'Оновлення');
 
   return {
     html: `
@@ -3928,14 +4228,14 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
         </div>
       </div>
       <div class="post-meta-cards">
-        <div class="post-chip"><span>${readLabel}</span><strong>${readMinutes} ${lang === 'pl' ? 'min' : 'хв'}</strong></div>
+        <div class="post-chip"><span>${readLabel}</span><strong>${readMinutes} ${isPl ? 'min' : (isRu ? 'мин' : 'хв')}</strong></div>
         <div class="post-chip"><span>${updatedLabel}</span><strong data-format-date="${updatedDate}">${updatedDate}</strong></div>
       </div>
       <section class="post-section">
         ${body}
       </section>
       <section class="post-section post-related">
-        <h3>${lang === 'pl' ? 'Powiązane artykuły' : 'Пов’язані статті'}</h3>
+        <h3>${isPl ? 'Powiązane artykuły' : (isRu ? 'Похожие статьи' : 'Пов’язані статті')}</h3>
         <ul>${relatedHtml}</ul>
       </section>
     `,
@@ -4037,7 +4337,22 @@ function showLangContentBlocks(html, lang) {
 /**
  * Apply PL translations to all data-i18n elements in HTML at build time.
  */
-function applyI18nTranslationsBuild(html, translations) {
+function applyI18nTranslationsBuild(html, translations, targetLang = 'pl') {
+  const getLangText = (dict, fallback = '') => {
+    if (!dict) return fallback;
+    if (dict[targetLang] !== undefined && dict[targetLang] !== null) return dict[targetLang];
+    if (targetLang === 'ru') {
+      const source = (dict.ua !== undefined && dict.ua !== null)
+        ? dict.ua
+        : ((dict.pl !== undefined && dict.pl !== null) ? dict.pl : fallback);
+      return toRussianFallbackText(source);
+    }
+    if (dict.ua !== undefined && dict.ua !== null) return dict.ua;
+    if (dict.pl !== undefined && dict.pl !== null) return dict.pl;
+    if (dict.ru !== undefined && dict.ru !== null) return dict.ru;
+    return fallback;
+  };
+
   // 1. Void elements with data-i18n-attr (meta, input)
   html = html.replace(
     /<(meta|input|link)\b([^>]*?)data-i18n="([^"]+)"([^>]*?)>/gi,
@@ -4048,8 +4363,8 @@ function applyI18nTranslationsBuild(html, translations) {
       const attr = attrMatch[1];
       const dict = translations[key];
       if (!dict) return match;
-      const plText = (dict.pl || dict.ua || '').replace(/"/g, '&quot;');
-      return match.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${plText}"`);
+      const text = String(getLangText(dict, '')).replace(/"/g, '&quot;');
+      return match.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${text}"`);
     }
   );
 
@@ -4065,16 +4380,16 @@ function applyI18nTranslationsBuild(html, translations) {
         const attrMatch = attrs.match(/data-i18n-attr="([^"]+)"/);
         if (attrMatch) {
           const attr = attrMatch[1];
-          const plText = (dict.pl || dict.ua || '').replace(/"/g, '&quot;');
-          const newAttrs = attrs.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${plText}"`);
+          const text = String(getLangText(dict, '')).replace(/"/g, '&quot;');
+          const newAttrs = attrs.replace(new RegExp(`${attr}="[^"]*"`), `${attr}="${text}"`);
           return `<${tag}${newAttrs}>${content}</${tag}>`;
         }
         return match;
       }
 
       // Text/HTML content replacement
-      const plText = dict.pl || dict.ua || content;
-      return `<${tag}${attrs}>${plText}</${tag}>`;
+      const text = getLangText(dict, content);
+      return `<${tag}${attrs}>${text}</${tag}>`;
     }
   );
 
@@ -4102,6 +4417,25 @@ function updateLinksForPolish(html) {
 }
 
 /**
+ * Update internal navigation links for RU pages: href="/x.html" → href="/x-ru.html"
+ */
+function updateLinksForRussian(html) {
+  // Root → RU index
+  html = html.replace(/href="\/"/g, 'href="/index-ru.html"');
+
+  const skipBases = new Set(['styles', 'main', 'jobs', 'jobs-loader', 'features', 'engagement']);
+  html = html.replace(
+    /href="\/([\w][\w\-]*)(\.html)([\?#][^"]*)?"/g,
+    (match, base, ext, suffix) => {
+      if (base.endsWith('-ru') || skipBases.has(base)) return match;
+      return `href="/${base}-ru${ext}${suffix || ''}"`;
+    }
+  );
+
+  return html;
+}
+
+/**
  * Update full rybezh.site URLs to PL versions.
  */
 function updateFullUrlsForPolish(html) {
@@ -4116,6 +4450,25 @@ function updateFullUrlsForPolish(html) {
   html = html.replace(
     /(<(?:link[^>]+rel="canonical"|meta[^>]+property="og:url"|meta[^>]+name="twitter:url")[^>]+(?:href|content)=")https:\/\/rybezh\.site\/"/g,
     '$1https://rybezh.site/index-pl.html"'
+  );
+  return html;
+}
+
+/**
+ * Update full rybezh.site URLs to RU versions.
+ */
+function updateFullUrlsForRussian(html) {
+  html = html.replace(
+    /(https:\/\/rybezh\.site\/)([\w][\w\-]*)(\.html)/g,
+    (match, domain, base, ext) => {
+      if (base.endsWith('-ru')) return match;
+      return `${domain}${base}-ru${ext}`;
+    }
+  );
+  // Root canonical/OG → index-ru.html
+  html = html.replace(
+    /(<(?:link[^>]+rel="canonical"|meta[^>]+property="og:url"|meta[^>]+name="twitter:url")[^>]+(?:href|content)=")https:\/\/rybezh\.site\/"/g,
+    '$1https://rybezh.site/index-ru.html"'
   );
   return html;
 }
@@ -4178,7 +4531,7 @@ function transformToPolish(html, translations, filename) {
   r = updateLinksForPolish(r);
 
   // 7. Hreflang
-  r = addHreflangTags(r, filename, PAGES_WITH_RU_VERSION.has(filename));
+  r = addHreflangTags(r, filename, true);
 
   // 8. Force PL language on load
   if (r.includes('</head>')) {
@@ -4189,13 +4542,43 @@ function transformToPolish(html, translations, filename) {
   return r;
 }
 
-// Pages that have a Russian (-ru) counterpart
-const PAGES_WITH_RU_VERSION = new Set([
-  'index.html', 'vacancies.html', 'blog.html', 'about.html', 'apply.html',
-  'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html',
-  'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html',
-  'proof.html', 'for-employers.html'
-]);
+/**
+ * Transform a complete HTML page to its Russian version.
+ */
+function transformToRussian(html, translations, filename) {
+  let r = html;
+
+  // 1. Lang attribute
+  r = r.replace(/<html\s+lang="uk"/g, '<html lang="ru"');
+  r = r.replace(/<html\s+lang="pl"/g, '<html lang="ru"');
+
+  // 2. Data-lang-content blocks
+  r = removeLangContentBlocks(r, 'ua');
+  r = removeLangContentBlocks(r, 'pl');
+  r = showLangContentBlocks(r, 'ru');
+
+  // 3. Apply i18n translations
+  r = applyI18nTranslationsBuild(r, translations, 'ru');
+
+  // 4. OG locale
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")uk_UA"/g, '$1ru_RU"');
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")pl_PL"/g, '$1ru_RU"');
+
+  // 5. Full URLs + internal links
+  r = updateFullUrlsForRussian(r);
+  r = updateLinksForRussian(r);
+
+  // 6. Hreflang
+  r = addHreflangTags(r, filename, true);
+
+  // 7. Force RU language on load
+  if (r.includes('</head>')) {
+    r = r.replace('</head>',
+      `<script>if(typeof localStorage!=='undefined'){localStorage.setItem('site_lang','ru');localStorage.setItem('siteLang','ru');}</script>\n</head>`);
+  }
+
+  return toRussianFallbackText(r);
+}
 
 /**
  * Generate Polish versions of all HTML pages in dist/.
@@ -4226,7 +4609,7 @@ async function generatePolishPages(dynamicTranslations) {
       await fs.writeFile(path.join(DIST, plFile), plHtml, 'utf8');
 
       // Add hreflang tags to the original UA page
-      const uaHtml = addHreflangTags(html, file, PAGES_WITH_RU_VERSION.has(file));
+      const uaHtml = addHreflangTags(html, file, true);
       await fs.writeFile(filePath, uaHtml, 'utf8');
 
       generated++;
@@ -4244,6 +4627,49 @@ async function generatePolishPages(dynamicTranslations) {
   } catch {}
 
   console.log(`  ✅ Generated ${generated} Polish pages`);
+}
+
+/**
+ * Generate Russian versions of all HTML pages in dist/.
+ */
+async function generateRussianPages(dynamicTranslations) {
+  console.log('\n🇷🇺 Generating Russian pages...');
+
+  const mainTranslations = await getMainTranslations();
+  const allTranslations = { ...mainTranslations, ...(dynamicTranslations || {}) };
+
+  let entries;
+  try { entries = await fs.readdir(DIST, { withFileTypes: true }); }
+  catch { console.warn('  ⚠️  dist/ not found'); return; }
+
+  const htmlFiles = entries
+    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html') && !e.name.endsWith('-ru.html'))
+    .map(e => e.name);
+
+  let generated = 0;
+  for (const file of htmlFiles) {
+    try {
+      const filePath = path.join(DIST, file);
+      const html = await fs.readFile(filePath, 'utf8');
+
+      const ruHtml = transformToRussian(html, allTranslations, file);
+      const ruFile = file.replace('.html', '-ru.html');
+      await fs.writeFile(path.join(DIST, ruFile), ruHtml, 'utf8');
+      generated++;
+    } catch (e) {
+      console.error(`  ❌ ${file}: ${e.message}`);
+    }
+  }
+
+  // RU version of 404 subdirectory
+  try {
+    const dir = path.join(DIST, '404-ru');
+    await fs.mkdir(dir, { recursive: true });
+    const ru404 = await fs.readFile(path.join(DIST, '404-ru.html'), 'utf8');
+    await fs.writeFile(path.join(dir, 'index.html'), ru404, 'utf8');
+  } catch {}
+
+  console.log(`  ✅ Generated ${generated} Russian pages`);
 }
 
 build().catch(err => {

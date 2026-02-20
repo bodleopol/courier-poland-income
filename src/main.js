@@ -50,11 +50,11 @@
     'human.home.i2.li1': { ua: 'дивіться на графік, тип договору і логістику', pl: 'zwróć uwagę na rozkład pracy, rodzaj umowy i transport' },
     'human.home.i2.li2': { ua: 'питайте про житло/доїзд і перший день на об’єкті', pl: 'zapytaj o mieszkanie, dojazd i pierwszy dzień w pracy' },
     'human.home.i2.li3': { ua: 'якщо щось «занадто гарно» — перевіряйте двічі', pl: 'jeśli coś jest „zbyt pięknie” — sprawdź dokładnie' },
-    'human.vacancies.title': { ua: 'Як читати вакансії на Rybezh', pl: 'Jak czytać oferty na Rybezh' },
-    'human.vacancies.lead': { ua: 'Ми стараємось писати без «води»: що робити, який графік, які документи і що з житлом/доїздом. Якщо бачите незрозумілий пункт — краще уточнити до старту.', pl: 'Staramy się pisać bez „lania wody”: co robić, jaki grafik, dokumenty i jak z mieszkaniem/dojazdem. Jeśli coś jest niejasne — lepiej dopytać przed rozpoczęciem.' },
-    'human.vacancies.li1': { ua: 'Фільтруйте за містом і категорією — так швидше знайдете адекватні варіанти.', pl: 'Filtruj po mieście i kategorii — szybciej znajdziesz odpowiednie oferty.' },
-    'human.vacancies.li2': { ua: 'Дивіться на режим роботи та перерви — вони часто важливіші за «гучні бонуси».', pl: 'Zwróć uwagę na tryb pracy i przerwy — często są ważniejsze niż „głośne bonusy”.' },
-    'human.vacancies.li3': { ua: 'Під кожну вакансію можна подати заявку — ми допоможемо уточнити деталі.', pl: 'Do każdej oferty możesz złożyć zgłoszenie — pomożemy wyjaśnić szczegóły.' },
+    'human.vacancies.title': { ua: 'Як читати вакансії на Rybezh', pl: 'Jak czytać oferty na Rybezh', ru: 'Как читать вакансии на Rybezh' },
+    'human.vacancies.lead': { ua: 'Ми стараємось писати без «води»: що робити, який графік, які документи і що з житлом/доїздом. Якщо бачите незрозумілий пункт — краще уточнити до старту.', pl: 'Staramy się pisać bez „lania wody”: co robić, jaki grafik, dokumenty i jak z mieszkaniem/dojazdem. Jeśli coś jest niejasne — lepiej dopytać przed rozpoczęciem.', ru: 'Мы стараемся писать без «воды»: что делать, какой график, какие документы и что с жильем/проездом. Если видите непонятный пункт — лучше уточнить перед стартом.' },
+    'human.vacancies.li1': { ua: 'Фільтруйте за містом і категорією — так швидше знайдете адекватні варіанти.', pl: 'Filtruj po mieście i kategorii — szybciej znajdziesz odpowiednie oferty.', ru: 'Фильтруйте по городу и категории — так быстрее найдете адекватные варианты.' },
+    'human.vacancies.li2': { ua: 'Дивіться на режим роботи та перерви — вони часто важливіші за «гучні бонуси».', pl: 'Zwróć uwagę na tryb pracy i przerwy — często są ważniejsze niż „głośne bonusy”.', ru: 'Смотрите на режим работы и перерывы — они часто важнее «громких бонусов».' },
+    'human.vacancies.li3': { ua: 'Під кожну вакансію можна подати заявку — ми допоможемо уточнити деталі.', pl: 'Do każdej oferty możesz złożyć zgłoszenie — pomożemy wyjaśnić szczegóły.', ru: 'Под каждую вакансию можно подать заявку — мы поможем уточнить детали.' },
     'home.hero.title': { ua: '🚀 Робота мрії чекає тебе!', pl: '🚀 Praca marzeń czeka na Ciebie!' },
     'home.hero.subtitle': { ua: '<strong>Тисячі людей вже працюють</strong> у Польщі. 📌 Безкоштовна консультація, <strong>легальне працевлаштування</strong> та <strong>зручний пошук</strong>.', pl: '<strong>Tysiące osób już pracują</strong> w Polsce. 📌 Bezpłatna konsultacja, <strong>legalne zatrudnienie</strong> i <strong>wygodne wyszukiwanie</strong>.' },
     'home.hero.cta_primary': { ua: 'Почати прямо зараз', pl: 'Zacznij teraz' },
@@ -95,27 +95,27 @@
     'home.features.f4.title': { ua: '🔍 Зручний пошук', pl: '🔍 Wygodne wyszukiwanie' },
     'home.features.f4.text': { ua: 'Фільтри за містом, категорією, зарплатою', pl: 'Filtry według miasta, kategorii i wynagrodzenia' },
     'search.sr': { ua: 'Пошук', pl: 'Szukaj' },
-    'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy' },
-    'search.button': { ua: 'Знайти', pl: 'Znajdź' },
-    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' },
+    'search.placeholder': { ua: 'Пошук за містом або типом роботи', pl: 'Szukaj według miasta lub rodzaju pracy', ru: 'Поиск по городу или типу работы' },
+    'search.button': { ua: 'Знайти', pl: 'Znajdź', ru: 'Найти' },
+    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta', ru: 'Все города' },
     'jobs.cta': { ua: 'Деталі', pl: 'Szczegóły' },
     'cta.heading': { ua: 'Потрібна допомога з оформленням?', pl: 'Potrzebujesz pomocy z dokumentami?' },
     'cta.lead': { ua: 'Залиште заявку — ми допоможемо з документами та підбором роботи.', pl: 'Zostaw zgłoszenie — pomożemy z dokumentami i doborem pracy.' },
-    'cta.ready': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?' },
-    'cta.sub': { ua: 'Отримайте консультацію та почніть заробляти вже сьогодні.', pl: 'Uzyskaj konsultację i zacznij zarabiać już dziś.' },
-    'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek' },
-    'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.' },
-    'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności' },
-    'footer.terms': { ua: 'Умови користування', pl: 'Regulamin' },
-    'footer.company': { ua: 'Реквізити', pl: 'Dane firmy' },
-    'footer.desc': { ua: 'Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.', pl: 'Pomagamy znaleźć pracę w Polsce i dobrać ofertę do doświadczenia. Wsparcie 24/7.' },
-    'footer.nav': { ua: 'Навігація', pl: 'Nawigacja' },
-    'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy' },
-    'footer.contact': { ua: 'Контакти', pl: 'Kontakt' },
-    'footer.newsletter.title': { ua: 'Підписка', pl: 'Subskrypcja' },
-    'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.' },
-    'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email' },
-    'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!' },
+    'cta.ready': { ua: 'Готові почати?', pl: 'Gotowy, by zacząć?', ru: 'Готовы начать?' },
+    'cta.sub': { ua: 'Отримайте консультацію та почніть заробляти вже сьогодні.', pl: 'Uzyskaj konsultację i zacznij zarabiać już dziś.', ru: 'Получите консультацию и начните зарабатывать уже сегодня.' },
+    'cta.button': { ua: 'Подати заявку', pl: 'Złóż wniosek', ru: 'Подать заявку' },
+    'footer.rights': { ua: 'Всі права захищені.', pl: 'Wszelkie prawa zastrzeżone.', ru: 'Все права защищены.' },
+    'footer.privacy': { ua: 'Політика конфіденційності', pl: 'Polityka prywatności', ru: 'Политика конфиденциальности' },
+    'footer.terms': { ua: 'Умови користування', pl: 'Regulamin', ru: 'Условия использования' },
+    'footer.company': { ua: 'Реквізити', pl: 'Dane firmy', ru: 'Реквизиты' },
+    'footer.desc': { ua: 'Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.', pl: 'Pomagamy znaleźć pracę w Polsce i dobrać ofertę do doświadczenia. Wsparcie 24/7.', ru: 'Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.' },
+    'footer.nav': { ua: 'Навігація', pl: 'Nawigacja', ru: 'Навигация' },
+    'footer.jobs': { ua: 'Вакансії', pl: 'Oferty pracy', ru: 'Вакансии' },
+    'footer.contact': { ua: 'Контакти', pl: 'Kontakt', ru: 'Контакты' },
+    'footer.newsletter.title': { ua: 'Підписка', pl: 'Subskrypcja', ru: 'Подписка' },
+    'footer.newsletter.text': { ua: 'Нові вакансії та статті.', pl: 'Nowe oferty i artykuły.', ru: 'Новые вакансии и статьи.' },
+    'footer.newsletter.placeholder': { ua: 'Ваш email', pl: 'Twój email', ru: 'Ваш email' },
+    'footer.newsletter.success': { ua: 'Дякуємо!', pl: 'Dziękujemy!', ru: 'Спасибо!' },
     'calc.title': { ua: 'Калькулятор заробітку', pl: 'Kalkulator zarobków' },
     'calc.hours': { ua: 'Годин на тиждень', pl: 'Godzin tygodniowo' },
     'calc.rate': { ua: 'Ставка (PLN/год)', pl: 'Stawka (PLN/h)' },
@@ -143,7 +143,8 @@
     'btn.clear': { ua: 'Очистити', pl: 'Wyczyść' },
     'aside.help': { ua: 'Потрібна допомога?', pl: 'Potrzebujesz pomocy?' },
     'aside.text': { ua: 'Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.', pl: 'Pomagamy z dokumentami, legalizacją i doborem ofert. Zgłoszenia przetwarzamy w ciągu 24 godzin.' },
-    'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną' },
+    'btn.back': { ua: 'Повернутись на головну', pl: 'Powrót na stronę główną', ru: 'Вернуться на главную' },
+    'btn.all_vacancies': { ua: 'Всі вакансії', pl: 'Wszystkie oferty', ru: 'Все вакансии' },
     'aside.contacts': { ua: 'Контакти', pl: 'Kontakt' },
     'about.meta_title': { ua: 'Про нас — Rybezh | Пошук роботи у Польщі', pl: 'O nas — Rybezh | Praca w Polsce' },
     'about.meta_description': { ua: 'Rybezh — ваш надійний партнер у пошуку роботи у Польщі. Допомагаємо з працевлаштуванням, документами та адаптацією.', pl: 'Rybezh to Twój zaufany partner w znalezieniu pracy w Polsce. Pomagamy w zatrudnieniu, dokumentach i adaptacji.' },
@@ -177,8 +178,8 @@
     'faq.meta_description': { ua: 'Відповіді на поширені запитання про роботу у Польщі. Документи, графік, умови, підтримка.', pl: 'Odpowiedzi na najczęstsze pytania o pracę w Polsce. Dokumenty, grafik, warunki, wsparcie.' },
     'faq.title': { ua: 'Часті запитання', pl: 'Częste pytania' },
     'faq.text': { ua: "<details><summary>Як швидко можна знайти роботу?</summary><p>Зазвичай перші пропозиції надходять протягом 1–3 днів після подачі заявки.</p></details><details><summary>Які документи потрібні?</summary><p>Найчастіше потрібні паспорт, віза або карта побиту, PESEL і банківський рахунок.</p></details><details><summary>Чи потрібен досвід?</summary><p>Не завжди. Для багатьох вакансій досвід не обов'язковий.</p></details><details><summary>Який графік?</summary><p>Є повна зайнятість, зміни та часткова зайнятість.</p></details>", pl: "<details><summary>Jak szybko można znaleźć pracę?</summary><p>Zwykle pierwsze oferty pojawiają się w ciągu 1–3 dni po zgłoszeniu.</p></details><details><summary>Jakie dokumenty są potrzebne?</summary><p>Najczęściej potrzebne są paszport, wiza lub karta pobytu, PESEL i konto bankowe.</p></details><details><summary>Czy wymagane jest doświadczenie?</summary><p>Nie zawsze. Wiele ofert nie wymaga doświadczenia.</p></details><details><summary>Jaki jest grafik?</summary><p>Dostępne są pełne etaty, zmiany i praca dorywcza.</p></details>" },
-    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.' },
-    'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj' },
+    'cookie.banner.text': { ua: 'Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', pl: 'Używamy plików cookie, aby poprawić Twoje wrażenia. Pozostając na stronie, zgadzasz się na ich użycie.', ru: 'Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь на их использование.' },
+    'cookie.banner.accept': { ua: 'Прийняти', pl: 'Akceptuj', ru: 'Принять' },
     'theme.light': { ua: 'Світла тема', pl: 'Jasny motyw' },
     'theme.dark': { ua: 'Темна тема', pl: 'Ciemny motyw' },
     'scroll.top': { ua: 'Вгору', pl: 'Do góry' },
@@ -198,14 +199,14 @@
     'blog.pagination.next': { ua: 'Вперед →', pl: 'Dalej →' },
     'jobs.search.count': { ua: 'Знайдено вакансій:', pl: 'Znaleziono ofert:' },
     'jobs.search.empty': { ua: 'Нічого не знайдено', pl: 'Brak wyników' },
-    'vacancies.title': { ua: 'Всі вакансії', pl: 'Wszystkie oferty' },
-    'vacancies.found': { ua: 'вакансій знайдено', pl: 'ofert znaleziono' },
-    'vacancies.meta_title': { ua: 'Всі вакансії — Rybezh', pl: 'Wszystkie oferty — Rybezh' },
-    'vacancies.meta_description': { ua: 'Перегляньте всі актуальні вакансії в Польщі. Фільтри за містом, категорією та зарплатою.', pl: 'Zobacz wszystkie aktualne oferty pracy w Polsce. Filtry według miasta, kategorii i wynagrodzenia.' },
-    'filters.all_categories': { ua: 'Всі категорії', pl: 'Wszystkie kategorie' },
-    'filters.salary_placeholder': { ua: 'Мін. зарплата (PLN)', pl: 'Min. wynagrodzenie (PLN)' },
-    'filters.proof75': { ua: 'Тільки з Proof ≥ 75', pl: 'Tylko z Proof ≥ 75' },
-    'filters.reset': { ua: 'Скинути', pl: 'Resetuj' },
+    'vacancies.title': { ua: 'Всі вакансії', pl: 'Wszystkie oferty', ru: 'Все вакансии' },
+    'vacancies.found': { ua: 'вакансій знайдено', pl: 'ofert znaleziono', ru: 'вакансий найдено' },
+    'vacancies.meta_title': { ua: 'Всі вакансії — Rybezh', pl: 'Wszystkie oferty — Rybezh', ru: 'Все вакансии — Rybezh' },
+    'vacancies.meta_description': { ua: 'Перегляньте всі актуальні вакансії в Польщі. Фільтри за містом, категорією та зарплатою.', pl: 'Zobacz wszystkie aktualne oferty pracy w Polsce. Filtry według miasta, kategorii i wynagrodzenia.', ru: 'Посмотрите все актуальные вакансии в Польше. Фильтры по городу, категории и зарплате.' },
+    'filters.all_categories': { ua: 'Всі категорії', pl: 'Wszystkie kategorie', ru: 'Все категории' },
+    'filters.salary_placeholder': { ua: 'Мін. зарплата (PLN)', pl: 'Min. wynagrodzenie (PLN)', ru: 'Мин. зарплата (PLN)' },
+    'filters.proof75': { ua: 'Тільки з Proof ≥ 75', pl: 'Tylko z Proof ≥ 75', ru: 'Только с Proof ≥ 75' },
+    'filters.reset': { ua: 'Скинути', pl: 'Resetuj', ru: 'Сбросить' },
     // Article template (legacy)
     'article.step1': { ua: 'Крок 1: Перевірте базові документи', pl: 'Krok 1: Sprawdź podstawowe dokumenty' },
     'article.step2': { ua: 'Крок 2: Заповніть анкету на Rybezh', pl: 'Krok 2: Wypełnij formularz Rybezh' },
@@ -243,29 +244,29 @@
     'share.title': { ua: 'Поділитися вакансією:', pl: 'Udostępnij ofertę:' },
     'footer.legal': { ua: 'Правова інформація', pl: 'Informacje prawne' },
     // Cities
-    'city.warszawa': { ua: 'Варшава', pl: 'Warszawa' },
-    'city.krakow': { ua: 'Краків', pl: 'Kraków' },
-    'city.gdansk': { ua: 'Гданськ', pl: 'Gdańsk' },
-    'city.wroclaw': { ua: 'Вроцлав', pl: 'Wrocław' },
-    'city.poznan': { ua: 'Познань', pl: 'Poznań' },
-    'city.lodz': { ua: 'Лодзь', pl: 'Łódź' },
-    'city.katowice': { ua: 'Катовіце', pl: 'Katowice' },
-    'city.szczecin': { ua: 'Щецін', pl: 'Szczecin' },
-    'city.lublin': { ua: 'Люблін', pl: 'Lublin' },
-    'city.bialystok': { ua: 'Білосток', pl: 'Białystok' },
-    'city.bydgoszcz': { ua: 'Бидгощ', pl: 'Bydgoszcz' },
-    'city.rzeszow': { ua: 'Жешув', pl: 'Rzeszów' },
-    'city.torun': { ua: 'Торунь', pl: 'Toruń' },
-    'city.czestochowa': { ua: 'Ченстохова', pl: 'Częstochowa' },
-    'city.radom': { ua: 'Радом', pl: 'Radom' },
-    'city.sosnowiec': { ua: 'Сосновець', pl: 'Sosnowiec' },
-    'city.kielce': { ua: 'Кельце', pl: 'Kielce' },
-    'city.gliwice': { ua: 'Гливіце', pl: 'Gliwice' },
-    'city.olsztyn': { ua: 'Ольштин', pl: 'Olsztyn' },
-    'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała' },
-    'city.plock': { ua: 'Плоцьк', pl: 'Płock' },
-    'city.gdynia': { ua: 'Гдиня', pl: 'Gdynia' },
-    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta' },
+    'city.warszawa': { ua: 'Варшава', pl: 'Warszawa', ru: 'Варшава' },
+    'city.krakow': { ua: 'Краків', pl: 'Kraków', ru: 'Краков' },
+    'city.gdansk': { ua: 'Гданськ', pl: 'Gdańsk', ru: 'Гданьск' },
+    'city.wroclaw': { ua: 'Вроцлав', pl: 'Wrocław', ru: 'Вроцлав' },
+    'city.poznan': { ua: 'Познань', pl: 'Poznań', ru: 'Познань' },
+    'city.lodz': { ua: 'Лодзь', pl: 'Łódź', ru: 'Лодзь' },
+    'city.katowice': { ua: 'Катовіце', pl: 'Katowice', ru: 'Катовице' },
+    'city.szczecin': { ua: 'Щецін', pl: 'Szczecin', ru: 'Щецин' },
+    'city.lublin': { ua: 'Люблін', pl: 'Lublin', ru: 'Люблин' },
+    'city.bialystok': { ua: 'Білосток', pl: 'Białystok', ru: 'Белосток' },
+    'city.bydgoszcz': { ua: 'Бидгощ', pl: 'Bydgoszcz', ru: 'Быдгощ' },
+    'city.rzeszow': { ua: 'Жешув', pl: 'Rzeszów', ru: 'Жешув' },
+    'city.torun': { ua: 'Торунь', pl: 'Toruń', ru: 'Торунь' },
+    'city.czestochowa': { ua: 'Ченстохова', pl: 'Częstochowa', ru: 'Ченстохова' },
+    'city.radom': { ua: 'Радом', pl: 'Radom', ru: 'Радом' },
+    'city.sosnowiec': { ua: 'Сосновець', pl: 'Sosnowiec', ru: 'Сосновец' },
+    'city.kielce': { ua: 'Кельце', pl: 'Kielce', ru: 'Кельце' },
+    'city.gliwice': { ua: 'Гливіце', pl: 'Gliwice', ru: 'Гливице' },
+    'city.olsztyn': { ua: 'Ольштин', pl: 'Olsztyn', ru: 'Ольштын' },
+    'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała', ru: 'Бельско-Бяла' },
+    'city.plock': { ua: 'Плоцьк', pl: 'Płock', ru: 'Плоцк' },
+    'city.gdynia': { ua: 'Гдиня', pl: 'Gdynia', ru: 'Гдыня' },
+    'city.all': { ua: 'Всі міста', pl: 'Wszystkie miasta', ru: 'Все города' },
 
     // For Employers page
     'nav.employers': { ua: 'Для роботодавців', pl: 'Dla pracodawców' },
@@ -515,12 +516,104 @@
     return text.replace(/\$\{year\}/g, String(new Date().getFullYear()));
   }
 
+  function toRussianFallbackText(input) {
+    if (input === null || input === undefined) return '';
+    let text = String(input);
+    const replacements = [
+      ['Пошук роботи у Польщі', 'Поиск работы в Польше'],
+      ['Знайдіть роботу в Польщі', 'Найдите работу в Польше'],
+      ['Актуальні вакансії в різних сферах по всій Польщі.', 'Актуальные вакансии в разных сферах по всей Польше.'],
+      ['Легальні умови та підтримка.', 'Легальные условия и поддержка.'],
+      ['Пошук за містом або типом роботи', 'Поиск по городу или типу работы'],
+      ['Пошук за мистом або типом роботи', 'Поиск по городу или типу работы'],
+      ['Знайти', 'Найти'],
+      ['Прийняти', 'Принять'],
+      ['Готові почати?', 'Готовы начать?'],
+      ['Отримайте консультацію та почніть заробляти вже сьогодні.', 'Получите консультацию и начните зарабатывать уже сегодня.'],
+      ['Вси вакансии', 'Все вакансии'],
+      ['Як читати вакансии на Rybezh', 'Как читать вакансии на Rybezh'],
+      ['Ми стараемось писати без «води»: що робити, який график, яки документи и що з житлом/доиздом. Якщо бачите незрозумилий пункт — краще уточнити до старту.', 'Мы стараемся писать без «воды»: что делать, какой график, какие документы и что с жильем/проездом. Если видите непонятный пункт — лучше уточнить перед стартом.'],
+      ['Фильтруйте за мистом и категориею — так швидше знайдете адекватни варианти.', 'Фильтруйте по городу и категории — так быстрее найдете адекватные варианты.'],
+      ['Дивиться на режим роботи та перерви — вони часто важливиши за «гучни бонуси».', 'Смотрите на режим работы и перерывы — они часто важнее «громких бонусов».'],
+      ['Пид кожну вакансию можна подати заявку — ми допоможемо уточнити детали.', 'Под каждую вакансию можно подать заявку — мы поможем уточнить детали.'],
+      ['Допомагаемо знайти роботу в Польщи та пидибрати вакансию пид ваш досвид. Пидтримка 24/7.', 'Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.'],
+      ['Нови вакансии та статти.', 'Новые вакансии и статьи.'],
+      ['Вси категории', 'Все категории'],
+      ['Вси миста', 'Все города'],
+      ['Логистика та доставка', 'Логистика и доставка'],
+      ['Будивництво', 'Строительство'],
+      ['Виробництво', 'Производство'],
+      ['Прибирання', 'Уборка'],
+      ['Роздрибна торгивля', 'Розничная торговля'],
+      ['Медицина та догляд', 'Медицина и уход'],
+      ['IT та технологии', 'IT и технологии'],
+      ['Сильське господарство', 'Сельское хозяйство'],
+      ['Освита', 'Образование'],
+      ['Краса та здоров\'я', 'Красота и здоровье'],
+      ['Безпека', 'Безопасность'],
+      ['Кракив', 'Краков'],
+      ['Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', 'Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь на их использование.'],
+      ['Головна', 'Главная'],
+      ['Вакансії', 'Вакансии'],
+      ['Категорії', 'Категории'],
+      ['Інструменти', 'Инструменты'],
+      ['Про нас', 'О нас'],
+      ['Контакти', 'Контакты'],
+      ['Для роботодавців', 'Для работодателей'],
+      ['Отримати консультацію', 'Получить консультацию'],
+      ['Подати заявку', 'Подать заявку'],
+      ['Навігація', 'Навигация'],
+      ['Підписка', 'Подписка'],
+      ['Політика конфіденційності', 'Политика конфиденциальности'],
+      ['Умови користування', 'Условия использования'],
+      ['Реквізити', 'Реквизиты'],
+      ['Всі права захищені', 'Все права защищены'],
+      ['Схожі вакансії', 'Похожие вакансии']
+    ];
+    for (const [from, to] of replacements) {
+      text = text.split(from).join(to);
+    }
+    text = text
+      .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+      .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.');
+    return text
+      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
+        і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
+      }[ch] || ch))
+      .replace(/[ʼ’]/g, '\'')
+      .replace(/\bПольщи\b/gi, 'Польше')
+      .replace(/\bЗнайдить\b/gi, 'Найдите')
+      .replace(/\bризних\b/gi, 'разных')
+      .replace(/\bвсий\b/gi, 'всей')
+      .replace(/\bЛегальне\b/gi, 'Легальные')
+      .replace(/\bумови\b/gi, 'условия')
+      .replace(/\bпидтримка\b/gi, 'поддержка')
+      .replace(/\bшукае\b/gi, 'ищет')
+      .replace(/\bдоговир\b/gi, 'договор')
+      .replace(/\bдосвид\b/gi, 'опыт')
+      .replace(/\bпрацивник\b/gi, 'сотрудник')
+      .replace(/\bкоманди\b/gi, 'команды')
+      .replace(/\bзагалом\b/gi, 'в целом')
+      .replace(/\bуточнити\b/gi, 'уточнить')
+      .replace(/\bгданськ\b/gi, 'Гданьск')
+      .replace(/\bкракив\b/gi, 'Краков')
+      .replace(/\bвроцлав\b/gi, 'Вроцлав')
+      .replace(/\bсосновець\b/gi, 'Сосновец');
+  }
+
+  function getTranslationText(dict, lang) {
+    if (!dict) return '';
+    if (dict[lang] !== undefined) return dict[lang];
+    if (lang === 'ru') return toRussianFallbackText(dict.ua || dict.pl || '');
+    return dict.ua || '';
+  }
+
   function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const dict = translations[key];
       if (!dict) return;
-      const text = (dict[lang] !== undefined) ? dict[lang] : (dict.ua || '');
+      const text = getTranslationText(dict, lang);
       const attr = el.getAttribute('data-i18n-attr');
       if (attr) {
         try { el.setAttribute(attr, interpolateText(text)); } catch (e) { el.textContent = interpolateText(text); }
@@ -907,7 +1000,7 @@
   // ============================================
   function initDateFormatting() {
     const lang = getLang();
-    const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+    const locale = lang === 'pl' ? 'pl-PL' : (lang === 'ru' ? 'ru-RU' : 'uk-UA');
     
     document.querySelectorAll('[data-format-date]').forEach(el => {
       const dateStr = el.getAttribute('data-format-date');
@@ -1041,14 +1134,15 @@
         const name = nameInput ? nameInput.value.trim() : '';
         const contact = contactInput ? contactInput.value.trim() : '';
         const message = messageInput ? messageInput.value.trim() : '';
+        const currentLang = getLang();
 
         if (!name || !contact) {
-          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : 'Заповніть імʼя та контакт.';
+          if (status) status.textContent = currentLang === 'pl' ? 'Uzupełnij imię i kontakt.' : (currentLang === 'ru' ? 'Заполните имя и контакт.' : 'Заповніть імʼя та контакт.');
           return;
         }
 
         if (button) button.disabled = true;
-        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : 'Надсилаємо...';
+        if (status) status.textContent = currentLang === 'pl' ? 'Wysyłanie...' : (currentLang === 'ru' ? 'Отправляем...' : 'Надсилаємо...');
 
         try {
           let city = '';
@@ -1069,18 +1163,18 @@
           formData.append('type', 'contact');
           formData.append('city', city);
           formData.append('page', window.location.href);
-          formData.append('lang', getLang());
+          formData.append('lang', currentLang);
           formData.append('ts', new Date().toISOString());
 
           await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
 
-          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : 'Дякуємо! Ми відповімо найближчим часом.';
+          if (status) status.textContent = currentLang === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : (currentLang === 'ru' ? 'Спасибо! Мы свяжемся с вами в ближайшее время.' : 'Дякуємо! Ми відповімо найближчим часом.');
           if (nameInput) nameInput.value = '';
           if (contactInput) contactInput.value = '';
           if (messageInput) messageInput.value = '';
         } catch (err) {
           console.error(err);
-          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : 'Помилка відправки. Спробуйте ще раз.';
+          if (status) status.textContent = currentLang === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : (currentLang === 'ru' ? 'Ошибка отправки. Попробуйте ещё раз.' : 'Помилка відправки. Спробуйте ще раз.');
         } finally {
           if (button) button.disabled = false;
         }
@@ -1105,7 +1199,7 @@
     };
 
     const formatDate = (date, lang) => {
-      const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+      const locale = lang === 'pl' ? 'pl-PL' : (lang === 'ru' ? 'ru-RU' : 'uk-UA');
       return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
     };
 
@@ -1132,12 +1226,12 @@
 
       const author = document.createElement('div');
       author.className = 'comment-author';
-      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : 'Анонім');
+      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : (lang === 'ru' ? 'Аноним' : 'Анонім'));
 
       if (item.isTeam) {
         const badge = document.createElement('span');
         badge.className = 'comment-badge';
-        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : 'Відповідь Rybezh';
+        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : (lang === 'ru' ? 'Ответ Rybezh' : 'Відповідь Rybezh');
         author.appendChild(badge);
       }
 
@@ -1160,7 +1254,7 @@
       const replyBtn = document.createElement('button');
       replyBtn.className = 'comment-reply-btn';
       replyBtn.type = 'button';
-      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : 'Відповісти';
+      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : (lang === 'ru' ? 'Ответить' : 'Відповісти');
       actions.appendChild(replyBtn);
 
       wrap.appendChild(header);
@@ -1247,11 +1341,11 @@
 
           const name = nameInput ? nameInput.value.trim() : '';
           const text = messageInput ? messageInput.value.trim() : '';
-          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : 'UA');
+          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : (lang === 'ru' ? 'RU' : 'UA'));
           const country = { flag: flagMap[countryLabel] || '🌍', label: countryLabel };
 
           if (!name || !text) {
-            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : 'Вкажіть імʼя та коментар.';
+            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : (lang === 'ru' ? 'Укажите имя и комментарий.' : 'Вкажіть імʼя та коментар.');
             return;
           }
 
@@ -1269,7 +1363,7 @@
           stored.unshift(newComment);
           thread.insertBefore(renderComment(newComment, lang), thread.firstChild);
           if (countEl) countEl.textContent = String(data.length + stored.length);
-          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : 'Коментар додано.';
+          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : (lang === 'ru' ? 'Комментарий добавлен.' : 'Коментар додано.');
 
           if (nameInput) nameInput.value = '';
           if (messageInput) messageInput.value = '';

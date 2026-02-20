@@ -15,11 +15,59 @@
   function isPlPage() {
     return window.location.pathname.endsWith('-pl.html');
   }
+  function isRuPage() {
+    return window.location.pathname.endsWith('-ru.html');
+  }
+  function toRuText(input) {
+    if (input === null || input === undefined) return '';
+    const replacements = [
+      [/\bВси\b/gi, 'Все'],
+      // Support both spellings: "Краків" and normalized fallback "Кракив"
+      [/\bКракі?в\b/gi, 'Краков'],
+      [/\bПольщі\b/gi, 'Польше'],
+      [/\bГданськ\b/gi, 'Гданьск'],
+      [/\bСосновець\b/gi, 'Сосновец'],
+      [/\bВроцлав\b/gi, 'Вроцлав'],
+      [/\bСтабільна\b/gi, 'Стабильная'],
+      [/\bбезпечна\b/gi, 'безопасная'],
+      [/\bвакансія\b/gi, 'вакансия'],
+      [/\bвідгуками\b/gi, 'отзывам'],
+      [/\bвидгуками\b/gi, 'отзывам'],
+      [/\bУмови\b/gi, 'Условия'],
+      [/\bзагалом\b/gi, 'в целом'],
+      [/\bварто\b/gi, 'стоит'],
+      [/\bуточнити\b/gi, 'уточнить'],
+      [/\bшукае\b/gi, 'ищет'],
+      [/\bдосвид\b/gi, 'опыт'],
+      [/\bпрацивник\b/gi, 'сотрудник'],
+      [/\bдоговир\b/gi, 'договор'],
+      [/\bробота\b/gi, 'работа'],
+      [/\bкоманди\b/gi, 'команды']
+    ];
+    let text = String(input)
+      .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
+      .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.')
+      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({ і:'и', І:'И', ї:'и', Ї:'И', є:'е', Є:'Е', ґ:'г', Ґ:'Г' }[ch] || ch));
+    for (const [pattern, replacement] of replacements) {
+      text = text.replace(pattern, replacement);
+    }
+    return text;
+  }
+  function getLocalizedValue(item, base, lang) {
+    if (!item) return '';
+    if (lang === 'pl') return item[`${base}_pl`] || item[base] || '';
+    if (lang === 'ru') return toRuText(item[`${base}_ru`] || item[base] || '');
+    return item[`${base}_ua`] || item[base] || '';
+  }
   function vacanciesUrl() {
-    return isPlPage() ? '/vacancies-pl.html' : '/vacancies.html';
+    if (isPlPage()) return '/vacancies-pl.html';
+    if (isRuPage()) return '/vacancies-ru.html';
+    return '/vacancies.html';
   }
   function jobUrl(slug) {
-    return isPlPage() ? `/${slug}-pl.html` : `/${slug}.html`;
+    if (isPlPage()) return `/${slug}-pl.html`;
+    if (isRuPage()) return `/${slug}-ru.html`;
+    return `/${slug}.html`;
   }
 
   function extractSlugFromVacancyUrl(rawUrl) {
@@ -29,7 +77,9 @@
       const last = (parsed.pathname.split('/').filter(Boolean).pop() || '').toLowerCase();
       if (!last.endsWith('.html')) return '';
       const base = last.replace(/\.html$/, '');
-      return base.endsWith('-pl') ? base.slice(0, -3) : base;
+      if (base.endsWith('-pl')) return base.slice(0, -3);
+      if (base.endsWith('-ru')) return base.slice(0, -3);
+      return base;
     } catch (_) {
       return '';
     }
@@ -162,10 +212,19 @@
   }
 
   function getProofVerdict(score, lang) {
-    const isPl = lang === 'pl';
-    if (score >= 80) return isPl ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
-    if (score >= 60) return isPl ? 'Warunki ogólnie OK, warto doprecyzować szczegóły.' : 'Умови загалом ок, але варто уточнити деталі.';
-    return isPl ? 'Podwyższone ryzyko — sprawdź warunki przed startem.' : 'Підвищений ризик — перевірте умови перед стартом.';
+    if (lang === 'pl') {
+      if (score >= 80) return 'Stabilna i bezpieczna oferta według opinii.';
+      if (score >= 60) return 'Warunki ogólnie OK, warto doprecyzować szczegóły.';
+      return 'Podwyższone ryzyko — sprawdź warunki przed startem.';
+    }
+    if (lang === 'ru') {
+      if (score >= 80) return 'Стабильная и безопасная вакансия по отзывам.';
+      if (score >= 60) return 'Условия в целом хорошие, но стоит уточнить детали.';
+      return 'Повышенный риск — проверьте условия перед стартом.';
+    }
+    if (score >= 80) return 'Стабільна та безпечна вакансія за відгуками.';
+    if (score >= 60) return 'Умови загалом ок, але варто уточнити деталі.';
+    return 'Підвищений ризик — перевірте умови перед стартом.';
   }
 
   function getProofColorClass(score) {
@@ -196,8 +255,8 @@
 
     // Desktop: mega-menu with icons + descriptions
     const buildDesktopLinks = () => categories.map(cat => {
-      const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
-      const desc = lang === 'pl' ? cat.description_pl : cat.description_ua;
+      const name = getLocalizedValue(cat, 'name', lang);
+      const desc = getLocalizedValue(cat, 'description', lang);
       return `<a href="${vacanciesUrl()}?category=${cat.id}" class="mega-item">
         <span class="mega-icon">${cat.icon}</span>
         <span class="mega-text">
@@ -209,7 +268,7 @@
 
     // Mobile: collapsible with icon grid
     const buildMobileLinks = () => categories.map(cat => {
-      const name = lang === 'pl' ? cat.name_pl : cat.name_ua;
+      const name = getLocalizedValue(cat, 'name', lang);
       return `<a href="${vacanciesUrl()}?category=${cat.id}">${cat.icon} ${name}</a>`;
     }).join('');
 
@@ -219,7 +278,7 @@
     }
 
     if (mobileNav) {
-      mobileNav.innerHTML = `<button type="button" class="nav-link mobile-cat__toggle" onclick="this.parentElement.classList.toggle('is-open')">${lang === 'pl' ? 'Kategorie' : 'Категорії'} <span class="mobile-cat__arrow">▸</span></button><div class="mobile-cat__menu">${buildMobileLinks()}</div>`;
+      mobileNav.innerHTML = `<button type="button" class="nav-link mobile-cat__toggle" onclick="this.parentElement.classList.toggle('is-open')">${lang === 'pl' ? 'Kategorie' : (lang === 'ru' ? 'Категории' : 'Категорії')} <span class="mobile-cat__arrow">▸</span></button><div class="mobile-cat__menu">${buildMobileLinks()}</div>`;
     }
   }
 
@@ -237,8 +296,8 @@
         card.className = 'category-card';
         card.innerHTML = `
           <span class="category-icon">${cat.icon}</span>
-          <h3>${lang === 'pl' ? cat.name_pl : cat.name_ua}</h3>
-          <p>${lang === 'pl' ? cat.description_pl : cat.description_ua}</p>
+          <h3>${getLocalizedValue(cat, 'name', lang)}</h3>
+          <p>${getLocalizedValue(cat, 'description', lang)}</p>
         `;
         categoryGrid.appendChild(card);
       });
@@ -320,7 +379,7 @@
       window.CATEGORIES.forEach(cat => {
         const option = document.createElement('option');
         option.value = cat.id;
-        option.textContent = lang === 'pl' ? cat.name_pl : cat.name_ua;
+        option.textContent = getLocalizedValue(cat, 'name', lang);
         categoryFilter.appendChild(option);
       });
     }
@@ -367,8 +426,8 @@
         // Search query
         if (searchQuery) {
           const lang = localStorage.getItem('site_lang') || 'ua';
-          const title = (lang === 'pl' ? job.title_pl : job.title).toLowerCase();
-          const excerpt = (lang === 'pl' ? job.excerpt_pl : job.excerpt).toLowerCase();
+          const title = getLocalizedValue(job, 'title', lang).toLowerCase();
+          const excerpt = getLocalizedValue(job, 'excerpt', lang).toLowerCase();
           if (!title.includes(searchQuery) && !excerpt.includes(searchQuery)) {
             return false;
           }
@@ -433,7 +492,9 @@
       const lang = localStorage.getItem('site_lang') || 'ua';
       const noResultsText = lang === 'pl'
         ? 'Nie znaleziono ofert. Spróbuj zmienić filtry.'
-        : 'Вакансій не знайдено. Спробуйте змінити фільтри.';
+        : (lang === 'ru'
+          ? 'Вакансии не найдены. Попробуйте изменить фильтры.'
+          : 'Вакансій не знайдено. Спробуйте змінити фільтри.');
       container.innerHTML = `<p style="text-align: center; padding: 3rem; color: #6b7280;">${noResultsText}</p>`;
       return;
     }
@@ -448,7 +509,7 @@
       if (window.CATEGORIES) {
         const cat = window.CATEGORIES.find(c => c.id === job.category);
         if (cat) {
-          categoryName = lang === 'pl' ? cat.name_pl : cat.name_ua;
+          categoryName = getLocalizedValue(cat, 'name', lang);
         }
       }
 
@@ -459,17 +520,17 @@
       const proofLine = `<div class="job-proof-chip ${getProofColorClass(proof.score)}">🔍 Rybezh Proof: ${proof.score}/100${reviewsSuffix}</div>
            <p class="job-proof-note">${getProofVerdict(proof.score, lang)}</p>`;
       const dateLine = job.date_posted
-        ? `<p class="job-date">📅 ${lang === 'pl' ? 'Dodano' : 'Додано'} <span data-format-date="${job.date_posted}">${job.date_posted}</span></p>`
+        ? `<p class="job-date">📅 ${lang === 'pl' ? 'Dodano' : (lang === 'ru' ? 'Добавлено' : 'Додано')} <span data-format-date="${job.date_posted}">${job.date_posted}</span></p>`
         : '';
 
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
-        <h3>${lang === 'pl' ? (job.title_pl || job.title) : job.title}</h3>
-        <p class="job-city">📍 ${lang === 'pl' ? (job.city_pl || job.city) : job.city}</p>
+        <h3>${getLocalizedValue(job, 'title', lang)}</h3>
+        <p class="job-city">📍 ${getLocalizedValue(job, 'city', lang)}</p>
         ${job.salary ? `<p class="job-salary">💰 ${job.salary}</p>` : ''}
         ${dateLine}
         ${proofLine}
-        <p class="job-excerpt">${lang === 'pl' ? (job.excerpt_pl || job.excerpt) : job.excerpt}</p>
+        <p class="job-excerpt">${getLocalizedValue(job, 'excerpt', lang)}</p>
       `;
 
       container.appendChild(card);
