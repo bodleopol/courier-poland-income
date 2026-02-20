@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Как проверить вакансию на мошенничество — Rybezh</title>
+  <meta name="description" content="10 признаков мошеннических вакансий в Польше. Проверьте любое объявление за 2 минуты перед откликом.">
+  <link rel="canonical" href="https://rybezh.site/red-flag-ru.html">
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/red-flag.html">
+  <link rel="alternate" hreflang="ru" href="https://rybezh.site/red-flag-ru.html">
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/red-flag.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rybezh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rybezh.site/red-flag-ru.html">
+  <meta property="og:title" content="Как проверить вакансию на мошенничество — Rybezh">
+  <meta property="og:description" content="10 признаков мошеннических вакансий в Польше. Проверьте любое объявление за 2 минуты перед откликом.">
+  <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Rybezh">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Проверка вакансий — Red Flag Checker",
+    "url": "https://rybezh.site/red-flag-ru.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+    "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+  }
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .tool-page { max-width: 800px; margin: 0 auto; }
+    .tool-hero { text-align: center; padding: 2.5rem 0 1rem; }
+    .tool-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .tool-hero p { color: var(--color-secondary); font-size: 1.1rem; }
+    .rf-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 1.5rem; }
+    .rf-card h2 { font-size: 1.3rem; margin: 0 0 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.95rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 0.65rem 0.85rem; border-radius: 10px;
+      border: 1px solid var(--color-border); background: var(--color-surface-alt);
+      font-size: 0.95rem; color: var(--color-primary); font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--color-accent); outline: none; }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-group .hint { font-size: 0.82rem; color: var(--color-secondary); margin-top: 0.2rem; }
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li { padding: 0.85rem 1rem; border-radius: 10px; margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; transition: all 0.2s; border: 2px solid transparent; user-select: none; }
+    .checklist li:hover { background: rgba(0,0,0,0.02); }
+    .checklist li.checked { background: rgba(220,38,38,0.06); border-color: rgba(220,38,38,0.2); }
+    .checklist li input[type="checkbox"] { margin-top: 0.15rem; width: 18px; height: 18px; accent-color: #dc2626; flex-shrink: 0; }
+    .checklist .flag-text { flex: 1; }
+    .checklist .flag-text strong { display: block; font-size: 0.95rem; }
+    .checklist .flag-text span { font-size: 0.85rem; color: var(--color-secondary); }
+    .result-panel { border-radius: 16px; padding: 2rem; text-align: center; margin: 1.5rem 0; transition: all 0.3s; }
+    .result-panel.safe { background: rgba(22,163,74,0.08); border: 2px solid rgba(22,163,74,0.3); }
+    .result-panel.warning { background: rgba(245,158,11,0.08); border: 2px solid rgba(245,158,11,0.3); }
+    .result-panel.danger { background: rgba(220,38,38,0.08); border: 2px solid rgba(220,38,38,0.3); }
+    .result-panel .emoji { font-size: 3rem; margin-bottom: 0.75rem; }
+    .result-panel h3 { margin: 0 0 0.5rem; font-size: 1.4rem; }
+    .result-panel p { color: var(--color-secondary); margin: 0; line-height: 1.6; }
+    .score-bar { width: 100%; height: 12px; border-radius: 6px; background: #e5e7eb; margin: 1rem 0; overflow: hidden; }
+    .score-bar .fill { height: 100%; border-radius: 6px; transition: width 0.5s ease, background 0.5s ease; }
+    .tip-card { background: rgba(0,166,126,0.05); border-left: 4px solid var(--color-accent); border-radius: 0 12px 12px 0; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+    .tip-card strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .tip-card p { font-size: 0.9rem; color: var(--color-secondary); margin: 0; line-height: 1.5; }
+    .btn-check { display: inline-flex; align-items: center; gap: 0.5rem; background: #dc2626; color: #fff; padding: 0.8rem 2rem; border: none; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+    .btn-check:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(220,38,38,0.3); }
+    .share-row { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+    .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.15s; }
+    .share-btn:hover { transform: translateY(-1px); }
+    .share-btn.tg { background: #0088cc; color: #fff; }
+    .share-btn.fb { background: #1877f2; color: #fff; }
+    .report-note { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); border-radius: 12px; padding: 1.25rem; margin-top: 1.5rem; }
+    .report-note h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+    .report-note p { margin: 0; font-size: 0.9rem; color: var(--color-secondary); line-height: 1.6; }
+    .report-note a { color: var(--color-accent); }
+  </style>
+</head>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link">Главная</a>
+        <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+        <div class="nav-dropdown" aria-label="Категории">
+          <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu" id="categoryNav"></div>
+        </div>
+        <div class="nav-dropdown" aria-label="Инструменты">
+          <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+            <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
+            <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
+            <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
+            <a href="/map-ru.html">🗺️ Карта земляков</a>
+          </div>
+        </div>
+        <a href="/blog-ru.html" class="nav-link">Блог</a>
+        <a href="/about-ru.html" class="nav-link">О нас</a>
+        <a href="/faq-ru.html" class="nav-link">FAQ</a>
+        <a href="/contact-ru.html" class="nav-link">Контакты</a>
+        <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+        <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
+        <div class="header-lang">
+          <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+          <button class="lang-btn lang-btn--active">RU</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Главная</a>
+      <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+      <div class="mobile-categories" id="mobileCategoryNav"></div>
+      <div class="mobile-tools">
+        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
+        <div class="mobile-tools__menu">
+          <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
+          <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
+          <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
+          <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
+        </div>
+      </div>
+      <a href="/blog-ru.html" class="nav-link">Блог</a>
+      <a href="/about-ru.html" class="nav-link">О нас</a>
+      <a href="/faq-ru.html" class="nav-link">FAQ</a>
+      <a href="/contact-ru.html" class="nav-link">Контакты</a>
+      <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" onclick="location.href='/index.html'">UA</button>
+        <button class="lang-btn lang-btn--active">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tool-page">
+      <div class="tool-hero">
+        <h1>🚩 Проверка вакансий: красные флаги</h1>
+        <p>Проверь вакансию на признаки мошенничества — не дай себя обмануть</p>
+      </div>
+
+      <div class="rf-card">
+        <h2>🔍 Опиши вакансию</h2>
+        <div class="form-group">
+          <label>Ссылка или название вакансии</label>
+          <input type="text" id="rf-link" placeholder="https://olx.pl/... или 'Упаковка конфет 5000 zł'">
+        </div>
+        <div class="form-group">
+          <label>Где нашли? (необязательно)</label>
+          <select id="rf-source">
+            <option value="">— Выберите —</option>
+            <option value="olx">OLX</option>
+            <option value="facebook">Facebook / Группа</option>
+            <option value="telegram">Telegram</option>
+            <option value="pracuj">Pracuj.pl</option>
+            <option value="indeed">Indeed</option>
+            <option value="jooble">Jooble</option>
+            <option value="other">Другое (сайт, объявление)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Что обещают? (основное)</label>
+          <textarea id="rf-promises" placeholder="Например: 5000 zł чистыми, жильё бесплатно, оплата проезда, без опыта, выход завтра..."></textarea>
+        </div>
+      </div>
+
+      <div class="rf-card">
+        <h2>🚩 Чек-лист красных флагов</h2>
+        <p style="color:var(--color-secondary);font-size:0.9rem;margin-bottom:1rem;">Отметь всё, что относится к этой вакансии:</p>
+
+        <ul class="checklist" id="checklist">
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Просят деньги вперёд</strong>
+              <span>Оплата за «оформление», «визу», «бронь места» — это мошенничество в 99% случаев</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Зарплата нереально высокая</strong>
+              <span>«5000–8000 zł на руки без опыта» — так не бывает. Средняя на старте: 3000–4000 zł нетто</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Нет названия компании</strong>
+              <span>Легальный работодатель всегда указывает название, NIP, адрес. Если «компанию узнаете позже» — это подозрительно</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Давление «срочно, до завтра»</strong>
+              <span>Мошенники торопят, чтобы вы не успели проверить. Нормальный работодатель даёт время на раздумья</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Общаются только в мессенджерах</strong>
+              <span>Только WhatsApp/Telegram, без официального email или телефона компании</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Не дают договор заранее</strong>
+              <span>«Договор подпишете на месте» — легальные агентства присылают договор до выезда</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Забирают паспорт</strong>
+              <span>НИКТО не имеет права забирать ваши документы. Это признак торговли людьми!</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Бесплатное жильё + большие вычеты</strong>
+              <span>Обещают бесплатное жильё, но потом вычитают 1000–1500 zł из зарплаты за «койко-место»</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Неясное место работы</strong>
+              <span>«Работа по всей Польше», «точный адрес сообщим позже» — как проверить, если неизвестно где?</span>
+            </div>
+          </li>
+          <li onclick="toggleFlag(this)">
+            <input type="checkbox">
+            <div class="flag-text">
+              <strong>Требуют фото паспорта / PESEL</strong>
+              <span>Личные данные НЕ нужны на этапе первого контакта. Это может быть кража личных данных</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div style="text-align:center;margin:1.5rem 0;">
+        <button class="btn-check" onclick="analyze()">🔍 Проверить вакансию</button>
+      </div>
+
+      <div id="rf-result" style="display:none;">
+        <div class="result-panel" id="result-panel">
+          <div class="emoji" id="result-emoji">✅</div>
+          <h3 id="result-title">Выглядит нормально</h3>
+          <div class="score-bar"><div class="fill" id="score-fill"></div></div>
+          <p id="result-desc"></p>
+        </div>
+
+        <div class="share-row">
+          <a class="share-btn tg" id="rf-share-tg" href="#" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Предупредить в Telegram
+          </a>
+          <a class="share-btn fb" id="rf-share-fb" href="#" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div class="rf-card" style="margin-top:1.5rem;">
+        <h2>💡 Как защитить себя</h2>
+        <div class="tip-card">
+          <strong>✅ Проверь компанию в KRS / CEIDG</strong>
+          <p>Каждая легальная фирма зарегистрирована. Ищи на <a href="https://ekrs.ms.gov.pl" target="_blank" rel="noopener">ekrs.ms.gov.pl</a> или <a href="https://prod.ceidg.gov.pl" target="_blank" rel="noopener">prod.ceidg.gov.pl</a></p>
+        </div>
+        <div class="tip-card">
+          <strong>✅ Требуй договор до выезда</strong>
+          <p>Легальный работодатель всегда пришлёт договор для ознакомления ДО того, как вы куда-то поедете</p>
+        </div>
+        <div class="tip-card">
+          <strong>✅ Позвони в PIP (Государственная инспекция труда)</strong>
+          <p>Горячая линия: <strong>801 002 006</strong>. Помогут проверить любую вакансию</p>
+        </div>
+        <div class="tip-card">
+          <strong>✅ Никогда не отправляй деньги вперёд</strong>
+          <p>Ни один легальный работодатель не берёт деньги за трудоустройство. Это запрещено законом!</p>
+        </div>
+        <div class="tip-card">
+          <strong>✅ Сохрани всю переписку</strong>
+          <p>Скриншоты объявлений, сообщения, номера — это доказательства, если понадобится жалоба</p>
+        </div>
+      </div>
+
+      <div class="report-note">
+        <h3>⚠️ Столкнулись с мошенничеством?</h3>
+        <p>
+          Сообщите нам через <a href="https://t.me/rybezh_site" target="_blank" rel="noopener">Telegram @rybezh_site</a> или <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a> — мы добавим эту информацию в нашу базу и предупредим других.<br><br>
+          Также подайте жалобу в <strong>Policia (997)</strong> или через <a href="https://www.gov.pl/web/sprawiedliwosc/zglos-przestepstwo" target="_blank" rel="noopener">gov.pl</a>.
+        </p>
+      </div>
+
+      <div style="text-align:center;margin:2rem 0;">
+        <a href="/vacancies-ru.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;">Безопасные вакансии на Rybezh</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p>Помогаем найти работу в Польше и подобрать вакансию под ваш опыт. Поддержка 24/7.</p>
+          <div class="footer-social">
+            <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <a href="mailto:contacts@rybezh.site" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <a href="/">Главная</a>
+          <a href="/about-ru.html">О нас</a>
+          <a href="/blog-ru.html">Блог</a>
+          <a href="/faq-ru.html">FAQ</a>
+          <a href="/contact-ru.html">Контакты</a>
+          <a href="/for-employers-ru.html">Для работодателей</a>
+        </div>
+        <div class="footer-col">
+          <h4>Вакансии</h4>
+          <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
+          <a href="/vacancies-ru.html?city=krakow">Краков</a>
+          <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
+          <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
+        </div>
+        <div class="footer-col">
+          <h4>Рассылка</h4>
+          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
+          <form class="footer-newsletter-form">
+            <input type="email" required placeholder="Ваш email">
+            <button type="submit" aria-label="Subscribe">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply-ru.html">Подать заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy-ru.html">Политика конфиденциальности</a>
+          <a href="/terms-ru.html">Условия использования</a>
+          <a href="/company-ru.html">Реквизиты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
+    <button id="cookie-accept-btn">Принять</button>
+  </div>
+  <script src="/main.js"></script>
+
+  <script>
+  (function() {
+    window.toggleFlag = function(li) {
+      const cb = li.querySelector('input[type="checkbox"]');
+      cb.checked = !cb.checked;
+      li.classList.toggle('checked', cb.checked);
+    };
+
+    window.analyze = function() {
+      const checks = document.querySelectorAll('#checklist input[type="checkbox"]');
+      let flagged = 0;
+      checks.forEach(cb => { if (cb.checked) flagged++; });
+
+      const total = checks.length;
+      const pct = Math.round((flagged / total) * 100);
+      const panel = document.getElementById('result-panel');
+      const emoji = document.getElementById('result-emoji');
+      const title = document.getElementById('result-title');
+      const desc = document.getElementById('result-desc');
+      const fill = document.getElementById('score-fill');
+
+      document.getElementById('rf-result').style.display = 'block';
+      fill.style.width = pct + '%';
+
+      if (flagged === 0) {
+        panel.className = 'result-panel safe';
+        emoji.textContent = '✅';
+        title.textContent = 'Выглядит нормально';
+        desc.innerHTML = 'Ни одного красного флага не найдено. Но всё равно проверьте компанию в <a href="https://ekrs.ms.gov.pl" target="_blank">KRS</a> и требуйте договор до выезда.';
+        fill.style.background = '#16a34a';
+      } else if (flagged <= 2) {
+        panel.className = 'result-panel warning';
+        emoji.textContent = '⚠️';
+        title.textContent = 'Есть подозрительные признаки (' + flagged + '/' + total + ')';
+        desc.innerHTML = 'Найдено <strong>' + flagged + '</strong> красных флагов. Будьте осторожны! Проверьте компанию в KRS и обратитесь в PIP (801 002 006) для консультации.';
+        fill.style.background = '#f59e0b';
+      } else {
+        panel.className = 'result-panel danger';
+        emoji.textContent = '🚨';
+        title.textContent = 'ОПАСНО! (' + flagged + '/' + total + ' флагов)';
+        desc.innerHTML = 'Найдено <strong>' + flagged + '</strong> красных флагов! Эта вакансия имеет все признаки мошенничества. <strong>НЕ отправляйте деньги и документы.</strong> Обратитесь в Policja (997) или PIP (801 002 006).';
+        fill.style.background = '#dc2626';
+      }
+
+      const link = document.getElementById('rf-link').value || 'подозрительная вакансия';
+      const shareText = '🚩 Проверил вакансию в Rybezh Red Flag Checker: ' + flagged + '/' + total + ' красных флагов!\n\n"' + link + '"\n\nПроверь свою: https://rybezh.site/red-flag-ru.html';
+      const encoded = encodeURIComponent(shareText);
+      document.getElementById('rf-share-tg').href = 'https://t.me/share/url?url=' + encodeURIComponent('https://rybezh.site/red-flag-ru.html') + '&text=' + encoded;
+      document.getElementById('rf-share-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('https://rybezh.site/red-flag-ru.html') + '&quote=' + encoded;
+
+      document.getElementById('rf-result').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+  })();
+  </script>
+</body>
+</html>
