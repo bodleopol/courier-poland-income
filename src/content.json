@@ -39162,16 +39162,16 @@
       "Premia miesięczna za jakość i dokładność pracy."
     ],
     "tasks_ua": [
-      "Виконувати щоденні задачі ролі «працівник розсадника» згідно стандарту зміни.",
-      "Працювати в команді та передавати зміну без втрати інформації.",
-      "Дотримуватися правил безпеки, чистоти та внутрішніх інструкцій.",
-      "Оперативно повідомляти координатора про питання по процесу."
+      "Підготовка саджанців до відправки: перевірка стану, маркування та пакування.",
+      "Полив і базовий догляд за рослинами за планом зміни.",
+      "Підтримка порядку на ділянці та в проходах між стелажами.",
+      "Передача короткого звіту старшому зміни наприкінці робочого дня."
     ],
     "tasks_pl": [
-      "Realizować codzienne zadania na stanowisku „pracownik szkółki roślin” zgodnie ze standardem zmiany.",
-      "Pracować zespołowo i przekazywać zmianę bez utraty informacji.",
-      "Przestrzegać zasad bezpieczeństwa, porządku i instrukcji wewnętrznych.",
-      "Na bieżąco zgłaszać koordynatorowi kwestie procesowe."
+      "Przygotowanie sadzonek do wysyłki: kontrola stanu, oznaczanie i pakowanie.",
+      "Podlewanie i podstawowa pielęgnacja roślin zgodnie z planem zmiany.",
+      "Utrzymanie porządku na stanowisku i w ciągach komunikacyjnych.",
+      "Przekazanie krótkiego podsumowania liderowi zmiany na koniec dnia."
     ],
     "details_ua": [
       "Обʼєкт розташований у межах міста Вроцлав, доїзд зрозумілий навіть у ранні зміни.",
@@ -39223,8 +39223,8 @@
     ],
     "excerpt": "Baltic People Hub шукає працівник розсадника у Вроцлав. Графік Вт-Сб, 7:00-15:00, договір Umowa zlecenie, робота в стабільній команді без хаосу.",
     "excerpt_pl": "Baltic People Hub poszukuje osoby na stanowisko pracownik szkółki roślin w Wrocław. Grafik Wt-Sob, 7:00-15:00, umowa Umowa zlecenie, stabilna praca w zespole.",
-    "body": "<p><strong>Працівник розсадника</strong> у Вроцлав: чесний графік, зрозумілі задачі й підтримка координатора на старті.</p><ul><li>Графік: Вт-Сб, 7:00-15:00</li><li>Режим: 6/1</li><li>Старт: Вихід за 5-7 днів</li><li>Договір: Umowa zlecenie</li></ul><p>Вакансія підходить кандидатам, які цінують стабільний темп, передбачуваний процес і прозорі виплати.</p>",
-    "body_pl": "<p><strong>Pracownik szkółki roślin</strong> w Wrocław: jasny grafik, konkretne zadania i wsparcie koordynatora na starcie.</p><ul><li>Grafik: Wt-Sob, 7:00-15:00</li><li>System: 6/1</li><li>Start: Start w 5-7 dni</li><li>Umowa: Umowa zlecenie</li></ul><p>Oferta dla osób, które cenią spokojny rytm pracy, przejrzyste procesy i terminowe wypłaty.</p>",
+    "body": "<p>У <strong>розсаднику у Вроцлаві</strong> робота організована спокійно: зранку брифінг, далі зрозумілий список задач на зміну і підтримка координатора, якщо виникають питання.</p><ul><li>Графік: Вт-Сб, 7:00-15:00</li><li>Режим: 6/1</li><li>Старт: Вихід за 5-7 днів</li><li>Договір: Umowa zlecenie</li></ul><p>Підійде тим, хто хоче стабільну денну зміну без нічних годин, прозору оплату і команду, де новачкам справді допомагають на старті.</p>",
+    "body_pl": "<p>W <strong>szkółce roślin we Wrocławiu</strong> praca ma spokojny rytm: krótki briefing rano, jasna lista zadań na zmianę i realne wsparcie koordynatora, gdy pojawiają się pytania.</p><ul><li>Grafik: Wt-Sob, 7:00-15:00</li><li>System: 6/1</li><li>Start: Start w 5-7 dni</li><li>Umowa: Umowa zlecenie</li></ul><p>To oferta dla osób, które wolą stałe dzienne godziny, przejrzyste zasady wypłat i zespół, który pomaga wdrożyć się od pierwszych dni.</p>",
     "cta_text": "Подати заявку",
     "cta_text_pl": "Aplikuj",
     "cta_link": "/apply.html",
