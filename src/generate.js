@@ -224,7 +224,6 @@ function toRussianFallbackText(input) {
     [/\bвідгуки\b/gi, 'отзывы'],
     // Additional Ukrainian words that commonly appear in vacancy content
     [/\bпісля\b/gi, 'после'],
-    [/\bпiсля\b/gi, 'после'],
     [/\bобіцяємо\b/gi, 'обещаем'],
     [/\bобіцяти\b/gi, 'обещать'],
     [/\bзрозумілі\b/gi, 'понятные'],
@@ -357,7 +356,6 @@ function toRussianFallbackText(input) {
     [/\bшвидко\b/gi, 'быстро'],
     [/\bшвидкий\b/gi, 'быстрый'],
     [/\bшвидке\b/gi, 'быстрое'],
-    [/\bзаявка\b/gi, 'заявка'],
     [/\bзаявку\b/gi, 'заявку'],
     [/\bзаявок\b/gi, 'заявок'],
     [/\bподати\b/gi, 'подать'],
@@ -380,7 +378,6 @@ function toRussianFallbackText(input) {
     [/\bгодини\b/gi, 'часы'],
     [/\bставка\b/gi, 'ставка'],
     [/\bставки\b/gi, 'ставки'],
-    [/\bприблизний\b/gi, 'приблизительный'],
     [/\bприблизний\b/gi, 'приблизительный'],
     [/\bрозрахунок\b/gi, 'расчёт'],
     [/\bдохід\b/gi, 'доход'],
