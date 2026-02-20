@@ -6,6 +6,6 @@
     "sitemap": "node src/generate-sitemap.js"
   },
   "devDependencies": {
-    "firebase-tools": "^15.5.1"
+    "firebase-tools": "^15.7.0"
   }
 }
