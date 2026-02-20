@@ -426,9 +426,22 @@
         // Search query
         if (searchQuery) {
           const lang = localStorage.getItem('site_lang') || 'ua';
-          const title = getLocalizedValue(job, 'title', lang).toLowerCase();
-          const excerpt = getLocalizedValue(job, 'excerpt', lang).toLowerCase();
-          if (!title.includes(searchQuery) && !excerpt.includes(searchQuery)) {
+          const searchTexts = [
+            getLocalizedValue(job, 'title', lang),
+            getLocalizedValue(job, 'excerpt', lang),
+            job.title,
+            job.title_ua,
+            job.title_pl,
+            job.title_ru,
+            job.excerpt,
+            job.excerpt_ua,
+            job.excerpt_pl,
+            job.excerpt_ru
+          ]
+            .filter(Boolean)
+            .join(' ')
+            .toLowerCase();
+          if (!searchTexts.includes(searchQuery)) {
             return false;
           }
         }
