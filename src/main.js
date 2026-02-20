@@ -410,23 +410,38 @@
       || /(^|\/)[^/]+-pl$/.test(pathname)
       || /(^|\/)404-pl(\/index\.html|\/?)$/.test(pathname);
   }
+  function isRussianPath(pathname) {
+    return /(^|\/)index-ru(?:\.html)?$/.test(pathname)
+      || /(^|\/)[^/]+-ru\.html$/.test(pathname)
+      || /(^|\/)[^/]+-ru$/.test(pathname)
+      || /(^|\/)404-ru(\/index\.html|\/?)$/.test(pathname);
+  }
 
   function toUaPath(pathname) {
     if (pathname === '/index-pl.html' || pathname === '/index-pl') return '/';
+    if (pathname === '/index-ru.html' || pathname === '/index-ru') return '/';
     if (/\/404-pl(\/index\.html|\/?)$/.test(pathname)) return '/404/';
+    if (/\/404-ru(\/index\.html|\/?)$/.test(pathname)) return '/404/';
 
     if (pathname.endsWith('-pl.html')) {
       return pathname.replace(/-pl\.html$/, '.html');
     }
+    if (pathname.endsWith('-ru.html')) {
+      return pathname.replace(/-ru\.html$/, '.html');
+    }
 
     if (pathname.endsWith('-pl')) {
       return pathname.replace(/-pl$/, '');
+    }
+    if (pathname.endsWith('-ru')) {
+      return pathname.replace(/-ru$/, '');
     }
 
     return pathname;
   }
 
   function toPlPath(pathname) {
+    pathname = toUaPath(pathname);
     if (pathname === '/' || pathname === '/index.html' || pathname === '/index') return '/index-pl.html';
     if (/\/404(\/index\.html|\/?)$/.test(pathname)) return '/404-pl/';
 
@@ -442,26 +457,49 @@
     // Fallback for trailing slash paths
     return `${pathname.replace(/\/$/, '')}-pl`;
   }
+  function toRuPath(pathname) {
+    pathname = toUaPath(pathname);
+    if (pathname === '/' || pathname === '/index.html' || pathname === '/index') return '/index-ru.html';
+    if (/\/404(\/index\.html|\/?)$/.test(pathname)) return '/404-ru/';
+
+    if (pathname.endsWith('.html')) {
+      return pathname.replace(/\.html$/, '-ru.html');
+    }
+
+    if (!pathname.endsWith('/')) {
+      return `${pathname}-ru`;
+    }
+
+    return `${pathname.replace(/\/$/, '')}-ru`;
+  }
 
   // Set language — navigates between UA / PL page variants
   function setLang(lang) {
     const currentPath = window.location.pathname;
     const isPlPage = isPolishPath(currentPath);
+    const isRuPage = isRussianPath(currentPath);
     const suffix = `${window.location.search || ''}${window.location.hash || ''}`;
     localStorage.setItem(STORAGE_KEY, lang);
     localStorage.setItem(LEGACY_KEY, lang);
 
-    // Navigate to UA page from PL page
-    if (lang === 'ua' && isPlPage) {
+    // Navigate to UA page from PL/RU page
+    if (lang === 'ua' && (isPlPage || isRuPage)) {
       const uaPath = toUaPath(currentPath);
       window.location.href = `${uaPath}${suffix}`;
       return;
     }
 
-    // Navigate to PL page from UA page
+    // Navigate to PL page from UA/RU page
     if (lang === 'pl' && !isPlPage) {
       const plPath = toPlPath(currentPath);
       window.location.href = `${plPath}${suffix}`;
+      return;
+    }
+
+    // Navigate to RU page from UA/PL page
+    if (lang === 'ru' && !isRuPage) {
+      const ruPath = toRuPath(currentPath);
+      window.location.href = `${ruPath}${suffix}`;
       return;
     }
 
@@ -508,7 +546,7 @@
     });
 
     // Update HTML lang attribute
-    document.documentElement.lang = lang === 'ua' ? 'uk' : 'pl';
+    document.documentElement.lang = lang === 'ua' ? 'uk' : (lang === 'ru' ? 'ru' : 'pl');
   }
 
   // Update language button states
@@ -529,11 +567,16 @@
     
     // Auto-detect language from page URL
     const isPlPage = isPolishPath(window.location.pathname);
-    const lang = isPlPage ? 'pl' : getLang();
+    const isRuPage = isRussianPath(window.location.pathname);
+    const lang = isPlPage ? 'pl' : (isRuPage ? 'ru' : getLang());
 
     if (isPlPage) {
       localStorage.setItem(STORAGE_KEY, 'pl');
       localStorage.setItem(LEGACY_KEY, 'pl');
+    }
+    if (isRuPage) {
+      localStorage.setItem(STORAGE_KEY, 'ru');
+      localStorage.setItem(LEGACY_KEY, 'ru');
     }
 
     applyTranslations(lang);
@@ -542,6 +585,7 @@
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const newLang = btn.getAttribute('data-lang');
+        if (!newLang) return;
         setLang(newLang);
       });
     });
