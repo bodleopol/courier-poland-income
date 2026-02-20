@@ -907,7 +907,7 @@
   // ============================================
   function initDateFormatting() {
     const lang = getLang();
-    const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+    const locale = lang === 'pl' ? 'pl-PL' : (lang === 'ru' ? 'ru-RU' : 'uk-UA');
     
     document.querySelectorAll('[data-format-date]').forEach(el => {
       const dateStr = el.getAttribute('data-format-date');
@@ -1043,12 +1043,12 @@
         const message = messageInput ? messageInput.value.trim() : '';
 
         if (!name || !contact) {
-          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : 'Заповніть імʼя та контакт.';
+          if (status) status.textContent = getLang() === 'pl' ? 'Uzupełnij imię i kontakt.' : (getLang() === 'ru' ? 'Заполните имя и контакт.' : 'Заповніть імʼя та контакт.');
           return;
         }
 
         if (button) button.disabled = true;
-        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : 'Надсилаємо...';
+        if (status) status.textContent = getLang() === 'pl' ? 'Wysyłanie...' : (getLang() === 'ru' ? 'Отправляем...' : 'Надсилаємо...');
 
         try {
           let city = '';
@@ -1074,13 +1074,13 @@
 
           await fetch(GSA_URL, { method: 'POST', mode: 'no-cors', body: formData });
 
-          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : 'Дякуємо! Ми відповімо найближчим часом.';
+          if (status) status.textContent = getLang() === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : (getLang() === 'ru' ? 'Спасибо! Мы свяжемся с вами в ближайшее время.' : 'Дякуємо! Ми відповімо найближчим часом.');
           if (nameInput) nameInput.value = '';
           if (contactInput) contactInput.value = '';
           if (messageInput) messageInput.value = '';
         } catch (err) {
           console.error(err);
-          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : 'Помилка відправки. Спробуйте ще раз.';
+          if (status) status.textContent = getLang() === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : (getLang() === 'ru' ? 'Ошибка отправки. Попробуйте ещё раз.' : 'Помилка відправки. Спробуйте ще раз.');
         } finally {
           if (button) button.disabled = false;
         }
@@ -1105,7 +1105,7 @@
     };
 
     const formatDate = (date, lang) => {
-      const locale = lang === 'pl' ? 'pl-PL' : 'uk-UA';
+      const locale = lang === 'pl' ? 'pl-PL' : (lang === 'ru' ? 'ru-RU' : 'uk-UA');
       return date.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
     };
 
@@ -1132,12 +1132,12 @@
 
       const author = document.createElement('div');
       author.className = 'comment-author';
-      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : 'Анонім');
+      author.textContent = item.name || (lang === 'pl' ? 'Anonim' : (lang === 'ru' ? 'Аноним' : 'Анонім'));
 
       if (item.isTeam) {
         const badge = document.createElement('span');
         badge.className = 'comment-badge';
-        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : 'Відповідь Rybezh';
+        badge.textContent = lang === 'pl' ? 'Odpowiedź Rybezh' : (lang === 'ru' ? 'Ответ Rybezh' : 'Відповідь Rybezh');
         author.appendChild(badge);
       }
 
@@ -1160,7 +1160,7 @@
       const replyBtn = document.createElement('button');
       replyBtn.className = 'comment-reply-btn';
       replyBtn.type = 'button';
-      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : 'Відповісти';
+      replyBtn.textContent = lang === 'pl' ? 'Odpowiedz' : (lang === 'ru' ? 'Ответить' : 'Відповісти');
       actions.appendChild(replyBtn);
 
       wrap.appendChild(header);
@@ -1247,11 +1247,11 @@
 
           const name = nameInput ? nameInput.value.trim() : '';
           const text = messageInput ? messageInput.value.trim() : '';
-          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : 'UA');
+          const countryLabel = countrySelect ? countrySelect.value : (lang === 'pl' ? 'PL' : (lang === 'ru' ? 'RU' : 'UA'));
           const country = { flag: flagMap[countryLabel] || '🌍', label: countryLabel };
 
           if (!name || !text) {
-            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : 'Вкажіть імʼя та коментар.';
+            if (status) status.textContent = lang === 'pl' ? 'Podaj imię i komentarz.' : (lang === 'ru' ? 'Укажите имя и комментарий.' : 'Вкажіть імʼя та коментар.');
             return;
           }
 
@@ -1269,7 +1269,7 @@
           stored.unshift(newComment);
           thread.insertBefore(renderComment(newComment, lang), thread.firstChild);
           if (countEl) countEl.textContent = String(data.length + stored.length);
-          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : 'Коментар додано.';
+          if (status) status.textContent = lang === 'pl' ? 'Komentarz dodany.' : (lang === 'ru' ? 'Комментарий добавлен.' : 'Коментар додано.');
 
           if (nameInput) nameInput.value = '';
           if (messageInput) messageInput.value = '';
