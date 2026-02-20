@@ -662,13 +662,13 @@
         'Катерина','Тетяна','Оксана','Юлія','Світлана','Людмила','Аліна','Вікторія','Дарина','Софія',
         'Христина','Надія','Леся','Марина','Зоряна','Уляна'
       ];
-      var seeks = ['робота', 'квартира', 'напарник', 'інше'];
+      var seeks = ['работа', 'квартира', 'помощник', 'другое'];
       var descriptions = [
-        'Шукаю роботу та нові контакти серед українців',
-        'Переїхав(ла) нещодавно, відкритий(а) до знайомств',
-        'Можу підказати з адаптацією та документами',
-        'Шукаю житло/сусідів у районі',
-        'Цікавлять робочі зміни та підробіток поруч'
+        'Ищу работу и новые контакты среди соотечественников',
+        'Недавно переехал(а), открыт(а) к новым знакомствам',
+        'Могу подсказать по адаптации и документам',
+        'Ищу жильё/соседей в районе',
+        'Интересуют смены и подработка рядом'
       ];
 
       var extra = [];
@@ -747,14 +747,14 @@
       errorShown = true;
       if (loadingEl) {
         loadingEl.innerHTML = '<div style="color:#ef4444;font-weight:600;">⚠️ ' + msg + '</div>' +
-          '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Спробувати знову</button>';
+          '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Попробовать снова</button>';
         loadingEl.style.display = 'block';
       }
     }
 
     // Add timeout for CSV loading
     var csvTimeout = setTimeout(function() {
-      showError('Завантаження даних зайняло надто довго. Перевірте інтернет-з\'єднання.');
+      showError('Загрузка данных заняла слишком много времени. Проверьте интернет-соединение.');
     }, 15000);
 
     Papa.parse(csvUrl, {
@@ -772,16 +772,16 @@
         // Auto-detect column names from the first row
         var firstRow = results.data[0];
         var colLat = findCol(firstRow, ['Широта', 'Lat', 'lat', 'latitude']);
-        var colLng = findCol(firstRow, ['Довгота', 'Lng', 'lng', 'longitude']);
-        var colName = findCol(firstRow, ["Ім'я", 'Нік', 'Name', 'name']);
-        var colCity = findCol(firstRow, ['Місто', 'City', 'city']);
+        var colLng = findCol(firstRow, ['Долгота', 'Довгота', 'Lng', 'lng', 'longitude']);
+        var colName = findCol(firstRow, ['Имя', "Ім'я", 'Ник', 'Нік', 'Name', 'name']);
+        var colCity = findCol(firstRow, ['Город', 'Місто', 'City', 'city']);
         var colTg = findCol(firstRow, ['Telegram', 'telegram', 'tg']);
-        var colSeeking = findCol(firstRow, ['Що шукаю', 'seeking', 'szukam']);
-        var colDesc = findCol(firstRow, ['Короткий опис', 'опис', 'description', 'opis']);
+        var colSeeking = findCol(firstRow, ['Что ищу', 'Що шукаю', 'seeking', 'szukam']);
+        var colDesc = findCol(firstRow, ['Короткое описание', 'Короткий опис', 'опис', 'description', 'opis']);
 
         if (!colLat || !colLng) {
           console.warn('Map CSV: Could not find Lat/Lng columns. Found headers:', Object.keys(firstRow));
-          showError('Не вдалося розпізнати формат даних. Спробуйте пізніше.');
+          showError('Не удалось распознать формат данных. Попробуйте позже.');
           return;
         }
 
@@ -794,7 +794,7 @@
             var lat = parseFloat(String(latStr).replace(',', '.'));
             var lng = parseFloat(String(lngStr).replace(',', '.'));
             if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
-              var name = (colName && row[colName]) ? row[colName] : 'Анонім';
+              var name = (colName && row[colName]) ? row[colName] : 'Аноним';
               var city = (colCity && row[colCity]) ? row[colCity] : '';
               var telegram = (colTg && row[colTg]) ? row[colTg] : '';
               var seeking = (colSeeking && row[colSeeking]) ? row[colSeeking] : '';
@@ -824,7 +824,7 @@
       },
       error: function(err) {
         clearTimeout(csvTimeout);
-        showError('Не вдалося завантажити дані карти. Спробуйте пізніше.');
+        showError('Не удалось загрузить данные карты. Попробуйте позже.');
         console.error('CSV parse error:', err);
       }
     });
