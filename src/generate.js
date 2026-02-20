@@ -67,6 +67,103 @@ const SITE_AUTHOR = {
   }
 };
 
+const RU_FALLBACK_REPLACEMENTS = [
+  ['Пошук роботи у Польщі', 'Поиск работы в Польше'],
+  ['Знайдіть роботу в Польщі', 'Найдите работу в Польше'],
+  ['Актуальні вакансії в різних сферах по всій Польщі.', 'Актуальные вакансии в разных сферах по всей Польше.'],
+  ['Легальні умови та підтримка.', 'Легальные условия и поддержка.'],
+  ['Пошук за містом або типом роботи', 'Поиск по городу или типу работы'],
+  ['Пошук за мистом або типом роботи', 'Поиск по городу или типу работы'],
+  ['Знайти', 'Найти'],
+  ['Готові почати?', 'Готовы начать?'],
+  ['Отримайте консультацію та почніть заробляти вже сьогодні.', 'Получите консультацию и начните зарабатывать уже сегодня.'],
+  ['Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', 'Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь на их использование.'],
+  ['Головна', 'Главная'],
+  ['Вакансії', 'Вакансии'],
+  ['Категорії', 'Категории'],
+  ['Інструменти', 'Инструменты'],
+  ['Про нас', 'О нас'],
+  ['Контакти', 'Контакты'],
+  ['Для роботодавців', 'Для работодателей'],
+  ['Отримати консультацію', 'Получить консультацию'],
+  ['Подати заявку', 'Подать заявку'],
+  ['Навігація', 'Навигация'],
+  ['Підписка', 'Подписка'],
+  ['Політика конфіденційності', 'Политика конфиденциальности'],
+  ['Умови користування', 'Условия использования'],
+  ['Реквізити', 'Реквизиты'],
+  ['Всі права захищені', 'Все права защищены'],
+  ['Схожі вакансії', 'Похожие вакансии'],
+  ['Повернутись на головну', 'Вернуться на главную'],
+  ['Умови', 'Условия'],
+  ['Зарплата', 'Зарплата'],
+  ['Контракт', 'Договор'],
+  ['Графік', 'График'],
+  ['Режим', 'Режим'],
+  ['Старт', 'Старт'],
+  ['Бонуси', 'Бонусы'],
+  ['Додаткова інформація', 'Дополнительная информация'],
+  ['Вимоги', 'Требования'],
+  ['Проживання', 'Проживание'],
+  ['Тип обʼєкта', 'Тип объекта'],
+  ['Адаптація', 'Адаптация'],
+  ['Обладнання', 'Оборудование'],
+  ['Фізичні вимоги', 'Физические требования'],
+  ['Структура зміни', 'Структура смены']
+];
+
+function toRussianFallbackText(input) {
+  if (input === null || input === undefined) return '';
+  let text = String(input);
+  for (const [from, to] of RU_FALLBACK_REPLACEMENTS) {
+    text = text.split(from).join(to);
+  }
+
+  const wordReplacements = [
+    [/\bпрацевлаштування\b/gi, 'трудоустройства'],
+    [/\bробота\b/gi, 'работа'],
+    [/\bроботи\b/gi, 'работы'],
+    [/\bроботу\b/gi, 'работу'],
+    [/\bробочий\b/gi, 'рабочий'],
+    [/\bробоча\b/gi, 'рабочая'],
+    [/\bПошук\b/gi, 'Поиск'],
+    [/\bЗнайдіть\b/gi, 'Найдите'],
+    [/\bЗнайди\b/gi, 'Найди'],
+    [/\bмістом\b/gi, 'городу'],
+    [/\bмісто\b/gi, 'город'],
+    [/\bмістах\b/gi, 'городах'],
+    [/\bземляків\b/gi, 'земляков'],
+    [/\bдодайте\b/gi, 'добавьте'],
+    [/\bстворіть\b/gi, 'создайте'],
+    [/\bінтерактивна\b/gi, 'интерактивная'],
+    [/\bспільноту\b/gi, 'сообщество'],
+    [/\bпідтримки\b/gi, 'поддержки'],
+    [/\bкарта\b/gi, 'карта'],
+    [/\bкарти\b/gi, 'карте'],
+    [/\bдесятки українців\b/gi, 'десятки украинцев'],
+    [/\bвидзначені\b/gi, 'отмечены'],
+    [/\bзаявка\b/gi, 'заявка'],
+    [/\bвідгук\b/gi, 'отзыв'],
+    [/\bвідгуки\b/gi, 'отзывы']
+  ];
+  for (const [pattern, replacement] of wordReplacements) {
+    text = text.replace(pattern, replacement);
+  }
+
+  return text
+    .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
+      і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
+    }[ch] || ch))
+    .replace(/[ʼ’]/g, '\'')
+    .replace(/\bПольщи\b/g, 'Польше')
+    .replace(/\bЗнайдить\b/g, 'Найдите')
+    .replace(/\bризних\b/g, 'разных')
+    .replace(/\bвсий\b/g, 'всей')
+    .replace(/\bЛегальне\b/g, 'Легальные')
+    .replace(/\bумови\b/g, 'условия')
+    .replace(/\bпидтримка\b/g, 'поддержка');
+}
+
 const CATEGORY_SPECIFIC_SECTIONS = {
   it: {
     ua: {
@@ -1789,7 +1886,7 @@ function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
   const base = firstText(isPl ? (page.excerpt_pl || page.excerpt) : (isRu ? (page.excerpt_ru || page.excerpt) : page.excerpt));
-  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return base;
+  if (base.length >= MIN_VACANCY_EXCERPT_LENGTH) return isRu ? toRussianFallbackText(base) : base;
 
   const parts = [
     base,
@@ -1812,7 +1909,8 @@ function enrichVacancyExcerpt(page, lang) {
     if (mergedLength >= MIN_VACANCY_EXCERPT_LENGTH) break;
   }
 
-  return (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+  const normalized = (merged.join(' ') || base).replace(/\s+/g, ' ').trim();
+  return isRu ? toRussianFallbackText(normalized) : normalized;
 }
 
 async function build() {
@@ -1959,7 +2057,7 @@ async function build() {
   // Prepare dynamic translations for jobs
   const jobTranslations = {};
   pages.forEach(p => {
-    const titleRu = p.title_ru || p.title;
+    const titleRu = p.title_ru || toRussianFallbackText(p.title);
     const excerptRu = enrichVacancyExcerpt(p, 'ru');
     jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
     jobTranslations[`job.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
@@ -1970,10 +2068,10 @@ async function build() {
   // Prepare dynamic translations for blog
   posts.forEach(p => {
     const readMinutes = estimateReadingTime(p.body || '');
-    const titleRu = p.title_ru || p.title;
+    const titleRu = p.title_ru || toRussianFallbackText(p.title);
     jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
     jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
-    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: p.excerpt_ru || p.excerpt };
+    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: p.excerpt_ru || toRussianFallbackText(p.excerpt) };
     jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania`, ru: `${readMinutes} мин чтения` };
     jobTranslations[`blog.${p.slug}.author_role`] = { ua: p.author_role || '', pl: p.author_role_pl || p.author_role || '', ru: p.author_role_ru || p.author_role || '' };
   });
@@ -3950,14 +4048,20 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
 
-  const bodySource = isPl ? (post.body_pl || post.body || '') : (isRu ? (post.body_ru || post.body || '') : (post.body || ''));
-  const bodyTitle = isPl ? (post.title_pl || post.title) : (isRu ? (post.title_ru || post.title) : post.title);
+  const bodySource = isPl
+    ? (post.body_pl || post.body || '')
+    : (isRu ? (post.body_ru || toRussianFallbackText(post.body || '')) : (post.body || ''));
+  const bodyTitle = isPl
+    ? (post.title_pl || post.title)
+    : (isRu ? (post.title_ru || toRussianFallbackText(post.title || '')) : post.title);
   const body = humanizeBody(bodySource, bodyTitle, lang, seed + 5);
 
   const updatedDate = post.updated || post.date || new Date().toISOString().slice(0, 10);
 
   const relatedHtml = related.map(r => {
-    const title = isPl ? (r.title_pl || r.title) : (isRu ? (r.title_ru || r.title) : r.title);
+    const title = isPl
+      ? (r.title_pl || r.title)
+      : (isRu ? (r.title_ru || toRussianFallbackText(r.title || '')) : r.title);
     return `<li><a href="/post-${escapeHtml(r.slug)}.html">${escapeHtml(title)}</a></li>`;
   }).join('');
 
@@ -4089,6 +4193,12 @@ function applyI18nTranslationsBuild(html, translations, targetLang = 'pl') {
   const getLangText = (dict, fallback = '') => {
     if (!dict) return fallback;
     if (dict[targetLang] !== undefined && dict[targetLang] !== null) return dict[targetLang];
+    if (targetLang === 'ru') {
+      const source = (dict.ua !== undefined && dict.ua !== null)
+        ? dict.ua
+        : ((dict.pl !== undefined && dict.pl !== null) ? dict.pl : fallback);
+      return toRussianFallbackText(source);
+    }
     if (dict.ua !== undefined && dict.ua !== null) return dict.ua;
     if (dict.pl !== undefined && dict.pl !== null) return dict.pl;
     if (dict.ru !== undefined && dict.ru !== null) return dict.ru;
@@ -4319,7 +4429,7 @@ function transformToRussian(html, translations, filename) {
       `<script>if(typeof localStorage!=='undefined'){localStorage.setItem('site_lang','ru');localStorage.setItem('siteLang','ru');}</script>\n</head>`);
   }
 
-  return r;
+  return toRussianFallbackText(r);
 }
 
 /**

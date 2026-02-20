@@ -515,12 +515,67 @@
     return text.replace(/\$\{year\}/g, String(new Date().getFullYear()));
   }
 
+  function toRussianFallbackText(input) {
+    if (input === null || input === undefined) return '';
+    let text = String(input);
+    const replacements = [
+      ['Пошук роботи у Польщі', 'Поиск работы в Польше'],
+      ['Знайдіть роботу в Польщі', 'Найдите работу в Польше'],
+      ['Актуальні вакансії в різних сферах по всій Польщі.', 'Актуальные вакансии в разных сферах по всей Польше.'],
+      ['Легальні умови та підтримка.', 'Легальные условия и поддержка.'],
+      ['Пошук за містом або типом роботи', 'Поиск по городу или типу работы'],
+      ['Пошук за мистом або типом роботи', 'Поиск по городу или типу работы'],
+      ['Знайти', 'Найти'],
+      ['Готові почати?', 'Готовы начать?'],
+      ['Отримайте консультацію та почніть заробляти вже сьогодні.', 'Получите консультацию и начните зарабатывать уже сегодня.'],
+      ['Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.', 'Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь на их использование.'],
+      ['Головна', 'Главная'],
+      ['Вакансії', 'Вакансии'],
+      ['Категорії', 'Категории'],
+      ['Інструменти', 'Инструменты'],
+      ['Про нас', 'О нас'],
+      ['Контакти', 'Контакты'],
+      ['Для роботодавців', 'Для работодателей'],
+      ['Отримати консультацію', 'Получить консультацию'],
+      ['Подати заявку', 'Подать заявку'],
+      ['Навігація', 'Навигация'],
+      ['Підписка', 'Подписка'],
+      ['Політика конфіденційності', 'Политика конфиденциальности'],
+      ['Умови користування', 'Условия использования'],
+      ['Реквізити', 'Реквизиты'],
+      ['Всі права захищені', 'Все права защищены'],
+      ['Схожі вакансії', 'Похожие вакансии']
+    ];
+    for (const [from, to] of replacements) {
+      text = text.split(from).join(to);
+    }
+    return text
+      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({
+        і: 'и', І: 'И', ї: 'и', Ї: 'И', є: 'е', Є: 'Е', ґ: 'г', Ґ: 'Г'
+      }[ch] || ch))
+      .replace(/[ʼ’]/g, '\'')
+      .replace(/\bПольщи\b/g, 'Польше')
+      .replace(/\bЗнайдить\b/g, 'Найдите')
+      .replace(/\bризних\b/g, 'разных')
+      .replace(/\bвсий\b/g, 'всей')
+      .replace(/\bЛегальне\b/g, 'Легальные')
+      .replace(/\bумови\b/g, 'условия')
+      .replace(/\bпидтримка\b/g, 'поддержка');
+  }
+
+  function getTranslationText(dict, lang) {
+    if (!dict) return '';
+    if (dict[lang] !== undefined) return dict[lang];
+    if (lang === 'ru') return toRussianFallbackText(dict.ua || dict.pl || '');
+    return dict.ua || '';
+  }
+
   function applyTranslations(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const dict = translations[key];
       if (!dict) return;
-      const text = (dict[lang] !== undefined) ? dict[lang] : (dict.ua || '');
+      const text = getTranslationText(dict, lang);
       const attr = el.getAttribute('data-i18n-attr');
       if (attr) {
         try { el.setAttribute(attr, interpolateText(text)); } catch (e) { el.textContent = interpolateText(text); }
