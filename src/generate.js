@@ -2186,6 +2186,7 @@ function isVacancyPage(page) {
 
 const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const MIN_EXTENDED_NARRATIVE_LENGTH = 1000;
+const MIN_VACANCY_NARRATIVE_LENGTH = 600;
 const MAX_VACANCY_TEXT_SIMILARITY = 0.05;
 const MIN_SIMILARITY_TOKEN_LENGTH = 4;
 const VACANCY_SIMILARITY_STOPWORDS_UA = ['і', 'й', 'та', 'в', 'у', 'на', 'з', 'до', 'для', 'по', 'про', 'що', 'це', 'як', 'ми', 'ви', 'не', 'за', 'від', 'при', 'або', 'але'];
@@ -2357,6 +2358,30 @@ function getVacancyNarrative(page, lang, variationState) {
     }
     if (chosenText.length < MIN_EXTENDED_NARRATIVE_LENGTH) {
       chosenText = `${chosenText} ${segmentPool.terms || segmentPool.salary || ''}`.replace(/\s+/g, ' ').trim();
+    }
+  }
+
+  if (chosenText.length < MIN_VACANCY_NARRATIVE_LENGTH) {
+    const title = localize('title');
+    const uniqueExtensionPool = isPl ? [
+      `${title} w ${city} ma stałą kolejność działań na zmianie, dlatego łatwiej utrzymać tempo bez nerwowych przestojów.`,
+      `W tej roli na starcie dostajesz plan wdrożenia i kontakt do osoby prowadzącej, żeby od razu domknąć kwestie organizacyjne.`,
+      `Zespół ustala priorytety na początek dnia, a przy ${salary} i grafiku ${shift} łatwiej policzyć realny miesięczny wynik.`
+    ] : (isRu ? [
+      `На позиции ${title} в ${city} смена идет по понятному порядку, поэтому проще держать ритм без лишней суеты.`,
+      `На старте по этой вакансии сразу согласовываем задачи первой недели и ответственного координатора по вопросам выхода.`,
+      `При оплате ${salary} и графике ${shift} проще заранее спланировать бюджет и личные дела без хаотичных переносов.`
+    ] : [
+      `На позиції ${title} у ${city} зміна побудована поетапно, тому легше тримати темп без зайвої метушні.`,
+      `На старті цієї вакансії одразу узгоджуємо задачі першого тижня та контакт координатора для швидких робочих питань.`,
+      `За умов оплати ${salary} і графіка ${shift} простіше планувати бюджет і особисті справи без хаотичних переносів.`
+    ]);
+    let extensionAttempt = 0;
+    while (chosenText.length < MIN_VACANCY_NARRATIVE_LENGTH && extensionAttempt < 5) {
+      const idx = Math.abs(hashString(`${page.slug || ''}-${lang}-ext-${extensionAttempt}`)) % uniqueExtensionPool.length;
+      const extra = uniqueExtensionPool[idx];
+      chosenText = `${chosenText} ${extra}`.replace(/\s+/g, ' ').trim();
+      extensionAttempt += 1;
     }
   }
 
