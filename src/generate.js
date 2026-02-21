@@ -13,24 +13,6 @@ const POSTS_PER_PAGE = 20;
 
 // Indexing strategy for vacancies to reduce doorway/scaled-content risk.
 // Keep a limited set of generated vacancies indexable; mark the rest as noindex.
-const INDEXABLE_VACANCIES_LIMIT = Number.parseInt(process.env.INDEXABLE_VACANCIES_LIMIT || '50', 10);
-
-async function loadIndexableVacancySlugs(allPages) {
-  const whitelistPath = path.join(SRC, 'indexable-vacancies.json');
-  try {
-    const raw = await fs.readFile(whitelistPath, 'utf8');
-    const slugs = JSON.parse(raw);
-    if (Array.isArray(slugs) && slugs.length > 0) {
-      return new Set(slugs.map(String));
-    }
-  } catch (e) {
-    // no whitelist file, fall back to limit
-  }
-
-  const limit = Number.isFinite(INDEXABLE_VACANCIES_LIMIT) ? Math.max(0, INDEXABLE_VACANCIES_LIMIT) : 50;
-  return new Set(allPages.slice(0, limit).map(p => String(p.slug)));
-}
-
 function setRobotsMeta(html, robotsContent) {
   const out = String(html || '');
   if (/<meta\s+name=["']robots["'][^>]*>/i.test(out)) {
@@ -1648,7 +1630,6 @@ function diversifyOffer(phrase, slug) {
 function buildConditionsBlock(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
-  const isGenerated = Boolean(page?.is_generated);
   const labels = isPl ? {
     title: 'Warunki',
     salary: 'Wynagrodzenie',
@@ -1720,17 +1701,11 @@ function buildConditionsBlock(page, lang) {
   const physicalPrepared = toRu(physical);
   const shiftStructurePrepared = toRu(shiftStructure);
 
-  const effectiveBonusesList = (isGenerated && !isPl)
-    ? bonusesListPrepared.map(phrase => diversifyOffer(phrase, page.slug || ''))
-    : bonusesListPrepared;
+  const effectiveBonusesList = bonusesListPrepared;
   const bonuses = effectiveBonusesList.slice(0, 3).join(' • ');
-  const effectiveExtraList = (isGenerated && !isPl)
-    ? extraListPrepared.map(phrase => diversifyOffer(phrase, page.slug || ''))
-    : extraListPrepared;
+  const effectiveExtraList = extraListPrepared;
   const extras = effectiveExtraList.slice(0, 2).join(' • ');
-  const effectiveOnboarding = (isGenerated && !isPl && onboardingPrepared)
-    ? diversifyOffer(onboardingPrepared, page.slug || '')
-    : onboardingPrepared;
+  const effectiveOnboarding = onboardingPrepared;
   const requirements = requirementsListPrepared.slice(0, 3).join(' • ');
 
   const rows = [];
@@ -1879,17 +1854,7 @@ const NOTICE_VARIANTS = {
 };
 
 function buildGeneratedNotice(page, lang) {
-  if (!page?.is_generated) return '';
-  const variants = NOTICE_VARIANTS[lang] || NOTICE_VARIANTS.ua;
-  const seed = hashString(`${page?.slug || ''}:notice`);
-  const variant = variants[seed % variants.length];
-  if (!variant) return ''; // some pages get no notice at all
-  return `
-    <div class="job-notice" role="note" aria-label="${escapeHtml(variant.title)}">
-      <strong>${escapeHtml(variant.title)}</strong>
-      <span>${escapeHtml(variant.body)}</span>
-    </div>
-  `;
+  return '';
 }
 
 function buildVacancyProofSummaryBlock(page) {
@@ -2252,7 +2217,7 @@ async function build() {
   pages.forEach((page) => enrichRussianFields(page, vacancyRuFields));
   // Manual batch polishing: force-normalize first 50 vacancy-like pages for literary RU
   const batchVacancies = pages
-    .filter(page => page && page.slug && page.is_generated)
+    .filter(page => page && page.slug)
     // Stable alphabetical batching makes iterative 50-page review reproducible.
     .sort((a, b) => String(a.slug).localeCompare(String(b.slug)))
     .slice(0, 50);
@@ -2275,22 +2240,10 @@ async function build() {
     page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
   });
 
-  const indexableVacancySlugs = await loadIndexableVacancySlugs(pages);
-
   // Log indexing stats to help track doorway risk
-  const generatedPages = pages.filter(p => p.is_generated);
-  const indexedGenerated = generatedPages.filter(p => indexableVacancySlugs.has(String(p.slug)));
-  console.log(`📊 Vacancy indexing: ${indexedGenerated.length}/${generatedPages.length} generated vacancies will be indexed (${generatedPages.length - indexedGenerated.length} noindex/skipped)`);
-  // Doorway risk warning: flag when many similar generated pages are indexed without unique differentiation.
-  // Threshold is higher than 50 (default limit) since one-per-city-category is a valid strategy.
-  if (indexedGenerated.length > 200) {
-    console.warn('  ⚠️  Doorway risk: more than 200 generated vacancies are indexable. Ensure each page has genuinely unique content (enrichments, company details) or reduce the indexable-vacancies.json whitelist.');
-  }
-
-  // Write jobs data for client-side loading (only indexable pages, strip internal fields)
-  const indexablePages = pages.filter(p => !p.is_generated || indexableVacancySlugs.has(String(p.slug)));
+  const indexablePages = pages;
   const publicPages = indexablePages.map(p => {
-    const { is_generated, data_source, ...rest } = p;
+    const { data_source, ...rest } = p;
     return rest;
   });
   await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(publicPages), 'utf8');
@@ -2514,7 +2467,7 @@ async function build() {
   }
 
   // Only generate HTML for indexable vacancies (reduce doorway signals)
-  const pagesToGenerate = pages.filter(p => !p.is_generated || indexableVacancySlugs.has(String(p.slug)));
+  const pagesToGenerate = pages;
   const links = [];
   for (const page of pagesToGenerate) {
     const tpl = pageTpl;
@@ -2576,7 +2529,7 @@ async function build() {
     // Build related vacancies (same city or same category, max 3)
     // Only link to pages that have HTML files (pagesToGenerate)
     const relatedVacancies = pagesToGenerate
-      .filter(p => p.slug !== page.slug && p.is_generated && (
+      .filter(p => p.slug !== page.slug && (
         (p.city === page.city && p.category !== page.category) ||
         (p.category === page.category && p.city !== page.city)
       ))
@@ -2691,7 +2644,7 @@ async function build() {
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
     // Inject JobPosting structured data for all indexable pages
-    const isIndexable = page?.is_generated ? indexableVacancySlugs.has(String(page.slug)) : true;
+    const isIndexable = true;
     if (isIndexable) {
       const jobPostingScript = jsonLdScript(buildJobPostingJsonLd(page));
       if (finalHtml.includes('</head>')) {
@@ -2700,9 +2653,7 @@ async function build() {
     }
 
     // All generated pages that reach this point are indexable (pre-filtered above)
-    if (page?.is_generated) {
-      finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
-    }
+    finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
 
     // Add specific styles for job pages
     const jobStyles = `
@@ -2789,7 +2740,7 @@ async function build() {
 
     const outFile = path.join(DIST, `${page.slug}.html`);
     await fs.writeFile(outFile, finalHtml, 'utf8');
-    links.push({ title: page.title, slug: page.slug, city: page.city || '', indexable: !page?.is_generated });
+    links.push({ title: page.title, slug: page.slug, city: page.city || '', indexable: true });
   }
 
   // Pagination for Blog
@@ -2963,7 +2914,7 @@ async function build() {
   // Minimum word count threshold below which blog posts are marked noindex
   const BLOG_NOINDEX_THRESHOLD = 300;
   // Word count below which a warning is logged
-  const BLOG_WARN_THRESHOLD = 800;
+  const BLOG_WARN_THRESHOLD = 500;
 
   // Generate Blog Posts
   for (const post of posts) {

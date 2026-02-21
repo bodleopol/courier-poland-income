@@ -8,36 +8,11 @@ const __dirname = path.dirname(__filename);
 const DOMAIN = 'https://rybezh.site';
 const DIST_DIR = path.join(__dirname, '..', 'dist');
 
-// Indexing strategy (to reduce doorway/scaled-content signals):
-// - keep only a limited set of vacancy pages in sitemaps
-// - the rest can remain accessible but should be noindex'ed at page level
-// You can override the default selection via:
-// 1) INDEXABLE_VACANCIES_LIMIT env var (number)
-// 2) src/indexable-vacancies.json (array of slugs)
-const INDEXABLE_VACANCIES_LIMIT = Number.parseInt(process.env.INDEXABLE_VACANCIES_LIMIT || '50', 10);
-
 // Read content.json to get all vacancies
 const contentPath = path.join(__dirname, 'content.json');
 const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
 
-function loadIndexableVacancySlugs(allJobs) {
-  const whitelistPath = path.join(__dirname, 'indexable-vacancies.json');
-  try {
-    const raw = fs.readFileSync(whitelistPath, 'utf8');
-    const slugs = JSON.parse(raw);
-    if (Array.isArray(slugs) && slugs.length > 0) {
-      return new Set(slugs.map(String));
-    }
-  } catch (e) {
-    // no whitelist file, fall back to limit
-  }
-
-  const limit = Number.isFinite(INDEXABLE_VACANCIES_LIMIT) ? Math.max(0, INDEXABLE_VACANCIES_LIMIT) : 50;
-  return new Set(allJobs.slice(0, limit).map(j => String(j.slug)));
-}
-
-const INDEXABLE_VACANCY_SLUGS = loadIndexableVacancySlugs(content);
-const indexableVacancies = content.filter(job => INDEXABLE_VACANCY_SLUGS.has(String(job.slug)));
+const indexableVacancies = content;
 
 // Read posts.json to get all blog posts
 const postsPath = path.join(__dirname, 'posts.json');
