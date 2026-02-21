@@ -2186,13 +2186,25 @@ function isVacancyPage(page) {
 
 const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const MIN_EXTENDED_NARRATIVE_LENGTH = 1000;
+const MAX_VACANCY_TEXT_SIMILARITY = 0.05;
+const MIN_SIMILARITY_TOKEN_LENGTH = 4;
+const VACANCY_SIMILARITY_STOPWORDS_UA = ['і', 'й', 'та', 'в', 'у', 'на', 'з', 'до', 'для', 'по', 'про', 'що', 'це', 'як', 'ми', 'ви', 'не', 'за', 'від', 'при', 'або', 'але'];
+const VACANCY_SIMILARITY_STOPWORDS_PL = ['i', 'oraz', 'w', 'na', 'z', 'do', 'dla', 'po', 'jak', 'to', 'jest', 'nie', 'się', 'że', 'przy', 'bez', 'ale', 'lub'];
+const VACANCY_SIMILARITY_STOPWORDS_RU = ['и', 'в', 'на', 'с', 'для', 'по', 'как', 'это', 'мы', 'вы', 'не', 'за', 'от', 'при', 'или', 'но', 'что'];
+const VACANCY_SIMILARITY_STOPWORDS = new Set([
+  ...VACANCY_SIMILARITY_STOPWORDS_UA,
+  ...VACANCY_SIMILARITY_STOPWORDS_PL,
+  ...VACANCY_SIMILARITY_STOPWORDS_RU
+]);
 
 function cosineSimilarity(textA, textB) {
   const tokenize = (text) => String(text || '')
     .toLowerCase()
     .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
     .split(/\s+/)
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter(token => token.length >= MIN_SIMILARITY_TOKEN_LENGTH)
+    .filter(token => !VACANCY_SIMILARITY_STOPWORDS.has(token));
   const aTokens = tokenize(textA);
   const bTokens = tokenize(textB);
   if (!aTokens.length || !bTokens.length) return 0;
@@ -2244,7 +2256,7 @@ function getVacancyNarrative(page, lang, variationState) {
     D: isPl ? `${city}: ${salary}, ${shift}.` : (isRu ? `${city}: ${salary}, ${shift}.` : `${city}: ${salary}, ${shift}.`),
     E: isPl ? `Najważniejszy punkt tej oferty to harmonogram: ${shift}${pattern ? ` i ${pattern}` : ''}.` : (isRu ? `Ключевой акцент этой вакансии — график: ${shift}${pattern ? ` и ${pattern}` : ''}.` : `Ключовий акцент цієї вакансії — графік: ${shift}${pattern ? ` та ${pattern}` : ''}.`),
     F: isPl ? `Tu na pierwszy plan wychodzi wynagrodzenie: ${salary}.` : (isRu ? `Здесь ключевой акцент — оплата: ${salary}.` : `Тут на перший план виходить оплата: ${salary}.`),
-    G: isPl ? `Ta rola jest dobra dla osób, które chcą jasnych wymagań i prostego wdrożenia.` : (isRu ? `Эта роль подходит тем, кто ценит понятные требования и прозрачный старт.` : `Ця роль підійде тим, хто цінує зрозумілі вимоги та прозорий старт.`),
+    G: isPl ? `W tej ofercie od pierwszego dnia wiadomo, za co odpowiadasz i jak wygląda wejście na zmianę.` : (isRu ? `В этой вакансии с первого дня понятно, за что вы отвечаете и как устроен вход в смену.` : `У цій вакансії з першого дня зрозуміло, за що ви відповідаєте і як проходить вхід у зміну.`),
     H: isPl ? `Proces pracy jest poukładany etapami: wejście na zmianę, zadania, odbiór efektu.` : (isRu ? `Рабочий процесс выстроен по этапам: вход на смену, задачи, контроль результата.` : `Робочий процес побудований етапно: вхід на зміну, задачі, контроль результату.`)
   };
 
@@ -2280,21 +2292,52 @@ function getVacancyNarrative(page, lang, variationState) {
       .map(key => segmentPool[key])
       .filter(Boolean);
     const fallback = isPl
-      ? 'Oferta jest aktualna i podczas kontaktu doprecyzujemy detale wdrożenia.'
-      : (isRu ? 'Предложение актуально, детали запуска уточняются при контакте.' : 'Пропозиція актуальна, деталі старту уточнюються під час контакту.');
+      ? 'Na rozmowie od razu omawiamy szczegóły startu i zakres pierwszych zmian.'
+      : (isRu ? 'На первом контакте сразу проговариваем условия выхода и задачи на первые смены.' : 'Під час першого контакту одразу узгоджуємо умови виходу та задачі на перші зміни.');
     const text = [introByModel[selectedModel], ...orderedSegments, fallback]
       .join(' ')
       .replace(/\s+/g, ' ')
       .trim();
     return text;
   };
+  const isTooSimilarToRecent = (text) => langRecent.some(prev => cosineSimilarity(prev, text) > MAX_VACANCY_TEXT_SIMILARITY);
 
   let chosenText = buildModelText(model);
   for (let i = 0; i < VACANCY_NARRATIVE_MODELS.length; i++) {
-    const tooSimilar = langRecent.some(prev => cosineSimilarity(prev, chosenText) > 0.75);
+    const tooSimilar = isTooSimilarToRecent(chosenText);
     if (!tooSimilar) break;
     model = nextModel(model);
     chosenText = buildModelText(model);
+  }
+  if (isTooSimilarToRecent(chosenText)) {
+    const allSegmentKeys = Object.keys(segmentPool).filter((key) => segmentPool[key]);
+    for (let attempt = 0; attempt < VACANCY_NARRATIVE_MODELS.length; attempt++) {
+      const introModel = VACANCY_NARRATIVE_MODELS[(VACANCY_NARRATIVE_MODELS.indexOf(model) + attempt) % VACANCY_NARRATIVE_MODELS.length];
+      const orderedKeys = allSegmentKeys
+        .slice()
+        .sort((a, b) => {
+          const aHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${a}`);
+          const bHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${b}`);
+          const aNum = Number(aHash);
+          const bNum = Number(bHash);
+          if (Number.isFinite(aNum) && Number.isFinite(bNum)) return aNum - bNum;
+          return String(aHash).localeCompare(String(bHash)) || a.localeCompare(b);
+        });
+      const candidate = [
+        introByModel[introModel],
+        ...orderedKeys.map((key) => segmentPool[key]).filter(Boolean),
+        isPl
+          ? `Podczas wdrożenia omawiamy harmonogram pierwszych zmian i odpowiedzialność krok po kroku.`
+          : (isRu
+            ? `Во время выхода подробно проговариваем задачи первой недели и порядок работы по смене.`
+            : `Під час виходу детально узгоджуємо задачі першого тижня та порядок роботи в зміні.`)
+      ].join(' ').replace(/\s+/g, ' ').trim();
+      if (!isTooSimilarToRecent(candidate)) {
+        chosenText = candidate;
+        model = introModel;
+        break;
+      }
+    }
   }
 
   const needsExtendedNarrative = Boolean(page && page.enforce_long_narrative);
@@ -2327,7 +2370,7 @@ function getVacancyNarrative(page, lang, variationState) {
   if (variationState?.recentByLang?.[lang]) {
     variationState.lastModelByLang[lang] = model;
     variationState.recentByLang[lang].push(chosenText);
-    if (variationState.recentByLang[lang].length > 10) variationState.recentByLang[lang].shift();
+    if (variationState.recentByLang[lang].length > 100) variationState.recentByLang[lang].shift();
   }
   const rendered = paragraphs.filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('');
   return `<div class="vacancy-description">${rendered}</div>`;
@@ -2686,12 +2729,19 @@ async function build() {
 
     // Build related vacancies (same city or same category, max 3)
     // Only link to pages that have HTML files (pagesToGenerate)
+    const seenRelatedSignatures = new Set();
     const relatedVacancies = pagesToGenerate
-      .filter(p => p.slug !== page.slug && (
+      .filter(p => p.slug !== page.slug && p.title !== page.title && (
         (p.city === page.city && p.category !== page.category) ||
         (p.category === page.category && p.city !== page.city)
       ))
       .sort((a, b) => hashString(a.slug + page.slug) - hashString(b.slug + page.slug))
+      .filter((p) => {
+        const signature = `${String(p.title || '').trim().toLowerCase()}|${String(p.city || '').trim().toLowerCase()}`;
+        if (seenRelatedSignatures.has(signature)) return false;
+        seenRelatedSignatures.add(signature);
+        return true;
+      })
       .slice(0, 3);
 
     let relatedHtml = '';
