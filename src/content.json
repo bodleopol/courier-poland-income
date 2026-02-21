@@ -6248,5 +6248,1010 @@
       "Если релевантного опыта мало, решающими становятся мотивация и готовность к практическому обучению.",
       "Физическая нагрузка зависит от смены, поэтому важны пунктуальность, дисциплина и соблюдение стандартов рабочего места."
     ]
+  },
+  {
+    "slug": "warszawa-hospitality-human-801",
+    "category": "hospitality",
+    "city": "Варшава (Таргувек)",
+    "city_pl": "Warszawa (Targówek)",
+    "title": "Заготівельник у цех напівфабрикатів",
+    "title_pl": "Pracownik przygotowania półproduktów",
+    "salary": "6300 - 7600 PLN/miesiąc brutto",
+    "company": "MilaStop Food Hub",
+    "shift_ua": "графік 3/3",
+    "shift_pl": "grafik 3/3",
+    "shift_ru": "график 3/3",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: гаряче харчування та компенсація доїзду.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: gorący posiłek i zwrot kosztów dojazdu.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: горячее питание и компенсация проезда.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "krakow-hospitality-human-802",
+    "category": "hospitality",
+    "city": "Краків (Подгуже)",
+    "city_pl": "Kraków (Podgórze)",
+    "title": "Помічник кухаря у центральну кухню мережі",
+    "title_pl": "Pomoc kuchenna w centralnej kuchni sieci",
+    "salary": "31 - 35 PLN/h brutto",
+    "company": "CityBreak Bistro Group",
+    "shift_ua": "дві зміни без ночей",
+    "shift_pl": "dwie zmiany bez nocek",
+    "shift_ru": "две смены без ночей",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: бонус 400 PLN за повну відвідуваність.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: premia 400 PLN za pełną frekwencję.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: бонус 400 PLN за полную посещаемость.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "wroclaw-logistics-human-803",
+    "category": "logistics",
+    "city": "Вроцлав (Псє Поле)",
+    "city_pl": "Wrocław (Psie Pole)",
+    "title": "Комплектувальник замовлень для міні-маркетів",
+    "title_pl": "Komisjoner zamówień dla minimarketów",
+    "salary": "30 - 36 PLN/h brutto",
+    "company": "QuickBasket Distribution",
+    "shift_ua": "графік 5/2",
+    "shift_pl": "grafik 5/2",
+    "shift_ru": "график 5/2",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: безкоштовний автобус від станції Nadodrze.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: bezpłatny autobus od stacji Nadodrze.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: бесплатный автобус от станции Nadodrze.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "poznan-production-human-804",
+    "category": "production",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Оператор лінії фасування сендвічів",
+    "title_pl": "Operator linii pakowania kanapek",
+    "salary": "29 - 34 PLN/h brutto",
+    "company": "ReadyMeal Factory",
+    "shift_ua": "зміни 2/2",
+    "shift_pl": "zmiany 2/2",
+    "shift_ru": "смены 2/2",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: компенсація проїзного до 180 PLN.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: zwrot kosztów przejazdu do 180 PLN.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: компенсация проезда до 180 PLN.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "lodz-retail-human-805",
+    "category": "retail",
+    "city": "Лодзь (Балути)",
+    "city_pl": "Łódź (Bałuty)",
+    "title": "Касир-продавець у магазин біля дому",
+    "title_pl": "Kasjer-sprzedawca w sklepie osiedlowym",
+    "salary": "5400 - 6500 PLN/miesiąc brutto",
+    "company": "MiniStop Partner Stores",
+    "shift_ua": "денні та нічні зміни 2/2",
+    "shift_pl": "zmiany dzienne i nocne 2/2",
+    "shift_ru": "дневные и ночные смены 2/2",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: знижка 20% на каву та випічку.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: zniżka 20% na kawę i pieczywo.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: скидка 20% на кофе и выпечку.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-human-806",
+    "category": "cleaning",
+    "city": "Гданськ (Оруня)",
+    "city_pl": "Gdańsk (Orunia)",
+    "title": "Працівник прибирання зони кафе на АЗС",
+    "title_pl": "Pracownik sprzątania strefy café na stacji",
+    "salary": "28 - 31 PLN/h brutto",
+    "company": "FuelPoint Services",
+    "shift_ua": "денна зміна 3/3",
+    "shift_pl": "dzienna zmiana 3/3",
+    "shift_ru": "дневная смена 3/3",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: безкоштовний обід на зміні.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: bezpłatny obiad na zmianie.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: бесплатный обед на смене.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "lublin-security-human-807",
+    "category": "security",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Охоронець нічної зміни на автозаправному комплексі",
+    "title_pl": "Pracownik ochrony na nocnej zmianie",
+    "salary": "29 - 33 PLN/h brutto",
+    "company": "SafeRoute Protection",
+    "shift_ua": "нічні зміни 2/2",
+    "shift_pl": "nocne zmiany 2/2",
+    "shift_ru": "ночные смены 2/2",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: кімната охорони з мікрохвильовкою.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: pomieszczenie ochrony z kuchenką mikrofalową.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: комната охраны с микроволновкой.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "bialystok-healthcare-human-808",
+    "category": "healthcare",
+    "city": "Білосток",
+    "city_pl": "Białystok",
+    "title": "Доглядальниця/доглядальник у приватний дім опіки",
+    "title_pl": "Opiekun/Opiekunka w prywatnym domu opieki",
+    "salary": "6000 - 7200 PLN/miesiąc brutto",
+    "company": "Dom Spokoju Senior Care",
+    "shift_ua": "12-годинні зміни",
+    "shift_pl": "zmiany 12-godzinne",
+    "shift_ru": "12-часовые смены",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: оплачувана відпустка і гаряче харчування.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: płatny urlop i gorący posiłek.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: оплачиваемый отпуск и горячее питание.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "katowice-education-human-809",
+    "category": "education",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Асистент групи продовженого дня",
+    "title_pl": "Asystent świetlicy",
+    "salary": "27 - 30 PLN/h brutto",
+    "company": "EduMeal Campus Services",
+    "shift_ua": "Пн-Пт 11:00-19:00",
+    "shift_pl": "Pn-Pt 11:00-19:00",
+    "shift_ru": "Пн-Пт 11:00-19:00",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: лише будні та стабільний графік.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: tylko dni robocze i stabilny grafik.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: только будни и стабильный график.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "szczecin-agriculture-human-810",
+    "category": "agriculture",
+    "city": "Щецин (околиця)",
+    "city_pl": "Szczecin (okolice)",
+    "title": "Працівник теплиці (зелень для супермаркетів)",
+    "title_pl": "Pracownik szklarni (zioła dla marketów)",
+    "salary": "28 - 32 PLN/h brutto",
+    "company": "FreshLeaf Growers",
+    "shift_ua": "Пн-Сб 06:00-16:00",
+    "shift_pl": "Pn-Sb 06:00-16:00",
+    "shift_ru": "Пн-Сб 06:00-16:00",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: безкоштовний трансфер від житла.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: bezpłatny transport od miejsca zamieszkania.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: бесплатный трансфер от жилья.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "warszawa-it-human-811",
+    "category": "it",
+    "city": "Варшава (Мокотув)",
+    "city_pl": "Warszawa (Mokotów)",
+    "title": "IT Helpdesk Specialist для мережі магазинів",
+    "title_pl": "Specjalista IT Helpdesk dla sieci sklepów",
+    "salary": "7800 - 9800 PLN/miesiąc brutto",
+    "company": "RetailCore Systems",
+    "shift_ua": "Пн-Пт 08:00-16:30",
+    "shift_pl": "Pn-Pt 08:00-16:30",
+    "shift_ru": "Пн-Пт 08:00-16:30",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: гібридний формат 3/2.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: format hybrydowy 3/2.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: гибридный формат 3/2.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "torun-beauty-human-812",
+    "category": "beauty",
+    "city": "Торунь",
+    "city_pl": "Toruń",
+    "title": "Барбер у мережевий салон у ТЦ",
+    "title_pl": "Barber w salonie sieciowym w galerii",
+    "salary": "35 - 60 PLN/h + %",
+    "company": "CutPoint Studio",
+    "shift_ua": "зміни 2/2",
+    "shift_pl": "zmiany 2/2",
+    "shift_ru": "смены 2/2",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: готова клієнтська база.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: gotowa baza klientów.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: готовая клиентская база.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "rzeszow-construction-human-813",
+    "category": "construction",
+    "city": "Жешув",
+    "city_pl": "Rzeszów",
+    "title": "Технік з дрібних ремонтів на обʼєктах мережі",
+    "title_pl": "Technik drobnych napraw na obiektach sieci",
+    "salary": "34 - 42 PLN/h brutto",
+    "company": "StationCare Facilities",
+    "shift_ua": "Пн-Пт 08:00-17:00",
+    "shift_pl": "Pn-Pt 08:00-17:00",
+    "shift_ru": "Пн-Пт 08:00-17:00",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: службовий бус і інструмент.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: służbowy bus i narzędzia.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: служебный бус и инструмент.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "opole-logistics-human-814",
+    "category": "logistics",
+    "city": "Ополе",
+    "city_pl": "Opole",
+    "title": "Водій кат. B для доставки між магазинами",
+    "title_pl": "Kierowca kat. B do dostaw między sklepami",
+    "salary": "6200 - 7600 PLN/miesiąc brutto",
+    "company": "RouteLink Retail Logistics",
+    "shift_ua": "ранкові рейси",
+    "shift_pl": "poranne kursy",
+    "shift_ru": "утренние рейсы",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: повернення на базу щодня.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: powrót do bazy codziennie.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: возвращение на базу ежедневно.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-retail-human-815",
+    "category": "retail",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Мерчандайзер свіжої продукції",
+    "title_pl": "Merchandiser działu świeżego",
+    "salary": "28 - 33 PLN/h brutto",
+    "company": "MarketLine Fresh",
+    "shift_ua": "Пн-Пт 06:00-14:00",
+    "shift_pl": "Pn-Pt 06:00-14:00",
+    "shift_ru": "Пн-Пт 06:00-14:00",
+    "pattern_ua": "Повна зайнятість у форматі великої мережі з прозорими змінами.",
+    "pattern_pl": "Pełen etat w modelu dużej sieci z przejrzystym grafikiem.",
+    "pattern_ru": "Полная занятость в формате крупной сети с понятным графиком.",
+    "start_ua": "Початок роботи протягом 3-7 днів після оформлення.",
+    "start_pl": "Start pracy w ciągu 3-7 dni po formalnościach.",
+    "start_ru": "Старт работы в течение 3-7 дней после оформления.",
+    "contract_ua": "Umowa o pracę / Umowa Zlecenie (залежно від обʼєкта)",
+    "contract_pl": "Umowa o pracę / Umowa Zlecenie (zależnie od obiektu)",
+    "contract_ru": "Umowa o pracę / Umowa Zlecenie (в зависимости от объекта)",
+    "offers_ua": [
+      "Тут усе офіційно: оформлення без \"сірих\" схем, виплата вчасно та прозора розрахункова відомість.",
+      "Працівники отримують конкретні бонуси: премія за аудит викладки без зауважень.",
+      "Графік формуємо наперед, щоб можна було планувати навчання, сімʼю й особисті справи."
+    ],
+    "offers_pl": [
+      "Tu wszystko jest legalnie: umowa bez szarej strefy, wypłata na czas i czytelne rozliczenie.",
+      "Zespół dostaje konkretne benefity: premia za audyt ekspozycji bez uwag.",
+      "Grafik układamy z wyprzedzeniem, żeby dało się planować życie prywatne i naukę."
+    ],
+    "offers_ru": [
+      "Здесь все официально: договор без серых схем, своевременная выплата и прозрачный расчет.",
+      "Команда получает конкретные бонусы: премия за аудит выкладки без замечаний.",
+      "График формируется заранее, чтобы можно было планировать учебу и личные дела."
+    ],
+    "tasks_ua": [
+      "Працюєте за зрозумілим стандартом зміни: прийом задач, виконання, коротка передача наступній команді.",
+      "Контролюєте якість своєї ділянки, фіксуєте відхилення і не залишаєте проблеми \"на потім\".",
+      "Підтримуєте порядок робочої зони та дотримуєтесь правил безпеки без формального підходу."
+    ],
+    "tasks_pl": [
+      "Pracujesz według jasnego standardu zmiany: odbiór zadań, realizacja i przekazanie kolejnej ekipie.",
+      "Kontrolujesz jakość na swoim odcinku, zgłaszasz odchylenia i domykasz temat.",
+      "Utrzymujesz porządek stanowiska oraz przestrzegasz zasad bezpieczeństwa w praktyce."
+    ],
+    "tasks_ru": [
+      "Работаете по понятному стандарту смены: прием задач, выполнение и передача следующей команде.",
+      "Контролируете качество на своем участке, фиксируете отклонения и закрываете вопросы сразу.",
+      "Поддерживаете порядок рабочей зоны и соблюдаете правила безопасности без формальности."
+    ],
+    "details_ua": [
+      "Ми цінуємо людей, які приходять на роботу вчасно, тримають слово й бережуть командний темп.",
+      "Досвід буде перевагою, але у більшості позицій є безкоштовне навчання з наставником.",
+      "Якщо хочете стабільну роботу в системній компанії без хаосу — ця вакансія для вас."
+    ],
+    "details_pl": [
+      "Doceniamy osoby punktualne, odpowiedzialne i nastawione na wspólne tempo zespołu.",
+      "Doświadczenie jest atutem, ale większość stanowisk ma bezpłatne wdrożenie z mentorem.",
+      "Jeśli szukasz stabilnej pracy w uporządkowanej firmie, ta oferta jest dla Ciebie."
+    ],
+    "details_ru": [
+      "Мы ценим людей, которые приходят вовремя, держат слово и поддерживают командный темп.",
+      "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
+      "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
+    ]
   }
 ]
