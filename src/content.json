@@ -7253,5 +7253,1055 @@
       "Опыт будет плюсом, но на большинстве позиций есть бесплатное обучение с наставником.",
       "Если вам нужна стабильная работа в системной компании без хаоса — эта вакансия для вас."
     ]
+  },
+  {
+    "slug": "warszawa-ochrona-osiedle-monitoring-801",
+    "category": "other",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_ru": "Варшава",
+    "title": "Охоронець житлового комплексу (нічні чергування)",
+    "title_pl": "Pracownik ochrony osiedla mieszkaniowego (nocne dyżury)",
+    "title_ru": "Охранник жилого комплекса (ночные дежурства)",
+    "salary": "31 - 36 PLN/h netto",
+    "company": "Mokotow Security Partner",
+    "shift_ua": "19:00 - 07:00, 2/2",
+    "shift_pl": "19:00 - 07:00, 2/2",
+    "shift_ru": "19:00 - 07:00, график 2/2",
+    "pattern_ua": "15–16 змін на місяць",
+    "pattern_pl": "15–16 zmian miesięcznie",
+    "pattern_ru": "15–16 смен в месяц",
+    "start_ua": "Протягом 4 днів після перевірки документів",
+    "start_pl": "W ciągu 4 dni po weryfikacji dokumentów",
+    "start_ru": "В течение 4 дней после проверки документов",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "contract_ru": "Umowa Zlecenie",
+    "offers_ua": [
+      "Пост розташований у теплому приміщенні біля вʼїзду на паркінг, тому половина зміни проходить за моніторами, а не під дощем; форму для зими й демісезону видаємо в перший день, без застави та штрафів за знос.",
+      "Аванс можна взяти щотижня в пʼятницю до 400 PLN, а основна виплата приходить до 10 числа; якщо берете підміни у свята, погодинна ставка автоматично піднімається на 4 PLN.",
+      "Начальник обʼєкта живе поруч і швидко закриває побутові питання: на посту є мікрохвильовка, чайник та окрема шафа для речей, щоб не носити спорядження додому."
+    ],
+    "offers_pl": [
+      "Posterunek znajduje się w ogrzewanej budce przy wjeździe na parking, więc większość zmiany to praca przy monitoringu, a nie stanie na deszczu; komplet munduru letni i zimowy dostajesz od razu, bez kaucji.",
+      "Możesz brać zaliczki co tydzień do 400 PLN, a główna wypłata wpływa do 10 dnia miesiąca; za dyżury świąteczne stawka rośnie automatycznie o 4 PLN za godzinę.",
+      "Koordynator obiektu jest na miejscu i szybko załatwia sprawy organizacyjne: na posterunku jest mikrofalówka, czajnik i zamykana szafka na rzeczy prywatne."
+    ],
+    "offers_ru": [
+      "Пост находится в тёплой будке у въезда на паркинг, поэтому большую часть смены вы работаете за мониторами, а не на улице; зимнюю и демисезонную форму выдаём сразу и без залога.",
+      "Раз в неделю можно взять аванс до 400 PLN, а основная выплата приходит до 10 числа; при выходе в праздничные дни ставка автоматически повышается на 4 PLN в час.",
+      "Руководитель объекта рядом и быстро решает бытовые вопросы: на посту есть микроволновка, чайник и отдельный шкафчик, чтобы не возить экипировку домой."
+    ],
+    "tasks_ua": [
+      "Контроль вʼїзду мешканців і курʼєрів: звіряєте номер авто в системі, відкриваєте шлагбаум та робите коротку позначку про нічні доставки, щоб ранкова зміна бачила повну картину.",
+      "Раз на дві години обхід території з електронною міткою, без складних маршрутів: підʼїзди, дитячий майданчик і зона контейнерів; взимку додається перевірка, чи не заблоковані пожежні проходи.",
+      "У випадку інциденту ви не працюєте сам на сам: є чітка інструкція, група швидкого реагування та менеджер на звʼязку, тому головне — уважність і спокійна фіксація подій."
+    ],
+    "tasks_pl": [
+      "Kontrola wjazdu mieszkańców i kurierów: sprawdzasz numer auta w systemie, otwierasz szlaban i robisz krótką notatkę o dostawach nocnych, żeby poranna zmiana miała pełny obraz.",
+      "Co dwie godziny wykonujesz obchód z punktem kontrolnym, bez skomplikowanej trasy: klatki, plac zabaw i strefa śmietników; zimą dochodzi sprawdzenie dróg pożarowych.",
+      "W razie incydentu nie zostajesz sam: działa jasna procedura, grupa interwencyjna i dyżurny koordynator, więc kluczowe są spokój, obserwacja i poprawny zapis zdarzenia."
+    ],
+    "tasks_ru": [
+      "Контролируете въезд жителей и курьеров: сверяете номер машины в системе, открываете шлагбаум и оставляете короткую отметку о ночных доставках для утренней смены.",
+      "Каждые два часа обход территории с электронной отметкой, маршрут простой: подъезды, детская площадка и зона контейнеров; зимой дополнительно проверяете пожарные проезды.",
+      "При инциденте вы не один: есть понятная инструкция, группа реагирования и дежурный менеджер на связи, поэтому важны внимательность и спокойная фиксация ситуации."
+    ],
+    "details_ua": [
+      "Потрібна базова польська для діалогу з мешканцями та службами доставки, але професійних ліцензій не вимагаємо — спочатку проходите оплачуваний інструктаж на конкретному обʼєкті. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Варшава, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "Пост облаштований кондиціонером і санвузлом, нічна перерва не «на папері»: старший зміни підміняє на 20–25 хвилин, щоб можна було нормально поїсти.",
+      "Робота підходить людям, які люблять передбачуваний ритм, не шукають силових конфліктів і можуть акуратно вести журнал подій без поспіху."
+    ],
+    "details_pl": [
+      "Wymagana jest komunikatywna polszczyzna do rozmów z mieszkańcami i serwisami dostawczymi, ale licencja kwalifikowanego pracownika nie jest potrzebna — zaczynasz od płatnego wdrożenia. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Warszawa liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Posterunek ma klimatyzację i zaplecze sanitarne, a przerwa nocna jest realna: starszy zmiany robi zastępstwo na 20–25 minut, żeby spokojnie zjeść.",
+      "Oferta dla osób, które lubią przewidywalny rytm pracy, nie szukają konfliktów siłowych i potrafią prowadzić dziennik zdarzeń dokładnie, bez nerwów."
+    ],
+    "details_ru": [
+      "Нужен базовый польский для общения с жителями и службами доставки, но профессиональная лицензия не требуется — сначала проходите оплачиваемое обучение на объекте. На вводе отдельно объясняем, как именно на объекте в Варшава считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Пост оборудован кондиционером и санузлом, а ночной перерыв реальный: старший смены подменяет на 20–25 минут, чтобы вы могли спокойно поесть.",
+      "Вакансия подойдёт тем, кто любит предсказуемый ритм, не ищет силовых конфликтов и умеет аккуратно вести журнал событий."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "krakow-ochrona-biuro-dzienna-802",
+    "category": "other",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "city_ru": "Краков",
+    "title": "Охоронець офісного центру (денна зміна)",
+    "title_pl": "Pracownik ochrony biurowca (zmiana dzienna)",
+    "title_ru": "Охранник офисного центра (дневная смена)",
+    "salary": "30 - 34 PLN/h netto",
+    "company": "Orbit Tower Services",
+    "shift_ua": "07:00 - 19:00, 2/2",
+    "shift_pl": "07:00 - 19:00, 2/2",
+    "shift_ru": "07:00 - 19:00, 2/2",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "Обʼєкт — бізнес-центр біля Ronda Mogilskiego: робота проходить у вестибюлі та на посту моніторингу, форму видаємо одразу, а на зміні є окрема кімната для перерви з кавомашиною.",
+      "Старший охорони працює поруч і допомагає новачкам перші тижні: показує систему перепусток, шаблони звітів і порядок дій, якщо після 18:00 в офіс приходить підрядник.",
+      "Раз на тиждень можна взяти аванс, а за додаткові денні чергування в кінці місяця нараховується окрема доплата; оплату отримуєте на рахунок без затримок."
+    ],
+    "offers_pl": [
+      "Obiekt to biurowiec przy Rondzie Mogilskim: pracujesz w lobby i na stanowisku monitoringu, mundur dostajesz od pierwszego dnia, a na zmianie jest pokój socjalny z ekspresem do kawy.",
+      "Starszy ochrony jest na miejscu i wspiera nowych pracowników przez pierwsze tygodnie: pokazuje system przepustek, wzory raportów i procedury dla serwisu po godzinach.",
+      "Raz w tygodniu możesz pobrać zaliczkę, a za dodatkowe dyżury dzienne naliczamy osobny dodatek na koniec miesiąca; wypłata trafia terminowo na konto."
+    ],
+    "offers_ru": [
+      "Объект — офисный центр возле Ronda Mogilskiego: работа в лобби и на посту мониторинга, форму выдаём в первый день, на смене есть отдельная комната отдыха с кофемашиной.",
+      "Старший охраны находится рядом и помогает новичкам в первые недели: показывает систему пропусков, шаблоны отчётов и порядок действий для подрядчиков после 18:00.",
+      "Раз в неделю можно взять аванс, а за дополнительные дневные дежурства начисляется отдельная доплата в конце месяца; выплаты приходят на счёт без задержек."
+    ],
+    "tasks_ua": [
+      "На вході перевіряєте перепустки співробітників та гостей, фіксуєте тимчасові картки в системі й ведете журнал, щоб адміністрація бачила, хто перебуває в будівлі після робочих годин.",
+      "Протягом зміни контролюєте камери з паркінгу та службових поверхів, реагуєте на сигнали пожежної системи за інструкцією і, за потреби, передаєте інформацію черговому техніку.",
+      "Раз на кілька годин робите короткий обхід по поверхах офісної частини, перевіряєте аварійні виходи та закриття технічних дверей, після чого здаєте зміни структурованим звітом."
+    ],
+    "tasks_pl": [
+      "Przy wejściu weryfikujesz przepustki pracowników i gości, rejestrujesz karty tymczasowe w systemie i prowadzisz dziennik obecności po godzinach pracy biura.",
+      "W trakcie zmiany nadzorujesz monitoring parkingu i pięter technicznych, reagujesz na sygnały PPOŻ zgodnie z procedurą i w razie potrzeby kontaktujesz się z dyżurnym technicznym.",
+      "Co kilka godzin wykonujesz krótki obchód części biurowej, sprawdzasz wyjścia ewakuacyjne oraz drzwi serwisowe, a zmianę kończysz uporządkowanym raportem dla kolejnego dyżuru."
+    ],
+    "tasks_ru": [
+      "На входе проверяете пропуска сотрудников и посетителей, регистрируете временные карты в системе и ведёте журнал, чтобы администрация видела присутствие после рабочего дня.",
+      "В течение смены контролируете камеры парковки и технических этажей, реагируете на сигналы пожарной системы по инструкции и при необходимости связываетесь с дежурным техником.",
+      "Несколько раз за смену делаете короткий обход офисных этажей, проверяете аварийные выходы и сервисные двери, а затем передаёте смену с понятным отчётом."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Краків, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Kraków liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Краков считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "wroclaw-ochrona-sklep-noc-803",
+    "category": "other",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "city_ru": "Вроцлав",
+    "title": "Охоронець у магазині DIY (вечір-ніч)",
+    "title_pl": "Pracownik ochrony marketu budowlanego (wieczór-noc)",
+    "title_ru": "Охранник строительного маркета (вечер-ночь)",
+    "salary": "29 - 33 PLN/h netto",
+    "company": "SafeGate Retail",
+    "shift_ua": "16:00 - 04:00, 4/2",
+    "shift_pl": "16:00 - 04:00, 4/2",
+    "shift_ru": "16:00 - 04:00, 4/2",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "Нічна зміна на будівельному маркеті проходить у парі: один працівник тримає пост біля службового входу, другий контролює зал і рампи по камерах; графік формують на місяць, без хаотичних викликів «на завтра».",
+      "Після 22:00 на обʼєкті тихо, але є чіткі правила для прийому нічних поставок: ви працюєте з планшетом, де видно номери авто та вікна розвантаження, тому не потрібно дзвонити по десять разів.",
+      "Компанія доплачує за нічні години та видає теплу куртку для обходів зовнішньої рампи; у кімнаті охорони є холодильник, чайник і місце, де можна спокійно поїсти під час перерви."
+    ],
+    "offers_pl": [
+      "Nocna zmiana w markecie budowlanym odbywa się w duecie: jedna osoba pilnuje wejścia serwisowego, druga nadzoruje halę i rampy przez monitoring; grafik ustalamy miesięcznie, bez nagłych telefonów.",
+      "Po 22:00 obiekt jest spokojniejszy, ale obowiązuje jasna procedura dla dostaw nocnych: pracujesz na tablecie z numerami aut i oknami rozładunku, więc wszystko jest czytelne.",
+      "Firma wypłaca dodatek za godziny nocne i zapewnia ciepłą kurtkę do obchodów rampy zewnętrznej; w stróżówce jest lodówka, czajnik i miejsce na normalną przerwę."
+    ],
+    "offers_ru": [
+      "Ночная смена в строительном маркете проходит в паре: один сотрудник дежурит у служебного входа, второй контролирует зал и рампы по камерам; график составляется заранее на месяц.",
+      "После 22:00 на объекте спокойнее, но есть чёткая процедура ночных поставок: вы работаете с планшетом, где указаны номера машин и окна разгрузки, без лишних звонков.",
+      "Компания доплачивает за ночные часы и выдаёт тёплую куртку для обходов внешней рампы; в комнате охраны есть холодильник, чайник и нормальное место для перерыва."
+    ],
+    "tasks_ua": [
+      "Приймаєте нічні поставки: звіряєте номер машини з заявкою, відкриваєте службовий вʼїзд і відмічаєте час прибуття, щоб ранкова адміністрація бачила фактичний рух транспорту.",
+      "Моніторите торговий зал і касову зону в години закриття, фіксуєте будь-які спрацювання датчиків та передаєте інформацію керівнику зміни без самодіяльності.",
+      "Кожні дві години виконуєте маршрут обходу всередині магазину і на зовнішній рампі, перевіряєте аварійні виходи та ворота складу, після чого вносите запис у електронний журнал."
+    ],
+    "tasks_pl": [
+      "Obsługujesz nocne dostawy: weryfikujesz numer auta z awizacją, otwierasz bramę serwisową i zapisujesz godzinę przyjazdu, aby poranna administracja miała pełny raport.",
+      "Nadzorujesz halę sprzedaży i strefę kas po zamknięciu sklepu, rejestrujesz każde wywołanie czujników i przekazujesz informacje kierownikowi zmiany zgodnie z procedurą.",
+      "Co dwie godziny wykonujesz obchód wnętrza marketu oraz zewnętrznej rampy, sprawdzasz wyjścia ewakuacyjne i bramy magazynowe, a następnie uzupełniasz dziennik elektroniczny."
+    ],
+    "tasks_ru": [
+      "Принимаете ночные поставки: сверяете номер машины с заявкой, открываете сервисный въезд и фиксируете время прибытия, чтобы утренняя администрация видела реальное движение.",
+      "Контролируете торговый зал и кассовую зону после закрытия, записываете срабатывания датчиков и передаёте информацию руководителю смены по установленной процедуре.",
+      "Каждые два часа выполняете обход внутри магазина и по внешней рампе, проверяете аварийные выходы и складские ворота, после чего заполняете электронный журнал."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Вроцлав, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Wrocław liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Вроцлав считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "poznan-budowa-pomocnik-murowanie-804",
+    "category": "construction",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "city_ru": "Познань",
+    "title": "Помічник на забудову (мулярна бригада)",
+    "title_pl": "Pomocnik budowlany (brygada murarska)",
+    "title_ru": "Помощник на стройку (каменная бригада)",
+    "salary": "32 - 38 PLN/h netto",
+    "company": "Warta Construction Team",
+    "shift_ua": "07:00 - 17:00, Пн-Сб",
+    "shift_pl": "07:00 - 17:00, Pn-Sob",
+    "shift_ru": "07:00 - 17:00, Пн-Сб",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Познань робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Poznań praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Познань процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Готуєте розчин, підвозите блоки та інструмент до мулярів на конкретну секцію, щоб бригада не зупинялася через дрібні затримки.",
+      "Допомагаєте виставляти маяки, прибираєте робочу зону після кожного етапу та контролюєте, щоб проходи лишались безпечними для всієї зміни.",
+      "Наприкінці дня разом із бригадиром перевіряєте залишки матеріалу, готуєте площадку на ранок і здаєте інструмент у комору."
+    ],
+    "tasks_pl": [
+      "Przygotowujesz zaprawę, dowozisz bloczki i narzędzia do murarzy na konkretną sekcję, aby brygada nie miała przestojów.",
+      "Pomagasz przy ustawianiu prowadnic, porządkujesz stanowisko po każdym etapie i dbasz o drożne, bezpieczne przejścia na budowie.",
+      "Pod koniec dnia razem z brygadzistą sprawdzasz stan materiałów, przygotowujesz front robót na rano i zdajesz sprzęt do magazynku."
+    ],
+    "tasks_ru": [
+      "Готовите раствор, подвозите блоки и инструмент к каменщикам на нужный участок, чтобы бригада не теряла темп.",
+      "Помогаете выставлять направляющие, убираете рабочую зону после этапов и следите, чтобы проходы оставались безопасными.",
+      "В конце дня вместе с бригадиром проверяете остатки материалов, готовите площадку на утро и сдаёте инструмент в кладовую."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Познань, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Poznań liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Познань считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "gdansk-budowa-pomocnik-elewacja-805",
+    "category": "construction",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "city_ru": "Гданьск",
+    "title": "Помічник на забудову (утеплення фасадів)",
+    "title_pl": "Pomocnik budowlany (ocieplenia elewacji)",
+    "title_ru": "Помощник на стройку (утепление фасадов)",
+    "salary": "31 - 37 PLN/h netto",
+    "company": "Baltic Facade Group",
+    "shift_ua": "07:30 - 17:30, Пн-Сб",
+    "shift_pl": "07:30 - 17:30, Pn-Sob",
+    "shift_ru": "07:30 - 17:30, Пн-Сб",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Гданськ робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Gdańsk praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Гданьск процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Разкладаєте плити утеплювача, готуєте клейові суміші невеликими партіями й передаєте матеріал монтажникам по поверхах.",
+      "Працюєте на риштуванні з обовʼязковою страховкою: фіксуєте сітку, подаєте дюбелі та контролюєте чистоту зони, щоб нічого не падало вниз.",
+      "Після зміни закриваєте матеріал від вологи, сортуєте відходи й готуєте інструмент на наступний день, щоб ранковий старт проходив без затримок."
+    ],
+    "tasks_pl": [
+      "Rozkładasz płyty ocieplenia, przygotowujesz klej małymi partiami i podajesz materiał ekipie montażowej na poszczególne kondygnacje.",
+      "Pracujesz na rusztowaniu z obowiązkowym zabezpieczeniem: mocujesz siatkę, podajesz kołki i dbasz o czystość strefy pod elewacją.",
+      "Po zmianie zabezpieczasz materiał przed wilgocią, segregujesz odpady i przygotowujesz narzędzia, aby poranny start przebiegał bez poślizgu."
+    ],
+    "tasks_ru": [
+      "Раскладываете плиты утеплителя, готовите клеевые смеси небольшими партиями и подаёте материал монтажникам по этажам.",
+      "Работаете на лесах только со страховкой: фиксируете сетку, подаёте дюбели и следите за чистотой зоны под фасадом.",
+      "После смены закрываете материал от влаги, сортируете отходы и готовите инструмент на следующий день, чтобы утром не терять время."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Гданськ, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Gdańsk liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Гданьск считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "lodz-budowa-pomocnik-monolit-806",
+    "category": "construction",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "city_ru": "Лодзь",
+    "title": "Помічник на забудову (моноліт)",
+    "title_pl": "Pomocnik budowlany (monolit)",
+    "title_ru": "Помощник на стройку (монолит)",
+    "salary": "33 - 39 PLN/h netto",
+    "company": "SolidForm Łódź",
+    "shift_ua": "06:30 - 17:00, Пн-Сб",
+    "shift_pl": "06:30 - 17:00, Pn-Sob",
+    "shift_ru": "06:30 - 17:00, Пн-Сб",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Лодзь робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Łódź praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Лодзь процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Подаєте арматуру, фанеру та дрібний інструмент на ділянку моноліту, допомагаєте бригаді швидко підготувати опалубку перед заливкою.",
+      "Під контролем майстра встановлюєте підпори, стежите за маркуванням елементів і прибираєте залишки бетону з проходів, щоб не було травмонебезпечних місць.",
+      "Після завершення етапу миєте інструмент, сортуєте кріплення по ящиках і готуєте майданчик на наступну заливку."
+    ],
+    "tasks_pl": [
+      "Podajesz zbrojenie, sklejkę i drobne narzędzia na odcinek monolitu, pomagając brygadzie sprawnie przygotować szalunki przed betonowaniem.",
+      "Pod nadzorem majstra ustawiasz podpory, pilnujesz oznaczeń elementów i usuwasz resztki betonu z ciągów komunikacyjnych.",
+      "Po etapie myjesz narzędzia, segregujesz łączniki do skrzynek i przygotowujesz stanowisko pod kolejne betonowanie."
+    ],
+    "tasks_ru": [
+      "Подаёте арматуру, фанеру и инструмент на участок монолита, помогая бригаде быстро собрать опалубку перед заливкой.",
+      "Под контролем мастера ставите подпорки, следите за маркировкой элементов и убираете остатки бетона из проходов.",
+      "После этапа моете инструмент, сортируете крепёж по ящикам и готовите площадку к следующей заливке."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Лодзь, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Łódź liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Лодзь считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "katowice-magazyn-ladowanie-rampa-807",
+    "category": "logistics",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "city_ru": "Катовице",
+    "title": "Вантажник на рампі (нічний прийом товару)",
+    "title_pl": "Magazynier na rampie (nocne przyjęcia)",
+    "title_ru": "Грузчик на рампе (ночная приёмка)",
+    "salary": "30 - 35 PLN/h netto",
+    "company": "Silesia Freight Hub",
+    "shift_ua": "18:00 - 06:00, 2/2",
+    "shift_pl": "18:00 - 06:00, 2/2",
+    "shift_ru": "18:00 - 06:00, 2/2",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Катовіце робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Katowice praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Катовице процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "На рампі приймаєте палети з нічних фур, перевіряєте цілісність упаковки та скануєте етикетки перед передачею товару в зону сортування.",
+      "Працюєте з роклою та транспортером: розставляєте вантаж за напрямками рейсів, щоб ранкова логістика починала відправки без заторів.",
+      "Наприкінці зміни закриваєте документи по прийому, формуєте короткий звіт про нестачі або пошкодження й передаєте його старшому складу."
+    ],
+    "tasks_pl": [
+      "Na rampie przyjmujesz palety z nocnych aut, sprawdzasz stan opakowań i skanujesz etykiety przed przekazaniem towaru do sortowni.",
+      "Pracujesz z paleciakiem i taśmociągiem: ustawiasz ładunek według kierunków wysyłki, aby poranna logistyka ruszała bez zatorów.",
+      "Na koniec zmiany zamykasz dokumenty przyjęcia, tworzysz krótki raport braków lub uszkodzeń i przekazujesz go liderowi magazynu."
+    ],
+    "tasks_ru": [
+      "На рампе принимаете палеты с ночных машин, проверяете целостность упаковки и сканируете этикетки перед передачей в сортировочную зону.",
+      "Работаете с рохлей и конвейером: расставляете груз по направлениям отгрузки, чтобы утренняя логистика стартовала без заторов.",
+      "В конце смены закрываете документы приёмки, формируете короткий отчёт по недостачам или повреждениям и передаёте его старшему склада."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Катовіце, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Katowice liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Катовице считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "szczecin-magazyn-kompletacja-skaner-808",
+    "category": "logistics",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "city_ru": "Щецин",
+    "title": "Вантажник-комплектувальник на складі побутової хімії",
+    "title_pl": "Magazynier-kompletacja w magazynie chemii gospodarczej",
+    "title_ru": "Грузчик-комплектовщик на складе бытовой химии",
+    "salary": "29 - 34 PLN/h netto",
+    "company": "NorthPack Logistics",
+    "shift_ua": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_pl": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_ru": "06:00 - 14:00 / 14:00 - 22:00",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Щецин робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Szczecin praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Щецин процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Комплектуєте замовлення по сканеру: збираєте коробки з комірок, перевіряєте партії й терміни, після чого передаєте товар на контроль якості.",
+      "Під час пікових хвиль допомагаєте на ділянці палетування — рівно укладаєте коробки, фіксуєте стрейчем і маркуєте палету під конкретний маршрут.",
+      "Працюєте в теплому складі з чіткою навігацією рядів, тому новачки швидко входять у ритм і бачать свій прогрес уже за перший тиждень."
+    ],
+    "tasks_pl": [
+      "Kompletujesz zamówienia ze skanerem: pobierasz kartony z lokalizacji, weryfikujesz partie i daty, a następnie przekazujesz towar do kontroli jakości.",
+      "W godzinach szczytu wspierasz dział paletyzacji — układasz kartony równo, owijasz stretchem i oznaczasz paletę pod konkretny kierunek.",
+      "Pracujesz w ogrzewanym magazynie z czytelną numeracją alejek, dlatego nowe osoby szybko łapią rytm i widzą efekty już w pierwszym tygodniu."
+    ],
+    "tasks_ru": [
+      "Комплектуете заказы со сканером: собираете коробки из ячеек, проверяете партии и сроки, после чего передаёте товар на контроль качества.",
+      "В пиковые часы помогаете на участке палетизации — ровно укладываете коробки, фиксируете стрейчем и маркируете палету под нужный маршрут.",
+      "Работаете на тёплом складе с понятной навигацией по рядам, поэтому новички быстро входят в темп и видят результат уже в первую неделю."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Щецин, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Szczecin liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Щецин считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "lublin-magazyn-meble-zaladunek-809",
+    "category": "logistics",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "city_ru": "Люблин",
+    "title": "Вантажник на складі меблів (завантаження фур)",
+    "title_pl": "Magazynier w centrum meblowym (załadunek aut)",
+    "title_ru": "Грузчик на мебельном складе (погрузка машин)",
+    "salary": "31 - 36 PLN/h netto",
+    "company": "MebleLine Transport",
+    "shift_ua": "08:00 - 18:00, Пн-Пт",
+    "shift_pl": "08:00 - 18:00, Pn-Pt",
+    "shift_ru": "08:00 - 18:00, Пн-Пт",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Люблін робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Lublin praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Люблин процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Разом з напарником переносите й завантажуєте меблеві пакети у фури за маршрутом відправки, дотримуючись схеми укладки, щоб не пошкодити товар.",
+      "Перед кожним рейсом перевіряєте маркування коробок і кріпите вантаж ременями, бо частина доставок іде на далекі напрямки без проміжного сортування.",
+      "Після відвантаження прибираєте рампу, повертаєте візки в зону зберігання та готуєте місце під наступну машину, щоб зміна не втрачала темп."
+    ],
+    "tasks_pl": [
+      "W duecie przenosisz i ładujesz paczki meblowe do aut zgodnie z planem trasy, dbając o układ ładunku tak, aby nie uszkodzić towaru.",
+      "Przed każdym kursem sprawdzasz oznaczenia kartonów i zabezpieczasz ładunek pasami, bo część wysyłek jedzie na dalekie kierunki bez przeładunku.",
+      "Po załadunku porządkujesz rampę, odstawiasz wózki do strefy odkładczej i przygotowujesz stanowisko pod kolejne auto."
+    ],
+    "tasks_ru": [
+      "В паре переносите и грузите мебельные пакеты в машины по маршруту отправки, соблюдая схему укладки, чтобы избежать повреждений.",
+      "Перед каждым рейсом проверяете маркировку коробок и фиксируете груз ремнями, так как часть поставок идёт на дальние направления без перегруза.",
+      "После отгрузки убираете рампу, возвращаете тележки в зону хранения и готовите место под следующую машину."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Люблін, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Lublin liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Люблин считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "bialystok-riznorobochiy-zaklad-upak-810",
+    "category": "other",
+    "city": "Білосток",
+    "city_pl": "Białystok",
+    "city_ru": "Белосток",
+    "title": "Різноробочий на пакувальній дільниці",
+    "title_pl": "Pracownik ogólny na dziale pakowania",
+    "title_ru": "Разнорабочий на упаковочном участке",
+    "salary": "28 - 32 PLN/h netto",
+    "company": "Podlasie Pack",
+    "shift_ua": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_pl": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_ru": "06:00 - 14:00 / 14:00 - 22:00",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Білосток робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Białystok praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Белосток процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "На пакувальній дільниці збираєте готову продукцію в транспортні коробки, клеїте етикетки й звіряєте кількість по маршрутному листу.",
+      "Допомагаєте оператору лінії із заміною витратних матеріалів: плівка, короби, стікери; якщо лінія зупиняється, швидко прибираєте відходи, щоб запуск був без затримки.",
+      "У кінці зміни сортуєте піддони за напрямками, робите базове прибирання робочого місця і здаєте зміну з короткою відміткою по залишках."
+    ],
+    "tasks_pl": [
+      "Na dziale pakowania układasz gotowy produkt do kartonów transportowych, naklejasz etykiety i potwierdzasz ilości według listy wysyłkowej.",
+      "Wspierasz operatora linii przy wymianie materiałów: folia, kartony, etykiety; gdy linia staje, szybko porządkujesz strefę, aby restart był płynny.",
+      "Pod koniec zmiany sortujesz palety według kierunków, wykonujesz podstawowe porządki i przekazujesz zmianę z krótką informacją o stanie zapasu."
+    ],
+    "tasks_ru": [
+      "На упаковочном участке укладываете готовую продукцию в транспортные коробки, клеите этикетки и сверяете количество по маршрутному листу.",
+      "Помогаете оператору линии менять расходники: плёнку, короба, стикеры; при остановке линии быстро убираете отходы, чтобы запуск не задерживался.",
+      "В конце смены сортируете палеты по направлениям, делаете базовую уборку рабочего места и передаёте смену с отметкой по остаткам."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Білосток, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Białystok liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Белосток считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "rzeszow-riznorobochiy-serwis-terytorii-811",
+    "category": "other",
+    "city": "Жешув",
+    "city_pl": "Rzeszów",
+    "city_ru": "Жешув",
+    "title": "Різноробочий з обслуговування території ТЦ",
+    "title_pl": "Pracownik ogólny do utrzymania terenu centrum handlowego",
+    "title_ru": "Разнорабочий по обслуживанию территории ТЦ",
+    "salary": "29 - 33 PLN/h netto",
+    "company": "ResMall Facility",
+    "shift_ua": "07:00 - 15:00, 5/2",
+    "shift_pl": "07:00 - 15:00, 5/2",
+    "shift_ru": "07:00 - 15:00, 5/2",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Жешув робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Rzeszów praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Жешув процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Обслуговуєте прилеглу територію ТЦ: прибираєте пішохідні зони, контролюєте урни та підʼїзди для постачальників, щоб зранку обʼєкт був готовий до відкриття.",
+      "У теплий сезон доглядаєте зелені зони та полив, узимку допомагаєте зі снігоприбиральною технікою і посипанням проходів проти ожеледиці.",
+      "Працюєте за чітким маршрутом по секторах, відмічаєте виконання в мобільному чек-листі й одразу повідомляєте майстру, якщо бачите пошкодження покриття чи освітлення."
+    ],
+    "tasks_pl": [
+      "Obsługujesz teren centrum handlowego: sprzątasz ciągi piesze, kontrolujesz kosze i podjazdy dostawcze, aby obiekt był gotowy przed otwarciem.",
+      "W sezonie ciepłym dbasz o zieleń i podlewanie, zimą wspierasz odśnieżanie oraz posypywanie alejek przeciw oblodzeniu.",
+      "Pracujesz według stałej trasy sektorowej, oznaczasz wykonanie w mobilnym checkliście i od razu zgłaszasz brygadziście uszkodzenia nawierzchni lub oświetlenia."
+    ],
+    "tasks_ru": [
+      "Обслуживаете территорию торгового центра: убираете пешеходные зоны, контролируете урны и подъезды для поставщиков, чтобы объект был готов к открытию.",
+      "В тёплый сезон ухаживаете за зелёными зонами и поливом, зимой помогаете со снегоуборкой и обработкой проходов против гололёда.",
+      "Работаете по фиксированному маршруту по секторам, отмечаете выполнение в мобильном чек-листе и сразу сообщаете мастеру о повреждениях покрытия или освещения."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Жешув, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Rzeszów liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Жешув считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "warszawa-elektryk-pomocnik-biurowiec-812",
+    "category": "construction",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_ru": "Варшава",
+    "title": "Помічник електрика на внутрішні роботи",
+    "title_pl": "Pomocnik elektryka przy instalacjach wewnętrznych",
+    "title_ru": "Помощник электрика на внутренних работах",
+    "salary": "34 - 41 PLN/h netto",
+    "company": "VoltRoom Instalacje",
+    "shift_ua": "07:00 - 17:00, Пн-Пт + Сб за бажанням",
+    "shift_pl": "07:00 - 17:00, Pn-Pt + Sob opcjonalnie",
+    "shift_ru": "07:00 - 17:00, Пн-Пт + Сб по желанию",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Варшава робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Warszawa praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Варшава процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Допомагаєте електрику прокладати кабельні траси у стелях та технічних шахтах, подаєте матеріал і готуєте інструмент під конкретну ділянку робіт.",
+      "Монтуєте підрозетники, маркуєте кабелі та перевіряєте комплектацію перед закриттям стін, щоб основний майстер не втрачав час на пошук дрібниць.",
+      "Після завершення зміни прибираєте робоче місце, здаєте інструмент і фіксуєте, які позиції потрібно дозамовити на наступний день."
+    ],
+    "tasks_pl": [
+      "Pomagasz elektrykowi prowadzić trasy kablowe w sufitach i szachtach technicznych, podajesz materiał i przygotowujesz narzędzia pod konkretny odcinek prac.",
+      "Montujesz puszki, opisujesz przewody i sprawdzasz kompletację przed zamknięciem ścian, aby główny elektryk nie tracił czasu na drobne braki.",
+      "Po zmianie porządkujesz stanowisko, zdajesz narzędzia i zapisujesz, jakie elementy trzeba domówić na kolejny dzień pracy."
+    ],
+    "tasks_ru": [
+      "Помогаете электрику прокладывать кабельные трассы в потолках и технических шахтах, подаёте материалы и готовите инструмент под конкретный участок.",
+      "Монтируете подрозетники, маркируете кабель и проверяете комплектацию перед закрытием стен, чтобы мастер не терял время на поиски мелочей.",
+      "После смены убираете рабочее место, сдаёте инструмент и отмечаете, что нужно дозаказать на следующий день."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Варшава, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Warszawa liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Варшава считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "opole-elektryk-pomocnik-hala-813",
+    "category": "construction",
+    "city": "Ополе",
+    "city_pl": "Opole",
+    "city_ru": "Ополе",
+    "title": "Помічник електрика на монтаж освітлення в цеху",
+    "title_pl": "Pomocnik elektryka przy montażu oświetlenia hali",
+    "title_ru": "Помощник электрика на монтаже освещения в цехе",
+    "salary": "33 - 40 PLN/h netto",
+    "company": "Opole Industrial Electric",
+    "shift_ua": "06:00 - 16:00, Пн-Сб",
+    "shift_pl": "06:00 - 16:00, Pn-Sob",
+    "shift_ru": "06:00 - 16:00, Пн-Сб",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Ополе робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Opole praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Ополе процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Працюєте на монтажі освітлення в виробничому цеху: збираєте кріплення, подаєте кабель та допомагаєте встановлювати світильники на заданих висотах.",
+      "Перед запуском лінії разом з майстром перевіряєте підключення секцій, маркуєте щити й контролюєте, щоб проходи для техніки залишались вільними.",
+      "На обʼєкті сувора техніка безпеки: щоденний короткий брифінг, обовʼязкові засоби захисту і чіткий порядок доступу до зон під напругою."
+    ],
+    "tasks_pl": [
+      "Pracujesz przy montażu oświetlenia hali produkcyjnej: składasz mocowania, podajesz przewody i wspierasz montaż opraw na wyznaczonych wysokościach.",
+      "Przed uruchomieniem sekcji razem z elektrykiem sprawdzasz podłączenia, oznaczasz rozdzielnice i pilnujesz drożnych przejazdów dla transportu wewnętrznego.",
+      "Na obiekcie obowiązują ścisłe zasady BHP: codzienny briefing, obowiązkowe środki ochrony i kontrolowany dostęp do stref pod napięciem."
+    ],
+    "tasks_ru": [
+      "Работаете на монтаже освещения в производственном цехе: собираете крепления, подаёте кабель и помогаете устанавливать светильники на нужной высоте.",
+      "Перед запуском участка вместе с мастером проверяете подключения, маркируете щиты и следите, чтобы проезды для техники оставались свободными.",
+      "На объекте строгие правила безопасности: ежедневный брифинг, обязательные СИЗ и контролируемый доступ в зоны под напряжением."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Ополе, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Opole liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Ополе считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "torun-pracownik-skladu-spozywczy-814",
+    "category": "logistics",
+    "city": "Торунь",
+    "city_pl": "Toruń",
+    "city_ru": "Торунь",
+    "title": "Працівник складу продуктового дистрибʼютора",
+    "title_pl": "Pracownik magazynu dystrybucji spożywczej",
+    "title_ru": "Работник склада продуктового дистрибьютора",
+    "salary": "30 - 35 PLN/h netto",
+    "company": "Vistula Food Logistic",
+    "shift_ua": "05:00 - 13:00 / 13:00 - 21:00",
+    "shift_pl": "05:00 - 13:00 / 13:00 - 21:00",
+    "shift_ru": "05:00 - 13:00 / 13:00 - 21:00",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Торунь робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Toruń praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Торунь процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "На складі продуктового дистрибʼютора приймаєте товар, скануєте палети й розвозите їх по температурних зонах відповідно до маркування.",
+      "Комплектуєте замовлення магазинів по листах відбору, перевіряєте кількість позицій і передаєте в експедицію готові палети з чіткою наліпкою маршруту.",
+      "Важлива уважність до термінів придатності: при невідповідності одразу повідомляєте лідера зміни, щоб товар не потрапив у відвантаження помилково."
+    ],
+    "tasks_pl": [
+      "W magazynie dystrybucji spożywczej przyjmujesz towar, skanujesz palety i rozstawiasz je do odpowiednich stref temperaturowych.",
+      "Kompletujesz zamówienia sklepowe według list pobrań, weryfikujesz ilości i przekazujesz gotowe palety do ekspedycji z czytelną etykietą trasy.",
+      "Kluczowa jest kontrola dat ważności: przy niezgodności od razu zgłaszasz temat liderowi zmiany, aby produkt nie trafił do wysyłki."
+    ],
+    "tasks_ru": [
+      "На складе продуктового дистрибьютора принимаете товар, сканируете палеты и распределяете их по температурным зонам согласно маркировке.",
+      "Комплектуете заказы магазинов по листам отбора, проверяете количество позиций и передаёте готовые палеты в экспедицию с понятной маршрутной этикеткой.",
+      "Важно внимательно контролировать сроки годности: при расхождении сразу сообщаете лидеру смены, чтобы товар не ушёл в отгрузку ошибочно."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Торунь, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Toruń liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Торунь считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "bydgoszcz-pracownik-skladu-odziez-815",
+    "category": "logistics",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "city_ru": "Быдгощ",
+    "title": "Працівник складу брендового одягу",
+    "title_pl": "Pracownik magazynu odzieżowego",
+    "title_ru": "Работник склада брендовой одежды",
+    "salary": "29 - 34 PLN/h netto",
+    "company": "ModaHub Bydgoszcz",
+    "shift_ua": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_pl": "06:00 - 14:00 / 14:00 - 22:00",
+    "shift_ru": "06:00 - 14:00 / 14:00 - 22:00",
+    "pattern_ua": "Графік узгоджується на місяць наперед",
+    "pattern_pl": "Grafik ustalany miesięcznie",
+    "pattern_ru": "График согласуется на месяц вперёд",
+    "start_ua": "Старт після короткого інструктажу, зазвичай у межах тижня",
+    "start_pl": "Start po krótkim wdrożeniu, zwykle w ciągu tygodnia",
+    "start_ru": "Выход после короткого инструктажа, обычно в течение недели",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę (за домовленістю)",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę (do ustalenia)",
+    "contract_ru": "Umowa Zlecenie / Umowa o pracę (по договорённости)",
+    "offers_ua": [
+      "У Бидгощ робочий процес організований без хаосу: старший зміни розписує задачі на старті, інструмент і витратники вже на місці, а за перевиконання плану даємо погодинну надбавку, яку видно в розрахунковому листі окремим рядком.",
+      "Оплата приходить стабільно раз на місяць, але аванс можна взяти щотижня; на обʼєкті є кімната для перерви з мікрохвильовкою, гарячою водою та шафами, тож люди не їдять поспіхом на ходу.",
+      "Форма або базовий робочий одяг видаються за рахунок компанії, а якщо обʼєкт за містом, ми компенсуємо проїзд або організовуємо підвіз з найближчої зупинки, щоб зміна не починалась зі стресу."
+    ],
+    "offers_pl": [
+      "W Bydgoszcz praca jest poukładana bez chaosu: brygadzista rozpisuje zadania na początku zmiany, narzędzia i materiały są gotowe, a za wynik ponad plan naliczamy dodatek godzinowy widoczny osobno na pasku.",
+      "Wynagrodzenie wpływa regularnie raz w miesiącu, a zaliczki są dostępne co tydzień; na miejscu jest pomieszczenie socjalne z mikrofalą, wrzątkiem i szafkami, więc można normalnie zrobić przerwę.",
+      "Odzież roboczą zapewnia firma, a gdy obiekt jest poza centrum, zwracamy koszty dojazdu albo organizujemy transport z najbliższego przystanku, żeby ludzie nie tracili energii przed pracą."
+    ],
+    "offers_ru": [
+      "В Быдгощ процесс организован без суеты: старший смены заранее распределяет задачи, инструмент и расходники подготовлены, а за перевыполнение плана начисляется почасовая надбавка отдельной строкой в расчёте.",
+      "Зарплата приходит стабильно раз в месяц, но аванс можно брать еженедельно; на объекте есть нормальная бытовая комната с микроволновкой, кипятком и шкафчиками, поэтому перерыв проходит спокойно.",
+      "Рабочую одежду выдаём за счёт компании, а если объект за городом — компенсируем дорогу или организуем подвоз от ближайшей остановки, чтобы смена не начиналась с лишнего напряжения."
+    ],
+    "tasks_ua": [
+      "Працюєте в зоні прийому брендового одягу: розпаковуєте коробки, перевіряєте артикули по сканеру і розподіляєте товар по стелажах адресного зберігання.",
+      "На ділянці відправки комплектуєте онлайн-замовлення, додаєте вкладення та готуєте пакети до курʼєра за часовими вікнами маркетплейсів.",
+      "Склад теплий і чистий, без важких вантажів: основний фокус — уважність до розміру, кольору та коду моделі, щоб не було повернень від клієнтів."
+    ],
+    "tasks_pl": [
+      "Pracujesz w strefie przyjęć odzieży markowej: rozpakowujesz kartony, sprawdzasz indeksy skanerem i odkładasz towar na regały adresowe.",
+      "W części wysyłkowej kompletujesz zamówienia online, dodajesz insert i przygotowujesz paczki dla kuriera zgodnie z oknami czasowymi marketplace.",
+      "Magazyn jest ciepły i czysty, bez ciężkich ładunków: najważniejsza jest dokładność rozmiaru, koloru i kodu modelu, aby ograniczyć zwroty."
+    ],
+    "tasks_ru": [
+      "Работаете в зоне приёмки брендовой одежды: распаковываете коробки, проверяете артикулы сканером и размещаете товар на адресных стеллажах.",
+      "В зоне отгрузки комплектуете онлайн-заказы, добавляете вкладыши и готовите посылки для курьера по временным окнам маркетплейсов.",
+      "Склад тёплый и чистый, без тяжёлых грузов: основной акцент — точность по размеру, цвету и коду модели, чтобы снизить количество возвратов."
+    ],
+    "details_ua": [
+      "Досвід вітається, але не є жорсткою перепоною: новачків заводимо поступово, перші дні працюють у парі з досвідченим працівником, щоб людина не губилася в темпі та вимогах. Окремо пояснюємо логіку розрахунку годин і доплат саме для обʼєкта в Бидгощ, щоб людина з першого тижня розуміла, скільки реально заробляє за базовий графік і підміни.",
+      "На обʼєкті працює невелика команда, тому комунікація пряма і без зайвої бюрократії; питання щодо графіка або підмін вирішуються наперед, а не в останню годину перед зміною.",
+      "Це вакансія для тих, хто хоче стабільний ритм, зрозумілі гроші й нормальні робочі умови без обіцянок «золотих гір»."
+    ],
+    "details_pl": [
+      "Doświadczenie jest mile widziane, ale nie jest sztywnym warunkiem: nowe osoby wdrażamy etapami i przez pierwsze dni pracują one w parze z bardziej doświadczonym pracownikiem. Dodatkowo podczas wdrożenia pokazujemy, jak na obiekcie w Bydgoszcz liczone są godziny oraz dodatki, żeby od pierwszego tygodnia było jasne, ile realnie wychodzi za podstawowy grafik i zastępstwa.",
+      "Zespół jest niewielki, więc komunikacja jest prosta i konkretna; kwestie grafiku oraz zamian ustalamy z wyprzedzeniem, a nie na ostatnią chwilę przed zmianą.",
+      "To oferta dla osób, które cenią stabilny rytm pracy, jasne rozliczenie godzin i normalne warunki bez pustych obietnic."
+    ],
+    "details_ru": [
+      "Опыт приветствуется, но не является жёстким фильтром: новых сотрудников вводим постепенно, первые смены проходят в паре с более опытным коллегой. На вводе отдельно объясняем, как именно на объекте в Быдгощ считаются часы и доплаты, чтобы уже в первую неделю сотрудник понимал реальный заработок по базовому графику и подменам.",
+      "Команда небольшая, поэтому коммуникация прямая и без лишней бюрократии; вопросы графика и подмен решаются заранее, а не за час до выхода.",
+      "Эта вакансия для людей, которым важны стабильный ритм, понятный расчёт часов и нормальные рабочие условия без пустых обещаний."
+    ],
+    "enforce_long_narrative": true
   }
 ]
