@@ -2244,7 +2244,7 @@ function getVacancyNarrative(page, lang, variationState) {
     D: isPl ? `${city}: ${salary}, ${shift}.` : (isRu ? `${city}: ${salary}, ${shift}.` : `${city}: ${salary}, ${shift}.`),
     E: isPl ? `Najważniejszy punkt tej oferty to harmonogram: ${shift}${pattern ? ` i ${pattern}` : ''}.` : (isRu ? `Ключевой акцент этой вакансии — график: ${shift}${pattern ? ` и ${pattern}` : ''}.` : `Ключовий акцент цієї вакансії — графік: ${shift}${pattern ? ` та ${pattern}` : ''}.`),
     F: isPl ? `Tu na pierwszy plan wychodzi wynagrodzenie: ${salary}.` : (isRu ? `Здесь ключевой акцент — оплата: ${salary}.` : `Тут на перший план виходить оплата: ${salary}.`),
-    G: isPl ? `Ta rola jest dobra dla osób, które chcą jasnych wymagań i prostego wdrożenia.` : (isRu ? `Эта роль подходит тем, кто ценит понятные требования и прозрачный старт.` : `Ця роль підійде тим, хто цінує зрозумілі вимоги та прозорий старт.`),
+    G: isPl ? `W tej ofercie od pierwszego dnia wiadomo, za co odpowiadasz i jak wygląda wejście na zmianę.` : (isRu ? `В этой вакансии с первого дня понятно, за что вы отвечаете и как устроен вход в смену.` : `У цій вакансії з першого дня зрозуміло, за що ви відповідаєте і як проходить вхід у зміну.`),
     H: isPl ? `Proces pracy jest poukładany etapami: wejście na zmianę, zadania, odbiór efektu.` : (isRu ? `Рабочий процесс выстроен по этапам: вход на смену, задачи, контроль результата.` : `Робочий процес побудований етапно: вхід на зміну, задачі, контроль результату.`)
   };
 
@@ -2280,8 +2280,8 @@ function getVacancyNarrative(page, lang, variationState) {
       .map(key => segmentPool[key])
       .filter(Boolean);
     const fallback = isPl
-      ? 'Oferta jest aktualna i podczas kontaktu doprecyzujemy detale wdrożenia.'
-      : (isRu ? 'Предложение актуально, детали запуска уточняются при контакте.' : 'Пропозиція актуальна, деталі старту уточнюються під час контакту.');
+      ? 'Na rozmowie od razu omawiamy szczegóły startu i zakres pierwszych zmian.'
+      : (isRu ? 'На первом контакте сразу проговариваем условия выхода и задачи на первые смены.' : 'Під час першого контакту одразу узгоджуємо умови виходу та задачі на перші зміни.');
     const text = [introByModel[selectedModel], ...orderedSegments, fallback]
       .join(' ')
       .replace(/\s+/g, ' ')
@@ -2291,7 +2291,7 @@ function getVacancyNarrative(page, lang, variationState) {
 
   let chosenText = buildModelText(model);
   for (let i = 0; i < VACANCY_NARRATIVE_MODELS.length; i++) {
-    const tooSimilar = langRecent.some(prev => cosineSimilarity(prev, chosenText) > 0.75);
+    const tooSimilar = langRecent.some(prev => cosineSimilarity(prev, chosenText) > 0.05);
     if (!tooSimilar) break;
     model = nextModel(model);
     chosenText = buildModelText(model);
@@ -2686,12 +2686,19 @@ async function build() {
 
     // Build related vacancies (same city or same category, max 3)
     // Only link to pages that have HTML files (pagesToGenerate)
+    const seenRelatedSignatures = new Set();
     const relatedVacancies = pagesToGenerate
-      .filter(p => p.slug !== page.slug && (
+      .filter(p => p.slug !== page.slug && p.title !== page.title && (
         (p.city === page.city && p.category !== page.category) ||
         (p.category === page.category && p.city !== page.city)
       ))
       .sort((a, b) => hashString(a.slug + page.slug) - hashString(b.slug + page.slug))
+      .filter((p) => {
+        const signature = `${String(p.title || '').trim().toLowerCase()}|${String(p.city || '').trim().toLowerCase()}`;
+        if (seenRelatedSignatures.has(signature)) return false;
+        seenRelatedSignatures.add(signature);
+        return true;
+      })
       .slice(0, 3);
 
     let relatedHtml = '';
