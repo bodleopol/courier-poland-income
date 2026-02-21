@@ -4,9 +4,5 @@
   "scripts": {
     "build": "node src/generate.js && node src/generate-sitemap.js",
     "sitemap": "node src/generate-sitemap.js"
-  },
-  "devDependencies": {
-    "firebase-tools": "^15.5.1",
-    "picomatch": "^4.0.3"
   }
 }
