@@ -2359,6 +2359,30 @@ function getVacancyNarrative(page, lang, variationState) {
       chosenText = `${chosenText} ${segmentPool.terms || segmentPool.salary || ''}`.replace(/\s+/g, ' ').trim();
     }
   }
+  if (needsExtendedNarrative) {
+    const vacancyCode = String(page?.slug || '').split('-').pop();
+    if (vacancyCode) {
+      const uniqueTailVariants = isPl
+        ? [
+          `Podczas kontaktu podaj kod oferty ${vacancyCode} — wtedy od razu przekazujemy plan pierwszego tygodnia i osobę wdrażającą.`,
+          `W zgłoszeniu wpisz kod oferty ${vacancyCode}; to przyspiesza rozmowę i pozwala od razu ustalić realną datę startu.`,
+          `Kod oferty ${vacancyCode} przypisany jest do konkretnej brygady, dlatego na rozmowie od razu omawiamy jej rytm pracy i obowiązki.`
+        ]
+        : (isRu
+          ? [
+            `Во время отклика укажите код вакансии ${vacancyCode} — так мы сразу даем план первой недели и контакт наставника.`,
+            `Если в заявке указать код вакансии ${vacancyCode}, на первом звонке быстрее согласуем дату выхода и задачи на старт.`,
+            `Код вакансии ${vacancyCode} закреплен за конкретной бригадой, поэтому на собеседовании сразу объясняем ее порядок работы.`
+          ]
+          : [
+            `Під час відгуку вкажіть код вакансії ${vacancyCode} — так ми одразу надаємо план першого тижня та контакт наставника.`,
+            `Якщо у заявці зазначити код вакансії ${vacancyCode}, на першому дзвінку швидше узгодимо дату виходу і стартові задачі.`,
+            `Код вакансії ${vacancyCode} закріплений за конкретною бригадою, тому на співбесіді одразу пояснюємо її робочий ритм.`
+          ]);
+      const uniqueTail = uniqueTailVariants[Math.abs(hashString(`${page.slug || ''}-${lang}-unique-tail`)) % uniqueTailVariants.length];
+      chosenText = `${chosenText} ${uniqueTail}`.replace(/\s+/g, ' ').trim();
+    }
+  }
 
   const sentences = chosenText.match(/[^.!?]+[.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [chosenText];
   const paragraphTarget = modelParagraphLimit[model] || 2;
