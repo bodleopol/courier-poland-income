@@ -2585,9 +2585,9 @@ async function build() {
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
           <span class="tag">📅 ${escapeHtml(displayDate)}</span>
         </div>
-        <div data-lang-content="ua">${noticeUA}${content}${conditionsUA}${humanUA}</div>
-        <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${conditionsPL}${humanPL}</div>
-        <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}${conditionsRU}${humanRU}</div>
+        <div data-lang-content="ua">${noticeUA}${content}</div>
+        <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}</div>
+        <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}</div>
         ${proofSummaryBlock}
         ${proofFormBlock}
         ${enrichmentHtml}
