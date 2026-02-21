@@ -2186,13 +2186,25 @@ function isVacancyPage(page) {
 
 const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const MIN_EXTENDED_NARRATIVE_LENGTH = 1000;
+const MAX_VACANCY_TEXT_SIMILARITY = 0.05;
+const MIN_SIMILARITY_TOKEN_LENGTH = 4;
+const VACANCY_SIMILARITY_STOPWORDS_UA = ['і', 'й', 'та', 'в', 'у', 'на', 'з', 'до', 'для', 'по', 'про', 'що', 'це', 'як', 'ми', 'ви', 'не', 'за', 'від', 'при', 'або', 'але'];
+const VACANCY_SIMILARITY_STOPWORDS_PL = ['i', 'oraz', 'w', 'na', 'z', 'do', 'dla', 'po', 'jak', 'to', 'jest', 'nie', 'się', 'że', 'przy', 'bez', 'ale', 'lub'];
+const VACANCY_SIMILARITY_STOPWORDS_RU = ['и', 'в', 'на', 'с', 'для', 'по', 'как', 'это', 'мы', 'вы', 'не', 'за', 'от', 'при', 'или', 'но', 'что'];
+const VACANCY_SIMILARITY_STOPWORDS = new Set([
+  ...VACANCY_SIMILARITY_STOPWORDS_UA,
+  ...VACANCY_SIMILARITY_STOPWORDS_PL,
+  ...VACANCY_SIMILARITY_STOPWORDS_RU
+]);
 
 function cosineSimilarity(textA, textB) {
   const tokenize = (text) => String(text || '')
     .toLowerCase()
     .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
     .split(/\s+/)
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter(token => token.length >= MIN_SIMILARITY_TOKEN_LENGTH)
+    .filter(token => !VACANCY_SIMILARITY_STOPWORDS.has(token));
   const aTokens = tokenize(textA);
   const bTokens = tokenize(textB);
   if (!aTokens.length || !bTokens.length) return 0;
@@ -2288,13 +2300,44 @@ function getVacancyNarrative(page, lang, variationState) {
       .trim();
     return text;
   };
+  const isTooSimilarToRecent = (text) => langRecent.some(prev => cosineSimilarity(prev, text) > MAX_VACANCY_TEXT_SIMILARITY);
 
   let chosenText = buildModelText(model);
   for (let i = 0; i < VACANCY_NARRATIVE_MODELS.length; i++) {
-    const tooSimilar = langRecent.some(prev => cosineSimilarity(prev, chosenText) > 0.05);
+    const tooSimilar = isTooSimilarToRecent(chosenText);
     if (!tooSimilar) break;
     model = nextModel(model);
     chosenText = buildModelText(model);
+  }
+  if (isTooSimilarToRecent(chosenText)) {
+    const allSegmentKeys = Object.keys(segmentPool).filter((key) => segmentPool[key]);
+    for (let attempt = 0; attempt < VACANCY_NARRATIVE_MODELS.length; attempt++) {
+      const introModel = VACANCY_NARRATIVE_MODELS[(VACANCY_NARRATIVE_MODELS.indexOf(model) + attempt) % VACANCY_NARRATIVE_MODELS.length];
+      const orderedKeys = allSegmentKeys
+        .slice()
+        .sort((a, b) => {
+          const aHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${a}`);
+          const bHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${b}`);
+          const aNum = Number(aHash);
+          const bNum = Number(bHash);
+          if (Number.isFinite(aNum) && Number.isFinite(bNum)) return aNum - bNum;
+          return String(aHash).localeCompare(String(bHash)) || a.localeCompare(b);
+        });
+      const candidate = [
+        introByModel[introModel],
+        ...orderedKeys.map((key) => segmentPool[key]).filter(Boolean),
+        isPl
+          ? `Podczas wdrożenia omawiamy harmonogram pierwszych zmian i odpowiedzialność krok po kroku.`
+          : (isRu
+            ? `Во время выхода подробно проговариваем задачи первой недели и порядок работы по смене.`
+            : `Під час виходу детально узгоджуємо задачі першого тижня та порядок роботи в зміні.`)
+      ].join(' ').replace(/\s+/g, ' ').trim();
+      if (!isTooSimilarToRecent(candidate)) {
+        chosenText = candidate;
+        model = introModel;
+        break;
+      }
+    }
   }
 
   const needsExtendedNarrative = Boolean(page && page.enforce_long_narrative);
@@ -2327,7 +2370,7 @@ function getVacancyNarrative(page, lang, variationState) {
   if (variationState?.recentByLang?.[lang]) {
     variationState.lastModelByLang[lang] = model;
     variationState.recentByLang[lang].push(chosenText);
-    if (variationState.recentByLang[lang].length > 10) variationState.recentByLang[lang].shift();
+    if (variationState.recentByLang[lang].length > 100) variationState.recentByLang[lang].shift();
   }
   const rendered = paragraphs.filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('');
   return `<div class="vacancy-description">${rendered}</div>`;
