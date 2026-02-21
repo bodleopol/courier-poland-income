@@ -2169,6 +2169,149 @@ function firstText(value) {
   return String(value || '').trim();
 }
 
+function isVacancyPage(page) {
+  return (
+    Boolean(firstText(page.tasks_ua)) ||
+    Boolean(firstText(page.tasks_pl)) ||
+    Boolean(firstText(page.details_ua)) ||
+    Boolean(firstText(page.details_pl)) ||
+    Boolean(firstText(page.transport_ua)) ||
+    Boolean(firstText(page.transport_pl)) ||
+    Boolean(firstText(page.transport)) ||
+    Boolean(firstText(page.housing_ua)) ||
+    Boolean(firstText(page.housing_pl)) ||
+    Boolean(firstText(page.housing))
+  );
+}
+
+const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+function cosineSimilarity(textA, textB) {
+  const tokenize = (text) => String(text || '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+  const aTokens = tokenize(textA);
+  const bTokens = tokenize(textB);
+  if (!aTokens.length || !bTokens.length) return 0;
+  const aFreq = new Map();
+  const bFreq = new Map();
+  for (const token of aTokens) aFreq.set(token, (aFreq.get(token) || 0) + 1);
+  for (const token of bTokens) bFreq.set(token, (bFreq.get(token) || 0) + 1);
+  let dot = 0;
+  for (const [token, countA] of aFreq.entries()) {
+    const countB = bFreq.get(token) || 0;
+    dot += countA * countB;
+  }
+  const normA = Math.sqrt(Array.from(aFreq.values()).reduce((sum, val) => sum + (val * val), 0));
+  const normB = Math.sqrt(Array.from(bFreq.values()).reduce((sum, val) => sum + (val * val), 0));
+  if (!normA || !normB) return 0;
+  return dot / (normA * normB);
+}
+
+function getVacancyNarrative(page, lang, variationState) {
+  const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
+  const localize = (baseKey) => {
+    const value = isPl
+      ? (page[`${baseKey}_pl`] || page[`${baseKey}_ua`] || page[baseKey])
+      : (isRu ? (page[`${baseKey}_ru`] || page[`${baseKey}_ua`] || page[`${baseKey}_pl`] || page[baseKey]) : (page[`${baseKey}_ua`] || page[baseKey]));
+    return isRu ? toRussianFallbackText(value || '') : (value || '');
+  };
+  const collect = (baseKey) => {
+    const value = localize(baseKey);
+    return Array.isArray(value) ? value : (value ? [String(value)] : []);
+  };
+
+  const city = localize('city');
+  const salary = localize('salary');
+  const contract = localize('contract');
+  const shift = localize('shift');
+  const pattern = localize('pattern');
+  const start = localize('start');
+  const offers = collect('offers').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const tasks = collect('tasks').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const details = [...collect('details'), ...collect('requirements')].map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const housing = collect('housing').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const process = collect('shift_structure').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+
+  const introByModel = {
+    A: isPl ? `Na tej zmianie dzień zaczyna się w ${city}: wchodzisz w rytm ${shift}${pattern ? `, ${pattern}` : ''}.` : (isRu ? `На этой позиции смена в ${city} начинается по графику ${shift}${pattern ? `, ${pattern}` : ''}.` : `На цій позиції день у ${city} стартує в ритмі ${shift}${pattern ? `, ${pattern}` : ''}.`),
+    B: isPl ? `Lokalizacja: ${city}. Stawka: ${salary}. Umowa: ${contract}.` : (isRu ? `Локация: ${city}. Оплата: ${salary}. Договор: ${contract}.` : `Локація: ${city}. Оплата: ${salary}. Договір: ${contract}.`),
+    C: isPl ? `W ${city} oferta łączy pracę ${shift} z realnym wdrożeniem i zapleczem organizacyjnym.` : (isRu ? `В ${city} вакансия сочетает смену ${shift} с продуманной адаптацией и бытовыми условиями.` : `У ${city} вакансія поєднує зміну ${shift} з продуманою адаптацією та побутом.`),
+    D: isPl ? `${city}: ${salary}, ${shift}.` : (isRu ? `${city}: ${salary}, ${shift}.` : `${city}: ${salary}, ${shift}.`),
+    E: isPl ? `Najważniejszy punkt tej oferty to harmonogram: ${shift}${pattern ? ` i ${pattern}` : ''}.` : (isRu ? `Ключевой акцент этой вакансии — график: ${shift}${pattern ? ` и ${pattern}` : ''}.` : `Ключовий акцент цієї вакансії — графік: ${shift}${pattern ? ` та ${pattern}` : ''}.`),
+    F: isPl ? `Tu na pierwszy plan wychodzi wynagrodzenie: ${salary}.` : (isRu ? `Здесь ключевой акцент — оплата: ${salary}.` : `Тут на перший план виходить оплата: ${salary}.`),
+    G: isPl ? `Ta rola jest dobra dla osób, które chcą jasnych wymagań i prostego wdrożenia.` : (isRu ? `Эта роль подходит тем, кто ценит понятные требования и прозрачный старт.` : `Ця роль підійде тим, хто цінує зрозумілі вимоги та прозорий старт.`),
+    H: isPl ? `Proces pracy jest poukładany etapami: wejście na zmianę, zadania, odbiór efektu.` : (isRu ? `Рабочий процесс выстроен по этапам: вход на смену, задачи, контроль результата.` : `Робочий процес побудований етапно: вхід на зміну, задачі, контроль результату.`)
+  };
+
+  const segmentPool = {
+    salary: isPl ? `Wynagrodzenie trzyma poziom ${salary}, a start zaplanowano ${start || 'po uzgodnieniu'}.` : (isRu ? `Оплата держится на уровне ${salary}, выход возможен ${start || 'по согласованию'}.` : `Оплата тримається на рівні ${salary}, старт можливий ${start || 'за узгодженням'}.`),
+    terms: isPl ? `Współpraca odbywa się w formule ${contract}${pattern ? `, tryb: ${pattern}` : ''}.` : (isRu ? `Сотрудничество оформляется как ${contract}${pattern ? `, режим: ${pattern}` : ''}.` : `Співпраця оформлюється як ${contract}${pattern ? `, режим: ${pattern}` : ''}.`),
+    offers: offers.slice(0, 2).join(' '),
+    tasks: tasks.slice(0, 2).join(' '),
+    details: details.slice(0, 2).join(' '),
+    housing: housing.slice(0, 2).join(' '),
+    process: process.slice(0, 2).join(' ')
+  };
+  const modelOrder = {
+    A: ['offers', 'tasks', 'terms', 'details'],
+    B: ['salary', 'terms', 'tasks', 'offers'],
+    C: ['housing', 'terms', 'tasks', 'details'],
+    D: ['salary', 'tasks', 'details'],
+    E: ['terms', 'tasks', 'offers', 'details'],
+    F: ['salary', 'offers', 'tasks', 'details'],
+    G: ['details', 'tasks', 'terms', 'offers'],
+    H: ['process', 'tasks', 'offers', 'terms']
+  };
+  const modelParagraphLimit = { A: 3, B: 2, C: 3, D: 1, E: 2, F: 2, G: 2, H: 3 };
+  const langRecent = variationState?.recentByLang?.[lang] || [];
+  const nextModel = (model) => VACANCY_NARRATIVE_MODELS[(VACANCY_NARRATIVE_MODELS.indexOf(model) + 1) % VACANCY_NARRATIVE_MODELS.length];
+  let model = VACANCY_NARRATIVE_MODELS[Math.abs(hashString(`${page.slug || ''}-${lang}`)) % VACANCY_NARRATIVE_MODELS.length];
+  if (variationState?.lastModelByLang?.[lang] && variationState.lastModelByLang[lang] === model) {
+    model = nextModel(model);
+  }
+
+  const buildModelText = (selectedModel) => {
+    const orderedSegments = modelOrder[selectedModel]
+      .map(key => segmentPool[key])
+      .filter(Boolean);
+    const fallback = isPl
+      ? 'Oferta jest aktualna i podczas kontaktu doprecyzujemy detale wdrożenia.'
+      : (isRu ? 'Предложение актуально, детали запуска уточняются при контакте.' : 'Пропозиція актуальна, деталі старту уточнюються під час контакту.');
+    const text = [introByModel[selectedModel], ...orderedSegments, fallback]
+      .join(' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    return text;
+  };
+
+  let chosenText = buildModelText(model);
+  for (let i = 0; i < VACANCY_NARRATIVE_MODELS.length; i++) {
+    const tooSimilar = langRecent.some(prev => cosineSimilarity(prev, chosenText) > 0.75);
+    if (!tooSimilar) break;
+    model = nextModel(model);
+    chosenText = buildModelText(model);
+  }
+
+  const sentences = chosenText.match(/[^.!?]+[.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [chosenText];
+  const paragraphTarget = modelParagraphLimit[model] || 2;
+  const chunkSize = Math.max(1, Math.ceil(sentences.length / paragraphTarget));
+  const paragraphs = [];
+  for (let i = 0; i < sentences.length; i += chunkSize) {
+    paragraphs.push(sentences.slice(i, i + chunkSize).join(' ').trim());
+  }
+  if (variationState?.recentByLang?.[lang]) {
+    variationState.lastModelByLang[lang] = model;
+    variationState.recentByLang[lang].push(chosenText);
+    if (variationState.recentByLang[lang].length > 10) variationState.recentByLang[lang].shift();
+  }
+  const rendered = paragraphs.filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('');
+  return `<div class="vacancy-description">${rendered}</div>`;
+}
+
 function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
@@ -2223,18 +2366,7 @@ async function build() {
     .slice(0, 50);
   batchVacancies.forEach((page) => normalizeRussianFields(page, vacancyRuFields));
   pages.forEach((page) => {
-    const looksLikeVacancy = (
-      Boolean(firstText(page.tasks_ua)) ||
-      Boolean(firstText(page.tasks_pl)) ||
-      Boolean(firstText(page.details_ua)) ||
-      Boolean(firstText(page.details_pl)) ||
-      Boolean(firstText(page.transport_ua)) ||
-      Boolean(firstText(page.transport_pl)) ||
-      Boolean(firstText(page.transport)) ||
-      Boolean(firstText(page.housing_ua)) ||
-      Boolean(firstText(page.housing_pl)) ||
-      Boolean(firstText(page.housing))
-    );
+    const looksLikeVacancy = isVacancyPage(page);
     if (!looksLikeVacancy) return;
     page.excerpt = enrichVacancyExcerpt(page, 'ua');
     page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
@@ -2468,13 +2600,18 @@ async function build() {
 
   // Only generate HTML for indexable vacancies (reduce doorway signals)
   const pagesToGenerate = pages;
+  const vacancyNarrativeVariationState = {
+    recentByLang: { ua: [], pl: [], ru: [] },
+    lastModelByLang: { ua: null, pl: null, ru: null }
+  };
   const links = [];
   for (const page of pagesToGenerate) {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
-    const content = page.body || page.content || page.excerpt || '';
-    const contentPl = page.body_pl || page.body || '';
-    const contentRu = toRussianFallbackText(page.body_ru || page.body || '');
+    const isVacancy = isVacancyPage(page);
+    const content = isVacancy ? getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState) : (page.body || page.content || page.excerpt || '');
+    const contentPl = isVacancy ? getVacancyNarrative(page, 'pl', vacancyNarrativeVariationState) : (page.body_pl || page.body || '');
+    const contentRu = isVacancy ? getVacancyNarrative(page, 'ru', vacancyNarrativeVariationState) : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
     const variantRoll = Math.random();
