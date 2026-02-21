@@ -2185,6 +2185,7 @@ function isVacancyPage(page) {
 }
 
 const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+const MIN_EXTENDED_NARRATIVE_LENGTH = 1000;
 
 function cosineSimilarity(textA, textB) {
   const tokenize = (text) => String(text || '')
@@ -2294,6 +2295,26 @@ function getVacancyNarrative(page, lang, variationState) {
     if (!tooSimilar) break;
     model = nextModel(model);
     chosenText = buildModelText(model);
+  }
+
+  const needsExtendedNarrative = Boolean(page && page.enforce_long_narrative);
+  if (needsExtendedNarrative && chosenText.length < MIN_EXTENDED_NARRATIVE_LENGTH) {
+    const extensionPool = [
+      ...offers.slice(2),
+      ...tasks.slice(2),
+      ...details.slice(2),
+      ...housing.slice(2),
+      ...process.slice(2),
+      segmentPool.salary,
+      segmentPool.terms
+    ].filter(Boolean);
+    for (const extra of extensionPool) {
+      if (chosenText.length >= MIN_EXTENDED_NARRATIVE_LENGTH) break;
+      chosenText = `${chosenText} ${extra}`.replace(/\s+/g, ' ').trim();
+    }
+    if (chosenText.length < MIN_EXTENDED_NARRATIVE_LENGTH) {
+      chosenText = `${chosenText} ${segmentPool.terms || segmentPool.salary || ''}`.replace(/\s+/g, ' ').trim();
+    }
   }
 
   const sentences = chosenText.match(/[^.!?]+[.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [chosenText];
