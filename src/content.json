@@ -2004,5 +2004,2705 @@
       "Praca ciężka, często na wysokości lub w przestrzeniach zamkniętych (ładownie).",
       "Przed rozpoczęciem pracy każdy kandydat zdaje test praktyczny (spawanie próbek z kontrolą ultradźwiękową spoiny)."
     ]
+  },
+  {
+    "slug": "warszawa-logistics-new-850",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Комплектувальник онлайн-замовлень — Варшава",
+    "title_pl": "Kompletacja zamówień e-commerce — Warszawa",
+    "salary": "27 - 33 PLN/h netto",
+    "company": "North Bridge Group",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "krakow-production-new-851",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор лінії фасування — Краків",
+    "title_pl": "Operator linii pakowania — Kraków",
+    "salary": "30 PLN/h netto + премія за зміну",
+    "company": "Baltic Staff",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "wrocaw-construction-new-852",
+    "category": "construction",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Монтажник вентиляції — Вроцлав",
+    "title_pl": "Monter wentylacji — Wrocław",
+    "salary": "6270 - 7770 PLN/місяць",
+    "company": "MobiWork Polska",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-hospitality-new-853",
+    "category": "hospitality",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник кейтерингу — Познань",
+    "title_pl": "Pracownik cateringu — Poznań",
+    "salary": "до 40 PLN/h netto (ставка + бонус)",
+    "company": "GreenLine Services",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-new-854",
+    "category": "cleaning",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Клінер офісних просторів — Гданськ",
+    "title_pl": "Pracownik serwisu sprzątającego biura — Gdańsk",
+    "salary": "32 - 38 PLN/h brutto",
+    "company": "ShiftCraft",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "odz-retail-new-855",
+    "category": "retail",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник викладки товару — Лодзь",
+    "title_pl": "Pracownik wykładania towaru — Łódź",
+    "salary": "32 - 38 PLN/h netto",
+    "company": "Solid Team Sp. z o.o.",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "lublin-transport-new-856",
+    "category": "transport",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Курʼєр на авто компанії — Люблін",
+    "title_pl": "Kurier autem służbowym — Lublin",
+    "salary": "35 PLN/h netto + премія за зміну",
+    "company": "Daily Route",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "katowice-agriculture-new-857",
+    "category": "agriculture",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Працівник розсадника рослин — Катовіце",
+    "title_pl": "Pracownik szkółki roślin — Katowice",
+    "salary": "6445 - 7945 PLN/місяць",
+    "company": "Urban Works",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "szczecin-security-new-858",
+    "category": "security",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "title": "Оператор моніторингу обʼєкта — Щецин",
+    "title_pl": "Operator monitoringu obiektu — Szczecin",
+    "salary": "до 45 PLN/h netto (ставка + бонус)",
+    "company": "Nova Support",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-medical-new-859",
+    "category": "medical",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Асистент догляду в центрі реабілітації — Бидгощ",
+    "title_pl": "Asystent opieki w centrum rehabilitacji — Bydgoszcz",
+    "salary": "28 - 34 PLN/h brutto",
+    "company": "Prime Logistic Hub",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "warszawa-logistics-new-860",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Комплектувальник онлайн-замовлень — Варшава",
+    "title_pl": "Kompletacja zamówień e-commerce — Warszawa",
+    "salary": "28 - 34 PLN/h netto",
+    "company": "North Bridge Group",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "krakow-production-new-861",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор лінії фасування — Краків",
+    "title_pl": "Operator linii pakowania — Kraków",
+    "salary": "31 PLN/h netto + премія за зміну",
+    "company": "Baltic Staff",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "wrocaw-construction-new-862",
+    "category": "construction",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Монтажник вентиляції — Вроцлав",
+    "title_pl": "Monter wentylacji — Wrocław",
+    "salary": "6620 - 8120 PLN/місяць",
+    "company": "MobiWork Polska",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-hospitality-new-863",
+    "category": "hospitality",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник кейтерингу — Познань",
+    "title_pl": "Pracownik cateringu — Poznań",
+    "salary": "до 41 PLN/h netto (ставка + бонус)",
+    "company": "GreenLine Services",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-new-864",
+    "category": "cleaning",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Клінер офісних просторів — Гданськ",
+    "title_pl": "Pracownik serwisu sprzątającego biura — Gdańsk",
+    "salary": "33 - 39 PLN/h brutto",
+    "company": "ShiftCraft",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "odz-retail-new-865",
+    "category": "retail",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник викладки товару — Лодзь",
+    "title_pl": "Pracownik wykładania towaru — Łódź",
+    "salary": "33 - 39 PLN/h netto",
+    "company": "Solid Team Sp. z o.o.",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "lublin-transport-new-866",
+    "category": "transport",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Курʼєр на авто компанії — Люблін",
+    "title_pl": "Kurier autem służbowym — Lublin",
+    "salary": "36 PLN/h netto + премія за зміну",
+    "company": "Daily Route",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "katowice-agriculture-new-867",
+    "category": "agriculture",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Працівник розсадника рослин — Катовіце",
+    "title_pl": "Pracownik szkółki roślin — Katowice",
+    "salary": "6795 - 8295 PLN/місяць",
+    "company": "Urban Works",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "szczecin-security-new-868",
+    "category": "security",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "title": "Оператор моніторингу обʼєкта — Щецин",
+    "title_pl": "Operator monitoringu obiektu — Szczecin",
+    "salary": "до 37 PLN/h netto (ставка + бонус)",
+    "company": "Nova Support",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-medical-new-869",
+    "category": "medical",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Асистент догляду в центрі реабілітації — Бидгощ",
+    "title_pl": "Asystent opieki w centrum rehabilitacji — Bydgoszcz",
+    "salary": "29 - 35 PLN/h brutto",
+    "company": "Prime Logistic Hub",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "warszawa-logistics-new-870",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Комплектувальник онлайн-замовлень — Варшава",
+    "title_pl": "Kompletacja zamówień e-commerce — Warszawa",
+    "salary": "29 - 35 PLN/h netto",
+    "company": "North Bridge Group",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "krakow-production-new-871",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор лінії фасування — Краків",
+    "title_pl": "Operator linii pakowania — Kraków",
+    "salary": "32 PLN/h netto + премія за зміну",
+    "company": "Baltic Staff",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "wrocaw-construction-new-872",
+    "category": "construction",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Монтажник вентиляції — Вроцлав",
+    "title_pl": "Monter wentylacji — Wrocław",
+    "salary": "6970 - 8470 PLN/місяць",
+    "company": "MobiWork Polska",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-hospitality-new-873",
+    "category": "hospitality",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник кейтерингу — Познань",
+    "title_pl": "Pracownik cateringu — Poznań",
+    "salary": "до 42 PLN/h netto (ставка + бонус)",
+    "company": "GreenLine Services",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-new-874",
+    "category": "cleaning",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Клінер офісних просторів — Гданськ",
+    "title_pl": "Pracownik serwisu sprzątającego biura — Gdańsk",
+    "salary": "34 - 40 PLN/h brutto",
+    "company": "ShiftCraft",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "odz-retail-new-875",
+    "category": "retail",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник викладки товару — Лодзь",
+    "title_pl": "Pracownik wykładania towaru — Łódź",
+    "salary": "34 - 40 PLN/h netto",
+    "company": "Solid Team Sp. z o.o.",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "lublin-transport-new-876",
+    "category": "transport",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Курʼєр на авто компанії — Люблін",
+    "title_pl": "Kurier autem służbowym — Lublin",
+    "salary": "37 PLN/h netto + премія за зміну",
+    "company": "Daily Route",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "katowice-agriculture-new-877",
+    "category": "agriculture",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Працівник розсадника рослин — Катовіце",
+    "title_pl": "Pracownik szkółki roślin — Katowice",
+    "salary": "7145 - 8645 PLN/місяць",
+    "company": "Urban Works",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "szczecin-security-new-878",
+    "category": "security",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "title": "Оператор моніторингу обʼєкта — Щецин",
+    "title_pl": "Operator monitoringu obiektu — Szczecin",
+    "salary": "до 38 PLN/h netto (ставка + бонус)",
+    "company": "Nova Support",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-medical-new-879",
+    "category": "medical",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Асистент догляду в центрі реабілітації — Бидгощ",
+    "title_pl": "Asystent opieki w centrum rehabilitacji — Bydgoszcz",
+    "salary": "30 - 36 PLN/h brutto",
+    "company": "Prime Logistic Hub",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "warszawa-logistics-new-880",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Комплектувальник онлайн-замовлень — Варшава",
+    "title_pl": "Kompletacja zamówień e-commerce — Warszawa",
+    "salary": "30 - 36 PLN/h netto",
+    "company": "North Bridge Group",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "krakow-production-new-881",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор лінії фасування — Краків",
+    "title_pl": "Operator linii pakowania — Kraków",
+    "salary": "33 PLN/h netto + премія за зміну",
+    "company": "Baltic Staff",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "wrocaw-construction-new-882",
+    "category": "construction",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Монтажник вентиляції — Вроцлав",
+    "title_pl": "Monter wentylacji — Wrocław",
+    "salary": "7320 - 8820 PLN/місяць",
+    "company": "MobiWork Polska",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-hospitality-new-883",
+    "category": "hospitality",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник кейтерингу — Познань",
+    "title_pl": "Pracownik cateringu — Poznań",
+    "salary": "до 43 PLN/h netto (ставка + бонус)",
+    "company": "GreenLine Services",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-new-884",
+    "category": "cleaning",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Клінер офісних просторів — Гданськ",
+    "title_pl": "Pracownik serwisu sprzątającego biura — Gdańsk",
+    "salary": "35 - 41 PLN/h brutto",
+    "company": "ShiftCraft",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "odz-retail-new-885",
+    "category": "retail",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник викладки товару — Лодзь",
+    "title_pl": "Pracownik wykładania towaru — Łódź",
+    "salary": "35 - 41 PLN/h netto",
+    "company": "Solid Team Sp. z o.o.",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "lublin-transport-new-886",
+    "category": "transport",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Курʼєр на авто компанії — Люблін",
+    "title_pl": "Kurier autem służbowym — Lublin",
+    "salary": "29 PLN/h netto + премія за зміну",
+    "company": "Daily Route",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "katowice-agriculture-new-887",
+    "category": "agriculture",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Працівник розсадника рослин — Катовіце",
+    "title_pl": "Pracownik szkółki roślin — Katowice",
+    "salary": "7495 - 8995 PLN/місяць",
+    "company": "Urban Works",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "szczecin-security-new-888",
+    "category": "security",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "title": "Оператор моніторингу обʼєкта — Щецин",
+    "title_pl": "Operator monitoringu obiektu — Szczecin",
+    "salary": "до 39 PLN/h netto (ставка + бонус)",
+    "company": "Nova Support",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-medical-new-889",
+    "category": "medical",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Асистент догляду в центрі реабілітації — Бидгощ",
+    "title_pl": "Asystent opieki w centrum rehabilitacji — Bydgoszcz",
+    "salary": "31 - 37 PLN/h brutto",
+    "company": "Prime Logistic Hub",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "warszawa-logistics-new-890",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Комплектувальник онлайн-замовлень — Варшава",
+    "title_pl": "Kompletacja zamówień e-commerce — Warszawa",
+    "salary": "31 - 37 PLN/h netto",
+    "company": "North Bridge Group",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "krakow-production-new-891",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор лінії фасування — Краків",
+    "title_pl": "Operator linii pakowania — Kraków",
+    "salary": "34 PLN/h netto + премія за зміну",
+    "company": "Baltic Staff",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "wrocaw-construction-new-892",
+    "category": "construction",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Монтажник вентиляції — Вроцлав",
+    "title_pl": "Monter wentylacji — Wrocław",
+    "salary": "7670 - 9170 PLN/місяць",
+    "company": "MobiWork Polska",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-hospitality-new-893",
+    "category": "hospitality",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Працівник кейтерингу — Познань",
+    "title_pl": "Pracownik cateringu — Poznań",
+    "salary": "до 44 PLN/h netto (ставка + бонус)",
+    "company": "GreenLine Services",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "gdansk-cleaning-new-894",
+    "category": "cleaning",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Клінер офісних просторів — Гданськ",
+    "title_pl": "Pracownik serwisu sprzątającego biura — Gdańsk",
+    "salary": "36 - 42 PLN/h brutto",
+    "company": "ShiftCraft",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "odz-retail-new-895",
+    "category": "retail",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Працівник викладки товару — Лодзь",
+    "title_pl": "Pracownik wykładania towaru — Łódź",
+    "salary": "27 - 33 PLN/h netto",
+    "company": "Solid Team Sp. z o.o.",
+    "shift_ua": "06:00 - 14:00",
+    "shift_pl": "06:00 - 14:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Відразу після погодження документів",
+    "start_pl": "Od razu po potwierdzeniu dokumentów",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "Для частини змін доступний доїзд корпоративним транспортом."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "Dla części zmian dostępny jest dojazd transportem firmowym."
+    ]
+  },
+  {
+    "slug": "lublin-transport-new-896",
+    "category": "transport",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "title": "Курʼєр на авто компанії — Люблін",
+    "title_pl": "Kurier autem służbowym — Lublin",
+    "salary": "30 PLN/h netto + премія за зміну",
+    "company": "Daily Route",
+    "shift_ua": "07:00 - 17:00",
+    "shift_pl": "07:00 - 17:00",
+    "pattern_ua": "2 зміни",
+    "pattern_pl": "2 zmiany",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "katowice-agriculture-new-897",
+    "category": "agriculture",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "title": "Працівник розсадника рослин — Катовіце",
+    "title_pl": "Pracownik szkółki roślin — Katowice",
+    "salary": "7845 - 9345 PLN/місяць",
+    "company": "Urban Works",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Гнучкий графік",
+    "pattern_pl": "Elastyczny grafik",
+    "start_ua": "З наступного тижня",
+    "start_pl": "Od przyszłego tygodnia",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "szczecin-security-new-898",
+    "category": "security",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "title": "Оператор моніторингу обʼєкта — Щецин",
+    "title_pl": "Operator monitoringu obiektu — Szczecin",
+    "salary": "до 40 PLN/h netto (ставка + бонус)",
+    "company": "Nova Support",
+    "shift_ua": "14:00 - 22:00",
+    "shift_pl": "14:00 - 22:00",
+    "pattern_ua": "Зміни по 10-12 годин",
+    "pattern_pl": "Zmiany po 10-12 godzin",
+    "start_ua": "Після короткого інструктажу",
+    "start_pl": "Po krótkim wdrożeniu",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "За потреби допомагаємо підібрати житло біля роботи з коротким доїздом."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "W razie potrzeby pomagamy znaleźć zakwaterowanie blisko miejsca pracy."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Базове знання польської мови буде плюсом, але для старту не є обовʼязковим.",
+      "Робота стояча, потрібна уважність і нормальна фізична витривалість.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Podstawowa znajomość języka polskiego będzie atutem, ale nie jest warunkiem startu.",
+      "Praca stojąca, wymagana uważność i dobra kondycja fizyczna.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "bydgoszcz-medical-new-899",
+    "category": "medical",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "title": "Асистент догляду в центрі реабілітації — Бидгощ",
+    "title_pl": "Asystent opieki w centrum rehabilitacji — Bydgoszcz",
+    "salary": "32 - 38 PLN/h brutto",
+    "company": "Prime Logistic Hub",
+    "shift_ua": "06:00 - 18:00",
+    "shift_pl": "06:00 - 18:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після підтвердження графіка",
+    "start_pl": "Po potwierdzeniu grafiku",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
+      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
+      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
+      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+    ],
+    "offers_pl": [
+      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
+      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
+      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
+      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+    ],
+    "tasks_ua": [
+      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
+      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
+      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
+      "Підтримка порядку на робочому місці наприкінці зміни."
+    ],
+    "tasks_pl": [
+      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
+      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
+      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
+      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+    ],
+    "details_ua": [
+      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
+      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
+      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
+      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+    ],
+    "details_pl": [
+      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
+      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
+      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
+      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
+    ]
   }
 ]
