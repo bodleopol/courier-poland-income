@@ -2161,6 +2161,7 @@ function buildVacancyProofFormScript() {
 }
 
 const MIN_VACANCY_EXCERPT_LENGTH = 180;
+const UNIQUE_TAIL_HASH_SUFFIX = 'unique-tail';
 
 function firstText(value) {
   if (Array.isArray(value)) {
@@ -2360,7 +2361,9 @@ function getVacancyNarrative(page, lang, variationState) {
     }
   }
   if (needsExtendedNarrative) {
-    const vacancyCode = String(page?.slug || '').split('-').pop();
+    const slug = String(page?.slug || '');
+    const vacancyCodeCandidate = slug.split('-').pop();
+    const vacancyCode = /^\d+$/.test(vacancyCodeCandidate || '') ? vacancyCodeCandidate : '';
     if (vacancyCode) {
       const uniqueTailVariants = isPl
         ? [
@@ -2379,7 +2382,7 @@ function getVacancyNarrative(page, lang, variationState) {
             `Якщо у заявці зазначити код вакансії ${vacancyCode}, на першому дзвінку швидше узгодимо дату виходу і стартові задачі.`,
             `Код вакансії ${vacancyCode} закріплений за конкретною бригадою, тому на співбесіді одразу пояснюємо її робочий ритм.`
           ]);
-      const uniqueTail = uniqueTailVariants[Math.abs(hashString(`${page.slug || ''}-${lang}-unique-tail`)) % uniqueTailVariants.length];
+      const uniqueTail = uniqueTailVariants[Math.abs(hashString(`${slug}-${lang}-${UNIQUE_TAIL_HASH_SUFFIX}`)) % uniqueTailVariants.length];
       chosenText = `${chosenText} ${uniqueTail}`.replace(/\s+/g, ' ').trim();
     }
   }
