@@ -1,5 +1,509 @@
 [
   {
+    "slug": "wroclaw-manufacturing-welder-tig-141-424",
+    "category": "manufacturing",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Зварювальник TIG (141) на виробництво харчового обладнання",
+    "title_pl": "Spawacz TIG (141) na produkcji urządzeń dla przemysłu spożywczego",
+    "salary": "45 - 55 PLN/h netto",
+    "company": "InoxTech Solutions",
+    "shift_ua": "06:00 - 14:00, 14:00 - 22:00",
+    "shift_pl": "06:00 - 14:00, 14:00 - 22:00",
+    "pattern_ua": "5 днів на тиждень (можливі робочі суботи)",
+    "pattern_pl": "5 dni w tygodniu (możliwe pracujące soboty)",
+    "start_ua": "Після здачі зразків (próbki) на нержавійці",
+    "start_pl": "Po zdaniu próbek na stali nierdzewnej",
+    "contract_ua": "Umowa o pracę / B2B",
+    "contract_pl": "Umowa o pracę / B2B",
+    "offers_ua": [
+      "Робота виключно з нержавіючою сталлю (Inox) — чисто, без іржі та важкого пилу.",
+      "Сучасні зварювальні апарати (Fronius, Kemppi) та якісні витратні матеріали.",
+      "Світлий, опалювальний цех з потужною системою витяжки над кожним робочим місцем.",
+      "Доплата за надгодини (+50%) та роботу у вихідні (+100%).",
+      "Допомога з оновленням сертифікатів TUV/UDT за рахунок компанії."
+    ],
+    "offers_pl": [
+      "Praca wyłącznie ze stalą nierdzewną (Inox) — czysto, bez rdzy i ciężkiego pyłu.",
+      "Nowoczesne spawarki (Fronius, Kemppi) i wysokiej jakości materiały eksploatacyjne.",
+      "Jasna, ogrzewana hala z wydajnym systemem odciągów nad każdym stanowiskiem.",
+      "Dodatek za nadgodziny (+50%) i pracę w weekendy (+100%).",
+      "Pomoc w odnowieniu certyfikatów TUV/UDT na koszt firmy."
+    ],
+    "tasks_ua": [
+      "Зварювання тонколистової нержавіючої сталі (1-3 мм) методом TIG (141).",
+      "Зварювання труб та резервуарів для харчової промисловості (з піддувом аргону).",
+      "Читання ізометричних креслень та самостійна збірка вузлів перед зварюванням.",
+      "Шліфування та травлення зварних швів (доведення до ідеального вигляду)."
+    ],
+    "tasks_pl": [
+      "Spawanie cienkich blach ze stali nierdzewnej (1-3 mm) metodą TIG (141).",
+      "Spawanie rur i zbiorników dla przemysłu spożywczego (w osłonie argonu).",
+      "Czytanie rysunków izometrycznych i samodzielny montaż podzespołów przed spawaniem.",
+      "Szlifowanie i trawienie spoin (doprowadzenie do idealnego wyglądu)."
+    ],
+    "details_ua": [
+      "Обов'язковий досвід зварювання нержавійки (труби, тонкий лист) від 2 років.",
+      "Вміння варити 'на дзеркало' (без пор та окислення).",
+      "Наявність актуального сертифікату TIG 141 буде перевагою (але можемо оновити).",
+      "Акуратність та увага до естетики шва (харчові стандарти)."
+    ],
+    "details_pl": [
+      "Obowiązkowe doświadczenie w spawaniu stali nierdzewnej (rury, cienka blacha) od 2 lat.",
+      "Umiejętność spawania 'na lustro' (bez porów i utlenień).",
+      "Posiadanie aktualnego certyfikatu TIG 141 będzie atutem (ale możemy odnowić).",
+      "Dokładność i dbałość o estetykę spoiny (standardy spożywcze)."
+    ]
+  },
+  {
+    "slug": "poznan-agriculture-greenhouse-worker-425",
+    "category": "agriculture",
+    "city": "Познань (околиці)",
+    "city_pl": "Poznań (okolice)",
+    "title": "Працівник сучасної теплиці (збір томатів)",
+    "title_pl": "Pracownik nowoczesnej szklarni (zbiór pomidorów)",
+    "salary": "25 - 28 PLN/h netto",
+    "company": "EcoTomatoes Wielkopolska",
+    "shift_ua": "06:00 - 14:00 (влітку можливі зміни з 05:00)",
+    "shift_pl": "06:00 - 14:00 (latem możliwe zmiany od 05:00)",
+    "pattern_ua": "6 днів на тиждень",
+    "pattern_pl": "6 dni w tygodniu",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Робота в сучасній скляній теплиці з клімат-контролем (не плівкові парники).",
+      "Стабільна робота цілий рік (теплиці опалюються взимку).",
+      "Надається безкоштовне житло (хостел для працівників) за 10 хвилин ходьби від роботи.",
+      "Можливість купувати свіжі овочі за собівартістю.",
+      "Премії за виконання норми збору."
+    ],
+    "offers_pl": [
+      "Praca w nowoczesnej szklarni z klimatyzacją (nie tunele foliowe).",
+      "Stabilna praca przez cały rok (szklarnie są ogrzewane zimą).",
+      "Zapewnione darmowe zakwaterowanie (hostel pracowniczy) 10 minut spacerem od pracy.",
+      "Możliwość zakupu świeżych warzyw po kosztach produkcji.",
+      "Premie za wyrobienie normy zbioru."
+    ],
+    "tasks_ua": [
+      "Збір стиглих томатів з кущів (робота на спеціальних візках, що рухаються по трубах).",
+      "Обрізка нижнього листя та пасинкування (догляд за рослинами).",
+      "Сортування томатів за розміром та кольором.",
+      "Укладання продукції в картонні ящики для відправки в супермаркети."
+    ],
+    "tasks_pl": [
+      "Zbiór dojrzałych pomidorów z krzaków (praca na specjalnych wózkach jeżdżących po rurach).",
+      "Obrywanie dolnych liści i pędów bocznych (pielęgnacja roślin).",
+      "Sortowanie pomidorów według rozmiaru i koloru.",
+      "Układanie produktów w kartony do wysyłki do supermarketów."
+    ],
+    "details_ua": [
+      "Досвід роботи не потрібен, головне — бажання працювати та відсутність алергії на пилок томатів.",
+      "Робота вимагає фізичної витривалості (робота на ногах, іноді в умовах підвищеної вологості).",
+      "Знання польської мови не обов'язкове (бригадири розмовляють українською).",
+      "Підходить для сімейних пар (надаємо окремі кімнати)."
+    ],
+    "details_pl": [
+      "Doświadczenie nie jest wymagane, najważniejsze to chęci do pracy i brak alergii na pyłek pomidorów.",
+      "Praca wymaga wytrzymałości fizycznej (praca stojąca, czasami w warunkach podwyższonej wilgotności).",
+      "Znajomość języka polskiego nie jest obowiązkowa (brygadziści mówią po ukraińsku).",
+      "Odpowiednie dla par (zapewniamy osobne pokoje)."
+    ]
+  },
+  {
+    "slug": "warsaw-retail-cashier-supermarket-426",
+    "category": "other",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Касир-продавець у мережевий супермаркет",
+    "title_pl": "Kasjer-sprzedawca w supermarkecie sieciowym",
+    "salary": "4200 - 4800 PLN/miesiąc brutto + премії",
+    "company": "FreshMarket Polska",
+    "shift_ua": "Змінний графік (ранкові та вечірні зміни)",
+    "shift_pl": "Grafik zmianowy (zmiany poranne i wieczorne)",
+    "pattern_ua": "Графік планується на місяць вперед",
+    "pattern_pl": "Grafik planowany z miesięcznym wyprzedzeniem",
+    "start_ua": "Після проходження медогляду",
+    "start_pl": "Po przejściu badań lekarskich",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня (Umowa o pracę), оплачувані відпустки.",
+      "Знижки на покупки в мережі супермаркетів (карта працівника).",
+      "Приватне медичне страхування (Luxmed) та страхування життя.",
+      "Навчання роботі на касі з нуля (оплачуване стажування).",
+      "Можливість швидкого кар'єрного росту до старшого касира або заступника керуючого."
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia (Umowa o pracę), płatne urlopy.",
+      "Zniżki na zakupy w sieci supermarketów (karta pracownicza).",
+      "Prywatna opieka medyczna (Luxmed) i ubezpieczenie na życie.",
+      "Szkolenie z obsługi kasy od podstaw (płatny staż).",
+      "Możliwość szybkiego awansu na starszego kasjera lub zastępcę kierownika."
+    ],
+    "tasks_ua": [
+      "Обслуговування покупців на касі (сканування товарів, прийом готівки та карток).",
+      "Викладка товарів у торговому залі (у вільний від каси час).",
+      "Контроль термінів придатності продуктів на полицях.",
+      "Підтримка чистоти на робочому місці та в торговому залі."
+    ],
+    "tasks_pl": [
+      "Obsługa klientów na kasie (skanowanie towarów, przyjmowanie gotówki i kart).",
+      "Wykładanie towarów na sali sprzedaży (w czasie wolnym od kasy).",
+      "Kontrola terminów przydatności produktów na półkach.",
+      "Utrzymanie czystości na stanowisku pracy i na sali sprzedaży."
+    ],
+    "details_ua": [
+      "Обов'язкове знання польської мови на комунікативному рівні (B1) для спілкування з клієнтами.",
+      "Наявність санітарної книжки (książeczka sanepidowska) — допомагаємо з оформленням.",
+      "Ввічливість, стресостійкість та вміння вирішувати конфліктні ситуації.",
+      "Готовність до роботи у вихідні дні (за графіком)."
+    ],
+    "details_pl": [
+      "Obowiązkowa znajomość języka polskiego na poziomie komunikatywnym (B1) do obsługi klientów.",
+      "Posiadanie książeczki sanepidowskiej — pomagamy w wyrobieniu.",
+      "Uprzejmość, odporność na stres i umiejętność rozwiązywania sytuacji konfliktowych.",
+      "Gotowość do pracy w weekendy (według grafiku)."
+    ]
+  },
+  {
+    "slug": "krakow-construction-solar-installer-427",
+    "category": "construction",
+    "city": "Краків (виїзди по регіону)",
+    "city_pl": "Kraków (wyjazdy w regionie)",
+    "title": "Монтажник сонячних панелей (ФЕС)",
+    "title_pl": "Monter paneli fotowoltaicznych (PV)",
+    "salary": "6000 - 10000 PLN/miesiąc netto (від виробітку)",
+    "company": "SunPower Małopolska",
+    "shift_ua": "07:00 - до завершення монтажу",
+    "shift_pl": "07:00 - do zakończenia montażu",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після проходження інструктажу з висотних робіт",
+    "start_pl": "Po przejściu szkolenia z prac na wysokości",
+    "contract_ua": "Umowa Zlecenie / B2B",
+    "contract_pl": "Umowa Zlecenie / B2B",
+    "offers_ua": [
+      "Робота в перспективній сфері відновлюваної енергетики.",
+      "Оплата залежить від кількості змонтованих кіловат (кВт) — чим швидше і якісніше працює бригада, тим вищий заробіток.",
+      "Забезпечуємо фірмовим транспортом (бус), професійним інструментом (Hilti, DeWalt) та страхувальними системами.",
+      "Навчання специфіці монтажу різних типів дахів (черепиця, металопрофіль, плоскі дахи).",
+      "Робота на свіжому повітрі, об'єкти переважно в приватному секторі (будинки)."
+    ],
+    "offers_pl": [
+      "Praca w perspektywicznej branży odnawialnych źródeł energii.",
+      "Wynagrodzenie zależy od ilości zamontowanych kilowatów (kW) — im szybciej i lepiej pracuje brygada, tym wyższe zarobki.",
+      "Zapewniamy transport firmowy (bus), profesjonalne narzędzia (Hilti, DeWalt) i systemy asekuracyjne.",
+      "Szkolenie ze specyfiki montażu na różnych rodzajach dachów (dachówka, blachodachówka, dachy płaskie).",
+      "Praca na świeżym powietrzu, obiekty głównie w sektorze prywatnym (domy jednorodzinne)."
+    ],
+    "tasks_ua": [
+      "Монтаж несучих конструкцій (алюмінієвих профілів) на дахах будівель.",
+      "Встановлення та закріплення сонячних панелей.",
+      "Прокладання кабельних трас від панелей до інвертора (постійний струм - DC).",
+      "Допомога електрику в підключенні системи (за наявності допусків SEP)."
+    ],
+    "tasks_pl": [
+      "Montaż konstrukcji nośnych (profili aluminiowych) na dachach budynków.",
+      "Instalacja i mocowanie paneli fotowoltaicznych.",
+      "Układanie tras kablowych od paneli do falownika (prąd stały - DC).",
+      "Pomoc elektrykowi w podłączeniu systemu (w przypadku posiadania uprawnień SEP)."
+    ],
+    "details_ua": [
+      "Відсутність страху висоти (робота на дахах 1-2 поверхових будинків).",
+      "Обов'язковий медичний допуск до роботи на висоті понад 3 метри (badania wysokościowe).",
+      "Досвід роботи на дахах (покрівельник) або в монтажі ФЕС буде великою перевагою.",
+      "Наявність водійських прав кат. B (для керування робочим бусом) вітається."
+    ],
+    "details_pl": [
+      "Brak lęku wysokości (praca na dachach budynków 1-2 piętrowych).",
+      "Obowiązkowe badania lekarskie do pracy na wysokości powyżej 3 metrów.",
+      "Doświadczenie w pracy na dachach (dekarz) lub w montażu PV będzie dużym atutem.",
+      "Posiadanie prawa jazdy kat. B (do prowadzenia busa firmowego) mile widziane."
+    ]
+  },
+  {
+    "slug": "gdansk-manufacturing-turner-manual-428",
+    "category": "manufacturing",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Токар-універсал (мануальні верстати)",
+    "title_pl": "Tokarz uniwersalny (maszyny konwencjonalne)",
+    "salary": "35 - 45 PLN/h netto",
+    "company": "Baltic Machining",
+    "shift_ua": "07:00 - 15:00",
+    "shift_pl": "07:00 - 15:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Після перевірки навичок (виточення тестової деталі)",
+    "start_pl": "Po sprawdzeniu umiejętności (wytoczenie detalu testowego)",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Робота на стабільному підприємстві, що виготовляє деталі для суднобудування.",
+      "Тільки денні зміни (без нічних!), вільні вихідні.",
+      "Робота з одиничними та дрібносерійними замовленнями (не конвеєр, цікаві задачі).",
+      "Забезпечення якісним ріжучим інструментом (Sandvik, Seco) та вимірювальними приладами.",
+      "Допомога з пошуком житла для працівників з інших міст."
+    ],
+    "offers_pl": [
+      "Praca w stabilnym przedsiębiorstwie produkującym części dla przemysłu stoczniowego.",
+      "Tylko zmiany dzienne (bez nocek!), wolne weekendy.",
+      "Praca z zamówieniami jednostkowymi i małoseryjnymi (nie taśmociąg, ciekawe zadania).",
+      "Zapewnienie wysokiej jakości narzędzi skrawających (Sandvik, Seco) i przyrządów pomiarowych.",
+      "Pomoc w znalezieniu zakwaterowania dla pracowników z innych miast."
+    ],
+    "tasks_ua": [
+      "Токарна обробка деталей з різних металів (сталь, бронза, латунь, алюміній) на універсальних верстатах.",
+      "Нарізання різних типів різьби (метрична, дюймова, трапецеїдальна) різцем.",
+      "Самостійний підбір режимів різання та заточування різців.",
+      "Контроль розмірів виготовлених деталей згідно з кресленням (допуски та посадки)."
+    ],
+    "tasks_pl": [
+      "Obróbka tokarska detali z różnych metali (stal, brąz, mosiądz, aluminium) na tokarkach konwencjonalnych.",
+      "Nacinanie różnych rodzajów gwintów (metryczny, calowy, trapezowy) nożem.",
+      "Samodzielny dobór parametrów skrawania i ostrzenie noży tokarskich.",
+      "Kontrola wymiarów wykonanych detali zgodnie z rysunkiem (tolerancje i pasowania)."
+    ],
+    "details_ua": [
+      "Досвід роботи токарем-універсалом від 3 років (обов'язково).",
+      "Вільне читання складних технічних креслень.",
+      "Вміння користуватися мікрометром, нутроміром, штангенциркулем.",
+      "Відповідальність, акуратність, відсутність шкідливих звичок."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako tokarz uniwersalny od 3 lat (obowiązkowo).",
+      "Biegłe czytanie skomplikowanych rysunków technicznych.",
+      "Umiejętność posługiwania się mikrometrem, średnicówką, suwmiarką.",
+      "Odpowiedzialność, dokładność, brak nałogów."
+    ]
+  },
+  {
+    "slug": "lodz-logistics-reach-truck-operator-429",
+    "category": "logistics",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Оператор Reach Truck (висотне складування)",
+    "title_pl": "Operator wózka bocznego Reach Truck (wysokie składowanie)",
+    "salary": "30 - 38 PLN/h netto",
+    "company": "Global Logistics Hub",
+    "shift_ua": "3 зміни (06:00-14:00, 14:00-22:00, 22:00-06:00)",
+    "shift_pl": "3 zmiany (06:00-14:00, 14:00-22:00, 22:00-06:00)",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Після тестування навичок водіння",
+    "start_pl": "Po teście umiejętności jazdy",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Робота на сучасному складі класу А (чисто, тепло, хороше освітлення).",
+      "Нові навантажувачі Jungheinrich з камерами на вилах для зручної роботи на висоті.",
+      "Офіційне працевлаштування (Umowa o pracę) з оплачуваними відпустками.",
+      "Доплата за нічні зміни (+20%) та премії за продуктивність (кількість знятих палет).",
+      "Безкоштовні обіди в їдальні підприємства."
+    ],
+    "offers_pl": [
+      "Praca w nowoczesnym magazynie klasy A (czysto, ciepło, dobre oświetlenie).",
+      "Nowe wózki Jungheinrich z kamerami na widłach dla wygodnej pracy na wysokości.",
+      "Oficjalne zatrudnienie (Umowa o pracę) z płatnymi urlopami.",
+      "Dodatek za zmiany nocne (+20%) i premie za wydajność (ilość zdjętych palet).",
+      "Darmowe obiady na stołówce zakładowej."
+    ],
+    "tasks_ua": [
+      "Розміщення палет з товаром на стелажах висотного складування (до 12 метрів).",
+      "Зняття палет зі стелажів для комплектації замовлень.",
+      "Робота зі сканером штрих-кодів та терміналом WMS.",
+      "Контроль технічного стану навантажувача (перевірка батареї, візуальний огляд перед зміною)."
+    ],
+    "tasks_pl": [
+      "Rozmieszczanie palet z towarem na regałach wysokiego składowania (do 12 metrów).",
+      "Zdejmowanie palet z regałów w celu kompletacji zamówień.",
+      "Praca ze skanerem kodów kreskowych i terminalem WMS.",
+      "Kontrola stanu technicznego wózka (sprawdzanie baterii, oględziny wizualne przed zmianą)."
+    ],
+    "details_ua": [
+      "Обов'язкова наявність польських прав UDT на навантажувачі (Wózki jezdniowe podnośnikowe).",
+      "Досвід роботи на Reach Truck (боковий навантажувач) від 6 місяців.",
+      "Хороший зір та просторова орієнтація (робота на великій висоті).",
+      "Відповідальність та дотримання правил техніки безпеки (BHP)."
+    ],
+    "details_pl": [
+      "Obowiązkowe posiadanie polskich uprawnień UDT na wózki widłowe.",
+      "Doświadczenie w pracy na wózkach bocznych (Reach Truck) od 6 miesięcy.",
+      "Dobry wzrok i orientacja przestrzenna (praca na dużej wysokości).",
+      "Odpowiedzialność i przestrzeganie zasad BHP."
+    ]
+  },
+  {
+    "slug": "warsaw-beauty-hairdresser-colorist-430",
+    "category": "beauty",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Перукар-колорист у сучасний салон краси",
+    "title_pl": "Fryzjer-kolorysta w nowoczesnym salonie urody",
+    "salary": "6000 - 12000 PLN/miesiąc (відсоток)",
+    "company": "Style & Color Studio",
+    "shift_ua": "Графік 2/2 або 3/2 (10:00 - 20:00)",
+    "shift_pl": "Grafik 2/2 lub 3/2 (10:00 - 20:00)",
+    "pattern_ua": "Змінний графік",
+    "pattern_pl": "Grafik zmianowy",
+    "start_ua": "Після демонстрації роботи на моделі",
+    "start_pl": "Po demonstracji pracy na modelce",
+    "contract_ua": "Umowa Zlecenie / B2B",
+    "contract_pl": "Umowa Zlecenie / B2B",
+    "offers_ua": [
+      "Робота в популярному салоні з активним записом (не потрібно сидіти без діла).",
+      "Високий відсоток від послуг (40-50%) + відсоток від продажу домашнього догляду.",
+      "Салон працює на преміум-косметиці (Kevin Murphy, L'Oréal Professionnel, Olaplex).",
+      "Регулярні майстер-класи від технологів брендів за рахунок салону.",
+      "Допомога в просуванні особистого бренду майстра (професійні фото/відео робіт для Instagram)."
+    ],
+    "offers_pl": [
+      "Praca w popularnym salonie z aktywnym grafikiem zapisów (nie trzeba siedzieć bezczynnie).",
+      "Wysoki procent od usług (40-50%) + procent od sprzedaży kosmetyków do pielęgnacji domowej.",
+      "Salon pracuje na kosmetykach premium (Kevin Murphy, L'Oréal Professionnel, Olaplex).",
+      "Regularne szkolenia od technologów marek na koszt salonu.",
+      "Pomoc w promowaniu marki osobistej stylisty (profesjonalne zdjęcia/wideo prac na Instagram)."
+    ],
+    "tasks_ua": [
+      "Виконання складних технік фарбування (Airtouch, Shatush, Balayage, Handtouch).",
+      "Жіночі та чоловічі стрижки (від класики до креативу).",
+      "Проведення процедур догляду та відновлення волосся.",
+      "Консультація клієнтів щодо підбору домашнього догляду."
+    ],
+    "tasks_pl": [
+      "Wykonywanie skomplikowanych technik koloryzacji (Airtouch, Shatush, Balayage, Handtouch).",
+      "Strzyżenia damskie i męskie (od klasyki po kreatywne).",
+      "Przeprowadzanie zabiegów pielęgnacyjnych i regeneracyjnych na włosy.",
+      "Doradztwo dla klientów w zakresie doboru pielęgnacji domowej."
+    ],
+    "details_ua": [
+      "Досвід роботи перукарем-колористом від 3 років, наявність портфоліо (Instagram).",
+      "Глибоке розуміння колористики (фон освітлення, нейтралізація, робота з сивиною).",
+      "Знання польської мови на комунікативному рівні (B1) для консультації клієнтів.",
+      "Комунікабельність, охайний зовнішній вигляд, бажання розвиватися."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako fryzjer-kolorysta od 3 lat, posiadanie portfolio (Instagram).",
+      "Głębokie zrozumienie koloryzacji (tło rozjaśniania, neutralizacja, praca z siwizną).",
+      "Znajomość języka polskiego na poziomie komunikatywnym (B1) do konsultacji z klientami.",
+      "Komunikatywność, zadbany wygląd, chęć rozwoju."
+    ]
+  },
+  {
+    "slug": "krakow-education-english-tutor-431",
+    "category": "education",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Викладач англійської мови (онлайн/офлайн)",
+    "title_pl": "Lektor języka angielskiego (online/offline)",
+    "salary": "50 - 80 PLN/h netto",
+    "company": "SpeakUp Language School",
+    "shift_ua": "Гнучкий графік (переважно друга половина дня)",
+    "shift_pl": "Elastyczny grafik (głównie popołudnia)",
+    "pattern_ua": "Залежить від кількості груп",
+    "pattern_pl": "Zależy od ilości grup",
+    "start_ua": "З початку нового семестру",
+    "start_pl": "Od początku nowego semestru",
+    "contract_ua": "Umowa Zlecenie / B2B",
+    "contract_pl": "Umowa Zlecenie / B2B",
+    "offers_ua": [
+      "Можливість працювати в гібридному форматі (частина занять в офісі, частина онлайн з дому).",
+      "Готові методичні матеріали та плани уроків (не потрібно витрачати години на підготовку).",
+      "Оплата залежить від кваліфікації та типу групи (індивідуальні, групові, корпоративні).",
+      "Методична підтримка та регулярні тренінги для викладачів.",
+      "Сучасний офіс у центрі Кракова з безлімітною кавою та снеками."
+    ],
+    "offers_pl": [
+      "Możliwość pracy w formacie hybrydowym (część zajęć w biurze, część online z domu).",
+      "Gotowe materiały metodyczne i scenariusze lekcji (nie trzeba tracić godzin na przygotowania).",
+      "Wynagrodzenie zależy od kwalifikacji i rodzaju grupy (indywidualne, grupowe, korporacyjne).",
+      "Wsparcie metodyczne i regularne szkolenia dla lektorów.",
+      "Nowoczesne biuro w centrum Krakowa z nielimitowaną kawą i przekąskami."
+    ],
+    "tasks_ua": [
+      "Проведення занять з англійської мови для дорослих та підлітків (рівні від A2 до C1).",
+      "Підготовка до міжнародних іспитів (IELTS, TOEFL, FCE) — за наявності досвіду.",
+      "Перевірка домашніх завдань та надання зворотного зв'язку студентам.",
+      "Ведення журналу відвідуваності та успішності в електронній системі."
+    ],
+    "tasks_pl": [
+      "Prowadzenie zajęć z języka angielskiego dla dorosłych i młodzieży (poziomy od A2 do C1).",
+      "Przygotowanie do egzaminów międzynarodowych (IELTS, TOEFL, FCE) — w przypadku posiadania doświadczenia.",
+      "Sprawdzanie prac domowych i udzielanie informacji zwrotnej kursantom.",
+      "Prowadzenie dziennika obecności i postępów w systemie elektronicznym."
+    ],
+    "details_ua": [
+      "Вища філологічна/педагогічна освіта або наявність сертифікатів CELTA/TEFL/TESOL.",
+      "Рівень володіння англійською мовою не нижче C1.",
+      "Досвід викладання від 1 року (бажано з використанням комунікативної методики).",
+      "Знання польської мови на рівні B1-B2 для пояснення граматики початківцям."
+    ],
+    "details_pl": [
+      "Wyższe wykształczenie filologiczne/pedagogiczne lub posiadanie certyfikatów CELTA/TEFL/TESOL.",
+      "Poziom znajomości języka angielskiego nie niższy niż C1.",
+      "Doświadczenie w nauczaniu od 1 roku (najlepiej z wykorzystaniem metody komunikatywnej).",
+      "Znajomość języka polskiego na poziomie B1-B2 do tłumaczenia gramatyki początkującym."
+    ]
+  },
+  {
+    "slug": "wroclaw-transport-taxi-driver-bolt-432",
+    "category": "transport",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Водій таксі (Bolt/Uber/FreeNow) на авто компанії",
+    "title_pl": "Kierowca taxi (Bolt/Uber/FreeNow) na aucie firmowym",
+    "salary": "5000 - 8000 PLN/miesiąc netto",
+    "company": "CityRide Partner",
+    "shift_ua": "Вільний графік (рекомендовано 8-10 годин)",
+    "shift_pl": "Elastyczny grafik (rekomendowane 8-10 godzin)",
+    "pattern_ua": "Автомобіль закріплений за одним водієм (без перезмінок)",
+    "pattern_pl": "Auto przypisane do jednego kierowcy (bez zmian)",
+    "start_ua": "Після отримання ідентифікатора водія таксі",
+    "start_pl": "Po uzyskaniu identyfikatora kierowcy taxi",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Нові автомобілі (Toyota Corolla, Skoda Auris) з ГБО (газ) або гібриди — економія на пальному.",
+      "Автомобіль залишається у вас 24/7, ви самі плануєте свій робочий час.",
+      "Компанія покриває витрати на ТО, страховку, ремонт та ліцензії.",
+      "Допомога в оформленні всіх необхідних документів (довідка про несудимість, медогляд, психотести).",
+      "Щотижневі виплати заробітку на банківську карту."
+    ],
+    "offers_pl": [
+      "Nowe samochody (Toyota Corolla, Skoda Auris) z LPG (gaz) lub hybrydy — oszczędność na paliwie.",
+      "Auto zostaje u Ciebie 24/7, sam planujesz swój czas pracy.",
+      "Firma pokrywa koszty serwisu, ubezpieczenia, napraw i licencji.",
+      "Pomoc w załatwieniu wszystkich niezbędnych dokumentów (zaświadczenie o niekaralności, badania lekarskie, psychotesty).",
+      "Cotygodniowe wypłaty zarobków na konto bankowe."
+    ],
+    "tasks_ua": [
+      "Виконання пасажирських перевезень через додатки Bolt, Uber, FreeNow.",
+      "Підтримка чистоти в салоні автомобіля (регулярна мийка).",
+      "Дотримання правил дорожнього руху та безпечне водіння.",
+      "Ввічливе спілкування з пасажирами."
+    ],
+    "tasks_pl": [
+      "Realizacja przewozów pasażerskich przez aplikacje Bolt, Uber, FreeNow.",
+      "Utrzymanie czystości wewnątrz samochodu (regularne mycie).",
+      "Przestrzeganie przepisów ruchu drogowego i bezpieczna jazda.",
+      "Uprzejma komunikacja z pasażerami."
+    ],
+    "details_ua": [
+      "Водійські права категорії B (стаж водіння від 1 року).",
+      "Наявність довідки про несудимість у Польщі (zaświadczenie o niekaralności).",
+      "Смартфон з доступом до інтернету для роботи з додатками.",
+      "Базове знання польської мови (привітатися, уточнити маршрут)."
+    ],
+    "details_pl": [
+      "Prawo jazdy kategorii B (staż za kierownicą od 1 roku).",
+      "Posiadanie zaświadczenia o niekaralności w Polsce.",
+      "Smartfon z dostępem do internetu do obsługi aplikacji.",
+      "Podstawowa znajomość języka polskiego (przywitanie się, dopytanie o trasę)."
+    ]
+  },
+  {
     "slug": "krakow-medical-elderly-caregiver-414",
     "category": "medical",
     "city": "Краків (околиці)",
