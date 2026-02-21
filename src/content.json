@@ -1,5 +1,565 @@
 [
   {
+    "slug": "krakow-medical-elderly-caregiver-414",
+    "category": "medical",
+    "city": "Краків (околиці)",
+    "city_pl": "Kraków (okolice)",
+    "title": "Опікун/ка в приватний пансіонат для літніх людей",
+    "title_pl": "Opiekun/ka w prywatnym pensjonacie dla osób starszych",
+    "salary": "4500 - 5800 PLN/miesiąc netto",
+    "company": "Złota Jesień Care",
+    "shift_ua": "12-годинні зміни (денні та нічні)",
+    "shift_pl": "Zmiany 12-godzinne (dzienne i nocne)",
+    "pattern_ua": "Графік 2/2 або за домовленістю",
+    "pattern_pl": "Grafik 2/2 lub do uzgodnienia",
+    "start_ua": "Після співбесіди та перевірки рекомендацій",
+    "start_pl": "Po rozmowie i weryfikacji referencji",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Робота в сучасному, чистому пансіонаті європейського зразка (не лікарняного типу).",
+      "Безкоштовне проживання в окремому будинку для персоналу поруч із пансіонатом.",
+      "Повноцінне триразове харчування під час робочої зміни.",
+      "Наявність сучасного обладнання для переміщення пацієнтів (підйомники, спеціальні ліжка), що береже вашу спину.",
+      "Премії за відданість роботі та позитивні відгуки від родин підопічних."
+    ],
+    "offers_pl": [
+      "Praca w nowoczesnym, czystym pensjonacie o standardzie europejskim (nie typu szpitalnego).",
+      "Darmowe zakwaterowanie w osobnym domu dla personelu obok pensjonatu.",
+      "Pełne wyżywienie (trzy posiłki) podczas zmiany roboczej.",
+      "Dostępność nowoczesnego sprzętu do transferu pacjentów (podnośniki, specjalne łóżka), co chroni kręgosłup.",
+      "Premie za zaangażowanie i pozytywne opinie od rodzin podopiecznych."
+    ],
+    "tasks_ua": [
+      "Допомога підопічним у щоденних справах (вмивання, одягання, прийом їжі).",
+      "Контроль за прийомом ліків (згідно з призначенням лікаря).",
+      "Організація дозвілля (читання, прогулянки на території пансіонату, бесіди).",
+      "Підтримка чистоти в кімнатах підопічних (зміна постільної білизни)."
+    ],
+    "tasks_pl": [
+      "Pomoc podopiecznym w codziennych czynnościach (mycie, ubieranie, karmienie).",
+      "Kontrola przyjmowania leków (zgodnie z zaleceniami lekarza).",
+      "Organizacja czasu wolnego (czytanie, spacery po terenie pensjonatu, rozmowy).",
+      "Utrzymanie czystości w pokojach podopiecznych (zmiana pościeli)."
+    ],
+    "details_ua": [
+      "Обов'язковий досвід догляду за літніми людьми (можна в родині) та емпатія.",
+      "Знання польської мови на рівні, достатньому для вільного спілкування з підопічними (A2-B1).",
+      "Медична освіта (медсестра) буде величезною перевагою і вплине на ставку.",
+      "Шукаємо терплячих, добрих людей, які розуміють специфіку роботи з деменцією."
+    ],
+    "details_pl": [
+      "Obowiązkowe doświadczenie w opiece nad osobami starszymi (może być w rodzinie) i empatia.",
+      "Znajomość języka polskiego na poziomie wystarczającym do swobodnej komunikacji z podopiecznymi (A2-B1).",
+      "Wykształcenie medyczne (pielęgniarka) będzie ogromnym atutem i wpłynie na stawkę.",
+      "Szukamy cierpliwych, dobrych osób, które rozumieją specyfikę pracy z demencją."
+    ]
+  },
+  {
+    "slug": "poznan-transport-driver-ce-international-415",
+    "category": "transport",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Водій-міжнародник категорії C+E (траси Західна Європа)",
+    "title_pl": "Kierowca międzynarodowy kat. C+E (trasy Europa Zachodnia)",
+    "salary": "8500 - 11000 PLN/miesiąc netto (podstawa + diety)",
+    "company": "TransPol Logistics",
+    "shift_ua": "Система каденцій (3/1, 4/1, 6/2)",
+    "shift_pl": "System zjazdowy (3/1, 4/1, 6/2)",
+    "pattern_ua": "Каденції",
+    "pattern_pl": "System zjazdowy",
+    "start_ua": "Після проходження тест-драйву на базі",
+    "start_pl": "Po przejściu jazdy próbnej na bazie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Сучасний автопарк (Mercedes Actros, Volvo FH) не старше 3 років, закріплене авто за водієм.",
+      "Прозорі розрахунки: висока 'подстава' + дієти, виплати без затримок до 10 числа.",
+      "Дотримання режиму праці та відпочинку (тахограф) — ми не змушуємо порушувати правила.",
+      "Оплачувані паркінги та автохолодильники в кожній машині.",
+      "Допомога з отриманням Коду 95 (Świadectwo Kwalifikacji Zawodowej) та медичних довідок."
+    ],
+    "offers_pl": [
+      "Nowoczesna flota (Mercedes Actros, Volvo FH) nie starsza niż 3 lata, auto przypisane do kierowcy.",
+      "Przejrzyste rozliczenia: wysoka podstawa + diety, wypłaty bez opóźnień do 10. dnia miesiąca.",
+      "Przestrzeganie czasu pracy i odpoczynku (tachograf) — nie zmuszamy do łamania przepisów.",
+      "Płatne parkingi i lodówki samochodowe w każdym aucie.",
+      "Pomoc w uzyskaniu Kodu 95 (Świadectwo Kwalifikacji Zawodowej) i badań lekarskich."
+    ],
+    "tasks_ua": [
+      "Перевезення вантажів (тент/штора) маршрутами: Польща - Німеччина - Франція - Іспанія.",
+      "Контроль завантаження та розвантаження (правильне кріплення вантажу ременями).",
+      "Ведення транспортної документації (CMR).",
+      "Дбайливе ставлення до автомобіля та еко-водіння."
+    ],
+    "tasks_pl": [
+      "Przewóz ładunków (plandeka/firanka) na trasach: Polska - Niemcy - Francja - Hiszpania.",
+      "Nadzór nad załadunkiem i rozładunkiem (prawidłowe zabezpieczenie ładunku pasami).",
+      "Prowadzenie dokumentacji transportowej (CMR).",
+      "Dbałość o powierzony pojazd i eco-driving."
+    ],
+    "details_ua": [
+      "Обов'язковий досвід роботи по Європі від 1 року (категорія C+E).",
+      "Наявність чіп-карти водія та актуальних психотестів.",
+      "Базове знання англійської або німецької мови для спілкування на логістичних центрах.",
+      "Відсутність шкідливих звичок, що впливають на безпеку руху."
+    ],
+    "details_pl": [
+      "Obowiązkowe doświadczenie w trasach po Europie od 1 roku (kategoria C+E).",
+      "Posiadanie karty kierowcy i aktualnych psychotestów.",
+      "Podstawowa znajomość języka angielskiego lub niemieckiego do komunikacji w centrach logistycznych.",
+      "Brak nałogów wpływających na bezpieczeństwo ruchu."
+    ]
+  },
+  {
+    "slug": "warsaw-construction-tiler-premium-416",
+    "category": "construction",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Плиточник-універсал (ремонти преміум-класу)",
+    "title_pl": "Glazurnik-płytkarz (wykończenia wnętrz premium)",
+    "salary": "7000 - 12000 PLN/miesiąc (від виробітку)",
+    "company": "Elite Home Renovation",
+    "shift_ua": "08:00 - 17:00",
+    "shift_pl": "08:00 - 17:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Після демонстрації навичок на об'єкті",
+    "start_pl": "Po demonstracji umiejętności na obiekcie",
+    "contract_ua": "Umowa Zlecenie / B2B",
+    "contract_pl": "Umowa Zlecenie / B2B",
+    "offers_ua": [
+      "Робота виключно на внутрішніх об'єктах (квартири, котеджі) у Варшаві.",
+      "Оплата за квадратний метр (від 80 до 150 PLN/м2 залежно від формату плитки).",
+      "Забезпечуємо професійним інструментом (Sigma, Rubi, лазерні рівні).",
+      "Постійна наявність об'єктів без простоїв (замовлення розписані на півроку вперед).",
+      "Допомога з житлом для майстрів з інших міст."
+    ],
+    "offers_pl": [
+      "Praca wyłącznie na obiektach wewnętrznych (mieszkania, domy) w Warszawie.",
+      "Płatność za metr kwadratowy (od 80 do 150 PLN/m2 w zależności od formatu płytek).",
+      "Zapewniamy profesjonalne narzędzia (Sigma, Rubi, poziomice laserowe).",
+      "Ciągłość zleceń bez przestojów (zamówienia zaplanowane na pół roku do przodu).",
+      "Pomoc w zakwaterowaniu dla fachowców z innych miast."
+    ],
+    "tasks_ua": [
+      "Укладання керамічної плитки, керамограніту (включаючи великоформатний 120х240).",
+      "Підготовка поверхні (вирівнювання стін, гідроізоляція).",
+      "Зарізка кутів під 45 градусів (епоксидна та цементна фуга).",
+      "Монтаж прихованих люків та душових піддонів (odpływ liniowy)."
+    ],
+    "tasks_pl": [
+      "Układanie płytek ceramicznych, gresu (w tym wielkoformatowego 120x240).",
+      "Przygotowanie podłoża (równanie ścian, hydroizolacja).",
+      "Szlifowanie kątów pod kątem 45 stopni (fuga epoksydowa i cementowa).",
+      "Montaż rewizji ukrytych i odpływów liniowych."
+    ],
+    "details_ua": [
+      "Шукаємо майстра з високою якістю роботи (міліметрова точність).",
+      "Досвід роботи з великоформатним керамогранітом обов'язковий.",
+      "Вміння читати дизайн-проекти та розкладку плитки.",
+      "Акуратність, підтримка чистоти на об'єкті, відсутність алкогольної залежності."
+    ],
+    "details_pl": [
+      "Szukamy fachowca o wysokiej jakości pracy (milimetrowa dokładność).",
+      "Doświadczenie w pracy z gresem wielkoformatowym jest obowiązkowe.",
+      "Umiejętność czytania projektów wnętrz i układu płytek.",
+      "Dokładność, utrzymywanie czystości na obiekcie, brak uzależnienia od alkoholu."
+    ]
+  },
+  {
+    "slug": "zakopane-hospitality-hotel-maid-boutique-417",
+    "category": "hospitality",
+    "city": "Закопане",
+    "city_pl": "Zakopane",
+    "title": "Покоївка в бутик-готель (з проживанням)",
+    "title_pl": "Pokojówka w hotelu butikowym (z zakwaterowaniem)",
+    "salary": "4000 - 5000 PLN/miesiąc netto",
+    "company": "Tatra View Boutique Hotel",
+    "shift_ua": "08:00 - 16:00",
+    "shift_pl": "08:00 - 16:00",
+    "pattern_ua": "Графік 5/2 (плаваючі вихідні)",
+    "pattern_pl": "Grafik 5/2 (ruchome dni wolne)",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Безкоштовне проживання в комфортних умовах (кімнати для персоналу по 2 людини).",
+      "Безкоштовне харчування (сніданок та обід) у ресторані готелю.",
+      "Робота в невеликому готелі (всього 20 номерів), немає 'конвеєра' як у великих мережах.",
+      "Премії за ідеальну чистоту та чайові від гостей.",
+      "Офіційне працевлаштування з першого дня."
+    ],
+    "offers_pl": [
+      "Darmowe zakwaterowanie w komfortowych warunkach (pokoje pracownicze 2-osobowe).",
+      "Darmowe wyżywienie (śniadanie i obiad) w restauracji hotelowej.",
+      "Praca w małym hotelu (tylko 20 pokoi), brak 'taśmociągu' jak w dużych sieciówkach.",
+      "Premie za idealną czystość i napiwki od gości.",
+      "Oficjalne zatrudnienie od pierwszego dnia."
+    ],
+    "tasks_ua": [
+      "Щоденне та генеральне прибирання номерів після виїзду гостей.",
+      "Зміна постільної білизни та рушників.",
+      "Поповнення міні-бару та косметичних засобів у ванній кімнаті.",
+      "Підтримка чистоти в коридорах та зонах загального користування."
+    ],
+    "tasks_pl": [
+      "Codzienne i generalne sprzątanie pokoi po wyjeździe gości.",
+      "Zmiana pościeli i ręczników.",
+      "Uzupełnianie mini-baru i kosmetyków w łazience.",
+      "Utrzymanie czystości na korytarzach i w strefach ogólnodostępnych."
+    ],
+    "details_ua": [
+      "Досвід роботи покоївкою вітається, але готові навчити стандартів готелю.",
+      "Акуратність, увага до деталей (відсутність пилу, ідеально заправлені ліжка).",
+      "Базове розуміння польської мови для спілкування з адміністратором.",
+      "Хороша фізична форма (робота рухлива)."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako pokojówka mile widziane, ale jesteśmy gotowi nauczyć standardów hotelu.",
+      "Dokładność, dbałość o szczegóły (brak kurzu, idealnie pościelone łóżka).",
+      "Podstawowe rozumienie języka polskiego do komunikacji z recepcją.",
+      "Dobra kondycja fizyczna (praca w ruchu)."
+    ]
+  },
+  {
+    "slug": "wroclaw-manufacturing-cnc-miller-fanuc-418",
+    "category": "manufacturing",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Оператор-фрезерувальник ЧПУ (CNC) стійка Fanuc",
+    "title_pl": "Operator-frezer CNC (sterowanie Fanuc)",
+    "salary": "35 - 45 PLN/h netto",
+    "company": "Precision Metal Parts",
+    "shift_ua": "2 зміни (06:00-14:00, 14:00-22:00)",
+    "shift_pl": "2 zmiany (06:00-14:00, 14:00-22:00)",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Після тестового завдання на верстаті",
+    "start_pl": "Po zadaniu testowym na maszynie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Робота на сучасних 3- та 4-осьових фрезерних центрах (Haas, Doosan).",
+      "Чистий цех з клімат-контролем (немає масляного туману та бруду).",
+      "Можливість професійного розвитку (навчання програмуванню в CAM-системах).",
+      "Доплата за надгодини (за бажанням) +50% та +100% у вихідні.",
+      "Приватне медичне страхування та карта Multisport."
+    ],
+    "offers_pl": [
+      "Praca na nowoczesnych 3- i 4-osiowych centrach frezarskich (Haas, Doosan).",
+      "Czysta hala z klimatyzacją (brak mgły olejowej i brudu).",
+      "Możliwość rozwoju zawodowego (szkolenia z programowania w systemach CAM).",
+      "Dodatek za nadgodziny (dla chętnych) +50% i +100% w weekendy.",
+      "Prywatna opieka medyczna i karta Multisport."
+    ],
+    "tasks_ua": [
+      "Обслуговування фрезерних верстатів з ЧПУ (стійка Fanuc).",
+      "Встановлення та прив'язка деталей, заміна ріжучого інструменту.",
+      "Внесення дрібних корекцій у програму (корекція на знос інструменту).",
+      "Контроль якості виготовлених деталей за допомогою вимірювального інструменту (штангенциркуль, мікрометр)."
+    ],
+    "tasks_pl": [
+      "Obsługa frezarek CNC (sterowanie Fanuc).",
+      "Mocowanie i bazowanie detali, wymiana narzędzi skrawających.",
+      "Wprowadzanie drobnych korekt do programu (korekcja na zużycie narzędzia).",
+      "Kontrola jakości wykonanych detali za pomocą narzędzi pomiarowych (suwmiarka, mikrometr)."
+    ],
+    "details_ua": [
+      "Досвід роботи оператором ЧПУ від 2 років.",
+      "Вміння читати технічні креслення обов'язкове.",
+      "Знання польської мови на рівні розуміння технічної документації.",
+      "Відповідальність за дорогий інструмент та обладнання."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako operator CNC od 2 lat.",
+      "Umiejętność czytania rysunków technicznych jest obowiązkowa.",
+      "Znajomość języka polskiego na poziomie rozumienia dokumentacji technicznej.",
+      "Odpowiedzialność za drogie narzędzia i sprzęt."
+    ]
+  },
+  {
+    "slug": "gdansk-medical-physiotherapist-rehab-419",
+    "category": "medical",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Фізіотерапевт у реабілітаційну клініку",
+    "title_pl": "Fizjoterapeuta w klinice rehabilitacyjnej",
+    "salary": "5500 - 8000 PLN/miesiąc brutto",
+    "company": "Baltic Rehab Center",
+    "shift_ua": "Гнучкий графік (зміни по 6-8 годин)",
+    "shift_pl": "Elastyczny grafik (zmiany po 6-8 godzin)",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "start_ua": "Після підтвердження кваліфікації (PWZFz)",
+    "start_pl": "Po potwierdzeniu kwalifikacji (PWZFz)",
+    "contract_ua": "Umowa o pracę / B2B",
+    "contract_pl": "Umowa o pracę / B2B",
+    "offers_ua": [
+      "Робота в сучасній клініці з новітнім обладнанням (ударно-хвильова терапія, лазер високої інтенсивності).",
+      "Бюджет на професійні курси (мануальна терапія, PNF, кінезіотейпування).",
+      "Пацієнти клініки — спортсмени та люди після ортопедичних операцій (цікаві клінічні випадки).",
+      "Дружня команда лікарів та реабілітологів, регулярні консиліуми.",
+      "Допомога з нострифікацією диплома для фахівців з України."
+    ],
+    "offers_pl": [
+      "Praca w nowoczesnej klinice z najnowszym sprzętem (fala uderzeniowa, laser wysokoenergetyczny).",
+      "Budżet na kursy zawodowe (terapia manualna, PNF, kinesiotaping).",
+      "Pacjenci kliniki to sportowcy i osoby po operacjach ortopedycznych (ciekawe przypadki kliniczne).",
+      "Przyjazny zespół lekarzy i rehabilitantów, regularne konsylia.",
+      "Pomoc w nostryfikacji dyplomu dla specjalistów z Ukrainy."
+    ],
+    "tasks_ua": [
+      "Проведення індивідуальних сеансів фізіотерапії та мануальної терапії.",
+      "Складання планів реабілітації для пацієнтів після травм та операцій.",
+      "Проведення занять з лікувальної фізкультури (кінезіотерапія).",
+      "Ведення медичної документації в електронній системі."
+    ],
+    "tasks_pl": [
+      "Prowadzenie indywidualnych sesji fizjoterapii i terapii manualnej.",
+      "Układanie planów rehabilitacji dla pacjentów po urazach i operacjach.",
+      "Prowadzenie zajęć z gimnastyki leczniczej (kinezyterapia).",
+      "Prowadzenie dokumentacji medycznej w systemie elektronicznym."
+    ],
+    "details_ua": [
+      "Обов'язкова вища освіта за спеціальністю 'Фізична терапія'.",
+      "Наявність права на виконання професії фізіотерапевта в Польщі (PWZFz) або процес його отримання.",
+      "Вільне володіння польською мовою (B2-C1) для спілкування з пацієнтами.",
+      "Емпатія, комунікабельність та бажання розвиватися в професії."
+    ],
+    "details_pl": [
+      "Obowiązkowe wyższe wykształczenie na kierunku 'Fizjoterapia'.",
+      "Posiadanie Prawa Wykonywania Zawodu Fizjoterapeuty w Polsce (PWZFz) lub bycie w trakcie jego uzyskiwania.",
+      "Biegła znajomość języka polskiego (B2-C1) do komunikacji z pacjentami.",
+      "Empatia, komunikatywność i chęć rozwoju w zawodzie."
+    ]
+  },
+  {
+    "slug": "lodz-transport-courier-bakery-420",
+    "category": "transport",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Водій-кур'єр (кат. B) для доставки свіжої випічки",
+    "title_pl": "Kierowca-kurier (kat. B) do dostaw świeżego pieczywa",
+    "salary": "4500 - 5500 PLN/miesiąc netto",
+    "company": "Poranny Rogalik Piekarnia",
+    "shift_ua": "03:00 - 11:00 (ранкові зміни)",
+    "shift_pl": "03:00 - 11:00 (zmiany poranne)",
+    "pattern_ua": "6 днів на тиждень (неділя вихідний)",
+    "pattern_pl": "6 dni w tygodniu (niedziela wolna)",
+    "start_ua": "Відразу після співбесіди",
+    "start_pl": "Zaraz po rozmowie kwalifikacyjnej",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "offers_ua": [
+      "Робота на нових фургонах (Renault Kangoo, Fiat Trafic) компанії.",
+      "Ранній графік дозволяє мати вільний день вже з 11:00 ранку.",
+      "Стабільний маршрут (одні й ті самі кав'ярні та магазини щодня).",
+      "Безкоштовна свіжа випічка та кава для працівників.",
+      "Своєчасна виплата зарплати та премії за відсутність запізнень."
+    ],
+    "offers_pl": [
+      "Praca na nowych furgonetkach (Renault Kangoo, Fiat Trafic) firmowych.",
+      "Wczesny grafik pozwala mieć wolny dzień już od 11:00 rano.",
+      "Stała trasa (te same kawiarnie i sklepy każdego dnia).",
+      "Darmowe świeże pieczywo i kawa dla pracowników.",
+      "Terminowa wypłata wynagrodzenia i premie za brak spóźnień."
+    ],
+    "tasks_ua": [
+      "Завантаження лотків зі свіжою випічкою на пекарні (о 03:00 ночі).",
+      "Доставка продукції по кав'ярнях, ресторанах та невеликих магазинах Лодзі.",
+      "Робота з накладними (передача товару клієнтам).",
+      "Підтримка чистоти в робочому автомобілі."
+    ],
+    "tasks_pl": [
+      "Załadunek koszy ze świeżym pieczywem w piekarni (o 03:00 w nocy).",
+      "Dostawa produktów do kawiarni, restauracji i małych sklepów w Łodzi.",
+      "Praca z dokumentami WZ (przekazywanie towaru klientom).",
+      "Utrzymanie czystości w samochodzie służbowym."
+    ],
+    "details_ua": [
+      "Водійські права категорії B (мінімум 2 роки стажу).",
+      "Обов'язкова наявність санітарної книжки (робота з продуктами харчування).",
+      "Пунктуальність — випічка має бути доставлена до відкриття закладів.",
+      "Базове знання польської мови для спілкування з приймальниками товару."
+    ],
+    "details_pl": [
+      "Prawo jazdy kategorii B (minimum 2 lata stażu).",
+      "Obowiązkowe posiadanie książeczki sanepidowskiej (praca z żywnością).",
+      "Punktualność — pieczywo musi być dostarczone przed otwarciem lokali.",
+      "Podstawowa znajomość języka polskiego do komunikacji z osobami przyjmującymi towar."
+    ]
+  },
+  {
+    "slug": "krakow-construction-plumber-residential-421",
+    "category": "construction",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Сантехнік-монтажник на новобудови",
+    "title_pl": "Hydraulik-monter na nowych inwestycjach",
+    "salary": "6000 - 9000 PLN/miesiąc netto",
+    "company": "AquaInstal Kraków",
+    "shift_ua": "07:00 - 16:00",
+    "shift_pl": "07:00 - 16:00",
+    "pattern_ua": "5-6 днів на тиждень",
+    "pattern_pl": "5-6 dni w tygodniu",
+    "start_ua": "Протягом 3 днів",
+    "start_pl": "W ciągu 3 dni",
+    "contract_ua": "Umowa o pracę / B2B",
+    "contract_pl": "Umowa o pracę / B2B",
+    "offers_ua": [
+      "Робота на великих об'єктах (житлові комплекси), стабільна зайнятість цілий рік.",
+      "Надаємо весь необхідний електроінструмент та спецодяг.",
+      "Можливість працювати на акорд (від виробітку) для досвідчених бригад.",
+      "Допомога з легалізацією (Karta Pobytu) для працівників з України.",
+      "Доїзд до об'єктів службовим транспортом."
+    ],
+    "offers_pl": [
+      "Praca na dużych obiektach (osiedla mieszkaniowe), stabilne zatrudnienie przez cały rok.",
+      "Zapewniamy wszystkie niezbędne elektronarzędzia i odzież roboczą.",
+      "Możliwość pracy na akord (od wykonanej pracy) dla doświadczonych brygad.",
+      "Pomoc w legalizacji pobytu (Karta Pobytu) dla pracowników z Ukrainy.",
+      "Dojazd na obiekty transportem służbowym."
+    ],
+    "tasks_ua": [
+      "Монтаж систем водопостачання та каналізації (PEX, PP, ПВХ).",
+      "Монтаж систем центрального опалення (радіатори, тепла підлога).",
+      "Встановлення інсталяцій для підвісних унітазів (Geberit).",
+      "Проведення гідравлічних випробувань систем."
+    ],
+    "tasks_pl": [
+      "Montaż instalacji wodno-kanalizacyjnych (PEX, PP, PVC).",
+      "Montaż instalacji centralnego ogrzewania (grzejniki, ogrzewanie podłogowe).",
+      "Montaż stelaży podtynkowych (Geberit).",
+      "Przeprowadzanie prób ciśnieniowych instalacji."
+    ],
+    "details_ua": [
+      "Досвід роботи сантехніком на будовах від 2 років.",
+      "Вміння читати сантехнічні креслення та схеми.",
+      "Відповідальність за якість з'єднань (відсутність протікань).",
+      "Робота в команді, базове розуміння польської мови."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako hydraulik na budowach od 2 lat.",
+      "Umiejętność czytania rysunków i schematów instalacyjnych.",
+      "Odpowiedzialność za jakość połączeń (brak wycieków).",
+      "Praca w zespole, podstawowe rozumienie języka polskiego."
+    ]
+  },
+  {
+    "slug": "warsaw-hospitality-barista-specialty-422",
+    "category": "hospitality",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Бариста у кав'ярню третьої хвилі (Specialty Coffee)",
+    "title_pl": "Barista w kawiarni specialty",
+    "salary": "28 - 35 PLN/h netto + чайові",
+    "company": "Bean & Brew Specialty",
+    "shift_ua": "Зміни по 8 годин (між 07:00 та 20:00)",
+    "shift_pl": "Zmiany po 8 godzin (między 07:00 a 20:00)",
+    "pattern_ua": "Гнучкий графік (можна поєднувати з навчанням)",
+    "pattern_pl": "Elastyczny grafik (można łączyć ze studiami)",
+    "start_ua": "Після тестової зміни",
+    "start_pl": "Po zmianie próbnej",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Робота з топовим обладнанням (La Marzocco, Mahlkönig, фільтр-кавоварки).",
+      "Зерно від найкращих європейських обсмажчиків, регулярні каппінги.",
+      "Навчання латте-арту та альтернативним методам заварювання (V60, Aeropress).",
+      "Стильна уніформа, безкоштовна кава протягом зміни.",
+      "Молодий, творчий колектив та адекватне керівництво."
+    ],
+    "offers_pl": [
+      "Praca na topowym sprzęcie (La Marzocco, Mahlkönig, ekspresy przelewowe).",
+      "Ziarna od najlepszych europejskich palarni, regularne cuppingi.",
+      "Szkolenia z latte art i alternatywnych metod parzenia (V60, Aeropress).",
+      "Stylowy uniform, darmowa kawa podczas zmiany.",
+      "Młody, kreatywny zespół i adekwatne kierownictwo."
+    ],
+    "tasks_ua": [
+      "Приготування еспресо та напоїв на його основі з дотриманням рецептур.",
+      "Заварювання кави альтернативними методами.",
+      "Обслуговування гостей, допомога у виборі зерна, продаж десертів.",
+      "Налаштування помелу, підтримка чистоти кавомашини та робочого місця."
+    ],
+    "tasks_pl": [
+      "Przygotowywanie espresso i napojów na jego bazie zgodnie z recepturami.",
+      "Parzenie kawy metodami alternatywnymi.",
+      "Obsługa gości, doradztwo w wyborze ziaren, sprzedaż deserów.",
+      "Ustawianie młynka, utrzymanie czystości ekspresu i stanowiska pracy."
+    ],
+    "details_ua": [
+      "Досвід роботи баристою від 6 місяців (бажано з specialty кавою).",
+      "Вільне володіння польською мовою (спілкування з гостями — це 50% роботи).",
+      "Знання англійської мови буде великим плюсом (багато іноземців).",
+      "Наявність санітарної книжки."
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy jako barista od 6 miesięcy (najlepiej z kawą specialty).",
+      "Biegła znajomość języka polskiego (rozmowa z gośćmi to 50% pracy).",
+      "Znajomość języka angielskiego będzie dużym atutem (wielu obcokrajowców).",
+      "Posiadanie książeczki sanepidowskiej."
+    ]
+  },
+  {
+    "slug": "poznan-logistics-packer-cosmetics-423",
+    "category": "logistics",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Пакувальник замовлень на склад інтернет-магазину косметики",
+    "title_pl": "Pakowacz zamówień na magazynie sklepu internetowego z kosmetykami",
+    "salary": "27 - 31 PLN/h netto",
+    "company": "GlowBeauty Logistics",
+    "shift_ua": "2 зміни (06:00-14:00, 14:00-22:00)",
+    "shift_pl": "2 zmiany (06:00-14:00, 14:00-22:00)",
+    "pattern_ua": "5 днів на тиждень (іноді робочі суботи)",
+    "pattern_pl": "5 dni w tygodniu (czasem pracujące soboty)",
+    "start_ua": "Протягом 2-3 днів",
+    "start_pl": "W ciągu 2-3 dni",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Легка фізична робота (косметика важить мало), ідеально підходить для жінок.",
+      "Чистий, теплий склад з приємним запахом, грає музика.",
+      "Знижки до 40% на продукцію інтернет-магазину для працівників.",
+      "Премії за швидкість та відсутність помилок при пакуванні.",
+      "Безкоштовний доїзд фірмовим автобусом з центру Познані."
+    ],
+    "offers_pl": [
+      "Lekka praca fizyczna (kosmetyki ważą niewiele), idealna dla kobiet.",
+      "Czysty, ciepły magazyn z przyjemnym zapachem, gra muzyka.",
+      "Zniżki do 40% na produkty sklepu internetowego dla pracowników.",
+      "Premie za szybkość i brak błędów przy pakowaniu.",
+      "Darmowy dojazd autobusem firmowym z centrum Poznania."
+    ],
+    "tasks_ua": [
+      "Збір товарів (косметика, парфумерія) зі стелажів за допомогою сканера.",
+      "Естетичне пакування замовлень у фірмові коробки (додавання пробників, листівок).",
+      "Друк та наклеювання транспортних етикеток (InPost, DPD).",
+      "Підтримка порядку на робочому місці."
+    ],
+    "tasks_pl": [
+      "Zbieranie towarów (kosmetyki, perfumy) z regałów za pomocą skanera.",
+      "Estetyczne pakowanie zamówień w firmowe kartony (dodawanie próbek, ulotek).",
+      "Drukowanie i naklejanie etykiet kurierskich (InPost, DPD).",
+      "Utrzymanie porządku na stanowisku pracy."
+    ],
+    "details_ua": [
+      "Досвід роботи не потрібен — проводимо навчання в перший день.",
+      "Уважність та акуратність (важливо не переплутати відтінки помад чи кремів).",
+      "Базове знання польського алфавіту (для читання назв товарів).",
+      "Готовність до роботи на ногах."
+    ],
+    "details_pl": [
+      "Doświadczenie nie jest wymagane — przeprowadzamy szkolenie pierwszego dnia.",
+      "Spostrzegawczość i dokładność (ważne, aby nie pomylić odcieni pomadek czy kremów).",
+      "Podstawowa znajomość polskiego alfabetu (do czytania nazw produktów).",
+      "Gotowość do pracy stojącej."
+    ]
+  },
+  {
     "slug": "warsaw-hospitality-kitchen-assistant-412",
     "category": "hospitality",
     "city": "Варшава",
