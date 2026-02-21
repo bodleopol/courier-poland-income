@@ -2169,6 +2169,67 @@ function firstText(value) {
   return String(value || '').trim();
 }
 
+function isVacancyPage(page) {
+  return (
+    Boolean(firstText(page.tasks_ua)) ||
+    Boolean(firstText(page.tasks_pl)) ||
+    Boolean(firstText(page.details_ua)) ||
+    Boolean(firstText(page.details_pl)) ||
+    Boolean(firstText(page.transport_ua)) ||
+    Boolean(firstText(page.transport_pl)) ||
+    Boolean(firstText(page.transport)) ||
+    Boolean(firstText(page.housing_ua)) ||
+    Boolean(firstText(page.housing_pl)) ||
+    Boolean(firstText(page.housing))
+  );
+}
+
+function getVacancyNarrative(page, lang) {
+  const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
+  const localize = (baseKey) => {
+    const value = isPl
+      ? (page[`${baseKey}_pl`] || page[`${baseKey}_ua`] || page[baseKey])
+      : (isRu ? (page[`${baseKey}_ru`] || page[`${baseKey}_ua`] || page[`${baseKey}_pl`] || page[baseKey]) : (page[`${baseKey}_ua`] || page[baseKey]));
+    return isRu ? toRussianFallbackText(value || '') : (value || '');
+  };
+  const collect = (baseKey) => {
+    const value = localize(baseKey);
+    return Array.isArray(value) ? value : (value ? [String(value)] : []);
+  };
+
+  const city = localize('city');
+  const salary = localize('salary');
+  const contract = localize('contract');
+  const shift = localize('shift');
+  const pattern = localize('pattern');
+  const start = localize('start');
+  const intro = isPl
+    ? `To ogłoszenie w lokalizacji ${city} obejmuje wynagrodzenie ${salary}, współpracę w formule ${contract}, tryb pracy ${shift}${pattern ? ` oraz ${pattern}` : ''}${start ? `, a start jest planowany ${start}` : ''}.`
+    : (isRu
+      ? `Эта вакансия в локации ${city} предполагает доход ${salary}, формат сотрудничества ${contract}, режим работы ${shift}${pattern ? ` и ${pattern}` : ''}${start ? `, а выход на работу запланирован ${start}` : ''}.`
+      : `Ця вакансія в локації ${city} передбачає дохід ${salary}, формат співпраці ${contract}, режим роботи ${shift}${pattern ? ` та ${pattern}` : ''}${start ? `, а старт запланований ${start}` : ''}.`);
+
+  const details = [...collect('offers'), ...collect('tasks'), ...collect('details'), ...collect('requirements')]
+    .map(item => String(item || '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+  let text = [intro, ...details].join(' ').replace(/\s+/g, ' ').trim();
+  if (text.length < 350) {
+    const fallback = isPl
+      ? 'Oferta jest aktualna i omawiana indywidualnie, dlatego podczas kontaktu doprecyzujemy szczegóły stanowiska, obowiązków i warunków wdrożenia.'
+      : (isRu
+        ? 'Предложение актуально и обсуждается индивидуально, поэтому при контакте мы уточним детали позиции, обязанностей и этапа адаптации.'
+        : 'Пропозиція актуальна та обговорюється індивідуально, тому під час контакту ми уточнимо деталі позиції, обовʼязків і етапу адаптації.');
+    text = `${text} ${fallback}`.trim();
+  }
+
+  const sentences = text.match(/[^.!?]+[.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [text];
+  const splitAt = Math.max(1, Math.ceil(sentences.length / 2));
+  const paragraphOne = sentences.slice(0, splitAt).join(' ').trim();
+  const paragraphTwo = sentences.slice(splitAt).join(' ').trim();
+  return `<div class="vacancy-description"><p>${escapeHtml(paragraphOne)}</p>${paragraphTwo ? `<p>${escapeHtml(paragraphTwo)}</p>` : ''}</div>`;
+}
+
 function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
@@ -2223,18 +2284,7 @@ async function build() {
     .slice(0, 50);
   batchVacancies.forEach((page) => normalizeRussianFields(page, vacancyRuFields));
   pages.forEach((page) => {
-    const looksLikeVacancy = (
-      Boolean(firstText(page.tasks_ua)) ||
-      Boolean(firstText(page.tasks_pl)) ||
-      Boolean(firstText(page.details_ua)) ||
-      Boolean(firstText(page.details_pl)) ||
-      Boolean(firstText(page.transport_ua)) ||
-      Boolean(firstText(page.transport_pl)) ||
-      Boolean(firstText(page.transport)) ||
-      Boolean(firstText(page.housing_ua)) ||
-      Boolean(firstText(page.housing_pl)) ||
-      Boolean(firstText(page.housing))
-    );
+    const looksLikeVacancy = isVacancyPage(page);
     if (!looksLikeVacancy) return;
     page.excerpt = enrichVacancyExcerpt(page, 'ua');
     page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
@@ -2472,9 +2522,10 @@ async function build() {
   for (const page of pagesToGenerate) {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
-    const content = page.body || page.content || page.excerpt || '';
-    const contentPl = page.body_pl || page.body || '';
-    const contentRu = toRussianFallbackText(page.body_ru || page.body || '');
+    const isVacancy = isVacancyPage(page);
+    const content = isVacancy ? getVacancyNarrative(page, 'ua') : (page.body || page.content || page.excerpt || '');
+    const contentPl = isVacancy ? getVacancyNarrative(page, 'pl') : (page.body_pl || page.body || '');
+    const contentRu = isVacancy ? getVacancyNarrative(page, 'ru') : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
     const variantRoll = Math.random();
