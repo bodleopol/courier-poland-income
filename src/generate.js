@@ -2407,9 +2407,12 @@ function getManualVacancyNarrative(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
   const localize = (baseKey) => {
-    const value = isPl
-      ? (page[`${baseKey}_pl`] || page[`${baseKey}_ua`] || page[baseKey])
-      : (isRu ? (page[`${baseKey}_ru`] || page[`${baseKey}_ua`] || page[`${baseKey}_pl`] || page[baseKey]) : (page[`${baseKey}_ua`] || page[baseKey]));
+    const keyOrder = isPl
+      ? [`${baseKey}_pl`, `${baseKey}_ua`, baseKey]
+      : (isRu
+        ? [`${baseKey}_ru`, `${baseKey}_ua`, `${baseKey}_pl`, baseKey]
+        : [`${baseKey}_ua`, baseKey]);
+    const value = keyOrder.map((key) => page[key]).find(Boolean);
     return isRu ? toRussianFallbackText(value || '') : (value || '');
   };
   const collect = (baseKey) => {
@@ -2441,7 +2444,7 @@ function getManualVacancyNarrative(page, lang) {
     ? 'Wymagania i organizacja wejścia do zespołu:'
     : (isRu ? 'Требования и организация входа в команду:' : 'Вимоги та організація входу в команду:');
 
-  const paragraph = (lead, items) => `${lead} ${items.join(' ')}`.trim();
+  const paragraph = (lead, items) => (items.length ? `${lead} ${items.join(' ')}`.trim() : '');
   const rendered = [
     intro,
     paragraph(offerLead, offers),
@@ -2748,7 +2751,7 @@ async function build() {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const isVacancy = isVacancyPage(page);
-    const useManualVacancyText = isVacancy && page && page.manual_vacancy_text === true;
+    const useManualVacancyText = isVacancy && page.manual_vacancy_text === true;
     const content = isVacancy
       ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ua') : getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState))
       : (page.body || page.content || page.excerpt || '');
