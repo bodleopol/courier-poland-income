@@ -9544,5 +9544,405 @@
       "В смене работают 4 сотрудника охраны, есть старший поста и резерв мобильной группы."
     ],
     "enforce_long_narrative": true
+  },
+  {
+    "slug": "krakow-cleaning-office-complex-995",
+    "category": "cleaning",
+    "city": "Краків (Подгуже)",
+    "city_pl": "Kraków (Podgórze)",
+    "city_ru": "Краков (Подгуже)",
+    "title": "Прибиральник офісного комплексу з вечірньою зміною",
+    "title_pl": "Sprzątacz kompleksu biurowego na zmianę wieczorną",
+    "title_ru": "Уборщик офисного комплекса на вечернюю смену",
+    "salary": "5900 - 7200 PLN brutto",
+    "company": "CleanWay Facilities",
+    "shift_ua": "14:00-22:00, понеділок-п'ятниця",
+    "shift_pl": "14:00-22:00, poniedziałek-piątek",
+    "shift_ru": "14:00-22:00, понедельник-пятница",
+    "pattern_ua": "Дві суботи на місяць за окремою згодою, неділя завжди вихідна",
+    "pattern_pl": "Dwie soboty w miesiącu tylko za zgodą, niedziela zawsze wolna",
+    "pattern_ru": "Две субботы в месяц только по согласованию, воскресенье всегда выходной",
+    "start_ua": "Вихід на об'єкт після медогляду і короткого навчання BHP (2 дні)",
+    "start_pl": "Start po badaniach i krótkim szkoleniu BHP (2 dni)",
+    "start_ru": "Выход после медосмотра и короткого обучения BHP (2 дня)",
+    "contract_ua": "Umowa o pracę на повну ставку",
+    "contract_pl": "Umowa o pracę na pełny etat",
+    "contract_ru": "Umowa o pracę на полную ставку",
+    "offers_ua": [
+      "Окрім базової ставки, на цій локації діє щомісячна премія за якість до 600 PLN: її нараховують, якщо поверхи приймають без повторних зауважень і без зривів у графіку.",
+      "За роботу після 20:00 є вечірня надбавка, а за погоджені понаднормові в останні дні місяця оплата йде з підвищеним коефіцієнтом і відображається окремим рядком у розрахунковому листі.",
+      "Компанія компенсує проїзний на міський транспорт до 200 PLN, видає професійний спецодяг по сезону та оплачує заміну рукавичок і витратних матеріалів без утримань із зарплати.",
+      "Для команди передбачено приватне медичне страхування, реферальний бонус 800 PLN за рекомендацію працівника після трьох відпрацьованих місяців і річну премію за стабільну присутність."
+    ],
+    "offers_pl": [
+      "Poza stawką podstawową działa premia jakościowa do 600 PLN miesięcznie: dostajesz ją, gdy piętra są odbierane bez poprawek i bez opóźnień po stronie zespołu sprzątającego.",
+      "Za godziny po 20:00 obowiązuje dodatek wieczorny, a za uzgodnione nadgodziny pod koniec miesiąca wypłata liczona jest wyższym przelicznikiem i pokazana osobno na pasku.",
+      "Firma zwraca koszt biletu miejskiego do 200 PLN, zapewnia odzież roboczą na każdą porę roku oraz finansuje wymianę rękawic i środków ochrony bez potrąceń z wynagrodzenia.",
+      "W pakiecie są prywatna opieka medyczna, bonus poleceń 800 PLN po trzech miesiącach pracy osoby poleconej oraz roczna nagroda frekwencyjna dla najbardziej stabilnych pracowników."
+    ],
+    "offers_ru": [
+      "Помимо базовой ставки действует ежемесячная премия за качество до 600 PLN: её начисляют, когда этажи сдаются без повторных замечаний и без срывов по времени.",
+      "За часы после 20:00 предусмотрена вечерняя доплата, а согласованные переработки в конце месяца оплачиваются по повышенному коэффициенту и выделяются отдельной строкой.",
+      "Компания компенсирует городской проездной до 200 PLN, выдает сезонную спецодежду и полностью покрывает замену перчаток и расходников без удержаний из зарплаты.",
+      "В пакете есть частная медицинская страховка, бонус 800 PLN за рекомендацию сотрудника после трёх месяцев его работы и годовая премия за стабильную посещаемость."
+    ],
+    "tasks_ua": [
+      "Основний блок роботи — прибирання open-space зон, санітарних кімнат і переговорних після завершення офісного дня; ти працюєш за чек-листом, де чітко визначено маршрут, час і очікуваний результат.",
+      "Окремо виконується контроль витратних матеріалів: папір, мило, дезінфектори, а також поповнення запасів по поверхах, щоб ранкова зміна не стартувала з порожніми санвузлами.",
+      "Раз на зміну потрібно фіксувати виконані зони в мобільному додатку та передавати координатору фото проблемних місць, якщо є технічні поломки або потреба в дрібному сервісі.",
+      "У п'ятницю проводиться поглиблене прибирання кухонних блоків і скляних перегородок, але ці роботи плануються завчасно, без хаотичних доручень «в останню хвилину»."
+    ],
+    "tasks_pl": [
+      "Główny zakres to sprzątanie open space'ów, sanitariatów i sal spotkań po zakończeniu dnia biurowego; pracujesz według checklisty z jasno rozpisaną trasą, czasem i standardem odbioru.",
+      "W praktyce ważna jest też kontrola materiałów eksploatacyjnych: papier, mydło, środki dezynfekujące oraz ich uzupełnianie na piętrach, aby poranna zmiana nie zaczynała od braków.",
+      "Raz na zmianę raportujesz wykonane strefy w aplikacji i przekazujesz koordynatorowi zdjęcia miejsc problemowych, jeśli pojawią się usterki techniczne wymagające interwencji serwisu.",
+      "W piątki realizowane jest pogłębione sprzątanie aneksów kuchennych i przegród szklanych, ale zadania są planowane z wyprzedzeniem, bez nagłych poleceń na końcu dyżuru."
+    ],
+    "tasks_ru": [
+      "Основной блок работы — уборка open-space зон, санитарных комнат и переговорных после завершения офисного дня; вы работаете по чек-листу с понятным маршрутом и нормой времени.",
+      "Отдельно контролируются расходные материалы: бумага, мыло, дезинфекторы, а также пополнение запасов по этажам, чтобы утренняя смена не начинала работу с дефицита.",
+      "Один раз за смену нужно отмечать выполненные зоны в мобильном приложении и передавать координатору фото проблемных мест, если замечены технические неисправности.",
+      "По пятницам проводится углубленная уборка кухонных зон и стеклянных перегородок, при этом задачи согласуются заранее и не превращаются в хаотичный аврал под конец дня."
+    ],
+    "details_ua": [
+      "Потрібна уважність до деталей і готовність працювати в стабільному темпі весь вечір; позиція не про швидкі ривки, а про якісно завершений цикл прибирання кожної зони.",
+      "Досвід у клінінгу буде плюсом, але якщо його немає, наставник показує технологію роботи з професійною хімією, кольорове кодування інвентарю та правила безпечного дозування.",
+      "Для комунікації достатньо польської на рівні А2-В1: важливо читати службові позначки, розуміти інструкції та передавати короткі звіти координатору зміни.",
+      "В колективі 9 людей на об'єкті, старший зміни доступний протягом усього вечора, тому новачок не залишається наодинці з проблемами у перші тижні."
+    ],
+    "details_pl": [
+      "Potrzebna jest dokładność i gotowość do równego tempa przez całą zmianę; to stanowisko nie opiera się na pośpiechu, tylko na domknięciu każdej strefy zgodnie ze standardem.",
+      "Doświadczenie w sprzątaniu będzie atutem, ale osoby bez praktyki wdrażamy przez opiekuna, który pokazuje pracę z chemią profesjonalną i zasady bezpiecznego dozowania.",
+      "Wystarczy polski na poziomie A2-B1: trzeba czytać oznaczenia, rozumieć instrukcje i przekazywać krótkie raporty koordynatorowi zmiany.",
+      "Na obiekcie pracuje 9 osób, a starszy zmiany jest dostępny przez cały dyżur, więc nowa osoba nie zostaje sama z trudnymi sytuacjami."
+    ],
+    "details_ru": [
+      "Нужна внимательность к деталям и готовность держать ровный темп весь вечер; здесь ценят не спешку, а аккуратный результат в каждой зоне.",
+      "Опыт в клининге приветствуется, но при его отсутствии наставник обучает работе с профессиональной химией, маркировке инвентаря и безопасной дозировке средств.",
+      "Достаточно польского на уровне A2-B1: важно читать служебные обозначения, понимать инструкции и передавать короткие отчеты координатору смены.",
+      "На объекте работает команда из 9 человек, старший смены доступен весь вечер, поэтому новичок не остается один с рабочими вопросами."
+    ],
+    "manual_vacancy_text": true,
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "poznan-construction-helper-residential-site-996",
+    "category": "construction",
+    "city": "Познань (Нове Місто)",
+    "city_pl": "Poznań (Nowe Miasto)",
+    "city_ru": "Познань (Нове-Място)",
+    "title": "Помічник на забудову житлового комплексу",
+    "title_pl": "Pomocnik budowlany na inwestycji mieszkaniowej",
+    "title_ru": "Помощник на стройку жилого комплекса",
+    "salary": "6100 - 8300 PLN brutto",
+    "company": "NordDom Development",
+    "shift_ua": "07:00-17:00, понеділок-п'ятниця",
+    "shift_pl": "07:00-17:00, poniedziałek-piątek",
+    "shift_ru": "07:00-17:00, понедельник-пятница",
+    "pattern_ua": "Дві оплачувані суботи на місяць за бажанням",
+    "pattern_pl": "Dwie płatne soboty w miesiącu dla chętnych",
+    "pattern_ru": "Две оплачиваемые субботы в месяц по желанию",
+    "start_ua": "Після підписання договору та вступного інструктажу по техніці безпеки",
+    "start_pl": "Po podpisaniu umowy i szkoleniu wstępnym BHP",
+    "start_ru": "После подписания договора и вводного инструктажа по безопасности",
+    "contract_ua": "Umowa o pracę або umowa zlecenie (на вибір кандидата)",
+    "contract_pl": "Umowa o pracę albo umowa zlecenie (do wyboru)",
+    "contract_ru": "Umowa o pracę или umowa zlecenie (по выбору кандидата)",
+    "offers_ua": [
+      "Ставка переглядається кожні шість місяців за результатом бригади, а щомісячна премія прив'язана до виконання етапу без переробок і браку по внутрішніх актах приймання.",
+      "Усі погоджені понаднормові оплачуються того ж розрахункового місяця, а робота у суботу закривається окремим коефіцієнтом, що видно в роздруківці зарплати.",
+      "Компанія покриває медичний огляд, забезпечує гарячий обід на об'єкті та компенсує дорогу для працівників, які добираються з приміських локацій.",
+      "На старті видають повний комплект спецодягу, каску, рукавиці та взуття S3; також є бонус 1000 PLN за рекомендацію фахівця після його випробувального періоду."
+    ],
+    "offers_pl": [
+      "Stawka podlega przeglądowi co sześć miesięcy na podstawie wyniku brygady, a miesięczna premia zależy od domknięcia etapu bez poprawek i braków jakościowych.",
+      "Każda uzgodniona nadgodzina jest rozliczana w tym samym miesiącu, a praca sobotnia dostaje osobny mnożnik, który widać na pasku wynagrodzenia.",
+      "Firma finansuje badania medyczne, zapewnia ciepły posiłek na budowie i zwraca koszt dojazdu osobom dojeżdżającym z podpoznańskich miejscowości.",
+      "Od pierwszego dnia otrzymujesz pełny komplet odzieży ochronnej, kask, rękawice i buty S3, a dodatkowo działa bonus poleceń 1000 PLN po okresie próbnym poleconej osoby."
+    ],
+    "offers_ru": [
+      "Ставка пересматривается раз в полгода по результатам бригады, а ежемесячная премия зависит от закрытия этапа без переделок и брака по внутренним актам.",
+      "Все согласованные переработки оплачиваются в том же расчетном месяце, а работа в субботу идет по отдельному коэффициенту, который отражается в расчетке.",
+      "Компания оплачивает медосмотр, организует горячий обед на площадке и компенсирует дорогу сотрудникам, которые добираются из пригородных районов.",
+      "На старте выдают полный комплект спецодежды, каску, перчатки и обувь S3; дополнительно действует бонус 1000 PLN за рекомендацию после испытательного срока."
+    ],
+    "tasks_ua": [
+      "Ти допомагаєш мулярам і монтажникам: подача матеріалів, підготовка робочих зон, прибирання проходів та контроль, щоб майданчик був безпечним для техніки і людей.",
+      "Щодня є блок простих, але важливих робіт: розмітка, сортування інструменту, підготовка сумішей, транспортування дрібних елементів на поверхи ліфтовими шахтами.",
+      "Частина зміни проходить у зв'язці з майстром ділянки: він ставить пріоритети по етапах, а ти фіксуєш виконане в короткому листі зміни, щоб команда ранку стартувала без втрат часу.",
+      "На завершення дня бригада закриває об'єкт за регламентом: зберігання матеріалів, перевірка інструменту та очищення проходів перед ранковим виходом техніки."
+    ],
+    "tasks_pl": [
+      "Wspierasz murarzy i monterów: podajesz materiał, przygotowujesz strefy robocze, porządkujesz ciągi komunikacyjne i pilnujesz, aby plac był bezpieczny dla ludzi i sprzętu.",
+      "Każdego dnia realizowany jest pakiet prostych, lecz krytycznych zadań: znakowanie, segregacja narzędzi, przygotowanie zapraw oraz transport drobnych elementów na kondygnacje.",
+      "Część zmiany odbywa się bezpośrednio z majstrem odcinka: ustala priorytety etapów, a Ty raportujesz wykonanie, aby poranna brygada nie traciła czasu na odtworzenie stanu prac.",
+      "Na koniec dnia zespół zamyka plac według procedury: zabezpiecza materiały, sprawdza narzędzia i czyści trasy przejazdu pod poranny start maszyn."
+    ],
+    "tasks_ru": [
+      "Вы помогаете каменщикам и монтажникам: подаете материалы, готовите рабочие зоны, убираете проходы и следите, чтобы площадка оставалась безопасной для людей и техники.",
+      "Ежедневно есть блок простых, но критичных задач: разметка, сортировка инструмента, подготовка смесей и перемещение мелких элементов на этажи.",
+      "Часть смены проходит в связке с мастером участка: он задает приоритеты, а вы фиксируете выполненное в коротком отчете, чтобы утренняя бригада не теряла время.",
+      "В конце дня команда закрывает объект по регламенту: хранение материалов, проверка инструмента и очистка маршрутов перед утренним выходом техники."
+    ],
+    "details_ua": [
+      "Потрібна базова фізична форма і готовність працювати на відкритому майданчику в різну погоду; роботи організовані так, щоб навантаження чергувалося між активними і технічними задачами.",
+      "Досвід на будові бажаний, але не обов'язковий: новачка ставлять у пару з досвідченим працівником на перші два тижні, щоб безпечно увійти в ритм і зрозуміти регламенти.",
+      "Польська мова на рівні А2-В1 потрібна для розуміння команд майстра і попереджень з безпеки; за потреби координатор дублює ключові інструкції українською.",
+      "На проєкті працює велика бригада, є окремий відповідальний за BHP, тому процес контрольований, а питання по виплатах та графіку вирішуються через офіс без посередників."
+    ],
+    "details_pl": [
+      "Wymagana jest podstawowa kondycja i gotowość do pracy na otwartym placu przy zmiennej pogodzie; obciążenie jest układane naprzemiennie, aby utrzymać stabilne tempo.",
+      "Doświadczenie budowlane mile widziane, ale nieobowiązkowe: nowa osoba pracuje w duecie z doświadczonym pracownikiem przez pierwsze dwa tygodnie wdrożenia.",
+      "Polski na poziomie A2-B1 jest potrzebny do rozumienia poleceń majstra i komunikatów bezpieczeństwa; kluczowe instrukcje koordynator może powtórzyć po ukraińsku.",
+      "Projekt prowadzi duża brygada z osobnym opiekunem BHP, dlatego proces jest uporządkowany, a sprawy wypłat i grafiku załatwiane bezpośrednio z biurem firmy."
+    ],
+    "details_ru": [
+      "Нужна базовая физическая выносливость и готовность работать на открытой площадке в разную погоду; нагрузка распределяется так, чтобы удерживать устойчивый темп.",
+      "Опыт на стройке желателен, но не обязателен: новичок первые две недели работает в паре с опытным сотрудником и проходит практическое вводное обучение.",
+      "Польский на уровне A2-B1 нужен для понимания команд мастера и предупреждений по безопасности; ключевые инструкции координатор при необходимости дублирует на украинском.",
+      "На проекте работает большая бригада и отдельный специалист по BHP, поэтому процесс контролируемый, а вопросы графика и выплат решаются напрямую с офисом компании."
+    ],
+    "manual_vacancy_text": true,
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "lodz-security-guard-shopping-center-997",
+    "category": "security",
+    "city": "Лодзь (Срудмесьце)",
+    "city_pl": "Łódź (Śródmieście)",
+    "city_ru": "Лодзь (Срудместье)",
+    "title": "Охоронець торгового центру (денні та нічні зміни)",
+    "title_pl": "Pracownik ochrony centrum handlowego (zmiany dzienne i nocne)",
+    "title_ru": "Охранник торгового центра (дневные и ночные смены)",
+    "salary": "6200 - 8400 PLN brutto",
+    "company": "CityShield Service",
+    "shift_ua": "07:00-19:00 / 19:00-07:00",
+    "shift_pl": "07:00-19:00 / 19:00-07:00",
+    "shift_ru": "07:00-19:00 / 19:00-07:00",
+    "pattern_ua": "Графік 2/2 або 3/3 за вибором команди",
+    "pattern_pl": "Grafik 2/2 albo 3/3 ustalany z zespołem",
+    "pattern_ru": "График 2/2 или 3/3 по согласованию с командой",
+    "start_ua": "Після перевірки документів та навчання з процедур евакуації",
+    "start_pl": "Po weryfikacji dokumentów i szkoleniu z procedur ewakuacji",
+    "start_ru": "После проверки документов и обучения по процедурам эвакуации",
+    "contract_ua": "Umowa o pracę (можлива umowa zlecenie для студентів)",
+    "contract_pl": "Umowa o pracę (dla studentów możliwa umowa zlecenie)",
+    "contract_ru": "Umowa o pracę (для студентов возможна umowa zlecenie)",
+    "offers_ua": [
+      "Нічні зміни оплачуються з надбавкою, а за вихід у святковий день ставка підвищується окремим коефіцієнтом, що фіксується у табелі без ручних «домовленостей».",
+      "Щоквартально діє премія за відсутність інцидентів у зоні відповідальності поста, а також доплата за участь у навчаннях з першої допомоги та кризового реагування.",
+      "Працівники мають приватне медичне страхування, компенсацію доїзду для нічних змін і забезпечуються формою з зимовим та літнім комплектом включно зі взуттям.",
+      "Роботодавець оплачує понаднормові того самого місяця, дає реферальний бонус 900 PLN і річну премію тим, хто закриває повний календар без дисциплінарних порушень."
+    ],
+    "offers_pl": [
+      "Nocki są rozliczane z dodatkiem, a każda praca w dzień świąteczny otrzymuje osobny mnożnik zapisany w ewidencji czasu pracy bez uznaniowych korekt.",
+      "Co kwartał działa premia za brak incydentów w strefie posterunku oraz dopłata za udział w szkoleniach z pierwszej pomocy i reakcji kryzysowej.",
+      "Zespół ma prywatną opiekę medyczną, zwrot kosztu dojazdu po zmianach nocnych oraz pełne umundurowanie sezonowe wraz z obuwiem roboczym.",
+      "Nadgodziny są wypłacane w tym samym miesiącu, funkcjonuje bonus poleceń 900 PLN oraz roczna nagroda dla osób z pełną frekwencją i dobrą oceną służby."
+    ],
+    "offers_ru": [
+      "Ночные смены оплачиваются с надбавкой, а работа в праздничные дни считается по отдельному коэффициенту, который фиксируется в табеле без ручных корректировок.",
+      "Ежеквартально действует премия за отсутствие инцидентов на посту и доплата за участие в тренингах по первой помощи и кризисному реагированию.",
+      "Сотрудникам предоставляют частную медицинскую страховку, компенсацию дороги после ночных смен и полный сезонный комплект формы вместе с рабочей обувью.",
+      "Переработки выплачиваются в том же месяце, работает реферальный бонус 900 PLN и годовая премия для сотрудников с высокой дисциплиной и стабильной явкой."
+    ],
+    "tasks_ua": [
+      "Постова робота охоплює контроль входів, відеомоніторинг і регулярні обходи технічних зон; ключове завдання — попередити конфлікт або ризик до того, як він переросте в інцидент.",
+      "Під час вечірніх годин потрібно координувати рух сервісних підрядників, перевіряти накладні на доступ у закриті приміщення та вести електронний журнал відвідувань.",
+      "У нічній зміні пріоритети зміщуються на безпеку периметра, контроль пожежних виходів і взаємодію з диспетчером у випадку технічних тривог чи викликів поліції.",
+      "Після завершення чергування складається звіт зміни: зафіксовані події, час реагування, передача ключів і підтвердження стану систем безпеки наступній зміні."
+    ],
+    "tasks_pl": [
+      "Służba obejmuje kontrolę wejść, monitoring wizyjny i regularne obchody stref technicznych; kluczowe jest zapobieganie konfliktom zanim przerodzą się w realny incydent.",
+      "W godzinach wieczornych koordynujesz ruch ekip serwisowych, weryfikujesz uprawnienia dostępu do zamkniętych stref i prowadzisz elektroniczny rejestr wejść.",
+      "Na zmianie nocnej priorytetem jest perymetr, drogi ewakuacyjne i szybka komunikacja z dyspozytorem przy alarmach technicznych lub interwencjach policji.",
+      "Po dyżurze przygotowujesz raport: zdarzenia, czas reakcji, przekazanie kluczy i potwierdzenie stanu systemów bezpieczeństwa dla kolejnej zmiany."
+    ],
+    "tasks_ru": [
+      "Постовая служба включает контроль входов, видеомониторинг и регулярные обходы технических зон; главная задача — предотвратить конфликт до эскалации.",
+      "В вечерние часы вы координируете работу сервисных подрядчиков, проверяете допуски в закрытые помещения и ведете электронный журнал посещений.",
+      "На ночной смене приоритеты смещаются на периметр, пожарные выходы и взаимодействие с диспетчером при технических тревогах или вызове полиции.",
+      "После дежурства оформляется отчет смены: события, время реакции, передача ключей и подтверждение состояния систем безопасности следующему сотруднику."
+    ],
+    "details_ua": [
+      "Важлива впевнена комунікація з відвідувачами і орендарями ТРЦ, здатність спокійно діяти у стресових епізодах та коректно документувати кожну нестандартну подію.",
+      "Досвід у сфері охорони бажаний, але кандидатів після служби або суміжних ролей навчають на місці, включно з роботою в системі відеонагляду і процедурою евакуації.",
+      "Польська мова на рівні В1-В2 потрібна для спілкування з орендарями, технічними службами та поліцією; російська або українська буде додатковою перевагою для команди.",
+      "На зміні працюють кілька постів під старшим зміни, тому рішення приймаються не в одиночку, а за чітким протоколом і підтримкою чергового координатора."
+    ],
+    "details_pl": [
+      "Liczy się pewna komunikacja z klientami galerii i najemcami, umiejętność spokojnego działania pod presją oraz rzetelne dokumentowanie niestandardowych zdarzeń.",
+      "Doświadczenie w ochronie jest mile widziane, ale osoby po służbie lub z pokrewnych stanowisk wdrażamy na miejscu, także w obsłudze monitoringu i ewakuacji.",
+      "Polski na poziomie B1-B2 jest potrzebny do kontaktu z najemcami, serwisem technicznym i policją; ukraiński lub rosyjski stanowi dodatkowy atut zespołu.",
+      "Na zmianie działa kilka posterunków pod jednym starszym zmiany, dlatego decyzje podejmowane są protokołem i przy stałym wsparciu koordynatora dyżurnego."
+    ],
+    "details_ru": [
+      "Важна уверенная коммуникация с посетителями и арендаторами ТЦ, умение спокойно действовать в стрессовых ситуациях и корректно фиксировать нестандартные события.",
+      "Опыт в охране желателен, но кандидатов после службы и смежных ролей обучают на месте, включая работу с видеосистемой и алгоритмы эвакуации.",
+      "Польский на уровне B1-B2 нужен для контакта с арендаторами, техслужбами и полицией; украинский или русский будет дополнительным преимуществом.",
+      "В смене работают несколько постов под старшим смены, поэтому решения принимаются по протоколу, а не в одиночку, с постоянной поддержкой координатора."
+    ],
+    "manual_vacancy_text": true,
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "wroclaw-retail-electronics-consultant-998",
+    "category": "retail",
+    "city": "Вроцлав (Магнолія)",
+    "city_pl": "Wrocław (Magnolia)",
+    "city_ru": "Вроцлав (Магнолия)",
+    "title": "Продавець-консультант у магазин електроніки",
+    "title_pl": "Sprzedawca-doradca w sklepie z elektroniką",
+    "title_ru": "Продавец-консультант в магазине электроники",
+    "salary": "5800 - 8800 PLN brutto + % від продажів",
+    "company": "TechPoint Retail",
+    "shift_ua": "10:00-20:00, змінний графік",
+    "shift_pl": "10:00-20:00, grafik zmianowy",
+    "shift_ru": "10:00-20:00, сменный график",
+    "pattern_ua": "Система 2/2 або 5/2 залежно від сезону продажів",
+    "pattern_pl": "System 2/2 albo 5/2 zależnie od sezonu sprzedaży",
+    "pattern_ru": "Система 2/2 или 5/2 в зависимости от сезона продаж",
+    "start_ua": "Після продуктового тренінгу та стажування в торговому залі",
+    "start_pl": "Po szkoleniu produktowym i krótkim stażu na sali sprzedaży",
+    "start_ru": "После продуктового обучения и короткой стажировки в зале",
+    "contract_ua": "Umowa o pracę (повний або неповний етап)",
+    "contract_pl": "Umowa o pracę (pełny lub niepełny etat)",
+    "contract_ru": "Umowa o pracę (полная или частичная занятость)",
+    "offers_ua": [
+      "Базова ставка доповнюється відсотком від особистого продажу та командною премією за виконання плану магазину, тому дохід реально росте у пікові місяці без непрозорих схем.",
+      "Компанія офіційно оплачує понаднормові в період акцій, надає знижку для працівників на техніку до 20% і виплачує квартальний бонус за найвищий NPS серед клієнтів.",
+      "Для працівників діє медичне страхування, компенсація доїзду на вечірні зміни та оплата сертифікацій виробників (Samsung, Xiaomi, Philips), які підвищують ставку консультанта.",
+      "Щороку передбачена премія лояльності, а за рекомендацію нового продавця після випробувального терміну компанія виплачує 1200 PLN одноразової винагороди."
+    ],
+    "offers_pl": [
+      "Stawka podstawowa jest rozszerzona o prowizję od sprzedaży indywidualnej i premię zespołową za plan sklepu, dzięki czemu dochód realnie rośnie w miesiącach o dużym ruchu.",
+      "Firma legalnie rozlicza nadgodziny w okresach akcyjnych, daje rabat pracowniczy na sprzęt do 20% i wypłaca kwartalny bonus za najwyższy wynik NPS obsługi klienta.",
+      "W pakiecie są prywatna opieka medyczna, zwrot kosztu dojazdu po zmianach wieczornych oraz finansowanie certyfikacji producentów podnoszących poziom i stawkę doradcy.",
+      "Raz w roku wypłacana jest premia lojalnościowa, a za polecenie nowego sprzedawcy po okresie próbnym przysługuje 1200 PLN jednorazowej nagrody."
+    ],
+    "offers_ru": [
+      "Базовая ставка дополняется процентом от личных продаж и командной премией за выполнение плана магазина, поэтому доход заметно растет в активные месяцы.",
+      "Компания официально оплачивает переработки в периоды акций, дает сотрудникам скидку на технику до 20% и квартальный бонус за лучший клиентский NPS.",
+      "Сотрудникам доступна частная медицинская страховка, компенсация дороги после вечерних смен и оплата сертификаций производителей, повышающих квалификацию консультанта.",
+      "Ежегодно выплачивается премия лояльности, а за рекомендацию нового продавца после испытательного срока предусмотрен единоразовый бонус 1200 PLN."
+    ],
+    "tasks_ua": [
+      "Твоя зона відповідальності — повна консультація клієнта: від підбору моделі під бюджет до пояснення гарантії, додаткових сервісів і коректного оформлення покупки в касовій системі.",
+      "У зміні важливо підтримувати порядок на вітринах, контролювати наявність цінників, своєчасно оновлювати демонстраційні зразки та повідомляти керівника про дефіцит популярних позицій.",
+      "Під час пікових днів ти працюєш у команді з касиром і складом: узгоджуєш видачу, перевіряєш комплектацію та відпрацьовуєш повернення за процедурою без конфлікту з клієнтом.",
+      "Кожна зміна завершується коротким звітом у CRM: що продано, які запити були частими та які позиції варто замовити, щоб не втрачати попит наступного дня."
+    ],
+    "tasks_pl": [
+      "Twoja odpowiedzialność obejmuje pełne doradztwo klientowi: od doboru modelu do budżetu, przez omówienie gwarancji, po poprawne zamknięcie sprzedaży w systemie kasowym.",
+      "W trakcie zmiany dbasz o ekspozycję, poprawność cen, aktualność modeli demonstracyjnych oraz zgłaszasz kierownikowi braki towaru na najszybciej rotujących indeksach.",
+      "W dniach o największym ruchu współpracujesz z kasą i magazynem: koordynujesz wydania, sprawdzasz kompletność zestawów i prowadzisz zwroty zgodnie z procedurą sklepu.",
+      "Każda zmiana kończy się krótkim wpisem do CRM: sprzedaż, najczęstsze pytania klientów i lista pozycji, które należy domówić, by nie tracić popytu następnego dnia."
+    ],
+    "tasks_ru": [
+      "Ваша зона ответственности — полноценная консультация клиента: от подбора модели под бюджет до объяснения гарантии и корректного оформления покупки в кассовой системе.",
+      "В течение смены нужно поддерживать порядок на витринах, следить за актуальностью ценников, обновлять демонстрационные образцы и сообщать о дефиците популярных позиций.",
+      "В пиковые дни вы работаете в связке с кассой и складом: координируете выдачу, проверяете комплектность и оформляете возвраты по процедуре без конфликта с клиентом.",
+      "Каждая смена завершается коротким отчетом в CRM: что продано, какие запросы повторялись и какие позиции нужно дозакупить на следующий торговый день."
+    ],
+    "details_ua": [
+      "Потрібна жива комунікація, уміння слухати клієнта і пояснювати складні технічні параметри просто; агресивні «дотискування» продажу тут не вітаються політикою магазину.",
+      "Досвід у роздрібній торгівлі бажаний, але кандидатів без досвіду навчають у внутрішній школі продукту, де дають скрипти для консультацій і відпрацювання заперечень.",
+      "Польська на рівні В1 потрібна для роботи з клієнтами та документами продажу, а знання української або російської допоможе працювати з великою часткою мігрантського потоку.",
+      "У команді є наставник на перший місяць, тому адаптація проходить поетапно: спершу консультації, далі каса, потім складніші категорії техніки."
+    ],
+    "details_pl": [
+      "Liczy się otwarta komunikacja, umiejętność słuchania klienta i tłumaczenia parametrów technicznych prostym językiem; agresywna sprzedaż nie jest stylem tego sklepu.",
+      "Doświadczenie handlowe będzie atutem, ale osoby bez praktyki przechodzą wewnętrzną szkołę produktu z gotowymi schematami rozmowy i pracą na obiekcjach.",
+      "Polski na poziomie B1 jest potrzebny do obsługi klientów i dokumentów sprzedażowych, a ukraiński lub rosyjski pomaga przy dużym ruchu klientów migrantów.",
+      "W pierwszym miesiącu pracujesz z mentorem, dzięki czemu adaptacja jest etapowa: konsultacja, obsługa kasy i dopiero potem bardziej złożone kategorie elektroniki."
+    ],
+    "details_ru": [
+      "Нужна живая коммуникация, умение слушать клиента и объяснять технические параметры простыми словами; агрессивное давление в продаже не поддерживается политикой магазина.",
+      "Опыт в рознице желателен, но кандидатов без практики обучают во внутренней школе продукта, где дают рабочие сценарии консультаций и обработки возражений.",
+      "Польский на уровне B1 необходим для работы с клиентами и документацией продаж, а украинский или русский поможет в сменах с высоким мигрантским трафиком.",
+      "В первый месяц работает система наставничества, поэтому адаптация проходит по шагам: консультация, касса и затем более сложные товарные категории."
+    ],
+    "manual_vacancy_text": true,
+    "enforce_long_narrative": true
+  },
+  {
+    "slug": "gdansk-retail-grocery-seller-fresh-zone-999",
+    "category": "retail",
+    "city": "Гданськ (Примор'є)",
+    "city_pl": "Gdańsk (Przymorze)",
+    "city_ru": "Гданьск (Пшиможе)",
+    "title": "Продавець у відділ свіжих продуктів (делікатеси)",
+    "title_pl": "Sprzedawca w dziale świeżych produktów (delikatesy)",
+    "title_ru": "Продавец в отдел свежих продуктов (деликатесы)",
+    "salary": "5600 - 7900 PLN brutto + бонуси за зміну",
+    "company": "Baltic Market Delikatesy",
+    "shift_ua": "06:00-14:00 / 14:00-22:00",
+    "shift_pl": "06:00-14:00 / 14:00-22:00",
+    "shift_ru": "06:00-14:00 / 14:00-22:00",
+    "pattern_ua": "5/2 із плаваючими вихідними, графік на місяць наперед",
+    "pattern_pl": "5/2 z ruchomymi dniami wolnymi, grafik na miesiąc z wyprzedzeniem",
+    "pattern_ru": "5/2 с плавающими выходными, график на месяц заранее",
+    "start_ua": "Після санітарної книжки та інструктажу HACCP",
+    "start_pl": "Po książeczce sanepid i szkoleniu HACCP",
+    "start_ru": "После санитарной книжки и инструктажа HACCP",
+    "contract_ua": "Umowa o pracę (стандартний офіційний контракт)",
+    "contract_pl": "Umowa o pracę (standardowy kontrakt etatowy)",
+    "contract_ru": "Umowa o pracę (стандартный официальный контракт)",
+    "offers_ua": [
+      "У відділі діє щоденний бонус за списання нижче норми: коли команда тримає якість і не втрачає товар, на зміну нараховується додаткова премія до окладу.",
+      "За ранкові виходи з 06:00 виплачується надбавка, а у святкові дні застосовується підвищена ставка; всі години фіксуються через електронний табель без ручних правок.",
+      "Роботодавець компенсує частину витрат на проїзд, надає гаряче харчування під час зміни і покриває вартість спецодягу, включно з пранням та плановою заміною форми.",
+      "Додатково є приватна медична страховка, бонус 700 PLN за рекомендацію співробітника, а наприкінці року — премія за стабільну якість сервісу у відділі."
+    ],
+    "offers_pl": [
+      "W dziale działa dzienny bonus za utrzymanie niskich strat towaru: gdy zespół pilnuje jakości i ogranicza odpisy, do każdej zmiany dopisywana jest premia.",
+      "Za start o 06:00 obowiązuje dodatek poranny, a w święta stawka rośnie zgodnie z przepisami; wszystkie godziny są ewidencjonowane elektronicznie bez ręcznych korekt.",
+      "Pracodawca zwraca część kosztów dojazdu, zapewnia ciepły posiłek na zmianie i finansuje odzież roboczą wraz z praniem i planową wymianą zużytych elementów.",
+      "Dodatkowo dostępna jest prywatna opieka medyczna, bonus poleceń 700 PLN oraz roczna premia jakościowa dla działu utrzymującego wysoki standard obsługi."
+    ],
+    "offers_ru": [
+      "В отделе действует ежедневный бонус за низкий уровень списаний: когда команда удерживает качество и минимизирует потери, к каждой смене начисляется премия.",
+      "За выход с 06:00 предусмотрена утренняя надбавка, а в праздничные дни ставка повышается по правилам компании; часы фиксируются электронным табелем.",
+      "Работодатель компенсирует часть расходов на дорогу, обеспечивает горячее питание в смену и полностью покрывает спецодежду вместе со стиркой и заменой формы.",
+      "Дополнительно есть частная медицинская страховка, бонус 700 PLN за рекомендацию сотрудника и годовая премия за стабильное качество сервиса."
+    ],
+    "tasks_ua": [
+      "Робота у fresh-зоні включає викладку, контроль термінів придатності, підтримку температурного режиму та консультацію покупців по складу, алергенах і варіантах приготування продуктів.",
+      "Протягом зміни ти працюєш із ваговим обладнанням і касовим модулем відділу: зважування, маркування, фасування та контроль відповідності цін на полиці й у системі.",
+      "У ранковій зміні ключовий фокус на приймання поставок і ротацію товару, у вечірній — підготовка відділу до наступного дня, санітарна обробка поверхонь і звірка залишків.",
+      "Щодня перед закриттям заповнюється короткий чек-лист HACCP, щоб керівник зміни бачив стан обладнання, гігієну зони та причини можливих списань."
+    ],
+    "tasks_pl": [
+      "Praca w strefie fresh obejmuje wykładanie towaru, kontrolę terminów, utrzymanie reżimu temperatur i doradztwo klientom w kwestii składu, alergenów oraz użycia produktów.",
+      "W trakcie zmiany obsługujesz wagę i moduł kasowy działu: ważenie, etykietowanie, porcjowanie oraz kontrolę zgodności cen między półką a systemem.",
+      "Na porannej zmianie priorytetem jest przyjęcie dostawy i rotacja towaru, a na popołudniowej przygotowanie działu na kolejny dzień i sanitarne domknięcie strefy.",
+      "Przed zamknięciem wypełniany jest checklist HACCP, aby kierownik widział stan urządzeń, higienę stanowiska i powody ewentualnych odpisów."
+    ],
+    "tasks_ru": [
+      "Работа в fresh-зоне включает выкладку, контроль сроков годности, соблюдение температурного режима и консультации покупателей по составу, аллергенам и способу приготовления.",
+      "В течение смены вы работаете с весовым оборудованием и кассовым модулем отдела: взвешивание, маркировка, фасовка и контроль соответствия цен на полке и в системе.",
+      "На утренней смене приоритет — прием поставок и ротация, на вечерней — подготовка отдела к следующему дню, санитарная обработка и сверка остатков.",
+      "Перед закрытием ежедневно заполняется чек-лист HACCP, чтобы руководитель смены видел состояние оборудования, гигиену зоны и причины возможных списаний."
+    ],
+    "details_ua": [
+      "Важлива доброзичлива комунікація і акуратність у роботі з продуктами харчування, бо від продавця напряму залежить довіра клієнта та показник повторних покупок відділу.",
+      "Досвід у торгівлі харчами буде перевагою, але новачків навчають стандартам викладки, правилам ротації та взаємодії з клієнтами на прикладах реальних змін.",
+      "Потрібна польська на рівні В1 для роботи з покупцями і службовими документами HACCP; уважність до гігієни та дисципліна є критично важливими вимогами.",
+      "Відділ працює в стабільній команді з наставником, тому адаптація проходить керовано: перші тижні без самостійних складних завдань і з постійною підтримкою старшого."
+    ],
+    "details_pl": [
+      "W tej roli liczy się życzliwa komunikacja i precyzja przy pracy z żywnością, bo od jakości obsługi zależy zaufanie klientów i powtarzalność zakupów w dziale.",
+      "Doświadczenie spożywcze będzie atutem, ale osoby bez praktyki szkolimy z zasad ekspozycji, rotacji i standardów rozmowy z klientem na realnych przykładach zmian.",
+      "Wymagany jest polski na poziomie B1 do pracy z klientem i dokumentacją HACCP; higiena oraz dyscyplina operacyjna to kluczowe warunki utrzymania stanowiska.",
+      "Dział pracuje w stabilnym zespole z mentorem wdrożeniowym, dlatego pierwszy okres odbywa się bez samodzielnych zadań wysokiego ryzyka i pod stałym wsparciem."
+    ],
+    "details_ru": [
+      "В этой роли важны доброжелательная коммуникация и аккуратность при работе с продуктами, потому что от продавца напрямую зависит доверие покупателя.",
+      "Опыт в продовольственной рознице будет плюсом, но новичков обучают стандартам выкладки, ротации и общения с клиентами на практике реальных смен.",
+      "Нужен польский на уровне B1 для работы с покупателями и документацией HACCP; соблюдение гигиены и дисциплины — обязательное требование отдела.",
+      "Отдел работает стабильной командой с наставником, поэтому адаптация проходит поэтапно: первые недели без сложных самостоятельных задач и с постоянной поддержкой."
+    ],
+    "manual_vacancy_text": true,
+    "enforce_long_narrative": true
   }
 ]

@@ -2403,6 +2403,54 @@ function getVacancyNarrative(page, lang, variationState) {
   return `<div class="vacancy-description">${rendered}</div>`;
 }
 
+function getManualVacancyNarrative(page, lang) {
+  const isPl = lang === 'pl';
+  const isRu = lang === 'ru';
+  const localize = (baseKey) => {
+    const value = isPl
+      ? (page[`${baseKey}_pl`] || page[`${baseKey}_ua`] || page[baseKey])
+      : (isRu ? (page[`${baseKey}_ru`] || page[`${baseKey}_ua`] || page[`${baseKey}_pl`] || page[baseKey]) : (page[`${baseKey}_ua`] || page[baseKey]));
+    return isRu ? toRussianFallbackText(value || '') : (value || '');
+  };
+  const collect = (baseKey) => {
+    const value = localize(baseKey);
+    return Array.isArray(value) ? value : (value ? [String(value)] : []);
+  };
+  const city = localize('city');
+  const salary = localize('salary');
+  const shift = localize('shift');
+  const contract = localize('contract');
+  const pattern = localize('pattern');
+  const start = localize('start');
+  const offers = collect('offers');
+  const tasks = collect('tasks');
+  const details = collect('details');
+
+  const intro = isPl
+    ? `${city}. Wynagrodzenie: ${salary}. Grafik: ${shift}${pattern ? `, ${pattern}` : ''}. Umowa: ${contract}. Start: ${start}.`
+    : (isRu
+      ? `${city}. Оплата: ${salary}. График: ${shift}${pattern ? `, ${pattern}` : ''}. Договор: ${contract}. Старт: ${start}.`
+      : `${city}. Оплата: ${salary}. Графік: ${shift}${pattern ? `, ${pattern}` : ''}. Договір: ${contract}. Старт: ${start}.`);
+  const offerLead = isPl
+    ? 'Co realnie dostajesz poza stawką:'
+    : (isRu ? 'Что сотрудник получает помимо базовой ставки:' : 'Що працівник реально отримує окрім базової ставки:');
+  const taskLead = isPl
+    ? 'Jak wygląda codzienna zmiana:'
+    : (isRu ? 'Как выглядит рабочая смена на практике:' : 'Як виглядає робоча зміна на практиці:');
+  const detailLead = isPl
+    ? 'Wymagania i organizacja wejścia do zespołu:'
+    : (isRu ? 'Требования и организация входа в команду:' : 'Вимоги та організація входу в команду:');
+
+  const paragraph = (lead, items) => `${lead} ${items.join(' ')}`.trim();
+  const rendered = [
+    intro,
+    paragraph(offerLead, offers),
+    paragraph(taskLead, tasks),
+    paragraph(detailLead, details)
+  ].filter(Boolean).map(p => `<p>${escapeHtml(String(p || '').replace(/\s+/g, ' ').trim())}</p>`).join('');
+  return `<div class="vacancy-description">${rendered}</div>`;
+}
+
 function enrichVacancyExcerpt(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
@@ -2700,9 +2748,16 @@ async function build() {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const isVacancy = isVacancyPage(page);
-    const content = isVacancy ? getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState) : (page.body || page.content || page.excerpt || '');
-    const contentPl = isVacancy ? getVacancyNarrative(page, 'pl', vacancyNarrativeVariationState) : (page.body_pl || page.body || '');
-    const contentRu = isVacancy ? getVacancyNarrative(page, 'ru', vacancyNarrativeVariationState) : toRussianFallbackText(page.body_ru || page.body || '');
+    const useManualVacancyText = isVacancy && page && page.manual_vacancy_text === true;
+    const content = isVacancy
+      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ua') : getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState))
+      : (page.body || page.content || page.excerpt || '');
+    const contentPl = isVacancy
+      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'pl') : getVacancyNarrative(page, 'pl', vacancyNarrativeVariationState))
+      : (page.body_pl || page.body || '');
+    const contentRu = isVacancy
+      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ru') : getVacancyNarrative(page, 'ru', vacancyNarrativeVariationState))
+      : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
     const variantRoll = Math.random();
