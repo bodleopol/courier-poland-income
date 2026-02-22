@@ -2735,50 +2735,79 @@
     "title_pl": "Pracownik cateringu — Poznań",
     "salary": "до 41 PLN/h netto (ставка + бонус)",
     "company": "GreenLine Services",
-    "shift_ua": "14:00 - 22:00",
-    "shift_pl": "14:00 - 22:00",
-    "pattern_ua": "Зміни по 10-12 годин",
-    "pattern_pl": "Zmiany po 10-12 godzin",
-    "start_ua": "Після короткого інструктажу",
-    "start_pl": "Po krótkim wdrożeniu",
-    "contract_ua": "Umowa o pracę",
-    "contract_pl": "Umowa o pracę",
+    "shift_ua": "05:30 - 13:30 або 10:30 - 18:30 (без нічних змін)",
+    "shift_pl": "05:30 - 13:30 lub 10:30 - 18:30 (bez nocek)",
+    "shift_ru": "05:30 - 13:30 или 10:30 - 18:30 (без ночных смен)",
+    "pattern_ua": "Пн-Пт, ротація ранньої та пізньої зміни щотижня",
+    "pattern_pl": "Pon.-pt., rotacja zmiany porannej i popołudniowej co tydzień",
+    "pattern_ru": "Пн-пт, ротация утренней и дневной смены каждую неделю",
+    "start_ua": "Старт після 1 оплачуваної пробної зміни на кухні школи №7",
+    "start_pl": "Start po 1 płatnej zmianie próbnej w kuchni Szkoły nr 7",
+    "start_ru": "Выход после 1 оплачиваемой пробной смены на кухне Школы №7",
+    "contract_ua": "Umowa o pracę (3 місяці пробного періоду)",
+    "contract_pl": "Umowa o pracę (3 miesiące okresu próbnego)",
+    "contract_ru": "Umowa o pracę (3 месяца испытательного периода)",
     "offers_ua": [
-      "Стабільні виплати без затримок та зрозумілий розрахунок за фактично відпрацьовані години.",
-      "Підтримка координатора українською та польською під час адаптації на обʼєкті.",
-      "Організований онбординг у перші зміни, щоб без стресу увійти в робочий темп.",
-      "Можна брати додаткові зміни у пікові дні для збільшення доходу."
+      "Обʼєкт невеликий: центральна кухня для 3 шкіл у районі Єжице, команда на зміні 9 людей, тому завжди зрозуміло хто за що відповідає.",
+      "Щодня є теплий обід від кухні та оплата проїзду міським транспортом (картка ZTM до 180 PLN/міс).",
+      "У перший тиждень працюєте в парі зі старшим змінним кухарем: показують маршрут видачі, зони миття та правила маркування алергенів.",
+      "Найбільше навантаження з 11:00 до 13:00; після цього темп спокійний, без авральних переробок."
     ],
     "offers_pl": [
-      "Stabilne wypłaty bez opóźnień i przejrzyste rozliczenie za realnie przepracowane godziny.",
-      "Wsparcie koordynatora po ukraińsku i polsku podczas wdrożenia na obiekcie.",
-      "Zorganizowany onboarding na pierwszych zmianach, żeby spokojnie wejść w rytm pracy.",
-      "Możliwość dodatkowych zmian w dniach o większym obciążeniu."
+      "Obiekt jest kameralny: jedna kuchnia centralna dla 3 szkół na Jeżycach, na zmianie pracuje 9 osób i zakres obowiązków jest jasno podzielony.",
+      "Codziennie dostajesz ciepły posiłek od kuchni oraz dopłatę do komunikacji miejskiej (karta ZTM do 180 PLN/mies.).",
+      "W pierwszym tygodniu pracujesz w parze ze starszym kucharzem zmianowym: pokazuje trasę wydawki, strefę zmywalni i zasady oznaczania alergenów.",
+      "Największy ruch jest między 11:00 a 13:00, potem tempo wyraźnie spada i nie ma pracy „na chaosie”."
+    ],
+    "offers_ru": [
+      "Объект небольшой: центральная кухня для 3 школ в районе Ежице, в смене 9 человек и зоны ответственности распределены заранее.",
+      "Каждый день есть горячий обед от кухни и компенсация городского проезда (карта ZTM до 180 PLN в месяц).",
+      "В первую неделю вы работаете в паре со старшим поваром смены: он показывает маршрут выдачи, мойку и правила маркировки аллергенов.",
+      "Пик нагрузки с 11:00 до 13:00; после этого работа идет спокойно, без постоянных авралов."
     ],
     "tasks_ua": [
-      "Виконання щоденних задач за чітким планом зміни та інструкцією бригадира.",
-      "Контроль якості на своєму етапі та передача задачі наступному співробітнику.",
-      "Робота з базовим обладнанням або сканером згідно стандартів безпеки.",
-      "Підтримка порядку на робочому місці наприкінці зміни."
+      "Комплектація гастроємностей для шкільних ліній видачі за меню дня: суп, друга страва, дієтичні порції та окремо безглютенові набори.",
+      "Видача контейнерів водіям внутрішньої доставки о 07:10 та 10:40, перевірка температурних листів і підписів у журналі HACCP.",
+      "Після обіду — сортування чистого інвентарю, підготовка зони на наступний день і короткий звіт старшому зміни."
     ],
     "tasks_pl": [
-      "Realizacja codziennych zadań według planu zmiany i instrukcji brygadzisty.",
-      "Kontrola jakości na swoim etapie oraz przekazanie pracy dalej w procesie.",
-      "Praca z podstawowym sprzętem lub skanerem zgodnie z zasadami bezpieczeństwa.",
-      "Utrzymanie porządku na stanowisku pod koniec zmiany."
+      "Kompletowanie gastronormów na szkolne linie wydawcze według menu dnia: zupa, drugie danie, porcje dietetyczne i zestawy bezglutenowe.",
+      "Wydanie pojemników kierowcom dostawy wewnętrznej o 07:10 i 10:40 wraz z kontrolą kart temperatur oraz podpisów w rejestrze HACCP.",
+      "Po obiedzie: segregacja czystego sprzętu, przygotowanie stanowiska na kolejny dzień i krótki raport do lidera zmiany."
+    ],
+    "tasks_ru": [
+      "Комплектация гастроемкостей для школьной линии выдачи по меню дня: суп, второе блюдо, диетические порции и отдельные безглютеновые наборы.",
+      "Передача контейнеров водителям внутренней доставки в 07:10 и 10:40, контроль температурных листов и подписей в журнале HACCP.",
+      "После обеда — сортировка чистого инвентаря, подготовка зоны на следующий день и короткий отчет старшему смены."
     ],
     "details_ua": [
-      "Досвід вітається, але новачків навчаємо на місці за структурованим планом.",
-      "Темп роботи рівний, без хаотичних ривків протягом всієї зміни.",
-      "Перед стартом погоджуємо графік, формат договору та деталі виплат.",
-      "За потреби допомагаємо з оформленням медичної книжки або BHP-документів."
+      "Потрібна актуальна sanepid-книжка або готовність зробити її в перший тиждень (допомагаємо записатися в Jeżyce Med).",
+      "Робота переважно в русі, але без підйому важких ваг: стандартні лотки до 8 кг.",
+      "Польська на рівні A2-B1 достатня, бо важливо читати стікери з алергенами та спілкуватися з водіями.",
+      "Керівник зміни відкрито проговорює план дня о 05:35 та 10:35, тому немає «сюрпризів» у середині зміни."
     ],
     "details_pl": [
-      "Doświadczenie mile widziane, jednak nowych pracowników wdrażamy na miejscu.",
-      "Tempo pracy jest równe, bez chaotycznych zrywów podczas zmiany.",
-      "Przed startem potwierdzamy grafik, formę umowy i szczegóły wypłat.",
-      "W razie potrzeby pomagamy w formalnościach BHP lub książeczce sanepidowskiej."
-    ]
+      "Wymagana aktualna książeczka sanepid albo gotowość do jej wyrobienia w pierwszym tygodniu (pomagamy z rejestracją w Jeżyce Med).",
+      "Praca jest głównie w ruchu, ale bez dźwigania dużych ciężarów: standardowe pojemniki do 8 kg.",
+      "Polski na poziomie A2-B1 wystarczy, bo kluczowe jest czytanie etykiet alergenów i kontakt z kierowcami.",
+      "Lider zmiany omawia plan dnia o 05:35 i 10:35, więc nie ma nagłych zmian bez zapowiedzi."
+    ],
+    "details_ru": [
+      "Нужна действующая sanepid-книжка или готовность оформить ее в первую неделю (помогаем записаться в Jeżyce Med).",
+      "Работа в основном на ногах, но без тяжелых переносок: стандартные лотки до 8 кг.",
+      "Польский на уровне A2-B1 достаточен, потому что важно читать маркировку аллергенов и общаться с водителями.",
+      "Руководитель смены проговаривает план дня в 05:35 и 10:35, поэтому внезапных задач в середине смены почти не бывает."
+    ],
+    "team_ua": "9 людей у зміні: 1 старший кухар, 5 лінія видачі, 3 зона миття та пакування.",
+    "team_pl": "9 osób na zmianie: 1 starszy kucharz, 5 wydawka, 3 zmywalnia i pakowanie.",
+    "team_ru": "9 человек в смене: 1 старший повар, 5 линия выдачи, 3 мойка и упаковка.",
+    "workplace_ua": "Центральна кухня шкільного кейтерингу, район Jeżyce, окрема холодна та гаряча лінія.",
+    "workplace_pl": "Kuchnia centralna cateringu szkolnego, dzielnica Jeżyce, oddzielna linia zimna i ciepła.",
+    "workplace_ru": "Центральная кухня школьного кейтеринга, район Ежице, отдельная холодная и горячая линия.",
+    "shift_structure_ua": "05:30-07:10 комплектація, 07:10 перша відправка, 10:40 друга відправка, 12:30-13:30 прибирання і підготовка.",
+    "shift_structure_pl": "05:30-07:10 kompletacja, 07:10 pierwszy wyjazd, 10:40 drugi wyjazd, 12:30-13:30 porządki i przygotowanie.",
+    "shift_structure_ru": "05:30-07:10 комплектация, 07:10 первая отправка, 10:40 вторая отправка, 12:30-13:30 уборка и подготовка.",
+    "enforce_long_narrative": true
   },
   {
     "slug": "gdansk-cleaning-new-864",
