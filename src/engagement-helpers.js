@@ -7,8 +7,8 @@ export function getViewCount(slug, seed) {
 }
 
 export function getLastUpdated(slug) {
-  const today = new Date('2026-02-06');
-  const daysBehind = (hashString(slug) % 14) + 1;
+  const today = new Date('2026-02-24');
+  const daysBehind = hashString(slug) % 4;
   const updated = new Date(today);
   updated.setDate(updated.getDate() - daysBehind);
   return updated.toISOString().slice(0, 10);
