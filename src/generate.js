@@ -13,6 +13,50 @@ const POSTS_PER_PAGE = 20;
 
 // Indexing strategy for vacancies to reduce doorway/scaled-content risk.
 // Keep a limited set of generated vacancies indexable; mark the rest as noindex.
+
+/**
+ * Detects near-duplicate vacancy pages that share the same city prefix and job-type
+ * base (slug without city prefix and trailing numeric ID).
+ * Returns a Set of slugs that are secondary variants — these are marked noindex to
+ * reduce AI-doorway / city-spin signals detected by the SEO audit.
+ *
+ * Algorithm:
+ *   1. Extract city prefix (first hyphen-delimited segment) and job base
+ *      (remaining segments with the trailing numeric suffix removed).
+ *   2. Group pages by (cityPrefix, jobBase).
+ *   3. For each group with 2+ pages, keep the first occurrence indexable;
+ *      mark the rest as secondary (noindex).
+ */
+function detectNearDuplicateSlugs(pages) {
+  const groups = new Map();
+  for (const page of pages) {
+    const slug = page.slug || '';
+    const parts = slug.split('-');
+    if (parts.length < 2) continue;
+    const cityPrefix = parts[0];
+    let jobParts = parts.slice(1);
+    // Strip trailing pure-numeric ID (e.g. "-850")
+    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
+      jobParts = jobParts.slice(0, -1);
+    }
+    const jobBase = jobParts.join('-');
+    if (!jobBase) continue;
+    const key = `${cityPrefix}::${jobBase}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(slug);
+  }
+  const secondarySlugs = new Set();
+  for (const [, slugs] of groups) {
+    if (slugs.length >= 2) {
+      // Keep the first occurrence; mark all subsequent as secondary
+      for (const slug of slugs.slice(1)) {
+        secondarySlugs.add(slug);
+      }
+    }
+  }
+  return secondarySlugs;
+}
+
 function setRobotsMeta(html, robotsContent) {
   const out = String(html || '');
   if (/<meta\s+name=["']robots["'][^>]*>/i.test(out)) {
@@ -2734,6 +2778,13 @@ async function build() {
 
   // Only generate HTML for indexable vacancies (reduce doorway signals)
   const pagesToGenerate = pages;
+
+  // Detect near-duplicate (city-spin) pages and mark them noindex to reduce doorway risk
+  const nearDuplicateSlugs = detectNearDuplicateSlugs(pagesToGenerate);
+  if (nearDuplicateSlugs.size > 0) {
+    console.log(`  ℹ️  Near-duplicate doorway detection: ${nearDuplicateSlugs.size} secondary city-variant page(s) will be set to noindex, follow`);
+  }
+
   const vacancyNarrativeVariationState = {
     recentByLang: { ua: [], pl: [], ru: [] },
     lastModelByLang: { ua: null, pl: null, ru: null }
@@ -2937,8 +2988,11 @@ async function build() {
       }
     }
 
-    // All generated pages that reach this point are indexable (pre-filtered above)
-    finalHtml = setRobotsMeta(finalHtml, 'index, follow, max-snippet:-1, max-image-preview:large');
+    // Set robots meta: noindex for near-duplicate city-variant pages, index for unique pages
+    const vacancyRobotsContent = nearDuplicateSlugs.has(page.slug)
+      ? 'noindex, follow'
+      : 'index, follow, max-snippet:-1, max-image-preview:large';
+    finalHtml = setRobotsMeta(finalHtml, vacancyRobotsContent);
 
     // Add specific styles for job pages
     const jobStyles = `
@@ -3025,7 +3079,7 @@ async function build() {
 
     const outFile = path.join(DIST, `${page.slug}.html`);
     await fs.writeFile(outFile, finalHtml, 'utf8');
-    links.push({ title: page.title, slug: page.slug, city: page.city || '', indexable: true });
+    links.push({ title: page.title, slug: page.slug, city: page.city || '', indexable: !nearDuplicateSlugs.has(page.slug) });
   }
 
   // Pagination for Blog
@@ -3196,9 +3250,11 @@ async function build() {
     await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
   }
 
-  // Minimum word count threshold below which blog posts are marked noindex
-  const BLOG_NOINDEX_THRESHOLD = 300;
-  // Word count below which a warning is logged
+  // Minimum word count threshold below which blog posts are marked noindex.
+  // Raised from 300 to 500 to better guard against thin AI-generated content (SEO audit finding).
+  // BLOG_WARN_THRESHOLD is kept equal so every noindex-worthy post also triggers a build warning.
+  const BLOG_NOINDEX_THRESHOLD = 500;
+  // Word count below which a warning is logged (equal to noindex threshold so warnings are actionable)
   const BLOG_WARN_THRESHOLD = 500;
 
   // Generate Blog Posts
@@ -3953,7 +4009,7 @@ function generateVacanciesSitemap(links) {
   const base = 'https://rybezh.site';
   const today = new Date().toISOString().split('T')[0];
 
-  const items = links.flatMap(l => {
+  const items = links.filter(l => l.indexable !== false).flatMap(l => {
     const uaUrl = `${base}/${l.slug}.html`;
     const plUrl = `${base}/${l.slug}-pl.html`;
     const ruUrl = `${base}/${l.slug}-ru.html`;
