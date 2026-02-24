@@ -9944,5 +9944,355 @@
     ],
     "manual_vacancy_text": true,
     "enforce_long_narrative": true
+  },
+  {
+    "slug": "warszawa-hospitality-kucharz-zimny-cech-801",
+    "category": "hospitality",
+    "city": "Варшава (Wola)",
+    "city_pl": "Warszawa (Wola)",
+    "city_ru": "Варшава (Wola)",
+    "title": "Кухар холодного цеху в ресторані сучасної польської кухні",
+    "title_pl": "Kucharz zimnej kuchni w restauracji nowoczesnej kuchni polskiej",
+    "title_ru": "Повар холодного цеха в ресторане современной польской кухни",
+    "salary": "34–40 PLN/год брутто + премія за сервіс",
+    "company": "Brzeg Smaku Bistro",
+    "shift_ua": "5 змін на тиждень, 08:00–17:00",
+    "shift_pl": "5 zmian w tygodniu, 08:00–17:00",
+    "shift_ru": "5 смен в неделю, 08:00–17:00",
+    "pattern_ua": "ранкові зміни, плаваючі вихідні",
+    "pattern_pl": "zmiany poranne, dni wolne rotacyjne",
+    "pattern_ru": "утренние смены, выходные по ротации",
+    "start_ua": "після пробного дня",
+    "start_pl": "po dniu próbnym",
+    "start_ru": "после пробной смены",
+    "contract_ua": "Umowa o pracę / Umowa zlecenie",
+    "contract_pl": "Umowa o pracę / Umowa zlecenie",
+    "contract_ru": "Umowa o pracę / Umowa zlecenie",
+    "offers_ua": [
+      "Ставка фіксується в договорі, а сервісний бонус нараховується окремо за виконання денного плану без рекламацій від залу. У середньому команда додає до бази 600–900 zł на місяць.",
+      "Кухня працює за коротким сезонним меню, тому ти не застрягаєш у монотонному нарізанні одних і тих самих позицій. Раз на два тижні шеф проводить дегустаційний розбір нових холодних закусок.",
+      "Заклад компенсує 70% вартості санітарної книжки та видає комплект форми під твій розмір. Прання форми організоване централізовано, тому після зміни не потрібно везти робочий одяг додому."
+    ],
+    "offers_pl": [
+      "Stawka jest wpisana do umowy, a premia serwisowa naliczana osobno za wykonanie planu dziennego bez reklamacji z sali. Zespół zwykle dorabia 600–900 zł miesięcznie ponad podstawę.",
+      "Kuchnia pracuje na krótkim, sezonowym menu, więc nie utkniesz w monotonnym krojeniu tych samych pozycji. Co dwa tygodnie szef prowadzi degustacyjny przegląd nowych przystawek zimnych.",
+      "Lokal refunduje 70% kosztu książeczki sanitarnej i wydaje komplet odzieży roboczej dobranej do rozmiaru. Pranie odzieży jest zorganizowane przez restaurację."
+    ],
+    "offers_ru": [
+      "Ставка фиксируется в договоре, а сервисная премия начисляется отдельно за выполненный дневной план без претензий от зала. В среднем команда добавляет к базе 600–900 zł в месяц.",
+      "Кухня работает по короткому сезонному меню, поэтому ты не застреваешь в однообразной нарезке. Раз в две недели шеф проводит дегустационный разбор новых холодных закусок.",
+      "Ресторан компенсирует 70% стоимости санитарной книжки и выдает комплект формы по размеру. Стирка формы организована заведением, после смены ничего не нужно везти домой."
+    ],
+    "tasks_ua": [
+      "Підготовка тартарів, оселедцевих позицій, сезонних салатів, холодних соусів і заправок з точним дотриманням gramatura та маркуванням партій.",
+      "Щозмінний контроль свіжості зелені, листя, ферментованих компонентів і готових соусів: перевірка температури, смаку, дати виготовлення і коректності контейнерів на лінії.",
+      "Перед вечірнім сервісом ти збираєш запас порцій на пікову годину, щоб зал не чекав холодні страви довше стандарту. Після сервісу — короткий звіт по списаннях та залишках."
+    ],
+    "tasks_pl": [
+      "Przygotowanie tartarów, pozycji śledziowych, sałat sezonowych, zimnych sosów i dressingów z dokładnym trzymaniem gramatury oraz oznaczaniem partii.",
+      "Kontrola świeżości ziół, liści, komponentów fermentowanych i gotowych sosów na każdej zmianie: temperatura, smak, data przygotowania i właściwe pojemniki na linii.",
+      "Przed serwisem wieczornym budujesz zapas porcji na godzinę szczytu, aby sala nie czekała dłużej niż standard. Po serwisie przygotowujesz krótki raport strat i stanów."
+    ],
+    "tasks_ru": [
+      "Подготовка тартаров, сельдевых позиций, сезонных салатов, холодных соусов и заправок с точным соблюдением gramatura и маркировкой партий.",
+      "Посменный контроль свежести зелени, листовых смесей, ферментированных компонентов и готовых соусов: температура, вкус, дата производства и правильная тара на линии.",
+      "Перед вечерним сервисом собираешь запас порций на пиковый час, чтобы зал не ждал холодные блюда дольше стандарта. После сервиса — краткий отчет по списаниям и остаткам."
+    ],
+    "details_ua": [
+      "Потрібен досвід від 1 року у холодному або універсальному цеху. Якщо ти добре тримаєш ніж і розумієш базову санітарію, шеф навчає внутрішнім стандартам за 5–7 змін.",
+      "Темп роботи рівний, але вимогливий до точності. Тут не вітають хаотичну імпровізацію: кожна позиція має еталонну подачу, і відхилення одразу видно на видачі.",
+      "Команда невелика: шеф, су-шеф, два кухарі гарячого цеху, два кухарі холодного цеху та prep-кухар. Українська і польська в колективі використовуються щодня, адаптація проходить спокійно."
+    ],
+    "details_pl": [
+      "Wymagane doświadczenie od 1 roku na zimnej kuchni lub stanowisku uniwersalnym. Jeśli dobrze pracujesz nożem i znasz podstawy higieny, szef wdraża do standardów w 5–7 zmian.",
+      "Tempo pracy jest równe, ale mocno nastawione na precyzję. Nie ma miejsca na chaotyczną improwizację: każda pozycja ma wzorcowe wydanie i odchylenia są widoczne od razu.",
+      "Zespół jest kameralny: szef, sous chef, dwóch kucharzy ciepłej kuchni, dwóch kucharzy zimnej kuchni i prep cook. W codziennej komunikacji używa się polskiego i ukraińskiego."
+    ],
+    "details_ru": [
+      "Нужен опыт от 1 года в холодном или универсальном цехе. Если уверенно работаешь ножом и понимаешь базовую санитарную дисциплину, шеф обучает внутренним стандартам за 5–7 смен.",
+      "Темп работы ровный, но требовательный к точности. Хаотичная импровизация не приветствуется: у каждой позиции есть эталонная подача, и отклонения видны сразу на выдаче.",
+      "Команда компактная: шеф, су-шеф, два повара горячего цеха, два повара холодного цеха и prep-повар. Внутри смены ежедневно используются польский и украинский языки."
+    ],
+    "manual_vacancy_text": true
+  },
+  {
+    "slug": "krakow-hospitality-pomichnyk-kukharya-open-kitchen-802",
+    "category": "hospitality",
+    "city": "Краків (Kazimierz)",
+    "city_pl": "Kraków (Kazimierz)",
+    "city_ru": "Краков (Kazimierz)",
+    "title": "Помічник кухаря у відкритій кухні міського гастробару",
+    "title_pl": "Pomoc kucharza w otwartej kuchni miejskiego gastrobara",
+    "title_ru": "Помощник повара в открытой кухне городского гастробара",
+    "salary": "30–35 PLN/год брутто + чайові команди",
+    "company": "Kazimierz Open Kitchen",
+    "shift_ua": "4/2, зміни 10:30–22:30",
+    "shift_pl": "4/2, zmiany 10:30–22:30",
+    "shift_ru": "4/2, смены 10:30–22:30",
+    "pattern_ua": "довга зміна з двома перервами",
+    "pattern_pl": "długa zmiana z dwiema przerwami",
+    "pattern_ru": "длинная смена с двумя перерывами",
+    "start_ua": "вихід протягом 3 днів після співбесіди",
+    "start_pl": "start do 3 dni po rozmowie",
+    "start_ru": "выход в течение 3 дней после собеседования",
+    "contract_ua": "Umowa zlecenie з переходом на Umowa o pracę",
+    "contract_pl": "Umowa zlecenie z przejściem na Umowa o pracę",
+    "contract_ru": "Umowa zlecenie с переходом на Umowa o pracę",
+    "offers_ua": [
+      "У закладі прозора система росту: після трьох місяців стабільної роботи помічник переходить на станцію гарнірів або фритюру з підвищенням ставки. Рішення ухвалюють не по знайомству, а за результатом щотижневого чек-листа.",
+      "Чайові діляться між кухнею і залом за зрозумілою формулою, тому кухня не залишається “за кадром”. У сильні туристичні тижні це дає відчутну доплату.",
+      "Працівник отримує харчування на зміні, знижку на меню у вихідні дні та часткову компенсацію проїзного."
+    ],
+    "offers_pl": [
+      "W lokalu działa przejrzysta ścieżka rozwoju: po trzech miesiącach stabilnej pracy pomoc przechodzi na stację dodatków lub frytury z podwyżką. Decyzja opiera się na tygodniowej ocenie, nie na znajomościach.",
+      "Napiwki są dzielone między kuchnię i salę według jasnej formuły, więc kuchnia nie zostaje poza systemem premiowym. W sezonie turystycznym daje to realny dodatek do pensji.",
+      "Pracownik ma posiłek na zmianie, zniżkę na menu w dni wolne i częściową refundację biletu miejskiego."
+    ],
+    "offers_ru": [
+      "В заведении прозрачная система роста: после трех месяцев стабильной работы помощник переходит на станцию гарниров или фритюра с повышением ставки. Решение принимают по результату еженедельного чек-листа.",
+      "Чаевые делятся между кухней и залом по понятной формуле, поэтому кухня не остается в стороне от бонусной системы. В туристические недели это дает заметную прибавку.",
+      "Сотрудник получает питание на смене, скидку на меню в выходные и частичную компенсацию проездного."
+    ],
+    "tasks_ua": [
+      "Підготовка овочів, бульйонних баз, дрібних напівфабрикатів, підтримка фритюрної станції і своєчасне поповнення лінії під час сервісу.",
+      "У відкритій кухні важливий контакт із залом: ти працюєш охайно, без зайвого шуму, вчасно передаєш інформацію про стоп-лист і контролюєш, щоб заготовки не закінчувалися в пік.",
+      "Після закриття зміни виконуєш санітарний блок за чек-листом: мийка інвентарю, дезінфекція поверхонь, маркування залишків, короткий запис по витраті продукту."
+    ],
+    "tasks_pl": [
+      "Przygotowanie warzyw, baz bulionowych, drobnych półproduktów, wsparcie stacji frytury i terminowe uzupełnianie linii w trakcie serwisu.",
+      "W otwartej kuchni liczy się kontakt z salą: pracujesz czysto, bez zbędnego hałasu, przekazujesz informację o brakach i pilnujesz, by mise en place nie kończyło się w szczycie.",
+      "Po zamknięciu wykonujesz blok sanitarny z checklisty: mycie sprzętu, dezynfekcja blatów, etykietowanie resztek i krótki raport zużycia produktów."
+    ],
+    "tasks_ru": [
+      "Подготовка овощей, бульонных баз, мелких полуфабрикатов, поддержка фритюрной станции и своевременное пополнение линии во время сервиса.",
+      "В открытой кухне важен контакт с залом: работаешь аккуратно, без лишнего шума, передаешь информацию о стоп-листе и следишь, чтобы заготовки не заканчивались в пик.",
+      "После закрытия смены выполняешь санитарный блок по чек-листу: мойка инвентаря, дезинфекция поверхностей, маркировка остатков и короткая запись по расходу продукта."
+    ],
+    "details_ua": [
+      "Позиція підходить людям з мінімальним досвідом від 6 місяців, але з хорошим темпом і відповідальністю. Якщо ти раніше працював у фастфуді або кафе, адаптація зазвичай займає до двох тижнів.",
+      "Тут цінують не гучні резюме, а стабільність у дрібних процесах: чистий пост, вчасна підготовка, акуратна комунікація з командою.",
+      "Робота фізично активна, більшість зміни проходить на ногах. Команда заздалегідь попереджає про інтенсивні дні, щоб можна було розподілити навантаження і не втрачати якість сервісу."
+    ],
+    "details_pl": [
+      "Stanowisko dla osób z minimalnym doświadczeniem od 6 miesięcy, ale z dobrym tempem i odpowiedzialnym podejściem. Jeśli pracowałeś wcześniej w fast foodzie lub kawiarni, wdrożenie zwykle zajmuje do dwóch tygodni.",
+      "Najbardziej ceniona jest stabilność w małych procesach: czyste stanowisko, przygotowanie na czas i spokojna komunikacja z zespołem.",
+      "Praca jest fizycznie aktywna, większość zmiany odbywa się na stojąco. Zespół z wyprzedzeniem informuje o dniach wysokiego obciążenia, żeby utrzymać jakość serwisu."
+    ],
+    "details_ru": [
+      "Позиция подходит людям с минимальным опытом от 6 месяцев, но с хорошим темпом и ответственностью. Если ты работал в фастфуде или кафе, адаптация обычно занимает до двух недель.",
+      "Здесь ценят не громкое резюме, а стабильность в мелких процессах: чистый пост, своевременную подготовку и спокойную коммуникацию внутри смены.",
+      "Работа физически активная, большая часть смены проходит на ногах. Команда заранее предупреждает о самых интенсивных днях, чтобы распределять нагрузку без потери качества."
+    ],
+    "manual_vacancy_text": true
+  },
+  {
+    "slug": "wroclaw-hospitality-zagotivelnyk-catering-803",
+    "category": "hospitality",
+    "city": "Вроцлав (Psie Pole)",
+    "city_pl": "Wrocław (Psie Pole)",
+    "city_ru": "Вроцлав (Psie Pole)",
+    "title": "Заготівельник у кейтеринговому виробництві (нічна зміна)",
+    "title_pl": "Pracownik przygotowalni w produkcji cateringowej (zmiana nocna)",
+    "title_ru": "Заготовщик на кейтеринговом производстве (ночная смена)",
+    "salary": "36–42 PLN/год брутто + нічний коефіцієнт",
+    "company": "WrocMeal Production Hub",
+    "shift_ua": "Нд–Чт, 21:00–05:30",
+    "shift_pl": "Nd–Czw, 21:00–05:30",
+    "shift_ru": "Вс–Чт, 21:00–05:30",
+    "pattern_ua": "нічний цикл, фіксований графік",
+    "pattern_pl": "cykl nocny, grafik stały",
+    "pattern_ru": "ночной цикл, фиксированный график",
+    "start_ua": "після медогляду та інструктажу BHP",
+    "start_pl": "po badaniach i szkoleniu BHP",
+    "start_ru": "после медосмотра и инструктажа BHP",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_ru": "Umowa o pracę",
+    "offers_ua": [
+      "Нічна ставка підсилюється коефіцієнтом, а за відсутність браку в маркуванні команда отримує щомісячний бонус. Для виробничих позицій це одна з найпрозоріших моделей оплати у місті.",
+      "Робота проходить у чистому цеху з контрольованою температурою та чіткою санітарною маршрутизацією. На старті кожен новий працівник отримує наставника на перші 8 змін.",
+      "Компанія частково компенсує таксі після зміни, якщо твій маршрут не покриває перший міський транспорт."
+    ],
+    "offers_pl": [
+      "Stawka nocna jest podbita współczynnikiem, a za brak błędów w etykietowaniu zespół dostaje premię miesięczną. To jedna z najbardziej przejrzystych form wynagradzania na produkcji we Wrocławiu.",
+      "Praca odbywa się w czystym zakładzie z kontrolowaną temperaturą i jasno wyznaczonym ruchem sanitarnym. Na starcie każdy nowy pracownik ma mentora przez pierwsze 8 zmian.",
+      "Firma częściowo refunduje przejazd taxi po zmianie, jeśli trasa nie jest objęta pierwszym transportem miejskim."
+    ],
+    "offers_ru": [
+      "Ночная ставка усиливается коэффициентом, а за отсутствие ошибок в маркировке команда получает ежемесячный бонус. Для производственной позиции это прозрачная система оплаты.",
+      "Работа проходит в чистом цехе с контролируемой температурой и четкой санитарной маршрутизацией. На старте каждому сотруднику закрепляют наставника на первые 8 смен.",
+      "Компания частично компенсирует такси после смены, если маршрут не покрывается первым городским транспортом."
+    ],
+    "tasks_ua": [
+      "Нарізка овочевих і м’ясних компонентів для ранкового пакування, фасування по технологічних картах, підпис контейнерів і контроль часу перебування продукту поза холодом.",
+      "Підготовка соусів і базових гарнірів під денне відправлення: зважування, вакуумування, формування лотів для логістичної команди.",
+      "Робота тісно пов’язана з цифровими чек-листами: кожна партія фіксується в системі, тому уважність до номерів, дат і підписів критично важлива."
+    ],
+    "tasks_pl": [
+      "Krojenie komponentów warzywnych i mięsnych pod poranne pakowanie, porcjowanie według kart technologicznych, opisywanie pojemników i kontrola czasu poza chłodnią.",
+      "Przygotowanie sosów i bazowych dodatków pod wysyłkę dzienną: ważenie, pakowanie próżniowe i kompletowanie lotów dla zespołu logistyki.",
+      "Praca jest ściśle połączona z checklistami cyfrowymi: każda partia trafia do systemu, dlatego precyzja przy numerach, datach i podpisach ma kluczowe znaczenie."
+    ],
+    "tasks_ru": [
+      "Нарезка овощных и мясных компонентов для утренней упаковки, фасовка по технологическим картам, маркировка контейнеров и контроль времени продукта вне холода.",
+      "Подготовка соусов и базовых гарниров под дневную отправку: взвешивание, вакуумирование, формирование лотов для логистической команды.",
+      "Работа тесно связана с цифровыми чек-листами: каждая партия фиксируется в системе, поэтому внимательность к номерам, датам и подписям критически важна."
+    ],
+    "details_ua": [
+      "Потрібен досвід від 1 року на заготовці або харчовому виробництві. Якщо маєш сильну уважність і звик працювати в нічному ритмі, адаптація проходить без зайвого стресу.",
+      "Фізичне навантаження середнє: багато ходьби між зонами, підйом гастроємностей до 12 кг, робота в рукавичках і санітарному одязі протягом усієї зміни.",
+      "Керівник зміни оцінює не швидкість “будь-якою ціною”, а стабільність: відсутність браку, чиста документація, прогнозовані залишки до ранкового відвантаження."
+    ],
+    "details_pl": [
+      "Wymagane doświadczenie od 1 roku na przygotowalni lub produkcji spożywczej. Jeśli masz wysoką dokładność i jesteś przyzwyczajony do nocnego rytmu, wdrożenie przebiega spokojnie.",
+      "Obciążenie fizyczne jest umiarkowane: dużo przemieszczania się między strefami, podnoszenie pojemników do 12 kg oraz praca w rękawicach i odzieży sanitarnej przez całą zmianę.",
+      "Kierownik zmiany ocenia nie tempo za wszelką cenę, lecz stabilność: brak braków jakościowych, czysta dokumentacja i przewidywalne stany do porannej wysyłki."
+    ],
+    "details_ru": [
+      "Нужен опыт от 1 года на заготовке или пищевом производстве. Если у тебя высокая внимательность и привычка к ночному ритму, адаптация проходит спокойно.",
+      "Физическая нагрузка умеренная: много перемещений между зонами, подъем гастроемкостей до 12 кг, работа в перчатках и санитарной форме всю смену.",
+      "Руководитель смены оценивает не скорость любой ценой, а стабильность: отсутствие брака, чистую документацию и прогнозируемые остатки к утренней отправке."
+    ],
+    "manual_vacancy_text": true
+  },
+  {
+    "slug": "poznan-hospitality-shef-de-partie-grill-804",
+    "category": "hospitality",
+    "city": "Познань (Jeżyce)",
+    "city_pl": "Poznań (Jeżyce)",
+    "city_ru": "Познань (Jeżyce)",
+    "title": "Кухар гарячого цеху (grill station) у м’ясному ресторані",
+    "title_pl": "Kucharz ciepłej kuchni (grill station) w restauracji mięsnej",
+    "title_ru": "Повар горячего цеха (grill station) в мясном ресторане",
+    "salary": "38–46 PLN/год брутто + відсоток від банкетів",
+    "company": "Jeżyce Meat Atelier",
+    "shift_ua": "Ср–Нд, 12:00–23:00",
+    "shift_pl": "Śr–Nd, 12:00–23:00",
+    "shift_ru": "Ср–Вс, 12:00–23:00",
+    "pattern_ua": "переважно вечірній сервіс",
+    "pattern_pl": "głównie serwis wieczorny",
+    "pattern_ru": "в основном вечерний сервис",
+    "start_ua": "після технічного тесту на станції",
+    "start_pl": "po teście praktycznym na stacji",
+    "start_ru": "после практического теста на станции",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_ru": "Umowa o pracę",
+    "offers_ua": [
+      "Окрім погодинної ставки, кухня отримує відсоток із приватних банкетів і chef’s table. Це дозволяє суттєво підвищити дохід у сезон корпоративних подій.",
+      "Ресторан працює з локальним м’ясом dry-age, тому ти маєш доступ до якісного продукту і регулярних внутрішніх дегустацій. Для кухаря гарячого цеху це реальний професійний розвиток, а не формальна обіцянка.",
+      "Компанія покриває участь у двох профільних майстер-класах на рік, якщо працівник виконує стандарти сервісу і не має дисциплінарних порушень."
+    ],
+    "offers_pl": [
+      "Poza stawką godzinową kuchnia otrzymuje procent od bankietów prywatnych i kolacji chef’s table. W sezonie eventowym znacząco podnosi to dochód.",
+      "Restauracja pracuje na lokalnym mięsie dry-age, więc masz dostęp do jakościowego produktu i regularnych degustacji wewnętrznych. Dla kucharza ciepłej kuchni to realny rozwój zawodowy.",
+      "Firma finansuje udział w dwóch warsztatach branżowych rocznie, jeśli pracownik utrzymuje standard serwisu i nie ma naruszeń dyscypliny."
+    ],
+    "offers_ru": [
+      "Помимо почасовой ставки кухня получает процент от частных банкетов и chef’s table. В сезон мероприятий это ощутимо повышает доход.",
+      "Ресторан работает с локальным мясом dry-age, поэтому у тебя есть доступ к качественному продукту и регулярным внутренним дегустациям. Для повара горячего цеха это реальный профессиональный рост.",
+      "Компания оплачивает участие в двух профильных мастер-классах в год, если сотрудник соблюдает стандарты сервиса и не имеет дисциплинарных нарушений."
+    ],
+    "tasks_ua": [
+      "Ведення grill station: контроль температурних зон, правильний відпочинок м’яса після жару, синхронізація з гарнірним постом і точна віддача ступеня просмаження.",
+      "Підготовка м’ясних заготовок до сервісу: обрізка, порціонування, маркування, контроль dry-age партій і збереження чистоти ножового інвентарю.",
+      "Під час вечірнього піку ти координуєш помічника на станції, щоб не допустити провалів по таймінгу. Після сервісу формуєш короткий фідбек по втраті ваги і відходах."
+    ],
+    "tasks_pl": [
+      "Prowadzenie grill station: kontrola stref temperatury, właściwy odpoczynek mięsa po obróbce, synchronizacja z dodatkami i precyzyjne wydanie stopnia wysmażenia.",
+      "Przygotowanie mięs do serwisu: trybowanie, porcjowanie, etykietowanie, kontrola partii dry-age i utrzymanie porządku na stanowisku nożowym.",
+      "W godzinach szczytu koordynujesz pomocnika na stacji, aby nie dopuścić do opóźnień. Po serwisie przygotowujesz krótki feedback o ubytkach masy i odpadzie."
+    ],
+    "tasks_ru": [
+      "Ведение grill station: контроль температурных зон, правильный отдых мяса после жарки, синхронизация с гарнирной станцией и точная отдача степени прожарки.",
+      "Подготовка мясных заготовок к сервису: обрезка, порционирование, маркировка, контроль dry-age партий и поддержание чистоты ножевого инвентаря.",
+      "В вечерний пик координируешь помощника на станции, чтобы не допускать провалов по таймингу. После сервиса даешь краткий фидбек по потере веса и отходам."
+    ],
+    "details_ua": [
+      "Від кандидата очікують щонайменше 2 роки досвіду на гарячому цеху та розуміння базових технік роботи з яловичиною і свининою. Окремий плюс — досвід банкетного сервісу.",
+      "Кухня інтенсивна, але технологічно добре організована: окрема prep-зона, чіткий білд на кожну позицію, швидкі брифінги перед відкриттям залу.",
+      "Для команди важлива професійна мова й повага в комунікації. Тут не працює формат “кричимо в сервісі”, натомість цінується коротка, точна взаємодія між постами."
+    ],
+    "details_pl": [
+      "Od kandydata oczekuje się minimum 2 lat doświadczenia na ciepłej kuchni oraz znajomości bazowych technik pracy z wołowiną i wieprzowiną. Dodatkowym atutem jest doświadczenie bankietowe.",
+      "Kuchnia jest intensywna, ale dobrze zorganizowana technologicznie: osobna strefa prep, jasny build każdej pozycji i krótkie briefingi przed otwarciem sali.",
+      "W zespole ważna jest kultura komunikacji. Nie działa model krzyku na serwisie — liczy się krótka, precyzyjna współpraca między stanowiskami."
+    ],
+    "details_ru": [
+      "От кандидата ждут минимум 2 года опыта на горячем цехе и понимание базовых техник работы с говядиной и свининой. Дополнительный плюс — опыт банкетного сервиса.",
+      "Кухня интенсивная, но технологически хорошо организована: отдельная prep-зона, четкий build на каждую позицию и короткие брифинги перед открытием зала.",
+      "Для команды важен профессиональный тон и уважительная коммуникация. Формат “крик в сервисе” не приветствуется — ценится короткое и точное взаимодействие между станциями."
+    ],
+    "manual_vacancy_text": true
+  },
+  {
+    "slug": "gdansk-hospitality-pekarskyi-tseh-rannia-zmina-805",
+    "category": "hospitality",
+    "city": "Гданськ (Wrzeszcz)",
+    "city_pl": "Gdańsk (Wrzeszcz)",
+    "city_ru": "Гданьск (Wrzeszcz)",
+    "title": "Працівник пекарського цеху при ресторані (ранкова зміна)",
+    "title_pl": "Pracownik sekcji piekarniczej przy restauracji (zmiana poranna)",
+    "title_ru": "Сотрудник пекарского цеха при ресторане (утренняя смена)",
+    "salary": "32–38 PLN/год брутто + ранковий бонус",
+    "company": "Port Bread & Kitchen",
+    "shift_ua": "Вт–Нд, 04:30–13:00",
+    "shift_pl": "Wt–Nd, 04:30–13:00",
+    "shift_ru": "Вт–Вс, 04:30–13:00",
+    "pattern_ua": "рання зміна, стабільний цикл",
+    "pattern_pl": "wczesna zmiana, cykl stały",
+    "pattern_ru": "ранняя смена, стабильный цикл",
+    "start_ua": "після оплачуваного стажування 2 дні",
+    "start_pl": "po 2 dniach płatnego wdrożenia",
+    "start_ru": "после 2 дней оплачиваемой стажировки",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_ru": "Umowa o pracę",
+    "offers_ua": [
+      "Ранковий бонус додається за дотримання таймінгу випічки до відкриття залу. Якщо цех стабільно закриває план, працівники отримують додатковий вихідний день раз на квартал.",
+      "У команді добре вибудувана адаптація: технолог показує роботу з тістом поетапно, а не кидає новачка в повний обсяг з першої зміни.",
+      "Для працівників діє внутрішня ціна на хліб і десерти, а також знижка на каву під час зміни."
+    ],
+    "offers_pl": [
+      "Premia poranna naliczana jest za utrzymanie harmonogramu wypieku przed otwarciem sali. Przy stabilnej realizacji planu zespół dostaje dodatkowy dzień wolny raz na kwartał.",
+      "Wdrożenie jest uporządkowane: technolog pokazuje pracę z ciastem etapami, bez wrzucania nowej osoby od razu w pełny wolumen.",
+      "Dla pracowników obowiązuje cena wewnętrzna na pieczywo i desery oraz zniżka na kawę w trakcie zmiany."
+    ],
+    "offers_ru": [
+      "Утренняя премия начисляется за соблюдение графика выпечки до открытия зала. При стабильном выполнении плана команда получает дополнительный выходной раз в квартал.",
+      "Адаптация выстроена по шагам: технолог показывает работу с тестом поэтапно, без перегруза новым объемом в первый день.",
+      "Для сотрудников действует внутренняя цена на хлеб и десерты, а также скидка на кофе во время смены."
+    ],
+    "tasks_ua": [
+      "Заміс, ферментація, формування і випікання базової лінійки хліба, булочок та пирогів для сніданкового і денного сервісу.",
+      "Контроль вологості тіста, часу вистоювання і температури печі; паралельна підготовка простих десертних заготовок для кондитерського поста.",
+      "Щоденний облік виходу продукції: фіксуєш, які позиції розійшлися швидше, щоб технолог міг коригувати план випічки на наступну зміну."
+    ],
+    "tasks_pl": [
+      "Mieszanie, fermentacja, formowanie i wypiek bazowej linii pieczywa, bułek i wypieków pod serwis śniadaniowy oraz dzienny.",
+      "Kontrola wilgotności ciasta, czasu garowania i temperatury pieca; równoległe przygotowanie prostych półproduktów deserowych dla sekcji cukierniczej.",
+      "Codzienna ewidencja produkcji: zapisujesz, które pozycje schodzą najszybciej, aby technolog mógł skorygować plan na kolejną zmianę."
+    ],
+    "tasks_ru": [
+      "Замес, ферментация, формовка и выпечка базовой линейки хлеба, булочек и пирогов для завтраков и дневного сервиса.",
+      "Контроль влажности теста, времени расстойки и температуры печи; параллельная подготовка простых десертных заготовок для кондитерской станции.",
+      "Ежедневный учет выхода продукции: фиксируешь, какие позиции уходят быстрее, чтобы технолог корректировал план выпечки на следующую смену."
+    ],
+    "details_ua": [
+      "Потрібен досвід від 1 року у пекарні, кондитерському або ресторанному цеху. Якщо вмієш працювати з дріжджовим тістом і не боїшся ранніх змін, колектив швидко вводить у робочий ритм.",
+      "Робота починається дуже рано, але закінчується до обіду, тому позиція зручна для тих, хто хоче мати вільний другий південь.",
+      "Якість оцінюють за стабільністю партій, а не за “геройством” на зміні. Тут важливо тримати повторюваний результат: однакова структура м’якуша, колір скоринки і вага виробу."
+    ],
+    "details_pl": [
+      "Wymagane doświadczenie od 1 roku w piekarni, cukierni lub sekcji restauracyjnej. Jeśli pracujesz z ciastem drożdżowym i akceptujesz bardzo wczesne zmiany, wdrożenie przebiega szybko.",
+      "Zmiana zaczyna się wcześnie, ale kończy przed południem, dlatego stanowisko jest wygodne dla osób, które chcą mieć wolne popołudnie.",
+      "Jakość ocenia się przez stabilność partii, nie przez jednorazowy zryw. Liczy się powtarzalny efekt: struktura miękiszu, kolor skórki i masa produktu."
+    ],
+    "details_ru": [
+      "Нужен опыт от 1 года в пекарне, кондитерском или ресторанном цехе. Если умеешь работать с дрожжевым тестом и готов к ранним сменам, команда быстро вводит в процесс.",
+      "Смена начинается рано, но заканчивается до обеда, поэтому позиция подходит тем, кто хочет свободную вторую половину дня.",
+      "Качество оценивают по стабильности партий, а не по разовым подвигам. Важно держать повторяемый результат: структура мякиша, цвет корки и вес изделия."
+    ],
+    "manual_vacancy_text": true
   }
 ]
