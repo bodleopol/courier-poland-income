@@ -12,7 +12,42 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 const contentPath = path.join(__dirname, 'content.json');
 const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
 
-const indexableVacancies = content;
+/**
+ * Detects near-duplicate vacancy pages that share the same city prefix and job-type
+ * base (slug without city prefix and trailing numeric ID).
+ * Returns a Set of slugs that are secondary variants to be excluded from the sitemap.
+ * Mirrors the same logic in generate.js to keep indexing decisions consistent.
+ */
+function detectNearDuplicateSlugs(pages) {
+  const groups = new Map();
+  for (const page of pages) {
+    const slug = page.slug || '';
+    const parts = slug.split('-');
+    if (parts.length < 2) continue;
+    const cityPrefix = parts[0];
+    let jobParts = parts.slice(1);
+    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
+      jobParts = jobParts.slice(0, -1);
+    }
+    const jobBase = jobParts.join('-');
+    if (!jobBase) continue;
+    const key = `${cityPrefix}::${jobBase}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(slug);
+  }
+  const secondarySlugs = new Set();
+  for (const [, slugs] of groups) {
+    if (slugs.length >= 2) {
+      for (const slug of slugs.slice(1)) {
+        secondarySlugs.add(slug);
+      }
+    }
+  }
+  return secondarySlugs;
+}
+
+const nearDuplicateSlugs = detectNearDuplicateSlugs(content);
+const indexableVacancies = content.filter(job => !nearDuplicateSlugs.has(job.slug));
 
 // Read posts.json to get all blog posts
 const postsPath = path.join(__dirname, 'posts.json');
