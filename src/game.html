@@ -3557,6 +3557,11 @@ function initGame() {
       }
     });
   }
+  if (window.matchMedia('(pointer: coarse), (max-width: 768px)').matches) {
+    document.body.classList.add('game-fs');
+    if (fsBtn) fsBtn.textContent = '✕';
+    resizeCanvas();
+  }
 
   const difficultyEl = document.getElementById('game-difficulty');
   const mobileScaleEl = document.getElementById('mobile-scale');
