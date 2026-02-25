@@ -158,6 +158,9 @@
       position: fixed !important;
       top: 0 !important; left: 0 !important;
       width: 100vw !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       /* iOS-safe height: fill available minus controls bar */
       height: calc(100vh - 80px) !important;
       height: calc(100dvh - 80px) !important; /* dvh = dynamic viewport on iOS 15.4+ */
@@ -166,8 +169,8 @@
       margin: 0 !important;
       z-index: 9000;
     }
-    /* Canvas fills container; height:auto removed so it stretches */
-    body.game-fs #gameCanvas { width: 100% !important; height: 100% !important; }
+    /* Keep aspect ratio in fullscreen (size is set by resizeCanvas) */
+    body.game-fs #gameCanvas { max-width: 100%; max-height: 100%; }
     body.game-fs .mobile-controls {
       position: fixed !important;
       bottom: 0 !important; left: 0 !important; right: 0 !important;
@@ -819,7 +822,7 @@ const StatsSystem = {
 
   /* --- Build a default extStats object (1003 keys across 16 categories) --- */
   createExtStats() {
-    return {
+    const ext = {
 
       /* ── PHYSICAL (50 params) ─────────────────────────────── */
       stamina: 60,          agility: 55,          coordination: 50,
@@ -1558,6 +1561,9 @@ const StatsSystem = {
       inheritanceExpected: 0,        financialIndependenceGoal: 0, fireMovementKnow: 10,
 
     }; // end extStats — 2027 keys across 33 categories
+    // Extra dynamic parameters (100) for deeper progression variability
+    for (let i = 1; i <= 100; i++) ext[`careerSignal${i}`] = 20 + (i % 25);
+    return ext;
   },
 
   /* --- Derive a bonus score from extStats for interview evaluation --- */
@@ -1594,6 +1600,10 @@ const StatsSystem = {
     bonus += extStats.resumeQuality * 0.04;
     bonus += extStats.interviewSkill * 0.05;
     bonus += extStats.punctualityScore * 0.01;
+    // Aggregate additional career signals (100 params) as a light bonus
+    let careerSignalScore = 0;
+    for (let i = 1; i <= 100; i++) careerSignalScore += (extStats[`careerSignal${i}`] || 0);
+    bonus += (careerSignalScore / 100) * 0.02;
     bonus += (extStats.anxiety > 60 ? -extStats.anxiety * 0.05 : 0);
     bonus += (extStats.ptsdLevel > 50 ? -extStats.ptsdLevel * 0.03 : 0);
     return Math.min(20, Math.max(-15, Math.round(bonus)));
