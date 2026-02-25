@@ -1995,7 +1995,8 @@ const UISystem = {
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '9px sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText('[Q] квести  [ESC] пауза  [S] зберегти', 8, 58);
+    const streak = player.stats.comboStreak || 0;
+    ctx.fillText(`[Q] квести  [ESC] пауза  [S] зберегти  🔥x${streak}`, 8, 58);
 
     ctx.restore();
   },
@@ -2454,6 +2455,8 @@ class GameEngine {
     this.questLogVisible = false;
     this.notification = { visible: false, text: '', timer: 0, maxTimer: 150 };
     this.moralChoice = null;
+    this.collectStreak = 0;
+    this.lastCollectFrame = 0;
 
     this._bindInput();
     this._initWorld();
@@ -2659,6 +2662,8 @@ class GameEngine {
     this.notification = { visible: false, text: '', timer: 0, maxTimer: 150 };
     this.moralChoice = null;
     this.frame = 0;
+    this.collectStreak = 0;
+    this.lastCollectFrame = 0;
 
     if (savedData) {
       Object.assign(this.player.stats, savedData.stats);
@@ -2770,12 +2775,17 @@ class GameEngine {
         c.collected = true;
         c.apply(this.player.stats, this.player.extStats);
         this.collected++;
+        const comboWindow = 220;
+        this.collectStreak = (this.frame - this.lastCollectFrame <= comboWindow) ? (this.collectStreak + 1) : 1;
+        this.lastCollectFrame = this.frame;
+        this.player.stats.comboStreak = this.collectStreak;
         // Award XP
-        this.player.stats.experience = (this.player.stats.experience || 0) + Math.round(CFG.XP_PER_COLLECT * getDifficultyPreset().xpMult);
+        const comboMult = 1 + Math.min(0.5, (this.collectStreak - 1) * 0.05);
+        this.player.stats.experience = (this.player.stats.experience || 0) + Math.round(CFG.XP_PER_COLLECT * getDifficultyPreset().xpMult * comboMult);
         if (c.type === 1) this.hasCert = true;
         if (c.type === 2) this.hasRec = true;
         const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська','📑 +Статус громадянства','🏅 +Мовний сертифікат'];
-        this._notify(`${labels[c.type] || '⭐ Бонус!'} +${CFG.XP_PER_COLLECT}XP`, 100);
+        this._notify(`${labels[c.type] || '⭐ Бонус!'} +${CFG.XP_PER_COLLECT}XP  🔥x${this.collectStreak}`, 100);
       }
     }
   }
