@@ -94,6 +94,72 @@
       .game-info-grid { grid-template-columns: 1fr; }
       .game-hero h1 { font-size: 1.5rem; }
     }
+    /* ── Mobile on-screen controls ─────────────────────────── */
+    .mobile-controls {
+      display: none;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 1rem;
+      padding: 6px 8px;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5,10,20,0.6);
+      border-radius: 12px;
+      gap: 8px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    @media (pointer: coarse), (max-width: 768px) {
+      .mobile-controls { display: flex; }
+      .game-controls-hint { display: none; }
+    }
+    .mc-dpad { display: flex; gap: 8px; align-items: center; }
+    .mc-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .mc-btn {
+      width: 54px;
+      height: 54px;
+      border: 2px solid rgba(0,166,126,0.7);
+      border-radius: 12px;
+      background: rgba(10,10,26,0.85);
+      color: #fff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.1s;
+    }
+    .mc-btn:active, .mc-btn.mc-active {
+      background: rgba(0,166,126,0.45);
+      border-color: #00e5a0;
+    }
+    .mc-btn-jump {
+      width: 64px;
+      height: 64px;
+      font-size: 1.6rem;
+      border-color: rgba(255,215,0,0.8);
+    }
+    .mc-btn-jump:active, .mc-btn-jump.mc-active {
+      background: rgba(255,215,0,0.3);
+      border-color: #ffd700;
+    }
+    .mc-btn-interact {
+      border-color: rgba(37,99,235,0.8);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .mc-btn-interact:active, .mc-btn-interact.mc-active {
+      background: rgba(37,99,235,0.35);
+    }
+    .mc-btn-sm {
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+      border-color: rgba(150,150,150,0.6);
+    }
   </style>
 </head>
 <body>
@@ -151,6 +217,20 @@
         <canvas id="gameCanvas" width="920" height="540"></canvas>
       </div>
 
+      <!-- On-screen controls for touch/mobile devices -->
+      <div id="mobile-controls" class="mobile-controls" aria-label="Ігрові кнопки">
+        <div class="mc-dpad">
+          <button class="mc-btn" id="mc-left" aria-label="Рух вліво">◀</button>
+          <button class="mc-btn" id="mc-right" aria-label="Рух вправо">▶</button>
+        </div>
+        <div class="mc-actions">
+          <button class="mc-btn mc-btn-interact" id="mc-interact" aria-label="Взаємодія з NPC/будівлею">E</button>
+          <button class="mc-btn mc-btn-sm" id="mc-quest" aria-label="Журнал квестів">📋</button>
+          <button class="mc-btn mc-btn-sm" id="mc-pause" aria-label="Пауза">⏸</button>
+          <button class="mc-btn mc-btn-jump" id="mc-jump" aria-label="Стрибок">↑</button>
+        </div>
+      </div>
+
       <p class="game-controls-hint">
         <kbd>←</kbd><kbd>→</kbd> або <kbd>A</kbd><kbd>D</kbd> — рух &nbsp;|&nbsp;
         <kbd>↑</kbd> або <kbd>W</kbd> або <kbd>Пробіл</kbd> — стрибок &nbsp;|&nbsp;
@@ -197,6 +277,8 @@
             <li>📝 Рекомендація — підвищує харизму</li>
             <li>💰 Гроші — поповнюють бюджет</li>
             <li>💊 Ліки — знижують стрес, відновлюють здоров'я</li>
+            <li>📑 Документ — підвищує громадянський статус</li>
+            <li>🏅 Мовний сертифікат — суттєво покращує польську</li>
           </ul>
         </div>
       </div>
@@ -319,7 +401,7 @@ const DATA = {
   ],
 
   /* --- Collectibles [x, y, type] ---
-     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang */
+     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang 7=document 8=langCert */
   collectibles: [
     [310, 355],[470, 470],[650, 302],[820, 465],[1020, 325],
     [1120, 465],[1300, 275],[1520, 355],[1750, 465],[1870, 315],
@@ -329,7 +411,10 @@ const DATA = {
     [5650, 315],[5870, 315],[6150, 275],[6450, 335],[6720, 305],
     [850, 465],[1470, 465],[2020, 465],[2900, 465],[3650, 465],
     [4200, 465],[4750, 465],[5450, 465],[5950, 465],[6550, 465],
-  ].map((pos, i) => ({x: pos[0], y: pos[1], type: i % 7})),
+    // new: document & language cert items scattered through world
+    [1650, 355, 7],[2500, 340, 7],[3400, 345, 7],[5000, 340, 7],[6200, 350, 7],
+    [2250, 300, 8],[3850, 305, 8],[5700, 300, 8],
+  ].map((pos, i) => ({x: pos[0], y: pos[1], type: pos[2] !== undefined ? pos[2] : i % 9})),
 
   /* --- Enemies [x, patrolMin, patrolMax, type] ---
      0=Bureaucrat, 1=Scammer, 2=BadEmployer, 3=TaxAgent */
@@ -360,6 +445,7 @@ const DATA = {
     {id:'q4', name:'Перша співбесіда',   desc:'Пройдіть першу співбесіду',       target:1,  type:'interview'},
     {id:'q5', name:'Ветеранська мережа', desc:'Знайдіть 3 ветеранів',            target:3,  type:'veterans'},
     {id:'q6', name:'Власний бізнес',     desc:'Накопичте 5000 PLN та репутацію 70', target:1, type:'business'},
+    {id:'q7', name:'Офіційний статус',   desc:'Зберіть 3 документи для оформлення статусу', target:45, type:'citizenship'},
   ],
 
   /* --- Dialogue templates (used to generate 2000+ combinations) --- */
@@ -989,6 +1075,24 @@ const StatsSystem = {
         extStats.enBusinessTerms= Math.min(100, extStats.enBusinessTerms + 4);
         extStats.completedLanguageCourse = 1;
         break;
+      case 7: // Document → citizenship / legal status params
+        extStats.kartaPobytu      = Math.min(1, extStats.kartaPobytu + 0.34);
+        extStats.workPermit       = Math.min(1, extStats.workPermit + 0.25);
+        extStats.socialServicesAware = Math.min(100, extStats.socialServicesAware + 8);
+        extStats.immigrationLawKnow  = Math.min(100, extStats.immigrationLawKnow + 6);
+        extStats.taxIdPL          = Math.min(1, extStats.taxIdPL + 0.3);
+        break;
+      case 8: // Language certificate → advanced PL + professional bonus
+        extStats.plListening    = Math.min(100, extStats.plListening + 10);
+        extStats.plSpeaking     = Math.min(100, extStats.plSpeaking + 10);
+        extStats.plReading      = Math.min(100, extStats.plReading + 10);
+        extStats.plWriting      = Math.min(100, extStats.plWriting + 8);
+        extStats.plVocabSize    = Math.min(10000, extStats.plVocabSize + 400);
+        extStats.plGrammarScore = Math.min(100, extStats.plGrammarScore + 8);
+        extStats.plBusinessTerms= Math.min(100, extStats.plBusinessTerms + 10);
+        extStats.resumeQuality  = Math.min(100, extStats.resumeQuality + 4);
+        extStats.completedLanguageCourse = 1;
+        break;
     }
   },
 
@@ -1225,7 +1329,7 @@ class Player extends Entity {
       health: 100, strength: 50, intelligence: 50, charisma: 45,
       militaryExp: 80, stress: 30, mentalHealth: 70,
       finances: 2000, reputation: 40, polishLang: 30,
-      englishLang: 60, civilExp: 20,
+      englishLang: 60, civilExp: 20, citizenshipProgress: 0,
     };
     // Extended parameters (1003 values across 16 categories)
     this.extStats = StatsSystem.createExtStats();
@@ -1440,7 +1544,8 @@ class NPC extends Entity {
     // Interaction hint
     ctx.fillStyle = '#00a67e';
     ctx.font = 'bold 11px sans-serif';
-    ctx.fillText('[E]', px + this.w / 2, py - 8);
+    const npcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(npcIsTouch ? '[E]' : '[E]', px + this.w / 2, py - 8);
     if (!this.talked) {
       // Pulsing indicator
       const alpha = 0.5 + 0.5 * Math.sin(this.bobTimer * 0.08);
@@ -1552,8 +1657,8 @@ class Collectible {
     this.collected = false;
     this.bobTimer = Math.random() * Math.PI * 2;
   }
-  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧']; }
-  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN']; }
+  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧','📑','🏅']; }
+  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN','+DOC','+CERT']; }
   draw(ctx, camX) {
     if (this.collected) return;
     this.bobTimer += 0.06;
@@ -1575,6 +1680,8 @@ class Collectible {
       () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); },
       () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); },
       () => { stats.englishLang  = Math.min(100, stats.englishLang + 8); },
+      () => { stats.citizenshipProgress = Math.min(100, (stats.citizenshipProgress || 0) + 15); stats.reputation = Math.min(100, stats.reputation + 5); },
+      () => { stats.polishLang = Math.min(100, stats.polishLang + 15); stats.reputation = Math.min(100, stats.reputation + 8); },
     ];
     if (map[this.type]) map[this.type]();
     // Also update extStats sub-parameters
@@ -1604,6 +1711,7 @@ const QuestSystem = {
         case 'business':
           q.progress = (p.stats.finances >= 5000 && p.stats.reputation >= 70) ? 1 : 0;
           break;
+        case 'citizenship': q.progress = p.stats.citizenshipProgress || 0; break;
       }
       if (q.progress >= q.target && !q.done) {
         q.done = true;
@@ -1647,6 +1755,8 @@ const UISystem = {
     UISystem.drawBar(ctx, 8, 26, 80, 11, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
     // Polish language bar
     UISystem.drawBar(ctx, 98, 26, 70, 11, s.polishLang,  100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
+    // Citizenship progress bar
+    UISystem.drawBar(ctx, 8, 44, 80, 9, s.citizenshipProgress || 0, 100, '#ff9800', `🏛 ${s.citizenshipProgress || 0}%`);
 
     // Finances
     ctx.fillStyle = '#00e5a0';
@@ -1744,7 +1854,11 @@ const UISystem = {
       ctx.fillStyle = 'rgba(255,255,255,0.45)';
       ctx.font = '11px sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText('[E / Enter] продовжити', bx + bw - 10, by + bh - 8);
+      const dlgIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+      ctx.fillText(
+        dlgIsTouch ? 'Торкніться або натисніть E' : '[E / Enter] продовжити',
+        bx + bw - 10, by + bh - 8
+      );
     }
 
     ctx.restore();
@@ -1789,7 +1903,12 @@ const UISystem = {
     ctx.textAlign = 'center';
     ctx.fillText('⏸ ПАУЗА', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 30);
     ctx.font = '18px sans-serif';
-    ctx.fillText('[ESC] — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    const pauseIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if (pauseIsTouch) {
+      ctx.fillText('Торкніться екрану — продовжити', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    } else {
+      ctx.fillText('[ESC] — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    }
     ctx.fillText('[S] — зберегти прогрес', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 40);
     ctx.fillText('[R] — нова гра', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 70);
     ctx.restore();
@@ -1820,11 +1939,19 @@ const UISystem = {
 
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
     ctx.font = '14px sans-serif';
-    ctx.fillText('← → рух  |  ↑ / Пробіл стрибок  |  E — взаємодія', CFG.CANVAS_W / 2, 230);
+    const isTouch2 = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      isTouch2 ? '◀ ▶ — рух  |  ↑ — стрибок  |  E — взаємодія' : '← → рух  |  ↑ / Пробіл стрибок  |  E — взаємодія',
+      CFG.CANVAS_W / 2, 230
+    );
 
     ctx.fillStyle = '#ffd700';
     ctx.font = 'bold 20px sans-serif';
-    ctx.fillText('Натисніть ПРОБІЛ або ENTER щоб почати', CFG.CANVAS_W / 2, 290);
+    const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      isTouch ? 'Торкніться екрану або натисніть E щоб почати' : 'Натисніть ПРОБІЛ або ENTER щоб почати',
+      CFG.CANVAS_W / 2, 290
+    );
 
     const hasSave = !!SaveSystem.load();
     if (hasSave) {
@@ -1868,7 +1995,11 @@ const UISystem = {
 
     ctx.fillStyle = '#00a67e';
     ctx.font = 'bold 18px sans-serif';
-    ctx.fillText('[R] — Грати знову  |  [ESC] — Пауза', CFG.CANVAS_W / 2, CFG.CANVAS_H - 50);
+    const endIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      endIsTouch ? 'Торкніться екрану щоб грати знову' : '[R] — Грати знову  |  [ESC] — Пауза',
+      CFG.CANVAS_W / 2, CFG.CANVAS_H - 50
+    );
     ctx.restore();
   },
 
@@ -1920,7 +2051,11 @@ const UISystem = {
 
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '11px sans-serif';
-    ctx.fillText('[A] вибрати перший  [B] вибрати другий', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45);
+    const mcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      mcIsTouch ? 'Торкніться лівої половини (A) або правої (B)' : '[A] вибрати перший  [B] вибрати другий',
+      CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45
+    );
     ctx.restore();
   },
 
@@ -2076,6 +2211,69 @@ class GameEngine {
       const mapped = keyMap2[e.code];
       if (mapped && mapped in this.input) this.input[mapped] = false;
     });
+
+    this._bindTouchControls();
+  }
+
+  _bindTouchControls() {
+    // Helper: bind press/release for a button element to an input key
+    const addBtn = (id, key, onPress, onRelease) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      const press = (e) => {
+        e.preventDefault();
+        btn.classList.add('mc-active');
+        if (onPress) onPress();
+        else if (key) this.input[key] = true;
+      };
+      const release = (e) => {
+        e.preventDefault();
+        btn.classList.remove('mc-active');
+        if (onRelease) onRelease();
+        else if (key) this.input[key] = false;
+      };
+      btn.addEventListener('touchstart', press, { passive: false });
+      btn.addEventListener('touchend', release, { passive: false });
+      btn.addEventListener('touchcancel', release, { passive: false });
+      // Mouse fallback for testing on desktop
+      btn.addEventListener('mousedown', press);
+      btn.addEventListener('mouseup', release);
+      btn.addEventListener('mouseleave', release);
+    };
+
+    addBtn('mc-left', 'left');
+    addBtn('mc-right', 'right');
+    addBtn('mc-jump', null,
+      () => { this.input.jump = true; },
+      () => { this.input.jump = false; }
+    );
+    addBtn('mc-interact', null, () => {
+      if (this.state === 'start') { this.state = 'playing'; return; }
+      if (this.state === 'dialogue') { this._advanceDialogue(); return; }
+      if (this.state === 'moralChoice') { return; }
+      this.input.interact = true;
+    }, () => { this.input.interact = false; });
+    addBtn('mc-quest', null, () => {
+      if (this.state === 'playing') this.questLogVisible = !this.questLogVisible;
+    });
+    addBtn('mc-pause', null, () => { this._handleEscape(); });
+
+    // Tap on canvas: start game / advance dialogue / handle moral choice
+    this.canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      if (this.state === 'start') { this.state = 'playing'; return; }
+      if (this.state === 'dialogue') { this._advanceDialogue(); return; }
+      if (this.state === 'paused') { this.state = 'playing'; return; }
+      if (this.state === 'ending') { this._initWorld(); return; }
+      if (this.state === 'moralChoice' && this.moralChoice) {
+        // Tap left half → choice A, tap right half → choice B
+        const rect = this.canvas.getBoundingClientRect();
+        const tapX = (e.touches[0].clientX - rect.left) / rect.width * CFG.CANVAS_W;
+        if (tapX < CFG.CANVAS_W / 2) this._handleMoralKeyA();
+        else this._handleMoralKeyB();
+        return;
+      }
+    }, { passive: false });
   }
 
   _handleEscape() {
@@ -2230,7 +2428,7 @@ class GameEngine {
         this.collected++;
         if (c.type === 1) this.hasCert = true;
         if (c.type === 2) this.hasRec = true;
-        const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська'];
+        const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська','📑 +Статус громадянства','🏅 +Мовний сертифікат'];
         this._notify(labels[c.type] || '⭐ Бонус!', 100);
       }
     }
