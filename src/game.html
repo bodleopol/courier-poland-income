@@ -59,6 +59,7 @@
       display: block;
       width: 100%;
       height: auto;
+      touch-action: none;
     }
     .game-controls-hint {
       text-align: center;
@@ -2245,14 +2246,14 @@ class GameEngine {
     addBtn('mc-right', 'right');
     addBtn('mc-jump', null,
       () => { this.input.jump = true; },
-      () => { this.input.jump = false; }
+      null  // Player.update() already consumes input.jump each frame
     );
     addBtn('mc-interact', null, () => {
       if (this.state === 'start') { this.state = 'playing'; return; }
       if (this.state === 'dialogue') { this._advanceDialogue(); return; }
       if (this.state === 'moralChoice') { return; }
       this.input.interact = true;
-    }, () => { this.input.interact = false; });
+    }, null); // _checkBuildingInteraction() already clears input.interact each frame
     addBtn('mc-quest', null, () => {
       if (this.state === 'playing') this.questLogVisible = !this.questLogVisible;
     });
