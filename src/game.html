@@ -93,7 +93,51 @@
     @media (max-width: 600px) {
       .game-info-grid { grid-template-columns: 1fr; }
       .game-hero h1 { font-size: 1.5rem; }
+      .game-controls-hint { display: none; }
+      .touch-hint { display: block !important; }
     }
+    /* Touch / mobile controls overlay */
+    .touch-hint {
+      display: none;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--color-secondary,#64748b);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    #touch-controls {
+      display: none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #touch-controls.active { display: block; }
+    .touch-btn {
+      position: absolute;
+      pointer-events: all;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.30);
+      border-radius: 50%;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.25rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .touch-btn:active { background: rgba(255,255,255,0.28); }
+    #btn-left     { width: 54px; height: 54px; bottom: 18px; left: 14px; }
+    #btn-right    { width: 54px; height: 54px; bottom: 18px; left: 78px; }
+    #btn-jump     { width: 64px; height: 64px; bottom: 14px; right: 14px; background: rgba(0,200,130,0.18); border-color: rgba(0,200,130,0.5); }
+    #btn-interact { width: 50px; height: 50px; bottom: 20px; right: 88px; background: rgba(255,215,0,0.18); border-color: rgba(255,215,0,0.45); font-size: 1rem; }
+    #btn-quest    { width: 40px; height: 40px; bottom: 84px; right: 14px; font-size: 0.85rem; }
+    #btn-pause    { width: 36px; height: 36px; top: 6px; right: 6px; font-size: 0.85rem; }
   </style>
 </head>
 <body>
@@ -149,6 +193,7 @@
 
       <div id="game-container">
         <canvas id="gameCanvas" width="920" height="540"></canvas>
+        <div id="touch-controls"></div>
       </div>
 
       <p class="game-controls-hint">
@@ -158,6 +203,14 @@
         <kbd>Q</kbd> — квести &nbsp;|&nbsp;
         <kbd>S</kbd> — зберегти &nbsp;|&nbsp;
         <kbd>ESC</kbd> — пауза
+      </p>
+
+      <p class="touch-hint">
+        👆 Торкніться екрана щоб почати &nbsp;|&nbsp;
+        ◀▶ — рух (ліворуч внизу) &nbsp;|&nbsp;
+        ↑ — стрибок (праворуч внизу) &nbsp;|&nbsp;
+        <strong>E</strong> — взаємодія &nbsp;|&nbsp;
+        <strong>Q</strong> — квести
       </p>
 
       <div class="game-info-grid">
@@ -177,7 +230,7 @@
             <li>🔵 IT-компанія — потрібен інтелект і знання англійської</li>
             <li>⚙️ Завод / склад — потрібна фізична витривалість</li>
             <li>🟠 Стартап — важливі харизма та репутація</li>
-            <li>Натисніть <kbd>E</kbd> поруч з входом щоб увійти</li>
+            <li>Натисніть <kbd>E</kbd> або кнопку <strong>E</strong> поруч з входом щоб увійти</li>
           </ul>
         </div>
         <div class="game-info-card">
@@ -197,6 +250,8 @@
             <li>📝 Рекомендація — підвищує харизму</li>
             <li>💰 Гроші — поповнюють бюджет</li>
             <li>💊 Ліки — знижують стрес, відновлюють здоров'я</li>
+            <li>🎖️ Медаль — підвищує військовий досвід та удачу</li>
+            <li>🪪 Картка ветерана — покращує документи та репутацію</li>
           </ul>
         </div>
       </div>
@@ -319,7 +374,8 @@ const DATA = {
   ],
 
   /* --- Collectibles [x, y, type] ---
-     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang */
+     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang
+     7=veteranMedal 8=veteranCard */
   collectibles: [
     [310, 355],[470, 470],[650, 302],[820, 465],[1020, 325],
     [1120, 465],[1300, 275],[1520, 355],[1750, 465],[1870, 315],
@@ -329,7 +385,12 @@ const DATA = {
     [5650, 315],[5870, 315],[6150, 275],[6450, 335],[6720, 305],
     [850, 465],[1470, 465],[2020, 465],[2900, 465],[3650, 465],
     [4200, 465],[4750, 465],[5450, 465],[5950, 465],[6550, 465],
-  ].map((pos, i) => ({x: pos[0], y: pos[1], type: i % 7})),
+  ].map((pos, i) => ({x: pos[0], y: pos[1], type: i % 7})).concat([
+    {x: 600,  y: 290, type: 7}, {x: 2400, y: 265, type: 7},
+    {x: 4500, y: 275, type: 7}, {x: 6300, y: 255, type: 7},
+    {x: 1100, y: 355, type: 8}, {x: 3100, y: 310, type: 8},
+    {x: 5200, y: 280, type: 8}, {x: 6800, y: 295, type: 8},
+  ]),
 
   /* --- Enemies [x, patrolMin, patrolMax, type] ---
      0=Bureaucrat, 1=Scammer, 2=BadEmployer, 3=TaxAgent */
@@ -342,13 +403,15 @@ const DATA = {
   ],
 
   /* --- Friendly NPCs [x, type, name] ---
-     0=veteran, 1=hr, 2=instructor */
+     0=veteran, 1=hr, 2=instructor, 3=lawyer */
   npcs: [
     [200,  0, 'Андрій, ветеран'],
     [1800, 1, 'Марта, HR'],
     [2800, 0, 'Тарас, ветеран'],
+    [3600, 3, 'Пан Войцех, юрист'],
     [4100, 2, 'Пан Новак, викладач'],
     [4800, 0, 'Олег, ветеран'],
+    [5500, 3, 'Пані Зося, адвокат'],
     [6100, 1, 'Агнєшка, HR'],
   ],
 
@@ -360,6 +423,20 @@ const DATA = {
     {id:'q4', name:'Перша співбесіда',   desc:'Пройдіть першу співбесіду',       target:1,  type:'interview'},
     {id:'q5', name:'Ветеранська мережа', desc:'Знайдіть 3 ветеранів',            target:3,  type:'veterans'},
     {id:'q6', name:'Власний бізнес',     desc:'Накопичте 5000 PLN та репутацію 70', target:1, type:'business'},
+    {id:'q7', name:'Документи в порядку',desc:'Оформіть документи (рівень ≥ 60)', target:60, type:'documents'},
+    {id:'q8', name:'Щасливчик',          desc:'Досягніть удачі 70',              target:70, type:'luck'},
+  ],
+
+  /* --- Lawyer dialogue lines --- */
+  lawyerLines: [
+    'Для легальної роботи потрібна картка побиту або легалізація.',
+    'Оформіть PESEL та рахунок у банку якомога швидше.',
+    'Ветерани мають право на особливий статус у Польщі.',
+    'Допоможу з документами для отримання дозволу на роботу.',
+    'Перевірте договір перед підписанням — я безкоштовно.',
+    'ZUS та податки — важливо розуміти свої зобов\'язання.',
+    'Зверніться до ZUS для підтвердження страхових прав.',
+    'Картка ветерана дає додаткові соціальні права у Польщі.',
   ],
 
   /* --- Dialogue templates (used to generate 2000+ combinations) --- */
@@ -989,6 +1066,18 @@ const StatsSystem = {
         extStats.enBusinessTerms= Math.min(100, extStats.enBusinessTerms + 4);
         extStats.completedLanguageCourse = 1;
         break;
+      case 7: // Veteran medal → military + resilience + luck
+        extStats.resilienceScore    = Math.min(100, extStats.resilienceScore + 6);
+        extStats.leadershipExp      = Math.min(100, (extStats.leadershipExp || 0) + 5);
+        extStats.combatExp          = Math.min(100, (extStats.combatExp || 0) + 5);
+        extStats.confidenceWork     = Math.min(100, extStats.confidenceWork + 4);
+        break;
+      case 8: // Veteran card → documents / legal / stress
+        extStats.resumeQuality      = Math.min(100, extStats.resumeQuality + 4);
+        extStats.professionalBrand  = Math.min(100, extStats.professionalBrand + 5);
+        extStats.anxiety            = Math.max(0, extStats.anxiety - 6);
+        extStats.trustInInstitutions= Math.min(100, extStats.trustInInstitutions + 8);
+        break;
     }
   },
 
@@ -1153,13 +1242,17 @@ const DialogueSystem = {
     if (bribeBonus) score += 20;
     if (stats.stress > 70) score -= 15;
     if (stats.mentalHealth < 40) score -= 10;
+    // Luck factor: slight random boost/penalty scaled by luck stat
+    if (stats.luck !== undefined) score += (stats.luck - 50) * 0.1 + (Math.random() * 6 - 3) * (stats.luck / 100);
+    // Documents factor: proper paperwork helps
+    if (stats.documents !== undefined) score += stats.documents * 0.05;
 
     const passed = score >= 50;
     const responseText = passed ? this.rnd(DATA.offers) : this.rnd(DATA.rejections);
     return { passed, score: Math.round(score), requirements: reqs, text: responseText };
   },
 
-  /* Generate NPC dialogue lines (veteran / hr / instructor) */
+  /* Generate NPC dialogue lines (veteran / hr / instructor / lawyer) */
   buildNPCDialogue(npcType, stats, veteransMet) {
     if (npcType === 0) { // veteran
       const base = this.rnd(DATA.veteranLines);
@@ -1170,7 +1263,7 @@ const DialogueSystem = {
       const statsNote = stats.reputation > 60 ? ' Ваша репутація вже добра — продовжуйте!' :
                         stats.polishLang < 40 ? ' Найбільша проблема зараз — мова. Курси — пріоритет.' : '';
       return base + statsNote;
-    } else { // instructor
+    } else if (npcType === 2) { // instructor
       const tips = [
         'Урок 1: Po polsku — Dzień dobry! Добрий день!',
         'Урок 2: Jak masz na imię? — Як тебе звати?',
@@ -1180,6 +1273,12 @@ const DialogueSystem = {
         'Цей урок +10 до знань польської!',
       ];
       return this.rnd(tips);
+    } else { // lawyer (type 3)
+      const base = this.rnd(DATA.lawyerLines);
+      const docNote = stats.documents !== undefined && stats.documents < 50
+        ? ' Ваші документи потребують уваги! +10 до документів.'
+        : ' Ваші документи в порядку. Так тримати!';
+      return base + docNote;
     }
   },
 };
@@ -1226,6 +1325,8 @@ class Player extends Entity {
       militaryExp: 80, stress: 30, mentalHealth: 70,
       finances: 2000, reputation: 40, polishLang: 30,
       englishLang: 60, civilExp: 20,
+      luck: 50,       // удача — впливає на успіх співбесід і взаємодій
+      documents: 30,  // рівень оформлення документів
     };
     // Extended parameters (1003 values across 16 categories)
     this.extStats = StatsSystem.createExtStats();
@@ -1427,8 +1528,8 @@ class NPC extends Entity {
   draw(ctx, camX) {
     const px = Math.round(this.x - camX);
     const py = Math.round(this.y + Math.sin(this.bobTimer * 0.04) * 2);
-    const colors = ['#2d5a27','#1a5f7a','#7a5c1a'];
-    const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫'];
+    const colors = ['#2d5a27','#1a5f7a','#7a5c1a','#4a1a5a'];
+    const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫','⚖️'];
     ctx.save();
     ctx.fillStyle = colors[this.type] || '#666';
     ctx.fillRect(px, py + 10, this.w, this.h - 10);
@@ -1552,8 +1653,8 @@ class Collectible {
     this.collected = false;
     this.bobTimer = Math.random() * Math.PI * 2;
   }
-  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧']; }
-  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN']; }
+  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧','🎖️','🪪']; }
+  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN','+MIL','+DOC']; }
   draw(ctx, camX) {
     if (this.collected) return;
     this.bobTimer += 0.06;
@@ -1568,13 +1669,15 @@ class Collectible {
   }
   apply(stats, extStats) {
     const map = [
-      () => { stats.intelligence = Math.min(100, stats.intelligence + 5); stats.civilExp += 3; },
-      () => { stats.reputation   = Math.min(100, stats.reputation + 8); },
+      () => { stats.intelligence = Math.min(100, stats.intelligence + 5); stats.civilExp += 3; stats.luck = Math.min(100, stats.luck + 1); },
+      () => { stats.reputation   = Math.min(100, stats.reputation + 8); stats.documents = Math.min(100, stats.documents + 3); },
       () => { stats.charisma     = Math.min(100, stats.charisma + 6); },
       () => { stats.finances     += 300; },
-      () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); },
-      () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); },
+      () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); stats.luck = Math.min(100, stats.luck + 2); },
+      () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); stats.documents = Math.min(100, stats.documents + 5); },
       () => { stats.englishLang  = Math.min(100, stats.englishLang + 8); },
+      () => { stats.militaryExp  = Math.min(100, stats.militaryExp + 8); stats.luck = Math.min(100, stats.luck + 6); stats.reputation = Math.min(100, stats.reputation + 4); },
+      () => { stats.documents    = Math.min(100, stats.documents + 15); stats.reputation = Math.min(100, stats.reputation + 5); stats.stress = Math.max(0, stats.stress - 8); },
     ];
     if (map[this.type]) map[this.type]();
     // Also update extStats sub-parameters
@@ -1604,6 +1707,8 @@ const QuestSystem = {
         case 'business':
           q.progress = (p.stats.finances >= 5000 && p.stats.reputation >= 70) ? 1 : 0;
           break;
+        case 'documents':  q.progress = p.stats.documents || 0; break;
+        case 'luck':       q.progress = p.stats.luck || 0; break;
       }
       if (q.progress >= q.target && !q.done) {
         q.done = true;
@@ -1637,33 +1742,38 @@ const UISystem = {
 
     // Semi-transparent HUD panel
     ctx.fillStyle = 'rgba(5,10,20,0.78)';
-    ctx.fillRect(0, 0, CFG.CANVAS_W, 52);
+    ctx.fillRect(0, 0, CFG.CANVAS_W, 70);
 
     // Health bar
-    UISystem.drawBar(ctx, 8,  8, 80, 11, s.health,      100, '#e74c3c', `❤ ${s.health}`);
+    UISystem.drawBar(ctx, 8,  6, 80, 10, s.health,      100, '#e74c3c', `❤ ${s.health}`);
     // Stress bar (lower = better, shown as inverted)
-    UISystem.drawBar(ctx, 98, 8, 70, 11, 100 - s.stress, 100, '#f39c12', `😌 ${100-s.stress}%`);
+    UISystem.drawBar(ctx, 98, 6, 70, 10, 100 - s.stress, 100, '#f39c12', `😌 ${100-s.stress}%`);
     // Mental health bar
-    UISystem.drawBar(ctx, 8, 26, 80, 11, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
+    UISystem.drawBar(ctx, 8, 20, 80, 10, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
     // Polish language bar
-    UISystem.drawBar(ctx, 98, 26, 70, 11, s.polishLang,  100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
+    UISystem.drawBar(ctx, 98, 20, 70, 10, s.polishLang,  100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
+    // Luck bar
+    UISystem.drawBar(ctx, 8,  34, 80, 10, s.luck || 0,   100, '#f0c040', `🍀 ${s.luck || 0}`);
+    // Documents bar
+    UISystem.drawBar(ctx, 98, 34, 70, 10, s.documents || 0, 100, '#20c090', `📄 ${s.documents || 0}%`);
 
     // Finances
     ctx.fillStyle = '#00e5a0';
     ctx.font = 'bold 13px sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText(`💰 ${s.finances.toLocaleString('pl-PL')} PLN`, 182, 20);
+    ctx.fillText(`💰 ${s.finances.toLocaleString('pl-PL')} PLN`, 182, 18);
 
     // Reputation
     ctx.fillStyle = '#ffd700';
-    ctx.fillText(`⭐ Реп: ${s.reputation}`, 182, 40);
+    ctx.fillText(`⭐ Реп: ${s.reputation}`, 182, 34);
 
     // Stats summary (right side)
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
     ctx.font = '10px sans-serif';
     ctx.textAlign = 'right';
-    ctx.fillText(`INT:${s.intelligence} STR:${s.strength} CHR:${s.charisma} EN:${s.englishLang}`, CFG.CANVAS_W - 8, 18);
-    ctx.fillText(`MilXP:${s.militaryExp} CivXP:${s.civilExp} Quests:${questsDone}`, CFG.CANVAS_W - 8, 34);
+    ctx.fillText(`INT:${s.intelligence} STR:${s.strength} CHR:${s.charisma} EN:${s.englishLang}`, CFG.CANVAS_W - 8, 16);
+    ctx.fillText(`MilXP:${s.militaryExp} CivXP:${s.civilExp} Quests:${questsDone}`, CFG.CANVAS_W - 8, 30);
+    ctx.fillText(`Удача:${s.luck || 0} Документи:${s.documents || 0}`, CFG.CANVAS_W - 8, 44);
 
     // Extended stats highlights (top right, compact)
     const ext = player.extStats;
@@ -1671,20 +1781,20 @@ const UISystem = {
       ctx.fillStyle = 'rgba(0,229,160,0.75)';
       ctx.font = '9px sans-serif';
       const highlights = StatsSystem.getTopHighlights(ext);
-      if (highlights) ctx.fillText(highlights, CFG.CANVAS_W - 8, 46);
+      if (highlights) ctx.fillText(highlights, CFG.CANVAS_W - 8, 56);
     }
 
     // Economy demand indicators
     ctx.font = '9px sans-serif';
     ctx.textAlign = 'right';
     ctx.fillStyle = '#aaa';
-    ctx.fillText(`IT:${Math.round(economySystem.getDemand(0))}% 🏭:${Math.round(economySystem.getDemand(1))}% 🚀:${Math.round(economySystem.getDemand(2))}%`, CFG.CANVAS_W - 8, 56);
+    ctx.fillText(`IT:${Math.round(economySystem.getDemand(0))}% 🏭:${Math.round(economySystem.getDemand(1))}% 🚀:${Math.round(economySystem.getDemand(2))}%`, CFG.CANVAS_W - 8, 66);
 
     // Quests shortcut hint
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '9px sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText('[Q] квести  [ESC] пауза  [S] зберегти', 8, 52);
+    ctx.fillText('[Q] квести  [ESC] пауза  [S] зберегти', 8, 58);
 
     ctx.restore();
   },
@@ -1744,7 +1854,7 @@ const UISystem = {
       ctx.fillStyle = 'rgba(255,255,255,0.45)';
       ctx.font = '11px sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText('[E / Enter] продовжити', bx + bw - 10, by + bh - 8);
+      ctx.fillText('[E / Enter] або 👆 продовжити', bx + bw - 10, by + bh - 8);
     }
 
     ctx.restore();
@@ -1789,9 +1899,12 @@ const UISystem = {
     ctx.textAlign = 'center';
     ctx.fillText('⏸ ПАУЗА', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 30);
     ctx.font = '18px sans-serif';
-    ctx.fillText('[ESC] — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    ctx.fillText('[ESC] або кнопка ⏸ — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
     ctx.fillText('[S] — зберегти прогрес', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 40);
     ctx.fillText('[R] — нова гра', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 70);
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('👆 Торкніться екрана щоб продовжити', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 110);
     ctx.restore();
   },
 
@@ -1824,7 +1937,10 @@ const UISystem = {
 
     ctx.fillStyle = '#ffd700';
     ctx.font = 'bold 20px sans-serif';
-    ctx.fillText('Натисніть ПРОБІЛ або ENTER щоб почати', CFG.CANVAS_W / 2, 290);
+    ctx.fillText('Натисніть ПРОБІЛ або торкніться екрана', CFG.CANVAS_W / 2, 285);
+    ctx.font = '16px sans-serif';
+    ctx.fillStyle = 'rgba(255,215,0,0.8)';
+    ctx.fillText('щоб почати гру', CFG.CANVAS_W / 2, 310);
 
     const hasSave = !!SaveSystem.load();
     if (hasSave) {
@@ -1868,7 +1984,7 @@ const UISystem = {
 
     ctx.fillStyle = '#00a67e';
     ctx.font = 'bold 18px sans-serif';
-    ctx.fillText('[R] — Грати знову  |  [ESC] — Пауза', CFG.CANVAS_W / 2, CFG.CANVAS_H - 50);
+    ctx.fillText('[R] — Грати знову  |  👆 Торкніться щоб почати знову', CFG.CANVAS_W / 2, CFG.CANVAS_H - 50);
     ctx.restore();
   },
 
@@ -1920,7 +2036,7 @@ const UISystem = {
 
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '11px sans-serif';
-    ctx.fillText('[A] вибрати перший  [B] вибрати другий', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45);
+    ctx.fillText('[A] / 👈 ліворуч  |  [B] / 👉 праворуч', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45);
     ctx.restore();
   },
 
@@ -2076,6 +2192,96 @@ class GameEngine {
       const mapped = keyMap2[e.code];
       if (mapped && mapped in this.input) this.input[mapped] = false;
     });
+
+    // Bind touch controls on touch-capable devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+      this._bindTouchControls();
+    }
+  }
+
+  _bindTouchControls() {
+    const overlay = document.getElementById('touch-controls');
+    if (!overlay) return;
+    overlay.classList.add('active');
+
+    // Helper to create a button
+    const mkBtn = (id, html) => {
+      const btn = document.createElement('button');
+      btn.id = id;
+      btn.className = 'touch-btn';
+      btn.innerHTML = html;
+      overlay.appendChild(btn);
+      return btn;
+    };
+
+    const btnLeft     = mkBtn('btn-left',     '◀');
+    const btnRight    = mkBtn('btn-right',    '▶');
+    const btnJump     = mkBtn('btn-jump',     '↑');
+    const btnInteract = mkBtn('btn-interact', 'E');
+    const btnQuest    = mkBtn('btn-quest',    'Q');
+    const btnPause    = mkBtn('btn-pause',    '⏸');
+
+    // D-pad: track each touch by identifier so multi-touch works
+    const setKey = (key, val) => { this.input[key] = val; };
+
+    const bindDpad = (btn, key) => {
+      btn.addEventListener('touchstart', (e) => { e.preventDefault(); setKey(key, true); }, {passive: false});
+      btn.addEventListener('touchend',   (e) => { e.preventDefault(); setKey(key, false); }, {passive: false});
+      btn.addEventListener('touchcancel',(e) => { e.preventDefault(); setKey(key, false); }, {passive: false});
+    };
+    bindDpad(btnLeft,  'left');
+    bindDpad(btnRight, 'right');
+
+    btnJump.addEventListener('touchstart', (e) => { e.preventDefault(); this.input.jump = true; }, {passive: false});
+    btnJump.addEventListener('touchend',   (e) => { e.preventDefault(); }, {passive: false});
+
+    btnInteract.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      if (this.state === 'dialogue') {
+        this._advanceDialogue();
+      } else if (this.state === 'moralChoice') {
+        this._handleMoralKeyA();
+      } else {
+        this.input.interact = true;
+        setTimeout(() => { this.input.interact = false; }, 120);
+      }
+    }, {passive: false});
+
+    btnQuest.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      if (this.state === 'playing') this.questLogVisible = !this.questLogVisible;
+    }, {passive: false});
+
+    btnPause.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      this._handleEscape();
+    }, {passive: false});
+
+    // Canvas tap handler for overlay states (start, dialogue, moral choice, ending, paused)
+    this.canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      const touch = e.changedTouches[0];
+      const rect = this.canvas.getBoundingClientRect();
+      const scaleX = CFG.CANVAS_W / rect.width;
+      const scaleY = CFG.CANVAS_H / rect.height;
+      const cx = (touch.clientX - rect.left) * scaleX;
+      const cy = (touch.clientY - rect.top) * scaleY;
+
+      if (this.state === 'start') {
+        this.state = 'playing';
+      } else if (this.state === 'dialogue') {
+        this._advanceDialogue();
+      } else if (this.state === 'moralChoice') {
+        // Left half → choice A, right half → choice B
+        if (cx < CFG.CANVAS_W / 2) this._handleMoralKeyA();
+        else this._handleMoralKeyB();
+      } else if (this.state === 'ending') {
+        this._initWorld();
+      } else if (this.state === 'paused') {
+        // Tap anywhere on paused canvas resumes
+        this._handleEscape();
+      }
+    }, {passive: false});
   }
 
   _handleEscape() {
@@ -2367,7 +2573,7 @@ class GameEngine {
       this._notify(`🤝 Зустріли ветерана: ${npc.name}`, 120);
     }
     const text = DialogueSystem.buildNPCDialogue(npc.type, this.player.stats, this.veteransMet);
-    const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач'];
+    const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач', 'Юрист'];
     this.dialogue = {
       visible: true,
       speaker: `${npc.name} (${typeNames[npc.type] || 'NPC'})`,
@@ -2378,6 +2584,12 @@ class GameEngine {
         if (npc.type === 2) {
           this.player.stats.polishLang = Math.min(100, this.player.stats.polishLang + 5);
           this._notify('👨‍🏫 Урок польської: +5 до знань!', 100);
+        }
+        // Lawyer gives documents bonus
+        if (npc.type === 3) {
+          this.player.stats.documents = Math.min(100, this.player.stats.documents + 10);
+          this.player.stats.stress = Math.max(0, this.player.stats.stress - 5);
+          this._notify('⚖️ Юрист: +10 до документів!', 100);
         }
         this.dialogue.visible = false;
         this.state = 'playing';
