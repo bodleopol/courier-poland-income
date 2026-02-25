@@ -2850,10 +2850,20 @@ class GameEngine {
   _checkEnemyCollisions() {
     const p = this.player;
     const enemyMult = getDifficultyPreset().enemyMult;
-    if (p.invincible > 0) return;
 
     for (const e of this.enemies) {
       if (!e.alive) continue;
+      const touchingEnemy = Physics.rectOverlap(p.x, p.y, p.w, p.h, e.x, e.y, e.w, e.h);
+      if (touchingEnemy && p.vy > 0 && p.y + p.h <= e.y + 14) {
+        e.alive = false;
+        e.projectiles = [];
+        p.vy = CFG.JUMP_FORCE * 0.55;
+        p.stats.experience = (p.stats.experience || 0) + Math.round(CFG.XP_PER_COLLECT * getDifficultyPreset().xpMult);
+        this._notify('⚔️ Ворога знищено! +XP', 70);
+        continue;
+      }
+
+      if (p.invincible > 0) continue;
 
       // Check projectile collision
       for (const pr of e.projectiles) {
@@ -2866,7 +2876,7 @@ class GameEngine {
         }
       }
 
-      if (!Physics.rectOverlap(p.x, p.y, p.w, p.h, e.x, e.y, e.w, e.h)) continue;
+      if (!touchingEnemy) continue;
 
       p.invincible = 80;
       switch (e.type) {
