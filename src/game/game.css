@@ -2,6 +2,29 @@
     .game-hero { text-align: center; padding: 1.5rem 0 1rem; }
     .game-hero h1 { font-size: 2rem; margin-bottom: 0.4rem; }
     .game-hero p { color: var(--color-secondary,#64748b); font-size: 1rem; }
+    .game-promo {
+      max-width: 920px;
+      margin: 0 auto 1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0,166,126,0.4);
+      background: linear-gradient(120deg, rgba(6,18,38,0.94), rgba(5,36,45,0.92));
+      box-shadow: 0 10px 28px rgba(2, 8, 23, 0.3);
+      color: #e2e8f0;
+    }
+    .game-promo-tabs { display: flex; gap: 0.5rem; margin-bottom: 0.55rem; }
+    .game-promo-tab {
+      border: 1px solid rgba(148,163,184,0.45);
+      background: rgba(10,15,25,0.65);
+      color: #cbd5e1;
+      border-radius: 999px;
+      padding: 0.25rem 0.6rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .game-promo-tab.is-active { border-color: #00e5a0; color: #fff; background: rgba(0,166,126,0.25); }
+    .game-promo-text { display: none; margin: 0; font-size: 0.9rem; line-height: 1.45; }
+    .game-promo-text.is-active { display: block; }
     #game-container {
       position: relative;
       width: 100%;
@@ -89,6 +112,7 @@
       .game-info-grid { grid-template-columns: 1fr; }
       .game-hero h1 { font-size: 1.5rem; }
       .game-settings { grid-template-columns: 1fr; }
+      .game-promo { padding: 0.8rem; }
     }
 
     /* ── Fullscreen toggle button ──────────────────────────── */

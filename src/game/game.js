@@ -1098,6 +1098,8 @@ const StatsSystem = {
     }; // end extStats — 2027 keys across 33 categories
     // Extra dynamic parameters (100) for deeper progression variability
     for (let i = 1; i <= 100; i++) ext[`careerSignal${i}`] = 20 + (i % 25);
+    // Additional mastery tracks (300) for long-form progression depth
+    for (let i = 1; i <= 300; i++) ext[`masteryTrack${i}`] = 10 + (i % 40);
     return ext;
   },
 
@@ -1139,6 +1141,9 @@ const StatsSystem = {
     let careerSignalScore = 0;
     for (let i = 1; i <= 100; i++) careerSignalScore += (extStats[`careerSignal${i}`] || 0);
     bonus += (careerSignalScore / 100) * 0.02;
+    let masteryScore = 0;
+    for (let i = 1; i <= 300; i++) masteryScore += (extStats[`masteryTrack${i}`] || 0);
+    bonus += (masteryScore / 300) * 0.015;
     bonus += (extStats.anxiety > 60 ? -extStats.anxiety * 0.05 : 0);
     bonus += (extStats.ptsdLevel > 50 ? -extStats.ptsdLevel * 0.03 : 0);
     return Math.min(20, Math.max(-15, Math.round(bonus)));
@@ -1260,6 +1265,8 @@ const StatsSystem = {
     if (extStats.resumeQuality > 30) h.push(`CV:${Math.round(extStats.resumeQuality)}`);
     if (extStats.stamina > 50) h.push(`Витривалість:${Math.round(extStats.stamina)}`);
     if (extStats.networkSize > 5) h.push(`Мережа:${Math.round(extStats.networkSize)}`);
+    const mt = extStats.masteryTrack1 || 0;
+    if (mt > 20) h.push(`Mastery:${Math.round(mt)}`);
     return h.slice(0, 4).join(' · ');
   },
 };
@@ -1550,6 +1557,12 @@ class Player extends Entity {
       ctx.restore(); return;
     }
 
+    // Shadow
+    ctx.fillStyle = 'rgba(0,0,0,0.28)';
+    ctx.beginPath();
+    ctx.ellipse(px + this.w / 2, py + this.h + 3, this.w * 0.55, 5, 0, 0, Math.PI * 2);
+    ctx.fill();
+
     // Body
     ctx.fillStyle = '#2d5a27'; // dark green (military uniform)
     ctx.fillRect(px, py + 8, this.w, this.h - 8);
@@ -1561,6 +1574,10 @@ class Player extends Entity {
     // Beret
     ctx.fillStyle = '#1a3a1a';
     ctx.fillRect(px + 2, py - 4, this.w - 4, 8);
+
+    // Backpack
+    ctx.fillStyle = '#314a2a';
+    ctx.fillRect(px + (this.facingRight ? 1 : this.w - 7), py + 11, 6, 14);
 
     // Eyes
     ctx.fillStyle = '#222';
@@ -1578,6 +1595,11 @@ class Player extends Entity {
       ctx.fillStyle = 'rgba(150,100,255,0.3)';
       ctx.fillRect(px, py, this.w, this.h);
     }
+
+    // Character outline
+    ctx.strokeStyle = 'rgba(0,0,0,0.4)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(px + 0.5, py + 0.5, this.w - 1, this.h - 1);
 
     ctx.restore();
   }
@@ -2269,6 +2291,31 @@ const UISystem = {
       const bx2 = (i * 380 - px2 % 380 + 380) % (CFG.CANVAS_W + 200) - 100;
       const bh2 = 80 + (i * 37) % 100;
       ctx.fillRect(bx2, CFG.GROUND_Y - bh2, 60 + (i * 23) % 80, bh2);
+    }
+
+    // Atmospheric glow layers by level
+    if (levelNum === 1) {
+      ctx.fillStyle = 'rgba(120,180,255,0.08)';
+      ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H * 0.7);
+    } else if (levelNum === 2) {
+      ctx.fillStyle = 'rgba(255,170,80,0.08)';
+      ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H * 0.7);
+    } else {
+      ctx.fillStyle = 'rgba(120,255,200,0.08)';
+      ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H * 0.7);
+    }
+
+    // Moving clouds for richer scene depth
+    ctx.fillStyle = 'rgba(255,255,255,0.12)';
+    const cloudSpeed = 0.08 + (levelNum || 1) * 0.01;
+    for (let i = 0; i < 7; i++) {
+      const cx = ((i * 210 - (camX * cloudSpeed)) % (CFG.CANVAS_W + 260)) - 130;
+      const cy = 58 + (i % 3) * 34;
+      ctx.beginPath();
+      ctx.ellipse(cx + 36, cy + 14, 34, 13, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx + 66, cy + 12, 27, 11, 0, 0, Math.PI * 2);
+      ctx.ellipse(cx + 18, cy + 17, 22, 10, 0, 0, Math.PI * 2);
+      ctx.fill();
     }
 
     // Ground
@@ -3026,6 +3073,18 @@ class GameEngine {
 function initGame() {
   const canvas = document.getElementById('gameCanvas');
   if (!canvas) return;
+  const promoTabs = Array.from(document.querySelectorAll('[data-promo-lang]'));
+  const promoTexts = Array.from(document.querySelectorAll('[data-promo-text]'));
+  const applyPromoLang = (lang) => {
+    promoTabs.forEach((b) => b.classList.toggle('is-active', b.dataset.promoLang === lang));
+    promoTexts.forEach((p) => p.classList.toggle('is-active', p.dataset.promoText === lang));
+  };
+  if (promoTabs.length && promoTexts.length) {
+    promoTabs.forEach((btn) => btn.addEventListener('click', () => applyPromoLang(btn.dataset.promoLang || 'ua')));
+    const htmlLang = (document.documentElement.lang || 'uk').toLowerCase();
+    const initialPromoLang = htmlLang.startsWith('pl') ? 'pl' : htmlLang.startsWith('ru') ? 'ru' : 'ua';
+    applyPromoLang(initialPromoLang);
+  }
 
   // Scale canvas responsively
   function resizeCanvas() {
