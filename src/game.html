@@ -9,7 +9,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
   <!-- End Google Tag Manager -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Шлях Ветерана — Пошук роботи в Польщі | Rybezh Game</title>
   <meta name="description" content="Безкоштовна 2D браузерна гра: зіграйте за українського ветерана, який шукає роботу у Польщі. Унікальний геймплей з діалогами, квестами та моральними виборами.">
   <link rel="canonical" href="https://rybezh.site/game.html">
@@ -134,25 +134,40 @@
       position: fixed !important;
       top: 0 !important; left: 0 !important;
       width: 100vw !important;
-      height: calc(100vh - 80px) !important; /* leave room for controls */
+      /* iOS-safe height: fill available minus controls bar */
+      height: calc(100vh - 80px) !important;
+      height: calc(100dvh - 80px) !important; /* dvh = dynamic viewport on iOS 15.4+ */
       max-width: 100vw !important;
       border-radius: 0 !important;
       margin: 0 !important;
       z-index: 9000;
     }
-    body.game-fs #gameCanvas { width: 100% !important; height: 100% !important; object-fit: contain; }
+    /* Canvas fills container; height:auto removed so it stretches */
+    body.game-fs #gameCanvas { width: 100% !important; height: 100% !important; }
     body.game-fs .mobile-controls {
       position: fixed !important;
       bottom: 0 !important; left: 0 !important; right: 0 !important;
-      height: 80px;
+      /* Account for iOS home indicator */
+      height: calc(80px + env(safe-area-inset-bottom, 0px));
+      padding-bottom: env(safe-area-inset-bottom, 0px);
       margin: 0 !important;
       border-radius: 0 !important;
       max-width: 100vw !important;
       z-index: 9001;
-      padding: 8px 12px;
+      padding-left: max(12px, env(safe-area-inset-left, 12px));
+      padding-right: max(12px, env(safe-area-inset-right, 12px));
+      padding-top: 8px;
       background: rgba(5,10,20,0.92) !important;
+      box-sizing: border-box;
     }
-    body.game-fs #fs-btn { top: 4px; right: 4px; }
+    body.game-fs #fs-btn { top: max(4px, env(safe-area-inset-top, 4px)); right: 4px; }
+    /* Landscape on small screens: shrink controls bar */
+    @media (max-height: 500px) and (pointer: coarse) {
+      body.game-fs #game-container { height: calc(100dvh - 60px) !important; }
+      body.game-fs .mobile-controls { height: 60px; }
+      .mc-btn { width: 44px !important; height: 44px !important; font-size: 1.1rem !important; }
+      .mc-btn-jump { width: 52px !important; height: 52px !important; }
+    }
 
     /* ── Mobile on-screen controls ─────────────────────────── */
     .mobile-controls {
@@ -1124,7 +1139,367 @@ const StatsSystem = {
       acceleratorApplied: 0, acceleratorAccepted: 0,equipmentOwned: 0,
       officeSpaceAccess: 0,  businessRegistered: 0, vatRegistered: 0,
 
-    }; // end extStats — 1003 keys across 16 categories
+      /* ── EDUCATION & ACADEMIC (80 params) ──────────────────── */
+      primarySchoolGrade: 85,    secondarySchoolGrade: 78, universityGPA: 3.2,
+      mastersDegree: 0,          phdDegree: 0,             mbaCompleted: 0,
+      vocationalCert: 0,         onlineCertCount: 2,       moocCoursesFinished: 1,
+      libraryVisitsPerYear: 4,   booksReadPerYear: 6,      academicPublications: 0,
+      scholarshipsWon: 0,        tutorExperience: 0,       teachingAssistant: 0,
+      researchSkill: 25,         academicWriting: 30,      citationScore: 0,
+      dissertationStarted: 0,    dissertationDone: 0,      academicNetworkSize: 5,
+      peerReviewDone: 0,         conferenceAttended: 0,    conferencePresented: 0,
+      mathSkill: 55,             statisticsKnow: 35,       physicsKnow: 30,
+      chemistryKnow: 20,         biologyKnow: 25,          historyKnow: 60,
+      geographyKnow: 50,         philosophyKnow: 35,       economicsKnow: 40,
+      lawBasicsKnow: 30,         psychologyKnow: 45,       sociologyKnow: 35,
+      artHistoryKnow: 20,        musicTheoryKnow: 15,      literatureAppreciation: 40,
+      foreignLangCoursesDone: 2, continuousLearningScore: 50, e_learningHours: 120,
+      certificationPMP: 0,       certificationISO: 0,      certificationHR: 0,
+      certificationFinance: 0,   certificationLaw: 0,      educationGoalClarity: 55,
+      studyGroupParticipation: 1, onlineLearningAdaptability: 60, seminarsDone: 3,
+      workshopsAttended: 4,      mentoringReceived: 1,     coachingSessionsDone: 0,
+      selfImprovementScore: 55,  knowledgeRetentionScore: 60, criticalReadingScore: 50,
+      educationDebt: 0,          scholarshipAmountTotal: 0, educationSatisfaction: 65,
+      lifeLongLearningIndex: 55, alumniNetworkSize: 8,     gradeImprovementTrend: 0,
+
+      /* ── COOKING & NUTRITION (70 params) ────────────────────── */
+      cookingSkillLevel: 45,     recipesKnown: 30,         cuisinesKnown: 4,
+      mealPrepTime: 30,          kitchenEquipOwned: 6,     bakingSkill: 20,
+      bbqSkill: 35,              veganCookingKnow: 10,     rawFoodKnow: 5,
+      fermentationKnow: 10,      picklingKnow: 15,         canningKnow: 0,
+      nutritionKnowledge: 40,    calorieCountingSkill: 30, macroBalanceScore: 35,
+      hydrationHabit: 65,        breakfastFreq: 6,         lunchFreq: 6,
+      dinnerFreq: 7,             snackFreq: 3,             alcoholConsumption: 20,
+      caffeineIntake: 50,        sugarIntake: 55,          saltIntake: 50,
+      vegetableServingsDay: 2,   fruitServingsDay: 1,      proteinIntake: 60,
+      carbIntake: 60,            fatIntake: 45,            fiberIntake: 40,
+      supplementsUsed: 2,        waterLitersDay: 1.8,      foodBudgetPLN: 400,
+      groceryShoppingFreq: 2,    mealPlanningSkill: 35,    foodWasteAwareness: 45,
+      organicFoodPref: 20,       localFoodPref: 30,        cuisinePoland: 60,
+      cuisineUkraine: 75,        cuisineItaly: 40,         cuisineAsia: 30,
+      streetFoodExp: 40,         restaurantBudget: 100,    cookingForOthersFreq: 3,
+      foodPhotographyInterest: 15, recipeSharingOnline: 0, cookingClassAttended: 0,
+      kitchenCleanlinessScore: 70, foodSafetyKnow: 55,     allergyAwareness: 40,
+      diabeticDietKnow: 15,      heartHealthyDietKnow: 20, glutenFreeKnow: 15,
+      intermittentFastingExp: 0, ketoDietKnow: 10,         mediterraneanDietKnow: 20,
+      mealDeliveryUsed: 5,       homeMadeVsOrdered: 70,    cookingStressLevel: 25,
+      groceryListSkill: 55,      bulkCookingSkill: 30,     kitchenOrgSkill: 50,
+      seasoningKnowledge: 45,    knifeSkill: 40,           sauceMaking: 30,
+      soupMaking: 55,            pastaSkill: 45,           breadBakingSkill: 20,
+
+      /* ── LEGAL & ADMINISTRATIVE (80 params) ─────────────────── */
+      legalLiteracyScore: 30,    contractReadingSkill: 25, tenantRightsKnow: 20,
+      laborLawKnow: 35,          consumerRightsKnow: 30,   taxFilingSkill: 25,
+      businessLawKnow: 20,       criminalLawBasics: 15,    familyLawKnow: 10,
+      immigrationLawDetail: 20,  dataPrivacyKnow: 25,      gdprAwareness: 20,
+      copyrightKnow: 15,         propertyLawKnow: 15,      insuranceLawKnow: 20,
+      courtProcedureKnow: 10,    mediationKnow: 15,        arbitrationKnow: 10,
+      notaryExperience: 1,       powerOfAttorneyDone: 0,   willWritten: 0,
+      bankAccountsOwned: 1,      bankingDocsDone: 5,       taxReturnsDone: 2,
+      documentOrganisationScore: 45, documentScanDone: 30, documentBackupScore: 35,
+      officialFormsFilled: 15,   bureaucracyFrustration: 65, bureaucracySuccessRate: 55,
+      officialEmailsWritten: 8,  officialLettersWritten: 3, complaintsFiled: 1,
+      legalAidAccessed: 0,       lawyerConsulted: 0,       policeContactsPos: 0,
+      policeContactsNeg: 0,      courtAppearances: 0,      finesReceived: 0,
+      finesPaid: 0,              legalDebts: 0,            criminalRecordClean: 1,
+      backgroundCheckPassed: 1,  gdprConsentManaged: 1,    privacySettingsManaged: 1,
+      identityVerified: 1,       idDocumentsValid: 1,      passportValid: 1,
+      drivingLicenseValid: 0,    insurancePoliciesOwned: 1, vehicleRegistered: 0,
+      propertyOwned: 0,          mortgageKnow: 10,         rentalContractSigned: 1,
+      rentalDisputeExp: 0,       tenantProtectionKnow: 20, utilityContractsSigned: 2,
+      mobileContractSigned: 1,   internetContractSigned: 1, bankMandatesSetup: 2,
+      creditHistoryScore: 50,    debtCollectionExp: 0,     insolvencyKnow: 5,
+      euLawAwareness: 15,        internationalTreatyKnow: 5, humanRightsKnow: 25,
+      antiDiscriminationKnow: 30, whistleblowerKnow: 10,   corporateComplianceKnow: 10,
+      amlKnow: 5,                gdprTrainingDone: 0,      securityClearanceLevel: 0,
+
+      /* ── TRANSPORTATION & MOBILITY (70 params) ──────────────── */
+      drivingSkillScore: 45,     carOwned: 0,              motorcycleOwned: 0,
+      bicycleOwned: 1,           publicTransitSkill: 70,   navigationSkill: 60,
+      mapReadingSkill: 55,       gpsUsageSkill: 70,        publicTransitKnow: 65,
+      busRoutesKnown: 8,         tramRoutesKnown: 4,       subwayRoutesKnown: 2,
+      trainRoutesKnown: 5,       taxiUsageFreq: 2,         rideshareUsageFreq: 3,
+      cyclingDistanceKm: 5,      walkingDistanceKm: 3,     commuteDurationMin: 35,
+      commuteStressLevel: 45,    transportBudgetPLN: 150,  fuelCostKnow: 40,
+      carMaintenanceKnow: 25,    tirePressureChecks: 2,    oilChangeKnow: 15,
+      vehicleInspectionDue: 0,   parkingSkill: 55,         parallelParkingScore: 40,
+      highwayDrivingComfort: 50, nightDrivingComfort: 45,  weatherDrivingComfort: 40,
+      internationalDrivingExp: 10, truckDrivingLicense: 0, forkliftLicense: 0,
+      boatLicense: 0,            pilotLicense: 0,          droneFlightExp: 5,
+      flightFreqPerYear: 1,      airportNavigationSkill: 55, boardingPassDigital: 1,
+      luggagePackingSkill: 65,   customsKnow: 30,          borderCrossingExp: 5,
+      internationalTravelExp: 3, backpackingExp: 1,        hostelUsageExp: 3,
+      hotelBookingSkill: 60,     travelInsuranceUsed: 1,   visaApplicationExp: 2,
+      eTicketUsage: 1,           transitConnectionsManaged: 10, delayHandlingSkill: 55,
+      accessibilityAwareness: 35, lastMileNavigationSkill: 60, carSharingUsed: 2,
+      scooterRidingSkill: 30,    skateboardingSkill: 10,   rollerbladeSkill: 10,
+      hitchhikingExp: 2,         carpoolingExp: 3,         sustainableMobilityScore: 45,
+
+      /* ── COMMUNICATION & MEDIA (80 params) ──────────────────── */
+      publicSpeakingScore: 35,   presentationSkill: 40,    debatingSkill: 30,
+      persuasionScore: 45,       activeListeningScore: 55, feedbackGivingSkill: 50,
+      feedbackReceivingSkill: 55, conflictCommunicationSkill: 40, assertivenessScore: 45,
+      nonVerbalCommSkill: 50,    emailWritingScore: 60,    reportWritingScore: 45,
+      technicalWritingScore: 30, creativeWritingScore: 35, blogPostsWritten: 2,
+      socialMediaPosts: 150,     twitterFollowers: 80,     instagramFollowers: 120,
+      linkedinArticles: 1,       youtubeChannelSubs: 0,    podcastEpisodesRecorded: 0,
+      pressReleaseWritten: 0,    mediaCoverageReceived: 0, interviewGivenToMedia: 0,
+      photojournalismSkill: 10,  videoEditingBasic: 15,    podcastListeningHrsWeek: 3,
+      newsReadingFreq: 5,        mediaLiteracyScore: 55,   misinformationDetection: 50,
+      criticalMediaAnalysis: 45, advertisingAwareness: 60, prMediaSkill: 20,
+      brandVoiceConsistency: 30, audienceEngagementScore: 25, hashtagStrategy: 15,
+      contentCalendarUsed: 0,    seoBasicsKnow: 20,        analyticsToolsUsed: 1,
+      onlineCommunityBuilt: 0,   forumParticipation: 10,   redditActivity: 5,
+      discordMembership: 2,      telegramGroupsJoined: 8,  whatsappGroupsActive: 5,
+      zoomCallsPerWeek: 3,       teamsCallsPerWeek: 1,     videoCallSetupSkill: 65,
+      virtualEventAttended: 5,   webinarsConducted: 0,     liveChatSupport: 0,
+      customerServiceCommSkill: 45, escalationHandling: 35, diplomaticComm: 50,
+      crossCulturalCommScore: 45, interpreterExp: 5,       translationExp: 3,
+      translationToolsUsed: 3,   subtitleCreationExp: 0,   voiceoverExp: 0,
+      radioExp: 0,               tvAppearanceExp: 0,       stagePresenceScore: 30,
+      humorScore: 55,            storytellingScore: 50,    motivationalSpeakingScore: 25,
+      empathyCommunication: 60,  clearInstructionGiving: 55, meetingFacilitation: 35,
+
+      /* ── FAMILY & RELATIONSHIPS (60 params) ─────────────────── */
+      maritalStatus: 0,          partnerSupportLevel: 0,   childrenCount: 0,
+      parentingScore: 0,         elderCareResponsibility: 0, siblingCount: 1,
+      familyNetworkStrength: 55, familyConflictLevel: 20,  familyFinancialSupport: 10,
+      remittanceSentPLN: 0,      homesicknessLevel: 60,    longDistanceRelExp: 1,
+      videoCallFreqFamily: 3,    letterWrittenToFamily: 0, familyVisitsPerYear: 1,
+      familyEmergencyFund: 0,    childcareAccessScore: 0,  schoolEnrollmentHelp: 0,
+      familyCommunicationQuality: 60, divorceExp: 0,       griefProcessingScore: 40,
+      lossOfFriendship: 2,       socialIsolationRisk: 35,  lonelinessMeasure: 40,
+      friendshipNetworkSize: 12, closeFreindsCount: 3,     acquaintancesCount: 50,
+      newFriendshipsLastYear: 2, socialEventAttended: 8,   partyOrganised: 1,
+      weddingAttended: 2,        funeralAttended: 1,        birthdaysCelebrated: 5,
+      anniversaryCelebrated: 0,  holidayCelebrated: 4,     giftGivingScore: 55,
+      volunteerRelationshipHelp: 0, conflictResolutionFamilyScore: 45, supportGroupMembership: 0,
+      therapyRelationshipSessions: 0, petOwnership: 0,     petCareScore: 0,
+      animalLoveScore: 55,       neighborRelationsScore: 50, communityEventParticipation: 3,
+      workLifeBalanceScore: 40,  boundarySettingScore: 45, selfDisclosureComfort: 50,
+      emotionalIntelligenceScore: 55, empatheticListeningScore: 60, trustScore: 55,
+
+      /* ── CIVIC & COMMUNITY (70 params) ──────────────────────── */
+      votingParticipation: 0,    politicalAwarenessScore: 35, localGovKnow: 20,
+      taxCivicKnow: 25,          publicServiceUsage: 40,    socialBenefitsApplied: 1,
+      socialBenefitsReceived: 0, charityDonated: 0,         charityDonationsTotal: 0,
+      ngoMembership: 0,          volunteerHoursTotal: 10,   communityLeadershipScore: 20,
+      petitionSigned: 3,         protestParticipated: 0,    civilDisobedience: 0,
+      civicEducationScore: 30,   constitutionKnow: 20,      electoralSystemKnow: 25,
+      humanRightsActivism: 10,   environmentActivism: 15,   laborUnionMembership: 0,
+      laborRightsKnow: 30,       strikeParticipated: 0,     publicHearingAttended: 0,
+      municipalBudgetKnow: 10,   participatoryBudgeting: 0, citizenInitiative: 0,
+      neighborhoodAssocMember: 0, townHallAttended: 0,      officialComplaintFiled: 1,
+      ombudsmanContacted: 0,     parliamentVisited: 0,      govTransparencyAwareness: 30,
+      freedomOfSpeechScore: 70,  pressFreedornAwareness: 55, corruptionAwarenessScore: 45,
+      anticorruptionAction: 0,   whistleblowing: 0,         accountabilityScore: 50,
+      digitalCivicsScore: 40,    eGovernmentUsage: 25,      onlinePetitionsSigned: 5,
+      socialJusticeAwareness: 45, equalityScore: 55,        accessibilityAdvocacy: 20,
+      inclusivityScore: 55,      diversityAwareness: 50,    culturalSensitivity: 55,
+      antiRacismScore: 60,       peacefulConflictResolution: 55, internationalSolidarity: 50,
+      warRefugeeAwareness: 70,   disasterReliefParticipated: 0, firstAidCommunityDone: 1,
+      neighborhoodSafetyScore: 55, crimeReportingWill: 60,  trafficSafetyScore: 65,
+      environmentCleanUp: 1,     recyclingScore: 55,        wasteSegregationScore: 60,
+
+      /* ── CONSTRUCTION & DIY REPAIR (80 params) ──────────────── */
+      basicPlumbingKnow: 20,     advancedPlumbingKnow: 5,  basicElectricalKnow: 25,
+      advancedElectricalKnow: 5, paintingWallsSkill: 35,   wallpaperHangingSkill: 10,
+      tilingSkill: 15,           flooringInstallSkill: 20,  carpentryBasic: 20,
+      carpentryAdvanced: 5,      furnitureAssemblySkill: 65, ikEaAssemblyScore: 70,
+      drywallSkill: 10,          insulationInstallSkill: 10, roofingKnow: 5,
+      windowInstallKnow: 10,     doorInstallKnow: 15,      lockInstallKnow: 20,
+      cctvInstallKnow: 0,              alarmSystemInstall: 10,   hvacBasic: 10,
+      boilerMaintenanceKnow: 10, solarPanelKnow: 5,        rainwaterHarvestingKnow: 5,
+      gardeningBasic: 30,        gardeningAdvanced: 10,    lawnCareKnow: 20,
+      compostingKnow: 15,        treePruningKnow: 10,      vegetableGardeningExp: 10,
+      concreteWorkKnow: 10,      bricklayingKnow: 5,       scaffoldingKnow: 5,
+      weldingBasic: 5,           weldingAdvanced: 0,       metalworkKnow: 10,
+      woodworkKnow: 25,          printingKnow3d: 5,        laserCuttingKnow: 0,
+      cnckMachiningKnow: 0,      arduinoKnow: 5,           raspberryPiKnow: 5,
+      homeAutomationKnow: 10,    smarthomDevicesOwned: 0,  toolboxCompleteness: 50,
+      powerDrillOwned: 1,        circularSawOwned: 0,      jigsawOwned: 0,
+      measuringToolsKnow: 60,     levelToolKnow: 50,        safetyGearUsage: 55,
+      projectManagementDIY: 35,  budgetManagementDIY: 30,  materialCostEstimation: 25,
+      constructionCodeKnow: 10,  buildingPermitKnow: 10,   contractorManagement: 15,
+      architecturalDrawingKnow: 5, cadBasic: 0,            homeBlueprintReading: 15,
+      energyEfficiencyKnow: 30,  insulationValueKnow: 15,  greenBuildingKnow: 10,
+      wasteDisposalConstruction: 20, scaffoldSafety: 10,   heightWorkComfort: 35,
+      ropeWorkKnow: 20,          firstAidConstructionDone: 1, workInConfinedSpace: 10,
+      paintHazardAwareness: 25,  asbestosAwareness: 20,    chemicalHandlingSafety: 30,
+
+      /* ── VETERAN INTEGRATION POLAND (120 params) ─────────────── */
+      integrationProgramJoined: 0,   integrationCounselorMet: 0, vetOrganizationMember: 0,
+      vetNetworkContactsCount: 2,    polishVetCommunityKnow: 15, uaVetCommunityKnow: 40,
+      vetBenefitsKnow: 20,           vetBenefitsApplied: 0,      vetBenefitsReceived: 0,
+      militaryPensionStatus: 0,      veteranCardReceived: 0,     veteranStatusConfirmed: 0,
+      ptsdTreatmentStarted: 0,       ptsdTreatmentCompleted: 0,  traumaTherapySessions: 0,
+      groupTherapyParticipated: 0,   mentalhealthScreeningDone: 0, psychiatristConsulted: 0,
+      medicationForPtsd: 0,          stressManagementTechniques: 3, mindfulnessPractice: 10,
+      meditationFreqPerWeek: 1,      exerciseFreqPerWeek: 3,     sleepHoursAvg: 6.5,
+      nightmaresFreqWeek: 2,         hypervigilanceScore: 45,    flashbacksFreqWeek: 1,
+      avoidanceBehaviorScore: 35,    emotionalNumbScore: 30,     angerManagementScore: 40,
+      suicideRiskScreenDone: 0,      crisisHotlineKnow: 1,       emergencyContactSet: 1,
+      socialWorkerAssigned: 0,       housingBenefitApplied: 0,   housingBenefitReceived: 0,
+      temporaryHousingMonths: 0,     permanentHousingSecured: 1, housingQualityScore: 55,
+      housingCostBurdenScore: 60,    rentSubsidyKnow: 10,        communalLivingExp: 0,
+      communityKitchenUsed: 0,       foodBankVisited: 0,         warmingCenterVisited: 0,
+      familyReunificationProgress: 20, childrenEnrolledInSchool: 0, spouseJobSearchHelp: 0,
+      divorceRiskScore: 0,           familyTherapySessions: 0,   parentingCourseAttended: 0,
+      plLanguageCourseEnrolled: 0,   plLanguageCourseCompleted: 0, plLanguageExamPassed: 0,
+      plLangCourseHours: 0,          plLangCourseFunded: 0,      plLangCertificateLevel: 0,
+      retrainingCourseEnrolled: 0,   retrainingCourseCompleted: 0, retrainingSkillsGained: 0,
+      employmentOfficeRegistered: 0, urzadPracyVisited: 0,       jobCenterServicesUsed: 0,
+      profileInJobCenter: 0,         jobMatchingServiceUsed: 0,  cvCreatedWithHelp: 0,
+      interviewCoachingReceived: 0,  careerCounselorMet: 0,      vocationalTestDone: 0,
+      skillsAssessmentDone: 0,       jobTrialParticipated: 0,    internshipViaCenter: 0,
+      subsidizedEmployment: 0,       selfEmploymentSupport: 0,   businessGrantKnow: 0,
+      startupSupportProgramKnow: 10, startupSupportApplied: 0,   startupFunded: 0,
+      socialEnterpriseFounded: 0,    coopMembership: 0,          microfinanceAccessed: 0,
+      bankAccountOpenedPoland: 1,    zlotysOwned: 2000,          eurosSaved: 0,
+      moneyTransferAppUsed: 1,       fxRateAwareness: 55,        currencyExchangeExp: 3,
+      taxIdPolandRegistered: 0,      nipNumber: 0,               zusRegistered: 0,
+      zusContributionsPaid: 0,       healthInsuranceActive: 0,   nfzCardReceived: 0,
+      nfzDoctorVisited: 0,           specialistReferralDone: 0,  pharmacyPolandUsed: 1,
+      medicationRefillPoland: 0,     dentalCarePoland: 0,        eyeCarePoland: 0,
+      mentalHealthCarePoland: 0,     emergencyRoomVisited: 0,    ambulanceCalledPoland: 0,
+      polishHospitalExp: 0,          medicalTranslatorUsed: 0,   patientRightsKnow: 15,
+      culturalBarriersExperienced: 3, xenophobiaIncidentsExp: 0, discriminationReported: 0,
+      antiDiscriminationOrgKnow: 10, integrationEventAttended: 2, crossCulturalFriendships: 5,
+      polishFriendsMade: 2,          polishColleagueMade: 0,     polishNeighborMet: 3,
+      polishCultureCourseAttended: 0, polishHolidaysKnow: 6,     polishCuisineExplored: 8,
+      polishSportsInterest: 25,      polishMusicInterest: 20,    polishFilmInterest: 30,
+      polishLiteratureRead: 1,       polishNewsReadable: 0,      polishRadioListened: 5,
+      polishTVWatched: 15,           polishPodcastListened: 2,   socialMediaInPolish: 10,
+      polishComputerInterfaceUsed: 1, polishSmartphoneUsed: 1,   polishBankAppUsed: 1,
+
+      /* ── ECONOMY & LABOR MARKET (80 params) ─────────────────── */
+      polishLaborMarketKnow: 30,     avgSalaryPolandKnow: 35,   minWagePolandKnow: 40,
+      sectorSalaryComparison: 25,    salaryNegotiationAttempts: 1, salaryNegotiationSuccess: 0,
+      raisingRaisedSuccessfully: 0,  bonusReceived: 0,           benefitsPackageValue: 0,
+      stockOptionsKnow: 10,          equityCompensationKnow: 5,  profitSharingKnow: 10,
+      employmentContractSigned: 0,   contractTypeKnow: 35,       b2bContractKnow: 20,
+      umowaodzielo: 15,           umowazlecenia: 20,       uopKnow: 30,
+      workPermitPoland: 0,           kartyPolaka: 0,             blueCardEU: 0,
+      temporaryResidencePermit: 0,   permanentResidencePermit: 0, euCitizenshipProgress: 0,
+      jobSearchDurationKnow: 5,       jobOffersReceived: 0,       jobOffersRejected: 0,
+      jobOffersDeclined: 0,          jobOffersAccepted: 0,       employmentGapMonths: 6,
+      currentlyEmployed: 0,          employedPartTime: 0,        employedFullTime: 0,
+      selfEmployed: 0,               unemployedDays: 180,        unemploymentBenefit: 0,
+      activeJobSearchScore: 55,      cvAppliedCount: 10,           cvVersion: 2,
+      coverLetterScore: 35,          portfolioScore: 25,         githubProfileScore: 0,
+      linkedinProfileComplete: 45,   linkedinSearchable: 1,      linkedinRecommendations: 1,
+      jobBoardsUsed: 3,              recruitersContactedCount: 2, headhunterReached: 0,
+      referralJobOffer: 0,           insiderJobInfo: 1,          jobFairAttended: 1,
+      industryEventNetworking: 2,    professionalAssocMember: 0, tradeAssocMember: 0,
+      laborInspectionKnow: 20,       workplaceSafetyScore: 60,   harassmentPolicyKnow: 30,
+      whistleblowingProtectionKnow: 15, collectiveBargainingKnow: 10, strikeLegalityKnow: 10,
+      remoteWorkCapability: 40,      hybridWorkPreference: 60,   officeWorkPreference: 40,
+      overtimeWillingScore: 55,      shiftWorkWillingScore: 60,  weekendWorkWillingScore: 50,
+      nightShiftWillingScore: 45,    relocationWillingScore: 40, internationalWorkWilling: 35,
+
+      /* ── TECHNOLOGY & GADGETS (80 params) ───────────────────── */
+      smartphoneModelAge: 2,         smartphoneOsAndroid: 1,     smartphoneOsIos: 0,
+      appInstallFreq: 4,             appDeleteFreq: 2,           storageUsedGB: 45,
+      batteryHealthScore: 75,        phoneCaseOwned: 1,          screenProtectorOwned: 1,
+      bluetoothHeadphonesOwned: 1,   smartwatchOwned: 0,         fitnessTrackerOwned: 0,
+      tabletOwned: 0,                laptopOwned: 1,             desktopOwned: 0,
+      laptopAgeYears: 3,             ramGB: 8,                   storageGBLaptop: 256,
+      processorGeneration: 8,        gpuOwned: 0,                externalMonitorOwned: 0,
+      keyboardCustom: 0,             mouseErgonomic: 0,          webcamOwned: 1,
+      microphoneExternal: 0,         speakersOwned: 1,           printerOwned: 0,
+      scannerOwned: 0,               externalHDDOwned: 1,        cloudStorageUsedGB: 15,
+      cloudServicesSubs: 2,          streamingServicesSubs: 1,   musicStreamingSub: 1,
+      gamingConsoleOwned: 0,         gamesOwnedDigital: 5,       gamingHoursWeek: 3,
+      vrHeadsetOwned: 0,             arExperienceCount: 0,       iotDevicesOwned: 2,
+      smartHomeSpeaker: 0,           smartTVOwned: 1,            streamingContentKnow: 60,
+      vpnUsed: 0,                    passwordManagerUsed: 0,     twoFactorAuthEnabled: 1,
+      antivirusSoftwareActive: 1,    firewallConfigured: 1,      regularBackupSchedule: 0,
+      phishingAwareness: 50,         socialEngineeringAwareness: 45, cybersecurityTrainingDone: 0,
+      browserExtensionsCount: 4,     adBlockerUsed: 1,           darkModePreferred: 1,
+      accessibilityFeaturesUsed: 0,  screenRecordingKnow: 40,   screenShareSkill: 55,
+      fileCompressionKnow: 50,       fileFormatKnow: 60,         cloudSyncSetup: 1,
+      automationToolsUsed: 1,        spreadsheetSkill: 50,       wordProcessingSkill: 65,
+      presentationSoftwareSkill: 45, diagrammingToolsUsed: 1,   projectMgmtToolsUsed: 2,
+      timeTrackingToolsUsed: 0,      invoicingToolsUsed: 0,      crmKnow: 10,
+
+      /* ── ENVIRONMENT & ECO (50 params) ──────────────────────── */
+      carbonFootprintAwareness: 45,  personalCarbonFootprintKg: 5000, recyclingHabit: 60,
+      compostingActive: 0,           plasticUsageReduction: 35,  reusableBagUsed: 1,
+      reusableBottleUsed: 1,         reusableCupUsed: 0,        fastFashionAwareness: 40,
+      clothesRepaired: 3,            secondHandShoppingFreq: 2, energySavingHabits: 50,
+      lightBulbsLED: 4,             applianceEnergyRating: 55,  solarPanelInterest: 25,
+      electricVehicleInterest: 20,  publicTransitPreference: 65, cyclingForTransport: 3,
+      veganismInterest: 10,          vegetarianDaysPerWeek: 1,   localFoodChoices: 30,
+      foodMileAwareness: 35,         seasonalEatingScore: 30,    homeEnergyAuditDone: 0,
+      waterConservationHabits: 50,   gardenWaterRecycling: 0,   rainwaterCollection: 0,
+      eWasteDisposalScore: 40,       batteryRecycling: 55,       paperUsageReduction: 50,
+      officePaperless: 25,           digitalReceiptsUsed: 60,   ecoFriendlyProductPref: 35,
+      sustainableBrandSupport: 30,   greenCertifiedBuying: 15,  carbonOffsetPurchased: 0,
+      treesPlanted: 2,               parkCleanupDone: 1,        beachCleanupDone: 0,
+      nationalParkVisited: 3,        hikingTripsPerYear: 2,     birdwatchingExp: 0,
+      wildlifePhotographyExp: 0,     conservationDonation: 0,   ecoTourismExp: 0,
+      climateScienceKnow: 35,        climateAnxietyLevel: 30,   climateActionScore: 30,
+
+      /* ── ARTS & CULTURE (60 params) ─────────────────────────── */
+      paintingSkill: 15,             drawingSkill: 20,           sculptureSkill: 5,
+      photographySkill: 25,          filmMakingSkill: 10,        animationSkill: 5,
+      calligraphySkill: 10,          graffitSkill: 5,            streetArtInterest: 20,
+      theaterVisitsPerYear: 1,       operaVisitsPerYear: 0,      concertAttended: 3,
+      museumVisitsPerYear: 4,        galleryVisitsPerYear: 2,    culturalFestivalAttended: 2,
+      booksOwnedCount: 35,           eBooksOwned: 0,              audioBookHrsMonth: 4,
+      podcastGenresExplored: 4,      musicGenresEnjoyed: 5,      instrumentPlayed: 1,
+      instrumentPracticeHrWeek: 1,   singingSkill: 30,           dancingSkill: 25,
+      danceStylesKnown: 2,           actingSkill: 10,            improvTheatreExp: 0,
+      cinematographyInterest: 30,    filmReviewsWritten: 2,      bookReviewsWritten: 0,
+      literaryAnalysisSkill: 30,     poetryWritten: 3,           shortStoriesWritten: 1,
+      novelStarted: 0,               scriptWritten: 0,            gameNarrativeInterest: 25,
+      comicBookInterest: 20,         mangaRead: 5,               animeWatched: 3,
+      classicalMusicKnow: 15,        jazzKnow: 10,               folkMusicKnow: 30,
+      ukrainianMusicInterest: 65,    polishMusicInterest: 30,    worldMusicExplored: 15,
+      concertOrganizerExp: 0,        djSkill: 0,                  soundEngineeringKnow: 5,
+      studioRecordingExp: 0,         mixingKnow: 5,              masteringKnow: 0,
+
+      /* ── HEALTH & WELLNESS ADVANCED (60 params) ─────────────── */
+      meditationTechniqueCount: 2,    yogaSkillLevel: 10,        pilatesSkillLevel: 5,
+      breathworkKnow: 15,            coldExposureKnow: 10,       saunaFreqPerMonth: 2,
+      massageTherapyReceived: 1,      acupunctureExp: 0,          chiropracticExp: 0,
+      herbalMedicineKnow: 20,        aromatherapyKnow: 10,       homeopathyKnow: 5,
+      bloodTypeKnow: 1,              bloodPressureMonitored: 0,   bloodSugarMonitored: 0,
+      cholesterolMonitored: 0,       bmiScore: 24,               bodyFatPercentage: 22,
+      muscleGroupsStrengthened: 4,   mobilityRoutineDone: 0,     stretchingHabbit: 25,
+      jointHealthScore: 65,          backPainFreq: 3,             neckPainFreq: 2,
+      headacheFreqPerMonth: 4,       dentalHealthScore: 60,      eyeHealthScore: 70,
+      earHealthScore: 75,            skinHealthScore: 65,        hairHealthScore: 60,
+      nailHealthScore: 55,           gutHealthAwareness: 35,     probioticUsage: 0,
+      prebioticUsage: 0,             vitaminDKnow: 0,            vitaminB12Know: 0,
+      ironLevelsKnow: 0,             magnesiumKnow: 0,           zincKnow: 0,
+      omega3Intake: 0,               antioxidantFoodScore: 40,   antiInflammFoodScore: 35,
+      fastingExperience: 0,          detoxExperience: 0,         naturopathyExp: 0,
+      biohackingInterest: 10,        trackingAppsUsedCount: 1,   heartRateMonitored: 0,
+      vo2MaxKnow: 0,                 rhrBeatsPerMin: 68,         hrRecoveryScore: 55,
+      stressHormoneAwareness: 25,    cortisolManagement: 30,     adrenalFatigueAwareness: 15,
+      immuneBoostingHabits: 40,      vaccinationsUpToDate: 1,    allergyTestDone: 0,
+      foodIntoleranceKnow: 20,       environmentalAllergyKnow: 15, medicineInteractionKnow: 10,
+
+      /* ── PERSONAL FINANCE ADVANCED (50 params) ──────────────── */
+      monthlyBudgetWritten: 0,       budgetAppUsed: 0,           envelopeBudgeting: 0,
+      zeroBudgetingKnow: 10,         fiftyThirtyTwentyRule: 15,  financialGoalsSet: 0,
+      emergencyFundMonths: 0,        retirementSavingsStarted: 0, pensionSystemKnow: 15,
+      investmentAccountsOwned: 0,    stocksOwned: 0,             etfOwned: 0,
+      cryptoOwned: 0,                cryptoKnow: 20,             nftKnow: 5,
+      realEstateInvested: 0,         bondKnow: 10,               mutualFundKnow: 10,
+      indexFundKnow: 15,             roboAdvisorUsed: 0,         compoundInterestKnow: 40,
+      inflationAwareness: 50,        currencyHedgingKnow: 5,     forexTradingKnow: 5,
+      optionsKnow: 0,               futuresKnow: 0,              commoditiesKnow: 5,
+      financialAdvisorConsulted: 0,  taxOptimizationKnow: 10,    taxDeductionsKnow: 20,
+      lifeInsuranceOwned: 0,         healthInsuranceOwned: 0,    propertyInsuranceOwned: 0,
+      wealthGrowthRate: 0,           netWorthGrowthYearly: 0,    savingsRatePercent: 5,
+      debtToIncomeRatio: 0,          creditScorePoland: 0,       biKReportChecked: 0,
+      financialLiteracyScore: 30,    moneyMindsetScore: 40,      abundanceMindset: 35,
+      scarcityMindset: 55,           financialAnxiety: 50,       moneyConversationComfort: 30,
+      inheritanceExpected: 0,        financialIndependenceGoal: 0, fireMovementKnow: 10,
+
+    }; // end extStats — 2027 keys across 33 categories
   },
 
   /* --- Derive a bonus score from extStats for interview evaluation --- */
@@ -3053,10 +3428,13 @@ function initGame() {
     const isFs = document.body.classList.contains('game-fs') ||
                  !!(document.fullscreenElement || document.webkitFullscreenElement);
     if (isFs) {
-      // In fullscreen: fill full window width, leave room for controls bar
-      const ctrlH = 80;
-      const availH = window.innerHeight - ctrlH;
-      const availW = window.innerWidth;
+      // In fullscreen: fill full window, leave room for controls bar
+      // Use visualViewport height when available (avoids iOS address-bar issues)
+      const vvH = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+      const isLandscapeSmall = vvH < 500;
+      const ctrlH = isLandscapeSmall ? 60 : 80;
+      const availH = vvH - ctrlH;
+      const availW = (window.visualViewport && window.visualViewport.width) || window.innerWidth;
       const ratio   = CFG.CANVAS_W / CFG.CANVAS_H;
       let w = availW;
       let h = Math.round(w / ratio);
@@ -3072,6 +3450,10 @@ function initGame() {
   }
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
+  // iOS Safari fires visualViewport resize when address bar shows/hides
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', resizeCanvas);
+  }
   document.addEventListener('fullscreenchange', resizeCanvas);
   document.addEventListener('webkitfullscreenchange', resizeCanvas);
 
