@@ -496,6 +496,7 @@ const CFG = {
   XP_PER_NPC: 30,
 };
 const GAME_SETTINGS = { difficulty: 'normal', mobileScale: 1, haptics: true };
+const GAME_SETTINGS_KEY = 'veteran-path-runtime-settings';
 const DIFFICULTY_PRESETS = {
   easy:   { xpMult: 1.2, enemyMult: 0.8, drainMult: 0.85 },
   normal: { xpMult: 1,   enemyMult: 1,   drainMult: 1 },
@@ -3560,12 +3561,27 @@ function initGame() {
   const difficultyEl = document.getElementById('game-difficulty');
   const mobileScaleEl = document.getElementById('mobile-scale');
   const hapticsEl = document.getElementById('haptics-toggle');
+  try {
+    const saved = JSON.parse(localStorage.getItem(GAME_SETTINGS_KEY) || 'null');
+    if (saved) {
+      if (difficultyEl && typeof saved.difficulty === 'string') difficultyEl.value = saved.difficulty;
+      if (mobileScaleEl && Number.isFinite(saved.mobileScale)) mobileScaleEl.value = String(Math.round(saved.mobileScale * 100));
+      if (hapticsEl && typeof saved.haptics === 'boolean') hapticsEl.value = saved.haptics ? 'on' : 'off';
+    }
+  } catch (_) {}
   const applyRuntimeSettings = () => {
     GAME_SETTINGS.difficulty = (difficultyEl && difficultyEl.value) || 'normal';
     const scaleRaw = mobileScaleEl ? Number(mobileScaleEl.value) : 100;
     GAME_SETTINGS.mobileScale = Math.max(0.85, Math.min(1.3, scaleRaw / 100));
     GAME_SETTINGS.haptics = !hapticsEl || hapticsEl.value !== 'off';
     document.documentElement.style.setProperty('--mc-scale', String(GAME_SETTINGS.mobileScale));
+    try {
+      localStorage.setItem(GAME_SETTINGS_KEY, JSON.stringify({
+        difficulty: GAME_SETTINGS.difficulty,
+        mobileScale: GAME_SETTINGS.mobileScale,
+        haptics: GAME_SETTINGS.haptics,
+      }));
+    } catch (_) {}
   };
   applyRuntimeSettings();
   if (difficultyEl) difficultyEl.addEventListener('change', applyRuntimeSettings);
