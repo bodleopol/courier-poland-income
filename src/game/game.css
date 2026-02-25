@@ -72,6 +72,7 @@
       width: 100%;
       height: auto;
       touch-action: none;
+      image-rendering: auto;
     }
     .game-controls-hint {
       text-align: center;
@@ -228,10 +229,18 @@
       gap: 8px;
       user-select: none;
       -webkit-user-select: none;
+      position: sticky;
+      bottom: 0.35rem;
+      z-index: 30;
+      backdrop-filter: blur(8px);
     }
     @media (pointer: coarse), (max-width: 768px) {
       .mobile-controls { display: flex; }
-      .game-controls-hint { display: none; }
+      .game-controls-hint {
+        display: block;
+        margin: 0.5rem 0 0.9rem;
+        font-size: 0.75rem;
+      }
     }
     .mc-dpad { display: flex; gap: 8px; align-items: center; }
     .mc-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
@@ -240,7 +249,7 @@
       height: calc(54px * var(--mc-scale, 1));
       border: 2px solid rgba(0,166,126,0.7);
       border-radius: 12px;
-      background: rgba(10,10,26,0.85);
+      background: linear-gradient(180deg, rgba(26,36,62,0.95), rgba(10,10,26,0.92));
       color: #fff;
       font-size: calc(1.35rem * var(--mc-scale, 1));
       cursor: pointer;
@@ -250,11 +259,13 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: background 0.1s;
+      transition: background 0.1s, transform 0.08s;
+      box-shadow: 0 8px 16px rgba(2, 8, 23, 0.4);
     }
     .mc-btn:active, .mc-btn.mc-active {
       background: rgba(0,166,126,0.45);
       border-color: #00e5a0;
+      transform: translateY(1px) scale(0.98);
     }
     .mc-btn-jump {
       width: calc(64px * var(--mc-scale, 1));
@@ -279,4 +290,10 @@
       height: calc(44px * var(--mc-scale, 1));
       font-size: calc(1rem * var(--mc-scale, 1));
       border-color: rgba(150,150,150,0.6);
+    }
+    @media (max-width: 600px) {
+      .game-page { padding: 1rem 0.65rem; }
+      #game-container { border-radius: 10px; margin-bottom: 0.75rem; }
+      .mobile-controls { padding: 5px 6px; gap: 6px; border-radius: 10px; }
+      .mc-actions, .mc-dpad { gap: 6px; }
     }
