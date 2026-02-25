@@ -72,6 +72,8 @@
       width: 100%;
       height: auto;
       touch-action: none;
+      image-rendering: auto;
+      transition: opacity 0.3s ease;
     }
     .game-controls-hint {
       text-align: center;
@@ -90,6 +92,7 @@
       border: 1px solid rgba(0,166,126,0.35);
       border-radius: 12px;
       color: #e2e8f0;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .game-setting { display: grid; gap: 0.35rem; font-size: 0.8rem; }
     .game-setting label { font-weight: 700; color: #cbd5e1; }
@@ -157,6 +160,11 @@
       -webkit-tap-highlight-color: transparent;
       align-items: center;
       justify-content: center;
+      animation: fs-pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes fs-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(0, 229, 160, 0.2); }
+      50% { box-shadow: 0 0 0 7px rgba(0, 229, 160, 0.03); }
     }
     @media (pointer: coarse), (max-width: 768px) {
       #fs-btn { display: flex; }
@@ -228,10 +236,18 @@
       gap: 8px;
       user-select: none;
       -webkit-user-select: none;
+      position: sticky;
+      bottom: 0.35rem;
+      z-index: 30;
+      backdrop-filter: blur(8px);
     }
     @media (pointer: coarse), (max-width: 768px) {
       .mobile-controls { display: flex; }
-      .game-controls-hint { display: none; }
+      .game-controls-hint {
+        display: block;
+        margin: 0.5rem 0 0.9rem;
+        font-size: 0.75rem;
+      }
     }
     .mc-dpad { display: flex; gap: 8px; align-items: center; }
     .mc-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
@@ -240,7 +256,7 @@
       height: calc(54px * var(--mc-scale, 1));
       border: 2px solid rgba(0,166,126,0.7);
       border-radius: 12px;
-      background: rgba(10,10,26,0.85);
+      background: linear-gradient(180deg, rgba(26,36,62,0.95), rgba(10,10,26,0.92));
       color: #fff;
       font-size: calc(1.35rem * var(--mc-scale, 1));
       cursor: pointer;
@@ -250,11 +266,18 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: background 0.1s;
+      transition: background 0.1s, transform 0.08s;
+      box-shadow: 0 8px 16px rgba(2, 8, 23, 0.4);
     }
     .mc-btn:active, .mc-btn.mc-active {
       background: rgba(0,166,126,0.45);
       border-color: #00e5a0;
+      transform: translateY(1px) scale(0.96);
+      box-shadow: inset 0 3px 8px rgba(0,0,0,0.35);
+    }
+    .mc-btn:focus-visible {
+      outline: 2px solid rgba(255, 215, 0, 0.65);
+      outline-offset: 2px;
     }
     .mc-btn-jump {
       width: calc(64px * var(--mc-scale, 1));
@@ -279,4 +302,10 @@
       height: calc(44px * var(--mc-scale, 1));
       font-size: calc(1rem * var(--mc-scale, 1));
       border-color: rgba(150,150,150,0.6);
+    }
+    @media (max-width: 600px) {
+      .game-page { padding: 1rem 0.65rem; }
+      #game-container { border-radius: 10px; margin-bottom: 0.75rem; }
+      .mobile-controls { padding: 5px 6px; gap: 6px; border-radius: 10px; }
+      .mc-actions, .mc-dpad { gap: 6px; }
     }

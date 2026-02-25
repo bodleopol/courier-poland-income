@@ -1550,6 +1550,7 @@ class Player extends Entity {
   draw(ctx, camX) {
     const px = Math.round(this.x - camX);
     const py = Math.round(this.y);
+    const legSwing = Math.sin(this.animFrame * Math.PI / 2) * (Math.abs(this.vx) > 0.2 ? 2 : 0.6);
     ctx.save();
 
     // Flicker when invincible
@@ -1564,16 +1565,27 @@ class Player extends Entity {
     ctx.fill();
 
     // Body
-    ctx.fillStyle = '#2d5a27'; // dark green (military uniform)
+    const bodyGrad = ctx.createLinearGradient(px, py + 8, px, py + this.h);
+    bodyGrad.addColorStop(0, '#3f7d35');
+    bodyGrad.addColorStop(1, '#1d3b1a');
+    ctx.fillStyle = bodyGrad;
     ctx.fillRect(px, py + 8, this.w, this.h - 8);
+    // Legs (simple walk cycle)
+    ctx.fillStyle = '#182f16';
+    ctx.fillRect(px + 6, py + this.h - 12 + legSwing, 5, 12 - legSwing);
+    ctx.fillRect(px + this.w - 11, py + this.h - 12 - legSwing, 5, 12 + legSwing);
 
     // Head
     ctx.fillStyle = '#f0c080';
     ctx.fillRect(px + 4, py, this.w - 8, 16);
+    ctx.fillStyle = 'rgba(255,255,255,0.22)';
+    ctx.fillRect(px + 6, py + 1, this.w - 14, 4);
 
     // Beret
     ctx.fillStyle = '#1a3a1a';
     ctx.fillRect(px + 2, py - 4, this.w - 4, 8);
+    ctx.fillStyle = '#f7d046';
+    ctx.fillRect(px + (this.facingRight ? this.w - 8 : 4), py - 1, 3, 3);
 
     // Backpack
     ctx.fillStyle = '#314a2a';
@@ -1581,8 +1593,13 @@ class Player extends Entity {
 
     // Eyes
     ctx.fillStyle = '#222';
-    const eyeDir = this.facingRight ? 1 : -1;
     ctx.fillRect(px + (this.facingRight ? 14 : 6), py + 4, 3, 3);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(px + (this.facingRight ? 15 : 7), py + 4, 1, 1);
+    ctx.fillStyle = '#5b341c';
+    ctx.fillRect(px + 12, py + 11, 4, 1);
+    ctx.fillStyle = '#0ea5e9';
+    ctx.fillRect(px + 11, py + 16, 6, 6);
 
     // Stress indicator (red tint if high stress)
     if (this.stats.stress > 65) {
@@ -1677,13 +1694,20 @@ class Enemy extends Entity {
     const colors = ['#8b4513','#2e4057','#c0392b','#7f8c8d'];
     const icons  = ['👔','🎭','😡','📋'];
     ctx.save();
-    ctx.fillStyle = colors[this.type] || '#888';
+    const bodyGrad = ctx.createLinearGradient(px, py + 8, px, py + this.h);
+    bodyGrad.addColorStop(0, colors[this.type] || '#888');
+    bodyGrad.addColorStop(1, '#1f2937');
+    ctx.fillStyle = bodyGrad;
     ctx.fillRect(px, py + 8, this.w, this.h - 8);
     ctx.fillStyle = '#f0c080';
     ctx.fillRect(px + 4, py, this.w - 8, 14);
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    ctx.fillRect(px + 6, py + 1, this.w - 14, 3);
     ctx.font = '14px serif';
     ctx.textAlign = 'center';
     ctx.fillText(icons[this.type] || '?', px + this.w / 2, py + 12);
+    ctx.strokeStyle = 'rgba(0,0,0,0.45)';
+    ctx.strokeRect(px + 0.5, py + 0.5, this.w - 1, this.h - 1);
     // Stunned flash
     if (this.stunTimer > 0) {
       ctx.fillStyle = 'rgba(255,255,0,0.35)';
@@ -1717,7 +1741,10 @@ class NPC extends Entity {
     const colors = ['#2d5a27','#1a5f7a','#7a5c1a'];
     const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫'];
     ctx.save();
-    ctx.fillStyle = colors[this.type] || '#666';
+    const npcGrad = ctx.createLinearGradient(px, py + 10, px, py + this.h);
+    npcGrad.addColorStop(0, colors[this.type] || '#666');
+    npcGrad.addColorStop(1, '#1f2937');
+    ctx.fillStyle = npcGrad;
     ctx.fillRect(px, py + 10, this.w, this.h - 10);
     ctx.fillStyle = '#f0c080';
     ctx.fillRect(px + 3, py, this.w - 6, 16);
@@ -1730,6 +1757,11 @@ class NPC extends Entity {
     const npcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
     ctx.fillText(npcIsTouch ? '[E]' : '[E]', px + this.w / 2, py - 8);
     if (!this.talked) {
+      const glowAlpha = 0.07 + 0.05 * Math.sin(this.bobTimer * 0.08);
+      ctx.fillStyle = `rgba(0,166,126,${glowAlpha})`;
+      ctx.beginPath();
+      ctx.arc(px + this.w / 2, py + this.h / 2, this.w, 0, Math.PI * 2);
+      ctx.fill();
       // Pulsing indicator
       const alpha = 0.5 + 0.5 * Math.sin(this.bobTimer * 0.08);
       ctx.fillStyle = `rgba(0,166,126,${alpha})`;
@@ -2275,6 +2307,15 @@ const UISystem = {
     skyGrad.addColorStop(1, skyBot);
     ctx.fillStyle = skyGrad;
     ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+    // Soft sun / moon glow for richer background depth
+    const glowX = CFG.CANVAS_W - 110 - ((camX * 0.03) % 80);
+    const glow = ctx.createRadialGradient(glowX, 92, 8, glowX, 92, 84);
+    glow.addColorStop(0, levelNum === 2 ? 'rgba(255, 188, 120, 0.28)' : 'rgba(180, 220, 255, 0.24)');
+    glow.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(glowX, 92, 84, 0, Math.PI * 2);
+    ctx.fill();
 
     // Static stars (seeded pattern)
     ctx.fillStyle = 'rgba(255,255,255,0.6)';
@@ -3171,11 +3212,9 @@ function initGame() {
       }
     });
   }
-  if (window.matchMedia('(pointer: coarse), (max-width: 768px)').matches) {
-    document.body.classList.add('game-fs');
-    if (fsBtn) fsBtn.textContent = '✕';
-    resizeCanvas();
-  }
+  document.body.classList.add('game-fs');
+  if (fsBtn) fsBtn.textContent = '✕';
+  resizeCanvas();
 
   const difficultyEl = document.getElementById('game-difficulty');
   const mobileScaleEl = document.getElementById('mobile-scale');
