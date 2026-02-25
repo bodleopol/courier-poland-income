@@ -68,6 +68,29 @@
       margin-bottom: 1.5rem;
       line-height: 1.7;
     }
+    .game-settings {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem auto 1rem;
+      padding: 0.8rem;
+      background: rgba(7, 12, 24, 0.92);
+      border: 1px solid rgba(0,166,126,0.35);
+      border-radius: 12px;
+      color: #e2e8f0;
+    }
+    .game-setting { display: grid; gap: 0.35rem; font-size: 0.8rem; }
+    .game-setting label { font-weight: 700; color: #cbd5e1; }
+    .game-setting select,
+    .game-setting input {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.9);
+      color: #f8fafc;
+      padding: 0.45rem 0.5rem;
+      font-size: 0.85rem;
+    }
     .game-controls-hint kbd {
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
@@ -94,6 +117,7 @@
     @media (max-width: 600px) {
       .game-info-grid { grid-template-columns: 1fr; }
       .game-hero h1 { font-size: 1.5rem; }
+      .game-settings { grid-template-columns: 1fr; }
     }
 
     /* ── Fullscreen toggle button ──────────────────────────── */
@@ -191,13 +215,13 @@
     .mc-dpad { display: flex; gap: 8px; align-items: center; }
     .mc-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
     .mc-btn {
-      width: 54px;
-      height: 54px;
+      width: calc(54px * var(--mc-scale, 1));
+      height: calc(54px * var(--mc-scale, 1));
       border: 2px solid rgba(0,166,126,0.7);
       border-radius: 12px;
       background: rgba(10,10,26,0.85);
       color: #fff;
-      font-size: 1.35rem;
+      font-size: calc(1.35rem * var(--mc-scale, 1));
       cursor: pointer;
       touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
@@ -212,9 +236,9 @@
       border-color: #00e5a0;
     }
     .mc-btn-jump {
-      width: 64px;
-      height: 64px;
-      font-size: 1.6rem;
+      width: calc(64px * var(--mc-scale, 1));
+      height: calc(64px * var(--mc-scale, 1));
+      font-size: calc(1.6rem * var(--mc-scale, 1));
       border-color: rgba(255,215,0,0.8);
     }
     .mc-btn-jump:active, .mc-btn-jump.mc-active {
@@ -230,9 +254,9 @@
       background: rgba(37,99,235,0.35);
     }
     .mc-btn-sm {
-      width: 44px;
-      height: 44px;
-      font-size: 1rem;
+      width: calc(44px * var(--mc-scale, 1));
+      height: calc(44px * var(--mc-scale, 1));
+      font-size: calc(1rem * var(--mc-scale, 1));
       border-color: rgba(150,150,150,0.6);
     }
   </style>
@@ -307,6 +331,28 @@
         </div>
       </div>
 
+      <div class="game-settings" aria-label="Параметри гри">
+        <div class="game-setting">
+          <label for="game-difficulty">Складність</label>
+          <select id="game-difficulty">
+            <option value="easy">Легка</option>
+            <option value="normal" selected>Стандарт</option>
+            <option value="hard">Ветеран</option>
+          </select>
+        </div>
+        <div class="game-setting">
+          <label for="mobile-scale">Мобільні кнопки</label>
+          <input id="mobile-scale" type="range" min="85" max="130" step="5" value="100" aria-label="Розмір мобільних кнопок">
+        </div>
+        <div class="game-setting">
+          <label for="haptics-toggle">Вібровідгук</label>
+          <select id="haptics-toggle">
+            <option value="on" selected>Увімкнено</option>
+            <option value="off">Вимкнено</option>
+          </select>
+        </div>
+      </div>
+
       <p class="game-controls-hint">
         <kbd>←</kbd><kbd>→</kbd> або <kbd>A</kbd><kbd>D</kbd> — рух &nbsp;|&nbsp;
         <kbd>↑</kbd> або <kbd>W</kbd> або <kbd>Пробіл</kbd> — стрибок &nbsp;|&nbsp;
@@ -335,6 +381,8 @@
             <li>🎯 Skill Points — бонусні очки за рівні</li>
             <li>😊 Настрій, ⚡ Енергія, 🍞 Голод</li>
             <li>🏛 Громадянський статус (збирайте документи)</li>
+            <li>🎚 Складність: легка / стандарт / ветеран</li>
+            <li>📱 Налаштування мобільних кнопок і вібровідгуку</li>
           </ul>
         </div>
         <div class="game-info-card">
@@ -447,6 +495,15 @@ const CFG = {
   XP_PER_INTERVIEW: 80,
   XP_PER_NPC: 30,
 };
+const GAME_SETTINGS = { difficulty: 'normal', mobileScale: 1, haptics: true };
+const DIFFICULTY_PRESETS = {
+  easy:   { xpMult: 1.2, enemyMult: 0.8, drainMult: 0.85 },
+  normal: { xpMult: 1,   enemyMult: 1,   drainMult: 1 },
+  hard:   { xpMult: 0.9, enemyMult: 1.25,drainMult: 1.2 },
+};
+function getDifficultyPreset() {
+  return DIFFICULTY_PRESETS[GAME_SETTINGS.difficulty] || DIFFICULTY_PRESETS.normal;
+}
 
 // ============================================================
 // MODULE: GameData — world layout, templates, quests, endings
@@ -1923,8 +1980,9 @@ class Player extends Entity {
     if (this.frame % 1800 === 0 && this.stats.finances > 0) this.stats.finances -= 20;
     // Hunger and energy drain
     if (this.frame % 1200 === 0) {
-      this.stats.hunger = Math.max(0, this.stats.hunger - 2);
-      this.stats.energy = Math.max(0, this.stats.energy - 1);
+      const drain = getDifficultyPreset().drainMult;
+      this.stats.hunger = Math.max(0, this.stats.hunger - (2 * drain));
+      this.stats.energy = Math.max(0, this.stats.energy - (1 * drain));
     }
     // Low hunger affects mood
     if (this.stats.hunger < 30) this.stats.mood = Math.max(0, this.stats.mood - 0.02);
@@ -2876,6 +2934,7 @@ class GameEngine {
       const press = (e) => {
         e.preventDefault();
         btn.classList.add('mc-active');
+        if (GAME_SETTINGS.haptics && navigator.vibrate) navigator.vibrate(10);
         if (onPress) onPress();
         else if (key) this.input[key] = true;
       };
@@ -3119,7 +3178,7 @@ class GameEngine {
         c.apply(this.player.stats, this.player.extStats);
         this.collected++;
         // Award XP
-        this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_COLLECT;
+        this.player.stats.experience = (this.player.stats.experience || 0) + Math.round(CFG.XP_PER_COLLECT * getDifficultyPreset().xpMult);
         if (c.type === 1) this.hasCert = true;
         if (c.type === 2) this.hasRec = true;
         const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська','📑 +Статус громадянства','🏅 +Мовний сертифікат'];
@@ -3130,6 +3189,7 @@ class GameEngine {
 
   _checkEnemyCollisions() {
     const p = this.player;
+    const enemyMult = getDifficultyPreset().enemyMult;
     if (p.invincible > 0) return;
 
     for (const e of this.enemies) {
@@ -3139,8 +3199,8 @@ class GameEngine {
       for (const pr of e.projectiles) {
         if (pr.alive && Physics.rectOverlap(p.x, p.y, p.w, p.h, pr.x - 6, pr.y - 4, 12, 8)) {
           pr.alive = false;
-          p.stats.health = Math.max(0, p.stats.health - 12);
-          p.stats.stress = Math.min(100, p.stats.stress + 8);
+          p.stats.health = Math.max(0, p.stats.health - Math.round(12 * enemyMult));
+          p.stats.stress = Math.min(100, p.stats.stress + Math.round(8 * enemyMult));
           p.invincible = 60;
           this._notify('😣 -12 HP — папірці від поганого роботодавця!', 80);
         }
@@ -3152,19 +3212,19 @@ class GameEngine {
       switch (e.type) {
         case 0: // Bureaucrat — slow + stress
           p.slowTimer = 180;
-          p.stats.stress = Math.min(100, p.stats.stress + 18);
-          p.stats.mentalHealth = Math.max(0, p.stats.mentalHealth - 8);
+          p.stats.stress = Math.min(100, p.stats.stress + Math.round(18 * enemyMult));
+          p.stats.mentalHealth = Math.max(0, p.stats.mentalHealth - Math.round(8 * enemyMult));
           this._notify('👔 Бюрократ: затримка та стрес!', 90);
           break;
         case 1: // Scammer — steal money
-          const stolen = Math.min(p.stats.finances, 180 + Math.floor(Math.random() * 150));
+          const stolen = Math.min(p.stats.finances, Math.round((180 + Math.floor(Math.random() * 150)) * enemyMult));
           p.stats.finances -= stolen;
-          p.stats.stress = Math.min(100, p.stats.stress + 12);
+          p.stats.stress = Math.min(100, p.stats.stress + Math.round(12 * enemyMult));
           this._notify(`🎭 Шахрай вкрав ${stolen} PLN!`, 90);
           break;
         case 3: // Tax agent — reduce stats
-          p.stats.intelligence = Math.max(10, p.stats.intelligence - 4);
-          p.stats.reputation = Math.max(0, p.stats.reputation - 6);
+          p.stats.intelligence = Math.max(10, p.stats.intelligence - Math.round(4 * enemyMult));
+          p.stats.reputation = Math.max(0, p.stats.reputation - Math.round(6 * enemyMult));
           this._notify('📋 Податківець: -4 INT, -6 REP!', 90);
           break;
       }
@@ -3217,7 +3277,7 @@ class GameEngine {
         this.interviewsDone++;
         building.interviewDone = true;
         // Award XP for attempting interview
-        this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_INTERVIEW;
+        this.player.stats.experience = (this.player.stats.experience || 0) + Math.round(CFG.XP_PER_INTERVIEW * getDifficultyPreset().xpMult);
 
         if (result.passed) {
           building.jobOffered = true;
@@ -3261,7 +3321,7 @@ class GameEngine {
       this._notify(`🤝 Зустріли ветерана: ${npc.name}`, 120);
     }
     // Award XP and network points
-    this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_NPC;
+    this.player.stats.experience = (this.player.stats.experience || 0) + Math.round(CFG.XP_PER_NPC * getDifficultyPreset().xpMult);
     this.player.stats.networkPoints = (this.player.stats.networkPoints || 0) + 1;
     const text = DialogueSystem.buildNPCDialogue(npc.type, this.player.stats, this.veteransMet);
     const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач'];
@@ -3496,6 +3556,21 @@ function initGame() {
       }
     });
   }
+
+  const difficultyEl = document.getElementById('game-difficulty');
+  const mobileScaleEl = document.getElementById('mobile-scale');
+  const hapticsEl = document.getElementById('haptics-toggle');
+  const applyRuntimeSettings = () => {
+    GAME_SETTINGS.difficulty = (difficultyEl && difficultyEl.value) || 'normal';
+    const scaleRaw = mobileScaleEl ? Number(mobileScaleEl.value) : 100;
+    GAME_SETTINGS.mobileScale = Math.max(0.85, Math.min(1.3, scaleRaw / 100));
+    GAME_SETTINGS.haptics = !hapticsEl || hapticsEl.value !== 'off';
+    document.documentElement.style.setProperty('--mc-scale', String(GAME_SETTINGS.mobileScale));
+  };
+  applyRuntimeSettings();
+  if (difficultyEl) difficultyEl.addEventListener('change', applyRuntimeSettings);
+  if (mobileScaleEl) mobileScaleEl.addEventListener('input', applyRuntimeSettings);
+  if (hapticsEl) hapticsEl.addEventListener('change', applyRuntimeSettings);
 
   const engine = new GameEngine(canvas);
   engine.start();
