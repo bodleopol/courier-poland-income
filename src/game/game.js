@@ -1578,6 +1578,8 @@ class Player extends Entity {
     // Head
     ctx.fillStyle = '#f0c080';
     ctx.fillRect(px + 4, py, this.w - 8, 16);
+    ctx.fillStyle = 'rgba(255,255,255,0.22)';
+    ctx.fillRect(px + 6, py + 1, this.w - 14, 4);
 
     // Beret
     ctx.fillStyle = '#1a3a1a';
@@ -1591,8 +1593,11 @@ class Player extends Entity {
 
     // Eyes
     ctx.fillStyle = '#222';
-    const eyeDir = this.facingRight ? 1 : -1;
     ctx.fillRect(px + (this.facingRight ? 14 : 6), py + 4, 3, 3);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(px + (this.facingRight ? 15 : 7), py + 4, 1, 1);
+    ctx.fillStyle = '#5b341c';
+    ctx.fillRect(px + 12, py + 11, 4, 1);
     ctx.fillStyle = '#0ea5e9';
     ctx.fillRect(px + 11, py + 16, 6, 6);
 
@@ -1696,6 +1701,8 @@ class Enemy extends Entity {
     ctx.fillRect(px, py + 8, this.w, this.h - 8);
     ctx.fillStyle = '#f0c080';
     ctx.fillRect(px + 4, py, this.w - 8, 14);
+    ctx.fillStyle = 'rgba(255,255,255,0.18)';
+    ctx.fillRect(px + 6, py + 1, this.w - 14, 3);
     ctx.font = '14px serif';
     ctx.textAlign = 'center';
     ctx.fillText(icons[this.type] || '?', px + this.w / 2, py + 12);
@@ -1750,6 +1757,11 @@ class NPC extends Entity {
     const npcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
     ctx.fillText(npcIsTouch ? '[E]' : '[E]', px + this.w / 2, py - 8);
     if (!this.talked) {
+      const glowAlpha = 0.07 + 0.05 * Math.sin(this.bobTimer * 0.08);
+      ctx.fillStyle = `rgba(0,166,126,${glowAlpha})`;
+      ctx.beginPath();
+      ctx.arc(px + this.w / 2, py + this.h / 2, this.w, 0, Math.PI * 2);
+      ctx.fill();
       // Pulsing indicator
       const alpha = 0.5 + 0.5 * Math.sin(this.bobTimer * 0.08);
       ctx.fillStyle = `rgba(0,166,126,${alpha})`;
@@ -3200,11 +3212,9 @@ function initGame() {
       }
     });
   }
-  if (window.matchMedia('(pointer: coarse), (max-width: 768px)').matches) {
-    document.body.classList.add('game-fs');
-    if (fsBtn) fsBtn.textContent = '✕';
-    resizeCanvas();
-  }
+  document.body.classList.add('game-fs');
+  if (fsBtn) fsBtn.textContent = '✕';
+  resizeCanvas();
 
   const difficultyEl = document.getElementById('game-difficulty');
   const mobileScaleEl = document.getElementById('mobile-scale');
