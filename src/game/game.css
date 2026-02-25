@@ -297,6 +297,14 @@
     .mc-btn-interact:active, .mc-btn-interact.mc-active {
       background: rgba(37,99,235,0.35);
     }
+    .mc-btn-shoot {
+      border-color: rgba(251,191,36,0.9);
+      font-size: 1.1rem;
+    }
+    .mc-btn-shoot:active, .mc-btn-shoot.mc-active {
+      background: rgba(251,191,36,0.35);
+      border-color: #fbbf24;
+    }
     .mc-btn-sm {
       width: calc(44px * var(--mc-scale, 1));
       height: calc(44px * var(--mc-scale, 1));

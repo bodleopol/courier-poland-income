@@ -35,6 +35,9 @@ const CFG = {
   XP_PER_COLLECT: 20,
   XP_PER_INTERVIEW: 80,
   XP_PER_NPC: 30,
+  PLAYER_SHOT_SPEED: 8,
+  PLAYER_SHOT_COOLDOWN: 16,
+  PLAYER_SHOT_DAMAGE: 1,
 };
 const GAME_SETTINGS = { difficulty: 'normal', mobileScale: 1, haptics: true };
 const GAME_SETTINGS_KEY = 'veteran-path-runtime-settings';
@@ -1503,12 +1506,16 @@ class Player extends Entity {
     this.animTimer = 0;
     this.coyoteTimer = 0;
     this.jumpBuffer = 0;
+    this.shotCooldown = 0;
+    this.weaponHeat = 0;
+    this.weaponLevel = 1;
   }
 
   update(input, platforms) {
     this.frame++;
     if (this.invincible > 0) this.invincible--;
     if (this.slowTimer > 0) this.slowTimer--;
+    if (this.shotCooldown > 0) this.shotCooldown--;
 
     if (this.onGround) this.coyoteTimer = CFG.COYOTE_FRAMES;
     else if (this.coyoteTimer > 0) this.coyoteTimer--;
@@ -1553,6 +1560,7 @@ class Player extends Entity {
     // Low hunger affects mood
     if (this.stats.hunger < 30) this.stats.mood = Math.max(0, this.stats.mood - 0.02);
     else if (this.frame % 600 === 0) this.stats.mood = Math.min(100, this.stats.mood + 0.5);
+    if (this.frame % 25 === 0) this.weaponHeat = Math.max(0, this.weaponHeat - 2);
     // Tick extStats evolution
     StatsSystem.tick(this.extStats, this.frame);
 
@@ -1614,6 +1622,18 @@ class Player extends Entity {
     ctx.fillStyle = '#0ea5e9';
     ctx.fillRect(px + 11, py + 16, 6, 6);
 
+    // Weapon
+    const weaponX = this.facingRight ? px + this.w - 2 : px - 10;
+    const weaponY = py + 18;
+    ctx.fillStyle = '#9aa4b2';
+    ctx.fillRect(weaponX, weaponY, 10, 3);
+    ctx.fillStyle = '#334155';
+    ctx.fillRect(this.facingRight ? weaponX + 7 : weaponX, weaponY - 1, 3, 5);
+    if (this.shotCooldown > CFG.PLAYER_SHOT_COOLDOWN - 3) {
+      ctx.fillStyle = '#fbbf24';
+      ctx.fillRect(this.facingRight ? weaponX + 10 : weaponX - 2, weaponY, 2, 2);
+    }
+
     // Stress indicator (red tint if high stress)
     if (this.stats.stress > 65) {
       ctx.fillStyle = 'rgba(255,0,0,0.22)';
@@ -1649,6 +1669,9 @@ class Enemy extends Entity {
     const baseSpeed = type === 3 ? CFG.ENEMY_PATROL_SPEED * 1.6 : CFG.ENEMY_PATROL_SPEED;
     this.speed = baseSpeed;
     this.chaseSpeed = type === 3 ? CFG.ENEMY_CHASE_SPEED * 1.4 : CFG.ENEMY_CHASE_SPEED;
+    this.hp = type === 3 ? 3 : type === 2 ? 2 : 1;
+    this.aggression = 1 + type * 0.12;
+    this.armor = type === 3 ? 0.25 : type === 2 ? 0.15 : 0;
   }
 
   update(player, platforms) {
@@ -1663,12 +1686,12 @@ class Enemy extends Entity {
       // Bad employer stays put but throws projectiles
       this.state = 'attack';
       this.attackTimer++;
-      if (this.attackTimer > 120 && absDist < 400) {
+      if (this.attackTimer > Math.round(120 / this.aggression) && absDist < 400) {
         this.attackTimer = 0;
         const dir = dist > 0 ? 1 : -1;
         this.projectiles.push({
           x: this.x + this.w / 2, y: this.y + 10,
-          vx: dir * CFG.PROJECTILE_SPEED + dir * 1.5, vy: -2,
+          vx: dir * CFG.PROJECTILE_SPEED * this.aggression + dir * 1.5, vy: -2,
           alive: true,
         });
       }
@@ -2041,7 +2064,9 @@ const UISystem = {
     ctx.font = '9px sans-serif';
     ctx.textAlign = 'left';
     const streak = player.stats.comboStreak || 0;
-    ctx.fillText(`[Q] квести  [ESC] пауза  [S] зберегти  🔥x${streak}`, 8, 58);
+    const heat = Math.round(player.weaponHeat || 0);
+    const weaponTier = player.weaponLevel || 1;
+    ctx.fillText(`[F] постріл  [Q] квести  [ESC] пауза  [S] зберегти  🔫T${weaponTier} 🌡${heat}% 🔥x${streak}`, 8, 58);
 
     ctx.restore();
   },
@@ -2483,6 +2508,7 @@ class GameEngine {
       left: false, right: false, jump: false,
       sprint: false,
       interact: false, questLog: false, save: false, restart: false,
+      shoot: false,
       keyA: false, keyB: false,
     };
 
@@ -2493,6 +2519,7 @@ class GameEngine {
     this.enemies = [];
     this.npcs = [];
     this.platforms = [];
+    this.playerShots = [];
 
     // Progress tracking
     this.collected = 0;
@@ -2526,6 +2553,7 @@ class GameEngine {
       'KeyE': 'interact', 'Enter': 'interact',
       'KeyQ': 'questLog',
       'KeyS': 'save',
+      'KeyF': 'shoot',
       'KeyR': 'restart',
       'KeyA_moral': 'keyA',
       'KeyB': 'keyB',
@@ -2571,6 +2599,7 @@ class GameEngine {
         'ArrowRight': 'right', 'KeyD': 'right',
         'ArrowUp': 'jump', 'KeyW': 'jump', 'Space': 'jump',
         'ShiftLeft': 'sprint', 'ShiftRight': 'sprint',
+        'KeyF': 'shoot',
       };
       const mapped = keyMap2[e.code];
       if (mapped && mapped in this.input) this.input[mapped] = false;
@@ -2621,6 +2650,7 @@ class GameEngine {
     addBtn('mc-quest', null, () => {
       if (this.state === 'playing') this.questLogVisible = !this.questLogVisible;
     });
+    addBtn('mc-shoot', null, () => { this.input.shoot = true; }, () => { this.input.shoot = false; });
     addBtn('mc-pause', null, () => { this._handleEscape(); });
 
     // Tap on canvas: start game / advance dialogue / handle moral choice / level complete
@@ -2703,6 +2733,7 @@ class GameEngine {
     this.collectibles= lvlCollect.map(c => new Collectible(c.x, c.y, c.type));
     this.enemies     = lvlEnemies.map(e => new Enemy(...e));
     this.npcs        = lvlNpcs.map(n => new NPC(...n));
+    this.playerShots = [];
 
     this.collected = 0;
     this.hasCert = false;
@@ -2855,6 +2886,7 @@ class GameEngine {
       if (!e.alive) continue;
       const touchingEnemy = Physics.rectOverlap(p.x, p.y, p.w, p.h, e.x, e.y, e.w, e.h);
       if (touchingEnemy && p.vy > 0 && p.y + p.h <= e.y + 14) {
+        e.hp = 0;
         e.alive = false;
         e.projectiles = [];
         p.vy = CFG.JUMP_FORCE * 0.55;
@@ -2903,6 +2935,55 @@ class GameEngine {
       p.vx = (p.x > e.x) ? 5 : -5;
       p.vy = -6;
     }
+  }
+
+  _handleShooting() {
+    if (!this.input.shoot || this.player.shotCooldown > 0 || this.state !== 'playing') return;
+    if (this.player.weaponHeat >= 100) {
+      this._notify('🔥 Зброя перегріта', 50);
+      return;
+    }
+    const dir = this.player.facingRight ? 1 : -1;
+    const projectile = {
+      x: this.player.x + (this.player.facingRight ? this.player.w + 2 : -6),
+      y: this.player.y + 20,
+      vx: dir * CFG.PLAYER_SHOT_SPEED,
+      alive: true,
+      ttl: 80,
+      damage: CFG.PLAYER_SHOT_DAMAGE,
+    };
+    this.playerShots.push(projectile);
+    this.player.shotCooldown = CFG.PLAYER_SHOT_COOLDOWN;
+    this.player.weaponHeat = Math.min(100, this.player.weaponHeat + 12);
+    this._notify('🔫 Постріл', 35);
+  }
+
+  _updatePlayerShots() {
+    for (const shot of this.playerShots) {
+      if (!shot.alive) continue;
+      shot.x += shot.vx;
+      shot.ttl--;
+      if (shot.ttl <= 0 || shot.x < 0 || shot.x > CFG.WORLD_W) {
+        shot.alive = false;
+        continue;
+      }
+      for (const e of this.enemies) {
+        if (!e.alive || !shot.alive) continue;
+        if (Physics.rectOverlap(shot.x - 2, shot.y - 2, 6, 4, e.x, e.y, e.w, e.h)) {
+          const effectiveDamage = Math.max(0.25, shot.damage - e.armor);
+          e.hp -= effectiveDamage;
+          e.stunTimer = Math.max(e.stunTimer, 18);
+          shot.alive = false;
+          if (e.hp <= 0) {
+            e.alive = false;
+            e.projectiles = [];
+            this.player.stats.experience = (this.player.stats.experience || 0) + Math.round((CFG.XP_PER_COLLECT + 8 * e.aggression) * getDifficultyPreset().xpMult);
+            this._notify('🎯 Ворог нейтралізований', 60);
+          }
+        }
+      }
+    }
+    this.playerShots = this.playerShots.filter((p) => p.alive);
   }
 
   _checkBuildingInteraction() {
@@ -3024,6 +3105,8 @@ class GameEngine {
 
     // Player update
     this.player.update(this.input, this.platforms);
+    this._handleShooting();
+    this._updatePlayerShots();
 
     // Camera follow with lag
     this.camXTarget = this.player.x - CFG.CANVAS_W * 0.35;
@@ -3105,6 +3188,12 @@ class GameEngine {
 
     // Player
     this.player.draw(ctx, this.camX);
+
+    // Player projectiles
+    ctx.fillStyle = '#fbbf24';
+    for (const shot of this.playerShots) {
+      ctx.fillRect(Math.round(shot.x - this.camX), Math.round(shot.y), 5, 2);
+    }
 
     // Portal at end of level (visible only after 2 interviews)
     if (this.interviewsDone >= 2) {
