@@ -2913,7 +2913,7 @@ async function build() {
     }
 
     // Format date for display
-    const displayDate = page.date_posted || new Date().toISOString().slice(0, 10);
+    const displayDate = page.date_posted || getLastUpdated(page.slug);
     
     const dualContent = `
       <div class="job-page-layout">
@@ -4216,8 +4216,8 @@ function categoryToIndustry(category) {
 
 function buildJobPostingJsonLd(page) {
   const now = new Date();
-  // Use page.date_posted if available, otherwise fall back to current date
-  const datePosted = page.date_posted || toISODate(now);
+  // Use page.date_posted if available, otherwise fall back to a deterministic random date
+  const datePosted = page.date_posted || getLastUpdated(page.slug);
   const validThrough = toISODate(addDays(now, 60));
   const addr = cityToJobAddress(page.city);
 
