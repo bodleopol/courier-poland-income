@@ -9,7 +9,7 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
   <!-- End Google Tag Manager -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Шлях Ветерана — Пошук роботи в Польщі | Rybezh Game</title>
   <meta name="description" content="Безкоштовна 2D браузерна гра: зіграйте за українського ветерана, який шукає роботу у Польщі. Унікальний геймплей з діалогами, квестами та моральними виборами.">
   <link rel="canonical" href="https://rybezh.site/game.html">
@@ -59,6 +59,7 @@
       display: block;
       width: 100%;
       height: auto;
+      touch-action: none;
     }
     .game-controls-hint {
       text-align: center;
@@ -93,51 +94,147 @@
     @media (max-width: 600px) {
       .game-info-grid { grid-template-columns: 1fr; }
       .game-hero h1 { font-size: 1.5rem; }
+    }
+
+    /* ── Fullscreen toggle button ──────────────────────────── */
+    #fs-btn {
+      display: none;
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 20;
+      background: rgba(10,10,26,0.75);
+      border: 1.5px solid rgba(0,166,126,0.6);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (pointer: coarse), (max-width: 768px) {
+      #fs-btn { display: flex; }
+    }
+
+    /* ── Fullscreen mode ───────────────────────────────────── */
+    body.game-fs { overflow: hidden; background: #0a0a1a; }
+    body.game-fs .site-header,
+    body.game-fs .site-footer,
+    body.game-fs .game-hero,
+    body.game-fs .game-controls-hint,
+    body.game-fs .game-info-grid,
+    body.game-fs #cookie-banner { display: none !important; }
+    body.game-fs main { padding: 0 !important; margin: 0 !important; }
+    body.game-fs .game-page { padding: 0 !important; max-width: 100vw !important; }
+    body.game-fs #game-container {
+      position: fixed !important;
+      top: 0 !important; left: 0 !important;
+      width: 100vw !important;
+      /* iOS-safe height: fill available minus controls bar */
+      height: calc(100vh - 80px) !important;
+      height: calc(100dvh - 80px) !important; /* dvh = dynamic viewport on iOS 15.4+ */
+      max-width: 100vw !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+      z-index: 9000;
+    }
+    /* Canvas fills container; height:auto removed so it stretches */
+    body.game-fs #gameCanvas { width: 100% !important; height: 100% !important; }
+    body.game-fs .mobile-controls {
+      position: fixed !important;
+      bottom: 0 !important; left: 0 !important; right: 0 !important;
+      /* Account for iOS home indicator */
+      height: calc(80px + env(safe-area-inset-bottom, 0px));
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      margin: 0 !important;
+      border-radius: 0 !important;
+      max-width: 100vw !important;
+      z-index: 9001;
+      padding-left: max(12px, env(safe-area-inset-left, 12px));
+      padding-right: max(12px, env(safe-area-inset-right, 12px));
+      padding-top: 8px;
+      background: rgba(5,10,20,0.92) !important;
+      box-sizing: border-box;
+    }
+    body.game-fs #fs-btn { top: max(4px, env(safe-area-inset-top, 4px)); right: 4px; }
+    /* Landscape on small screens: shrink controls bar */
+    @media (max-height: 500px) and (pointer: coarse) {
+      body.game-fs #game-container { height: calc(100dvh - 60px) !important; }
+      body.game-fs .mobile-controls { height: 60px; }
+      .mc-btn { width: 44px !important; height: 44px !important; font-size: 1.1rem !important; }
+      .mc-btn-jump { width: 52px !important; height: 52px !important; }
+    }
+
+    /* ── Mobile on-screen controls ─────────────────────────── */
+    .mobile-controls {
+      display: none;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 1rem;
+      padding: 6px 8px;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(5,10,20,0.6);
+      border-radius: 12px;
+      gap: 8px;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    @media (pointer: coarse), (max-width: 768px) {
+      .mobile-controls { display: flex; }
       .game-controls-hint { display: none; }
-      .touch-hint { display: block !important; }
     }
-    /* Touch / mobile controls overlay */
-    .touch-hint {
-      display: none;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--color-secondary,#64748b);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-    #touch-controls {
-      display: none;
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 10;
-    }
-    #touch-controls.active { display: block; }
-    .touch-btn {
-      position: absolute;
-      pointer-events: all;
-      background: rgba(255,255,255,0.12);
-      border: 2px solid rgba(255,255,255,0.30);
-      border-radius: 50%;
-      color: rgba(255,255,255,0.9);
-      font-size: 1.25rem;
-      line-height: 1;
+    .mc-dpad { display: flex; gap: 8px; align-items: center; }
+    .mc-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+    .mc-btn {
+      width: 54px;
+      height: 54px;
+      border: 2px solid rgba(0,166,126,0.7);
+      border-radius: 12px;
+      background: rgba(10,10,26,0.85);
+      color: #fff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: none;
-      -webkit-tap-highlight-color: transparent;
+      flex-shrink: 0;
+      transition: background 0.1s;
     }
-    .touch-btn:active { background: rgba(255,255,255,0.28); }
-    #btn-left     { width: 54px; height: 54px; bottom: 18px; left: 14px; }
-    #btn-right    { width: 54px; height: 54px; bottom: 18px; left: 78px; }
-    #btn-jump     { width: 64px; height: 64px; bottom: 14px; right: 14px; background: rgba(0,200,130,0.18); border-color: rgba(0,200,130,0.5); }
-    #btn-interact { width: 50px; height: 50px; bottom: 20px; right: 88px; background: rgba(255,215,0,0.18); border-color: rgba(255,215,0,0.45); font-size: 1rem; }
-    #btn-quest    { width: 40px; height: 40px; bottom: 84px; right: 14px; font-size: 0.85rem; }
-    #btn-pause    { width: 36px; height: 36px; top: 6px; right: 6px; font-size: 0.85rem; }
+    .mc-btn:active, .mc-btn.mc-active {
+      background: rgba(0,166,126,0.45);
+      border-color: #00e5a0;
+    }
+    .mc-btn-jump {
+      width: 64px;
+      height: 64px;
+      font-size: 1.6rem;
+      border-color: rgba(255,215,0,0.8);
+    }
+    .mc-btn-jump:active, .mc-btn-jump.mc-active {
+      background: rgba(255,215,0,0.3);
+      border-color: #ffd700;
+    }
+    .mc-btn-interact {
+      border-color: rgba(37,99,235,0.8);
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .mc-btn-interact:active, .mc-btn-interact.mc-active {
+      background: rgba(37,99,235,0.35);
+    }
+    .mc-btn-sm {
+      width: 44px;
+      height: 44px;
+      font-size: 1rem;
+      border-color: rgba(150,150,150,0.6);
+    }
   </style>
 </head>
 <body>
@@ -193,7 +290,21 @@
 
       <div id="game-container">
         <canvas id="gameCanvas" width="920" height="540"></canvas>
-        <div id="touch-controls"></div>
+        <button id="fs-btn" aria-label="Повний екран" title="Повний екран">⛶</button>
+      </div>
+
+      <!-- On-screen controls for touch/mobile devices -->
+      <div id="mobile-controls" class="mobile-controls" aria-label="Ігрові кнопки">
+        <div class="mc-dpad">
+          <button class="mc-btn" id="mc-left" aria-label="Рух вліво">◀</button>
+          <button class="mc-btn" id="mc-right" aria-label="Рух вправо">▶</button>
+        </div>
+        <div class="mc-actions">
+          <button class="mc-btn mc-btn-interact" id="mc-interact" aria-label="Взаємодія з NPC/будівлею">E</button>
+          <button class="mc-btn mc-btn-sm" id="mc-quest" aria-label="Журнал квестів">📋</button>
+          <button class="mc-btn mc-btn-sm" id="mc-pause" aria-label="Пауза">⏸</button>
+          <button class="mc-btn mc-btn-jump" id="mc-jump" aria-label="Стрибок">↑</button>
+        </div>
       </div>
 
       <p class="game-controls-hint">
@@ -205,53 +316,46 @@
         <kbd>ESC</kbd> — пауза
       </p>
 
-      <p class="touch-hint">
-        👆 Торкніться екрана щоб почати &nbsp;|&nbsp;
-        ◀▶ — рух (ліворуч внизу) &nbsp;|&nbsp;
-        ↑ — стрибок (праворуч внизу) &nbsp;|&nbsp;
-        <strong>E</strong> — взаємодія &nbsp;|&nbsp;
-        <strong>Q</strong> — квести
-      </p>
-
       <div class="game-info-grid">
         <div class="game-info-card">
           <h3>🎯 Мета гри</h3>
           <ul>
-            <li>Знайдіть роботу у Польщі після служби</li>
-            <li>Відвідуйте будівлі та проходьте співбесіди</li>
-            <li>Збирайте бонуси: курси, сертифікати, гроші</li>
-            <li>Уникайте ворогів: бюрократів та шахраїв</li>
+            <li>3 рівні: Варшава → Краків → Вроцлав</li>
+            <li>Пройдіть 2 співбесіди, щоб відкрити портал переходу</li>
+            <li>Збирайте бонуси для підвищення навичок та XP</li>
             <li>Виконуйте квести та приймайте рішення</li>
+            <li>📱 На мобільному: натисніть ⛶ для повного екрану</li>
           </ul>
         </div>
         <div class="game-info-card">
-          <h3>🏢 Типи будівель</h3>
+          <h3>📊 Нові параметри</h3>
           <ul>
-            <li>🔵 IT-компанія — потрібен інтелект і знання англійської</li>
-            <li>⚙️ Завод / склад — потрібна фізична витривалість</li>
-            <li>🟠 Стартап — важливі харизма та репутація</li>
-            <li>Натисніть <kbd>E</kbd> або кнопку <strong>E</strong> поруч з входом щоб увійти</li>
+            <li>⚡ XP — досвід за збір предметів, співбесіди, NPC</li>
+            <li>🤝 Мережа — контакти, зароблені спілкуванням</li>
+            <li>🎯 Skill Points — бонусні очки за рівні</li>
+            <li>😊 Настрій, ⚡ Енергія, 🍞 Голод</li>
+            <li>🏛 Громадянський статус (збирайте документи)</li>
           </ul>
         </div>
         <div class="game-info-card">
-          <h3>⚔️ Вороги</h3>
+          <h3>🗺️ Рівні</h3>
           <ul>
-            <li>👔 Бюрократ — сповільнює та підвищує стрес</li>
-            <li>🎭 Шахрай — краде гроші</li>
-            <li>😡 Поганий роботодавець — кидає папірці</li>
-            <li>📋 Податківець — забирає бонуси</li>
+            <li>🏙️ Рівень 1 — Варшава: 9 будівель, 15 ворогів</li>
+            <li>🏔️ Рівень 2 — Краків: 10 будівель, 17 ворогів (важче)</li>
+            <li>🏰 Рівень 3 — Вроцлав: 12 будівель, 20 ворогів (фінал)</li>
+            <li>➡️ Портал з'являється після 2 співбесід</li>
           </ul>
         </div>
         <div class="game-info-card">
           <h3>💡 Бонуси</h3>
           <ul>
-            <li>📚 Курс — підвищує інтелект</li>
-            <li>🏆 Сертифікат — покращує репутацію</li>
-            <li>📝 Рекомендація — підвищує харизму</li>
-            <li>💰 Гроші — поповнюють бюджет</li>
-            <li>💊 Ліки — знижують стрес, відновлюють здоров'я</li>
-            <li>🎖️ Медаль — підвищує військовий досвід та удачу</li>
-            <li>🪪 Картка ветерана — покращує документи та репутацію</li>
+            <li>📚 Курс — +інтелект +XP</li>
+            <li>🏆 Сертифікат — +репутація</li>
+            <li>📝 Рекомендація — +харизма</li>
+            <li>💰 Гроші (+300 PLN)</li>
+            <li>💊 Ліки — -стрес/+HP</li>
+            <li>📑 Документ — +громадянський статус</li>
+            <li>🏅 Мовний сертифікат — +польська</li>
           </ul>
         </div>
       </div>
@@ -338,6 +442,10 @@ const CFG = {
   ENEMY_DETECT_RANGE: 180,
   PROJECTILE_SPEED: 4,
   DIALOGUE_MAX_HISTORY: 6,
+  TOTAL_LEVELS: 3,
+  XP_PER_COLLECT: 20,
+  XP_PER_INTERVIEW: 80,
+  XP_PER_NPC: 30,
 };
 
 // ============================================================
@@ -374,8 +482,7 @@ const DATA = {
   ],
 
   /* --- Collectibles [x, y, type] ---
-     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang
-     7=veteranMedal 8=veteranCard */
+     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang 7=document 8=langCert */
   collectibles: [
     [310, 355],[470, 470],[650, 302],[820, 465],[1020, 325],
     [1120, 465],[1300, 275],[1520, 355],[1750, 465],[1870, 315],
@@ -385,12 +492,10 @@ const DATA = {
     [5650, 315],[5870, 315],[6150, 275],[6450, 335],[6720, 305],
     [850, 465],[1470, 465],[2020, 465],[2900, 465],[3650, 465],
     [4200, 465],[4750, 465],[5450, 465],[5950, 465],[6550, 465],
-  ].map((pos, i) => ({x: pos[0], y: pos[1], type: i % 7})).concat([
-    {x: 600,  y: 290, type: 7}, {x: 2400, y: 265, type: 7},
-    {x: 4500, y: 275, type: 7}, {x: 6300, y: 255, type: 7},
-    {x: 1100, y: 355, type: 8}, {x: 3100, y: 310, type: 8},
-    {x: 5200, y: 280, type: 8}, {x: 6800, y: 295, type: 8},
-  ]),
+    // new: document & language cert items scattered through world
+    [1650, 355, 7],[2500, 340, 7],[3400, 345, 7],[5000, 340, 7],[6200, 350, 7],
+    [2250, 300, 8],[3850, 305, 8],[5700, 300, 8],
+  ].map((pos, i) => ({x: pos[0], y: pos[1], type: pos[2] !== undefined ? pos[2] : i % 9})),
 
   /* --- Enemies [x, patrolMin, patrolMax, type] ---
      0=Bureaucrat, 1=Scammer, 2=BadEmployer, 3=TaxAgent */
@@ -403,15 +508,13 @@ const DATA = {
   ],
 
   /* --- Friendly NPCs [x, type, name] ---
-     0=veteran, 1=hr, 2=instructor, 3=lawyer */
+     0=veteran, 1=hr, 2=instructor */
   npcs: [
     [200,  0, 'Андрій, ветеран'],
     [1800, 1, 'Марта, HR'],
     [2800, 0, 'Тарас, ветеран'],
-    [3600, 3, 'Пан Войцех, юрист'],
     [4100, 2, 'Пан Новак, викладач'],
     [4800, 0, 'Олег, ветеран'],
-    [5500, 3, 'Пані Зося, адвокат'],
     [6100, 1, 'Агнєшка, HR'],
   ],
 
@@ -423,20 +526,7 @@ const DATA = {
     {id:'q4', name:'Перша співбесіда',   desc:'Пройдіть першу співбесіду',       target:1,  type:'interview'},
     {id:'q5', name:'Ветеранська мережа', desc:'Знайдіть 3 ветеранів',            target:3,  type:'veterans'},
     {id:'q6', name:'Власний бізнес',     desc:'Накопичте 5000 PLN та репутацію 70', target:1, type:'business'},
-    {id:'q7', name:'Документи в порядку',desc:'Оформіть документи (рівень ≥ 60)', target:60, type:'documents'},
-    {id:'q8', name:'Щасливчик',          desc:'Досягніть удачі 70',              target:70, type:'luck'},
-  ],
-
-  /* --- Lawyer dialogue lines --- */
-  lawyerLines: [
-    'Для легальної роботи потрібна картка побиту або легалізація.',
-    'Оформіть PESEL та рахунок у банку якомога швидше.',
-    'Ветерани мають право на особливий статус у Польщі.',
-    'Допоможу з документами для отримання дозволу на роботу.',
-    'Перевірте договір перед підписанням — я безкоштовно.',
-    'ZUS та податки — важливо розуміти свої зобов\'язання.',
-    'Зверніться до ZUS для підтвердження страхових прав.',
-    'Картка ветерана дає додаткові соціальні права у Польщі.',
+    {id:'q7', name:'Офіційний статус',   desc:'Зберіть 3 документи для оформлення статусу', target:45, type:'citizenship'},
   ],
 
   /* --- Dialogue templates (used to generate 2000+ combinations) --- */
@@ -552,6 +642,112 @@ const DATA = {
     {id:'biz',     title:'Власний бізнес',      icon:'🏢', text:'Ви відкрили власне підприємство! Досвід, накопичені зв\'язки та репутація — основа успіху. Ви — підприємець! 🦁'},
     {id:'vet',     title:'Лідер громади',        icon:'🤝', text:'Ви об\'єднали ветеранів і стали лідером спільноти! Ваша підтримка допомагає сотням людей. ❤️'},
     {id:'bad',     title:'Важкий час...',        icon:'😔', text:'Гроші закінчились... Але не все втрачено. Зверніться до ветеранської організації. Натисніть R щоб спробувати ще раз.'},
+  ],
+
+  /* --- Level definitions ---
+     3 levels: Варшава → Краків → Вроцлав.
+     Player reaches a portal at world end to advance (needs interviewsDone >= 2). */
+  levels: [
+    {
+      /* ── LEVEL 1: ВАРШАВА ── */
+      name: 'Варшава', subtitle: 'Перший крок у новому місті', worldW: 7200,
+      skyTop:'#0d1117', skyBot:'#2a3a5a', groundColor:'#1a2e0f', grassColor:'#2d4a1a',
+    },
+    {
+      /* ── LEVEL 2: КРАКІВ ── */
+      name: 'Краків', subtitle: 'Розширюй можливості', worldW: 8000,
+      skyTop:'#0a0d18', skyBot:'#1a2850', groundColor:'#1e1a0e', grassColor:'#3a3012',
+      platforms: [
+        [0,CFG.GROUND_Y,8000,62],
+        [250,390,120,16],[500,340,150,16],[780,300,130,16],[1000,370,110,16],
+        [1250,320,140,16],[1500,280,120,16],[1750,360,150,16],[2000,310,130,16],
+        [2300,260,140,16],[2600,340,120,16],[2900,300,150,16],[3200,370,130,16],
+        [3500,280,140,16],[3800,340,120,16],[4100,300,150,16],[4400,360,130,16],
+        [4700,270,140,16],[5000,330,120,16],[5300,290,150,16],[5600,350,130,16],
+        [5900,310,140,16],[6200,270,120,16],[6500,340,150,16],[6800,300,130,16],
+        [7100,380,120,16],[7400,290,140,16],[7700,340,110,16],
+      ],
+      buildings: [
+        [400,320,190,160,0,'KrakIT Solutions'],[1100,330,185,155,1,'MałopolFactory'],
+        [1800,315,180,165,2,'KrakStartup Hub'],[2500,325,190,150,0,'TechWawel Dev'],
+        [3200,330,185,160,1,'SteelKraków'],[3900,310,180,170,2,'InnoKraków'],
+        [4700,325,190,155,0,'CloudPol Kraków'],[5500,315,185,165,1,'LogiKraków X'],
+        [6300,330,180,155,2,'CreativeKraków'],[7100,310,185,165,0,'SeniorDevs Kraków'],
+      ],
+      collectibles: [
+        [230,365],[480,315],[710,275],[950,345],[1180,295],[1430,455],[1680,335],
+        [1920,285],[2180,355],[2450,315],[2730,275],[3030,345],[3330,255],[3630,315],
+        [3890,265],[4180,335],[4450,245],[4760,305],[5060,265],[5360,325],[5650,285],
+        [5950,375],[6250,245],[6550,315],[6850,275],[7150,355],[7450,265],[7750,315],
+        [680,465],[1350,465],[2080,465],[2800,465],[3550,465],[4300,465],[5050,465],
+        [5800,465],[6600,465],[7350,465],[7850,465],
+        [1550,310,7],[2650,295,7],[3750,280,7],[4850,305,7],[6100,295,7],[7200,310,7],
+        [2100,270,8],[4000,260,8],[5950,275,8],[7050,265,8],
+      ].map((p,i)=>({x:p[0],y:p[1],type:p[2]!==undefined?p[2]:i%9})),
+      enemies: [
+        [600,530,720,0],[950,880,1100,1],[1400,1320,1560,3],
+        [1900,1800,2100,0],[2400,2280,2550,2],[2900,2750,3050,1],
+        [3400,3280,3550,3],[3900,3750,4050,0],[4400,4280,4600,1],
+        [4900,4750,5100,2],[5400,5280,5600,3],[5800,5700,6000,0],
+        [6200,6100,6400,1],[6700,6580,6900,2],[7200,7100,7400,3],
+        [7600,7500,7800,0],[400,320,550,1],
+      ],
+      npcs: [
+        [150,0,'Васил, ветеран'],[1600,1,'Ева, HR-менеджер'],
+        [3000,2,'Пані Ковальська, викладач'],[4500,0,'Дмитро, ветеран'],
+        [5800,1,'Роберт, HR'],[7000,0,'Юрій, ветеран'],
+      ],
+    },
+    {
+      /* ── LEVEL 3: ВРОЦЛАВ ── */
+      name: 'Вроцлав', subtitle: 'Фінальний шлях до успіху', worldW: 9000,
+      skyTop:'#080a14', skyBot:'#0f1a35', groundColor:'#12180a', grassColor:'#1e2d0a',
+      platforms: [
+        [0,CFG.GROUND_Y,9000,62],
+        [200,385,100,16],[420,335,130,16],[670,285,140,16],[950,355,110,16],
+        [1200,305,130,16],[1480,265,120,16],[1730,345,140,16],[2000,295,130,16],
+        [2300,255,120,16],[2600,325,140,16],[2900,285,130,16],[3200,355,110,16],
+        [3500,265,140,16],[3800,325,130,16],[4100,285,120,16],[4400,345,140,16],
+        [4700,255,130,16],[5000,315,120,16],[5300,275,140,16],[5600,335,130,16],
+        [5900,295,120,16],[6200,255,140,16],[6500,315,130,16],[6800,275,120,16],
+        [7100,345,140,16],[7400,265,130,16],[7700,325,120,16],[8000,285,140,16],
+        [8300,355,130,16],[8600,295,120,16],[8850,385,100,16],
+      ],
+      buildings: [
+        [350,315,185,165,0,'WrocTech AI'],[1050,325,190,155,1,'WrocSteel Plant'],
+        [1750,310,180,170,2,'InnoWrocław'],[2450,320,190,160,0,'FinTech Wrocław'],
+        [3150,330,185,150,1,'AutoWroc Factory'],[3850,315,180,165,2,'MedTech Wrocław'],
+        [4550,325,185,155,0,'CyberWroc Hub'],[5250,310,190,170,1,'BioWrocław Lab'],
+        [5950,325,180,155,2,'GreenTech Wrocław'],[6700,315,185,165,0,'SpaceData Wroc'],
+        [7500,330,190,150,1,'PremiumLogistics'],[8200,310,180,170,2,'VentureWrocław'],
+      ],
+      collectibles: [
+        [180,360],[380,310],[620,260],[880,330],[1140,280],[1400,435],[1660,310],
+        [1900,260],[2180,330],[2460,290],[2750,250],[3060,320],[3370,230],[3680,290],
+        [3940,240],[4230,310],[4510,220],[4820,280],[5120,240],[5420,300],[5710,260],
+        [6010,350],[6310,220],[6620,290],[6920,250],[7220,330],[7520,240],[7820,295],
+        [8100,265],[8380,330],[8680,270],[8880,360],
+        [650,465],[1400,465],[2150,465],[2900,465],[3700,465],[4500,465],[5300,465],
+        [6100,465],[6900,465],[7700,465],[8500,465],
+        [1200,280,7],[2300,270,7],[3500,255,7],[4700,270,7],[6000,260,7],[7300,275,7],[8400,260,7],
+        [1700,245,8],[3200,240,8],[5000,250,8],[6700,245,8],[8100,240,8],
+      ].map((p,i)=>({x:p[0],y:p[1],type:p[2]!==undefined?p[2]:i%9})),
+      enemies: [
+        [550,460,680,0],[900,820,1050,1],[1350,1270,1490,3],
+        [1820,1720,1980,0],[2330,2230,2480,2],[2850,2730,2990,1],
+        [3380,3270,3510,3],[3920,3810,4040,0],[4460,4350,4550,1],
+        [4970,4870,5050,2],[5490,5380,5570,3],[5930,5830,6080,0],
+        [6380,6270,6520,1],[6870,6760,7000,2],[7380,7270,7500,3],
+        [7880,7770,8000,0],[8380,8250,8520,1],[8750,8670,8900,2],
+        [450,350,600,3],[1100,1000,1200,0],
+      ],
+      npcs: [
+        [100,0,'Сашко, ветеран'],[1500,1,'Клаудія, HR-директор'],
+        [2700,2,'Проф. Вишневський, ментор'],[4200,0,'Роман, ветеран-підприємець'],
+        [5600,1,'Катажина, рекрутер'],[7000,0,'Богдан, ветеран-лідер'],
+        [8100,2,'Адам, бізнес-тренер'],
+      ],
+    },
   ],
 };
 
@@ -943,7 +1139,367 @@ const StatsSystem = {
       acceleratorApplied: 0, acceleratorAccepted: 0,equipmentOwned: 0,
       officeSpaceAccess: 0,  businessRegistered: 0, vatRegistered: 0,
 
-    }; // end extStats — 1003 keys across 16 categories
+      /* ── EDUCATION & ACADEMIC (80 params) ──────────────────── */
+      primarySchoolGrade: 85,    secondarySchoolGrade: 78, universityGPA: 3.2,
+      mastersDegree: 0,          phdDegree: 0,             mbaCompleted: 0,
+      vocationalCert: 0,         onlineCertCount: 2,       moocCoursesFinished: 1,
+      libraryVisitsPerYear: 4,   booksReadPerYear: 6,      academicPublications: 0,
+      scholarshipsWon: 0,        tutorExperience: 0,       teachingAssistant: 0,
+      researchSkill: 25,         academicWriting: 30,      citationScore: 0,
+      dissertationStarted: 0,    dissertationDone: 0,      academicNetworkSize: 5,
+      peerReviewDone: 0,         conferenceAttended: 0,    conferencePresented: 0,
+      mathSkill: 55,             statisticsKnow: 35,       physicsKnow: 30,
+      chemistryKnow: 20,         biologyKnow: 25,          historyKnow: 60,
+      geographyKnow: 50,         philosophyKnow: 35,       economicsKnow: 40,
+      lawBasicsKnow: 30,         psychologyKnow: 45,       sociologyKnow: 35,
+      artHistoryKnow: 20,        musicTheoryKnow: 15,      literatureAppreciation: 40,
+      foreignLangCoursesDone: 2, continuousLearningScore: 50, e_learningHours: 120,
+      certificationPMP: 0,       certificationISO: 0,      certificationHR: 0,
+      certificationFinance: 0,   certificationLaw: 0,      educationGoalClarity: 55,
+      studyGroupParticipation: 1, onlineLearningAdaptability: 60, seminarsDone: 3,
+      workshopsAttended: 4,      mentoringReceived: 1,     coachingSessionsDone: 0,
+      selfImprovementScore: 55,  knowledgeRetentionScore: 60, criticalReadingScore: 50,
+      educationDebt: 0,          scholarshipAmountTotal: 0, educationSatisfaction: 65,
+      lifeLongLearningIndex: 55, alumniNetworkSize: 8,     gradeImprovementTrend: 0,
+
+      /* ── COOKING & NUTRITION (70 params) ────────────────────── */
+      cookingSkillLevel: 45,     recipesKnown: 30,         cuisinesKnown: 4,
+      mealPrepTime: 30,          kitchenEquipOwned: 6,     bakingSkill: 20,
+      bbqSkill: 35,              veganCookingKnow: 10,     rawFoodKnow: 5,
+      fermentationKnow: 10,      picklingKnow: 15,         canningKnow: 0,
+      nutritionKnowledge: 40,    calorieCountingSkill: 30, macroBalanceScore: 35,
+      hydrationHabit: 65,        breakfastFreq: 6,         lunchFreq: 6,
+      dinnerFreq: 7,             snackFreq: 3,             alcoholConsumption: 20,
+      caffeineIntake: 50,        sugarIntake: 55,          saltIntake: 50,
+      vegetableServingsDay: 2,   fruitServingsDay: 1,      proteinIntake: 60,
+      carbIntake: 60,            fatIntake: 45,            fiberIntake: 40,
+      supplementsUsed: 2,        waterLitersDay: 1.8,      foodBudgetPLN: 400,
+      groceryShoppingFreq: 2,    mealPlanningSkill: 35,    foodWasteAwareness: 45,
+      organicFoodPref: 20,       localFoodPref: 30,        cuisinePoland: 60,
+      cuisineUkraine: 75,        cuisineItaly: 40,         cuisineAsia: 30,
+      streetFoodExp: 40,         restaurantBudget: 100,    cookingForOthersFreq: 3,
+      foodPhotographyInterest: 15, recipeSharingOnline: 0, cookingClassAttended: 0,
+      kitchenCleanlinessScore: 70, foodSafetyKnow: 55,     allergyAwareness: 40,
+      diabeticDietKnow: 15,      heartHealthyDietKnow: 20, glutenFreeKnow: 15,
+      intermittentFastingExp: 0, ketoDietKnow: 10,         mediterraneanDietKnow: 20,
+      mealDeliveryUsed: 5,       homeMadeVsOrdered: 70,    cookingStressLevel: 25,
+      groceryListSkill: 55,      bulkCookingSkill: 30,     kitchenOrgSkill: 50,
+      seasoningKnowledge: 45,    knifeSkill: 40,           sauceMaking: 30,
+      soupMaking: 55,            pastaSkill: 45,           breadBakingSkill: 20,
+
+      /* ── LEGAL & ADMINISTRATIVE (80 params) ─────────────────── */
+      legalLiteracyScore: 30,    contractReadingSkill: 25, tenantRightsKnow: 20,
+      laborLawKnow: 35,          consumerRightsKnow: 30,   taxFilingSkill: 25,
+      businessLawKnow: 20,       criminalLawBasics: 15,    familyLawKnow: 10,
+      immigrationLawDetail: 20,  dataPrivacyKnow: 25,      gdprAwareness: 20,
+      copyrightKnow: 15,         propertyLawKnow: 15,      insuranceLawKnow: 20,
+      courtProcedureKnow: 10,    mediationKnow: 15,        arbitrationKnow: 10,
+      notaryExperience: 1,       powerOfAttorneyDone: 0,   willWritten: 0,
+      bankAccountsOwned: 1,      bankingDocsDone: 5,       taxReturnsDone: 2,
+      documentOrganisationScore: 45, documentScanDone: 30, documentBackupScore: 35,
+      officialFormsFilled: 15,   bureaucracyFrustration: 65, bureaucracySuccessRate: 55,
+      officialEmailsWritten: 8,  officialLettersWritten: 3, complaintsFiled: 1,
+      legalAidAccessed: 0,       lawyerConsulted: 0,       policeContactsPos: 0,
+      policeContactsNeg: 0,      courtAppearances: 0,      finesReceived: 0,
+      finesPaid: 0,              legalDebts: 0,            criminalRecordClean: 1,
+      backgroundCheckPassed: 1,  gdprConsentManaged: 1,    privacySettingsManaged: 1,
+      identityVerified: 1,       idDocumentsValid: 1,      passportValid: 1,
+      drivingLicenseValid: 0,    insurancePoliciesOwned: 1, vehicleRegistered: 0,
+      propertyOwned: 0,          mortgageKnow: 10,         rentalContractSigned: 1,
+      rentalDisputeExp: 0,       tenantProtectionKnow: 20, utilityContractsSigned: 2,
+      mobileContractSigned: 1,   internetContractSigned: 1, bankMandatesSetup: 2,
+      creditHistoryScore: 50,    debtCollectionExp: 0,     insolvencyKnow: 5,
+      euLawAwareness: 15,        internationalTreatyKnow: 5, humanRightsKnow: 25,
+      antiDiscriminationKnow: 30, whistleblowerKnow: 10,   corporateComplianceKnow: 10,
+      amlKnow: 5,                gdprTrainingDone: 0,      securityClearanceLevel: 0,
+
+      /* ── TRANSPORTATION & MOBILITY (70 params) ──────────────── */
+      drivingSkillScore: 45,     carOwned: 0,              motorcycleOwned: 0,
+      bicycleOwned: 1,           publicTransitSkill: 70,   navigationSkill: 60,
+      mapReadingSkill: 55,       gpsUsageSkill: 70,        publicTransitKnow: 65,
+      busRoutesKnown: 8,         tramRoutesKnown: 4,       subwayRoutesKnown: 2,
+      trainRoutesKnown: 5,       taxiUsageFreq: 2,         rideshareUsageFreq: 3,
+      cyclingDistanceKm: 5,      walkingDistanceKm: 3,     commuteDurationMin: 35,
+      commuteStressLevel: 45,    transportBudgetPLN: 150,  fuelCostKnow: 40,
+      carMaintenanceKnow: 25,    tirePressureChecks: 2,    oilChangeKnow: 15,
+      vehicleInspectionDue: 0,   parkingSkill: 55,         parallelParkingScore: 40,
+      highwayDrivingComfort: 50, nightDrivingComfort: 45,  weatherDrivingComfort: 40,
+      internationalDrivingExp: 10, truckDrivingLicense: 0, forkliftLicense: 0,
+      boatLicense: 0,            pilotLicense: 0,          droneFlightExp: 5,
+      flightFreqPerYear: 1,      airportNavigationSkill: 55, boardingPassDigital: 1,
+      luggagePackingSkill: 65,   customsKnow: 30,          borderCrossingExp: 5,
+      internationalTravelExp: 3, backpackingExp: 1,        hostelUsageExp: 3,
+      hotelBookingSkill: 60,     travelInsuranceUsed: 1,   visaApplicationExp: 2,
+      eTicketUsage: 1,           transitConnectionsManaged: 10, delayHandlingSkill: 55,
+      accessibilityAwareness: 35, lastMileNavigationSkill: 60, carSharingUsed: 2,
+      scooterRidingSkill: 30,    skateboardingSkill: 10,   rollerbladeSkill: 10,
+      hitchhikingExp: 2,         carpoolingExp: 3,         sustainableMobilityScore: 45,
+
+      /* ── COMMUNICATION & MEDIA (80 params) ──────────────────── */
+      publicSpeakingScore: 35,   presentationSkill: 40,    debatingSkill: 30,
+      persuasionScore: 45,       activeListeningScore: 55, feedbackGivingSkill: 50,
+      feedbackReceivingSkill: 55, conflictCommunicationSkill: 40, assertivenessScore: 45,
+      nonVerbalCommSkill: 50,    emailWritingScore: 60,    reportWritingScore: 45,
+      technicalWritingScore: 30, creativeWritingScore: 35, blogPostsWritten: 2,
+      socialMediaPosts: 150,     twitterFollowers: 80,     instagramFollowers: 120,
+      linkedinArticles: 1,       youtubeChannelSubs: 0,    podcastEpisodesRecorded: 0,
+      pressReleaseWritten: 0,    mediaCoverageReceived: 0, interviewGivenToMedia: 0,
+      photojournalismSkill: 10,  videoEditingBasic: 15,    podcastListeningHrsWeek: 3,
+      newsReadingFreq: 5,        mediaLiteracyScore: 55,   misinformationDetection: 50,
+      criticalMediaAnalysis: 45, advertisingAwareness: 60, prMediaSkill: 20,
+      brandVoiceConsistency: 30, audienceEngagementScore: 25, hashtagStrategy: 15,
+      contentCalendarUsed: 0,    seoBasicsKnow: 20,        analyticsToolsUsed: 1,
+      onlineCommunityBuilt: 0,   forumParticipation: 10,   redditActivity: 5,
+      discordMembership: 2,      telegramGroupsJoined: 8,  whatsappGroupsActive: 5,
+      zoomCallsPerWeek: 3,       teamsCallsPerWeek: 1,     videoCallSetupSkill: 65,
+      virtualEventAttended: 5,   webinarsConducted: 0,     liveChatSupport: 0,
+      customerServiceCommSkill: 45, escalationHandling: 35, diplomaticComm: 50,
+      crossCulturalCommScore: 45, interpreterExp: 5,       translationExp: 3,
+      translationToolsUsed: 3,   subtitleCreationExp: 0,   voiceoverExp: 0,
+      radioExp: 0,               tvAppearanceExp: 0,       stagePresenceScore: 30,
+      humorScore: 55,            storytellingScore: 50,    motivationalSpeakingScore: 25,
+      empathyCommunication: 60,  clearInstructionGiving: 55, meetingFacilitation: 35,
+
+      /* ── FAMILY & RELATIONSHIPS (60 params) ─────────────────── */
+      maritalStatus: 0,          partnerSupportLevel: 0,   childrenCount: 0,
+      parentingScore: 0,         elderCareResponsibility: 0, siblingCount: 1,
+      familyNetworkStrength: 55, familyConflictLevel: 20,  familyFinancialSupport: 10,
+      remittanceSentPLN: 0,      homesicknessLevel: 60,    longDistanceRelExp: 1,
+      videoCallFreqFamily: 3,    letterWrittenToFamily: 0, familyVisitsPerYear: 1,
+      familyEmergencyFund: 0,    childcareAccessScore: 0,  schoolEnrollmentHelp: 0,
+      familyCommunicationQuality: 60, divorceExp: 0,       griefProcessingScore: 40,
+      lossOfFriendship: 2,       socialIsolationRisk: 35,  lonelinessMeasure: 40,
+      friendshipNetworkSize: 12, closeFreindsCount: 3,     acquaintancesCount: 50,
+      newFriendshipsLastYear: 2, socialEventAttended: 8,   partyOrganised: 1,
+      weddingAttended: 2,        funeralAttended: 1,        birthdaysCelebrated: 5,
+      anniversaryCelebrated: 0,  holidayCelebrated: 4,     giftGivingScore: 55,
+      volunteerRelationshipHelp: 0, conflictResolutionFamilyScore: 45, supportGroupMembership: 0,
+      therapyRelationshipSessions: 0, petOwnership: 0,     petCareScore: 0,
+      animalLoveScore: 55,       neighborRelationsScore: 50, communityEventParticipation: 3,
+      workLifeBalanceScore: 40,  boundarySettingScore: 45, selfDisclosureComfort: 50,
+      emotionalIntelligenceScore: 55, empatheticListeningScore: 60, trustScore: 55,
+
+      /* ── CIVIC & COMMUNITY (70 params) ──────────────────────── */
+      votingParticipation: 0,    politicalAwarenessScore: 35, localGovKnow: 20,
+      taxCivicKnow: 25,          publicServiceUsage: 40,    socialBenefitsApplied: 1,
+      socialBenefitsReceived: 0, charityDonated: 0,         charityDonationsTotal: 0,
+      ngoMembership: 0,          volunteerHoursTotal: 10,   communityLeadershipScore: 20,
+      petitionSigned: 3,         protestParticipated: 0,    civilDisobedience: 0,
+      civicEducationScore: 30,   constitutionKnow: 20,      electoralSystemKnow: 25,
+      humanRightsActivism: 10,   environmentActivism: 15,   laborUnionMembership: 0,
+      laborRightsKnow: 30,       strikeParticipated: 0,     publicHearingAttended: 0,
+      municipalBudgetKnow: 10,   participatoryBudgeting: 0, citizenInitiative: 0,
+      neighborhoodAssocMember: 0, townHallAttended: 0,      officialComplaintFiled: 1,
+      ombudsmanContacted: 0,     parliamentVisited: 0,      govTransparencyAwareness: 30,
+      freedomOfSpeechScore: 70,  pressFreedornAwareness: 55, corruptionAwarenessScore: 45,
+      anticorruptionAction: 0,   whistleblowing: 0,         accountabilityScore: 50,
+      digitalCivicsScore: 40,    eGovernmentUsage: 25,      onlinePetitionsSigned: 5,
+      socialJusticeAwareness: 45, equalityScore: 55,        accessibilityAdvocacy: 20,
+      inclusivityScore: 55,      diversityAwareness: 50,    culturalSensitivity: 55,
+      antiRacismScore: 60,       peacefulConflictResolution: 55, internationalSolidarity: 50,
+      warRefugeeAwareness: 70,   disasterReliefParticipated: 0, firstAidCommunityDone: 1,
+      neighborhoodSafetyScore: 55, crimeReportingWill: 60,  trafficSafetyScore: 65,
+      environmentCleanUp: 1,     recyclingScore: 55,        wasteSegregationScore: 60,
+
+      /* ── CONSTRUCTION & DIY REPAIR (80 params) ──────────────── */
+      basicPlumbingKnow: 20,     advancedPlumbingKnow: 5,  basicElectricalKnow: 25,
+      advancedElectricalKnow: 5, paintingWallsSkill: 35,   wallpaperHangingSkill: 10,
+      tilingSkill: 15,           flooringInstallSkill: 20,  carpentryBasic: 20,
+      carpentryAdvanced: 5,      furnitureAssemblySkill: 65, ikEaAssemblyScore: 70,
+      drywallSkill: 10,          insulationInstallSkill: 10, roofingKnow: 5,
+      windowInstallKnow: 10,     doorInstallKnow: 15,      lockInstallKnow: 20,
+      cctvInstallKnow: 0,              alarmSystemInstall: 10,   hvacBasic: 10,
+      boilerMaintenanceKnow: 10, solarPanelKnow: 5,        rainwaterHarvestingKnow: 5,
+      gardeningBasic: 30,        gardeningAdvanced: 10,    lawnCareKnow: 20,
+      compostingKnow: 15,        treePruningKnow: 10,      vegetableGardeningExp: 10,
+      concreteWorkKnow: 10,      bricklayingKnow: 5,       scaffoldingKnow: 5,
+      weldingBasic: 5,           weldingAdvanced: 0,       metalworkKnow: 10,
+      woodworkKnow: 25,          printingKnow3d: 5,        laserCuttingKnow: 0,
+      cnckMachiningKnow: 0,      arduinoKnow: 5,           raspberryPiKnow: 5,
+      homeAutomationKnow: 10,    smarthomDevicesOwned: 0,  toolboxCompleteness: 50,
+      powerDrillOwned: 1,        circularSawOwned: 0,      jigsawOwned: 0,
+      measuringToolsKnow: 60,     levelToolKnow: 50,        safetyGearUsage: 55,
+      projectManagementDIY: 35,  budgetManagementDIY: 30,  materialCostEstimation: 25,
+      constructionCodeKnow: 10,  buildingPermitKnow: 10,   contractorManagement: 15,
+      architecturalDrawingKnow: 5, cadBasic: 0,            homeBlueprintReading: 15,
+      energyEfficiencyKnow: 30,  insulationValueKnow: 15,  greenBuildingKnow: 10,
+      wasteDisposalConstruction: 20, scaffoldSafety: 10,   heightWorkComfort: 35,
+      ropeWorkKnow: 20,          firstAidConstructionDone: 1, workInConfinedSpace: 10,
+      paintHazardAwareness: 25,  asbestosAwareness: 20,    chemicalHandlingSafety: 30,
+
+      /* ── VETERAN INTEGRATION POLAND (120 params) ─────────────── */
+      integrationProgramJoined: 0,   integrationCounselorMet: 0, vetOrganizationMember: 0,
+      vetNetworkContactsCount: 2,    polishVetCommunityKnow: 15, uaVetCommunityKnow: 40,
+      vetBenefitsKnow: 20,           vetBenefitsApplied: 0,      vetBenefitsReceived: 0,
+      militaryPensionStatus: 0,      veteranCardReceived: 0,     veteranStatusConfirmed: 0,
+      ptsdTreatmentStarted: 0,       ptsdTreatmentCompleted: 0,  traumaTherapySessions: 0,
+      groupTherapyParticipated: 0,   mentalhealthScreeningDone: 0, psychiatristConsulted: 0,
+      medicationForPtsd: 0,          stressManagementTechniques: 3, mindfulnessPractice: 10,
+      meditationFreqPerWeek: 1,      exerciseFreqPerWeek: 3,     sleepHoursAvg: 6.5,
+      nightmaresFreqWeek: 2,         hypervigilanceScore: 45,    flashbacksFreqWeek: 1,
+      avoidanceBehaviorScore: 35,    emotionalNumbScore: 30,     angerManagementScore: 40,
+      suicideRiskScreenDone: 0,      crisisHotlineKnow: 1,       emergencyContactSet: 1,
+      socialWorkerAssigned: 0,       housingBenefitApplied: 0,   housingBenefitReceived: 0,
+      temporaryHousingMonths: 0,     permanentHousingSecured: 1, housingQualityScore: 55,
+      housingCostBurdenScore: 60,    rentSubsidyKnow: 10,        communalLivingExp: 0,
+      communityKitchenUsed: 0,       foodBankVisited: 0,         warmingCenterVisited: 0,
+      familyReunificationProgress: 20, childrenEnrolledInSchool: 0, spouseJobSearchHelp: 0,
+      divorceRiskScore: 0,           familyTherapySessions: 0,   parentingCourseAttended: 0,
+      plLanguageCourseEnrolled: 0,   plLanguageCourseCompleted: 0, plLanguageExamPassed: 0,
+      plLangCourseHours: 0,          plLangCourseFunded: 0,      plLangCertificateLevel: 0,
+      retrainingCourseEnrolled: 0,   retrainingCourseCompleted: 0, retrainingSkillsGained: 0,
+      employmentOfficeRegistered: 0, urzadPracyVisited: 0,       jobCenterServicesUsed: 0,
+      profileInJobCenter: 0,         jobMatchingServiceUsed: 0,  cvCreatedWithHelp: 0,
+      interviewCoachingReceived: 0,  careerCounselorMet: 0,      vocationalTestDone: 0,
+      skillsAssessmentDone: 0,       jobTrialParticipated: 0,    internshipViaCenter: 0,
+      subsidizedEmployment: 0,       selfEmploymentSupport: 0,   businessGrantKnow: 0,
+      startupSupportProgramKnow: 10, startupSupportApplied: 0,   startupFunded: 0,
+      socialEnterpriseFounded: 0,    coopMembership: 0,          microfinanceAccessed: 0,
+      bankAccountOpenedPoland: 1,    zlotysOwned: 2000,          eurosSaved: 0,
+      moneyTransferAppUsed: 1,       fxRateAwareness: 55,        currencyExchangeExp: 3,
+      taxIdPolandRegistered: 0,      nipNumber: 0,               zusRegistered: 0,
+      zusContributionsPaid: 0,       healthInsuranceActive: 0,   nfzCardReceived: 0,
+      nfzDoctorVisited: 0,           specialistReferralDone: 0,  pharmacyPolandUsed: 1,
+      medicationRefillPoland: 0,     dentalCarePoland: 0,        eyeCarePoland: 0,
+      mentalHealthCarePoland: 0,     emergencyRoomVisited: 0,    ambulanceCalledPoland: 0,
+      polishHospitalExp: 0,          medicalTranslatorUsed: 0,   patientRightsKnow: 15,
+      culturalBarriersExperienced: 3, xenophobiaIncidentsExp: 0, discriminationReported: 0,
+      antiDiscriminationOrgKnow: 10, integrationEventAttended: 2, crossCulturalFriendships: 5,
+      polishFriendsMade: 2,          polishColleagueMade: 0,     polishNeighborMet: 3,
+      polishCultureCourseAttended: 0, polishHolidaysKnow: 6,     polishCuisineExplored: 8,
+      polishSportsInterest: 25,      polishMusicInterest: 20,    polishFilmInterest: 30,
+      polishLiteratureRead: 1,       polishNewsReadable: 0,      polishRadioListened: 5,
+      polishTVWatched: 15,           polishPodcastListened: 2,   socialMediaInPolish: 10,
+      polishComputerInterfaceUsed: 1, polishSmartphoneUsed: 1,   polishBankAppUsed: 1,
+
+      /* ── ECONOMY & LABOR MARKET (80 params) ─────────────────── */
+      polishLaborMarketKnow: 30,     avgSalaryPolandKnow: 35,   minWagePolandKnow: 40,
+      sectorSalaryComparison: 25,    salaryNegotiationAttempts: 1, salaryNegotiationSuccess: 0,
+      raisingRaisedSuccessfully: 0,  bonusReceived: 0,           benefitsPackageValue: 0,
+      stockOptionsKnow: 10,          equityCompensationKnow: 5,  profitSharingKnow: 10,
+      employmentContractSigned: 0,   contractTypeKnow: 35,       b2bContractKnow: 20,
+      umowaodzielo: 15,           umowazlecenia: 20,       uopKnow: 30,
+      workPermitPoland: 0,           kartyPolaka: 0,             blueCardEU: 0,
+      temporaryResidencePermit: 0,   permanentResidencePermit: 0, euCitizenshipProgress: 0,
+      jobSearchDurationKnow: 5,       jobOffersReceived: 0,       jobOffersRejected: 0,
+      jobOffersDeclined: 0,          jobOffersAccepted: 0,       employmentGapMonths: 6,
+      currentlyEmployed: 0,          employedPartTime: 0,        employedFullTime: 0,
+      selfEmployed: 0,               unemployedDays: 180,        unemploymentBenefit: 0,
+      activeJobSearchScore: 55,      cvAppliedCount: 10,           cvVersion: 2,
+      coverLetterScore: 35,          portfolioScore: 25,         githubProfileScore: 0,
+      linkedinProfileComplete: 45,   linkedinSearchable: 1,      linkedinRecommendations: 1,
+      jobBoardsUsed: 3,              recruitersContactedCount: 2, headhunterReached: 0,
+      referralJobOffer: 0,           insiderJobInfo: 1,          jobFairAttended: 1,
+      industryEventNetworking: 2,    professionalAssocMember: 0, tradeAssocMember: 0,
+      laborInspectionKnow: 20,       workplaceSafetyScore: 60,   harassmentPolicyKnow: 30,
+      whistleblowingProtectionKnow: 15, collectiveBargainingKnow: 10, strikeLegalityKnow: 10,
+      remoteWorkCapability: 40,      hybridWorkPreference: 60,   officeWorkPreference: 40,
+      overtimeWillingScore: 55,      shiftWorkWillingScore: 60,  weekendWorkWillingScore: 50,
+      nightShiftWillingScore: 45,    relocationWillingScore: 40, internationalWorkWilling: 35,
+
+      /* ── TECHNOLOGY & GADGETS (80 params) ───────────────────── */
+      smartphoneModelAge: 2,         smartphoneOsAndroid: 1,     smartphoneOsIos: 0,
+      appInstallFreq: 4,             appDeleteFreq: 2,           storageUsedGB: 45,
+      batteryHealthScore: 75,        phoneCaseOwned: 1,          screenProtectorOwned: 1,
+      bluetoothHeadphonesOwned: 1,   smartwatchOwned: 0,         fitnessTrackerOwned: 0,
+      tabletOwned: 0,                laptopOwned: 1,             desktopOwned: 0,
+      laptopAgeYears: 3,             ramGB: 8,                   storageGBLaptop: 256,
+      processorGeneration: 8,        gpuOwned: 0,                externalMonitorOwned: 0,
+      keyboardCustom: 0,             mouseErgonomic: 0,          webcamOwned: 1,
+      microphoneExternal: 0,         speakersOwned: 1,           printerOwned: 0,
+      scannerOwned: 0,               externalHDDOwned: 1,        cloudStorageUsedGB: 15,
+      cloudServicesSubs: 2,          streamingServicesSubs: 1,   musicStreamingSub: 1,
+      gamingConsoleOwned: 0,         gamesOwnedDigital: 5,       gamingHoursWeek: 3,
+      vrHeadsetOwned: 0,             arExperienceCount: 0,       iotDevicesOwned: 2,
+      smartHomeSpeaker: 0,           smartTVOwned: 1,            streamingContentKnow: 60,
+      vpnUsed: 0,                    passwordManagerUsed: 0,     twoFactorAuthEnabled: 1,
+      antivirusSoftwareActive: 1,    firewallConfigured: 1,      regularBackupSchedule: 0,
+      phishingAwareness: 50,         socialEngineeringAwareness: 45, cybersecurityTrainingDone: 0,
+      browserExtensionsCount: 4,     adBlockerUsed: 1,           darkModePreferred: 1,
+      accessibilityFeaturesUsed: 0,  screenRecordingKnow: 40,   screenShareSkill: 55,
+      fileCompressionKnow: 50,       fileFormatKnow: 60,         cloudSyncSetup: 1,
+      automationToolsUsed: 1,        spreadsheetSkill: 50,       wordProcessingSkill: 65,
+      presentationSoftwareSkill: 45, diagrammingToolsUsed: 1,   projectMgmtToolsUsed: 2,
+      timeTrackingToolsUsed: 0,      invoicingToolsUsed: 0,      crmKnow: 10,
+
+      /* ── ENVIRONMENT & ECO (50 params) ──────────────────────── */
+      carbonFootprintAwareness: 45,  personalCarbonFootprintKg: 5000, recyclingHabit: 60,
+      compostingActive: 0,           plasticUsageReduction: 35,  reusableBagUsed: 1,
+      reusableBottleUsed: 1,         reusableCupUsed: 0,        fastFashionAwareness: 40,
+      clothesRepaired: 3,            secondHandShoppingFreq: 2, energySavingHabits: 50,
+      lightBulbsLED: 4,             applianceEnergyRating: 55,  solarPanelInterest: 25,
+      electricVehicleInterest: 20,  publicTransitPreference: 65, cyclingForTransport: 3,
+      veganismInterest: 10,          vegetarianDaysPerWeek: 1,   localFoodChoices: 30,
+      foodMileAwareness: 35,         seasonalEatingScore: 30,    homeEnergyAuditDone: 0,
+      waterConservationHabits: 50,   gardenWaterRecycling: 0,   rainwaterCollection: 0,
+      eWasteDisposalScore: 40,       batteryRecycling: 55,       paperUsageReduction: 50,
+      officePaperless: 25,           digitalReceiptsUsed: 60,   ecoFriendlyProductPref: 35,
+      sustainableBrandSupport: 30,   greenCertifiedBuying: 15,  carbonOffsetPurchased: 0,
+      treesPlanted: 2,               parkCleanupDone: 1,        beachCleanupDone: 0,
+      nationalParkVisited: 3,        hikingTripsPerYear: 2,     birdwatchingExp: 0,
+      wildlifePhotographyExp: 0,     conservationDonation: 0,   ecoTourismExp: 0,
+      climateScienceKnow: 35,        climateAnxietyLevel: 30,   climateActionScore: 30,
+
+      /* ── ARTS & CULTURE (60 params) ─────────────────────────── */
+      paintingSkill: 15,             drawingSkill: 20,           sculptureSkill: 5,
+      photographySkill: 25,          filmMakingSkill: 10,        animationSkill: 5,
+      calligraphySkill: 10,          graffitSkill: 5,            streetArtInterest: 20,
+      theaterVisitsPerYear: 1,       operaVisitsPerYear: 0,      concertAttended: 3,
+      museumVisitsPerYear: 4,        galleryVisitsPerYear: 2,    culturalFestivalAttended: 2,
+      booksOwnedCount: 35,           eBooksOwned: 0,              audioBookHrsMonth: 4,
+      podcastGenresExplored: 4,      musicGenresEnjoyed: 5,      instrumentPlayed: 1,
+      instrumentPracticeHrWeek: 1,   singingSkill: 30,           dancingSkill: 25,
+      danceStylesKnown: 2,           actingSkill: 10,            improvTheatreExp: 0,
+      cinematographyInterest: 30,    filmReviewsWritten: 2,      bookReviewsWritten: 0,
+      literaryAnalysisSkill: 30,     poetryWritten: 3,           shortStoriesWritten: 1,
+      novelStarted: 0,               scriptWritten: 0,            gameNarrativeInterest: 25,
+      comicBookInterest: 20,         mangaRead: 5,               animeWatched: 3,
+      classicalMusicKnow: 15,        jazzKnow: 10,               folkMusicKnow: 30,
+      ukrainianMusicInterest: 65,    polishMusicInterest: 30,    worldMusicExplored: 15,
+      concertOrganizerExp: 0,        djSkill: 0,                  soundEngineeringKnow: 5,
+      studioRecordingExp: 0,         mixingKnow: 5,              masteringKnow: 0,
+
+      /* ── HEALTH & WELLNESS ADVANCED (60 params) ─────────────── */
+      meditationTechniqueCount: 2,    yogaSkillLevel: 10,        pilatesSkillLevel: 5,
+      breathworkKnow: 15,            coldExposureKnow: 10,       saunaFreqPerMonth: 2,
+      massageTherapyReceived: 1,      acupunctureExp: 0,          chiropracticExp: 0,
+      herbalMedicineKnow: 20,        aromatherapyKnow: 10,       homeopathyKnow: 5,
+      bloodTypeKnow: 1,              bloodPressureMonitored: 0,   bloodSugarMonitored: 0,
+      cholesterolMonitored: 0,       bmiScore: 24,               bodyFatPercentage: 22,
+      muscleGroupsStrengthened: 4,   mobilityRoutineDone: 0,     stretchingHabbit: 25,
+      jointHealthScore: 65,          backPainFreq: 3,             neckPainFreq: 2,
+      headacheFreqPerMonth: 4,       dentalHealthScore: 60,      eyeHealthScore: 70,
+      earHealthScore: 75,            skinHealthScore: 65,        hairHealthScore: 60,
+      nailHealthScore: 55,           gutHealthAwareness: 35,     probioticUsage: 0,
+      prebioticUsage: 0,             vitaminDKnow: 0,            vitaminB12Know: 0,
+      ironLevelsKnow: 0,             magnesiumKnow: 0,           zincKnow: 0,
+      omega3Intake: 0,               antioxidantFoodScore: 40,   antiInflammFoodScore: 35,
+      fastingExperience: 0,          detoxExperience: 0,         naturopathyExp: 0,
+      biohackingInterest: 10,        trackingAppsUsedCount: 1,   heartRateMonitored: 0,
+      vo2MaxKnow: 0,                 rhrBeatsPerMin: 68,         hrRecoveryScore: 55,
+      stressHormoneAwareness: 25,    cortisolManagement: 30,     adrenalFatigueAwareness: 15,
+      immuneBoostingHabits: 40,      vaccinationsUpToDate: 1,    allergyTestDone: 0,
+      foodIntoleranceKnow: 20,       environmentalAllergyKnow: 15, medicineInteractionKnow: 10,
+
+      /* ── PERSONAL FINANCE ADVANCED (50 params) ──────────────── */
+      monthlyBudgetWritten: 0,       budgetAppUsed: 0,           envelopeBudgeting: 0,
+      zeroBudgetingKnow: 10,         fiftyThirtyTwentyRule: 15,  financialGoalsSet: 0,
+      emergencyFundMonths: 0,        retirementSavingsStarted: 0, pensionSystemKnow: 15,
+      investmentAccountsOwned: 0,    stocksOwned: 0,             etfOwned: 0,
+      cryptoOwned: 0,                cryptoKnow: 20,             nftKnow: 5,
+      realEstateInvested: 0,         bondKnow: 10,               mutualFundKnow: 10,
+      indexFundKnow: 15,             roboAdvisorUsed: 0,         compoundInterestKnow: 40,
+      inflationAwareness: 50,        currencyHedgingKnow: 5,     forexTradingKnow: 5,
+      optionsKnow: 0,               futuresKnow: 0,              commoditiesKnow: 5,
+      financialAdvisorConsulted: 0,  taxOptimizationKnow: 10,    taxDeductionsKnow: 20,
+      lifeInsuranceOwned: 0,         healthInsuranceOwned: 0,    propertyInsuranceOwned: 0,
+      wealthGrowthRate: 0,           netWorthGrowthYearly: 0,    savingsRatePercent: 5,
+      debtToIncomeRatio: 0,          creditScorePoland: 0,       biKReportChecked: 0,
+      financialLiteracyScore: 30,    moneyMindsetScore: 40,      abundanceMindset: 35,
+      scarcityMindset: 55,           financialAnxiety: 50,       moneyConversationComfort: 30,
+      inheritanceExpected: 0,        financialIndependenceGoal: 0, fireMovementKnow: 10,
+
+    }; // end extStats — 2027 keys across 33 categories
   },
 
   /* --- Derive a bonus score from extStats for interview evaluation --- */
@@ -1066,17 +1622,23 @@ const StatsSystem = {
         extStats.enBusinessTerms= Math.min(100, extStats.enBusinessTerms + 4);
         extStats.completedLanguageCourse = 1;
         break;
-      case 7: // Veteran medal → military + resilience + luck
-        extStats.resilienceScore    = Math.min(100, extStats.resilienceScore + 6);
-        extStats.leadershipExp      = Math.min(100, (extStats.leadershipExp || 0) + 5);
-        extStats.combatExp          = Math.min(100, (extStats.combatExp || 0) + 5);
-        extStats.confidenceWork     = Math.min(100, extStats.confidenceWork + 4);
+      case 7: // Document → citizenship / legal status params
+        extStats.kartaPobytu      = Math.min(1, extStats.kartaPobytu + 0.34);
+        extStats.workPermit       = Math.min(1, extStats.workPermit + 0.25);
+        extStats.socialServicesAware = Math.min(100, extStats.socialServicesAware + 8);
+        extStats.immigrationLawKnow  = Math.min(100, extStats.immigrationLawKnow + 6);
+        extStats.taxIdPL          = Math.min(1, extStats.taxIdPL + 0.3);
         break;
-      case 8: // Veteran card → documents / legal / stress
-        extStats.resumeQuality      = Math.min(100, extStats.resumeQuality + 4);
-        extStats.professionalBrand  = Math.min(100, extStats.professionalBrand + 5);
-        extStats.anxiety            = Math.max(0, extStats.anxiety - 6);
-        extStats.trustInInstitutions= Math.min(100, extStats.trustInInstitutions + 8);
+      case 8: // Language certificate → advanced PL + professional bonus
+        extStats.plListening    = Math.min(100, extStats.plListening + 10);
+        extStats.plSpeaking     = Math.min(100, extStats.plSpeaking + 10);
+        extStats.plReading      = Math.min(100, extStats.plReading + 10);
+        extStats.plWriting      = Math.min(100, extStats.plWriting + 8);
+        extStats.plVocabSize    = Math.min(10000, extStats.plVocabSize + 400);
+        extStats.plGrammarScore = Math.min(100, extStats.plGrammarScore + 8);
+        extStats.plBusinessTerms= Math.min(100, extStats.plBusinessTerms + 10);
+        extStats.resumeQuality  = Math.min(100, extStats.resumeQuality + 4);
+        extStats.completedLanguageCourse = 1;
         break;
     }
   },
@@ -1242,17 +1804,13 @@ const DialogueSystem = {
     if (bribeBonus) score += 20;
     if (stats.stress > 70) score -= 15;
     if (stats.mentalHealth < 40) score -= 10;
-    // Luck factor: slight random boost/penalty scaled by luck stat
-    if (stats.luck !== undefined) score += (stats.luck - 50) * 0.1 + (Math.random() * 6 - 3) * (stats.luck / 100);
-    // Documents factor: proper paperwork helps
-    if (stats.documents !== undefined) score += stats.documents * 0.05;
 
     const passed = score >= 50;
     const responseText = passed ? this.rnd(DATA.offers) : this.rnd(DATA.rejections);
     return { passed, score: Math.round(score), requirements: reqs, text: responseText };
   },
 
-  /* Generate NPC dialogue lines (veteran / hr / instructor / lawyer) */
+  /* Generate NPC dialogue lines (veteran / hr / instructor) */
   buildNPCDialogue(npcType, stats, veteransMet) {
     if (npcType === 0) { // veteran
       const base = this.rnd(DATA.veteranLines);
@@ -1263,7 +1821,7 @@ const DialogueSystem = {
       const statsNote = stats.reputation > 60 ? ' Ваша репутація вже добра — продовжуйте!' :
                         stats.polishLang < 40 ? ' Найбільша проблема зараз — мова. Курси — пріоритет.' : '';
       return base + statsNote;
-    } else if (npcType === 2) { // instructor
+    } else { // instructor
       const tips = [
         'Урок 1: Po polsku — Dzień dobry! Добрий день!',
         'Урок 2: Jak masz na imię? — Як тебе звати?',
@@ -1273,12 +1831,6 @@ const DialogueSystem = {
         'Цей урок +10 до знань польської!',
       ];
       return this.rnd(tips);
-    } else { // lawyer (type 3)
-      const base = this.rnd(DATA.lawyerLines);
-      const docNote = stats.documents !== undefined && stats.documents < 50
-        ? ' Ваші документи потребують уваги! +10 до документів.'
-        : ' Ваші документи в порядку. Так тримати!';
-      return base + docNote;
     }
   },
 };
@@ -1324,9 +1876,9 @@ class Player extends Entity {
       health: 100, strength: 50, intelligence: 50, charisma: 45,
       militaryExp: 80, stress: 30, mentalHealth: 70,
       finances: 2000, reputation: 40, polishLang: 30,
-      englishLang: 60, civilExp: 20,
-      luck: 50,       // удача — впливає на успіх співбесід і взаємодій
-      documents: 30,  // рівень оформлення документів
+      englishLang: 60, civilExp: 20, citizenshipProgress: 0,
+      experience: 0, networkPoints: 0, skillPoints: 0,
+      hunger: 100, energy: 100, mood: 70,
     };
     // Extended parameters (1003 values across 16 categories)
     this.extStats = StatsSystem.createExtStats();
@@ -1369,6 +1921,14 @@ class Player extends Entity {
     if (this.frame % 480 === 0 && this.stats.stress < 90) this.stats.stress += 1;
     // Finances drain very slowly
     if (this.frame % 1800 === 0 && this.stats.finances > 0) this.stats.finances -= 20;
+    // Hunger and energy drain
+    if (this.frame % 1200 === 0) {
+      this.stats.hunger = Math.max(0, this.stats.hunger - 2);
+      this.stats.energy = Math.max(0, this.stats.energy - 1);
+    }
+    // Low hunger affects mood
+    if (this.stats.hunger < 30) this.stats.mood = Math.max(0, this.stats.mood - 0.02);
+    else if (this.frame % 600 === 0) this.stats.mood = Math.min(100, this.stats.mood + 0.5);
     // Tick extStats evolution
     StatsSystem.tick(this.extStats, this.frame);
 
@@ -1528,8 +2088,8 @@ class NPC extends Entity {
   draw(ctx, camX) {
     const px = Math.round(this.x - camX);
     const py = Math.round(this.y + Math.sin(this.bobTimer * 0.04) * 2);
-    const colors = ['#2d5a27','#1a5f7a','#7a5c1a','#4a1a5a'];
-    const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫','⚖️'];
+    const colors = ['#2d5a27','#1a5f7a','#7a5c1a'];
+    const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫'];
     ctx.save();
     ctx.fillStyle = colors[this.type] || '#666';
     ctx.fillRect(px, py + 10, this.w, this.h - 10);
@@ -1541,7 +2101,8 @@ class NPC extends Entity {
     // Interaction hint
     ctx.fillStyle = '#00a67e';
     ctx.font = 'bold 11px sans-serif';
-    ctx.fillText('[E]', px + this.w / 2, py - 8);
+    const npcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(npcIsTouch ? '[E]' : '[E]', px + this.w / 2, py - 8);
     if (!this.talked) {
       // Pulsing indicator
       const alpha = 0.5 + 0.5 * Math.sin(this.bobTimer * 0.08);
@@ -1653,8 +2214,8 @@ class Collectible {
     this.collected = false;
     this.bobTimer = Math.random() * Math.PI * 2;
   }
-  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧','🎖️','🪪']; }
-  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN','+MIL','+DOC']; }
+  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧','📑','🏅']; }
+  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN','+DOC','+CERT']; }
   draw(ctx, camX) {
     if (this.collected) return;
     this.bobTimer += 0.06;
@@ -1669,15 +2230,15 @@ class Collectible {
   }
   apply(stats, extStats) {
     const map = [
-      () => { stats.intelligence = Math.min(100, stats.intelligence + 5); stats.civilExp += 3; stats.luck = Math.min(100, stats.luck + 1); },
-      () => { stats.reputation   = Math.min(100, stats.reputation + 8); stats.documents = Math.min(100, stats.documents + 3); },
+      () => { stats.intelligence = Math.min(100, stats.intelligence + 5); stats.civilExp += 3; },
+      () => { stats.reputation   = Math.min(100, stats.reputation + 8); },
       () => { stats.charisma     = Math.min(100, stats.charisma + 6); },
       () => { stats.finances     += 300; },
-      () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); stats.luck = Math.min(100, stats.luck + 2); },
-      () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); stats.documents = Math.min(100, stats.documents + 5); },
+      () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); },
+      () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); },
       () => { stats.englishLang  = Math.min(100, stats.englishLang + 8); },
-      () => { stats.militaryExp  = Math.min(100, stats.militaryExp + 8); stats.luck = Math.min(100, stats.luck + 6); stats.reputation = Math.min(100, stats.reputation + 4); },
-      () => { stats.documents    = Math.min(100, stats.documents + 15); stats.reputation = Math.min(100, stats.reputation + 5); stats.stress = Math.max(0, stats.stress - 8); },
+      () => { stats.citizenshipProgress = Math.min(100, (stats.citizenshipProgress || 0) + 15); stats.reputation = Math.min(100, stats.reputation + 5); },
+      () => { stats.polishLang = Math.min(100, stats.polishLang + 15); stats.reputation = Math.min(100, stats.reputation + 8); },
     ];
     if (map[this.type]) map[this.type]();
     // Also update extStats sub-parameters
@@ -1707,8 +2268,7 @@ const QuestSystem = {
         case 'business':
           q.progress = (p.stats.finances >= 5000 && p.stats.reputation >= 70) ? 1 : 0;
           break;
-        case 'documents':  q.progress = p.stats.documents || 0; break;
-        case 'luck':       q.progress = p.stats.luck || 0; break;
+        case 'citizenship': q.progress = p.stats.citizenshipProgress || 0; break;
       }
       if (q.progress >= q.target && !q.done) {
         q.done = true;
@@ -1736,36 +2296,52 @@ const UISystem = {
     ctx.fillText(label, x + 3, y + h - 2);
   },
 
-  drawHUD(ctx, player, camX, economySystem, questsDone, frame) {
+  drawHUD(ctx, player, camX, economySystem, questsDone, frame, levelNum) {
     const s = player.stats;
     ctx.save();
 
-    // Semi-transparent HUD panel
-    ctx.fillStyle = 'rgba(5,10,20,0.78)';
-    ctx.fillRect(0, 0, CFG.CANVAS_W, 70);
+    // Semi-transparent HUD panel — taller to fit new bars
+    ctx.fillStyle = 'rgba(5,10,20,0.82)';
+    ctx.fillRect(0, 0, CFG.CANVAS_W, 60);
 
     // Health bar
-    UISystem.drawBar(ctx, 8,  6, 80, 10, s.health,      100, '#e74c3c', `❤ ${s.health}`);
+    UISystem.drawBar(ctx, 8,  4, 80, 10, s.health,      100, '#e74c3c', `❤ ${s.health}`);
     // Stress bar (lower = better, shown as inverted)
-    UISystem.drawBar(ctx, 98, 6, 70, 10, 100 - s.stress, 100, '#f39c12', `😌 ${100-s.stress}%`);
+    UISystem.drawBar(ctx, 98, 4, 70, 10, 100 - s.stress, 100, '#f39c12', `😌 ${100-s.stress}%`);
     // Mental health bar
-    UISystem.drawBar(ctx, 8, 20, 80, 10, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
+    UISystem.drawBar(ctx, 8, 18, 80, 10, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
     // Polish language bar
-    UISystem.drawBar(ctx, 98, 20, 70, 10, s.polishLang,  100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
-    // Luck bar
-    UISystem.drawBar(ctx, 8,  34, 80, 10, s.luck || 0,   100, '#f0c040', `🍀 ${s.luck || 0}`);
-    // Documents bar
-    UISystem.drawBar(ctx, 98, 34, 70, 10, s.documents || 0, 100, '#20c090', `📄 ${s.documents || 0}%`);
+    UISystem.drawBar(ctx, 98,18, 70, 10, s.polishLang,   100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
+    // Citizenship bar
+    UISystem.drawBar(ctx, 8, 32, 80,  9, s.citizenshipProgress||0, 100, '#ff9800', `🏛 ${s.citizenshipProgress||0}%`);
+    // XP bar
+    const xpCap = 500 * (levelNum || 1);
+    UISystem.drawBar(ctx, 98,32, 70,  9, s.experience % xpCap, xpCap, '#00e5a0', `⚡XP ${s.experience}`);
+    // Mood bar
+    UISystem.drawBar(ctx, 8, 45, 55,  8, s.mood||70, 100, '#e91e8c', `😊 ${Math.round(s.mood||70)}`);
+    // Energy bar
+    UISystem.drawBar(ctx, 68,45, 55,  8, s.energy||100, 100, '#f5d800', `⚡ ${Math.round(s.energy||100)}`);
+    // Hunger bar
+    UISystem.drawBar(ctx, 128,45, 40, 8, s.hunger||100, 100, '#8B4513', `🍞 ${Math.round(s.hunger||100)}`);
 
     // Finances
     ctx.fillStyle = '#00e5a0';
-    ctx.font = 'bold 13px sans-serif';
+    ctx.font = 'bold 12px sans-serif';
     ctx.textAlign = 'left';
-    ctx.fillText(`💰 ${s.finances.toLocaleString('pl-PL')} PLN`, 182, 18);
+    ctx.fillText(`💰 ${s.finances.toLocaleString('pl-PL')} PLN`, 182, 16);
 
-    // Reputation
+    // Reputation & Network
     ctx.fillStyle = '#ffd700';
-    ctx.fillText(`⭐ Реп: ${s.reputation}`, 182, 34);
+    ctx.font = '11px sans-serif';
+    ctx.fillText(`⭐ ${s.reputation}  🤝 ${s.networkPoints||0}pts  🎯 ${s.skillPoints||0}sp`, 182, 30);
+
+    // Level name
+    if (levelNum) {
+      const lvlData = DATA.levels[levelNum - 1];
+      ctx.fillStyle = 'rgba(255,215,0,0.9)';
+      ctx.font = 'bold 10px sans-serif';
+      ctx.fillText(`Рівень ${levelNum}: ${lvlData ? lvlData.name : ''}`, 182, 44);
+    }
 
     // Stats summary (right side)
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
@@ -1773,7 +2349,6 @@ const UISystem = {
     ctx.textAlign = 'right';
     ctx.fillText(`INT:${s.intelligence} STR:${s.strength} CHR:${s.charisma} EN:${s.englishLang}`, CFG.CANVAS_W - 8, 16);
     ctx.fillText(`MilXP:${s.militaryExp} CivXP:${s.civilExp} Quests:${questsDone}`, CFG.CANVAS_W - 8, 30);
-    ctx.fillText(`Удача:${s.luck || 0} Документи:${s.documents || 0}`, CFG.CANVAS_W - 8, 44);
 
     // Extended stats highlights (top right, compact)
     const ext = player.extStats;
@@ -1781,14 +2356,14 @@ const UISystem = {
       ctx.fillStyle = 'rgba(0,229,160,0.75)';
       ctx.font = '9px sans-serif';
       const highlights = StatsSystem.getTopHighlights(ext);
-      if (highlights) ctx.fillText(highlights, CFG.CANVAS_W - 8, 56);
+      if (highlights) ctx.fillText(highlights, CFG.CANVAS_W - 8, 44);
     }
 
     // Economy demand indicators
     ctx.font = '9px sans-serif';
     ctx.textAlign = 'right';
     ctx.fillStyle = '#aaa';
-    ctx.fillText(`IT:${Math.round(economySystem.getDemand(0))}% 🏭:${Math.round(economySystem.getDemand(1))}% 🚀:${Math.round(economySystem.getDemand(2))}%`, CFG.CANVAS_W - 8, 66);
+    ctx.fillText(`IT:${Math.round(economySystem.getDemand(0))}% 🏭:${Math.round(economySystem.getDemand(1))}% 🚀:${Math.round(economySystem.getDemand(2))}%`, CFG.CANVAS_W - 8, 58);
 
     // Quests shortcut hint
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
@@ -1854,7 +2429,11 @@ const UISystem = {
       ctx.fillStyle = 'rgba(255,255,255,0.45)';
       ctx.font = '11px sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText('[E / Enter] або 👆 продовжити', bx + bw - 10, by + bh - 8);
+      const dlgIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+      ctx.fillText(
+        dlgIsTouch ? 'Торкніться або натисніть E' : '[E / Enter] продовжити',
+        bx + bw - 10, by + bh - 8
+      );
     }
 
     ctx.restore();
@@ -1899,12 +2478,14 @@ const UISystem = {
     ctx.textAlign = 'center';
     ctx.fillText('⏸ ПАУЗА', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 30);
     ctx.font = '18px sans-serif';
-    ctx.fillText('[ESC] або кнопка ⏸ — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    const pauseIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if (pauseIsTouch) {
+      ctx.fillText('Торкніться екрану — продовжити', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    } else {
+      ctx.fillText('[ESC] — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    }
     ctx.fillText('[S] — зберегти прогрес', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 40);
     ctx.fillText('[R] — нова гра', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 70);
-    ctx.fillStyle = 'rgba(255,255,255,0.45)';
-    ctx.font = '14px sans-serif';
-    ctx.fillText('👆 Торкніться екрана щоб продовжити', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 110);
     ctx.restore();
   },
 
@@ -1933,14 +2514,19 @@ const UISystem = {
 
     ctx.fillStyle = 'rgba(255,255,255,0.8)';
     ctx.font = '14px sans-serif';
-    ctx.fillText('← → рух  |  ↑ / Пробіл стрибок  |  E — взаємодія', CFG.CANVAS_W / 2, 230);
+    const isTouch2 = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      isTouch2 ? '◀ ▶ — рух  |  ↑ — стрибок  |  E — взаємодія' : '← → рух  |  ↑ / Пробіл стрибок  |  E — взаємодія',
+      CFG.CANVAS_W / 2, 230
+    );
 
     ctx.fillStyle = '#ffd700';
     ctx.font = 'bold 20px sans-serif';
-    ctx.fillText('Натисніть ПРОБІЛ або торкніться екрана', CFG.CANVAS_W / 2, 285);
-    ctx.font = '16px sans-serif';
-    ctx.fillStyle = 'rgba(255,215,0,0.8)';
-    ctx.fillText('щоб почати гру', CFG.CANVAS_W / 2, 310);
+    const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      isTouch ? 'Торкніться екрану або натисніть E щоб почати' : 'Натисніть ПРОБІЛ або ENTER щоб почати',
+      CFG.CANVAS_W / 2, 290
+    );
 
     const hasSave = !!SaveSystem.load();
     if (hasSave) {
@@ -1984,7 +2570,11 @@ const UISystem = {
 
     ctx.fillStyle = '#00a67e';
     ctx.font = 'bold 18px sans-serif';
-    ctx.fillText('[R] — Грати знову  |  👆 Торкніться щоб почати знову', CFG.CANVAS_W / 2, CFG.CANVAS_H - 50);
+    const endIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      endIsTouch ? 'Торкніться екрану щоб грати знову' : '[R] — Грати знову  |  [ESC] — Пауза',
+      CFG.CANVAS_W / 2, CFG.CANVAS_H - 50
+    );
     ctx.restore();
   },
 
@@ -2036,16 +2626,26 @@ const UISystem = {
 
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '11px sans-serif';
-    ctx.fillText('[A] / 👈 ліворуч  |  [B] / 👉 праворуч', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45);
+    const mcIsTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillText(
+      mcIsTouch ? 'Торкніться лівої половини (A) або правої (B)' : '[A] вибрати перший  [B] вибрати другий',
+      CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45
+    );
     ctx.restore();
   },
 
-  drawWorld(ctx, camX) {
+  drawWorld(ctx, camX, levelNum) {
+    const lvl = DATA.levels[(levelNum||1) - 1] || DATA.levels[0];
+    const skyTop = lvl.skyTop || '#0d1117';
+    const skyBot = lvl.skyBot || '#2a3a5a';
+    const groundColor = lvl.groundColor || '#1a2e0f';
+    const grassColor  = lvl.grassColor  || '#2d4a1a';
+
     // Sky gradient
     const skyGrad = ctx.createLinearGradient(0, 0, 0, CFG.CANVAS_H);
-    skyGrad.addColorStop(0, '#0d1117');
-    skyGrad.addColorStop(0.65, '#1a2a4a');
-    skyGrad.addColorStop(1, '#2a3a5a');
+    skyGrad.addColorStop(0, skyTop);
+    skyGrad.addColorStop(0.65, skyBot.replace(/#/,'#') );
+    skyGrad.addColorStop(1, skyBot);
     ctx.fillStyle = skyGrad;
     ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
 
@@ -2057,9 +2657,10 @@ const UISystem = {
       ctx.fillRect(sx, sy, 1.5, 1.5);
     }
 
-    // Distant city silhouettes (parallax)
+    // Distant city silhouettes (parallax) — color varies by level
+    const cityColor = levelNum === 2 ? '#1a1520' : levelNum === 3 ? '#0a1018' : '#1a2030';
     const px2 = camX * 0.2;
-    ctx.fillStyle = '#1a2030';
+    ctx.fillStyle = cityColor;
     for (let i = 0; i < 20; i++) {
       const bx2 = (i * 380 - px2 % 380 + 380) % (CFG.CANVAS_W + 200) - 100;
       const bh2 = 80 + (i * 37) % 100;
@@ -2067,10 +2668,53 @@ const UISystem = {
     }
 
     // Ground
-    ctx.fillStyle = '#1a2e0f';
+    ctx.fillStyle = groundColor;
     ctx.fillRect(0, CFG.GROUND_Y, CFG.CANVAS_W, CFG.CANVAS_H - CFG.GROUND_Y);
-    ctx.fillStyle = '#2d4a1a';
+    ctx.fillStyle = grassColor;
     ctx.fillRect(0, CFG.GROUND_Y, CFG.CANVAS_W, 6);
+  },
+
+  drawLevelComplete(ctx, levelNum) {
+    if (!levelNum) return;
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,20,10,0.94)';
+    ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+
+    ctx.font = '64px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('🏆', CFG.CANVAS_W / 2, 130);
+
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 30px sans-serif';
+    ctx.fillText(`Рівень ${levelNum} пройдено!`, CFG.CANVAS_W / 2, 185);
+
+    const lvl = DATA.levels[levelNum - 1];
+    if (lvl) {
+      ctx.fillStyle = '#00e5a0';
+      ctx.font = '18px sans-serif';
+      ctx.fillText(lvl.name + ' — ' + lvl.subtitle, CFG.CANVAS_W / 2, 220);
+    }
+
+    const nextLvl = DATA.levels[levelNum];
+    if (nextLvl) {
+      ctx.fillStyle = '#e8f4f8';
+      ctx.font = '16px sans-serif';
+      ctx.fillText(`Наступний рівень: ${nextLvl.name}`, CFG.CANVAS_W / 2, 260);
+      ctx.fillText(nextLvl.subtitle, CFG.CANVAS_W / 2, 285);
+    } else {
+      ctx.fillStyle = '#e8f4f8';
+      ctx.font = '16px sans-serif';
+      ctx.fillText('Вітаємо! Всі рівні пройдено!', CFG.CANVAS_W / 2, 270);
+    }
+
+    const isTouch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText(
+      isTouch ? 'Торкніться екрану щоб продовжити' : 'Натисніть ENTER або ПРОБІЛ щоб продовжити',
+      CFG.CANVAS_W / 2, CFG.CANVAS_H - 60
+    );
+    ctx.restore();
   },
 
   drawPlatforms(ctx, platforms, camX) {
@@ -2088,6 +2732,29 @@ const UISystem = {
       ctx.fillRect(Math.round(sx), Math.round(py), pw, 4);
     }
   },
+
+  drawPortal(ctx, portalX, camX, frame) {
+    const px = Math.round(portalX - camX);
+    if (px < -60 || px > CFG.CANVAS_W + 60) return;
+    const pulse = 0.5 + 0.5 * Math.sin(frame * 0.06);
+    ctx.save();
+    // Glow
+    const grd = ctx.createRadialGradient(px + 20, CFG.GROUND_Y - 50, 5, px + 20, CFG.GROUND_Y - 50, 40);
+    grd.addColorStop(0, `rgba(0,229,160,${0.8 * pulse})`);
+    grd.addColorStop(1, 'rgba(0,229,160,0)');
+    ctx.fillStyle = grd;
+    ctx.fillRect(px - 20, CFG.GROUND_Y - 90, 80, 90);
+    // Portal frame
+    ctx.strokeStyle = `rgba(0,229,160,${0.6 + 0.4 * pulse})`;
+    ctx.lineWidth = 3;
+    ctx.strokeRect(px, CFG.GROUND_Y - 80, 40, 80);
+    // Label
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('➡ ДАЛІ', px + 20, CFG.GROUND_Y - 86);
+    ctx.restore();
+  },
 };
 
 // ============================================================
@@ -2097,11 +2764,13 @@ class GameEngine {
   constructor(canvas) {
     this.canvas = canvas;
     this.ctx = canvas.getContext('2d');
-    this.state = 'start'; // start | playing | paused | dialogue | moralChoice | ending
+    this.state = 'start'; // start | playing | paused | dialogue | moralChoice | ending | levelComplete
     this.frame = 0;
     this.camX = 0;
     this.camXTarget = 0;
     this.lastSave = Date.now();
+    this.level = 1; // current level (1–3)
+    this.portalX = 0; // x position of exit portal
 
     // Input state
     this.input = {
@@ -2178,6 +2847,9 @@ class GameEngine {
       if ((e.code === 'Space' || e.code === 'Enter') && this.state === 'start') {
         this.state = 'playing';
       }
+      if ((e.code === 'Space' || e.code === 'Enter') && this.state === 'levelComplete') {
+        this._advanceLevel();
+      }
       if ((e.code === 'KeyE' || e.code === 'Enter') && this.state === 'dialogue') {
         this._advanceDialogue();
       }
@@ -2193,95 +2865,69 @@ class GameEngine {
       if (mapped && mapped in this.input) this.input[mapped] = false;
     });
 
-    // Bind touch controls on touch-capable devices
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      this._bindTouchControls();
-    }
+    this._bindTouchControls();
   }
 
   _bindTouchControls() {
-    const overlay = document.getElementById('touch-controls');
-    if (!overlay) return;
-    overlay.classList.add('active');
-
-    // Helper to create a button
-    const mkBtn = (id, html) => {
-      const btn = document.createElement('button');
-      btn.id = id;
-      btn.className = 'touch-btn';
-      btn.innerHTML = html;
-      overlay.appendChild(btn);
-      return btn;
+    // Helper: bind press/release for a button element to an input key
+    const addBtn = (id, key, onPress, onRelease) => {
+      const btn = document.getElementById(id);
+      if (!btn) return;
+      const press = (e) => {
+        e.preventDefault();
+        btn.classList.add('mc-active');
+        if (onPress) onPress();
+        else if (key) this.input[key] = true;
+      };
+      const release = (e) => {
+        e.preventDefault();
+        btn.classList.remove('mc-active');
+        if (onRelease) onRelease();
+        else if (key) this.input[key] = false;
+      };
+      btn.addEventListener('touchstart', press, { passive: false });
+      btn.addEventListener('touchend', release, { passive: false });
+      btn.addEventListener('touchcancel', release, { passive: false });
+      // Mouse fallback for testing on desktop
+      btn.addEventListener('mousedown', press);
+      btn.addEventListener('mouseup', release);
+      btn.addEventListener('mouseleave', release);
     };
 
-    const btnLeft     = mkBtn('btn-left',     '◀');
-    const btnRight    = mkBtn('btn-right',    '▶');
-    const btnJump     = mkBtn('btn-jump',     '↑');
-    const btnInteract = mkBtn('btn-interact', 'E');
-    const btnQuest    = mkBtn('btn-quest',    'Q');
-    const btnPause    = mkBtn('btn-pause',    '⏸');
-
-    // D-pad: track each touch by identifier so multi-touch works
-    const setKey = (key, val) => { this.input[key] = val; };
-
-    const bindDpad = (btn, key) => {
-      btn.addEventListener('touchstart', (e) => { e.preventDefault(); setKey(key, true); }, {passive: false});
-      btn.addEventListener('touchend',   (e) => { e.preventDefault(); setKey(key, false); }, {passive: false});
-      btn.addEventListener('touchcancel',(e) => { e.preventDefault(); setKey(key, false); }, {passive: false});
-    };
-    bindDpad(btnLeft,  'left');
-    bindDpad(btnRight, 'right');
-
-    btnJump.addEventListener('touchstart', (e) => { e.preventDefault(); this.input.jump = true; }, {passive: false});
-    btnJump.addEventListener('touchend',   (e) => { e.preventDefault(); }, {passive: false});
-
-    btnInteract.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      if (this.state === 'dialogue') {
-        this._advanceDialogue();
-      } else if (this.state === 'moralChoice') {
-        this._handleMoralKeyA();
-      } else {
-        this.input.interact = true;
-        setTimeout(() => { this.input.interact = false; }, 120);
-      }
-    }, {passive: false});
-
-    btnQuest.addEventListener('touchstart', (e) => {
-      e.preventDefault();
+    addBtn('mc-left', 'left');
+    addBtn('mc-right', 'right');
+    addBtn('mc-jump', null,
+      () => { this.input.jump = true; },
+      null  // Player.update() already consumes input.jump each frame
+    );
+    addBtn('mc-interact', null, () => {
+      if (this.state === 'start') { this.state = 'playing'; return; }
+      if (this.state === 'dialogue') { this._advanceDialogue(); return; }
+      if (this.state === 'moralChoice') { return; }
+      this.input.interact = true;
+    }, null); // _checkBuildingInteraction() already clears input.interact each frame
+    addBtn('mc-quest', null, () => {
       if (this.state === 'playing') this.questLogVisible = !this.questLogVisible;
-    }, {passive: false});
+    });
+    addBtn('mc-pause', null, () => { this._handleEscape(); });
 
-    btnPause.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      this._handleEscape();
-    }, {passive: false});
-
-    // Canvas tap handler for overlay states (start, dialogue, moral choice, ending, paused)
+    // Tap on canvas: start game / advance dialogue / handle moral choice / level complete
     this.canvas.addEventListener('touchstart', (e) => {
       e.preventDefault();
-      const touch = e.changedTouches[0];
-      const rect = this.canvas.getBoundingClientRect();
-      const scaleX = CFG.CANVAS_W / rect.width;
-      const scaleY = CFG.CANVAS_H / rect.height;
-      const cx = (touch.clientX - rect.left) * scaleX;
-      const cy = (touch.clientY - rect.top) * scaleY;
-
-      if (this.state === 'start') {
-        this.state = 'playing';
-      } else if (this.state === 'dialogue') {
-        this._advanceDialogue();
-      } else if (this.state === 'moralChoice') {
-        // Left half → choice A, right half → choice B
-        if (cx < CFG.CANVAS_W / 2) this._handleMoralKeyA();
+      if (this.state === 'start') { this.state = 'playing'; return; }
+      if (this.state === 'dialogue') { this._advanceDialogue(); return; }
+      if (this.state === 'paused') { this.state = 'playing'; return; }
+      if (this.state === 'ending') { this._initWorld(); return; }
+      if (this.state === 'levelComplete') { this._advanceLevel(); return; }
+      if (this.state === 'moralChoice' && this.moralChoice) {
+        // Tap left half → choice A, tap right half → choice B
+        const rect = this.canvas.getBoundingClientRect();
+        const tapX = (e.touches[0].clientX - rect.left) / rect.width * CFG.CANVAS_W;
+        if (tapX < CFG.CANVAS_W / 2) this._handleMoralKeyA();
         else this._handleMoralKeyB();
-      } else if (this.state === 'ending') {
-        this._initWorld();
-      } else if (this.state === 'paused') {
-        // Tap anywhere on paused canvas resumes
-        this._handleEscape();
+        return;
       }
-    }, {passive: false});
+    }, { passive: false });
   }
 
   _handleEscape() {
@@ -2323,12 +2969,29 @@ class GameEngine {
   }
 
   _initWorld(savedData) {
+    // Load level-specific data (levels 2+ have their own layout)
+    const levelIdx = (savedData ? (savedData.level || 1) : this.level) - 1;
+    const lvlData = DATA.levels[Math.max(0, Math.min(levelIdx, DATA.levels.length - 1))];
+    this.level = levelIdx + 1;
+    // Override global WORLD_W with the level's world width
+    CFG.WORLD_W = lvlData.worldW || 7200;
+    this.portalX = CFG.WORLD_W - 120;
+
     this.player = new Player(120, CFG.GROUND_Y - CFG.PLAYER_H);
-    this.platforms = DATA.platforms;
-    this.buildings = DATA.buildings.map(b => new Building(...b));
-    this.collectibles = DATA.collectibles.map(c => new Collectible(c.x, c.y, c.type));
-    this.enemies = DATA.enemies.map(e => new Enemy(...e));
-    this.npcs = DATA.npcs.map(n => new NPC(...n));
+
+    // Use level-specific or fallback to DATA.*
+    const lvlPlatforms = lvlData.platforms || DATA.platforms;
+    const lvlBuildings  = lvlData.buildings  || DATA.buildings;
+    const lvlCollect    = lvlData.collectibles|| DATA.collectibles;
+    const lvlEnemies    = lvlData.enemies    || DATA.enemies;
+    const lvlNpcs       = lvlData.npcs       || DATA.npcs;
+
+    this.platforms   = lvlPlatforms;
+    this.buildings   = lvlBuildings.map(b => new Building(...b));
+    this.collectibles= lvlCollect.map(c => new Collectible(c.x, c.y, c.type));
+    this.enemies     = lvlEnemies.map(e => new Enemy(...e));
+    this.npcs        = lvlNpcs.map(n => new NPC(...n));
+
     this.collected = 0;
     this.hasCert = false;
     this.hasRec = false;
@@ -2362,6 +3025,26 @@ class GameEngine {
     if (!savedData && this.state !== 'start') this.state = 'playing';
   }
 
+  _advanceLevel() {
+    if (this.level >= CFG.TOTAL_LEVELS) {
+      // All levels done — trigger best ending
+      this._triggerEnding('vet');
+      return;
+    }
+    const prevStats = { ...this.player.stats };
+    const prevExt   = { ...this.player.extStats };
+    this.level++;
+    this._initWorld();
+    // Restore accumulated stats
+    Object.assign(this.player.stats, prevStats);
+    Object.assign(this.player.extStats, prevExt);
+    // Give bonus XP & skill point for level completion
+    this.player.stats.experience += 500;
+    this.player.stats.skillPoints = Math.min(20, (this.player.stats.skillPoints || 0) + 3);
+    this.player.stats.mood = Math.min(100, (this.player.stats.mood || 70) + 20);
+    this._notify(`🏆 Ласкаво просимо до рівня ${this.level}: ${DATA.levels[this.level-1].name}!`, 250);
+  }
+
   _saveGame() {
     const ok = SaveSystem.save({
       player: this.player,
@@ -2371,6 +3054,7 @@ class GameEngine {
       interviewsDone: this.interviewsDone,
       veteransMet: this.veteransMet,
       moralChoicesDone: this.moralChoicesDone,
+      level: this.level,
     });
     this._notify(ok ? '💾 Прогрес збережено!' : '⚠ Помилка збереження');
   }
@@ -2434,10 +3118,12 @@ class GameEngine {
         c.collected = true;
         c.apply(this.player.stats, this.player.extStats);
         this.collected++;
+        // Award XP
+        this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_COLLECT;
         if (c.type === 1) this.hasCert = true;
         if (c.type === 2) this.hasRec = true;
-        const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська'];
-        this._notify(labels[c.type] || '⭐ Бонус!', 100);
+        const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська','📑 +Статус громадянства','🏅 +Мовний сертифікат'];
+        this._notify(`${labels[c.type] || '⭐ Бонус!'} +${CFG.XP_PER_COLLECT}XP`, 100);
       }
     }
   }
@@ -2530,6 +3216,8 @@ class GameEngine {
         if (ext) ext.jobOfferReceived++;
         this.interviewsDone++;
         building.interviewDone = true;
+        // Award XP for attempting interview
+        this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_INTERVIEW;
 
         if (result.passed) {
           building.jobOffered = true;
@@ -2572,8 +3260,11 @@ class GameEngine {
       this.veteransMet++;
       this._notify(`🤝 Зустріли ветерана: ${npc.name}`, 120);
     }
+    // Award XP and network points
+    this.player.stats.experience = (this.player.stats.experience || 0) + CFG.XP_PER_NPC;
+    this.player.stats.networkPoints = (this.player.stats.networkPoints || 0) + 1;
     const text = DialogueSystem.buildNPCDialogue(npc.type, this.player.stats, this.veteransMet);
-    const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач', 'Юрист'];
+    const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач'];
     this.dialogue = {
       visible: true,
       speaker: `${npc.name} (${typeNames[npc.type] || 'NPC'})`,
@@ -2583,13 +3274,7 @@ class GameEngine {
         // Instructor gives language bonus
         if (npc.type === 2) {
           this.player.stats.polishLang = Math.min(100, this.player.stats.polishLang + 5);
-          this._notify('👨‍🏫 Урок польської: +5 до знань!', 100);
-        }
-        // Lawyer gives documents bonus
-        if (npc.type === 3) {
-          this.player.stats.documents = Math.min(100, this.player.stats.documents + 10);
-          this.player.stats.stress = Math.max(0, this.player.stats.stress - 5);
-          this._notify('⚖️ Юрист: +10 до документів!', 100);
+          this._notify('👨‍🏫 Урок польської: +5 до знань! +🤝', 100);
         }
         this.dialogue.visible = false;
         this.state = 'playing';
@@ -2625,6 +3310,7 @@ class GameEngine {
     this._checkBuildingInteraction();
     this._checkCollectibles();
     this._checkEnemyCollisions();
+    this._checkPortal();
 
     // Quest update
     QuestSystem.update(this.quests, this);
@@ -2640,12 +3326,15 @@ class GameEngine {
 
     // Notification update
     this._updateNotification();
+  }
 
-    // Building proximity hints
-    for (const b of this.buildings) {
-      if (b.isNearDoor(this.player)) {
-        // hint drawn in draw() below
-      }
+  _checkPortal() {
+    if (this.state !== 'playing') return;
+    // Portal is accessible only after at least 2 interviews
+    if (this.interviewsDone < 2) return;
+    const p = this.player;
+    if (p.x + p.w >= this.portalX && p.x <= this.portalX + 44) {
+      this.state = 'levelComplete';
     }
   }
 
@@ -2663,8 +3352,13 @@ class GameEngine {
       return;
     }
 
+    if (this.state === 'levelComplete') {
+      UISystem.drawLevelComplete(ctx, this.level);
+      return;
+    }
+
     // Draw world
-    UISystem.drawWorld(ctx, this.camX);
+    UISystem.drawWorld(ctx, this.camX, this.level);
     UISystem.drawPlatforms(ctx, this.platforms, this.camX);
 
     // Draw buildings
@@ -2682,6 +3376,11 @@ class GameEngine {
     // Player
     this.player.draw(ctx, this.camX);
 
+    // Portal at end of level (visible only after 2 interviews)
+    if (this.interviewsDone >= 2) {
+      UISystem.drawPortal(ctx, this.portalX, this.camX, this.frame);
+    }
+
     // Building door hint
     for (const b of this.buildings) {
       if (b.isNearDoor(this.player)) {
@@ -2695,7 +3394,7 @@ class GameEngine {
     }
 
     // HUD
-    UISystem.drawHUD(ctx, this.player, this.camX, EconomySystem, this.questsDone, this.frame);
+    UISystem.drawHUD(ctx, this.player, this.camX, EconomySystem, this.questsDone, this.frame, this.level);
 
     // UI overlays
     UISystem.drawDialogueBox(ctx, this.dialogue);
@@ -2726,13 +3425,77 @@ function initGame() {
   function resizeCanvas() {
     const container = canvas.parentElement;
     if (!container) return;
-    const ratio = CFG.CANVAS_W / CFG.CANVAS_H;
-    const maxW = Math.min(container.clientWidth, CFG.CANVAS_W);
-    canvas.style.width  = maxW + 'px';
-    canvas.style.height = Math.round(maxW / ratio) + 'px';
+    const isFs = document.body.classList.contains('game-fs') ||
+                 !!(document.fullscreenElement || document.webkitFullscreenElement);
+    if (isFs) {
+      // In fullscreen: fill full window, leave room for controls bar
+      // Use visualViewport height when available (avoids iOS address-bar issues)
+      const vvH = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
+      const isLandscapeSmall = vvH < 500;
+      const ctrlH = isLandscapeSmall ? 60 : 80;
+      const availH = vvH - ctrlH;
+      const availW = (window.visualViewport && window.visualViewport.width) || window.innerWidth;
+      const ratio   = CFG.CANVAS_W / CFG.CANVAS_H;
+      let w = availW;
+      let h = Math.round(w / ratio);
+      if (h > availH) { h = availH; w = Math.round(h * ratio); }
+      canvas.style.width  = w + 'px';
+      canvas.style.height = h + 'px';
+    } else {
+      const ratio = CFG.CANVAS_W / CFG.CANVAS_H;
+      const maxW = Math.min(container.clientWidth, CFG.CANVAS_W);
+      canvas.style.width  = maxW + 'px';
+      canvas.style.height = Math.round(maxW / ratio) + 'px';
+    }
   }
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
+  // iOS Safari fires visualViewport resize when address bar shows/hides
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', resizeCanvas);
+  }
+  document.addEventListener('fullscreenchange', resizeCanvas);
+  document.addEventListener('webkitfullscreenchange', resizeCanvas);
+
+  // ── Fullscreen button ──────────────────────────────────────
+  const fsBtn = document.getElementById('fs-btn');
+  const gameContainer = document.getElementById('game-container');
+  if (fsBtn && gameContainer) {
+    fsBtn.addEventListener('click', () => {
+      const isMobile = window.matchMedia('(pointer: coarse)').matches;
+      const isInFs = document.body.classList.contains('game-fs');
+      if (isMobile || true) {
+        // CSS-based fullscreen (works on all browsers including iOS Safari)
+        document.body.classList.toggle('game-fs');
+        fsBtn.textContent = document.body.classList.contains('game-fs') ? '✕' : '⛶';
+        resizeCanvas();
+        // Try native fullscreen API as well (desktop / Android Chrome)
+        if (document.body.classList.contains('game-fs')) {
+          const el = document.documentElement;
+          const rfs = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen;
+          if (rfs) rfs.call(el).catch(() => {});
+        } else {
+          const efs = document.exitFullscreen || document.webkitExitFullscreen;
+          if (efs) efs.call(document).catch(() => {});
+        }
+      }
+    });
+    // Sync button label when fullscreen exits via OS back button
+    document.addEventListener('fullscreenchange', () => {
+      if (!document.fullscreenElement) {
+        document.body.classList.remove('game-fs');
+        fsBtn.textContent = '⛶';
+        resizeCanvas();
+      }
+    });
+    document.addEventListener('webkitfullscreenchange', () => {
+      if (!document.webkitFullscreenElement) {
+        document.body.classList.remove('game-fs');
+        fsBtn.textContent = '⛶';
+        resizeCanvas();
+      }
+    });
+  }
 
   const engine = new GameEngine(canvas);
   engine.start();
