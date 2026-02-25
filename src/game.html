@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шлях Ветерана — Пошук роботи в Польщі | Rybezh Game</title>
+  <meta name="description" content="Безкоштовна 2D браузерна гра: зіграйте за українського ветерана, який шукає роботу у Польщі. Унікальний геймплей з діалогами, квестами та моральними виборами.">
+  <link rel="canonical" href="https://rybezh.site/game.html">
+  <link rel="alternate" hreflang="uk" href="https://rybezh.site/game.html">
+  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/game.html">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Rybezh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rybezh.site/game.html">
+  <meta property="og:title" content="Шлях Ветерана — Пошук роботи в Польщі | Rybezh Game">
+  <meta property="og:description" content="Безкоштовна 2D браузерна гра про українського ветерана, який шукає роботу у Польщі.">
+  <meta property="og:image" content="https://rybezh.site/og-image.png">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Rybezh">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Шлях Ветерана — 2D Gra | Rybezh">
+  <meta name="twitter:description" content="Зіграйте за ветерана у пошуках роботи у Польщі. Безкоштовна браузерна гра.">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/features.css">
+  <script src="/jobs.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J3XSXPYW9K');
+  </script>
+  <style>
+    .game-page { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .game-hero { text-align: center; padding: 1.5rem 0 1rem; }
+    .game-hero h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+    .game-hero p { color: var(--color-secondary,#64748b); font-size: 1rem; }
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 1.5rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+      background: #0a0a1a;
+      cursor: default;
+    }
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .game-controls-hint {
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--color-secondary,#64748b);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .game-controls-hint kbd {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 0.1rem 0.4rem;
+      font-family: monospace;
+      font-size: 0.78rem;
+    }
+    .game-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .game-info-card {
+      background: var(--color-surface,#fff);
+      border: 1px solid var(--color-border,#e5e7eb);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+    }
+    .game-info-card h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+    .game-info-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.88rem; color: var(--color-secondary,#64748b); }
+    .game-info-card li { margin-bottom: 0.2rem; }
+    @media (max-width: 600px) {
+      .game-info-grid { grid-template-columns: 1fr; }
+      .game-hero h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        Rybezh
+      </a>
+      <nav class="nav-menu">
+        <a href="/" class="nav-link" data-i18n="nav.home">Головна</a>
+        <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
+        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
+        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
+        <a href="/apply.html" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
+        <div class="header-lang">
+          <button class="lang-btn" data-lang="ua">UA</button>
+          <button class="lang-btn" data-lang="pl">PL</button>
+          <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
+      </nav>
+      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="/" class="nav-link">Головна</a>
+      <a href="/vacancies.html" class="nav-link">Вакансії</a>
+      <a href="/blog.html" class="nav-link">Блог</a>
+      <a href="/about.html" class="nav-link">Про нас</a>
+      <a href="/faq.html" class="nav-link">FAQ</a>
+      <a href="/contact.html" class="nav-link">Контакти</a>
+      <a href="/apply.html" class="btn-cta" style="text-align:center">Отримати консультацію</a>
+      <div class="mobile-lang">
+        <button class="lang-btn" data-lang="ua">UA</button>
+        <button class="lang-btn" data-lang="pl">PL</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="game-page">
+      <div class="game-hero">
+        <h1>🎖️ Шлях Ветерана</h1>
+        <p>2D гра про пошук роботи у Польщі після повернення з фронту</p>
+      </div>
+
+      <div id="game-container">
+        <canvas id="gameCanvas" width="920" height="540"></canvas>
+      </div>
+
+      <p class="game-controls-hint">
+        <kbd>←</kbd><kbd>→</kbd> або <kbd>A</kbd><kbd>D</kbd> — рух &nbsp;|&nbsp;
+        <kbd>↑</kbd> або <kbd>W</kbd> або <kbd>Пробіл</kbd> — стрибок &nbsp;|&nbsp;
+        <kbd>E</kbd> — взаємодія з будівлею / NPC &nbsp;|&nbsp;
+        <kbd>Q</kbd> — квести &nbsp;|&nbsp;
+        <kbd>S</kbd> — зберегти &nbsp;|&nbsp;
+        <kbd>ESC</kbd> — пауза
+      </p>
+
+      <div class="game-info-grid">
+        <div class="game-info-card">
+          <h3>🎯 Мета гри</h3>
+          <ul>
+            <li>Знайдіть роботу у Польщі після служби</li>
+            <li>Відвідуйте будівлі та проходьте співбесіди</li>
+            <li>Збирайте бонуси: курси, сертифікати, гроші</li>
+            <li>Уникайте ворогів: бюрократів та шахраїв</li>
+            <li>Виконуйте квести та приймайте рішення</li>
+          </ul>
+        </div>
+        <div class="game-info-card">
+          <h3>🏢 Типи будівель</h3>
+          <ul>
+            <li>🔵 IT-компанія — потрібен інтелект і знання англійської</li>
+            <li>⚙️ Завод / склад — потрібна фізична витривалість</li>
+            <li>🟠 Стартап — важливі харизма та репутація</li>
+            <li>Натисніть <kbd>E</kbd> поруч з входом щоб увійти</li>
+          </ul>
+        </div>
+        <div class="game-info-card">
+          <h3>⚔️ Вороги</h3>
+          <ul>
+            <li>👔 Бюрократ — сповільнює та підвищує стрес</li>
+            <li>🎭 Шахрай — краде гроші</li>
+            <li>😡 Поганий роботодавець — кидає папірці</li>
+            <li>📋 Податківець — забирає бонуси</li>
+          </ul>
+        </div>
+        <div class="game-info-card">
+          <h3>💡 Бонуси</h3>
+          <ul>
+            <li>📚 Курс — підвищує інтелект</li>
+            <li>🏆 Сертифікат — покращує репутацію</li>
+            <li>📝 Рекомендація — підвищує харизму</li>
+            <li>💰 Гроші — поповнюють бюджет</li>
+            <li>💊 Ліки — знижують стрес, відновлюють здоров'я</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Rybezh
+          </a>
+          <p data-i18n="footer.desc">Допомагаємо знайти роботу в Польщі та підібрати вакансію під ваш досвід. Підтримка 24/7.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav">Навігація</h4>
+          <a href="/" data-i18n="nav.home">Головна</a>
+          <a href="/about.html" data-i18n="nav.about">Про нас</a>
+          <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+          <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+          <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.tools">Інструменти</h4>
+          <a href="/calculator.html" data-i18n="footer.tool.calc">Калькулятор</a>
+          <a href="/cv-generator.html" data-i18n="footer.tool.cv">Генератор CV</a>
+          <a href="/red-flag.html" data-i18n="footer.tool.redflag">Перевірка вакансій</a>
+          <a href="/game.html">🎮 Гра «Шлях Ветерана»</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Контакти</h4>
+          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+          <a href="/apply.html" data-i18n="nav.apply">Подати заявку</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
+        <div class="footer-bottom-links">
+          <a href="/privacy.html" data-i18n="footer.privacy">Політика конфіденційності</a>
+          <a href="/terms.html" data-i18n="footer.terms">Умови користування</a>
+          <a href="/company.html" data-i18n="footer.company">Реквізити</a>
+          <a href="/game.html">🎮 Гра</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <div id="cookie-banner" class="cookie-banner" hidden>
+    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду.</p>
+    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+  </div>
+  <script src="/main.js"></script>
+  <script>
+/* ==========================================================================
+   ШЛЯХ ВЕТЕРАНА — 2D Platformer Game
+   Architecture: Modular IIFE, Canvas 2D, Vanilla JS
+   No frameworks, no libraries, runs in any modern browser
+   ========================================================================== */
+(function() {
+'use strict';
+
+// ============================================================
+// MODULE: GameConfig — all constants & tuning values
+// ============================================================
+const CFG = {
+  CANVAS_W: 920,
+  CANVAS_H: 540,
+  WORLD_W: 7200,
+  GROUND_Y: 478,
+  GRAVITY: 0.55,
+  JUMP_FORCE: -13,
+  PLAYER_SPEED: 4.2,
+  PLAYER_W: 28,
+  PLAYER_H: 40,
+  FPS_CAP: 60,
+  SAVE_KEY: 'veteran-path-save',
+  AUTOSAVE_INTERVAL: 30000,
+  CAMERA_LAG: 0.12,
+  ENEMY_PATROL_SPEED: 1.4,
+  ENEMY_CHASE_SPEED: 2.4,
+  ENEMY_DETECT_RANGE: 180,
+  PROJECTILE_SPEED: 4,
+  DIALOGUE_MAX_HISTORY: 6,
+};
+
+// ============================================================
+// MODULE: GameData — world layout, templates, quests, endings
+// ============================================================
+const DATA = {
+  /* --- Platforms [x, y, w, h] --- */
+  platforms: [
+    // Ground segments (fill world)
+    [0, CFG.GROUND_Y, CFG.WORLD_W, 62],
+    // Elevated platforms
+    [320, 380, 140, 16], [560, 330, 120, 16], [780, 390, 100, 16],
+    [1050, 350, 160, 16], [1350, 300, 130, 16], [1600, 380, 110, 16],
+    [1900, 340, 150, 16], [2150, 290, 120, 16], [2400, 360, 140, 16],
+    [2700, 320, 130, 16], [2950, 380, 110, 16], [3200, 340, 160, 16],
+    [3500, 290, 140, 16], [3780, 360, 120, 16], [4050, 320, 150, 16],
+    [4350, 380, 130, 16], [4600, 300, 120, 16], [4900, 350, 140, 16],
+    [5200, 310, 130, 16], [5500, 380, 110, 16], [5800, 340, 150, 16],
+    [6100, 300, 140, 16], [6400, 360, 120, 16], [6700, 330, 130, 16],
+  ],
+
+  /* --- Buildings [x, y, w, h, type, name] ---
+     type: 0=IT, 1=Factory, 2=Startup */
+  buildings: [
+    [500,  320, 180, 160, 0, 'TechPol IT'],
+    [1200, 330, 190, 150, 1, 'LogiPack Склад'],
+    [1900, 310, 185, 170, 2, 'StartHub UA'],
+    [2600, 320, 185, 160, 0, 'DevCorp Poland'],
+    [3300, 335, 190, 145, 1, 'MegaFactory'],
+    [3900, 315, 180, 165, 2, 'InnoVenture'],
+    [4600, 325, 185, 155, 0, 'CyberBridge IT'],
+    [5300, 330, 190, 150, 1, 'WarehouseX'],
+    [6000, 310, 185, 170, 2, 'FutureWork Hub'],
+  ],
+
+  /* --- Collectibles [x, y, type] ---
+     0=course 1=cert 2=rec 3=money 4=medicine 5=plLang 6=enLang */
+  collectibles: [
+    [310, 355],[470, 470],[650, 302],[820, 465],[1020, 325],
+    [1120, 465],[1300, 275],[1520, 355],[1750, 465],[1870, 315],
+    [2100, 265],[2350, 335],[2550, 455],[2750, 295],[3000, 355],
+    [3180, 315],[3460, 265],[3700, 335],[3950, 290],[4150, 295],
+    [4400, 355],[4640, 275],[4870, 325],[5120, 285],[5370, 355],
+    [5650, 315],[5870, 315],[6150, 275],[6450, 335],[6720, 305],
+    [850, 465],[1470, 465],[2020, 465],[2900, 465],[3650, 465],
+    [4200, 465],[4750, 465],[5450, 465],[5950, 465],[6550, 465],
+  ].map((pos, i) => ({x: pos[0], y: pos[1], type: i % 7})),
+
+  /* --- Enemies [x, patrolMin, patrolMax, type] ---
+     0=Bureaucrat, 1=Scammer, 2=BadEmployer, 3=TaxAgent */
+  enemies: [
+    [700,  620, 850,  0],[1100, 1050, 1280, 1],[1550, 1480, 1700, 0],
+    [2250, 2150, 2500, 2],[2850, 2700, 3000, 1],[3450, 3350, 3650, 3],
+    [3800, 3700, 4000, 0],[4450, 4300, 4600, 1],[4800, 4700, 5000, 2],
+    [5100, 5000, 5280, 3],[5600, 5450, 5750, 0],[5900, 5800, 6100, 1],
+    [6300, 6200, 6500, 2],[6600, 6500, 6750, 3],[900, 800, 1050, 0],
+  ],
+
+  /* --- Friendly NPCs [x, type, name] ---
+     0=veteran, 1=hr, 2=instructor */
+  npcs: [
+    [200,  0, 'Андрій, ветеран'],
+    [1800, 1, 'Марта, HR'],
+    [2800, 0, 'Тарас, ветеран'],
+    [4100, 2, 'Пан Новак, викладач'],
+    [4800, 0, 'Олег, ветеран'],
+    [6100, 1, 'Агнєшка, HR'],
+  ],
+
+  /* --- Quest definitions --- */
+  quests: [
+    {id:'q1', name:'Перший крок',        desc:'Зберіть 3 предмети',             target:3,  type:'collect'},
+    {id:'q2', name:'Мовний бар\'єр',     desc:'Досягніть рівня польської 50',   target:50, type:'polishLang'},
+    {id:'q3', name:'Портфоліо готове',   desc:'Зберіть рекомендацію, сертифікат та накопичте 1500 PLN', target:3, type:'portfolio'},
+    {id:'q4', name:'Перша співбесіда',   desc:'Пройдіть першу співбесіду',       target:1,  type:'interview'},
+    {id:'q5', name:'Ветеранська мережа', desc:'Знайдіть 3 ветеранів',            target:3,  type:'veterans'},
+    {id:'q6', name:'Власний бізнес',     desc:'Накопичте 5000 PLN та репутацію 70', target:1, type:'business'},
+  ],
+
+  /* --- Dialogue templates (used to generate 2000+ combinations) --- */
+  greetings: [
+    'Доброго дня! Ви прийшли на співбесіду?',
+    'Вітаємо! Ми чекали на вас.',
+    'Привіт! Бачу ваше CV у нашій базі.',
+    'Здрастуйте! Розкажіть про себе.',
+    'Ласкаво просимо! Сідайте, будь ласка.',
+    'Добрий день! Раді бачити ветеранів.',
+    'Привіт! Ваш досвід нас зацікавив.',
+    'Вітаю! Готові пройти співбесіду?',
+  ],
+  itQuestions: [
+    'Який ваш рівень програмування?',
+    'Чи знаєте ви основи SQL та баз даних?',
+    'Розкажіть про ваш досвід з командними проєктами.',
+    'Ваш рівень англійської для технічних документів?',
+    'Що ви знаєте про Agile та Scrum методологію?',
+    'Чи доводилось вам працювати з хмарними сервісами?',
+    'Як ви вирішуєте технічні проблеми під тиском?',
+    'Ваш досвід у кібербезпеці?',
+  ],
+  factoryQuestions: [
+    'Чи маєте ви досвід роботи на виробництві?',
+    'Як ваша фізична форма для важкої роботи?',
+    'Чи є у вас водійські права категорії B або C?',
+    'Готові працювати в нічні зміни?',
+    'Ваш досвід із навантажувачами та технікою?',
+    'Як ви реагуєте на монотонну роботу?',
+    'Чи маєте ви досвід у логістиці та складуванні?',
+    'Готові до фізичних навантажень 8-10 годин?',
+  ],
+  startupQuestions: [
+    'Яка ваша суперсила у командній роботі?',
+    'Розкажіть про незвичайний досвід у вашому житті.',
+    'Як ви впораєтеся з нестандартними завданнями?',
+    'Що вас мотивує більше — гроші чи місія?',
+    'Чи готові ви до швидких змін та невизначеності?',
+    'Яке ваше бачення майбутнього нашого продукту?',
+    'Як ваш військовий досвід допоміг би нашій команді?',
+    'Що ви зробили б по-іншому в нашому стартапі?',
+  ],
+  rejections: [
+    'На жаль, ваш профіль не відповідає вимогам.',
+    'Ми шукаємо більш досвідченого кандидата.',
+    'Рівень ваших навичок ще недостатній.',
+    'Вибачте, позиція вже закрита.',
+    'Ми оберемо іншого кандидата.',
+    'Зайдіть ще раз після курсів підвищення.',
+    'Нам потрібен кандидат з більшим досвідом.',
+    'Ваші знання мови ще треба покращити.',
+  ],
+  offers: [
+    'Ми хочемо запропонувати вам цю позицію!',
+    'Ви нам підходите! Починаємо в понеділок?',
+    'Ваш досвід саме те, що нам потрібно!',
+    'Чудово! Ми готові зробити офер вже сьогодні.',
+    'Ви пройшли співбесіду успішно! Ласкаво просимо!',
+    'Impressed! Приходьте з документами завтра.',
+    'Ви саме та людина, яку ми шукали!',
+    'Вітаємо! Ваше місце у нашій команді!',
+  ],
+  veteranLines: [
+    'Брате, тут непросто, але можна знайти роботу.',
+    'Я теж повернувся рік тому. Ось мій контакт.',
+    'Тримайся! Перші місяці найважчі.',
+    'Знаєш, я знайшов хорошу роботу через 3 місяці.',
+    'Рекомендую спочатку вивчити польську.',
+    'Головне — документи в порядку мати.',
+    'Ветеранська організація може допомогти з оформленням.',
+    'Не здавайся! У мене в команді є ще двоє наших.',
+  ],
+  hrAdvice: [
+    'Ваше CV треба адаптувати під польський ринок.',
+    'Військовий досвід — це плюс, підкресліть лідерство.',
+    'Рекомендую пройти курс польської до B1 рівня.',
+    'Ми маємо програму для ветеранів — зверніться до менеджера.',
+    'Ваші навички — це актив. Правильно їх презентуйте.',
+    'Спробуйте стажування — так легше влаштуватися.',
+    'Не занижуйте свій досвід у переговорах про зарплату.',
+    'Соціальні мережі теж важливі — LinkedIn допоможе.',
+  ],
+  moralChoices: [
+    {
+      text: 'Шахрай пропонує роботу без документів. Погодитись?',
+      optA: 'Так (+1500 PLN, -30 репутація)',
+      optB: 'Ні (зберегти репутацію)',
+      applyA: (p) => { p.stats.finances += 1500; p.stats.reputation -= 30; p.stats.stress += 15; },
+      applyB: (p) => { p.stats.reputation += 5; },
+    },
+    {
+      text: 'Ветеран просить допомогу — купити їжу. Допомогти?',
+      optA: 'Так (-200 PLN, +20 репутація)',
+      optB: 'Ні (зберегти гроші)',
+      applyA: (p) => { p.stats.finances -= 200; p.stats.reputation += 20; p.stats.mentalHealth += 10; },
+      applyB: (p) => { p.stats.mentalHealth -= 8; },
+    },
+    {
+      text: 'HR пропонує "прискорити" процес за гроші. Платити?',
+      optA: 'Так (-500 PLN, +20% шанс на офер)',
+      optB: 'Ні (чесний шлях)',
+      applyA: (p) => { p.stats.finances -= 500; p.stats.reputation -= 10; p.bribeBonus = true; },
+      applyB: (p) => { p.stats.reputation += 8; },
+    },
+  ],
+
+  /* --- Endings --- */
+  endings: [
+    {id:'it',      title:'IT-спеціаліст',       icon:'💻', text:'Ви стали частиною IT-команди! Ваш досвід та навички допомогли підкорити цифровий Wrocław. Зарплата 8000 PLN/міс. 🎉'},
+    {id:'factory', title:'Начальник зміни',     icon:'⚙️', text:'Ваша дисципліна та фізична витривалість оцінена! Вас призначили начальником зміни на заводі. 6000 PLN/міс. 💪'},
+    {id:'startup', title:'Член стартапу',       icon:'🚀', text:'Ваша харизма та унікальний досвід стали активом стартапу! Опціони + 5000 PLN/міс. Майбутнє яскраве! ⭐'},
+    {id:'biz',     title:'Власний бізнес',      icon:'🏢', text:'Ви відкрили власне підприємство! Досвід, накопичені зв\'язки та репутація — основа успіху. Ви — підприємець! 🦁'},
+    {id:'vet',     title:'Лідер громади',        icon:'🤝', text:'Ви об\'єднали ветеранів і стали лідером спільноти! Ваша підтримка допомагає сотням людей. ❤️'},
+    {id:'bad',     title:'Важкий час...',        icon:'😔', text:'Гроші закінчились... Але не все втрачено. Зверніться до ветеранської організації. Натисніть R щоб спробувати ще раз.'},
+  ],
+};
+
+// ============================================================
+// MODULE: SaveSystem
+// ============================================================
+const SaveSystem = {
+  save(gameState) {
+    try {
+      const data = {
+        v: 2,
+        ts: Date.now(),
+        stats: { ...gameState.player.stats },
+        x: Math.round(gameState.player.x),
+        quests: JSON.parse(JSON.stringify(gameState.quests)),
+        questsDone: [...gameState.questsDone],
+        collected: gameState.collected,
+        interviewsDone: gameState.interviewsDone,
+        veteransMet: gameState.veteransMet,
+        moralChoicesDone: gameState.moralChoicesDone,
+      };
+      localStorage.setItem(CFG.SAVE_KEY, JSON.stringify(data));
+      return true;
+    } catch(e) { return false; }
+  },
+  load() {
+    try {
+      const raw = localStorage.getItem(CFG.SAVE_KEY);
+      if (!raw) return null;
+      const d = JSON.parse(raw);
+      if (!d || d.v < 2) return null;
+      return d;
+    } catch(e) { return null; }
+  },
+  clear() { localStorage.removeItem(CFG.SAVE_KEY); },
+};
+
+// ============================================================
+// MODULE: Physics — AABB collision helpers
+// ============================================================
+const Physics = {
+  rectOverlap(ax, ay, aw, ah, bx, by, bw, bh) {
+    return ax < bx + bw && ax + aw > bx && ay < by + bh && ay + ah > by;
+  },
+  resolveCollision(entity, platforms) {
+    entity.onGround = false;
+    for (const p of platforms) {
+      const [px, py, pw, ph] = p;
+      if (!Physics.rectOverlap(entity.x, entity.y, entity.w, entity.h, px, py, pw, ph)) continue;
+      // overlap amounts
+      const overlapL = (entity.x + entity.w) - px;
+      const overlapR = (px + pw) - entity.x;
+      const overlapT = (entity.y + entity.h) - py;
+      const overlapB = (py + ph) - entity.y;
+      const minH = Math.min(overlapL, overlapR);
+      const minV = Math.min(overlapT, overlapB);
+      if (minV < minH) {
+        if (overlapT < overlapB) {
+          entity.y = py - entity.h;
+          entity.vy = 0;
+          entity.onGround = true;
+        } else {
+          entity.y = py + ph;
+          if (entity.vy < 0) entity.vy = 0;
+        }
+      } else {
+        if (overlapL < overlapR) { entity.x = px - entity.w; entity.vx = 0; }
+        else { entity.x = px + pw; entity.vx = 0; }
+      }
+    }
+  },
+};
+
+// ============================================================
+// MODULE: DialogueSystem
+// ============================================================
+const DialogueSystem = {
+  /* Pick random element from array */
+  rnd(arr) { return arr[Math.floor(Math.random() * arr.length)]; },
+
+  /* Build contextual greeting based on player stats */
+  buildGreeting(stats) {
+    const base = this.rnd(DATA.greetings);
+    const extras = [];
+    if (stats.militaryExp > 60) extras.push('Ваш військовий досвід вражає!');
+    if (stats.polishLang > 50) extras.push('Ваша польська дуже гарна!');
+    if (stats.reputation > 55) extras.push('Чув про вашу репутацію — дуже добре.');
+    if (stats.stress > 60) extras.push('Ви виглядаєте втомленим. Все гаразд?');
+    const extra = extras.length ? ' ' + this.rnd(extras) : '';
+    return base + extra;
+  },
+
+  /* Build interview question based on building type + stats */
+  buildQuestion(buildingType, stats) {
+    const pool = buildingType === 0 ? DATA.itQuestions :
+                 buildingType === 1 ? DATA.factoryQuestions : DATA.startupQuestions;
+    const q = this.rnd(pool);
+    // Contextual follow-up
+    const followUps = [];
+    if (buildingType === 0 && stats.intelligence < 50) followUps.push('Нам потрібен вищий рівень технічних знань.');
+    if (buildingType === 0 && stats.englishLang < 40) followUps.push('Також важливий рівень англійської B2+.');
+    if (buildingType === 1 && stats.strength < 50) followUps.push('Ця робота вимагає хорошої фізичної форми.');
+    if (buildingType === 2 && stats.charisma < 45) followUps.push('Нам важливі навички комунікації.');
+    if (stats.militaryExp > 70) followUps.push('Ваш армійський досвід командування дуже цікавий.');
+    const followUp = followUps.length ? ' ' + this.rnd(followUps) : '';
+    return q + followUp;
+  },
+
+  /* Evaluate interview outcome based on stats + building type */
+  evaluateInterview(buildingType, stats, bribeBonus) {
+    let score = 0;
+    const reqs = [];
+
+    if (buildingType === 0) {
+      // IT company requirements
+      score += Math.min(stats.intelligence, 100) * 0.35;
+      score += Math.min(stats.englishLang, 100) * 0.25;
+      score += Math.min(stats.civilExp, 100) * 0.20;
+      score += Math.min(stats.reputation, 100) * 0.20;
+      if (stats.intelligence < 60) reqs.push('інтелект < 60');
+      if (stats.englishLang < 50) reqs.push('англійська < 50');
+    } else if (buildingType === 1) {
+      // Factory requirements
+      score += Math.min(stats.strength, 100) * 0.40;
+      score += Math.min(stats.health, 100) * 0.30;
+      score += Math.min(stats.militaryExp, 100) * 0.20;
+      score += Math.min(stats.polishLang, 100) * 0.10;
+      if (stats.strength < 55) reqs.push('сила < 55');
+      if (stats.health < 60) reqs.push('здоров\'я < 60');
+    } else {
+      // Startup requirements
+      score += Math.min(stats.charisma, 100) * 0.35;
+      score += Math.min(stats.reputation, 100) * 0.30;
+      score += Math.min(stats.intelligence, 100) * 0.20;
+      score += Math.min(stats.polishLang, 100) * 0.15;
+      if (stats.charisma < 50 && stats.reputation < 60) reqs.push('харизма або репутація занизькі');
+    }
+
+    if (bribeBonus) score += 20;
+    if (stats.stress > 70) score -= 15;
+    if (stats.mentalHealth < 40) score -= 10;
+
+    const passed = score >= 50;
+    const responseText = passed ? this.rnd(DATA.offers) : this.rnd(DATA.rejections);
+    return { passed, score: Math.round(score), requirements: reqs, text: responseText };
+  },
+
+  /* Generate NPC dialogue lines (veteran / hr / instructor) */
+  buildNPCDialogue(npcType, stats, veteransMet) {
+    if (npcType === 0) { // veteran
+      const base = this.rnd(DATA.veteranLines);
+      const bonus = veteransMet >= 2 ? ' Нас вже троє тут — зустрінемося ввечері!' : '';
+      return base + bonus;
+    } else if (npcType === 1) { // hr
+      const base = this.rnd(DATA.hrAdvice);
+      const statsNote = stats.reputation > 60 ? ' Ваша репутація вже добра — продовжуйте!' :
+                        stats.polishLang < 40 ? ' Найбільша проблема зараз — мова. Курси — пріоритет.' : '';
+      return base + statsNote;
+    } else { // instructor
+      const tips = [
+        'Урок 1: Po polsku — Dzień dobry! Добрий день!',
+        'Урок 2: Jak masz na imię? — Як тебе звати?',
+        'Урок 3: Gdzie jest praca? — Де є робота?',
+        'Урок 4: Ile zarabiasz? — Скільки ти заробляєш?',
+        'Урок 5: Potrzebuję pomocy. — Мені потрібна допомога.',
+        'Цей урок +10 до знань польської!',
+      ];
+      return this.rnd(tips);
+    }
+  },
+};
+
+// ============================================================
+// MODULE: EconomySystem — job market simulation
+// ============================================================
+const EconomySystem = {
+  itDemand: 75,
+  factoryDemand: 65,
+  startupDemand: 55,
+  tick(frame) {
+    if (frame % 600 === 0) {
+      this.itDemand      = Math.max(20, Math.min(100, this.itDemand      + (Math.random() * 10 - 5)));
+      this.factoryDemand = Math.max(20, Math.min(100, this.factoryDemand + (Math.random() * 10 - 5)));
+      this.startupDemand = Math.max(20, Math.min(100, this.startupDemand + (Math.random() * 10 - 5)));
+    }
+  },
+  getDemand(type) {
+    return [this.itDemand, this.factoryDemand, this.startupDemand][type] || 50;
+  },
+};
+
+// ============================================================
+// MODULE: Entities
+// ============================================================
+class Entity {
+  constructor(x, y, w, h) {
+    this.x = x; this.y = y; this.w = w; this.h = h;
+    this.vx = 0; this.vy = 0;
+    this.onGround = false;
+    this.alive = true;
+    this.frame = 0;
+  }
+  applyGravity() { this.vy += CFG.GRAVITY; }
+  move() { this.x += this.vx; this.y += this.vy; }
+}
+
+class Player extends Entity {
+  constructor(x, y) {
+    super(x, y, CFG.PLAYER_W, CFG.PLAYER_H);
+    this.stats = {
+      health: 100, strength: 50, intelligence: 50, charisma: 45,
+      militaryExp: 80, stress: 30, mentalHealth: 70,
+      finances: 2000, reputation: 40, polishLang: 30,
+      englishLang: 60, civilExp: 20,
+    };
+    this.facingRight = true;
+    this.invincible = 0;      // frames of invincibility after hit
+    this.slowTimer = 0;       // bureaucrat slow effect
+    this.bribeBonus = false;
+    this.animFrame = 0;
+    this.animTimer = 0;
+  }
+
+  update(input, platforms) {
+    this.frame++;
+    if (this.invincible > 0) this.invincible--;
+    if (this.slowTimer > 0) this.slowTimer--;
+
+    const speed = this.slowTimer > 0 ? CFG.PLAYER_SPEED * 0.45 : CFG.PLAYER_SPEED;
+
+    // Horizontal movement
+    this.vx = 0;
+    if (input.left)  { this.vx = -speed; this.facingRight = false; }
+    if (input.right) { this.vx =  speed; this.facingRight = true; }
+
+    // Jump
+    if (input.jump && this.onGround) {
+      this.vy = CFG.JUMP_FORCE;
+      this.onGround = false;
+    }
+    input.jump = false; // consume
+
+    this.applyGravity();
+    this.move();
+    Physics.resolveCollision(this, platforms);
+
+    // Clamp to world
+    if (this.x < 0) this.x = 0;
+    if (this.x + this.w > CFG.WORLD_W) this.x = CFG.WORLD_W - this.w;
+
+    // Stress ticks up slowly over time
+    if (this.frame % 480 === 0 && this.stats.stress < 90) this.stats.stress += 1;
+    // Finances drain very slowly
+    if (this.frame % 1800 === 0 && this.stats.finances > 0) this.stats.finances -= 20;
+
+    this.animTimer++;
+    if (this.animTimer > 8) { this.animFrame = (this.animFrame + 1) % 4; this.animTimer = 0; }
+  }
+
+  draw(ctx, camX) {
+    const px = Math.round(this.x - camX);
+    const py = Math.round(this.y);
+    ctx.save();
+
+    // Flicker when invincible
+    if (this.invincible > 0 && Math.floor(this.invincible / 4) % 2 === 0) {
+      ctx.restore(); return;
+    }
+
+    // Body
+    ctx.fillStyle = '#2d5a27'; // dark green (military uniform)
+    ctx.fillRect(px, py + 8, this.w, this.h - 8);
+
+    // Head
+    ctx.fillStyle = '#f0c080';
+    ctx.fillRect(px + 4, py, this.w - 8, 16);
+
+    // Beret
+    ctx.fillStyle = '#1a3a1a';
+    ctx.fillRect(px + 2, py - 4, this.w - 4, 8);
+
+    // Eyes
+    ctx.fillStyle = '#222';
+    const eyeDir = this.facingRight ? 1 : -1;
+    ctx.fillRect(px + (this.facingRight ? 14 : 6), py + 4, 3, 3);
+
+    // Stress indicator (red tint if high stress)
+    if (this.stats.stress > 65) {
+      ctx.fillStyle = 'rgba(255,0,0,0.22)';
+      ctx.fillRect(px, py, this.w, this.h);
+    }
+
+    // Slow indicator
+    if (this.slowTimer > 0) {
+      ctx.fillStyle = 'rgba(150,100,255,0.3)';
+      ctx.fillRect(px, py, this.w, this.h);
+    }
+
+    ctx.restore();
+  }
+}
+
+class Enemy extends Entity {
+  constructor(x, patrolMin, patrolMax, type) {
+    super(x, CFG.GROUND_Y - 40, 30, 40);
+    this.patrolMin = patrolMin;
+    this.patrolMax = patrolMax;
+    this.type = type;       // 0=Bureaucrat,1=Scammer,2=BadEmployer,3=TaxAgent
+    this.state = 'patrol';  // patrol | chase | attack | stunned
+    this.dir = 1;
+    this.stunTimer = 0;
+    this.attackTimer = 0;
+    this.projectiles = [];
+    const baseSpeed = type === 3 ? CFG.ENEMY_PATROL_SPEED * 1.6 : CFG.ENEMY_PATROL_SPEED;
+    this.speed = baseSpeed;
+    this.chaseSpeed = type === 3 ? CFG.ENEMY_CHASE_SPEED * 1.4 : CFG.ENEMY_CHASE_SPEED;
+  }
+
+  update(player, platforms) {
+    this.frame++;
+    if (this.stunTimer > 0) { this.stunTimer--; return; }
+
+    const dist = player.x - this.x;
+    const absDist = Math.abs(dist);
+
+    // State machine
+    if (this.type === 2) {
+      // Bad employer stays put but throws projectiles
+      this.state = 'attack';
+      this.attackTimer++;
+      if (this.attackTimer > 120 && absDist < 400) {
+        this.attackTimer = 0;
+        const dir = dist > 0 ? 1 : -1;
+        this.projectiles.push({
+          x: this.x + this.w / 2, y: this.y + 10,
+          vx: dir * CFG.PROJECTILE_SPEED + dir * 1.5, vy: -2,
+          alive: true,
+        });
+      }
+    } else {
+      if (absDist < CFG.ENEMY_DETECT_RANGE && player.stats.health > 0) {
+        this.state = 'chase';
+        this.vx = dist > 0 ? this.chaseSpeed : -this.chaseSpeed;
+      } else {
+        this.state = 'patrol';
+        this.x += this.dir * this.speed;
+        if (this.x < this.patrolMin) { this.dir = 1; this.x = this.patrolMin; }
+        if (this.x > this.patrolMax) { this.dir = -1; this.x = this.patrolMax; }
+        this.vx = 0;
+      }
+    }
+
+    if (this.state === 'chase') {
+      this.x += this.vx;
+      if (this.x < 0) this.x = 0;
+      if (this.x + this.w > CFG.WORLD_W) this.x = CFG.WORLD_W - this.w;
+    }
+
+    // Update projectiles
+    for (const pr of this.projectiles) {
+      if (!pr.alive) continue;
+      pr.x += pr.vx; pr.y += pr.vy; pr.vy += 0.15;
+      if (pr.x < 0 || pr.x > CFG.WORLD_W || pr.y > CFG.GROUND_Y) pr.alive = false;
+    }
+    this.projectiles = this.projectiles.filter(p => p.alive);
+  }
+
+  draw(ctx, camX) {
+    if (!this.alive) return;
+    const px = Math.round(this.x - camX);
+    const py = Math.round(this.y);
+    const colors = ['#8b4513','#2e4057','#c0392b','#7f8c8d'];
+    const icons  = ['👔','🎭','😡','📋'];
+    ctx.save();
+    ctx.fillStyle = colors[this.type] || '#888';
+    ctx.fillRect(px, py + 8, this.w, this.h - 8);
+    ctx.fillStyle = '#f0c080';
+    ctx.fillRect(px + 4, py, this.w - 8, 14);
+    ctx.font = '14px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(icons[this.type] || '?', px + this.w / 2, py + 12);
+    // Stunned flash
+    if (this.stunTimer > 0) {
+      ctx.fillStyle = 'rgba(255,255,0,0.35)';
+      ctx.fillRect(px, py, this.w, this.h);
+    }
+    ctx.restore();
+
+    // Draw projectiles
+    for (const pr of this.projectiles) {
+      ctx.fillStyle = '#e8e0d0';
+      ctx.fillRect(Math.round(pr.x - camX) - 4, Math.round(pr.y) - 3, 12, 8);
+      ctx.font = '10px serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('📄', Math.round(pr.x - camX), Math.round(pr.y));
+    }
+  }
+}
+
+class NPC extends Entity {
+  constructor(x, type, name) {
+    super(x, CFG.GROUND_Y - 42, 28, 42);
+    this.type = type; // 0=veteran, 1=hr, 2=instructor
+    this.name = name;
+    this.talked = false;
+    this.bobTimer = 0;
+  }
+  update() { this.bobTimer++; }
+  draw(ctx, camX) {
+    const px = Math.round(this.x - camX);
+    const py = Math.round(this.y + Math.sin(this.bobTimer * 0.04) * 2);
+    const colors = ['#2d5a27','#1a5f7a','#7a5c1a'];
+    const faceIcons = ['🧑‍✈️','👩‍💼','👨‍🏫'];
+    ctx.save();
+    ctx.fillStyle = colors[this.type] || '#666';
+    ctx.fillRect(px, py + 10, this.w, this.h - 10);
+    ctx.fillStyle = '#f0c080';
+    ctx.fillRect(px + 3, py, this.w - 6, 16);
+    ctx.font = '16px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(faceIcons[this.type] || '😊', px + this.w / 2, py + 14);
+    // Interaction hint
+    ctx.fillStyle = '#00a67e';
+    ctx.font = 'bold 11px sans-serif';
+    ctx.fillText('[E]', px + this.w / 2, py - 8);
+    if (!this.talked) {
+      // Pulsing indicator
+      const alpha = 0.5 + 0.5 * Math.sin(this.bobTimer * 0.08);
+      ctx.fillStyle = `rgba(0,166,126,${alpha})`;
+      ctx.beginPath();
+      ctx.arc(px + this.w / 2, py - 16, 5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+}
+
+class Building {
+  constructor(x, y, w, h, type, name) {
+    this.x = x; this.y = y; this.w = w; this.h = h;
+    this.type = type; // 0=IT, 1=Factory, 2=Startup
+    this.name = name;
+    this.interviewDone = false;
+    this.jobOffered = false;
+    this.frame = 0;
+  }
+  get doorX() { return this.x + this.w / 2 - 16; }
+  get doorY() { return this.y + this.h - 50; }
+
+  isNearDoor(player) {
+    return Math.abs(player.x + player.w / 2 - (this.doorX + 16)) < 55 &&
+           player.y + player.h > this.y + this.h - 80;
+  }
+
+  draw(ctx, camX) {
+    this.frame++;
+    const bx = Math.round(this.x - camX);
+    const by = Math.round(this.y);
+
+    // Building colors by type
+    const wallColors   = ['#1a2a4a','#2a2a2a','#3a2010'];
+    const accentColors = ['#2563eb','#6b7280','#f97316'];
+    const typeLabels   = ['IT','🏭','🚀'];
+
+    ctx.save();
+
+    // Main structure
+    ctx.fillStyle = wallColors[this.type] || '#333';
+    ctx.fillRect(bx, by, this.w, this.h);
+
+    // Roof / top trim
+    ctx.fillStyle = accentColors[this.type] || '#555';
+    ctx.fillRect(bx - 4, by - 6, this.w + 8, 10);
+
+    // Windows (2 rows × 3 columns)
+    ctx.fillStyle = 'rgba(255,255,180,0.85)';
+    for (let row = 0; row < 2; row++) {
+      for (let col = 0; col < 3; col++) {
+        const wx = bx + 16 + col * ((this.w - 32) / 3);
+        const wy = by + 18 + row * 45;
+        ctx.fillRect(wx, wy, 24, 18);
+        // Window light flicker on IT buildings
+        if (this.type === 0 && Math.sin(this.frame * 0.03 + row + col) > 0.5) {
+          ctx.fillStyle = 'rgba(100,200,255,0.4)';
+          ctx.fillRect(wx, wy, 24, 18);
+          ctx.fillStyle = 'rgba(255,255,180,0.85)';
+        }
+      }
+    }
+
+    // Door
+    ctx.fillStyle = '#8B6914';
+    ctx.fillRect(Math.round(this.doorX - camX), Math.round(this.doorY), 32, 44);
+    ctx.fillStyle = accentColors[this.type];
+    ctx.fillRect(Math.round(this.doorX - camX) + 4, Math.round(this.doorY) + 4, 10, 36);
+
+    // Sign / name
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 11px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(this.name, bx + this.w / 2, by + 14);
+
+    // Type badge
+    ctx.fillStyle = accentColors[this.type];
+    ctx.fillRect(bx + this.w - 28, by - 4, 24, 16);
+    ctx.fillStyle = '#fff';
+    ctx.font = '10px sans-serif';
+    ctx.fillText(typeLabels[this.type] || '?', bx + this.w - 16, by + 8);
+
+    // Interact hint
+    if (this.isNearDoor({ x: 0 - 9999, y: 0, w: 0, h: 0 }) === false) {
+      // only drawn dynamically in main drawUI
+    }
+
+    // Job offered flag
+    if (this.jobOffered) {
+      ctx.fillStyle = '#00a67e';
+      ctx.font = 'bold 12px sans-serif';
+      ctx.fillText('✅ Офер!', bx + this.w / 2, by - 14);
+    } else if (this.interviewDone) {
+      ctx.fillStyle = '#e74c3c';
+      ctx.font = '11px sans-serif';
+      ctx.fillText('✗ Відмова', bx + this.w / 2, by - 14);
+    }
+
+    ctx.restore();
+  }
+}
+
+class Collectible {
+  constructor(x, y, type) {
+    this.x = x; this.y = y; this.type = type;
+    this.w = 22; this.h = 22;
+    this.collected = false;
+    this.bobTimer = Math.random() * Math.PI * 2;
+  }
+  get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧']; }
+  get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN']; }
+  draw(ctx, camX) {
+    if (this.collected) return;
+    this.bobTimer += 0.06;
+    const px = Math.round(this.x - camX);
+    const py = Math.round(this.y + Math.sin(this.bobTimer) * 3);
+    ctx.font = '20px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(this.icons[this.type] || '⭐', px + 11, py + 18);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 8px sans-serif';
+    ctx.fillText(this.labels[this.type] || '+?', px + 11, py + 28);
+  }
+  apply(stats) {
+    const map = [
+      () => { stats.intelligence = Math.min(100, stats.intelligence + 5); stats.civilExp += 3; },
+      () => { stats.reputation   = Math.min(100, stats.reputation + 8); },
+      () => { stats.charisma     = Math.min(100, stats.charisma + 6); },
+      () => { stats.finances     += 300; },
+      () => { stats.stress       = Math.max(0, stats.stress - 15); stats.health = Math.min(100, stats.health + 20); },
+      () => { stats.polishLang   = Math.min(100, stats.polishLang + 10); },
+      () => { stats.englishLang  = Math.min(100, stats.englishLang + 8); },
+    ];
+    if (map[this.type]) map[this.type]();
+  }
+}
+
+// ============================================================
+// MODULE: QuestSystem
+// ============================================================
+const QuestSystem = {
+  init() {
+    return DATA.quests.map(q => ({ ...q, progress: 0, done: false }));
+  },
+  update(quests, game) {
+    const p = game.player;
+    for (const q of quests) {
+      if (q.done) continue;
+      switch (q.type) {
+        case 'collect':    q.progress = game.collected; break;
+        case 'polishLang': q.progress = p.stats.polishLang; break;
+        case 'portfolio':
+          q.progress = (game.hasCert ? 1 : 0) + (game.hasRec ? 1 : 0) + (p.stats.finances >= 1500 ? 1 : 0);
+          break;
+        case 'interview':  q.progress = game.interviewsDone; break;
+        case 'veterans':   q.progress = game.veteransMet; break;
+        case 'business':
+          q.progress = (p.stats.finances >= 5000 && p.stats.reputation >= 70) ? 1 : 0;
+          break;
+      }
+      if (q.progress >= q.target && !q.done) {
+        q.done = true;
+        game.onQuestComplete(q);
+      }
+    }
+  },
+};
+
+// ============================================================
+// MODULE: UISystem — HUD, dialogue box, overlays
+// ============================================================
+const UISystem = {
+  drawBar(ctx, x, y, w, h, value, max, color, label) {
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    ctx.fillRect(x - 1, y - 1, w + 2, h + 2);
+    ctx.fillStyle = '#333';
+    ctx.fillRect(x, y, w, h);
+    const filled = Math.max(0, Math.min(w, (value / max) * w));
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, filled, h);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 9px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(label, x + 3, y + h - 2);
+  },
+
+  drawHUD(ctx, player, camX, economySystem, questsDone, frame) {
+    const s = player.stats;
+    ctx.save();
+
+    // Semi-transparent HUD panel
+    ctx.fillStyle = 'rgba(5,10,20,0.78)';
+    ctx.fillRect(0, 0, CFG.CANVAS_W, 52);
+
+    // Health bar
+    UISystem.drawBar(ctx, 8,  8, 80, 11, s.health,      100, '#e74c3c', `❤ ${s.health}`);
+    // Stress bar (lower = better, shown as inverted)
+    UISystem.drawBar(ctx, 98, 8, 70, 11, 100 - s.stress, 100, '#f39c12', `😌 ${100-s.stress}%`);
+    // Mental health bar
+    UISystem.drawBar(ctx, 8, 26, 80, 11, s.mentalHealth, 100, '#9b59b6', `🧠 ${s.mentalHealth}`);
+    // Polish language bar
+    UISystem.drawBar(ctx, 98, 26, 70, 11, s.polishLang,  100, '#1a8cff', `🇵🇱 ${s.polishLang}%`);
+
+    // Finances
+    ctx.fillStyle = '#00e5a0';
+    ctx.font = 'bold 13px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(`💰 ${s.finances.toLocaleString('pl-PL')} PLN`, 182, 20);
+
+    // Reputation
+    ctx.fillStyle = '#ffd700';
+    ctx.fillText(`⭐ Реп: ${s.reputation}`, 182, 40);
+
+    // Stats summary (right side)
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText(`INT:${s.intelligence} STR:${s.strength} CHR:${s.charisma} EN:${s.englishLang}`, CFG.CANVAS_W - 8, 18);
+    ctx.fillText(`MilXP:${s.militaryExp} CivXP:${s.civilExp} Quests:${questsDone}`, CFG.CANVAS_W - 8, 34);
+
+    // Economy demand indicators
+    ctx.font = '9px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#aaa';
+    ctx.fillText(`IT:${Math.round(economySystem.getDemand(0))}% 🏭:${Math.round(economySystem.getDemand(1))}% 🚀:${Math.round(economySystem.getDemand(2))}%`, CFG.CANVAS_W - 8, 48);
+
+    // Quests shortcut hint
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '9px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('[Q] квести  [ESC] пауза  [S] зберегти', 8, 52);
+
+    ctx.restore();
+  },
+
+  drawDialogueBox(ctx, dialogue) {
+    if (!dialogue.visible) return;
+    ctx.save();
+    const bx = 30, by = CFG.CANVAS_H - 185, bw = CFG.CANVAS_W - 60, bh = 175;
+
+    // Box
+    ctx.fillStyle = 'rgba(5,15,30,0.94)';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx, by, bw, bh, 12) : ctx.rect(bx, by, bw, bh);
+    ctx.fill();
+    ctx.strokeStyle = '#00a67e';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(bx, by, bw, bh, 12) : ctx.rect(bx, by, bw, bh);
+    ctx.stroke();
+
+    // Speaker
+    ctx.fillStyle = '#00e5a0';
+    ctx.font = 'bold 13px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText(dialogue.speaker || 'NPC', bx + 12, by + 20);
+
+    // Message text (word wrap)
+    ctx.fillStyle = '#e8f4f8';
+    ctx.font = '13px sans-serif';
+    const maxWidth = bw - 24;
+    const lineH = 19;
+    const words = (dialogue.text || '').split(' ');
+    let line = '', lineY = by + 42;
+    for (let i = 0; i < words.length; i++) {
+      const testLine = line + words[i] + ' ';
+      if (ctx.measureText(testLine).width > maxWidth && i > 0) {
+        ctx.fillText(line, bx + 12, lineY);
+        line = words[i] + ' ';
+        lineY += lineH;
+        if (lineY > by + bh - 55) { ctx.fillText('...', bx + 12, lineY); break; }
+      } else { line = testLine; }
+    }
+    ctx.fillText(line, bx + 12, lineY);
+
+    // Options
+    if (dialogue.options && dialogue.options.length) {
+      dialogue.options.forEach((opt, i) => {
+        const oy = by + bh - 48 + i * 24;
+        const active = dialogue.selectedOption === i;
+        ctx.fillStyle = active ? '#00a67e' : 'rgba(255,255,255,0.15)';
+        ctx.fillRect(bx + 10, oy - 15, bw - 20, 20);
+        ctx.fillStyle = active ? '#fff' : '#aaa';
+        ctx.font = `${active ? 'bold ' : ''}12px sans-serif`;
+        ctx.fillText(`${i === 0 ? '[A]' : '[B]'} ${opt}`, bx + 18, oy);
+      });
+    } else {
+      ctx.fillStyle = 'rgba(255,255,255,0.45)';
+      ctx.font = '11px sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('[E / Enter] продовжити', bx + bw - 10, by + bh - 8);
+    }
+
+    ctx.restore();
+  },
+
+  drawQuestLog(ctx, quests, visible) {
+    if (!visible) return;
+    ctx.save();
+    const qx = CFG.CANVAS_W - 280, qy = 58, qw = 272, qh = 200;
+    ctx.fillStyle = 'rgba(5,15,30,0.92)';
+    ctx.fillRect(qx, qy, qw, qh);
+    ctx.strokeStyle = '#ffd700';
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(qx, qy, qw, qh);
+
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'left';
+    ctx.fillText('📋 Квести', qx + 8, qy + 16);
+
+    quests.forEach((q, i) => {
+      const ly = qy + 30 + i * 28;
+      ctx.fillStyle = q.done ? '#00e5a0' : '#ccc';
+      ctx.font = `${q.done ? 'bold ' : ''}11px sans-serif`;
+      const pct = q.target > 0 ? Math.min(q.progress, q.target) : q.progress;
+      ctx.fillText(`${q.done ? '✅' : '○'} ${q.name}`, qx + 8, ly);
+      ctx.fillStyle = '#888';
+      ctx.font = '10px sans-serif';
+      ctx.fillText(`  ${q.desc} (${pct}/${q.target})`, qx + 10, ly + 13);
+    });
+    ctx.restore();
+  },
+
+  drawPauseMenu(ctx, visible) {
+    if (!visible) return;
+    ctx.save();
+    ctx.fillStyle = 'rgba(0,0,0,0.7)';
+    ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 32px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('⏸ ПАУЗА', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 30);
+    ctx.font = '18px sans-serif';
+    ctx.fillText('[ESC] — продовжити гру', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 10);
+    ctx.fillText('[S] — зберегти прогрес', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 40);
+    ctx.fillText('[R] — нова гра', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 70);
+    ctx.restore();
+  },
+
+  drawStartScreen(ctx) {
+    ctx.save();
+    // Sky gradient
+    const grad = ctx.createLinearGradient(0, 0, 0, CFG.CANVAS_H);
+    grad.addColorStop(0, '#0a0a1a');
+    grad.addColorStop(1, '#1a2a3a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+
+    // Stars
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
+    const stars = [[120,80],[250,40],[400,90],[560,55],[700,75],[820,40],[900,90],[100,150],[300,120],[650,130],[800,110]];
+    for (const [sx, sy] of stars) { ctx.fillRect(sx, sy, 2, 2); }
+
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 36px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('🎖️ Шлях Ветерана', CFG.CANVAS_W / 2, 130);
+
+    ctx.fillStyle = '#00e5a0';
+    ctx.font = '16px sans-serif';
+    ctx.fillText('Пошук роботи у Польщі після повернення з фронту', CFG.CANVAS_W / 2, 170);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('← → рух  |  ↑ / Пробіл стрибок  |  E — взаємодія', CFG.CANVAS_W / 2, 230);
+
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 20px sans-serif';
+    ctx.fillText('Натисніть ПРОБІЛ або ENTER щоб почати', CFG.CANVAS_W / 2, 290);
+
+    const hasSave = !!SaveSystem.load();
+    if (hasSave) {
+      ctx.fillStyle = '#00a67e';
+      ctx.font = '14px sans-serif';
+      ctx.fillText('або [L] щоб завантажити збереження', CFG.CANVAS_W / 2, 320);
+    }
+
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '12px sans-serif';
+    ctx.fillText('Ціль: знайдіть роботу, виконайте квести, уникайте ворогів', CFG.CANVAS_W / 2, 380);
+    ctx.fillText('3 типи будівель · 4 типи ворогів · 6 квестів · 6 кінцівок', CFG.CANVAS_W / 2, 400);
+
+    ctx.restore();
+  },
+
+  drawEndingScreen(ctx, ending) {
+    if (!ending) return;
+    ctx.save();
+    const isGood = ending.id !== 'bad';
+    ctx.fillStyle = isGood ? 'rgba(0,30,15,0.95)' : 'rgba(20,5,5,0.95)';
+    ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+
+    ctx.font = '64px serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(ending.icon, CFG.CANVAS_W / 2, 120);
+
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 28px sans-serif';
+    ctx.fillText(ending.title, CFG.CANVAS_W / 2, 170);
+
+    ctx.fillStyle = '#e8f4f8';
+    ctx.font = '15px sans-serif';
+    const lines = ending.text.split(' ').reduce((acc, w) => {
+      const last = acc[acc.length - 1];
+      if (last && last.length + w.length < 60) { acc[acc.length - 1] += ' ' + w; }
+      else acc.push(w);
+      return acc;
+    }, []);
+    lines.forEach((ln, i) => ctx.fillText(ln, CFG.CANVAS_W / 2, 210 + i * 28));
+
+    ctx.fillStyle = '#00a67e';
+    ctx.font = 'bold 18px sans-serif';
+    ctx.fillText('[R] — Грати знову  |  [ESC] — Пауза', CFG.CANVAS_W / 2, CFG.CANVAS_H - 50);
+    ctx.restore();
+  },
+
+  drawNotification(ctx, notif) {
+    if (!notif || !notif.visible) return;
+    ctx.save();
+    const alpha = Math.min(1, notif.timer / 30) * Math.min(1, (notif.maxTimer - notif.timer) / 30);
+    ctx.fillStyle = `rgba(0,166,126,${0.92 * alpha})`;
+    ctx.fillRect(CFG.CANVAS_W / 2 - 200, 58, 400, 36);
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(notif.text, CFG.CANVAS_W / 2, 82);
+    ctx.restore();
+  },
+
+  drawMoralChoice(ctx, mc) {
+    if (!mc || !mc.visible) return;
+    ctx.save();
+    ctx.fillStyle = 'rgba(5,15,30,0.96)';
+    ctx.fillRect(50, CFG.CANVAS_H / 2 - 90, CFG.CANVAS_W - 100, 180);
+    ctx.strokeStyle = '#f39c12';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(50, CFG.CANVAS_H / 2 - 90, CFG.CANVAS_W - 100, 180);
+
+    ctx.fillStyle = '#f39c12';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('⚖️ Моральний вибір', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 68);
+
+    ctx.fillStyle = '#fff';
+    ctx.font = '14px sans-serif';
+    ctx.fillText(mc.text, CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 - 40);
+
+    const aActive = mc.selected === 0;
+    ctx.fillStyle = aActive ? '#f39c12' : 'rgba(255,255,255,0.15)';
+    ctx.fillRect(80, CFG.CANVAS_H / 2 - 15, (CFG.CANVAS_W - 180) / 2, 28);
+    ctx.fillStyle = aActive ? '#000' : '#ccc';
+    ctx.font = `${aActive ? 'bold ' : ''}12px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.fillText(`[A] ${mc.optA}`, CFG.CANVAS_W / 2 - (CFG.CANVAS_W - 180) / 4 - 10, CFG.CANVAS_H / 2 + 4);
+
+    const bActive = mc.selected === 1;
+    ctx.fillStyle = bActive ? '#00a67e' : 'rgba(255,255,255,0.15)';
+    ctx.fillRect(CFG.CANVAS_W / 2 + 10, CFG.CANVAS_H / 2 - 15, (CFG.CANVAS_W - 180) / 2, 28);
+    ctx.fillStyle = bActive ? '#000' : '#ccc';
+    ctx.font = `${bActive ? 'bold ' : ''}12px sans-serif`;
+    ctx.fillText(`[B] ${mc.optB}`, CFG.CANVAS_W / 2 + (CFG.CANVAS_W - 180) / 4 + 10, CFG.CANVAS_H / 2 + 4);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+    ctx.font = '11px sans-serif';
+    ctx.fillText('[A] вибрати перший  [B] вибрати другий', CFG.CANVAS_W / 2, CFG.CANVAS_H / 2 + 45);
+    ctx.restore();
+  },
+
+  drawWorld(ctx, camX) {
+    // Sky gradient
+    const skyGrad = ctx.createLinearGradient(0, 0, 0, CFG.CANVAS_H);
+    skyGrad.addColorStop(0, '#0d1117');
+    skyGrad.addColorStop(0.65, '#1a2a4a');
+    skyGrad.addColorStop(1, '#2a3a5a');
+    ctx.fillStyle = skyGrad;
+    ctx.fillRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+
+    // Static stars (seeded pattern)
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    for (let i = 0; i < 80; i++) {
+      const sx = (i * 113 + 7) % CFG.CANVAS_W;
+      const sy = (i * 79 + 11) % (CFG.CANVAS_H * 0.55);
+      ctx.fillRect(sx, sy, 1.5, 1.5);
+    }
+
+    // Distant city silhouettes (parallax)
+    const px2 = camX * 0.2;
+    ctx.fillStyle = '#1a2030';
+    for (let i = 0; i < 20; i++) {
+      const bx2 = (i * 380 - px2 % 380 + 380) % (CFG.CANVAS_W + 200) - 100;
+      const bh2 = 80 + (i * 37) % 100;
+      ctx.fillRect(bx2, CFG.GROUND_Y - bh2, 60 + (i * 23) % 80, bh2);
+    }
+
+    // Ground
+    ctx.fillStyle = '#1a2e0f';
+    ctx.fillRect(0, CFG.GROUND_Y, CFG.CANVAS_W, CFG.CANVAS_H - CFG.GROUND_Y);
+    ctx.fillStyle = '#2d4a1a';
+    ctx.fillRect(0, CFG.GROUND_Y, CFG.CANVAS_W, 6);
+  },
+
+  drawPlatforms(ctx, platforms, camX) {
+    for (const p of platforms) {
+      const [px, py, pw, ph] = p;
+      const sx = px - camX;
+      if (sx + pw < 0 || sx > CFG.CANVAS_W) continue;
+      if (py >= CFG.GROUND_Y) {
+        // Ground — already drawn
+        continue;
+      }
+      ctx.fillStyle = '#3a5a25';
+      ctx.fillRect(Math.round(sx), Math.round(py), pw, ph);
+      ctx.fillStyle = '#4a7a30';
+      ctx.fillRect(Math.round(sx), Math.round(py), pw, 4);
+    }
+  },
+};
+
+// ============================================================
+// MODULE: GameEngine — the main game orchestrator
+// ============================================================
+class GameEngine {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.state = 'start'; // start | playing | paused | dialogue | moralChoice | ending
+    this.frame = 0;
+    this.camX = 0;
+    this.camXTarget = 0;
+    this.lastSave = Date.now();
+
+    // Input state
+    this.input = {
+      left: false, right: false, jump: false,
+      interact: false, questLog: false, save: false, restart: false,
+      keyA: false, keyB: false,
+    };
+
+    // Game entities
+    this.player = null;
+    this.buildings = [];
+    this.collectibles = [];
+    this.enemies = [];
+    this.npcs = [];
+    this.platforms = [];
+
+    // Progress tracking
+    this.collected = 0;
+    this.hasCert = false;
+    this.hasRec = false;
+    this.interviewsDone = 0;
+    this.veteransMet = 0;
+    this.moralChoicesDone = 0;
+    this.quests = [];
+    this.questsDone = 0;
+    this.ending = null;
+
+    // UI state
+    this.dialogue = { visible: false, speaker: '', text: '', options: [], selectedOption: 0, callback: null };
+    this.questLogVisible = false;
+    this.notification = { visible: false, text: '', timer: 0, maxTimer: 150 };
+    this.moralChoice = null;
+
+    this._bindInput();
+    this._initWorld();
+  }
+
+  _bindInput() {
+    const keyMap = {
+      'ArrowLeft': 'left', 'KeyA': 'left',
+      'ArrowRight': 'right', 'KeyD': 'right',
+      'ArrowUp': 'jump', 'KeyW': 'jump', 'Space': 'jump',
+      'KeyE': 'interact', 'Enter': 'interact',
+      'KeyQ': 'questLog',
+      'KeyS': 'save',
+      'KeyR': 'restart',
+      'KeyA_moral': 'keyA',
+      'KeyB': 'keyB',
+      'KeyL': 'load',
+    };
+
+    document.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') e.preventDefault();
+      if (e.code === 'ArrowLeft' || e.code === 'ArrowRight' ||
+          e.code === 'ArrowUp' || e.code === 'ArrowDown') e.preventDefault();
+
+      if (e.code === 'Escape') { this._handleEscape(); return; }
+      if (e.code === 'KeyR') { if (this.state === 'ending' || this.state === 'paused') this._initWorld(); return; }
+      if (e.code === 'KeyL') { if (this.state === 'start') this._loadGame(); return; }
+      if (e.code === 'KeyA') { this._handleMoralKeyA(); }
+      if (e.code === 'KeyB') { this._handleMoralKeyB(); }
+
+      const mapped = keyMap[e.code];
+      if (mapped && mapped in this.input) this.input[mapped] = true;
+
+      if (e.code === 'KeyQ' && this.state === 'playing') {
+        this.questLogVisible = !this.questLogVisible;
+        this.input.questLog = false;
+      }
+      if (e.code === 'KeyS' && this.state === 'playing') {
+        this._saveGame();
+        this.input.save = false;
+      }
+      if ((e.code === 'Space' || e.code === 'Enter') && this.state === 'start') {
+        this.state = 'playing';
+      }
+      if ((e.code === 'KeyE' || e.code === 'Enter') && this.state === 'dialogue') {
+        this._advanceDialogue();
+      }
+    });
+
+    document.addEventListener('keyup', (e) => {
+      const keyMap2 = {
+        'ArrowLeft': 'left', 'KeyA': 'left',
+        'ArrowRight': 'right', 'KeyD': 'right',
+        'ArrowUp': 'jump', 'KeyW': 'jump', 'Space': 'jump',
+      };
+      const mapped = keyMap2[e.code];
+      if (mapped && mapped in this.input) this.input[mapped] = false;
+    });
+  }
+
+  _handleEscape() {
+    if (this.state === 'playing') { this.state = 'paused'; }
+    else if (this.state === 'paused') { this.state = 'playing'; }
+    else if (this.state === 'dialogue') {
+      this.dialogue.visible = false;
+      this.state = 'playing';
+    }
+  }
+
+  _handleMoralKeyA() {
+    if (this.state !== 'moralChoice' || !this.moralChoice) return;
+    DATA.moralChoices[this.moralChoice.idx].applyA(this.player);
+    this.moralChoice = null;
+    this.state = 'playing';
+    this.moralChoicesDone++;
+    this._notify('Ви прийняли рішення A');
+  }
+
+  _handleMoralKeyB() {
+    if (this.state !== 'moralChoice' || !this.moralChoice) return;
+    DATA.moralChoices[this.moralChoice.idx].applyB(this.player);
+    this.moralChoice = null;
+    this.state = 'playing';
+    this.moralChoicesDone++;
+    this._notify('Ви прийняли рішення B');
+  }
+
+  _advanceDialogue() {
+    if (!this.dialogue.visible) return;
+    if (this.dialogue.callback) {
+      this.dialogue.callback();
+      this.dialogue.callback = null;
+    } else {
+      this.dialogue.visible = false;
+      this.state = 'playing';
+    }
+  }
+
+  _initWorld(savedData) {
+    this.player = new Player(120, CFG.GROUND_Y - CFG.PLAYER_H);
+    this.platforms = DATA.platforms;
+    this.buildings = DATA.buildings.map(b => new Building(...b));
+    this.collectibles = DATA.collectibles.map(c => new Collectible(c.x, c.y, c.type));
+    this.enemies = DATA.enemies.map(e => new Enemy(...e));
+    this.npcs = DATA.npcs.map(n => new NPC(...n));
+    this.collected = 0;
+    this.hasCert = false;
+    this.hasRec = false;
+    this.interviewsDone = 0;
+    this.veteransMet = 0;
+    this.moralChoicesDone = 0;
+    this.quests = QuestSystem.init();
+    this.questsDone = 0;
+    this.ending = null;
+    this.camX = 0;
+    this.dialogue = { visible: false, speaker: '', text: '', options: [], selectedOption: 0, callback: null };
+    this.questLogVisible = false;
+    this.notification = { visible: false, text: '', timer: 0, maxTimer: 150 };
+    this.moralChoice = null;
+    this.frame = 0;
+
+    if (savedData) {
+      Object.assign(this.player.stats, savedData.stats);
+      this.player.x = savedData.x;
+      this.quests = savedData.quests || this.quests;
+      this.questsDone = savedData.questsDone ? savedData.questsDone.length : 0;
+      this.collected = savedData.collected || 0;
+      this.interviewsDone = savedData.interviewsDone || 0;
+      this.veteransMet = savedData.veteransMet || 0;
+      this.moralChoicesDone = savedData.moralChoicesDone || 0;
+    }
+
+    this.state = savedData ? 'playing' : (this.state === 'start' ? 'start' : 'playing');
+    if (!savedData && this.state !== 'start') this.state = 'playing';
+  }
+
+  _saveGame() {
+    const ok = SaveSystem.save({
+      player: this.player,
+      quests: this.quests,
+      questsDone: this.quests.filter(q => q.done).map(q => q.id),
+      collected: this.collected,
+      interviewsDone: this.interviewsDone,
+      veteransMet: this.veteransMet,
+      moralChoicesDone: this.moralChoicesDone,
+    });
+    this._notify(ok ? '💾 Прогрес збережено!' : '⚠ Помилка збереження');
+  }
+
+  _loadGame() {
+    const d = SaveSystem.load();
+    if (d) { this._initWorld(d); this._notify('📂 Завантажено збереження!'); }
+    else this._notify('Збереження не знайдено');
+  }
+
+  _notify(text, duration) {
+    this.notification = { visible: true, text, timer: 0, maxTimer: duration || 150 };
+  }
+
+  onQuestComplete(quest) {
+    this.questsDone++;
+    this._notify(`✅ Квест виконано: ${quest.name}!`, 200);
+    this._saveGame();
+    // Trigger moral choice occasionally after quest completion
+    if (this.questsDone % 2 === 0 && this.moralChoicesDone < DATA.moralChoices.length) {
+      setTimeout(() => {
+        if (this.state === 'playing') {
+          const mc = DATA.moralChoices[this.moralChoicesDone % DATA.moralChoices.length];
+          this.moralChoice = { ...mc, idx: this.moralChoicesDone % DATA.moralChoices.length, visible: true };
+          this.state = 'moralChoice';
+        }
+      }, 2000);
+    }
+  }
+
+  _checkEnding() {
+    const s = this.player.stats;
+    if (s.finances <= 0) { this._triggerEnding('bad'); return; }
+    if (s.finances >= 5000 && s.reputation >= 70) { this._triggerEnding('biz'); return; }
+    if (this.veteransMet >= 3 && this.questsDone >= 5) { this._triggerEnding('vet'); return; }
+    // Buildings trigger their own endings on job offer
+  }
+
+  _triggerEnding(id) {
+    const e = DATA.endings.find(x => x.id === id);
+    if (e && this.state !== 'ending') {
+      this.ending = e;
+      this.state = 'ending';
+      SaveSystem.clear();
+    }
+  }
+
+  _updateNotification() {
+    if (!this.notification.visible) return;
+    this.notification.timer++;
+    if (this.notification.timer >= this.notification.maxTimer) {
+      this.notification.visible = false;
+    }
+  }
+
+  _checkCollectibles() {
+    for (const c of this.collectibles) {
+      if (c.collected) continue;
+      if (Physics.rectOverlap(this.player.x, this.player.y, this.player.w, this.player.h,
+                              c.x, c.y, c.w, c.h)) {
+        c.collected = true;
+        c.apply(this.player.stats);
+        this.collected++;
+        if (c.type === 1) this.hasCert = true;
+        if (c.type === 2) this.hasRec = true;
+        const labels = ['📚 +Інтелект','🏆 +Репутація','📝 +Харизма','💰 +300 PLN','💊 -Стрес/+HP','🇵🇱 +Польська','🇬🇧 +Англійська'];
+        this._notify(labels[c.type] || '⭐ Бонус!', 100);
+      }
+    }
+  }
+
+  _checkEnemyCollisions() {
+    const p = this.player;
+    if (p.invincible > 0) return;
+
+    for (const e of this.enemies) {
+      if (!e.alive) continue;
+
+      // Check projectile collision
+      for (const pr of e.projectiles) {
+        if (pr.alive && Physics.rectOverlap(p.x, p.y, p.w, p.h, pr.x - 6, pr.y - 4, 12, 8)) {
+          pr.alive = false;
+          p.stats.health = Math.max(0, p.stats.health - 12);
+          p.stats.stress = Math.min(100, p.stats.stress + 8);
+          p.invincible = 60;
+          this._notify('😣 -12 HP — папірці від поганого роботодавця!', 80);
+        }
+      }
+
+      if (!Physics.rectOverlap(p.x, p.y, p.w, p.h, e.x, e.y, e.w, e.h)) continue;
+
+      p.invincible = 80;
+      switch (e.type) {
+        case 0: // Bureaucrat — slow + stress
+          p.slowTimer = 180;
+          p.stats.stress = Math.min(100, p.stats.stress + 18);
+          p.stats.mentalHealth = Math.max(0, p.stats.mentalHealth - 8);
+          this._notify('👔 Бюрократ: затримка та стрес!', 90);
+          break;
+        case 1: // Scammer — steal money
+          const stolen = Math.min(p.stats.finances, 180 + Math.floor(Math.random() * 150));
+          p.stats.finances -= stolen;
+          p.stats.stress = Math.min(100, p.stats.stress + 12);
+          this._notify(`🎭 Шахрай вкрав ${stolen} PLN!`, 90);
+          break;
+        case 3: // Tax agent — reduce stats
+          p.stats.intelligence = Math.max(10, p.stats.intelligence - 4);
+          p.stats.reputation = Math.max(0, p.stats.reputation - 6);
+          this._notify('📋 Податківець: -4 INT, -6 REP!', 90);
+          break;
+      }
+
+      // Knockback
+      p.vx = (p.x > e.x) ? 5 : -5;
+      p.vy = -6;
+    }
+  }
+
+  _checkBuildingInteraction() {
+    if (!this.input.interact) return;
+    this.input.interact = false;
+
+    for (const b of this.buildings) {
+      if (!b.isNearDoor(this.player)) continue;
+      this._startInterview(b);
+      return;
+    }
+
+    for (const npc of this.npcs) {
+      if (Physics.rectOverlap(this.player.x, this.player.y - 20, this.player.w + 40, this.player.h + 30,
+                              npc.x, npc.y, npc.w, npc.h)) {
+        this._talkToNPC(npc);
+        return;
+      }
+    }
+  }
+
+  _startInterview(building) {
+    const s = this.player.stats;
+    const typeNames = ['IT-компанія', 'Завод / Склад', 'Стартап'];
+    const greeting = DialogueSystem.buildGreeting(s);
+    const question = DialogueSystem.buildQuestion(building.type, s);
+    const demandInfo = `Попит на ринку: ${Math.round(EconomySystem.getDemand(building.type))}%`;
+
+    this.dialogue = {
+      visible: true,
+      speaker: `${building.name} (${typeNames[building.type]})`,
+      text: `${greeting}\n\n${question}\n\n[${demandInfo}]`,
+      options: [],
+      callback: () => {
+        // Show evaluation result
+        const result = DialogueSystem.evaluateInterview(building.type, s, this.player.bribeBonus);
+        this.player.bribeBonus = false;
+        this.interviewsDone++;
+        building.interviewDone = true;
+
+        if (result.passed) {
+          building.jobOffered = true;
+          const endingMap = { 0: 'it', 1: 'factory', 2: 'startup' };
+          this.dialogue = {
+            visible: true,
+            speaker: building.name,
+            text: `🎉 ${result.text}\n\nОцінка: ${result.score}/100\nПривітаємо!`,
+            options: [],
+            callback: () => {
+              this.dialogue.visible = false;
+              this.state = 'playing';
+              this._triggerEnding(endingMap[building.type] || 'it');
+            },
+          };
+        } else {
+          const reqText = result.requirements.length
+            ? `Вимоги не виконані: ${result.requirements.join(', ')}.`
+            : 'Загальний рівень недостатній.';
+          this.dialogue = {
+            visible: true,
+            speaker: building.name,
+            text: `❌ ${result.text}\n\n${reqText}\nОцінка: ${result.score}/100\nПрокачайте навички та спробуйте знову!`,
+            options: [],
+            callback: () => {
+              this.dialogue.visible = false;
+              this.state = 'playing';
+            },
+          };
+        }
+        this.state = 'dialogue';
+      },
+    };
+    this.state = 'dialogue';
+  }
+
+  _talkToNPC(npc) {
+    npc.talked = true;
+    if (npc.type === 0) {
+      this.veteransMet++;
+      this._notify(`🤝 Зустріли ветерана: ${npc.name}`, 120);
+    }
+    const text = DialogueSystem.buildNPCDialogue(npc.type, this.player.stats, this.veteransMet);
+    const typeNames = ['Ветеран', 'HR-менеджер', 'Викладач'];
+    this.dialogue = {
+      visible: true,
+      speaker: `${npc.name} (${typeNames[npc.type] || 'NPC'})`,
+      text,
+      options: [],
+      callback: () => {
+        // Instructor gives language bonus
+        if (npc.type === 2) {
+          this.player.stats.polishLang = Math.min(100, this.player.stats.polishLang + 5);
+          this._notify('👨‍🏫 Урок польської: +5 до знань!', 100);
+        }
+        this.dialogue.visible = false;
+        this.state = 'playing';
+      },
+    };
+    this.state = 'dialogue';
+  }
+
+  update() {
+    if (this.state !== 'playing') {
+      this._updateNotification();
+      return;
+    }
+
+    this.frame++;
+    EconomySystem.tick(this.frame);
+
+    // Player update
+    this.player.update(this.input, this.platforms);
+
+    // Camera follow with lag
+    this.camXTarget = this.player.x - CFG.CANVAS_W * 0.35;
+    this.camXTarget = Math.max(0, Math.min(CFG.WORLD_W - CFG.CANVAS_W, this.camXTarget));
+    this.camX += (this.camXTarget - this.camX) * CFG.CAMERA_LAG;
+
+    // Enemies update
+    for (const e of this.enemies) e.update(this.player, this.platforms);
+
+    // NPCs update
+    for (const n of this.npcs) n.update();
+
+    // Check interactions
+    this._checkBuildingInteraction();
+    this._checkCollectibles();
+    this._checkEnemyCollisions();
+
+    // Quest update
+    QuestSystem.update(this.quests, this);
+
+    // Check endings
+    this._checkEnding();
+
+    // Autosave
+    if (Date.now() - this.lastSave > CFG.AUTOSAVE_INTERVAL) {
+      this.lastSave = Date.now();
+      this._saveGame();
+    }
+
+    // Notification update
+    this._updateNotification();
+
+    // Building proximity hints
+    for (const b of this.buildings) {
+      if (b.isNearDoor(this.player)) {
+        // hint drawn in draw() below
+      }
+    }
+  }
+
+  draw() {
+    const ctx = this.ctx;
+    ctx.clearRect(0, 0, CFG.CANVAS_W, CFG.CANVAS_H);
+
+    if (this.state === 'start') {
+      UISystem.drawStartScreen(ctx);
+      return;
+    }
+
+    if (this.state === 'ending') {
+      UISystem.drawEndingScreen(ctx, this.ending);
+      return;
+    }
+
+    // Draw world
+    UISystem.drawWorld(ctx, this.camX);
+    UISystem.drawPlatforms(ctx, this.platforms, this.camX);
+
+    // Draw buildings
+    for (const b of this.buildings) b.draw(ctx, this.camX);
+
+    // Collectibles
+    for (const c of this.collectibles) c.draw(ctx, this.camX);
+
+    // NPCs
+    for (const n of this.npcs) n.draw(ctx, this.camX);
+
+    // Enemies
+    for (const e of this.enemies) e.draw(ctx, this.camX);
+
+    // Player
+    this.player.draw(ctx, this.camX);
+
+    // Building door hint
+    for (const b of this.buildings) {
+      if (b.isNearDoor(this.player)) {
+        const hx = Math.round(b.doorX - this.camX);
+        const hy = Math.round(b.doorY - 24);
+        ctx.fillStyle = '#ffd700';
+        ctx.font = 'bold 12px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('[E] увійти', hx + 16, hy);
+      }
+    }
+
+    // HUD
+    UISystem.drawHUD(ctx, this.player, this.camX, EconomySystem, this.questsDone, this.frame);
+
+    // UI overlays
+    UISystem.drawDialogueBox(ctx, this.dialogue);
+    UISystem.drawQuestLog(ctx, this.quests, this.questLogVisible);
+    UISystem.drawPauseMenu(ctx, this.state === 'paused');
+    UISystem.drawMoralChoice(ctx, this.moralChoice);
+    UISystem.drawNotification(ctx, this.notification);
+  }
+
+  start() {
+    const loop = (ts) => {
+      this.update();
+      this.draw();
+      requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+  }
+}
+
+// ============================================================
+// INIT — Bootstrap the game when DOM is ready
+// ============================================================
+function initGame() {
+  const canvas = document.getElementById('gameCanvas');
+  if (!canvas) return;
+
+  // Scale canvas responsively
+  function resizeCanvas() {
+    const container = canvas.parentElement;
+    if (!container) return;
+    const ratio = CFG.CANVAS_W / CFG.CANVAS_H;
+    const maxW = Math.min(container.clientWidth, CFG.CANVAS_W);
+    canvas.style.width  = maxW + 'px';
+    canvas.style.height = Math.round(maxW / ratio) + 'px';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const engine = new GameEngine(canvas);
+  engine.start();
+
+  // Expose for debug
+  window.__veteranGame = engine;
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGame);
+} else {
+  initGame();
+}
+
+})(); // end IIFE
+</script>
+</body>
+</html>
