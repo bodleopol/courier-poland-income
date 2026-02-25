@@ -17,6 +17,9 @@ const CFG = {
   GRAVITY: 0.55,
   JUMP_FORCE: -13,
   PLAYER_SPEED: 4.2,
+  SPRINT_MULT: 1.2,
+  COYOTE_FRAMES: 8,
+  JUMP_BUFFER_FRAMES: 8,
   PLAYER_W: 28,
   PLAYER_H: 40,
   FPS_CAP: 60,
@@ -1498,6 +1501,8 @@ class Player extends Entity {
     this.bribeBonus = false;
     this.animFrame = 0;
     this.animTimer = 0;
+    this.coyoteTimer = 0;
+    this.jumpBuffer = 0;
   }
 
   update(input, platforms) {
@@ -1505,7 +1510,13 @@ class Player extends Entity {
     if (this.invincible > 0) this.invincible--;
     if (this.slowTimer > 0) this.slowTimer--;
 
-    const speed = this.slowTimer > 0 ? CFG.PLAYER_SPEED * 0.45 : CFG.PLAYER_SPEED;
+    if (this.onGround) this.coyoteTimer = CFG.COYOTE_FRAMES;
+    else if (this.coyoteTimer > 0) this.coyoteTimer--;
+    if (input.jump) this.jumpBuffer = CFG.JUMP_BUFFER_FRAMES;
+    else if (this.jumpBuffer > 0) this.jumpBuffer--;
+
+    const sprintMult = input.sprint ? CFG.SPRINT_MULT : 1;
+    const speed = (this.slowTimer > 0 ? CFG.PLAYER_SPEED * 0.45 : CFG.PLAYER_SPEED) * sprintMult;
 
     // Horizontal movement
     this.vx = 0;
@@ -1513,9 +1524,11 @@ class Player extends Entity {
     if (input.right) { this.vx =  speed; this.facingRight = true; }
 
     // Jump
-    if (input.jump && this.onGround) {
+    if (this.jumpBuffer > 0 && (this.onGround || this.coyoteTimer > 0)) {
       this.vy = CFG.JUMP_FORCE;
       this.onGround = false;
+      this.coyoteTimer = 0;
+      this.jumpBuffer = 0;
     }
     input.jump = false; // consume
 
@@ -2468,6 +2481,7 @@ class GameEngine {
     // Input state
     this.input = {
       left: false, right: false, jump: false,
+      sprint: false,
       interact: false, questLog: false, save: false, restart: false,
       keyA: false, keyB: false,
     };
@@ -2508,6 +2522,7 @@ class GameEngine {
       'ArrowLeft': 'left', 'KeyA': 'left',
       'ArrowRight': 'right', 'KeyD': 'right',
       'ArrowUp': 'jump', 'KeyW': 'jump', 'Space': 'jump',
+      'ShiftLeft': 'sprint', 'ShiftRight': 'sprint',
       'KeyE': 'interact', 'Enter': 'interact',
       'KeyQ': 'questLog',
       'KeyS': 'save',
@@ -2555,6 +2570,7 @@ class GameEngine {
         'ArrowLeft': 'left', 'KeyA': 'left',
         'ArrowRight': 'right', 'KeyD': 'right',
         'ArrowUp': 'jump', 'KeyW': 'jump', 'Space': 'jump',
+        'ShiftLeft': 'sprint', 'ShiftRight': 'sprint',
       };
       const mapped = keyMap2[e.code];
       if (mapped && mapped in this.input) this.input[mapped] = false;
@@ -3248,6 +3264,12 @@ function initGame() {
 
   const engine = new GameEngine(canvas);
   engine.start();
+  const openGameBtn = document.getElementById('open-game-btn');
+  if (openGameBtn) {
+    openGameBtn.addEventListener('click', () => {
+      if (engine.state === 'start') engine.state = 'playing';
+    });
+  }
 
   // Expose for debug
   window.__veteranGame = engine;
