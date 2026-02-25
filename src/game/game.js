@@ -3261,12 +3261,10 @@ function initGame() {
     const isFs = document.body.classList.contains('game-fs') ||
                  !!(document.fullscreenElement || document.webkitFullscreenElement);
     if (isFs) {
-      // In fullscreen: fill full window, leave room for controls bar
+      // In fullscreen: fill full window height
       // Use visualViewport height when available (avoids iOS address-bar issues)
       const vvH = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
-      const isLandscapeSmall = vvH < 500;
-      const ctrlH = isLandscapeSmall ? 60 : 80;
-      const availH = vvH - ctrlH;
+      const availH = vvH;
       const availW = (window.visualViewport && window.visualViewport.width) || window.innerWidth;
       const ratio   = CFG.CANVAS_W / CFG.CANVAS_H;
       let w = availW;
