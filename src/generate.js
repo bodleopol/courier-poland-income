@@ -2625,6 +2625,23 @@ async function build() {
     // main.js not found, continue
   }
 
+  // Copy modular game assets
+  try {
+    const gameSrcDir = path.join(SRC, 'game');
+    const gameDistDir = path.join(DIST, 'game');
+    await fs.mkdir(gameDistDir, { recursive: true });
+    for (const fileName of ['game.css', 'game.js', 'index.html']) {
+      try {
+        const content = await fs.readFile(path.join(gameSrcDir, fileName), 'utf8');
+        await fs.writeFile(path.join(gameDistDir, fileName), content, 'utf8');
+      } catch (e) {
+        // optional game file missing, continue
+      }
+    }
+  } catch (e) {
+    // modular game folder not found, continue
+  }
+
   // Copy favicon.svg
   try {
     const faviconPath = path.join(SRC, 'favicon.svg');
