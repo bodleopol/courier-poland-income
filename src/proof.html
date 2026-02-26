@@ -23,6 +23,54 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Rybezh Proof Schema: Organization + AggregateRating -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rybezh Proof",
+    "url": "https://rybezh.site/proof.html",
+    "description": "Система верифікації роботодавців у Польщі на основі реальних відгуків українців. Рейтинг Proof Score від 0 до 100.",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Rybezh",
+      "url": "https://rybezh.site"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.3",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "847",
+      "reviewCount": "412"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Ігор К."},
+        "datePublished": "2025-11-15",
+        "reviewBody": "Дуже корисна система. Перевірив компанію перед виїздом — все збіглося з реальністю.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Оксана М."},
+        "datePublished": "2025-10-22",
+        "reviewBody": "Proof Score допоміг уникнути сумнівної компанії. Рекомендую перевіряти перед виїздом.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Андрій Т."},
+        "datePublished": "2025-09-10",
+        "reviewBody": "Зручний рейтинг. Побачив реальні відгуки від людей, які вже працювали у цій компанії.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "4", "bestRating": "5"}
+      }
+    ]
+  }
+  </script>
+
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
   <script>

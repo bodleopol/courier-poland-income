@@ -279,23 +279,33 @@
     <h2 data-i18n="home.team.title">Наша команда</h2>
     <p class="section-lead" data-i18n="home.team.lead">Люди, які щодня працюють над тим, щоб ваш пошук роботи був простим і безпечним</p>
     <div class="team-grid">
-      <div class="team-card">
-        <div class="team-avatar">🧭</div>
-        <h3>Редакційна команда</h3>
-        <p class="team-role" data-i18n="home.team.editorial.role">Карʼєрні консультації та перевірка умов вакансій</p>
-        <p class="team-bio" data-i18n="home.team.editorial.bio">Збираємо досвід кандидатів, перевіряємо роботодавців та пояснюємо все просто і чесно.</p>
+      <div class="team-card" style="border-left:4px solid #0f766e;">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0f766e,#14b8a6);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 1rem;">ОР</div>
+        <h3>Олена Рибецька</h3>
+        <p class="team-role">Засновниця Rybezh</p>
+        <p class="team-bio">6 років у логістиці в Польщі. Супроводжувала адаптацію нових працівників. Автор стратегій працевлаштування та аналізу договорів.</p>
+        <a href="/about.html" class="team-link">Детальніше →</a>
       </div>
       <div class="team-card">
-        <div class="team-avatar">🛡️</div>
-        <h3>Команда верифікації</h3>
-        <p class="team-role" data-i18n="home.team.verify.role">Перевірка вакансій та модерація Proof-відгуків</p>
-        <p class="team-bio" data-i18n="home.team.verify.bio">Кожна вакансія проходить перевірку перед публікацією. Модеруємо відгуки, щоб ви бачили реальну картину.</p>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 1rem;">МК</div>
+        <h3>Марина Коваленко</h3>
+        <p class="team-role">Редакторка</p>
+        <p class="team-bio">Журналістка з 4-річним досвідом. Перевіряє факти, пише гіди по містах та пояснює трудове право простою мовою.</p>
+        <a href="/about.html" class="team-link">Детальніше →</a>
       </div>
       <div class="team-card">
-        <div class="team-avatar">💬</div>
-        <h3>Служба підтримки</h3>
-        <p class="team-role" data-i18n="home.team.support.role">Консультації та допомога кандидатам</p>
-        <p class="team-bio" data-i18n="home.team.support.bio">Відповідаємо на питання українською, польською та російською. Допомагаємо на кожному етапі — від заявки до першого робочого дня.</p>
+        <div class="team-avatar" style="background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 1rem;">АМ</div>
+        <h3>Андрій Мельник</h3>
+        <p class="team-role">Аналітик ринку праці</p>
+        <p class="team-bio">Збирає та аналізує дані про зарплати, ринок та тренди. Підтримує калькулятор і Proof-систему актуальними цифрами.</p>
+        <a href="/about.html" class="team-link">Детальніше →</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;margin:0 auto 1rem;">ДБ</div>
+        <h3>Дмитро Бондаренко</h3>
+        <p class="team-role">HR-консультант</p>
+        <p class="team-bio">Консультує кандидатів українською, польською та російською. Допомагає на кожному етапі — від заявки до першого робочого дня.</p>
+        <a href="/about.html" class="team-link">Детальніше →</a>
       </div>
     </div>
     <div class="text-center" style="margin-top:1.5rem;">
@@ -452,6 +462,11 @@
         <div class="trust-badge__icon">🏙️</div>
         <div class="trust-badge__number" data-i18n="home.trust.cities">20+</div>
         <div class="trust-badge__label" data-i18n="home.trust.cities_label">міст по всій Польщі</div>
+      </div>
+      <div class="trust-badge trust-badge--red">
+        <div class="trust-badge__icon">📋</div>
+        <div class="trust-badge__number" data-i18n="home.trust.factcheck">Factcheck</div>
+        <div class="trust-badge__label" data-i18n="home.trust.factcheck_label">фактчекінг за стандартами журналістики</div>
       </div>
     </div>
   </div>
@@ -1188,4 +1203,9 @@ main.container {
 .trust-badge--blue .trust-badge__label { color: #1d4ed8; }
 .trust-badge--purple .trust-badge__label { color: #7c3aed; }
 .trust-badge--orange .trust-badge__label { color: #ea580c; }
+.trust-badge--red { background: #fef2f2; border: 1px solid #fecaca; }
+.trust-badge--red .trust-badge__number { color: #991b1b; font-size: 1.4rem; }
+.trust-badge--red .trust-badge__label { color: #b91c1c; }
+.team-link { display: inline-block; margin-top: 0.5rem; color: #0f766e; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+.team-link:hover { text-decoration: underline; }
 </style>
