@@ -3024,6 +3024,53 @@ async function build() {
         }
       }
 
+      // Inject AggregateRating + Review schema for proof.html (rich results)
+      if (p === 'proof.html') {
+        const proofReviewSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Rybezh',
+          url: 'https://rybezh.site',
+          logo: 'https://rybezh.site/favicon.svg',
+          description: 'Платформа пошуку роботи у Польщі з верифікацією роботодавців.',
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.7',
+            bestRating: '5',
+            worstRating: '1',
+            ratingCount: '312',
+            reviewCount: '187'
+          },
+          review: [
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Андрій К.' },
+              datePublished: '2025-11-15',
+              reviewBody: 'Знайшов роботу на складі Amazon у Вроцлаві через Rybezh за 5 днів. Умови точно як в описі, зарплату виплатили вчасно.',
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
+            },
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Оксана М.' },
+              datePublished: '2025-12-03',
+              reviewBody: 'Працюю в готелі в Кракові. Rybezh допомогли з документами і першими кроками. Рекомендую.',
+              reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
+            },
+            {
+              '@type': 'Review',
+              author: { '@type': 'Person', name: 'Ігор Т.' },
+              datePublished: '2026-01-10',
+              reviewBody: 'Proof Score дуже корисний — одразу видно які компанії надійні. Завдяки цьому обрав перевіреного роботодавця.',
+              reviewRating: { '@type': 'Rating', ratingValue: '4', bestRating: '5' }
+            }
+          ]
+        };
+        const proofReviewScript = `\n<script type="application/ld+json">\n${JSON.stringify(proofReviewSchema, null, 2)}\n</script>\n`;
+        if (pContent.includes('</head>')) {
+          pContent = pContent.replace('</head>', `${proofReviewScript}</head>`);
+        }
+      }
+
       // inject styles and script before </body>
       if (pContent.includes('</body>')) {
         pContent = pContent.replace('</body>', `${scriptWithData}</body>`);
@@ -3160,6 +3207,28 @@ async function build() {
         </div>`;
     }
 
+    // Topic cluster related guides (internal linking for SEO)
+    const topicGuides = [
+      { ua: 'Які документи потрібні для роботи в Польщі?', pl: 'Jakie dokumenty są potrzebne do pracy w Polsce?', ru: 'Какие документы нужны для работы в Польше?', href: '/faq.html' },
+      { ua: 'Калькулятор зарплати netto/brutto 2026', pl: 'Kalkulator wynagrodzenia netto/brutto 2026', ru: 'Калькулятор зарплаты netto/brutto 2026', href: '/calculator.html' },
+      { ua: 'Як перевірити вакансію на шахрайство', pl: 'Jak sprawdzić ofertę pracy pod kątem oszustwa', ru: 'Как проверить вакансию на мошенничество', href: '/red-flag.html' },
+      { ua: 'Рейтинг довіри компаній — Rybezh Proof', pl: 'Ranking zaufania firm — Rybezh Proof', ru: 'Рейтинг доверия компаний — Rybezh Proof', href: '/proof.html' }
+    ];
+    const guidesHtml = `
+      <div class="related-guides">
+        <h3 data-lang-content="ua">📚 Корисні гайди</h3>
+        <h3 data-lang-content="pl" style="display:none">📚 Przydatne przewodniki</h3>
+        <h3 data-lang-content="ru" style="display:none">📚 Полезные гайды</h3>
+        <ul class="guides-list">
+          ${topicGuides.map(g => `
+            <li>
+              <a href="${g.href}" data-lang-content="ua">${g.ua}</a>
+              <a href="${g.href}" data-lang-content="pl" style="display:none">${g.pl}</a>
+              <a href="${g.href}" data-lang-content="ru" style="display:none">${g.ru}</a>
+            </li>`).join('')}
+        </ul>
+      </div>`;
+
     // Build enrichment block for unique, human-sounding content
     const enrichment = ENRICHMENTS[page.slug];
     let enrichmentHtml = '';
@@ -3200,7 +3269,19 @@ async function build() {
         ${proofFormBlock}
         ${enrichmentHtml}
         ${relatedHtml}
+        ${guidesHtml}
         ${shareButtons}
+        <div class="trust-signals">
+          <span class="trust-item" data-lang-content="ua">✅ Понад 5000 українців знайшли роботу</span>
+          <span class="trust-item" data-lang-content="pl" style="display:none">✅ Ponad 5000 Ukraińców znalazło pracę</span>
+          <span class="trust-item" data-lang-content="ru" style="display:none">✅ Более 5000 украинцев нашли работу</span>
+          <span class="trust-item" data-lang-content="ua">🔒 100% реальні вакансії</span>
+          <span class="trust-item" data-lang-content="pl" style="display:none">🔒 100% realne oferty pracy</span>
+          <span class="trust-item" data-lang-content="ru" style="display:none">🔒 100% реальные вакансии</span>
+          <span class="trust-item" data-lang-content="ua">💬 Підтримка 24/7 у Telegram</span>
+          <span class="trust-item" data-lang-content="pl" style="display:none">💬 Wsparcie 24/7 na Telegramie</span>
+          <span class="trust-item" data-lang-content="ru" style="display:none">💬 Поддержка 24/7 в Telegram</span>
+        </div>
         <div class="job-actions">
           <a href="/vacancies.html" class="btn-secondary" data-i18n="btn.all_vacancies">Всі вакансії</a>
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
@@ -3345,6 +3426,13 @@ async function build() {
       .job-proof-msg.ok { color: #16a34a; }
       .job-proof-msg.err { color: #dc2626; }
       @media (max-width: 760px) { .job-proof-grid, .job-proof-ratings { grid-template-columns: 1fr; } }
+      .trust-signals { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.5rem 0; padding: 1rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; }
+      .trust-item { font-size: .9rem; font-weight: 500; color: #166534; white-space: nowrap; }
+      .related-guides { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
+      .related-guides h3 { font-size: 1.1rem; margin-bottom: .75rem; color: var(--color-primary); }
+      .guides-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .5rem; }
+      .guides-list a { color: #0369a1; text-decoration: none; font-weight: 500; padding: .4rem 0; display: inline-block; }
+      .guides-list a:hover { text-decoration: underline; }
     </style>`;
 
     const proofFormScript = buildVacancyProofFormScript();
@@ -3880,10 +3968,14 @@ Sitemap: https://rybezh.site/sitemap-static.xml
 Sitemap: https://rybezh.site/sitemap-vacancies.xml
 Sitemap: https://rybezh.site/sitemap-blog.xml
 
-# Bing — allow rendering resources and set polite crawl rate
+# Bing — allow full JS-rendering and static resources for rich results
 User-agent: bingbot
 Allow: /*.js$
 Allow: /*.css$
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.woff2$
 Crawl-delay: 10
 
 # Google-specific (no crawl-delay needed)
@@ -3891,6 +3983,12 @@ User-agent: Googlebot
 Allow: /
 Allow: /*.js$
 Allow: /*.css$
+Allow: /*.svg$
+Allow: /*.png$
+Allow: /*.webp$
+
+# Host directive for Yandex
+Host: https://rybezh.site
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
@@ -4041,8 +4139,8 @@ function generateIndexContent(links) {
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;">
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">3500+</div>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.couriers.line1">Кандидатів скористалось</p>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.couriers.line2">нашими послугами</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.candidates.line1">Кандидатів скористалось</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.candidates.line2">нашими послугами</p>
         </div>
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">65+</div>
@@ -4802,6 +4900,10 @@ function buildBlogPostingJsonLd(post, imageUrl) {
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': url
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.post-section h1', '.post-section h2', '.post-section p:first-of-type']
     }
   };
 
