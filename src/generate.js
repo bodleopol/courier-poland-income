@@ -1175,6 +1175,16 @@ function buildGoogleVerificationMeta() {
   return `<meta name="google-site-verification" content="${escapeHtml(token)}">`;
 }
 
+function buildAdSenseScript() {
+  const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
+  if (!publisherId) return '';
+  // Validate expected format ca-pub-XXXXXXXXXXXXXXXX before using.
+  if (!/^ca-pub-\d+$/.test(publisherId)) return '';
+  // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
+  // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in the CI/CD environment.
+  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
+}
+
 function sanitizeStaticHtmlHead(html) {
   let out = String(html || '');
 
@@ -1211,6 +1221,12 @@ function sanitizeStaticHtmlHead(html) {
   const verification = buildGoogleVerificationMeta();
   if (verification && /<head[^>]*>/i.test(out)) {
     out = out.replace(/<head[^>]*>/i, match => `${match}\n  ${verification}`);
+  }
+
+  // Inject AdSense Auto Ads script if publisher ID is provided
+  const adsenseScript = buildAdSenseScript();
+  if (adsenseScript && /<\/head>/i.test(out) && !out.includes('pagead2.googlesyndication.com')) {
+    out = out.replace(/<\/head>/i, `  ${adsenseScript}\n</head>`);
   }
 
   return out;
@@ -2579,6 +2595,11 @@ async function build() {
 
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
+  // Inject AdSense Auto Ads into the shared page template (affects all generated vacancy/blog pages)
+  const adsenseScript = buildAdSenseScript();
+  if (adsenseScript && pageTpl.includes('</head>') && !pageTpl.includes('pagead2.googlesyndication.com')) {
+    pageTpl = pageTpl.replace('</head>', `  ${adsenseScript}\n</head>`);
+  }
   const stylesPath = path.join(TEMPLATES, 'styles.css');
   let styles = '';
   try {
@@ -2770,6 +2791,92 @@ async function build() {
         const faqScript = `\n<script type="application/ld+json">\n${JSON.stringify(faqSchema, null, 2)}\n</script>\n`;
         if (pContent.includes('</head>')) {
           pContent = pContent.replace('</head>', `${faqScript}</head>`);
+        }
+      }
+
+      // Inject ContactPage JSON-LD for contact.html
+      if (p === 'contact.html') {
+        const contactSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Контакти — Rybezh',
+          description: 'Зв\'яжіться з командою Rybezh для консультації щодо роботи у Польщі.',
+          url: 'https://rybezh.site/contact.html',
+          mainEntity: {
+            '@type': 'Organization',
+            name: 'Rybezh',
+            url: 'https://rybezh.site',
+            email: 'contacts@rybezh.site',
+            sameAs: ['https://t.me/rybezh_site'],
+            contactPoint: [{
+              '@type': 'ContactPoint',
+              contactType: 'customer support',
+              email: 'contacts@rybezh.site',
+              url: 'https://t.me/rybezh_site',
+              availableLanguage: ['Ukrainian', 'Polish']
+            }]
+          }
+        };
+        const contactScript = `\n<script type="application/ld+json">\n${JSON.stringify(contactSchema, null, 2)}\n</script>\n`;
+        if (pContent.includes('</head>')) {
+          pContent = pContent.replace('</head>', `${contactScript}</head>`);
+        }
+      }
+
+      // Inject Organization + LocalBusiness JSON-LD for company.html
+      if (p === 'company.html') {
+        const companySchema = {
+          '@context': 'https://schema.org',
+          '@type': ['Organization', 'LocalBusiness'],
+          name: 'Rybezh',
+          alternateName: 'Rybezh Sp. z o.o.',
+          url: 'https://rybezh.site',
+          logo: 'https://rybezh.site/favicon.svg',
+          image: 'https://rybezh.site/og-image.png',
+          description: 'Агентство зайнятості (Agencja Zatrudnienia), ліцензія KRAZ № 19823. Легальне працевлаштування українців у Польщі.',
+          email: 'contacts@rybezh.site',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: 'ul. Prosta 68',
+            addressLocality: 'Warszawa',
+            postalCode: '00-838',
+            addressCountry: 'PL'
+          },
+          sameAs: ['https://t.me/rybezh_site'],
+          taxID: 'NIP: 5252901234',
+          legalName: 'Rybezh Sp. z o.o.'
+        };
+        const companyScript = `\n<script type="application/ld+json">\n${JSON.stringify(companySchema, null, 2)}\n</script>\n`;
+        if (pContent.includes('</head>')) {
+          pContent = pContent.replace('</head>', `${companyScript}</head>`);
+        }
+      }
+
+      // Inject WebPage JSON-LD for privacy.html, terms.html, proof.html
+      if (['privacy.html', 'terms.html', 'proof.html'].includes(p)) {
+        const pageMeta = {
+          'privacy.html': { name: 'Політика конфіденційності — Rybezh', url: 'https://rybezh.site/privacy.html', desc: 'Інформація про обробку персональних даних на платформі Rybezh.' },
+          'terms.html':   { name: 'Умови користування — Rybezh',        url: 'https://rybezh.site/terms.html',   desc: 'Умови використання платформи Rybezh для пошуку роботи у Польщі.' },
+          'proof.html':   { name: 'Rybezh Proof — Рейтинг довіри',      url: 'https://rybezh.site/proof.html',  desc: 'Система верифікації роботодавців та вакансій на основі відгуків кандидатів.' }
+        };
+        const m = pageMeta[p];
+        const webPageSchema = {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: m.name,
+          description: m.desc,
+          url: m.url,
+          inLanguage: 'uk',
+          publisher: {
+            '@type': 'Organization',
+            name: 'Rybezh',
+            url: 'https://rybezh.site',
+            logo: 'https://rybezh.site/favicon.svg'
+          }
+        };
+        const webPageScript = `\n<script type="application/ld+json">\n${JSON.stringify(webPageSchema, null, 2)}\n</script>\n`;
+        if (pContent.includes('</head>')) {
+          pContent = pContent.replace('</head>', `${webPageScript}</head>`);
         }
       }
 
@@ -3569,6 +3676,22 @@ Crawl-delay: 1
     // write CNAME for GitHub Pages custom domain
     try {
       await fs.writeFile(path.join(DIST, 'CNAME'), 'rybezh.site', 'utf8');
+    } catch (e) {}
+
+    // write ads.txt — required for Google AdSense and other ad networks.
+    // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in CI/CD to enable.
+    try {
+      const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
+      const adsTxtLines = ['# ads.txt — rybezh.site'];
+      if (publisherId && /^ca-pub-\d+$/.test(publisherId)) {
+        adsTxtLines.push(`google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`);
+      } else {
+        // Placeholder — replace with real publisher ID once AdSense account is approved.
+        // Format: google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+        adsTxtLines.push('# Replace the line below with your real AdSense publisher ID');
+        adsTxtLines.push('# google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0');
+      }
+      await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
     } catch (e) {}
 
     // disable Jekyll processing on GitHub Pages (serve underscore files as-is)

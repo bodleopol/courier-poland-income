@@ -64,6 +64,76 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Розміщення вакансій на Rybezh",
+    "description": "Платформа для пошуку українських та польських працівників у Польщі. Розміщення вакансій, підбір кандидатів, верифікація компаній.",
+    "url": "https://rybezh.site/for-employers.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rybezh",
+      "url": "https://rybezh.site"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Poland"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Тарифи для роботодавців",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Старт — безкоштовне розміщення",
+            "description": "1 активна вакансія, стандартне розміщення, модерація 24–48 год"
+          },
+          "price": "0",
+          "priceCurrency": "PLN",
+          "availability": "https://schema.org/InStock",
+          "name": "Старт"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Pro — активний найм",
+            "description": "До 5 вакансій, виділення у пошуку, модерація до 4 год, пріоритетна підтримка, статистика"
+          },
+          "price": "199",
+          "priceCurrency": "PLN",
+          "eligibleDuration": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "MON"
+          },
+          "availability": "https://schema.org/InStock",
+          "name": "Pro"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business — необмежений підбір",
+            "description": "Необмежена кількість вакансій, топ-позиція, модерація до 1 год, виділений менеджер, бейдж верифікованої компанії"
+          },
+          "price": "499",
+          "priceCurrency": "PLN",
+          "eligibleDuration": {
+            "@type": "QuantitativeValue",
+            "value": 1,
+            "unitCode": "MON"
+          },
+          "availability": "https://schema.org/InStock",
+          "name": "Business"
+        }
+      ]
+    }
+  }
+  </script>
 
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
@@ -167,6 +237,32 @@
     .emp-proof-block { margin: 2rem 0; padding: 1.4rem; border-radius: 14px; border: 1px solid #fecaca; background: linear-gradient(135deg, #fff5f5, #fff); }
     .emp-proof-block h2 { margin: 0 0 0.5rem; color: #b91c1c; font-size: 1.3rem; }
     .emp-proof-block p { margin: 0; color: #7f1d1d; line-height: 1.6; }
+
+    /* Pricing plans */
+    .emp-pricing { margin: 2.5rem 0; }
+    .emp-pricing h2 { text-align: center; font-size: 1.7rem; color: var(--color-primary, #0f766e); margin: 0 0 0.5rem; }
+    .emp-pricing .pricing-lead { text-align: center; color: var(--color-text-secondary, #64748b); margin: 0 0 2rem; font-size: 0.97rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pricing-card { background: var(--color-surface, #fff); border: 2px solid var(--color-border, #e5e7eb); border-radius: 18px; padding: 2rem 1.5rem; display: flex; flex-direction: column; position: relative; transition: box-shadow 0.2s, transform 0.2s; }
+    .pricing-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.09); transform: translateY(-3px); }
+    .pricing-card.featured { border-color: var(--color-accent, #00a67e); box-shadow: 0 8px 28px rgba(0, 166, 126, 0.18); }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-accent, #00a67e); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.9rem; border-radius: 999px; white-space: nowrap; }
+    .pricing-plan-name { font-size: 1.1rem; font-weight: 700; color: var(--color-text, #1f2937); margin: 0 0 0.25rem; }
+    .pricing-plan-desc { font-size: 0.87rem; color: var(--color-text-secondary, #64748b); margin: 0 0 1.25rem; }
+    .pricing-price { font-size: 2.1rem; font-weight: 800; color: var(--color-primary, #0f766e); margin: 0 0 0.2rem; line-height: 1; }
+    .pricing-price span { font-size: 1rem; font-weight: 500; color: var(--color-text-secondary, #64748b); }
+    .pricing-period { font-size: 0.82rem; color: var(--color-text-secondary, #64748b); margin: 0 0 1.5rem; }
+    .pricing-features { list-style: none; padding: 0; margin: 0 0 1.75rem; flex: 1; }
+    .pricing-features li { font-size: 0.9rem; padding: 0.35rem 0; color: var(--color-text, #1f2937); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .pricing-features li::before { content: "✓"; color: var(--color-accent, #00a67e); font-weight: 700; flex-shrink: 0; }
+    .pricing-features li.unavailable { color: var(--color-text-secondary, #64748b); }
+    .pricing-features li.unavailable::before { content: "–"; color: #cbd5e1; }
+    .pricing-cta { display: block; text-align: center; padding: 0.85rem 1rem; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.18s, transform 0.15s; cursor: pointer; border: none; }
+    .pricing-cta-outline { border: 2px solid var(--color-accent, #00a67e); color: var(--color-accent, #00a67e); background: transparent; }
+    .pricing-cta-outline:hover { background: rgba(0, 166, 126, 0.07); }
+    .pricing-cta-filled { background: linear-gradient(135deg, var(--color-accent, #00a67e), var(--color-primary, #0f766e)); color: #fff; }
+    .pricing-cta-filled:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 166, 126, 0.28); }
+    @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -295,12 +391,82 @@
       <p data-i18n="emp.proof.text">Кожна вакансія та компанія отримує Rybezh Proof на основі реальних відгуків кандидатів. Це допомагає роботодавцям формувати довіру, а кандидатам — швидше приймати рішення.</p>
     </section>
 
+    <!-- Pricing Plans -->
+    <section class="emp-pricing" id="pricing" aria-labelledby="pricingHeading">
+      <h2 id="pricingHeading" data-i18n="emp.pricing.title">Тарифи для роботодавців</h2>
+      <p class="pricing-lead" data-i18n="emp.pricing.lead">Оберіть план, який відповідає вашим потребам. Без прихованих платежів.</p>
+      <div class="pricing-grid">
+
+        <!-- Basic -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name" data-i18n="emp.plan.basic.name">Старт</div>
+          <div class="pricing-plan-desc" data-i18n="emp.plan.basic.desc">Для разового підбору</div>
+          <div class="pricing-price">0 <span>PLN</span></div>
+          <div class="pricing-period" data-i18n="emp.plan.basic.period">назавжди безкоштовно</div>
+          <ul class="pricing-features">
+            <li data-i18n="emp.plan.basic.f1">1 активна вакансія</li>
+            <li data-i18n="emp.plan.basic.f2">Стандартне розміщення</li>
+            <li data-i18n="emp.plan.basic.f3">Модерація 24–48 год</li>
+            <li class="unavailable" data-i18n="emp.plan.basic.f4">Виділення у пошуку</li>
+            <li class="unavailable" data-i18n="emp.plan.basic.f5">Пріоритетна підтримка</li>
+            <li class="unavailable" data-i18n="emp.plan.basic.f6">Бейдж верифікованої компанії</li>
+          </ul>
+          <button type="button" class="pricing-cta pricing-cta-outline" onclick="document.getElementById('employerForm').scrollIntoView({behavior:'smooth'});document.querySelector('[name=plan]') && (document.querySelector('[name=plan][value=basic]').checked=true)" data-i18n="emp.plan.cta.free">Розмістити безкоштовно</button>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge" data-i18n="emp.plan.pro.badge">Найпопулярніший</span>
+          <div class="pricing-plan-name" data-i18n="emp.plan.pro.name">Pro</div>
+          <div class="pricing-plan-desc" data-i18n="emp.plan.pro.desc">Для активного найму</div>
+          <div class="pricing-price">199 <span>PLN</span></div>
+          <div class="pricing-period" data-i18n="emp.plan.pro.period">/ місяць</div>
+          <ul class="pricing-features">
+            <li data-i18n="emp.plan.pro.f1">До 5 активних вакансій</li>
+            <li data-i18n="emp.plan.pro.f2">Виділення у списку пошуку</li>
+            <li data-i18n="emp.plan.pro.f3">Модерація до 4 годин</li>
+            <li data-i18n="emp.plan.pro.f4">Пріоритетна підтримка</li>
+            <li data-i18n="emp.plan.pro.f5">Статистика переглядів</li>
+            <li class="unavailable" data-i18n="emp.plan.pro.f6">Бейдж верифікованої компанії</li>
+          </ul>
+          <a href="https://t.me/rybezh_site?text=Тариф+Pro+199+PLN" target="_blank" rel="noopener" class="pricing-cta pricing-cta-filled" data-i18n="emp.plan.cta.pro">Обрати Pro →</a>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name" data-i18n="emp.plan.biz.name">Business</div>
+          <div class="pricing-plan-desc" data-i18n="emp.plan.biz.desc">Для компаній, що ростуть</div>
+          <div class="pricing-price">499 <span>PLN</span></div>
+          <div class="pricing-period" data-i18n="emp.plan.biz.period">/ місяць</div>
+          <ul class="pricing-features">
+            <li data-i18n="emp.plan.biz.f1">Необмежена кількість вакансій</li>
+            <li data-i18n="emp.plan.biz.f2">Топ-позиція у пошуку</li>
+            <li data-i18n="emp.plan.biz.f3">Модерація до 1 години</li>
+            <li data-i18n="emp.plan.biz.f4">Виділений менеджер підбору</li>
+            <li data-i18n="emp.plan.biz.f5">Бейдж верифікованої компанії ✅</li>
+            <li data-i18n="emp.plan.biz.f6">Щомісячний звіт по кандидатах</li>
+          </ul>
+          <a href="https://t.me/rybezh_site?text=Тариф+Business+499+PLN" target="_blank" rel="noopener" class="pricing-cta pricing-cta-filled" data-i18n="emp.plan.cta.biz">Обрати Business →</a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Form -->
     <section class="emp-form-wrapper">
       <h2 data-i18n="emp.form.title">📝 Опублікувати вакансію</h2>
       <p class="form-sub" data-i18n="emp.form.sub">Заповніть форму — ми опублікуємо вакансію після перевірки</p>
 
       <form class="emp-form" id="employerForm" novalidate>
+        <div>
+          <label data-i18n="emp.form.plan">Тарифний план <span class="req">*</span></label>
+          <div class="housing-options" style="flex-wrap:wrap;gap:1rem;">
+            <label><input type="radio" name="plan" value="basic" checked> <span data-i18n="emp.plan.basic.name">Старт (безкоштовно)</span></label>
+            <label><input type="radio" name="plan" value="pro"> <span data-i18n="emp.plan.pro.name">Pro — 199 PLN/міс</span></label>
+            <label><input type="radio" name="plan" value="business"> <span data-i18n="emp.plan.biz.name">Business — 499 PLN/міс</span></label>
+          </div>
+        </div>
+
         <div class="form-row">
           <div>
             <label data-i18n="emp.form.company">Назва компанії / ПІБ <span class="req">*</span></label>
@@ -512,6 +678,7 @@
         salary_from: form.salary_from.value,
         salary_to: form.salary_to.value,
         housing: form.housing ? (form.querySelector('input[name="housing"]:checked') || {}).value || '' : '',
+        plan: (form.querySelector('input[name="plan"]:checked') || {}).value || 'basic',
         description: desc
       };
 
@@ -519,12 +686,13 @@
       btn.disabled = true;
       btn.textContent = t('sending');
 
-      var subject = encodeURIComponent((getLang() === 'pl' ? 'Nowa oferta od ' : 'Нова вакансія від ') + data.company + ' — ' + data.city);
+      var subject = encodeURIComponent((getLang() === 'pl' ? 'Nowa oferta od ' : 'Нова вакансія від ') + data.company + ' — ' + data.city + ' [' + data.plan.toUpperCase() + ']');
       var body = encodeURIComponent(
         (getLang() === 'pl' ? 'Firma' : 'Компанія') + ': ' + data.company + '\n' +
         'Email: ' + data.email + '\n' +
         (getLang() === 'pl' ? 'Telefon' : 'Телефон') + ': ' + data.phone + '\n' +
         (getLang() === 'pl' ? 'Miasto' : 'Місто') + ': ' + data.city + '\n' +
+        (getLang() === 'pl' ? 'Plan' : 'Тариф') + ': ' + data.plan.toUpperCase() + '\n' +
         (getLang() === 'pl' ? 'Umowa' : 'Договір') + ': ' + data.contract + '\n' +
         (getLang() === 'pl' ? 'Pracowników' : 'Працівників') + ': ' + data.workers + '\n' +
         (getLang() === 'pl' ? 'Wynagrodzenie' : 'Зарплата') + ': ' + (data.salary_from || '?') + ' — ' + (data.salary_to || '?') + ' PLN\n' +
