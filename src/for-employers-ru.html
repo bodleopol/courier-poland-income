@@ -54,6 +54,32 @@
     .emp-proof-block { background: linear-gradient(135deg, rgba(0,166,126,0.06), rgba(15,118,110,0.06)); border: 1px solid var(--color-accent); border-radius: 16px; padding: 2rem; margin: 2rem 0; }
     .emp-proof-block h2 { color: var(--color-primary); margin: 0 0 0.75rem; }
     .emp-proof-block p { color: var(--color-secondary); margin: 0; }
+
+    /* Pricing plans */
+    .emp-pricing { margin: 2.5rem 0; }
+    .emp-pricing h2 { text-align: center; font-size: 1.7rem; color: var(--color-primary, #0f766e); margin: 0 0 0.5rem; }
+    .emp-pricing .pricing-lead { text-align: center; color: var(--color-text-secondary, #64748b); margin: 0 0 2rem; font-size: 0.97rem; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .pricing-card { background: var(--color-surface, #fff); border: 2px solid var(--color-border, #e5e7eb); border-radius: 18px; padding: 2rem 1.5rem; display: flex; flex-direction: column; position: relative; transition: box-shadow 0.2s, transform 0.2s; }
+    .pricing-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.09); transform: translateY(-3px); }
+    .pricing-card.featured { border-color: var(--color-accent, #00a67e); box-shadow: 0 8px 28px rgba(0, 166, 126, 0.18); }
+    .pricing-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-accent, #00a67e); color: #fff; font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.9rem; border-radius: 999px; white-space: nowrap; }
+    .pricing-plan-name { font-size: 1.1rem; font-weight: 700; color: var(--color-text, #1f2937); margin: 0 0 0.25rem; }
+    .pricing-plan-desc { font-size: 0.87rem; color: var(--color-text-secondary, #64748b); margin: 0 0 1.25rem; }
+    .pricing-price { font-size: 2.1rem; font-weight: 800; color: var(--color-primary, #0f766e); margin: 0 0 0.2rem; line-height: 1; }
+    .pricing-price span { font-size: 1rem; font-weight: 500; color: var(--color-text-secondary, #64748b); }
+    .pricing-period { font-size: 0.82rem; color: var(--color-text-secondary, #64748b); margin: 0 0 1.5rem; }
+    .pricing-features { list-style: none; padding: 0; margin: 0 0 1.75rem; flex: 1; }
+    .pricing-features li { font-size: 0.9rem; padding: 0.35rem 0; color: var(--color-text, #1f2937); display: flex; align-items: flex-start; gap: 0.5rem; }
+    .pricing-features li::before { content: "✓"; color: var(--color-accent, #00a67e); font-weight: 700; flex-shrink: 0; }
+    .pricing-features li.unavailable { color: var(--color-text-secondary, #64748b); }
+    .pricing-features li.unavailable::before { content: "–"; color: #cbd5e1; }
+    .pricing-cta { display: block; text-align: center; padding: 0.85rem 1rem; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.18s, transform 0.15s; cursor: pointer; border: none; }
+    .pricing-cta-outline { border: 2px solid var(--color-accent, #00a67e); color: var(--color-accent, #00a67e); background: transparent; }
+    .pricing-cta-outline:hover { background: rgba(0, 166, 126, 0.07); }
+    .pricing-cta-filled { background: linear-gradient(135deg, var(--color-accent, #00a67e), var(--color-primary, #0f766e)); color: #fff; }
+    .pricing-cta-filled:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 166, 126, 0.28); }
+    @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
     .emp-form-wrapper { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 18px; padding: 2.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 720px; margin: 0 auto 3rem; }
     .emp-form-wrapper h2 { text-align: center; font-size: 1.5rem; margin: 0 0 0.5rem; color: var(--color-primary); }
     .emp-form-wrapper .form-sub { text-align: center; font-size: 0.92rem; color: var(--color-text-secondary, #64748b); margin: 0 0 2rem; }
@@ -233,11 +259,81 @@
       <p>Каждая вакансия и компания получает рейтинг Rybezh Proof на основе реальных отзывов кандидатов. Это помогает работодателям формировать доверие, а кандидатам — быстрее принимать решения.</p>
     </section>
 
+    <!-- Тарифы -->
+    <section class="emp-pricing" id="pricing" aria-labelledby="pricingHeading">
+      <h2 id="pricingHeading">Тарифы для работодателей</h2>
+      <p class="pricing-lead">Выберите план, который подходит для вашего найма. Без скрытых платежей.</p>
+      <div class="pricing-grid">
+
+        <!-- Basic -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name">Старт</div>
+          <div class="pricing-plan-desc">Для разового подбора</div>
+          <div class="pricing-price">0 <span>PLN</span></div>
+          <div class="pricing-period">всегда бесплатно</div>
+          <ul class="pricing-features">
+            <li>1 активная вакансия</li>
+            <li>Стандартное размещение</li>
+            <li>Модерация 24–48 ч</li>
+            <li class="unavailable">Выделение в поиске</li>
+            <li class="unavailable">Приоритетная поддержка</li>
+            <li class="unavailable">Бейдж верифицированной компании</li>
+          </ul>
+          <button type="button" class="pricing-cta pricing-cta-outline" onclick="document.getElementById('employerForm').scrollIntoView({behavior:'smooth'});var r=document.querySelector('input[name=plan][value=basic]');if(r)r.checked=true;">Разместить бесплатно</button>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge">Самый популярный</span>
+          <div class="pricing-plan-name">Pro</div>
+          <div class="pricing-plan-desc">Для активного найма</div>
+          <div class="pricing-price">199 <span>PLN</span></div>
+          <div class="pricing-period">/ месяц</div>
+          <ul class="pricing-features">
+            <li>До 5 активных вакансий</li>
+            <li>Выделение в поиске</li>
+            <li>Модерация до 4 часов</li>
+            <li>Приоритетная поддержка</li>
+            <li>Статистика просмотров</li>
+            <li class="unavailable">Бейдж верифицированной компании</li>
+          </ul>
+          <a href="https://t.me/rybezh_site?text=Тариф+Pro+199+PLN" target="_blank" rel="noopener" class="pricing-cta pricing-cta-filled">Выбрать Pro →</a>
+        </div>
+
+        <!-- Business -->
+        <div class="pricing-card">
+          <div class="pricing-plan-name">Business</div>
+          <div class="pricing-plan-desc">Для растущих компаний</div>
+          <div class="pricing-price">499 <span>PLN</span></div>
+          <div class="pricing-period">/ месяц</div>
+          <ul class="pricing-features">
+            <li>Неограниченное число вакансий</li>
+            <li>Топ-позиция в поиске</li>
+            <li>Модерация до 1 часа</li>
+            <li>Выделенный менеджер подбора</li>
+            <li>Бейдж верифицированной компании ✅</li>
+            <li>Ежемесячный отчёт по кандидатам</li>
+          </ul>
+          <a href="https://t.me/rybezh_site?text=Тариф+Business+499+PLN" target="_blank" rel="noopener" class="pricing-cta pricing-cta-filled">Выбрать Business →</a>
+        </div>
+
+      </div>
+    </section>
+
     <section class="emp-form-wrapper">
       <h2>📝 Опубликовать вакансию</h2>
       <p class="form-sub">Заполните форму — мы опубликуем вакансию после проверки</p>
 
       <form class="emp-form" id="employerForm" novalidate>
+        <div>
+          <label>Тарифный план <span class="req">*</span></label>
+          <div class="housing-options" style="flex-wrap:wrap;gap:1rem;">
+            <label><input type="radio" name="plan" value="basic" checked> Старт (бесплатно)</label>
+            <label><input type="radio" name="plan" value="pro"> Pro — 199 PLN/мес</label>
+            <label><input type="radio" name="plan" value="business"> Business — 499 PLN/мес</label>
+          </div>
+        </div>
+
         <div class="form-row">
           <div>
             <label>Название компании / ФИО <span class="req">*</span></label>
@@ -451,6 +547,7 @@
         salary_from: form.salary_from.value,
         salary_to: form.salary_to.value,
         housing: (form.querySelector('input[name="housing"]:checked') || {}).value || '',
+        plan: (form.querySelector('input[name="plan"]:checked') || {}).value || 'basic',
         description: desc
       };
 
@@ -458,12 +555,13 @@
       btn.disabled = true;
       btn.textContent = msgs.sending;
 
-      var subject = encodeURIComponent('Новая вакансия от ' + data.company + ' — ' + data.city);
+      var subject = encodeURIComponent('Новая вакансия от ' + data.company + ' — ' + data.city + ' [' + data.plan.toUpperCase() + ']');
       var body = encodeURIComponent(
         'Компания: ' + data.company + '\n' +
         'Email: ' + data.email + '\n' +
         'Телефон: ' + data.phone + '\n' +
         'Город: ' + data.city + '\n' +
+        'Тариф: ' + data.plan.toUpperCase() + '\n' +
         'Договор: ' + data.contract + '\n' +
         'Работников: ' + data.workers + '\n' +
         'Зарплата: ' + (data.salary_from || '?') + ' — ' + (data.salary_to || '?') + ' PLN\n' +
