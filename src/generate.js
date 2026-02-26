@@ -3275,7 +3275,9 @@ async function build() {
           <span class="trust-item" data-lang-content="ua">✅ Понад 5000 українців знайшли роботу</span>
           <span class="trust-item" data-lang-content="pl" style="display:none">✅ Ponad 5000 Ukraińców znalazło pracę</span>
           <span class="trust-item" data-lang-content="ru" style="display:none">✅ Более 5000 украинцев нашли работу</span>
-          <span class="trust-item">🔒 100% реальні вакансії</span>
+          <span class="trust-item" data-lang-content="ua">🔒 100% реальні вакансії</span>
+          <span class="trust-item" data-lang-content="pl" style="display:none">🔒 100% realne oferty pracy</span>
+          <span class="trust-item" data-lang-content="ru" style="display:none">🔒 100% реальные вакансии</span>
           <span class="trust-item" data-lang-content="ua">💬 Підтримка 24/7 у Telegram</span>
           <span class="trust-item" data-lang-content="pl" style="display:none">💬 Wsparcie 24/7 na Telegramie</span>
           <span class="trust-item" data-lang-content="ru" style="display:none">💬 Поддержка 24/7 в Telegram</span>
