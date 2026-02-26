@@ -3820,7 +3820,7 @@ Allow: /cv-generator.html
 # Prevent crawling of raw data files and internal assets
 Disallow: /jobs-data.json
 Disallow: /game/
-Disallow: /*.json$
+Disallow: /*.json
 
 # Sitemaps — primary sitemap index + individual sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
