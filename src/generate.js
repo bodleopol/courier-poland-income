@@ -76,7 +76,8 @@ function detectNearDuplicateSlugs(pages) {
   }
   for (const [, slugs] of crossCityGroups) {
     if (slugs.length >= 2) {
-      // Keep only the first city variant indexable; mark the rest noindex
+      // Keep only the first city variant (by content.json insertion order) indexable;
+      // mark the rest noindex to reduce "city-spin doorway" pattern.
       for (const slug of slugs.slice(1)) {
         secondarySlugs.add(slug);
       }
@@ -3895,18 +3896,15 @@ Allow: /*.css$
       await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
     } catch (e) {}
 
-    // write IndexNow key file for Bing/Yandex instant indexing
-    // Set INDEXNOW_KEY in CI/CD environment to enable
+    // write IndexNow key file for Bing/Yandex instant indexing.
+    // Set INDEXNOW_KEY (32-char hex string per IndexNow spec) in CI/CD environment to enable.
     try {
       const indexNowKey = String(process.env.INDEXNOW_KEY || '').trim();
       if (indexNowKey && /^[a-f0-9]{32}$/.test(indexNowKey)) {
         await fs.writeFile(path.join(DIST, `${indexNowKey}.txt`), indexNowKey, 'utf8');
         console.log(`✅ IndexNow key file generated: ${indexNowKey}.txt`);
-      } else {
-        // Generate a placeholder key file for manual setup
-        const placeholderKey = 'indexnow-key-placeholder';
-        await fs.writeFile(path.join(DIST, `${placeholderKey}.txt`), placeholderKey, 'utf8');
       }
+      // Skip file creation when no valid key is provided to avoid confusing search engines
     } catch (e) {}
 
     // disable Jekyll processing on GitHub Pages (serve underscore files as-is)
