@@ -3895,6 +3895,20 @@ Allow: /*.css$
       await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
     } catch (e) {}
 
+    // write IndexNow key file for Bing/Yandex instant indexing
+    // Set INDEXNOW_KEY in CI/CD environment to enable
+    try {
+      const indexNowKey = String(process.env.INDEXNOW_KEY || '').trim();
+      if (indexNowKey && /^[a-f0-9]{32}$/.test(indexNowKey)) {
+        await fs.writeFile(path.join(DIST, `${indexNowKey}.txt`), indexNowKey, 'utf8');
+        console.log(`✅ IndexNow key file generated: ${indexNowKey}.txt`);
+      } else {
+        // Generate a placeholder key file for manual setup
+        const placeholderKey = 'indexnow-key-placeholder';
+        await fs.writeFile(path.join(DIST, `${placeholderKey}.txt`), placeholderKey, 'utf8');
+      }
+    } catch (e) {}
+
     // disable Jekyll processing on GitHub Pages (serve underscore files as-is)
     try {
       await fs.writeFile(path.join(DIST, '.nojekyll'), '', 'utf8');
@@ -5085,6 +5099,15 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
       <section class="post-section post-related">
         <h3>${isPl ? 'Powiązane artykuły' : (isRu ? 'Похожие статьи' : 'Пов’язані статті')}</h3>
         <ul>${relatedHtml}</ul>
+      </section>
+      <section class="post-section post-vacancies-cta">
+        <h3>${isPl ? 'Szukasz pracy?' : (isRu ? 'Ищете работу?' : 'Шукаєте роботу?')}</h3>
+        <p>${isPl ? 'Sprawdź aktualne oferty pracy w Polsce.' : (isRu ? 'Посмотрите актуальные вакансии в Польше.' : 'Перегляньте актуальні вакансії в Польщі.')}</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <a href="/vacancies.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#00a67e;border-radius:8px;color:#fff;font-weight:600;">${isPl ? 'Oferty pracy' : (isRu ? 'Вакансии' : 'Вакансії')} →</a>
+          <a href="/calculator.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#f3f4f6;border-radius:8px;color:#374151;font-weight:600;">💰 ${isPl ? 'Kalkulator' : (isRu ? 'Калькулятор' : 'Калькулятор')}</a>
+          <a href="/cv-generator.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#f3f4f6;border-radius:8px;color:#374151;font-weight:600;">📄 ${isPl ? 'Generator CV' : (isRu ? 'Генератор CV' : 'Генератор CV')}</a>
+        </div>
       </section>
     `,
     faqItems: []
