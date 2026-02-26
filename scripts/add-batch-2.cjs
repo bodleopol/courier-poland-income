@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const contentPath = path.join(__dirname, 'src', 'content.json');
-const indexablePath = path.join(__dirname, 'src', 'indexable-vacancies.json');
+const contentPath = path.join(__dirname, '..', 'src', 'content.json');
+const indexablePath = path.join(__dirname, '..', 'src', 'indexable-vacancies.json');
 
 const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
 const indexable = JSON.parse(fs.readFileSync(indexablePath, 'utf8'));

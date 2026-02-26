@@ -29,6 +29,10 @@ npm install
 npm run build
 ```
 
+### Utility Scripts
+
+One-off maintenance/data scripts are organized in `/scripts` (for example: `scripts/check.cjs`, `scripts/dedup.js`, `scripts/add-batch-*.cjs`).
+
 ### Deployment
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. See [DEPLOYMENT_INSTRUCTIONS.md](./DEPLOYMENT_INSTRUCTIONS.md) for details.
