@@ -3552,15 +3552,16 @@ Allow: /jobs.js
 Allow: /jobs-loader.js
 Allow: /engagement-helpers.js
 
-# Crawl-delay for generic bots (Googlebot ignores this; Bingbot respects it)
-Crawl-delay: 1
-
 # Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
 Sitemap: https://rybezh.site/sitemap-static.xml
 Sitemap: https://rybezh.site/sitemap-vacancies.xml
 Sitemap: https://rybezh.site/sitemap-blog.xml
+
+# Optional crawl-rate hint for Bing
+User-agent: bingbot
+Crawl-delay: 1
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}

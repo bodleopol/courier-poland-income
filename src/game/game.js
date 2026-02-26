@@ -20,8 +20,10 @@ const CFG = {
   SPRINT_MULT: 1.2,
   COYOTE_FRAMES: 8,
   JUMP_BUFFER_FRAMES: 8,
-  PLAYER_W: 28,
-  PLAYER_H: 40,
+  PLAYER_W: 32,
+  PLAYER_H: 46,
+  ENEMY_W: 34,
+  ENEMY_H: 46,
   FPS_CAP: 60,
   SAVE_KEY: 'veteran-path-save',
   AUTOSAVE_INTERVAL: 30000,
@@ -354,14 +356,14 @@ const DATA = {
 };
 
 // ============================================================
-// MODULE: StatsSystem — 1000+ extended parameters
-// Organised into 16 categories. Values are 0–100 unless noted.
+// MODULE: StatsSystem — 2000+ extended parameters
+// Organised into 33 categories. Values are 0–100 unless noted.
 // These are all derived from / intertwined with player.stats and
 // affect: interview scores, dialogue, economy bonuses, quest flags.
 // ============================================================
 const StatsSystem = {
 
-  /* --- Build a default extStats object (1003 keys across 16 categories) --- */
+  /* --- Build a default extStats object (2027 keys across 33 categories) --- */
   createExtStats() {
     const ext = {
 
@@ -1496,7 +1498,7 @@ class Player extends Entity {
       experience: 0, networkPoints: 0, skillPoints: 0,
       hunger: 100, energy: 100, mood: 70,
     };
-    // Extended parameters (1003 values across 16 categories)
+    // Extended parameters (2027 values across 33 categories)
     this.extStats = StatsSystem.createExtStats();
     this.facingRight = true;
     this.invincible = 0;      // frames of invincibility after hit
@@ -3259,12 +3261,10 @@ function initGame() {
     const isFs = document.body.classList.contains('game-fs') ||
                  !!(document.fullscreenElement || document.webkitFullscreenElement);
     if (isFs) {
-      // In fullscreen: fill full window, leave room for controls bar
+      // In fullscreen: fill full window height
       // Use visualViewport height when available (avoids iOS address-bar issues)
       const vvH = (window.visualViewport && window.visualViewport.height) || window.innerHeight;
-      const isLandscapeSmall = vvH < 500;
-      const ctrlH = isLandscapeSmall ? 60 : 80;
-      const availH = vvH - ctrlH;
+      const availH = vvH;
       const availW = (window.visualViewport && window.visualViewport.width) || window.innerWidth;
       const ratio   = CFG.CANVAS_W / CFG.CANVAS_H;
       let w = availW;
