@@ -3695,8 +3695,32 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     // Make the template H1 translatable
     indexHtml = indexHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="meta.title">$1</h1>`);
 
+    // Inject FAQPage schema for homepage rich results
+    const homeFaqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        { '@type': 'Question', 'name': 'Як знайти роботу в Польщі через Rybezh?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'На Rybezh ви можете шукати вакансії за містом, категорією та зарплатою. Оберіть вакансію, перегляньте умови та подайте заявку онлайн. Ми допоможемо з консультацією та оформленням документів.' } },
+        { '@type': 'Question', 'name': 'Які документи потрібні для роботи в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Основні документи: закордонний паспорт, PESEL (можна отримати в urzędzie gminy), медичний огляд, а для деяких професій — санітарна книжка або спеціальні допуски (UDT, SEP тощо). Для громадян України з тимчасовим захистом достатньо PESEL UKR.' } },
+        { '@type': 'Question', 'name': 'Яка середня зарплата в Польщі у 2026 році?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Мінімальна зарплата у 2026 році становить 4 666 PLN brutto. Середня зарплата залежить від галузі: логістика 5 000–8 000 PLN, будівництво 6 000–10 000 PLN, IT від 10 000 PLN. Використовуйте наш калькулятор для точного розрахунку netto.' } },
+        { '@type': 'Question', 'name': 'Які типи договорів існують у Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Три основних типи: Umowa o pracę (трудовий договір з повним соцпакетом), Umowa zlecenie (договір доручення з меншими внесками) та B2B (самозайнятість). Кожен має свої переваги щодо податків, відпустки та соціального захисту.' } },
+        { '@type': 'Question', 'name': 'Чи є безкоштовне житло від роботодавця?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Багато роботодавців пропонують житло з частковою або повною компенсацією (200–600 PLN/міс). Уточнюйте умови проживання до виїзду: кількість людей у кімнаті, наявність кухні, відстань до роботи.' } },
+        { '@type': 'Question', 'name': 'Як перевірити вакансію на шахрайство?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш інструмент «Перевірка вакансій» (Red Flag Checker). Основні ознаки шахрайства: вимога передоплати, відсутність назви компанії, занадто висока зарплата без вимог, тиск на швидке рішення.' } },
+        { '@type': 'Question', 'name': 'Скільки часу займає оформлення на роботу?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Від подання заявки до першого робочого дня зазвичай проходить 1–3 тижні. Це включає: відгук роботодавця (1–3 дні), співбесіда, оформлення документів, медогляд та інструктаж з техніки безпеки.' } },
+        { '@type': 'Question', 'name': 'Чи потрібно знати польську мову?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Залежить від позиції. Для фізичної роботи (склад, виробництво) достатньо базового рівня A1–A2. Для роботи з клієнтами потрібен B1+. IT-сектор часто працює англійською. Багато роботодавців пропонують безкоштовні курси польської.' } },
+        { '@type': 'Question', 'name': 'Що таке Rybezh Proof?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Rybezh Proof — це система верифікації вакансій на основі реальних відгуків працівників. Кожна вакансія отримує оцінку від 0 до 100 за критеріями: зарплата, житло, ставлення, графік, виплати та надійність.' } },
+        { '@type': 'Question', 'name': 'Як створити CV для роботи в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш безкоштовний генератор CV. Він створює професійне резюме з RODO-застереженням (обовʼязковим для Польщі), підтримує українську та польську мови, та генерує супровідний лист.' } },
+        { '@type': 'Question', 'name': 'Які міста найпопулярніші для роботи?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Найбільше вакансій у Варшаві, Кракові, Вроцлаві, Познані, Гданську та Лодзі. Варшава пропонує найвищі зарплати, але й вищу вартість життя. Менші міста часто мають кращий баланс зарплати та витрат.' } },
+        { '@type': 'Question', 'name': 'Чи можна працювати в Польщі без досвіду?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Так, багато вакансій не вимагають досвіду: склад, пакування, прибирання, допоміжні будівельні роботи, кухня. Роботодавці зазвичай проводять навчання на місці протягом перших 3–5 днів.' } },
+        { '@type': 'Question', 'name': 'Як розрахувати зарплату netto в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш калькулятор зарплати. Він враховує тип договору (UoP, Zlecenie, B2B), ставку, кількість годин та розраховує суму «на руки» з урахуванням усіх податків і внесків за 2026 рік.' } },
+        { '@type': 'Question', 'name': 'Що робити, якщо роботодавець порушує умови?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Зверніться до Państwowej Inspekcji Pracy (PIP) — це безкоштовно. Також можете написати нам на contacts@rybezh.site або в Telegram @rybezh_site. Зберігайте всі документи, скріншоти листування та фото умов.' } },
+        { '@type': 'Question', 'name': 'Чи є підтримка українською мовою?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Так, Rybezh повністю підтримує українську, польську та російську мови. Наша команда консультує українською і допомагає з усіма питаннями від пошуку вакансії до вирішення проблем на робочому місці.' } }
+      ]
+    };
+    const homeFaqScript = `\n<script type="application/ld+json">\n${JSON.stringify(homeFaqSchema, null, 2)}\n</script>\n`;
+
     if (indexHtml.includes('</head>')) {
-      indexHtml = indexHtml.replace('</head>', `${dataScript}\n</head>`);
+      indexHtml = indexHtml.replace('</head>', `${homeFaqScript}${dataScript}\n</head>`);
     } else {
       indexHtml = dataScript + indexHtml;
     }
@@ -3831,14 +3855,21 @@ Disallow: /*.json$
 # Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
+Sitemap: https://rybezh.site/sitemap-static.xml
+Sitemap: https://rybezh.site/sitemap-vacancies.xml
+Sitemap: https://rybezh.site/sitemap-blog.xml
 
-# Bing crawl-delay for polite crawling
+# Bing — allow rendering resources and set polite crawl rate
 User-agent: bingbot
-Crawl-delay: 2
+Allow: /*.js$
+Allow: /*.css$
+Crawl-delay: 10
 
 # Google-specific (no crawl-delay needed)
 User-agent: Googlebot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
