@@ -29,6 +29,7 @@ const POSTS_PER_PAGE = 20;
  */
 function detectNearDuplicateSlugs(pages) {
   const groups = new Map();
+  // Phase 1: Group by same city + same job type (original logic)
   for (const page of pages) {
     const slug = page.slug || '';
     const parts = slug.split('-');
@@ -54,6 +55,34 @@ function detectNearDuplicateSlugs(pages) {
       }
     }
   }
+
+  // Phase 2: Cross-city dedup — same job base across different cities.
+  // Keep the first city occurrence indexable; mark others noindex to reduce
+  // "city-spin doorway" pattern that search engines penalise.
+  const crossCityGroups = new Map();
+  for (const page of pages) {
+    const slug = page.slug || '';
+    if (secondarySlugs.has(slug)) continue; // already marked
+    const parts = slug.split('-');
+    if (parts.length < 2) continue;
+    let jobParts = parts.slice(1);
+    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
+      jobParts = jobParts.slice(0, -1);
+    }
+    const jobBase = jobParts.join('-');
+    if (!jobBase) continue;
+    if (!crossCityGroups.has(jobBase)) crossCityGroups.set(jobBase, []);
+    crossCityGroups.get(jobBase).push(slug);
+  }
+  for (const [, slugs] of crossCityGroups) {
+    if (slugs.length >= 3) {
+      // Keep the first two city variants; mark the rest noindex
+      for (const slug of slugs.slice(2)) {
+        secondarySlugs.add(slug);
+      }
+    }
+  }
+
   return secondarySlugs;
 }
 
@@ -1680,9 +1709,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -1822,6 +1851,11 @@ const JOB_CHECKLIST_POOL = {
 
 const CHECKLIST_ITEM_VARIANTS = {
   ua: {
+    'Ставка: брутто чи нетто? Є премії/бонуси — за що саме?': [
+      'Уточніть ставку: брутто чи нетто? Які є додаткові виплати та за що?',
+      'Перевірте, яка ставка вказана — до вирахувань чи після? Чи є бонуси?',
+      'Запитайте про реальну суму на руки і чи передбачені премії.'
+    ],
     'Який тип договору (umowa zlecenie/umowa o pracę/B2B) і хто його підписує?': [
       'Який саме договір на старті (zlecenie/UoP/B2B) і хто з вами підписує документи?',
       'Уточніть формат співпраці: zlecenie, UoP чи B2B — і яка сторона підписує договір.',
@@ -1832,6 +1866,11 @@ const CHECKLIST_ITEM_VARIANTS = {
       'Запитайте про фактичний розклад: години, перерви, роботу у вихідні та нічні зміни.',
       'Уточніть, як виглядає зміна на практиці: скільки годин, які перерви, чи є нічні.'
     ],
+    'Житло/доїзд: чи є, скільки коштує, які умови, скільки людей у кімнаті.': [
+      'Запитайте про житло від роботодавця: умови, ціна, кількість людей у кімнаті.',
+      'Перевірте варіанти проживання: чи надає роботодавець, скільки коштує, які умови.',
+      'Уточніть деталі житла та доїзду: хто компенсує, які умови проживання.'
+    ],
     'Що входить у задачі на старті: перші 3–5 днів зазвичай найважчі.': [
       'Що саме роблять у перші дні: стартові задачі часто найскладніші для адаптації.',
       'Уточніть обовʼязки на старті — перший робочий тиждень зазвичай показовий.',
@@ -1841,9 +1880,24 @@ const CHECKLIST_ITEM_VARIANTS = {
       'Перевірте пакет документів для цієї ролі: PESEL, медогляд, санепід, UDT.',
       'Уточніть перелік документів саме для цього обʼєкта (PESEL, довідки, допуски).',
       'Які документи обовʼязкові тут: PESEL, медичні допуски, санепід, UDT за потреби.'
+    ],
+    'Форма/взуття/інструменти: що дають, а що треба мати з собою.': [
+      'Уточніть, що надає роботодавець: робочий одяг, взуття, інструменти.',
+      'Запитайте, яке спорядження забезпечують, а що потрібно мати власне.',
+      'Перевірте, чи надається форма, захисне взуття та необхідний інвентар.'
+    ],
+    'Виплати: як часто, на карту чи готівкою, чи є аванс.': [
+      'Уточніть графік виплат: періодичність, спосіб оплати, наявність авансу.',
+      'Запитайте про виплати: на карту чи готівкою, як часто, чи можливий аванс.',
+      'Перевірте порядок оплати: терміни, форма виплати та можливість авансування.'
     ]
   },
   pl: {
+    'Stawka: brutto czy netto? Są premie/bonusy — za co konkretnie?': [
+      'Dopytaj o stawkę: brutto czy netto? Jakie premie i za co przysługują?',
+      'Sprawdź, jaka kwota jest podana — przed potrąceniami czy po? Czy są bonusy?',
+      'Ustal realną kwotę „na rękę" i jakie dodatkowe wypłaty przewiduje umowa.'
+    ],
     'Jaki typ umowy (umowa zlecenie/umowa o pracę/B2B) i kto ją podpisuje?': [
       'Ustal typ umowy na start (zlecenie/UoP/B2B) i kto formalnie ją podpisuje.',
       'Dopytaj o formę współpracy: zlecenie, UoP czy B2B oraz stronę podpisującą.',
@@ -1854,6 +1908,11 @@ const CHECKLIST_ITEM_VARIANTS = {
       'Sprawdź harmonogram w praktyce: liczba godzin, przerwy i zasady pracy w weekend.',
       'Ustal, jak wygląda dzień pracy: godziny, nocki oraz sposób rozliczania nadgodzin.'
     ],
+    'Mieszkanie/dojazd: czy jest, ile kosztuje, jakie warunki, ile osób w pokoju.': [
+      'Dopytaj o zakwaterowanie: warunki, koszt, liczba osób w pokoju.',
+      'Sprawdź opcje mieszkania — czy pracodawca zapewnia, ile to kosztuje, jakie standardy.',
+      'Ustal szczegóły lokum i dojazdu: kto finansuje, jakie warunki, ile osób w pokoju.'
+    ],
     'Zakres zadań na start: pierwsze 3–5 dni zwykle robią największą różnicę.': [
       'Ustal obowiązki na początek — pierwsze dni zwykle pokazują realne tempo pracy.',
       'Dopytaj, jakie zadania są na starcie, bo pierwszy tydzień bywa najbardziej wymagający.',
@@ -1863,14 +1922,24 @@ const CHECKLIST_ITEM_VARIANTS = {
       'Zweryfikuj wymagane dokumenty: PESEL, badania, sanepid i ewentualnie UDT.',
       'Dopytaj o komplet formalności dla tej oferty (PESEL, badania, dopuszczenia).',
       'Jakie dokumenty są obowiązkowe na tym projekcie: PESEL, badania, sanepid, UDT?'
+    ],
+    'Ubranie/buty/sprzęt: co zapewnia pracodawca, a co musisz mieć.': [
+      'Ustal, co zapewnia pracodawca: odzież robocza, obuwie, narzędzia.',
+      'Dopytaj, jaki sprzęt jest zapewniony, a co trzeba mieć własne.',
+      'Sprawdź, czy dostajesz mundur, obuwie ochronne i niezbędne wyposażenie.'
+    ],
+    'Wypłaty: jak często, na konto czy gotówką, czy jest zaliczka.': [
+      'Ustal harmonogram wypłat: częstotliwość, forma płatności, możliwość zaliczki.',
+      'Dopytaj o wypłaty: na konto czy gotówka, jak często, czy możliwa zaliczka.',
+      'Sprawdź warunki płatności: terminy, formę wypłaty i opcję zaliczkowania.'
     ]
   }
 };
 
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -3182,6 +3251,12 @@ async function build() {
     // Replace H1 content with data-i18n span, or add attribute if simple
     finalHtml = finalHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="job.${page.slug}.title">$1</h1>`);
 
+    // Set og:type to "article" for vacancy pages (template defaults to "website")
+    finalHtml = finalHtml.replace(
+      '<meta property="og:type" content="website">',
+      '<meta property="og:type" content="article">'
+    );
+
     // Inject JobPosting structured data for all indexable pages
     const isIndexable = true;
     if (isIndexable) {
@@ -3539,6 +3614,12 @@ async function build() {
       `<h1 data-i18n="blog.${post.slug}.title">${escapeHtml(post.title)}</h1>`
     );
 
+    // Set og:type to "article" for blog posts (template defaults to "website")
+    postHtml = postHtml.replace(
+      '<meta property="og:type" content="website">',
+      '<meta property="og:type" content="article">'
+    );
+
     // Inject BlogPosting structured data
     const blogPostingScript = jsonLdScript(buildBlogPostingJsonLd(post, heroImageUrl));
 
@@ -3724,28 +3805,34 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     // write robots.txt
     try {
       const robots = `# Robots.txt for rybezh.site — Job search platform in Poland
-# Generated automatically on ${new Date().toISOString().split('T')[0]}
+# https://rybezh.site | Contact: contacts@rybezh.site
 
 User-agent: *
 Allow: /
+Allow: /vacancies.html
+Allow: /blog.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /faq.html
+Allow: /calculator.html
+Allow: /cv-generator.html
 
-# Disallow internal build artifacts
-Disallow: /dist/
-Allow: /main.js
-Allow: /jobs.js
-Allow: /jobs-loader.js
-Allow: /engagement-helpers.js
+# Prevent crawling of raw data files and internal assets
+Disallow: /jobs-data.json
+Disallow: /game/
+Disallow: /*.json
 
-# Sitemaps
+# Sitemaps — primary sitemap index + individual sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
-Sitemap: https://rybezh.site/sitemap-static.xml
-Sitemap: https://rybezh.site/sitemap-vacancies.xml
-Sitemap: https://rybezh.site/sitemap-blog.xml
 
-# Optional crawl-rate hint for Bing
+# Bing crawl-delay for polite crawling
 User-agent: bingbot
-Crawl-delay: 1
+Crawl-delay: 2
+
+# Google-specific (no crawl-delay needed)
+User-agent: Googlebot
+Allow: /
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}

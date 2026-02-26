@@ -43,6 +43,31 @@ function detectNearDuplicateSlugs(pages) {
       }
     }
   }
+
+  // Cross-city dedup: same job base across different cities
+  const crossCityGroups = new Map();
+  for (const page of pages) {
+    const slug = page.slug || '';
+    if (secondarySlugs.has(slug)) continue;
+    const parts = slug.split('-');
+    if (parts.length < 2) continue;
+    let jobParts = parts.slice(1);
+    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
+      jobParts = jobParts.slice(0, -1);
+    }
+    const jobBase = jobParts.join('-');
+    if (!jobBase) continue;
+    if (!crossCityGroups.has(jobBase)) crossCityGroups.set(jobBase, []);
+    crossCityGroups.get(jobBase).push(slug);
+  }
+  for (const [, slugs] of crossCityGroups) {
+    if (slugs.length >= 3) {
+      for (const slug of slugs.slice(2)) {
+        secondarySlugs.add(slug);
+      }
+    }
+  }
+
   return secondarySlugs;
 }
 
