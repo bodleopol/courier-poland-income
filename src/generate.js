@@ -4139,8 +4139,8 @@ function generateIndexContent(links) {
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem;">
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">3500+</div>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.couriers.line1">Кандидатів скористалось</p>
-          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.couriers.line2">нашими послугами</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 1rem;" data-i18n="home.stats.candidates.line1">Кандидатів скористалось</p>
+          <p style="color: var(--color-secondary); margin: 0; font-size: 0.9rem;" data-i18n="home.stats.candidates.line2">нашими послугами</p>
         </div>
         <div style="text-align: center;">
           <div style="font-size: 2.8rem; font-weight: 800; color: var(--color-accent); margin-bottom: 0.5rem;">65+</div>
