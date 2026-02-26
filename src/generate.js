@@ -29,6 +29,7 @@ const POSTS_PER_PAGE = 20;
  */
 function detectNearDuplicateSlugs(pages) {
   const groups = new Map();
+  // Phase 1: Group by same city + same job type (original logic)
   for (const page of pages) {
     const slug = page.slug || '';
     const parts = slug.split('-');
@@ -54,6 +55,34 @@ function detectNearDuplicateSlugs(pages) {
       }
     }
   }
+
+  // Phase 2: Cross-city dedup — same job base across different cities.
+  // Keep the first city occurrence indexable; mark others noindex to reduce
+  // "city-spin doorway" pattern that search engines penalise.
+  const crossCityGroups = new Map();
+  for (const page of pages) {
+    const slug = page.slug || '';
+    if (secondarySlugs.has(slug)) continue; // already marked
+    const parts = slug.split('-');
+    if (parts.length < 2) continue;
+    let jobParts = parts.slice(1);
+    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
+      jobParts = jobParts.slice(0, -1);
+    }
+    const jobBase = jobParts.join('-');
+    if (!jobBase) continue;
+    if (!crossCityGroups.has(jobBase)) crossCityGroups.set(jobBase, []);
+    crossCityGroups.get(jobBase).push(slug);
+  }
+  for (const [, slugs] of crossCityGroups) {
+    if (slugs.length >= 3) {
+      // Keep the first two city variants; mark the rest noindex
+      for (const slug of slugs.slice(2)) {
+        secondarySlugs.add(slug);
+      }
+    }
+  }
+
   return secondarySlugs;
 }
 
@@ -1680,9 +1709,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -1868,9 +1897,9 @@ const CHECKLIST_ITEM_VARIANTS = {
 };
 
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -3724,28 +3753,34 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     // write robots.txt
     try {
       const robots = `# Robots.txt for rybezh.site — Job search platform in Poland
-# Generated automatically on ${new Date().toISOString().split('T')[0]}
+# https://rybezh.site | Contact: contacts@rybezh.site
 
 User-agent: *
 Allow: /
+Allow: /vacancies.html
+Allow: /blog.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /faq.html
+Allow: /calculator.html
+Allow: /cv-generator.html
 
-# Disallow internal build artifacts
-Disallow: /dist/
-Allow: /main.js
-Allow: /jobs.js
-Allow: /jobs-loader.js
-Allow: /engagement-helpers.js
+# Prevent crawling of raw data files and internal assets
+Disallow: /jobs-data.json
+Disallow: /game/
+Disallow: /*.json$
 
-# Sitemaps
+# Sitemaps — primary sitemap index + individual sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
-Sitemap: https://rybezh.site/sitemap-static.xml
-Sitemap: https://rybezh.site/sitemap-vacancies.xml
-Sitemap: https://rybezh.site/sitemap-blog.xml
 
-# Optional crawl-rate hint for Bing
+# Bing crawl-delay for polite crawling
 User-agent: bingbot
-Crawl-delay: 1
+Crawl-delay: 2
+
+# Google-specific (no crawl-delay needed)
+User-agent: Googlebot
+Allow: /
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}

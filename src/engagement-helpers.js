@@ -60,17 +60,17 @@ export function buildBreadcrumbs(job, lang) {
 }
 
 export function buildEngagementMeta(job, lang) {
-  const viewCount = getViewCount(job.slug, hashString(job.slug));
   const lastUpdated = getLastUpdated(job.slug);
+  const contractType = job.contract || '';
   
   const labels = {
     ua: {
-      views: 'переглядів цього тижня',
-      updated: 'Оновлено'
+      updated: 'Оновлено',
+      contract: 'Тип договору'
     },
     pl: {
-      views: 'wyświetleń w tym tygodniu',
-      updated: 'Zaktualizowano'
+      updated: 'Zaktualizowano',
+      contract: 'Typ umowy'
     }
   };
   const l = labels[lang] || labels.ua;
@@ -78,19 +78,19 @@ export function buildEngagementMeta(job, lang) {
   return `
     <div class="job-meta-cards">
       <div class="job-meta-card">
-        <span class="icon">👁</span>
-        <div>
-          <div class="value">${viewCount}</div>
-          <div class="label">${l.views}</div>
-        </div>
-      </div>
-      <div class="job-meta-card">
         <span class="icon">📅</span>
         <div>
           <div class="label">${l.updated}</div>
           <div class="value" data-format-date="${lastUpdated}">${lastUpdated}</div>
         </div>
       </div>
+      ${contractType ? `<div class="job-meta-card">
+        <span class="icon">📋</span>
+        <div>
+          <div class="label">${l.contract}</div>
+          <div class="value">${escapeHtml(contractType)}</div>
+        </div>
+      </div>` : ''}
     </div>
   `;
 }
