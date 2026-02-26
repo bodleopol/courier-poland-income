@@ -220,6 +220,7 @@
           <button class="lang-btn" data-lang="ua">UA</button>
           <button class="lang-btn" data-lang="pl">PL</button>
           <button class="lang-btn" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
       </nav>
       <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
@@ -250,9 +251,20 @@
         <button class="lang-btn" data-lang="ua">UA</button>
         <button class="lang-btn" data-lang="pl">PL</button>
         <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
   </header>
+
+  <!-- Visible Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/" data-i18n="nav.home">Головна</a></li>
+        <li aria-current="page">{{TITLE}}</li>
+      </ol>
+    </div>
+  </nav>
 
   <main class="container">
     <section class="hero-section">
