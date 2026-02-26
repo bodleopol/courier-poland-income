@@ -101,6 +101,11 @@
     "sameAs": [
       "https://t.me/rybezh_site"
     ],
+    "founder": {
+      "@type": "Person",
+      "name": "Олена Рибецька",
+      "jobTitle": "Founder & CEO"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Support",
@@ -113,6 +118,11 @@
       "addressCountry": "PL"
     },
     "foundingDate": "2024-01-01",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 5,
+      "maxValue": 15
+    },
     "inLanguage": ["uk", "pl", "ru"],
     "knowsLanguage": ["uk", "pl", "ru"]
   }
@@ -145,10 +155,13 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="Rybezh">
   
+  <!-- Performance: preload critical CSS -->
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="preload" href="/features.css" as="style">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
-  <script src="/jobs-loader.js"></script>
-  <script src="/jobs.js"></script>
+  <script src="/jobs-loader.js" defer></script>
+  <script src="/jobs.js" defer></script>
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
   <script>

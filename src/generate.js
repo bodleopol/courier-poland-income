@@ -3733,6 +3733,26 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       indexHtml += scriptWithData;
     }
 
+    // Inject ItemList schema for homepage (popular vacancies for rich results)
+    const homeItemListSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Популярні вакансії в Польщі',
+      description: 'Найактуальніші вакансії для українців у Польщі',
+      url: 'https://rybezh.site/',
+      numberOfItems: Math.min(latestJobs.length, 10),
+      itemListElement: latestJobs.slice(0, 10).map((v, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: v.title,
+        url: `https://rybezh.site/${v.slug}.html`
+      }))
+    };
+    const homeItemListScript = `\n<script type="application/ld+json">\n${JSON.stringify(homeItemListSchema, null, 2)}\n</script>\n`;
+    if (indexHtml.includes('</head>')) {
+      indexHtml = indexHtml.replace('</head>', `${homeItemListScript}\n</head>`);
+    }
+
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
 
     // generate vacancies page
@@ -4073,8 +4093,70 @@ function generateIndexContent(links) {
           <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t3.name">Софія Л., Вроцлав</p>
           <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t3.role">Студентка, 4 міс. досвіду</p>
         </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t4.quote">
+            "Працюю на заводі під Познанню вже 8 місяців. Зарплату платять вчасно, є медична страховка. Rybezh допоміг швидко знайти саме те, що шукав."
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t4.name">Андрій Т., Познань</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t4.role">Оператор лінії, 8 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t5.quote">
+            "Переїхала з Харкова і боялася шахрайства. Rybezh Proof допоміг перевірити компанію перед виїздом. Тепер працюю в готелі і все чудово!"
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t5.name">Оксана М., Гданськ</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t5.role">Покоївка готелю, 5 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t6.quote">
+            "Калькулятор зарплати дуже допоміг зрозуміти, скільки буде на руки. Без цього легко помилитися з очікуваннями."
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t6.name">Віталій С., Лодзь</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t6.role">Електромонтажник, 4 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t7.quote">
+            "Я мама двох дітей і знайшла роботу з гнучким графіком. Дуже дякую за підтримку і допомогу з документами!"
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t7.name">Наталія Д., Катовіце</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t7.role">Прибиральниця, 7 міс. досвіду</p>
+        </div>
       </div>
       <p style="text-align:center; margin-top:1rem; color:#64748b; font-size:0.9rem;" data-i18n="home.testimonials.note">*Досвід кандидатів може відрізнятися залежно від міста та роботодавця</p>
+    </div>
+
+    <!-- TRUST BADGES -->
+    <div style="padding: 2rem 0; margin-top: 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div style="padding: 1.5rem; border-radius: 12px; background: #f0fdf4; border: 1px solid #bbf7d0;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇺🇦</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #166534;" data-i18n="home.trust.users">5 000+</div>
+          <div style="color: #15803d; font-size: 0.95rem;" data-i18n="home.trust.users_label">українців знайшли роботу</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #eff6ff; border: 1px solid #bfdbfe;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">✅</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #1e40af;" data-i18n="home.trust.verified">100%</div>
+          <div style="color: #1d4ed8; font-size: 0.95rem;" data-i18n="home.trust.verified_label">перевірені вакансії</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #faf5ff; border: 1px solid #e9d5ff;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #7e22ce;" data-i18n="home.trust.support">24/7</div>
+          <div style="color: #7c3aed; font-size: 0.95rem;" data-i18n="home.trust.support_label">підтримка в Telegram</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #fff7ed; border: 1px solid #fed7aa;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏙️</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #c2410c;" data-i18n="home.trust.cities">20+</div>
+          <div style="color: #ea580c; font-size: 0.95rem;" data-i18n="home.trust.cities_label">міст по всій Польщі</div>
+        </div>
+      </div>
     </div>
 
     <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії у 20+ містах Польщі. Стабільні умови та підтримка.</p>
