@@ -1679,14 +1679,16 @@ function diversifyOffer(phrase, slug) {
   return variants[seed % variants.length];
 }
 
+const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи']
+};
+
 function buildConditionsBlock(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
-  const conditionsTitleVariants = isPl
-    ? ['Warunki', 'Szczegóły oferty', 'Parametry pracy']
-    : isRu
-      ? ['Условия', 'Детали вакансии', 'Формат работы']
-      : ['Умови', 'Деталі вакансії', 'Формат роботи'];
+  const conditionsTitleVariants = CONDITIONS_TITLE_VARIANTS_BY_LANG[lang] || CONDITIONS_TITLE_VARIANTS_BY_LANG.ua;
   const conditionsTitle = conditionsTitleVariants[hashString(`${page?.slug || ''}:${lang}:conditions-title`) % conditionsTitleVariants.length];
   const labels = isPl ? {
     title: conditionsTitle,
@@ -1865,6 +1867,12 @@ const CHECKLIST_ITEM_VARIANTS = {
   }
 };
 
+const SIMPLE_HUMAN_TITLES_BY_LANG = {
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом']
+};
+
 function diversifyChecklistItem(text, page, lang, index) {
   const variantsByLang = CHECKLIST_ITEM_VARIANTS[lang];
   const variants = variantsByLang ? variantsByLang[text] : null;
@@ -1892,6 +1900,9 @@ const JOB_QUESTIONS_POOL = {
   ]
 };
 
+const CHECKLIST_SEED_OFFSET = 17;
+const QUESTIONS_SEED_OFFSET = 29;
+
 function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
@@ -1899,11 +1910,9 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   
   // Variant-based simplified version (for 'simple')
   if (variant === 'simple') {
-    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + 17)
+    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + CHECKLIST_SEED_OFFSET)
       .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
-    const simpleTitles = isPl ? ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem']
-      : isRu ? ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее']
-      : ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом'];
+    const simpleTitles = SIMPLE_HUMAN_TITLES_BY_LANG[lang] || SIMPLE_HUMAN_TITLES_BY_LANG.ua;
     const title = simpleTitles[seed % simpleTitles.length];
     const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
     
@@ -1916,9 +1925,9 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   }
   
   // Full version with 2 columns
-  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17)
+  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + CHECKLIST_SEED_OFFSET)
     .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
-  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
+  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + QUESTIONS_SEED_OFFSET);
 
   const title = isPl ? 'Warto wiedzieć przed startem' : (isRu ? 'Что важно знать перед стартом' : 'Що варто знати перед стартом');
   const leftTitle = isPl ? 'Lista kontrolna' : (isRu ? 'Проверочный список' : 'Чек-лист перевірки');
