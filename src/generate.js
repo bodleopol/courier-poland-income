@@ -3650,10 +3650,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
 User-agent: *
 Allow: /
 
-# Disallow internal build and helper scripts
+# Disallow internal build artifacts
 Disallow: /dist/
-Disallow: /*.cjs$
-Disallow: /*.js$
 Allow: /main.js
 Allow: /jobs.js
 Allow: /jobs-loader.js
