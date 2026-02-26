@@ -1223,4 +1223,33 @@ details li {
   color: var(--color-primary);
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+  padding: 0.5rem 0;
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+.breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.breadcrumbs li::after {
+  content: "›";
+  margin-left: 0.3rem;
+  color: #9ca3af;
+}
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+.breadcrumbs a {
+  color: var(--color-primary, #0f766e);
+  text-decoration: none;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
 

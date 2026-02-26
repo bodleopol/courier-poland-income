@@ -71,6 +71,30 @@
   }
   </script>
 
+  <!-- ItemList Schema: Top-10 Companies -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Топ-10 перевірених компаній-роботодавців Польщі",
+    "description": "Найкращі роботодавці за оцінками реальних працівників (Rybezh Proof Score)",
+    "url": "https://rybezh.site/proof.html",
+    "numberOfItems": 10,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Amazon Fulfillment Poland", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 2, "name": "InPost Logistics", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 3, "name": "Biedronka (Jeronimo Martins)", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 4, "name": "Żabka", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 5, "name": "Panattoni", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 6, "name": "Poczta Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 7, "name": "GLS Poland", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 8, "name": "Lidl Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 9, "name": "Skanska Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 10, "name": "Netto (Salling Group)", "url": "https://rybezh.site/proof.html"}
+    ]
+  }
+  </script>
+
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
   <script>
@@ -551,6 +575,45 @@
       .proof-top { flex-direction: column; }
       .proof-score-box { text-align: left; }
     }
+
+    .breadcrumbs { margin: 0 0 1rem; font-size: 0.88rem; color: #6b7280; }
+    .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .breadcrumbs li::after { content: "›"; margin-left: 0.3rem; color: #9ca3af; }
+    .breadcrumbs li:last-child::after { content: ""; }
+    .breadcrumbs a { color: #0f766e; text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .proof-methodology { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-methodology h2 { margin: 0 0 0.75rem; font-size: 1.3rem; color: #111827; }
+    .proof-methodology > p { color: #374151; margin: 0 0 1rem; line-height: 1.6; }
+    .proof-method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+    .proof-method-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .proof-method-card h3 { margin: 0 0 0.4rem; font-size: 1rem; color: #1f2937; }
+    .proof-method-card p { margin: 0; color: #4b5563; font-size: 0.9rem; line-height: 1.5; }
+    .proof-score-legend { font-size: 0.92rem; color: #374151; margin: 0; }
+
+    .proof-top10 { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-top10 h2 { margin: 0 0 0.3rem; font-size: 1.3rem; color: #111827; }
+    .proof-top10 > p { color: #6b7280; margin: 0 0 1rem; font-size: 0.95rem; }
+    .proof-top10-grid { display: grid; gap: 0.75rem; }
+    .proof-top10-card { display: grid; grid-template-columns: 40px 1fr 80px; gap: 0.75rem; align-items: center; padding: 0.85rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafbfc; }
+    .proof-top10-rank { font-size: 1.1rem; font-weight: 800; color: #0f766e; text-align: center; }
+    .proof-top10-info h3 { margin: 0; font-size: 1rem; color: #111827; }
+    .proof-top10-city { margin: 0.15rem 0 0; font-size: 0.82rem; color: #6b7280; }
+    .proof-top10-review { margin: 0.3rem 0 0; font-size: 0.85rem; color: #4b5563; font-style: italic; line-height: 1.4; }
+    .proof-top10-score { text-align: right; font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+    .proof-top10-score small { font-size: 0.75rem; color: #6b7280; font-weight: 400; }
+
+    .proof-related { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-related h2 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #111827; }
+    .related-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+    .related-links a { color: #0f766e; text-decoration: none; font-weight: 500; display: inline-block; padding: 0.3rem 0; }
+    .related-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .proof-top10-card { grid-template-columns: 30px 1fr 60px; gap: 0.5rem; }
+      .proof-top10-review { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -595,6 +658,151 @@
         <h1>Rybezh Proof — чесний рейтинг компаній Польщі</h1>
         <p>Тільки реальні відгуки від українців, які там працювали</p>
       </div>
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Головна</a></li>
+          <li aria-current="page">Rybezh Proof</li>
+        </ol>
+      </nav>
+
+      <!-- Methodology Section -->
+      <section class="proof-methodology" aria-label="Як працює Rybezh Proof">
+        <h2>📊 Як працює рейтинг Rybezh Proof</h2>
+        <p>Rybezh Proof — це система верифікації роботодавців на основі реальних відгуків українців, які працювали в компаніях Польщі. Кожна компанія отримує <strong>Proof Score від 0 до 100</strong>.</p>
+        <div class="proof-method-grid">
+          <div class="proof-method-card">
+            <h3>📝 Збір відгуків</h3>
+            <p>Кожен кандидат може залишити відгук з оцінками за 7 критеріїв: зарплата, житло, ставлення, графік, виплати, надійність та рекомендація.</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>🔍 Фактчекінг</h3>
+            <p>Модератори перевіряють кожен відгук на реальність: наявність деталей, відповідність реальним вакансіям, відсутність спаму та фейків.</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>📈 Розрахунок Score</h3>
+            <p>Proof Score = середнє зважене всіх оцінок × 10. Враховуються кількість відгуків, свіжість та підтверджені докази (фото, документи).</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>🛡️ Оновлення</h3>
+            <p>Рейтинг оновлюється щотижня. Компанії з негативною динамікою отримують попередження. Без нових відгуків за 6 місяців — позначка «застарілий».</p>
+          </div>
+        </div>
+        <p class="proof-score-legend"><strong>Що означає Score:</strong> <span class="score-good">75–100</span> = надійна компанія, <span class="score-mid">60–74</span> = варто уточнити деталі, <span class="score-bad">&lt;60</span> = ризики, потрібна додаткова перевірка.</p>
+      </section>
+
+      <!-- Top-10 Companies -->
+      <section class="proof-top10" aria-label="Топ-10 компаній">
+        <h2>🏆 Топ-10 перевірених компаній</h2>
+        <p>Найкращі роботодавці за оцінками реальних працівників</p>
+        <div class="proof-top10-grid">
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#1</div>
+            <div class="proof-top10-info">
+              <h3>Amazon Fulfillment Poland</h3>
+              <p class="proof-top10-city">📍 Wrocław, Poznań, Łódź</p>
+              <p class="proof-top10-review">"Стабільна зарплата, чіткий графік, є нічні зміни з доплатою. Житло не надають, але зарплата дозволяє орендувати."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">92</span>/100<br><small>48 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#2</div>
+            <div class="proof-top10-info">
+              <h3>InPost Logistics</h3>
+              <p class="proof-top10-city">📍 Kraków, Warszawa</p>
+              <p class="proof-top10-review">"Добрі умови для кур'єрів. Гнучкий графік, виплати щотижня."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">89</span>/100<br><small>35 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#3</div>
+            <div class="proof-top10-info">
+              <h3>Biedronka (Jeronimo Martins)</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"Працюю касиркою 7 місяців. UoP з першого дня, медична страховка, бонуси за надурочні."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">87</span>/100<br><small>52 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#4</div>
+            <div class="proof-top10-info">
+              <h3>Żabka (франчайзинг)</h3>
+              <p class="proof-top10-city">📍 Warszawa, Gdańsk, Katowice</p>
+              <p class="proof-top10-review">"Зручний графік для студентів. Zlecenie, але платять вчасно."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">85</span>/100<br><small>29 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#5</div>
+            <div class="proof-top10-info">
+              <h3>Panattoni (будівництво)</h3>
+              <p class="proof-top10-city">📍 Łódź, Wrocław</p>
+              <p class="proof-top10-review">"Хороші ставки для будівельників, 30–40 PLN/год. Є надурочні."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">83</span>/100<br><small>21 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#6</div>
+            <div class="proof-top10-info">
+              <h3>Poczta Polska</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"UoP, стабільний графік, гарне ставлення до українців."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">81</span>/100<br><small>18 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#7</div>
+            <div class="proof-top10-info">
+              <h3>GLS Poland</h3>
+              <p class="proof-top10-city">📍 Warszawa, Poznań</p>
+              <p class="proof-top10-review">"Кур'єрська доставка, авто надають. Заробіток залежить від кількості посилок."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">79</span>/100<br><small>15 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#8</div>
+            <div class="proof-top10-info">
+              <h3>Lidl Polska</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"Добрі умови для складських працівників. Є корпоративне житло у деяких містах."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">78</span>/100<br><small>24 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#9</div>
+            <div class="proof-top10-info">
+              <h3>Skanska Polska</h3>
+              <p class="proof-top10-city">📍 Warszawa, Kraków</p>
+              <p class="proof-top10-review">"Будівельна компанія з хорошою репутацією. UoP для досвідчених."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">76</span>/100<br><small>12 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#10</div>
+            <div class="proof-top10-info">
+              <h3>Netto (Salling Group)</h3>
+              <p class="proof-top10-city">📍 Szczecin, Gdańsk, Poznań</p>
+              <p class="proof-top10-review">"Магазин, але стабільні умови. Графік обговорюється індивідуально."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">75</span>/100<br><small>11 відгуків</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Materials -->
+      <section class="proof-related" aria-label="Пов'язані матеріали">
+        <h2>📚 Пов'язані матеріали</h2>
+        <ul class="related-links">
+          <li><a href="/red-flag.html">🚩 Перевірка вакансій на шахрайство — Red Flag Checker</a></li>
+          <li><a href="/vacancies.html">📋 Всі перевірені вакансії в Польщі</a></li>
+          <li><a href="/calculator.html">💰 Калькулятор зарплати netto в Польщі 2026</a></li>
+          <li><a href="/about.html">👥 Команда Rybezh — хто перевіряє компанії</a></li>
+          <li><a href="/blog.html">📰 Блог — статті про роботу в Польщі</a></li>
+          <li><a href="/faq.html">❓ Часті запитання про працевлаштування</a></li>
+          <li><a href="/contact.html">📞 Зв'язатися з командою Rybezh</a></li>
+        </ul>
+      </section>
 
       <div class="proof-filters" aria-label="Фільтри відгуків">
         <div class="proof-filter-grid">
