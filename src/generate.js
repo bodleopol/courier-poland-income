@@ -1679,11 +1679,19 @@ function diversifyOffer(phrase, slug) {
   return variants[seed % variants.length];
 }
 
+const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи']
+};
+
 function buildConditionsBlock(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
+  const conditionsTitleVariants = CONDITIONS_TITLE_VARIANTS_BY_LANG[lang] || CONDITIONS_TITLE_VARIANTS_BY_LANG.ua;
+  const conditionsTitle = conditionsTitleVariants[hashString(`${page?.slug || ''}:${lang}:conditions-title`) % conditionsTitleVariants.length];
   const labels = isPl ? {
-    title: 'Warunki',
+    title: conditionsTitle,
     salary: 'Wynagrodzenie',
     contract: 'Umowa',
     schedule: 'Grafik',
@@ -1693,7 +1701,7 @@ function buildConditionsBlock(page, lang) {
     extra: 'Dodatkowe informacje',
     requirements: 'Wymagania'
   } : isRu ? {
-    title: 'Условия',
+    title: conditionsTitle,
     salary: 'Зарплата',
     contract: 'Договор',
     schedule: 'График',
@@ -1703,7 +1711,7 @@ function buildConditionsBlock(page, lang) {
     extra: 'Дополнительная информация',
     requirements: 'Требования'
   } : {
-    title: 'Умови',
+    title: conditionsTitle,
     salary: 'Зарплата',
     contract: 'Контракт',
     schedule: 'Графік',
@@ -1812,6 +1820,67 @@ const JOB_CHECKLIST_POOL = {
   ]
 };
 
+const CHECKLIST_ITEM_VARIANTS = {
+  ua: {
+    'Який тип договору (umowa zlecenie/umowa o pracę/B2B) і хто його підписує?': [
+      'Який саме договір на старті (zlecenie/UoP/B2B) і хто з вами підписує документи?',
+      'Уточніть формат співпраці: zlecenie, UoP чи B2B — і яка сторона підписує договір.',
+      'Перевірте тип договору та процедуру підписання: хто відповідальний і коли це відбувається.'
+    ],
+    'Графік: скільки годин на зміну, перерви, нічні/вихідні, понаднормові.': [
+      'Проясніть графік: тривалість зміни, перерви, нічні/вихідні та правила понаднормових.',
+      'Запитайте про фактичний розклад: години, перерви, роботу у вихідні та нічні зміни.',
+      'Уточніть, як виглядає зміна на практиці: скільки годин, які перерви, чи є нічні.'
+    ],
+    'Що входить у задачі на старті: перші 3–5 днів зазвичай найважчі.': [
+      'Що саме роблять у перші дні: стартові задачі часто найскладніші для адаптації.',
+      'Уточніть обовʼязки на старті — перший робочий тиждень зазвичай показовий.',
+      'Запитайте про задачі на перші зміни, щоб реально оцінити навантаження.'
+    ],
+    'Документи: PESEL, медогляд, санепід, UDT — що потрібно саме тут.': [
+      'Перевірте пакет документів для цієї ролі: PESEL, медогляд, санепід, UDT.',
+      'Уточніть перелік документів саме для цього обʼєкта (PESEL, довідки, допуски).',
+      'Які документи обовʼязкові тут: PESEL, медичні допуски, санепід, UDT за потреби.'
+    ]
+  },
+  pl: {
+    'Jaki typ umowy (umowa zlecenie/umowa o pracę/B2B) i kto ją podpisuje?': [
+      'Ustal typ umowy na start (zlecenie/UoP/B2B) i kto formalnie ją podpisuje.',
+      'Dopytaj o formę współpracy: zlecenie, UoP czy B2B oraz stronę podpisującą.',
+      'Sprawdź model umowy i procedurę podpisania — kto odpowiada za formalności.'
+    ],
+    'Grafik: ile godzin na zmianę, przerwy, nocki/weekendy, nadgodziny.': [
+      'Dopytaj o realny grafik: długość zmiany, przerwy, noce/weekendy i nadgodziny.',
+      'Sprawdź harmonogram w praktyce: liczba godzin, przerwy i zasady pracy w weekend.',
+      'Ustal, jak wygląda dzień pracy: godziny, nocki oraz sposób rozliczania nadgodzin.'
+    ],
+    'Zakres zadań na start: pierwsze 3–5 dni zwykle robią największą różnicę.': [
+      'Ustal obowiązki na początek — pierwsze dni zwykle pokazują realne tempo pracy.',
+      'Dopytaj, jakie zadania są na starcie, bo pierwszy tydzień bywa najbardziej wymagający.',
+      'Sprawdź zakres pracy w pierwszych dniach, aby lepiej ocenić poziom wejścia.'
+    ],
+    'Dokumenty: PESEL, badania, sanepid, UDT — co jest wymagane tutaj.': [
+      'Zweryfikuj wymagane dokumenty: PESEL, badania, sanepid i ewentualnie UDT.',
+      'Dopytaj o komplet formalności dla tej oferty (PESEL, badania, dopuszczenia).',
+      'Jakie dokumenty są obowiązkowe na tym projekcie: PESEL, badania, sanepid, UDT?'
+    ]
+  }
+};
+
+const SIMPLE_HUMAN_TITLES_BY_LANG = {
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом']
+};
+
+function diversifyChecklistItem(text, page, lang, index) {
+  const variantsByLang = CHECKLIST_ITEM_VARIANTS[lang];
+  const variants = variantsByLang ? variantsByLang[text] : null;
+  if (!variants || variants.length === 0) return text;
+  const seed = hashString(`${page?.slug || ''}:${lang}:${index}:${text}`);
+  return variants[seed % variants.length];
+}
+
 const JOB_QUESTIONS_POOL = {
   ua: [
     'Хто і де зустрічає в перший день? Є контакти координатора?',
@@ -1831,6 +1900,9 @@ const JOB_QUESTIONS_POOL = {
   ]
 };
 
+const CHECKLIST_SEED_OFFSET = 17;
+const QUESTIONS_SEED_OFFSET = 29;
+
 function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
@@ -1838,8 +1910,10 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   
   // Variant-based simplified version (for 'simple')
   if (variant === 'simple') {
-    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + 17);
-    const title = isPl ? 'Warto wiedzieć' : (isRu ? 'Важно знать' : 'Варто знати');
+    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + CHECKLIST_SEED_OFFSET)
+      .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
+    const simpleTitles = SIMPLE_HUMAN_TITLES_BY_LANG[lang] || SIMPLE_HUMAN_TITLES_BY_LANG.ua;
+    const title = simpleTitles[seed % simpleTitles.length];
     const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
     
     return `
@@ -1851,8 +1925,9 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   }
   
   // Full version with 2 columns
-  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + 17);
-  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + 29);
+  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + CHECKLIST_SEED_OFFSET)
+    .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
+  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + QUESTIONS_SEED_OFFSET);
 
   const title = isPl ? 'Warto wiedzieć przed startem' : (isRu ? 'Что важно знать перед стартом' : 'Що варто знати перед стартом');
   const leftTitle = isPl ? 'Lista kontrolna' : (isRu ? 'Проверочный список' : 'Чек-лист перевірки');
@@ -2958,6 +3033,10 @@ async function build() {
     const noticeRU = buildGeneratedNotice(page, 'ru');
     const proofSummaryBlock = buildVacancyProofSummaryBlock(page);
     const proofFormBlock = buildVacancyProofFormBlock(page);
+    const includeDetails = layoutVariant !== 'short';
+    const detailsUA = includeDetails ? `${conditionsUA}${humanUA}` : '';
+    const detailsPL = includeDetails ? `${conditionsPL}${humanPL}` : '';
+    const detailsRU = includeDetails ? `${conditionsRU}${humanRU}` : '';
 
     const shareUrl = `https://rybezh.site/${escapeHtml(page.slug)}.html`;
     const shareText = encodeURIComponent(page.title);
@@ -3045,9 +3124,9 @@ async function build() {
           <span class="tag">📍 ${escapeHtml(page.city)}</span>
           <span class="tag">📅 ${escapeHtml(displayDate)}</span>
         </div>
-        <div data-lang-content="ua">${noticeUA}${content}</div>
-        <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}</div>
-        <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}</div>
+        <div data-lang-content="ua">${noticeUA}${content}${detailsUA}</div>
+        <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${detailsPL}</div>
+        <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}${detailsRU}</div>
         ${proofSummaryBlock}
         ${proofFormBlock}
         ${enrichmentHtml}
