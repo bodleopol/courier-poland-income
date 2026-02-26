@@ -75,9 +75,9 @@ function detectNearDuplicateSlugs(pages) {
     crossCityGroups.get(jobBase).push(slug);
   }
   for (const [, slugs] of crossCityGroups) {
-    if (slugs.length >= 3) {
-      // Keep the first two city variants; mark the rest noindex
-      for (const slug of slugs.slice(2)) {
+    if (slugs.length >= 2) {
+      // Keep only the first city variant indexable; mark the rest noindex
+      for (const slug of slugs.slice(1)) {
         secondarySlugs.add(slug);
       }
     }
@@ -559,18 +559,8 @@ const CATEGORY_SPECIFIC_SECTIONS = {
   }
 };
 
-function getViewCount(slug, seed) {
-  const base = 15 + ((seed % 200) + (hashString(slug) % 300));
-  const weekMultiplier = 1 + (Math.abs(Math.sin(seed * 0.1)) * 2);
-  return Math.floor(base * weekMultiplier);
-}
-
-function getLastUpdated(slug) {
-  const today = new Date('2026-02-24');
-  const daysBehind = hashString(slug) % 4;
-  const updated = new Date(today);
-  updated.setDate(updated.getDate() - daysBehind);
-  return updated.toISOString().slice(0, 10);
+function getLastUpdated() {
+  return new Date().toISOString().slice(0, 10);
 }
 
 const HUMAN_INTROS = {
@@ -1709,9 +1699,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -1937,9 +1927,9 @@ const CHECKLIST_ITEM_VARIANTS = {
 };
 
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -2050,7 +2040,15 @@ const NOTICE_VARIANTS = {
 };
 
 function buildGeneratedNotice(page, lang) {
-  return '';
+  const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
+  const date = page.date_posted || getLastUpdated();
+  if (lang === 'pl') {
+    return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
+  }
+  if (lang === 'ru') {
+    return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
+  }
+  return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
 }
 
 function buildVacancyProofSummaryBlock(page) {
@@ -3185,7 +3183,7 @@ async function build() {
     }
 
     // Format date for display
-    const displayDate = page.date_posted || getLastUpdated(page.slug);
+    const displayDate = page.date_posted || getLastUpdated();
     
     const dualContent = `
       <div class="job-page-layout">
@@ -3278,6 +3276,8 @@ async function build() {
       .job-page-layout { margin-top: 1rem; }
       .job-meta { margin-bottom: 1.5rem; display: flex; gap: 10px; }
       .job-meta .tag { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 99px; font-size: 0.9rem; font-weight: 500; }
+      .editorial-notice { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding: 0.5rem 0.75rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 0.85rem; color: #166534; }
+      .editorial-author { font-weight: 600; }
       .job-conditions { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 12px; margin: 2rem 0; }
       .job-conditions h3 { margin-top: 0; color: #0f172a; font-size: 1.15rem; }
       .job-conditions ul { list-style: none; padding: 0; margin: 0; }
@@ -3816,13 +3816,18 @@ Allow: /contact.html
 Allow: /faq.html
 Allow: /calculator.html
 Allow: /cv-generator.html
+Allow: /red-flag.html
+Allow: /map.html
+Allow: /for-employers.html
+Allow: /proof.html
 
-# Prevent crawling of raw data files and internal assets
+# Prevent crawling of raw data files, internal assets, and game
 Disallow: /jobs-data.json
 Disallow: /game/
-Disallow: /*.json
+Disallow: /game.html
+Disallow: /*.json$
 
-# Sitemaps — primary sitemap index + individual sitemaps
+# Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
 
@@ -4522,7 +4527,7 @@ function categoryToIndustry(category) {
 function buildJobPostingJsonLd(page) {
   const now = new Date();
   // Use page.date_posted if available, otherwise fall back to a deterministic random date
-  const datePosted = page.date_posted || getLastUpdated(page.slug);
+  const datePosted = page.date_posted || getLastUpdated();
   const validThrough = toISODate(addDays(now, 60));
   const addr = cityToJobAddress(page.city);
 

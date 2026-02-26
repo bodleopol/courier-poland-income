@@ -1,17 +1,7 @@
 // Engagement and SEO improvement helpers
 
-export function getViewCount(slug, seed) {
-  const base = 15 + ((seed % 200) + (hashString(slug) % 300));
-  const weekMultiplier = 1 + (Math.abs(Math.sin(seed * 0.1)) * 2);
-  return Math.floor(base * weekMultiplier);
-}
-
-export function getLastUpdated(slug) {
-  const today = new Date('2026-02-24');
-  const daysBehind = hashString(slug) % 4;
-  const updated = new Date(today);
-  updated.setDate(updated.getDate() - daysBehind);
-  return updated.toISOString().slice(0, 10);
+export function getLastUpdated() {
+  return new Date().toISOString().slice(0, 10);
 }
 
 export function buildSimilarJobs(currentJob, allJobs, limit = 3) {
@@ -60,7 +50,7 @@ export function buildBreadcrumbs(job, lang) {
 }
 
 export function buildEngagementMeta(job, lang) {
-  const lastUpdated = getLastUpdated(job.slug);
+  const lastUpdated = getLastUpdated();
   const contractType = job.contract || '';
   
   const labels = {
