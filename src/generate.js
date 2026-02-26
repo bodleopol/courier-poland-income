@@ -2053,15 +2053,16 @@ function buildGeneratedNotice(page, lang) {
 
 function buildVacancyProofSummaryBlock(page) {
   const slug = escapeHtml(page.slug || '');
+  const city = escapeHtml(page.city || '');
   return `
     <section class="job-proof-summary" data-proof-summary data-vacancy-slug="${slug}" aria-live="polite">
       <div data-lang-content="ua">
-        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(на основі <span data-proof-count>0</span> відгуків)</small></h3>
+        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> відгуків)</small></h3>
         <p data-proof-verdict>Завантажуємо підтверджені відгуки…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Додати свій Proof</a>
       </div>
       <div data-lang-content="pl" style="display:none">
-        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(na podstawie <span data-proof-count>0</span> opinii)</small></h3>
+        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> opinii)</small></h3>
         <p data-proof-verdict>Ładujemy zatwierdzone opinie…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Dodaj swój Proof</a>
       </div>
