@@ -94,6 +94,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Rybezh",
+    "alternateName": "Rybezh Sp. z o.o.",
     "url": "https://rybezh.site",
     "logo": "https://rybezh.site/favicon.svg",
     "image": "https://rybezh.site/og-image.png",
@@ -104,7 +105,8 @@
     "founder": {
       "@type": "Person",
       "name": "Олена Рибецька",
-      "jobTitle": "Засновниця та CEO"
+      "jobTitle": "Засновниця та CEO",
+      "url": "https://rybezh.site/about.html"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -115,16 +117,24 @@
     },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "ul. Prosta 68",
+      "addressLocality": "Warszawa",
+      "postalCode": "00-838",
       "addressCountry": "PL"
     },
     "foundingDate": "2024-01-01",
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Warszawa, Polska"
+    },
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
       "minValue": 5,
       "maxValue": 15
     },
     "inLanguage": ["uk", "pl", "ru"],
-    "knowsLanguage": ["uk", "pl", "ru"]
+    "knowsLanguage": ["uk", "pl", "ru"],
+    "slogan": "Знайди роботу в Польщі — чесно, без переплат"
   }
   </script>
   
@@ -155,8 +165,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-title" content="Rybezh">
   
-  <!-- Performance: preload critical CSS -->
+  <!-- Performance: preload critical CSS and fonts -->
   <link rel="preload" href="/styles.css" as="style">
+  <link rel="preload" href="/favicon.svg" as="image" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
   <script src="/jobs-loader.js" defer></script>
