@@ -1,6 +1,8 @@
-# courier-poland-income
+# Rybezh — Пошук роботи в Польщі
 
-A website for job opportunities in Poland for couriers.
+Платформа для пошуку роботи в Польщі для всіх — від логістики та будівництва до IT, медицини та ресторанного бізнесу. Актуальні вакансії, калькулятор зарплати, генератор CV, перевірка вакансій та система верифікації Rybezh Proof.
+
+**Сайт:** [rybezh.site](https://rybezh.site)
 
 ## 🔐 Security
 
@@ -46,4 +48,4 @@ When contributing to this repository:
 
 ## 📄 License
 
-This project is for educational and demonstration purposes.
+This project is proprietary. All rights reserved.

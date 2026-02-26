@@ -75,9 +75,10 @@ function detectNearDuplicateSlugs(pages) {
     crossCityGroups.get(jobBase).push(slug);
   }
   for (const [, slugs] of crossCityGroups) {
-    if (slugs.length >= 3) {
-      // Keep the first two city variants; mark the rest noindex
-      for (const slug of slugs.slice(2)) {
+    if (slugs.length >= 2) {
+      // Keep only the first city variant (by content.json insertion order) indexable;
+      // mark the rest noindex to reduce "city-spin doorway" pattern.
+      for (const slug of slugs.slice(1)) {
         secondarySlugs.add(slug);
       }
     }
@@ -559,18 +560,8 @@ const CATEGORY_SPECIFIC_SECTIONS = {
   }
 };
 
-function getViewCount(slug, seed) {
-  const base = 15 + ((seed % 200) + (hashString(slug) % 300));
-  const weekMultiplier = 1 + (Math.abs(Math.sin(seed * 0.1)) * 2);
-  return Math.floor(base * weekMultiplier);
-}
-
-function getLastUpdated(slug) {
-  const today = new Date('2026-02-24');
-  const daysBehind = hashString(slug) % 4;
-  const updated = new Date(today);
-  updated.setDate(updated.getDate() - daysBehind);
-  return updated.toISOString().slice(0, 10);
+function getLastUpdated() {
+  return new Date().toISOString().slice(0, 10);
 }
 
 const HUMAN_INTROS = {
@@ -1709,9 +1700,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -1937,9 +1928,9 @@ const CHECKLIST_ITEM_VARIANTS = {
 };
 
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -2050,20 +2041,29 @@ const NOTICE_VARIANTS = {
 };
 
 function buildGeneratedNotice(page, lang) {
-  return '';
+  const author = SITE_AUTHOR[lang] || SITE_AUTHOR.ua;
+  const date = page.date_posted || getLastUpdated();
+  if (lang === 'pl') {
+    return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
+  }
+  if (lang === 'ru') {
+    return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
+  }
+  return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
 }
 
 function buildVacancyProofSummaryBlock(page) {
   const slug = escapeHtml(page.slug || '');
+  const city = escapeHtml(page.city || '');
   return `
     <section class="job-proof-summary" data-proof-summary data-vacancy-slug="${slug}" aria-live="polite">
       <div data-lang-content="ua">
-        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(на основі <span data-proof-count>0</span> відгуків)</small></h3>
+        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> відгуків)</small></h3>
         <p data-proof-verdict>Завантажуємо підтверджені відгуки…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Додати свій Proof</a>
       </div>
       <div data-lang-content="pl" style="display:none">
-        <h3>🔍 Rybezh Proof: <span data-proof-score>—</span>/100 <small>(na podstawie <span data-proof-count>0</span> opinii)</small></h3>
+        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> opinii)</small></h3>
         <p data-proof-verdict>Ładujemy zatwierdzone opinie…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Dodaj swój Proof</a>
       </div>
@@ -3185,7 +3185,7 @@ async function build() {
     }
 
     // Format date for display
-    const displayDate = page.date_posted || getLastUpdated(page.slug);
+    const displayDate = page.date_posted || getLastUpdated();
     
     const dualContent = `
       <div class="job-page-layout">
@@ -3278,6 +3278,8 @@ async function build() {
       .job-page-layout { margin-top: 1rem; }
       .job-meta { margin-bottom: 1.5rem; display: flex; gap: 10px; }
       .job-meta .tag { background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 99px; font-size: 0.9rem; font-weight: 500; }
+      .editorial-notice { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding: 0.5rem 0.75rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 0.85rem; color: #166534; }
+      .editorial-author { font-weight: 600; }
       .job-conditions { background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 12px; margin: 2rem 0; }
       .job-conditions h3 { margin-top: 0; color: #0f172a; font-size: 1.15rem; }
       .job-conditions ul { list-style: none; padding: 0; margin: 0; }
@@ -3694,8 +3696,32 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     // Make the template H1 translatable
     indexHtml = indexHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="meta.title">$1</h1>`);
 
+    // Inject FAQPage schema for homepage rich results
+    const homeFaqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        { '@type': 'Question', 'name': 'Як знайти роботу в Польщі через Rybezh?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'На Rybezh ви можете шукати вакансії за містом, категорією та зарплатою. Оберіть вакансію, перегляньте умови та подайте заявку онлайн. Ми допоможемо з консультацією та оформленням документів.' } },
+        { '@type': 'Question', 'name': 'Які документи потрібні для роботи в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Основні документи: закордонний паспорт, PESEL (можна отримати в urzędzie gminy), медичний огляд, а для деяких професій — санітарна книжка або спеціальні допуски (UDT, SEP тощо). Для громадян України з тимчасовим захистом достатньо PESEL UKR.' } },
+        { '@type': 'Question', 'name': 'Яка середня зарплата в Польщі у 2026 році?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Мінімальна зарплата у 2026 році становить 4 666 PLN brutto. Середня зарплата залежить від галузі: логістика 5 000–8 000 PLN, будівництво 6 000–10 000 PLN, IT від 10 000 PLN. Використовуйте наш калькулятор для точного розрахунку netto.' } },
+        { '@type': 'Question', 'name': 'Які типи договорів існують у Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Три основних типи: Umowa o pracę (трудовий договір з повним соцпакетом), Umowa zlecenie (договір доручення з меншими внесками) та B2B (самозайнятість). Кожен має свої переваги щодо податків, відпустки та соціального захисту.' } },
+        { '@type': 'Question', 'name': 'Чи є безкоштовне житло від роботодавця?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Багато роботодавців пропонують житло з частковою або повною компенсацією (200–600 PLN/міс). Уточнюйте умови проживання до виїзду: кількість людей у кімнаті, наявність кухні, відстань до роботи.' } },
+        { '@type': 'Question', 'name': 'Як перевірити вакансію на шахрайство?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш інструмент «Перевірка вакансій» (Red Flag Checker). Основні ознаки шахрайства: вимога передоплати, відсутність назви компанії, занадто висока зарплата без вимог, тиск на швидке рішення.' } },
+        { '@type': 'Question', 'name': 'Скільки часу займає оформлення на роботу?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Від подання заявки до першого робочого дня зазвичай проходить 1–3 тижні. Це включає: відгук роботодавця (1–3 дні), співбесіда, оформлення документів, медогляд та інструктаж з техніки безпеки.' } },
+        { '@type': 'Question', 'name': 'Чи потрібно знати польську мову?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Залежить від позиції. Для фізичної роботи (склад, виробництво) достатньо базового рівня A1–A2. Для роботи з клієнтами потрібен B1+. IT-сектор часто працює англійською. Багато роботодавців пропонують безкоштовні курси польської.' } },
+        { '@type': 'Question', 'name': 'Що таке Rybezh Proof?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Rybezh Proof — це система верифікації вакансій на основі реальних відгуків працівників. Кожна вакансія отримує оцінку від 0 до 100 за критеріями: зарплата, житло, ставлення, графік, виплати та надійність.' } },
+        { '@type': 'Question', 'name': 'Як створити CV для роботи в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш безкоштовний генератор CV. Він створює професійне резюме з RODO-застереженням (обовʼязковим для Польщі), підтримує українську та польську мови, та генерує супровідний лист.' } },
+        { '@type': 'Question', 'name': 'Які міста найпопулярніші для роботи?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Найбільше вакансій у Варшаві, Кракові, Вроцлаві, Познані, Гданську та Лодзі. Варшава пропонує найвищі зарплати, але й вищу вартість життя. Менші міста часто мають кращий баланс зарплати та витрат.' } },
+        { '@type': 'Question', 'name': 'Чи можна працювати в Польщі без досвіду?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Так, багато вакансій не вимагають досвіду: склад, пакування, прибирання, допоміжні будівельні роботи, кухня. Роботодавці зазвичай проводять навчання на місці протягом перших 3–5 днів.' } },
+        { '@type': 'Question', 'name': 'Як розрахувати зарплату netto в Польщі?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Використовуйте наш калькулятор зарплати. Він враховує тип договору (UoP, Zlecenie, B2B), ставку, кількість годин та розраховує суму «на руки» з урахуванням усіх податків і внесків за 2026 рік.' } },
+        { '@type': 'Question', 'name': 'Що робити, якщо роботодавець порушує умови?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Зверніться до Państwowej Inspekcji Pracy (PIP) — це безкоштовно. Також можете написати нам на contacts@rybezh.site або в Telegram @rybezh_site. Зберігайте всі документи, скріншоти листування та фото умов.' } },
+        { '@type': 'Question', 'name': 'Чи є підтримка українською мовою?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Так, Rybezh повністю підтримує українську, польську та російську мови. Наша команда консультує українською і допомагає з усіма питаннями від пошуку вакансії до вирішення проблем на робочому місці.' } }
+      ]
+    };
+    const homeFaqScript = `\n<script type="application/ld+json">\n${JSON.stringify(homeFaqSchema, null, 2)}\n</script>\n`;
+
     if (indexHtml.includes('</head>')) {
-      indexHtml = indexHtml.replace('</head>', `${dataScript}\n</head>`);
+      indexHtml = indexHtml.replace('</head>', `${homeFaqScript}${dataScript}\n</head>`);
     } else {
       indexHtml = dataScript + indexHtml;
     }
@@ -3705,6 +3731,26 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       indexHtml = indexHtml.replace('</body>', `${scriptWithData}</body>`);
     } else {
       indexHtml += scriptWithData;
+    }
+
+    // Inject ItemList schema for homepage (popular vacancies for rich results)
+    const homeItemListSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Популярні вакансії в Польщі',
+      description: 'Найактуальніші вакансії для українців у Польщі',
+      url: 'https://rybezh.site/',
+      numberOfItems: Math.min(latestJobs.length, 10),
+      itemListElement: latestJobs.slice(0, 10).map((v, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: v.title,
+        url: `https://rybezh.site/${v.slug}.html`
+      }))
+    };
+    const homeItemListScript = `\n<script type="application/ld+json">\n${JSON.stringify(homeItemListSchema, null, 2)}\n</script>\n`;
+    if (indexHtml.includes('</head>')) {
+      indexHtml = indexHtml.replace('</head>', `${homeItemListScript}\n</head>`);
     }
 
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
@@ -3816,23 +3862,35 @@ Allow: /contact.html
 Allow: /faq.html
 Allow: /calculator.html
 Allow: /cv-generator.html
+Allow: /red-flag.html
+Allow: /map.html
+Allow: /for-employers.html
+Allow: /proof.html
 
-# Prevent crawling of raw data files and internal assets
+# Prevent crawling of raw data files, internal assets, and game
 Disallow: /jobs-data.json
 Disallow: /game/
-Disallow: /*.json
+Disallow: /game.html
+Disallow: /*.json$
 
-# Sitemaps — primary sitemap index + individual sitemaps
+# Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
 Sitemap: https://rybezh.site/sitemap-index.xml
+Sitemap: https://rybezh.site/sitemap-static.xml
+Sitemap: https://rybezh.site/sitemap-vacancies.xml
+Sitemap: https://rybezh.site/sitemap-blog.xml
 
-# Bing crawl-delay for polite crawling
+# Bing — allow rendering resources and set polite crawl rate
 User-agent: bingbot
-Crawl-delay: 2
+Allow: /*.js$
+Allow: /*.css$
+Crawl-delay: 10
 
 # Google-specific (no crawl-delay needed)
 User-agent: Googlebot
 Allow: /
+Allow: /*.js$
+Allow: /*.css$
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
@@ -3856,6 +3914,17 @@ Allow: /
         adsTxtLines.push('# google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0');
       }
       await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
+    } catch (e) {}
+
+    // write IndexNow key file for Bing/Yandex instant indexing.
+    // Set INDEXNOW_KEY (32-char hex string per IndexNow spec) in CI/CD environment to enable.
+    try {
+      const indexNowKey = String(process.env.INDEXNOW_KEY || '').trim();
+      if (indexNowKey && /^[a-f0-9]{32}$/.test(indexNowKey)) {
+        await fs.writeFile(path.join(DIST, `${indexNowKey}.txt`), indexNowKey, 'utf8');
+        console.log(`✅ IndexNow key file generated: ${indexNowKey}.txt`);
+      }
+      // Skip file creation when no valid key is provided to avoid confusing search engines
     } catch (e) {}
 
     // disable Jekyll processing on GitHub Pages (serve underscore files as-is)
@@ -4024,8 +4093,70 @@ function generateIndexContent(links) {
           <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t3.name">Софія Л., Вроцлав</p>
           <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t3.role">Студентка, 4 міс. досвіду</p>
         </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t4.quote">
+            "Працюю на заводі під Познанню вже 8 місяців. Зарплату платять вчасно, є медична страховка. Rybezh допоміг швидко знайти саме те, що шукав."
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t4.name">Андрій Т., Познань</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t4.role">Оператор лінії, 8 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t5.quote">
+            "Переїхала з Харкова і боялася шахрайства. Rybezh Proof допоміг перевірити компанію перед виїздом. Тепер працюю в готелі і все чудово!"
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t5.name">Оксана М., Гданськ</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t5.role">Покоївка готелю, 5 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t6.quote">
+            "Калькулятор зарплати дуже допоміг зрозуміти, скільки буде на руки. Без цього легко помилитися з очікуваннями."
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t6.name">Віталій С., Лодзь</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t6.role">Електромонтажник, 4 міс. досвіду</p>
+        </div>
+
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 12px; transition: all 0.3s ease; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--color-secondary); line-height: 1.6; margin-bottom: 1rem;" data-i18n="home.testimonials.t7.quote">
+            "Я мама двох дітей і знайшла роботу з гнучким графіком. Дуже дякую за підтримку і допомогу з документами!"
+          </p>
+          <p style="color: var(--color-primary); font-weight: 600; margin: 0;" data-i18n="home.testimonials.t7.name">Наталія Д., Катовіце</p>
+          <p style="color: var(--color-secondary); font-size: 0.9rem; margin: 0;" data-i18n="home.testimonials.t7.role">Прибиральниця, 7 міс. досвіду</p>
+        </div>
       </div>
       <p style="text-align:center; margin-top:1rem; color:#64748b; font-size:0.9rem;" data-i18n="home.testimonials.note">*Досвід кандидатів може відрізнятися залежно від міста та роботодавця</p>
+    </div>
+
+    <!-- TRUST BADGES -->
+    <div style="padding: 2rem 0; margin-top: 1rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+        <div style="padding: 1.5rem; border-radius: 12px; background: #f0fdf4; border: 1px solid #bbf7d0;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🇺🇦</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #166534;" data-i18n="home.trust.users">5 000+</div>
+          <div style="color: #15803d; font-size: 0.95rem;" data-i18n="home.trust.users_label">українців знайшли роботу</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #eff6ff; border: 1px solid #bfdbfe;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">✅</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #1e40af;" data-i18n="home.trust.verified">100%</div>
+          <div style="color: #1d4ed8; font-size: 0.95rem;" data-i18n="home.trust.verified_label">перевірені вакансії</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #faf5ff; border: 1px solid #e9d5ff;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #7e22ce;" data-i18n="home.trust.support">24/7</div>
+          <div style="color: #7c3aed; font-size: 0.95rem;" data-i18n="home.trust.support_label">підтримка в Telegram</div>
+        </div>
+        <div style="padding: 1.5rem; border-radius: 12px; background: #fff7ed; border: 1px solid #fed7aa;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏙️</div>
+          <div style="font-size: 1.6rem; font-weight: 800; color: #c2410c;" data-i18n="home.trust.cities">20+</div>
+          <div style="color: #ea580c; font-size: 0.95rem;" data-i18n="home.trust.cities_label">міст по всій Польщі</div>
+        </div>
+      </div>
     </div>
 
     <p class="lead" style="text-align:center; margin-bottom:2rem; margin-top: 3rem; color:var(--color-secondary);" data-i18n="hero.lead">Актуальні вакансії у 20+ містах Польщі. Стабільні умови та підтримка.</p>
@@ -4522,7 +4653,7 @@ function categoryToIndustry(category) {
 function buildJobPostingJsonLd(page) {
   const now = new Date();
   // Use page.date_posted if available, otherwise fall back to a deterministic random date
-  const datePosted = page.date_posted || getLastUpdated(page.slug);
+  const datePosted = page.date_posted || getLastUpdated();
   const validThrough = toISODate(addDays(now, 60));
   const addr = cityToJobAddress(page.city);
 
@@ -5048,6 +5179,15 @@ function buildEnhancedPostContent(post, posts, categories, lang, readMinutes) {
       <section class="post-section post-related">
         <h3>${isPl ? 'Powiązane artykuły' : (isRu ? 'Похожие статьи' : 'Пов’язані статті')}</h3>
         <ul>${relatedHtml}</ul>
+      </section>
+      <section class="post-section post-vacancies-cta">
+        <h3>${isPl ? 'Szukasz pracy?' : (isRu ? 'Ищете работу?' : 'Шукаєте роботу?')}</h3>
+        <p>${isPl ? 'Sprawdź aktualne oferty pracy w Polsce.' : (isRu ? 'Посмотрите актуальные вакансии в Польше.' : 'Перегляньте актуальні вакансії в Польщі.')}</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <a href="/vacancies.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#00a67e;border-radius:8px;color:#fff;font-weight:600;">${isPl ? 'Oferty pracy' : (isRu ? 'Вакансии' : 'Вакансії')} →</a>
+          <a href="/calculator.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#f3f4f6;border-radius:8px;color:#374151;font-weight:600;">💰 ${isPl ? 'Kalkulator' : (isRu ? 'Калькулятор' : 'Калькулятор')}</a>
+          <a href="/cv-generator.html" style="text-decoration:none;display:inline-block;padding:0.6rem 1.2rem;background:#f3f4f6;border-radius:8px;color:#374151;font-weight:600;">📄 ${isPl ? 'Generator CV' : (isRu ? 'Генератор CV' : 'Генератор CV')}</a>
+        </div>
       </section>
     `,
     faqItems: []

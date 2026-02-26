@@ -61,8 +61,8 @@ function detectNearDuplicateSlugs(pages) {
     crossCityGroups.get(jobBase).push(slug);
   }
   for (const [, slugs] of crossCityGroups) {
-    if (slugs.length >= 3) {
-      for (const slug of slugs.slice(2)) {
+    if (slugs.length >= 2) {
+      for (const slug of slugs.slice(1)) {
         secondarySlugs.add(slug);
       }
     }
