@@ -2876,8 +2876,8 @@ async function build() {
       pContent = sanitizeStaticHtmlHead(pContent);
       pContent = pContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
 
-      // Inject FAQPage schema into faq.html for Google rich results
-      if (p === 'faq.html') {
+      // Inject FAQPage schema into faq.html / faq-ru.html for Google rich results
+      if (p === 'faq.html' || p === 'faq-ru.html') {
         const faqSchema = {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
@@ -2938,14 +2938,14 @@ async function build() {
         }
       }
 
-      // Inject ContactPage JSON-LD for contact.html
-      if (p === 'contact.html') {
+      // Inject ContactPage JSON-LD for contact.html / contact-ru.html
+      if (p === 'contact.html' || p === 'contact-ru.html') {
         const contactSchema = {
           '@context': 'https://schema.org',
           '@type': 'ContactPage',
           name: 'Контакти — Rybezh',
           description: 'Зв\'яжіться з командою Rybezh для консультації щодо роботи у Польщі.',
-          url: 'https://rybezh.site/contact.html',
+          url: `https://rybezh.site/${p}`,
           mainEntity: {
             '@type': 'Organization',
             name: 'Rybezh',
@@ -2967,8 +2967,8 @@ async function build() {
         }
       }
 
-      // Inject Organization + LocalBusiness JSON-LD for company.html
-      if (p === 'company.html') {
+      // Inject Organization + LocalBusiness JSON-LD for company.html / company-ru.html
+      if (p === 'company.html' || p === 'company-ru.html') {
         const companySchema = {
           '@context': 'https://schema.org',
           '@type': ['Organization', 'LocalBusiness'],
@@ -2996,21 +2996,25 @@ async function build() {
         }
       }
 
-      // Inject WebPage JSON-LD for privacy.html, terms.html, proof.html
-      if (['privacy.html', 'terms.html', 'proof.html'].includes(p)) {
-        const pageMeta = {
-          'privacy.html': { name: 'Політика конфіденційності — Rybezh', url: 'https://rybezh.site/privacy.html', desc: 'Інформація про обробку персональних даних на платформі Rybezh.' },
-          'terms.html':   { name: 'Умови користування — Rybezh',        url: 'https://rybezh.site/terms.html',   desc: 'Умови використання платформи Rybezh для пошуку роботи у Польщі.' },
-          'proof.html':   { name: 'Rybezh Proof — Рейтинг довіри',      url: 'https://rybezh.site/proof.html',  desc: 'Система верифікації роботодавців та вакансій на основі відгуків кандидатів.' }
-        };
-        const m = pageMeta[p];
+      // Inject WebPage JSON-LD for privacy, terms, proof, press (+ RU variants)
+      const webPageMetaMap = {
+        'privacy.html': { name: 'Політика конфіденційності — Rybezh', url: 'https://rybezh.site/privacy.html', desc: 'Інформація про обробку персональних даних на платформі Rybezh.', lang: 'uk' },
+        'privacy-ru.html': { name: 'Политика конфиденциальности — Rybezh', url: 'https://rybezh.site/privacy-ru.html', desc: 'Информация об обработке персональных данных на платформе Rybezh.', lang: 'ru' },
+        'terms.html': { name: 'Умови користування — Rybezh', url: 'https://rybezh.site/terms.html', desc: 'Умови використання платформи Rybezh для пошуку роботи у Польщі.', lang: 'uk' },
+        'terms-ru.html': { name: 'Условия использования — Rybezh', url: 'https://rybezh.site/terms-ru.html', desc: 'Условия использования платформы Rybezh для поиска работы в Польше.', lang: 'ru' },
+        'proof.html': { name: 'Rybezh Proof — Рейтинг довіри', url: 'https://rybezh.site/proof.html', desc: 'Система верифікації роботодавців та вакансій на основі відгуків кандидатів.', lang: 'uk' },
+        'proof-ru.html': { name: 'Rybezh Proof — Рейтинг доверия', url: 'https://rybezh.site/proof-ru.html', desc: 'Система верификации работодателей и вакансий на основе отзывов кандидатов.', lang: 'ru' },
+        'press.html': { name: 'Для ЗМІ — Rybezh | Прес-кіт', url: 'https://rybezh.site/press.html', desc: 'Прес-кіт Rybezh: статистика, логотипи, ключові факти та контакти для медіа.', lang: 'uk' }
+      };
+      if (webPageMetaMap[p]) {
+        const m = webPageMetaMap[p];
         const webPageSchema = {
           '@context': 'https://schema.org',
           '@type': 'WebPage',
           name: m.name,
           description: m.desc,
           url: m.url,
-          inLanguage: 'uk',
+          inLanguage: m.lang || 'uk',
           publisher: {
             '@type': 'Organization',
             name: 'Rybezh',
@@ -3024,8 +3028,8 @@ async function build() {
         }
       }
 
-      // Inject AggregateRating + Review schema for proof.html (rich results)
-      if (p === 'proof.html') {
+      // Inject AggregateRating + Review schema for proof.html / proof-ru.html (rich results)
+      if (p === 'proof.html' || p === 'proof-ru.html') {
         const proofReviewSchema = {
           '@context': 'https://schema.org',
           '@type': 'Organization',
@@ -3068,6 +3072,32 @@ async function build() {
         const proofReviewScript = `\n<script type="application/ld+json">\n${JSON.stringify(proofReviewSchema, null, 2)}\n</script>\n`;
         if (pContent.includes('</head>')) {
           pContent = pContent.replace('</head>', `${proofReviewScript}</head>`);
+        }
+      }
+
+      // Inject WebPage JSON-LD for RU static pages that lack inline schemas
+      const ruWebPageMetaMap = {
+        'about-ru.html':          { type: 'AboutPage',      name: 'О нас — Rybezh',                         url: 'https://rybezh.site/about-ru.html',          desc: 'Кто стоит за Rybezh: основательница, редакция, аналитики и HR-консультанты.' },
+        'blog-ru.html':           { type: 'CollectionPage',  name: 'Блог — Rybezh',                          url: 'https://rybezh.site/blog-ru.html',           desc: 'Полезные статьи и советы для поиска работы в Польше.' },
+        'vacancies-ru.html':      { type: 'CollectionPage',  name: 'Все вакансии — Rybezh',                   url: 'https://rybezh.site/vacancies-ru.html',      desc: 'Актуальные вакансии в Польше с фильтрами по городу, категории и зарплате.' },
+        'index-ru.html':          { type: 'WebPage',         name: 'Найди работу в Польше — Rybezh',          url: 'https://rybezh.site/index-ru.html',          desc: 'Актуальные вакансии в разных сферах по всей Польше. Легальное трудоустройство и поддержка.' },
+        'for-employers-ru.html':  { type: 'WebPage',         name: 'Для работодателей — Rybezh',              url: 'https://rybezh.site/for-employers-ru.html',  desc: 'Размещение вакансий и поиск сотрудников из Украины через платформу Rybezh.' },
+        'apply-ru.html':          { type: 'WebPage',         name: 'Подать заявку — Rybezh',                  url: 'https://rybezh.site/apply-ru.html',          desc: 'Заполните форму и получите консультацию по трудоустройству в Польше.' }
+      };
+      if (ruWebPageMetaMap[p] && !pContent.includes('application/ld+json')) {
+        const rm = ruWebPageMetaMap[p];
+        const ruSchema = {
+          '@context': 'https://schema.org',
+          '@type': rm.type,
+          name: rm.name,
+          description: rm.desc,
+          url: rm.url,
+          inLanguage: 'ru',
+          publisher: { '@type': 'Organization', name: 'Rybezh', url: 'https://rybezh.site', logo: 'https://rybezh.site/favicon.svg' }
+        };
+        const ruSchemaScript = `\n<script type="application/ld+json">\n${JSON.stringify(ruSchema, null, 2)}\n</script>\n`;
+        if (pContent.includes('</head>')) {
+          pContent = pContent.replace('</head>', `${ruSchemaScript}</head>`);
         }
       }
 
@@ -3612,7 +3642,23 @@ async function build() {
 
     // Make the template H1 translatable
     blogHtml = blogHtml.replace(/<h1>(.*?)<\/h1>/, `<h1 data-i18n="blog.title">Блог Rybezh</h1>`);
-  
+
+    // Inject CollectionPage schema for the blog listing page
+    const blogCollectionSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: 'Блог Rybezh — статті про роботу в Польщі',
+      description: 'Корисні статті та поради для пошуку роботи в Польщі: документи, адаптація, кар\'єра.',
+      url: canonicalUrl,
+      inLanguage: 'uk',
+      isPartOf: { '@type': 'WebSite', name: 'Rybezh', url: 'https://rybezh.site' },
+      publisher: { '@type': 'Organization', name: 'Rybezh', url: 'https://rybezh.site', logo: 'https://rybezh.site/favicon.svg' }
+    };
+    const blogCollectionScript = `\n<script type="application/ld+json">\n${JSON.stringify(blogCollectionSchema, null, 2)}\n</script>\n`;
+    if (blogHtml.includes('</head>')) {
+      blogHtml = blogHtml.replace('</head>', `${blogCollectionScript}</head>`);
+    }
+
     if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
     else blogHtml += scriptWithData;
     await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
