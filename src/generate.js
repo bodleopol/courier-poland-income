@@ -2998,13 +2998,13 @@ async function build() {
 
       // Inject WebPage JSON-LD for privacy, terms, proof, press (+ RU variants)
       const webPageMetaMap = {
-        'privacy.html':    { name: 'Політика конфіденційності — Rybezh', url: 'https://rybezh.site/privacy.html',    desc: 'Інформація про обробку персональних даних на платформі Rybezh.',                   lang: 'uk' },
-        'privacy-ru.html': { name: 'Политика конфиденциальности — Rybezh', url: 'https://rybezh.site/privacy-ru.html', desc: 'Информация об обработке персональных данных на платформе Rybezh.',                   lang: 'ru' },
-        'terms.html':      { name: 'Умови користування — Rybezh',        url: 'https://rybezh.site/terms.html',      desc: 'Умови використання платформи Rybezh для пошуку роботи у Польщі.',                   lang: 'uk' },
-        'terms-ru.html':   { name: 'Условия использования — Rybezh',     url: 'https://rybezh.site/terms-ru.html',   desc: 'Условия использования платформы Rybezh для поиска работы в Польше.',                lang: 'ru' },
-        'proof.html':      { name: 'Rybezh Proof — Рейтинг довіри',      url: 'https://rybezh.site/proof.html',      desc: 'Система верифікації роботодавців та вакансій на основі відгуків кандидатів.',        lang: 'uk' },
-        'proof-ru.html':   { name: 'Rybezh Proof — Рейтинг доверия',     url: 'https://rybezh.site/proof-ru.html',   desc: 'Система верификации работодателей и вакансий на основе отзывов кандидатов.',        lang: 'ru' },
-        'press.html':      { name: 'Для ЗМІ — Rybezh | Прес-кіт',       url: 'https://rybezh.site/press.html',      desc: 'Прес-кіт Rybezh: статистика, логотипи, ключові факти та контакти для медіа.',       lang: 'uk' }
+        'privacy.html': { name: 'Політика конфіденційності — Rybezh', url: 'https://rybezh.site/privacy.html', desc: 'Інформація про обробку персональних даних на платформі Rybezh.', lang: 'uk' },
+        'privacy-ru.html': { name: 'Политика конфиденциальности — Rybezh', url: 'https://rybezh.site/privacy-ru.html', desc: 'Информация об обработке персональных данных на платформе Rybezh.', lang: 'ru' },
+        'terms.html': { name: 'Умови користування — Rybezh', url: 'https://rybezh.site/terms.html', desc: 'Умови використання платформи Rybezh для пошуку роботи у Польщі.', lang: 'uk' },
+        'terms-ru.html': { name: 'Условия использования — Rybezh', url: 'https://rybezh.site/terms-ru.html', desc: 'Условия использования платформы Rybezh для поиска работы в Польше.', lang: 'ru' },
+        'proof.html': { name: 'Rybezh Proof — Рейтинг довіри', url: 'https://rybezh.site/proof.html', desc: 'Система верифікації роботодавців та вакансій на основі відгуків кандидатів.', lang: 'uk' },
+        'proof-ru.html': { name: 'Rybezh Proof — Рейтинг доверия', url: 'https://rybezh.site/proof-ru.html', desc: 'Система верификации работодателей и вакансий на основе отзывов кандидатов.', lang: 'ru' },
+        'press.html': { name: 'Для ЗМІ — Rybezh | Прес-кіт', url: 'https://rybezh.site/press.html', desc: 'Прес-кіт Rybezh: статистика, логотипи, ключові факти та контакти для медіа.', lang: 'uk' }
       };
       if (webPageMetaMap[p]) {
         const m = webPageMetaMap[p];
