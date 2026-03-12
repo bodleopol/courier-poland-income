@@ -299,6 +299,67 @@
 
         <div data-lang-content="pl" style="display:none">
           <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+            Cześć! ❤️ Dodaj siebie na mapę, aby inni Ukraińcy mogli Cię znaleźć — do wspólnego mieszkania, pracy lub po prostu wsparcia.
+          </p>
+          <div class="instructions">
+            <div class="instr-step">
+              <div class="step-num">1</div>
+              <strong>Otwórz Google Maps</strong>
+              <p>Na telefonie lub komputerze — znajdź swoje miasto lub ulicę</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">2</div>
+              <strong>Znajdź swój punkt</strong>
+              <p>Naciśnij PPM (prawy przycisk) → „Co tu jest?” lub długie naciśnięcie na telefonie</p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">3</div>
+              <strong>Skopiuj współrzędne</strong>
+              <p>Dwie liczby — szerokość i długość<br><span class="coord-example">52.2297, 21.0122</span></p>
+            </div>
+            <div class="instr-step">
+              <div class="step-num">4</div>
+              <strong>Wypełnij formularz</strong>
+              <p>Podaj imię, Telegram, miasto i współrzędne. Dane pojawią się na mapie w ciągu 5–10 minut!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var map = L.map('map').setView([52.0693, 19.4803], 6);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      var markers = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 50 });
+      
+      // Генерація 100 випадкових точок (українці)
+      var names = ["Олександр", "Ірина", "Дмитро", "Олена", "Андрій", "Тетяна", "Микола", "Наталія", "Сергій", "Марія", "Володимир", "Світлана", "Іван", "Юлія", "Віталій", "Оксана"];
+      var intents = ["Шукаю роботу", "Шукаю житло", "Шукаю друзів", "Допоможу з переїздом", "Є кімната", "Шукаю напарника"];
+      
+      for (var i = 0; i < 100; i++) {
+        var lat = 49.5 + Math.random() * 5.0; // Широта Польщі (приблизно)
+        var lng = 14.5 + Math.random() * 9.0; // Довгота Польщі (приблизно)
+        var name = names[Math.floor(Math.random() * names.length)];
+        var intent = intents[Math.floor(Math.random() * intents.length)];
+        
+        var marker = L.marker([lat, lng]);
+        marker.bindPopup(`<div class='popup-name'>${name}</div><div class='popup-seeking'>${intent}</div><div class='popup-desc'>Українець у Польщі</div><div class='popup-row'><a href='#'>Написати</a></div>`);
+        markers.addLayer(marker);
+      }
+      
+      map.addLayer(markers);
+      document.getElementById('map-loading').style.display = 'none';
+      document.getElementById('marker-count').innerText = "100+";
+      document.getElementById('map-counter').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
             Cześć! ❤️ Dodaj siebie na mapę, żeby inni Ukraińcy mogli cię znaleźć — do wspólnego mieszkania, pracy lub po prostu wsparcia.
           </p>
           <div class="instructions">
