@@ -34859,6 +34859,206 @@
     "data_source": "generated"
   },
   {
+    "slug": "warsaw-it-helpdesk-specialist-human-501",
+    "category": "it",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Спеціаліст IT Helpdesk (з українською)",
+    "title_pl": "Specjalista IT Helpdesk (z ukraińskim)",
+    "salary": "5800 - 7800 PLN",
+    "company": "Global Connect IT",
+    "shift_ua": "Пн-Пт, 08:00-16:00 / 09:00-17:00",
+    "shift_pl": "Pn-Pt, 08:00-16:00 / 09:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Приватне медичне страхування та карта Multisport.",
+      "Гібридний формат роботи після випробувального терміну.",
+      "Бюджет на навчання та сертифікацію.",
+      "Сучасний офіс в центрі Варшави."
+    ],
+    "offers_pl": [
+      "Prywatna opieka medyczna i karta Multisport.",
+      "Praca hybrydowa po okresie próbnym.",
+      "Budżet szkoleniowy i certyfikacje.",
+      "Nowoczesne biuro w centrum Warszawy."
+    ],
+    "tasks_ua": [
+      "Перша лінія підтримки користувачів (телефон, чат, тікети).",
+      "Діагностика та вирішення базових проблем з ПЗ та залізом.",
+      "Налаштування облікових записів та доступів.",
+      "Ескалація складних запитів на 2-гу лінію."
+    ],
+    "tasks_pl": [
+      "Pierwsza linia wsparcia użytkowników (telefon, czat, tickety).",
+      "Diagnozowanie i rozwiązywanie podstawowych problemów z oprogramowaniem i sprzętem.",
+      "Konfiguracja kont i dostępów.",
+      "Eskalacja złożonych zgłoszeń do 2. linii."
+    ],
+    "details_ua": [
+      "Робота в міжнародному середовищі.",
+      "Можливість практики англійської/польської мови.",
+      "Чіткі процедури та база знань.",
+      "Дружня атмосфера в команді."
+    ],
+    "details_pl": [
+      "Praca w środowisku międzynarodowym.",
+      "Możliwość praktyki języka angielskiego/polskiego.",
+      "Jasne procedury i baza wiedzy.",
+      "Przyjazna atmosfera w zespole."
+    ],
+    "requirements_ua": [
+      "Досвід: Бажано від 6 місяців у підтримці (або курси).",
+      "Мова: Польська B1, Англійська A2/B1.",
+      "Документи: Дозвіл на роботу."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Mile widziane 6 mies. w supporcie (lub kursy).",
+      "Język: Polski B1, Angielski A2/B1.",
+      "Dokumenty: Pozwolenie na pracę."
+    ],
+    "experience_ua": "Бажано від 6 місяців",
+    "experience_pl": "Mile widziane od 6 miesięcy",
+    "language_ua": "Польська B1, Англійська A2/B1",
+    "language_pl": "Polski B1, Angielski A2/B1",
+    "housing_ua": "Не надається",
+    "housing_pl": "We własnym zakresie",
+    "transport_ua": "Офіс біля метро",
+    "transport_pl": "Biuro przy metrze",
+    "documents_ua": "Документи: Дозвіл на роботу",
+    "documents_pl": "Dokumenty: Pozwolenie na pracę",
+    "workplace_ua": "Тип об’єкта: офіс",
+    "workplace_pl": "Typ obiektu: biuro",
+    "team_ua": "Команда: 10 осіб у відділі",
+    "team_pl": "Zespół: 10 osób w dziale",
+    "onboarding_ua": "Оплачуване навчання 2 тижні.",
+    "onboarding_pl": "Płatne szkolenie 2 tygodnie.",
+    "daily_ua": [
+      "Робота з тікет-системою (Jira/ServiceNow).",
+      "Спілкування з користувачами."
+    ],
+    "daily_pl": [
+      "Praca z systemem biletowym (Jira/ServiceNow).",
+      "Komunikacja z użytkownikami."
+    ],
+    "excerpt": "Global Connect IT шукає Спеціаліста IT Helpdesk у Варшаві. Підтримка користувачів, гібридний графік, навчання.",
+    "excerpt_pl": "Global Connect IT poszukuje Specjalisty IT Helpdesk w Warszawie. Wsparcie użytkowników, praca hybrydowa, szkolenia.",
+    "body": "<div class='vacancy-block'><p>Почніть кар'єру в IT з позиції Helpdesk Specialist. Ми шукаємо комунікабельну людину, яка любить допомагати іншим вирішувати технічні питання.</p><p>Знання польської на рівні B1 є обов'язковим для спілкування з локальною командою, але ми також цінуємо вашу українську для підтримки наших співробітників з України. Пропонуємо навчання та чіткий кар'єрний шлях.</p><div class='salary-box'>💰 Зарплата: <strong>5800 - 7800 PLN</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>Rozpocznij karierę w IT na stanowisku Helpdesk Specialist. Szukamy komunikatywnej osoby, która lubi pomagać innym w rozwiązywaniu problemów technicznych.</p><p>Znajomość polskiego na poziomie B1 jest wymagana do komunikacji z lokalnym zespołem. Oferujemy szkolenia i jasną ścieżkę kariery.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>5800 - 7800 PLN</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-03-12T10:00:00.000Z",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-it-junior-qa-manual-human-502",
+    "category": "it",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Junior Manual QA Tester",
+    "title_pl": "Młodszy Tester Manualny",
+    "salary": "5000 - 7000 PLN",
+    "company": "SoftServe Poland",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "Пн-Пт",
+    "pattern_pl": "Pn-Pt",
+    "start_ua": "Протягом місяця",
+    "start_pl": "W ciągu miesiąca",
+    "contract_ua": "B2B / UoP",
+    "contract_pl": "B2B / UoP",
+    "offers_ua": [
+      "Менторство від Senior QA.",
+      "Доступ до внутрішньої бази знань Udemy.",
+      "Курси англійської мови.",
+      "Регулярні перегляди зарплати."
+    ],
+    "offers_pl": [
+      "Mentoring od Senior QA.",
+      "Dostęp do bazy wiedzy Udemy.",
+      "Kursy języka angielskiego.",
+      "Regularne przeglądy wynagrodzeń."
+    ],
+    "tasks_ua": [
+      "Ручне тестування веб та мобільних додатків.",
+      "Створення та підтримка тест-кейсів.",
+      "Реєстрація багів у Jira.",
+      "Співпраця з розробниками для відтворення помилок."
+    ],
+    "tasks_pl": [
+      "Testowanie manualne aplikacji webowych i mobilnych.",
+      "Tworzenie i utrzymywanie przypadków testowych.",
+      "Rejestrowanie błędów w Jira.",
+      "Współpraca z programistami w celu reprodukcji błędów."
+    ],
+    "details_ua": [
+      "Проєкт у сфері e-commerce.",
+      "Дружній процес онбордингу.",
+      "Можливість переходу в автоматизацію в майбутньому."
+    ],
+    "details_pl": [
+      "Projekt w branży e-commerce.",
+      "Przyjazny proces onboardingu.",
+      "Możliwość przejścia do automatyzacji w przyszłości."
+    ],
+    "requirements_ua": [
+      "Досвід: Комерційний досвід не обов'язковий (курси QA + портфоліо).",
+      "Мова: Англійська B1+ (для читання документації).",
+      "Навички: Розуміння теорії тестування, SQL (базовий)."
+    ],
+    "requirements_pl": [
+      "Doświadczenie: Komercyjne nie wymagane (kursy QA + portfolio).",
+      "Język: Angielski B1+ (do czytania dokumentacji).",
+      "Umiejętności: Zrozumienie teorii testowania, SQL (podstawy)."
+    ],
+    "experience_ua": "Без комерційного досвіду",
+    "experience_pl": "Bez doświadczenia komercyjnego",
+    "language_ua": "Англійська B1+",
+    "language_pl": "Angielski B1+",
+    "housing_ua": "Не надається",
+    "housing_pl": "We własnym zakresie",
+    "transport_ua": "Віддалено або офіс",
+    "transport_pl": "Zdalnie lub biuro",
+    "documents_ua": "Документи: Дозвіл на роботу",
+    "documents_pl": "Dokumenty: Pozwolenie na pracę",
+    "workplace_ua": "Тип об’єкта: IT компанія",
+    "workplace_pl": "Typ obiektu: firma IT",
+    "team_ua": "Команда: QA команда 5 осіб",
+    "team_pl": "Zespół: zespół QA 5 osób",
+    "onboarding_ua": "Інтро в проект та інструменти.",
+    "onboarding_pl": "Wprowadzenie do projektu i narzędzi.",
+    "daily_ua": [
+      "Дейлі мітинги.",
+      "Виконання тест-кейсів."
+    ],
+    "daily_pl": [
+      "Daily meetings.",
+      "Wykonywanie przypadków testowych."
+    ],
+    "excerpt": "SoftServe Poland шукає Junior Manual QA у Кракові. Ідеально для старту в IT. Менторство, навчання, гнучкий графік.",
+    "excerpt_pl": "SoftServe Poland poszukuje Junior Manual QA w Krakowie. Idealne na start w IT. Mentoring, szkolenia, elastyczny grafik.",
+    "body": "<div class='vacancy-block'><p>Чудова можливість для початківців у тестуванні! Ми шукаємо Junior QA, який має гарну теоретичну базу та хоче розвиватися.</p><p>Якщо ви уважні до деталей, любите знаходити помилки та хочете працювати у великій стабільній компанії, ця вакансія для вас. Ми надаємо ментора та всі умови для швидкого професійного зростання.</p><div class='salary-box'>💰 Зарплата: <strong>5000 - 7000 PLN</strong></div></div><a href='/apply.html' class='btn btn-primary'>Відгукнутися на вакансію</a>",
+    "body_pl": "<div class='vacancy-block'><p>Świetna szansa dla początkujących w testowaniu! Szukamy Junior QA z solidną wiedzą teoretyczną i chęcią rozwoju.</p><p>Jeśli jesteś dokładny, lubisz znajdować błędy i chcesz pracować w dużej, stabilnej firmie, ta oferta jest dla Ciebie. Zapewniamy mentora i warunki do szybkiego wzrostu.</p><div class='salary-box'>💰 Wynagrodzenie: <strong>5000 - 7000 PLN</strong></div></div><a href='/apply.html' class='btn btn-primary'>Aplikuj teraz</a>",
+    "cta_text": "Подати заявку",
+    "cta_text_pl": "Aplikuj",
+    "cta_link": "/apply.html",
+    "country": "Poland",
+    "language": "uk",
+    "employment_type": "full-time",
+    "date_posted": "2026-03-12T11:30:00.000Z",
+    "is_generated": false,
+    "data_source": "manual"
+  },
+  {
     "slug": "warsaw-hospitality-kitchen-assistant-291",
     "category": "hospitality",
     "city": "Варшава",
