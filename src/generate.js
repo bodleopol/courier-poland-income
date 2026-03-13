@@ -2383,6 +2383,8 @@ function isVacancyPage(page) {
 
 const VACANCY_NARRATIVE_MODELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 const MIN_EXTENDED_NARRATIVE_LENGTH = 1000;
+const MIN_VACANCY_NARRATIVE_LENGTH = 600;
+const MAX_NARRATIVE_EXTENSION_ATTEMPTS = 5;
 const MAX_VACANCY_TEXT_SIMILARITY = 0.05;
 const MIN_SIMILARITY_TOKEN_LENGTH = 4;
 const VACANCY_SIMILARITY_STOPWORDS_UA = ['і', 'й', 'та', 'в', 'у', 'на', 'з', 'до', 'для', 'по', 'про', 'що', 'це', 'як', 'ми', 'ви', 'не', 'за', 'від', 'при', 'або', 'але'];
@@ -2580,6 +2582,45 @@ function getVacancyNarrative(page, lang, variationState) {
           ]);
       const uniqueTail = uniqueTailVariants[Math.abs(hashString(`${slug}-${lang}-${UNIQUE_TAIL_HASH_SUFFIX}`)) % uniqueTailVariants.length];
       chosenText = `${chosenText} ${uniqueTail}`.replace(/\s+/g, ' ').trim();
+    }
+  }
+
+  if (chosenText.length < MIN_VACANCY_NARRATIVE_LENGTH) {
+    const title = localize('title');
+    const safeTitle = title || (isPl ? 'to stanowisko' : (isRu ? 'эта роль' : 'ця позиція'));
+    const safeCity = city || (isPl ? 'tej lokalizacji' : (isRu ? 'этой локации' : 'цій локації'));
+    const safeSalary = salary || (isPl ? 'uzgodnionym poziomie' : (isRu ? 'согласованном уровне' : 'узгодженому рівні'));
+    const safeShift = shift || (isPl ? 'ustalonym grafiku' : (isRu ? 'согласованном графике' : 'узгодженому графіку'));
+    const uniqueExtensionPool = isPl ? [
+      `${safeTitle} w ${safeCity} ma stałą kolejność działań na zmianie, dlatego łatwiej utrzymać tempo bez nerwowych przestojów.`,
+      `W tej roli na starcie dostajesz plan wdrożenia i kontakt do osoby prowadzącej, żeby od razu domknąć kwestie organizacyjne.`,
+      `Zespół ustala priorytety na początek dnia, a przy ${safeSalary} i grafiku ${safeShift} łatwiej policzyć realny miesięczny wynik.`
+    ] : (isRu ? [
+      `На позиции ${safeTitle} в ${safeCity} смена идет по понятному порядку, поэтому проще держать ритм без лишней суеты.`,
+      `На старте по этой вакансии сразу согласовываем задачи первой недели и ответственного координатора по вопросам выхода.`,
+      `При оплате ${safeSalary} и графике ${safeShift} проще заранее спланировать бюджет и личные дела без хаотичных переносов.`
+    ] : [
+      `На позиції ${safeTitle} у ${safeCity} зміна побудована поетапно, тому легше тримати темп без зайвої метушні.`,
+      `На старті цієї вакансії одразу узгоджуємо задачі першого тижня та контакт координатора для швидких робочих питань.`,
+      `За умов оплати ${safeSalary} і графіка ${safeShift} простіше планувати бюджет і особисті справи без хаотичних переносів.`
+    ]);
+    const extensionSeedBase = page.slug || `${safeTitle}-${safeCity}-${safeSalary}-${safeShift}`;
+    let extensionAttempt = 0;
+    const usedExtensionIndices = new Set();
+    while (chosenText.length < MIN_VACANCY_NARRATIVE_LENGTH && extensionAttempt < MAX_NARRATIVE_EXTENSION_ATTEMPTS) {
+      let idx = Math.abs(hashString(`${extensionSeedBase}-${lang}-ext-${extensionAttempt}`)) % uniqueExtensionPool.length;
+      if (usedExtensionIndices.has(idx)) {
+        idx = uniqueExtensionPool.findIndex((_, i) => !usedExtensionIndices.has(i));
+        if (idx === -1) idx = extensionAttempt % uniqueExtensionPool.length;
+      }
+      const extra = uniqueExtensionPool[idx];
+      chosenText = `${chosenText} ${extra}`.replace(/\s+/g, ' ').trim();
+      usedExtensionIndices.add(idx);
+      extensionAttempt += 1;
+    }
+    if (chosenText.length < MIN_VACANCY_NARRATIVE_LENGTH) {
+      const fallbackIndex = uniqueExtensionPool.findIndex((_, i) => !usedExtensionIndices.has(i));
+      chosenText = `${chosenText} ${uniqueExtensionPool[fallbackIndex >= 0 ? fallbackIndex : 0]}`.replace(/\s+/g, ' ').trim();
     }
   }
 
