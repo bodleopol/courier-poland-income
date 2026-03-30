@@ -123,6 +123,62 @@ const SITE_AUTHOR = {
   }
 };
 
+const EN_FALLBACK_REPLACEMENTS = [
+  ['Пошук роботи у Польщі', 'Job search in Poland'],
+  ['Знайдіть роботу в Польщі', 'Find a job in Poland'],
+  ['Актуальні вакансії в різних сферах по всій Польщі.', 'Current vacancies in various fields across Poland.'],
+  ['Легальні умови та підтримка.', 'Legal conditions and support.'],
+  ['Пошук за містом або типом роботи', 'Search by city or job type'],
+  ['Знайти', 'Find'],
+  ['Прийняти', 'Accept'],
+  ['Готові почати?', 'Ready to start?'],
+  ['Отримайте консультацію та почніть заробляти вже сьогодні.', 'Get a consultation and start earning today.'],
+  ['Нові вакансії та статті.', 'New vacancies and articles.'],
+  ['Всі категорії', 'All categories'],
+  ['Всі міста', 'All cities'],
+  ['Головна', 'Home'],
+  ['Вакансії', 'Vacancies'],
+  ['Категорії', 'Categories'],
+  ['Інструменти', 'Tools'],
+  ['Про нас', 'About us'],
+  ['Контакти', 'Contacts'],
+  ['Для роботодавців', 'For employers'],
+  ['Отримати консультацію', 'Get a consultation'],
+  ['Подати заявку', 'Apply'],
+  ['Навігація', 'Navigation'],
+  ['Підписка', 'Subscribe'],
+  ['Політика конфіденційності', 'Privacy policy'],
+  ['Умови користування', 'Terms of use'],
+  ['Реквізити', 'Details'],
+  ['Всі права захищені', 'All rights reserved'],
+  ['Схожі вакансії', 'Similar vacancies'],
+  ['Повернутись на головну', 'Return to home'],
+  ['Умови', 'Conditions'],
+  ['Зарплата', 'Salary'],
+  ['Контракт', 'Contract'],
+  ['Графік', 'Schedule'],
+  ['Режим', 'Mode'],
+  ['Старт', 'Start'],
+  ['Бонуси', 'Bonuses'],
+  ['Додаткова інформація', 'Additional info'],
+  ['Вимоги', 'Requirements'],
+  ['Проживання', 'Accommodation'],
+  ['Тип обʼєкта', 'Object type'],
+  ['Адаптація', 'Adaptation'],
+  ['Обладнання', 'Equipment'],
+  ['Фізичні вимоги', 'Physical requirements'],
+  ['Структура зміни', 'Shift structure']
+];
+
+function toEnglishFallbackText(input) {
+  if (input === null || input === undefined) return '';
+  let text = String(input);
+  for (const [from, to] of EN_FALLBACK_REPLACEMENTS) {
+    text = text.split(from).join(to);
+  }
+  return text;
+}
+
 const RU_FALLBACK_REPLACEMENTS = [
   ['Пошук роботи у Польщі', 'Поиск работы в Польше'],
   ['Знайдіть роботу в Польщі', 'Найдите работу в Польше'],
@@ -4165,6 +4221,7 @@ Host: https://rybezh.site
     // ==========================================
     await generatePolishPages(jobTranslations);
     await generateRussianPages(jobTranslations);
+    await generateEnglishPages(jobTranslations);
 
     console.log('Build complete. Pages:', links.length);
 }
@@ -5510,9 +5567,16 @@ function applyI18nTranslationsBuild(html, translations, targetLang = 'pl') {
         : ((dict.pl !== undefined && dict.pl !== null) ? dict.pl : fallback);
       return toRussianFallbackText(source);
     }
+    if (targetLang === 'en') {
+      const source = (dict.ua !== undefined && dict.ua !== null)
+        ? dict.ua
+        : ((dict.pl !== undefined && dict.pl !== null) ? dict.pl : fallback);
+      return toEnglishFallbackText(source);
+    }
     if (dict.ua !== undefined && dict.ua !== null) return dict.ua;
     if (dict.pl !== undefined && dict.pl !== null) return dict.pl;
     if (dict.ru !== undefined && dict.ru !== null) return dict.ru;
+    if (dict.en !== undefined && dict.en !== null) return dict.en;
     return fallback;
   };
 
@@ -5640,20 +5704,23 @@ function updateFullUrlsForRussian(html) {
  * Add/replace hreflang tags in HTML.
  */
 function addHreflangTags(html, filename, hasRuVersion) {
-  let uaUrl, plUrl, ruUrl;
+  let uaUrl, plUrl, ruUrl, enUrl;
   if (filename === 'index.html') {
     uaUrl = 'https://rybezh.site/';
     plUrl = 'https://rybezh.site/index-pl.html';
     ruUrl = 'https://rybezh.site/index-ru.html';
+    enUrl = 'https://rybezh.site/index-en.html';
   } else {
     uaUrl = `https://rybezh.site/${filename}`;
     plUrl = `https://rybezh.site/${filename.replace('.html', '-pl.html')}`;
     ruUrl = `https://rybezh.site/${filename.replace('.html', '-ru.html')}`;
+    enUrl = `https://rybezh.site/${filename.replace('.html', '-en.html')}`;
   }
 
   const ruTag = hasRuVersion ? `\n  <link rel="alternate" hreflang="ru" href="${ruUrl}">` : '';
+  const enTag = `\n  <link rel="alternate" hreflang="en" href="${enUrl}">`;
   const tags = `
-  <link rel="alternate" hreflang="uk" href="${uaUrl}">${ruTag}
+  <link rel="alternate" hreflang="uk" href="${uaUrl}">${ruTag}${enTag}
   <link rel="alternate" hreflang="pl" href="${plUrl}">
   <link rel="alternate" hreflang="x-default" href="${uaUrl}">`;
 
@@ -5669,6 +5736,68 @@ function addHreflangTags(html, filename, hasRuVersion) {
 /**
  * Transform a complete HTML page to its Polish version.
  */
+
+function updateFullUrlsForEnglish(html) {
+  html = html.replace(
+    /(https:\/\/rybezh\.site\/)([\w][\w\-]*)(\.html)/g,
+    (match, domain, base, ext) => {
+      if (base.endsWith('-en')) return match;
+      return `${domain}${base}-en${ext}`;
+    }
+  );
+  html = html.replace(
+    /(<(?:link[^>]+rel="canonical"|meta[^>]+property="og:url"|meta[^>]+name="twitter:url")[^>]+(?:href|content)=")https:\/\/rybezh\.site\/"/g,
+    '$1https://rybezh.site/index-en.html"'
+  );
+  return html;
+}
+
+function updateLinksForEnglish(html) {
+  html = html.replace(/href="\/"/g, 'href="/index-en.html"');
+
+  const skipBases = new Set(['styles', 'main', 'jobs', 'jobs-loader', 'features', 'engagement']);
+  html = html.replace(
+    /href="\/([\w][\w\-]*)(\.html)([\?#][^"]*)?"/g,
+    (match, base, ext, suffix) => {
+      if (base.endsWith('-en') || skipBases.has(base)) return match;
+      return `href="/${base}-en${ext}${suffix || ''}"`;
+    }
+  );
+
+  return html;
+}
+
+function transformToEnglish(html, translations, filename) {
+  let r = html;
+
+  r = r.replace(/<html\s+lang="uk"/g, '<html lang="en"');
+  r = r.replace(/<html\s+lang="pl"/g, '<html lang="en"');
+  r = r.replace(/<html\s+lang="ru"/g, '<html lang="en"');
+
+  r = removeLangContentBlocks(r, 'ua');
+  r = removeLangContentBlocks(r, 'pl');
+  r = removeLangContentBlocks(r, 'ru');
+  r = showLangContentBlocks(r, 'en');
+
+  r = applyI18nTranslationsBuild(r, translations, 'en');
+
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")uk_UA"/g, '$1en_US"');
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")pl_PL"/g, '$1en_US"');
+  r = r.replace(/(<meta\s+property="og:locale"\s+content=")ru_RU"/g, '$1en_US"');
+
+  r = updateFullUrlsForEnglish(r);
+  r = updateLinksForEnglish(r);
+
+  r = addHreflangTags(r, filename, true);
+
+  if (r.includes('</head>')) {
+    r = r.replace('</head>',
+      `<script>if(typeof localStorage!=='undefined'){localStorage.setItem('site_lang','en');localStorage.setItem('siteLang','en');}</script>\n</head>`);
+  }
+
+  return toEnglishFallbackText(r);
+}
+
 function transformToPolish(html, translations, filename) {
   let r = html;
 
@@ -5795,6 +5924,45 @@ async function generatePolishPages(dynamicTranslations) {
 /**
  * Generate Russian versions of all HTML pages in dist/.
  */
+async function generateEnglishPages(dynamicTranslations) {
+  console.log('\n🇬🇧 Generating English pages...');
+
+  const mainTranslations = await getMainTranslations();
+  const allTranslations = { ...mainTranslations, ...(dynamicTranslations || {}) };
+
+  let entries;
+  try { entries = await fs.readdir(DIST, { withFileTypes: true }); }
+  catch { console.warn('  ⚠️  dist/ not found'); return; }
+
+  const htmlFiles = entries
+    .filter(e => e.isFile() && e.name.endsWith('.html') && !e.name.endsWith('-pl.html') && !e.name.endsWith('-ru.html') && !e.name.endsWith('-en.html'))
+    .map(e => e.name);
+
+  let generated = 0;
+  for (const file of htmlFiles) {
+    try {
+      const filePath = path.join(DIST, file);
+      const html = await fs.readFile(filePath, 'utf8');
+
+      const enHtml = transformToEnglish(html, allTranslations, file);
+      const enFile = file.replace('.html', '-en.html');
+      await fs.writeFile(path.join(DIST, enFile), enHtml, 'utf8');
+      generated++;
+    } catch (e) {
+      console.error(`  ❌ ${file}: ${e.message}`);
+    }
+  }
+
+  try {
+    const dir = path.join(DIST, '404-en');
+    await fs.mkdir(dir, { recursive: true });
+    const en404 = await fs.readFile(path.join(DIST, '404-en.html'), 'utf8');
+    await fs.writeFile(path.join(dir, 'index.html'), en404, 'utf8');
+  } catch {}
+
+  console.log(`  ✅ Generated ${generated} English pages`);
+}
+
 async function generateRussianPages(dynamicTranslations) {
   console.log('\n🇷🇺 Generating Russian pages...');
 
