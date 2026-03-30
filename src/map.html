@@ -339,11 +339,11 @@
 
       var markers = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 50 });
       
-      // Генерація 100 випадкових точок (українці)
+      // Генерація 200 випадкових точок (українці)
       var names = ["Олександр", "Ірина", "Дмитро", "Олена", "Андрій", "Тетяна", "Микола", "Наталія", "Сергій", "Марія", "Володимир", "Світлана", "Іван", "Юлія", "Віталій", "Оксана"];
       var intents = ["Шукаю роботу", "Шукаю житло", "Шукаю друзів", "Допоможу з переїздом", "Є кімната", "Шукаю напарника"];
       
-      for (var i = 0; i < 100; i++) {
+      for (var i = 0; i < 200; i++) {
         var lat = 49.5 + Math.random() * 5.0; // Широта Польщі (приблизно)
         var lng = 14.5 + Math.random() * 9.0; // Довгота Польщі (приблизно)
         var name = names[Math.floor(Math.random() * names.length)];
@@ -356,7 +356,7 @@
       
       map.addLayer(markers);
       document.getElementById('map-loading').style.display = 'none';
-      document.getElementById('marker-count').innerText = "100+";
+      document.getElementById('marker-count').innerText = "200+";
       document.getElementById('map-counter').style.display = 'block';
     });
   </script>
