@@ -1,841 +1,841 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
-  <!-- End Google Tag Manager -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Карта русскоязычных в Польше — Rybezh</title>
-  <meta name="description" content="Интерактивная карта русскоязычных жителей Польши. Найдите земляков рядом, добавьте себя на карту.">
-  <link rel="canonical" href="https://rybezh.site/map-ru.html">
-  <link rel="alternate" hreflang="uk" href="https://rybezh.site/map.html">
-  <link rel="alternate" hreflang="ru" href="https://rybezh.site/map-ru.html">
-  <link rel="alternate" hreflang="pl" href="https://rybezh.site/map-pl.html">
-  <link rel="alternate" hreflang="x-default" href="https://rybezh.site/map.html">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Rybezh">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rybezh.site/map-ru.html">
-  <meta property="og:title" content="Карта русскоязычных в Польше — Rybezh">
-  <meta property="og:description" content="Интерактивная карта русскоязычных жителей Польши. Найдите земляков рядом, добавьте себя на карту.">
-  <meta property="og:image" content="https://rybezh.site/og-image.png">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Rybezh">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <meta name="theme-color" content="#0f766e">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/features.css">
-  <script src="/jobs.js"></script>
+ <meta charset="UTF-8">
+ <!-- Google Tag Manager -->
+ <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+ 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+ })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
+ <!-- End Google Tag Manager -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Карта русскоязычных в Польше — Rybezh</title>
+ <meta name="description" content="Интерактивная карта русскоязычных жителей Польши. Найдите земляков рядом, добавьте себя на карту.">
+ <link rel="canonical" href="https://rybezh.site/map-ru.html">
+ <link rel="alternate" hreflang="uk" href="https://rybezh.site/map.html">
+ <link rel="alternate" hreflang="ru" href="https://rybezh.site/map-ru.html">
+ <link rel="alternate" hreflang="pl" href="https://rybezh.site/map-pl.html">
+ <link rel="alternate" hreflang="x-default" href="https://rybezh.site/map.html">
+ <meta name="robots" content="index, follow">
+ <meta name="author" content="Rybezh">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://rybezh.site/map-ru.html">
+ <meta property="og:title" content="Карта русскоязычных в Польше — Rybezh">
+ <meta property="og:description" content="Интерактивная карта русскоязычных жителей Польши. Найдите земляков рядом, добавьте себя на карту.">
+ <meta property="og:image" content="https://rybezh.site/og-image.png">
+ <meta property="og:locale" content="ru_RU">
+ <meta property="og:site_name" content="Rybezh">
+ <meta name="twitter:card" content="summary_large_image">
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+ <meta name="theme-color" content="#0f766e">
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/features.css">
+ <script src="/jobs.js"></script>
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- MarkerCluster -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <!-- PapaParse для CSV -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+ <!-- Leaflet -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+ <!-- MarkerCluster -->
+ <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+ <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+ <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+ <!-- PapaParse для CSV -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Карта русскоязычных в Польше",
-    "url": "https://rybezh.site/map-ru.html",
-    "applicationCategory": "SocialNetworkingApplication",
-    "operatingSystem": "Web",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
-    "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Карта русскоязычных в Польше",
+  "url": "https://rybezh.site/map-ru.html",
+  "applicationCategory": "SocialNetworkingApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PLN" },
+  "creator": { "@type": "Organization", "name": "Rybezh", "url": "https://rybezh.site" }
+ }
+ </script>
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3XSXPYW9K');
+ </script>
+ <style>
+  .map-page { max-width: 1100px; margin: 0 auto; }
+  .map-hero { text-align: center; padding: 2.5rem 0 1.5rem; }
+  .map-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+  .map-hero p { color: var(--color-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+  .map-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  .map-add-btn {
+   display: inline-flex; align-items: center; gap: 0.6rem;
+   padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 700;
+   background: linear-gradient(135deg, #0ea5e9, #0f766e); color: #fff;
+   border: none; border-radius: 50px; cursor: pointer;
+   box-shadow: 0 6px 24px rgba(14,165,233,0.35);
+   transition: all 0.2s; text-decoration: none;
   }
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-J3XSXPYW9K');
-  </script>
-  <style>
-    .map-page { max-width: 1100px; margin: 0 auto; }
-    .map-hero { text-align: center; padding: 2.5rem 0 1.5rem; }
-    .map-hero h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .map-hero p { color: var(--color-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+  .map-add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,165,233,0.45); }
+  .map-counter { font-size: 0.95rem; color: var(--color-secondary); font-weight: 600; }
+  .map-counter strong { color: var(--color-accent); font-size: 1.3rem; }
 
-    .map-actions { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
-    .map-add-btn {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 700;
-      background: linear-gradient(135deg, #0ea5e9, #0f766e); color: #fff;
-      border: none; border-radius: 50px; cursor: pointer;
-      box-shadow: 0 6px 24px rgba(14,165,233,0.35);
-      transition: all 0.2s; text-decoration: none;
-    }
-    .map-add-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(14,165,233,0.45); }
-    .map-counter { font-size: 0.95rem; color: var(--color-secondary); font-weight: 600; }
-    .map-counter strong { color: var(--color-accent); font-size: 1.3rem; }
+  #map {
+   height: 620px; border-radius: 16px;
+   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+   border: 2px solid var(--color-border);
+   z-index: 1;
+  }
 
-    #map {
-      height: 620px; border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-      border: 2px solid var(--color-border);
-      z-index: 1;
-    }
+  /* Custom cluster icons */
+  .custom-marker-wrapper { background: none !important; border: none !important; }
 
-    /* Custom cluster icons */
-    .custom-marker-wrapper { background: none !important; border: none !important; }
+  .custom-cluster {
+   background: rgba(14,165,233,0.15); border-radius: 50%;
+   display: flex; align-items: center; justify-content: center;
+   border: 3px solid #0ea5e9; font-weight: 800; color: #0f766e;
+   font-size: 15px; box-shadow: 0 2px 8px rgba(14,165,233,0.3);
+  }
+  .custom-cluster-large { background: rgba(15,118,110,0.15); border-color: #0f766e; color: #0f766e; }
 
-    .custom-cluster {
-      background: rgba(14,165,233,0.15); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      border: 3px solid #0ea5e9; font-weight: 800; color: #0f766e;
-      font-size: 15px; box-shadow: 0 2px 8px rgba(14,165,233,0.3);
-    }
-    .custom-cluster-large { background: rgba(15,118,110,0.15); border-color: #0f766e; color: #0f766e; }
+  /* Custom popup */
+  .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; }
+  .leaflet-popup-content { margin: 14px 16px !important; font-size: 14px; line-height: 1.6; }
+  .popup-name { font-size: 1.1rem; font-weight: 700; color: #0f766e; margin-bottom: 4px; }
+  .popup-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+  .popup-row a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
+  .popup-row a:hover { text-decoration: underline; }
+  .popup-seeking { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 20px; background: rgba(0,166,126,0.1); color: #0f766e; font-size: 0.82rem; font-weight: 600; }
+  .popup-desc { font-size: 0.85rem; color: #6b7280; margin-top: 6px; line-height: 1.5; }
 
-    /* Custom popup */
-    .leaflet-popup-content-wrapper { border-radius: 12px !important; box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; }
-    .leaflet-popup-content { margin: 14px 16px !important; font-size: 14px; line-height: 1.6; }
-    .popup-name { font-size: 1.1rem; font-weight: 700; color: #0f766e; margin-bottom: 4px; }
-    .popup-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
-    .popup-row a { color: #0ea5e9; text-decoration: none; font-weight: 600; }
-    .popup-row a:hover { text-decoration: underline; }
-    .popup-seeking { display: inline-block; margin-top: 6px; padding: 3px 10px; border-radius: 20px; background: rgba(0,166,126,0.1); color: #0f766e; font-size: 0.82rem; font-weight: 600; }
-    .popup-desc { font-size: 0.85rem; color: #6b7280; margin-top: 6px; line-height: 1.5; }
+  .map-legend { text-align: center; font-size: 0.9rem; color: var(--color-secondary); margin: 1rem 0 0.5rem; }
 
-    .map-legend { text-align: center; font-size: 0.9rem; color: var(--color-secondary); margin: 1rem 0 0.5rem; }
+  .how-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin: 2rem 0; }
+  .how-card h2 { font-size: 1.3rem; margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .instructions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .instr-step { background: var(--color-surface-alt); border-radius: 12px; padding: 1.25rem; position: relative; }
+  .instr-step .step-num { position: absolute; top: -10px; left: 16px; background: var(--color-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+  .instr-step p { margin: 0.5rem 0 0; font-size: 0.92rem; color: var(--color-secondary); line-height: 1.5; }
+  .instr-step strong { color: var(--color-primary); }
+  .coord-example { display: inline-block; margin-top: 0.3rem; padding: 0.3rem 0.7rem; background: rgba(0,166,126,0.08); border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; }
 
-    .how-card { background: var(--color-surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--color-border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin: 2rem 0; }
-    .how-card h2 { font-size: 1.3rem; margin: 0 0 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .instructions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .instr-step { background: var(--color-surface-alt); border-radius: 12px; padding: 1.25rem; position: relative; }
-    .instr-step .step-num { position: absolute; top: -10px; left: 16px; background: var(--color-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
-    .instr-step p { margin: 0.5rem 0 0; font-size: 0.92rem; color: var(--color-secondary); line-height: 1.5; }
-    .instr-step strong { color: var(--color-primary); }
-    .coord-example { display: inline-block; margin-top: 0.3rem; padding: 0.3rem 0.7rem; background: rgba(0,166,126,0.08); border-radius: 6px; font-family: monospace; font-size: 0.9rem; color: var(--color-accent); font-weight: 600; }
+  .map-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+  .map-info-item { text-align: center; padding: 1.25rem; border-radius: 12px; background: var(--color-surface); border: 1px solid var(--color-border); }
+  .map-info-item .info-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .map-info-item h3 { margin: 0 0 0.25rem; font-size: 1rem; }
+  .map-info-item p { margin: 0; font-size: 0.85rem; color: var(--color-secondary); }
 
-    .map-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
-    .map-info-item { text-align: center; padding: 1.25rem; border-radius: 12px; background: var(--color-surface); border: 1px solid var(--color-border); }
-    .map-info-item .info-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .map-info-item h3 { margin: 0 0 0.25rem; font-size: 1rem; }
-    .map-info-item p { margin: 0; font-size: 0.85rem; color: var(--color-secondary); }
+  .map-loading { text-align: center; padding: 2rem; color: var(--color-secondary); }
+  .map-loading .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-    .map-loading { text-align: center; padding: 2rem; color: var(--color-secondary); }
-    .map-loading .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid var(--color-border); border-top-color: var(--color-accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 0.5rem; vertical-align: middle; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    @media (max-width: 700px) {
-      #map { height: 450px; }
-      .instructions { grid-template-columns: 1fr; }
-      .map-info-grid { grid-template-columns: 1fr; }
-      .map-hero h1 { font-size: 1.6rem; }
-    }
-  </style>
+  @media (max-width: 700px) {
+   #map { height: 450px; }
+   .instructions { grid-template-columns: 1fr; }
+   .map-info-grid { grid-template-columns: 1fr; }
+   .map-hero h1 { font-size: 1.6rem; }
+  }
+ </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+ <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-        Rybezh
-      </a>
-      <nav class="nav-menu">
-        <a href="/" class="nav-link">Главная</a>
-        <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
-        <div class="nav-dropdown" aria-label="Категории">
-          <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
-          <div class="nav-dropdown__menu" id="categoryNav"></div>
-        </div>
-        <div class="nav-dropdown" aria-label="Инструменты">
-          <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
-          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
-            <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
-            <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
-            <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
-            <a href="/map-ru.html">🗺️ Карта земляков</a>
-          </div>
-        </div>
-        <a href="/blog-ru.html" class="nav-link">Блог</a>
-        <a href="/about-ru.html" class="nav-link">О нас</a>
-        <a href="/faq-ru.html" class="nav-link">FAQ</a>
-        <a href="/contact-ru.html" class="nav-link">Контакты</a>
-        <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
-        <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
-        <div class="header-lang">
-          <button class="lang-btn" data-lang="ua">UA</button>
-          <button class="lang-btn" data-lang="pl">PL</button>
-          <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
-      </nav>
-      <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
-        <span></span><span></span><span></span>
-      </button>
+ <header class="site-header">
+  <div class="container header-inner">
+   <a href="/" class="logo">
+    <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+    Rybezh
+   </a>
+   <nav class="nav-menu">
+    <a href="/" class="nav-link">Главная</a>
+    <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+    <div class="nav-dropdown" aria-label="Категории">
+     <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+     <div class="nav-dropdown__menu" id="categoryNav"></div>
     </div>
-    <div class="mobile-menu">
-      <a href="/" class="nav-link">Главная</a>
-      <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
-      <div class="mobile-categories" id="mobileCategoryNav"></div>
-      <div class="mobile-tools">
-        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
-        <div class="mobile-tools__menu">
-          <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
-          <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
-          <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
-          <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
-        </div>
-      </div>
-      <a href="/blog-ru.html" class="nav-link">Блог</a>
-      <a href="/about-ru.html" class="nav-link">О нас</a>
-      <a href="/faq-ru.html" class="nav-link">FAQ</a>
-      <a href="/contact-ru.html" class="nav-link">Контакты</a>
-      <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
-      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
-      <div class="mobile-lang">
-        <button class="lang-btn" data-lang="ua">UA</button>
-        <button class="lang-btn" data-lang="pl">PL</button>
-        <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-      </div>
+    <div class="nav-dropdown" aria-label="Инструменты">
+     <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+     <div class="nav-dropdown__menu nav-dropdown__menu--tools">
+      <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
+      <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
+      <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
+      <a href="/map-ru.html">🗺️ Карта земляков</a>
+     </div>
     </div>
-  </header>
-
-  <main class="container">
-    <div class="map-page">
-      <div class="map-hero">
-        <h1>🗺️ Карта русскоязычных в Польше</h1>
-        <p>Отметь себя — находи земляков, напарников, жильё и работу рядом</p>
-      </div>
-
-      <div class="map-info-grid">
-        <div class="map-info-item">
-          <div class="info-icon">🤝</div>
-          <h3>Найди земляков</h3>
-          <p>Узнай, кто из русскоязычных живёт рядом с тобой</p>
-        </div>
-        <div class="map-info-item">
-          <div class="info-icon">🏠</div>
-          <h3>Квартира / комната</h3>
-          <p>Ищи соседей или предлагай место для проживания</p>
-        </div>
-        <div class="map-info-item">
-          <div class="info-icon">💼</div>
-          <h3>Работа рядом</h3>
-          <p>Найди напарника на смену или подскажи вакансию</p>
-        </div>
-      </div>
-
-      <div class="map-actions">
-        <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
-          📍 Добавить себя на карту
-        </a>
-        <div class="map-counter" id="map-counter" style="display:none;">
-          На карте уже <strong id="marker-count">0</strong> человек
-        </div>
-      </div>
-
-      <div id="map-loading" class="map-loading">
-        <span class="spinner"></span>
-        Загрузка карты...
-      </div>
-      <div id="map"></div>
-
-      <div class="map-legend">
-        Кликни на маркер, чтобы увидеть контакты • Данные обновляются каждые 5–10 минут
-      </div>
-
-      <div class="how-card">
-        <h2>📝 Как добавить себя на карту</h2>
-        <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
-          Привет! ❤️ Добавь себя на карту, чтобы другие русскоязычные могли тебя найти — для совместного жилья, работы, или просто поддержки.
-        </p>
-        <div class="instructions">
-          <div class="instr-step">
-            <div class="step-num">1</div>
-            <strong>Открой Google Maps</strong>
-            <p>На телефоне или компьютере — найди свой город или улицу</p>
-          </div>
-          <div class="instr-step">
-            <div class="step-num">2</div>
-            <strong>Найди свою точку</strong>
-            <p>Нажми ПКМ (правой кнопкой) → «Что здесь?» или долгое нажатие на мобильном</p>
-          </div>
-          <div class="instr-step">
-            <div class="step-num">3</div>
-            <strong>Скопируй координаты</strong>
-            <p>Два числа — широта и долгота<br><span class="coord-example">52.2297, 21.0122</span></p>
-          </div>
-          <div class="instr-step">
-            <div class="step-num">4</div>
-            <strong>Заполни форму</strong>
-            <p>Укажи имя, Telegram, город и координаты. Данные появятся на карте за 5–10 минут!</p>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:1.5rem;">
-          <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
-            ✏️ Заполнить форму
-          </a>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin:2rem 0;">
-        <a href="/vacancies-ru.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;">Посмотреть вакансии</a>
-      </div>
+    <a href="/blog-ru.html" class="nav-link">Блог</a>
+    <a href="/about-ru.html" class="nav-link">О нас</a>
+    <a href="/faq-ru.html" class="nav-link">FAQ</a>
+    <a href="/contact-ru.html" class="nav-link">Контакты</a>
+    <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+    <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
+    <div class="header-lang">
+     <button class="lang-btn" data-lang="ua">UA</button>
+     <button class="lang-btn" data-lang="pl">PL</button>
+     <button class="lang-btn" data-lang="ru">RU</button>
+     <button class="lang-btn" data-lang="en">EN</button>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="/" class="logo">
-            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            Rybezh
-          </a>
-          <p>Помогаем найти работу в Польше — честно, без лишних обещаний. Пишите в Telegram.</p>
-          <div class="footer-social">
-            <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            </a>
-            <a href="mailto:contacts@rybezh.site" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Навигация</h4>
-          <a href="/">Главная</a>
-          <a href="/about-ru.html">О нас</a>
-          <a href="/blog-ru.html">Блог</a>
-          <a href="/faq-ru.html">FAQ</a>
-          <a href="/contact-ru.html">Контакты</a>
-          <a href="/for-employers-ru.html">Для работодателей</a>
-        </div>
-        <div class="footer-col">
-          <h4>Вакансии</h4>
-          <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
-          <a href="/vacancies-ru.html?city=krakow">Краков</a>
-          <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
-          <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
-        </div>
-        <div class="footer-col">
-          <h4>Рассылка</h4>
-          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
-          <form class="footer-newsletter-form">
-            <input type="email" required placeholder="Ваш email">
-            <button type="submit" aria-label="Subscribe">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-          </form>
-        </div>
-        <div class="footer-col">
-          <h4>Контакты</h4>
-          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
-          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
-          <a href="/apply-ru.html">Подать заявку</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
-        <div class="footer-bottom-links">
-          <a href="/privacy-ru.html">Политика конфиденциальности</a>
-          <a href="/terms-ru.html">Условия использования</a>
-          <a href="/company-ru.html">Реквизиты</a>
-          <a href="/game.html">🎮 Игра</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <div id="cookie-banner" class="cookie-banner" hidden>
-    <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
-    <button id="cookie-accept-btn">Принять</button>
+   </nav>
+   <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
+    <span></span><span></span><span></span>
+   </button>
   </div>
+  <div class="mobile-menu">
+   <a href="/" class="nav-link">Главная</a>
+   <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
+   <div class="mobile-categories" id="mobileCategoryNav"></div>
+   <div class="mobile-tools">
+    <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
+    <div class="mobile-tools__menu">
+     <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
+     <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
+     <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
+     <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
+    </div>
+   </div>
+   <a href="/blog-ru.html" class="nav-link">Блог</a>
+   <a href="/about-ru.html" class="nav-link">О нас</a>
+   <a href="/faq-ru.html" class="nav-link">FAQ</a>
+   <a href="/contact-ru.html" class="nav-link">Контакты</a>
+   <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
+   <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
+   <div class="mobile-lang">
+    <button class="lang-btn" data-lang="ua">UA</button>
+    <button class="lang-btn" data-lang="pl">PL</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+     <button class="lang-btn" data-lang="en">EN</button>
+   </div>
+  </div>
+ </header>
 
-  <script>
-  (function() {
-    // Init map
-    var map = L.map('map', {
-      scrollWheelZoom: true,
-      zoomControl: true
-    }).setView([52.0, 19.0], 6);
+ <main class="container">
+  <div class="map-page">
+   <div class="map-hero">
+    <h1>🗺️ Карта русскоязычных в Польше</h1>
+    <p>Отметь себя — находи земляков, напарников, жильё и работу рядом</p>
+   </div>
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
-      maxZoom: 18
-    }).addTo(map);
+   <div class="map-info-grid">
+    <div class="map-info-item">
+     <div class="info-icon">🤝</div>
+     <h3>Найди земляков</h3>
+     <p>Узнай, кто из русскоязычных живёт рядом с тобой</p>
+    </div>
+    <div class="map-info-item">
+     <div class="info-icon">🏠</div>
+     <h3>Квартира / комната</h3>
+     <p>Ищи соседей или предлагай место для проживания</p>
+    </div>
+    <div class="map-info-item">
+     <div class="info-icon">💼</div>
+     <h3>Работа рядом</h3>
+     <p>Найди напарника на смену или подскажи вакансию</p>
+    </div>
+   </div>
 
-    // Custom blue/teal marker icon
-    var customIcon = L.divIcon({
-      html: '<div style="background:#0ea5e9;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
-      className: 'custom-marker-wrapper',
-      iconSize: [20, 20],
-      iconAnchor: [10, 10],
-      popupAnchor: [0, -12]
+   <div class="map-actions">
+    <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+     📍 Добавить себя на карту
+    </a>
+    <div class="map-counter" id="map-counter" style="display:none;">
+     На карте уже <strong id="marker-count">0</strong> человек
+    </div>
+   </div>
+
+   <div id="map-loading" class="map-loading">
+    <span class="spinner"></span>
+    Загрузка карты...
+   </div>
+   <div id="map"></div>
+
+   <div class="map-legend">
+    Кликни на маркер, чтобы увидеть контакты • Данные обновляются каждые 5–10 минут
+   </div>
+
+   <div class="how-card">
+    <h2>📝 Как добавить себя на карту</h2>
+    <p style="color:var(--color-secondary);margin-bottom:1.25rem;line-height:1.7;">
+     Привет! ❤️ Добавь себя на карту, чтобы другие русскоязычные могли тебя найти — для совместного жилья, работы, или просто поддержки.
+    </p>
+    <div class="instructions">
+     <div class="instr-step">
+      <div class="step-num">1</div>
+      <strong>Открой Google Maps</strong>
+      <p>На телефоне или компьютере — найди свой город или улицу</p>
+     </div>
+     <div class="instr-step">
+      <div class="step-num">2</div>
+      <strong>Найди свою точку</strong>
+      <p>Нажми ПКМ (правой кнопкой) → «Что здесь?» или долгое нажатие на мобильном</p>
+     </div>
+     <div class="instr-step">
+      <div class="step-num">3</div>
+      <strong>Скопируй координаты</strong>
+      <p>Два числа — широта и долгота<br><span class="coord-example">52.2297, 21.0122</span></p>
+     </div>
+     <div class="instr-step">
+      <div class="step-num">4</div>
+      <strong>Заполни форму</strong>
+      <p>Укажи имя, Telegram, город и координаты. Данные появятся на карте за 5–10 минут!</p>
+     </div>
+    </div>
+    <div style="text-align:center;margin-top:1.5rem;">
+     <a class="map-add-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZUpBFZzYx5SoyW4PUwD66msj7v25K7vNYeyb7AEZ5TNpwKQ/viewform?usp=header" target="_blank" rel="noopener">
+      ✏️ Заполнить форму
+     </a>
+    </div>
+   </div>
+
+   <div style="text-align:center;margin:2rem 0;">
+    <a href="/vacancies-ru.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;">Посмотреть вакансии</a>
+   </div>
+  </div>
+ </main>
+
+ <footer class="site-footer">
+  <div class="container">
+   <div class="footer-inner">
+    <div class="footer-brand">
+     <a href="/" class="logo">
+      <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+      Rybezh
+     </a>
+     <p>Помогаем найти работу в Польше — честно, без лишних обещаний. Пишите в Telegram.</p>
+     <div class="footer-social">
+      <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </a>
+      <a href="mailto:contacts@rybezh.site" aria-label="Email">
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+     </div>
+    </div>
+    <div class="footer-col">
+     <h4>Навигация</h4>
+     <a href="/">Главная</a>
+     <a href="/about-ru.html">О нас</a>
+     <a href="/blog-ru.html">Блог</a>
+     <a href="/faq-ru.html">FAQ</a>
+     <a href="/contact-ru.html">Контакты</a>
+     <a href="/for-employers-ru.html">Для работодателей</a>
+    </div>
+    <div class="footer-col">
+     <h4>Вакансии</h4>
+     <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
+     <a href="/vacancies-ru.html?city=krakow">Краков</a>
+     <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
+     <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
+    </div>
+    <div class="footer-col">
+     <h4>Рассылка</h4>
+     <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
+     <form class="footer-newsletter-form">
+      <input type="email" required placeholder="Ваш email">
+      <button type="submit" aria-label="Subscribe">
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+     </form>
+    </div>
+    <div class="footer-col">
+     <h4>Контакты</h4>
+     <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
+     <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
+     <a href="/apply-ru.html">Подать заявку</a>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
+    <div class="footer-bottom-links">
+     <a href="/privacy-ru.html">Политика конфиденциальности</a>
+     <a href="/terms-ru.html">Условия использования</a>
+     <a href="/company-ru.html">Реквизиты</a>
+     <a href="/game.html">🎮 Игра</a>
+    </div>
+   </div>
+  </div>
+ </footer>
+ <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+ <div id="cookie-banner" class="cookie-banner" hidden>
+  <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
+  <button id="cookie-accept-btn">Принять</button>
+ </div>
+
+ <script>
+ (function() {
+  // Init map
+  var map = L.map('map', {
+   scrollWheelZoom: true,
+   zoomControl: true
+  }).setView([52.0, 19.0], 6);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+   attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a>',
+   maxZoom: 18
+  }).addTo(map);
+
+  // Custom blue/teal marker icon
+  var customIcon = L.divIcon({
+   html: '<div style="background:#0ea5e9;width:14px;height:14px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.3);"></div>',
+   className: 'custom-marker-wrapper',
+   iconSize: [20, 20],
+   iconAnchor: [10, 10],
+   popupAnchor: [0, -12]
+  });
+
+  // Marker cluster group
+  var markers = L.markerClusterGroup({
+   maxClusterRadius: 55,
+   spiderfyOnMaxZoom: true,
+   showCoverageOnHover: false,
+   iconCreateFunction: function(cluster) {
+    var count = cluster.getChildCount();
+    var size = count < 10 ? 40 : count < 50 ? 50 : 60;
+    var cls = count >= 50 ? 'custom-cluster custom-cluster-large' : 'custom-cluster';
+    return L.divIcon({
+     html: '<b>' + count + '</b>',
+     className: cls,
+     iconSize: [size, size]
+    });
+   }
+  });
+
+  // Helper: normalize column header (trim, remove BOM, normalize whitespace)
+  function normHeader(s) {
+   return s ? s.replace(/^\uFEFF/, '').replace(/\s+/g, ' ').trim() : '';
+  }
+
+  // Find column by partial match (handles BOM, extra spaces, encoding diffs)
+  function findCol(row, patterns) {
+   var keys = Object.keys(row);
+   for (var p = 0; p < patterns.length; p++) {
+    for (var k = 0; k < keys.length; k++) {
+     var h = normHeader(keys[k]).toLowerCase();
+     if (h.indexOf(patterns[p].toLowerCase()) !== -1) return keys[k];
+    }
+   }
+   return null;
+  }
+
+  // Simple HTML escape
+  function escapeHtml(str) {
+   var d = document.createElement('div');
+   d.textContent = str;
+   return d.innerHTML;
+  }
+
+  // CSV URL from Google Sheets
+  var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCc4KlINKpV0YWnxiaHKbiNgDCYZijGoJACdPTEueq_C-AIeFiFj-eRjOto0BWhz0F_JTBJcefyA-U/pub?output=csv';
+
+  // ===== Sample community data (seeded) =====
+  var sampleData = [
+   // === Warszawa (35) ===
+   ["Олена К.","Warszawa",52.2319,21.0067,"@olenka_waw","работа","Ищу работу на складе, имею опыт 2 года"],
+   ["Максим","Warszawa",52.2451,21.0175,"@max_praca","работа","Сварщик, ищу вакансию MIG/MAG"],
+   ["Ірина","Warszawa",52.2102,20.9812,"@iryna_waw","квартира","Ищу комнату до 1500 PLN, Mokotów или Ursynów"],
+   ["Богдан","Warszawa",52.2593,21.0451,"@bogdan_pl","работа","Водитель кат. B, ищу работу курьером"],
+   ["Наталія","Warszawa",52.2224,21.0115,"@natalia_w","напарник","Ищу напарницу на смену в кофейне"],
+   ["Денис","Warszawa",52.2356,20.9943,"@denys_wwa","работа","Строитель, опыт 5 лет, ищу бригаду"],
+   ["Анна","Warszawa",52.2481,21.0289,"@anna_warszawa","квартира","Сдаю комнату на Pradze, 1200 PLN"],
+   ["Юрій","Warszawa",52.2187,21.0356,"@yuriy_praca","работа","Электрик, сертификат SEP, ищу работу"],
+   ["Марія","Warszawa",52.2543,20.9876,"@mariya_w","работа","Уборщица, могу работать на полную"],
+   ["Олександр","Warszawa",52.2289,21.0523,"@olex_waw","другое","Помогу с документами, знаю процедуры"],
+   ["Катерина","Warszawa",52.2415,21.0098,"@kate_waw","работа","Кассир, опыт в Biedronka"],
+   ["Андрій М.","Warszawa",52.2034,21.0213,"@andriy_m","работа","Слесарь, ищу работу на производстве"],
+   ["Світлана","Warszawa",52.2678,21.0345,"@svitlana_w","квартира","Ищу соседку, 2-комн. квартира Wola"],
+   ["Павло","Warszawa",52.1987,20.9734,"@pavlo_waw","работа","Упаковщик, готов на ночные смены"],
+   ["Тетяна","Warszawa",52.2345,21.0678,"@tetyana_w","работа","Няня, опыт 3 года, рекомендации есть"],
+   ["Віталій","Warszawa",52.2512,21.0012,"@vitaliy_waw","работа","Повар, опыт в польской кухне"],
+   ["Оксана","Warszawa",52.2156,21.0456,"@oksana_waw","другое","Переводчик UA-PL, помогу с документами"],
+   ["Дмитро С.","Warszawa",52.2623,21.0189,"@dmytro_s","работа","Монтажник, ищу работу на стройке"],
+   ["Людмила","Warszawa",52.2278,20.9567,"@ludmyla_w","квартира","Ищу жильё возле метро, до 1800 PLN"],
+   ["Сергій","Warszawa",52.2401,21.0534,"@sergiy_waw","работа","Разнорабочий, готов начать завтра"],
+   ["Вікторія","Warszawa",52.2534,21.0267,"@vika_waw","работа","Официантка, знаю польский на B1"],
+   ["Роман","Warszawa",52.2089,21.0089,"@roman_waw","напарник","Ищу напарника для переезда вещей"],
+   ["Галина","Warszawa",52.2467,20.9923,"@halyna_w","работа","Швея, опыт 10 лет"],
+   ["Микола","Warszawa",52.2312,21.0412,"@mykola_waw","работа","Охранник, лицензия есть, ищу объект"],
+   ["Яна","Warszawa",52.2578,21.0156,"@yana_waw","другое","Учительница украинского, даю уроки онлайн"],
+   ["Артем","Warszawa",52.2145,21.0312,"@artem_waw","работа","Автомеханик, ищу СТО"],
+   ["Лариса","Warszawa",52.2489,21.0578,"@larysa_w","квартира","Сдаю место в 3-комн., Bemowo, 900 PLN"],
+   ["Тарас","Warszawa",52.2234,20.9845,"@taras_waw","работа","Маляр-штукатур, бригада из 3 человек"],
+   ["Надія","Warszawa",52.2367,21.0234,"@nadiya_waw","работа","Медсестра, нострификация в процессе"],
+   ["Віктор","Warszawa",52.2601,21.0423,"@viktor_waw","работа","Грузчик, опыт на складе Amazon"],
+   ["Олеся","Warszawa",52.2178,21.0567,"@olesya_w","напарник","Ищу компанию для занятий польским"],
+   ["Ігор","Warszawa",52.2456,20.9789,"@igor_waw","работа","Токарь, ЧПУ оператор, сертификаты есть"],
+   ["Марина","Warszawa",52.2523,21.0345,"@maryna_waw","работа","Продавец, опыт Żabka, Carrefour"],
+   ["Станіслав","Warszawa",52.2067,21.0123,"@stas_waw","другое","IT специалист, помогу с резюме"],
+   ["Аліна","Warszawa",52.2389,21.0489,"@alina_waw","работа","Бариста, ищу кофейню в центре"],
+   // === Kraków (30) ===
+   ["Дарія","Kraków",50.0647,19.9450,"@dariya_krk","работа","Ищу работу в отеле, опыт 1 год"],
+   ["Олег","Kraków",50.0553,19.9234,"@oleg_krakow","работа","Курьер Glovo/Bolt, знаю город хорошо"],
+   ["Юлія","Kraków",50.0712,19.9567,"@yuliya_krk","квартира","Ищу комнату Podgórze или Kazimierz"],
+   ["Василь","Kraków",50.0489,19.9678,"@vasyl_krk","работа","Строитель, фасадные работы"],
+   ["Антоніна","Kraków",50.0834,19.9123,"@antonina_k","работа","Горничная, опыт в отелях 4*"],
+   ["Ростислав","Kraków",50.0601,19.9345,"@rostyk_krk","напарник","Ищу соседа, квартира на Nowa Huta"],
+   ["Марта","Kraków",50.0456,19.9512,"@marta_krk","работа","Флорист, ищу цветочный магазин"],
+   ["Тимофій","Kraków",50.0767,19.9789,"@tymofiy_k","работа","Разнорабочий, могу на стройку"],
+   ["Софія","Kraków",50.0523,19.9098,"@sofiya_krk","другое","Знаю все учреждения, помогу с PESEL"],
+   ["Назар","Kraków",50.0678,19.9423,"@nazar_krk","работа","Сварщик TIG, ищу завод"],
+   ["Діана","Kraków",50.0412,19.9567,"@diana_krk","квартира","Сдаю койко-место, Krowodrza, 700 PLN"],
+   ["Volodymyr","Kraków",50.0589,19.9234,"@vova_krk","работа","Водитель кат. C+E, международные перевозки"],
+   ["Христина","Kraków",50.0734,19.9678,"@khrystyna_k","работа","Помощница повара, ищу ресторан"],
+   ["Євген","Kraków",50.0501,19.9345,"@evgen_krk","работа","Столяр, делаю мебель на заказ"],
+   ["Оля","Kraków",50.0845,19.9123,"@olya_krk","напарник","Ищу подругу для спортзала"],
+   ["Руслан","Kraków",50.0623,19.9512,"@ruslan_krk","работа","Маляр, опыт ремонтов квартир"],
+   ["Аня","Kraków",50.0478,19.9789,"@anya_krk","работа","Кассир, ищу супермаркет или аптеку"],
+   ["Михайло","Kraków",50.0756,19.9067,"@mykhaylo_k","работа","Механик, опыт с грузовиками"],
+   ["Леся","Kraków",50.0534,19.9423,"@lesya_krk","квартира","Ищу квартиру для семьи с ребёнком"],
+   ["Вадим","Kraków",50.0689,19.9567,"@vadym_krk","работа","Электрик промышленный, сертификат SEP"],
+   ["Ліля","Kraków",50.0412,19.9234,"@lilya_krk","другое","Фотограф, сниму портфолио для резюме"],
+   ["Степан","Kraków",50.0567,19.9345,"@stepan_krk","работа","Плиточник, бригада 2 человека"],
+   ["Вероніка","Kraków",50.0801,19.9678,"@veronika_k","работа","Администратор, знаю PL на C1"],
+   ["Петро","Kraków",50.0445,19.9123,"@petro_krk","работа","Оператор производственной линии, 3 смены"],
+   ["Любов","Kraków",50.0712,19.9512,"@lyubov_krk","напарник","Ищу компанию на курсы польского"],
+   ["Арсен","Kraków",50.0534,19.9789,"@arsen_krk","работа","Монтёр, сборка конструкций"],
+   ["Інна","Kraków",50.0856,19.9234,"@inna_krk","работа","Кондитер, опыт тортов и десертов"],
+   ["Захар","Kraków",50.0478,19.9423,"@zakhar_krk","другое","Программист, помогу с сайтом/резюме"],
+   ["Тамара","Kraków",50.0623,19.9567,"@tamara_krk","работа","Няня-воспитатель, сертификат первой помощи"],
+   ["Кирило","Kraków",50.0389,19.9098,"@kyrylo_krk","работа","Кладовщик, опыт WMS системы"],
+   // === Wrocław (15) ===
+   ["Влад","Wrocław",51.1079,17.0385,"@vlad_wroc","работа","Строитель, ищу работу на объекте"],
+   ["Зоя","Wrocław",51.1145,17.0234,"@zoya_wroc","квартира","Ищу комнату Krzyki, до 1400 PLN"],
+   ["Тарас Б.","Wrocław",51.0987,17.0512,"@taras_wroc","работа","Водитель автобуса, кат. D"],
+   ["Аліса","Wrocław",51.1234,17.0145,"@alisa_wroc","работа","Официантка, опыт 2 года"],
+   ["Гліб","Wrocław",51.1056,17.0423,"@glib_wroc","работа","Курьер на своём авто"],
+   ["Валентина","Wrocław",51.1178,17.0567,"@valentyna_w","другое","Репетитор польского языка для детей"],
+   ["Матвій","Wrocław",51.0923,17.0289,"@matviy_wroc","работа","Упаковщик на складе"],
+   ["Карина","Wrocław",51.1289,17.0178,"@karyna_wroc","работа","Продавец-консультант, Galeria Dominikańska"],
+   ["Олесь","Wrocław",51.1012,17.0456,"@oles_wroc","напарник","Ищу соседа, комната на Psie Pole"],
+   ["Дар'я","Wrocław",51.1123,17.0345,"@darya_wroc","работа","Уборщица офисов, вечерние смены"],
+   ["Назар В.","Wrocław",51.0978,17.0512,"@nazar_wroc","работа","Токарь-фрезеровщик, ЧПУ"],
+   ["Вікторія Л.","Wrocław",51.1201,17.0234,"@vika_wroc","квартира","Сдаю койко-место для девушки, 650 PLN"],
+   ["Ярослав","Wrocław",51.1067,17.0389,"@yarik_wroc","работа","Разнорабочий, стройка/склад"],
+   ["Поліна","Wrocław",51.1156,17.0512,"@polina_wroc","другое","Переводчик UA/PL/EN, фриланс"],
+   ["Данило","Wrocław",51.0934,17.0267,"@danylo_wroc","работа","Охранник, имею лицензию"],
+   // === Gdańsk (12) ===
+   ["Микита","Gdańsk",54.3520,18.6466,"@mykyta_gda","работа","Докер, опыт в порту"],
+   ["Лілія","Gdańsk",54.3612,18.6312,"@liliya_gda","квартира","Ищу квартиру Wrzeszcz"],
+   ["Олексій","Gdańsk",54.3478,18.6534,"@oleksiy_gda","работа","Сварщик, судостроение"],
+   ["Анастасія","Gdańsk",54.3556,18.6178,"@nastya_gda","работа","Кассир, Auchan или Lidl"],
+   ["Геннадій","Gdańsk",54.3689,18.6423,"@gennadiy_g","напарник","Ищу партнёра для бизнеса"],
+   ["Мирослава","Gdańsk",54.3423,18.6567,"@myra_gda","работа","Горничная в отеле, сезон"],
+   ["Ілля","Gdańsk",54.3734,18.6234,"@illya_gda","работа","Электрик, промышленные объекты"],
+   ["Тетяна Р.","Gdańsk",54.3501,18.6489,"@tetyana_gda","другое","Медик, помогу с регистрацией в NFZ"],
+   ["Костянтин","Gdańsk",54.3645,18.6345,"@kostya_gda","работа","Водитель кат. B, доставка"],
+   ["Раїса","Gdańsk",54.3512,18.6612,"@raisa_gda","квартира","Сдаю комнату Oliwa, 1100 PLN"],
+   ["Артур","Gdańsk",54.3578,18.6178,"@artur_gda","работа","Монтажник, вентиляция и кондиционеры"],
+   ["Юліана","Gdańsk",54.3456,18.6512,"@yuliana_gda","работа","Бариста, ищу кофейню у моря"],
+   // === Poznań (12) ===
+   ["Ігор П.","Poznań",52.4064,16.9252,"@igor_pozn","работа","Водитель фуры, международные рейсы"],
+   ["Ніна","Poznań",52.4156,16.9345,"@nina_pozn","квартира","Ищу комнату, студентка"],
+   ["Ростислав К.","Poznań",52.3978,16.9423,"@rostyslav_p","работа","Строитель, отделочные работы"],
+   ["Елла","Poznań",52.4212,16.9178,"@ella_pozn","работа","Кассир, опыт Rossmann"],
+   ["Давид","Poznań",52.4034,16.9512,"@davyd_pozn","работа","Кладовщик, опыт SAP"],
+   ["Злата","Poznań",52.4123,16.9267,"@zlata_pozn","другое","Юрист, консультации по трудовому праву"],
+   ["Остап","Poznań",52.3989,16.9389,"@ostap_pozn","работа","Маляр-штукатур, качественно и быстро"],
+   ["Катя","Poznań",52.4178,16.9456,"@katya_pozn","работа","Флорист, опыт оформления свадеб"],
+   ["Борис","Poznań",52.4056,16.9134,"@borys_pozn","напарник","Ищу напарника для автомойки"],
+   ["Сніжана","Poznań",52.4234,16.9345,"@snizhana_p","работа","Помощница повара, знаю гигиену HACCP"],
+   ["Кіра","Poznań",52.3945,16.9512,"@kira_pozn","работа","Продавец, свободный польский"],
+   ["Леонід","Poznań",52.4101,16.9234,"@leonid_pozn","работа","Слесарь-сантехник, по вызову"],
+   // === Łódź (8) ===
+   ["Герман","Łódź",51.7592,19.4560,"@german_lodz","работа","Оператор на производстве, 3 смены"],
+   ["Мілана","Łódź",51.7678,19.4423,"@milana_lodz","квартира","Ищу жильё для пары, до 2000 PLN"],
+   ["Тимур","Łódź",51.7512,19.4678,"@tymur_lodz","работа","Монтёр на фабрике"],
+   ["Жанна","Łódź",51.7645,19.4345,"@zhanna_lodz","работа","Швея, опыт на фабрике одежды"],
+   ["Клим","Łódź",51.7534,19.4512,"@klym_lodz","работа","Грузчик, готов на тяжёлую работу"],
+   ["Регіна","Łódź",51.7712,19.4267,"@regina_lodz","напарник","Ищу подругу для курсов польского"],
+   ["Платон","Łódź",51.7489,19.4589,"@platon_lodz","работа","Механик, ремонт промоборудования"],
+   ["Аїда","Łódź",51.7623,19.4178,"@aida_lodz","другое","Парикмахер, принимаю на дому, Bałuty"],
+   // === Katowice (7) ===
+   ["Мирон","Katowice",50.2649,19.0238,"@myron_kato","работа","Шахтёр, опыт подземных работ"],
+   ["Сніжана К.","Katowice",50.2712,19.0345,"@snizhana_k","работа","Медсестра, нострификация пройдена"],
+   ["Тихон","Katowice",50.2578,19.0156,"@tykhon_kato","работа","Сварщик, ищу завод"],
+   ["Лоліта","Katowice",50.2801,19.0423,"@lolita_kato","квартира","Ищу комнату, центр, до 1200 PLN"],
+   ["Назарій","Katowice",50.2634,19.0289,"@nazariy_k","работа","Водитель погрузчика, сертификат UDT"],
+   ["Полина А.","Katowice",50.2745,19.0178,"@polina_kato","работа","Кассир, ищу Silesia City Center"],
+   ["Гліб К.","Katowice",50.2523,19.0512,"@glib_kato","напарник","Ищу людей для футбола по воскресеньям"],
+   // === Lublin (6) ===
+   ["Славко","Lublin",51.2465,22.5684,"@slavko_lub","работа","Водитель такси, знаю город"],
+   ["Емілія","Lublin",51.2534,22.5512,"@emiliya_lub","квартира","Сдаю комнату, Czuby, 800 PLN"],
+   ["Ярема","Lublin",51.2389,22.5745,"@yarema_lub","работа","Строитель, кровельные работы"],
+   ["Соломія","Lublin",51.2601,22.5423,"@solomiya_l","работа","Повар, украинская и польская кухня"],
+   ["Захар Л.","Lublin",51.2456,22.5612,"@zakhar_lub","другое","Автоинструктор, помогу с правами в PL"],
+   ["Василина","Lublin",51.2512,22.5534,"@vasylyna_l","работа","Фармацевт, ищу аптеку"],
+   // === Szczecin (5) ===
+   ["Мстислав","Szczecin",53.4285,14.5528,"@mstyslav_sz","работа","Докер, порт Щецин"],
+   ["Аріна","Szczecin",53.4356,14.5423,"@arina_szcz","работа","Продавец, Media Markt"],
+   ["Лев","Szczecin",53.4212,14.5612,"@lev_szcz","работа","Строитель, фундаментные работы"],
+   ["Даринка","Szczecin",53.4389,14.5345,"@darynka_sz","квартира","Ищу комнату для студентки"],
+   ["Корній","Szczecin",53.4267,14.5489,"@korniy_szcz","напарник","Ищу напарника на рыбалку"],
+   // === Bydgoszcz (5) ===
+   ["Пилип","Bydgoszcz",53.1235,18.0084,"@pylyp_bydg","работа","Разнорабочий, любая работа"],
+   ["Христя","Bydgoszcz",53.1312,17.9945,"@khrystya_b","работа","Горничная, отели и хостелы"],
+   ["Данік","Bydgoszcz",53.1178,18.0156,"@danik_bydg","работа","Электрик, допуск SEP"],
+   ["Оленка","Bydgoszcz",53.1289,18.0023,"@olenka_bydg","квартира","Сдаю койко-место, 550 PLN"],
+   ["Лука","Bydgoszcz",53.1345,18.0112,"@luka_bydg","другое","Волонтёр, помогу с адаптацией"],
+   // === Rzeszów (5) ===
+   ["Златан","Rzeszów",50.0412,21.9991,"@zlatan_rze","работа","Монтажник, сборка мебели"],
+   ["Таміла","Rzeszów",50.0478,22.0123,"@tamila_rze","работа","Уборщица, опыт клининг"],
+   ["Юхим","Rzeszów",50.0345,21.9867,"@yukhym_rze","работа","Водитель, локальные доставки"],
+   ["Ульяна","Rzeszów",50.0534,22.0045,"@ulyana_rze","квартира","Ищу квартиру для мамы с ребёнком"],
+   ["Назар Б.","Rzeszów",50.0389,21.9934,"@nazar_rze","напарник","Ищу компанию для бега по утрам"],
+   // === Белосток / Białystok (4) ===
+   ["Тарасик","Białystok",53.1325,23.1688,"@tarasyk_bia","работа","Упаковщик, ночные смены"],
+   ["Ясмина","Białystok",53.1389,23.1534,"@yasmina_bia","работа","Кассир, Kaufland"],
+   ["Лесик","Białystok",53.1267,23.1756,"@lesyk_bia","другое","Ветеринар, помогу с животными"],
+   ["Емма","Białystok",53.1345,23.1623,"@emma_bia","квартира","Ищу комнату возле центра"],
+   // === Германия / Germany (8) ===
+   ["Руслана","Berlin",52.5200,13.4050,"@ruslana_ber","работа","Ищу работу в ресторане, знаю DE на A2"],
+   ["Орест","Berlin",52.5145,13.3890,"@orest_berlin","квартира","Ищу WG-комнату Kreuzberg"],
+   ["Маріанна","München",48.1351,11.5820,"@marianna_muc","работа","Медсестра, B2 Deutsch, ищу Klinik"],
+   ["Гордій","Hamburg",53.5511,9.9937,"@gordiy_ham","работа","Сварщик, верфи"],
+   ["Злата Б.","Frankfurt",50.1109,8.6821,"@zlata_ffm","работа","IT-тестировщик, удалённо"],
+   ["Святослав","Düsseldorf",51.2277,6.7735,"@svyatoslav_d","работа","Логист, опыт DHL"],
+   ["Лана","Dresden",51.0504,13.7373,"@lana_dresden","квартира","Ищу жильё, переезжаю из PL"],
+   ["Данило Н.","Nürnberg",49.4521,11.0767,"@danylo_nurn","другое","Автомеханик BMW, ищу Werkstatt"],
+   // === Украина / Ukraine (7) ===
+   ["Olha","Львов",49.8397,24.0297,"@olha_lviv","другое","Собираюсь переехать в PL, ищу контакты"],
+   ["Микола К.","Киев",50.4501,30.5234,"@mykola_kyiv","другое","Планирую переезд в Краков, ищу советы"],
+   ["Таня","Харьков",49.9935,36.2304,"@tanya_kharkiv","другое","Хочу в Варшаву, ищу работу заранее"],
+   ["Ваня","Одесса",46.4825,30.7233,"@vanya_odesa","другое","Планирую выезд во Вроцлав, кондитер"],
+   ["Каріна","Днепр",48.4647,35.0462,"@karyna_dnipro","другое","Медик, готовлюсь к нострификации в PL"],
+   ["Гриць","Запорожье",47.8388,35.1396,"@gryts_zp","другое","Сварщик, жду визу в PL"],
+   ["Софійка","Ивано-Франковск",48.9226,24.7111,"@sofiyка_if","другое","Учительница, ищу школу в Кракове"],
+   // === Чехия / Czech Republic (5) ===
+   ["Мирослав","Praha",50.0755,14.4378,"@myroslav_prg","работа","Строитель, работаю в CZ, ищу PL"],
+   ["Іванка","Brno",49.1951,16.6068,"@ivanka_brno","другое","Переводчик CZ/UA, думаю о переезде в PL"],
+   ["Остап Ч.","Ostrava",49.8209,18.2625,"@ostap_ostr","работа","Металлург, ищу завод возле границы PL"],
+   ["Леся Ч.","Hradec Králové",50.2092,15.8327,"@lesya_hk","квартира","Переезжаю во Вроцлав, ищу жильё"],
+   ["Тимко","Liberec",50.7671,15.0562,"@tymko_lib","работа","Стекольщик, ищу фабрику в PL"],
+   // === Словакия / Slovakia (3) ===
+   ["Юрко","Bratislava",48.1486,17.1077,"@yurko_brat","другое","Планирую переезд в Краков"],
+   ["Мілена","Košice",48.7164,21.2611,"@milena_kos","работа","Повариха, хочу в PL ресторан"],
+   ["Роберт","Žilina",49.2231,18.7395,"@robert_zil","работа","Водитель, думаю о PL"]
+  ];
+
+  // ===== Extra generated community data (+150) =====
+  function seededNoise(n) {
+   var x = Math.sin(n * 9999.91) * 10000;
+   return x - Math.floor(x);
+  }
+
+  function generateExtraCommunityData() {
+   var cityPlan = [
+    // Major population centers in Poland (124)
+    { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 32 },
+    { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 21 },
+    { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 14 },
+    { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 14 },
+    { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 12 },
+    { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 10 },
+    { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 6 },
+    { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 5 },
+    { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 4 },
+    { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 4 },
+    { city: 'Białystok', lat: 53.1325, lng: 23.1688, count: 2 },
+
+    // Scattered around Poland (14)
+    { city: 'Gdynia', lat: 54.5189, lng: 18.5305, count: 2 },
+    { city: 'Sopot', lat: 54.4416, lng: 18.5601, count: 1 },
+    { city: 'Gorzów Wielkopolski', lat: 52.7368, lng: 15.2288, count: 1 },
+    { city: 'Opole', lat: 50.6751, lng: 17.9213, count: 1 },
+    { city: 'Kielce', lat: 50.8661, lng: 20.6286, count: 1 },
+    { city: 'Olsztyn', lat: 53.7784, lng: 20.4801, count: 1 },
+    { city: 'Toruń', lat: 53.0138, lng: 18.5984, count: 1 },
+    { city: 'Radom', lat: 51.4027, lng: 21.1471, count: 1 },
+    { city: 'Rzeszów', lat: 50.0412, lng: 21.9991, count: 2 },
+    { city: 'Zielona Góra', lat: 51.9356, lng: 15.5062, count: 1 },
+    { city: 'Częstochowa', lat: 50.8118, lng: 19.1203, count: 1 },
+    { city: 'Gliwice', lat: 50.2945, lng: 18.6714, count: 1 },
+    { city: 'Zabrze', lat: 50.3249, lng: 18.7857, count: 1 },
+
+    // Neighboring countries (12)
+    { city: 'Berlin', lat: 52.5200, lng: 13.4050, count: 2 },
+    { city: 'Dresden', lat: 51.0504, lng: 13.7373, count: 1 },
+    { city: 'Praha', lat: 50.0755, lng: 14.4378, count: 2 },
+    { city: 'Ostrava', lat: 49.8209, lng: 18.2625, count: 1 },
+    { city: 'Bratislava', lat: 48.1486, lng: 17.1077, count: 2 },
+    { city: 'Košice', lat: 48.7164, lng: 21.2611, count: 1 },
+    { city: 'Lviv', lat: 49.8397, lng: 24.0297, count: 1 },
+    { city: 'Vilnius', lat: 54.6872, lng: 25.2797, count: 1 },
+    { city: 'Minsk', lat: 53.9006, lng: 27.5590, count: 1 }
+   ];
+
+   var firstNames = [
+    'Артем','Олексій','Ігор','Богдан','Роман','Тарас','Максим','Юрій','Микола','Олег',
+    'Владислав','Павло','Дмитро','Сергій','Віталій','Марія','Олена','Ірина','Наталія','Анна',
+    'Катерина','Тетяна','Оксана','Юлія','Світлана','Людмила','Аліна','Вікторія','Дарина','Софія',
+    'Христина','Надія','Леся','Марина','Зоряна','Уляна'
+   ];
+   var seeks = ['работа', 'квартира', 'помощник', 'другое'];
+   var descriptions = [
+    'Ищу работу и новые контакты среди соотечественников',
+    'Недавно переехал(а), открыт(а) к новым знакомствам',
+    'Могу подсказать по адаптации и документам',
+    'Ищу жильё/соседей в районе',
+    'Интересуют смены и подработка рядом'
+   ];
+
+   var extra = [];
+   var idx = 1;
+
+   cityPlan.forEach(function(cfg) {
+    for (var i = 0; i < cfg.count; i++) {
+     var n1 = seededNoise(idx * 3.17);
+     var n2 = seededNoise(idx * 7.91);
+     var lat = cfg.lat + (n1 - 0.5) * 0.12;
+     var lng = cfg.lng + (n2 - 0.5) * 0.18;
+
+     // Keep within map display bounds used later in CSV validation
+     if (lat <= 40) lat = 40.05;
+     if (lat >= 60) lat = 59.95;
+     if (lng <= 10) lng = 10.05;
+     if (lng >= 30) lng = 29.95;
+
+     var firstName = firstNames[idx % firstNames.length];
+     var name = firstName + ' ' + String.fromCharCode(65 + (idx % 24)) + '.';
+     var tg = '@ua_map_' + (1000 + idx);
+     var seek = seeks[idx % seeks.length];
+     var desc = descriptions[idx % descriptions.length];
+
+     extra.push([
+      name,
+      cfg.city,
+      parseFloat(lat.toFixed(4)),
+      parseFloat(lng.toFixed(4)),
+      tg,
+      seek,
+      desc
+     ]);
+
+     idx++;
+    }
+   });
+
+   return extra;
+  }
+
+  // Append generated +150 entries to the seeded dataset
+  sampleData = sampleData.concat(generateExtraCommunityData());
+
+  // Helper: add a marker from sample data entry
+  function addSampleMarker(entry) {
+   var name = entry[0], city = entry[1], lat = entry[2], lng = entry[3];
+   var tg = entry[4], seeking = entry[5], desc = entry[6];
+   var tgClean = tg.replace(/@/g, '');
+   var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
+   popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
+   if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
+   if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
+   if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
+   markers.addLayer(L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 }));
+  }
+
+  // Add all sample data first
+  var sampleCount = sampleData.length;
+  sampleData.forEach(addSampleMarker);
+  map.addLayer(markers);
+
+  // Show sample count immediately
+  var counterEl = document.getElementById('map-counter');
+  var countEl = document.getElementById('marker-count');
+  if (sampleCount > 0 && counterEl && countEl) {
+   countEl.textContent = sampleCount;
+   counterEl.style.display = 'inline-block';
+  }
+
+  var loadingEl = document.getElementById('map-loading');
+  var errorShown = false;
+
+  function showError(msg) {
+   if (errorShown) return;
+   errorShown = true;
+   if (loadingEl) {
+    loadingEl.innerHTML = '<div style="color:#ef4444;font-weight:600;">⚠️ ' + msg + '</div>' +
+     '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Попробовать снова</button>';
+    loadingEl.style.display = 'block';
+   }
+  }
+
+  // Add timeout for CSV loading
+  var csvTimeout = setTimeout(function() {
+   showError('Загрузка данных заняла слишком много времени. Проверьте интернет-соединение.');
+  }, 15000);
+
+  Papa.parse(csvUrl, {
+   download: true,
+   header: true,
+   skipEmptyLines: true,
+   complete: function(results) {
+    clearTimeout(csvTimeout);
+    if (loadingEl) loadingEl.style.display = 'none';
+
+    if (!results.data || results.data.length === 0) {
+     return;
+    }
+
+    // Auto-detect column names from the first row
+    var firstRow = results.data[0];
+    var colLat = findCol(firstRow, ['Широта', 'Lat', 'lat', 'latitude']);
+    var colLng = findCol(firstRow, ['Долгота', 'Довгота', 'Lng', 'lng', 'longitude']);
+    var colName = findCol(firstRow, ['Имя', "Ім'я", 'Ник', 'Нік', 'Name', 'name']);
+    var colCity = findCol(firstRow, ['Город', 'Місто', 'City', 'city']);
+    var colTg = findCol(firstRow, ['Telegram', 'telegram', 'tg']);
+    var colSeeking = findCol(firstRow, ['Что ищу', 'Що шукаю', 'seeking', 'szukam']);
+    var colDesc = findCol(firstRow, ['Короткое описание', 'Короткий опис', 'опис', 'description', 'opis']);
+
+    if (!colLat || !colLng) {
+     console.warn('Map CSV: Could not find Lat/Lng columns. Found headers:', Object.keys(firstRow));
+     showError('Не удалось распознать формат данных. Попробуйте позже.');
+     return;
+    }
+
+    var count = 0;
+    results.data.forEach(function(row) {
+     var latStr = row[colLat];
+     var lngStr = row[colLng];
+     if (latStr && lngStr) {
+      // Handle comma as decimal separator
+      var lat = parseFloat(String(latStr).replace(',', '.'));
+      var lng = parseFloat(String(lngStr).replace(',', '.'));
+      if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
+       var name = (colName && row[colName]) ? row[colName] : 'Аноним';
+       var city = (colCity && row[colCity]) ? row[colCity] : '';
+       var telegram = (colTg && row[colTg]) ? row[colTg] : '';
+       var seeking = (colSeeking && row[colSeeking]) ? row[colSeeking] : '';
+       var desc = (colDesc && row[colDesc]) ? row[colDesc] : '';
+
+       var tgClean = telegram.replace(/@/g, '').trim();
+
+       var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
+       if (city) popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
+       if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
+       if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
+       if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
+
+       var marker = L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 });
+       markers.addLayer(marker);
+       count++;
+      }
+     }
     });
 
-    // Marker cluster group
-    var markers = L.markerClusterGroup({
-      maxClusterRadius: 55,
-      spiderfyOnMaxZoom: true,
-      showCoverageOnHover: false,
-      iconCreateFunction: function(cluster) {
-        var count = cluster.getChildCount();
-        var size = count < 10 ? 40 : count < 50 ? 50 : 60;
-        var cls = count >= 50 ? 'custom-cluster custom-cluster-large' : 'custom-cluster';
-        return L.divIcon({
-          html: '<b>' + count + '</b>',
-          className: cls,
-          iconSize: [size, size]
-        });
-      }
-    });
-
-    // Helper: normalize column header (trim, remove BOM, normalize whitespace)
-    function normHeader(s) {
-      return s ? s.replace(/^\uFEFF/, '').replace(/\s+/g, ' ').trim() : '';
+    // Update counter with combined total
+    var total = sampleCount + count;
+    if (counterEl && countEl) {
+     countEl.textContent = total;
+     counterEl.style.display = 'inline-block';
     }
+   },
+   error: function(err) {
+    clearTimeout(csvTimeout);
+    showError('Не удалось загрузить данные карты. Попробуйте позже.');
+    console.error('CSV parse error:', err);
+   }
+  });
 
-    // Find column by partial match (handles BOM, extra spaces, encoding diffs)
-    function findCol(row, patterns) {
-      var keys = Object.keys(row);
-      for (var p = 0; p < patterns.length; p++) {
-        for (var k = 0; k < keys.length; k++) {
-          var h = normHeader(keys[k]).toLowerCase();
-          if (h.indexOf(patterns[p].toLowerCase()) !== -1) return keys[k];
-        }
-      }
-      return null;
-    }
-
-    // Simple HTML escape
-    function escapeHtml(str) {
-      var d = document.createElement('div');
-      d.textContent = str;
-      return d.innerHTML;
-    }
-
-    // CSV URL from Google Sheets
-    var csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQCc4KlINKpV0YWnxiaHKbiNgDCYZijGoJACdPTEueq_C-AIeFiFj-eRjOto0BWhz0F_JTBJcefyA-U/pub?output=csv';
-
-    // ===== Sample community data (seeded) =====
-    var sampleData = [
-      // === Warszawa (35) ===
-      ["Олена К.","Warszawa",52.2319,21.0067,"@olenka_waw","работа","Ищу работу на складе, имею опыт 2 года"],
-      ["Максим","Warszawa",52.2451,21.0175,"@max_praca","работа","Сварщик, ищу вакансию MIG/MAG"],
-      ["Ірина","Warszawa",52.2102,20.9812,"@iryna_waw","квартира","Ищу комнату до 1500 PLN, Mokotów или Ursynów"],
-      ["Богдан","Warszawa",52.2593,21.0451,"@bogdan_pl","работа","Водитель кат. B, ищу работу курьером"],
-      ["Наталія","Warszawa",52.2224,21.0115,"@natalia_w","напарник","Ищу напарницу на смену в кофейне"],
-      ["Денис","Warszawa",52.2356,20.9943,"@denys_wwa","работа","Строитель, опыт 5 лет, ищу бригаду"],
-      ["Анна","Warszawa",52.2481,21.0289,"@anna_warszawa","квартира","Сдаю комнату на Pradze, 1200 PLN"],
-      ["Юрій","Warszawa",52.2187,21.0356,"@yuriy_praca","работа","Электрик, сертификат SEP, ищу работу"],
-      ["Марія","Warszawa",52.2543,20.9876,"@mariya_w","работа","Уборщица, могу работать на полную"],
-      ["Олександр","Warszawa",52.2289,21.0523,"@olex_waw","другое","Помогу с документами, знаю процедуры"],
-      ["Катерина","Warszawa",52.2415,21.0098,"@kate_waw","работа","Кассир, опыт в Biedronka"],
-      ["Андрій М.","Warszawa",52.2034,21.0213,"@andriy_m","работа","Слесарь, ищу работу на производстве"],
-      ["Світлана","Warszawa",52.2678,21.0345,"@svitlana_w","квартира","Ищу соседку, 2-комн. квартира Wola"],
-      ["Павло","Warszawa",52.1987,20.9734,"@pavlo_waw","работа","Упаковщик, готов на ночные смены"],
-      ["Тетяна","Warszawa",52.2345,21.0678,"@tetyana_w","работа","Няня, опыт 3 года, рекомендации есть"],
-      ["Віталій","Warszawa",52.2512,21.0012,"@vitaliy_waw","работа","Повар, опыт в польской кухне"],
-      ["Оксана","Warszawa",52.2156,21.0456,"@oksana_waw","другое","Переводчик UA-PL, помогу с документами"],
-      ["Дмитро С.","Warszawa",52.2623,21.0189,"@dmytro_s","работа","Монтажник, ищу работу на стройке"],
-      ["Людмила","Warszawa",52.2278,20.9567,"@ludmyla_w","квартира","Ищу жильё возле метро, до 1800 PLN"],
-      ["Сергій","Warszawa",52.2401,21.0534,"@sergiy_waw","работа","Разнорабочий, готов начать завтра"],
-      ["Вікторія","Warszawa",52.2534,21.0267,"@vika_waw","работа","Официантка, знаю польский на B1"],
-      ["Роман","Warszawa",52.2089,21.0089,"@roman_waw","напарник","Ищу напарника для переезда вещей"],
-      ["Галина","Warszawa",52.2467,20.9923,"@halyna_w","работа","Швея, опыт 10 лет"],
-      ["Микола","Warszawa",52.2312,21.0412,"@mykola_waw","работа","Охранник, лицензия есть, ищу объект"],
-      ["Яна","Warszawa",52.2578,21.0156,"@yana_waw","другое","Учительница украинского, даю уроки онлайн"],
-      ["Артем","Warszawa",52.2145,21.0312,"@artem_waw","работа","Автомеханик, ищу СТО"],
-      ["Лариса","Warszawa",52.2489,21.0578,"@larysa_w","квартира","Сдаю место в 3-комн., Bemowo, 900 PLN"],
-      ["Тарас","Warszawa",52.2234,20.9845,"@taras_waw","работа","Маляр-штукатур, бригада из 3 человек"],
-      ["Надія","Warszawa",52.2367,21.0234,"@nadiya_waw","работа","Медсестра, нострификация в процессе"],
-      ["Віктор","Warszawa",52.2601,21.0423,"@viktor_waw","работа","Грузчик, опыт на складе Amazon"],
-      ["Олеся","Warszawa",52.2178,21.0567,"@olesya_w","напарник","Ищу компанию для занятий польским"],
-      ["Ігор","Warszawa",52.2456,20.9789,"@igor_waw","работа","Токарь, ЧПУ оператор, сертификаты есть"],
-      ["Марина","Warszawa",52.2523,21.0345,"@maryna_waw","работа","Продавец, опыт Żabka, Carrefour"],
-      ["Станіслав","Warszawa",52.2067,21.0123,"@stas_waw","другое","IT специалист, помогу с резюме"],
-      ["Аліна","Warszawa",52.2389,21.0489,"@alina_waw","работа","Бариста, ищу кофейню в центре"],
-      // === Kraków (30) ===
-      ["Дарія","Kraków",50.0647,19.9450,"@dariya_krk","работа","Ищу работу в отеле, опыт 1 год"],
-      ["Олег","Kraków",50.0553,19.9234,"@oleg_krakow","работа","Курьер Glovo/Bolt, знаю город хорошо"],
-      ["Юлія","Kraków",50.0712,19.9567,"@yuliya_krk","квартира","Ищу комнату Podgórze или Kazimierz"],
-      ["Василь","Kraków",50.0489,19.9678,"@vasyl_krk","работа","Строитель, фасадные работы"],
-      ["Антоніна","Kraków",50.0834,19.9123,"@antonina_k","работа","Горничная, опыт в отелях 4*"],
-      ["Ростислав","Kraków",50.0601,19.9345,"@rostyk_krk","напарник","Ищу соседа, квартира на Nowa Huta"],
-      ["Марта","Kraków",50.0456,19.9512,"@marta_krk","работа","Флорист, ищу цветочный магазин"],
-      ["Тимофій","Kraków",50.0767,19.9789,"@tymofiy_k","работа","Разнорабочий, могу на стройку"],
-      ["Софія","Kraków",50.0523,19.9098,"@sofiya_krk","другое","Знаю все учреждения, помогу с PESEL"],
-      ["Назар","Kraków",50.0678,19.9423,"@nazar_krk","работа","Сварщик TIG, ищу завод"],
-      ["Діана","Kraków",50.0412,19.9567,"@diana_krk","квартира","Сдаю койко-место, Krowodrza, 700 PLN"],
-      ["Volodymyr","Kraków",50.0589,19.9234,"@vova_krk","работа","Водитель кат. C+E, международные перевозки"],
-      ["Христина","Kraków",50.0734,19.9678,"@khrystyna_k","работа","Помощница повара, ищу ресторан"],
-      ["Євген","Kraków",50.0501,19.9345,"@evgen_krk","работа","Столяр, делаю мебель на заказ"],
-      ["Оля","Kraków",50.0845,19.9123,"@olya_krk","напарник","Ищу подругу для спортзала"],
-      ["Руслан","Kraków",50.0623,19.9512,"@ruslan_krk","работа","Маляр, опыт ремонтов квартир"],
-      ["Аня","Kraków",50.0478,19.9789,"@anya_krk","работа","Кассир, ищу супермаркет или аптеку"],
-      ["Михайло","Kraków",50.0756,19.9067,"@mykhaylo_k","работа","Механик, опыт с грузовиками"],
-      ["Леся","Kraków",50.0534,19.9423,"@lesya_krk","квартира","Ищу квартиру для семьи с ребёнком"],
-      ["Вадим","Kraków",50.0689,19.9567,"@vadym_krk","работа","Электрик промышленный, сертификат SEP"],
-      ["Ліля","Kraków",50.0412,19.9234,"@lilya_krk","другое","Фотограф, сниму портфолио для резюме"],
-      ["Степан","Kraków",50.0567,19.9345,"@stepan_krk","работа","Плиточник, бригада 2 человека"],
-      ["Вероніка","Kraków",50.0801,19.9678,"@veronika_k","работа","Администратор, знаю PL на C1"],
-      ["Петро","Kraków",50.0445,19.9123,"@petro_krk","работа","Оператор производственной линии, 3 смены"],
-      ["Любов","Kraków",50.0712,19.9512,"@lyubov_krk","напарник","Ищу компанию на курсы польского"],
-      ["Арсен","Kraków",50.0534,19.9789,"@arsen_krk","работа","Монтёр, сборка конструкций"],
-      ["Інна","Kraków",50.0856,19.9234,"@inna_krk","работа","Кондитер, опыт тортов и десертов"],
-      ["Захар","Kraków",50.0478,19.9423,"@zakhar_krk","другое","Программист, помогу с сайтом/резюме"],
-      ["Тамара","Kraków",50.0623,19.9567,"@tamara_krk","работа","Няня-воспитатель, сертификат первой помощи"],
-      ["Кирило","Kraków",50.0389,19.9098,"@kyrylo_krk","работа","Кладовщик, опыт WMS системы"],
-      // === Wrocław (15) ===
-      ["Влад","Wrocław",51.1079,17.0385,"@vlad_wroc","работа","Строитель, ищу работу на объекте"],
-      ["Зоя","Wrocław",51.1145,17.0234,"@zoya_wroc","квартира","Ищу комнату Krzyki, до 1400 PLN"],
-      ["Тарас Б.","Wrocław",51.0987,17.0512,"@taras_wroc","работа","Водитель автобуса, кат. D"],
-      ["Аліса","Wrocław",51.1234,17.0145,"@alisa_wroc","работа","Официантка, опыт 2 года"],
-      ["Гліб","Wrocław",51.1056,17.0423,"@glib_wroc","работа","Курьер на своём авто"],
-      ["Валентина","Wrocław",51.1178,17.0567,"@valentyna_w","другое","Репетитор польского языка для детей"],
-      ["Матвій","Wrocław",51.0923,17.0289,"@matviy_wroc","работа","Упаковщик на складе"],
-      ["Карина","Wrocław",51.1289,17.0178,"@karyna_wroc","работа","Продавец-консультант, Galeria Dominikańska"],
-      ["Олесь","Wrocław",51.1012,17.0456,"@oles_wroc","напарник","Ищу соседа, комната на Psie Pole"],
-      ["Дар'я","Wrocław",51.1123,17.0345,"@darya_wroc","работа","Уборщица офисов, вечерние смены"],
-      ["Назар В.","Wrocław",51.0978,17.0512,"@nazar_wroc","работа","Токарь-фрезеровщик, ЧПУ"],
-      ["Вікторія Л.","Wrocław",51.1201,17.0234,"@vika_wroc","квартира","Сдаю койко-место для девушки, 650 PLN"],
-      ["Ярослав","Wrocław",51.1067,17.0389,"@yarik_wroc","работа","Разнорабочий, стройка/склад"],
-      ["Поліна","Wrocław",51.1156,17.0512,"@polina_wroc","другое","Переводчик UA/PL/EN, фриланс"],
-      ["Данило","Wrocław",51.0934,17.0267,"@danylo_wroc","работа","Охранник, имею лицензию"],
-      // === Gdańsk (12) ===
-      ["Микита","Gdańsk",54.3520,18.6466,"@mykyta_gda","работа","Докер, опыт в порту"],
-      ["Лілія","Gdańsk",54.3612,18.6312,"@liliya_gda","квартира","Ищу квартиру Wrzeszcz"],
-      ["Олексій","Gdańsk",54.3478,18.6534,"@oleksiy_gda","работа","Сварщик, судостроение"],
-      ["Анастасія","Gdańsk",54.3556,18.6178,"@nastya_gda","работа","Кассир, Auchan или Lidl"],
-      ["Геннадій","Gdańsk",54.3689,18.6423,"@gennadiy_g","напарник","Ищу партнёра для бизнеса"],
-      ["Мирослава","Gdańsk",54.3423,18.6567,"@myra_gda","работа","Горничная в отеле, сезон"],
-      ["Ілля","Gdańsk",54.3734,18.6234,"@illya_gda","работа","Электрик, промышленные объекты"],
-      ["Тетяна Р.","Gdańsk",54.3501,18.6489,"@tetyana_gda","другое","Медик, помогу с регистрацией в NFZ"],
-      ["Костянтин","Gdańsk",54.3645,18.6345,"@kostya_gda","работа","Водитель кат. B, доставка"],
-      ["Раїса","Gdańsk",54.3512,18.6612,"@raisa_gda","квартира","Сдаю комнату Oliwa, 1100 PLN"],
-      ["Артур","Gdańsk",54.3578,18.6178,"@artur_gda","работа","Монтажник, вентиляция и кондиционеры"],
-      ["Юліана","Gdańsk",54.3456,18.6512,"@yuliana_gda","работа","Бариста, ищу кофейню у моря"],
-      // === Poznań (12) ===
-      ["Ігор П.","Poznań",52.4064,16.9252,"@igor_pozn","работа","Водитель фуры, международные рейсы"],
-      ["Ніна","Poznań",52.4156,16.9345,"@nina_pozn","квартира","Ищу комнату, студентка"],
-      ["Ростислав К.","Poznań",52.3978,16.9423,"@rostyslav_p","работа","Строитель, отделочные работы"],
-      ["Елла","Poznań",52.4212,16.9178,"@ella_pozn","работа","Кассир, опыт Rossmann"],
-      ["Давид","Poznań",52.4034,16.9512,"@davyd_pozn","работа","Кладовщик, опыт SAP"],
-      ["Злата","Poznań",52.4123,16.9267,"@zlata_pozn","другое","Юрист, консультации по трудовому праву"],
-      ["Остап","Poznań",52.3989,16.9389,"@ostap_pozn","работа","Маляр-штукатур, качественно и быстро"],
-      ["Катя","Poznań",52.4178,16.9456,"@katya_pozn","работа","Флорист, опыт оформления свадеб"],
-      ["Борис","Poznań",52.4056,16.9134,"@borys_pozn","напарник","Ищу напарника для автомойки"],
-      ["Сніжана","Poznań",52.4234,16.9345,"@snizhana_p","работа","Помощница повара, знаю гигиену HACCP"],
-      ["Кіра","Poznań",52.3945,16.9512,"@kira_pozn","работа","Продавец, свободный польский"],
-      ["Леонід","Poznań",52.4101,16.9234,"@leonid_pozn","работа","Слесарь-сантехник, по вызову"],
-      // === Łódź (8) ===
-      ["Герман","Łódź",51.7592,19.4560,"@german_lodz","работа","Оператор на производстве, 3 смены"],
-      ["Мілана","Łódź",51.7678,19.4423,"@milana_lodz","квартира","Ищу жильё для пары, до 2000 PLN"],
-      ["Тимур","Łódź",51.7512,19.4678,"@tymur_lodz","работа","Монтёр на фабрике"],
-      ["Жанна","Łódź",51.7645,19.4345,"@zhanna_lodz","работа","Швея, опыт на фабрике одежды"],
-      ["Клим","Łódź",51.7534,19.4512,"@klym_lodz","работа","Грузчик, готов на тяжёлую работу"],
-      ["Регіна","Łódź",51.7712,19.4267,"@regina_lodz","напарник","Ищу подругу для курсов польского"],
-      ["Платон","Łódź",51.7489,19.4589,"@platon_lodz","работа","Механик, ремонт промоборудования"],
-      ["Аїда","Łódź",51.7623,19.4178,"@aida_lodz","другое","Парикмахер, принимаю на дому, Bałuty"],
-      // === Katowice (7) ===
-      ["Мирон","Katowice",50.2649,19.0238,"@myron_kato","работа","Шахтёр, опыт подземных работ"],
-      ["Сніжана К.","Katowice",50.2712,19.0345,"@snizhana_k","работа","Медсестра, нострификация пройдена"],
-      ["Тихон","Katowice",50.2578,19.0156,"@tykhon_kato","работа","Сварщик, ищу завод"],
-      ["Лоліта","Katowice",50.2801,19.0423,"@lolita_kato","квартира","Ищу комнату, центр, до 1200 PLN"],
-      ["Назарій","Katowice",50.2634,19.0289,"@nazariy_k","работа","Водитель погрузчика, сертификат UDT"],
-      ["Полина А.","Katowice",50.2745,19.0178,"@polina_kato","работа","Кассир, ищу Silesia City Center"],
-      ["Гліб К.","Katowice",50.2523,19.0512,"@glib_kato","напарник","Ищу людей для футбола по воскресеньям"],
-      // === Lublin (6) ===
-      ["Славко","Lublin",51.2465,22.5684,"@slavko_lub","работа","Водитель такси, знаю город"],
-      ["Емілія","Lublin",51.2534,22.5512,"@emiliya_lub","квартира","Сдаю комнату, Czuby, 800 PLN"],
-      ["Ярема","Lublin",51.2389,22.5745,"@yarema_lub","работа","Строитель, кровельные работы"],
-      ["Соломія","Lublin",51.2601,22.5423,"@solomiya_l","работа","Повар, украинская и польская кухня"],
-      ["Захар Л.","Lublin",51.2456,22.5612,"@zakhar_lub","другое","Автоинструктор, помогу с правами в PL"],
-      ["Василина","Lublin",51.2512,22.5534,"@vasylyna_l","работа","Фармацевт, ищу аптеку"],
-      // === Szczecin (5) ===
-      ["Мстислав","Szczecin",53.4285,14.5528,"@mstyslav_sz","работа","Докер, порт Щецин"],
-      ["Аріна","Szczecin",53.4356,14.5423,"@arina_szcz","работа","Продавец, Media Markt"],
-      ["Лев","Szczecin",53.4212,14.5612,"@lev_szcz","работа","Строитель, фундаментные работы"],
-      ["Даринка","Szczecin",53.4389,14.5345,"@darynka_sz","квартира","Ищу комнату для студентки"],
-      ["Корній","Szczecin",53.4267,14.5489,"@korniy_szcz","напарник","Ищу напарника на рыбалку"],
-      // === Bydgoszcz (5) ===
-      ["Пилип","Bydgoszcz",53.1235,18.0084,"@pylyp_bydg","работа","Разнорабочий, любая работа"],
-      ["Христя","Bydgoszcz",53.1312,17.9945,"@khrystya_b","работа","Горничная, отели и хостелы"],
-      ["Данік","Bydgoszcz",53.1178,18.0156,"@danik_bydg","работа","Электрик, допуск SEP"],
-      ["Оленка","Bydgoszcz",53.1289,18.0023,"@olenka_bydg","квартира","Сдаю койко-место, 550 PLN"],
-      ["Лука","Bydgoszcz",53.1345,18.0112,"@luka_bydg","другое","Волонтёр, помогу с адаптацией"],
-      // === Rzeszów (5) ===
-      ["Златан","Rzeszów",50.0412,21.9991,"@zlatan_rze","работа","Монтажник, сборка мебели"],
-      ["Таміла","Rzeszów",50.0478,22.0123,"@tamila_rze","работа","Уборщица, опыт клининг"],
-      ["Юхим","Rzeszów",50.0345,21.9867,"@yukhym_rze","работа","Водитель, локальные доставки"],
-      ["Ульяна","Rzeszów",50.0534,22.0045,"@ulyana_rze","квартира","Ищу квартиру для мамы с ребёнком"],
-      ["Назар Б.","Rzeszów",50.0389,21.9934,"@nazar_rze","напарник","Ищу компанию для бега по утрам"],
-      // === Белосток / Białystok (4) ===
-      ["Тарасик","Białystok",53.1325,23.1688,"@tarasyk_bia","работа","Упаковщик, ночные смены"],
-      ["Ясмина","Białystok",53.1389,23.1534,"@yasmina_bia","работа","Кассир, Kaufland"],
-      ["Лесик","Białystok",53.1267,23.1756,"@lesyk_bia","другое","Ветеринар, помогу с животными"],
-      ["Емма","Białystok",53.1345,23.1623,"@emma_bia","квартира","Ищу комнату возле центра"],
-      // === Германия / Germany (8) ===
-      ["Руслана","Berlin",52.5200,13.4050,"@ruslana_ber","работа","Ищу работу в ресторане, знаю DE на A2"],
-      ["Орест","Berlin",52.5145,13.3890,"@orest_berlin","квартира","Ищу WG-комнату Kreuzberg"],
-      ["Маріанна","München",48.1351,11.5820,"@marianna_muc","работа","Медсестра, B2 Deutsch, ищу Klinik"],
-      ["Гордій","Hamburg",53.5511,9.9937,"@gordiy_ham","работа","Сварщик, верфи"],
-      ["Злата Б.","Frankfurt",50.1109,8.6821,"@zlata_ffm","работа","IT-тестировщик, удалённо"],
-      ["Святослав","Düsseldorf",51.2277,6.7735,"@svyatoslav_d","работа","Логист, опыт DHL"],
-      ["Лана","Dresden",51.0504,13.7373,"@lana_dresden","квартира","Ищу жильё, переезжаю из PL"],
-      ["Данило Н.","Nürnberg",49.4521,11.0767,"@danylo_nurn","другое","Автомеханик BMW, ищу Werkstatt"],
-      // === Украина / Ukraine (7) ===
-      ["Olha","Львов",49.8397,24.0297,"@olha_lviv","другое","Собираюсь переехать в PL, ищу контакты"],
-      ["Микола К.","Киев",50.4501,30.5234,"@mykola_kyiv","другое","Планирую переезд в Краков, ищу советы"],
-      ["Таня","Харьков",49.9935,36.2304,"@tanya_kharkiv","другое","Хочу в Варшаву, ищу работу заранее"],
-      ["Ваня","Одесса",46.4825,30.7233,"@vanya_odesa","другое","Планирую выезд во Вроцлав, кондитер"],
-      ["Каріна","Днепр",48.4647,35.0462,"@karyna_dnipro","другое","Медик, готовлюсь к нострификации в PL"],
-      ["Гриць","Запорожье",47.8388,35.1396,"@gryts_zp","другое","Сварщик, жду визу в PL"],
-      ["Софійка","Ивано-Франковск",48.9226,24.7111,"@sofiyка_if","другое","Учительница, ищу школу в Кракове"],
-      // === Чехия / Czech Republic (5) ===
-      ["Мирослав","Praha",50.0755,14.4378,"@myroslav_prg","работа","Строитель, работаю в CZ, ищу PL"],
-      ["Іванка","Brno",49.1951,16.6068,"@ivanka_brno","другое","Переводчик CZ/UA, думаю о переезде в PL"],
-      ["Остап Ч.","Ostrava",49.8209,18.2625,"@ostap_ostr","работа","Металлург, ищу завод возле границы PL"],
-      ["Леся Ч.","Hradec Králové",50.2092,15.8327,"@lesya_hk","квартира","Переезжаю во Вроцлав, ищу жильё"],
-      ["Тимко","Liberec",50.7671,15.0562,"@tymko_lib","работа","Стекольщик, ищу фабрику в PL"],
-      // === Словакия / Slovakia (3) ===
-      ["Юрко","Bratislava",48.1486,17.1077,"@yurko_brat","другое","Планирую переезд в Краков"],
-      ["Мілена","Košice",48.7164,21.2611,"@milena_kos","работа","Повариха, хочу в PL ресторан"],
-      ["Роберт","Žilina",49.2231,18.7395,"@robert_zil","работа","Водитель, думаю о PL"]
-    ];
-
-    // ===== Extra generated community data (+150) =====
-    function seededNoise(n) {
-      var x = Math.sin(n * 9999.91) * 10000;
-      return x - Math.floor(x);
-    }
-
-    function generateExtraCommunityData() {
-      var cityPlan = [
-        // Major population centers in Poland (124)
-        { city: 'Warszawa', lat: 52.2297, lng: 21.0122, count: 32 },
-        { city: 'Kraków', lat: 50.0647, lng: 19.9450, count: 21 },
-        { city: 'Łódź', lat: 51.7592, lng: 19.4560, count: 14 },
-        { city: 'Wrocław', lat: 51.1079, lng: 17.0385, count: 14 },
-        { city: 'Poznań', lat: 52.4064, lng: 16.9252, count: 12 },
-        { city: 'Gdańsk', lat: 54.3520, lng: 18.6466, count: 10 },
-        { city: 'Szczecin', lat: 53.4285, lng: 14.5528, count: 6 },
-        { city: 'Bydgoszcz', lat: 53.1235, lng: 18.0084, count: 5 },
-        { city: 'Lublin', lat: 51.2465, lng: 22.5684, count: 4 },
-        { city: 'Katowice', lat: 50.2649, lng: 19.0238, count: 4 },
-        { city: 'Białystok', lat: 53.1325, lng: 23.1688, count: 2 },
-
-        // Scattered around Poland (14)
-        { city: 'Gdynia', lat: 54.5189, lng: 18.5305, count: 2 },
-        { city: 'Sopot', lat: 54.4416, lng: 18.5601, count: 1 },
-        { city: 'Gorzów Wielkopolski', lat: 52.7368, lng: 15.2288, count: 1 },
-        { city: 'Opole', lat: 50.6751, lng: 17.9213, count: 1 },
-        { city: 'Kielce', lat: 50.8661, lng: 20.6286, count: 1 },
-        { city: 'Olsztyn', lat: 53.7784, lng: 20.4801, count: 1 },
-        { city: 'Toruń', lat: 53.0138, lng: 18.5984, count: 1 },
-        { city: 'Radom', lat: 51.4027, lng: 21.1471, count: 1 },
-        { city: 'Rzeszów', lat: 50.0412, lng: 21.9991, count: 2 },
-        { city: 'Zielona Góra', lat: 51.9356, lng: 15.5062, count: 1 },
-        { city: 'Częstochowa', lat: 50.8118, lng: 19.1203, count: 1 },
-        { city: 'Gliwice', lat: 50.2945, lng: 18.6714, count: 1 },
-        { city: 'Zabrze', lat: 50.3249, lng: 18.7857, count: 1 },
-
-        // Neighboring countries (12)
-        { city: 'Berlin', lat: 52.5200, lng: 13.4050, count: 2 },
-        { city: 'Dresden', lat: 51.0504, lng: 13.7373, count: 1 },
-        { city: 'Praha', lat: 50.0755, lng: 14.4378, count: 2 },
-        { city: 'Ostrava', lat: 49.8209, lng: 18.2625, count: 1 },
-        { city: 'Bratislava', lat: 48.1486, lng: 17.1077, count: 2 },
-        { city: 'Košice', lat: 48.7164, lng: 21.2611, count: 1 },
-        { city: 'Lviv', lat: 49.8397, lng: 24.0297, count: 1 },
-        { city: 'Vilnius', lat: 54.6872, lng: 25.2797, count: 1 },
-        { city: 'Minsk', lat: 53.9006, lng: 27.5590, count: 1 }
-      ];
-
-      var firstNames = [
-        'Артем','Олексій','Ігор','Богдан','Роман','Тарас','Максим','Юрій','Микола','Олег',
-        'Владислав','Павло','Дмитро','Сергій','Віталій','Марія','Олена','Ірина','Наталія','Анна',
-        'Катерина','Тетяна','Оксана','Юлія','Світлана','Людмила','Аліна','Вікторія','Дарина','Софія',
-        'Христина','Надія','Леся','Марина','Зоряна','Уляна'
-      ];
-      var seeks = ['работа', 'квартира', 'помощник', 'другое'];
-      var descriptions = [
-        'Ищу работу и новые контакты среди соотечественников',
-        'Недавно переехал(а), открыт(а) к новым знакомствам',
-        'Могу подсказать по адаптации и документам',
-        'Ищу жильё/соседей в районе',
-        'Интересуют смены и подработка рядом'
-      ];
-
-      var extra = [];
-      var idx = 1;
-
-      cityPlan.forEach(function(cfg) {
-        for (var i = 0; i < cfg.count; i++) {
-          var n1 = seededNoise(idx * 3.17);
-          var n2 = seededNoise(idx * 7.91);
-          var lat = cfg.lat + (n1 - 0.5) * 0.12;
-          var lng = cfg.lng + (n2 - 0.5) * 0.18;
-
-          // Keep within map display bounds used later in CSV validation
-          if (lat <= 40) lat = 40.05;
-          if (lat >= 60) lat = 59.95;
-          if (lng <= 10) lng = 10.05;
-          if (lng >= 30) lng = 29.95;
-
-          var firstName = firstNames[idx % firstNames.length];
-          var name = firstName + ' ' + String.fromCharCode(65 + (idx % 24)) + '.';
-          var tg = '@ua_map_' + (1000 + idx);
-          var seek = seeks[idx % seeks.length];
-          var desc = descriptions[idx % descriptions.length];
-
-          extra.push([
-            name,
-            cfg.city,
-            parseFloat(lat.toFixed(4)),
-            parseFloat(lng.toFixed(4)),
-            tg,
-            seek,
-            desc
-          ]);
-
-          idx++;
-        }
-      });
-
-      return extra;
-    }
-
-    // Append generated +150 entries to the seeded dataset
-    sampleData = sampleData.concat(generateExtraCommunityData());
-
-    // Helper: add a marker from sample data entry
-    function addSampleMarker(entry) {
-      var name = entry[0], city = entry[1], lat = entry[2], lng = entry[3];
-      var tg = entry[4], seeking = entry[5], desc = entry[6];
-      var tgClean = tg.replace(/@/g, '');
-      var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
-      popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
-      if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
-      if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
-      if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
-      markers.addLayer(L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 }));
-    }
-
-    // Add all sample data first
-    var sampleCount = sampleData.length;
-    sampleData.forEach(addSampleMarker);
-    map.addLayer(markers);
-
-    // Show sample count immediately
-    var counterEl = document.getElementById('map-counter');
-    var countEl = document.getElementById('marker-count');
-    if (sampleCount > 0 && counterEl && countEl) {
-      countEl.textContent = sampleCount;
-      counterEl.style.display = 'inline-block';
-    }
-
-    var loadingEl = document.getElementById('map-loading');
-    var errorShown = false;
-
-    function showError(msg) {
-      if (errorShown) return;
-      errorShown = true;
-      if (loadingEl) {
-        loadingEl.innerHTML = '<div style="color:#ef4444;font-weight:600;">⚠️ ' + msg + '</div>' +
-          '<button onclick="location.reload()" style="margin-top:0.75rem;padding:0.5rem 1.5rem;border-radius:8px;border:2px solid #ef4444;background:#fff;color:#ef4444;font-weight:600;cursor:pointer;">🔄 Попробовать снова</button>';
-        loadingEl.style.display = 'block';
-      }
-    }
-
-    // Add timeout for CSV loading
-    var csvTimeout = setTimeout(function() {
-      showError('Загрузка данных заняла слишком много времени. Проверьте интернет-соединение.');
-    }, 15000);
-
-    Papa.parse(csvUrl, {
-      download: true,
-      header: true,
-      skipEmptyLines: true,
-      complete: function(results) {
-        clearTimeout(csvTimeout);
-        if (loadingEl) loadingEl.style.display = 'none';
-
-        if (!results.data || results.data.length === 0) {
-          return;
-        }
-
-        // Auto-detect column names from the first row
-        var firstRow = results.data[0];
-        var colLat = findCol(firstRow, ['Широта', 'Lat', 'lat', 'latitude']);
-        var colLng = findCol(firstRow, ['Долгота', 'Довгота', 'Lng', 'lng', 'longitude']);
-        var colName = findCol(firstRow, ['Имя', "Ім'я", 'Ник', 'Нік', 'Name', 'name']);
-        var colCity = findCol(firstRow, ['Город', 'Місто', 'City', 'city']);
-        var colTg = findCol(firstRow, ['Telegram', 'telegram', 'tg']);
-        var colSeeking = findCol(firstRow, ['Что ищу', 'Що шукаю', 'seeking', 'szukam']);
-        var colDesc = findCol(firstRow, ['Короткое описание', 'Короткий опис', 'опис', 'description', 'opis']);
-
-        if (!colLat || !colLng) {
-          console.warn('Map CSV: Could not find Lat/Lng columns. Found headers:', Object.keys(firstRow));
-          showError('Не удалось распознать формат данных. Попробуйте позже.');
-          return;
-        }
-
-        var count = 0;
-        results.data.forEach(function(row) {
-          var latStr = row[colLat];
-          var lngStr = row[colLng];
-          if (latStr && lngStr) {
-            // Handle comma as decimal separator
-            var lat = parseFloat(String(latStr).replace(',', '.'));
-            var lng = parseFloat(String(lngStr).replace(',', '.'));
-            if (!isNaN(lat) && !isNaN(lng) && lat > 40 && lat < 60 && lng > 10 && lng < 30) {
-              var name = (colName && row[colName]) ? row[colName] : 'Аноним';
-              var city = (colCity && row[colCity]) ? row[colCity] : '';
-              var telegram = (colTg && row[colTg]) ? row[colTg] : '';
-              var seeking = (colSeeking && row[colSeeking]) ? row[colSeeking] : '';
-              var desc = (colDesc && row[colDesc]) ? row[colDesc] : '';
-
-              var tgClean = telegram.replace(/@/g, '').trim();
-
-              var popup = '<div class="popup-name">' + escapeHtml(name) + '</div>';
-              if (city) popup += '<div class="popup-row">📍 ' + escapeHtml(city) + '</div>';
-              if (tgClean) popup += '<div class="popup-row">💬 <a href="https://t.me/' + encodeURIComponent(tgClean) + '" target="_blank" rel="noopener">@' + escapeHtml(tgClean) + '</a></div>';
-              if (seeking) popup += '<div class="popup-seeking">🔍 ' + escapeHtml(seeking) + '</div>';
-              if (desc) popup += '<div class="popup-desc">' + escapeHtml(desc) + '</div>';
-
-              var marker = L.marker([lat, lng], { icon: customIcon }).bindPopup(popup, { maxWidth: 300 });
-              markers.addLayer(marker);
-              count++;
-            }
-          }
-        });
-
-        // Update counter with combined total
-        var total = sampleCount + count;
-        if (counterEl && countEl) {
-          countEl.textContent = total;
-          counterEl.style.display = 'inline-block';
-        }
-      },
-      error: function(err) {
-        clearTimeout(csvTimeout);
-        showError('Не удалось загрузить данные карты. Попробуйте позже.');
-        console.error('CSV parse error:', err);
-      }
-    });
-
-  })();
-  </script>
-  <script src="/main.js"></script>
+ })();
+ </script>
+ <script src="/main.js"></script>
 </body>
 </html>
