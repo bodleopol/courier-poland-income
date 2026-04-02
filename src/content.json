@@ -1,5 +1,143 @@
 [
   {
+    "slug": "warsaw-transport-taxi-driver-uber-bolt-partner-704",
+    "category": "transport",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Водій таксі (Uber, Bolt, FreeNow) через партнера — Варшава",
+    "title_pl": "Kierowca taksówki (Uber, Bolt, FreeNow) przez partnera — Warszawa",
+    "salary": "4000 - 8000 PLN netto/міс",
+    "company": "EvoFleet Warszawa",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "Ви самі обираєте коли працювати",
+    "pattern_pl": "Sam wybierasz kiedy pracujesz",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Автомобілі 2020-2023 років випуску (Toyota Corolla, Skoda Fabia) на газу (LPG).",
+      "Оренда авто від 550 PLN на тиждень. Партнерська комісія 50 PLN/додаток.",
+      "Допомога у виготовленні ідентифікатора водія та проходженні медогляду.",
+      "Можливість роботи на власному автомобілі (комісія парку 50 PLN/тиждень + податки)."
+    ],
+    "tasks_ua": [
+      "Перевезення пасажирів за допомогою додатків Uber, Bolt, FreeNow.",
+      "Підтримання чистоти та порядку в автомобілі.",
+      "Дотримання правил дорожнього руху."
+    ],
+    "details_ua": [
+      "Вимоги: вік від 20 років, права кат. B (стаж від 1 року), довідка про відсутність судимості.",
+      "Заробіток залежить від кількості годин на лінії. Працюючи 50 годин на тиждень, реальний заробіток становить близько 4500 PLN чистими після всіх витрат.",
+      "Надаємо підтримку 24/7 та власний сервіс для обслуговування авто."
+    ],
+    "seo_title_ua": "Робота водієм таксі у Варшаві | Партнер Uber Bolt | Авто в оренду",
+    "meta_description_ua": "Легальна робота водієм таксі (Uber, Bolt, FreeNow) у Варшаві через партнера. Оренда авто, гнучкий графік, заробіток до 8000 PLN нетто. Допомагаємо з документами!",
+    "offers_pl": [
+      "Samochody z lat 2020-2023 (Toyota Corolla, Skoda Fabia) na gaz (LPG).",
+      "Wynajem auta od 550 PLN tygodniowo. Prowizja partnerska 50 PLN/aplikacja.",
+      "Pomoc w uzyskaniu identyfikatora kierowcy i badaniach lekarskich.",
+      "Możliwość pracy na własnym samochodzie (prowizja floty 50 PLN/tydzień + podatki)."
+    ],
+    "tasks_pl": [
+      "Przewóz pasażerów za pomocą aplikacji Uber, Bolt, FreeNow.",
+      "Utrzymanie czystości i porządku w samochodzie.",
+      "Przestrzeganie przepisów ruchu drogowego."
+    ],
+    "details_pl": [
+      "Wymagania: wiek od 20 lat, prawo jazdy kat. B (staż od 1 roku), zaświadczenie o niekaralności.",
+      "Zarobki zależą od liczby godzin na linii. Pracując 50 godzin w tygodniu, realne zarobki wynoszą około 4500 PLN na rękę po wszystkich kosztach.",
+      "Zapewniamy wsparcie 24/7 oraz własny serwis do obsługi aut."
+    ],
+    "offers_ru": [
+      "Автомобили 2020-2023 годов выпуска (Toyota Corolla, Skoda Fabia) на газу (LPG).",
+      "Аренда авто от 550 PLN в неделю. Партнерская комиссия 50 PLN/приложение.",
+      "Помощь в оформлении идентификатора водителя и прохождении медосмотра.",
+      "Возможность работы на собственном автомобиле (комиссия парка 50 PLN/неделя + налоги)."
+    ],
+    "tasks_ru": [
+      "Перевозка пассажиров с помощью приложений Uber, Bolt, FreeNow.",
+      "Поддержание чистоты и порядка в автомобиле.",
+      "Соблюдение правил дорожного движения."
+    ],
+    "details_ru": [
+      "Требования: возраст от 20 лет, права кат. B (стаж от 1 года), справка об отсутствии судимости.",
+      "Заработок зависит от количества часов на линии. Работая 50 часов в неделю, реальный заработок составляет около 4500 PLN чистыми после всех расходов.",
+      "Предоставляем поддержку 24/7 и собственный сервис для обслуживания авто."
+    ]
+  },
+  {
+    "slug": "krakow-transport-taxi-driver-uber-bolt-partner-705",
+    "category": "transport",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Kierowca Taxi (Uber/Bolt) wynajem auta — Kraków",
+    "title_pl": "Kierowca Taxi (Uber/Bolt) wynajem auta — Kraków",
+    "salary": "3500 - 7000 PLN netto/міс",
+    "company": "KrakTaxi Partner",
+    "shift_ua": "Вільний графік",
+    "shift_pl": "Wolny grafik",
+    "pattern_ua": "Робота в зручний час",
+    "pattern_pl": "Praca w dogodnym czasie",
+    "start_ua": "Протягом 3-5 днів",
+    "start_pl": "W ciągu 3-5 dni",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_pl": [
+      "Oferujemy nowe samochody hybrydowe (Toyota Yaris, Prius) z instalacją LPG.",
+      "Niski koszt wynajmu: od 500 PLN tygodniowo. Prowizja 40 PLN za aplikację.",
+      "Rozliczenia co tydzień na konto bankowe. Pokrywamy koszty księgowości.",
+      "Zniżki na paliwo na wybranych stacjach i darmowa myjnia raz w tygodniu."
+    ],
+    "tasks_pl": [
+      "Realizacja przejazdów z aplikacji Uber, Bolt, FreeNow na terenie Krakowa.",
+      "Dbałość o powierzony pojazd i kulturę osobistą wobec pasażerów.",
+      "Tankowanie pojazdu i bieżąca kontrola płynów eksploatacyjnych."
+    ],
+    "details_pl": [
+      "Wymagane polskie lub ukraińskie prawo jazdy z wymianą, zaświadczenie o niekaralności z polskiego sądu.",
+      "Zapewniamy pełne wdrożenie dla osób bez doświadczenia w taksówkach.",
+      "Możliwość wynajęcia auta z drugim kierowcą (np. z kolegą) w celu obniżenia kosztów na pół."
+    ],
+    "seo_title_pl": "Praca Kierowca Uber Bolt Kraków | Wynajem Auta Taxi",
+    "meta_description_pl": "Zostań kierowcą Uber/Bolt w Krakowie! Wynajem aut hybrydowych z LPG. Tanie rozliczenia, elastyczne godziny pracy, zarobki do 7000 PLN na rękę. Sprawdź!",
+    "title_ua": "Водій таксі (Uber/Bolt) оренда авто — Краків",
+    "offers_ua": [
+      "Пропонуємо нові гібридні автомобілі (Toyota Yaris, Prius) з газовою установкою (LPG).",
+      "Низька вартість оренди: від 500 PLN на тиждень. Комісія 40 PLN за додаток.",
+      "Щотижневі розрахунки на банківський рахунок. Покриваємо витрати на бухгалтерію.",
+      "Знижки на пальне на обраних заправках та безкоштовна мийка раз на тиждень."
+    ],
+    "tasks_ua": [
+      "Виконання поїздок з додатків Uber, Bolt, FreeNow на території Кракова.",
+      "Дбайливе ставлення до довіреного транспортного засобу та ввічливість до пасажирів.",
+      "Заправка автомобіля та регулярна перевірка експлуатаційних рідин."
+    ],
+    "details_ua": [
+      "Потрібне польське або українське посвідчення водія (з обміном), довідка про відсутність судимості з польського суду.",
+      "Забезпечуємо повне навчання для осіб без досвіду роботи в таксі.",
+      "Можливість оренди авто з другим водієм (наприклад, з другом) для зменшення витрат навпіл."
+    ],
+    "title_ru": "Водитель такси (Uber/Bolt) аренда авто — Краков",
+    "offers_ru": [
+      "Предлагаем новые гибридные автомобили (Toyota Yaris, Prius) с газовой установкой (LPG).",
+      "Низкая стоимость аренды: от 500 PLN в неделю. Комиссия 40 PLN за приложение.",
+      "Еженедельные расчеты на банковский счет. Покрываем расходы на бухгалтерию.",
+      "Скидки на топливо на выбранных заправках и бесплатная мойка раз в неделю."
+    ],
+    "tasks_ru": [
+      "Выполнение поездок из приложений Uber, Bolt, FreeNow на территории Кракова.",
+      "Бережное отношение к доверенному транспортному средству и вежливость к пассажирам.",
+      "Заправка автомобиля и регулярная проверка эксплуатационных жидкостей."
+    ],
+    "details_ru": [
+      "Требуется польское или украинское водительское удостоверение (с обменом), справка об отсутствии судимости из польского суда.",
+      "Обеспечиваем полное обучение для лиц без опыта работы в такси.",
+      "Возможность аренды авто со вторым водителем (например, с другом) для снижения расходов пополам."
+    ]
+  },
+  {
     "slug": "krakow-hospitality-chef-open-kitchen-human-401",
     "category": "hospitality",
     "city": "Краків",
