@@ -28,59 +28,35 @@ const POSTS_PER_PAGE = 20;
  *      mark the rest as secondary (noindex).
  */
 function detectNearDuplicateSlugs(pages) {
-  const groups = new Map();
-  // Phase 1: Group by same city + same job type (original logic)
+  const secondarySlugs = new Set();
+  const jobBases = new Set();
+
   for (const page of pages) {
     const slug = page.slug || '';
+
+    if (page.is_generated === false || page.data_source === 'manual' || page.data_source === 'local-business') {
+      // Manual pages are always indexable
+      continue;
+    }
+
     const parts = slug.split('-');
     if (parts.length < 2) continue;
-    const cityPrefix = parts[0];
+
     let jobParts = parts.slice(1);
     // Strip trailing pure-numeric ID (e.g. "-850")
     if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
       jobParts = jobParts.slice(0, -1);
     }
-    const jobBase = jobParts.join('-');
-    if (!jobBase) continue;
-    const key = `${cityPrefix}::${jobBase}`;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(slug);
-  }
-  const secondarySlugs = new Set();
-  for (const [, slugs] of groups) {
-    if (slugs.length >= 2) {
-      // Keep the first occurrence; mark all subsequent as secondary
-      for (const slug of slugs.slice(1)) {
-        secondarySlugs.add(slug);
-      }
-    }
-  }
 
-  // Phase 2: Cross-city dedup — same job base across different cities.
-  // Keep the first city occurrence indexable; mark others noindex to reduce
-  // "city-spin doorway" pattern that search engines penalise.
-  const crossCityGroups = new Map();
-  for (const page of pages) {
-    const slug = page.slug || '';
-    if (secondarySlugs.has(slug)) continue; // already marked
-    const parts = slug.split('-');
-    if (parts.length < 2) continue;
-    let jobParts = parts.slice(1);
-    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
-      jobParts = jobParts.slice(0, -1);
-    }
     const jobBase = jobParts.join('-');
     if (!jobBase) continue;
-    if (!crossCityGroups.has(jobBase)) crossCityGroups.set(jobBase, []);
-    crossCityGroups.get(jobBase).push(slug);
-  }
-  for (const [, slugs] of crossCityGroups) {
-    if (slugs.length >= 2) {
-      // Keep only the first city variant (by content.json insertion order) indexable;
-      // mark the rest noindex to reduce "city-spin doorway" pattern.
-      for (const slug of slugs.slice(1)) {
-        secondarySlugs.add(slug);
-      }
+
+    if (jobBases.has(jobBase)) {
+      // Mark all subsequent occurrences of the same job base as secondary
+      secondarySlugs.add(slug);
+    } else {
+      // Keep the first occurrence
+      jobBases.add(jobBase);
     }
   }
 
@@ -2053,6 +2029,12 @@ const SIMPLE_HUMAN_TITLES_BY_LANG = {
   ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити']
 };
 
+const FULL_HUMAN_TITLES_BY_LANG = {
+  pl: ['Warto wiedzieć przed startem', 'Praktyczne informacje', 'Co powinieneś wiedzieć', 'Najważniejsze szczegóły', 'Przed rozpoczęciem pracy', 'Wskazówki dla kandydatów', 'Krótko przed startem', 'Praktyczne wskazówki'],
+  ru: ['Важно знать перед стартом', 'Практическая информация', 'Что следует знать', 'Важные детали', 'Перед началом работы', 'Советы для кандидатов', 'Коротко перед стартом', 'Практические советы'],
+  ua: ['Що варто знати перед стартом', 'Практична інформація', 'Що слід знати', 'Важливі деталі', 'Перед початком роботи', 'Поради для кандидатів', 'Коротко перед стартом', 'Практичні поради']
+};
+
 function diversifyChecklistItem(text, page, lang, index) {
   const variantsByLang = CHECKLIST_ITEM_VARIANTS[lang];
   const variants = variantsByLang ? variantsByLang[text] : null;
@@ -2109,7 +2091,8 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
     .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
   const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + QUESTIONS_SEED_OFFSET);
 
-  const title = isPl ? 'Warto wiedzieć przed startem' : (isRu ? 'Что важно знать перед стартом' : 'Що варто знати перед стартом');
+  const fullTitles = FULL_HUMAN_TITLES_BY_LANG[lang] || FULL_HUMAN_TITLES_BY_LANG.ua;
+  const title = fullTitles[seed % fullTitles.length];
   const leftTitle = isPl ? 'Lista kontrolna' : (isRu ? 'Проверочный список' : 'Чек-лист перевірки');
   const rightTitle = isPl ? 'Pytania do rekrutera' : (isRu ? 'Вопросы рекрутеру' : 'Питання до рекрутера');
   const note = isPl
@@ -2172,18 +2155,31 @@ function buildGeneratedNotice(page, lang) {
   return `<div class="editorial-notice"><span class="editorial-author">✍️ ${escapeHtml(author.name)}</span> · <time datetime="${date}">${date}</time></div>`;
 }
 
+const PROOF_SUMMARY_TITLES_BY_LANG = {
+  ua: ['Rybezh Proof', 'Рейтинг довіри Proof', 'Оцінка компанії Rybezh Proof', 'Рейтинг роботодавця'],
+  pl: ['Rybezh Proof', 'Ranking zaufania Proof', 'Ocena firmy Rybezh Proof', 'Ranking pracodawcy'],
+  ru: ['Rybezh Proof', 'Рейтинг доверия Proof', 'Оценка компании Rybezh Proof', 'Рейтинг работодателя']
+};
+
 function buildVacancyProofSummaryBlock(page) {
   const slug = escapeHtml(page.slug || '');
   const city = escapeHtml(page.city || '');
+  const seed = hashString(`${slug}:proof-summary`);
+
+  const uaTitleList = PROOF_SUMMARY_TITLES_BY_LANG.ua;
+  const plTitleList = PROOF_SUMMARY_TITLES_BY_LANG.pl;
+  const uaTitle = uaTitleList[seed % uaTitleList.length];
+  const plTitle = plTitleList[seed % plTitleList.length];
+
   return `
     <section class="job-proof-summary" data-proof-summary data-vacancy-slug="${slug}" aria-live="polite">
       <div data-lang-content="ua">
-        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> відгуків)</small></h3>
+        <h3>🔍 ${uaTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> відгуків)</small></h3>
         <p data-proof-verdict>Завантажуємо підтверджені відгуки…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Додати свій Proof</a>
       </div>
       <div data-lang-content="pl" style="display:none">
-        <h3>🔍 Proof${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> opinii)</small></h3>
+        <h3>🔍 ${plTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> opinii)</small></h3>
         <p data-proof-verdict>Ładujemy zatwierdzone opinie…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Dodaj swój Proof</a>
       </div>
@@ -2191,15 +2187,30 @@ function buildVacancyProofSummaryBlock(page) {
   `;
 }
 
+const PROOF_FORM_TITLES_BY_LANG = {
+  ua: ['Додати свій Proof', 'Поділитися досвідом роботи', 'Залишити відгук про компанію', 'Оцінити вакансію'],
+  pl: ['Dodaj swój Proof', 'Podziel się doświadczeniem zawodowym', 'Zostaw opinię o firmie', 'Oceń ofertę pracy'],
+  ru: ['Добавить свой Proof', 'Поделиться опытом работы', 'Оставить отзыв о компании', 'Оценить вакансию']
+};
+
 function buildVacancyProofFormBlock(page) {
   const vacancyUrl = `https://rybezh.site/${escapeHtml(page.slug || '')}.html`;
   const company = escapeHtml(page.company || '');
   const city = escapeHtml(page.city || '');
+  const slug = escapeHtml(page.slug || '');
+  const seed = hashString(`${slug}:proof-form`);
+
+  const uaTitleList = PROOF_FORM_TITLES_BY_LANG.ua;
+  const plTitleList = PROOF_FORM_TITLES_BY_LANG.pl;
+  const uaTitle = uaTitleList[seed % uaTitleList.length];
+  const plTitle = plTitleList[seed % plTitleList.length];
 
   return `
     <section class="job-proof" id="proof-form-anchor" aria-label="Rybezh Proof">
-      <h3>🧾 Додати свій Proof</h3>
-      <p>Поділіться реальним досвідом роботи. Відгук буде перевірено модератором перед публікацією.</p>
+      <h3 data-lang-content="ua">🧾 ${uaTitle}</h3>
+      <h3 data-lang-content="pl" style="display:none">🧾 ${plTitle}</h3>
+      <p data-lang-content="ua">Поділіться реальним досвідом роботи. Відгук буде перевірено модератором перед публікацією.</p>
+      <p data-lang-content="pl" style="display:none">Podziel się realnym doświadczeniem. Opinia zostanie sprawdzona przez moderatora przed publikacją.</p>
       <form class="job-proof-form" data-proof-form novalidate>
         <div class="job-proof-grid">
           <label>🔗 Посилання на вакансію *

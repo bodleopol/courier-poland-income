@@ -19,52 +19,35 @@ const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
  * Mirrors the same logic in generate.js to keep indexing decisions consistent.
  */
 function detectNearDuplicateSlugs(pages) {
-  const groups = new Map();
-  for (const page of pages) {
-    const slug = page.slug || '';
-    const parts = slug.split('-');
-    if (parts.length < 2) continue;
-    const cityPrefix = parts[0];
-    let jobParts = parts.slice(1);
-    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
-      jobParts = jobParts.slice(0, -1);
-    }
-    const jobBase = jobParts.join('-');
-    if (!jobBase) continue;
-    const key = `${cityPrefix}::${jobBase}`;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(slug);
-  }
   const secondarySlugs = new Set();
-  for (const [, slugs] of groups) {
-    if (slugs.length >= 2) {
-      for (const slug of slugs.slice(1)) {
-        secondarySlugs.add(slug);
-      }
-    }
-  }
+  const jobBases = new Set();
 
-  // Cross-city dedup: same job base across different cities
-  const crossCityGroups = new Map();
   for (const page of pages) {
     const slug = page.slug || '';
-    if (secondarySlugs.has(slug)) continue;
+
+    if (page.is_generated === false || page.data_source === 'manual' || page.data_source === 'local-business') {
+      // Manual pages are always indexable
+      continue;
+    }
+
     const parts = slug.split('-');
     if (parts.length < 2) continue;
+
     let jobParts = parts.slice(1);
+    // Strip trailing pure-numeric ID (e.g. "-850")
     if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
       jobParts = jobParts.slice(0, -1);
     }
+
     const jobBase = jobParts.join('-');
     if (!jobBase) continue;
-    if (!crossCityGroups.has(jobBase)) crossCityGroups.set(jobBase, []);
-    crossCityGroups.get(jobBase).push(slug);
-  }
-  for (const [, slugs] of crossCityGroups) {
-    if (slugs.length >= 2) {
-      for (const slug of slugs.slice(1)) {
-        secondarySlugs.add(slug);
-      }
+
+    if (jobBases.has(jobBase)) {
+      // Mark all subsequent occurrences of the same job base as secondary
+      secondarySlugs.add(slug);
+    } else {
+      // Keep the first occurrence
+      jobBases.add(jobBase);
     }
   }
 
