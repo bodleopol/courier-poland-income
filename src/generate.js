@@ -2824,7 +2824,7 @@ async function build() {
     'title', 'excerpt', 'body', 'tasks', 'requirements', 'offers', 'details',
     'contract', 'shift', 'pattern', 'start', 'housing', 'transport', 'workplace',
     'team', 'onboarding', 'sector', 'equipment', 'physical', 'shift_structure',
-    'city', 'cta_text'
+    'city', 'cta_text', 'seo_title', 'meta_description'
   ];
   pages.forEach((page) => enrichRussianFields(page, vacancyRuFields));
   // Manual batch polishing: force-normalize first 50 vacancy-like pages for literary RU
@@ -2978,8 +2978,18 @@ async function build() {
     const titleRu = toRussianFallbackText(p.title_ru || p.title);
     const excerptRu = toRussianFallbackText(enrichVacancyExcerpt(p, 'ru'));
     jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
-    jobTranslations[`job.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
-    jobTranslations[`job.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: excerptRu };
+
+    // Use SEO fields if available, otherwise fallback to standard title/excerpt
+    const metaTitleUa = p.seo_title_ua || `${p.title} — Rybezh`;
+    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title} — Rybezh`);
+    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu} — Rybezh`);
+    jobTranslations[`job.${p.slug}.meta_title`] = { ua: metaTitleUa, pl: metaTitlePl, ru: metaTitleRu };
+
+    const metaDescUa = p.meta_description_ua || p.excerpt;
+    const metaDescPl = p.meta_description_pl || (p.meta_description_ua ? p.meta_description_ua : (p.excerpt_pl || p.excerpt));
+    const metaDescRu = p.meta_description_ru || (p.meta_description_ua ? toRussianFallbackText(p.meta_description_ua) : excerptRu);
+    jobTranslations[`job.${p.slug}.excerpt`] = { ua: metaDescUa, pl: metaDescPl, ru: metaDescRu };
+
     jobTranslations[`job.${p.slug}.cta`] = { ua: p.cta_text || 'Подати заявку', pl: p.cta_text_pl || 'Złóż wniosek', ru: p.cta_text_ru || 'Подать заявку' };
   });
 
@@ -2987,9 +2997,20 @@ async function build() {
   posts.forEach(p => {
     const readMinutes = estimateReadingTime(p.body || '');
     const titleRu = toRussianFallbackText(p.title_ru || p.title);
+    const excerptRu = toRussianFallbackText(p.excerpt_ru || p.excerpt);
     jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
-    jobTranslations[`blog.${p.slug}.meta_title`] = { ua: `${p.title} — Rybezh`, pl: `${p.title_pl || p.title} — Rybezh`, ru: `${titleRu} — Rybezh` };
-    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: p.excerpt, pl: p.excerpt_pl || p.excerpt, ru: toRussianFallbackText(p.excerpt_ru || p.excerpt) };
+
+    // Use SEO fields if available, otherwise fallback to standard title/excerpt
+    const metaTitleUa = p.seo_title_ua || `${p.title} — Rybezh`;
+    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title} — Rybezh`);
+    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu} — Rybezh`);
+    jobTranslations[`blog.${p.slug}.meta_title`] = { ua: metaTitleUa, pl: metaTitlePl, ru: metaTitleRu };
+
+    const metaDescUa = p.meta_description_ua || p.excerpt;
+    const metaDescPl = p.meta_description_pl || (p.meta_description_ua ? p.meta_description_ua : (p.excerpt_pl || p.excerpt));
+    const metaDescRu = p.meta_description_ru || (p.meta_description_ua ? toRussianFallbackText(p.meta_description_ua) : excerptRu);
+    jobTranslations[`blog.${p.slug}.excerpt`] = { ua: metaDescUa, pl: metaDescPl, ru: metaDescRu };
+
     jobTranslations[`blog.${p.slug}.read_time`] = { ua: `${readMinutes} хв читання`, pl: `${readMinutes} min czytania`, ru: `${readMinutes} мин чтения` };
     jobTranslations[`blog.${p.slug}.author_role`] = { ua: p.author_role || '', pl: p.author_role_pl || p.author_role || '', ru: p.author_role_ru || p.author_role || '' };
   });
