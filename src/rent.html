@@ -1,0 +1,115 @@
+<style>
+  .rent-hero { text-align: center; margin-bottom: 3rem; }
+  .rent-hero h1 { font-size: 2.5rem; color: #1e293b; margin-bottom: 1rem; }
+  .rent-hero p { font-size: 1.1rem; color: #64748b; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+  .fleet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+  .fleet-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; transition: transform 0.3s ease; display: flex; flex-direction: column; }
+  .fleet-card:hover { transform: translateY(-5px); }
+  .fleet-img { width: 100%; height: 200px; object-fit: cover; }
+  .fleet-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+  .fleet-content h3 { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.5rem; }
+  .fleet-content p { color: #475569; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; flex: 1; }
+
+  .legal-section { background: #f8fafc; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 4rem; }
+  .legal-section h2 { color: #0f172a; margin-bottom: 1rem; }
+  .legal-section p { color: #475569; line-height: 1.6; }
+
+  .rent-contact-section { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
+  .rent-contact-section h2 { text-align: center; margin-bottom: 2rem; color: #0f172a; }
+  .rent-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
+  @media (min-width: 768px) {
+    .rent-form { grid-template-columns: 1fr 1fr; }
+    .form-group.full-width { grid-column: span 2; }
+  }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-weight: 600; color: #334155; }
+  .form-group input, .form-group select { padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; color: #0f172a; }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: #0f766e; ring: 2px solid #99f6e4; }
+  .submit-btn { background: #0f766e; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
+  .submit-btn:hover { background: #115e59; }
+</style>
+
+<div class="rent-hero fade-in">
+  <h1 data-i18n="rent.title">Оренда транспорту</h1>
+  <p data-i18n="rent.subtitle">Надійний транспорт для роботи та особистих потреб. Велосипеди, скутери, мотоцикли та авто на вигідних умовах.</p>
+</div>
+
+<section class="fleet-section">
+  <h2 style="text-align: center; margin-bottom: 1rem;" data-i18n="rent.fleet">Наш автопарк</h2>
+  <p style="text-align: center; color: #64748b; margin-bottom: 3rem;" data-i18n="rent.fleet.desc">Обирайте транспорт, який найкраще підходить для ваших потреб.</p>
+
+  <div class="fleet-grid">
+    <!-- Велосипед -->
+    <div class="fleet-card fade-in">
+      <img class="fleet-img" src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80" alt="Bicycle" loading="lazy">
+      <div class="fleet-content">
+        <h3 data-i18n="rent.bike">Велосипед</h3>
+        <p data-i18n="rent.bike.desc">Легкий та екологічний транспорт. Ідеально підходить для коротких поїздок та роботи кур'єром (в наявності 2 шт).</p>
+        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
+      </div>
+    </div>
+
+    <!-- Скутер -->
+    <div class="fleet-card fade-in" style="animation-delay: 0.1s;">
+      <img class="fleet-img" src="https://images.unsplash.com/photo-1628103131758-a83a0bd58296?auto=format&fit=crop&w=600&q=80" alt="Lifan Scooter" loading="lazy">
+      <div class="fleet-content">
+        <h3 data-i18n="rent.scooter">Скутер Lifan</h3>
+        <p data-i18n="rent.scooter.desc">Економічний та маневровий скутер Lifan. Відмінний вибір для міста (в наявності 1 шт).</p>
+        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
+      </div>
+    </div>
+
+    <!-- Мотоцикл -->
+    <div class="fleet-card fade-in" style="animation-delay: 0.2s;">
+      <img class="fleet-img" src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80" alt="Road Motorcycle" loading="lazy">
+      <div class="fleet-content">
+        <h3 data-i18n="rent.moto">Дорожній мотоцикл</h3>
+        <p data-i18n="rent.moto.desc">Потужний дорожній мотоцикл для швидких переміщень. Надійна техніка для впевненої їзди (в наявності 3 шт).</p>
+        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
+      </div>
+    </div>
+
+    <!-- Автомобіль -->
+    <div class="fleet-card fade-in" style="animation-delay: 0.3s;">
+      <img class="fleet-img" src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&w=600&q=80" alt="Kia Solito" loading="lazy">
+      <div class="fleet-content">
+        <h3 data-i18n="rent.car">Автомобіль Kia Solito 2026</h3>
+        <p data-i18n="rent.car.desc">Абсолютно новий автомобіль 2026 року (0 км пробіг) на газу. Комфорт та максимальна економія пального. Ідеально для таксі.</p>
+        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal-section fade-in">
+  <h2 data-i18n="rent.legal.title">Юридична інформація</h2>
+  <p data-i18n="rent.legal.desc">Всі транспортні засоби здаються в оренду на підставі офіційного договору. Транспорт застрахований, регулярно проходить технічне обслуговування. Орендар несе відповідальність за дотримання ПДР та своєчасну оплату оренди. Детальні умови обговорюються при підписанні договору.</p>
+</section>
+
+<section id="rent-form-section" class="rent-contact-section fade-in">
+  <h2 data-i18n="rent.contact.title">Залишити заявку</h2>
+  <form class="rent-form" onsubmit="event.preventDefault(); alert('Дякуємо! Ваша заявка прийнята.'); this.reset();">
+    <div class="form-group">
+      <label for="rentName" data-i18n="rent.form.name">Ваше ім'я</label>
+      <input type="text" id="rentName" required data-i18n="placeholder.name" data-i18n-attr="placeholder" placeholder="Ваше ім'я">
+    </div>
+    <div class="form-group">
+      <label for="rentPhone" data-i18n="rent.form.phone">Телефон</label>
+      <input type="tel" id="rentPhone" required placeholder="+48 XXX XXX XXX">
+    </div>
+    <div class="form-group full-width">
+      <label for="rentVehicle" data-i18n="rent.form.vehicle">Оберіть транспорт</label>
+      <select id="rentVehicle" required>
+        <option value="" disabled selected data-i18n="rent.form.vehicle">Оберіть транспорт</option>
+        <option value="bike" data-i18n="rent.bike">Велосипед</option>
+        <option value="scooter" data-i18n="rent.scooter">Скутер Lifan</option>
+        <option value="moto" data-i18n="rent.moto">Дорожній мотоцикл</option>
+        <option value="car" data-i18n="rent.car">Автомобіль Kia Solito 2026</option>
+      </select>
+    </div>
+    <div class="form-group full-width" style="margin-top: 1rem;">
+      <button type="submit" class="submit-btn full-width" data-i18n="rent.form.submit">Відправити заявку</button>
+    </div>
+  </form>
+</section>
