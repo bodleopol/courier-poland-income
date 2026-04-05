@@ -1292,12 +1292,9 @@ function buildGoogleVerificationMeta() {
 }
 
 function buildAdSenseScript() {
-  const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
-  if (!publisherId) return '';
-  // Validate expected format ca-pub-XXXXXXXXXXXXXXXX before using.
-  if (!/^ca-pub-\d+$/.test(publisherId)) return '';
+  // Use user-provided AdSense Publisher ID directly to ensure ads are loaded on all pages.
+  const publisherId = 'ca-pub-8323455138689324';
   // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
-  // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in the CI/CD environment.
   return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
 }
 
@@ -4197,19 +4194,16 @@ Host: https://rybezh.site
     } catch (e) {}
 
     // write ads.txt — required for Google AdSense and other ad networks.
-    // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in CI/CD to enable.
+    // And ada.txt per explicit request.
     try {
-      const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
+      const publisherId = 'ca-pub-8323455138689324';
+      const pubOnly = publisherId.replace('ca-', '');
       const adsTxtLines = ['# ads.txt — rybezh.site'];
-      if (publisherId && /^ca-pub-\d+$/.test(publisherId)) {
-        adsTxtLines.push(`google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`);
-      } else {
-        // Placeholder — replace with real publisher ID once AdSense account is approved.
-        // Format: google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-        adsTxtLines.push('# Replace the line below with your real AdSense publisher ID');
-        adsTxtLines.push('# google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0');
-      }
-      await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
+      adsTxtLines.push(`google.com, ${pubOnly}, DIRECT, f08c47fec0942fa0`);
+
+      const txtContent = adsTxtLines.join('\n') + '\n';
+      await fs.writeFile(path.join(DIST, 'ads.txt'), txtContent, 'utf8');
+      await fs.writeFile(path.join(DIST, 'ada.txt'), txtContent, 'utf8');
     } catch (e) {}
 
     // write IndexNow key file for Bing/Yandex instant indexing.
