@@ -4194,7 +4194,6 @@ Allow: /*.svg$
 Allow: /*.png$
 Allow: /*.webp$
 Allow: /*.woff2$
-Crawl-delay: 10
 
 # Google-specific (no crawl-delay needed)
 User-agent: Googlebot
@@ -4204,9 +4203,6 @@ Allow: /*.css$
 Allow: /*.svg$
 Allow: /*.png$
 Allow: /*.webp$
-
-# Host directive for Yandex
-Host: https://rybezh.site
 `;
       await fs.writeFile(path.join(DIST, 'robots.txt'), robots, 'utf8');
     } catch (e) {}
