@@ -3022,7 +3022,7 @@ async function build() {
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
-      // If it's a content-only static page like rent.html, wrap it in the template
+      // If it\'s a content-only static page like rent.html, wrap it in the template
       if (!pContent.includes('<html')) {
         let title = 'Rybezh';
         let desc = 'Rybezh';
