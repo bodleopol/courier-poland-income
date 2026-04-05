@@ -9,6 +9,9 @@
   .fleet-img { width: 100%; height: 200px; object-fit: cover; }
   .fleet-content { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
   .fleet-content h3 { font-size: 1.25rem; color: #0f172a; margin-bottom: 0.5rem; }
+  .fleet-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .fleet-badge { display: inline-flex; align-items: center; background-color: #f1f5f9; color: #0f766e; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .fleet-badge.eco { background-color: #ecfdf5; color: #166534; }
   .fleet-content p { color: #475569; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem; flex: 1; }
 
   .legal-section { background: #f8fafc; padding: 3rem 2rem; border-radius: 12px; margin-bottom: 4rem; }
@@ -51,42 +54,58 @@
   <p style="text-align: center; color: #64748b; margin-bottom: 3rem;" data-i18n="rent.fleet.desc">Обирайте транспорт, який найкраще підходить для ваших потреб.</p>
 
   <div class="fleet-grid">
-    <!-- Велосипед -->
+    <!-- Автомобіль -->
     <div class="fleet-card fade-in">
-      <img class="fleet-img" src="https://images.unsplash.com/photo-1571188654248-7a89213915f7?auto=format&fit=crop&w=600&q=80" alt="Bicycle" loading="lazy">
+      <img class="fleet-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Kia_Pegas_Shishi_01_2022-10-15.jpg/960px-Kia_Pegas_Shishi_01_2022-10-15.jpg" alt="Kia Soluto 2026 LPG" loading="lazy">
       <div class="fleet-content">
-        <h3 data-i18n="rent.bike">Велосипед</h3>
-        <p data-i18n="rent.bike.desc">Міцні міські велосипеди. Надійні гальма, посилена рама. Ідеально для старту в доставці (від 150 zł/тиждень).</p>
-        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
-      </div>
-    </div>
-
-    <!-- Скутер -->
-    <div class="fleet-card fade-in" style="animation-delay: 0.1s;">
-      <img class="fleet-img" src="https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=600&q=80" alt="Lifan Scooter" loading="lazy">
-      <div class="fleet-content">
-        <h3 data-i18n="rent.scooter">Скутер Lifan</h3>
-        <p data-i18n="rent.scooter.desc">Скутер 50 куб.см з реальною витратою 2-2.5 л/100 км. Ідеальний маневрений варіант для Glovo/Wolt. Можна їздити з правами категорії B.</p>
+        <h3 data-i18n="rent.car">Kia Soluto 2026 на газу (LPG)</h3>
+        <div class="fleet-badges">
+          <span class="fleet-badge">Uber / Bolt</span>
+          <span class="fleet-badge eco">LPG / ГАЗ</span>
+        </div>
+        <p data-i18n="rent.car.desc">Сучасне економне авто 2026 року з ГБО. Реальна витрата газу 7-8 л/100 км (дуже дешево у місті). Повністю підготовлене для роботи в таксі (Bolt, Uber) та доставці.</p>
         <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
       </div>
     </div>
 
     <!-- Мотоцикл -->
-    <div class="fleet-card fade-in" style="animation-delay: 0.2s;">
-      <img class="fleet-img" src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80" alt="Road Motorcycle" loading="lazy">
+    <div class="fleet-card fade-in" style="animation-delay: 0.1s;">
+      <img class="fleet-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Yamaha_YBR125_%28Fuel_Injection_-_EU_Spec%29.JPG/960px-Yamaha_YBR125_%28Fuel_Injection_-_EU_Spec%29.JPG" alt="125cc Motorcycle" loading="lazy">
       <div class="fleet-content">
-        <h3 data-i18n="rent.moto">Мотоцикл 125cc (Yamaha/Honda)</h3>
-        <p data-i18n="rent.moto.desc">Надійна техніка 125 куб.см для тих, хто заробляє на швидкості. Витрата 2.5-3 л/100 км. Потрібні права B (від 3 років) або A.</p>
+        <h3 data-i18n="rent.moto">Мотоцикл 125cc (Yamaha/Bajaj)</h3>
+        <div class="fleet-badges">
+          <span class="fleet-badge">Glovo / Wolt</span>
+          <span class="fleet-badge eco">2.5 л / 100 км</span>
+        </div>
+        <p data-i18n="rent.moto.desc">Надійна техніка 125 куб.см для швидкої доставки. Дуже економний варіант: реальна витрата 2.5 л/100 км. Потрібні права B (від 3 років) або A. Ідеально для заторів.</p>
         <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
       </div>
     </div>
 
-    <!-- Автомобіль -->
-    <div class="fleet-card fade-in" style="animation-delay: 0.3s;">
-      <img class="fleet-img" src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Kia Solito" loading="lazy">
+    <!-- Скутер -->
+    <div class="fleet-card fade-in" style="animation-delay: 0.2s;">
+      <img class="fleet-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Yamaha_Aerox_2011_.jpg/960px-Yamaha_Aerox_2011_.jpg" alt="50cc Scooter" loading="lazy">
       <div class="fleet-content">
-        <h3 data-i18n="rent.car">Економне авто на газу (LPG)</h3>
-        <p data-i18n="rent.car.desc">Авто В-класу з встановленим ГБО (пропан). Витрата газу 7-8 л по місту. Авто повністю готові до роботи в Uber/Bolt.</p>
+        <h3 data-i18n="rent.scooter">Скутер 50cc (Lifan/Barton)</h3>
+        <div class="fleet-badges">
+          <span class="fleet-badge">Категорія B</span>
+          <span class="fleet-badge eco">2 л / 100 км</span>
+        </div>
+        <p data-i18n="rent.scooter.desc">Недорогий скутер 50 куб.см з реальною витратою всього 2 л/100 км. Ідеальний маневрений варіант для роботи в Glovo/Wolt. Можна їздити з правами категорії B. Низькі витрати на обслуговування.</p>
+        <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
+      </div>
+    </div>
+
+    <!-- Велосипед -->
+    <div class="fleet-card fade-in" style="animation-delay: 0.3s;">
+      <img class="fleet-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Orbea_Occam_2020.jpg/960px-Orbea_Occam_2020.jpg" alt="Mountain Bike" loading="lazy">
+      <div class="fleet-content">
+        <h3 data-i18n="rent.bike">Гірський велосипед (Kross/Romet)</h3>
+        <div class="fleet-badges">
+          <span class="fleet-badge">Без застави</span>
+          <span class="fleet-badge eco">ЕКО</span>
+        </div>
+        <p data-i18n="rent.bike.desc">Недорогий та витривалий гірський велосипед. Надійні гальма, посилена рама та хороша амортизація. Ідеально для старту в доставці (від 150 zł/тиждень). Економія на транспорті.</p>
         <a href="#rent-form-section" class="btn btn-primary" style="text-align: center; text-decoration: none;" data-i18n="nav.cta">Отримати консультацію</a>
       </div>
     </div>
@@ -181,10 +200,10 @@
       <label for="rentVehicle" data-i18n="rent.form.vehicle">Оберіть транспорт</label>
       <select id="rentVehicle" required>
         <option value="" disabled selected data-i18n="rent.form.vehicle">Оберіть транспорт</option>
-        <option value="bike" data-i18n="rent.bike">Велосипед</option>
-        <option value="scooter" data-i18n="rent.scooter">Скутер Lifan</option>
-        <option value="moto" data-i18n="rent.moto">Мотоцикл 125cc (Yamaha/Honda)</option>
-        <option value="car" data-i18n="rent.car">Економне авто на газу (LPG)</option>
+        <option value="bike" data-i18n="rent.bike">Гірський велосипед (Kross/Romet)</option>
+        <option value="scooter" data-i18n="rent.scooter">Скутер 50cc (Lifan/Barton)</option>
+        <option value="moto" data-i18n="rent.moto">Мотоцикл 125cc (Yamaha/Bajaj)</option>
+        <option value="car" data-i18n="rent.car">Kia Soluto 2026 на газу (LPG)</option>
       </select>
     </div>
     <div class="form-group full-width" style="margin-top: 1rem;">
