@@ -1,5 +1,529 @@
 [
   {
+    "slug": "warsaw-construction-handyman-5",
+    "category": "construction",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Різноробочий на будову — Варшава",
+    "title_pl": "Pracownik fizyczny na budowę — Warszawa",
+    "salary": "28 - 35 PLN/h",
+    "company": "BudMax Sp. z o.o.",
+    "shift_ua": "Пн-Сб, 08:00-18:00",
+    "shift_pl": "Pn-Sob, 08:00-18:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Безкоштовний робочий одяг",
+      "Виплати раз на тиждень"
+    ],
+    "offers_pl": [
+      "Darmowa odzież robocza",
+      "Wypłaty co tydzień"
+    ],
+    "tasks_ua": [
+      "Допомога майстрам",
+      "Прибирання будівельного сміття",
+      "Розвантаження матеріалів"
+    ],
+    "tasks_pl": [
+      "Pomoc fachowcom",
+      "Sprzątanie gruzu",
+      "Rozładunek materiałów"
+    ],
+    "details_ua": [
+      "Досвід не вимагається",
+      "Готовність до фізичної роботи"
+    ],
+    "details_pl": [
+      "Doświadczenie nie jest wymagane",
+      "Gotowość do pracy fizycznej"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-production-handyman-6",
+    "category": "production",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Різноробочий на виробництво — Краків",
+    "title_pl": "Pracownik produkcji — Kraków",
+    "salary": "27 - 33 PLN/h",
+    "company": "PolFabryka",
+    "shift_ua": "Змінний графік, 3 зміни",
+    "shift_pl": "Grafik zmianowy, 3 zmiany",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Терміново",
+    "start_pl": "Pilnie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування",
+      "Доплати за нічні зміни"
+    ],
+    "offers_pl": [
+      "Legalne zatrudnienie",
+      "Dodatki za pracę w nocy"
+    ],
+    "tasks_ua": [
+      "Пакування готової продукції",
+      "Робота на конвеєрі",
+      "Сортування"
+    ],
+    "tasks_pl": [
+      "Pakowanie gotowych produktów",
+      "Praca na taśmie",
+      "Sortowanie"
+    ],
+    "details_ua": [
+      "Проводимо навчання",
+      "Житло надається"
+    ],
+    "details_pl": [
+      "Zapewniamy szkolenie",
+      "Zapewniamy zakwaterowanie"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-logistics-handyman-7",
+    "category": "logistics",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Різноробочий на склад — Вроцлав",
+    "title_pl": "Pracownik magazynowy — Wrocław",
+    "salary": "29 - 36 PLN/h",
+    "company": "LogiTrans",
+    "shift_ua": "Пн-Пт, 10:00-20:00",
+    "shift_pl": "Pn-Pt, 10:00-20:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Від завтра",
+    "start_pl": "Od jutra",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Теплий склад",
+      "Безкоштовні обіди"
+    ],
+    "offers_pl": [
+      "Ciepły magazyn",
+      "Darmowe obiady"
+    ],
+    "tasks_ua": [
+      "Розвантаження фур",
+      "Робота з роклою",
+      "Комплектація"
+    ],
+    "tasks_pl": [
+      "Rozładunek tirów",
+      "Praca z wózkiem paletowym",
+      "Kompletacja"
+    ],
+    "details_ua": [
+      "Здорова спина",
+      "Без шкідливих звичок"
+    ],
+    "details_pl": [
+      "Zdrowe plecy",
+      "Bez nałogów"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-cleaning-handyman-8",
+    "category": "cleaning",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Різноробочий / Прибиральник — Познань",
+    "title_pl": "Pracownik gospodarczy — Poznań",
+    "salary": "26 - 32 PLN/h",
+    "company": "Czysty Dom",
+    "shift_ua": "Пн-Пт, 07:00-15:00",
+    "shift_pl": "Pn-Pt, 07:00-15:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Спокійна робота",
+      "Премії"
+    ],
+    "offers_pl": [
+      "Spokojna praca",
+      "Premie"
+    ],
+    "tasks_ua": [
+      "Підтримання порядку на території",
+      "Стрижка газону",
+      "Дрібний ремонт"
+    ],
+    "tasks_pl": [
+      "Utrzymanie porządku na terenie",
+      "Koszenie trawy",
+      "Drobne naprawy"
+    ],
+    "details_ua": [
+      "Бажано мати водійські права",
+      "Відповідальність"
+    ],
+    "details_pl": [
+      "Mile widziane prawo jazdy",
+      "Odpowiedzialność"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-construction-handyman-9",
+    "category": "construction",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "title": "Різноробочий на дорожні роботи — Гданськ",
+    "title_pl": "Pracownik drogowy — Gdańsk",
+    "salary": "30 - 38 PLN/h",
+    "company": "Droga-Pol",
+    "shift_ua": "Пн-Сб, 07:00-17:00",
+    "shift_pl": "Pn-Sob, 07:00-17:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Транспорт до роботи",
+      "Проживання",
+      "Аванси"
+    ],
+    "offers_pl": [
+      "Transport do pracy",
+      "Zakwaterowanie",
+      "Zaliczki"
+    ],
+    "tasks_ua": [
+      "Підготовка території",
+      "Допомога в укладанні бруківки",
+      "Земляні роботи"
+    ],
+    "tasks_pl": [
+      "Przygotowanie terenu",
+      "Pomoc przy układaniu kostki",
+      "Prace ziemne"
+    ],
+    "details_ua": [
+      "Готовність до роботи на вулиці",
+      "Гарна фізична форма"
+    ],
+    "details_pl": [
+      "Gotowość do pracy na zewnątrz",
+      "Dobra kondycja fizyczna"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-transport-driver-10",
+    "category": "transport",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Водій категорії B — Лодзь",
+    "title_pl": "Kierowca kat. B — Łódź",
+    "salary": "4500 - 6000 PLN/міс",
+    "company": "Dostawa Plus",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Авто від компанії",
+      "Оплата палива",
+      "Гнучкі години"
+    ],
+    "offers_pl": [
+      "Auto firmowe",
+      "Karta paliwowa",
+      "Elastyczne godziny"
+    ],
+    "tasks_ua": [
+      "Розвезення товарів по магазинах",
+      "Контроль накладних",
+      "Догляд за авто"
+    ],
+    "tasks_pl": [
+      "Rozwóz towarów do sklepów",
+      "Kontrola dokumentów",
+      "Dbanie o auto"
+    ],
+    "details_ua": [
+      "Досвід водіння від 2 років",
+      "Знання міста"
+    ],
+    "details_pl": [
+      "Doświadczenie w prowadzeniu min. 2 lata",
+      "Znajomość miasta"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "warsaw-transport-moto-courier-11",
+    "category": "transport",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Кур'єр на мотоциклі / скутері — Варшава",
+    "title_pl": "Kurier na motocyklu / skuterze — Warszawa",
+    "salary": "3500 - 5500 PLN/міс",
+    "company": "Szybkie Jedzenie",
+    "shift_ua": "Позмінний, можна як підробіток",
+    "shift_pl": "Zmianowy, możliwość pracy dodatkowej",
+    "pattern_ua": "Вільний",
+    "pattern_pl": "Dowolny",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Надаємо мотоцикл/скутер",
+      "Шолом та екіпіровка",
+      "Бонуси за доставку"
+    ],
+    "offers_pl": [
+      "Zapewniamy motocykl/skuter",
+      "Kask i odzież ochronna",
+      "Bonusy za dostawy"
+    ],
+    "tasks_ua": [
+      "Доставка їжі з ресторанів",
+      "Робота з додатком",
+      "Ввічливе спілкування з клієнтами"
+    ],
+    "tasks_pl": [
+      "Dostawa jedzenia z restauracji",
+      "Praca z aplikacją",
+      "Uprzejma obsługa klienta"
+    ],
+    "details_ua": [
+      "Наявність водійського посвідчення А або В",
+      "Уміння користуватися навігатором"
+    ],
+    "details_pl": [
+      "Prawo jazdy kat. A lub B",
+      "Umiejętność obsługi nawigacji"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-gastronomy-cook-assistant-12",
+    "category": "gastronomy",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Помічник кухаря в ресторан — Краків",
+    "title_pl": "Pomocnik kucharza — Kraków",
+    "salary": "28 - 35 PLN/h",
+    "company": "Smaki Miasta",
+    "shift_ua": "2/2, 10:00-22:00",
+    "shift_pl": "2/2, 10:00-22:00",
+    "pattern_ua": "2/2",
+    "pattern_pl": "2/2",
+    "start_ua": "Терміново",
+    "start_pl": "Pilnie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Дворазове харчування",
+      "Навчання кулінарії",
+      "Дружній колектив"
+    ],
+    "offers_pl": [
+      "Dwa posiłki dziennie",
+      "Szkolenie kulinarne",
+      "Przyjazny zespół"
+    ],
+    "tasks_ua": [
+      "Нарізка інгредієнтів",
+      "Допомога у видачі страв",
+      "Дотримання чистоти на кухні"
+    ],
+    "tasks_pl": [
+      "Krojenie składników",
+      "Pomoc w wydawaniu dań",
+      "Utrzymanie czystości w kuchni"
+    ],
+    "details_ua": [
+      "Санітарна книжка обов'язкова",
+      "Швидкість та акуратність"
+    ],
+    "details_pl": [
+      "Książeczka sanepidowska wymagana",
+      "Szybkość i dokładność"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "warsaw-office-call-center-13",
+    "category": "office",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Оператор колл-центру (вхідна лінія) — Варшава",
+    "title_pl": "Konsultant Infolinii — Warszawa",
+    "salary": "4000 - 5500 PLN/міс",
+    "company": "TechSupport",
+    "shift_ua": "Пн-Пт, 09:00-17:00",
+    "shift_pl": "Pn-Pt, 09:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Після співбесіди",
+    "start_pl": "Po rozmowie",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Оплачуване навчання",
+      "Медичне страхування",
+      "Офіс в центрі"
+    ],
+    "offers_pl": [
+      "Płatne szkolenie",
+      "Opieka medyczna",
+      "Biuro w centrum"
+    ],
+    "tasks_ua": [
+      "Прийом дзвінків",
+      "Консультація клієнтів",
+      "Оформлення заявок"
+    ],
+    "tasks_pl": [
+      "Odbieranie połączeń",
+      "Doradztwo dla klientów",
+      "Wprowadzanie zgłoszeń"
+    ],
+    "details_ua": [
+      "Знання польської мови на рівні B2",
+      "Хороша дикція"
+    ],
+    "details_pl": [
+      "Znajomość j. polskiego na poziomie B2",
+      "Dobra dykcja"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-office-call-center-14",
+    "category": "office",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Спеціаліст з продажу в колл-центрі — Вроцлав",
+    "title_pl": "Specjalista ds. sprzedaży (Call Center) — Wrocław",
+    "salary": "3500 - 7000 PLN/міс (з преміями)",
+    "company": "SalesPro",
+    "shift_ua": "Пн-Пт, 08:00-16:00",
+    "shift_pl": "Pn-Pt, 08:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "start_ua": "Протягом 2 тижнів",
+    "start_pl": "W ciągu 2 tygodni",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Високі відсотки від продажу",
+      "Корпоративні заходи",
+      "Сучасна техніка"
+    ],
+    "offers_pl": [
+      "Wysokie prowizje",
+      "Imprezy firmowe",
+      "Nowoczesny sprzęt"
+    ],
+    "tasks_ua": [
+      "Вихідні дзвінки клієнтам",
+      "Презентація послуг",
+      "Закриття угод"
+    ],
+    "tasks_pl": [
+      "Połączenia wychodzące",
+      "Prezentacja usług",
+      "Zamykanie sprzedaży"
+    ],
+    "details_ua": [
+      "Досвід в продажах вітається",
+      "Комунікабельність",
+      "Польська мова B2+"
+    ],
+    "details_pl": [
+      "Mile widziane doświadczenie w sprzedaży",
+      "Komunikatywność",
+      "Polski B2+"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "remote-office-call-center-15",
+    "category": "office",
+    "city": "Віддалено",
+    "city_pl": "Zdalnie",
+    "title": "Оператор колл-центру (Віддалено) — Україномовна лінія",
+    "title_pl": "Konsultant Infolinii (Praca zdalna) — Język ukraiński",
+    "salary": "3000 - 4500 PLN/міс",
+    "company": "Global Connect",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "2/2 або 5/2",
+    "pattern_pl": "2/2 lub 5/2",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie / B2B",
+    "contract_pl": "Umowa Zlecenie / B2B",
+    "offers_ua": [
+      "Робота з дому",
+      "Можливість суміщати",
+      "Повна підтримка координатора"
+    ],
+    "offers_pl": [
+      "Praca z domu",
+      "Możliwość łączenia z innymi obowiązkami",
+      "Pełne wsparcie koordynatora"
+    ],
+    "tasks_ua": [
+      "Підтримка україномовних клієнтів в Польщі",
+      "Відповіді на запитання",
+      "Робота в чаті та по телефону"
+    ],
+    "tasks_pl": [
+      "Wsparcie klientów ukraińskojęzycznych w Polsce",
+      "Odpowiadanie na pytania",
+      "Obsługa czatu i telefonu"
+    ],
+    "details_ua": [
+      "Наявність ПК та інтернету",
+      "Тихе робоче місце",
+      "Вільна українська"
+    ],
+    "details_pl": [
+      "Posiadanie komputera i internetu",
+      "Ciche miejsce pracy",
+      "Biegły ukraiński"
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
     "slug": "warsaw-transport-driver-courier-new-1",
     "category": "transport",
     "city": "Варшава",
