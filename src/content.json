@@ -1,5 +1,255 @@
 [
   {
+    "slug": "warsaw-transport-driver-courier-new-1",
+    "category": "transport",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "title": "Водій-кур'єр — Варшава",
+    "title_pl": "Kierowca-kurier — Warszawa",
+    "salary": "4500 - 6500 PLN netto/міс",
+    "company": "Logistics Pro Sp. z o.o.",
+    "shift_ua": "Повний робочий день",
+    "shift_pl": "Pełny etat",
+    "pattern_ua": "Робота позмінно",
+    "pattern_pl": "Praca zmianowa",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Офіційне працевлаштування.",
+      "Надаємо робочий автомобіль.",
+      "Медичне страхування та бонуси."
+    ],
+    "tasks_ua": [
+      "Доставка посилок клієнтам у Варшаві.",
+      "Ведення звітності по доставках.",
+      "Догляд за робочим автомобілем."
+    ],
+    "details_ua": [
+      "Вимоги: права категорії B, досвід водіння від 1 року.",
+      "Базове знання польської мови вітається."
+    ],
+    "seo_title_ua": "Робота водієм-кур'єром у Варшаві | Логістика",
+    "meta_description_ua": "Терміново шукаємо водія-кур'єра у Варшаві. Офіційне працевлаштування, робоче авто. Зарплата до 6500 PLN нетто.",
+    "offers_pl": [
+      "Zatrudnienie na podstawie umowy o pracę.",
+      "Zapewniamy samochód służbowy.",
+      "Ubezpieczenie medyczne i premie."
+    ],
+    "tasks_pl": [
+      "Dostarczanie paczek do klientów w Warszawie.",
+      "Prowadzenie raportów z dostaw.",
+      "Dbanie o samochód służbowy."
+    ],
+    "details_pl": [
+      "Wymagania: prawo jazdy kat. B, doświadczenie w prowadzeniu pojazdów min. 1 rok.",
+      "Mile widziana podstawowa znajomość języka polskiego."
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-office-call-center-operator-new-2",
+    "category": "office",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "title": "Оператор колл-центру — Краків",
+    "title_pl": "Operator Call Center — Kraków",
+    "salary": "4000 - 5500 PLN netto/міс",
+    "company": "Contact Plus Group",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "pattern_ua": "Робота в офісі",
+    "pattern_pl": "Praca w biurze",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Навчання за рахунок компанії.",
+      "Премії за виконання плану.",
+      "Комфортний офіс у центрі міста."
+    ],
+    "tasks_ua": [
+      "Прийом вхідних дзвінків від клієнтів.",
+      "Консультування щодо послуг компанії.",
+      "Внесення інформації до бази даних."
+    ],
+    "details_ua": [
+      "Вимоги: комунікабельність, знання польської мови на рівні B1-B2.",
+      "Досвід роботи не обов'язковий."
+    ],
+    "seo_title_ua": "Робота оператором колл-центру у Кракові",
+    "meta_description_ua": "Вакансія оператора колл-центру в Кракові. Гнучкий графік, навчання. Зарплата до 5500 PLN нетто.",
+    "offers_pl": [
+      "Szkolenie na koszt firmy.",
+      "Premie za realizację planu.",
+      "Komfortowe biuro w centrum miasta."
+    ],
+    "tasks_pl": [
+      "Odbieranie połączeń przychodzących od klientów.",
+      "Doradztwo w zakresie usług firmy.",
+      "Wprowadzanie informacji do bazy danych."
+    ],
+    "details_pl": [
+      "Wymagania: komunikatywność, znajomość języka polskiego na poziomie B1-B2.",
+      "Doświadczenie nie jest wymagane."
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "wroclaw-gastronomy-kitchen-assistant-new-3",
+    "category": "gastronomy",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "title": "Помічник на кухню — Вроцлав",
+    "title_pl": "Pomoc kuchenna — Wrocław",
+    "salary": "3800 - 4800 PLN netto/міс",
+    "company": "Smak Polskiej Kuchni",
+    "shift_ua": "Повний робочий день",
+    "shift_pl": "Pełny etat",
+    "pattern_ua": "Робота позмінно",
+    "pattern_pl": "Praca zmianowa",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Безкоштовне харчування.",
+      "Дружній колектив.",
+      "Стабільна виплата заробітної плати."
+    ],
+    "tasks_ua": [
+      "Допомога кухарям у приготуванні страв.",
+      "Нарізка овочів та заготовок.",
+      "Миття посуду та підтримання чистоти на кухні."
+    ],
+    "details_ua": [
+      "Вимоги: наявність санітарної книжки, відповідальність.",
+      "Досвід роботи буде перевагою."
+    ],
+    "seo_title_ua": "Робота помічником на кухні у Вроцлаві",
+    "meta_description_ua": "Робота на кухні у Вроцлаві. Безкоштовне харчування, стабільна зарплата. Вакансія для українців.",
+    "offers_pl": [
+      "Darmowe wyżywienie.",
+      "Przyjazny zespół.",
+      "Stabilne wynagrodzenie."
+    ],
+    "tasks_pl": [
+      "Pomoc kucharzom w przygotowywaniu potraw.",
+      "Krojenie warzyw i półproduktów.",
+      "Zmywanie naczyń i utrzymywanie czystości w kuchni."
+    ],
+    "details_pl": [
+      "Wymagania: książeczka sanepidowska, odpowiedzialność.",
+      "Doświadczenie w pracy na podobnym stanowisku będzie atutem."
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-security-guard-new-4",
+    "category": "security",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "title": "Охоронець — Познань",
+    "title_pl": "Pracownik ochrony — Poznań",
+    "salary": "4200 - 5200 PLN netto/міс",
+    "company": "Ochrona 24/7",
+    "shift_ua": "Змінний графік",
+    "shift_pl": "Grafik zmianowy",
+    "pattern_ua": "Робота вночі та вдень",
+    "pattern_pl": "Praca w nocy i w dzień",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "offers_ua": [
+      "Забезпечення уніформою.",
+      "Можливість підробітків.",
+      "Офіційне працевлаштування."
+    ],
+    "tasks_ua": [
+      "Охорона торгового центру.",
+      "Контроль за порядком на території.",
+      "Обхід території згідно з графіком."
+    ],
+    "details_ua": [
+      "Вимоги: фізична витривалість, відсутність судимостей.",
+      "Знання польської мови на розмовному рівні."
+    ],
+    "seo_title_ua": "Робота охоронцем у Познані | Вакансії охорони",
+    "meta_description_ua": "Шукаємо охоронця в торговий центр у Познані. Змінний графік, уніформа, офіційне працевлаштування.",
+    "offers_pl": [
+      "Zapewnienie umundurowania.",
+      "Możliwość nadgodzin.",
+      "Zatrudnienie na podstawie umowy."
+    ],
+    "tasks_pl": [
+      "Ochrona centrum handlowego.",
+      "Kontrola porządku na terenie obiektu.",
+      "Obchód terenu zgodnie z harmonogramem."
+    ],
+    "details_pl": [
+      "Wymagania: sprawność fizyczna, zaświadczenie o niekaralności.",
+      "Znajomość języka polskiego na poziomie komunikatywnym."
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-transport-forklift-driver-new-5",
+    "category": "transport",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "title": "Водій навантажувача — Лодзь",
+    "title_pl": "Operator wózka widłowego — Łódź",
+    "salary": "5000 - 6800 PLN netto/міс",
+    "company": "Magazyn Centralny",
+    "shift_ua": "Повний робочий день",
+    "shift_pl": "Pełny etat",
+    "pattern_ua": "Робота на складі",
+    "pattern_pl": "Praca na magazynie",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "offers_ua": [
+      "Премії за ефективність.",
+      "Безкоштовний робочий одяг.",
+      "Оплачувані перерви."
+    ],
+    "tasks_ua": [
+      "Завантаження та розвантаження товарів.",
+      "Переміщення палет по складу.",
+      "Участь в інвентаризації."
+    ],
+    "details_ua": [
+      "Вимоги: наявність посвідчення УДТ (UDT).",
+      "Досвід роботи на вилковому навантажувачі від 6 місяців."
+    ],
+    "seo_title_ua": "Робота водієм навантажувача у Лодзі",
+    "meta_description_ua": "Вакансія водія навантажувача (карщика) в Лодзі. Висока зарплата, офіційне працевлаштування. Вимагається UDT.",
+    "offers_pl": [
+      "Premie za wydajność.",
+      "Darmowa odzież robocza.",
+      "Płatne przerwy."
+    ],
+    "tasks_pl": [
+      "Załadunek i rozładunek towarów.",
+      "Przemieszczanie palet po magazynie.",
+      "Udział w inwentaryzacji."
+    ],
+    "details_pl": [
+      "Wymagania: uprawnienia UDT.",
+      "Doświadczenie w obsłudze wózków widłowych min. 6 miesięcy."
+    ],
+    "date_posted": "2026-04-05",
+    "data_source": "manual"
+  },
+  {
     "slug": "warsaw-transport-taxi-driver-uber-bolt-partner-704",
     "category": "transport",
     "city": "Варшава",
