@@ -1295,7 +1295,8 @@ function buildAdSenseScript() {
   // Use user-provided AdSense Publisher ID directly to ensure ads are loaded on all pages.
   const publisherId = 'ca-pub-8323455138689324';
   // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
-  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
+  return `<meta name="google-adsense-account" content="${publisherId}">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
 }
 
 function sanitizeStaticHtmlHead(html) {
