@@ -28,6 +28,17 @@
   .form-group input:focus, .form-group select:focus { outline: none; border-color: #0f766e; ring: 2px solid #99f6e4; }
   .submit-btn { background: #0f766e; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
   .submit-btn:hover { background: #115e59; }
+
+  /* FAQ Accordion Styles */
+  .faq-section { max-width: 800px; margin: 0 auto 4rem; padding: 0 1rem; }
+  .faq-section h2 { text-align: center; margin-bottom: 2rem; color: #0f172a; }
+  .faq-item { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+  .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; cursor: pointer; background: transparent; border: none; width: 100%; text-align: left; font-size: 1.1rem; font-weight: 600; color: #1e293b; transition: background 0.2s; }
+  .faq-question:hover { background: #f8fafc; }
+  .faq-icon { transition: transform 0.3s ease; color: #0f766e; }
+  .faq-item.active .faq-icon { transform: rotate(180deg); }
+  .faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease-out; background: #fff; color: #475569; line-height: 1.6; }
+  .faq-item.active .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 500px; }
 </style>
 
 <div class="rent-hero fade-in">
@@ -86,6 +97,74 @@
   <h2 data-i18n="rent.legal.title">Юридична інформація</h2>
   <p data-i18n="rent.legal.desc">Всі транспортні засоби здаються в оренду на підставі офіційного договору. Транспорт застрахований, регулярно проходить технічне обслуговування. Орендар несе відповідальність за дотримання ПДР та своєчасну оплату оренди. Детальні умови обговорюються при підписанні договору.</p>
 </section>
+
+<section class="faq-section fade-in">
+  <h2 data-i18n="rent.faq.title">FAQ: Закон про оренду в Польщі</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span data-i18n="rent.faq.q1">Які документи потрібні для оренди?</span>
+      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+    <div class="faq-answer">
+      <p data-i18n="rent.faq.a1">Для оренди майна зазвичай потрібен дійсний паспорт (або карта побиту) та підписання договору. У деяких випадках можуть попросити заставу (кауцію).</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span data-i18n="rent.faq.q2">Що таке кауція (kaucja)?</span>
+      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+    <div class="faq-answer">
+      <p data-i18n="rent.faq.a2">Кауція — це поворотний депозит, який слугує фінансовою гарантією для орендодавця на випадок пошкодження майна або несплати. Вона повертається після закінчення терміну дії договору.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span data-i18n="rent.faq.q3">Чи можу я розірвати договір достроково?</span>
+      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+    <div class="faq-answer">
+      <p data-i18n="rent.faq.a3">Дострокове розірвання залежить від типу договору. Строкові договори можна розірвати лише у випадках, прямо зазначених у договорі. Безстрокові договори мають визначений законом період попередження.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" aria-expanded="false">
+      <span data-i18n="rent.faq.q4">Хто оплачує ремонт під час оренди?</span>
+      <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
+    <div class="faq-answer">
+      <p data-i18n="rent.faq.a4">Дрібний поточний ремонт зазвичай є обов'язком орендаря. Капітальний ремонт або усунення серйозних несправностей, які виникли не з вини орендаря, покриває орендодавець.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.closest('.faq-item');
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle current item
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  });
+</script>
 
 <section id="rent-form-section" class="rent-contact-section fade-in">
   <h2 data-i18n="rent.contact.title">Залишити заявку</h2>
