@@ -1293,7 +1293,7 @@ function buildGoogleVerificationMeta() {
 
 function buildAdSenseScript() {
   // Use user-provided AdSense Publisher ID directly to ensure ads are loaded on all pages.
-  const publisherId = 'ca-pub-6447385208465056';
+  const publisherId = 'ca-pub-8323455138689324';
   // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
   return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
 }
@@ -4196,7 +4196,7 @@ Host: https://rybezh.site
     // write ads.txt — required for Google AdSense and other ad networks.
     // And ada.txt per explicit request.
     try {
-      const publisherId = 'ca-pub-6447385208465056';
+      const publisherId = 'ca-pub-8323455138689324';
       const pubOnly = publisherId.replace('ca-', '');
       const adsTxtLines = ['# ads.txt — rybezh.site'];
       adsTxtLines.push(`google.com, ${pubOnly}, DIRECT, f08c47fec0942fa0`);
