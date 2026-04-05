@@ -3018,10 +3018,29 @@ async function build() {
     .replace('__CATEGORIES__', JSON.stringify(categories));
 
   // copy static pages
-  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'rent-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html'];
+  const staticPages = ['apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
+      // If it\'s a content-only static page like rent.html, wrap it in the template
+      if (!pContent.includes('<html')) {
+        let title = 'Rybezh';
+        let desc = 'Rybezh';
+        if (p === 'rent.html') {
+          title = 'Оренда транспорту';
+          desc = 'Надійний транспорт для роботи та особистих потреб. Велосипеди, скутери, мотоцикли та авто на вигідних умовах.';
+        }
+
+        pContent = pageTpl
+          .replace(/{{TITLE}}/g, title)
+          .replace(/{{DESCRIPTION}}/g, desc)
+          .replace(/{{CONTENT}}/g, pContent)
+          .replace(/{{CANONICAL}}/g, `https://rybezh.site/${p}`)
+          .replace(/{{CANONICAL_PL}}/g, `https://rybezh.site/${p.replace('.html', '-pl.html')}`)
+          .replace(/{{CANONICAL_RU}}/g, `https://rybezh.site/${p.replace('.html', '-ru.html')}`)
+          .replace(/{{CITY}}/g, '')
+          .replace(/{{CTA_LINK}}/g, '/apply.html')
+          .replace(/{{CTA_TEXT}}/g, 'Подати заявку');
 
       // Some static pages might just be fragments, ensure they have full layout
       if (!pContent.includes('<html')) {
