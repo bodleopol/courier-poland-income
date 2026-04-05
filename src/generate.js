@@ -3022,13 +3022,13 @@ async function build() {
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
-      // If it\'s a content-only static page like rent.html, wrap it in the template
+      // If it's a content-only static page like rent.html, wrap it in the template
       if (!pContent.includes('<html')) {
         let title = 'Rybezh';
         let desc = 'Rybezh';
-        if (p === 'rent.html') {
-          title = 'Оренда транспорту';
-          desc = 'Надійний транспорт для роботи та особистих потреб. Велосипеди, скутери, мотоцикли та авто на вигідних умовах.';
+        if (p === 'rent.html' || p === 'rent-ru.html') {
+          title = p.includes('-ru') ? 'Аренда автомобилей для такси и курьеров — Rybezh' : 'Оренда авто для таксі та кур\'єрів — Rybezh';
+          desc = p.includes('-ru') ? 'Арендуйте надежные и экономичные автомобили для работы в Bolt, Uber, FreeNow, Glovo, Wolt.' : 'Орендуйте надійні та економні авто для роботи в Bolt, Uber, FreeNow, Glovo, Wolt.';
         }
 
         pContent = pageTpl
@@ -3041,22 +3041,6 @@ async function build() {
           .replace(/{{CITY}}/g, '')
           .replace(/{{CTA_LINK}}/g, '/apply.html')
           .replace(/{{CTA_TEXT}}/g, 'Подати заявку');
-
-      // Some static pages might just be fragments, ensure they have full layout
-      if (!pContent.includes('<html')) {
-        let metaTitle = 'Rybezh';
-        let metaDescription = 'Rybezh';
-        if (p === 'rent.html' || p === 'rent-ru.html') {
-           metaTitle = p.includes('-ru') ? 'Аренда автомобилей для такси и курьеров — Rybezh' : 'Оренда авто для таксі та кур\'єрів — Rybezh';
-           metaDescription = p.includes('-ru') ? 'Арендуйте надежные и экономичные автомобили для работы в Bolt, Uber, FreeNow, Glovo, Wolt.' : 'Орендуйте надійні та економні авто для роботи в Bolt, Uber, FreeNow, Glovo, Wolt.';
-        }
-
-        let localPageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
-        localPageTpl = localPageTpl.replace('{{TITLE}}', metaTitle)
-                                   .replace('{{META_DESC}}', metaDescription)
-                                   .replace('{{OG_URL}}', `https://rybezh.site/${p}`)
-                                   .replace('{{LANG}}', p.includes('-ru') ? 'ru' : 'uk');
-        pContent = localPageTpl.replace('{{CONTENT}}', pContent);
       }
 
       pContent = sanitizeStaticHtmlHead(pContent);
