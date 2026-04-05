@@ -375,6 +375,9 @@
     'home.tools.map.title': { ua: 'Карта українців', pl: 'Mapa Ukraińców', ru: 'Карта русскоязычных' },
     'home.tools.map.text': { ua: 'Знайдіть земляків поруч — інтерактивна карта з контактами по всій Польщі', pl: 'Znajdź rodaków w pobliżu — interaktywna mapa z kontaktami w całej Polsce' , ru: "Найдите земляков рядом — интерактивная карта с контактами по всей Польше" },
     'home.tools.map.cta': { ua: 'Відкрити карту →', pl: 'Otwórz mapę →' , ru: "Открыть карту →" },
+    'home.tools.game.title': { ua: 'Гра «Шлях Ветерана»', pl: 'Gra «Droga Weterana»', ru: 'Игра «Путь Ветерана»' },
+    'home.tools.game.text': { ua: 'Безкоштовна браузерна гра про пошук роботи у Польщі після повернення з фронту', pl: 'Darmowa gra przeglądarkowa o poszukiwaniu pracy w Polsce po powrocie z frontu', ru: 'Бесплатная браузерная игра о поиске работы в Польше после возвращения с фронта' },
+    'home.tools.game.cta': { ua: 'Грати зараз →', pl: 'Graj teraz →', ru: 'Играть сейчас →' },
 
     // Homepage: map preview
     'home.map.kicker': { ua: '🗺️ Новинка', pl: '🗺️ Nowość' , ru: "🗺️ Новинка" },

@@ -317,3 +317,18 @@
       .mobile-controls { padding: 5px 6px; gap: 6px; border-radius: 10px; }
       .mc-actions, .mc-dpad { gap: 6px; }
     }
+
+.game-promo-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 229, 160, 0.4);
+  background: linear-gradient(90deg, #22d3ee, #00e5a0);
+}
+
+@keyframes pulse-btn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.game-promo-cta {
+  animation: pulse-btn 2s infinite ease-in-out;
+}
