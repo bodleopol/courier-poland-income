@@ -1295,7 +1295,7 @@ function buildAdSenseScript() {
   // Use user-provided AdSense Publisher ID directly to ensure ads are loaded on all pages.
   const publisherId = 'ca-pub-8323455138689324';
   // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
-  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
+  return `<meta name="google-adsense-account" content="${publisherId}">\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
 }
 
 function sanitizeStaticHtmlHead(html) {
@@ -3022,6 +3022,24 @@ async function build() {
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
+
+      // Some static pages might just be fragments, ensure they have full layout
+      if (!pContent.includes('<html')) {
+        let metaTitle = 'Rybezh';
+        let metaDescription = 'Rybezh';
+        if (p === 'rent.html' || p === 'rent-ru.html') {
+           metaTitle = p.includes('-ru') ? 'Аренда автомобилей для такси и курьеров — Rybezh' : 'Оренда авто для таксі та кур\'єрів — Rybezh';
+           metaDescription = p.includes('-ru') ? 'Арендуйте надежные и экономичные автомобили для работы в Bolt, Uber, FreeNow, Glovo, Wolt.' : 'Орендуйте надійні та економні авто для роботи в Bolt, Uber, FreeNow, Glovo, Wolt.';
+        }
+
+        let localPageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
+        localPageTpl = localPageTpl.replace('{{TITLE}}', metaTitle)
+                                   .replace('{{META_DESC}}', metaDescription)
+                                   .replace('{{OG_URL}}', `https://rybezh.site/${p}`)
+                                   .replace('{{LANG}}', p.includes('-ru') ? 'ru' : 'uk');
+        pContent = localPageTpl.replace('{{CONTENT}}', pContent);
+      }
+
       pContent = sanitizeStaticHtmlHead(pContent);
       pContent = pContent.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
 
