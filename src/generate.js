@@ -1292,13 +1292,13 @@ function buildGoogleVerificationMeta() {
 }
 
 function buildAdSenseScript() {
-  const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
+  const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || 'ca-pub-8323455138689324').trim();
   if (!publisherId) return '';
   // Validate expected format ca-pub-XXXXXXXXXXXXXXXX before using.
   if (!/^ca-pub-\d+$/.test(publisherId)) return '';
   // Google AdSense Auto Ads — automatically finds the best ad placements on the page.
   // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in the CI/CD environment.
-  return `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
+  return `<meta name="google-adsense-account" content="${publisherId}">\n  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}" crossorigin="anonymous"></script>`;
 }
 
 function sanitizeStaticHtmlHead(html) {
@@ -4199,15 +4199,15 @@ Host: https://rybezh.site
     // write ads.txt — required for Google AdSense and other ad networks.
     // Set ADSENSE_PUBLISHER_ID=ca-pub-XXXXXXXXXXXXXXXX in CI/CD to enable.
     try {
-      const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || '').trim();
+      const publisherId = String(process.env.ADSENSE_PUBLISHER_ID || 'ca-pub-8323455138689324').trim();
       const adsTxtLines = ['# ads.txt — rybezh.site'];
       if (publisherId && /^ca-pub-\d+$/.test(publisherId)) {
-        adsTxtLines.push(`google.com, ${publisherId}, DIRECT, f08c47fec0942fa0`);
+        adsTxtLines.push(`google.com, ${publisherId.replace('ca-', '')}, DIRECT, f08c47fec0942fa0`);
       } else {
         // Placeholder — replace with real publisher ID once AdSense account is approved.
-        // Format: google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+        // Format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
         adsTxtLines.push('# Replace the line below with your real AdSense publisher ID');
-        adsTxtLines.push('# google.com, ca-pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0');
+        adsTxtLines.push('# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0');
       }
       await fs.writeFile(path.join(DIST, 'ads.txt'), adsTxtLines.join('\n') + '\n', 'utf8');
     } catch (e) {}
