@@ -3468,8 +3468,8 @@ async function build() {
         <div data-lang-content="ua">${noticeUA}${content}${detailsUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${detailsPL}</div>
         <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}${detailsRU}</div>
-        <div class="job-actions" style="margin-top: 1rem; margin-bottom: 2rem;">
-          <a href="\${page.cta_link || \`/respond.html?job=\${escapeHtml(page.slug)}\`}" class="btn-secondary" style="background:#e74c3c; color:white;" data-i18n="btn.submit">Відгукнутися на вакансію</a>
+        <div class="job-actions">
+          <a href="${page.cta_link || `/respond.html?job=${escapeHtml(page.slug)}`}" class="btn-secondary vacancy-cta-btn" data-i18n="btn.submit">Відгукнутися на вакансію</a>
         </div>
         ${proofSummaryBlock}
         ${proofFormBlock}
@@ -3598,6 +3598,24 @@ async function build() {
       .job-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
       .btn-secondary { display: inline-block; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; background: #f3f4f6; color: #374151; font-weight: 600; }
       .btn-secondary:hover { background: #e5e7eb; }
+      .vacancy-cta-btn {
+        background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+        color: white !important;
+        border: none;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-align: center;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 1.5rem auto 0;
+        font-size: 1.1rem;
+      }
+      .vacancy-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        background: linear-gradient(135deg, #0284c7 0%, #059669 100%);
+      }
       .related-vacancies { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
       .related-vacancies h3 { font-size: 1.15rem; margin-bottom: 1rem; color: var(--color-primary); }
       .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
