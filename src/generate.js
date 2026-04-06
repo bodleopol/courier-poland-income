@@ -4175,8 +4175,8 @@ Allow: /proof.html
 
 # Prevent crawling of raw data files, internal assets, and game
 Disallow: /jobs-data.json
-Disallow: /game/
-Disallow: /game.html
+Allow: /game/
+Allow: /game.html
 Disallow: /*.json$
 
 # Sitemaps

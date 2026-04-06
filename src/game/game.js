@@ -1475,6 +1475,33 @@ const EconomySystem = {
 // ============================================================
 // MODULE: Entities
 // ============================================================
+
+class Particle {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.vx = (Math.random() - 0.5) * 4;
+    this.vy = (Math.random() - 0.5) * 4 - 2;
+    this.life = 1.0;
+    this.decay = Math.random() * 0.05 + 0.02;
+    this.color = Math.random() > 0.5 ? '#00e5a0' : '#ffd700';
+  }
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += 0.1; // gravity
+    this.life -= this.decay;
+  }
+  draw(ctx, camX) {
+    if (this.life <= 0) return;
+    ctx.save();
+    ctx.globalAlpha = this.life;
+    ctx.fillStyle = this.color;
+    ctx.fillRect(Math.round(this.x - camX), Math.round(this.y), 4, 4);
+    ctx.restore();
+  }
+}
+
 class Entity {
   constructor(x, y, w, h) {
     this.x = x; this.y = y; this.w = w; this.h = h;
@@ -2522,6 +2549,7 @@ class GameEngine {
     this.npcs = [];
     this.platforms = [];
     this.playerShots = [];
+    this.particles = [];
 
     // Progress tracking
     this.collected = 0;
@@ -2863,8 +2891,11 @@ class GameEngine {
       if (Physics.rectOverlap(this.player.x, this.player.y, this.player.w, this.player.h,
                               c.x, c.y, c.w, c.h)) {
         c.collected = true;
+
         c.apply(this.player.stats, this.player.extStats);
+        for(let i=0; i<15; i++) this.particles.push(new Particle(c.x + 11, c.y + 11));
         this.collected++;
+
         const comboWindow = 220;
         this.collectStreak = (this.frame - this.lastCollectFrame <= comboWindow) ? (this.collectStreak + 1) : 1;
         this.lastCollectFrame = this.frame;
@@ -3127,6 +3158,9 @@ class GameEngine {
     this._checkEnemyCollisions();
     this._checkPortal();
 
+    for (const p of this.particles) p.update();
+    this.particles = this.particles.filter(p => p.life > 0);
+
     // Quest update
     QuestSystem.update(this.quests, this);
 
@@ -3190,6 +3224,9 @@ class GameEngine {
 
     // Player
     this.player.draw(ctx, this.camX);
+
+    // Particles
+    for (const p of this.particles) p.draw(ctx, this.camX);
 
     // Player projectiles
     ctx.fillStyle = '#fbbf24';
@@ -3327,8 +3364,8 @@ function initGame() {
       }
     });
   }
-  document.body.classList.add('game-fs');
-  if (fsBtn) fsBtn.textContent = '✕';
+  // document.body.classList.add('game-fs'); // Removed to avoid forcing fullscreen on desktop load
+  // if (fsBtn) fsBtn.textContent = '✕';
   resizeCanvas();
 
   const difficultyEl = document.getElementById('game-difficulty');
@@ -3366,7 +3403,7 @@ function initGame() {
   const openGameBtn = document.getElementById('open-game-btn');
   if (openGameBtn) {
     openGameBtn.addEventListener('click', () => {
-      if (engine.state === 'start') engine.state = 'playing';
+      if (engine.state === 'start') { engine.state = 'playing'; if (window.matchMedia('(pointer: coarse)').matches) { document.body.classList.add('game-fs'); if (fsBtn) fsBtn.textContent = '✕'; resizeCanvas(); } }
     });
   }
 
