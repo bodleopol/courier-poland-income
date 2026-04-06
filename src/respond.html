@@ -675,16 +675,32 @@ function applyTranslationsLocal(lang) {
                 formData.delete(qKey); // Optional: remove individual ones if you don't want them polluting the main payload
             }
         });
-        formData.append('Answers', answersArr.join('\n\n'));
+        formData.append('answers', answersArr.join('\n\n'));
 
         const fileInput = document.getElementById('resume');
         if(fileInput.files.length > 0) {
             const file = fileInput.files[0];
+
+            // Validate file size (max 5 MB)
+            if (file.size > 5 * 1024 * 1024) {
+              const lang = getLang();
+              const errorMsgs = {
+                ua: 'Файл завеликий. Максимальний розмір 5 МБ.',
+                pl: 'Plik jest za duży. Maksymalny rozmiar to 5 MB.',
+                ru: 'Файл слишком большой. Максимальный размер 5 МБ.',
+                en: 'File is too large. Maximum size is 5 MB.'
+              };
+              show(errorMsgs[lang] || errorMsgs.ua, false);
+              submitBtn.disabled = false;
+              submitBtn.removeAttribute('aria-busy');
+              return;
+            }
+
             const reader = new FileReader();
             reader.onload = async function(event) {
                 const base64Data = event.target.result.split(',')[1];
-                // we set the base64 resume onto 'Summary_currículum' which corresponds to Column H based on the mapping instruction
-                formData.set('Summary_currículum', base64Data);
+                // we set the base64 resume onto 'resume'
+                formData.set('resume', base64Data);
                 formData.append('resumeName', file.name);
                 formData.append('resumeType', file.type);
                 submitForm(formData);
