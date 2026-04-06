@@ -69,10 +69,12 @@ function generateVacanciesSitemap() {
     const uaUrl = `${DOMAIN}/${job.slug}.html`;
     const plUrl = `${DOMAIN}/${job.slug}-pl.html`;
     const ruUrl = `${DOMAIN}/${job.slug}-ru.html`;
+    const enUrl = `${DOMAIN}/${job.slug}-en.html`;
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
     return [
       `  <url>
@@ -89,6 +91,12 @@ function generateVacanciesSitemap() {
   </url>`,
       `  <url>
     <loc>${ruUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${enUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>${xhtmlLinks}
@@ -109,10 +117,12 @@ function generateBlogSitemap() {
     const uaUrl = `${DOMAIN}/post-${post.slug}.html`;
     const plUrl = `${DOMAIN}/post-${post.slug}-pl.html`;
     const ruUrl = `${DOMAIN}/post-${post.slug}-ru.html`;
+    const enUrl = `${DOMAIN}/post-${post.slug}-en.html`;
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
     return [
       `  <url>
@@ -129,6 +139,12 @@ function generateBlogSitemap() {
   </url>`,
       `  <url>
     <loc>${ruUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${enUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>${xhtmlLinks}
@@ -173,13 +189,15 @@ function staticAlternates(baseUrl) {
     return {
       ua: `${DOMAIN}/`,
       pl: `${DOMAIN}/index-pl.html`,
-      ru: `${DOMAIN}/index-ru.html`
+      ru: `${DOMAIN}/index-ru.html`,
+      en: `${DOMAIN}/index-en.html`
     };
   }
   return {
     ua: `${DOMAIN}/${baseUrl}`,
     pl: `${DOMAIN}/${baseUrl.replace('.html', '-pl.html')}`,
-    ru: `${DOMAIN}/${baseUrl.replace('.html', '-ru.html')}`
+    ru: `${DOMAIN}/${baseUrl.replace('.html', '-ru.html')}`,
+    en: `${DOMAIN}/${baseUrl.replace('.html', '-en.html')}`
   };
 }
 
@@ -191,6 +209,7 @@ function generateStaticSitemap() {
     <xhtml:link rel="alternate" hreflang="uk" href="${alts.ua}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${alts.pl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${alts.ru}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${alts.en}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${alts.ua}"/>`;
     return [
       `  <url>
@@ -207,6 +226,12 @@ function generateStaticSitemap() {
   </url>`,
       `  <url>
     <loc>${alts.ru}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${alts.en}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>${xhtmlLinks}
@@ -248,6 +273,7 @@ function generateMainSitemap() {
     <xhtml:link rel="alternate" hreflang="uk" href="${alts.ua}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${alts.pl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${alts.ru}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${alts.en}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${alts.ua}"/>`;
     return [
       `  <url>
@@ -267,6 +293,12 @@ function generateMainSitemap() {
     <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${alts.en}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>${xhtmlLinks}
   </url>`
     ];
   }).join('\n');
@@ -275,10 +307,12 @@ function generateMainSitemap() {
     const uaUrl = `${DOMAIN}/${job.slug}.html`;
     const plUrl = `${DOMAIN}/${job.slug}-pl.html`;
     const ruUrl = `${DOMAIN}/${job.slug}-ru.html`;
+    const enUrl = `${DOMAIN}/${job.slug}-en.html`;
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
     return [
       `  <url>
@@ -295,6 +329,12 @@ function generateMainSitemap() {
   </url>`,
       `  <url>
     <loc>${ruUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${enUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>${xhtmlLinks}
@@ -306,10 +346,12 @@ function generateMainSitemap() {
     const uaUrl = `${DOMAIN}/post-${post.slug}.html`;
     const plUrl = `${DOMAIN}/post-${post.slug}-pl.html`;
     const ruUrl = `${DOMAIN}/post-${post.slug}-ru.html`;
+    const enUrl = `${DOMAIN}/post-${post.slug}-en.html`;
     const xhtmlLinks = `
     <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
     <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
     <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
     return [
       `  <url>
@@ -326,6 +368,12 @@ function generateMainSitemap() {
   </url>`,
       `  <url>
     <loc>${ruUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${enUrl}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>${xhtmlLinks}
@@ -351,9 +399,9 @@ console.log('🗺️  Generating sitemaps...');
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), generateMainSitemap(), 'utf8');
 const STATIC_PAGES_COUNT = STATIC_SITEMAP_PAGES.length;
 // Each base page produces 3 entries (ua/pl/ru)
-const totalStaticUrls = STATIC_PAGES_COUNT * 3;
-const totalVacancyUrls = indexableVacancies.length * 3;
-const totalBlogUrls = posts.length * 3;
+const totalStaticUrls = STATIC_PAGES_COUNT * 4;
+const totalVacancyUrls = indexableVacancies.length * 4;
+const totalBlogUrls = posts.length * 4;
 console.log(`✅ sitemap.xml: ${totalStaticUrls + totalVacancyUrls + totalBlogUrls} URLs (all languages)`);
 
 // Sitemap index
@@ -362,13 +410,13 @@ console.log('✅ sitemap-index.xml');
 
 // Individual sitemaps
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-static.xml'), generateStaticSitemap(), 'utf8');
-console.log(`✅ sitemap-static.xml: ${totalStaticUrls} URLs (${STATIC_PAGES_COUNT} base pages × 3 languages)`);
+console.log(`✅ sitemap-static.xml: ${totalStaticUrls} URLs (${STATIC_PAGES_COUNT} base pages × 4 languages)`);
 
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-vacancies.xml'), generateVacanciesSitemap(), 'utf8');
-console.log(`✅ sitemap-vacancies.xml: ${totalVacancyUrls} URLs (${indexableVacancies.length} vacancies × 3 languages)`);
+console.log(`✅ sitemap-vacancies.xml: ${totalVacancyUrls} URLs (${indexableVacancies.length} vacancies × 4 languages)`);
 
 fs.writeFileSync(path.join(DIST_DIR, 'sitemap-blog.xml'), generateBlogSitemap(), 'utf8');
-console.log(`✅ sitemap-blog.xml: ${totalBlogUrls} URLs (${posts.length} posts × 3 languages)`);
+console.log(`✅ sitemap-blog.xml: ${totalBlogUrls} URLs (${posts.length} posts × 4 languages)`);
 
 console.log('\n🎉 All sitemaps generated successfully!');
 console.log(`\n📊 Total URLs: ${totalStaticUrls + totalVacancyUrls + totalBlogUrls}`);
