@@ -310,6 +310,7 @@
       if (window.LATEST_JOBS && latestJobsGrid) {
         const onlyHighProof = !!(latestProofFilter && latestProofFilter.checked);
         renderJobs(shuffleArray(window.LATEST_JOBS), latestJobsGrid, { onlyHighProof });
+        if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
       }
     };
 
@@ -463,6 +464,7 @@
 
       // Render jobs
       renderJobs(filtered, allJobsGrid, { onlyHighProof });
+      if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
     }
 
     // Event listeners
@@ -564,6 +566,7 @@
     initCategoryNav();
     initHomePage();
     initVacanciesPage();
+    if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
   });
 
 })();
