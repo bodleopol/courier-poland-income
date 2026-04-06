@@ -3468,6 +3468,9 @@ async function build() {
         <div data-lang-content="ua">${noticeUA}${content}${detailsUA}</div>
         <div data-lang-content="pl" style="display:none">${noticePL}${contentPl}${detailsPL}</div>
         <div data-lang-content="ru" style="display:none">${noticeRU}${contentRu}${detailsRU}</div>
+        <div class="job-actions" style="margin-top: 1rem; margin-bottom: 2rem;">
+          <a href="\${page.cta_link || \`/respond.html?job=\${escapeHtml(page.slug)}\`}" class="btn-secondary" style="background:#e74c3c; color:white;" data-i18n="btn.submit">Відгукнутися на вакансію</a>
+        </div>
         ${proofSummaryBlock}
         ${proofFormBlock}
         ${enrichmentHtml}
@@ -3486,7 +3489,6 @@ async function build() {
           <span class="trust-item" data-lang-content="ru" style="display:none">💬 Поддержка 24/7 в Telegram</span>
         </div>
         <div class="job-actions">
-          <a href="\${page.cta_link || \`/respond.html?job=\${escapeHtml(page.slug)}\`}" class="btn-secondary" style="background:#e74c3c; color:white;" data-i18n="btn.submit">Відгукнутися на вакансію</a>
           <a href="/vacancies.html" class="btn-secondary" data-i18n="btn.all_vacancies">Всі вакансії</a>
           <a href="/" class="btn-secondary" data-i18n="btn.back">Повернутись на головну</a>
         </div>
