@@ -2657,6 +2657,7 @@
 
   // Expose to global scope
   window.applyTranslations = applyTranslations;
+  window.initDateFormatting = initDateFormatting;
 
 
 })();

@@ -36,3 +36,4 @@ secrets.json
 tokens.txt
 credentials.yml
 !SECURITY.md
+test-results/
