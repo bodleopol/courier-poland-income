@@ -3502,7 +3502,8 @@ async function build() {
       .replace(/{{CTA_TEXT}}/g, page.cta_text || 'Подати заявку');
 
     // inject i18n attributes into the generated page where applicable by adding lang switcher and script
-    let finalHtml = html.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
+    const htmlWithEn = html.replace(/{{CANONICAL_EN}}/g, `https://rybezh.site/${escapeHtml(page.slug || '')}-en.html`);
+    let finalHtml = htmlWithEn.replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     // ensure CTA has data-i18n if present
     finalHtml = finalHtml.replace(/(<a[^>]*class="?card-cta"?[^>]*>)([\s\S]*?)(<\/a>)/gi, function(m, open, inner, close) {
       if (/data-i18n/.test(open)) return m;
@@ -3779,12 +3780,15 @@ async function build() {
     const canonicalUrl = page === 1 ? 'https://rybezh.site/blog.html' : `https://rybezh.site/blog-${page}.html`;
     const canonicalPlUrl = page === 1 ? 'https://rybezh.site/blog-pl.html' : `https://rybezh.site/blog-${page}-pl.html`;
 
+    const canonicalEnUrl = page === 1 ? 'https://rybezh.site/blog-en.html' : `https://rybezh.site/blog-${page}-en.html`;
+
     let blogHtml = pageTpl
       .replace(/{{TITLE}}/g, `Блог${page > 1 ? ` (сторінка ${page})` : ''}`)
       .replace(/{{DESCRIPTION}}/g, 'Корисні статті про роботу в Польщі та кар\'єру')
       .replace(/{{CONTENT}}/g, blogIndexContent)
       .replace(/{{CANONICAL}}/g, canonicalUrl)
       .replace(/{{CANONICAL_PL}}/g, canonicalPlUrl)
+      .replace(/{{CANONICAL_EN}}/g, canonicalEnUrl)
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
@@ -3889,6 +3893,7 @@ async function build() {
       .replace(/{{CANONICAL}}/g, `https://rybezh.site/post-${post.slug}.html`)
       .replace(/{{CANONICAL_PL}}/g, `https://rybezh.site/post-${post.slug}-pl.html`)
       .replace(/{{CANONICAL_RU}}/g, `https://rybezh.site/post-${post.slug}-ru.html`)
+      .replace(/{{CANONICAL_EN}}/g, `https://rybezh.site/post-${post.slug}-en.html`)
       .replace(/{{CITY}}/g, '')
       .replace(/{{CTA_LINK}}/g, '/apply.html')
       .replace(/{{CTA_TEXT}}/g, '');
@@ -3988,6 +3993,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       .replace(/{{CANONICAL}}/g, "https://rybezh.site/")
       .replace(/{{CANONICAL_PL}}/g, "https://rybezh.site/index-pl.html")
       .replace(/{{CANONICAL_RU}}/g, "https://rybezh.site/index-ru.html")
+      .replace(/{{CANONICAL_EN}}/g, "https://rybezh.site/index-en.html")
       .replace(/{{CITY}}/g, "")
       .replace(/\$\{new Date\(\)\.getFullYear\(\)\}/g, String(new Date().getFullYear()));
     
@@ -4078,6 +4084,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
         .replace(/{{CANONICAL}}/g, 'https://rybezh.site/vacancies.html')
         .replace(/{{CANONICAL_PL}}/g, 'https://rybezh.site/vacancies-pl.html')
         .replace(/{{CANONICAL_RU}}/g, 'https://rybezh.site/vacancies-ru.html')
+        .replace(/{{CANONICAL_EN}}/g, 'https://rybezh.site/vacancies-en.html')
         .replace(/{{CITY}}/g, '')
         .replace(/{{CTA_LINK}}/g, '/apply.html')
         .replace(/{{CTA_TEXT}}/g, '')

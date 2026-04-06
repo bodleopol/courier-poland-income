@@ -12,6 +12,1126 @@
   // ============================================
   // 1. TRANSLATIONS (i18n)
   // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
+  /**
+ * Rybezh Site - Main JavaScript
+ * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
+ */
+
+(function() {
+  'use strict';
+
+  const GSA_URL = 'https://script.google.com/macros/s/AKfycbyZIupzVZo3q5UDGVSBzEaw1vdKFJcaEyTh5iuMgBECdd7VWE4Hq7cZ1WNL6V6Jy1FdMg/exec';
+  const GEO_URL = 'https://ipapi.co/json/';
+
+  // ============================================
+  // 1. TRANSLATIONS (i18n)
+  // ============================================
   const translations = {
     'meta.title': { ua: 'Rybezh — Пошук роботи у Польщі', pl: 'Rybezh — Praca w Polsce', ru: 'Rybezh — Поиск работы в Польше' , en: 'Work in Poland for Ukrainians | Rybezh - Free Employment'},
     'meta.description': { ua: 'Актуальні вакансії в різних сферах по всій Польщі. Легальне працевлаштування та підтримка.', pl: 'Aktualne oferty pracy w różnych branżach w całej Polsce. Legalne zatrudnienie i wsparcie.', ru: 'Актуальные вакансии в разных сферах по всей Польше. Легальное трудоустройство и поддержка.' , en: 'Find your dream job in Poland! Free consultation, document assistance, and hundreds of verified vacancies from direct employers. Start working legally today.'},
@@ -551,7 +1671,7 @@
     return text.replace(/\$\{year\}/g, String(new Date().getFullYear()));
   }
 
-  function toRussianFallbackText(input) {
+    function toRussianFallbackText(input) {
     if (input === null || input === undefined) return '';
     let text = String(input);
     const replacements = [
@@ -630,9 +1750,14 @@
 
   function getTranslationText(dict, lang) {
     if (!dict) return '';
-    if (dict[lang] !== undefined) return dict[lang];
+    if (dict[lang] !== undefined && dict[lang] !== null) return dict[lang];
     if (lang === 'ru') return toRussianFallbackText(dict.ua || dict.pl || '');
-    return dict.ua || '';
+    if (lang === 'en' && dict.en) return dict.en;
+    if (dict.ua !== undefined && dict.ua !== null) return dict.ua;
+    if (dict.pl !== undefined && dict.pl !== null) return dict.pl;
+    if (dict.ru !== undefined && dict.ru !== null) return dict.ru;
+    if (dict.en !== undefined && dict.en !== null) return dict.en;
+    return '';
   }
 
   function applyTranslations(lang) {
