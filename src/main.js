@@ -1148,7 +1148,71 @@
   }
 
   // ============================================
-  // 12. CONTACT FORM
+  // 12. RENT FORM
+  // ============================================
+  function initRentForm() {
+    const form = document.getElementById('rent-form');
+    if (!form) return;
+
+    // Use the specific endpoint for the rent form as requested
+    const RENT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTumA94hc0uIu24ga9ZkQ8n1zOcWbYLFPXtiYe8IulPabzVCv6PMduZ8Axc2e6n9w/exec';
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const nameInput = form.querySelector('#rentName');
+      const phoneInput = form.querySelector('#rentPhone');
+      const vehicleSelect = form.querySelector('#rentVehicle');
+      const status = document.getElementById('rent-form-msg');
+      const button = form.querySelector('button[type="submit"]');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const vehicle = vehicleSelect ? vehicleSelect.value : '';
+      const currentLang = getLang();
+
+      if (!name || !phone || !vehicle) {
+        if (status) {
+          status.style.color = '#ef4444';
+          status.textContent = currentLang === 'pl' ? 'Uzupełnij wszystkie pola.' : (currentLang === 'ru' ? 'Заполните все поля.' : 'Заповніть усі поля.');
+        }
+        return;
+      }
+
+      if (button) button.disabled = true;
+      if (status) {
+        status.style.color = '#64748b';
+        status.textContent = currentLang === 'pl' ? 'Wysyłanie...' : (currentLang === 'ru' ? 'Отправляем...' : 'Надсилаємо...');
+      }
+
+      try {
+        const formData = new FormData();
+        // Fields mapped according to Google Sheet columns A1, B1, C1
+        formData.append('Ваше ім\'я', name);
+        formData.append('Телефон', phone);
+        formData.append('транспорт', vehicle);
+
+        // Fetch requires no-cors for unauthenticated Google Apps Script web apps POSTs
+        await fetch(RENT_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formData });
+
+        if (status) {
+          status.style.color = '#10b981';
+          status.textContent = currentLang === 'pl' ? 'Dziękujemy! Skontaktujemy się wkrótce.' : (currentLang === 'ru' ? 'Спасибо! Ваша заявка принята.' : 'Дякуємо! Ваша заявка прийнята.');
+        }
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        if (status) {
+          status.style.color = '#ef4444';
+          status.textContent = currentLang === 'pl' ? 'Błąd wysyłki. Spróbuj ponownie.' : (currentLang === 'ru' ? 'Ошибка отправки. Попробуйте ещё раз.' : 'Помилка відправки. Спробуйте ще раз.');
+        }
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+  }
+
+  // ============================================
+  // 13. CONTACT FORM
   // ============================================
   function initContactForm() {
     const forms = document.querySelectorAll('.js-contact-form');
@@ -1522,6 +1586,7 @@
     initImageFallbacks();
     initNewsletter();
     initContactForm();
+    initRentForm();
     initCalculator();
     initCommentThreads();
     // Disabled: synthetic "live activity" widget can look deceptive to users/search engines.

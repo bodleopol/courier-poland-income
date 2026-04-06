@@ -2892,6 +2892,15 @@ async function build() {
     // features.css not found, continue
   }
 
+  // Copy olena-founder.png
+  try {
+    const founderPath = path.join(SRC, 'olena-founder.png');
+    const founderContent = await fs.readFile(founderPath);
+    await fs.writeFile(path.join(DIST, 'olena-founder.png'), founderContent);
+  } catch (e) {
+    console.warn('⚠️ olena-founder.png not found');
+  }
+
   // Copy jobs.js
   try {
     const jobsJsPath = path.join(SRC, 'jobs.js');

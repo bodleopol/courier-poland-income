@@ -201,7 +201,7 @@
 
 <section id="rent-form-section" class="rent-contact-section fade-in">
   <h2 data-i18n="rent.contact.title">Залишити заявку</h2>
-  <form class="rent-form" onsubmit="event.preventDefault(); alert('Дякуємо! Ваша заявка прийнята.'); this.reset();">
+  <form id="rent-form" class="rent-form">
     <div class="form-group">
       <label for="rentName" data-i18n="rent.form.name">Ваше ім'я</label>
       <input type="text" id="rentName" required data-i18n="placeholder.name" data-i18n-attr="placeholder" placeholder="Ваше ім'я">
@@ -224,5 +224,6 @@
     <div class="form-group full-width" style="margin-top: 1rem;">
       <button type="submit" class="submit-btn full-width" data-i18n="rent.form.submit">Відправити заявку</button>
     </div>
+    <div id="rent-form-msg" class="form-message" aria-live="polite" style="grid-column: span 2;"></div>
   </form>
 </section>
