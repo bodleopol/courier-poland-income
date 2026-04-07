@@ -20,12 +20,13 @@
 
   .rent-contact-section { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
   .rent-contact-section h2 { text-align: center; margin-bottom: 2rem; color: #0f172a; }
-  .rent-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
+  .rent-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
+  .form-message { grid-column: 1 / -1; }
   @media (min-width: 768px) {
     .rent-form { grid-template-columns: 1fr 1fr; }
     .form-group.full-width { grid-column: span 2; }
   }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
   .form-group label { font-weight: 600; color: #334155; }
   .form-group input, .form-group select { padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; color: #0f172a; }
   .form-group input:focus, .form-group select:focus { outline: none; border-color: #0f766e; ring: 2px solid #99f6e4; }
@@ -224,6 +225,6 @@
     <div class="form-group full-width" style="margin-top: 1rem;">
       <button type="submit" class="submit-btn full-width" data-i18n="rent.form.submit">Відправити заявку</button>
     </div>
-    <div id="rent-form-msg" class="form-message" aria-live="polite" style="grid-column: span 2;"></div>
+    <div id="rent-form-msg" class="form-message" aria-live="polite"></div>
   </form>
 </section>

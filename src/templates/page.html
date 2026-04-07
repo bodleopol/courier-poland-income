@@ -196,12 +196,21 @@
         Rybezh
       </a>
       <nav class="nav-menu">
-        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
         <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
-        <div class="nav-dropdown" aria-label="Категорії">
-          <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.categories">Категорії <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
-          <div class="nav-dropdown__menu" id="categoryNav"></div>
+
+        <div class="nav-dropdown" aria-label="Ресурси">
+          <button type="button" class="nav-link nav-dropdown__toggle">Ресурси <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown__menu">
+            <a href="/blog.html" data-i18n="nav.blog">Блог</a>
+            <a href="/proof.html" style="color:#e74c3c;font-weight:700;">Proof</a>
+            <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
+            <a href="/rent.html" data-i18n="nav.rent">Оренда</a>
+            <a href="/about.html" data-i18n="nav.about">Про нас</a>
+            <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
+            <a href="/for-employers.html" data-i18n="nav.employers">Для роботодавців</a>
+          </div>
         </div>
+
         <div class="nav-dropdown" aria-label="Інструменти">
           <button type="button" class="nav-link nav-dropdown__toggle" data-i18n="nav.tools">🛠️ Інструменти <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
           <div class="nav-dropdown__menu nav-dropdown__menu--tools">
@@ -211,13 +220,7 @@
             <a href="/map.html" data-i18n="nav.tool.map">🗺️ Карта українців</a>
           </div>
         </div>
-        <a href="/blog.html" class="nav-link" data-i18n="nav.blog">Блог</a>
-        <a href="/proof.html" class="nav-link" style="color:#e74c3c;font-weight:700;">Proof</a>
-        <a href="/about.html" class="nav-link" data-i18n="nav.about">Про нас</a>
-        <a href="/faq.html" class="nav-link" data-i18n="nav.faq">FAQ</a>
-        <a href="/rent.html" class="nav-link" data-i18n="nav.rent">Оренда</a>
-        <a href="/contact.html" class="nav-link" data-i18n="nav.contact">Контакти</a>
-        <a href="/for-employers.html" class="nav-link" data-i18n="nav.employers">Для роботодавців</a>
+
         <a href="{{CTA_LINK}}" class="btn-cta" data-i18n="nav.cta">Отримати консультацію</a>
         <div class="header-lang">
           <button class="lang-btn" data-lang="ua">UA</button>
@@ -231,7 +234,6 @@
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
       <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
       <div class="mobile-categories" id="mobileCategoryNav"></div>
 
@@ -304,44 +306,37 @@
             </a>
           </div>
         </div>
+
         <div class="footer-col">
           <h4 data-i18n="footer.nav">Навігація</h4>
           <a href="/" data-i18n="nav.home">Головна</a>
+          <a href="/vacancies.html" data-i18n="nav.jobs">Всі вакансії</a>
           <a href="/about.html" data-i18n="nav.about">Про нас</a>
-          <a href="/proof.html">Rybezh Proof</a>
           <a href="/blog.html" data-i18n="nav.blog">Блог</a>
           <a href="/faq.html" data-i18n="nav.faq">FAQ</a>
           <a href="/rent.html" data-i18n="nav.rent">Оренда</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.tools">Інструменти</h4>
+          <a href="/calculator.html" data-i18n="footer.tool.calc">Калькулятор зарплати</a>
+          <a href="/cv-generator.html" data-i18n="footer.tool.cv">Генератор CV</a>
+          <a href="/red-flag.html" data-i18n="footer.tool.redflag">Перевірка вакансій</a>
+          <a href="/map.html" data-i18n="footer.tool.map">Мапа українців</a>
+          <a href="/proof.html">Rybezh Proof</a>
+          <a href="/game.html">🎮 Гра «Шлях Ветерана»</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact">Контакти та Бізнес</h4>
           <a href="/contact.html" data-i18n="nav.contact">Контакти</a>
           <a href="/for-employers.html" data-i18n="nav.employers">Для роботодавців</a>
-          <a href="/game.html">🎮 Гра «Шлях Ветерана»</a>
           <a href="/press.html">Для ЗМІ</a>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.jobs">Вакансії</h4>
-          <a href="/vacancies.html" data-i18n="nav.jobs">Всі вакансії</a>
-          <a href="/vacancies.html?city=warsaw" data-i18n="city.warszawa">Варшава</a>
-          <a href="/vacancies.html?city=krakow" data-i18n="city.krakow">Краків</a>
-          <a href="/vacancies.html?city=wroclaw" data-i18n="city.wroclaw">Вроцлав</a>
-          <a href="/vacancies.html?city=gdansk" data-i18n="city.gdansk">Гданськ</a>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.newsletter.title">Підписка</h4>
-          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem" data-i18n="footer.newsletter.text">Нові вакансії та статті.</p>
-          <form class="footer-newsletter-form">
-            <input type="email" required placeholder="Ваш email" data-i18n="footer.newsletter.placeholder" data-i18n-attr="placeholder">
-            <button type="submit" aria-label="Subscribe">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-          </form>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.contact">Контакти</h4>
           <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
           <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
-          <a href="{{CTA_LINK}}" data-i18n="nav.apply">Подати заявку</a>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
         <div class="footer-bottom-links">

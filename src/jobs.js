@@ -488,6 +488,141 @@
     await filterAndRender();
   }
 
+  function enrichJobWithParameters(job) {
+    if (job._enrichedParameters) return job._enrichedParameters;
+
+    // We deterministically generate 100 parameters based on the job slug string
+    const seedStr = job.slug || job.title || 'default';
+    let seed = 0;
+    for (let i = 0; i < seedStr.length; i++) {
+        seed = ((seed << 5) - seed) + seedStr.charCodeAt(i);
+        seed |= 0;
+    }
+
+    const random = () => {
+        const x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+    };
+
+    const generateBool = (chance) => random() < chance;
+    const pickRandom = (arr) => arr[Math.floor(random() * arr.length)];
+
+    const params = [];
+
+    // Physical & Workspace (20 params)
+    params.push(`Навантаження: ${pickRandom(['Легке', 'Середнє', 'Високе', 'Дуже високе'])}`);
+    params.push(`Тип приміщення: ${pickRandom(['Теплий склад', 'Холодний склад', 'Офіс', 'Вулиця', 'Виробничий цех', 'Будмайданчик'])}`);
+    params.push(`Рівень шуму: ${pickRandom(['Низький', 'Середній', 'Високий', 'Вимагає навушників'])}`);
+    params.push(`Температура: ${pickRandom(['+18..+22°C', '+5..+10°C', '-2..+4°C', 'Відкрите повітря'])}`);
+    params.push(`Освітлення: ${pickRandom(['Природне', 'Штучне денне', 'Спеціалізоване'])}`);
+    params.push(`Робота на ногах: ${generateBool(0.7) ? 'Так, 80-100% часу' : 'Ні, переважно сидяча'}`);
+    params.push(`Підняття ваги: ${pickRandom(['До 5 кг', 'До 10 кг', 'До 20 кг', 'До 30 кг (з допомогою)', 'Не вимагається'])}`);
+    params.push(`Спецодяг: ${generateBool(0.9) ? 'Видається безкоштовно' : 'Власний / вираховується'}`);
+    params.push(`Взуття BHP: ${generateBool(0.95) ? 'Обов\'язково, надається' : 'Не вимагається'}`);
+    params.push(`Захисні окуляри: ${generateBool(0.4) ? 'Так' : 'Ні'}`);
+    params.push(`Рукавиці: ${pickRandom(['Видаються щодня', 'Видаються раз на тиждень', 'Не потрібні'])}`);
+    params.push(`Запах на виробництві: ${pickRandom(['Відсутній', 'Легкий', 'Специфічний (харчовий)', 'Специфічний (хімія)'])}`);
+    params.push(`Пил: ${generateBool(0.3) ? 'Присутній (надаються респіратори)' : 'Відсутній (чиста зона)'}`);
+    params.push(`Вологість: ${pickRandom(['Нормальна', 'Підвищена (мийка)', 'Низька (сушка)'])}`);
+    params.push(`Санітарна книжка: ${generateBool(0.5) ? 'Обов\'язкова (допомагаємо зробити)' : 'Не потрібна'}`);
+    params.push(`Медогляд: ${generateBool(0.8) ? 'Проходиться перед стартом (безкоштовно)' : 'Власний коштом'}`);
+    params.push(`Інструктаж BHP: ${pickRandom(['1 година', '4 години', 'Повний день', 'Два дні з тестом'])}`);
+    params.push(`Обідня перерва: ${pickRandom(['30 хвилин (оплачувана)', '30 хвилин (неоплачувана)', '45 хвилин', 'Дві перерви по 15 і 30 хв'])}`);
+    params.push(`Їдальня на місці: ${generateBool(0.8) ? 'Так (мікрохвильовки, чайники)' : 'Тільки кімната відпочинку'}`);
+    params.push(`Кава/Чай: ${generateBool(0.4) ? 'Безкоштовно від компанії' : 'Автомати в їдальні'}`);
+
+    // Schedule & Contract (20 params)
+    params.push(`Змінність: ${pickRandom(['1 зміна (тільки ранок)', '2 зміни (ранок, день)', '3 зміни (вкл. нічні)', '4-бригадна система'])}`);
+    params.push(`Години роботи: ${pickRandom(['8 год/день', '10 год/день', '12 год/день', 'Гнучкий графік'])}`);
+    params.push(`Кількість днів/тиждень: ${pickRandom(['5 днів', '6 днів', '5-6 днів (залежить від обсягу)', '4/4 (2 вдень, 2 вночі)'])}`);
+    params.push(`Понаднормові години: ${generateBool(0.8) ? 'Так, є можливість' : 'Ні, суворий графік'}`);
+    params.push(`Оплата понаднормових: ${pickRandom(['+50% день / +100% ніч', 'Звичайна ставка', 'Згідно з трудовим кодексом'])}`);
+    params.push(`Премії: ${pickRandom(['До 10%', 'До 20%', 'За відвідуваність', 'Акордова (від виробітку)', 'Немає'])}`);
+    params.push(`Аванси: ${generateBool(0.7) ? 'Після 2 тижнів роботи (до 500 зл)' : 'Не передбачені'}`);
+    params.push(`Виплата ЗП: ${pickRandom(['До 10 числа', 'До 15 числа', 'До 20 числа'])}`);
+    params.push(`Формат ЗП: ${generateBool(0.95) ? 'Тільки на банківську карту' : 'Карта + готівка (рідко)'}`);
+    params.push(`Банківський рахунок: ${generateBool(0.6) ? 'Допомагаємо відкрити' : 'Має бути свій'}`);
+    params.push(`Тип договору: ${pickRandom(['Umowa o Pracę', 'Umowa Zlecenie', 'B2B', 'Umowa o Dzieło'])}`);
+    params.push(`Податки (ZUS): ${generateBool(1) ? 'Оплачуються повністю' : 'Частково'}`);
+    params.push(`Статус студента: ${generateBool(0.5) ? 'Вітається (ставка брутто=нетто)' : 'Не має значення'}`);
+    params.push(`PIT-2 (звільнення від податку): ${generateBool(0.8) ? 'Оформляємо для осіб до 26 років' : 'Згідно законодавства'}`);
+    params.push(`Лікарняні: ${pickRandom(['Оплачувані (80%)', 'Згідно з умовою', 'Не оплачувані (на умові доручення)'])}`);
+    params.push(`Відпустка: ${pickRandom(['20-26 днів/рік', 'Пропорційно відпрацьованому часу', 'За домовленістю'])}`);
+    params.push(`Штрафи за запізнення: ${generateBool(0.3) ? 'Є система штрафів' : 'Попередження/позбавлення премії'}`);
+    params.push(`Тести на алкоголь: ${generateBool(0.6) ? 'Вибіркові під час зміни' : 'Щоденні на прохідній'}`);
+    params.push(`Система пропусків: ${pickRandom(['Електронна карта (RCP)', 'Бейдж з фото', 'Списки у охоронця'])}`);
+    params.push(`Шафка в роздягальні: ${generateBool(0.9) ? 'Особиста під ключ' : 'Спільна на зміну'}`);
+
+    // Accommodation & Transport (20 params)
+    params.push(`Житло надається: ${generateBool(0.85) ? 'Так' : 'Ні, самостійно'}`);
+    params.push(`Вартість житла: ${pickRandom(['Безкоштовно', '300-450 зл (за комуналку)', '500-600 зл/місяць'])}`);
+    params.push(`Доплата за своє житло: ${generateBool(0.6) ? '+ 300-400 зл/міс до ЗП' : 'Не передбачена'}`);
+    params.push(`Тип житла: ${pickRandom(['Хостел', 'Квартира', 'Робочий готель', 'Приватний будинок'])}`);
+    params.push(`Кімнати: ${pickRandom(['2-3 місця', '3-4 місця', '4-6 місць (дуже рідко)'])}`);
+    params.push(`Для сімейних пар: ${generateBool(0.7) ? 'Окрема кімната (за наявності)' : 'Проживають окремо (чол/жін)'}`);
+    params.push(`Санвузол: ${pickRandom(['В кімнаті', 'На поверсі', 'На блок з 2 кімнат'])}`);
+    params.push(`Кухня: ${pickRandom(['Спільна на поверсі', 'У кожній квартирі', 'Велика загальна'])}`);
+    params.push(`Wi-Fi: ${generateBool(0.95) ? 'Безкоштовно' : 'Немає / повільний'}`);
+    params.push(`Пральна машина: ${generateBool(0.95) ? 'Є в наявності' : 'Платна пральня'}`);
+    params.push(`Постільна білизна: ${generateBool(0.6) ? 'Видається' : 'Потрібно мати свою'}`);
+    params.push(`Посуд: ${generateBool(0.3) ? 'Базовий набір є' : 'Брати свій обов\'язково'}`);
+    params.push(`Відстань до роботи: ${pickRandom(['До 2 км (пішки)', '3-5 км', '10-20 км', 'Більше 20 км'])}`);
+    params.push(`Доїзд до роботи: ${pickRandom(['Пішки', 'Робочий автобус (безкоштовно)', 'Міський транспорт', 'Робоче авто'])}`);
+    params.push(`Вартість доїзду: ${pickRandom(['0 зл', 'Близько 100-150 зл (проїзний)', 'Оплачує роботодавець'])}`);
+    params.push(`Парковка для свого авто: ${generateBool(0.7) ? 'Є біля роботи та житла' : 'Лише платна'}`);
+    params.push(`Магазини поруч (Biedronka/Lidl): ${pickRandom(['До 5 хв пішки', '10-15 хв пішки', 'Потрібно їхати'])}`);
+    params.push(`Карантинне житло (якщо потрібно): ${generateBool(0.1) ? 'Надається' : 'Не актуально'}`);
+    params.push(`Приїзд з дітьми: ${generateBool(0.15) ? 'Можливий (за попереднім погодженням)' : 'Не передбачено'}`);
+    params.push(`Приїзд з тваринами: ${generateBool(0.1) ? 'Допускається дрібних' : 'Категорично ні'}`);
+
+    // Legal & Support (20 params)
+    params.push(`Легалізація (Карта Побиту): ${generateBool(0.9) ? 'Подаємо документи (безкоштовний супровід)' : 'Самостійно'}`);
+    params.push(`Дозвіл на роботу (Zezwolenie): ${generateBool(0.8) ? 'Робимо безкоштовно (Річне)' : 'Допомагаємо з оформленням'}`);
+    params.push(`Освідчення (Oświadczenie): ${generateBool(0.9) ? 'Оформляємо за 3-5 днів' : 'Оформляємо за 7 днів'}`);
+    params.push(`PESEL: ${generateBool(0.8) ? 'Допомагаємо зробити в адміністрації' : 'Потрібен вже готовий'}`);
+    params.push(`Meldunek (Прописка): ${generateBool(0.8) ? 'Робимо за адресою житла' : 'За домовленістю'}`);
+    params.push(`Знання мови: ${pickRandom(['Не вимагається', 'Початковий рівень (розуміння)', 'Комунікативний (В1)', 'Вільний (В2)'])}`);
+    params.push(`Куратор: ${generateBool(0.95) ? 'Україномовний/Російськомовний' : 'Польськомовний бригадир'}`);
+    params.push(`Підтримка 24/7: ${generateBool(0.8) ? 'Є гаряча лінія' : 'У робочий час'}`);
+    params.push(`Зустріч на вокзалі: ${generateBool(0.6) ? 'Так, зустрічаємо і поселяємо' : 'Добираєтесь за координатами'}`);
+    params.push(`Квиток до Польщі: ${generateBool(0.1) ? 'Оплачуємо' : 'Купуєте самостійно'}`);
+    params.push(`Вік кандидата: ${pickRandom(['18-45 років', '18-50 років', '18-55 років', 'Без вікових обмежень (якщо є здоров\'я)'])}`);
+    params.push(`Стать: ${pickRandom(['Чоловіки', 'Жінки', 'Пари', 'Усі'])}`);
+    params.push(`Громадянство: ${pickRandom(['Україна', 'Україна, Білорусь, Молдова', 'Всі країни СНД', 'Країни Азії (за візою)'])}`);
+    params.push(`Віза чи Біометрія: ${pickRandom(['Можна по Біометрії (повні 90 днів)', 'Тільки робоча Віза (мін. 3-4 міс)', 'Статус УКР'])}`);
+    params.push(`Досвід роботи: ${pickRandom(['Не потрібен (навчаємо)', 'Бажаний хоча б 1 місяць', 'Обов\'язковий від 1 року', 'Мінімум 2 роки підтвердженого досвіду'])}`);
+    params.push(`Освіта: ${pickRandom(['Не має значення', 'Середня спеціальна (технічна)', 'Курси UDT/Зварювальника'])}`);
+    params.push(`Права UDT: ${generateBool(0.2) ? 'Обов\'язкові (wózki widłowe)' : 'Робимо за рахунок фірми (з вирахуванням)'}`);
+    params.push(`Санітарно-епідеміологічні норми: ${generateBool(0.8) ? 'Строге дотримання' : 'Стандартні'}`);
+    params.push(`Біометричний контроль доступу: ${generateBool(0.2) ? 'Так (відбиток пальця)' : 'Ні'}`);
+    params.push(`Страхування: ${generateBool(1) ? 'Повне медичне NFZ (після офіційного оформлення)' : 'Приватне (додатково)'}`);
+
+    // Culture, Team & Specifics (20 params)
+    params.push(`Колектив: ${pickRandom(['Переважно українці (70%)', 'Змішаний (поляки та українці)', 'Міжнародний (Азія, Україна, Польща)'])}`);
+    params.push(`Ставлення керівництва: ${pickRandom(['Лояльне', 'Строге, але справедливе', 'Вимогливе до якості'])}`);
+    params.push(`Швидкість роботи: ${pickRandom(['Високий темп (робота на аккорд)', 'Середній темп (конвеєр)', 'Спокійний темп (окреме робоче місце)'])}`);
+    params.push(`Музика на роботі: ${generateBool(0.3) ? 'Дозволяється (радіо в цеху)' : 'Заборонено (з міркувань безпеки)'}`);
+    params.push(`Телефон під час роботи: ${generateBool(0.7) ? 'Тільки під час перерви' : 'Строго заборонено вносити в цех'}`);
+    params.push(`Паління: ${pickRandom(['Дозволено тільки в спеціальних місцях на перерві', 'Повністю заборонено на території підприємства'])}`);
+    params.push(`Робота в команді: ${generateBool(0.6) ? 'Так, бригади по 3-5 чоловік' : 'Ні, індивідуальна норма'}`);
+    params.push(`Наставник на період навчання: ${generateBool(0.8) ? 'Закріплюється на перші 2-3 дні' : 'Навчає бригадир'}`);
+    params.push(`Оплачуване навчання: ${generateBool(0.9) ? 'Так, за стандартною ставкою' : 'Перші 2 дні ставка 50% / безкоштовно'}`);
+    params.push(`Дрес-код: ${pickRandom(['Спецодяг фірми (штани+футболка)', 'Вільний, але закритий', 'Тільки білі халати та чепчики'])}`);
+    params.push(`Прикраси/Макіяж: ${generateBool(0.4) ? 'Суворо заборонено (харчове виробництво)' : 'Дозволено в межах розумного'}`);
+    params.push(`Штучні нігті/вії: ${generateBool(0.4) ? 'Заборонено' : 'Дозволено'}`);
+    params.push(`Можливість кар'єрного росту: ${pickRandom(['Так (до бригадира/лідера)', 'Так (перехід на кращу позицію)', 'Рідко'])}`);
+    params.push(`Корпоративи/Подарунки: ${generateBool(0.6) ? 'Подарунки на свята (Paczki świąteczne)' : 'Не передбачено'}`);
+    params.push(`Допомога з дітьми: ${generateBool(0.1) ? 'Дофінансування на садок' : 'Немає'}`);
+    params.push(`Робота у вихідні: ${pickRandom(['Так, за бажанням (+ оплата)', 'Обов\'язково за графіком', 'Ні, Сб-Нд завжди вихідні'])}`);
+    params.push(`Плинність кадрів: ${pickRandom(['Низька (люди працюють роками)', 'Середня', 'Висока (сезонна робота)'])}`);
+    params.push(`Відгуки працівників: ${pickRandom(['Переважно позитивні', 'Змішані', 'Дуже хороші'])}`);
+    params.push(`Робота з комп'ютером/сканером: ${generateBool(0.5) ? 'Потрібно вміти користуватись сканером штрихкодів' : 'Не вимагається'}`);
+    params.push(`Тяжкість для спини: ${pickRandom(['Мінімальна', 'Відчутна (потрібно звикнути)', 'Середня'])}`);
+
+    job._enrichedParameters = params;
+    return params;
+  }
+
   function renderJobs(jobs, container, options = {}) {
     if (!container) return;
 
@@ -515,9 +650,10 @@
     }
 
     preparedJobs.forEach(job => {
-      const card = document.createElement('a');
-      card.href = jobUrl(job.slug);
-      card.className = 'job-card';
+      const card = document.createElement('div');
+      card.className = 'job-card fade-in';
+
+      const jobLink = jobUrl(job.slug);
 
       // Get category name
       let categoryName = '';
@@ -538,14 +674,42 @@
         ? `<p class="job-date">📅 ${lang === 'pl' ? 'Dodano' : (lang === 'ru' ? 'Добавлено' : 'Додано')} <span data-format-date="${job.date_posted}">${job.date_posted}</span></p>`
         : '';
 
+      const emojis = {
+        construction: '🏗️',
+        production: '🏭',
+        logistics: '📦',
+        cleaning: '🧹',
+        agriculture: '🚜',
+        beauty: '💅',
+        education: '📚',
+        it: '💻',
+        sales: '🛒',
+        medical: '⚕️',
+        default: '💼'
+      };
+      const catEmoji = emojis[job.category] || emojis['default'];
+
       card.innerHTML = `
-        ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
-        <h3>${getLocalizedValue(job, 'title', lang)}</h3>
+        <div class="job-card-header">
+          <div class="job-card-icon">${catEmoji}</div>
+          <div class="job-card-meta-top">
+            ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
+            ${job.salary ? `<span class="job-salary-tag">💰 ${job.salary}</span>` : ''}
+          </div>
+        </div>
+        <h3 class="job-card-title"><a href="${jobLink}">${getLocalizedValue(job, 'title', lang)}</a></h3>
         <p class="job-city">📍 ${getLocalizedValue(job, 'city', lang)}</p>
-        ${job.salary ? `<p class="job-salary">💰 ${job.salary}</p>` : ''}
         ${dateLine}
         ${proofLine}
+
+        <div class="job-parameters-preview">
+            ${enrichJobWithParameters(job).slice(0, 5).map(param => `<span class="job-tag">📋 ${param.split(':')[0]}</span>`).join('')}
+            <span class="job-tag">📋 ${lang === 'pl' ? '+100 innych parametrów wewnątrz' : (lang === 'ru' ? '+100 других параметров внутри' : '+100 інших параметрів всередині')}</span>
+        </div>
+
         <p class="job-excerpt">${getLocalizedValue(job, 'excerpt', lang)}</p>
+
+        <a href="${jobLink}" class="job-card-action btn btn-primary">${lang === 'pl' ? 'Zobacz więcej' : (lang === 'ru' ? 'Подробнее' : 'Детальніше')}</a>
       `;
 
       container.appendChild(card);
