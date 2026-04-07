@@ -4,7 +4,7 @@
   "scripts": {
     "build": "node src/generate.js && node src/generate-sitemap.js",
     "sitemap": "node src/generate-sitemap.js",
-    "lint:spell": "echo 'Skipping spellcheck due to dictionary issues'"
+    "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
   },
   "devDependencies": {
     "@cspell/dict-pl_pl": "^3.0.6",
