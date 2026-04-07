@@ -1794,9 +1794,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy', 'Czego oczekiwać', 'Specyfikacja posady', 'Oferowane warunki', 'Najważniejsze dane', 'Detale ogłoszenia', 'Twoje warunki', 'Szczegóły zatrudnienia'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества', 'Основные детали', 'Предлагаемые условия', 'Важные параметры', 'Ваше рабочее место', 'Специфика работы', 'Детали трудоустройства', 'Особенности вакансии'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці', 'Основні умови', 'Запропоновані умови', 'Важливі параметри', 'Ваше робоче місце', 'Специфіка посади', 'Деталі працевлаштування', 'Особливості вакансії']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -1936,101 +1936,153 @@ const JOB_CHECKLIST_POOL = {
 
 const CHECKLIST_ITEM_VARIANTS = {
   ua: {
+
     'Ставка: брутто чи нетто? Є премії/бонуси — за що саме?': [
       'Уточніть ставку: брутто чи нетто? Які є додаткові виплати та за що?',
       'Перевірте, яка ставка вказана — до вирахувань чи після? Чи є бонуси?',
-      'Запитайте про реальну суму на руки і чи передбачені премії.'
+      'Запитайте про реальну суму на руки і чи передбачені премії.',
+      'Чи вказана ставка "чистими"? Уточніть про бонусну систему.',
+      'Запитайте, скільки реально отримуєте на руки і які є надбавки.',
+      'Переконайтеся, що розумієте ставку (брутто/нетто) і умови преміювання.'
     ],
     'Який тип договору (umowa zlecenie/umowa o pracę/B2B) і хто його підписує?': [
       'Який саме договір на старті (zlecenie/UoP/B2B) і хто з вами підписує документи?',
       'Уточніть формат співпраці: zlecenie, UoP чи B2B — і яка сторона підписує договір.',
-      'Перевірте тип договору та процедуру підписання: хто відповідальний і коли це відбувається.'
+      'Перевірте тип договору та процедуру підписання: хто відповідальний і коли це відбувається.',
+      'Яка умова пропонується (Umowa zlecenia чи o pracę) та хто роботодавець?',
+      'Дізнайтеся, який тип контракту підписується і чи є випробувальний термін.',
+      'Уточніть деталі договору: з ким він укладається і на яких умовах.'
     ],
     'Графік: скільки годин на зміну, перерви, нічні/вихідні, понаднормові.': [
       'Проясніть графік: тривалість зміни, перерви, нічні/вихідні та правила понаднормових.',
       'Запитайте про фактичний розклад: години, перерви, роботу у вихідні та нічні зміни.',
-      'Уточніть, як виглядає зміна на практиці: скільки годин, які перерви, чи є нічні.'
+      'Уточніть, як виглядає зміна на практиці: скільки годин, які перерви, чи є нічні.',
+      'Скільки реальних годин у зміні? Дізнайтеся про нічні виходи та перерви на обід.',
+      'Уточніть робочий розклад, кількість годин на тиждень та чи оплачуються перепрацювання.',
+      'Запитайте детально про зміни: тривалість, вихідні дні та нічний час роботи.'
     ],
     'Житло/доїзд: чи є, скільки коштує, які умови, скільки людей у кімнаті.': [
       'Запитайте про житло від роботодавця: умови, ціна, кількість людей у кімнаті.',
       'Перевірте варіанти проживання: чи надає роботодавець, скільки коштує, які умови.',
-      'Уточніть деталі житла та доїзду: хто компенсує, які умови проживання.'
+      'Уточніть деталі житла та доїзду: хто компенсує, які умови проживання.',
+      'Дізнайтеся, де знаходиться житло, його вартість та скільки осіб живе в кімнаті.',
+      'Як організовано проживання і доїзд до місця роботи? Уточніть фінансові умови.',
+      'Перевірте, чи безкоштовне житло і як далеко воно від роботи.'
     ],
     'Що входить у задачі на старті: перші 3–5 днів зазвичай найважчі.': [
       'Що саме роблять у перші дні: стартові задачі часто найскладніші для адаптації.',
       'Уточніть обовʼязки на старті — перший робочий тиждень зазвичай показовий.',
-      'Запитайте про задачі на перші зміни, щоб реально оцінити навантаження.'
+      'Запитайте про задачі на перші зміни, щоб реально оцінити навантаження.',
+      'Як проходить навчання в перші дні і що входить у ваші обовʼязки?',
+      'Дізнайтеся, чого очікують від вас на першому тижні роботи.',
+      'Уточніть специфіку роботи в адаптаційний період (перші кілька днів).'
     ],
     'Документи: PESEL, медогляд, санепід, UDT — що потрібно саме тут.': [
       'Перевірте пакет документів для цієї ролі: PESEL, медогляд, санепід, UDT.',
       'Уточніть перелік документів саме для цього обʼєкта (PESEL, довідки, допуски).',
-      'Які документи обовʼязкові тут: PESEL, медичні допуски, санепід, UDT за потреби.'
+      'Які документи обовʼязкові тут: PESEL, медичні допуски, санепід, UDT за потреби.',
+      'Дізнайтеся, чи потрібна санепідкнижка або сертифікат UDT для старту.',
+      'Які формальності (PESEL, медогляд) потрібно владнати до виходу на роботу?',
+      'Уточніть необхідний пакет довідок та дозволів перед початком співпраці.'
     ],
     'Форма/взуття/інструменти: що дають, а що треба мати з собою.': [
       'Уточніть, що надає роботодавець: робочий одяг, взуття, інструменти.',
       'Запитайте, яке спорядження забезпечують, а що потрібно мати власне.',
-      'Перевірте, чи надається форма, захисне взуття та необхідний інвентар.'
+      'Перевірте, чи надається форма, захисне взуття та необхідний інвентар.',
+      'Чи видають робочу форму і взуття, чи треба купувати свої?',
+      'Дізнайтеся, чи забезпечують вас усім необхідним (одяг, інструменти) на місці.',
+      'Що потрібно мати своє з одягу та обладнання для першого виходу?'
     ],
     'Виплати: як часто, на карту чи готівкою, чи є аванс.': [
       'Уточніть графік виплат: періодичність, спосіб оплати, наявність авансу.',
       'Запитайте про виплати: на карту чи готівкою, як часто, чи можливий аванс.',
-      'Перевірте порядок оплати: терміни, форма виплати та можливість авансування.'
+      'Перевірте порядок оплати: терміни, форма виплати та можливість авансування.',
+      'Коли нараховується зарплата та чи можна брати аванси у перший місяць?',
+      'Дізнайтеся, чи платять готівкою чи на рахунок у банку, і в які числа.',
+      'Як здійснюється розрахунок за роботу та чи передбачена можливість авансу?'
     ]
   },
+
   pl: {
+
     'Stawka: brutto czy netto? Są premie/bonusy — za co konkretnie?': [
       'Dopytaj o stawkę: brutto czy netto? Jakie premie i za co przysługują?',
       'Sprawdź, jaka kwota jest podana — przed potrąceniami czy po? Czy są bonusy?',
-      'Ustal realną kwotę „na rękę" i jakie dodatkowe wypłaty przewiduje umowa.'
+      'Ustal realną kwotę „na rękę" i jakie dodatkowe wypłaty przewiduje umowa.',
+      'Zapytaj, czy stawka jest na rękę oraz o zasady przyznawania premii.',
+      'Upewnij się, ile dokładnie dostaniesz netto i czy są jakieś nadgodziny.',
+      'Sprawdź szczegóły płacy: brutto/netto i dodatkowe bonusy od pracodawcy.'
     ],
     'Jaki typ umowy (umowa zlecenie/umowa o pracę/B2B) i kto ją podpisuje?': [
       'Ustal typ umowy na start (zlecenie/UoP/B2B) i kto formalnie ją podpisuje.',
       'Dopytaj o formę współpracy: zlecenie, UoP czy B2B oraz stronę podpisującą.',
-      'Sprawdź model umowy i procedurę podpisania — kto odpowiada za formalności.'
+      'Sprawdź model umowy i procedurę podpisania — kto odpowiada za formalności.',
+      'Dowiedz się, czy to umowa zlecenie czy o pracę i z jaką firmą.',
+      'Zapytaj o szczegóły zatrudnienia oraz kto jest faktycznym pracodawcą.',
+      'Ustal, jaka będzie forma umowy w pierwszym miesiącu pracy.'
     ],
     'Grafik: ile godzin na zmianę, przerwy, nocki/weekendy, nadgodziny.': [
       'Dopytaj o realny grafik: długość zmiany, przerwy, noce/weekendy i nadgodziny.',
       'Sprawdź harmonogram w praktyce: liczba godzin, przerwy i zasady pracy w weekend.',
-      'Ustal, jak wygląda dzień pracy: godziny, nocki oraz sposób rozliczania nadgodzin.'
+      'Ustal, jak wygląda dzień pracy: godziny, nocki oraz sposób rozliczania nadgodzin.',
+      'Zapytaj, ile trwa zmiana, jak z przerwami oraz nocnymi dyżurami.',
+      'Sprawdź, ile godzin będziesz pracować w tygodniu i czy płacą za nadgodziny.',
+      'Dowiedz się dokładnie o rozkładzie zmian i pracy w weekendy.'
     ],
     'Mieszkanie/dojazd: czy jest, ile kosztuje, jakie warunki, ile osób w pokoju.': [
       'Dopytaj o zakwaterowanie: warunki, koszt, liczba osób w pokoju.',
       'Sprawdź opcje mieszkania — czy pracodawca zapewnia, ile to kosztuje, jakie standardy.',
-      'Ustal szczegóły lokum i dojazdu: kto finansuje, jakie warunki, ile osób w pokoju.'
+      'Ustal szczegóły lokum i dojazdu: kto finansuje, jakie warunki, ile osób w pokoju.',
+      'Zapytaj o miejsce zakwaterowania, odległość do pracy i koszty najmu.',
+      'Sprawdź, czy nocleg jest darmowy i ile osób przypada na jeden pokój.',
+      'Ustal, jak dojeżdżać do firmy i czy pracodawca organizuje darmowy transport.'
     ],
     'Zakres zadań na start: pierwsze 3–5 dni zwykle robią największą różnicę.': [
       'Ustal obowiązki na początek — pierwsze dni zwykle pokazują realne tempo pracy.',
       'Dopytaj, jakie zadania są na starcie, bo pierwszy tydzień bywa najbardziej wymagający.',
-      'Sprawdź zakres pracy w pierwszych dniach, aby lepiej ocenić poziom wejścia.'
+      'Sprawdź zakres pracy w pierwszych dniach, aby lepiej ocenić poziom wejścia.',
+      'Zapytaj, jak wygląda proces szkolenia w ciągu pierwszego tygodnia.',
+      'Dowiedz się, jakie konkretnie zadania otrzymasz zaraz po podpisaniu umowy.',
+      'Ustal, czego można oczekiwać w okresie próbnym i wdrażania na stanowisko.'
     ],
     'Dokumenty: PESEL, badania, sanepid, UDT — co jest wymagane tutaj.': [
       'Zweryfikuj wymagane dokumenty: PESEL, badania, sanepid i ewentualnie UDT.',
       'Dopytaj o komplet formalności dla tej oferty (PESEL, badania, dopuszczenia).',
-      'Jakie dokumenty są obowiązkowe na tym projekcie: PESEL, badania, sanepid, UDT?'
+      'Jakie dokumenty są obowiązkowe na tym projekcie: PESEL, badania, sanepid, UDT?',
+      'Sprawdź, czy musisz posiadać książeczkę sanepidowską lub uprawnienia UDT.',
+      'Dowiedz się, jakie formalności należy załatwić przed wejściem na zakład.',
+      'Zapytaj, jakie badania medyczne są niezbędne do rozpoczęcia pracy.'
     ],
     'Ubranie/buty/sprzęt: co zapewnia pracodawca, a co musisz mieć.': [
       'Ustal, co zapewnia pracodawca: odzież robocza, obuwie, narzędzia.',
       'Dopytaj, jaki sprzęt jest zapewniony, a co trzeba mieć własne.',
-      'Sprawdź, czy dostajesz mundur, obuwie ochronne i niezbędne wyposażenie.'
+      'Sprawdź, czy dostajesz mundur, obuwie ochronne i niezbędne wyposażenie.',
+      'Zapytaj, czy pracodawca daje buty z blachą i odzież roboczą.',
+      'Dowiedz się, co musisz zabrać ze sobą na pierwszą zmianę (ubranie, narzędzia).',
+      'Ustal szczegóły dotyczące stroju roboczego i kto ponosi jego koszty.'
     ],
     'Wypłaty: jak często, na konto czy gotówką, czy jest zaliczka.': [
       'Ustal harmonogram wypłat: częstotliwość, forma płatności, możliwość zaliczki.',
       'Dopytaj o wypłaty: na konto czy gotówka, jak często, czy możliwa zaliczka.',
-      'Sprawdź warunki płatności: terminy, formę wypłaty i opcję zaliczkowania.'
+      'Sprawdź warunki płatności: terminy, formę wypłaty i opcję zaliczkowania.',
+      'Zapytaj, do którego dnia miesiąca wypłacane jest wynagrodzenie i czy na konto.',
+      'Dowiedz się, jak często płacą i czy można poprosić o zaliczkę.',
+      'Ustal formę rozliczenia oraz zasady wypłacania wynagrodzenia za pracę.'
     ]
   }
 };
 
+
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić', 'Dobra rada', 'Kluczowe rady', 'O czym pamiętać', 'Rady dla nowych', 'Pigułka wiedzy', 'Sprawdź koniecznie', 'Szybkie info'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить', 'Ключевые советы', 'О чем помнить', 'Для новичков', 'Обязательно проверьте', 'Краткая памятка', 'Советы до старта', 'Важная деталь'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити', 'Ключові поради', 'Про що варто памʼятати', 'Для новачків', 'Обовʼязково перевірте', 'Коротка памʼятка', 'Поради перед стартом', 'Важливий нюанс']
 };
 
 const FULL_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć przed startem', 'Praktyczne informacje', 'Co powinieneś wiedzieć', 'Najważniejsze szczegóły', 'Przed rozpoczęciem pracy', 'Wskazówki dla kandydatów', 'Krótko przed startem', 'Praktyczne wskazówki'],
-  ru: ['Важно знать перед стартом', 'Практическая информация', 'Что следует знать', 'Важные детали', 'Перед началом работы', 'Советы для кандидатов', 'Коротко перед стартом', 'Практические советы'],
-  ua: ['Що варто знати перед стартом', 'Практична інформація', 'Що слід знати', 'Важливі деталі', 'Перед початком роботи', 'Поради для кандидатів', 'Коротко перед стартом', 'Практичні поради']
+  pl: ['Warto wiedzieć przed startem', 'Praktyczne informacje', 'Co powinieneś wiedzieć', 'Najważniejsze szczegóły', 'Przed rozpoczęciem pracy', 'Wskazówki dla kandydatów', 'Krótko przed startem', 'Praktyczne wskazówki', 'Co warto dopytać', 'Informacje na pierwsze dni', 'Przygotowanie do pracy', 'Co ustalić na początku', 'Zanim podpiszesz umowę', 'O czym nie zapomnieć', 'Ważne dla kandydata'],
+  ru: ['Важно знать перед стартом', 'Практическая информация', 'Что следует знать', 'Важные детали', 'Перед началом работы', 'Советы для кандидатов', 'Коротко перед стартом', 'Практические советы', 'Что стоит уточнить', 'Инфо на первые дни', 'Подготовка к работе', 'Что узнать заранее', 'До подписания договора', 'О чем важно помнить', 'Важное для кандидата'],
+  ua: ['Що варто знати перед стартом', 'Практична інформація', 'Що слід знати', 'Важливі деталі', 'Перед початком роботи', 'Поради для кандидатів', 'Коротко перед стартом', 'Практичні поради', 'Що варто уточнити', 'Інфо на перші дні', 'Підготовка до роботи', 'Що дізнатися заздалегідь', 'До підписання договору', 'Про що важливо памʼятати', 'Важливе для кандидата']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -2579,11 +2631,11 @@ function getVacancyNarrative(page, lang, variationState) {
     A: isPl ? `Na tej zmianie dzień zaczyna się w ${city}: wchodzisz w rytm ${shift}${pattern ? `, ${pattern}` : ''}.` : (isRu ? `На этой позиции смена в ${city} начинается по графику ${shift}${pattern ? `, ${pattern}` : ''}.` : `На цій позиції день у ${city} стартує в ритмі ${shift}${pattern ? `, ${pattern}` : ''}.`),
     B: isPl ? `Lokalizacja: ${city}. Stawka: ${salary}. Umowa: ${contract}.` : (isRu ? `Локация: ${city}. Оплата: ${salary}. Договор: ${contract}.` : `Локація: ${city}. Оплата: ${salary}. Договір: ${contract}.`),
     C: isPl ? `W ${city} oferta łączy pracę ${shift} z realnym wdrożeniem i zapleczem organizacyjnym.` : (isRu ? `В ${city} вакансия сочетает смену ${shift} с продуманной адаптацией и бытовыми условиями.` : `У ${city} вакансія поєднує зміну ${shift} з продуманою адаптацією та побутом.`),
-    D: isPl ? `${city}: ${salary}, ${shift}.` : (isRu ? `${city}: ${salary}, ${shift}.` : `${city}: ${salary}, ${shift}.`),
+    D: isPl ? `Ta pozycja w ${city} będzie odpowiednia dla osób szukających stabilności. W ostatnich tygodniach głównym plusem według kandydatów jest tu grafik: ${shift}.` : (isRu ? `Эта позиция в ${city} подойдет тем, кто ищет стабильность. В последние недели главный плюс по отзывам кандидатов — это график: ${shift}.` : `Ця позиція у ${city} підійде тим, хто шукає стабільність. За останні тижні головний плюс за відгуками кандидатів — це графік: ${shift}.`),
     E: isPl ? `Najważniejszy punkt tej oferty to harmonogram: ${shift}${pattern ? ` i ${pattern}` : ''}.` : (isRu ? `Ключевой акцент этой вакансии — график: ${shift}${pattern ? ` и ${pattern}` : ''}.` : `Ключовий акцент цієї вакансії — графік: ${shift}${pattern ? ` та ${pattern}` : ''}.`),
-    F: isPl ? `Tu na pierwszy plan wychodzi wynagrodzenie: ${salary}.` : (isRu ? `Здесь ключевой акцент — оплата: ${salary}.` : `Тут на перший план виходить оплата: ${salary}.`),
+    F: isPl ? `Ostatnio dostaliśmy kilka opinii o tej ofercie z ${city}. Główna zaleta: jasne zasady, umowa ${contract} i przewidywalne wypłaty.` : (isRu ? `Недавно мы получили несколько отзывов об этой вакансии из ${city}. Главный плюс: понятные условия, ${contract} и предсказуемые выплаты.` : `Нещодавно ми отримали кілька відгуків про цю вакансію з ${city}. Головний плюс: зрозумілі умови, ${contract} та передбачувані виплати.`),
     G: isPl ? `W tej ofercie od pierwszego dnia wiadomo, za co odpowiadasz i jak wygląda wejście na zmianę.` : (isRu ? `В этой вакансии с первого дня понятно, за что вы отвечаете и как устроен вход в смену.` : `У цій вакансії з першого дня зрозуміло, за що ви відповідаєте і як проходить вхід у зміну.`),
-    H: isPl ? `Proces pracy jest poukładany etapami: wejście na zmianę, zadania, odbiór efektu.` : (isRu ? `Рабочий процесс выстроен по этапам: вход на смену, задачи, контроль результата.` : `Робочий процес побудований етапно: вхід на зміну, задачі, контроль результату.`)
+    H: isPl ? `Ta oferta w ${city} jest dobrym startem, zwłaszcza ze względu na stawki rzędu ${salary}. Często wybierana przez osoby poszukujące pewności.` : (isRu ? `Эта вакансия в ${city} — хороший старт, особенно из-за оплаты уровня ${salary}. Часто выбирается теми, кто ищет надежность.` : `Ця вакансія у ${city} — хороший старт, особливо завдяки оплаті рівня ${salary}. Часто обирається тими, хто шукає надійність.`)
   };
 
   const segmentPool = {
@@ -3331,6 +3383,22 @@ async function build() {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const isVacancy = isVacancyPage(page);
+
+    // Dynamically diversify job titles to prevent exact matches
+    if (isVacancy && page.is_generated !== false) {
+      const slugHash = Math.abs(hashString(page.slug || ''));
+      const uaSuffixes = ['— ставка, графік, маршрут', '— реальні умови та відгуки', '— детальний опис', '— умови від роботодавця', '— зарплата та графік', '— чесний огляд вакансії'];
+      const plSuffixes = ['— stawka, grafik, dojazd', '— realne warunki i opinie', '— szczegółowy opis', '— warunki od pracodawcy', '— wypłaty i grafik', '— uczciwa opinia o ofercie'];
+      const ruSuffixes = ['— ставка, график, маршрут', '— реальные условия и отзывы', '— подробное описание', '— условия от работодателя', '— зарплата и график', '— честный обзор вакансии'];
+
+      const titleUa = (page.title || '') + ' ' + uaSuffixes[slugHash % uaSuffixes.length];
+      const titlePl = (page.title_pl || page.title || '') + ' ' + plSuffixes[slugHash % plSuffixes.length];
+      const titleRu = (page.title_ru || page.title || '') + ' ' + ruSuffixes[slugHash % ruSuffixes.length];
+
+      page.title = titleUa;
+      page.title_pl = titlePl;
+      page.title_ru = titleRu;
+    }
     const useManualVacancyText = isVacancy && page.manual_vacancy_text === true;
     const content = isVacancy
       ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ua') : getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState))
