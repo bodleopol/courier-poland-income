@@ -3568,6 +3568,7 @@ async function build() {
       ? 'noindex, follow'
       : 'index, follow, max-snippet:-1, max-image-preview:large';
     finalHtml = setRobotsMeta(finalHtml, vacancyRobotsContent);
+    finalHtml = sanitizeStaticHtmlHead(finalHtml);
 
     // Add specific styles for job pages
     const jobStyles = `
@@ -3866,6 +3867,8 @@ async function build() {
       blogHtml = blogHtml.replace('</head>', `${blogCollectionScript}</head>`);
     }
 
+    blogHtml = sanitizeStaticHtmlHead(blogHtml);
+
     if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
     else blogHtml += scriptWithData;
     await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
@@ -3994,6 +3997,8 @@ async function build() {
       postHtml = setRobotsMeta(postHtml, 'noindex, follow');
     }
 
+    postHtml = sanitizeStaticHtmlHead(postHtml);
+
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
     else postHtml += scriptWithData;
     await fs.writeFile(path.join(DIST, `post-${post.slug}.html`), postHtml, 'utf8');
@@ -4096,6 +4101,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       indexHtml = indexHtml.replace('</head>', `${homeItemListScript}\n</head>`);
     }
 
+    indexHtml = sanitizeStaticHtmlHead(indexHtml);
+
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
 
     // generate vacancies page
@@ -4174,6 +4181,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       } else {
         vacanciesHtml += scriptWithData;
       }
+
+      vacanciesHtml = sanitizeStaticHtmlHead(vacanciesHtml);
 
       await fs.writeFile(path.join(DIST, 'vacancies.html'), vacanciesHtml, 'utf8');
     } catch (e) {
@@ -4261,6 +4270,7 @@ Allow: /*.webp$
       const txtContent = adsTxtLines.join('\n') + '\n';
       await fs.writeFile(path.join(DIST, 'ads.txt'), txtContent, 'utf8');
       await fs.writeFile(path.join(DIST, 'ada.txt'), txtContent, 'utf8');
+      await fs.writeFile(path.join(DIST, 'Ads.txt'), txtContent, 'utf8');
     } catch (e) {}
 
     // write IndexNow key file for Bing/Yandex instant indexing.
