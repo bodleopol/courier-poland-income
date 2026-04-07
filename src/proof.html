@@ -1353,26 +1353,16 @@
           return;
         }
 
-        const payload = {
-          vacancy_url: vacancyUrl,
-          company,
-          city,
-          salary_rating: Number(form.elements.salary_rating.value || 0),
-          housing_rating: Number(form.elements.housing_rating.value || 0),
-          attitude_rating: Number(form.elements.attitude_rating.value || 0),
-          schedule_rating: Number(form.elements.schedule_rating.value || 0),
-          payment_rating: Number(form.elements.payment_rating.value || 0),
-          fraud_rating: Number(form.elements.fraud_rating.value || 0),
-          recommendation: Number(form.elements.recommendation.value || 0),
-          comment,
-          proof_files: String(form.elements.proof_files.value || '').trim(),
-          proof_score: computeProofScore(form.elements),
-          approved: false
-        };
+        const salary = Number(form.elements.salary_rating.value || 0);
+        const housing = Number(form.elements.housing_rating.value || 0);
+        const attitude = Number(form.elements.attitude_rating.value || 0);
+        const schedule = Number(form.elements.schedule_rating.value || 0);
+        const payments = Number(form.elements.payment_rating.value || 0);
+        const reliability = Number(form.elements.fraud_rating.value || 0);
+        const recommend = Number(form.elements.recommendation.value || 0);
 
         const ratingsValid = [
-          payload.salary_rating, payload.housing_rating, payload.attitude_rating,
-          payload.schedule_rating, payload.payment_rating, payload.fraud_rating, payload.recommendation
+          salary, housing, attitude, schedule, payments, reliability, recommend
         ].every(v => Number.isFinite(v) && v >= 1 && v <= 10);
 
         if (!ratingsValid) {
@@ -1381,12 +1371,35 @@
           return;
         }
 
+        const payload = {
+          link: vacancyUrl,
+          company: company,
+          city: city,
+          proofs: String(form.elements.proof_files.value || '').trim(),
+          salary: salary,
+          housing: housing,
+          attitude: attitude,
+          schedule: schedule,
+          payments: payments,
+          reliability: reliability,
+          recommend: recommend,
+          comment: comment
+        };
+
         submitBtn.disabled = true;
         submitBtn.textContent = '⏳ Відправляємо...';
 
         try {
-          const { error } = await supabaseClient.from('reviews').insert([payload]);
-          if (error) throw error;
+          const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3Cy0LYmMEg-fV_vIUGiRzy6P6Vxg0hNGNtRs8bHilEUoRL4Q_Sdok1Xy1vDEIaFNT/exec';
+
+          await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
 
           msg.classList.add('ok');
           msg.textContent = '✅ Дякуємо! Відгук відправлено на модерацію';
