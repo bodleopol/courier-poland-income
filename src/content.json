@@ -1,5 +1,715 @@
 [
   {
+    "slug": "lublin-greenhouse-worker-1",
+    "category": "agriculture",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "city_en": "Lublin",
+    "title": "Робітник у теплицю (збір овочів) — Люблін",
+    "title_pl": "Pracownik szklarni (zbiór warzyw) — Lublin",
+    "title_en": "Greenhouse Worker (Vegetable Harvesting) — Lublin",
+    "salary": "25 - 30 PLN/h",
+    "company": "GreenEco Agro",
+    "shift_ua": "Пн-Сб, 06:00-14:00",
+    "shift_pl": "Pn-Sob, 06:00-14:00",
+    "shift_en": "Mon-Sat, 06:00-14:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "pattern_en": "6/1",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "contract_ua": "Umowa o dzieło / Zlecenie",
+    "contract_pl": "Umowa o dzieło / Zlecenie",
+    "contract_en": "Umowa o dzieło / Zlecenie",
+    "offers_ua": [
+      "Проживання на території ферми",
+      "Свіжі овочі для працівників",
+      "Оплата щотижня"
+    ],
+    "offers_pl": [
+      "Zakwaterowanie na terenie gospodarstwa",
+      "Świeże warzywa dla pracowników",
+      "Tygodniówki"
+    ],
+    "offers_en": [
+      "Accommodation on the farm",
+      "Fresh vegetables for employees",
+      "Weekly payouts"
+    ],
+    "tasks_ua": [
+      "Збір помідорів та огірків",
+      "Сортування врожаю",
+      "Підтримка чистоти в теплиці"
+    ],
+    "tasks_pl": [
+      "Zbiór pomidorów i ogórków",
+      "Sortowanie plonów",
+      "Utrzymanie czystości w szklarni"
+    ],
+    "tasks_en": [
+      "Harvesting tomatoes and cucumbers",
+      "Sorting crops",
+      "Keeping the greenhouse clean"
+    ],
+    "details_ua": [
+      "Досвід не потрібен",
+      "Бажання працювати в ранкові години",
+      "Робота в теплому приміщенні"
+    ],
+    "details_pl": [
+      "Doświadczenie nie jest wymagane",
+      "Chęć pracy w godzinach porannych",
+      "Praca w ciepłym pomieszczeniu"
+    ],
+    "details_en": [
+      "No experience required",
+      "Willingness to work morning hours",
+      "Work in a warm environment"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-shipyard-welder-2",
+    "category": "construction",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "city_en": "Szczecin",
+    "title": "Зварювальник MIG/MAG на корабельню — Щецин",
+    "title_pl": "Spawacz MIG/MAG w stoczni — Szczecin",
+    "title_en": "MIG/MAG Shipyard Welder — Szczecin",
+    "salary": "45 - 55 PLN/h",
+    "company": "Stocznia Marine Pro",
+    "shift_ua": "Пн-Пт, 07:00-15:00",
+    "shift_pl": "Pn-Pt, 07:00-15:00",
+    "shift_en": "Mon-Fri, 07:00-15:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "start_en": "Upon agreement",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract (Umowa o pracę)",
+    "offers_ua": [
+      "Медичне страхування",
+      "Забезпечення спецодягом та маскою",
+      "Безкоштовний обід"
+    ],
+    "offers_pl": [
+      "Ubezpieczenie medyczne",
+      "Odzież robocza i maska zapewnione",
+      "Darmowy obiad"
+    ],
+    "offers_en": [
+      "Medical insurance",
+      "Work clothes and mask provided",
+      "Free lunch"
+    ],
+    "tasks_ua": [
+      "Зварювання металевих конструкцій судна",
+      "Робота за кресленнями",
+      "Контроль якості швів"
+    ],
+    "tasks_pl": [
+      "Spawanie konstrukcji metalowych statku",
+      "Praca na podstawie rysunku technicznego",
+      "Kontrola jakości spoin"
+    ],
+    "tasks_en": [
+      "Welding metal ship structures",
+      "Working from blueprints",
+      "Quality control of welds"
+    ],
+    "details_ua": [
+      "Досвід роботи від 2 років",
+      "Наявність сертифікатів вітається",
+      "Уміння читати креслення"
+    ],
+    "details_pl": [
+      "Doświadczenie min. 2 lata",
+      "Certyfikaty mile widziane",
+      "Umiejętność czytania rysunku technicznego"
+    ],
+    "details_en": [
+      "Minimum 2 years experience",
+      "Certificates are a plus",
+      "Ability to read blueprints"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "katowice-furniture-assembler-3",
+    "category": "production",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "city_en": "Katowice",
+    "title": "Збиральник меблів на фабриці — Катовіце",
+    "title_pl": "Montażysta mebli na fabryce — Katowice",
+    "title_en": "Furniture Assembler at Factory — Katowice",
+    "salary": "30 - 35 PLN/h",
+    "company": "MebleKat",
+    "shift_ua": "Пн-Пт, 08:00-16:00",
+    "shift_pl": "Pn-Pt, 08:00-16:00",
+    "shift_en": "Mon-Fri, 08:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "start_ua": "Через 2 тижні",
+    "start_pl": "Za 2 tygodnie",
+    "start_en": "In 2 weeks",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "contract_en": "Umowa Zlecenie",
+    "offers_ua": [
+      "Дружній колектив",
+      "Кімната для відпочинку",
+      "Знижки на продукцію компанії"
+    ],
+    "offers_pl": [
+      "Przyjazny zespół",
+      "Pokój socjalny",
+      "Zniżki na produkty firmy"
+    ],
+    "offers_en": [
+      "Friendly team",
+      "Break room",
+      "Discounts on company products"
+    ],
+    "tasks_ua": [
+      "Збірка корпусних меблів",
+      "Упаковка фурнітури",
+      "Перевірка комплектності деталей"
+    ],
+    "tasks_pl": [
+      "Montaż mebli skrzyniowych",
+      "Pakowanie okuć",
+      "Sprawdzanie kompletności elementów"
+    ],
+    "tasks_en": [
+      "Assembling cabinet furniture",
+      "Packing hardware",
+      "Checking completeness of parts"
+    ],
+    "details_ua": [
+      "Акуратність та уважність",
+      "Базові навички роботи з інструментом",
+      "Готовність до монотонної роботи"
+    ],
+    "details_pl": [
+      "Dokładność i uwaga",
+      "Podstawowe umiejętności obsługi narzędzi",
+      "Gotowość do rutynowej pracy"
+    ],
+    "details_en": [
+      "Accuracy and attention to detail",
+      "Basic tool skills",
+      "Willingness for routine work"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "bydgoszcz-bakery-assistant-4",
+    "category": "horeca",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "city_en": "Bydgoszcz",
+    "title": "Помічник пекаря у приватній пекарні — Бидгощ",
+    "title_pl": "Pomocnik piekarza w prywatnej piekarni — Bydgoszcz",
+    "title_en": "Baker's Assistant in Private Bakery — Bydgoszcz",
+    "salary": "28 - 32 PLN/h",
+    "company": "Chleb i Bułka",
+    "shift_ua": "Нічні зміни, 22:00-06:00",
+    "shift_pl": "Zmiany nocne, 22:00-06:00",
+    "shift_en": "Night shifts, 22:00-06:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "start_ua": "Терміново",
+    "start_pl": "Pilnie",
+    "start_en": "Urgently",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract (Umowa o pracę)",
+    "offers_ua": [
+      "Надбавка за нічні години",
+      "Свіжа випічка безкоштовно",
+      "Уніформа"
+    ],
+    "offers_pl": [
+      "Dodatek za pracę w nocy",
+      "Świeże wypieki za darmo",
+      "Uniform"
+    ],
+    "offers_en": [
+      "Night shift bonus",
+      "Free fresh pastries",
+      "Uniform"
+    ],
+    "tasks_ua": [
+      "Підготовка тіста",
+      "Формування булочок та хліба",
+      "Миття пекарського інвентарю"
+    ],
+    "tasks_pl": [
+      "Przygotowanie ciasta",
+      "Formowanie bułek i chleba",
+      "Mycie sprzętu piekarniczego"
+    ],
+    "tasks_en": [
+      "Dough preparation",
+      "Shaping buns and bread",
+      "Washing bakery equipment"
+    ],
+    "details_ua": [
+      "Наявність санітарної книжки (Sanepid)",
+      "Фізична витривалість",
+      "Без алергії на борошно"
+    ],
+    "details_pl": [
+      "Książeczka sanepidowska",
+      "Wytrzymałość fizyczna",
+      "Brak alergii na mąkę"
+    ],
+    "details_en": [
+      "Sanitary booklet (Sanepid) required",
+      "Physical stamina",
+      "No flour allergies"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "rzeszow-it-support-specialist-5",
+    "category": "it",
+    "city": "Ряшів",
+    "city_pl": "Rzeszów",
+    "city_en": "Rzeszow",
+    "title": "Спеціаліст технічної підтримки (IT Support) — Ряшів",
+    "title_pl": "Specjalista ds. Wsparcia IT — Rzeszów",
+    "title_en": "IT Support Specialist — Rzeszow",
+    "salary": "5000 - 7000 PLN/міс",
+    "company": "TechRz Solutions",
+    "shift_ua": "Пн-Пт, 09:00-17:00",
+    "shift_pl": "Pn-Pt, 09:00-17:00",
+    "shift_en": "Mon-Fri, 09:00-17:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "start_en": "Upon agreement",
+    "contract_ua": "B2B / Umowa o pracę",
+    "contract_pl": "B2B / Umowa o pracę",
+    "contract_en": "B2B / Employment contract",
+    "offers_ua": [
+      "Можливість гібридної роботи",
+      "Курси англійської мови",
+      "Сучасний офіс у центрі"
+    ],
+    "offers_pl": [
+      "Możliwość pracy hybrydowej",
+      "Kursy języka angielskiego",
+      "Nowoczesne biuro w centrum"
+    ],
+    "offers_en": [
+      "Hybrid work option",
+      "English language courses",
+      "Modern office in the center"
+    ],
+    "tasks_ua": [
+      "Налаштування робочих місць",
+      "Встановлення ПЗ",
+      "Допомога користувачам з технічними проблемами"
+    ],
+    "tasks_pl": [
+      "Konfiguracja stanowisk pracy",
+      "Instalacja oprogramowania",
+      "Pomoc użytkownikom w problemach technicznych"
+    ],
+    "tasks_en": [
+      "Workstation setup",
+      "Software installation",
+      "Helping users with technical issues"
+    ],
+    "details_ua": [
+      "Знання Windows/Mac OS",
+      "Англійська на рівні B1+",
+      "Комунікабельність"
+    ],
+    "details_pl": [
+      "Znajomość Windows/Mac OS",
+      "Angielski na poziomie B1+",
+      "Komunikatywność"
+    ],
+    "details_en": [
+      "Knowledge of Windows/Mac OS",
+      "English B1+",
+      "Communication skills"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "bialystok-bicycle-courier-6",
+    "category": "logistics",
+    "city": "Білосток",
+    "city_pl": "Białystok",
+    "city_en": "Bialystok",
+    "title": "Велокур'єр для доставки їжі — Білосток",
+    "title_pl": "Kurier rowerowy (dostawa jedzenia) — Białystok",
+    "title_en": "Bicycle Food Delivery Courier — Bialystok",
+    "salary": "25 - 40 PLN/h",
+    "company": "Szybkie Jedzenie",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "shift_en": "Flexible schedule",
+    "pattern_ua": "Вільний",
+    "pattern_pl": "Dowolny",
+    "pattern_en": "Any",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "contract_en": "Umowa Zlecenie",
+    "offers_ua": [
+      "Бонуси за кількість замовлень",
+      "Оренда велосипеда зі знижкою",
+      "Термосумка надається"
+    ],
+    "offers_pl": [
+      "Bonusy za ilość zamówień",
+      "Wynajem roweru ze zniżką",
+      "Torba termiczna w zestawie"
+    ],
+    "offers_en": [
+      "Bonuses for number of orders",
+      "Discounted bicycle rental",
+      "Thermal bag provided"
+    ],
+    "tasks_ua": [
+      "Прийом замовлень через додаток",
+      "Доставка їжі з ресторанів клієнтам",
+      "Спілкування з клієнтами"
+    ],
+    "tasks_pl": [
+      "Przyjmowanie zamówień przez aplikację",
+      "Dostawa jedzenia z restauracji do klientów",
+      "Kontakt z klientami"
+    ],
+    "tasks_en": [
+      "Taking orders via app",
+      "Delivering food from restaurants to customers",
+      "Communicating with customers"
+    ],
+    "details_ua": [
+      "Наявність смартфона з інтернетом",
+      "Орієнтування в місті",
+      "Знання польської на рівні А2"
+    ],
+    "details_pl": [
+      "Smartfon z internetem",
+      "Orientacja w mieście",
+      "Znajomość polskiego na poziomie A2"
+    ],
+    "details_en": [
+      "Smartphone with internet",
+      "City navigation skills",
+      "Polish at A2 level"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdynia-hotel-receptionist-7",
+    "category": "horeca",
+    "city": "Гдиня",
+    "city_pl": "Gdynia",
+    "city_en": "Gdynia",
+    "title": "Рецепціоніст у спа-готелі — Гдиня",
+    "title_pl": "Recepcjonista w hotelu SPA — Gdynia",
+    "title_en": "Receptionist at SPA Hotel — Gdynia",
+    "salary": "35 - 45 PLN/h",
+    "company": "SeaView SPA",
+    "shift_ua": "Змінний графік, по 12 годин",
+    "shift_pl": "Grafik zmianowy, po 12 godzin",
+    "shift_en": "Shift schedule, 12 hours",
+    "pattern_ua": "2/2",
+    "pattern_pl": "2/2",
+    "pattern_en": "2/2",
+    "start_ua": "З наступного місяця",
+    "start_pl": "Od przyszłego miesiąca",
+    "start_en": "From next month",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract (Umowa o pracę)",
+    "offers_ua": [
+      "Доступ до спа-зони в неробочий час",
+      "Премії за продаж додаткових послуг",
+      "Навчання"
+    ],
+    "offers_pl": [
+      "Dostęp do strefy SPA po godzinach pracy",
+      "Premie za sprzedaż usług dodatkowych",
+      "Szkolenia"
+    ],
+    "offers_en": [
+      "Access to SPA zone off-hours",
+      "Bonuses for upselling",
+      "Training"
+    ],
+    "tasks_ua": [
+      "Реєстрація гостей (Check-in/Check-out)",
+      "Відповіді на дзвінки та листи",
+      "Консультації щодо послуг готелю"
+    ],
+    "tasks_pl": [
+      "Rejestracja gości (Check-in/Check-out)",
+      "Odbieranie telefonów i maili",
+      "Udzielanie informacji o usługach hotelu"
+    ],
+    "tasks_en": [
+      "Guest registration (Check-in/Check-out)",
+      "Answering calls and emails",
+      "Providing info about hotel services"
+    ],
+    "details_ua": [
+      "Вільна польська та англійська",
+      "Охайний зовнішній вигляд",
+      "Стресостійкість"
+    ],
+    "details_pl": [
+      "Biegły polski i angielski",
+      "Nienaganna prezencja",
+      "Odporność na stres"
+    ],
+    "details_en": [
+      "Fluent Polish and English",
+      "Neat appearance",
+      "Stress resistance"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "opole-cnc-operator-8",
+    "category": "production",
+    "city": "Ополе",
+    "city_pl": "Opole",
+    "city_en": "Opole",
+    "title": "Оператор станків ЧПУ (CNC) — Ополе",
+    "title_pl": "Operator maszyn CNC — Opole",
+    "title_en": "CNC Machine Operator — Opole",
+    "salary": "40 - 50 PLN/h",
+    "company": "MetalPro Opole",
+    "shift_ua": "Пн-Пт, 06:00-14:00, 14:00-22:00",
+    "shift_pl": "Pn-Pt, 06:00-14:00, 14:00-22:00",
+    "shift_en": "Mon-Fri, 06:00-14:00, 14:00-22:00",
+    "pattern_ua": "5/2, дві зміни",
+    "pattern_pl": "5/2, dwie zmiany",
+    "pattern_en": "5/2, two shifts",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract (Umowa o pracę)",
+    "offers_ua": [
+      "Стабільне підприємство",
+      "Можливість надгодин (оплачуються +50%)",
+      "Пакет Medicover"
+    ],
+    "offers_pl": [
+      "Stabilna firma",
+      "Nadgodziny (+50%)",
+      "Pakiet Medicover"
+    ],
+    "offers_en": [
+      "Stable company",
+      "Overtime available (+50%)",
+      "Medicover package"
+    ],
+    "tasks_ua": [
+      "Обслуговування фрезерних станків",
+      "Контроль якості деталей",
+      "Введення корекцій в програму"
+    ],
+    "tasks_pl": [
+      "Obsługa frezarek",
+      "Kontrola jakości detali",
+      "Wprowadzanie korekt do programu"
+    ],
+    "tasks_en": [
+      "Operating milling machines",
+      "Quality control of parts",
+      "Making program corrections"
+    ],
+    "details_ua": [
+      "Досвід роботи від 1 року",
+      "Вміння користуватися вимірювальним інструментом",
+      "Уважність"
+    ],
+    "details_pl": [
+      "Doświadczenie min. 1 rok",
+      "Umiejętność posługiwania się narzędziami pomiarowymi",
+      "Dokładność"
+    ],
+    "details_en": [
+      "Min. 1 year experience",
+      "Ability to use measuring tools",
+      "Attention to detail"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "torun-veterinary-assistant-9",
+    "category": "medicine",
+    "city": "Торунь",
+    "city_pl": "Toruń",
+    "city_en": "Torun",
+    "title": "Асистент ветеринарного лікаря — Торунь",
+    "title_pl": "Asystent lekarza weterynarii — Toruń",
+    "title_en": "Veterinary Assistant — Torun",
+    "salary": "30 - 38 PLN/h",
+    "company": "Zdrowy Zwierzak",
+    "shift_ua": "Пн-Пт, 09:00-18:00",
+    "shift_pl": "Pn-Pt, 09:00-18:00",
+    "shift_en": "Mon-Fri, 09:00-18:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "start_en": "Upon agreement",
+    "contract_ua": "Umowa Zlecenie / Umowa o pracę",
+    "contract_pl": "Umowa Zlecenie / Umowa o pracę",
+    "contract_en": "Umowa Zlecenie / Employment contract",
+    "offers_ua": [
+      "Знижки на послуги клініки для своїх тварин",
+      "Навчання",
+      "Дружня атмосфера"
+    ],
+    "offers_pl": [
+      "Zniżki na usługi kliniki dla własnych zwierząt",
+      "Szkolenia",
+      "Przyjazna atmosfera"
+    ],
+    "offers_en": [
+      "Discounts on clinic services for personal pets",
+      "Training",
+      "Friendly atmosphere"
+    ],
+    "tasks_ua": [
+      "Допомога лікарю під час прийому",
+      "Догляд за тваринами в стаціонарі",
+      "Підтримка чистоти в кабінетах"
+    ],
+    "tasks_pl": [
+      "Pomoc lekarzowi podczas wizyt",
+      "Opieka nad zwierzętami w szpitalu",
+      "Utrzymanie czystości w gabinetach"
+    ],
+    "tasks_en": [
+      "Assisting vet during appointments",
+      "Caring for animals in the ward",
+      "Keeping rooms clean"
+    ],
+    "details_ua": [
+      "Любов до тварин",
+      "Відповідна освіта або студент останніх курсів",
+      "Стресостійкість"
+    ],
+    "details_pl": [
+      "Miłość do zwierząt",
+      "Kierunkowe wykształcenie lub student ostatnich lat",
+      "Odporność na stres"
+    ],
+    "details_en": [
+      "Love for animals",
+      "Relevant education or final year student",
+      "Stress resistance"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
+    "slug": "olsztyn-florist-decorator-10",
+    "category": "retail",
+    "city": "Ольштин",
+    "city_pl": "Olsztyn",
+    "city_en": "Olsztyn",
+    "title": "Флорист-декоратор у квітковий салон — Ольштин",
+    "title_pl": "Florysta/Dekorator w kwiaciarni — Olsztyn",
+    "title_en": "Florist-Decorator in Flower Shop — Olsztyn",
+    "salary": "28 - 35 PLN/h",
+    "company": "Kwiaty z Pasją",
+    "shift_ua": "Пн-Сб, графік узгоджується",
+    "shift_pl": "Pn-Sob, grafik do uzgodnienia",
+    "shift_en": "Mon-Sat, schedule to be agreed",
+    "pattern_ua": "5/2 або 4/3",
+    "pattern_pl": "5/2 lub 4/3",
+    "pattern_en": "5/2 or 4/3",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract (Umowa o pracę)",
+    "offers_ua": [
+      "Творча робота",
+      "Премії у святкові дні",
+      "Семінари з флористики"
+    ],
+    "offers_pl": [
+      "Praca twórcza",
+      "Premie w dni świąteczne",
+      "Szkolenia florystyczne"
+    ],
+    "offers_en": [
+      "Creative work",
+      "Bonuses on holidays",
+      "Floristry workshops"
+    ],
+    "tasks_ua": [
+      "Складання букетів",
+      "Догляд за зрізаними та кімнатними рослинами",
+      "Обслуговування клієнтів"
+    ],
+    "tasks_pl": [
+      "Układanie bukietów",
+      "Pielęgnacja roślin ciętych i doniczkowych",
+      "Obsługa klienta"
+    ],
+    "tasks_en": [
+      "Making bouquets",
+      "Caring for cut and potted plants",
+      "Customer service"
+    ],
+    "details_ua": [
+      "Почуття стилю",
+      "Досвід роботи від 6 місяців",
+      "Комунікабельність"
+    ],
+    "details_pl": [
+      "Zmysł estetyczny",
+      "Doświadczenie min. 6 miesięcy",
+      "Komunikatywność"
+    ],
+    "details_en": [
+      "Sense of style",
+      "Min. 6 months experience",
+      "Communication skills"
+    ],
+    "date_posted": "2026-04-10",
+    "data_source": "manual"
+  },
+  {
     "slug": "warsaw-construction-handyman-5",
     "category": "construction",
     "city": "Варшава",
