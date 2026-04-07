@@ -1015,17 +1015,17 @@
           const mappedRow = {
             id: String(index),
             created_at: new Date().toISOString(), // Mocking date since it's not in the sheet currently, or could be extracted if added later
-            vacancy_url: row['Посилання на вакансію'] || '',
+            vacancy_url: row['Посилання'] || row['Посилання на вакансію'] || '',
             company: row['Компанія'] || '',
             city: row['Місто'] || '',
             proof_files: row['Докази'] || '',
-            salary_rating: Number(row['Зарплата (1-10)'] || 0),
-            housing_rating: Number(row['Житло (1-10)'] || 0),
-            attitude_rating: Number(row['Ставлення (1-10)'] || 0),
-            schedule_rating: Number(row['Графік (1-10)'] || 0),
-            payment_rating: Number(row['Виплати (1-10)'] || 0),
-            fraud_rating: Number(row['Надійність (1-10)'] || 0),
-            recommendation: Number(row['Рекомендація (1-10)'] || 0),
+            salary_rating: Number(row['Зарплата'] || row['Зарплата (1-10)'] || 0),
+            housing_rating: Number(row['Житло'] || row['Житло (1-10)'] || 0),
+            attitude_rating: Number(row['Ставлення'] || row['Ставлення (1-10)'] || 0),
+            schedule_rating: Number(row['Графік'] || row['Графік (1-10)'] || 0),
+            payment_rating: Number(row['Виплати'] || row['Виплати (1-10)'] || 0),
+            fraud_rating: Number(row['Надійність'] || row['Надійність (1-10)'] || 0),
+            recommendation: Number(row['Рекомендація'] || row['Рекомендація (1-10)'] || 0),
             comment: row['Коментар'] || '',
             approved: true
           };
@@ -1332,7 +1332,7 @@
             method: 'POST',
             mode: 'no-cors',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'text/plain;charset=utf-8'
             },
             body: JSON.stringify(payload)
           });
