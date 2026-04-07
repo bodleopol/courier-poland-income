@@ -2901,6 +2901,16 @@ async function build() {
     console.warn('⚠️ olena-founder.png not found');
   }
 
+  // Copy Bogdan Tiutenko images
+  try {
+    const moto1Content = await fs.readFile(path.join(SRC, 'bogdan-moto-1.png'));
+    await fs.writeFile(path.join(DIST, 'bogdan-moto-1.png'), moto1Content);
+    const moto2Content = await fs.readFile(path.join(SRC, 'bogdan-moto-2.png'));
+    await fs.writeFile(path.join(DIST, 'bogdan-moto-2.png'), moto2Content);
+  } catch (e) {
+    console.warn('⚠️ Bogdan Tiutenko images not found');
+  }
+
   // Copy jobs.js
   try {
     const jobsJsPath = path.join(SRC, 'jobs.js');
@@ -3029,7 +3039,7 @@ async function build() {
 
   // copy static pages
   const staticPages = [
-  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html'];
+  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'bogdan-tiutenko.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -3568,6 +3578,7 @@ async function build() {
       ? 'noindex, follow'
       : 'index, follow, max-snippet:-1, max-image-preview:large';
     finalHtml = setRobotsMeta(finalHtml, vacancyRobotsContent);
+    finalHtml = sanitizeStaticHtmlHead(finalHtml);
 
     // Add specific styles for job pages
     const jobStyles = `
@@ -3866,6 +3877,8 @@ async function build() {
       blogHtml = blogHtml.replace('</head>', `${blogCollectionScript}</head>`);
     }
 
+    blogHtml = sanitizeStaticHtmlHead(blogHtml);
+
     if (blogHtml.includes('</body>')) blogHtml = blogHtml.replace('</body>', `${scriptWithData}</body>`);
     else blogHtml += scriptWithData;
     await fs.writeFile(path.join(DIST, blogFileName), blogHtml, 'utf8');
@@ -3994,6 +4007,8 @@ async function build() {
       postHtml = setRobotsMeta(postHtml, 'noindex, follow');
     }
 
+    postHtml = sanitizeStaticHtmlHead(postHtml);
+
     if (postHtml.includes('</body>')) postHtml = postHtml.replace('</body>', `${scriptWithData}</body>`);
     else postHtml += scriptWithData;
     await fs.writeFile(path.join(DIST, `post-${post.slug}.html`), postHtml, 'utf8');
@@ -4096,6 +4111,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       indexHtml = indexHtml.replace('</head>', `${homeItemListScript}\n</head>`);
     }
 
+    indexHtml = sanitizeStaticHtmlHead(indexHtml);
+
     await fs.writeFile(path.join(DIST, 'index.html'), indexHtml, 'utf8');
 
     // generate vacancies page
@@ -4174,6 +4191,8 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       } else {
         vacanciesHtml += scriptWithData;
       }
+
+      vacanciesHtml = sanitizeStaticHtmlHead(vacanciesHtml);
 
       await fs.writeFile(path.join(DIST, 'vacancies.html'), vacanciesHtml, 'utf8');
     } catch (e) {
@@ -4261,6 +4280,7 @@ Allow: /*.webp$
       const txtContent = adsTxtLines.join('\n') + '\n';
       await fs.writeFile(path.join(DIST, 'ads.txt'), txtContent, 'utf8');
       await fs.writeFile(path.join(DIST, 'ada.txt'), txtContent, 'utf8');
+      await fs.writeFile(path.join(DIST, 'Ads.txt'), txtContent, 'utf8');
     } catch (e) {}
 
     // write IndexNow key file for Bing/Yandex instant indexing.
@@ -4904,7 +4924,9 @@ function estimateReadingTime(html) {
 }
 
 function extractImageUrl(html) {
-  const match = String(html || '').match(/src=["']([^"']+)["']/i);
+  const str = String(html || '');
+  if (str.startsWith('http')) return str;
+  const match = str.match(/src=["']([^"']+)["']/i);
   return match ? match[1] : '';
 }
 

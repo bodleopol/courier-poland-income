@@ -22,7 +22,6 @@
   <meta name="theme-color" content="#e74c3c">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <!-- Rybezh Proof Schema: Organization + AggregateRating -->
   <script type="application/ld+json">
@@ -921,12 +920,7 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Supabase client (existing project credentials)
-    const { createClient } = supabase;
-    const supabaseClient = createClient(
-      "https://ubygfyksalvwsprvetoc.supabase.co",
-      "sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD"
-    );
+    const PROOF_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3Cy0LYmMEg-fV_vIUGiRzy6P6Vxg0hNGNtRs8bHilEUoRL4Q_Sdok1Xy1vDEIaFNT/exec';
 
     const ratingsKeys = [
       ['salary_rating', 'Зарплата'],
@@ -975,6 +969,13 @@
       return 'var(--proof-accent)';
     }
 
+    function getRowValue(row, keys) {
+      for (const key of keys) {
+        if (Object.prototype.hasOwnProperty.call(row, key)) return row[key];
+      }
+      return '';
+    }
+
     function fileCount(proofFiles) {
       if (!proofFiles || !String(proofFiles).trim()) return 0;
       return String(proofFiles)
@@ -1005,48 +1006,45 @@
     }
 
     async function detectAdminMode() {
-      try {
-        const { data, error } = await supabaseClient.auth.getSession();
-        if (error) throw error;
-
-        const session = data && data.session;
-        const user = session && session.user;
-        const email = String(user && user.email || '').toLowerCase();
-        const role = String((user && (user.app_metadata?.role || user.user_metadata?.role)) || '').toLowerCase();
-
-        const isAdmin = Boolean(user) && (
-          role === 'admin' ||
-          role === 'owner' ||
-          ADMIN_EMAILS.includes(email)
-        );
-
-        isAdminMode = isAdmin;
-
-        const bar = document.getElementById('proofAdminBar');
-        const userEl = document.getElementById('proofAdminUser');
-        if (bar) bar.hidden = !isAdmin;
-        if (userEl) userEl.textContent = user ? `👤 ${user.email || 'admin'}` : '—';
-      } catch (e) {
-        isAdminMode = false;
-      }
+      // Supabase is removed; Admin moderation is now handled directly in Google Sheets.
+      isAdminMode = false;
+      const bar = document.getElementById('proofAdminBar');
+      if (bar) bar.hidden = true;
     }
 
     async function fetchReviews() {
-      let query = supabaseClient
-        .from('reviews')
-        .select('*')
-        .order('created_at', { ascending: false });
+      try {
+        const response = await fetch(PROOF_SCRIPT_URL);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
 
-      if (!isAdminMode) query = query.eq('approved', true);
-
-      const { data, error } = await query;
-
-      if (error) throw error;
-
-      return (data || []).map(row => ({
-        ...row,
-        proof_score: computeProofScore(row)
-      }));
+        return data.map((row, index) => {
+          const mappedRow = {
+            id: String(index),
+            created_at: new Date().toISOString(), // Mocking date since it's not in the sheet currently, or could be extracted if added later
+            vacancy_url: getRowValue(row, ['link', 'Link', 'vacancy_url', 'vacancy', 'Посилання на вакансію', 'Посилання']) || '',
+            company: getRowValue(row, ['company', 'Company', 'Компанія']) || '',
+            city: getRowValue(row, ['city', 'City', 'Місто']) || '',
+            proof_files: getRowValue(row, ['proofs', 'Proofs', 'proof_files', 'Proof files', 'Докази']) || '',
+            salary_rating: Number(getRowValue(row, ['salary', 'Salary', 'Зарплата', 'Зарплата (1-10)']) || 0),
+            housing_rating: Number(getRowValue(row, ['housing', 'Housing', 'Житло', 'Житло (1-10)']) || 0),
+            attitude_rating: Number(getRowValue(row, ['attitude', 'Attitude', 'Ставлення', 'Ставлення (1-10)']) || 0),
+            schedule_rating: Number(getRowValue(row, ['schedule', 'Schedule', 'Графік', 'Графік (1-10)']) || 0),
+            payment_rating: Number(getRowValue(row, ['payments', 'Payments', 'Виплати', 'Виплати (1-10)']) || 0),
+            fraud_rating: Number(getRowValue(row, ['reliability', 'Reliability', 'Надійність', 'Надійність (1-10)']) || 0),
+            recommendation: Number(getRowValue(row, ['recommend', 'Recommend', 'Рекомендація', 'Рекомендація (1-10)']) || 0),
+            comment: getRowValue(row, ['comment', 'Comment', 'Коментар']) || '',
+            approved: true
+          };
+          return {
+            ...mappedRow,
+            proof_score: computeProofScore(mappedRow)
+          };
+        });
+      } catch (error) {
+        console.error('Fetch reviews error:', error);
+        throw error;
+      }
     }
 
     function buildCityOptions(data) {
@@ -1157,40 +1155,7 @@
       bindGiscusOnDemand();
     }
 
-    async function moderateReview(id, action) {
-      if (!id || !action) return;
-      try {
-        if (action === 'approve') {
-          const { error } = await supabaseClient
-            .from('reviews')
-            .update({ approved: true })
-            .eq('id', id);
-          if (error) throw error;
-        } else if (action === 'reject') {
-          const { error } = await supabaseClient
-            .from('reviews')
-            .delete()
-            .eq('id', id);
-          if (error) throw error;
-        }
-        await loadReviews({ hard: false });
-      } catch (e) {
-        console.error('Moderation error:', e);
-        alert('Не вдалося виконати модерацію. Перевірте права доступу.');
-      }
-    }
-
-    function bindAdminActions() {
-      document.querySelectorAll('[data-proof-action][data-proof-id]').forEach(btn => {
-        if (btn.dataset.bound === '1') return;
-        btn.dataset.bound = '1';
-        btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-proof-id');
-          const action = btn.getAttribute('data-proof-action');
-          moderateReview(id, action);
-        });
-      });
-    }
+    // Admin moderation is handled directly in Google Sheets.
 
     function mountGiscus(container, term) {
       if (!container || container.dataset.loaded === '1') return;
@@ -1258,20 +1223,7 @@
       }
     }
 
-    function initRealtime() {
-      if (realtimeChannel) return;
-      realtimeChannel = supabaseClient
-        .channel('proof-reviews-live')
-        .on('postgres_changes', {
-          event: '*',
-          schema: 'public',
-          table: 'reviews'
-        }, () => {
-          if (realtimeDebounce) clearTimeout(realtimeDebounce);
-          realtimeDebounce = setTimeout(() => loadReviews({ hard: false }), 450);
-        })
-        .subscribe();
-    }
+    // Realtime removed since it relied on Supabase. Falling back to simple polling via setInterval.
 
     const minScore = document.getElementById('proofMinScore');
     const minScoreValue = document.getElementById('proofMinScoreValue');
@@ -1354,25 +1306,23 @@
         }
 
         const payload = {
-          vacancy_url: vacancyUrl,
-          company,
-          city,
-          salary_rating: Number(form.elements.salary_rating.value || 0),
-          housing_rating: Number(form.elements.housing_rating.value || 0),
-          attitude_rating: Number(form.elements.attitude_rating.value || 0),
-          schedule_rating: Number(form.elements.schedule_rating.value || 0),
-          payment_rating: Number(form.elements.payment_rating.value || 0),
-          fraud_rating: Number(form.elements.fraud_rating.value || 0),
-          recommendation: Number(form.elements.recommendation.value || 0),
-          comment,
-          proof_files: String(form.elements.proof_files.value || '').trim(),
-          proof_score: computeProofScore(form.elements),
-          approved: false
+          link: vacancyUrl,
+          company: company,
+          city: city,
+          proofs: String(form.elements.proof_files.value || '').trim(),
+          salary: Number(form.elements.salary_rating.value || 0),
+          housing: Number(form.elements.housing_rating.value || 0),
+          attitude: Number(form.elements.attitude_rating.value || 0),
+          schedule: Number(form.elements.schedule_rating.value || 0),
+          payments: Number(form.elements.payment_rating.value || 0),
+          reliability: Number(form.elements.fraud_rating.value || 0),
+          recommend: Number(form.elements.recommendation.value || 0),
+          comment: comment
         };
 
         const ratingsValid = [
-          payload.salary_rating, payload.housing_rating, payload.attitude_rating,
-          payload.schedule_rating, payload.payment_rating, payload.fraud_rating, payload.recommendation
+          payload.salary, payload.housing, payload.attitude,
+          payload.schedule, payload.payments, payload.reliability, payload.recommend
         ].every(v => Number.isFinite(v) && v >= 1 && v <= 10);
 
         if (!ratingsValid) {
@@ -1385,13 +1335,19 @@
         submitBtn.textContent = '⏳ Відправляємо...';
 
         try {
-          const { error } = await supabaseClient.from('reviews').insert([payload]);
-          if (error) throw error;
+          await fetch(PROOF_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(payload)
+          });
 
           msg.classList.add('ok');
           msg.textContent = '✅ Дякуємо! Відгук відправлено на модерацію';
           form.reset();
           updateProgress();
+
+          // Optionally, wait a bit and fetch fresh data
+          setTimeout(() => loadReviews({ hard: true }), 1500);
         } catch (err) {
           console.error('Proof submit error:', err);
           msg.classList.add('err');
@@ -1415,11 +1371,10 @@
 
     document.getElementById('proofRefresh').addEventListener('click', () => loadReviews({ hard: true }));
 
-    // Initial load + polling every 30s + realtime subscription
+    // Initial load + polling every 30s
     setupProofForm();
     detectAdminMode().then(() => {
       loadReviews({ hard: true });
-      initRealtime();
     });
     setInterval(() => loadReviews({ hard: false }), 30000);
   </script>
