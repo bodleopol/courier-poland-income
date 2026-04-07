@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
   <script src="/jobs.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -228,20 +229,35 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label data-lang-content="ua" style="display:block">Бажана посада</label>
-            <label data-lang-content="pl" style="display:none">Stanowisko</label>
-            <input type="text" id="cv-position" placeholder="Pracownik produkcji / Magazynier / Spawacz">
-            <div class="hint" data-lang-content="ua">Краще писати польською — роботодавці бачать саме це</div>
-            <div class="hint" data-lang-content="pl" style="display:none">Wpisz po polsku — pracodawcy to widzą</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Бажана посада</label>
+              <label data-lang-content="pl" style="display:none">Stanowisko</label>
+              <input type="text" id="cv-position" placeholder="Pracownik produkcji / Magazynier / Spawacz">
+              <div class="hint" data-lang-content="ua">Краще писати польською — роботодавці бачать саме це</div>
+              <div class="hint" data-lang-content="pl" style="display:none">Wpisz po polsku — pracodawcy to widzą</div>
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Мова CV</label>
+              <label data-lang-content="pl" style="display:none">Język CV</label>
+              <select id="cv-lang">
+                <option value="pl">🇵🇱 Польською (рекомендовано)</option>
+                <option value="ua">🇺🇦 Українською</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label data-lang-content="ua" style="display:block">Мова CV</label>
-            <label data-lang-content="pl" style="display:none">Język CV</label>
-            <select id="cv-lang">
-              <option value="pl">🇵🇱 Польською (рекомендовано)</option>
-              <option value="ua">🇺🇦 Українською</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Фото (опціонально)</label>
+              <label data-lang-content="pl" style="display:none">Zdjęcie (opcjonalnie)</label>
+              <input type="file" id="cv-photo" accept="image/*" onchange="previewPhoto(event)">
+              <div class="hint" data-lang-content="ua">Додайте професійне фото для кращого враження</div>
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Посилання (LinkedIn/Портфоліо)</label>
+              <label data-lang-content="pl" style="display:none">Link (LinkedIn/Portfolio)</label>
+              <input type="url" id="cv-link" placeholder="https://linkedin.com/in/olena">
+            </div>
           </div>
           <div style="text-align:right;margin-top:1rem;">
             <button class="btn-generate" onclick="goStep(2)"><span data-lang-content="ua" style="display:inline">Далі</span><span data-lang-content="pl" style="display:none">Dalej</span> →</button>
@@ -402,7 +418,8 @@
 
           <div class="action-row">
             <button class="btn-action primary" onclick="copyCV()">📋 <span data-lang-content="ua" style="display:inline">Копіювати</span><span data-lang-content="pl" style="display:none">Kopiuj</span></button>
-            <button class="btn-action primary" onclick="downloadCV()">📥 <span data-lang-content="ua" style="display:inline">Завантажити .txt</span><span data-lang-content="pl" style="display:none">Pobierz .txt</span></button>
+            <button class="btn-action primary" onclick="downloadPDF()">📄 <span data-lang-content="ua" style="display:inline">Завантажити PDF</span><span data-lang-content="pl" style="display:none">Pobierz PDF</span></button>
+            <button class="btn-action secondary" onclick="downloadCV()">📥 <span data-lang-content="ua" style="display:inline">Завантажити .txt</span><span data-lang-content="pl" style="display:none">Pobierz .txt</span></button>
             <button class="btn-action secondary" onclick="goStep(1)">🔄 <span data-lang-content="ua" style="display:inline">Редагувати</span><span data-lang-content="pl" style="display:none">Edytuj</span></button>
           </div>
 
@@ -545,6 +562,21 @@
       renderSkills();
     };
 
+    let photoDataUrl = null;
+
+    window.previewPhoto = function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          photoDataUrl = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      } else {
+        photoDataUrl = null;
+      }
+    };
+
     window.generateCV = function() {
       const lang = $('cv-lang').value;
       const name = $('cv-name').value || 'Imię Nazwisko';
@@ -557,6 +589,7 @@
       const plLevel = $('cv-lang-pl').value;
       const enLevel = $('cv-lang-en').value;
       const ruLevel = $('cv-lang-ru').value;
+      const link = $('cv-link').value || '';
 
       // Collect experience
       const exps = [];
@@ -571,8 +604,17 @@
       const isPl = lang === 'pl';
 
       // Build CV HTML
-      let html = `<h3>${name}</h3>`;
-      html += `<div class="contact-line">${email} | ${phone} | ${city}</div>`;
+      let html = `<div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1rem;border-bottom:2px solid #0f766e;padding-bottom:1rem;">`;
+      if (photoDataUrl) {
+        html += `<img src="${photoDataUrl}" alt="Photo" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;">`;
+      }
+      html += `<div>`;
+      html += `<h3 style="border:none;margin-bottom:0.25rem;padding:0;">${name}</h3>`;
+      html += `<div class="contact-line" style="margin-bottom:0;">${email} | ${phone} | ${city}</div>`;
+      if (link) {
+        html += `<div style="font-size:0.85rem;margin-top:0.25rem;"><a href="${link}" target="_blank" style="color:#0f766e;text-decoration:none;">${link}</a></div>`;
+      }
+      html += `</div></div>`;
 
       // Objective
       html += `<h4>${isPl ? 'CEL ZAWODOWY' : 'МЕТА'}</h4>`;
@@ -661,6 +703,25 @@
       a.href = URL.createObjectURL(blob);
       a.download = filename;
       a.click();
+    };
+
+    window.downloadPDF = function() {
+      const activeTab = $('tab-cv').style.display !== 'none' ? 'cv' : 'letter';
+      const element = activeTab === 'cv' ? $('cv-output') : $('letter-output');
+      const name = $('cv-name').value || 'cv';
+      const filename = activeTab === 'cv'
+        ? `CV_${name.replace(/\s+/g, '_')}.pdf`
+        : `Cover_Letter_${name.replace(/\s+/g, '_')}.pdf`;
+
+      const opt = {
+        margin:       10,
+        filename:     filename,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save();
     };
   })();
   </script>

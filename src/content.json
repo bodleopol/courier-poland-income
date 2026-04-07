@@ -1,5 +1,925 @@
 [
   {
+    "slug": "wroclaw-warehouse-worker-801",
+    "category": "logistics",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "city_en": "Wroclaw",
+    "city_ru": "Вроцлав",
+    "title": "Працівник складу інтернет-магазину",
+    "title_pl": "Pracownik magazynu sklepu internetowego",
+    "title_en": "Online Store Warehouse Worker",
+    "title_ru": "Работник склада интернет-магазина",
+    "salary": "4500 - 5200 PLN netto",
+    "company": "EcoPack Logistics",
+    "shift_ua": "2 зміни (06:00-14:00, 14:00-22:00)",
+    "shift_pl": "2 zmiany (06:00-14:00, 14:00-22:00)",
+    "shift_en": "2 shifts (06:00-14:00, 14:00-22:00)",
+    "shift_ru": "2 смены (06:00-14:00, 14:00-22:00)",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "От сейчас",
+    "contract_ua": "Umowa zlecenia",
+    "contract_pl": "Umowa zlecenia",
+    "contract_en": "Umowa zlecenia",
+    "contract_ru": "Договор поручения (Umowa zlecenia)",
+    "offers_ua": [
+      "Безкоштовний доїзд автобусом",
+      "Спецодяг за рахунок фірми",
+      "Гарячі напої в кімнаті відпочинку"
+    ],
+    "offers_pl": [
+      "Darmowy dojazd autobusem pracowniczym",
+      "Odzież robocza na koszt firmy",
+      "Gorące napoje w pokoju socjalnym"
+    ],
+    "offers_en": [
+      "Free transport by employee bus",
+      "Workwear at the company's expense",
+      "Hot drinks in the break room"
+    ],
+    "offers_ru": [
+      "Бесплатный проезд на автобусе для сотрудников",
+      "Спецодежда за счет фирмы",
+      "Горячие напитки в комнате отдыха"
+    ],
+    "tasks_ua": [
+      "Комплектування замовлень зі сканером",
+      "Упаковка товарів для відправки",
+      "Перевірка якості упаковки"
+    ],
+    "tasks_pl": [
+      "Kompletowanie zamówień ze skanerem",
+      "Pakowanie towarów do wysyłki",
+      "Kontrola jakości pakowania"
+    ],
+    "tasks_en": [
+      "Picking orders with a scanner",
+      "Packing goods for shipping",
+      "Quality control of packaging"
+    ],
+    "tasks_ru": [
+      "Комплектация заказов со сканером",
+      "Упаковка товаров для отправки",
+      "Проверка качества упаковки"
+    ],
+    "details_ua": [
+      "Досвід не потрібен",
+      "Готовність до роботи на ногах",
+      "Розуміння польської на початковому рівні"
+    ],
+    "details_pl": [
+      "Doświadczenie nie jest wymagane",
+      "Gotowość do pracy stojącej",
+      "Podstawowa znajomość języka polskiego"
+    ],
+    "details_en": [
+      "No experience required",
+      "Willingness to work standing",
+      "Basic understanding of Polish"
+    ],
+    "details_ru": [
+      "Опыт не требуется",
+      "Готовность к работе на ногах",
+      "Начальное понимание польского языка"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "gdansk-cnc-operator-802",
+    "category": "production",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "city_en": "Gdansk",
+    "city_ru": "Гданьск",
+    "title": "Оператор станків ЧПУ (CNC)",
+    "title_pl": "Operator maszyn CNC",
+    "title_en": "CNC Machine Operator",
+    "title_ru": "Оператор станков ЧПУ (CNC)",
+    "salary": "6000 - 8000 PLN netto",
+    "company": "MetAl Tech",
+    "shift_ua": "3 зміни (06:00, 14:00, 22:00)",
+    "shift_pl": "3 zmiany (06:00, 14:00, 22:00)",
+    "shift_en": "3 shifts (06:00, 14:00, 22:00)",
+    "shift_ru": "3 смены (06:00, 14:00, 22:00)",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Протягом 2 тижнів",
+    "start_pl": "W ciągu 2 tygodni",
+    "start_en": "Within 2 weeks",
+    "start_ru": "В течение 2 недель",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Umowa o pracę",
+    "contract_ru": "Трудовой договор (Umowa o pracę)",
+    "offers_ua": [
+      "Офіційне оформлення",
+      "Приватна медична страховка",
+      "Можливість понаднормових годин"
+    ],
+    "offers_pl": [
+      "Zatrudnienie w oparciu o umowę o pracę",
+      "Prywatna opieka medyczna",
+      "Możliwość pracy w nadgodzinach"
+    ],
+    "offers_en": [
+      "Official employment",
+      "Private medical insurance",
+      "Possibility of overtime"
+    ],
+    "offers_ru": [
+      "Официальное трудоустройство",
+      "Частная медицинская страховка",
+      "Возможность сверхурочных часов"
+    ],
+    "tasks_ua": [
+      "Обслуговування фрезерних станків ЧПУ",
+      "Контроль якості деталей за кресленнями",
+      "Дрібне коригування програм"
+    ],
+    "tasks_pl": [
+      "Obsługa frezarek CNC",
+      "Kontrola jakości detali zgodnie z rysunkiem technicznym",
+      "Drobne korekty programów"
+    ],
+    "tasks_en": [
+      "Operating CNC milling machines",
+      "Quality control of parts according to drawings",
+      "Minor program adjustments"
+    ],
+    "tasks_ru": [
+      "Обслуживание фрезерных станков ЧПУ",
+      "Контроль качества деталей по чертежам",
+      "Мелкая корректировка программ"
+    ],
+    "details_ua": [
+      "Досвід роботи від 1 року",
+      "Вміння читати технічні креслення",
+      "Базові знання програмування (Heidenhain, Fanuc)"
+    ],
+    "details_pl": [
+      "Doświadczenie min. 1 rok",
+      "Umiejętność czytania rysunku technicznego",
+      "Podstawowa znajomość programowania (Heidenhain, Fanuc)"
+    ],
+    "details_en": [
+      "Minimum 1 year of experience",
+      "Ability to read technical drawings",
+      "Basic programming knowledge (Heidenhain, Fanuc)"
+    ],
+    "details_ru": [
+      "Опыт работы от 1 года",
+      "Умение читать технические чертежи",
+      "Базовые знания программирования (Heidenhain, Fanuc)"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "warsaw-delivery-driver-803",
+    "category": "logistics",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_en": "Warsaw",
+    "city_ru": "Варшава",
+    "title": "Кур'єр з власним автомобілем",
+    "title_pl": "Kurier z własnym samochodem",
+    "title_en": "Delivery Driver with Own Vehicle",
+    "title_ru": "Курьер с личным автомобилем",
+    "salary": "7000 - 9000 PLN netto",
+    "company": "FastPost",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "shift_en": "Flexible schedule",
+    "shift_ru": "Гибкий график",
+    "pattern_ua": "Залежить від виробітку",
+    "pattern_pl": "Zależy od wyników",
+    "pattern_en": "Performance-based",
+    "pattern_ru": "Зависит от выработки",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "От сейчас",
+    "contract_ua": "B2B / Umowa zlecenia",
+    "contract_pl": "B2B / Umowa zlecenia",
+    "contract_en": "B2B / Umowa zlecenia",
+    "contract_ru": "B2B / Договор поручения",
+    "offers_ua": [
+      "Компенсація пального",
+      "Бонуси за кількість доставок",
+      "Спецодяг та термінал"
+    ],
+    "offers_pl": [
+      "Zwrot kosztów paliwa",
+      "Premie za ilość dostaw",
+      "Odzież robocza i terminal"
+    ],
+    "offers_en": [
+      "Fuel compensation",
+      "Bonuses for delivery volume",
+      "Workwear and terminal"
+    ],
+    "offers_ru": [
+      "Компенсация топлива",
+      "Бонусы за количество доставок",
+      "Спецодежда и терминал"
+    ],
+    "tasks_ua": [
+      "Доставка посилок клієнтам по місту",
+      "Прийом оплати (картки, готівка)",
+      "Ведення звітності в додатку"
+    ],
+    "tasks_pl": [
+      "Dostarczanie przesyłek do klientów na terenie miasta",
+      "Przyjmowanie płatności (karty, gotówka)",
+      "Raportowanie w aplikacji"
+    ],
+    "tasks_en": [
+      "Delivering parcels to clients within the city",
+      "Accepting payments (cards, cash)",
+      "Reporting in the app"
+    ],
+    "tasks_ru": [
+      "Доставка посылок клиентам по городу",
+      "Прием оплаты (карты, наличные)",
+      "Ведение отчетности в приложении"
+    ],
+    "details_ua": [
+      "Наявність власного авто",
+      "Права категорії B",
+      "Комунікабельність та пунктуальність"
+    ],
+    "details_pl": [
+      "Posiadanie własnego samochodu",
+      "Prawo jazdy kat. B",
+      "Komunikatywność i punktualność"
+    ],
+    "details_en": [
+      "Own car",
+      "Category B driver's license",
+      "Sociability and punctuality"
+    ],
+    "details_ru": [
+      "Наличие собственного авто",
+      "Права категории B",
+      "Коммуникабельность и пунктуальность"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "krakow-kindergarten-teacher-804",
+    "category": "education",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "city_en": "Krakow",
+    "city_ru": "Краков",
+    "title": "Помічник вихователя в дитячий садок",
+    "title_pl": "Pomoc wychowawcy w przedszkolu",
+    "title_en": "Kindergarten Teacher Assistant",
+    "title_ru": "Помощник воспитателя в детский сад",
+    "salary": "4000 - 4500 PLN netto",
+    "company": "Małe Kroczki",
+    "shift_ua": "Пн-Пт, 08:00-16:00",
+    "shift_pl": "Pn-Pt, 08:00-16:00",
+    "shift_en": "Mon-Fri, 08:00-16:00",
+    "shift_ru": "Пн-Пт, 08:00-16:00",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "З початку наступного місяця",
+    "start_pl": "Od początku przyszłego miesiąca",
+    "start_en": "From the beginning of next month",
+    "start_ru": "С начала следующего месяца",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Umowa o pracę",
+    "contract_ru": "Трудовой договор (Umowa o pracę)",
+    "offers_ua": [
+      "Робота в дружньому колективі",
+      "Безкоштовне харчування",
+      "Оплачувані відпустки"
+    ],
+    "offers_pl": [
+      "Praca w przyjaznym zespole",
+      "Darmowe wyżywienie",
+      "Płatne urlopy"
+    ],
+    "offers_en": [
+      "Work in a friendly team",
+      "Free meals",
+      "Paid vacations"
+    ],
+    "offers_ru": [
+      "Работа в дружном коллективе",
+      "Бесплатное питание",
+      "Оплачиваемые отпуска"
+    ],
+    "tasks_ua": [
+      "Допомога вихователю під час занять",
+      "Допомога дітям під час їжі та прогулянок",
+      "Підтримка порядку в ігровій кімнаті"
+    ],
+    "tasks_pl": [
+      "Pomoc wychowawcy podczas zajęć",
+      "Pomoc dzieciom przy posiłkach i na spacerach",
+      "Utrzymywanie porządku w sali zabaw"
+    ],
+    "tasks_en": [
+      "Assisting the teacher during activities",
+      "Helping children during meals and walks",
+      "Maintaining order in the playroom"
+    ],
+    "tasks_ru": [
+      "Помощь воспитателю во время занятий",
+      "Помощь детям во время еды и прогулок",
+      "Поддержание порядка в игровой комнате"
+    ],
+    "details_ua": [
+      "Любов до дітей та терпіння",
+      "Знання польської мови на рівні B1+",
+      "Довідка про несудимість та санітарна книжка"
+    ],
+    "details_pl": [
+      "Zamiłowanie do pracy z dziećmi i cierpliwość",
+      "Znajomość języka polskiego na poziomie B1+",
+      "Zaświadczenie o niekaralności i książeczka sanepidowska"
+    ],
+    "details_en": [
+      "Love for children and patience",
+      "Polish language at B1+ level",
+      "Certificate of no criminal record and sanitary booklet"
+    ],
+    "details_ru": [
+      "Любовь к детям и терпение",
+      "Знание польского языка на уровне B1+",
+      "Справка о несудимости и санитарная книжка"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "poznan-plumber-805",
+    "category": "construction",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "city_en": "Poznan",
+    "city_ru": "Познань",
+    "title": "Сантехнік-монтажник",
+    "title_pl": "Hydraulik-monter",
+    "title_en": "Plumber-Installer",
+    "title_ru": "Сантехник-монтажник",
+    "salary": "35 - 45 PLN/h",
+    "company": "AquaInstal Poznań",
+    "shift_ua": "Пн-Сб, 07:00-17:00",
+    "shift_pl": "Pn-Sob, 07:00-17:00",
+    "shift_en": "Mon-Sat, 07:00-17:00",
+    "shift_ru": "Пн-Сб, 07:00-17:00",
+    "pattern_ua": "6/1",
+    "pattern_pl": "6/1",
+    "pattern_en": "6/1",
+    "pattern_ru": "6/1",
+    "start_ua": "Терміново",
+    "start_pl": "Pilne",
+    "start_en": "Urgent",
+    "start_ru": "Срочно",
+    "contract_ua": "Umowa o pracę / B2B",
+    "contract_pl": "Umowa o pracę / B2B",
+    "contract_en": "Umowa o pracę / B2B",
+    "contract_ru": "Трудовой договор / B2B",
+    "offers_ua": [
+      "Робота на великих об'єктах новобудов",
+      "Забезпечення професійним інструментом",
+      "Житло для іногородніх"
+    ],
+    "offers_pl": [
+      "Praca na dużych obiektach deweloperskich",
+      "Zapewniamy profesjonalne narzędzia",
+      "Zakwaterowanie dla osób przyjezdnych"
+    ],
+    "offers_en": [
+      "Work on large new construction sites",
+      "Professional tools provided",
+      "Accommodation for non-residents"
+    ],
+    "offers_ru": [
+      "Работа на крупных объектах новостроек",
+      "Обеспечение профессиональным инструментом",
+      "Жилье для иногородних"
+    ],
+    "tasks_ua": [
+      "Монтаж систем водопостачання та водовідведення",
+      "Встановлення теплої підлоги",
+      "Монтаж радіаторів та сантехніки"
+    ],
+    "tasks_pl": [
+      "Montaż instalacji wod-kan",
+      "Instalacja ogrzewania podłogowego",
+      "Montaż grzejników i białego montażu"
+    ],
+    "tasks_en": [
+      "Installation of water supply and sewage systems",
+      "Installing underfloor heating",
+      "Installing radiators and sanitary ware"
+    ],
+    "tasks_ru": [
+      "Монтаж систем водоснабжения и водоотведения",
+      "Установка теплого пола",
+      "Монтаж радиаторов и сантехники"
+    ],
+    "details_ua": [
+      "Досвід роботи від 2 років",
+      "Вміння читати креслення",
+      "Відповідальність"
+    ],
+    "details_pl": [
+      "Doświadczenie min. 2 lata",
+      "Umiejętność czytania rysunków technicznych",
+      "Odpowiedzialność"
+    ],
+    "details_en": [
+      "Minimum 2 years of experience",
+      "Ability to read drawings",
+      "Responsibility"
+    ],
+    "details_ru": [
+      "Опыт работы от 2 лет",
+      "Умение читать чертежи",
+      "Ответственность"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "lodz-barista-806",
+    "category": "hospitality",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "city_en": "Lodz",
+    "city_ru": "Лодзь",
+    "title": "Бариста в кав'ярню",
+    "title_pl": "Barista w kawiarni",
+    "title_en": "Barista in a Coffee Shop",
+    "title_ru": "Бариста в кофейню",
+    "salary": "25 - 28 PLN/h + чайові",
+    "company": "Kawa&Ciastko",
+    "shift_ua": "Позмінний графік, 07:00-15:00 / 14:00-22:00",
+    "shift_pl": "Praca zmianowa, 07:00-15:00 / 14:00-22:00",
+    "shift_en": "Shift work, 07:00-15:00 / 14:00-22:00",
+    "shift_ru": "Сменный график, 07:00-15:00 / 14:00-22:00",
+    "pattern_ua": "Гнучкий",
+    "pattern_pl": "Elastyczny",
+    "pattern_en": "Flexible",
+    "pattern_ru": "Гибкий",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "От сейчас",
+    "contract_ua": "Umowa zlecenia",
+    "contract_pl": "Umowa zlecenia",
+    "contract_en": "Umowa zlecenia",
+    "contract_ru": "Договор поручения (Umowa zlecenia)",
+    "offers_ua": [
+      "Знижки на продукцію кав'ярні",
+      "Дружній молодий колектив",
+      "Навчання від чемпіонів з бариста"
+    ],
+    "offers_pl": [
+      "Zniżki na asortyment kawiarni",
+      "Młody, zgrany zespół",
+      "Szkolenia u mistrzów baristyki"
+    ],
+    "offers_en": [
+      "Discounts on coffee shop products",
+      "Friendly young team",
+      "Training by barista champions"
+    ],
+    "offers_ru": [
+      "Скидки на продукцию кофейни",
+      "Дружный молодой коллектив",
+      "Обучение у чемпионов по бариста"
+    ],
+    "tasks_ua": [
+      "Приготування кавових та інших напоїв",
+      "Обслуговування гостей за касою",
+      "Підтримка чистоти на робочому місці"
+    ],
+    "tasks_pl": [
+      "Przygotowywanie kawy i innych napojów",
+      "Obsługa gości przy kasie",
+      "Utrzymywanie czystości na stanowisku pracy"
+    ],
+    "tasks_en": [
+      "Preparing coffee and other drinks",
+      "Serving guests at the register",
+      "Maintaining cleanliness at the workspace"
+    ],
+    "tasks_ru": [
+      "Приготовление кофейных и других напитков",
+      "Обслуживание гостей за кассой",
+      "Поддержание чистоты на рабочем месте"
+    ],
+    "details_ua": [
+      "Досвід роботи з ріжковою кавоваркою",
+      "Знання польської мови для спілкування з клієнтами",
+      "Санітарна книжка"
+    ],
+    "details_pl": [
+      "Doświadczenie w pracy z ekspresem kolbowym",
+      "Znajomość języka polskiego do kontaktu z klientami",
+      "Książeczka sanepidowska"
+    ],
+    "details_en": [
+      "Experience with an espresso machine",
+      "Polish language skills for interacting with clients",
+      "Sanitary booklet"
+    ],
+    "details_ru": [
+      "Опыт работы с рожковой кофеваркой",
+      "Знание польского языка для общения с клиентами",
+      "Санитарная книжка"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "lublin-security-guard-807",
+    "category": "security",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "city_en": "Lublin",
+    "city_ru": "Люблин",
+    "title": "Охоронець торгового центру",
+    "title_pl": "Pracownik ochrony w centrum handlowym",
+    "title_en": "Shopping Mall Security Guard",
+    "title_ru": "Охранник торгового центра",
+    "salary": "26 - 30 PLN/h",
+    "company": "SecureNet",
+    "shift_ua": "Графік 12 годин, денні та нічні зміни",
+    "shift_pl": "Grafik 12-godzinny, zmiany dzienne i nocne",
+    "shift_en": "12-hour shifts, day and night",
+    "shift_ru": "График 12 часов, дневные и ночные смены",
+    "pattern_ua": "2/2",
+    "pattern_pl": "2/2",
+    "pattern_en": "2/2",
+    "pattern_ru": "2/2",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "start_en": "Within a week",
+    "start_ru": "В течение недели",
+    "contract_ua": "Umowa zlecenia",
+    "contract_pl": "Umowa zlecenia",
+    "contract_en": "Umowa zlecenia",
+    "contract_ru": "Договор поручения (Umowa zlecenia)",
+    "offers_ua": [
+      "Стабільний графік",
+      "Форма надається",
+      "Вчасні виплати"
+    ],
+    "offers_pl": [
+      "Stabilny grafik",
+      "Zapewniamy umundurowanie",
+      "Terminowe wypłaty"
+    ],
+    "offers_en": [
+      "Stable schedule",
+      "Uniform provided",
+      "Timely payments"
+    ],
+    "offers_ru": [
+      "Стабильный график",
+      "Форма предоставляется",
+      "Своевременные выплаты"
+    ],
+    "tasks_ua": [
+      "Патрулювання території ТЦ",
+      "Запобігання крадіжкам",
+      "Реагування на позаштатні ситуації"
+    ],
+    "tasks_pl": [
+      "Patrolowanie terenu galerii",
+      "Zapobieganie kradzieżom",
+      "Reagowanie na sytuacje awaryjne"
+    ],
+    "tasks_en": [
+      "Patrolling the mall area",
+      "Preventing theft",
+      "Responding to emergencies"
+    ],
+    "tasks_ru": [
+      "Патрулирование территории ТЦ",
+      "Предотвращение краж",
+      "Реагирование на внештатные ситуации"
+    ],
+    "details_ua": [
+      "Довідка про несудимість",
+      "Хороша фізична форма",
+      "Досвід роботи в охороні вітається"
+    ],
+    "details_pl": [
+      "Zaświadczenie o niekaralności",
+      "Dobra sprawność fizyczna",
+      "Mile widziane doświadczenie w ochronie"
+    ],
+    "details_en": [
+      "Certificate of no criminal record",
+      "Good physical condition",
+      "Experience in security is a plus"
+    ],
+    "details_ru": [
+      "Справка о несудимости",
+      "Хорошая физическая форма",
+      "Опыт работы в охране приветствуется"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "szczecin-welder-808",
+    "category": "production",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "city_en": "Szczecin",
+    "city_ru": "Щецин",
+    "title": "Зварювальник MIG/MAG",
+    "title_pl": "Spawacz MIG/MAG",
+    "title_en": "MIG/MAG Welder",
+    "title_ru": "Сварщик MIG/MAG",
+    "salary": "40 - 55 PLN/h",
+    "company": "StalKonstrukcje",
+    "shift_ua": "Пн-Пт, 06:00-14:00 (можливі надгодини)",
+    "shift_pl": "Pn-Pt, 06:00-14:00 (możliwe nadgodziny)",
+    "shift_en": "Mon-Fri, 06:00-14:00 (overtime possible)",
+    "shift_ru": "Пн-Пт, 06:00-14:00 (возможны сверхурочные)",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Після проходження тестів",
+    "start_pl": "Po przejściu testów",
+    "start_en": "After passing tests",
+    "start_ru": "После прохождения тестов",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Umowa o pracę",
+    "contract_ru": "Трудовой договор (Umowa o pracę)",
+    "offers_ua": [
+      "Безкоштовне проживання перший місяць",
+      "Допомога з легалізацією",
+      "Сучасне зварювальне обладнання"
+    ],
+    "offers_pl": [
+      "Darmowe zakwaterowanie przez pierwszy miesiąc",
+      "Pomoc w legalizacji pobytu",
+      "Nowoczesny sprzęt spawalniczy"
+    ],
+    "offers_en": [
+      "Free accommodation for the first month",
+      "Assistance with legalization",
+      "Modern welding equipment"
+    ],
+    "offers_ru": [
+      "Бесплатное проживание первый месяц",
+      "Помощь с легализацией",
+      "Современное сварочное оборудование"
+    ],
+    "tasks_ua": [
+      "Зварювання сталевих конструкцій методом 135/136",
+      "Читання технічних креслень",
+      "Зачистка швів"
+    ],
+    "tasks_pl": [
+      "Spawanie konstrukcji stalowych metodą 135/136",
+      "Czytanie rysunku technicznego",
+      "Szlifowanie spoin"
+    ],
+    "tasks_en": [
+      "Welding steel structures using 135/136 method",
+      "Reading technical drawings",
+      "Grinding welds"
+    ],
+    "tasks_ru": [
+      "Сварка стальных конструкций методом 135/136",
+      "Чтение технических чертежей",
+      "Зачистка швов"
+    ],
+    "details_ua": [
+      "Діючі сертифікати зварювальника",
+      "Досвід від 3 років",
+      "Проходження зварювальних проб перед працевлаштуванням"
+    ],
+    "details_pl": [
+      "Ważne certyfikaty spawalnicze",
+      "Doświadczenie min. 3 lata",
+      "Zaliczenie próbek spawalniczych przed zatrudnieniem"
+    ],
+    "details_en": [
+      "Valid welding certificates",
+      "Minimum 3 years of experience",
+      "Passing welding tests before employment"
+    ],
+    "details_ru": [
+      "Действующие сертификаты сварщика",
+      "Опыт от 3 лет",
+      "Прохождение сварочных проб перед трудоустройством"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "bydgoszcz-pharmacist-809",
+    "category": "healthcare",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "city_en": "Bydgoszcz",
+    "city_ru": "Быдгощ",
+    "title": "Фармацевт",
+    "title_pl": "Magister Farmacji",
+    "title_en": "Pharmacist",
+    "title_ru": "Фармацевт",
+    "salary": "6000 - 8000 PLN netto",
+    "company": "Zdrowie Plus Apteki",
+    "shift_ua": "Позмінний, аптека працює 08:00-20:00",
+    "shift_pl": "Zmianowy, apteka czynna 08:00-20:00",
+    "shift_en": "Shift work, pharmacy open 08:00-20:00",
+    "shift_ru": "Сменный, аптека работает 08:00-20:00",
+    "pattern_ua": "Гнучкий",
+    "pattern_pl": "Elastyczny",
+    "pattern_en": "Flexible",
+    "pattern_ru": "Гибкий",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "От сейчас",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Umowa o pracę",
+    "contract_ru": "Трудовой договор (Umowa o pracę)",
+    "offers_ua": [
+      "Премії від продажу",
+      "Оплачуване навчання",
+      "Приватна медицина"
+    ],
+    "offers_pl": [
+      "Premie sprzedażowe",
+      "Płatne szkolenia",
+      "Prywatna opieka medyczna"
+    ],
+    "offers_en": [
+      "Sales bonuses",
+      "Paid training",
+      "Private healthcare"
+    ],
+    "offers_ru": [
+      "Премии от продаж",
+      "Оплачиваемое обучение",
+      "Частная медицина"
+    ],
+    "tasks_ua": [
+      "Відпуск лікарських засобів",
+      "Консультація пацієнтів",
+      "Прийом товару та контроль термінів придатності"
+    ],
+    "tasks_pl": [
+      "Wydawanie leków",
+      "Doradztwo dla pacjentów",
+      "Przyjmowanie dostaw i kontrola terminów ważności"
+    ],
+    "tasks_en": [
+      "Dispensing medicines",
+      "Patient consultation",
+      "Receiving deliveries and checking expiration dates"
+    ],
+    "tasks_ru": [
+      "Отпуск лекарственных средств",
+      "Консультация пациентов",
+      "Прием товара и контроль сроков годности"
+    ],
+    "details_ua": [
+      "Вища фармацевтична освіта та право на професію",
+      "Відмінне знання польської мови",
+      "Емпатія та комунікабельність"
+    ],
+    "details_pl": [
+      "Wyższe wykształcenie farmaceutyczne i prawo wykonywania zawodu",
+      "Biegła znajomość języka polskiego",
+      "Empatia i komunikatywność"
+    ],
+    "details_en": [
+      "Higher pharmaceutical education and right to practice",
+      "Fluent Polish",
+      "Empathy and communicativeness"
+    ],
+    "details_ru": [
+      "Высшее фармацевтическое образование и право на профессию",
+      "Отличное знание польского языка",
+      "Эмпатия и коммуникабельность"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
+    "slug": "warsaw-qa-engineer-810",
+    "category": "it",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_en": "Warsaw",
+    "city_ru": "Варшава",
+    "title": "Тестувальник ПЗ (QA Engineer)",
+    "title_pl": "Tester Oprogramowania (QA Engineer)",
+    "title_en": "Software Tester (QA Engineer)",
+    "title_ru": "Тестировщик ПО (QA Engineer)",
+    "salary": "8000 - 12000 PLN B2B",
+    "company": "AppSolutions",
+    "shift_ua": "Гнучкий",
+    "shift_pl": "Elastyczny",
+    "shift_en": "Flexible",
+    "shift_ru": "Гибкий",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Протягом місяця",
+    "start_pl": "W ciągu miesiąca",
+    "start_en": "Within a month",
+    "start_ru": "В течение месяца",
+    "contract_ua": "B2B / Umowa o pracę",
+    "contract_pl": "B2B / Umowa o pracę",
+    "contract_en": "B2B / Umowa o pracę",
+    "contract_ru": "B2B / Трудовой договор",
+    "offers_ua": [
+      "Гібридний формат роботи (2 дні в офісі)",
+      "Бюджет на курси",
+      "Спортзал в офісі"
+    ],
+    "offers_pl": [
+      "Praca hybrydowa (2 dni w biurze)",
+      "Budżet szkoleniowy",
+      "Siłownia w biurze"
+    ],
+    "offers_en": [
+      "Hybrid work (2 days in office)",
+      "Training budget",
+      "Gym in the office"
+    ],
+    "offers_ru": [
+      "Гибридный формат работы (2 дня в офисе)",
+      "Бюджет на курсы",
+      "Спортзал в офисе"
+    ],
+    "tasks_ua": [
+      "Мануальне тестування веб та мобільних додатків",
+      "Створення тестової документації (test cases)",
+      "Співпраця з командою розробників"
+    ],
+    "tasks_pl": [
+      "Testowanie manualne aplikacji webowych i mobilnych",
+      "Tworzenie dokumentacji testowej (test cases)",
+      "Współpraca z zespołem programistów"
+    ],
+    "tasks_en": [
+      "Manual testing of web and mobile applications",
+      "Creating test documentation (test cases)",
+      "Collaborating with the development team"
+    ],
+    "tasks_ru": [
+      "Мануальное тестирование веб и мобильных приложений",
+      "Создание тестовой документации (test cases)",
+      "Сотрудничество с командой разработчиков"
+    ],
+    "details_ua": [
+      "Досвід роботи в QA від 2 років",
+      "Англійська на рівні B2",
+      "Знання Postman, Jira, SQL"
+    ],
+    "details_pl": [
+      "Doświadczenie w QA min. 2 lata",
+      "Angielski na poziomie B2",
+      "Znajomość Postman, Jira, SQL"
+    ],
+    "details_en": [
+      "Minimum 2 years of QA experience",
+      "English at B2 level",
+      "Knowledge of Postman, Jira, SQL"
+    ],
+    "details_ru": [
+      "Опыт работы в QA от 2 лет",
+      "Английский на уровне B2",
+      "Знания Postman, Jira, SQL"
+    ],
+    "date_posted": "2026-04-07",
+    "data_source": "manual"
+  },
+  {
     "slug": "lublin-greenhouse-worker-1",
     "category": "agriculture",
     "city": "Люблін",
