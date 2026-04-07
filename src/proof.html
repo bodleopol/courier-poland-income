@@ -969,6 +969,13 @@
       return 'var(--proof-accent)';
     }
 
+    function getRowValue(row, keys) {
+      for (const key of keys) {
+        if (Object.prototype.hasOwnProperty.call(row, key)) return row[key];
+      }
+      return '';
+    }
+
     function fileCount(proofFiles) {
       if (!proofFiles || !String(proofFiles).trim()) return 0;
       return String(proofFiles)
@@ -1015,18 +1022,18 @@
           const mappedRow = {
             id: String(index),
             created_at: new Date().toISOString(), // Mocking date since it's not in the sheet currently, or could be extracted if added later
-            vacancy_url: row['Посилання на вакансію'] || '',
-            company: row['Компанія'] || '',
-            city: row['Місто'] || '',
-            proof_files: row['Докази'] || '',
-            salary_rating: Number(row['Зарплата (1-10)'] || 0),
-            housing_rating: Number(row['Житло (1-10)'] || 0),
-            attitude_rating: Number(row['Ставлення (1-10)'] || 0),
-            schedule_rating: Number(row['Графік (1-10)'] || 0),
-            payment_rating: Number(row['Виплати (1-10)'] || 0),
-            fraud_rating: Number(row['Надійність (1-10)'] || 0),
-            recommendation: Number(row['Рекомендація (1-10)'] || 0),
-            comment: row['Коментар'] || '',
+            vacancy_url: getRowValue(row, ['link', 'Link', 'vacancy_url', 'vacancy', 'Посилання на вакансію', 'Посилання']) || '',
+            company: getRowValue(row, ['company', 'Company', 'Компанія']) || '',
+            city: getRowValue(row, ['city', 'City', 'Місто']) || '',
+            proof_files: getRowValue(row, ['proofs', 'Proofs', 'proof_files', 'Proof files', 'Докази']) || '',
+            salary_rating: Number(getRowValue(row, ['salary', 'Salary', 'Зарплата', 'Зарплата (1-10)']) || 0),
+            housing_rating: Number(getRowValue(row, ['housing', 'Housing', 'Житло', 'Житло (1-10)']) || 0),
+            attitude_rating: Number(getRowValue(row, ['attitude', 'Attitude', 'Ставлення', 'Ставлення (1-10)']) || 0),
+            schedule_rating: Number(getRowValue(row, ['schedule', 'Schedule', 'Графік', 'Графік (1-10)']) || 0),
+            payment_rating: Number(getRowValue(row, ['payments', 'Payments', 'Виплати', 'Виплати (1-10)']) || 0),
+            fraud_rating: Number(getRowValue(row, ['reliability', 'Reliability', 'Надійність', 'Надійність (1-10)']) || 0),
+            recommendation: Number(getRowValue(row, ['recommend', 'Recommend', 'Рекомендація', 'Рекомендація (1-10)']) || 0),
+            comment: getRowValue(row, ['comment', 'Comment', 'Коментар']) || '',
             approved: true
           };
           return {
@@ -1331,9 +1338,6 @@
           await fetch(PROOF_SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
-            headers: {
-              'Content-Type': 'application/json'
-            },
             body: JSON.stringify(payload)
           });
 
