@@ -1131,7 +1131,7 @@
     if (!form) return;
 
     // Use the specific endpoint for the rent form as requested
-    const RENT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTumA94hc0uIu24ga9ZkQ8n1zOcWbYLFPXtiYe8IulPabzVCv6PMduZ8Axc2e6n9w/exec';
+    const RENT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxRfKEqTZEYfoAssL_0SuhgijULCRKwPlwqYQCn28mm_F1GR6KACFUAdhWXQWlI3Uwj/exec';
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -1161,14 +1161,21 @@
       }
 
       try {
-        const formData = new FormData();
-        // Fields mapped according to Google Sheet columns A1, B1, C1
-        formData.append('Ваше ім\'я', name);
-        formData.append('Телефон', phone);
-        formData.append('транспорт', vehicle);
+        const payload = {
+          name: name,
+          phone: phone,
+          transport: vehicle
+        };
 
         // Fetch requires no-cors for unauthenticated Google Apps Script web apps POSTs
-        await fetch(RENT_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formData });
+        await fetch(RENT_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
 
         if (status) {
           status.style.color = '#10b981';
