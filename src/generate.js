@@ -4914,7 +4914,9 @@ function estimateReadingTime(html) {
 }
 
 function extractImageUrl(html) {
-  const match = String(html || '').match(/src=["']([^"']+)["']/i);
+  const str = String(html || '');
+  if (str.startsWith('http')) return str;
+  const match = str.match(/src=["']([^"']+)["']/i);
   return match ? match[1] : '';
 }
 
