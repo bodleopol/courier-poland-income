@@ -18,19 +18,40 @@
   .legal-section h2 { color: #0f172a; margin-bottom: 1rem; }
   .legal-section p { color: #475569; line-height: 1.6; }
 
-  .rent-contact-section { background: #fff; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
-  .rent-contact-section h2 { text-align: center; margin-bottom: 2rem; color: #0f172a; }
-  .rent-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
+  .rent-contact-section { background: #fff; padding: 2rem 1.25rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
+  .rent-contact-section h2 { text-align: center; margin-bottom: 2rem; color: #0f172a; font-size: 1.75rem; }
+  .rent-form { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
   @media (min-width: 768px) {
+    .rent-contact-section { padding: 3rem; }
+    .rent-contact-section h2 { font-size: 2rem; }
     .rent-form { grid-template-columns: 1fr 1fr; }
     .form-group.full-width { grid-column: span 2; }
   }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
-  .form-group.full-width { grid-column: 1 / -1; }
-  .form-group label { font-weight: 600; color: #334155; }
-  .form-group input, .form-group select { padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; color: #0f172a; width: 100%; box-sizing: border-box; }
-  .form-group input:focus, .form-group select:focus { outline: none; border-color: #0f766e; ring: 2px solid #99f6e4; }
-  .submit-btn { background: #0f766e; color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; width: 100%; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-group label { font-weight: 600; color: #334155; font-size: 0.95rem; }
+  .form-group input, .form-group select {
+    padding: 0.875rem 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #0f172a;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .form-group select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.2em;
+    padding-right: 2.5rem;
+  }
+  .form-group input:focus, .form-group select:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2); }
+  .submit-btn { background: #0f766e; color: #fff; padding: 1rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; width: 100%; font-size: 1.05rem; }
   .submit-btn:hover { background: #115e59; }
 
   /* FAQ Accordion Styles */
