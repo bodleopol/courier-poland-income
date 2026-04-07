@@ -538,11 +538,18 @@
         ? `<p class="job-date">📅 ${lang === 'pl' ? 'Dodano' : (lang === 'ru' ? 'Добавлено' : 'Додано')} <span data-format-date="${job.date_posted}">${job.date_posted}</span></p>`
         : '';
 
+      const companyText = getLocalizedValue(job, 'company', lang) || job.company || '';
+      const shiftText = getLocalizedValue(job, 'shift', lang) || job.shift_ua || '';
+      const companyLine = companyText ? `<p class="job-company">🏢 ${companyText}</p>` : '';
+      const shiftLine = shiftText ? `<p class="job-shift">⏰ ${shiftText}</p>` : '';
+
       card.innerHTML = `
         ${categoryName ? `<span class="job-category">${categoryName}</span>` : ''}
         <h3>${getLocalizedValue(job, 'title', lang)}</h3>
         <p class="job-city">📍 ${getLocalizedValue(job, 'city', lang)}</p>
         ${job.salary ? `<p class="job-salary">💰 ${job.salary}</p>` : ''}
+        ${companyLine}
+        ${shiftLine}
         ${dateLine}
         ${proofLine}
         <p class="job-excerpt">${getLocalizedValue(job, 'excerpt', lang)}</p>
