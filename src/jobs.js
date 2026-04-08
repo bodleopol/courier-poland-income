@@ -361,6 +361,10 @@
   async function initVacanciesPage() {
     if (!document.getElementById('allJobs')) return;
 
+    let currentPage = 1;
+    const jobsPerPage = 20;
+    let currentFilteredJobs = [];
+
     const allJobsGrid = document.getElementById('allJobs');
     const categoryFilter = document.getElementById('categoryFilter');
     const cityFilter = document.getElementById('cityFilter');
@@ -394,6 +398,71 @@
     // Set filters from URL
     if (urlCategory && categoryFilter) categoryFilter.value = urlCategory;
     if (urlCity && cityFilter) cityFilter.value = urlCity;
+
+    function renderPagination(totalJobs) {
+      const paginationContainer = document.getElementById('pagination');
+      if (!paginationContainer) return;
+      paginationContainer.innerHTML = '';
+      const totalPages = Math.ceil(totalJobs / jobsPerPage);
+      if (totalPages <= 1) return;
+
+      const prevBtn = document.createElement('button');
+      prevBtn.textContent = '←';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderPaginatedJobs();
+        }
+      });
+      paginationContainer.appendChild(prevBtn);
+
+      for (let i = 1; i <= totalPages; i++) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 2 && i <= currentPage + 2)) {
+          const pageBtn = document.createElement('button');
+          pageBtn.textContent = i;
+          if (i === currentPage) pageBtn.classList.add('active');
+          pageBtn.addEventListener('click', () => {
+            currentPage = i;
+            renderPaginatedJobs();
+          });
+          paginationContainer.appendChild(pageBtn);
+        } else if (i === currentPage - 3 || i === currentPage + 3) {
+          const ellipsis = document.createElement('span');
+          ellipsis.textContent = '...';
+          ellipsis.style.padding = '0.5rem';
+          paginationContainer.appendChild(ellipsis);
+        }
+      }
+
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = '→';
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderPaginatedJobs();
+        }
+      });
+      paginationContainer.appendChild(nextBtn);
+    }
+
+    function renderPaginatedJobs() {
+      const startIdx = (currentPage - 1) * jobsPerPage;
+      const endIdx = startIdx + jobsPerPage;
+      const paginatedJobs = currentFilteredJobs.slice(startIdx, endIdx);
+      const onlyHighProof = !!(proof75Filter && proof75Filter.checked);
+
+      renderJobs(paginatedJobs, allJobsGrid, { onlyHighProof });
+      renderPagination(currentFilteredJobs.length);
+      if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
+
+      // Scroll to top of results
+      const resultsInfo = document.querySelector('.results-info');
+      if (resultsInfo && currentPage > 1) {
+        resultsInfo.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
 
     // Filter and render
     async function filterAndRender() {
@@ -455,16 +524,15 @@
         return true;
       });
 
-      filtered = shuffleArray(filtered);
+      currentFilteredJobs = shuffleArray(filtered);
 
       // Update results count
       if (resultsCount) {
-        resultsCount.textContent = filtered.length;
+        resultsCount.textContent = currentFilteredJobs.length;
       }
 
-      // Render jobs
-      renderJobs(filtered, allJobsGrid, { onlyHighProof });
-      if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
+      currentPage = 1;
+      renderPaginatedJobs();
     }
 
     // Event listeners

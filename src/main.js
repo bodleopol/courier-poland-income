@@ -322,6 +322,7 @@
     'city.bielsko': { ua: 'Бєльско-Бяла', pl: 'Bielsko-Biała', ru: 'Бельско-Бяла', en: 'Bielsko-Biała' },
     'city.plock': { ua: 'Плоцьк', pl: 'Płock', ru: 'Плоцк', en: 'Plotsk' },
     'city.gdynia': { ua: 'Гдиня', pl: 'Gdynia', ru: 'Гдыня', en: 'Gdynia' },
+    'city.opole': { ua: 'Ополе', pl: 'Opole', ru: 'Ополе', en: 'Opole' },
     'nav.employers': { ua: 'Для роботодавців', pl: 'Dla pracodawców', en: 'For Employers', ru: 'Для работодателей' },
     'emp.meta_title': { ua: 'Для роботодавців — Rybezh | Опублікуйте вакансію', pl: 'Dla pracodawców — Rybezh | Opublikuj ofertę', en: 'For Employers — Rybezh | Recruitment in Poland', ru: 'Для роботодавців — Rybezh | Опублікуйте вакансію' },
     'emp.meta_description': { ua: 'Розмістіть вакансію безкоштовно і знайдіть надійних українських працівників у Польщі. Без посередників, швидко та зручно.', pl: 'Opublikuj ofertę za darmo i znajdź rzetelnych ukraińskich pracowników w Polsce. Bez pośredników, szybko i wygodnie.', en: 'Looking for employees? Rybezh offers fast and high-quality staff recruitment for your business in Poland.', ru: 'Розмістіть вакансію безкоштовно і знайдіть надійних українських працівників у Польщі. Без посередників, швидко та зручно.' },

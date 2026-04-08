@@ -4434,7 +4434,8 @@ function generateIndexContent(links) {
     'Кельце': 'city.kielce',
     'Гливіце': 'city.gliwice',
     'Ольштин': 'city.olsztyn',
-    'Бєльско-Бяла': 'city.bielsko'
+    'Бєльско-Бяла': 'city.bielsko',
+    'Ополе': 'city.opole'
   };
 
   const cards = links.map(l => {
@@ -4649,6 +4650,7 @@ function generateIndexContent(links) {
         <option value="Радом" data-i18n="city.radom">Радом</option>
         <option value="Сосновець" data-i18n="city.sosnowiec">Сосновець</option>
         <option value="Бєльско-Бяла" data-i18n="city.bielsko">Бєльско-Бяла</option>
+        <option value="Ополе" data-i18n="city.opole">Ополе</option>
       </select>
       <button type="submit" class="search-button" data-i18n="search.button">Знайти</button>
     </form>
@@ -5067,7 +5069,8 @@ function cityToJobAddress(cityUa) {
     'Ольштин': { streetAddress: 'Centrum miasta', addressLocality: 'Olsztyn', addressRegion: 'Warmińsko-Mazurskie', postalCode: '10-001' },
     'Радом': { streetAddress: 'Centrum miasta', addressLocality: 'Radom', addressRegion: 'Mazowieckie', postalCode: '26-600' },
     'Сосновець': { streetAddress: 'Centrum miasta', addressLocality: 'Sosnowiec', addressRegion: 'Śląskie', postalCode: '41-200' },
-    'Бєльско-Бяла': { streetAddress: 'Centrum miasta', addressLocality: 'Bielsko-Biała', addressRegion: 'Śląskie', postalCode: '43-300' }
+    'Бєльско-Бяла': { streetAddress: 'Centrum miasta', addressLocality: 'Bielsko-Biała', addressRegion: 'Śląskie', postalCode: '43-300' },
+    'Ополе': { streetAddress: 'Centrum miasta', addressLocality: 'Opole', addressRegion: 'PL', postalCode: '00-000' }
   };
 
   return map[cityUa] || fallback;
