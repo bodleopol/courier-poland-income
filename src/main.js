@@ -112,6 +112,7 @@
     'bogdan.about_title': { ua: 'Про мене', pl: 'O mnie', ru: 'Обо мне', en: 'About Me' },
     'bogdan.mission_title': { ua: 'Моя місія в Rybezh', pl: 'Moja misja w Rybezh', ru: 'Моя миссия в Rybezh', en: 'My mission at Rybezh' },
     'bogdan.sidebar_role': { ua: 'Інвестор', pl: 'Inwestor', ru: 'Инвестор', en: 'Investor' },
+    'bogdan.short_bio': { ua: 'Інвестор платформи Rybezh. Обіймає посаду операційного директора в міжнародному логістичному центрі, застосовуючи свій досвід для стратегічного розвитку.', pl: 'Inwestor platformy Rybezh. Pełni funkcję dyrektora operacyjnego w międzynarodowym centrum logistycznym, wykorzystując swoje doświadczenie do strategicznego rozwoju.', ru: 'Инвестор платформы Rybezh. Занимает должность операционного директора в международном логистическом центре, применяя свой опыт для стратегического развития.', en: 'Investor of the Rybezh platform. Serves as Chief Operating Officer at an international logistics center, applying his expertise to strategic development.' },
     'bogdan.location_label': { ua: 'Локація', pl: 'Lokalizacja', ru: 'Локация', en: 'Location' },
     'bogdan.expertise_label': { ua: 'Експертиза', pl: 'Ekspertyza', ru: 'Экспертиза', en: 'Expertise' },
     'bogdan.expertise': { ua: 'Логістика, Інвестиції, Менеджмент', pl: 'Logistyka, Inwestycje, Zarządzanie', ru: 'Логистика, Инвестиции, Менеджмент', en: 'Logistics, Investments, Management' },
