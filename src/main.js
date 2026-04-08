@@ -1617,11 +1617,17 @@
     let hasOpened = false;
     let vaParams = [];
     let isFetching = false;
+    let userName = localStorage.getItem('va_username') || '';
+    let activeFlow = null;
 
     function addMessage(text, sender = 'bot') {
       const msg = document.createElement('div');
       msg.className = `va-msg va-msg--${sender}`;
-      msg.textContent = text;
+      if (sender === 'bot') {
+        msg.innerHTML = text.replace(/\n/g, '<br>');
+      } else {
+        msg.textContent = text;
+      }
       chat.appendChild(msg);
       chat.scrollTop = chat.scrollHeight;
     }
@@ -1655,7 +1661,15 @@
         // Replace loading message with actual greeting
         chat.lastChild.remove();
         let initialGreet = 'Привіт! Чим можу допомогти?';
-        if (vaParams.length > 0) {
+        if (userName) {
+          const names = {
+            'ua': `Привіт, ${userName}! Чим можу допомогти?`,
+            'pl': `Cześć, ${userName}! W czym mogę pomóc?`,
+            'ru': `Привет, ${userName}! Чем могу помочь?`,
+            'en': `Hello, ${userName}! How can I help you?`
+          };
+          initialGreet = names[lang] || names['ua'];
+        } else if (vaParams.length > 0) {
            initialGreet = vaParams[0][`r_${lang}`] || vaParams[0]['r_ua'];
         }
         addMessage(initialGreet, 'bot');
@@ -1690,6 +1704,64 @@
       const lang = getLang();
       const msgLower = userMsg.toLowerCase();
 
+      // 1. Extract Name
+      const nameMatch = userMsg.match(/(?:мене звати|my name is|меня зовут|nazywam się|jestem)\s+([a-zA-Zа-яА-ЯіІїЇєЄґҐ'ʼ]+(?:[- ]?[a-zA-Zа-яА-ЯіІїЇєЄґҐ'ʼ]+)*)/i);
+      if (nameMatch) {
+        let extractedName = nameMatch[1].trim();
+        if (extractedName.toLowerCase() === 'bogdan' || extractedName.toLowerCase() === 'bohdan') {
+           extractedName = 'Bohdan Tiutenko';
+        }
+        userName = extractedName;
+        localStorage.setItem('va_username', userName);
+        const nameReplies = {
+          'ua': `Приємно познайомитись, ${userName}! Чим я можу вам допомогти?`,
+          'pl': `Miło mi Cię poznać, ${userName}! W czym mogę pomóc?`,
+          'ru': `Приятно познакомиться, ${userName}! Чем могу помочь?`,
+          'en': `Nice to meet you, ${userName}! How can I help you?`
+        };
+        return nameReplies[lang] || nameReplies['ua'];
+      }
+
+      // 2. Main Menu Flow
+      if (activeFlow === 'main_menu') {
+        if (msgLower === '1') {
+          activeFlow = null;
+          return `<a href="/vacancies.html">${translations['nav.jobs'][lang] || 'Вакансії'}</a>`;
+        } else if (msgLower === '2') {
+          activeFlow = null;
+          return `<a href="/rent.html">${translations['nav.rent'][lang] || 'Оренда'}</a>`;
+        } else if (msgLower === '3') {
+          activeFlow = null;
+          return `<a href="/proof.html">Proof</a>`;
+        }
+      }
+
+      const menuKeywords = ['допомога', 'help', 'питання', 'pytania', 'вопрос', 'помощь'];
+      if (menuKeywords.some(kw => msgLower.includes(kw))) {
+        activeFlow = 'main_menu';
+        const menuReplies = {
+          'ua': 'Ось що я можу запропонувати:\n1. Вакансії\n2. Оренда\n3. Proof\nНапишіть номер, щоб перейти.',
+          'pl': 'Oto co mogę zaoferować:\n1. Oferty pracy\n2. Wynajem\n3. Proof\nWpisz numer, aby przejść.',
+          'ru': 'Вот что я могу предложить:\n1. Вакансии\n2. Аренда\n3. Proof\nНапишите номер, чтобы перейти.',
+          'en': 'Here is what I can offer:\n1. Vacancies\n2. Rent\n3. Proof\nType a number to proceed.'
+        };
+        return menuReplies[lang] || menuReplies['ua'];
+      }
+
+      // 3. Direct links
+      const directLinks = [
+        { keys: ['вакансії', 'вакансии', 'praca', 'oferty', 'jobs', 'vacancies'], url: '/vacancies.html', text: {ua: 'Вакансії', pl: 'Oferty pracy', ru: 'Вакансии', en: 'Vacancies'} },
+        { keys: ['калькулятор', 'kalkulator', 'calculator'], url: '/calculator.html', text: {ua: 'Калькулятор зарплати', pl: 'Kalkulator wynagrodzenia', ru: 'Калькулятор зарплаты', en: 'Salary Calculator'} },
+        { keys: ['блог', 'blog', 'статті', 'статьи'], url: '/blog.html', text: {ua: 'Блог', pl: 'Blog', ru: 'Блог', en: 'Blog'} },
+        { keys: ['оренда', 'wynajem', 'аренда', 'rent'], url: '/rent.html', text: {ua: 'Оренда транспорту', pl: 'Wynajem', ru: 'Аренда', en: 'Rent'} }
+      ];
+
+      for (const link of directLinks) {
+        if (link.keys.some(kw => msgLower.includes(kw))) {
+           return `<a href="${link.url}">${link.text[lang] || link.text['ua']}</a>`;
+        }
+      }
+
       for (const param of vaParams) {
         const keyPattern = param[`k_${lang}`] || '';
         if (!keyPattern) continue;
@@ -1707,8 +1779,17 @@
       }
 
       // Fallback response
+      let fallbackText = '';
       const fallbackObj = translations['va.default_reply'] || {};
-      return fallbackObj[lang] || fallbackObj['ua'] || 'Вибачте, я не зрозумів.';
+      fallbackText = fallbackObj[lang] || fallbackObj['ua'] || 'Вибачте, я не зрозумів. Спробуйте сформулювати інакше.';
+
+      if (userName) {
+         if (lang === 'ua') fallbackText = `Вибачте, ${userName}, я не зрозумів. Спробуйте сформулювати інакше.`;
+         else if (lang === 'pl') fallbackText = `Przepraszam, ${userName}, nie zrozumiałem. Spróbuj sformułować to inaczej.`;
+         else if (lang === 'ru') fallbackText = `Извините, ${userName}, я не понял. Попробуйте сформулировать иначе.`;
+         else if (lang === 'en') fallbackText = `Sorry, ${userName}, I didn't understand. Try rephrasing.`;
+      }
+      return fallbackText;
     }
   }
 
