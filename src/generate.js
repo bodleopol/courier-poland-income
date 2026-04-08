@@ -2955,12 +2955,12 @@ async function build() {
 
   // Copy Bogdan Tiutenko images
   try {
-    const moto1Content = await fs.readFile(path.join(SRC, 'bogdan-moto-1.png'));
-    await fs.writeFile(path.join(DIST, 'bogdan-moto-1.png'), moto1Content);
     const tiutenkoAvatar = await fs.readFile(path.join(SRC, 'bogdan-tiutenko.png'));
     await fs.writeFile(path.join(DIST, 'bogdan-tiutenko.png'), tiutenkoAvatar);
     const moto2Content = await fs.readFile(path.join(SRC, 'bogdan-moto-2.png'));
     await fs.writeFile(path.join(DIST, 'bogdan-moto-2.png'), moto2Content);
+    const dogContent = await fs.readFile(path.join(SRC, 'bogdan-dog.jpg'));
+    await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
   } catch (e) {
     console.warn('⚠️ Bogdan Tiutenko images not found');
   }

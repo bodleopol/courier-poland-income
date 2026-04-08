@@ -94,6 +94,8 @@
     'bogdan.location': { ua: 'Львів, Україна', pl: 'Lwów, Ukraina', ru: 'Львов, Украина', en: 'Lviv, Ukraine' },
     'bogdan.facebook': { ua: 'Facebook', pl: 'Facebook', ru: 'Facebook', en: 'Facebook' },
     'bogdan.gallery': { ua: 'Життя та захоплення', pl: 'Życie i pasje', ru: 'Жизнь и увлечения', en: 'Life and hobbies' },
+    'bogdan.gallery.moto': { ua: 'Мотоцикл — моя пристрасть', pl: 'Motocykle to moja pasja', ru: 'Мотоциклы — моя страсть', en: 'Motorcycles are my passion' },
+    'bogdan.gallery.dog': { ua: 'Разом з моїм вірним собакою', pl: 'Z moim wiernym psem', ru: 'Вместе с моей верной собакой', en: 'Together with my faithful dog' },
     'bogdan.back_to_team': { ua: 'Повернутись до команди', pl: 'Wróć do zespołu', ru: 'Вернуться к команде', en: 'Back to team' },
     'bogdan.about_title': { ua: 'Про мене', pl: 'O mnie', ru: 'Обо мне', en: 'About Me' },
     'bogdan.mission_title': { ua: 'Моя місія в Rybezh', pl: 'Moja misja w Rybezh', ru: 'Моя миссия в Rybezh', en: 'My mission at Rybezh' },
