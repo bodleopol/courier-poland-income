@@ -6,87 +6,87 @@
     "city_pl": "Kraków",
     "city_en": "Krakow",
     "city_ru": "Краков",
-    "title": "Frontend Розробник (React)",
-    "title_pl": "Frontend Developer (React)",
-    "title_en": "Frontend Developer (React)",
-    "title_ru": "Frontend Разработчик (React)",
-    "salary": "12000 - 18000 PLN B2B",
-    "company": "WebSoft Solutions",
-    "shift": "Гнучкий графік",
+    "title": "Фронтенд розробник",
+    "title_pl": "Programista Frontend",
+    "title_en": "Frontend Developer",
+    "title_ru": "Фронтенд разработчик",
+    "salary": "12000 - 18000 PLN",
+    "company": "TechSolutions",
+    "shift_ua": "Гнучкий графік",
     "shift_pl": "Elastyczny grafik",
     "shift_en": "Flexible schedule",
     "shift_ru": "Гибкий график",
-    "pattern": "5/2",
+    "pattern_ua": "5/2",
     "pattern_pl": "5/2",
     "pattern_en": "5/2",
     "pattern_ru": "5/2",
-    "start": "З наступного місяця",
-    "start_pl": "Od przyszłego miesiąca",
-    "start_en": "From next month",
-    "start_ru": "Со следующего месяца",
-    "contract": "B2B",
-    "contract_pl": "B2B",
-    "contract_en": "B2B",
-    "contract_ru": "B2B",
-    "offers": [
-      "Офіс в центрі Кракова",
-      "Медичне страхування",
-      "Курси англійської"
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "B2B / Umowa o pracę",
+    "contract_pl": "B2B / Umowa o pracę",
+    "contract_en": "B2B / Employment contract",
+    "contract_ru": "B2B / Umowa o pracę",
+    "accommodation_ua": "Не надається",
+    "accommodation_pl": "Nie zapewniamy",
+    "accommodation_en": "Not provided",
+    "accommodation_ru": "Не предоставляется",
+    "languages_ua": "Англійська (B2), Польська (вітається)",
+    "languages_pl": "Angielski (B2), Polski (mile widziany)",
+    "languages_en": "English (B2), Polish (nice to have)",
+    "languages_ru": "Английский (B2), Польский (приветствуется)",
+    "responsibilities_ua": [
+      "Розробка нових функцій на React",
+      "Оптимізація продуктивності додатків",
+      "Співпраця з командою дизайнерів"
     ],
-    "offers_pl": [
-      "Biuro w centrum Krakowa",
-      "Ubezpieczenie medyczne",
-      "Kursy angielskiego"
+    "responsibilities_pl": [
+      "Rozwój nowych funkcji w React",
+      "Optymalizacja wydajności aplikacji",
+      "Współpraca z zespołem projektowym"
     ],
-    "offers_en": [
-      "Office in central Krakow",
-      "Medical insurance",
-      "English courses"
+    "responsibilities_en": [
+      "Developing new features in React",
+      "Optimizing application performance",
+      "Collaborating with the design team"
     ],
-    "offers_ru": [
-      "Офис в центре Кракова",
-      "Медицинская страховка",
-      "Курсы английского"
+    "responsibilities_ru": [
+      "Разработка новых функций на React",
+      "Оптимизация производительности приложений",
+      "Сотрудничество с командой дизайнеров"
     ],
-    "tasks": [
-      "Розробка UI",
-      "Оптимізація",
-      "Написання тестів"
+    "requirements_ua": [
+      "Досвід роботи з React від 2 років",
+      "Глибокі знання JavaScript/TypeScript",
+      "Розуміння сучасних архітектурних патернів"
     ],
-    "tasks_pl": [
-      "Rozwój UI",
-      "Optymalizacja",
-      "Pisanie testów"
+    "requirements_pl": [
+      "Min. 2 lata doświadczenia z React",
+      "Głęboka znajomość JavaScript/TypeScript",
+      "Zrozumienie nowoczesnych wzorców architektonicznych"
     ],
-    "tasks_en": [
-      "UI Development",
-      "Optimization",
-      "Writing tests"
+    "requirements_en": [
+      "2+ years of experience with React",
+      "Deep knowledge of JavaScript/TypeScript",
+      "Understanding of modern architectural patterns"
     ],
-    "tasks_ru": [
-      "Разработка UI",
-      "Оптимизация",
-      "Написание тестов"
-    ],
-    "details": [
-      "Досвід 3+ роки",
-      "React, TypeScript"
-    ],
-    "details_pl": [
-      "Doświadczenie 3+ lat",
-      "React, TypeScript"
-    ],
-    "details_en": [
-      "3+ years experience",
-      "React, TypeScript"
-    ],
-    "details_ru": [
-      "Опыт 3+ года",
-      "React, TypeScript"
+    "requirements_ru": [
+      "Опыт работы с React от 2 лет",
+      "Глубокие знания JavaScript/TypeScript",
+      "Понимание современных архитектурных паттернов"
     ],
     "date_posted": "2026-04-08",
+    "is_generated": false,
     "data_source": "manual",
-    "is_generated": false
+    "seo_title": "Робота Фронтенд розробник Краків | Вакансія TechSolutions",
+    "seo_title_pl": "Praca Programista Frontend Kraków | Oferta TechSolutions",
+    "seo_title_en": "Job Frontend Developer Krakow | TechSolutions Vacancy",
+    "seo_title_ru": "Работа Фронтенд разработчик Краков | Вакансия TechSolutions",
+    "meta_description": "Шукаємо Фронтенд розробника у Кракові. Зарплата 12000 - 18000 PLN. Гнучкий графік, B2B або Umowa o pracę.",
+    "meta_description_pl": "Szukamy Programisty Frontend w Krakowie. Wynagrodzenie 12000 - 18000 PLN. Elastyczny grafik, B2B lub Umowa o pracę.",
+    "meta_description_en": "Looking for a Frontend Developer in Krakow. Salary 12000 - 18000 PLN. Flexible schedule, B2B or Employment contract.",
+    "meta_description_ru": "Ищем Фронтенд разработчика в Кракове. Зарплата 12000 - 18000 PLN. Гибкий график, B2B или Umowa o pracę."
   },
   {
     "slug": "gdansk-warehouse-worker-992",
@@ -96,86 +96,86 @@
     "city_en": "Gdansk",
     "city_ru": "Гданьск",
     "title": "Працівник складу",
-    "title_pl": "Pracownik magazynu",
+    "title_pl": "Pracownik Magazynowy",
     "title_en": "Warehouse Worker",
     "title_ru": "Работник склада",
-    "salary": "5000 - 6500 PLN Netto",
-    "company": "Baltic Logistics",
-    "shift": "Змінний графік",
-    "shift_pl": "Praca zmianowa",
-    "shift_en": "Shift work",
-    "shift_ru": "Сменный график",
-    "pattern": "3 зміни",
-    "pattern_pl": "3 zmiany",
-    "pattern_en": "3 shifts",
-    "pattern_ru": "3 смены",
-    "start": "Негайно",
-    "start_pl": "Od zaraz",
-    "start_en": "Immediately",
-    "start_ru": "Немедленно",
-    "contract": "Umowa zlecenia",
-    "contract_pl": "Umowa zlecenia",
+    "salary": "5000 - 6500 PLN",
+    "company": "LogisTech",
+    "shift_ua": "Позмінна (8-12 годин)",
+    "shift_pl": "Zmianowa (8-12 godzin)",
+    "shift_en": "Shift work (8-12 hours)",
+    "shift_ru": "Посменная (8-12 часов)",
+    "pattern_ua": "3/3 або 4/4",
+    "pattern_pl": "3/3 lub 4/4",
+    "pattern_en": "3/3 or 4/4",
+    "pattern_ru": "3/3 или 4/4",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "start_en": "Within a week",
+    "start_ru": "В течение недели",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
     "contract_en": "Mandate contract",
-    "contract_ru": "Договор поручения",
-    "offers": [
-      "Безкоштовний транспорт",
-      "Житло",
-      "Премії"
+    "contract_ru": "Umowa Zlecenie",
+    "accommodation_ua": "Надається (безкоштовно)",
+    "accommodation_pl": "Zapewnione (bezpłatne)",
+    "accommodation_en": "Provided (free)",
+    "accommodation_ru": "Предоставляется (бесплатно)",
+    "languages_ua": "Без знання мови",
+    "languages_pl": "Bez znajomości języka",
+    "languages_en": "No language requirements",
+    "languages_ru": "Без знания языка",
+    "responsibilities_ua": [
+      "Пакування та сортування товарів",
+      "Комплектування замовлень за накладними",
+      "Підтримка порядку на складі"
     ],
-    "offers_pl": [
-      "Darmowy transport",
-      "Zakwaterowanie",
-      "Premie"
+    "responsibilities_pl": [
+      "Pakowanie i sortowanie towarów",
+      "Kompletowanie zamówień wg specyfikacji",
+      "Utrzymanie porządku na magazynie"
     ],
-    "offers_en": [
-      "Free transport",
-      "Accommodation",
-      "Bonuses"
+    "responsibilities_en": [
+      "Packing and sorting goods",
+      "Fulfilling orders according to invoices",
+      "Maintaining order in the warehouse"
     ],
-    "offers_ru": [
-      "Бесплатный транспорт",
-      "Жилье",
-      "Премии"
+    "responsibilities_ru": [
+      "Упаковка и сортировка товаров",
+      "Комплектация заказов по накладным",
+      "Поддержание порядка на складе"
     ],
-    "tasks": [
-      "Комплектація замовлень",
-      "Пакування",
-      "Підтримка чистоти"
+    "requirements_ua": [
+      "Готовність до фізичної роботи",
+      "Відповідальність та пунктуальність",
+      "Досвід не обов'язковий (навчаємо)"
     ],
-    "tasks_pl": [
-      "Kompletowanie zamówień",
-      "Pakowanie",
-      "Utrzymanie czystości"
+    "requirements_pl": [
+      "Gotowość do pracy fizycznej",
+      "Odpowiedzialność i punktualność",
+      "Doświadczenie niewymagane (szkolimy)"
     ],
-    "tasks_en": [
-      "Order picking",
-      "Packaging",
-      "Maintaining cleanliness"
+    "requirements_en": [
+      "Readiness for physical work",
+      "Responsibility and punctuality",
+      "Experience not required (training provided)"
     ],
-    "tasks_ru": [
-      "Комплектация заказов",
-      "Упаковка",
-      "Поддержание чистоты"
-    ],
-    "details": [
-      "Без досвіду",
-      "Бажання працювати"
-    ],
-    "details_pl": [
-      "Bez doświadczenia",
-      "Chęć do pracy"
-    ],
-    "details_en": [
-      "No experience required",
-      "Willingness to work"
-    ],
-    "details_ru": [
-      "Без опыта",
-      "Желание работать"
+    "requirements_ru": [
+      "Готовность к физической работе",
+      "Ответственность и пунктуальность",
+      "Опыт не обязателен (обучаем)"
     ],
     "date_posted": "2026-04-08",
+    "is_generated": false,
     "data_source": "manual",
-    "is_generated": false
+    "seo_title": "Робота Працівник складу Гданськ | Вакансія LogisTech (Без мови)",
+    "seo_title_pl": "Praca Pracownik Magazynowy Gdańsk | Oferta LogisTech",
+    "seo_title_en": "Job Warehouse Worker Gdansk | LogisTech Vacancy",
+    "seo_title_ru": "Работа Работник склада Гданьск | Вакансия LogisTech (Без языка)",
+    "meta_description": "Робота на складі у Гданську для українців. ЗП 5000 - 6500 PLN, безкоштовне житло, можна без знання мови. Umowa Zlecenie.",
+    "meta_description_pl": "Praca na magazynie w Gdańsku. Wynagrodzenie 5000 - 6500 PLN, darmowe zakwaterowanie, bez znajomości języka. Umowa Zlecenie.",
+    "meta_description_en": "Warehouse job in Gdansk. Salary 5000 - 6500 PLN, free accommodation, no language required. Mandate contract.",
+    "meta_description_ru": "Работа на складе в Гданьске для украинцев. ЗП 5000 - 6500 PLN, бесплатное жилье, можно без знания языка. Umowa Zlecenie."
   },
   {
     "slug": "wroclaw-chef-assistant-993",
@@ -185,175 +185,175 @@
     "city_en": "Wroclaw",
     "city_ru": "Вроцлав",
     "title": "Помічник кухаря",
-    "title_pl": "Pomocnik kucharza",
+    "title_pl": "Pomoc Kuchenna",
     "title_en": "Chef Assistant",
     "title_ru": "Помощник повара",
-    "salary": "4500 - 5500 PLN Netto",
-    "company": "Gastro Master",
-    "shift": "Графік роботи ресторану",
-    "shift_pl": "Grafik restauracji",
-    "shift_en": "Restaurant schedule",
-    "shift_ru": "График работы ресторана",
-    "pattern": "2/2",
-    "pattern_pl": "2/2",
-    "pattern_en": "2/2",
-    "pattern_ru": "2/2",
-    "start": "Якнайшвидше",
-    "start_pl": "Jak najszybciej",
-    "start_en": "ASAP",
-    "start_ru": "Как можно скорее",
-    "contract": "Umowa o pracę",
+    "salary": "4800 - 5500 PLN",
+    "company": "Taste of Europe",
+    "shift_ua": "Денні та вечірні зміни",
+    "shift_pl": "Zmiany dzienne i wieczorne",
+    "shift_en": "Day and evening shifts",
+    "shift_ru": "Дневные и вечерние смены",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "Umowa o pracę",
     "contract_pl": "Umowa o pracę",
     "contract_en": "Employment contract",
-    "contract_ru": "Трудовой договор",
-    "offers": [
-      "Безкоштовне харчування",
-      "Уніформа",
-      "Чайові"
+    "contract_ru": "Umowa o pracę",
+    "accommodation_ua": "Допомога з пошуком",
+    "accommodation_pl": "Pomoc w znalezieniu",
+    "accommodation_en": "Assistance in finding",
+    "accommodation_ru": "Помощь с поиском",
+    "languages_ua": "Базова польська",
+    "languages_pl": "Podstawowy polski",
+    "languages_en": "Basic Polish",
+    "languages_ru": "Базовый польский",
+    "responsibilities_ua": [
+      "Підготовка інгредієнтів (нарізка, чистка)",
+      "Допомога шеф-кухарю у приготуванні страв",
+      "Миття посуду та підтримання чистоти на кухні"
     ],
-    "offers_pl": [
-      "Darmowe wyżywienie",
-      "Mundur",
-      "Napiwki"
+    "responsibilities_pl": [
+      "Przygotowanie składników (krojenie, obieranie)",
+      "Pomoc szefowi kuchni w przygotowaniu dań",
+      "Zmywanie naczyń i utrzymanie czystości"
     ],
-    "offers_en": [
-      "Free meals",
-      "Uniform",
-      "Tips"
+    "responsibilities_en": [
+      "Preparing ingredients (chopping, peeling)",
+      "Assisting the head chef with meal prep",
+      "Washing dishes and maintaining kitchen cleanliness"
     ],
-    "offers_ru": [
-      "Бесплатное питание",
-      "Униформа",
-      "Чаевые"
+    "responsibilities_ru": [
+      "Подготовка ингредиентов (нарезка, чистка)",
+      "Помощь шеф-повару в приготовлении блюд",
+      "Мытье посуды и поддержание чистоты на кухне"
     ],
-    "tasks": [
-      "Нарізка овочів",
-      "Допомога кухарю",
-      "Миття посуду"
+    "requirements_ua": [
+      "Санітарна книжка (або готовність зробити)",
+      "Швидкість у роботі",
+      "Бажання навчатися кулінарній справі"
     ],
-    "tasks_pl": [
-      "Krojenie warzyw",
-      "Pomoc kucharzowi",
-      "Zmywanie naczyń"
+    "requirements_pl": [
+      "Książeczka sanepidowska (lub gotowość do wyrobienia)",
+      "Szybkość w pracy",
+      "Chęć nauki gotowania"
     ],
-    "tasks_en": [
-      "Chopping vegetables",
-      "Assisting chef",
-      "Washing dishes"
+    "requirements_en": [
+      "Sanitary book (or willingness to obtain)",
+      "Speed in work",
+      "Desire to learn culinary skills"
     ],
-    "tasks_ru": [
-      "Нарезка овощей",
-      "Помощь повару",
-      "Мытье посуды"
-    ],
-    "details": [
-      "Санітарна книжка",
-      "Досвід бажаний"
-    ],
-    "details_pl": [
-      "Książeczka sanepidowska",
-      "Doświadczenie mile widziane"
-    ],
-    "details_en": [
-      "Sanitary book",
-      "Experience preferred"
-    ],
-    "details_ru": [
-      "Санитарная книжка",
-      "Опыт приветствуется"
+    "requirements_ru": [
+      "Санитарная книжка (или готовность сделать)",
+      "Скорость в работе",
+      "Желание обучаться кулинарному делу"
     ],
     "date_posted": "2026-04-08",
+    "is_generated": false,
     "data_source": "manual",
-    "is_generated": false
+    "seo_title": "Робота Помічник кухаря Вроцлав | Вакансія Taste of Europe",
+    "seo_title_pl": "Praca Pomoc Kuchenna Wrocław | Oferta Taste of Europe",
+    "seo_title_en": "Job Chef Assistant Wroclaw | Taste of Europe Vacancy",
+    "seo_title_ru": "Работа Помощник повара Вроцлав | Вакансия Taste of Europe",
+    "meta_description": "Робота помічником кухаря у Вроцлаві. Зарплата 4800 - 5500 PLN. Офіційне працевлаштування (Umowa o pracę), гнучкий графік.",
+    "meta_description_pl": "Praca jako pomoc kuchenna we Wrocławiu. Wynagrodzenie 4800 - 5500 PLN. Legalne zatrudnienie (Umowa o pracę), elastyczny grafik.",
+    "meta_description_en": "Chef assistant job in Wroclaw. Salary 4800 - 5500 PLN. Official employment (Employment contract), flexible schedule.",
+    "meta_description_ru": "Работа помощником повара во Вроцлаве. Зарплата 4800 - 5500 PLN. Официальное трудоустройство (Umowa o pracę), гибкий график."
   },
   {
     "slug": "poznan-cnc-operator-994",
-    "category": "production",
+    "category": "manufacturing",
     "city": "Познань",
     "city_pl": "Poznań",
     "city_en": "Poznan",
     "city_ru": "Познань",
-    "title": "Оператор ЧПК",
-    "title_pl": "Operator CNC",
+    "title": "Оператор ЧПК (CNC)",
+    "title_pl": "Operator Maszyn CNC",
     "title_en": "CNC Operator",
-    "title_ru": "Оператор ЧПУ",
-    "salary": "7000 - 9000 PLN Netto",
-    "company": "MetalWorks SP z o.o.",
-    "shift": "Повний день",
-    "shift_pl": "Pełny etat",
-    "shift_en": "Full time",
-    "shift_ru": "Полный день",
-    "pattern": "3 зміни",
-    "pattern_pl": "3 zmiany",
-    "pattern_en": "3 shifts",
-    "pattern_ru": "3 смены",
-    "start": "В межах 2 тижнів",
-    "start_pl": "W ciągu 2 tygodni",
-    "start_en": "Within 2 weeks",
-    "start_ru": "В течение 2 недель",
-    "contract": "Umowa o pracę",
+    "title_ru": "Оператор ЧПУ (CNC)",
+    "salary": "8000 - 11000 PLN",
+    "company": "MetalWorks Factory",
+    "shift_ua": "3 зміни (вкл. нічні)",
+    "shift_pl": "3 zmiany (w tym nocne)",
+    "shift_en": "3 shifts (incl. nights)",
+    "shift_ru": "3 смены (вкл. ночные)",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "start_en": "To be agreed",
+    "start_ru": "По договоренности",
+    "contract_ua": "Umowa o pracę",
     "contract_pl": "Umowa o pracę",
     "contract_en": "Employment contract",
-    "contract_ru": "Трудовой договор",
-    "offers": [
-      "Доплата за нічні",
-      "Навчання",
-      "Страхування"
+    "contract_ru": "Umowa o pracę",
+    "accommodation_ua": "Часткова компенсація",
+    "accommodation_pl": "Częściowa rekompensata",
+    "accommodation_en": "Partial compensation",
+    "accommodation_ru": "Частичная компенсация",
+    "languages_ua": "Комунікативна польська",
+    "languages_pl": "Komunikatywny polski",
+    "languages_en": "Communicative Polish",
+    "languages_ru": "Коммуникативный польский",
+    "responsibilities_ua": [
+      "Обслуговування фрезерних та токарних верстатів ЧПК",
+      "Контроль якості виготовлених деталей",
+      "Введення корекцій у програми"
     ],
-    "offers_pl": [
-      "Dodatek za nocki",
-      "Szkolenia",
-      "Ubezpieczenie"
+    "responsibilities_pl": [
+      "Obsługa frezarek i tokarek CNC",
+      "Kontrola jakości wykonanych detali",
+      "Wprowadzanie korekt do programów"
     ],
-    "offers_en": [
-      "Night shift allowance",
-      "Training",
-      "Insurance"
+    "responsibilities_en": [
+      "Operating CNC milling and turning machines",
+      "Quality control of manufactured parts",
+      "Making corrections to programs"
     ],
-    "offers_ru": [
-      "Доплата за ночные",
-      "Обучение",
-      "Страховка"
+    "responsibilities_ru": [
+      "Обслуживание фрезерных и токарных станков ЧПУ",
+      "Контроль качества изготовленных деталей",
+      "Внесение корректировок в программы"
     ],
-    "tasks": [
-      "Обслуговування станків",
-      "Контроль якості",
-      "Читання креслень"
+    "requirements_ua": [
+      "Досвід роботи оператором ЧПК від 1 року",
+      "Вміння читати технічне креслення",
+      "Знання систем Fanuc або Heidenhain"
     ],
-    "tasks_pl": [
-      "Obsługa maszyn",
-      "Kontrola jakości",
-      "Czytanie rysunków"
+    "requirements_pl": [
+      "Min. 1 rok doświadczenia jako operator CNC",
+      "Umiejętność czytania rysunku technicznego",
+      "Znajomość systemów Fanuc lub Heidenhain"
     ],
-    "tasks_en": [
-      "Machine operation",
-      "Quality control",
-      "Reading blueprints"
+    "requirements_en": [
+      "1+ years of experience as a CNC operator",
+      "Ability to read technical drawings",
+      "Knowledge of Fanuc or Heidenhain systems"
     ],
-    "tasks_ru": [
-      "Обслуживание станков",
-      "Контроль качества",
-      "Чтение чертежей"
-    ],
-    "details": [
-      "Досвід від 1 року",
-      "Знання Fanuc/Siemens"
-    ],
-    "details_pl": [
-      "Doświadczenie od 1 roku",
-      "Znajomość Fanuc/Siemens"
-    ],
-    "details_en": [
-      "1+ year experience",
-      "Knowledge of Fanuc/Siemens"
-    ],
-    "details_ru": [
-      "Опыт от 1 года",
-      "Знание Fanuc/Siemens"
+    "requirements_ru": [
+      "Опыт работы оператором ЧПУ от 1 года",
+      "Умение читать технические чертежи",
+      "Знание систем Fanuc или Heidenhain"
     ],
     "date_posted": "2026-04-08",
+    "is_generated": false,
     "data_source": "manual",
-    "is_generated": false
+    "seo_title": "Робота Оператор ЧПК Познань | Вакансія MetalWorks",
+    "seo_title_pl": "Praca Operator CNC Poznań | Oferta MetalWorks",
+    "seo_title_en": "Job CNC Operator Poznan | MetalWorks Vacancy",
+    "seo_title_ru": "Работа Оператор ЧПУ Познань | Вакансия MetalWorks",
+    "meta_description": "Високооплачувана робота для операторів ЧПК у Познані. ЗП 8000 - 11000 PLN. Офіційне працевлаштування, компенсація житла.",
+    "meta_description_pl": "Dobrze płatna praca dla operatorów CNC w Poznaniu. Wynagrodzenie 8000 - 11000 PLN. Legalne zatrudnienie, dopłata do zakwaterowania.",
+    "meta_description_en": "High-paying job for CNC operators in Poznan. Salary 8000 - 11000 PLN. Official employment, housing compensation.",
+    "meta_description_ru": "Высокооплачиваемая работа для операторов ЧПУ в Познани. ЗП 8000 - 11000 PLN. Официальное трудоустройство, компенсация жилья."
   },
   {
     "slug": "lodz-customer-support-995",
@@ -363,83 +363,453 @@
     "city_en": "Lodz",
     "city_ru": "Лодзь",
     "title": "Спеціаліст підтримки клієнтів",
-    "title_pl": "Specjalista ds. Obsługi Klienta",
+    "title_pl": "Specjalista ds. Wsparcia Klienta",
     "title_en": "Customer Support Specialist",
     "title_ru": "Специалист поддержки клиентов",
-    "salary": "6000 - 8000 PLN Brutto",
-    "company": "Global Connect",
-    "shift": "Офісні години",
-    "shift_pl": "Godziny biurowe",
-    "shift_en": "Office hours",
-    "shift_ru": "Офисные часы",
-    "pattern": "Пн-Пт 9-17",
-    "pattern_pl": "Pon-Pt 9-17",
-    "pattern_en": "Mon-Fri 9-17",
-    "pattern_ru": "Пн-Пт 9-17",
-    "start": "Вже",
-    "start_pl": "Już",
-    "start_en": "Now",
-    "start_ru": "Уже",
-    "contract": "Umowa o pracę",
+    "salary": "6000 - 8000 PLN",
+    "company": "Global Connect Support",
+    "shift_ua": "Гнучкий, можливий гібрид",
+    "shift_pl": "Elastyczny, możliwa hybryda",
+    "shift_en": "Flexible, hybrid possible",
+    "shift_ru": "Гибкий, возможен гибрид",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Вересень 2026",
+    "start_pl": "Wrzesień 2026",
+    "start_en": "September 2026",
+    "start_ru": "Сентябрь 2026",
+    "contract_ua": "Umowa o pracę",
     "contract_pl": "Umowa o pracę",
     "contract_en": "Employment contract",
+    "contract_ru": "Umowa o pracę",
+    "accommodation_ua": "Не надається",
+    "accommodation_pl": "Nie zapewniamy",
+    "accommodation_en": "Not provided",
+    "accommodation_ru": "Не предоставляется",
+    "languages_ua": "Українська (C1), Англійська (B2), Польська (B1)",
+    "languages_pl": "Ukraiński (C1), Angielski (B2), Polski (B1)",
+    "languages_en": "Ukrainian (C1), English (B2), Polish (B1)",
+    "languages_ru": "Украинский (C1), Английский (B2), Польский (B1)",
+    "responsibilities_ua": [
+      "Обслуговування вхідних запитів клієнтів (чат, email, телефон)",
+      "Вирішення технічних та організаційних питань",
+      "Ведення звітності в CRM-системі"
+    ],
+    "responsibilities_pl": [
+      "Obsługa zapytań przychodzących klientów (czat, email, telefon)",
+      "Rozwiązywanie problemów technicznych i organizacyjnych",
+      "Prowadzenie raportów w systemie CRM"
+    ],
+    "responsibilities_en": [
+      "Handling incoming customer requests (chat, email, phone)",
+      "Resolving technical and organizational issues",
+      "Maintaining reports in the CRM system"
+    ],
+    "responsibilities_ru": [
+      "Обслуживание входящих запросов клиентов (чат, email, телефон)",
+      "Решение технических и организационных вопросов",
+      "Ведение отчетности в CRM-системе"
+    ],
+    "requirements_ua": [
+      "Відмінні комунікативні навички",
+      "Досвід роботи в підтримці клієнтів (вітається)",
+      "Стресостійкість та емпатія"
+    ],
+    "requirements_pl": [
+      "Doskonałe umiejętności komunikacyjne",
+      "Doświadczenie w obsłudze klienta (mile widziane)",
+      "Odporność na stres i empatia"
+    ],
+    "requirements_en": [
+      "Excellent communication skills",
+      "Experience in customer support (nice to have)",
+      "Stress resistance and empathy"
+    ],
+    "requirements_ru": [
+      "Отличные коммуникативные навыки",
+      "Опыт работы в поддержке клиентов (приветствуется)",
+      "Стрессоустойчивость и эмпатия"
+    ],
+    "date_posted": "2026-04-08",
+    "is_generated": false,
+    "data_source": "manual",
+    "seo_title": "Робота Підтримка клієнтів Лодзь | Вакансія Global Connect",
+    "seo_title_pl": "Praca Wsparcie Klienta Łódź | Oferta Global Connect",
+    "seo_title_en": "Job Customer Support Lodz | Global Connect Vacancy",
+    "seo_title_ru": "Работа Поддержка клиентов Лодзь | Вакансия Global Connect",
+    "meta_description": "Робота в офісі у Лодзі. Спеціаліст підтримки клієнтів (укр/англ/пол). Зарплата 6000 - 8000 PLN. Офіційне працевлаштування.",
+    "meta_description_pl": "Praca biurowa w Łodzi. Specjalista ds. wsparcia klienta (ukr/ang/pol). Wynagrodzenie 6000 - 8000 PLN. Legalne zatrudnienie.",
+    "meta_description_en": "Office job in Lodz. Customer support specialist (ukr/eng/pol). Salary 6000 - 8000 PLN. Official employment.",
+    "meta_description_ru": "Работа в офисе в Лодзи. Специалист поддержки клиентов (укр/англ/пол). Зарплата 6000 - 8000 PLN. Официальное трудоустройство."
+  },
+  {
+    "slug": "krakow-eco-farm-manager-901",
+    "category": "agriculture",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "city_en": "Krakow",
+    "city_ru": "Краков",
+    "title": "Менеджер еко-ферми",
+    "title_pl": "Menedżer Eko-Farmy",
+    "title_en": "Eco-Farm Manager",
+    "title_ru": "Менеджер эко-фермы",
+    "salary": "6000 - 8000 PLN",
+    "company": "Green Harvest SP",
+    "shift_ua": "Ранкові зміни",
+    "shift_pl": "Poranne zmiany",
+    "shift_en": "Morning shifts",
+    "shift_ru": "Утренние смены",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
     "contract_ru": "Трудовой договор",
-    "offers": [
-      "Гібридна робота",
-      "Карти Multisport",
-      "Овочеві дні"
-    ],
-    "offers_pl": [
-      "Praca hybrydowa",
-      "Karty Multisport",
-      "Owocowe dni"
-    ],
-    "offers_en": [
-      "Hybrid work",
-      "Multisport cards",
-      "Fruit days"
-    ],
-    "offers_ru": [
-      "Гибридная работа",
-      "Карты Multisport",
-      "Фруктовые дни"
-    ],
-    "tasks": [
-      "Відповіді на імейли",
-      "Вирішення проблем",
-      "Консультації"
-    ],
-    "tasks_pl": [
-      "Odpowiadanie na maile",
-      "Rozwiązywanie problemów",
-      "Konsultacje"
-    ],
-    "tasks_en": [
-      "Email replies",
-      "Problem solving",
-      "Consultations"
-    ],
-    "tasks_ru": [
-      "Ответы на письма",
-      "Решение проблем",
-      "Консультации"
-    ],
-    "details": [
-      "Вільна польська та англійська",
-      "Комунікабельність"
-    ],
-    "details_pl": [
-      "Płynny polski i angielski",
-      "Komunikatywność"
-    ],
-    "details_en": [
-      "Fluent Polish and English",
-      "Communication skills"
-    ],
-    "details_ru": [
-      "Свободный польский и английский",
-      "Коммуникабельность"
-    ],
+    "description_ua": "Ми шукаємо досвідченого менеджера еко-ферми для нашого інноваційного проекту під Краковом. Ви будете відповідати за повний цикл вирощування органічних овочів, контроль якості продукції та управління невеликою командою працівників (до 10 осіб). Робота на свіжому повітрі з використанням найсучасніших агротехнологій. Ми пропонуємо стабільну оплату, проживання на території та можливості для кар'єрного зростання.",
+    "description_pl": "Poszukujemy doświadczonego menedżera eko-farmy do naszego innowacyjnego projektu pod Krakowem. Będziesz odpowiedzialny za pełny cykl uprawy warzyw ekologicznych, kontrolę jakości produktów oraz zarządzanie niewielkim zespołem pracowników (do 10 osób). Praca na świeżym powietrzu z wykorzystaniem najnowszych agrotechnologii. Oferujemy stabilne wynagrodzenie, zakwaterowanie na miejscu oraz możliwości rozwoju zawodowego.",
+    "description_en": "We are looking for an experienced eco-farm manager for our innovative project near Krakow. You will be responsible for the full cycle of growing organic vegetables, product quality control, and managing a small team of workers (up to 10 people). Work outdoors using the latest agricultural technologies. We offer stable pay, on-site accommodation, and opportunities for career growth.",
+    "description_ru": "Мы ищем опытного менеджера эко-фермы для нашего инновационного проекта под Краковом. Вы будете отвечать за полный цикл выращивания органических овощей, контроль качества продукции и управление небольшой командой работников (до 10 человек). Работа на свежем воздухе с использованием новейших агротехнологий. Мы предлагаем стабильную оплату, проживание на территории и возможности для карьерного роста.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "warsaw-senior-hair-stylist-902",
+    "category": "beauty",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_en": "Warsaw",
+    "city_ru": "Варшава",
+    "title": "Старший перукар-стиліст",
+    "title_pl": "Starszy Stylista Fryzur",
+    "title_en": "Senior Hair Stylist",
+    "title_ru": "Старший парикмахер-стилист",
+    "salary": "5000 - 9000 PLN",
+    "company": "Glamour Studio",
+    "shift_ua": "Змінний графік",
+    "shift_pl": "Grafik zmianowy",
+    "shift_en": "Shift schedule",
+    "shift_ru": "Сменный график",
+    "pattern_ua": "2/2",
+    "pattern_pl": "2/2",
+    "pattern_en": "2/2",
+    "pattern_ru": "2/2",
+    "start_ua": "Протягом 2 тижнів",
+    "start_pl": "W ciągu 2 tygodni",
+    "start_en": "Within 2 weeks",
+    "start_ru": "В течение 2 недель",
+    "contract_ua": "B2B або Umowa Zlecenie",
+    "contract_pl": "B2B lub Umowa Zlecenie",
+    "contract_en": "B2B or Mandate Contract",
+    "contract_ru": "B2B или Договор подряда",
+    "description_ua": "Запрошуємо талановитого та креативного старшого перукаря-стиліста до нашого преміального салону краси у центрі Варшави. Вашими основними обов'язками буде надання повного спектру перукарських послуг, включаючи складні техніки фарбування, стрижки та укладки. Від вас очікується високий рівень сервісу, здатність працювати з VIP-клієнтами та бажання постійно вдосконалювати свої навички. Ми пропонуємо відмінні умови праці та високий відсоток.",
+    "description_pl": "Zapraszamy utalentowanego i kreatywnego starszego stylistę fryzur do naszego luksusowego salonu piękności w centrum Warszawy. Twoimi głównymi obowiązkami będzie świadczenie pełnego zakresu usług fryzjerskich, w tym skomplikowanych technik koloryzacji, strzyżenia i układania włosów. Oczekujemy wysokiego poziomu obsługi, umiejętności pracy z klientami VIP oraz chęci ciągłego doskonalenia swoich umiejętności. Oferujemy doskonałe warunki pracy i wysoki procent.",
+    "description_en": "We invite a talented and creative senior hair stylist to our premium beauty salon in the center of Warsaw. Your main responsibilities will include providing a full range of hairdressing services, including complex coloring techniques, haircuts, and styling. You are expected to deliver a high level of service, have the ability to work with VIP clients, and a desire to constantly improve your skills. We offer excellent working conditions and a high percentage.",
+    "description_ru": "Приглашаем талантливого и креативного старшего парикмахера-стилиста в наш премиальный салон красоты в центре Варшавы. Вашими основными обязанностями будет предоставление полного спектра парикмахерских услуг, включая сложные техники окрашивания, стрижки и укладки. От вас ожидается высокий уровень сервиса, способность работать с VIP-клиентами и желание постоянно совершенствовать свои навыки. Мы предлагаем отличные условия труда и высокий процент.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "poznan-industrial-cleaner-903",
+    "category": "cleaning",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "city_en": "Poznan",
+    "city_ru": "Познань",
+    "title": "Спеціаліст з промислового прибирання",
+    "title_pl": "Specjalista ds. Sprzątania Przemysłowego",
+    "title_en": "Industrial Cleaning Specialist",
+    "title_ru": "Специалист по промышленной уборке",
+    "salary": "4500 - 6000 PLN",
+    "company": "CleanPro Industrial",
+    "shift_ua": "Нічні та денні зміни",
+    "shift_pl": "Zmiany nocne i dzienne",
+    "shift_en": "Night and day shifts",
+    "shift_ru": "Ночные и дневные смены",
+    "pattern_ua": "Гнучкий",
+    "pattern_pl": "Elastyczny",
+    "pattern_en": "Flexible",
+    "pattern_ru": "Гибкий",
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "description_ua": "Шукаємо відповідального спеціаліста з промислового прибирання для роботи на великих виробничих об'єктах у Познані. Робота передбачає використання спеціалізованого обладнання та професійних хімічних засобів для очищення складських приміщень, виробничих ліній та цехів. Досвід роботи вітається, але ми також проводимо повне навчання. Забезпечуємо робочим одягом, медичним страхуванням та стабільною виплатою заробітної плати без затримок.",
+    "description_pl": "Poszukujemy odpowiedzialnego specjalisty ds. sprzątania przemysłowego do pracy w dużych obiektach produkcyjnych w Poznaniu. Praca polega na wykorzystaniu specjalistycznego sprzętu i profesjonalnych środków chemicznych do czyszczenia magazynów, linii produkcyjnych i hal. Doświadczenie jest mile widziane, ale zapewniamy również pełne szkolenie. Zapewniamy odzież roboczą, ubezpieczenie medyczne oraz stabilne wypłaty wynagrodzenia bez opóźnień.",
+    "description_en": "We are looking for a responsible industrial cleaning specialist to work at large production facilities in Poznan. The job involves using specialized equipment and professional chemicals to clean warehouses, production lines, and halls. Experience is welcome, but we also provide full training. We provide work clothes, medical insurance, and stable salary payments without delays.",
+    "description_ru": "Ищем ответственного специалиста по промышленной уборке для работы на крупных производственных объектах в Познани. Работа предполагает использование специализированного оборудования и профессиональных химических средств для очистки складских помещений, производственных линий и цехов. Опыт работы приветствуется, но мы также проводим полное обучение. Обеспечиваем рабочей одеждой, медицинским страхованием и стабильной выплатой заработной платы без задержек.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "gdansk-site-supervisor-904",
+    "category": "construction",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "city_en": "Gdansk",
+    "city_ru": "Гданьск",
+    "title": "Керівник будівельного майданчика",
+    "title_pl": "Kierownik Budowy",
+    "title_en": "Site Supervisor",
+    "title_ru": "Руководитель строительной площадки",
+    "salary": "9000 - 13000 PLN",
+    "company": "Baltic Build Group",
+    "shift_ua": "Повний день",
+    "shift_pl": "Pełny etat",
+    "shift_en": "Full time",
+    "shift_ru": "Полный день",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "З наступного місяця",
+    "start_pl": "Od przyszłego miesiąca",
+    "start_en": "From next month",
+    "start_ru": "Со следующего месяца",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "contract_en": "B2B",
+    "contract_ru": "B2B",
+    "description_ua": "Компанія Baltic Build Group запрошує на роботу досвідченого керівника будівельного майданчика для ведення нових житлових проектів у Гданську. Вашими обов'язками буде координація всіх будівельних робіт, контроль за дотриманням термінів та бюджету, забезпечення правил техніки безпеки на об'єкті та комунікація з субпідрядниками. Необхідна вища інженерно-будівельна освіта та наявність будівельних ліцензій. Пропонуємо службовий автомобіль.",
+    "description_pl": "Firma Baltic Build Group zaprasza do pracy doświadczonego kierownika budowy do prowadzenia nowych projektów mieszkaniowych w Gdańsku. Twoimi obowiązkami będzie koordynacja wszystkich prac budowlanych, kontrola dotrzymywania terminów i budżetu, zapewnienie przestrzegania zasad BHP na obiekcie oraz komunikacja z podwykonawcami. Wymagane jest wyższe wykształcenie inżynieryjno-budowlane oraz posiadanie uprawnień budowlanych. Oferujemy samochód służbowy.",
+    "description_en": "Baltic Build Group is inviting an experienced site supervisor to lead new residential projects in Gdansk. Your responsibilities will include coordinating all construction work, controlling deadlines and budget, ensuring health and safety regulations on site, and communicating with subcontractors. A higher degree in civil engineering and construction licenses are required. We offer a company car.",
+    "description_ru": "Компания Baltic Build Group приглашает на работу опытного руководителя строительной площадки для ведения новых жилых проектов в Гданьске. Вашими обязанностями будет координация всех строительных работ, контроль за соблюдением сроков и бюджета, обеспечение правил техники безопасности на объекте и коммуникация с субподрядчиками. Необходимо высшее инженерно-строительное образование и наличие строительных лицензий. Предлагаем служебный автомобиль.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "wroclaw-english-teacher-905",
+    "category": "education",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "city_en": "Wroclaw",
+    "city_ru": "Вроцлав",
+    "title": "Викладач англійської мови",
+    "title_pl": "Nauczyciel Języka Angielskiego",
+    "title_en": "English Language Teacher",
+    "title_ru": "Преподаватель английского языка",
+    "salary": "5000 - 7500 PLN",
+    "company": "LinguaFuture",
+    "shift_ua": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "shift_en": "Flexible schedule",
+    "shift_ru": "Гибкий график",
+    "pattern_ua": "Часткова зайнятість",
+    "pattern_pl": "Część etatu",
+    "pattern_en": "Part-time",
+    "pattern_ru": "Частичная занятость",
+    "start_ua": "Вересень",
+    "start_pl": "Wrzesień",
+    "start_en": "September",
+    "start_ru": "Сентябрь",
+    "contract_ua": "Umowa Zlecenie",
+    "contract_pl": "Umowa Zlecenie",
+    "contract_en": "Mandate Contract",
+    "contract_ru": "Договор подряда",
+    "description_ua": "Школа іноземних мов LinguaFuture у Вроцлаві шукає енергійного та креативного викладача англійської мови для роботи з дорослими та підлітками. Ви будете проводити групові та індивідуальні заняття, розробляти навчальні матеріали та адаптувати програму під потреби студентів. Обов'язкове володіння англійською на рівні C1/C2 та наявність сертифікатів (CELTA/TEFL). Ми пропонуємо гнучкий графік, конкурентну оплату та дружній колектив.",
+    "description_pl": "Szkoła języków obcych LinguaFuture we Wrocławiu poszukuje energicznego i kreatywnego nauczyciela języka angielskiego do pracy z dorosłymi i młodzieżą. Będziesz prowadzić zajęcia grupowe i indywidualne, opracowywać materiały dydaktyczne i dostosowywać program do potrzeb uczniów. Wymagana jest znajomość języka angielskiego na poziomie C1/C2 oraz posiadanie certyfikatów (CELTA/TEFL). Oferujemy elastyczny grafik, konkurencyjne wynagrodzenie i przyjazny zespół.",
+    "description_en": "The LinguaFuture language school in Wroclaw is looking for an energetic and creative English language teacher to work with adults and teenagers. You will conduct group and individual classes, develop educational materials, and adapt the program to the needs of students. English proficiency at the C1/C2 level and certificates (CELTA/TEFL) are mandatory. We offer a flexible schedule, competitive pay, and a friendly team.",
+    "description_ru": "Школа иностранных языков LinguaFuture во Вроцлаве ищет энергичного и креативного преподавателя английского языка для работы со взрослыми и подростками. Вы будете проводить групповые и индивидуальные занятия, разрабатывать учебные материалы и адаптировать программу под потребности студентов. Обязательно владение английским на уровне C1/C2 и наличие сертификатов (CELTA/TEFL). Мы предлагаем гибкий график, конкурентную оплату и дружный коллектив.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "katowice-head-chef-906",
+    "category": "gastronomy",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "city_en": "Katowice",
+    "city_ru": "Катовице",
+    "title": "Шеф-кухар",
+    "title_pl": "Szef Kuchni",
+    "title_en": "Head Chef",
+    "title_ru": "Шеф-повар",
+    "salary": "8000 - 12000 PLN",
+    "company": "Silesia Taste",
+    "shift_ua": "Змінний графік",
+    "shift_pl": "Grafik zmianowy",
+    "shift_en": "Shift schedule",
+    "shift_ru": "Сменный график",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "description_ua": "Ресторан сучасної європейської кухні Silesia Taste у центрі Катовіце шукає талановитого Шеф-кухаря. Вашими завданнями буде розробка нового сезонного меню, управління командою кухарів, контроль закупівель та якості продуктів, а також дотримання санітарних норм (HACCP). Вимагаємо досвід роботи на аналогічній посаді від 3 років та креативний підхід до кулінарії. Ми гарантуємо високу зарплату та бонуси від прибутку ресторану.",
+    "description_pl": "Restauracja nowoczesnej kuchni europejskiej Silesia Taste w centrum Katowic poszukuje utalentowanego Szefa Kuchni. Twoimi zadaniami będzie opracowanie nowego menu sezonowego, zarządzanie zespołem kucharzy, kontrola zakupów i jakości produktów, a także przestrzeganie norm sanitarnych (HACCP). Wymagamy doświadczenia na podobnym stanowisku od 3 lat i kreatywnego podejścia do kulinariów. Gwarantujemy wysokie wynagrodzenie i premie od zysków restauracji.",
+    "description_en": "The modern European cuisine restaurant Silesia Taste in the center of Katowice is looking for a talented Head Chef. Your tasks will include developing a new seasonal menu, managing a team of chefs, controlling purchases and product quality, and complying with sanitary standards (HACCP). We require experience in a similar position for at least 3 years and a creative approach to cooking. We guarantee a high salary and bonuses from the restaurant's profit.",
+    "description_ru": "Ресторан современной европейской кухни Silesia Taste в центре Катовице ищет талантливого Шеф-повара. Вашими задачами будет разработка нового сезонного меню, управление командой поваров, контроль закупок и качества продуктов, а также соблюдение санитарных норм (HACCP). Требуем опыт работы на аналогичной должности от 3 лет и креативный подход к кулинарии. Мы гарантируем высокую зарплату и бонусы от прибыли ресторана.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "lublin-registered-nurse-907",
+    "category": "healthcare",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "city_en": "Lublin",
+    "city_ru": "Люблин",
+    "title": "Медична сестра / Медбрат",
+    "title_pl": "Pielęgniarka / Pielęgniarz",
+    "title_en": "Registered Nurse",
+    "title_ru": "Медицинская сестра / Медбрат",
+    "salary": "6000 - 8500 PLN",
+    "company": "Zdrowie Clinic",
+    "shift_ua": "12-годинні зміни",
+    "shift_pl": "Zmiany 12-godzinne",
+    "shift_en": "12-hour shifts",
+    "shift_ru": "12-часовые смены",
+    "pattern_ua": "2/2",
+    "pattern_pl": "2/2",
+    "pattern_en": "2/2",
+    "pattern_ru": "2/2",
+    "start_ua": "Протягом місяця",
+    "start_pl": "W ciągu miesiąca",
+    "start_en": "Within a month",
+    "start_ru": "В течение месяца",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "description_ua": "Приватна клініка Zdrowie Clinic у Любліні запрошує на роботу кваліфікованих медичних сестер та медбратів. Ваші обов'язки будуть включати догляд за пацієнтами, виконання лікарських призначень, проведення ін'єкцій та крапельниць, ведення медичної документації. Вимагається наявність діючого права на виконання професії (PWZ) та емпатія до пацієнтів. Ми пропонуємо комфортні умови праці, сучасне обладнання та можливості підвищення кваліфікації.",
+    "description_pl": "Prywatna klinika Zdrowie Clinic w Lublinie zaprasza do pracy wykwalifikowane pielęgniarki i pielęgniarzy. Twoje obowiązki będą obejmować opiekę nad pacjentami, wykonywanie zleceń lekarskich, robienie zastrzyków i kroplówek oraz prowadzenie dokumentacji medycznej. Wymagane jest posiadanie ważnego Prawa Wykonywania Zawodu (PWZ) i empatia do pacjentów. Oferujemy komfortowe warunki pracy, nowoczesny sprzęt i możliwości podnoszenia kwalifikacji.",
+    "description_en": "The private clinic Zdrowie Clinic in Lublin invites qualified nurses to work. Your duties will include patient care, fulfilling doctor's prescriptions, administering injections and IVs, and maintaining medical records. A valid Right to Practice (PWZ) and empathy towards patients are required. We offer comfortable working conditions, modern equipment, and opportunities for professional development.",
+    "description_ru": "Частная клиника Zdrowie Clinic в Люблине приглашает на работу квалифицированных медицинских сестер и медбратьев. Ваши обязанности будут включать уход за пациентами, выполнение врачебных назначений, проведение инъекций и капельниц, ведение медицинской документации. Требуется наличие действующего права на выполнение профессии (PWZ) и эмпатия к пациентам. Мы предлагаем комфортные условия труда, современное оборудование и возможности повышения квалификации.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "warsaw-devops-engineer-908",
+    "category": "it",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_en": "Warsaw",
+    "city_ru": "Варшава",
+    "title": "DevOps Інженер",
+    "title_pl": "Inżynier DevOps",
+    "title_en": "DevOps Engineer",
+    "title_ru": "DevOps Инженер",
+    "salary": "18000 - 25000 PLN",
+    "company": "CloudTech Solutions",
+    "shift_ua": "Гнучкий",
+    "shift_pl": "Elastyczny",
+    "shift_en": "Flexible",
+    "shift_ru": "Гибкий",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Протягом 2 місяців",
+    "start_pl": "W ciągu 2 miesięcy",
+    "start_en": "Within 2 months",
+    "start_ru": "В течение 2 месяцев",
+    "contract_ua": "B2B",
+    "contract_pl": "B2B",
+    "contract_en": "B2B",
+    "contract_ru": "B2B",
+    "description_ua": "Шукаємо Middle/Senior DevOps інженера для роботи над хмарною інфраструктурою наших міжнародних клієнтів. Основний стек: AWS, Kubernetes, Terraform, CI/CD (GitLab, Jenkins). Ви будете проектувати та розгортати стійкі до навантажень архітектури, автоматизувати процеси деплою та моніторингу (Prometheus, Grafana). Можлива повністю віддалена робота або з нашого офісу у Варшаві. Надаємо бюджет на сертифікацію та корпоративне навчання.",
+    "description_pl": "Poszukujemy inżyniera DevOps (Middle/Senior) do pracy nad infrastrukturą chmurową naszych międzynarodowych klientów. Główny stos technologiczny: AWS, Kubernetes, Terraform, CI/CD (GitLab, Jenkins). Będziesz projektować i wdrażać odporne na obciążenia architektury, automatyzować procesy wdrożeń i monitorowania (Prometheus, Grafana). Możliwa praca całkowicie zdalna lub z naszego biura w Warszawie. Zapewniamy budżet na certyfikację i szkolenia firmowe.",
+    "description_en": "We are looking for a Middle/Senior DevOps engineer to work on the cloud infrastructure of our international clients. Main stack: AWS, Kubernetes, Terraform, CI/CD (GitLab, Jenkins). You will design and deploy load-resistant architectures, automate deployment and monitoring processes (Prometheus, Grafana). Fully remote work or from our Warsaw office is possible. We provide a budget for certification and corporate training.",
+    "description_ru": "Ищем Middle/Senior DevOps инженера для работы над облачной инфраструктурой наших международных клиентов. Основной стек: AWS, Kubernetes, Terraform, CI/CD (GitLab, Jenkins). Вы будете проектировать и развертывать устойчивые к нагрузкам архитектуры, автоматизировать процессы деплоя и мониторинга (Prometheus, Grafana). Возможна полностью удаленная работа или из нашего офиса в Варшаве. Предоставляем бюджет на сертификацию и корпоративное обучение.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "lodz-warehouse-manager-909",
+    "category": "logistics",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "city_en": "Lodz",
+    "city_ru": "Лодзь",
+    "title": "Керівник зміни складу",
+    "title_pl": "Kierownik Zmiany Magazynu",
+    "title_en": "Warehouse Shift Manager",
+    "title_ru": "Руководитель смены склада",
+    "salary": "7000 - 9500 PLN",
+    "company": "FastLogistics",
+    "shift_ua": "Позмінно (вкл. нічні)",
+    "shift_pl": "Zmianowo (w tym nocne)",
+    "shift_en": "Shift work (incl. nights)",
+    "shift_ru": "Посменно (вкл. ночные)",
+    "pattern_ua": "4/4",
+    "pattern_pl": "4/4",
+    "pattern_en": "4/4",
+    "pattern_ru": "4/4",
+    "start_ua": "Негайно",
+    "start_pl": "Natychmiast",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "description_ua": "Сучасний логістичний центр FastLogistics у Лодзі шукає досвідченого керівника зміни складу. Ви будете відповідати за організацію роботи зміни (до 50 працівників), контроль прийому та відвантаження товарів, дотримання показників KPI та правил безпеки праці. Робота в системі WMS. Очікуємо досвід управління людьми в логістиці та високі організаційні навички. Ми пропонуємо стабільну роботу, премії за результатами та соціальний пакет.",
+    "description_pl": "Nowoczesne centrum logistyczne FastLogistics w Łodzi poszukuje doświadczonego kierownika zmiany magazynu. Będziesz odpowiadać za organizację pracy zmiany (do 50 pracowników), kontrolę przyjęć i wydań towarów, realizację wskaźników KPI oraz przestrzeganie zasad BHP. Praca w systemie WMS. Oczekujemy doświadczenia w zarządzaniu ludźmi w logistyce i wysokich umiejętności organizacyjnych. Oferujemy stabilną pracę, premie wynikowe i pakiet socjalny.",
+    "description_en": "The modern logistics center FastLogistics in Lodz is looking for an experienced warehouse shift manager. You will be responsible for organizing the work of the shift (up to 50 employees), controlling the receipt and shipment of goods, meeting KPI indicators, and complying with occupational safety rules. Work in the WMS system. We expect experience in managing people in logistics and high organizational skills. We offer stable work, performance bonuses, and a social package.",
+    "description_ru": "Современный логистический центр FastLogistics в Лодзи ищет опытного руководителя смены склада. Вы будете отвечать за организацию работы смены (до 50 работников), контроль приема и отгрузки товаров, соблюдение показателей KPI и правил безопасности труда. Работа в системе WMS. Ожидаем опыт управления людьми в логистике и высокие организационные навыки. Мы предлагаем стабильную работу, премии по результатам и социальный пакет.",
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "szczecin-store-manager-910",
+    "category": "retail",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "city_en": "Szczecin",
+    "city_ru": "Щецин",
+    "title": "Менеджер магазину",
+    "title_pl": "Kierownik Sklepu",
+    "title_en": "Store Manager",
+    "title_ru": "Менеджер магазина",
+    "salary": "6500 - 8500 PLN",
+    "company": "Urban Fashion Outlet",
+    "shift_ua": "Повний день",
+    "shift_pl": "Pełny etat",
+    "shift_en": "Full time",
+    "shift_ru": "Полный день",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Наступного місяця",
+    "start_pl": "W przyszłym miesiącu",
+    "start_en": "Next month",
+    "start_ru": "В следующем месяце",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "description_ua": "Мережа магазинів одягу Urban Fashion Outlet шукає амбітного Менеджера магазину у місті Щецин. Вашими завданнями буде управління всіма процесами магазину: досягнення планів продажів, візуальний мерчандайзинг, підбір, навчання та мотивація персоналу, а також контроль за залишками товару та проведення інвентаризацій. Потрібен досвід у рітейлі на керівній посаді. Ми пропонуємо привабливу бонусну систему, знижки на продукцію та навчання.",
+    "description_pl": "Sieć sklepów odzieżowych Urban Fashion Outlet poszukuje ambitnego Kierownika Sklepu w Szczecinie. Twoimi zadaniami będzie zarządzanie wszystkimi procesami sklepu: realizacja planów sprzedażowych, visual merchandising, rekrutacja, szkolenie i motywowanie personelu, a także kontrola stanów magazynowych i przeprowadzanie inwentaryzacji. Wymagane jest doświadczenie w handlu detalicznym na stanowisku kierowniczym. Oferujemy atrakcyjny system premiowy, zniżki na produkty i szkolenia.",
+    "description_en": "The Urban Fashion Outlet clothing store chain is looking for an ambitious Store Manager in Szczecin. Your tasks will include managing all store processes: achieving sales plans, visual merchandising, recruiting, training, and motivating staff, as well as controlling stock balances and conducting inventories. Experience in retail in a managerial position is required. We offer an attractive bonus system, discounts on products, and training.",
+    "description_ru": "Сеть магазинов одежды Urban Fashion Outlet ищет амбициозного Менеджера магазина в городе Щецин. Вашими задачами будет управление всеми процессами магазина: выполнение планов продаж, визуальный мерчандайзинг, подбор, обучение и мотивация персонала, а также контроль за остатками товара и проведение инвентаризаций. Требуется опыт в ритейле на руководящей должности. Мы предлагаем привлекательную бонусную систему, скидки на продукцию и обучение.",
     "date_posted": "2026-04-08",
     "data_source": "manual",
     "is_generated": false

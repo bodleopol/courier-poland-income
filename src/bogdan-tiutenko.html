@@ -153,7 +153,10 @@
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    aspect-ratio: 4/3;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
   }
 
   .gallery-item:hover {
@@ -162,9 +165,17 @@
 
   .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
+  }
+
+  .gallery-item figcaption {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    font-style: italic;
+    border-top: 1px solid var(--border-color);
   }
 
   .back-btn-container {
@@ -182,7 +193,7 @@
     </div>
 
     <h1 class="profile-name" data-i18n="bogdan.title">Богдан Тютенко</h1>
-    <div class="profile-role" data-i18n="bogdan.sidebar_role">Інвестор та Операційний Директор</div>
+    <div class="profile-role" data-i18n="bogdan.sidebar_role">Інвестор</div>
 
     <div class="profile-details">
       <div class="detail-item">
@@ -217,26 +228,28 @@
     <section>
       <h2 class="section-title" data-i18n="bogdan.about_title">Про мене</h2>
       <div class="content-text">
-        <p data-i18n="bogdan.intro">Я українець, проживаю у прекрасному місті Львів. Наразі я інвестую у нові платформи, а також працюю операційним директором в міжнародній логістичній компанії. Мій шлях у бізнесі та інвестиціях навчив мене головному: найцінніший актив будь-якого проекту — це люди. Саме тому я приєднався до команди Rybezh як Інвестор та Директор.</p>
+        <p data-i18n="bogdan.intro">Я українець, проживаю у прекрасному місті Львів. Мій шлях у бізнесі та інвестиціях навчив мене головному: найцінніший актив будь-якого проекту — це люди. Саме тому я приєднався до команди Rybezh як Інвестор.</p>
       </div>
     </section>
 
     <section>
       <h2 class="section-title" data-i18n="bogdan.mission_title">Моя місія в Rybezh</h2>
       <div class="content-text">
-        <p data-i18n="bogdan.mission">Наша платформа створена для того, щоб зробити пошук роботи в Польщі прозорим, безпечним та максимально комфортним для кожного українця. Ми постійно вдосконалюємось, впроваджуємо нові технології та розширюємо можливості. Як Голова та радник, я відповідаю за стратегічний розвиток та нові партнерства.</p>
+        <p data-i18n="bogdan.mission">Наша платформа створена для того, щоб зробити пошук роботи в Польщі прозорим, безпечним та максимально комфортним для кожного українця. Ми постійно вдосконалюємось, впроваджуємо нові технології та розширюємо можливості.</p>
       </div>
     </section>
 
     <section>
       <h2 class="section-title" data-i18n="bogdan.gallery">Життя та захоплення</h2>
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="/bogdan-moto-1.png" alt="Bohdan Tiutenko on a motorcycle">
-        </div>
-        <div class="gallery-item">
+        <figure class="gallery-item">
           <img src="/bogdan-moto-2.png" alt="Bohdan Tiutenko motorcycle gear">
-        </div>
+          <figcaption data-i18n="bogdan.gallery.moto">Мотоцикл — моя пристрасть</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/bogdan-dog.jpg" alt="Bohdan Tiutenko with his dog">
+          <figcaption data-i18n="bogdan.gallery.dog">Разом з моїм вірним собакою</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -253,13 +266,13 @@
   "@context": "https://schema.org",
   "@type": "ProfilePage",
   "name": "Богдан Тютенко — Rybezh",
-  "description": "Богдан Тютенко — Інвестор, Директор, Голова та радник платформи Rybezh. Львів, Україна.",
+  "description": "Богдан Тютенко — Інвестор платформи Rybezh. Львів, Україна.",
   "url": "https://rybezh.site/bogdan-tiutenko.html",
   "mainEntity": {
     "@type": "Person",
     "name": "Богдан Тютенко",
-    "jobTitle": "Інвестор, Директор, Голова та радник",
-    "description": "Інвестор та стратегічний директор платформи Rybezh.",
+    "jobTitle": "Інвестор",
+    "description": "Інвестор платформи Rybezh.",
     "homeLocation": {
       "@type": "Place",
       "name": "Львів, Україна"

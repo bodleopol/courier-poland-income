@@ -2955,12 +2955,12 @@ async function build() {
 
   // Copy Bogdan Tiutenko images
   try {
-    const moto1Content = await fs.readFile(path.join(SRC, 'bogdan-moto-1.png'));
-    await fs.writeFile(path.join(DIST, 'bogdan-moto-1.png'), moto1Content);
     const tiutenkoAvatar = await fs.readFile(path.join(SRC, 'bogdan-tiutenko.png'));
     await fs.writeFile(path.join(DIST, 'bogdan-tiutenko.png'), tiutenkoAvatar);
     const moto2Content = await fs.readFile(path.join(SRC, 'bogdan-moto-2.png'));
     await fs.writeFile(path.join(DIST, 'bogdan-moto-2.png'), moto2Content);
+    const dogContent = await fs.readFile(path.join(SRC, 'bogdan-dog.jpg'));
+    await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
   } catch (e) {
     console.warn('⚠️ Bogdan Tiutenko images not found');
   }
@@ -3007,6 +3007,19 @@ async function build() {
     }
   } catch (e) {
     // modular game folder not found, continue
+  }
+
+  // Copy quiz assets
+  try {
+    const quizDataPath = path.join(SRC, 'quiz-data.json');
+    const quizDataContent = await fs.readFile(quizDataPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'quiz-data.json'), quizDataContent, 'utf8');
+
+    await fs.mkdir(path.join(DIST, 'quiz'), { recursive: true });
+    const quizJsContent = await fs.readFile(path.join(SRC, 'quiz/quiz.js'), 'utf8');
+    await fs.writeFile(path.join(DIST, 'quiz/quiz.js'), quizJsContent, 'utf8');
+  } catch (e) {
+    console.error('Error copying quiz assets:', e);
   }
 
   // Copy favicon.svg
@@ -3093,7 +3106,7 @@ async function build() {
 
   // copy static pages
   const staticPages = [
-  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'bogdan-tiutenko.html'];
+  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'quiz.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'quiz-ru.html', 'bogdan-tiutenko.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -4421,7 +4434,8 @@ function generateIndexContent(links) {
     'Кельце': 'city.kielce',
     'Гливіце': 'city.gliwice',
     'Ольштин': 'city.olsztyn',
-    'Бєльско-Бяла': 'city.bielsko'
+    'Бєльско-Бяла': 'city.bielsko',
+    'Ополе': 'city.opole'
   };
 
   const cards = links.map(l => {
@@ -4636,6 +4650,7 @@ function generateIndexContent(links) {
         <option value="Радом" data-i18n="city.radom">Радом</option>
         <option value="Сосновець" data-i18n="city.sosnowiec">Сосновець</option>
         <option value="Бєльско-Бяла" data-i18n="city.bielsko">Бєльско-Бяла</option>
+        <option value="Ополе" data-i18n="city.opole">Ополе</option>
       </select>
       <button type="submit" class="search-button" data-i18n="search.button">Знайти</button>
     </form>
@@ -5054,7 +5069,8 @@ function cityToJobAddress(cityUa) {
     'Ольштин': { streetAddress: 'Centrum miasta', addressLocality: 'Olsztyn', addressRegion: 'Warmińsko-Mazurskie', postalCode: '10-001' },
     'Радом': { streetAddress: 'Centrum miasta', addressLocality: 'Radom', addressRegion: 'Mazowieckie', postalCode: '26-600' },
     'Сосновець': { streetAddress: 'Centrum miasta', addressLocality: 'Sosnowiec', addressRegion: 'Śląskie', postalCode: '41-200' },
-    'Бєльско-Бяла': { streetAddress: 'Centrum miasta', addressLocality: 'Bielsko-Biała', addressRegion: 'Śląskie', postalCode: '43-300' }
+    'Бєльско-Бяла': { streetAddress: 'Centrum miasta', addressLocality: 'Bielsko-Biała', addressRegion: 'Śląskie', postalCode: '43-300' },
+    'Ополе': { streetAddress: 'Centrum miasta', addressLocality: 'Opole', addressRegion: 'PL', postalCode: '00-000' }
   };
 
   return map[cityUa] || fallback;
