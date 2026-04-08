@@ -15,6 +15,7 @@
   const translations = {
     'meta.title': { ua: 'Rybezh — Пошук роботи у Польщі', pl: 'Rybezh — Praca w Polsce', ru: 'Rybezh — Поиск работы в Польше', en: 'Work in Poland for Ukrainians | Rybezh - Free Employment' },
     'meta.description': { ua: 'Актуальні вакансії в різних сферах по всій Польщі. Легальне працевлаштування та підтримка.', pl: 'Aktualne oferty pracy w różnych branżach w całej Polsce. Legalne zatrudnienie i wsparcie.', ru: 'Актуальные вакансии в разных сферах по всей Польше. Легальное трудоустройство и поддержка.', en: 'Find your dream job in Poland! Free consultation, document assistance, and hundreds of verified vacancies from direct employers. Start working legally today.' },
+    'meta.keywords': { ua: 'робота в польщі, вакансії польща, легальна робота, робота для українців, працевлаштування в польщі', pl: 'praca w polsce, oferty pracy polska, legalna praca, praca dla ukraińców, zatrudnienie w polsce', ru: 'работа в польше, вакансии польша, легальная работа, работа для украинцев, трудоустройство в польше', en: 'work in poland, jobs in poland, legal work, jobs for ukrainians, employment in poland' },
     'brand.name': { ua: 'Rybezh', pl: 'Rybezh', ru: 'Rybezh', en: 'Rybezh' },
     'brand.tagline': { ua: 'rybezh.site — робота у Польщі для українців та поляків', pl: 'rybezh.site — praca w Polsce dla Ukraińców i Polaków', ru: 'rybezh.site — работа в Польше для украинцев и поляков', en: 'rybezh.site — work in Poland for Ukrainians and Poles' },
     'nav.home': { ua: 'Головна', pl: 'Strona główna', ru: 'Главная', en: 'Home' },
@@ -217,6 +218,7 @@
     'blog.title': { ua: 'Блог Rybezh', pl: 'Blog Rybezh', ru: 'Блог Rybezh', en: 'Our Blog' },
     'blog.meta_title': { ua: 'Блог — Rybezh | Робота у Польщі', pl: 'Blog — Rybezh | Praca w Polsce', ru: 'Блог — Rybezh | Работа в Польше', en: 'Blog — Rybezh | Articles about Work in Poland' },
     'blog.meta_description': { ua: 'Корисні статті та поради про роботу у Польщі: документи, ринок праці, адаптація.', pl: 'Przydatne artykuły i porady o pracy w Polsce: dokumenty, rynek pracy, adaptacja.', ru: 'Полезные статьи и советы о работе в Польше: документы, рынок труда, адаптация.', en: 'Useful articles, tips, and news about living and working in Poland for Ukrainians.' },
+    'blog.meta_keywords': { ua: 'блог про роботу в польщі, поради для українців, документи польща, ринок праці польща', pl: 'blog o pracy w polsce, porady dla ukraińców, dokumenty polska, rynek pracy polska', ru: 'блог о работе в польше, советы для украинцев, документы польша, рынок труда польша', en: 'blog about work in poland, tips for ukrainians, documents poland, labor market poland' },
     'blog.subtitle': { ua: 'Корисні статті та новини про роботу', pl: 'Przydatne artykuły i wiadomości o pracy', ru: 'Полезные статьи и новости о работе', en: 'Useful articles and news about working in Poland.' },
     'blog.search.title': { ua: '🔎 Пошук у блозі', pl: '🔎 Szukaj w blogu', ru: '🔎 Поиск в блоге', en: '🔎 Search in the blog' },
     'blog.search.placeholder': { ua: 'Пошук по темі або місту', pl: 'Szukaj po temacie lub mieście', ru: 'Поиск по теме или городу', en: 'Search by topic or city' },
@@ -233,6 +235,7 @@
     'vacancies.found': { ua: 'вакансій знайдено', pl: 'ofert znaleziono', ru: 'вакансий найдено', en: 'vacancies found' },
     'vacancies.meta_title': { ua: 'Всі вакансії — Rybezh', pl: 'Wszystkie oferty — Rybezh', ru: 'Все вакансии — Rybezh', en: 'All vacancies — Rybezh' },
     'vacancies.meta_description': { ua: 'Перегляньте всі актуальні вакансії в Польщі. Фільтри за містом, категорією та зарплатою.', pl: 'Zobacz wszystkie aktualne oferty pracy w Polsce. Filtry według miasta, kategorii i wynagrodzenia.', ru: 'Посмотрите все актуальные вакансии в Польше. Фильтры по городу, категории и зарплате.', en: 'View all current vacancies in Poland. Filters by city, category and salary.' },
+    'vacancies.meta_keywords': { ua: 'всі вакансії польща, знайти роботу в польщі, вакансії для українців, свіжі вакансії польща', pl: 'wszystkie oferty polska, znajdź pracę w polsce, oferty dla ukraińców, najnowsze oferty pracy polska', ru: 'все вакансии польша, найти работу в польше, вакансии для украинцев, свежие вакансии польша', en: 'all vacancies poland, find job in poland, jobs for ukrainians, latest job offers poland' },
     'filters.all_categories': { ua: 'Всі категорії', pl: 'Wszystkie kategorie', ru: 'Все категории', en: 'All categories' },
     'filters.salary_placeholder': { ua: 'Мін. зарплата (PLN)', pl: 'Min. wynagrodzenie (PLN)', ru: 'Мин. зарплата (PLN)', en: 'Min. salary (PLN)' },
     'filters.proof75': { ua: 'Тільки з Proof ≥ 75', pl: 'Tylko z Proof ≥ 75', ru: 'Только с Proof ≥ 75', en: 'Only with Proof ≥ 75' },
