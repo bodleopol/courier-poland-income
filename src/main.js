@@ -1619,10 +1619,7 @@
 
     let hasOpened = false;
     let vaParams = [];
-<<<<<<< HEAD
-=======
     let vaIndex = null;
->>>>>>> origin/main
     let isFetching = false;
     let userName = localStorage.getItem('va_username') || '';
     let activeFlow = null;
@@ -1643,11 +1640,6 @@
       if (vaParams.length > 0 || isFetching) return;
       isFetching = true;
       try {
-<<<<<<< HEAD
-        const res = await fetch('/va-data.json');
-        if (res.ok) {
-          vaParams = await res.json();
-=======
         vaParams = [];
         let chunkIndex = 1;
         while (true) {
@@ -1677,7 +1669,6 @@
               }
             }
           }
->>>>>>> origin/main
         }
       } catch (err) {
         console.error('Failed to load VA data', err);
@@ -1775,8 +1766,6 @@
         }
       }
 
-<<<<<<< HEAD
-=======
       // 3. Step-by-step Consultation Flow
       if (activeFlow === 'consultation_1') {
         if (msgLower === '1') {
@@ -1814,7 +1803,6 @@
         }
       }
 
->>>>>>> origin/main
       const menuKeywords = ['допомога', 'help', 'питання', 'pytania', 'вопрос', 'помощь'];
       if (menuKeywords.some(kw => msgLower.includes(kw))) {
         activeFlow = 'main_menu';
@@ -1827,9 +1815,6 @@
         return menuReplies[lang] || menuReplies['ua'];
       }
 
-<<<<<<< HEAD
-      // 3. Direct links
-=======
       const consultationKeywords = ['консультація', 'consultation', 'konsultacja', 'консультация'];
       if (consultationKeywords.some(kw => msgLower.includes(kw))) {
         activeFlow = 'consultation_1';
@@ -1843,7 +1828,6 @@
       }
 
       // 4. Direct links
->>>>>>> origin/main
       const directLinks = [
         { keys: ['вакансії', 'вакансии', 'praca', 'oferty', 'jobs', 'vacancies'], url: '/vacancies.html', text: {ua: 'Вакансії', pl: 'Oferty pracy', ru: 'Вакансии', en: 'Vacancies'} },
         { keys: ['калькулятор', 'kalkulator', 'calculator'], url: '/calculator.html', text: {ua: 'Калькулятор зарплати', pl: 'Kalkulator wynagrodzenia', ru: 'Калькулятор зарплаты', en: 'Salary Calculator'} },
@@ -1857,22 +1841,6 @@
         }
       }
 
-<<<<<<< HEAD
-      for (const param of vaParams) {
-        const keyPattern = param[`k_${lang}`] || '';
-        if (!keyPattern) continue;
-
-        const keywords = keyPattern.split('|');
-        for (const kw of keywords) {
-          if (kw) {
-            // Use regex to ensure word boundary, handling both latin and cyrillic characters
-            const regex = new RegExp(`(?:^|[^\\p{L}\\p{N}_])${kw}(?:[^\\p{L}\\p{N}_]|$)`, 'iu');
-            if (regex.test(msgLower)) {
-              return param[`r_${lang}`] || param[`r_ua`];
-            }
-          }
-        }
-=======
       if (vaIndex && vaIndex[lang]) {
         let matchedResponse = null;
 
@@ -1913,7 +1881,6 @@
           }
           return matchedResponse;
         }
->>>>>>> origin/main
       }
 
       // Fallback response

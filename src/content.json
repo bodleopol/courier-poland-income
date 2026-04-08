@@ -1,21 +1,5 @@
 [
   {
-<<<<<<< HEAD
-    "slug": "krakow-frontend-developer-991",
-    "category": "it",
-    "city": "Краків",
-    "city_pl": "Kraków",
-    "city_en": "Krakow",
-    "city_ru": "Краков",
-    "title": "Фронтенд розробник",
-    "title_pl": "Programista Frontend",
-    "title_en": "Frontend Developer",
-    "title_ru": "Фронтенд разработчик",
-    "salary": "12000 - 18000 PLN",
-    "company": "TechSolutions",
-    "shift_ua": "Гнучкий графік",
-    "shift_pl": "Elastyczny grafik",
-=======
     "slug": "warsaw-graphic-designer-908",
     "category": "it",
     "city": "Варшава",
@@ -30,7 +14,6 @@
     "company": "Creative Minds Studio",
     "shift_ua": "Гнучкий графік",
     "shift_pl": "Elastyczne godziny pracy",
->>>>>>> origin/main
     "shift_en": "Flexible schedule",
     "shift_ru": "Гибкий график",
     "pattern_ua": "5/2",
@@ -43,162 +26,6 @@
     "start_ru": "Немедленно",
     "contract_ua": "B2B / Umowa o pracę",
     "contract_pl": "B2B / Umowa o pracę",
-<<<<<<< HEAD
-    "contract_en": "B2B / Employment contract",
-    "contract_ru": "B2B / Umowa o pracę",
-    "accommodation_ua": "Не надається",
-    "accommodation_pl": "Nie zapewniamy",
-    "accommodation_en": "Not provided",
-    "accommodation_ru": "Не предоставляется",
-    "languages_ua": "Англійська (B2), Польська (вітається)",
-    "languages_pl": "Angielski (B2), Polski (mile widziany)",
-    "languages_en": "English (B2), Polish (nice to have)",
-    "languages_ru": "Английский (B2), Польский (приветствуется)",
-    "responsibilities_ua": [
-      "Розробка нових функцій на React",
-      "Оптимізація продуктивності додатків",
-      "Співпраця з командою дизайнерів"
-    ],
-    "responsibilities_pl": [
-      "Rozwój nowych funkcji w React",
-      "Optymalizacja wydajności aplikacji",
-      "Współpraca z zespołem projektowym"
-    ],
-    "responsibilities_en": [
-      "Developing new features in React",
-      "Optimizing application performance",
-      "Collaborating with the design team"
-    ],
-    "responsibilities_ru": [
-      "Разработка новых функций на React",
-      "Оптимизация производительности приложений",
-      "Сотрудничество с командой дизайнеров"
-    ],
-    "requirements_ua": [
-      "Досвід роботи з React від 2 років",
-      "Глибокі знання JavaScript/TypeScript",
-      "Розуміння сучасних архітектурних патернів"
-    ],
-    "requirements_pl": [
-      "Min. 2 lata doświadczenia z React",
-      "Głęboka znajomość JavaScript/TypeScript",
-      "Zrozumienie nowoczesnych wzorców architektonicznych"
-    ],
-    "requirements_en": [
-      "2+ years of experience with React",
-      "Deep knowledge of JavaScript/TypeScript",
-      "Understanding of modern architectural patterns"
-    ],
-    "requirements_ru": [
-      "Опыт работы с React от 2 лет",
-      "Глубокие знания JavaScript/TypeScript",
-      "Понимание современных архитектурных паттернов"
-    ],
-    "date_posted": "2026-04-08",
-    "is_generated": false,
-    "data_source": "manual",
-    "seo_title": "Робота Фронтенд розробник Краків | Вакансія TechSolutions",
-    "seo_title_pl": "Praca Programista Frontend Kraków | Oferta TechSolutions",
-    "seo_title_en": "Job Frontend Developer Krakow | TechSolutions Vacancy",
-    "seo_title_ru": "Работа Фронтенд разработчик Краков | Вакансия TechSolutions",
-    "meta_description": "Шукаємо Фронтенд розробника у Кракові. Зарплата 12000 - 18000 PLN. Гнучкий графік, B2B або Umowa o pracę.",
-    "meta_description_pl": "Szukamy Programisty Frontend w Krakowie. Wynagrodzenie 12000 - 18000 PLN. Elastyczny grafik, B2B lub Umowa o pracę.",
-    "meta_description_en": "Looking for a Frontend Developer in Krakow. Salary 12000 - 18000 PLN. Flexible schedule, B2B or Employment contract.",
-    "meta_description_ru": "Ищем Фронтенд разработчика в Кракове. Зарплата 12000 - 18000 PLN. Гибкий график, B2B или Umowa o pracę."
-  },
-  {
-    "slug": "gdansk-warehouse-worker-992",
-    "category": "logistics",
-    "city": "Гданськ",
-    "city_pl": "Gdańsk",
-    "city_en": "Gdansk",
-    "city_ru": "Гданьск",
-    "title": "Працівник складу",
-    "title_pl": "Pracownik Magazynowy",
-    "title_en": "Warehouse Worker",
-    "title_ru": "Работник склада",
-    "salary": "5000 - 6500 PLN",
-    "company": "LogisTech",
-    "shift_ua": "Позмінна (8-12 годин)",
-    "shift_pl": "Zmianowa (8-12 godzin)",
-    "shift_en": "Shift work (8-12 hours)",
-    "shift_ru": "Посменная (8-12 часов)",
-    "pattern_ua": "3/3 або 4/4",
-    "pattern_pl": "3/3 lub 4/4",
-    "pattern_en": "3/3 or 4/4",
-    "pattern_ru": "3/3 или 4/4",
-    "start_ua": "Протягом тижня",
-    "start_pl": "W ciągu tygodnia",
-    "start_en": "Within a week",
-    "start_ru": "В течение недели",
-    "contract_ua": "Umowa Zlecenie",
-    "contract_pl": "Umowa Zlecenie",
-    "contract_en": "Mandate contract",
-    "contract_ru": "Umowa Zlecenie",
-    "accommodation_ua": "Надається (безкоштовно)",
-    "accommodation_pl": "Zapewnione (bezpłatne)",
-    "accommodation_en": "Provided (free)",
-    "accommodation_ru": "Предоставляется (бесплатно)",
-    "languages_ua": "Без знання мови",
-    "languages_pl": "Bez znajomości języka",
-    "languages_en": "No language requirements",
-    "languages_ru": "Без знания языка",
-    "responsibilities_ua": [
-      "Пакування та сортування товарів",
-      "Комплектування замовлень за накладними",
-      "Підтримка порядку на складі"
-    ],
-    "responsibilities_pl": [
-      "Pakowanie i sortowanie towarów",
-      "Kompletowanie zamówień wg specyfikacji",
-      "Utrzymanie porządku na magazynie"
-    ],
-    "responsibilities_en": [
-      "Packing and sorting goods",
-      "Fulfilling orders according to invoices",
-      "Maintaining order in the warehouse"
-    ],
-    "responsibilities_ru": [
-      "Упаковка и сортировка товаров",
-      "Комплектация заказов по накладным",
-      "Поддержание порядка на складе"
-    ],
-    "requirements_ua": [
-      "Готовність до фізичної роботи",
-      "Відповідальність та пунктуальність",
-      "Досвід не обов'язковий (навчаємо)"
-    ],
-    "requirements_pl": [
-      "Gotowość do pracy fizycznej",
-      "Odpowiedzialność i punktualność",
-      "Doświadczenie niewymagane (szkolimy)"
-    ],
-    "requirements_en": [
-      "Readiness for physical work",
-      "Responsibility and punctuality",
-      "Experience not required (training provided)"
-    ],
-    "requirements_ru": [
-      "Готовность к физической работе",
-      "Ответственность и пунктуальность",
-      "Опыт не обязателен (обучаем)"
-    ],
-    "date_posted": "2026-04-08",
-    "is_generated": false,
-    "data_source": "manual",
-    "seo_title": "Робота Працівник складу Гданськ | Вакансія LogisTech (Без мови)",
-    "seo_title_pl": "Praca Pracownik Magazynowy Gdańsk | Oferta LogisTech",
-    "seo_title_en": "Job Warehouse Worker Gdansk | LogisTech Vacancy",
-    "seo_title_ru": "Работа Работник склада Гданьск | Вакансия LogisTech (Без языка)",
-    "meta_description": "Робота на складі у Гданську для українців. ЗП 5000 - 6500 PLN, безкоштовне житло, можна без знання мови. Umowa Zlecenie.",
-    "meta_description_pl": "Praca na magazynie w Gdańsku. Wynagrodzenie 5000 - 6500 PLN, darmowe zakwaterowanie, bez znajomości języka. Umowa Zlecenie.",
-    "meta_description_en": "Warehouse job in Gdansk. Salary 5000 - 6500 PLN, free accommodation, no language required. Mandate contract.",
-    "meta_description_ru": "Работа на складе в Гданьске для украинцев. ЗП 5000 - 6500 PLN, бесплатное жилье, можно без знания языка. Umowa Zlecenie."
-  },
-  {
-    "slug": "wroclaw-chef-assistant-993",
-    "category": "hospitality",
-=======
     "contract_en": "B2B / Employment Contract",
     "contract_ru": "B2B / Трудовой договор",
     "description_ua": "Шукаємо креативного Графічного дизайнера для розробки візуальних концепцій, створення логотипів, банерів та рекламних матеріалів. Необхідне вільне володіння Adobe Creative Suite (Photoshop, Illustrator, InDesign) та наявність сильного портфоліо. Пропонуємо цікаві проекти, роботу в міжнародній команді та можливість професійного розвитку.",
@@ -249,23 +76,10 @@
   {
     "slug": "wroclaw-hr-manager-910",
     "category": "office",
->>>>>>> origin/main
     "city": "Вроцлав",
     "city_pl": "Wrocław",
     "city_en": "Wroclaw",
     "city_ru": "Вроцлав",
-<<<<<<< HEAD
-    "title": "Помічник кухаря",
-    "title_pl": "Pomoc Kuchenna",
-    "title_en": "Chef Assistant",
-    "title_ru": "Помощник повара",
-    "salary": "4800 - 5500 PLN",
-    "company": "Taste of Europe",
-    "shift_ua": "Денні та вечірні зміни",
-    "shift_pl": "Zmiany dzienne i wieczorne",
-    "shift_en": "Day and evening shifts",
-    "shift_ru": "Дневные и вечерние смены",
-=======
     "title": "Менеджер з персоналу (HR)",
     "title_pl": "HR Manager",
     "title_en": "HR Manager",
@@ -313,7 +127,6 @@
     "shift_pl": "Pełny etat",
     "shift_en": "Full time",
     "shift_ru": "Полный день",
->>>>>>> origin/main
     "pattern_ua": "5/2",
     "pattern_pl": "5/2",
     "pattern_en": "5/2",
@@ -322,75 +135,6 @@
     "start_pl": "Natychmiast",
     "start_en": "Immediately",
     "start_ru": "Немедленно",
-<<<<<<< HEAD
-    "contract_ua": "Umowa o pracę",
-    "contract_pl": "Umowa o pracę",
-    "contract_en": "Employment contract",
-    "contract_ru": "Umowa o pracę",
-    "accommodation_ua": "Допомога з пошуком",
-    "accommodation_pl": "Pomoc w znalezieniu",
-    "accommodation_en": "Assistance in finding",
-    "accommodation_ru": "Помощь с поиском",
-    "languages_ua": "Базова польська",
-    "languages_pl": "Podstawowy polski",
-    "languages_en": "Basic Polish",
-    "languages_ru": "Базовый польский",
-    "responsibilities_ua": [
-      "Підготовка інгредієнтів (нарізка, чистка)",
-      "Допомога шеф-кухарю у приготуванні страв",
-      "Миття посуду та підтримання чистоти на кухні"
-    ],
-    "responsibilities_pl": [
-      "Przygotowanie składników (krojenie, obieranie)",
-      "Pomoc szefowi kuchni w przygotowaniu dań",
-      "Zmywanie naczyń i utrzymanie czystości"
-    ],
-    "responsibilities_en": [
-      "Preparing ingredients (chopping, peeling)",
-      "Assisting the head chef with meal prep",
-      "Washing dishes and maintaining kitchen cleanliness"
-    ],
-    "responsibilities_ru": [
-      "Подготовка ингредиентов (нарезка, чистка)",
-      "Помощь шеф-повару в приготовлении блюд",
-      "Мытье посуды и поддержание чистоты на кухне"
-    ],
-    "requirements_ua": [
-      "Санітарна книжка (або готовність зробити)",
-      "Швидкість у роботі",
-      "Бажання навчатися кулінарній справі"
-    ],
-    "requirements_pl": [
-      "Książeczka sanepidowska (lub gotowość do wyrobienia)",
-      "Szybkość w pracy",
-      "Chęć nauki gotowania"
-    ],
-    "requirements_en": [
-      "Sanitary book (or willingness to obtain)",
-      "Speed in work",
-      "Desire to learn culinary skills"
-    ],
-    "requirements_ru": [
-      "Санитарная книжка (или готовность сделать)",
-      "Скорость в работе",
-      "Желание обучаться кулинарному делу"
-    ],
-    "date_posted": "2026-04-08",
-    "is_generated": false,
-    "data_source": "manual",
-    "seo_title": "Робота Помічник кухаря Вроцлав | Вакансія Taste of Europe",
-    "seo_title_pl": "Praca Pomoc Kuchenna Wrocław | Oferta Taste of Europe",
-    "seo_title_en": "Job Chef Assistant Wroclaw | Taste of Europe Vacancy",
-    "seo_title_ru": "Работа Помощник повара Вроцлав | Вакансия Taste of Europe",
-    "meta_description": "Робота помічником кухаря у Вроцлаві. Зарплата 4800 - 5500 PLN. Офіційне працевлаштування (Umowa o pracę), гнучкий графік.",
-    "meta_description_pl": "Praca jako pomoc kuchenna we Wrocławiu. Wynagrodzenie 4800 - 5500 PLN. Legalne zatrudnienie (Umowa o pracę), elastyczny grafik.",
-    "meta_description_en": "Chef assistant job in Wroclaw. Salary 4800 - 5500 PLN. Official employment (Employment contract), flexible schedule.",
-    "meta_description_ru": "Работа помощником повара во Вроцлаве. Зарплата 4800 - 5500 PLN. Официальное трудоустройство (Umowa o pracę), гибкий график."
-  },
-  {
-    "slug": "poznan-cnc-operator-994",
-    "category": "manufacturing",
-=======
     "contract_ua": "Umowa o pracę / B2B",
     "contract_pl": "Umowa o pracę / B2B",
     "contract_en": "Employment Contract / B2B",
@@ -406,23 +150,10 @@
   {
     "slug": "poznan-sales-representative-912",
     "category": "sales",
->>>>>>> origin/main
     "city": "Познань",
     "city_pl": "Poznań",
     "city_en": "Poznan",
     "city_ru": "Познань",
-<<<<<<< HEAD
-    "title": "Оператор ЧПК (CNC)",
-    "title_pl": "Operator Maszyn CNC",
-    "title_en": "CNC Operator",
-    "title_ru": "Оператор ЧПУ (CNC)",
-    "salary": "8000 - 11000 PLN",
-    "company": "MetalWorks Factory",
-    "shift_ua": "3 зміни (вкл. нічні)",
-    "shift_pl": "3 zmiany (w tym nocne)",
-    "shift_en": "3 shifts (incl. nights)",
-    "shift_ru": "3 смены (вкл. ночные)",
-=======
     "title": "Торговий представник (B2B)",
     "title_pl": "Przedstawiciel Handlowy (B2B)",
     "title_en": "Sales Representative (B2B)",
@@ -470,98 +201,10 @@
     "shift_pl": "Elastyczny czas pracy",
     "shift_en": "Flexible hours",
     "shift_ru": "Гибкий график",
->>>>>>> origin/main
     "pattern_ua": "5/2",
     "pattern_pl": "5/2",
     "pattern_en": "5/2",
     "pattern_ru": "5/2",
-<<<<<<< HEAD
-    "start_ua": "За домовленістю",
-    "start_pl": "Do uzgodnienia",
-    "start_en": "To be agreed",
-    "start_ru": "По договоренности",
-    "contract_ua": "Umowa o pracę",
-    "contract_pl": "Umowa o pracę",
-    "contract_en": "Employment contract",
-    "contract_ru": "Umowa o pracę",
-    "accommodation_ua": "Часткова компенсація",
-    "accommodation_pl": "Częściowa rekompensata",
-    "accommodation_en": "Partial compensation",
-    "accommodation_ru": "Частичная компенсация",
-    "languages_ua": "Комунікативна польська",
-    "languages_pl": "Komunikatywny polski",
-    "languages_en": "Communicative Polish",
-    "languages_ru": "Коммуникативный польский",
-    "responsibilities_ua": [
-      "Обслуговування фрезерних та токарних верстатів ЧПК",
-      "Контроль якості виготовлених деталей",
-      "Введення корекцій у програми"
-    ],
-    "responsibilities_pl": [
-      "Obsługa frezarek i tokarek CNC",
-      "Kontrola jakości wykonanych detali",
-      "Wprowadzanie korekt do programów"
-    ],
-    "responsibilities_en": [
-      "Operating CNC milling and turning machines",
-      "Quality control of manufactured parts",
-      "Making corrections to programs"
-    ],
-    "responsibilities_ru": [
-      "Обслуживание фрезерных и токарных станков ЧПУ",
-      "Контроль качества изготовленных деталей",
-      "Внесение корректировок в программы"
-    ],
-    "requirements_ua": [
-      "Досвід роботи оператором ЧПК від 1 року",
-      "Вміння читати технічне креслення",
-      "Знання систем Fanuc або Heidenhain"
-    ],
-    "requirements_pl": [
-      "Min. 1 rok doświadczenia jako operator CNC",
-      "Umiejętność czytania rysunku technicznego",
-      "Znajomość systemów Fanuc lub Heidenhain"
-    ],
-    "requirements_en": [
-      "1+ years of experience as a CNC operator",
-      "Ability to read technical drawings",
-      "Knowledge of Fanuc or Heidenhain systems"
-    ],
-    "requirements_ru": [
-      "Опыт работы оператором ЧПУ от 1 года",
-      "Умение читать технические чертежи",
-      "Знание систем Fanuc или Heidenhain"
-    ],
-    "date_posted": "2026-04-08",
-    "is_generated": false,
-    "data_source": "manual",
-    "seo_title": "Робота Оператор ЧПК Познань | Вакансія MetalWorks",
-    "seo_title_pl": "Praca Operator CNC Poznań | Oferta MetalWorks",
-    "seo_title_en": "Job CNC Operator Poznan | MetalWorks Vacancy",
-    "seo_title_ru": "Работа Оператор ЧПУ Познань | Вакансия MetalWorks",
-    "meta_description": "Високооплачувана робота для операторів ЧПК у Познані. ЗП 8000 - 11000 PLN. Офіційне працевлаштування, компенсація житла.",
-    "meta_description_pl": "Dobrze płatna praca dla operatorów CNC w Poznaniu. Wynagrodzenie 8000 - 11000 PLN. Legalne zatrudnienie, dopłata do zakwaterowania.",
-    "meta_description_en": "High-paying job for CNC operators in Poznan. Salary 8000 - 11000 PLN. Official employment, housing compensation.",
-    "meta_description_ru": "Высокооплачиваемая работа для операторов ЧПУ в Познани. ЗП 8000 - 11000 PLN. Официальное трудоустройство, компенсация жилья."
-  },
-  {
-    "slug": "lodz-customer-support-995",
-    "category": "office",
-    "city": "Лодзь",
-    "city_pl": "Łódź",
-    "city_en": "Lodz",
-    "city_ru": "Лодзь",
-    "title": "Спеціаліст підтримки клієнтів",
-    "title_pl": "Specjalista ds. Wsparcia Klienta",
-    "title_en": "Customer Support Specialist",
-    "title_ru": "Специалист поддержки клиентов",
-    "salary": "6000 - 8000 PLN",
-    "company": "Global Connect Support",
-    "shift_ua": "Гнучкий, можливий гібрид",
-    "shift_pl": "Elastyczny, możliwa hybryda",
-    "shift_en": "Flexible, hybrid possible",
-    "shift_ru": "Гибкий, возможен гибрид",
-=======
     "start_ua": "Негайно",
     "start_pl": "Natychmiast",
     "start_en": "Immediately",
@@ -669,80 +312,10 @@
     "shift_pl": "Zmiany wieczorne",
     "shift_en": "Evening shifts",
     "shift_ru": "Вечерние смены",
->>>>>>> origin/main
     "pattern_ua": "5/2",
     "pattern_pl": "5/2",
     "pattern_en": "5/2",
     "pattern_ru": "5/2",
-<<<<<<< HEAD
-    "start_ua": "Вересень 2026",
-    "start_pl": "Wrzesień 2026",
-    "start_en": "September 2026",
-    "start_ru": "Сентябрь 2026",
-    "contract_ua": "Umowa o pracę",
-    "contract_pl": "Umowa o pracę",
-    "contract_en": "Employment contract",
-    "contract_ru": "Umowa o pracę",
-    "accommodation_ua": "Не надається",
-    "accommodation_pl": "Nie zapewniamy",
-    "accommodation_en": "Not provided",
-    "accommodation_ru": "Не предоставляется",
-    "languages_ua": "Українська (C1), Англійська (B2), Польська (B1)",
-    "languages_pl": "Ukraiński (C1), Angielski (B2), Polski (B1)",
-    "languages_en": "Ukrainian (C1), English (B2), Polish (B1)",
-    "languages_ru": "Украинский (C1), Английский (B2), Польский (B1)",
-    "responsibilities_ua": [
-      "Обслуговування вхідних запитів клієнтів (чат, email, телефон)",
-      "Вирішення технічних та організаційних питань",
-      "Ведення звітності в CRM-системі"
-    ],
-    "responsibilities_pl": [
-      "Obsługa zapytań przychodzących klientów (czat, email, telefon)",
-      "Rozwiązywanie problemów technicznych i organizacyjnych",
-      "Prowadzenie raportów w systemie CRM"
-    ],
-    "responsibilities_en": [
-      "Handling incoming customer requests (chat, email, phone)",
-      "Resolving technical and organizational issues",
-      "Maintaining reports in the CRM system"
-    ],
-    "responsibilities_ru": [
-      "Обслуживание входящих запросов клиентов (чат, email, телефон)",
-      "Решение технических и организационных вопросов",
-      "Ведение отчетности в CRM-системе"
-    ],
-    "requirements_ua": [
-      "Відмінні комунікативні навички",
-      "Досвід роботи в підтримці клієнтів (вітається)",
-      "Стресостійкість та емпатія"
-    ],
-    "requirements_pl": [
-      "Doskonałe umiejętności komunikacyjne",
-      "Doświadczenie w obsłudze klienta (mile widziane)",
-      "Odporność na stres i empatia"
-    ],
-    "requirements_en": [
-      "Excellent communication skills",
-      "Experience in customer support (nice to have)",
-      "Stress resistance and empathy"
-    ],
-    "requirements_ru": [
-      "Отличные коммуникативные навыки",
-      "Опыт работы в поддержке клиентов (приветствуется)",
-      "Стрессоустойчивость и эмпатия"
-    ],
-    "date_posted": "2026-04-08",
-    "is_generated": false,
-    "data_source": "manual",
-    "seo_title": "Робота Підтримка клієнтів Лодзь | Вакансія Global Connect",
-    "seo_title_pl": "Praca Wsparcie Klienta Łódź | Oferta Global Connect",
-    "seo_title_en": "Job Customer Support Lodz | Global Connect Vacancy",
-    "seo_title_ru": "Работа Поддержка клиентов Лодзь | Вакансия Global Connect",
-    "meta_description": "Робота в офісі у Лодзі. Спеціаліст підтримки клієнтів (укр/англ/пол). Зарплата 6000 - 8000 PLN. Офіційне працевлаштування.",
-    "meta_description_pl": "Praca biurowa w Łodzi. Specjalista ds. wsparcia klienta (ukr/ang/pol). Wynagrodzenie 6000 - 8000 PLN. Legalne zatrudnienie.",
-    "meta_description_en": "Office job in Lodz. Customer support specialist (ukr/eng/pol). Salary 6000 - 8000 PLN. Official employment.",
-    "meta_description_ru": "Работа в офисе в Лодзи. Специалист поддержки клиентов (укр/англ/пол). Зарплата 6000 - 8000 PLN. Официальное трудоустройство."
-=======
     "start_ua": "Негайно",
     "start_pl": "Natychmiast",
     "start_en": "Immediately",
@@ -795,7 +368,6 @@
     "date_posted": "2026-04-09",
     "data_source": "manual",
     "is_generated": false
->>>>>>> origin/main
   },
   {
     "slug": "krakow-eco-farm-manager-901",

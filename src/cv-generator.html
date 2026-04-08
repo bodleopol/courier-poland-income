@@ -9,239 +9,6 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
   <!-- End Google Tag Manager -->
-
-  <!-- html2pdf.js for PDF generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script>
-  (function() {
-    function $(id) { return document.getElementById(id); }
-
-    // Auto-update preview on input changes
-    const container = $('cv-form-container');
-    if (container) {
-      container.addEventListener('input', () => window.generateCV());
-      container.addEventListener('change', () => window.generateCV());
-    }
-
-    let selectedSkills = [];
-
-    // Initialize one experience row
-    window.onload = function() {
-      if (typeof window.addExperience === 'function') {
-        window.addExperience();
-      }
-      if (typeof window.generateCV === 'function') {
-        window.generateCV();
-      }
-    };
-
-    window.addExperience = function() {
-      const list = $('experience-list');
-      if (!list) return;
-      const div = document.createElement('div');
-      div.className = 'exp-entry';
-      div.innerHTML = `<button class="remove-exp" onclick="this.parentElement.remove(); window.generateCV();">✖</button><div class="form-row" style="display:flex;gap:1rem;margin-bottom:0.5rem;"><div class="form-group" style="flex:1;"><label data-i18n="position">Stanowisko / Посада</label><input type="text" class="exp-title" placeholder="Operator CNC"></div><div class="form-group" style="flex:1;"><label data-i18n="company">Firma / Компанія</label><input type="text" class="exp-company" placeholder="Firma"></div></div><div class="form-row" style="display:flex;gap:1rem;"><div class="form-group" style="flex:1;"><label data-i18n="period">Okres / Період</label><input type="text" class="exp-dates" placeholder="01.2022 – 12.2022"></div><div class="form-group" style="flex:2;"><label data-i18n="duties">Obowiązki / Обов'язки</label><textarea class="exp-duties" rows="2" placeholder="Opis obowiązków"></textarea></div></div>`;
-      list.appendChild(div);
-      window.generateCV();
-    };
-
-    window.addSkill = function(el) {
-      const text = el.textContent.trim();
-      if (!selectedSkills.includes(text)) {
-        selectedSkills.push(text);
-        renderSkills();
-        window.generateCV();
-      }
-    };
-
-    window.addCustomSkill = function() {
-      const inp = $('cv-custom-skill');
-      if (!inp) return;
-      const text = inp.value.trim();
-      if (text && !selectedSkills.includes(text)) {
-        selectedSkills.push(text);
-        renderSkills();
-        window.generateCV();
-      }
-      inp.value = '';
-    };
-
-    function renderSkills() {
-      const container = $('selected-skills');
-      if (!container) return;
-      container.innerHTML = selectedSkills.map((s, i) => `<span class="skill-tag">${s} <button onclick="removeSkill(${i})">×</button></span>`).join('');
-    }
-
-    window.removeSkill = function(i) {
-      selectedSkills.splice(i, 1);
-      renderSkills();
-      window.generateCV();
-    };
-
-    let photoDataUrl = null;
-
-    window.previewPhoto = function(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          photoDataUrl = e.target.result;
-          window.generateCV();
-        };
-        reader.readAsDataURL(file);
-      } else {
-        photoDataUrl = null;
-        window.generateCV();
-      }
-    };
-
-    window.generateCV = function() {
-      const lang = $('cv-lang') ? $('cv-lang').value : 'pl';
-      const name = $('cv-name') ? $('cv-name').value || 'Imię Nazwisko' : '';
-      const email = $('cv-email') ? $('cv-email').value || 'email@example.com' : '';
-      const phone = $('cv-phone') ? $('cv-phone').value || '+48 000 000 000' : '';
-      const city = $('cv-city') ? $('cv-city').value : '';
-      const position = $('cv-position') ? $('cv-position').value || 'Pracownik' : '';
-      const school = $('cv-school') ? $('cv-school').value || '' : '';
-      const degree = $('cv-degree') ? $('cv-degree').value || '' : '';
-      const plLevel = $('cv-lang-pl') ? $('cv-lang-pl').value : '';
-      const enLevel = $('cv-lang-en') ? $('cv-lang-en').value : '';
-      const ruLevel = $('cv-lang-ru') ? $('cv-lang-ru').value : '';
-      const uaLevel = $('cv-lang-ua') ? $('cv-lang-ua').value : '';
-      const link = $('cv-link') ? $('cv-link').value || '' : '';
-
-      // Collect experience
-      const exps = [];
-      document.querySelectorAll('.exp-entry').forEach(entry => {
-        const title = entry.querySelector('.exp-title').value;
-        const company = entry.querySelector('.exp-company').value;
-        const dates = entry.querySelector('.exp-dates').value;
-        const duties = entry.querySelector('.exp-duties').value;
-        if (title || company) exps.push({ title, company, dates, duties });
-      });
-
-      const isPl = lang === 'pl';
-      const isEn = lang === 'en';
-      const isRu = lang === 'ru';
-      const isUa = lang === 'ua';
-
-      // Build CV HTML
-      let html = `<div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:1rem;border-bottom:2px solid #0f766e;padding-bottom:1rem;">`;
-      if (photoDataUrl) {
-        html += `<img src="${photoDataUrl}" alt="Photo" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb;">`;
-      }
-      html += `<div><h3 style="border:none;margin-bottom:0.25rem;padding:0;">${name}</h3><div class="contact-line" style="margin-bottom:0;color:#475569;">${email} | ${phone} | ${city}</div>`;
-      if (link) html += `<div style="font-size:0.85rem;margin-top:0.25rem;"><a href="${link}" target="_blank" style="color:#0f766e;text-decoration:none;">${link}</a></div>`;
-      html += `</div></div>`;
-
-      let objTitle = 'МЕТА'; if (isPl) objTitle = 'CEL ZAWODOWY'; if (isEn) objTitle = 'OBJECTIVE'; if (isRu) objTitle = 'ЦЕЛЬ';
-      let objText = `Мотивований працівник, шукаю посаду <strong>${position}</strong> у ${city}. Готовий приступити до роботи одразу. Маю досвід та бажання розвиватися у новому робочому середовищі.`;
-      if (isPl) objText = `Zmotywowany pracownik poszukujący stanowiska <strong>${position}</strong> w ${city}. Gotowy do podjęcia pracy od zaraz. Posiadam doświadczenie oraz chęć rozwoju w nowym środowisku zawodowym.`;
-      if (isEn) objText = `Motivated professional seeking a <strong>${position}</strong> role in ${city}. Ready to start immediately. I have experience and a strong desire to develop in a new work environment.`;
-      if (isRu) objText = `Мотивированный сотрудник, ищу должность <strong>${position}</strong> в ${city}. Готов приступить к работе немедленно. Имею опыт и желание развиваться в новой рабочей среде.`;
-      html += `<h4>${objTitle}</h4><p>${objText}</p>`;
-
-      let expTitle = 'ДОСВІД РОБОТИ'; if (isPl) expTitle = 'DOŚWIADCZENIE ZAWODOWE'; if (isEn) expTitle = 'WORK EXPERIENCE'; if (isRu) expTitle = 'ОПЫТ РАБОТЫ';
-      if (exps.length) {
-        html += `<h4>${expTitle}</h4>`;
-        exps.forEach(e => {
-          html += `<div class="exp-item" style="margin-bottom:1rem;"><div class="exp-title" style="font-weight:bold;">${e.title || '—'}${e.company ? ' — ' + e.company : ''}</div><div class="exp-dates" style="font-size:0.9rem;color:#64748b;margin-bottom:0.25rem;">${e.dates || ''}</div>`;
-          if (e.duties) html += `<p style="margin:0;">${e.duties}</p>`;
-          html += `</div>`;
-        });
-      }
-
-      let eduTitle = 'ОСВІТА'; if (isPl) eduTitle = 'WYKSZTAŁCENIE'; if (isEn) eduTitle = 'EDUCATION'; if (isRu) eduTitle = 'ОБРАЗОВАНИЕ';
-      if (school || degree) html += `<h4>${eduTitle}</h4><p>${school}${degree ? ' — ' + degree : ''}</p>`;
-
-      let skillsTitle = 'НАВИЧКИ'; if (isPl) skillsTitle = 'UMIEJĘTNOŚCI'; if (isEn) skillsTitle = 'SKILLS'; if (isRu) skillsTitle = 'НАВЫКИ';
-      if (selectedSkills.length) html += `<h4>${skillsTitle}</h4><div class="skills-list" style="display:flex;flex-wrap:wrap;gap:0.5rem;">${selectedSkills.map(s => `<span style="background:#f1f5f9;padding:0.25rem 0.5rem;border-radius:4px;font-size:0.9rem;">${s}</span>`).join('')}</div>`;
-
-      let langTitle = 'МОВИ'; if (isPl) langTitle = 'JĘZYKI'; if (isEn) langTitle = 'LANGUAGES'; if (isRu) langTitle = 'ЯЗЫКИ';
-      html += `<h4>${langTitle}</h4>`;
-      let langUa = 'Українська'; if (isPl) langUa = 'Ukraiński'; if (isEn) langUa = 'Ukrainian'; if (isRu) langUa = 'Украинский';
-      let langPl = 'Польська'; if (isPl) langPl = 'Polski'; if (isEn) langPl = 'Polish'; if (isRu) langPl = 'Польский';
-      let langEn = 'Англійська'; if (isPl) langEn = 'Angielski'; if (isEn) langEn = 'English'; if (isRu) langEn = 'Английский';
-      let langRu = 'Російська'; if (isPl) langRu = 'Rosyjski'; if (isEn) langRu = 'Russian'; if (isRu) langRu = 'Русский';
-
-      html += `<p style="margin:0.25rem 0;">🇺🇦 ${langUa} — ${uaLevel}</p><p style="margin:0.25rem 0;">🇵🇱 ${langPl} — ${plLevel}</p>`;
-      if (enLevel) html += `<p style="margin:0.25rem 0;">🇬🇧 ${langEn} — ${enLevel}</p>`;
-      if (ruLevel) html += `<p style="margin:0.25rem 0;">🇷🇺 ${langRu} — ${ruLevel}</p>`;
-
-      let rodoText = 'Даю згоду на обробку моїх персональних даних відповідно до Регламенту (ЄС) 2016/679 (GDPR) для цілей рекрутингу.';
-      if (isPl) rodoText = 'Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. (RODO).';
-      if (isEn) rodoText = 'I consent to the processing of my personal data for the purpose of recruitment in accordance with Regulation (EU) 2016/679 (GDPR).';
-      if (isRu) rodoText = 'Я даю согласие на обработку моих персональных данных для целей найма в соответствии с Регламентом (ЕС) 2016/679 (GDPR).';
-      html += `<hr style="margin:1.5rem 0;border-color:#e5e7eb;"><p style="font-size:0.75rem;color:#9ca3af;font-style:italic;">${rodoText}</p>`;
-
-      if ($('cv-output')) $('cv-output').innerHTML = html;
-
-      let letterText = '';
-      if (isPl) letterText = `${city}, ${new Date().toLocaleDateString('pl-PL')}\n\n${name}\n${email} | ${phone}\n\n\nSzanowni Państwo,\n\nZ dużym zainteresowaniem zwracam się w sprawie stanowiska ${position}. Jestem zmotywowanym i odpowiedzialnym pracownikiem, który poszukuje możliwości rozwoju zawodowego w Polsce.\n\n${exps.length ? 'Posiadam doświadczenie zawodowe, w tym na stanowisku ' + exps[0].title + (exps[0].company ? ' w firmie ' + exps[0].company : '') + '. ' : ''}Moje atuty to: ${selectedSkills.slice(0, 4).join(', ') || 'pracowitość, punktualność, gotowość do nauki'}. Znam język polski na poziomie ${plLevel}${enLevel ? ' oraz angielski na poziomie ' + enLevel : ''}.\n\nJestem gotowy do podjęcia pracy od zaraz i chętnie poznam szczegóły oferty podczas rozmowy kwalifikacyjnej.\n\nZ poważaniem,\n${name}`;
-      else if (isEn) letterText = `${city}, ${new Date().toLocaleDateString('en-US')}\n\n${name}\n${email} | ${phone}\n\n\nDear Hiring Manager,\n\nI am writing to express my strong interest in the ${position} position. I am a highly motivated and responsible professional seeking career opportunities.\n\n${exps.length ? 'I have relevant work experience, including a role as ' + exps[0].title + (exps[0].company ? ' at ' + exps[0].company : '') + '. ' : ''}My key strengths include: ${selectedSkills.slice(0, 4).join(', ') || 'hard work, punctuality, eagerness to learn'}. I speak Polish at a ${plLevel} level${enLevel ? ' and English at a ' + enLevel + ' level' : ''}.\n\nI am available to start immediately and would welcome the opportunity to discuss my qualifications further in an interview.\n\nSincerely,\n${name}`;
-      else if (isRu) letterText = `${city}, ${new Date().toLocaleDateString('ru-RU')}\n\n${name}\n${email} | ${phone}\n\n\nУважаемые господа,\n\nС большим интересом обращаюсь по поводу вакансии ${position}. Я мотивированный и ответственный сотрудник, который ищет возможности для профессионального развития.\n\n${exps.length ? 'Имею опыт работы на должности ' + exps[0].title + (exps[0].company ? ' в компании ' + exps[0].company : '') + '. ' : ''}Мои сильные стороны: ${selectedSkills.slice(0, 4).join(', ') || 'трудолюбие, пунктуальность, готовность учиться'}. Знаю польский язык на уровне ${plLevel}${enLevel ? ' и английский на уровне ' + enLevel : ''}.\n\nГотов приступить к работе немедленно и с удовольствием обсужу детали предложения на собеседовании.\n\nС уважением,\n${name}`;
-      else letterText = `${city}, ${new Date().toLocaleDateString('uk-UA')}\n\n${name}\n${email} | ${phone}\n\n\nШановні пані та панове,\n\nІз великим інтересом звертаюся щодо посади ${position}. Я мотивований та відповідальний працівник, який шукає можливості для професійного розвитку у Польщі.\n\n${exps.length ? 'Маю досвід роботи на посаді ' + exps[0].title + (exps[0].company ? ' у компанії ' + exps[0].company : '') + '. ' : ''}Мої переваги: ${selectedSkills.slice(0, 4).join(', ') || 'працьовитість, пунктуальність, готовність до навчання'}. Знаю польську мову на рівні ${plLevel}${enLevel ? ' та англійську на рівні ' + enLevel : ''}.\n\nГотовий приступити до роботи одразу і з задоволенням обговорю деталі пропозиції під час співбесіди.\n\nЗ повагою,\n${name}`;
-
-      if ($('letter-output')) $('letter-output').textContent = letterText;
-    };
-
-    window.showTab = function(tab) {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      if ($('tab-cv')) $('tab-cv').style.display = tab === 'cv' ? 'block' : 'none';
-      if ($('tab-letter')) $('tab-letter').style.display = tab === 'letter' ? 'block' : 'none';
-      if (event && event.target) event.target.classList.add('active');
-    };
-
-    window.copyCV = function() {
-      const activeTab = $('tab-cv') && $('tab-cv').style.display !== 'none' ? 'cv' : 'letter';
-      const text = activeTab === 'cv' ? $('cv-output').innerText : $('letter-output').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = event.target;
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✅ Skopiowano!';
-        setTimeout(() => { btn.innerHTML = orig; }, 2000);
-      });
-    };
-
-    window.downloadCV = function() {
-      const activeTab = $('tab-cv') && $('tab-cv').style.display !== 'none' ? 'cv' : 'letter';
-      const text = activeTab === 'cv' ? $('cv-output').innerText : $('letter-output').textContent;
-      const name = $('cv-name') ? $('cv-name').value || 'cv' : 'cv';
-      const filename = activeTab === 'cv'
-        ? `CV_${name.replace(/\s+/g, '_')}.txt`
-        : `Cover_Letter_${name.replace(/\s+/g, '_')}.txt`;
-      const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = filename;
-      a.click();
-    };
-
-    window.downloadPDF = function() {
-      const activeTab = $('tab-cv') && $('tab-cv').style.display !== 'none' ? 'cv' : 'letter';
-      const element = activeTab === 'cv' ? $('cv-output') : $('letter-output');
-      const name = $('cv-name') ? $('cv-name').value || 'cv' : 'cv';
-      const filename = activeTab === 'cv'
-        ? `CV_${name.replace(/\s+/g, '_')}.pdf`
-        : `Cover_Letter_${name.replace(/\s+/g, '_')}.pdf`;
-
-      const opt = {
-        margin:       15,
-        filename:     filename,
-        image:        { type: 'jpeg', quality: 1.0 },
-        html2canvas:  { scale: 2, useCORS: true },
-        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      if (typeof html2pdf !== 'undefined') {
-        html2pdf().set(opt).from(element).save();
-      } else {
-        alert("Library html2pdf is loading, please try again in a moment.");
-      }
-    };
-  })();
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="cv.meta_title">Генератор CV для Польщі — Rybezh</title>
   <meta name="description" data-i18n="cv.meta_description" data-i18n-attr="content" content="Створи професійне резюме та супровідний лист для роботи у Польщі. Формат Pracuj.pl. Українською та польською.">
@@ -418,357 +185,257 @@
       </div>
 
       <!-- Steps Progress -->
-
-<style>
-  .generator-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    align-items: start;
-    text-align: left;
-  }
-  @media (max-width: 768px) {
-    .generator-container {
-      grid-template-columns: 1fr;
-    }
-  }
-  .form-pane {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-height: 80vh;
-    overflow-y: auto;
-    padding-right: 1rem;
-  }
-  .form-pane::-webkit-scrollbar {
-    width: 6px;
-  }
-  .form-pane::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 4px;
-  }
-  .preview-pane {
-    position: sticky;
-    top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .preview-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 2rem;
-    min-height: 60vh;
-    box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06);
-    overflow-y: auto;
-    max-height: 70vh;
-  }
-  .form-section {
-    background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-  }
-  .form-section h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #0f766e;
-    font-size: 1.1rem;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-  }
-  .form-group {
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-  .form-group label {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #334155;
-  }
-  .form-group input, .form-group select, .form-group textarea {
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: #0f766e;
-    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
-  }
-  .btn-action {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background-color 0.2s, transform 0.1s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .btn-action:active {
-    transform: scale(0.98);
-  }
-  .btn-action.primary {
-    background: #0f766e;
-    color: white;
-  }
-  .btn-action.primary:hover {
-    background: #115e59;
-  }
-  .btn-action.secondary {
-    background: #e2e8f0;
-    color: #334155;
-  }
-  .btn-action.secondary:hover {
-    background: #cbd5e1;
-  }
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .skill-badge {
-    background: #e0f2fe;
-    color: #0369a1;
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    border: 1px solid #bae6fd;
-    transition: all 0.2s;
-  }
-  .skill-badge:hover {
-    background: #bae6fd;
-  }
-  .selected-skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  .skill-tag {
-    background: #0f766e;
-    color: white;
-    padding: 0.25rem 0.5rem 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.85rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .skill-tag button {
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 0 4px;
-  }
-  .skill-tag button:hover {
-    color: #fca5a5;
-  }
-  .exp-entry {
-    background: white;
-    border: 1px solid #e2e8f0;
-    padding: 1rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  .remove-exp {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: #fee2e2;
-    color: #ef4444;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-  }
-  .action-row {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .tabs {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  .tab-btn {
-    flex: 1;
-    padding: 0.75rem;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    border-bottom: none;
-    border-radius: 8px 8px 0 0;
-    cursor: pointer;
-    font-weight: 600;
-    color: #64748b;
-  }
-  .tab-btn.active {
-    background: #0f766e;
-    color: white;
-    border-color: #0f766e;
-  }
-  #cv-output, #letter-output {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #1e293b;
-    line-height: 1.5;
-  }
-  #cv-output h4, #letter-output h4 {
-    color: #0f766e;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.25rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    font-size: 1.1rem;
-  }
-</style>
-
-<div class="generator-container content-wrapper">
-  <!-- Left Pane: Forms -->
-  <div class="form-pane" id="cv-form-container">
-
-    <!-- Basic Info -->
-    <div class="form-section">
-      <h3 data-i18n="step1">Krok 1: Dane Osobiste / Крок 1: Особисті дані</h3>
-      <div class="form-group">
-        <label data-i18n="lang">Język CV / Мова резюме</label>
-        <select id="cv-lang">
-          <option value="pl">Polski</option>
-          <option value="ua">Українська</option>
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
-        </select>
+      <div class="cv-steps">
+        <div class="cv-step active" data-step="1">1. <span data-lang-content="ua" style="display:inline">Дані</span><span data-lang-content="pl" style="display:none">Dane</span></div>
+        <div class="cv-step" data-step="2">2. <span data-lang-content="ua" style="display:inline">Досвід</span><span data-lang-content="pl" style="display:none">Doświadczenie</span></div>
+        <div class="cv-step" data-step="3">3. <span data-lang-content="ua" style="display:inline">Навички</span><span data-lang-content="pl" style="display:none">Umiejętności</span></div>
+        <div class="cv-step" data-step="4">4. <span data-lang-content="ua" style="display:inline">Результат</span><span data-lang-content="pl" style="display:none">Wynik</span></div>
       </div>
-      <div class="form-group">
-        <label data-i18n="photo">Zdjęcie / Фото (Opcjonalnie)</label>
-        <input type="file" id="cv-photo" accept="image/*" onchange="previewPhoto(event)">
-      </div>
-      <div class="form-group"><label data-i18n="name">Imię i Nazwisko / Ім'я та Прізвище</label><input type="text" id="cv-name" placeholder="Ivan Petrenko"></div>
-      <div class="form-group"><label data-i18n="email">Email / Ел. пошта</label><input type="email" id="cv-email" placeholder="ivan@example.com"></div>
-      <div class="form-group"><label data-i18n="phone">Telefon / Телефон</label><input type="tel" id="cv-phone" placeholder="+48 000 000 000"></div>
-      <div class="form-group"><label data-i18n="city">Miasto / Місто</label><input type="text" id="cv-city" placeholder="Warszawa"></div>
-      <div class="form-group"><label data-i18n="position">Stanowisko / Посада</label><input type="text" id="cv-position" placeholder="Pracownik produkcji"></div>
-      <div class="form-group"><label data-i18n="link">Link (LinkedIn, Portfolio)</label><input type="url" id="cv-link" placeholder="https://linkedin.com/in/ivan..."></div>
-    </div>
 
-    <!-- Experience -->
-    <div class="form-section">
-      <h3 data-i18n="step2">Krok 2: Doświadczenie / Досвід</h3>
-      <div id="experience-list"></div>
-      <button class="btn-action secondary" onclick="addExperience()" style="width:100%;margin-top:1rem;"><span data-i18n="addExp">+ Dodaj doświadczenie / Додати досвід</span></button>
-    </div>
+      <!-- Step 1: Personal Info -->
+      <div class="cv-section active" id="step1">
+        <div class="cv-card">
+          <h2>👤 <span data-lang-content="ua" style="display:inline">Особисті дані</span><span data-lang-content="pl" style="display:none">Dane osobowe</span></h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Ім'я та прізвище</label>
+              <label data-lang-content="pl" style="display:none">Imię i nazwisko</label>
+              <input type="text" id="cv-name" placeholder="Olena Kovalenko">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="cv-email" placeholder="olena@email.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Телефон</label>
+              <label data-lang-content="pl" style="display:none">Telefon</label>
+              <input type="tel" id="cv-phone" placeholder="+48 123 456 789">
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Місто</label>
+              <label data-lang-content="pl" style="display:none">Miasto</label>
+              <select id="cv-city">
+                <option value="Warszawa">Warszawa</option>
+                <option value="Kraków">Kraków</option>
+                <option value="Wrocław">Wrocław</option>
+                <option value="Gdańsk">Gdańsk</option>
+                <option value="Poznań">Poznań</option>
+                <option value="Łódź">Łódź</option>
+                <option value="Katowice">Katowice</option>
+                <option value="Lublin">Lublin</option>
+                <option value="Rzeszów">Rzeszów</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Бажана посада</label>
+              <label data-lang-content="pl" style="display:none">Stanowisko</label>
+              <input type="text" id="cv-position" placeholder="Pracownik produkcji / Magazynier / Spawacz">
+              <div class="hint" data-lang-content="ua">Краще писати польською — роботодавці бачать саме це</div>
+              <div class="hint" data-lang-content="pl" style="display:none">Wpisz po polsku — pracodawcy to widzą</div>
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Мова CV</label>
+              <label data-lang-content="pl" style="display:none">Język CV</label>
+              <select id="cv-lang">
+                <option value="pl">🇵🇱 Польською (рекомендовано)</option>
+                <option value="ua">🇺🇦 Українською</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Фото (опціонально)</label>
+              <label data-lang-content="pl" style="display:none">Zdjęcie (opcjonalnie)</label>
+              <input type="file" id="cv-photo" accept="image/*" onchange="previewPhoto(event)">
+              <div class="hint" data-lang-content="ua">Додайте професійне фото для кращого враження</div>
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Посилання (LinkedIn/Портфоліо)</label>
+              <label data-lang-content="pl" style="display:none">Link (LinkedIn/Portfolio)</label>
+              <input type="url" id="cv-link" placeholder="https://linkedin.com/in/olena">
+            </div>
+          </div>
+          <div style="text-align:right;margin-top:1rem;">
+            <button class="btn-generate" onclick="goStep(2)"><span data-lang-content="ua" style="display:inline">Далі</span><span data-lang-content="pl" style="display:none">Dalej</span> →</button>
+          </div>
+        </div>
+      </div>
 
-    <!-- Education -->
-    <div class="form-section">
-      <h3 data-i18n="step3">Krok 3: Wykształcenie / Освіта</h3>
-      <div class="form-group"><label data-i18n="school">Uczelnia / Szkoła / Навчальний заклад</label><input type="text" id="cv-school" placeholder="Politechnika Warszawska"></div>
-      <div class="form-group"><label data-i18n="degree">Kierunek / Tytuł / Спеціальність</label><input type="text" id="cv-degree" placeholder="Inżynier mechanik"></div>
-    </div>
+      <!-- Step 2: Experience -->
+      <div class="cv-section" id="step2">
+        <div class="cv-card">
+          <h2>💼 <span data-lang-content="ua" style="display:inline">Досвід роботи</span><span data-lang-content="pl" style="display:none">Doświadczenie zawodowe</span></h2>
+          <div id="exp-list">
+            <div class="exp-entry" data-idx="0">
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-content="ua" style="display:block">Посада</label>
+                  <label data-lang-content="pl" style="display:none">Stanowisko</label>
+                  <input type="text" class="exp-title" placeholder="Pracownik magazynu">
+                </div>
+                <div class="form-group">
+                  <label data-lang-content="ua" style="display:block">Компанія</label>
+                  <label data-lang-content="pl" style="display:none">Firma</label>
+                  <input type="text" class="exp-company" placeholder="Amazon Polska">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-lang-content="ua" style="display:block">Період</label>
+                  <label data-lang-content="pl" style="display:none">Okres</label>
+                  <input type="text" class="exp-dates" placeholder="03.2023 – teraz">
+                </div>
+                <div class="form-group">
+                  <label data-lang-content="ua" style="display:block">Обов'язки</label>
+                  <label data-lang-content="pl" style="display:none">Obowiązki</label>
+                  <textarea class="exp-duties" placeholder="Kompletowanie zamówień, obsługa skanera, praca w zespole 10 osób" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn-action secondary" onclick="addExp()" style="margin-top:0.5rem;">+ <span data-lang-content="ua" style="display:inline">Додати ще</span><span data-lang-content="pl" style="display:none">Dodaj kolejne</span></button>
 
-    <!-- Skills -->
-    <div class="form-section">
-      <h3 data-i18n="skills">Umiejętności / Навички</h3>
-      <div class="skills-grid">
-        <span class="skill-badge" onclick="addSkill(this)">Prawo jazdy kat. B</span>
-        <span class="skill-badge" onclick="addSkill(this)">Obsługa wózka widłowego</span>
-        <span class="skill-badge" onclick="addSkill(this)">Znajomość MS Office</span>
-        <span class="skill-badge" onclick="addSkill(this)">Książeczka sanepidowska</span>
-        <span class="skill-badge" onclick="addSkill(this)">Zarządzanie zespołem</span>
-        <span class="skill-badge" onclick="addSkill(this)">Punktualność</span>
-        <span class="skill-badge" onclick="addSkill(this)">Praca w zespole</span>
+          <h2 style="margin-top:1.5rem;">🎓 <span data-lang-content="ua" style="display:inline">Освіта</span><span data-lang-content="pl" style="display:none">Wykształcenie</span></h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Навчальний заклад</label>
+              <label data-lang-content="pl" style="display:none">Szkoła / uczelnia</label>
+              <input type="text" id="cv-school" placeholder="Politechnika Lwowska / Liceum nr 5">
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Рівень / спеціальність</label>
+              <label data-lang-content="pl" style="display:none">Poziom / kierunek</label>
+              <input type="text" id="cv-degree" placeholder="Wykształcenie średnie / Inżynier mechanik">
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:1rem;">
+            <button class="btn-action secondary" onclick="goStep(1)">← <span data-lang-content="ua" style="display:inline">Назад</span><span data-lang-content="pl" style="display:none">Wstecz</span></button>
+            <button class="btn-generate" onclick="goStep(3)"><span data-lang-content="ua" style="display:inline">Далі</span><span data-lang-content="pl" style="display:none">Dalej</span> →</button>
+          </div>
+        </div>
       </div>
-      <div class="form-group" style="display:flex;gap:0.5rem;margin-top:1rem;">
-        <input type="text" id="cv-custom-skill" placeholder="Inna umiejętność / Інша навичка" style="flex:1;">
-        <button class="btn-action secondary" onclick="addCustomSkill()">+</button>
-      </div>
-      <div id="selected-skills" class="selected-skills-container"></div>
-    </div>
 
-    <!-- Languages -->
-    <div class="form-section">
-      <h3>Języki / Мови</h3>
-      <div class="form-group">
-        <label>Ukraiński / Українська</label>
-        <select id="cv-lang-ua">
-          <option value="Ojczysty">Ojczysty / Рідна</option>
-          <option value="Biegły">Biegły / Вільна</option>
-        </select>
+      <!-- Step 3: Skills -->
+      <div class="cv-section" id="step3">
+        <div class="cv-card">
+          <h2>🛠️ <span data-lang-content="ua" style="display:inline">Навички та мови</span><span data-lang-content="pl" style="display:none">Umiejętności i języki</span></h2>
+          <div class="form-group">
+            <label data-lang-content="ua" style="display:block">Навички (натисніть щоб додати)</label>
+            <label data-lang-content="pl" style="display:none">Umiejętności (kliknij aby dodać)</label>
+            <div class="skills-tags" id="skill-suggestions">
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Wózek widłowy</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Praca fizyczna</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Spawanie</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">CNC</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Obsługa klienta</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Prawo jazdy kat. B</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">MS Office</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Praca w zespole</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Gotowanie</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Sprzątanie</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">Pakowanie</span>
+              <span class="skill-tag" onclick="addSkill(this)" style="cursor:pointer">SAP</span>
+            </div>
+            <div class="form-row" style="margin-top:0.5rem;">
+              <input type="text" id="cv-custom-skill" placeholder="Або введіть свою навичку…">
+              <button class="btn-action secondary" onclick="addCustomSkill()" style="white-space:nowrap;" data-i18n="cv.skill.add">+ Додати</button>
+            </div>
+            <div class="skills-tags" id="selected-skills" style="margin-top:0.7rem;"></div>
+          </div>
+
+          <h2 style="margin-top:1.25rem;">🌐 <span data-lang-content="ua" style="display:inline">Знання мов</span><span data-lang-content="pl" style="display:none">Znajomość języków</span></h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>🇺🇦 <span data-lang-content="ua" style="display:inline">Українська</span><span data-lang-content="pl" style="display:none">Ukraiński</span></label>
+              <select id="cv-lang-ua">
+                <option value="Ojczysty">Рідна / Ojczysty</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>🇵🇱 <span data-lang-content="ua" style="display:inline">Польська</span><span data-lang-content="pl" style="display:none">Polski</span></label>
+              <select id="cv-lang-pl">
+                <option value="A1">A1 — Початковий</option>
+                <option value="A2">A2 — Елементарний</option>
+                <option value="B1" selected>B1 — Середній</option>
+                <option value="B2">B2 — Вище середнього</option>
+                <option value="C1">C1 — Вільний</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>🇬🇧 <span data-lang-content="ua" style="display:inline">Англійська</span><span data-lang-content="pl" style="display:none">Angielski</span></label>
+              <select id="cv-lang-en">
+                <option value="">— не вказувати —</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>🇷🇺 <span data-lang-content="ua" style="display:inline">Російська</span><span data-lang-content="pl" style="display:none">Rosyjski</span></label>
+              <select id="cv-lang-ru">
+                <option value="">— не вказувати —</option>
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="B1">B1</option>
+                <option value="B2">B2</option>
+                <option value="C1">C1</option>
+                <option value="Ojczysty">Рідна</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;margin-top:1rem;">
+            <button class="btn-action secondary" onclick="goStep(2)">← <span data-lang-content="ua" style="display:inline">Назад</span><span data-lang-content="pl" style="display:none">Wstecz</span></button>
+            <button class="btn-generate" onclick="generateCV()">✨ <span data-lang-content="ua" style="display:inline">Згенерувати CV</span><span data-lang-content="pl" style="display:none">Generuj CV</span></button>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Polski / Польська</label>
-        <select id="cv-lang-pl">
-          <option value="Początkujący (A1)">Początkujący (A1)</option>
-          <option value="Podstawowy (A2)">Podstawowy (A2)</option>
-          <option value="Średni (B1)">Średni (B1)</option>
-          <option value="Dobry (B2)">Dobry (B2)</option>
-          <option value="Biegły (C1/C2)">Biegły (C1/C2)</option>
-        </select>
+
+      <!-- Step 4: Result -->
+      <div class="cv-section" id="step4">
+        <div class="cv-card">
+          <h2>✅ <span data-lang-content="ua" style="display:inline">Результат</span><span data-lang-content="pl" style="display:none">Wynik</span></h2>
+
+          <div class="tab-btns">
+            <button class="tab-btn active" onclick="showTab('cv')">📄 CV</button>
+            <button class="tab-btn" onclick="showTab('letter')">✉️ <span data-lang-content="ua" style="display:inline">Супровідний лист</span><span data-lang-content="pl" style="display:none">List motywacyjny</span></button>
+          </div>
+
+          <div id="tab-cv">
+            <div class="cv-preview" id="cv-output"></div>
+          </div>
+          <div id="tab-letter" style="display:none;">
+            <div class="letter-preview" id="letter-output"></div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn-action primary" onclick="copyCV()">📋 <span data-lang-content="ua" style="display:inline">Копіювати</span><span data-lang-content="pl" style="display:none">Kopiuj</span></button>
+            <button class="btn-action primary" onclick="downloadPDF()">📄 <span data-lang-content="ua" style="display:inline">Завантажити PDF</span><span data-lang-content="pl" style="display:none">Pobierz PDF</span></button>
+            <button class="btn-action secondary" onclick="downloadCV()">📥 <span data-lang-content="ua" style="display:inline">Завантажити .txt</span><span data-lang-content="pl" style="display:none">Pobierz .txt</span></button>
+            <button class="btn-action secondary" onclick="goStep(1)">🔄 <span data-lang-content="ua" style="display:inline">Редагувати</span><span data-lang-content="pl" style="display:none">Edytuj</span></button>
+          </div>
+
+          <div style="text-align:center;margin-top:1.25rem;padding:1rem;border-radius:12px;background:rgba(0,166,126,0.05);">
+            <p style="margin:0;" data-lang-content="ua"><strong>💡 Порада:</strong> Скопіюй текст і встав у PDF-редактор (Canva, Google Docs) для гарного оформлення, або використовуй на <a href="https://www.pracuj.pl" target="_blank" rel="noopener">Pracuj.pl</a> напряму.</p>
+            <p style="margin:0;display:none;" data-lang-content="pl"><strong>💡 Rada:</strong> Skopiuj tekst i wklej do edytora PDF (Canva, Google Docs) lub użyj bezpośrednio na <a href="https://www.pracuj.pl" target="_blank" rel="noopener">Pracuj.pl</a>.</p>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Angielski / Англійська</label>
-        <select id="cv-lang-en">
-          <option value="">Brak / Немає</option>
-          <option value="A1">A1</option>
-          <option value="A2">A2</option>
-          <option value="B1">B1</option>
-          <option value="B2">B2</option>
-          <option value="C1/C2">C1/C2</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Rosyjski / Російська</label>
-        <select id="cv-lang-ru">
-          <option value="">Brak / Немає</option>
-          <option value="Biegły">Biegły / Вільна</option>
-          <option value="Ojczysty">Ojczysty / Рідна</option>
-        </select>
+
+      <div style="text-align:center;margin:2rem 0;">
+        <a href="/vacancies.html" class="btn-primary" style="display:inline-block;padding:0.8rem 2rem;" data-lang-content="ua">Переглянути вакансії</a>
+        <a href="/vacancies.html" class="btn-primary" style="display:none;padding:0.8rem 2rem;" data-lang-content="pl">Zobacz oferty pracy</a>
       </div>
     </div>
-
-  </div>
-
-  <!-- Right Pane: Preview -->
-  <div class="preview-pane">
-    <div class="tabs">
-      <button class="tab-btn active" onclick="showTab('cv')">CV</button>
-      <button class="tab-btn" onclick="showTab('letter')">List Motywacyjny / Мотиваційний лист</button>
-    </div>
-
-    <div class="preview-card">
-      <div id="tab-cv"><div id="cv-output"></div></div>
-      <div id="tab-letter" style="display:none;"><pre id="letter-output" style="white-space:pre-wrap;font-family:inherit;margin:0;"></pre></div>
-    </div>
-
-    <div class="action-row">
-      <button class="btn-action secondary" onclick="downloadCV()" style="flex:1;">⬇️ TXT</button>
-      <button class="btn-action primary" onclick="downloadPDF()" style="flex:1;">📄 PDF</button>
-      <button class="btn-action secondary" onclick="copyCV()" style="flex:1;">📋 Kopia</button>
-    </div>
-  </div>
-
-</div>
-\n  </main>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
