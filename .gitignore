@@ -39,3 +39,9 @@ credentials.yml
 test-results/
 venv
 testenv
+<<<<<<< HEAD
+verification/
+=======
+dist/quiz-data.json
+src/quiz-data.json
+>>>>>>> origin/main

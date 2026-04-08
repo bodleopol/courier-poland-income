@@ -2918,6 +2918,8 @@ async function build() {
     .slice(0, 50)
     .forEach((post) => normalizeRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
 
+  await fs.writeFile(path.join(DIST, 'posts.json'), JSON.stringify(posts), 'utf8');
+
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
   // Inject AdSense Auto Ads into the shared page template (affects all generated vacancy/blog pages)
@@ -3054,6 +3056,15 @@ async function build() {
     } catch (fallbackErr) {
       // No PNG fallback found, continue
     }
+  }
+
+  // Copy va-data.json
+  try {
+    const vaDataPath = path.join(SRC, 'va-data.json');
+    const vaDataContent = await fs.readFile(vaDataPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'va-data.json'), vaDataContent, 'utf8');
+  } catch (e) {
+    console.warn('⚠️  va-data.json not found, skipping copy');
   }
 
   // Prepare dynamic translations for jobs
