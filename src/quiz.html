@@ -1,0 +1,251 @@
+<style>
+  .quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .quiz-section {
+    display: none;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .quiz-section.active {
+    display: block;
+  }
+
+  .quiz-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .industry-card {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .industry-card:hover {
+    border-color: #00a67e;
+    background: #e8f5e9;
+  }
+
+  .question-container {
+    margin-bottom: 20px;
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .options-grid {
+    display: grid;
+    gap: 10px;
+  }
+
+  .option-btn {
+    padding: 15px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: #fff;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+  }
+
+  .option-btn:hover {
+    background: #f8f9fa;
+    border-color: #ced4da;
+  }
+
+  .option-btn.selected {
+    background: #e3f2fd;
+    border-color: #2196f3;
+  }
+
+  .option-btn.correct {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32;
+  }
+
+  .option-btn.incorrect {
+    background: #ffebee;
+    border-color: #f44336;
+    color: #c62828;
+  }
+
+  .option-letter {
+    font-weight: bold;
+    margin-right: 15px;
+    background: #e9ecef;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .quiz-controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: #00a67e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: #008f6c;
+  }
+
+  .btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  .progress-container {
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #00a67e;
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  .progress-text {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 5px;
+  }
+
+  .results-summary {
+    text-align: center;
+  }
+
+  .score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 10px solid #00a67e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 auto 30px;
+    color: #00a67e;
+  }
+
+  .loading-spinner {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+</style>
+
+<div class="quiz-container">
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="quiz-section active">
+    <div class="loading-spinner">
+      Завантаження даних... ⏳
+    </div>
+  </div>
+
+  <!-- Industry Selection Screen -->
+  <div id="selection-screen" class="quiz-section">
+    <div class="quiz-header">
+      <h2 data-i18n="quiz.select_industry">Оберіть галузь для тестування</h2>
+      <p data-i18n="quiz.select_desc">Пройдіть тест для перевірки своїх професійних знань</p>
+    </div>
+    <div class="industry-grid" id="industry-grid">
+      <!-- Industry cards will be populated here -->
+    </div>
+  </div>
+
+  <!-- Quiz Interface Screen -->
+  <div id="quiz-screen" class="quiz-section">
+    <div class="quiz-header">
+      <h2 id="current-industry-title">Галузь</h2>
+    </div>
+
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-text" id="progress-text">Питання 1 з 10</div>
+    </div>
+
+    <div class="question-container">
+      <div class="question-text" id="question-text">Текст питання буде тут</div>
+      <div class="options-grid" id="options-grid">
+        <!-- Options will be populated here -->
+      </div>
+    </div>
+
+    <div class="quiz-controls">
+      <button id="btn-quit" class="btn-primary" style="background: #dc3545;" data-i18n="quiz.quit">Завершити достроково</button>
+      <button id="btn-next" class="btn-primary" disabled data-i18n="quiz.next">Наступне питання</button>
+    </div>
+  </div>
+
+  <!-- Results Screen -->
+  <div id="results-screen" class="quiz-section">
+    <div class="results-summary">
+      <h2 data-i18n="quiz.results_title">Ваш результат</h2>
+      <div class="score-circle">
+        <span id="final-score">0</span>%
+      </div>
+      <p id="result-message" style="font-size: 1.2rem; margin-bottom: 30px;"></p>
+
+      <div style="display: flex; gap: 15px; justify-content: center;">
+        <button id="btn-retry" class="btn-primary" data-i18n="quiz.retry">Спробувати ще раз</button>
+        <button id="btn-home" class="btn-primary" style="background: #6c757d;" data-i18n="quiz.home">Обрати іншу галузь</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/quiz/quiz.js"></script>

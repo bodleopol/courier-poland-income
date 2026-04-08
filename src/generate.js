@@ -3009,6 +3009,19 @@ async function build() {
     // modular game folder not found, continue
   }
 
+  // Copy quiz assets
+  try {
+    const quizDataPath = path.join(SRC, 'quiz-data.json');
+    const quizDataContent = await fs.readFile(quizDataPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'quiz-data.json'), quizDataContent, 'utf8');
+
+    await fs.mkdir(path.join(DIST, 'quiz'), { recursive: true });
+    const quizJsContent = await fs.readFile(path.join(SRC, 'quiz/quiz.js'), 'utf8');
+    await fs.writeFile(path.join(DIST, 'quiz/quiz.js'), quizJsContent, 'utf8');
+  } catch (e) {
+    console.error('Error copying quiz assets:', e);
+  }
+
   // Copy favicon.svg
   try {
     const faviconPath = path.join(SRC, 'favicon.svg');
@@ -3093,7 +3106,7 @@ async function build() {
 
   // copy static pages
   const staticPages = [
-  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'bogdan-tiutenko.html'];
+  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'quiz.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'quiz-ru.html', 'bogdan-tiutenko.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
