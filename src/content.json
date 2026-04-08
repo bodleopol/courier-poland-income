@@ -1,5 +1,450 @@
 [
   {
+    "slug": "krakow-frontend-developer-991",
+    "category": "it",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "city_en": "Krakow",
+    "city_ru": "Краков",
+    "title": "Frontend Розробник (React)",
+    "title_pl": "Frontend Developer (React)",
+    "title_en": "Frontend Developer (React)",
+    "title_ru": "Frontend Разработчик (React)",
+    "salary": "12000 - 18000 PLN B2B",
+    "company": "WebSoft Solutions",
+    "shift": "Гнучкий графік",
+    "shift_pl": "Elastyczny grafik",
+    "shift_en": "Flexible schedule",
+    "shift_ru": "Гибкий график",
+    "pattern": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start": "З наступного місяця",
+    "start_pl": "Od przyszłego miesiąca",
+    "start_en": "From next month",
+    "start_ru": "Со следующего месяца",
+    "contract": "B2B",
+    "contract_pl": "B2B",
+    "contract_en": "B2B",
+    "contract_ru": "B2B",
+    "offers": [
+      "Офіс в центрі Кракова",
+      "Медичне страхування",
+      "Курси англійської"
+    ],
+    "offers_pl": [
+      "Biuro w centrum Krakowa",
+      "Ubezpieczenie medyczne",
+      "Kursy angielskiego"
+    ],
+    "offers_en": [
+      "Office in central Krakow",
+      "Medical insurance",
+      "English courses"
+    ],
+    "offers_ru": [
+      "Офис в центре Кракова",
+      "Медицинская страховка",
+      "Курсы английского"
+    ],
+    "tasks": [
+      "Розробка UI",
+      "Оптимізація",
+      "Написання тестів"
+    ],
+    "tasks_pl": [
+      "Rozwój UI",
+      "Optymalizacja",
+      "Pisanie testów"
+    ],
+    "tasks_en": [
+      "UI Development",
+      "Optimization",
+      "Writing tests"
+    ],
+    "tasks_ru": [
+      "Разработка UI",
+      "Оптимизация",
+      "Написание тестов"
+    ],
+    "details": [
+      "Досвід 3+ роки",
+      "React, TypeScript"
+    ],
+    "details_pl": [
+      "Doświadczenie 3+ lat",
+      "React, TypeScript"
+    ],
+    "details_en": [
+      "3+ years experience",
+      "React, TypeScript"
+    ],
+    "details_ru": [
+      "Опыт 3+ года",
+      "React, TypeScript"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "gdansk-warehouse-worker-992",
+    "category": "logistics",
+    "city": "Гданськ",
+    "city_pl": "Gdańsk",
+    "city_en": "Gdansk",
+    "city_ru": "Гданьск",
+    "title": "Працівник складу",
+    "title_pl": "Pracownik magazynu",
+    "title_en": "Warehouse Worker",
+    "title_ru": "Работник склада",
+    "salary": "5000 - 6500 PLN Netto",
+    "company": "Baltic Logistics",
+    "shift": "Змінний графік",
+    "shift_pl": "Praca zmianowa",
+    "shift_en": "Shift work",
+    "shift_ru": "Сменный график",
+    "pattern": "3 зміни",
+    "pattern_pl": "3 zmiany",
+    "pattern_en": "3 shifts",
+    "pattern_ru": "3 смены",
+    "start": "Негайно",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "Немедленно",
+    "contract": "Umowa zlecenia",
+    "contract_pl": "Umowa zlecenia",
+    "contract_en": "Mandate contract",
+    "contract_ru": "Договор поручения",
+    "offers": [
+      "Безкоштовний транспорт",
+      "Житло",
+      "Премії"
+    ],
+    "offers_pl": [
+      "Darmowy transport",
+      "Zakwaterowanie",
+      "Premie"
+    ],
+    "offers_en": [
+      "Free transport",
+      "Accommodation",
+      "Bonuses"
+    ],
+    "offers_ru": [
+      "Бесплатный транспорт",
+      "Жилье",
+      "Премии"
+    ],
+    "tasks": [
+      "Комплектація замовлень",
+      "Пакування",
+      "Підтримка чистоти"
+    ],
+    "tasks_pl": [
+      "Kompletowanie zamówień",
+      "Pakowanie",
+      "Utrzymanie czystości"
+    ],
+    "tasks_en": [
+      "Order picking",
+      "Packaging",
+      "Maintaining cleanliness"
+    ],
+    "tasks_ru": [
+      "Комплектация заказов",
+      "Упаковка",
+      "Поддержание чистоты"
+    ],
+    "details": [
+      "Без досвіду",
+      "Бажання працювати"
+    ],
+    "details_pl": [
+      "Bez doświadczenia",
+      "Chęć do pracy"
+    ],
+    "details_en": [
+      "No experience required",
+      "Willingness to work"
+    ],
+    "details_ru": [
+      "Без опыта",
+      "Желание работать"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "wroclaw-chef-assistant-993",
+    "category": "hospitality",
+    "city": "Вроцлав",
+    "city_pl": "Wrocław",
+    "city_en": "Wroclaw",
+    "city_ru": "Вроцлав",
+    "title": "Помічник кухаря",
+    "title_pl": "Pomocnik kucharza",
+    "title_en": "Chef Assistant",
+    "title_ru": "Помощник повара",
+    "salary": "4500 - 5500 PLN Netto",
+    "company": "Gastro Master",
+    "shift": "Графік роботи ресторану",
+    "shift_pl": "Grafik restauracji",
+    "shift_en": "Restaurant schedule",
+    "shift_ru": "График работы ресторана",
+    "pattern": "2/2",
+    "pattern_pl": "2/2",
+    "pattern_en": "2/2",
+    "pattern_ru": "2/2",
+    "start": "Якнайшвидше",
+    "start_pl": "Jak najszybciej",
+    "start_en": "ASAP",
+    "start_ru": "Как можно скорее",
+    "contract": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract",
+    "contract_ru": "Трудовой договор",
+    "offers": [
+      "Безкоштовне харчування",
+      "Уніформа",
+      "Чайові"
+    ],
+    "offers_pl": [
+      "Darmowe wyżywienie",
+      "Mundur",
+      "Napiwki"
+    ],
+    "offers_en": [
+      "Free meals",
+      "Uniform",
+      "Tips"
+    ],
+    "offers_ru": [
+      "Бесплатное питание",
+      "Униформа",
+      "Чаевые"
+    ],
+    "tasks": [
+      "Нарізка овочів",
+      "Допомога кухарю",
+      "Миття посуду"
+    ],
+    "tasks_pl": [
+      "Krojenie warzyw",
+      "Pomoc kucharzowi",
+      "Zmywanie naczyń"
+    ],
+    "tasks_en": [
+      "Chopping vegetables",
+      "Assisting chef",
+      "Washing dishes"
+    ],
+    "tasks_ru": [
+      "Нарезка овощей",
+      "Помощь повару",
+      "Мытье посуды"
+    ],
+    "details": [
+      "Санітарна книжка",
+      "Досвід бажаний"
+    ],
+    "details_pl": [
+      "Książeczka sanepidowska",
+      "Doświadczenie mile widziane"
+    ],
+    "details_en": [
+      "Sanitary book",
+      "Experience preferred"
+    ],
+    "details_ru": [
+      "Санитарная книжка",
+      "Опыт приветствуется"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "poznan-cnc-operator-994",
+    "category": "production",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "city_en": "Poznan",
+    "city_ru": "Познань",
+    "title": "Оператор ЧПК",
+    "title_pl": "Operator CNC",
+    "title_en": "CNC Operator",
+    "title_ru": "Оператор ЧПУ",
+    "salary": "7000 - 9000 PLN Netto",
+    "company": "MetalWorks SP z o.o.",
+    "shift": "Повний день",
+    "shift_pl": "Pełny etat",
+    "shift_en": "Full time",
+    "shift_ru": "Полный день",
+    "pattern": "3 зміни",
+    "pattern_pl": "3 zmiany",
+    "pattern_en": "3 shifts",
+    "pattern_ru": "3 смены",
+    "start": "В межах 2 тижнів",
+    "start_pl": "W ciągu 2 tygodni",
+    "start_en": "Within 2 weeks",
+    "start_ru": "В течение 2 недель",
+    "contract": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract",
+    "contract_ru": "Трудовой договор",
+    "offers": [
+      "Доплата за нічні",
+      "Навчання",
+      "Страхування"
+    ],
+    "offers_pl": [
+      "Dodatek za nocki",
+      "Szkolenia",
+      "Ubezpieczenie"
+    ],
+    "offers_en": [
+      "Night shift allowance",
+      "Training",
+      "Insurance"
+    ],
+    "offers_ru": [
+      "Доплата за ночные",
+      "Обучение",
+      "Страховка"
+    ],
+    "tasks": [
+      "Обслуговування станків",
+      "Контроль якості",
+      "Читання креслень"
+    ],
+    "tasks_pl": [
+      "Obsługa maszyn",
+      "Kontrola jakości",
+      "Czytanie rysunków"
+    ],
+    "tasks_en": [
+      "Machine operation",
+      "Quality control",
+      "Reading blueprints"
+    ],
+    "tasks_ru": [
+      "Обслуживание станков",
+      "Контроль качества",
+      "Чтение чертежей"
+    ],
+    "details": [
+      "Досвід від 1 року",
+      "Знання Fanuc/Siemens"
+    ],
+    "details_pl": [
+      "Doświadczenie od 1 roku",
+      "Znajomość Fanuc/Siemens"
+    ],
+    "details_en": [
+      "1+ year experience",
+      "Knowledge of Fanuc/Siemens"
+    ],
+    "details_ru": [
+      "Опыт от 1 года",
+      "Знание Fanuc/Siemens"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "lodz-customer-support-995",
+    "category": "office",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "city_en": "Lodz",
+    "city_ru": "Лодзь",
+    "title": "Спеціаліст підтримки клієнтів",
+    "title_pl": "Specjalista ds. Obsługi Klienta",
+    "title_en": "Customer Support Specialist",
+    "title_ru": "Специалист поддержки клиентов",
+    "salary": "6000 - 8000 PLN Brutto",
+    "company": "Global Connect",
+    "shift": "Офісні години",
+    "shift_pl": "Godziny biurowe",
+    "shift_en": "Office hours",
+    "shift_ru": "Офисные часы",
+    "pattern": "Пн-Пт 9-17",
+    "pattern_pl": "Pon-Pt 9-17",
+    "pattern_en": "Mon-Fri 9-17",
+    "pattern_ru": "Пн-Пт 9-17",
+    "start": "Вже",
+    "start_pl": "Już",
+    "start_en": "Now",
+    "start_ru": "Уже",
+    "contract": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment contract",
+    "contract_ru": "Трудовой договор",
+    "offers": [
+      "Гібридна робота",
+      "Карти Multisport",
+      "Овочеві дні"
+    ],
+    "offers_pl": [
+      "Praca hybrydowa",
+      "Karty Multisport",
+      "Owocowe dni"
+    ],
+    "offers_en": [
+      "Hybrid work",
+      "Multisport cards",
+      "Fruit days"
+    ],
+    "offers_ru": [
+      "Гибридная работа",
+      "Карты Multisport",
+      "Фруктовые дни"
+    ],
+    "tasks": [
+      "Відповіді на імейли",
+      "Вирішення проблем",
+      "Консультації"
+    ],
+    "tasks_pl": [
+      "Odpowiadanie na maile",
+      "Rozwiązywanie problemów",
+      "Konsultacje"
+    ],
+    "tasks_en": [
+      "Email replies",
+      "Problem solving",
+      "Consultations"
+    ],
+    "tasks_ru": [
+      "Ответы на письма",
+      "Решение проблем",
+      "Консультации"
+    ],
+    "details": [
+      "Вільна польська та англійська",
+      "Комунікабельність"
+    ],
+    "details_pl": [
+      "Płynny polski i angielski",
+      "Komunikatywność"
+    ],
+    "details_en": [
+      "Fluent Polish and English",
+      "Communication skills"
+    ],
+    "details_ru": [
+      "Свободный польский и английский",
+      "Коммуникабельность"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
     "slug": "warsaw-senior-software-engineer-888",
     "category": "it",
     "city": "Варшава",
