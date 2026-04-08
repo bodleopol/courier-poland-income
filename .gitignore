@@ -39,3 +39,4 @@ credentials.yml
 test-results/
 venv
 testenv
+src/quiz-data.json
