@@ -1,5 +1,749 @@
 [
   {
+    "slug": "warsaw-senior-software-engineer-888",
+    "category": "it",
+    "city": "Варшава",
+    "city_pl": "Warszawa",
+    "city_en": "Warsaw",
+    "city_ru": "Варшава",
+    "title": "Старший інженер-програміст (Full-Stack)",
+    "title_pl": "Starszy Inżynier Oprogramowania (Full-Stack)",
+    "title_en": "Senior Software Engineer (Full-Stack)",
+    "title_ru": "Старший инженер-программист (Full-Stack)",
+    "salary": "15000 - 22000 PLN B2B",
+    "company": "TechInnovate Solutions",
+    "shift_ua": "Гнучкий графік роботи",
+    "shift_pl": "Elastyczne godziny pracy",
+    "shift_en": "Flexible working hours",
+    "shift_ru": "Гибкий график работы",
+    "pattern_ua": "5/2",
+    "pattern_pl": "5/2",
+    "pattern_en": "5/2",
+    "pattern_ru": "5/2",
+    "start_ua": "Протягом місяця",
+    "start_pl": "W ciągu miesiąca",
+    "start_en": "Within a month",
+    "start_ru": "В течение месяца",
+    "contract_ua": "B2B або Umowa o pracę",
+    "contract_pl": "Kontrakt B2B lub Umowa o pracę",
+    "contract_en": "B2B Contract or Employment Contract",
+    "contract_ru": "B2B контракт или Трудовой договор",
+    "offers_ua": [
+      "Віддалена робота або гібридний формат в офісі у Варшаві",
+      "Бюджет на навчання та сертифікації (AWS, Azure)",
+      "Сучасна техніка від компанії (MacBook Pro) та оплата інтернету"
+    ],
+    "offers_pl": [
+      "Praca zdalna lub model hybrydowy w biurze w Warszawie",
+      "Budżet na szkolenia i certyfikacje (AWS, Azure)",
+      "Nowoczesny sprzęt od firmy (MacBook Pro) oraz opłacenie internetu"
+    ],
+    "offers_en": [
+      "Remote work or hybrid model in the Warsaw office",
+      "Budget for training and certifications (AWS, Azure)",
+      "Modern company equipment (MacBook Pro) and internet allowance"
+    ],
+    "offers_ru": [
+      "Удаленная работа или гибридный формат в офисе в Варшаве",
+      "Бюджет на обучение и сертификации (AWS, Azure)",
+      "Современная техника от компании (MacBook Pro) и оплата интернета"
+    ],
+    "tasks_ua": [
+      "Розробка та підтримка масштабованих веб-додатків на Node.js та React",
+      "Оптимізація продуктивності баз даних PostgreSQL та MongoDB",
+      "Проведення код-рев'ю та менторство молодших розробників команди"
+    ],
+    "tasks_pl": [
+      "Rozwój i utrzymanie skalowalnych aplikacji webowych (Node.js, React)",
+      "Optymalizacja wydajności baz danych PostgreSQL oraz MongoDB",
+      "Przeprowadzanie code review oraz mentoring młodszych programistów"
+    ],
+    "tasks_en": [
+      "Development and maintenance of scalable web applications on Node.js and React",
+      "Performance optimization of PostgreSQL and MongoDB databases",
+      "Conducting code reviews and mentoring junior team developers"
+    ],
+    "tasks_ru": [
+      "Разработка и поддержка масштабируемых веб-приложений на Node.js и React",
+      "Оптимизация производительности баз данных PostgreSQL и MongoDB",
+      "Проведение код-ревью и менторство младших разработчиков команды"
+    ],
+    "details_ua": [
+      "Мінімум 5 років досвіду в комерційній розробці ПЗ",
+      "Глибокі знання архітектури мікросервісів та хмарних технологій",
+      "Рівень англійської мови B2+ для комунікації з міжнародними клієнтами"
+    ],
+    "details_pl": [
+      "Minimum 5 lat doświadczenia w komercyjnym tworzeniu oprogramowania",
+      "Głęboka wiedza na temat architektury mikrousług i technologii chmurowych",
+      "Poziom języka angielskiego B2+ do komunikacji z międzynarodowymi klientami"
+    ],
+    "details_en": [
+      "Minimum 5 years of experience in commercial software development",
+      "Deep knowledge of microservices architecture and cloud technologies",
+      "English level B2+ for communication with international clients"
+    ],
+    "details_ru": [
+      "Минимум 5 лет опыта в коммерческой разработке ПО",
+      "Глубокие знания архитектуры микросервисов и облачных технологий",
+      "Уровень английского языка B2+ для коммуникации с международными клиентами"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "krakow-artisan-baker-889",
+    "category": "gastronomy",
+    "city": "Краків",
+    "city_pl": "Kraków",
+    "city_en": "Krakow",
+    "city_ru": "Краков",
+    "title": "Пекар-кондитер крафтової пекарні",
+    "title_pl": "Piekarz-cukiernik w rzemieślniczej piekarni",
+    "title_en": "Artisan Baker and Pastry Chef",
+    "title_ru": "Пекарь-кондитер крафтовой пекарни",
+    "salary": "5000 - 6500 PLN netto",
+    "company": "Złoty Chleb Piekarnia",
+    "shift_ua": "Нічні та ранкові зміни",
+    "shift_pl": "Zmiany nocne i poranne",
+    "shift_en": "Night and morning shifts",
+    "shift_ru": "Ночные и утренние смены",
+    "pattern_ua": "Змінний графік 4/2",
+    "pattern_pl": "Grafik zmianowy 4/2",
+    "pattern_en": "Shift schedule 4/2",
+    "pattern_ru": "Сменный график 4/2",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "Прямо сейчас",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "offers_ua": [
+      "Офіційне працевлаштування з першого дня, оплачувана відпустка",
+      "Безкоштовна випічка та кава під час зміни, знижка 50% на продукцію",
+      "Можливість навчання новим технікам випікання хліба на заквасці"
+    ],
+    "offers_pl": [
+      "Oficjalne zatrudnienie od pierwszego dnia, płatny urlop",
+      "Darmowe wypieki i kawa podczas zmiany, 50% zniżki na produkty",
+      "Możliwość nauki nowych technik pieczenia chleba na zakwasie"
+    ],
+    "offers_en": [
+      "Official employment from day one, paid vacation leave",
+      "Free pastries and coffee during shifts, 50% discount on products",
+      "Opportunity to learn new sourdough bread baking techniques"
+    ],
+    "offers_ru": [
+      "Официальное трудоустройство с первого дня, оплачиваемый отпуск",
+      "Бесплатная выпечка и кофе во время смены, скидка 50% на продукцию",
+      "Возможность обучения новым техникам выпечки хлеба на закваске"
+    ],
+    "tasks_ua": [
+      "Приготування тіста, формування та випікання хлібобулочних виробів",
+      "Виготовлення круасанів, булочок, тортів за фірмовими рецептами",
+      "Підтримання чистоти на робочому місці та дотримання санітарних норм HACCP"
+    ],
+    "tasks_pl": [
+      "Przygotowywanie ciasta, formowanie i wypiek wyrobów piekarniczych",
+      "Wytwarzanie rogalików, bułek i ciast według firmowych receptur",
+      "Utrzymanie czystości na stanowisku pracy i przestrzeganie norm HACCP"
+    ],
+    "tasks_en": [
+      "Dough preparation, shaping, and baking of bakery products",
+      "Making croissants, buns, and cakes according to signature recipes",
+      "Maintaining workspace cleanliness and observing HACCP hygiene standards"
+    ],
+    "tasks_ru": [
+      "Приготовление теста, формовка и выпечка хлебобулочных изделий",
+      "Изготовление круассанов, булочек, тортов по фирменным рецептам",
+      "Поддержание чистоты на рабочем месте и соблюдение санитарных норм HACCP"
+    ],
+    "details_ua": [
+      "Мінімум 1 рік досвіду роботи в пекарні або кондитерській",
+      "Наявність актуальної санітарно-епідеміологічної книжки (sanepid)",
+      "Відповідальність, пунктуальність та любов до своєї справи"
+    ],
+    "details_pl": [
+      "Minimum 1 rok doświadczenia w pracy w piekarni lub cukierni",
+      "Posiadanie aktualnej książeczki sanitarno-epidemiologicznej (sanepid)",
+      "Odpowiedzialność, punktualność i pasja do wykonywanego zawodu"
+    ],
+    "details_en": [
+      "Minimum 1 year of experience working in a bakery or pastry shop",
+      "Valid sanitary and epidemiological book (sanepid clearance) required",
+      "Responsibility, punctuality, and a genuine passion for baking"
+    ],
+    "details_ru": [
+      "Минимум 1 год опыта работы в пекарне или кондитерской",
+      "Наличие актуальной санитарно-эпидемиологической книжки (sanepid)",
+      "Ответственность, пунктуальность и любовь к своему делу"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "poznan-delivery-driver-890",
+    "category": "logistics",
+    "city": "Познань",
+    "city_pl": "Poznań",
+    "city_en": "Poznan",
+    "city_ru": "Познань",
+    "title": "Кур'єр служби доставки (Категорія B)",
+    "title_pl": "Kurier dostawca (Kategoria B)",
+    "title_en": "Delivery Courier (Category B)",
+    "title_ru": "Курьер службы доставки (Категория B)",
+    "salary": "4800 - 6000 PLN netto",
+    "company": "Express Parcel Delivery Sp. z o.o.",
+    "shift_ua": "Ранкові зміни з 07:00",
+    "shift_pl": "Zmiany poranne od 07:00",
+    "shift_en": "Morning shifts from 07:00",
+    "shift_ru": "Утренние смены с 07:00",
+    "pattern_ua": "5 днів на тиждень",
+    "pattern_pl": "5 dni w tygodniu",
+    "pattern_en": "5 days a week",
+    "pattern_ru": "5 дней в неделю",
+    "start_ua": "Після проходження співбесіди",
+    "start_pl": "Po pomyślnym przejściu rozmowy",
+    "start_en": "After successful interview",
+    "start_ru": "После прохождения собеседования",
+    "contract_ua": "Umowa zlecenia або B2B",
+    "contract_pl": "Umowa zlecenia lub B2B",
+    "contract_en": "Mandate Contract or B2B",
+    "contract_ru": "Договор поручения или B2B",
+    "offers_ua": [
+      "Службовий автомобіль (Renault Master, Ford Transit) та паливна карта",
+      "Робочий смартфон зі спеціальним додатком для маршрутизації",
+      "Бонуси за кількість доставлених посилок без запізнень"
+    ],
+    "offers_pl": [
+      "Samochód służbowy (Renault Master, Ford Transit) i karta paliwowa",
+      "Służbowy smartfon ze specjalną aplikacją do optymalizacji tras",
+      "System premiowy za ilość dostarczonych przesyłek w terminie"
+    ],
+    "offers_en": [
+      "Company vehicle (Renault Master, Ford Transit) and a fuel card provided",
+      "Work smartphone with a dedicated route optimization application",
+      "Performance bonuses based on the volume of on-time deliveries"
+    ],
+    "offers_ru": [
+      "Служебный автомобиль (Renault Master, Ford Transit) и топливная карта",
+      "Рабочий смартфон со специальным приложением для маршрутизации",
+      "Бонусы за количество доставленных посылок без опозданий"
+    ],
+    "tasks_ua": [
+      "Завантаження посилок на складі відповідно до оптимізованого маршруту",
+      "Своєчасна доставка відправлень клієнтам на території Познані",
+      "Робота з терміналом оплати, обробка післяплати та ведення звітності"
+    ],
+    "tasks_pl": [
+      "Załadunek paczek w magazynie zgodnie z optymalną trasą dostawy",
+      "Terminowe dostarczanie przesyłek do klientów na terenie Poznania",
+      "Obsługa terminala płatniczego, przyjmowanie pobrań i raportowanie"
+    ],
+    "tasks_en": [
+      "Loading parcels at the warehouse according to an optimized route plan",
+      "Timely delivery of shipments to customers within the Poznan area",
+      "Operating payment terminals, handling cash on delivery, and reporting"
+    ],
+    "tasks_ru": [
+      "Загрузка посылок на складе в соответствии с оптимизированным маршрутом",
+      "Своевременная доставка отправлений клиентам на территории Познани",
+      "Работа с терминалом оплаты, обработка наложенных платежей и отчетность"
+    ],
+    "details_ua": [
+      "Дійсні водійські права категорії B (мінімум 2 роки стажу)",
+      "Гарне знання топографії міста Познань та околиць",
+      "Фізична витривалість, оскільки робота вимагає підняття важких речей (до 30 кг)"
+    ],
+    "details_pl": [
+      "Ważne prawo jazdy kategorii B (prawo jazdy od co najmniej 2 lat)",
+      "Dobra znajomość topografii miasta Poznania oraz najbliższych okolic",
+      "Dobra sprawność fizyczna (praca obejmuje noszenie paczek do 30 kg)"
+    ],
+    "details_en": [
+      "Valid Category B driving license (minimum 2 years of driving experience)",
+      "Good knowledge of the topography of Poznan and the surrounding areas",
+      "Physical stamina is required as the job involves lifting packages up to 30 kg"
+    ],
+    "details_ru": [
+      "Действительные водительские права категории B (минимум 2 года стажа)",
+      "Хорошее знание топографии города Познань и окрестностей",
+      "Физическая выносливость (работа требует поднятия тяжестей до 30 кг)"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "lodz-quality-assurance-tester-891",
+    "category": "it",
+    "city": "Лодзь",
+    "city_pl": "Łódź",
+    "city_en": "Lodz",
+    "city_ru": "Лодзь",
+    "title": "Інженер з тестування ПЗ (Manual QA Tester)",
+    "title_pl": "Inżynier ds. testowania oprogramowania (Manual QA)",
+    "title_en": "Manual Quality Assurance Tester (QA)",
+    "title_ru": "Инженер по тестированию ПО (Manual QA Tester)",
+    "salary": "7000 - 10000 PLN brutto",
+    "company": "Quality First IT Services",
+    "shift_ua": "Стандартний робочий день",
+    "shift_pl": "Standardowe godziny pracy",
+    "shift_en": "Standard working hours",
+    "shift_ru": "Стандартный рабочий день",
+    "pattern_ua": "З понеділка по п'ятницю",
+    "pattern_pl": "Od poniedziałku do piątku",
+    "pattern_en": "Monday to Friday",
+    "pattern_ru": "С понедельника по пятницу",
+    "start_ua": "За домовленістю",
+    "start_pl": "Do uzgodnienia",
+    "start_en": "To be agreed",
+    "start_ru": "По договоренности",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "offers_ua": [
+      "Гібридний режим роботи: 2 дні в офісі, 3 дні віддалено",
+      "Карта MultiSport, приватне медичне страхування LuxMed",
+      "Можливість розвитку в напрямку автоматизованого тестування"
+    ],
+    "offers_pl": [
+      "Hybrydowy model pracy: 2 dni w biurze, 3 dni pracy zdalnej",
+      "Karta MultiSport oraz prywatna opieka medyczna LuxMed",
+      "Możliwość rozwoju w kierunku testowania automatycznego (Automated QA)"
+    ],
+    "offers_en": [
+      "Hybrid work model: 2 days at the office, 3 days working remotely",
+      "MultiSport card and private medical insurance plan (LuxMed)",
+      "Opportunity for career progression towards Test Automation (SDET)"
+    ],
+    "offers_ru": [
+      "Гибридный режим работы: 2 дня в офисе, 3 дня удаленно",
+      "Карта MultiSport, частное медицинское страхование LuxMed",
+      "Возможность развития в направлении автоматизированного тестирования"
+    ],
+    "tasks_ua": [
+      "Ручне тестування веб-додатків та мобільних застосунків (iOS, Android)",
+      "Створення та підтримка тестової документації: тест-кейсів, чек-лістів",
+      "Виявлення, документування та відстеження дефектів у системі Jira"
+    ],
+    "tasks_pl": [
+      "Manualne testowanie aplikacji internetowych oraz mobilnych (iOS, Android)",
+      "Tworzenie i aktualizacja dokumentacji testowej: przypadków testowych, checklist",
+      "Wykrywanie, raportowanie i śledzenie błędów w systemie Jira"
+    ],
+    "tasks_en": [
+      "Manual testing of complex web and mobile applications (iOS and Android platforms)",
+      "Creating and maintaining test documentation including test cases and checklists",
+      "Identifying, documenting, and tracking software defects using Jira issue tracker"
+    ],
+    "tasks_ru": [
+      "Ручное тестирование веб-приложений и мобильных приложений (iOS, Android)",
+      "Создание и поддержка тестовой документации: тест-кейсов, чек-листов",
+      "Выявление, документирование и отслеживание дефектов в системе Jira"
+    ],
+    "details_ua": [
+      "Розуміння життєвого циклу розробки програмного забезпечення (SDLC)",
+      "Базові знання SQL та досвід роботи з API (Postman)",
+      "Високий рівень уважності до деталей та аналітичний склад розуму"
+    ],
+    "details_pl": [
+      "Znajomość cyklu życia oprogramowania (SDLC) i metodyk zwinnych",
+      "Podstawowa wiedza z zakresu SQL oraz doświadczenie w pracy z API (Postman)",
+      "Duża dbałość o szczegóły oraz wysoko rozwinięte umiejętności analityczne"
+    ],
+    "details_en": [
+      "Understanding of the Software Development Life Cycle (SDLC) methodologies",
+      "Basic knowledge of SQL databases and experience working with REST APIs (Postman)",
+      "High level of attention to detail and strong analytical problem-solving skills"
+    ],
+    "details_ru": [
+      "Понимание жизненного цикла разработки программного обеспечения (SDLC)",
+      "Базовые знания SQL и опыт работы с API (Postman)",
+      "Высокий уровень внимания к деталям и аналитический склад ума"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "katowice-forklift-operator-892",
+    "category": "logistics",
+    "city": "Катовіце",
+    "city_pl": "Katowice",
+    "city_en": "Katowice",
+    "city_ru": "Катовице",
+    "title": "Оператор вилочного навантажувача (UDT)",
+    "title_pl": "Operator wózka widłowego (UDT)",
+    "title_en": "Forklift Operator (UDT certified)",
+    "title_ru": "Оператор вилочного погрузчика (UDT)",
+    "salary": "5500 - 7000 PLN brutto",
+    "company": "Silesia Storage Hub",
+    "shift_ua": "3 зміни (06:00, 14:00, 22:00)",
+    "shift_pl": "3 zmiany (06:00, 14:00, 22:00)",
+    "shift_en": "3 shifts (06:00, 14:00, 22:00)",
+    "shift_ru": "3 смены (06:00, 14:00, 22:00)",
+    "pattern_ua": "5 днів на тиждень + суботи за бажанням",
+    "pattern_pl": "5 dni w tygodniu + opcjonalne soboty",
+    "pattern_en": "5 days a week + optional Saturdays",
+    "pattern_ru": "5 дней в неделю + субботы по желанию",
+    "start_ua": "Протягом тижня",
+    "start_pl": "W ciągu tygodnia",
+    "start_en": "Within a week",
+    "start_ru": "В течение недели",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "offers_ua": [
+      "Повний пакет соціального забезпечення та стабільна заробітна плата",
+      "Доплата за нічні зміни та премії за продуктивність",
+      "Безкоштовне харчування в їдальні підприємства під час робочої зміни"
+    ],
+    "offers_pl": [
+      "Pełen pakiet świadczeń socjalnych i stabilne, terminowe wynagrodzenie",
+      "Dodatki za pracę w porze nocnej oraz atrakcyjne premie wydajnościowe",
+      "Darmowe posiłki na stołówce pracowniczej podczas trwania zmiany"
+    ],
+    "offers_en": [
+      "Full social security package and a stable, on-time salary payment",
+      "Night shift allowances and attractive performance-based bonuses",
+      "Free subsidized meals in the company canteen during working shifts"
+    ],
+    "offers_ru": [
+      "Полный пакет социального обеспечения и стабильная заработная плата",
+      "Доплата за ночные смены и премии за производительность",
+      "Бесплатное питание в столовой предприятия во время рабочей смены"
+    ],
+    "tasks_ua": [
+      "Розвантаження та завантаження вантажівок за допомогою вилочного навантажувача",
+      "Переміщення палет з товаром по території великого складського комплексу",
+      "Контроль технічного стану навантажувача та ведення складської звітності"
+    ],
+    "tasks_pl": [
+      "Rozładunek i załadunek samochodów ciężarowych za pomocą wózka widłowego",
+      "Rozmieszczanie oraz relokacja palet z towarem na terenie hali magazynowej",
+      "Dbałość o stan techniczny powierzonego sprzętu i raportowanie usterek"
+    ],
+    "tasks_en": [
+      "Unloading and loading of transport trucks using a forklift machine",
+      "Moving and organizing pallets with goods within a large warehouse facility",
+      "Monitoring the technical condition of the forklift and reporting any issues"
+    ],
+    "tasks_ru": [
+      "Разгрузка и загрузка грузовиков с помощью вилочного погрузчика",
+      "Перемещение паллет с товаром по территории крупного складского комплекса",
+      "Контроль технического состояния погрузчика и ведение складской отчетности"
+    ],
+    "details_ua": [
+      "Обов'язкова наявність дійсних польських посвідчень UDT",
+      "Досвід роботи на аналогічній посаді від 1 року",
+      "Відсутність медичних протипоказань до роботи на висотному складі"
+    ],
+    "details_pl": [
+      "Bezwzględnie wymagane aktualne uprawnienia UDT do obsługi wózków jezdniowych",
+      "Udokumentowane doświadczenie na podobnym stanowisku pracy (minimum 1 rok)",
+      "Brak przeciwwskazań zdrowotnych do wykonywania pracy w magazynie wysokiego składowania"
+    ],
+    "details_en": [
+      "Mandatory requirement: valid Polish UDT forklift operation certification",
+      "Documented experience in a similar warehouse position (minimum of 1 year)",
+      "No medical contraindications for working in a high-bay warehouse environment"
+    ],
+    "details_ru": [
+      "Обязательное наличие действительных польских удостоверений UDT",
+      "Опыт работы на аналогичной должности от 1 года",
+      "Отсутствие медицинских противопоказаний к работе на высотном складе"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "szczecin-electrical-installer-893",
+    "category": "construction",
+    "city": "Щецин",
+    "city_pl": "Szczecin",
+    "city_en": "Szczecin",
+    "city_ru": "Щецин",
+    "title": "Електрик-монтажник на будівельні об'єкти",
+    "title_pl": "Elektromonter na obiektach budowlanych",
+    "title_en": "Electrical Installer / Electrician",
+    "title_ru": "Электрик-монтажник на строительные объекты",
+    "salary": "35 - 45 PLN/год netto",
+    "company": "VoltBuild Polska",
+    "shift_ua": "З 07:00 до 17:00",
+    "shift_pl": "Od 07:00 do 17:00",
+    "shift_en": "From 07:00 to 17:00",
+    "shift_ru": "С 07:00 до 17:00",
+    "pattern_ua": "Пн-Пт (можливі суботи)",
+    "pattern_pl": "Pn-Pt (możliwe soboty pracujące)",
+    "pattern_en": "Mon-Fri (Saturdays possible)",
+    "pattern_ru": "Пн-Пт (возможны субботы)",
+    "start_ua": "Від зараз",
+    "start_pl": "Od zaraz",
+    "start_en": "Immediately",
+    "start_ru": "Сразу же",
+    "contract_ua": "Umowa zlecenia або Umowa o pracę",
+    "contract_pl": "Umowa zlecenia lub Umowa o pracę",
+    "contract_en": "Mandate Contract or Employment Contract",
+    "contract_ru": "Договор поручения или Трудовой договор",
+    "offers_ua": [
+      "Допомога з житлом для працівників з інших міст (квартири або хостели)",
+      "Забезпечення професійним електроінструментом (Hilti, Bosch) та робочим одягом",
+      "Оплата витрат на проїзд до віддалених будівельних об'єктів"
+    ],
+    "offers_pl": [
+      "Pomoc w zakwaterowaniu dla pracowników zamiejscowych (mieszkania, hostele)",
+      "Zapewnienie profesjonalnych elektronarzędzi (Hilti, Bosch) oraz odzieży roboczej",
+      "Zwrot kosztów dojazdu na odległe obiekty budowlane zlokalizowane poza miastem"
+    ],
+    "offers_en": [
+      "Accommodation assistance for relocated workers (apartments or employee hostels)",
+      "Provision of professional power tools (Hilti, Bosch) and branded workwear",
+      "Reimbursement of travel expenses to remote construction sites outside the city"
+    ],
+    "offers_ru": [
+      "Помощь с жильем для работников из других городов (квартиры или хостелы)",
+      "Обеспечение профессиональным электроинструментом (Hilti, Bosch) и спецодеждой",
+      "Оплата расходов на проезд до удаленных строительных объектов"
+    ],
+    "tasks_ua": [
+      "Прокладання кабельних трас, монтаж електропроводки у житлових та комерційних будівлях",
+      "Встановлення розеток, вимикачів, освітлювальних приладів та розподільчих щитів",
+      "Читання технічної документації та електричних схем під час виконання робіт"
+    ],
+    "tasks_pl": [
+      "Układanie tras kablowych oraz montaż instalacji elektrycznych w budynkach",
+      "Biały montaż: instalacja gniazdek, włączników, opraw oświetleniowych i rozdzielnic",
+      "Praca na podstawie dokumentacji technicznej i schematów elektrycznych"
+    ],
+    "tasks_en": [
+      "Laying cable routes and installing electrical wiring in residential and commercial buildings",
+      "Installation of sockets, switches, lighting fixtures, and electrical distribution boards",
+      "Reading technical documentation and electrical schematics during task execution"
+    ],
+    "tasks_ru": [
+      "Прокладка кабельных трасс, монтаж электропроводки в жилых и коммерческих зданиях",
+      "Установка розеток, выключателей, осветительных приборов и распределительных щитов",
+      "Чтение технической документации и электрических схем во время выполнения работ"
+    ],
+    "details_ua": [
+      "Досвід електромонтажних робіт на будівництві не менше 2 років",
+      "Наявність актуальних допусків SEP до 1 кВ є обов'язковою умовою",
+      "Вміння працювати самостійно та в бригаді, відсутність шкідливих звичок"
+    ],
+    "details_pl": [
+      "Doświadczenie w pracach elektromonterskich na budowie – co najmniej 2 lata",
+      "Posiadanie ważnych uprawnień SEP (E) do 1 kV to warunek konieczny",
+      "Umiejętność pracy samodzielnej i w brygadzie, rzetelność i bez nałogów"
+    ],
+    "details_en": [
+      "Minimum 2 years of proven experience in electrical installation on construction sites",
+      "Possession of valid SEP electrical qualification certificates up to 1 kV is mandatory",
+      "Ability to work both independently and as part of a team, high reliability"
+    ],
+    "details_ru": [
+      "Опыт электромонтажных работ на стройке не менее 2 лет",
+      "Наличие актуальных допусков SEP до 1 кВ является обязательным условием",
+      "Умение работать самостоятельно и в бригаде, отсутствие вредных привычек"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "lublin-customer-support-representative-894",
+    "category": "office",
+    "city": "Люблін",
+    "city_pl": "Lublin",
+    "city_en": "Lublin",
+    "city_ru": "Люблин",
+    "title": "Спеціаліст служби підтримки клієнтів (з українською та польською мовами)",
+    "title_pl": "Specjalista ds. Obsługi Klienta (z ukraińskim i polskim)",
+    "title_en": "Customer Support Representative (Ukrainian & Polish)",
+    "title_ru": "Специалист службы поддержки (с украинским и польским языками)",
+    "salary": "5000 - 6500 PLN brutto",
+    "company": "Global Connect BPO",
+    "shift_ua": "Плаваючі зміни (08:00-16:00, 10:00-18:00)",
+    "shift_pl": "Zmiany rotacyjne (08:00-16:00, 10:00-18:00)",
+    "shift_en": "Rotating shifts (08:00-16:00, 10:00-18:00)",
+    "shift_ru": "Плавающие смены (08:00-16:00, 10:00-18:00)",
+    "pattern_ua": "5/2 (включаючи деякі вихідні)",
+    "pattern_pl": "5 dni w tygodniu (w tym niektóre weekendy)",
+    "pattern_en": "5 days a week (including some weekends)",
+    "pattern_ru": "5/2 (включая некоторые выходные)",
+    "start_ua": "Наступного місяця",
+    "start_pl": "Od przyszłego miesiąca",
+    "start_en": "From next month",
+    "start_ru": "В следующем месяце",
+    "contract_ua": "Umowa o pracę",
+    "contract_pl": "Umowa o pracę",
+    "contract_en": "Employment Contract",
+    "contract_ru": "Трудовой договор",
+    "offers_ua": [
+      "Робота в сучасному офісі в центрі Любліна зі зручною транспортною розв'язкою",
+      "Курси англійської мови за рахунок компанії та тренінги з розвитку комунікативних навичок",
+      "Приємна атмосфера в міжнародній команді, регулярні тімбілдінги та корпоративи"
+    ],
+    "offers_pl": [
+      "Praca w nowoczesnym biurze w centrum Lublina z dobrym dojazdem",
+      "Kursy języka angielskiego opłacane przez pracodawcę oraz szkolenia miękkie",
+      "Przyjazna atmosfera w międzynarodowym zespole, regularne wyjścia integracyjne"
+    ],
+    "offers_en": [
+      "Work in a modern office in the center of Lublin with excellent public transport access",
+      "Company-sponsored English language courses and soft skills communication training",
+      "Friendly atmosphere in an international team, regular team building and corporate events"
+    ],
+    "offers_ru": [
+      "Работа в современном офисе в центре Люблина с удобной транспортной развязкой",
+      "Курсы английского языка за счет компании и тренинги по развитию коммуникативных навыков",
+      "Приятная атмосфера в международной команде, регулярные тимбилдинги и корпоративы"
+    ],
+    "tasks_ua": [
+      "Прийом вхідних дзвінків та обробка електронних звернень від клієнтів інтернет-магазину",
+      "Консультації щодо асортименту товарів, статусу замовлень та процедури повернення",
+      "Реєстрація звернень у CRM-системі та комунікація з відділом логістики"
+    ],
+    "tasks_pl": [
+      "Odbieranie połączeń przychodzących i obsługa zapytań e-mailowych klientów sklepu",
+      "Udzielanie informacji o asortymencie, statusie zamówień i procedurach zwrotu",
+      "Rejestrowanie zgłoszeń w systemie CRM i koordynacja działań z działem logistyki"
+    ],
+    "tasks_en": [
+      "Answering inbound calls and processing email inquiries from e-commerce customers",
+      "Consulting on product assortment, order fulfillment status, and return procedures",
+      "Logging customer interactions in the CRM system and liaising with the logistics department"
+    ],
+    "tasks_ru": [
+      "Прием входящих звонков и обработка электронных обращений от клиентов интернет-магазина",
+      "Консультации по ассортименту товаров, статусу заказов и процедуре возврата",
+      "Регистрация обращений в CRM-системе и коммуникация с отделом логистики"
+    ],
+    "details_ua": [
+      "Вільне володіння українською та польською мовами (рівень B2-C1)",
+      "Відмінні комунікативні навички, емпатія та вміння вирішувати конфліктні ситуації",
+      "Впевнений користувач ПК, досвід роботи з CRM системами буде перевагою"
+    ],
+    "details_pl": [
+      "Biegła znajomość języka ukraińskiego oraz polskiego (poziom B2-C1)",
+      "Znakomite zdolności komunikacyjne, empatia i umiejętność łagodzenia konfliktów",
+      "Dobra obsługa komputera, doświadczenie w pracy z systemami CRM będzie dużym atutem"
+    ],
+    "details_en": [
+      "Fluent in both Ukrainian and Polish languages (minimum B2-C1 proficiency level)",
+      "Excellent communication skills, empathy, and adept at conflict resolution techniques",
+      "Confident PC user; previous experience working with CRM systems is highly advantageous"
+    ],
+    "details_ru": [
+      "Свободное владение украинским и польским языками (уровень B2-C1)",
+      "Отличные коммуникативные навыки, эмпатия и умение решать конфликтные ситуации",
+      "Уверенный пользователь ПК, опыт работы с CRM системами будет преимуществом"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
+    "slug": "bydgoszcz-head-waiter-barista-895",
+    "category": "gastronomy",
+    "city": "Бидгощ",
+    "city_pl": "Bydgoszcz",
+    "city_en": "Bydgoszcz",
+    "city_ru": "Быдгощ",
+    "title": "Старший офіціант / Бариста в популярну кав'ярню",
+    "title_pl": "Starszy Kelner / Barista w popularnej kawiarni",
+    "title_en": "Head Waiter / Barista at a popular cafe",
+    "title_ru": "Старший официант / Бариста в популярную кофейню",
+    "salary": "28 - 35 PLN/год netto + чайові",
+    "company": "Kawa i Relaks Bydgoszcz",
+    "shift_ua": "Ранкові та вечірні зміни",
+    "shift_pl": "Zmiany poranne i popołudniowo-wieczorne",
+    "shift_en": "Morning and evening shifts",
+    "shift_ru": "Утренние и вечерние смены",
+    "pattern_ua": "Еластичний графік, мінімум 160 год/місяць",
+    "pattern_pl": "Elastyczny grafik, minimum 160 godz./miesiąc",
+    "pattern_en": "Flexible schedule, minimum 160 hours/month",
+    "pattern_ru": "Эластичный график, минимум 160 час/месяц",
+    "start_ua": "Протягом двох тижнів",
+    "start_pl": "W ciągu dwóch tygodni",
+    "start_en": "Within two weeks",
+    "start_ru": "В течение двух недель",
+    "contract_ua": "Umowa zlecenia",
+    "contract_pl": "Umowa zlecenia",
+    "contract_en": "Mandate Contract",
+    "contract_ru": "Договор поручения",
+    "offers_ua": [
+      "Високі чайові завдяки популярності закладу та розташуванню в центрі міста",
+      "Регулярне навчання мистецтву латте-арт та приготуванню авторських кавових напоїв",
+      "Уніформа надається роботодавцем, безкоштовні обіди для персоналу"
+    ],
+    "offers_pl": [
+      "Wysokie napiwki wynikające z renomy lokalu oraz jego świetnej lokalizacji",
+      "Regularne szkolenia z latte art i parzenia autorskich napojów kawowych",
+      "Firmowa odzież robocza zapewniona przez pracodawcę, darmowe obiady dla załogi"
+    ],
+    "offers_en": [
+      "High tips generated by the venue's popularity and excellent city center location",
+      "Regular training sessions in latte art and crafting signature espresso-based drinks",
+      "Work uniform provided by the employer, complimentary staff meals during shifts"
+    ],
+    "offers_ru": [
+      "Высокие чаевые благодаря популярности заведения и расположению в центре города",
+      "Регулярное обучение искусству латте-арт и приготовлению авторских кофейных напитков",
+      "Униформа предоставляется работодателем, бесплатные обеды для персонала"
+    ],
+    "tasks_ua": [
+      "Привітне обслуговування гостей, допомога у виборі десертів та кави",
+      "Професійне приготування еспресо, капучіно та інших кавових напоїв на рожковій кавомашині",
+      "Розрахунок клієнтів (готівка, термінал), підтримання ідеальної чистоти в залі та на барі"
+    ],
+    "tasks_pl": [
+      "Serdeczna obsługa gości kawiarni, doradztwo w wyborze ciast, deserów i kaw",
+      "Profesjonalne przygotowywanie napojów na bazie espresso z wykorzystaniem ekspresu kolbowego",
+      "Rozliczanie rachunków (gotówka, terminal), dbanie o czystość sali i obszaru roboczego baru"
+    ],
+    "tasks_en": [
+      "Welcoming and serving guests, assisting with dessert and coffee menu selections",
+      "Professional preparation of espresso, cappuccino, and other drinks using an espresso machine",
+      "Processing customer payments (cash, card), maintaining impeccable cleanliness in the hall and bar"
+    ],
+    "tasks_ru": [
+      "Приветливое обслуживание гостей, помощь в выборе десертов и кофе",
+      "Профессиональное приготовление эспрессо, капучино и других напитков на рожковой кофемашине",
+      "Расчет клиентов (наличные, терминал), поддержание идеальной чистоты в зале и на баре"
+    ],
+    "details_ua": [
+      "Досвід роботи баристою або офіціантом не менше 6 місяців",
+      "Знання польської мови на рівні, достатньому для вільного спілкування з гостями",
+      "Енергійність, стресостійкість, охайний зовнішній вигляд та санітарна книжка"
+    ],
+    "details_pl": [
+      "Doświadczenie na stanowisku baristy lub kelnera (przynajmniej 6 miesięcy)",
+      "Znajomość języka polskiego pozwalająca na płynną i bezproblemową obsługę gości",
+      "Wysoka energia, odporność na stres, schludny wygląd oraz ważna książeczka sanepidowska"
+    ],
+    "details_en": [
+      "Prior experience working as a barista or waiter for at least 6 consecutive months",
+      "Proficiency in Polish sufficient for fluent and clear communication with cafe guests",
+      "High energy levels, stress resistance, neat appearance, and valid sanitary clearance"
+    ],
+    "details_ru": [
+      "Опыт работы баристой или официантом не менее 6 месяцев",
+      "Знание польского языка на уровне, достаточном для свободного общения с гостями",
+      "Энергичность, стрессоустойчивость, опрятный внешний вид и санитарная книжка"
+    ],
+    "date_posted": "2026-04-08",
+    "data_source": "manual",
+    "is_generated": false
+  },
+  {
     "slug": "wroclaw-warehouse-worker-801",
     "category": "logistics",
     "city": "Вроцлав",
