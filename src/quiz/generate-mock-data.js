@@ -101,6 +101,54 @@ const realisticQuestions = [
     option_c_ua: '95-100°C', option_c_pl: '95-100°C', option_c_ru: '95-100°C', option_c_en: '95-100°C',
     option_d_ua: '60-65°C', option_d_pl: '60-65°C', option_d_ru: '60-65°C', option_d_en: '60-65°C',
     correct_option: 'B'
+  },
+  {
+    industry_ua: 'Фінанси та Банківська справа', industry_pl: 'Finanse i Bankowość', industry_ru: 'Финансы и Банковское дело', industry_en: 'Finance and Banking',
+    question_ua: 'Що таке диверсифікація портфеля?',
+    question_pl: 'Czym jest dywersyfikacja portfela?',
+    question_ru: 'Что такое диверсификация портфеля?',
+    question_en: 'What is portfolio diversification?',
+    option_a_ua: 'Вкладення всіх коштів в одну компанію', option_a_pl: 'Inwestowanie wszystkich środków w jedną firmę', option_a_ru: 'Вложение всех средств в одну компанию', option_a_en: 'Investing all funds in one company',
+    option_b_ua: 'Розподіл інвестицій між різними активами', option_b_pl: 'Rozkład inwestycji między różne aktywa', option_b_ru: 'Распределение инвестиций между различными активами', option_b_en: 'Spreading investments across various assets',
+    option_c_ua: 'Відмова від інвестування', option_c_pl: 'Rezygnacja z inwestowania', option_c_ru: 'Отказ от инвестирования', option_c_en: 'Refusing to invest',
+    option_d_ua: 'Зберігання грошей готівкою', option_d_pl: 'Przechowywanie pieniędzy w gotówce', option_d_ru: 'Хранение денег наличными', option_d_en: 'Keeping money in cash',
+    correct_option: 'B'
+  },
+  {
+    industry_ua: 'Дизайн та Мистецтво', industry_pl: 'Projektowanie i Sztuka', industry_ru: 'Дизайн и Искусство', industry_en: 'Design and Art',
+    question_ua: 'Який колір отримують при змішуванні синього та жовтого?',
+    question_pl: 'Jaki kolor powstaje po zmieszaniu niebieskiego i żółtego?',
+    question_ru: 'Какой цвет получается при смешивании синего и желтого?',
+    question_en: 'What color is produced by mixing blue and yellow?',
+    option_a_ua: 'Зелений', option_a_pl: 'Zielony', option_a_ru: 'Зеленый', option_a_en: 'Green',
+    option_b_ua: 'Фіолетовий', option_b_pl: 'Fioletowy', option_b_ru: 'Фиолетовый', option_b_en: 'Purple',
+    option_c_ua: 'Помаранчевий', option_c_pl: 'Pomarańczowy', option_c_ru: 'Оранжевый', option_c_en: 'Orange',
+    option_d_ua: 'Коричневий', option_d_pl: 'Brązowy', option_d_ru: 'Коричневый', option_d_en: 'Brown',
+    correct_option: 'A'
+  },
+  {
+    industry_ua: 'Енергетика', industry_pl: 'Energetyka', industry_ru: 'Энергетика', industry_en: 'Energy',
+    question_ua: 'Що з наведеного є відновлюваним джерелом енергії?',
+    question_pl: 'Które z poniższych jest odnawialnym źródłem energii?',
+    question_ru: 'Что из перечисленного является возобновляемым источником энергии?',
+    question_en: 'Which of the following is a renewable energy source?',
+    option_a_ua: 'Вугілля', option_a_pl: 'Węgiel', option_a_ru: 'Уголь', option_a_en: 'Coal',
+    option_b_ua: 'Природний газ', option_b_pl: 'Gaz ziemny', option_b_ru: 'Природный газ', option_b_en: 'Natural gas',
+    option_c_ua: 'Сонячна енергія', option_c_pl: 'Energia słoneczna', option_c_ru: 'Солнечная энергия', option_c_en: 'Solar energy',
+    option_d_ua: 'Нафта', option_d_pl: 'Ropa naftowa', option_d_ru: 'Нефть', option_d_en: 'Oil',
+    correct_option: 'C'
+  },
+  {
+    industry_ua: 'Маркетинг та PR', industry_pl: 'Marketing i PR', industry_ru: 'Маркетинг и PR', industry_en: 'Marketing and PR',
+    question_ua: 'Що означає абревіатура SEO?',
+    question_pl: 'Co oznacza skrót SEO?',
+    question_ru: 'Что означает аббревиатура SEO?',
+    question_en: 'What does the acronym SEO stand for?',
+    option_a_ua: 'Search Engine Optimization', option_a_pl: 'Search Engine Optimization', option_a_ru: 'Search Engine Optimization', option_a_en: 'Search Engine Optimization',
+    option_b_ua: 'Social Engagement Operation', option_b_pl: 'Social Engagement Operation', option_b_ru: 'Social Engagement Operation', option_b_en: 'Social Engagement Operation',
+    option_c_ua: 'Sales Evaluation Objective', option_c_pl: 'Sales Evaluation Objective', option_c_ru: 'Sales Evaluation Objective', option_c_en: 'Sales Evaluation Objective',
+    option_d_ua: 'System Error Output', option_d_pl: 'System Error Output', option_d_ru: 'System Error Output', option_d_en: 'System Error Output',
+    correct_option: 'A'
   }
 ];
 
@@ -114,7 +162,11 @@ const industriesList = [
   { ua: 'Сфера обслуговування (HoReCa)', pl: 'Gastronomia (HoReCa)', ru: 'Сфера обслуживания (HoReCa)', en: 'Hospitality (HoReCa)' },
   { ua: 'Виробництво і Промисловість', pl: 'Produkcja i Przemysł', ru: 'Производство и Промышленность', en: 'Manufacturing and Industry' },
   { ua: 'Торгівля', pl: 'Handel', ru: 'Торговля', en: 'Trade' },
-  { ua: 'Освіта', pl: 'Edukacja', ru: 'Образование', en: 'Education' }
+  { ua: 'Освіта', pl: 'Edukacja', ru: 'Образование', en: 'Education' },
+  { ua: 'Фінанси та Банківська справа', pl: 'Finanse i Bankowość', ru: 'Финансы и Банковское дело', en: 'Finance and Banking' },
+  { ua: 'Дизайн та Мистецтво', pl: 'Projektowanie i Sztuka', ru: 'Дизайн и Искусство', en: 'Design and Art' },
+  { ua: 'Енергетика', pl: 'Energetyka', ru: 'Энергетика', en: 'Energy' },
+  { ua: 'Маркетинг та PR', pl: 'Marketing i PR', ru: 'Маркетинг и PR', en: 'Marketing and PR' }
 ];
 
 const questionTemplates = [
@@ -206,7 +258,7 @@ function getParam(lang, indices) {
 }
 
 const allQuestions = [...realisticQuestions];
-const totalQuestionsNeeded = 10000;
+const totalQuestionsNeeded = 12000;
 const optionsArray = ['A', 'B', 'C', 'D'];
 
 let parameterCount = 0;
