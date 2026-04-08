@@ -4423,23 +4423,6 @@ Allow: /*.webp$
     await generateRussianPages(jobTranslations);
     await generateEnglishPages(jobTranslations);
 
-    // Copy va-data.json in chunks
-    try {
-      const vaDataPath = path.join(SRC, 'va-data.json');
-      const vaDataContent = await fs.readFile(vaDataPath, 'utf8');
-      const vaData = JSON.parse(vaDataContent);
-      const chunkSize = 20000;
-      const numChunks = Math.ceil(vaData.length / chunkSize);
-
-      for (let i = 0; i < numChunks; i++) {
-        const chunk = vaData.slice(i * chunkSize, (i + 1) * chunkSize);
-        await fs.writeFile(path.join(DIST, `va-data-${i + 1}.json`), JSON.stringify(chunk), 'utf8');
-      }
-      console.log(`✅ Chunked va-data.json into ${numChunks} files`);
-    } catch (e) {
-      console.warn('⚠️  va-data.json not found, skipping copy', e);
-    }
-
     console.log('Build complete. Pages:', links.length);
 }
 
