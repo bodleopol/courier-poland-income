@@ -5,11 +5,11 @@ def run_cuj(page):
     page.wait_for_timeout(2000)
 
     # Scroll down to ensure we capture the vacancy list
-    page.evaluate("window.scrollBy(0, 500)")
+    page.evaluate("window.scrollBy(0, 1000)")
     page.wait_for_timeout(1000)
 
     # Take screenshot at the key moment
-    page.screenshot(path="/home/jules/verification/screenshots/verification.png")
+    page.screenshot(path="/home/jules/verification/screenshots/verification_2.png")
     page.wait_for_timeout(1000)
 
 if __name__ == "__main__":

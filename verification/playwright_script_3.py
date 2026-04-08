@@ -4,12 +4,16 @@ def run_cuj(page):
     page.goto("http://localhost:3000/vacancies.html")
     page.wait_for_timeout(2000)
 
-    # Scroll down to ensure we capture the vacancy list
-    page.evaluate("window.scrollBy(0, 500)")
+    # Click next page to see more
+    page.get_by_role("button", name="2", exact=True).click()
     page.wait_for_timeout(1000)
 
-    # Take screenshot at the key moment
-    page.screenshot(path="/home/jules/verification/screenshots/verification.png")
+    # Scroll down
+    page.evaluate("window.scrollBy(0, 1000)")
+    page.wait_for_timeout(1000)
+
+    # Take screenshot
+    page.screenshot(path="/home/jules/verification/screenshots/verification_3.png")
     page.wait_for_timeout(1000)
 
 if __name__ == "__main__":
