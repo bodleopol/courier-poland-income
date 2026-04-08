@@ -41,3 +41,4 @@ venv
 testenv
 dist/quiz-data.json
 src/quiz-data.json
+minified.json

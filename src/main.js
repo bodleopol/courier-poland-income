@@ -1640,9 +1640,27 @@
       if (vaParams.length > 0 || isFetching) return;
       isFetching = true;
       try {
-        const res = await fetch('/va-data.json');
-        if (res.ok) {
-          vaParams = await res.json();
+        // Fetch chunks of va-data to comply with Cloudflare 25MB limits
+        const res1 = await fetch('/va-data-1.json');
+        const res2 = await fetch('/va-data-2.json');
+        const res3 = await fetch('/va-data-3.json'); // We have 51k items, 25k per chunk, so 3 chunks total
+
+        let allData = [];
+        if (res1.ok) {
+          const data1 = await res1.json();
+          allData = allData.concat(data1);
+        }
+        if (res2.ok) {
+          const data2 = await res2.json();
+          allData = allData.concat(data2);
+        }
+        if (res3.ok) {
+          const data3 = await res3.json();
+          allData = allData.concat(data3);
+        }
+
+        if (allData.length > 0) {
+          vaParams = allData;
 
           vaIndex = { ua: new Map(), pl: new Map(), ru: new Map(), en: new Map() };
           const langs = ['ua', 'pl', 'ru', 'en'];

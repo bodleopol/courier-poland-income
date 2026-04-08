@@ -3055,11 +3055,21 @@ async function build() {
     }
   }
 
-  // Copy va-data.json
+  // Copy and split va-data.json (minified) to fit under Cloudflare's 25 MiB limit
   try {
     const vaDataPath = path.join(SRC, 'va-data.json');
     const vaDataContent = await fs.readFile(vaDataPath, 'utf8');
-    await fs.writeFile(path.join(DIST, 'va-data.json'), vaDataContent, 'utf8');
+    const parsed = JSON.parse(vaDataContent);
+
+    // Split into chunks of 25,000 to keep sizes well under 25MB
+    const chunkSize = 25000;
+    const numChunks = Math.ceil(parsed.length / chunkSize);
+
+    for (let i = 0; i < numChunks; i++) {
+      const chunk = parsed.slice(i * chunkSize, (i + 1) * chunkSize);
+      const minified = JSON.stringify(chunk);
+      await fs.writeFile(path.join(DIST, `va-data-${i + 1}.json`), minified, 'utf8');
+    }
   } catch (e) {
     console.warn('⚠️  va-data.json not found, skipping copy');
   }
