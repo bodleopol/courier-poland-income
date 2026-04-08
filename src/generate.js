@@ -2992,6 +2992,15 @@ async function build() {
     // main.js not found, continue
   }
 
+  // Copy va-data.json
+  try {
+    const vaDataPath = path.join(SRC, 'va-data.json');
+    const vaDataContent = await fs.readFile(vaDataPath, 'utf8');
+    await fs.writeFile(path.join(DIST, 'va-data.json'), vaDataContent, 'utf8');
+  } catch (e) {
+    // va-data.json not found, continue
+  }
+
   // Copy modular game assets
   try {
     const gameSrcDir = path.join(SRC, 'game');
