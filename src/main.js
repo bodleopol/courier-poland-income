@@ -1640,10 +1640,19 @@
       if (vaParams.length > 0 || isFetching) return;
       isFetching = true;
       try {
-        const res = await fetch('/va-data.json');
-        if (res.ok) {
-          vaParams = await res.json();
+        vaParams = [];
+        let chunkIndex = 1;
+        while (true) {
+          const res = await fetch(`/va-data-${chunkIndex}.json`);
+          if (!res.ok) {
+            break;
+          }
+          const chunk = await res.json();
+          vaParams = vaParams.concat(chunk);
+          chunkIndex++;
+        }
 
+        if (vaParams.length > 0) {
           vaIndex = { ua: new Map(), pl: new Map(), ru: new Map(), en: new Map() };
           const langs = ['ua', 'pl', 'ru', 'en'];
           for (const param of vaParams) {
