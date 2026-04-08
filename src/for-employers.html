@@ -152,6 +152,50 @@
     .emp-hero h1 { font-size: 2.4rem; color: var(--color-primary); margin: 0 0 0.75rem; line-height: 1.2; }
     .emp-hero .subtitle { font-size: 1.15rem; color: var(--color-text-secondary, #64748b); max-width: 640px; margin: 0 auto; line-height: 1.6; }
 
+    /* Modern Split Hero */
+    .emp-hero-modern { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%); padding: 4rem 3rem; border-radius: 24px; margin: 2rem 0; border: 1px solid rgba(20, 184, 166, 0.2); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); position: relative; overflow: hidden; }
+    [data-theme="dark"] .emp-hero-modern { background: linear-gradient(135deg, #134e4a 0%, #115e59 100%); border-color: rgba(20, 184, 166, 0.3); }
+    .emp-hero-modern .hero-content { z-index: 2; }
+    .emp-hero-modern h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; background: linear-gradient(to right, #0f766e, #0d9488); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    [data-theme="dark"] .emp-hero-modern h1 { background: linear-gradient(to right, #5eead4, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .emp-hero-modern .subtitle { font-size: 1.25rem; color: var(--color-secondary, #475569); margin-bottom: 2.5rem; line-height: 1.6; }
+    [data-theme="dark"] .emp-hero-modern .subtitle { color: #ccfbf1; }
+    .emp-hero-modern .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .emp-hero-modern .btn-primary { background: var(--color-accent, #00a67e); color: #fff; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-decoration: none; border: none; transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+    .emp-hero-modern .btn-primary:hover { background: var(--color-accent-hover, #008a68); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 166, 126, 0.3); }
+    .emp-hero-modern .btn-outline { background: transparent; border: 2px solid var(--color-accent, #00a67e); color: var(--color-accent, #00a67e); padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+    [data-theme="dark"] .emp-hero-modern .btn-outline { color: #5eead4; border-color: #5eead4; }
+    .emp-hero-modern .btn-outline:hover { background: rgba(0, 166, 126, 0.1); transform: translateY(-2px); }
+    .emp-hero-modern .hero-visual { position: relative; height: 300px; display: flex; align-items: center; justify-content: center; }
+    .emp-hero-modern .hero-blob { position: absolute; width: 300px; height: 300px; background: var(--color-accent, #00a67e); border-radius: 50%; opacity: 0.2; filter: blur(40px); animation: pulseBlob 4s infinite alternate; }
+    .emp-hero-modern .hero-icon { font-size: 8rem; z-index: 2; animation: floatIcon 3s ease-in-out infinite; }
+    @keyframes floatIcon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    @keyframes pulseBlob { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+    @media (max-width: 900px) { .emp-hero-modern { grid-template-columns: 1fr; text-align: center; padding: 3rem 1.5rem; } .emp-hero-modern .hero-actions { justify-content: center; } .emp-hero-modern .hero-visual { display: none; } }
+
+    /* How it works */
+    .emp-how-it-works { padding: 3rem 0; margin-bottom: 2rem; text-align: center; }
+    .emp-how-it-works h2 { font-size: 2rem; color: var(--color-primary); margin-bottom: 2.5rem; }
+    .emp-how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+    .emp-how-step { position: relative; padding: 2rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; box-shadow: var(--shadow-sm); transition: transform 0.3s; }
+    .emp-how-step:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--color-accent); }
+    .emp-how-icon { font-size: 3rem; margin-bottom: 1rem; display: inline-block; }
+    .emp-how-step h3 { font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+    .emp-how-step p { color: var(--color-secondary, #64748b); font-size: 0.95rem; line-height: 1.6; }
+    .emp-how-arrow { display: none; position: absolute; top: 50%; right: -2rem; font-size: 2rem; color: var(--color-border); transform: translateY(-50%); }
+    @media (min-width: 900px) { .emp-how-arrow { display: block; } .emp-how-step:last-child .emp-how-arrow { display: none; } }
+
+    /* FAQ Section */
+    .emp-faq-section { margin: 3rem auto; max-width: 800px; }
+    .emp-faq-section h2 { text-align: center; font-size: 2rem; color: var(--color-primary); margin-bottom: 2rem; }
+    .emp-faq-details { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; margin-bottom: 1rem; overflow: hidden; transition: all 0.3s; }
+    .emp-faq-details[open] { border-color: var(--color-accent); box-shadow: 0 4px 12px rgba(0, 166, 126, 0.1); }
+    .emp-faq-summary { padding: 1.25rem; font-size: 1.1rem; font-weight: 600; color: var(--color-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+    .emp-faq-summary::-webkit-details-marker { display: none; }
+    .emp-faq-summary::after { content: '+'; color: var(--color-accent); font-size: 1.5rem; line-height: 1; transition: transform 0.3s; }
+    .emp-faq-details[open] .emp-faq-summary::after { transform: rotate(45deg); content: '×'; }
+    .emp-faq-details p { padding: 0 1.25rem 1.25rem; margin: 0; color: var(--color-secondary, #64748b); line-height: 1.6; }
+
     .emp-benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 2rem 0 2.5rem; }
     .emp-benefit { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 1.5rem; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
     .emp-benefit:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
@@ -234,9 +278,13 @@
     .emp-cta-bottom .btn-tg { display: inline-flex; align-items: center; gap: 0.5rem; background: #229ED9; color: #fff; padding: 0.8rem 1.8rem; border-radius: 10px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: background 0.2s; }
     .emp-cta-bottom .btn-tg:hover { background: #1b8ac0; color: #fff; }
 
-    .emp-proof-block { margin: 2rem 0; padding: 1.4rem; border-radius: 14px; border: 1px solid #fecaca; background: linear-gradient(135deg, #fff5f5, #fff); }
-    .emp-proof-block h2 { margin: 0 0 0.5rem; color: #b91c1c; font-size: 1.3rem; }
-    .emp-proof-block p { margin: 0; color: #7f1d1d; line-height: 1.6; }
+    .emp-proof-block { margin: 3rem 0; padding: 2.5rem; border-radius: 18px; border: 1px solid #bbf7d0; background: linear-gradient(135deg, #f0fdf4, #ecfdf5); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    [data-theme="dark"] .emp-proof-block { background: linear-gradient(135deg, #064e3b, #022c22); border-color: #065f46; }
+    .emp-proof-block .pricing-badge { position: static; display: inline-block; margin-bottom: 1rem; transform: none; font-size: 0.9rem; padding: 0.4rem 1.2rem; }
+    .emp-proof-block h2 { margin: 0 0 1rem; color: #166534; font-size: 1.8rem; }
+    [data-theme="dark"] .emp-proof-block h2 { color: #34d399; }
+    .emp-proof-block p { margin: 0 auto; color: #15803d; line-height: 1.6; font-size: 1.05rem; max-width: 700px; }
+    [data-theme="dark"] .emp-proof-block p { color: #a7f3d0; }
 
     /* Pricing plans */
     .emp-pricing { margin: 2.5rem 0; }
@@ -339,9 +387,19 @@
 
   <main class="container">
     <!-- Hero -->
-    <section class="emp-hero">
-      <h1 data-i18n="emp.title">Для роботодавців і компаній з Польщі</h1>
-      <p class="subtitle" data-i18n="emp.subtitle">Опублікуйте вакансію і знайдіть надійних українських працівників без посередників</p>
+    <section class="emp-hero-modern">
+      <div class="hero-content">
+        <h1 data-i18n="emp.title">Для роботодавців і компаній з Польщі</h1>
+        <p class="subtitle" data-i18n="emp.subtitle">Опублікуйте вакансію і знайдіть надійних українських працівників без посередників</p>
+        <div class="hero-actions">
+          <a href="#employerForm" class="btn-primary" data-i18n="emp.hero.btn1">Опублікувати вакансію</a>
+          <a href="#pricing" class="btn-outline" data-i18n="emp.hero.btn2">Дивитись тарифи</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <div class="hero-icon">💼</div>
+      </div>
     </section>
 
     <!-- Benefits -->
@@ -368,6 +426,30 @@
       </div>
     </section>
 
+    <!-- How it works -->
+    <section class="emp-how-it-works">
+      <h2 data-i18n="emp.how.title">Як це працює?</h2>
+      <div class="emp-how-grid">
+        <div class="emp-how-step">
+          <span class="emp-how-icon">📝</span>
+          <h3 data-i18n="emp.how.s1.title">1. Публікація</h3>
+          <p data-i18n="emp.how.s1.text">Заповніть форму з деталями вакансії. Ми швидко перевіримо та опублікуємо її.</p>
+          <div class="emp-how-arrow">→</div>
+        </div>
+        <div class="emp-how-step">
+          <span class="emp-how-icon">🔍</span>
+          <h3 data-i18n="emp.how.s2.title">2. Підбір кандидатів</h3>
+          <p data-i18n="emp.how.s2.text">Кандидати бачать вашу вакансію. Завдяки Rybezh Proof вони довіряють пропозиції.</p>
+          <div class="emp-how-arrow">→</div>
+        </div>
+        <div class="emp-how-step">
+          <span class="emp-how-icon">🤝</span>
+          <h3 data-i18n="emp.how.s3.title">3. Зв'язок і найм</h3>
+          <p data-i18n="emp.how.s3.text">Отримуйте відгуки напряму і наймайте найкращих працівників без комісій.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Stats -->
     <section class="emp-stats">
       <div class="stat">
@@ -389,6 +471,7 @@
     </section>
 
     <section class="emp-proof-block" aria-label="Rybezh Proof">
+      <span class="pricing-badge">Rybezh Proof</span>
       <h2 data-i18n="emp.proof.title">🔍 Ми перевіряємо всіх через Proof</h2>
       <p data-i18n="emp.proof.text">Кожна вакансія та компанія отримує Rybezh Proof на основі реальних відгуків кандидатів. Це допомагає роботодавцям формувати довіру, а кандидатам — швидше приймати рішення.</p>
     </section>
@@ -452,6 +535,23 @@
         </div>
 
       </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="emp-faq-section">
+      <h2 data-i18n="emp.faq.title">Часті запитання</h2>
+      <details class="emp-faq-details">
+        <summary class="emp-faq-summary" data-i18n="emp.faq.q1">Як швидко публікується вакансія?</summary>
+        <p data-i18n="emp.faq.a1">Після заповнення форми наша команда проводить модерацію. Зазвичай вакансія з'являється на сайті протягом 24 годин.</p>
+      </details>
+      <details class="emp-faq-details">
+        <summary class="emp-faq-summary" data-i18n="emp.faq.q2">Що таке Rybezh Proof і навіщо він потрібен?</summary>
+        <p data-i18n="emp.faq.a2">Rybezh Proof — це наша система рейтингу довіри. Ми збираємо відгуки кандидатів про умови праці. Високий рейтинг значно збільшує кількість відгуків на вашу вакансію.</p>
+      </details>
+      <details class="emp-faq-details">
+        <summary class="emp-faq-summary" data-i18n="emp.faq.q3">Чи можу я змінити опис після публікації?</summary>
+        <p data-i18n="emp.faq.a3">Так, ви можете зв'язатися з нашою підтримкою через Telegram у будь-який час, і ми оперативно внесемо необхідні зміни до вашого оголошення.</p>
+      </details>
     </section>
 
     <!-- Form -->
