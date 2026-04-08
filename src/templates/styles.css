@@ -1041,36 +1041,6 @@ main { flex: 1; padding: 3rem 0 4rem; }
   .row.two{grid-template-columns:1fr 1fr}
 }
 
-/* Virtual Assistant */
-.va-container { position: fixed; bottom: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-.va-fab { background: var(--color-accent); color: white; width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: transform 0.2s, background 0.2s; }
-.va-fab:hover { transform: scale(1.05); background: var(--color-accent-hover); }
-.va-fab svg { width: 28px; height: 28px; fill: currentColor; }
-.va-window { display: none; width: 320px; height: 420px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); flex-direction: column; overflow: hidden; }
-.va-window.is-open { display: flex; animation: slideUp 0.3s ease-out; }
-.va-header { background: var(--color-accent); color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
-.va-close { background: none; border: none; color: white; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; opacity: 0.8; transition: opacity 0.2s; }
-.va-close:hover { opacity: 1; }
-.va-chat { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: var(--color-bg); }
-.va-msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 0.9rem; line-height: 1.4; word-wrap: break-word; }
-.va-msg--bot { background: var(--color-surface); border: 1px solid var(--color-border); align-self: flex-start; border-bottom-left-radius: 4px; color: var(--color-text); }
-.va-msg--user { background: var(--color-accent); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
-.va-input-area { padding: 12px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; gap: 8px; }
-.va-input { flex: 1; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 20px; outline: none; background: var(--color-bg); color: var(--color-text); font-size: 0.9rem; transition: border-color 0.2s; }
-.va-input:focus { border-color: var(--color-accent); }
-.va-send { background: var(--color-accent); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; flex-shrink: 0; }
-.va-send:hover { background: var(--color-accent-hover); }
-.va-send svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; margin-left: -2px; }
-
-@media (max-width: 480px) {
-  .va-window { width: calc(100vw - 40px); height: 60vh; }
-}
-
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* Mobile Language Switcher */
 .mobile-lang { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); }
 .mobile-lang .lang-btn { background: transparent; border: 1px solid var(--color-border); padding: 0.5rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; color: var(--color-secondary); transition: all 0.2s; }
