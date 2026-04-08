@@ -2918,6 +2918,8 @@ async function build() {
     .slice(0, 50)
     .forEach((post) => normalizeRussianFields(post, ['title', 'excerpt', 'body', 'author_role']));
 
+  await fs.writeFile(path.join(DIST, 'posts.json'), JSON.stringify(posts), 'utf8');
+
   let pageTpl = await fs.readFile(path.join(TEMPLATES, 'page.html'), 'utf8');
   pageTpl = pageTpl.replace('{{GOOGLE_SITE_VERIFICATION_META}}', buildGoogleVerificationMeta());
   // Inject AdSense Auto Ads into the shared page template (affects all generated vacancy/blog pages)
