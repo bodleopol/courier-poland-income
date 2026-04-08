@@ -7,7 +7,7 @@ const baseTopics = [
     r_ua: 'Перейдіть до розділу "Вакансії" на нашому сайті, щоб знайти актуальні пропозиції.', r_pl: 'Przejdź do sekcji "Oferty pracy" na naszej stronie, aby znaleźć aktualne propozycje.', r_ru: 'Перейдите в раздел "Вакансии" на нашем сайте, чтобы найти актуальные предложения.', r_en: 'Go to the "Vacancies" section on our website to find current offers.' }
 ];
 
-const total = 10000;
+const total = 30000;
 const data = [...baseTopics];
 
 const topics = ['вакансія', 'робота', 'документи', 'житло', 'зарплата', 'оренда', 'відгуки', 'Богдан Тютенко', 'Rybezh', 'Польща', 'Варшава', 'Краків'];
