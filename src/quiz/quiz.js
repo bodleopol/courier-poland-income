@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const QUESTIONS_PER_QUIZ = 20; // Number of questions to ask per session
 
+  // Determine language
+  const currentLang = document.documentElement.lang || 'ua';
+
   // Fetch Data
   fetch('/quiz-data.json')
     .then(response => {
@@ -55,15 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function initIndustrySelection() {
     industryGrid.innerHTML = '';
 
-    // Extract unique industries from the data
-    const industries = [...new Set(quizData.map(q => q.industry))].sort();
+    // Extract unique industries from the data based on current language
+    const industryKey = `industry_${currentLang}`;
+    const industries = [...new Set(quizData.map(q => q[industryKey]))].sort();
 
     industries.forEach(industry => {
       const card = document.createElement('div');
       card.className = 'industry-card';
 
       // Get a count of questions for this industry
-      const count = quizData.filter(q => q.industry === industry).length;
+      const count = quizData.filter(q => q[industryKey] === industry).length;
 
       card.innerHTML = `
         <h3 style="margin-top: 0;">${industry}</h3>
@@ -79,9 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startQuiz(industry) {
     currentIndustry = industry;
+    const industryKey = `industry_${currentLang}`;
 
     // Filter questions for the selected industry and shuffle them
-    const industryQuestions = quizData.filter(q => q.industry === industry);
+    const industryQuestions = quizData.filter(q => q[industryKey] === industry);
     currentQuestions = shuffleArray(industryQuestions).slice(0, QUESTIONS_PER_QUIZ);
 
     currentQuestionIndex = 0;
@@ -105,17 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
     progressText.textContent = `Питання ${currentQuestionIndex + 1} з ${currentQuestions.length}`;
 
     // Update Question
-    questionText.textContent = question.question;
+    questionText.textContent = question[`question_${currentLang}`];
 
     // Update Options (assuming options A, B, C, D exist in the data)
     optionsGrid.innerHTML = '';
 
     const optionLabels = ['A', 'B', 'C', 'D'];
     const options = [
-      { id: 'A', text: question.option_a },
-      { id: 'B', text: question.option_b },
-      { id: 'C', text: question.option_c },
-      { id: 'D', text: question.option_d }
+      { id: 'A', text: question[`option_a_${currentLang}`] },
+      { id: 'B', text: question[`option_b_${currentLang}`] },
+      { id: 'C', text: question[`option_c_${currentLang}`] },
+      { id: 'D', text: question[`option_d_${currentLang}`] }
     ];
 
     options.forEach((opt, index) => {
