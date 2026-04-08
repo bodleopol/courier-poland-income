@@ -1616,6 +1616,7 @@
 
     let hasOpened = false;
     let vaParams = [];
+    let vaIndex = null;
     let isFetching = false;
     let userName = localStorage.getItem('va_username') || '';
     let activeFlow = null;
@@ -1639,6 +1640,23 @@
         const res = await fetch('/va-data.json');
         if (res.ok) {
           vaParams = await res.json();
+
+          vaIndex = { ua: new Map(), pl: new Map(), ru: new Map(), en: new Map() };
+          const langs = ['ua', 'pl', 'ru', 'en'];
+          for (const param of vaParams) {
+            for (const l of langs) {
+              const keyPattern = param[`k_${l}`] || '';
+              if (!keyPattern) continue;
+              const response = param[`r_${l}`] || param[`r_ua`];
+              const keywords = keyPattern.split('|');
+              for (const kw of keywords) {
+                const cleanKw = kw.trim().toLowerCase();
+                if (cleanKw && !vaIndex[l].has(cleanKw)) {
+                  vaIndex[l].set(cleanKw, response);
+                }
+              }
+            }
+          }
         }
       } catch (err) {
         console.error('Failed to load VA data', err);
@@ -1736,6 +1754,43 @@
         }
       }
 
+      // 3. Step-by-step Consultation Flow
+      if (activeFlow === 'consultation_1') {
+        if (msgLower === '1') {
+          activeFlow = 'consultation_2';
+          return lang === 'pl' ? 'Wspaniale! Szukasz pracy na:\n1. Pełny etat\n2. Dorywczo'
+               : (lang === 'ru' ? 'Отлично! Вы ищете работу на:\n1. Полную занятость\n2. Подработку'
+               : (lang === 'en' ? 'Great! Are you looking for:\n1. Full-time\n2. Part-time'
+               : 'Чудово! Ви шукаєте роботу на:\n1. Повну зайнятість\n2. Підробіток'));
+        } else if (msgLower === '2') {
+          activeFlow = null;
+          return lang === 'pl' ? 'Aby wynająć pojazd, zostaw zgłoszenie tutaj: <a href="/rent.html">Wynajem</a>'
+               : (lang === 'ru' ? 'Чтобы арендовать транспорт, оставьте заявку здесь: <a href="/rent.html">Аренда</a>'
+               : (lang === 'en' ? 'To rent a vehicle, leave a request here: <a href="/rent.html">Rent</a>'
+               : 'Щоб орендувати транспорт, залиште заявку тут: <a href="/rent.html">Оренда</a>'));
+        } else if (msgLower === '3') {
+          activeFlow = null;
+          return lang === 'pl' ? 'Skontaktuj się z nami bezpośrednio przez <a href="/contact.html">Kontakt</a>'
+               : (lang === 'ru' ? 'Свяжитесь с нами напрямую через <a href="/contact.html">Контакты</a>'
+               : (lang === 'en' ? 'Contact us directly via <a href="/contact.html">Contact</a>'
+               : 'Зв\'яжіться з нами безпосередньо через <a href="/contact.html">Контакти</a>'));
+        } else {
+          return lang === 'pl' ? 'Wpisz 1, 2 lub 3.' : (lang === 'ru' ? 'Введите 1, 2 или 3.' : (lang === 'en' ? 'Enter 1, 2, or 3.' : 'Введіть 1, 2 або 3.'));
+        }
+      }
+
+      if (activeFlow === 'consultation_2') {
+        activeFlow = null;
+        if (msgLower === '1' || msgLower === '2') {
+           return lang === 'pl' ? 'Dziękujemy! Obejrzyj odpowiednie <a href="/vacancies.html">oferty pracy</a> i złóż wniosek.'
+                : (lang === 'ru' ? 'Спасибо! Посмотрите подходящие <a href="/vacancies.html">вакансии</a> и подайте заявку.'
+                : (lang === 'en' ? 'Thank you! Browse relevant <a href="/vacancies.html">jobs</a> and apply.'
+                : 'Дякуємо! Перегляньте відповідні <a href="/vacancies.html">вакансії</a> та подайте заявку.'));
+        } else {
+           return lang === 'pl' ? 'Wpisz 1 lub 2.' : (lang === 'ru' ? 'Введите 1 или 2.' : (lang === 'en' ? 'Enter 1 or 2.' : 'Введіть 1 або 2.'));
+        }
+      }
+
       const menuKeywords = ['допомога', 'help', 'питання', 'pytania', 'вопрос', 'помощь'];
       if (menuKeywords.some(kw => msgLower.includes(kw))) {
         activeFlow = 'main_menu';
@@ -1748,7 +1803,19 @@
         return menuReplies[lang] || menuReplies['ua'];
       }
 
-      // 3. Direct links
+      const consultationKeywords = ['консультація', 'consultation', 'konsultacja', 'консультация'];
+      if (consultationKeywords.some(kw => msgLower.includes(kw))) {
+        activeFlow = 'consultation_1';
+        const consReplies = {
+          'ua': 'Давайте розпочнемо консультацію. Що вас цікавить найбільше?\n1. Пошук роботи\n2. Оренда транспорту\n3. Інше',
+          'pl': 'Zacznijmy konsultację. Co Cię najbardziej interesuje?\n1. Szukanie pracy\n2. Wynajem pojazdu\n3. Inne',
+          'ru': 'Давайте начнем консультацию. Что вас интересует больше всего?\n1. Поиск работы\n2. Аренда транспорта\n3. Другое',
+          'en': 'Let\'s start the consultation. What are you most interested in?\n1. Job search\n2. Vehicle rental\n3. Other'
+        };
+        return consReplies[lang] || consReplies['ua'];
+      }
+
+      // 4. Direct links
       const directLinks = [
         { keys: ['вакансії', 'вакансии', 'praca', 'oferty', 'jobs', 'vacancies'], url: '/vacancies.html', text: {ua: 'Вакансії', pl: 'Oferty pracy', ru: 'Вакансии', en: 'Vacancies'} },
         { keys: ['калькулятор', 'kalkulator', 'calculator'], url: '/calculator.html', text: {ua: 'Калькулятор зарплати', pl: 'Kalkulator wynagrodzenia', ru: 'Калькулятор зарплаты', en: 'Salary Calculator'} },
@@ -1762,19 +1829,45 @@
         }
       }
 
-      for (const param of vaParams) {
-        const keyPattern = param[`k_${lang}`] || '';
-        if (!keyPattern) continue;
+      if (vaIndex && vaIndex[lang]) {
+        let matchedResponse = null;
 
-        const keywords = keyPattern.split('|');
-        for (const kw of keywords) {
-          if (kw) {
-            // Use regex to ensure word boundary, handling both latin and cyrillic characters
-            const regex = new RegExp(`(?:^|[^\\p{L}\\p{N}_])${kw}(?:[^\\p{L}\\p{N}_]|$)`, 'iu');
-            if (regex.test(msgLower)) {
-              return param[`r_${lang}`] || param[`r_ua`];
-            }
+        // Extract words from the message
+        const words = msgLower.match(/[\p{L}\p{N}_]+/igu) || [];
+        for (const word of words) {
+          if (vaIndex[lang].has(word)) {
+            matchedResponse = vaIndex[lang].get(word);
+            break;
           }
+        }
+
+        // Also check if any multi-word keyword is in the message
+        if (!matchedResponse) {
+          for (const [kw, response] of vaIndex[lang].entries()) {
+             if (kw.includes(' ')) {
+                const regex = new RegExp(`(?:^|[^\\p{L}\\p{N}_])${kw}(?:[^\\p{L}\\p{N}_]|$)`, 'iu');
+                if (regex.test(msgLower)) {
+                   matchedResponse = response;
+                   break;
+                }
+             }
+          }
+        }
+
+        if (matchedResponse) {
+          // Sometimes inject the user's name
+          if (userName && Math.random() > 0.5) {
+             const prefixes = {
+                'ua': [`${userName}, `, `Отже, ${userName}, `, `Зрозумів, ${userName}. `],
+                'pl': [`${userName}, `, `Więc, ${userName}, `, `Rozumiem, ${userName}. `],
+                'ru': [`${userName}, `, `Итак, ${userName}, `, `Понял, ${userName}. `],
+                'en': [`${userName}, `, `So, ${userName}, `, `Got it, ${userName}. `]
+             };
+             const pool = prefixes[lang] || prefixes['ua'];
+             const prefix = pool[Math.floor(Math.random() * pool.length)];
+             return prefix + matchedResponse.charAt(0).toLowerCase() + matchedResponse.slice(1);
+          }
+          return matchedResponse;
         }
       }
 
