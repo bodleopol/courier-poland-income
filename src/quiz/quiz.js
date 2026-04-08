@@ -22,11 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // State
   let quizData = null;
-  let currentIndustry = null;
+  let currentIndustryId = null;
   let currentQuestions = [];
   let currentQuestionIndex = 0;
   let score = 0;
   let hasAnswered = false;
+
+  // Detect current language from HTML tag or fallback to 'ua'
+  const currentLang = document.documentElement.lang === 'uk' ? 'ua' : (document.documentElement.lang || 'ua');
 
   const QUESTIONS_PER_QUIZ = 20; // Number of questions to ask per session
 
@@ -55,39 +58,53 @@ document.addEventListener('DOMContentLoaded', () => {
   function initIndustrySelection() {
     industryGrid.innerHTML = '';
 
-    // Extract unique industries from the data
-    const industries = [...new Set(quizData.map(q => q.industry))].sort();
+    // Group by industry_id
+    const industryMap = new Map();
 
-    industries.forEach(industry => {
+    quizData.forEach(q => {
+      // Some old questions might still be in the data without industry_id, let's gracefully handle or skip them
+      const indId = q.industry_id || q.industry;
+      const indName = q[`industry_${currentLang}`] || q.industry_ua || q.industry;
+
+      if (!industryMap.has(indId)) {
+        industryMap.set(indId, {
+          id: indId,
+          name: indName,
+          count: 0
+        });
+      }
+      industryMap.get(indId).count++;
+    });
+
+    const industries = Array.from(industryMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+
+    industries.forEach(ind => {
       const card = document.createElement('div');
       card.className = 'industry-card';
 
-      // Get a count of questions for this industry
-      const count = quizData.filter(q => q.industry === industry).length;
-
       card.innerHTML = `
-        <h3 style="margin-top: 0;">${industry}</h3>
-        <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0;">${count} питань</p>
+        <h3 style="margin-top: 0;">${ind.name}</h3>
+        <p style="color: #6c757d; font-size: 0.9rem; margin-bottom: 0;">${ind.count} ${currentLang === 'ua' ? 'питань' : currentLang === 'pl' ? 'pytań' : currentLang === 'ru' ? 'вопросов' : 'questions'}</p>
       `;
 
-      card.addEventListener('click', () => startQuiz(industry));
+      card.addEventListener('click', () => startQuiz(ind));
       industryGrid.appendChild(card);
     });
 
     showScreen(selectionScreen);
   }
 
-  function startQuiz(industry) {
-    currentIndustry = industry;
+  function startQuiz(industryObj) {
+    currentIndustryId = industryObj.id;
 
     // Filter questions for the selected industry and shuffle them
-    const industryQuestions = quizData.filter(q => q.industry === industry);
+    const industryQuestions = quizData.filter(q => (q.industry_id || q.industry) === industryObj.id);
     currentQuestions = shuffleArray(industryQuestions).slice(0, QUESTIONS_PER_QUIZ);
 
     currentQuestionIndex = 0;
     score = 0;
 
-    currentIndustryTitle.textContent = industry;
+    currentIndustryTitle.textContent = industryObj.name;
 
     loadQuestion();
     showScreen(quizScreen);
@@ -105,17 +122,32 @@ document.addEventListener('DOMContentLoaded', () => {
     progressText.textContent = `Питання ${currentQuestionIndex + 1} з ${currentQuestions.length}`;
 
     // Update Question
-    questionText.textContent = question.question;
+    questionText.textContent = question[`question_${currentLang}`] || question.question_ua || question.question;
+
+    // Update localized UI elements
+    const nextBtnText = { ua: 'Наступне питання', pl: 'Następne pytanie', ru: 'Следующий вопрос', en: 'Next question' };
+    const quitBtnText = { ua: 'Завершити достроково', pl: 'Zakończ przedwcześnie', ru: 'Завершить досрочно', en: 'Quit early' };
+    const finishBtnText = { ua: 'Завершити тест', pl: 'Zakończ test', ru: 'Завершить тест', en: 'Finish quiz' };
+    const qCountText = { ua: 'Питання', pl: 'Pytanie', ru: 'Вопрос', en: 'Question' };
+    const ofText = { ua: 'з', pl: 'z', ru: 'из', en: 'of' };
+
+    progressText.textContent = `${qCountText[currentLang]} ${currentQuestionIndex + 1} ${ofText[currentLang]} ${currentQuestions.length}`;
+    btnQuit.textContent = quitBtnText[currentLang];
+
+    if (currentQuestionIndex === currentQuestions.length - 1) {
+      btnNext.textContent = finishBtnText[currentLang];
+    } else {
+      btnNext.textContent = nextBtnText[currentLang];
+    }
 
     // Update Options (assuming options A, B, C, D exist in the data)
     optionsGrid.innerHTML = '';
 
-    const optionLabels = ['A', 'B', 'C', 'D'];
     const options = [
-      { id: 'A', text: question.option_a },
-      { id: 'B', text: question.option_b },
-      { id: 'C', text: question.option_c },
-      { id: 'D', text: question.option_d }
+      { id: 'A', text: question[`option_a_${currentLang}`] || question.option_a_ua || question.option_a },
+      { id: 'B', text: question[`option_b_${currentLang}`] || question.option_b_ua || question.option_b },
+      { id: 'C', text: question[`option_c_${currentLang}`] || question.option_c_ua || question.option_c },
+      { id: 'D', text: question[`option_d_${currentLang}`] || question.option_d_ua || question.option_d }
     ];
 
     options.forEach((opt, index) => {
@@ -152,10 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnNext.disabled = false;
 
+    const nextBtnText = { ua: 'Наступне питання', pl: 'Następne pytanie', ru: 'Следующий вопрос', en: 'Next question' };
+    const finishBtnText = { ua: 'Завершити тест', pl: 'Zakończ test', ru: 'Завершить тест', en: 'Finish quiz' };
+
     if (currentQuestionIndex === currentQuestions.length - 1) {
-      btnNext.textContent = 'Завершити тест';
+      btnNext.textContent = finishBtnText[currentLang];
     } else {
-      btnNext.textContent = 'Наступне питання';
+      btnNext.textContent = nextBtnText[currentLang];
     }
   }
 
@@ -164,17 +199,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     finalScoreEl.textContent = percentage;
 
+    const messages = {
+      excellent: { ua: 'Відмінно! Ви справжній професіонал у цій галузі. 🏆', pl: 'Znakomicie! Jesteś prawdziwym profesjonalistą w tej dziedzinie. 🏆', ru: 'Отлично! Вы настоящий профессионал в этой отрасли. 🏆', en: 'Excellent! You are a true professional in this field. 🏆' },
+      good: { ua: 'Гарний результат! У вас хороші знання. 👍', pl: 'Dobry wynik! Masz dobrą wiedzę. 👍', ru: 'Хороший результат! У вас хорошие знания. 👍', en: 'Good result! You have good knowledge. 👍' },
+      fair: { ua: 'Непогано, але є куди рости. Варто ще потренуватися. 📚', pl: 'Nieźle, ale jest miejsce na rozwój. Warto jeszcze poćwiczyć. 📚', ru: 'Неплохо, но есть куда расти. Стоит еще потренироваться. 📚', en: 'Not bad, but there is room for growth. Worth practicing more. 📚' },
+      poor: { ua: 'Потрібно більше практики. Спробуйте пройти тест ще раз! 💪', pl: 'Potrzeba więcej praktyki. Spróbuj rozwiązać test jeszcze raz! 💪', ru: 'Нужно больше практики. Попробуйте пройти тест еще раз! 💪', en: 'More practice needed. Try taking the test again! 💪' }
+    };
+
     if (percentage >= 90) {
-      resultMessageEl.textContent = 'Відмінно! Ви справжній професіонал у цій галузі. 🏆';
+      resultMessageEl.textContent = messages.excellent[currentLang];
       resultMessageEl.style.color = '#2e7d32';
     } else if (percentage >= 70) {
-      resultMessageEl.textContent = 'Гарний результат! У вас хороші знання. 👍';
+      resultMessageEl.textContent = messages.good[currentLang];
       resultMessageEl.style.color = '#00a67e';
     } else if (percentage >= 50) {
-      resultMessageEl.textContent = 'Непогано, але є куди рости. Варто ще потренуватися. 📚';
+      resultMessageEl.textContent = messages.fair[currentLang];
       resultMessageEl.style.color = '#f57c00';
     } else {
-      resultMessageEl.textContent = 'Потрібно більше практики. Спробуйте пройти тест ще раз! 💪';
+      resultMessageEl.textContent = messages.poor[currentLang];
       resultMessageEl.style.color = '#c62828';
     }
 
@@ -204,7 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   btnRetry.addEventListener('click', () => {
-    startQuiz(currentIndustry);
+    // Re-find the industry object to pass to startQuiz
+    const indIds = Array.from(new Set(quizData.map(q => q.industry_id || q.industry)));
+    const ind = indIds.map(id => {
+      const q = quizData.find(x => (x.industry_id || x.industry) === id);
+      return { id: id, name: q[`industry_${currentLang}`] || q.industry_ua || q.industry };
+    }).find(i => i.id === currentIndustryId);
+
+    startQuiz(ind);
   });
 
   btnHome.addEventListener('click', () => {

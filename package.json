@@ -2,7 +2,7 @@
   "name": "courier-poland-income",
   "type": "module",
   "scripts": {
-    "build": "node src/generate.js && node src/generate-sitemap.js",
+    "build": "node src/quiz/generate-mock-data.js && node src/generate.js && node src/generate-sitemap.js",
     "sitemap": "node src/generate-sitemap.js",
     "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
   },
