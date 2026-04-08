@@ -1615,29 +1615,35 @@
 
     let hasOpened = false;
     let vaParams = [];
-    let isFetching = false;
+    let fetchPromise = null;
 
-    function addMessage(text, sender = 'bot') {
+    function addMessage(text, sender = 'bot', customClass = '') {
       const msg = document.createElement('div');
-      msg.className = `va-msg va-msg--${sender}`;
+      msg.className = `va-msg va-msg--${sender} ${customClass}`.trim();
       msg.textContent = text;
       chat.appendChild(msg);
       chat.scrollTop = chat.scrollHeight;
+      return msg;
     }
 
     async function loadVaData() {
-      if (vaParams.length > 0 || isFetching) return;
-      isFetching = true;
-      try {
-        const res = await fetch('/va-data.json');
-        if (res.ok) {
-          vaParams = await res.json();
-        }
-      } catch (err) {
-        console.error('Failed to load VA data', err);
-      } finally {
-        isFetching = false;
+      if (vaParams.length > 0) return;
+      if (fetchPromise) {
+        await fetchPromise;
+        return;
       }
+
+      fetchPromise = fetch('/va-data.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Network error');
+          return res.json();
+        })
+        .then(data => {
+          vaParams = data;
+        })
+        .catch(err => console.error('Failed to load VA data', err));
+
+      await fetchPromise;
     }
 
     fab.addEventListener('click', async () => {
@@ -1647,12 +1653,19 @@
         hasOpened = true;
         // Show loading or default greeting while fetching
         const lang = getLang();
-        addMessage(lang === 'pl' ? 'Wczytywanie...' : (lang === 'ru' ? 'Загрузка...' : 'Завантаження...'), 'bot');
+        let loadingMsg = 'Завантаження...';
+        if (lang === 'pl') loadingMsg = 'Wczytywanie...';
+        if (lang === 'ru') loadingMsg = 'Загрузка...';
+        if (lang === 'en') loadingMsg = 'Loading...';
+
+        const loadingEl = addMessage(loadingMsg, 'bot', 'va-loading-msg');
 
         await loadVaData();
 
         // Replace loading message with actual greeting
-        chat.lastChild.remove();
+        if (loadingEl && loadingEl.parentNode) {
+          loadingEl.remove();
+        }
         let initialGreet = 'Привіт! Чим можу допомогти?';
         if (vaParams.length > 0) {
            initialGreet = vaParams[0][`r_${lang}`] || vaParams[0]['r_ua'];
@@ -1679,35 +1692,93 @@
         await loadVaData();
       }
 
+      // Simulate a bit of typing delay for a more natural "AI" feel
+      const typingDelay = 600 + Math.random() * 800;
       setTimeout(() => {
         const reply = getBotReply(text);
         addMessage(reply, 'bot');
-      }, 500);
+      }, typingDelay);
     });
+
+    // Helper: escape regex control characters
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    }
+
+    // Helper: clean text and get stems (simple word roots) to make matching smarter
+    function getTokens(text) {
+      return text.toLowerCase()
+        .replace(/[.,!?()]/g, ' ')
+        .split(/\s+/)
+        .filter(word => word.length > 2)
+        .map(word => {
+          // Very simple heuristic: remove common endings for Ukrainian/Russian/Polish
+          return word.replace(/(ий|ый|ij|oje|ая|яя|a|e|і|и|y|i|om|am|ów|iw|ів|ов|у|u|em|iem|ie)$/i, '');
+        });
+    }
 
     function getBotReply(userMsg) {
       const lang = getLang();
       const msgLower = userMsg.toLowerCase();
+      const userTokens = getTokens(msgLower);
+
+      let bestMatch = null;
+      let maxScore = 0;
 
       for (const param of vaParams) {
         const keyPattern = param[`k_${lang}`] || '';
         if (!keyPattern) continue;
 
-        const keywords = keyPattern.split('|');
+        const keywords = keyPattern.split('|').filter(k => k.trim() !== '');
+
+        // 1. Try exact/regex match first (highest priority)
         for (const kw of keywords) {
-          if (kw) {
-            // Use regex to ensure word boundary, handling both latin and cyrillic characters
-            const regex = new RegExp(`(?:^|[^\\p{L}\\p{N}_])${kw}(?:[^\\p{L}\\p{N}_]|$)`, 'iu');
+            const escapedKw = escapeRegExp(kw);
+            const regex = new RegExp(`(?:^|[^\\p{L}\\p{N}_])${escapedKw}(?:[^\\p{L}\\p{N}_]|$)`, 'iu');
             if (regex.test(msgLower)) {
               return param[`r_${lang}`] || param[`r_ua`];
             }
+        }
+
+        // 2. Try fuzzy token matching if no exact match (score based on shared root words)
+        let score = 0;
+        for (const kw of keywords) {
+          const kwTokens = getTokens(kw);
+          for (const uToken of userTokens) {
+            for (const kToken of kwTokens) {
+               if (uToken === kToken && uToken.length > 2) {
+                 score += 1;
+               }
+            }
           }
         }
+
+        if (score > maxScore) {
+          maxScore = score;
+          bestMatch = param;
+        }
+      }
+
+      if (bestMatch && maxScore > 0) {
+        return bestMatch[`r_${lang}`] || bestMatch[`r_ua`];
       }
 
       // Fallback response
       const fallbackObj = translations['va.default_reply'] || {};
-      return fallbackObj[lang] || fallbackObj['ua'] || 'Вибачте, я не зрозумів.';
+      let fallbackText = fallbackObj[lang] || fallbackObj['ua'] || 'Вибачте, я не зрозумів.';
+
+      // Add a ChatGPT-like flavor to the fallback
+      if (lang === 'pl') {
+        fallbackText = "Przepraszam, nie jestem pewien czy dobrze zrozumiałem. Czy możesz sformułować to inaczej lub podać więcej szczegółów?";
+      } else if (lang === 'ru') {
+        fallbackText = "Извините, я не уверен, что правильно понял. Не могли бы вы перефразировать или уточнить ваш вопрос?";
+      } else if (lang === 'en') {
+        fallbackText = "I'm sorry, I'm not sure I understand. Could you please rephrase your question or provide more details?";
+      } else {
+        fallbackText = "Вибачте, я не впевнений, що правильно зрозумів. Чи могли б ви перефразувати питання або надати більше деталей?";
+      }
+
+      return fallbackText;
     }
   }
 
