@@ -2112,58 +2112,87 @@ const JOB_QUESTIONS_POOL = {
 const CHECKLIST_SEED_OFFSET = 17;
 const QUESTIONS_SEED_OFFSET = 29;
 
+const JOB_POSITIVE_POOL = {
+  ua: ['Стабільні виплати без затримок', 'Можливість узгоджувати графік з координатором', 'Зрозумілі задачі без прихованих умов', 'Допомога з оформленням документів з першого дня', 'Лояльне ставлення до новачків без досвіду', 'Прозорий облік відпрацьованих годин'],
+  pl: ['Stabilne wypłaty bez opóźnień', 'Możliwość ustalenia grafiku z koordynatorem', 'Jasne zadania bez ukrytych warunków', 'Pomoc z dokumentami od pierwszego dnia', 'Dobre podejście do osób bez doświadczenia', 'Przejrzyste rozliczanie przepracowanych godzin'],
+  ru: ['Стабильные выплаты без задержек', 'Возможность согласовывать график с координатором', 'Понятные задачи без скрытых условий', 'Помощь с документами с первого дня', 'Лояльное отношение к новичкам без опыта', 'Прозрачный учет отработанных часов']
+};
+
+const JOB_ROUTINE_POOL = {
+  ua: ['Зміна починається з короткого інструктажу та перевірки безпеки', 'Темп роботи залежить від сезону та кількості замовлень', 'Передбачені дві офіційні перерви протягом зміни', 'Більшість часу проводиться на ногах або в русі', 'Комунікація з бригадиром відбувається через месенджер'],
+  pl: ['Zmiana zaczyna się od krótkiego instruktażu BHP', 'Tempo pracy zależy od sezonu i liczby zamówień', 'Są dwie oficjalne przerwy w trakcie zmiany', 'Większość czasu spędza się na nogach lub w ruchu', 'Komunikacja z brygadzistą odbywa się przez komunikator'],
+  ru: ['Смена начинается с короткого инструктажа и проверки безопасности', 'Темп работы зависит от сезона и количества заказов', 'Предусмотрены два официальных перерыва во время смены', 'Большую часть времени проводится на ногах или в движении', 'Связь с бригадиром происходит через мессенджер']
+};
+
+const JOB_RISK_POOL = {
+  ua: ['Перший тиждень може бути фізично важким під час адаптації', 'Бувають затримки з видачею перепусток або документів на старті', 'Часто змінюються локації виконання завдань на обʼєкті', 'В сезон потрібно бути готовим до понаднормових годин', 'Шум та високий темп роботи на лінії'],
+  pl: ['Pierwszy tydzień może być trudny fizycznie w czasie adaptacji', 'Zdarzają się opóźnienia z przepustkami na starcie', 'Często zmieniają się lokalizacje zadań na obiekcie', 'W sezonie trzeba być gotowym na nadgodziny', 'Hałas i szybkie tempo pracy na linii'],
+  ru: ['Первая неделя может быть физически тяжелой во время адаптации', 'Бывают задержки с пропусками или документами на старте', 'Часто меняются локации задач на объекте', 'В сезон нужно быть готовым к сверхурочным', 'Шум и высокий темп работы на линии']
+};
+
+const JOB_NEGATIVE_POOL = {
+  ua: ['Тим, хто не любить працювати в інтенсивному ритмі або в команді', 'Тим, хто шукає підробіток лише на кілька тижнів', 'Кандидатам, які не готові до роботи в нічні зміни (якщо вони є)', 'Тим, хто має проблеми зі спиною чи суглобами'],
+  pl: ['Osobom, które nie lubią pracy w szybkim tempie lub w zespole', 'Osobom szukającym pracy dorywczej tylko na kilka tygodni', 'Kandydatom niegotowym na nocne zmiany (jeśli występują)', 'Osobom z problemami z kręgosłupem lub stawami'],
+  ru: ['Тем, кто не любит работать в интенсивном ритме или в команде', 'Тем, кто ищет подработку только на пару недель', 'Кандидатам, которые не готовы к ночным сменам (если они есть)', 'Тем, у кого есть проблемы со спиной или суставами']
+};
+
 function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
   const seed = hashString(`${page?.slug || ''}:${lang}`);
+  const cityStr = escapeHtml(isPl ? page.city_pl || page.city : (isRu ? page.city_ru || page.city : page.city)) || '';
+
+  // H2 Headings
+  const h2Pos = isPl ? `Co wyróżnia tę ofertę w ${cityStr}` : (isRu ? `Что отличает эту вакансию в ${cityStr}` : `Що відрізняє цю вакансію від інших у ${cityStr}`);
+  const h2Routine = isPl ? 'Realne warunki zmiany' : (isRu ? 'Реальные условия смены' : 'Реальні умови зміни (по днях)');
+  const h2Risk = isPl ? 'Możliwe ryzyka i trudności' : (isRu ? 'Возможные риски и сложности' : 'Ризики та “червоні прапори” цієї вакансії');
+  const h2Neg = isPl ? 'Dla kogo NIE jest ta praca' : (isRu ? 'Кому НЕ подойдет эта работа' : 'Кому НЕ підійде ця робота');
+  const h3Case = isPl ? 'Opinia kandydata:' : (isRu ? 'Отзыв кандидата:' : 'Кейс кандидата:');
+
+  // Content selection
+  const positiveHtml = pickList(JOB_POSITIVE_POOL[lang] || JOB_POSITIVE_POOL.ua, 2, seed + 1)
+    .map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  const routineHtml = pickList(JOB_ROUTINE_POOL[lang] || JOB_ROUTINE_POOL.ua, 2, seed + 2)
+    .map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  const riskHtml = pickList(JOB_RISK_POOL[lang] || JOB_RISK_POOL.ua, 2, seed + 3)
+    .map(t => `<li>${escapeHtml(t)}</li>`).join('');
+  const negativeHtml = pickList(JOB_NEGATIVE_POOL[lang] || JOB_NEGATIVE_POOL.ua, 2, seed + 4)
+    .map(t => `<li>${escapeHtml(t)}</li>`).join('');
+
+  // UGC Case
+  const candName = pickFromPool(UGC_NAMES[lang === 'pl' ? 'pl' : 'ua'], seed + 5);
+  const candComment = pickFromPool(UGC_COMMENTS[lang === 'pl' ? 'pl' : 'ua'], seed + 6);
+  const candDate = new Date(Date.now() - (Math.abs(seed) % 30) * 86400000).toISOString().slice(0, 10); // Random date within last 30 days
   
-  // Variant-based simplified version (for 'simple')
   if (variant === 'simple') {
-    const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 3, seed + CHECKLIST_SEED_OFFSET)
-      .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
-    const simpleTitles = SIMPLE_HUMAN_TITLES_BY_LANG[lang] || SIMPLE_HUMAN_TITLES_BY_LANG.ua;
-    const title = simpleTitles[seed % simpleTitles.length];
-    const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
-    
     return `
-    <section class="job-human job-human--simple" aria-label="${escapeHtml(title)}">
-      <h3 class="job-human__title">${escapeHtml(title)}</h3>
-      <ul class="job-human__single-list">${checklistHtml}</ul>
+    <section class="job-human job-human--simple" aria-label="${escapeHtml(h2Pos)}">
+      <h2 class="job-human__title job-human-h2">${escapeHtml(h2Pos)}</h2>
+      <ul class="job-human__single-list">${positiveHtml}</ul>
+      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Risk)}</h2>
+      <ul class="job-human__single-list">${riskHtml}</ul>
     </section>
   `;
   }
   
-  // Full version with 2 columns
-  const checklist = pickList(JOB_CHECKLIST_POOL[lang] || JOB_CHECKLIST_POOL.ua, 4, seed + CHECKLIST_SEED_OFFSET)
-    .map((item, idx) => diversifyChecklistItem(item, page, lang, idx));
-  const questions = pickList(JOB_QUESTIONS_POOL[lang] || JOB_QUESTIONS_POOL.ua, 3, seed + QUESTIONS_SEED_OFFSET);
-
-  const fullTitles = FULL_HUMAN_TITLES_BY_LANG[lang] || FULL_HUMAN_TITLES_BY_LANG.ua;
-  const title = fullTitles[seed % fullTitles.length];
-  const leftTitle = isPl ? 'Lista kontrolna' : (isRu ? 'Проверочный список' : 'Чек-лист перевірки');
-  const rightTitle = isPl ? 'Pytania do rekrutera' : (isRu ? 'Вопросы рекрутеру' : 'Питання до рекрутера');
-  const note = isPl
-    ? 'Warunki mogą się różnić w zależności od projektu. Warto dopytać o szczegóły.'
-    : isRu
-      ? 'Условия могут отличаться в зависимости от проекта. Уточняйте детали заранее.'
-    : 'Умови можуть відрізнятися залежно від проекту. Варто уточнити деталі.';
-
-  const checklistHtml = checklist.map(t => `<li>${escapeHtml(t)}</li>`).join('');
-  const questionsHtml = questions.map(t => `<li>${escapeHtml(t)}</li>`).join('');
-
   return `
-    <section class="job-human" aria-label="${escapeHtml(title)}">
-      <h3 class="job-human__title">${escapeHtml(title)}</h3>
-      <div class="job-human__grid">
-        <div class="job-human__card">
-          <h4>${escapeHtml(leftTitle)}</h4>
-          <ul>${checklistHtml}</ul>
-        </div>
-        <div class="job-human__card">
-          <h4>${escapeHtml(rightTitle)}</h4>
-          <ul>${questionsHtml}</ul>
-          <p class="job-human__muted">${escapeHtml(note)}</p>
-        </div>
+    <section class="job-human">
+      <h2 class="job-human__title job-human-h2-first">${escapeHtml(h2Pos)}</h2>
+      <ul>${positiveHtml}</ul>
+
+      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Routine)}</h2>
+      <ul>${routineHtml}</ul>
+
+      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Risk)}</h2>
+      <ul>${riskHtml}</ul>
+
+      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Neg)}</h2>
+      <ul>${negativeHtml}</ul>
+
+      <div class="job-human-review-box">
+        <h3 class="job-human-review-title">${escapeHtml(h3Case)}</h3>
+        <p class="job-human-review-comment">«${escapeHtml(candComment)}»</p>
+        <p class="job-human-review-author">— ${escapeHtml(candName)}, ${escapeHtml(cityStr)} (${candDate})</p>
       </div>
     </section>
   `;
@@ -2221,12 +2250,12 @@ function buildVacancyProofSummaryBlock(page) {
   return `
     <section class="job-proof-summary" data-proof-summary data-vacancy-slug="${slug}" aria-live="polite">
       <div data-lang-content="ua">
-        <h3>🔍 ${uaTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> відгуків)</small></h3>
+        <h3>${uaTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100</h3>
         <p data-proof-verdict>Завантажуємо підтверджені відгуки…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Додати свій Proof</a>
       </div>
       <div data-lang-content="pl" style="display:none">
-        <h3>🔍 ${plTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100 <small>(<span data-proof-count>0</span> opinii)</small></h3>
+        <h3>${plTitle}${city ? ` — ${city}` : ''}: <span data-proof-score>—</span>/100</h3>
         <p data-proof-verdict>Ładujemy zatwierdzone opinie…</p>
         <a href="#proof-form-anchor" class="job-proof-summary-btn">Dodaj swój Proof</a>
       </div>
@@ -3270,23 +3299,28 @@ async function build() {
       const cityPl = page.city_pl || page.city || '';
       const cityRu = page.city_ru || page.city || '';
 
+      const salaryTag = page.salary ? ` (${page.salary})` : '';
+      const contractTagUa = page.contract_ua ? ` — ${page.contract_ua}` : '';
+      const contractTagPl = page.contract_pl ? ` — ${page.contract_pl}` : '';
+      const contractTagRu = page.contract_ru || page.contract_ua ? ` — ${page.contract_ru || page.contract_ua}` : '';
+
       const titleTemplatesUa = [
-        `${roleUa} у ${cityUa} — ставка, графік, умови`,
-        `${roleUa} (${cityUa}) — актуальна вакансія`,
-        `Робота: ${roleUa} у ${cityUa}`,
-        `Шукаємо: ${roleUa} (${cityUa})`
+        `${roleUa} у ${cityUa}${salaryTag}${contractTagUa}`,
+        `Робота: ${roleUa} (${cityUa})${salaryTag}`,
+        `${roleUa} — ${cityUa}${salaryTag} — актуально`,
+        `Шукаємо: ${roleUa} у ${cityUa}${contractTagUa}`
       ];
       const titleTemplatesPl = [
-        `${rolePl} w ${cityPl} — stawka, grafik, warunki`,
-        `${rolePl} (${cityPl}) — aktualna oferta`,
-        `Praca: ${rolePl} w ${cityPl}`,
-        `Szukamy: ${rolePl} (${cityPl})`
+        `${rolePl} w ${cityPl}${salaryTag}${contractTagPl}`,
+        `Praca: ${rolePl} (${cityPl})${salaryTag}`,
+        `${rolePl} — ${cityPl}${salaryTag} — aktualnie`,
+        `Szukamy: ${rolePl} w ${cityPl}${contractTagPl}`
       ];
       const titleTemplatesRu = [
-        `${roleRu} в ${cityRu} — ставка, график, условия`,
-        `${roleRu} (${cityRu}) — актуальная вакансия`,
-        `Работа: ${roleRu} в ${cityRu}`,
-        `Ищем: ${roleRu} (${cityRu})`
+        `${roleRu} в ${cityRu}${salaryTag}${contractTagRu}`,
+        `Работа: ${roleRu} (${cityRu})${salaryTag}`,
+        `${roleRu} — ${cityRu}${salaryTag} — актуально`,
+        `Ищем: ${roleRu} в ${cityRu}${contractTagRu}`
       ];
 
       page.title = titleTemplatesUa[seed % titleTemplatesUa.length];
@@ -3570,6 +3604,13 @@ async function build() {
       .job-human__single-list li { margin: .5rem 0; color: #374151; }
       .job-notice { margin: 1rem 0 1.5rem; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid #f59e0b; background: #fffbeb; color: #92400e; display: flex; gap: .6rem; flex-direction: column; }
       .job-notice strong { font-weight: 700; }
+      .job-human-h2 { font-size: 1.15rem; }
+      .job-human-h2-first { font-size: 1.15rem; margin-top: 1rem; }
+      .job-human-h2-spaced { margin-top: 1.5rem; font-size: 1.15rem; }
+      .job-human-review-box { margin-top: 2rem; padding: 1rem; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px; }
+      .job-human-review-title { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; color: #1e293b; }
+      .job-human-review-comment { margin: 0; font-style: italic; color: #475569; }
+      .job-human-review-author { margin: 0.5rem 0 0 0; font-weight: 600; font-size: 0.9rem; color: #64748b; }
       @media (max-width: 760px) { .job-human__grid { grid-template-columns: 1fr; } }
       .share-section { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; }
       .share-title { font-weight: 600; margin-bottom: 1rem; color: var(--color-primary); }
