@@ -2865,7 +2865,10 @@ async function build() {
     await fs.mkdir(gameDistDir, { recursive: true });
     for (const fileName of ['game.css', 'game.js', 'index.html']) {
       try {
-        const content = await fs.readFile(path.join(gameSrcDir, fileName), 'utf8');
+        let content = await fs.readFile(path.join(gameSrcDir, fileName), 'utf8');
+        if (fileName === 'index.html') {
+          content = sanitizeStaticHtmlHead(content);
+        }
         await fs.writeFile(path.join(gameDistDir, fileName), content, 'utf8');
       } catch (e) {
         // optional game file missing, continue
