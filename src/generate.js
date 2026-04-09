@@ -2929,6 +2929,8 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'bogdan-moto-2.png'), moto2Content);
     const dogContent = await fs.readFile(path.join(SRC, 'bogdan-dog.jpg'));
     await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
+    const portraitContent = await fs.readFile(path.join(SRC, 'portrait-bohdan.jpg'));
+    await fs.writeFile(path.join(DIST, 'portrait-bohdan.jpg'), portraitContent);
   } catch (e) {
     console.warn('⚠️ Bogdan Tiutenko images not found');
   }
@@ -6248,6 +6250,7 @@ async function generateRussianPages(dynamicTranslations) {
 
   console.log(`  ✅ Generated ${generated} Russian pages`);
 }
+
 
 build().catch(err => {
   console.error(err);
