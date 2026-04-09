@@ -42,12 +42,15 @@ function detectNearDuplicateSlugs(pages) {
     const jobBase = jobParts.join('-');
     if (!jobBase) continue;
 
-    if (jobBases.has(jobBase)) {
-      // Mark all subsequent occurrences of the same job base as secondary
+    const city = parts[0];
+    const groupKey = `${city}-${jobBase}`;
+
+    if (jobBases.has(groupKey)) {
+      // Mark all subsequent occurrences of the same job base IN THE SAME CITY as secondary
       secondarySlugs.add(slug);
     } else {
       // Keep the first occurrence
-      jobBases.add(jobBase);
+      jobBases.add(groupKey);
     }
   }
 

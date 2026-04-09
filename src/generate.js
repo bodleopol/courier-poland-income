@@ -51,12 +51,17 @@ function detectNearDuplicateSlugs(pages) {
     const jobBase = jobParts.join('-');
     if (!jobBase) continue;
 
-    if (jobBases.has(jobBase)) {
-      // Mark all subsequent occurrences of the same job base as secondary
+    // We should group by BOTH city and job base to only deduplicate identical job roles WITHIN the same city.
+    // If we group ONLY by jobBase, then multiple cities cannot have the same job, which breaks the business logic.
+    const city = parts[0];
+    const groupKey = `${city}-${jobBase}`;
+
+    if (jobBases.has(groupKey)) {
+      // Mark all subsequent occurrences of the same job base IN THE SAME CITY as secondary
       secondarySlugs.add(slug);
     } else {
       // Keep the first occurrence
-      jobBases.add(jobBase);
+      jobBases.add(groupKey);
     }
   }
 
