@@ -1,3 +1,4 @@
+const POSTS_PER_PAGE = 20;
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -180,7 +181,11 @@ const STATIC_SITEMAP_PAGES = [
   { url: 'map.html',          priority: '0.9', changefreq: 'daily' },
   { url: 'proof.html',        priority: '0.9', changefreq: 'daily' },
   { url: 'for-employers.html', priority: '0.7', changefreq: 'monthly' },
-  { url: 'press.html',        priority: '0.5', changefreq: 'monthly' }
+  { url: 'press.html',        priority: '0.5', changefreq: 'monthly' },
+  { url: 'rent.html',         priority: '0.8', changefreq: 'monthly' },
+  { url: 'quiz.html',         priority: '0.8', changefreq: 'monthly' },
+  { url: 'game.html',         priority: '0.5', changefreq: 'monthly' },
+  { url: 'bogdan-tiutenko.html', priority: '0.8', changefreq: 'monthly' }
 ];
 
 /**
@@ -345,6 +350,50 @@ function generateMainSitemap() {
     ];
   }).join('\n');
 
+  const totalBlogPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const blogPaginationUrls = Array.from({ length: totalBlogPages }, (_, index) => {
+    const page = index + 1;
+    if (page === 1) return []; // Already covered by blog.html in STATIC_SITEMAP_PAGES
+
+    const uaUrl = `${DOMAIN}/blog-${page}.html`;
+    const plUrl = `${DOMAIN}/blog-${page}-pl.html`;
+    const ruUrl = `${DOMAIN}/blog-${page}-ru.html`;
+    const enUrl = `${DOMAIN}/blog-${page}-en.html`;
+    const xhtmlLinks = `
+    <xhtml:link rel="alternate" hreflang="uk" href="${uaUrl}"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="${plUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${uaUrl}"/>`;
+
+    return [
+      `  <url>
+    <loc>${uaUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${plUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${ruUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>${xhtmlLinks}
+  </url>`,
+      `  <url>
+    <loc>${enUrl}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>${xhtmlLinks}
+  </url>`
+    ];
+  }).flat().join('\n');
+
   const blogUrls = posts.flatMap(post => {
     const uaUrl = `${DOMAIN}/post-${post.slug}.html`;
     const plUrl = `${DOMAIN}/post-${post.slug}-pl.html`;
@@ -391,7 +440,7 @@ function generateMainSitemap() {
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 ${staticUrls}
 ${vacancyUrls}
-${blogUrls}
+${blogPaginationUrls ? blogPaginationUrls + "\n" : ""}${blogUrls}
 </urlset>`;
 }
 
@@ -407,19 +456,6 @@ const totalVacancyUrls = indexableVacancies.length * 4;
 const totalBlogUrls = posts.length * 4;
 console.log(`✅ sitemap.xml: ${totalStaticUrls + totalVacancyUrls + totalBlogUrls} URLs (all languages)`);
 
-// Sitemap index
-fs.writeFileSync(path.join(DIST_DIR, 'sitemap-index.xml'), generateSitemapIndex(), 'utf8');
-console.log('✅ sitemap-index.xml');
-
-// Individual sitemaps
-fs.writeFileSync(path.join(DIST_DIR, 'sitemap-static.xml'), generateStaticSitemap(), 'utf8');
-console.log(`✅ sitemap-static.xml: ${totalStaticUrls} URLs (${STATIC_PAGES_COUNT} base pages × 4 languages)`);
-
-fs.writeFileSync(path.join(DIST_DIR, 'sitemap-vacancies.xml'), generateVacanciesSitemap(), 'utf8');
-console.log(`✅ sitemap-vacancies.xml: ${totalVacancyUrls} URLs (${indexableVacancies.length} vacancies × 4 languages)`);
-
-fs.writeFileSync(path.join(DIST_DIR, 'sitemap-blog.xml'), generateBlogSitemap(), 'utf8');
-console.log(`✅ sitemap-blog.xml: ${totalBlogUrls} URLs (${posts.length} posts × 4 languages)`);
 
 console.log('\n🎉 All sitemaps generated successfully!');
 console.log(`\n📊 Total URLs: ${totalStaticUrls + totalVacancyUrls + totalBlogUrls}`);

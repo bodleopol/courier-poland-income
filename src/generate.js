@@ -4223,17 +4223,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
       console.error('Error generating vacancies page:', e);
     }
 
-    // write sitemap.xml
-    try {
-      const sitemap = generateSitemap(links, posts);
-      await fs.writeFile(path.join(DIST, 'sitemap.xml'), sitemap, 'utf8');
-    } catch (e) {}
 
-    // write sitemap-vacancies.xml
-    try {
-      const vacanciesSitemap = generateVacanciesSitemap(links);
-      await fs.writeFile(path.join(DIST, 'sitemap-vacancies.xml'), vacanciesSitemap, 'utf8');
-    } catch (e) {}
 
     // write robots.txt
     try {
@@ -4262,10 +4252,6 @@ Disallow: /*.json$
 
 # Sitemaps
 Sitemap: https://rybezh.site/sitemap.xml
-Sitemap: https://rybezh.site/sitemap-index.xml
-Sitemap: https://rybezh.site/sitemap-static.xml
-Sitemap: https://rybezh.site/sitemap-vacancies.xml
-Sitemap: https://rybezh.site/sitemap-blog.xml
 
 # Bing — allow full JS-rendering and static resources for rich results
 User-agent: bingbot
