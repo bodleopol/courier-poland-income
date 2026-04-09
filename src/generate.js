@@ -2582,76 +2582,20 @@ function getManualVacancyNarrative(page, lang) {
   const tasks = collect('tasks');
   const details = collect('details');
 
-  const seed = hashString((page.slug || '') + '-' + lang);
-
-  const introVariantsPL = [
-    `${city}. Wynagrodzenie: ${salary}. Grafik: ${shift}${pattern ? `, ${pattern}` : ''}. Umowa: ${contract}. Start: ${start}.`,
-    `Główne warunki — miasto: ${city}, stawka: ${salary}, umowa: ${contract}. Praca w systemie: ${shift}${pattern ? ` (${pattern})` : ''}. Dostępność: ${start}.`,
-    `Oferta z miasta ${city}. Wynagrodzenie rzędu ${salary} na podstawie ${contract}. Harmonogram to ${shift}${pattern ? ` (${pattern})` : ''}, rozpoczęcie: ${start}.`
-  ];
-  const introVariantsRU = [
-    `${city}. Оплата: ${salary}. График: ${shift}${pattern ? `, ${pattern}` : ''}. Договор: ${contract}. Старт: ${start}.`,
-    `Базовые условия в г. ${city}: зарплата ${salary}, оформление по ${contract}. Рабочий график: ${shift}${pattern ? ` (${pattern})` : ''}. Начало работы: ${start}.`,
-    `Работа в г. ${city}. Ставка: ${salary}, контракт: ${contract}. График работы: ${shift}${pattern ? ` (${pattern})` : ''}. Приступить можно: ${start}.`
-  ];
-  const introVariantsUA = [
-    `${city}. Оплата: ${salary}. Графік: ${shift}${pattern ? `, ${pattern}` : ''}. Договір: ${contract}. Старт: ${start}.`,
-    `Базові умови в м. ${city}: зарплата ${salary}, оформлення за ${contract}. Робочий графік: ${shift}${pattern ? ` (${pattern})` : ''}. Початок роботи: ${start}.`,
-    `Робота у місті ${city}. Ставка: ${salary}, контракт: ${contract}. Графік роботи: ${shift}${pattern ? ` (${pattern})` : ''}. Приступити можна: ${start}.`
-  ];
-
-  const offerLeadVariantsPL = [
-    'Co realnie dostajesz poza stawką:',
-    'Dodatkowe korzyści i atuty oferty:',
-    'Na co możesz liczyć oprócz wynagrodzenia:'
-  ];
-  const offerLeadVariantsRU = [
-    'Что сотрудник получает помимо базовой ставки:',
-    'Дополнительные преимущества и бонусы:',
-    'На что можно рассчитывать помимо зарплаты:'
-  ];
-  const offerLeadVariantsUA = [
-    'Що працівник реально отримує окрім базової ставки:',
-    'Додаткові переваги та бонуси:',
-    'На що можна розраховувати окрім зарплати:'
-  ];
-
-  const taskLeadVariantsPL = [
-    'Jak wygląda codzienna zmiana:',
-    'Twoje główne obowiązki i zadania:',
-    'Typowy dzień pracy na tym stanowisku:'
-  ];
-  const taskLeadVariantsRU = [
-    'Как выглядит рабочая смена на практике:',
-    'Ваши основные обязанности и задачи:',
-    'Типичный рабочий день на этой должности:'
-  ];
-  const taskLeadVariantsUA = [
-    'Як виглядає робоча зміна на практиці:',
-    'Ваші основні обов’язки та завдання:',
-    'Типовий робочий день на цій посаді:'
-  ];
-
-  const detailLeadVariantsPL = [
-    'Wymagania i organizacja wejścia do zespołu:',
-    'Czego oczekujemy i jak wygląda proces wdrożenia:',
-    'Kluczowe wymagania i szczegóły organizacyjne:'
-  ];
-  const detailLeadVariantsRU = [
-    'Требования и организация входа в команду:',
-    'Чего мы ожидаем и как проходит адаптация:',
-    'Ключевые требования и организационные детали:'
-  ];
-  const detailLeadVariantsUA = [
-    'Вимоги та організація входу в команду:',
-    'Чого ми очікуємо і як проходить адаптація:',
-    'Ключові вимоги та організаційні деталі:'
-  ];
-
-  const intro = isPl ? introVariantsPL[seed % introVariantsPL.length] : (isRu ? introVariantsRU[seed % introVariantsRU.length] : introVariantsUA[seed % introVariantsUA.length]);
-  const offerLead = isPl ? offerLeadVariantsPL[seed % offerLeadVariantsPL.length] : (isRu ? offerLeadVariantsRU[seed % offerLeadVariantsRU.length] : offerLeadVariantsUA[seed % offerLeadVariantsUA.length]);
-  const taskLead = isPl ? taskLeadVariantsPL[seed % taskLeadVariantsPL.length] : (isRu ? taskLeadVariantsRU[seed % taskLeadVariantsRU.length] : taskLeadVariantsUA[seed % taskLeadVariantsUA.length]);
-  const detailLead = isPl ? detailLeadVariantsPL[seed % detailLeadVariantsPL.length] : (isRu ? detailLeadVariantsRU[seed % detailLeadVariantsRU.length] : detailLeadVariantsUA[seed % detailLeadVariantsUA.length]);
+  const intro = isPl
+    ? `${city}. Wynagrodzenie: ${salary}. Grafik: ${shift}${pattern ? `, ${pattern}` : ''}. Umowa: ${contract}. Start: ${start}.`
+    : (isRu
+      ? `${city}. Оплата: ${salary}. График: ${shift}${pattern ? `, ${pattern}` : ''}. Договор: ${contract}. Старт: ${start}.`
+      : `${city}. Оплата: ${salary}. Графік: ${shift}${pattern ? `, ${pattern}` : ''}. Договір: ${contract}. Старт: ${start}.`);
+  const offerLead = isPl
+    ? 'Co realnie dostajesz poza stawką:'
+    : (isRu ? 'Что сотрудник получает помимо базовой ставки:' : 'Що працівник реально отримує окрім базової ставки:');
+  const taskLead = isPl
+    ? 'Jak wygląda codzienna zmiana:'
+    : (isRu ? 'Как выглядит рабочая смена на практике:' : 'Як виглядає робоча зміна на практиці:');
+  const detailLead = isPl
+    ? 'Wymagania i organizacja wejścia do zespołu:'
+    : (isRu ? 'Требования и организация входа в команду:' : 'Вимоги та організація входу в команду:');
 
   const paragraph = (lead, items) => (items.length ? `${lead} ${items.join(' ')}`.trim() : '');
   const rendered = [
@@ -3274,8 +3218,7 @@ async function build() {
       : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
-    const seedForVariant = hashString(page.slug + '-layout-variant');
-    const variantRoll = (seedForVariant % 100) / 100; // 0.0 to 0.99
+    const variantRoll = Math.random();
     let layoutVariant, humanVariant;
     if (variantRoll < 0.3) {
       // Short: no job-human section, fewer conditions
@@ -4889,13 +4832,8 @@ function toISODate(date) {
 
 function shuffleArray(items) {
   const arr = Array.isArray(items) ? items.slice() : [];
-  let seed = arr.length > 0 ? hashString(arr[0].slug || String(arr.length)) : 12345;
-  function lcg() {
-    seed = (seed * 1664525 + 1013904223) % 4294967296;
-    return seed / 4294967296;
-  }
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(lcg() * (i + 1));
+    const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
