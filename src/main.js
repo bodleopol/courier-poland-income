@@ -1,3 +1,9 @@
+
+let mainSeed = 12345;
+function mainRandom() {
+  mainSeed = (mainSeed * 9301 + 49297) % 233280;
+  return mainSeed / 233280;
+}
   /**
  * Rybezh Site - Main JavaScript
  * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
@@ -1372,14 +1378,14 @@
     const statusEl = activity.querySelector('[data-live-status]');
 
     const updateCount = () => {
-      const base = 14 + Math.floor(Math.random() * 38);
+      const base = 14 + Math.floor(mainRandom() * 38);
       if (countEl) countEl.textContent = String(base);
     };
 
     const updateStatus = () => {
       const lang = getLang();
       const pool = (labels[lang] || labels.ua).statusPool;
-      if (statusEl) statusEl.textContent = pool[Math.floor(Math.random() * pool.length)];
+      if (statusEl) statusEl.textContent = pool[Math.floor(mainRandom() * pool.length)];
     };
 
     const pushToast = () => {
@@ -1387,7 +1393,7 @@
       const pool = (labels[lang] || labels.ua).toastPool;
       const toast = document.createElement('div');
       toast.className = 'live-toast';
-      toast.textContent = pool[Math.floor(Math.random() * pool.length)];
+      toast.textContent = pool[Math.floor(mainRandom() * pool.length)];
       toastStack.appendChild(toast);
       setTimeout(() => toast.classList.add('visible'), 50);
       setTimeout(() => {
@@ -1401,9 +1407,9 @@
     updateStatus();
     pushToast();
 
-    const statusTimer = setInterval(updateStatus, 9000 + Math.random() * 7000);
-    const countTimer = setInterval(updateCount, 12000 + Math.random() * 9000);
-    const toastTimer = setInterval(pushToast, 14000 + Math.random() * 10000);
+    const statusTimer = setInterval(updateStatus, 9000 + mainRandom() * 7000);
+    const countTimer = setInterval(updateCount, 12000 + mainRandom() * 9000);
+    const toastTimer = setInterval(pushToast, 14000 + mainRandom() * 10000);
 
     window.addEventListener('languageChanged', () => {
       setLabels();

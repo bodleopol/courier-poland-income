@@ -287,7 +287,7 @@
     const renderLatestJobs = () => {
       if (window.LATEST_JOBS && latestJobsGrid) {
         const onlyHighProof = !!(latestProofFilter && latestProofFilter.checked);
-        renderJobs(shuffleArray(window.LATEST_JOBS), latestJobsGrid, { onlyHighProof });
+        renderJobs(shuffleArray(window.LATEST_JOBS, "latest_jobs_" + (latestProofFilter && latestProofFilter.checked)), latestJobsGrid, { onlyHighProof });
         if (typeof window.initDateFormatting === 'function') window.initDateFormatting();
       }
     };
@@ -502,7 +502,7 @@
         return true;
       });
 
-      currentFilteredJobs = shuffleArray(filtered);
+      currentFilteredJobs = shuffleArray(filtered, "filtered_jobs_" + category + "_" + city + "_" + searchQuery);
 
       // Update results count
       if (resultsCount) {
@@ -605,10 +605,22 @@
     });
   }
 
-  function shuffleArray(items) {
+  function shuffleArray(items, seedStr = '') {
     const arr = Array.isArray(items) ? items.slice() : [];
+
+    // We cannot use external hashString in a client script, so we write a simple hash
+    let hash = 0;
+    const str = String(seedStr || 'default');
+    for (let i = 0; i < str.length; i++) {
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash |= 0;
+    }
+    let seed = Math.abs(hash);
+
     for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      seed = (seed * 9301 + 49297) % 233280;
+      const rand = seed / 233280;
+      const j = Math.floor(rand * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;

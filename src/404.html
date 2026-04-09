@@ -600,7 +600,13 @@
         if (statEl) statEl.textContent = jobs.length + '+';
 
         // Pick 6 random vacancies
-        var shuffled = jobs.sort(function() { return 0.5 - Math.random(); });
+
+        var seed = 12345;
+        var shuffled = jobs.sort(function() {
+          seed = (seed * 9301 + 49297) % 233280;
+          return 0.5 - (seed / 233280);
+        });
+
         var selected = shuffled.slice(0, 6);
         
         var grid = document.getElementById('error-vacancies-grid');

@@ -3460,7 +3460,7 @@ async function build() {
       : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)
-    const variantRoll = Math.random();
+    const variantRoll = (hashString(page.slug || "") % 100) / 100;
     let layoutVariant, humanVariant;
     if (variantRoll < 0.3) {
       // Short: no job-human section, fewer conditions
@@ -4156,7 +4156,7 @@ async function build() {
 
     // generate index
     const indexSrc = await fs.readFile(path.join(SRC, 'index.html'), 'utf8');
-    const shuffledPages = shuffleArray([...pagesToGenerate]);
+    const shuffledPages = shuffleArray([...pagesToGenerate], "index_latest_jobs");
     const latestJobs = shuffledPages.slice(0, 12);
 
     // Inject only categories - jobs loaded via jobs-loader.js for better performance
@@ -5074,10 +5074,14 @@ function toISODate(date) {
   return d.toISOString().slice(0, 10);
 }
 
-function shuffleArray(items) {
+function shuffleArray(items, seedStr = '') {
   const arr = Array.isArray(items) ? items.slice() : [];
+  let seed = hashString(seedStr || 'default_seed');
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    // Simple pseudo-random using the seed
+    seed = (seed * 9301 + 49297) % 233280;
+    const rand = seed / 233280;
+    const j = Math.floor(rand * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;

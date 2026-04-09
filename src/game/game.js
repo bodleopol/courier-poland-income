@@ -1,3 +1,9 @@
+
+let gameSeed = 12345;
+function gameRandom() {
+  gameSeed = (gameSeed * 9301 + 49297) % 233280;
+  return gameSeed / 233280;
+}
 /* ==========================================================================
    ШЛЯХ ВЕТЕРАНА — 2D Platformer Game
    Architecture: Modular IIFE, Canvas 2D, Vanilla JS
@@ -1170,7 +1176,7 @@ const StatsSystem = {
     if (extStats.linkedinConnections > 100) notes.push('LinkedIn профіль справляє враження.');
     if (extStats.ptsdLevel > 55) notes.push('Ми розуміємо — адаптація потребує часу.');
     if (notes.length === 0) return '';
-    return ' ' + notes[Math.floor(Math.random() * notes.length)];
+    return ' ' + notes[Math.floor(gameRandom() * notes.length)];
   },
 
   /* --- Tick: some extStats evolve over time --- */
@@ -1355,7 +1361,7 @@ const Physics = {
 // ============================================================
 const DialogueSystem = {
   /* Pick random element from array */
-  rnd(arr) { return arr[Math.floor(Math.random() * arr.length)]; },
+  rnd(arr) { return arr[Math.floor(gameRandom() * arr.length)]; },
 
   /* Build contextual greeting based on player stats */
   buildGreeting(stats, extStats) {
@@ -1462,9 +1468,9 @@ const EconomySystem = {
   startupDemand: 55,
   tick(frame) {
     if (frame % 600 === 0) {
-      this.itDemand      = Math.max(20, Math.min(100, this.itDemand      + (Math.random() * 10 - 5)));
-      this.factoryDemand = Math.max(20, Math.min(100, this.factoryDemand + (Math.random() * 10 - 5)));
-      this.startupDemand = Math.max(20, Math.min(100, this.startupDemand + (Math.random() * 10 - 5)));
+      this.itDemand      = Math.max(20, Math.min(100, this.itDemand      + (gameRandom() * 10 - 5)));
+      this.factoryDemand = Math.max(20, Math.min(100, this.factoryDemand + (gameRandom() * 10 - 5)));
+      this.startupDemand = Math.max(20, Math.min(100, this.startupDemand + (gameRandom() * 10 - 5)));
     }
   },
   getDemand(type) {
@@ -1480,11 +1486,11 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.vx = (Math.random() - 0.5) * 4;
-    this.vy = (Math.random() - 0.5) * 4 - 2;
+    this.vx = (gameRandom() - 0.5) * 4;
+    this.vy = (gameRandom() - 0.5) * 4 - 2;
     this.life = 1.0;
-    this.decay = Math.random() * 0.05 + 0.02;
-    this.color = Math.random() > 0.5 ? '#00e5a0' : '#ffd700';
+    this.decay = gameRandom() * 0.05 + 0.02;
+    this.color = gameRandom() > 0.5 ? '#00e5a0' : '#ffd700';
   }
   update() {
     this.x += this.vx;
@@ -1935,7 +1941,7 @@ class Collectible {
     this.x = x; this.y = y; this.type = type;
     this.w = 22; this.h = 22;
     this.collected = false;
-    this.bobTimer = Math.random() * Math.PI * 2;
+    this.bobTimer = gameRandom() * Math.PI * 2;
   }
   get icons()  { return ['📚','🏆','📝','💰','💊','🇵🇱','🇬🇧','📑','🏅']; }
   get labels() { return ['+INT','+REP','+CHR','+PLN','+HP','+PL','+EN','+DOC','+CERT']; }
@@ -2952,7 +2958,7 @@ class GameEngine {
           this._notify('👔 Бюрократ: затримка та стрес!', 90);
           break;
         case 1: // Scammer — steal money
-          const stolen = Math.min(p.stats.finances, Math.round((180 + Math.floor(Math.random() * 150)) * enemyMult));
+          const stolen = Math.min(p.stats.finances, Math.round((180 + Math.floor(gameRandom() * 150)) * enemyMult));
           p.stats.finances -= stolen;
           p.stats.stress = Math.min(100, p.stats.stress + Math.round(12 * enemyMult));
           this._notify(`🎭 Шахрай вкрав ${stolen} PLN!`, 90);

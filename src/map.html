@@ -340,14 +340,20 @@
       var markers = L.markerClusterGroup({ showCoverageOnHover: false, maxClusterRadius: 50 });
       
       // Генерація 200 випадкових точок (українці)
+
+      let mapSeed = 12345;
+      function mapRandom() {
+        mapSeed = (mapSeed * 9301 + 49297) % 233280;
+        return mapSeed / 233280;
+      }
       var names = ["Олександр", "Ірина", "Дмитро", "Олена", "Андрій", "Тетяна", "Микола", "Наталія", "Сергій", "Марія", "Володимир", "Світлана", "Іван", "Юлія", "Віталій", "Оксана"];
       var intents = ["Шукаю роботу", "Шукаю житло", "Шукаю друзів", "Допоможу з переїздом", "Є кімната", "Шукаю напарника"];
       
       for (var i = 0; i < 200; i++) {
-        var lat = 49.5 + Math.random() * 5.0; // Широта Польщі (приблизно)
-        var lng = 14.5 + Math.random() * 9.0; // Довгота Польщі (приблизно)
-        var name = names[Math.floor(Math.random() * names.length)];
-        var intent = intents[Math.floor(Math.random() * intents.length)];
+        var lat = 49.5 + mapRandom() * 5.0; // Широта Польщі (приблизно)
+        var lng = 14.5 + mapRandom() * 9.0; // Довгота Польщі (приблизно)
+        var name = names[Math.floor(mapRandom() * names.length)];
+        var intent = intents[Math.floor(mapRandom() * intents.length)];
         
         var marker = L.marker([lat, lng]);
         marker.bindPopup(`<div class='popup-name'>${name}</div><div class='popup-seeking'>${intent}</div><div class='popup-desc'>Українець у Польщі</div><div class='popup-row'><a href='#'>Написати</a></div>`);
