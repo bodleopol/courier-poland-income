@@ -1791,9 +1791,9 @@ function diversifyOffer(phrase, slug) {
 }
 
 const CONDITIONS_TITLE_VARIANTS_BY_LANG = {
-  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy', 'Czego oczekiwać', 'Specyfikacja posady', 'Oferowane warunki', 'Najważniejsze dane', 'Detale ogłoszenia', 'Twoje warunki', 'Szczegóły zatrudnienia'],
-  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества', 'Основные детали', 'Предлагаемые условия', 'Важные параметры', 'Ваше рабочее место', 'Специфика работы', 'Детали трудоустройства', 'Особенности вакансии'],
-  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці', 'Основні умови', 'Запропоновані умови', 'Важливі параметри', 'Ваше робоче місце', 'Специфіка посади', 'Деталі працевлаштування', 'Особливості вакансії']
+  pl: ['Warunki', 'Szczegóły oferty', 'Parametry pracy', 'Co oferujemy', 'Kluczowe informacje', 'Opis stanowiska', 'Informacje o pracy', 'Warunki współpracy', 'Czego oczekiwać', 'Specyfikacja posady', 'Oferowane warunki', 'Najważniejsze dane', 'Detale ogłoszenia', 'Twoje warunki', 'Szczegóły zatrudnienia', 'Wymogi i benefity', 'Istotne fakty', 'Podsumowanie oferty', 'Zasady współpracy', 'Co musisz wiedzieć'],
+  ru: ['Условия', 'Детали вакансии', 'Формат работы', 'Что предлагаем', 'Ключевая информация', 'Описание позиции', 'Информация о работе', 'Условия сотрудничества', 'Основные детали', 'Предлагаемые условия', 'Важные параметры', 'Ваше рабочее место', 'Специфика работы', 'Детали трудоустройства', 'Особенности вакансии', 'Требования и бонусы', 'Суть работы', 'Главное о вакансии', 'Рабочий процесс', 'Что вас ждет'],
+  ua: ['Умови', 'Деталі вакансії', 'Формат роботи', 'Що пропонуємо', 'Ключова інформація', 'Опис позиції', 'Інформація про роботу', 'Умови співпраці', 'Основні умови', 'Запропоновані умови', 'Важливі параметри', 'Ваше робоче місце', 'Специфіка посади', 'Деталі працевлаштування', 'Особливості вакансії', 'Вимоги та бенефіти', 'Суть роботи', 'Головне про вакансію', 'Робочий процес', 'Що на вас чекає']
 };
 
 function buildConditionsBlock(page, lang) {
@@ -2071,15 +2071,15 @@ const CHECKLIST_ITEM_VARIANTS = {
 
 
 const SIMPLE_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić', 'Dobra rada', 'Kluczowe rady', 'O czym pamiętać', 'Rady dla nowych', 'Pigułka wiedzy', 'Sprawdź koniecznie', 'Szybkie info'],
-  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить', 'Ключевые советы', 'О чем помнить', 'Для новичков', 'Обязательно проверьте', 'Краткая памятка', 'Советы до старта', 'Важная деталь'],
-  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити', 'Ключові поради', 'Про що варто памʼятати', 'Для новачків', 'Обовʼязково перевірте', 'Коротка памʼятка', 'Поради перед стартом', 'Важливий нюанс']
+  pl: ['Warto wiedzieć', 'Najważniejsze przed startem', 'Krótki check przed startem', 'Zanim zaczniesz', 'Praktyczne wskazówki', 'Na co zwrócić uwagę', 'Przydatne informacje', 'Co sprawdzić', 'Dobra rada', 'Kluczowe rady', 'O czym pamiętać', 'Rady dla nowych', 'Pigułka wiedzy', 'Sprawdź koniecznie', 'Szybkie info', 'Uwagi do oferty', 'Zapamiętaj to', 'Małe podpowiedzi', 'Przed aplikacją', 'Dla przypomnienia'],
+  ru: ['Важно знать', 'Коротко перед стартом', 'Что проверить заранее', 'Перед началом работы', 'Практические советы', 'На что обратить внимание', 'Полезная информация', 'Что уточнить', 'Ключевые советы', 'О чем помнить', 'Для новичков', 'Обязательно проверьте', 'Краткая памятка', 'Советы до старта', 'Важная деталь', 'Заметки к вакансии', 'Стоит запомнить', 'Небольшие подсказки', 'Перед откликом', 'Напоминание'],
+  ua: ['Варто знати', 'Коротко перед стартом', 'Що перевірити перед виходом', 'Перед початком роботи', 'Практичні поради', 'На що звернути увагу', 'Корисна інформація', 'Що уточнити', 'Ключові поради', 'Про що варто памʼятати', 'Для новачків', 'Обовʼязково перевірте', 'Коротка памʼятка', 'Поради перед стартом', 'Важливий нюанс', 'Нотатки до вакансії', 'Варто запамʼятати', 'Невеликі підказки', 'Перед відгуком', 'Нагадування']
 };
 
 const FULL_HUMAN_TITLES_BY_LANG = {
-  pl: ['Warto wiedzieć przed startem', 'Praktyczne informacje', 'Co powinieneś wiedzieć', 'Najważniejsze szczegóły', 'Przed rozpoczęciem pracy', 'Wskazówki dla kandydatów', 'Krótko przed startem', 'Praktyczne wskazówki', 'Co warto dopytać', 'Informacje na pierwsze dni', 'Przygotowanie do pracy', 'Co ustalić na początku', 'Zanim podpiszesz umowę', 'O czym nie zapomnieć', 'Ważne dla kandydata'],
-  ru: ['Важно знать перед стартом', 'Практическая информация', 'Что следует знать', 'Важные детали', 'Перед началом работы', 'Советы для кандидатов', 'Коротко перед стартом', 'Практические советы', 'Что стоит уточнить', 'Инфо на первые дни', 'Подготовка к работе', 'Что узнать заранее', 'До подписания договора', 'О чем важно помнить', 'Важное для кандидата'],
-  ua: ['Що варто знати перед стартом', 'Практична інформація', 'Що слід знати', 'Важливі деталі', 'Перед початком роботи', 'Поради для кандидатів', 'Коротко перед стартом', 'Практичні поради', 'Що варто уточнити', 'Інфо на перші дні', 'Підготовка до роботи', 'Що дізнатися заздалегідь', 'До підписання договору', 'Про що важливо памʼятати', 'Важливе для кандидата']
+  pl: ['Warto wiedzieć przed startem', 'Praktyczne informacje', 'Co powinieneś wiedzieć', 'Najważniejsze szczegóły', 'Przed rozpoczęciem pracy', 'Wskazówki dla kandydatów', 'Krótko przed startem', 'Praktyczne wskazówki', 'Co warto dopytać', 'Informacje na pierwsze dni', 'Przygotowanie do pracy', 'Co ustalić na początku', 'Zanim podpiszesz umowę', 'O czym nie zapomnieć', 'Ważne dla kandydata', 'Szczegóły dla aplikujących', 'Lista kontrolna kandydata', 'O czym pamiętać przed startem', 'Praktyczny poradnik', 'Zanim wyślesz CV'],
+  ru: ['Важно знать перед стартом', 'Практическая информация', 'Что следует знать', 'Важные детали', 'Перед началом работы', 'Советы для кандидатов', 'Коротко перед стартом', 'Практические советы', 'Что стоит уточнить', 'Инфо на первые дни', 'Подготовка к работе', 'Что узнать заранее', 'До подписания договора', 'О чем важно помнить', 'Важное для кандидата', 'Детали для соискателей', 'Чек-лист кандидата', 'О чем помнить перед стартом', 'Практическое руководство', 'Перед отправкой резюме'],
+  ua: ['Що варто знати перед стартом', 'Практична інформація', 'Що слід знати', 'Важливі деталі', 'Перед початком роботи', 'Поради для кандидатів', 'Коротко перед стартом', 'Практичні поради', 'Що варто уточнити', 'Інфо на перші дні', 'Підготовка до роботи', 'Що дізнатися заздалегідь', 'До підписання договору', 'Про що важливо памʼятати', 'Важливе для кандидата', 'Деталі для шукачів', 'Чек-лист кандидата', 'Про що памʼятати перед стартом', 'Практичний посібник', 'Перед відправкою резюме']
 };
 
 function diversifyChecklistItem(text, page, lang, index) {
@@ -2203,9 +2203,9 @@ function buildGeneratedNotice(page, lang) {
 }
 
 const PROOF_SUMMARY_TITLES_BY_LANG = {
-  ua: ['Rybezh Proof', 'Рейтинг довіри Proof', 'Оцінка компанії Rybezh Proof', 'Рейтинг роботодавця'],
-  pl: ['Rybezh Proof', 'Ranking zaufania Proof', 'Ocena firmy Rybezh Proof', 'Ranking pracodawcy'],
-  ru: ['Rybezh Proof', 'Рейтинг доверия Proof', 'Оценка компании Rybezh Proof', 'Рейтинг работодателя']
+  ua: ['Rybezh Proof', 'Рейтинг довіри Proof', 'Оцінка компанії Rybezh Proof', 'Рейтинг роботодавця', 'Перевірка Rybezh Proof', 'Індекс довіри', 'Оцінка умов праці', 'Proof Rating', 'Незалежна оцінка Proof'],
+  pl: ['Rybezh Proof', 'Ranking zaufania Proof', 'Ocena firmy Rybezh Proof', 'Ranking pracodawcy', 'Weryfikacja Rybezh Proof', 'Indeks zaufania', 'Ocena warunków pracy', 'Proof Rating', 'Niezależna ocena Proof'],
+  ru: ['Rybezh Proof', 'Рейтинг доверия Proof', 'Оценка компании Rybezh Proof', 'Рейтинг работодателя', 'Проверка Rybezh Proof', 'Индекс доверия', 'Оценка условий труда', 'Proof Rating', 'Независимая оценка Proof']
 };
 
 function buildVacancyProofSummaryBlock(page) {
@@ -2554,6 +2554,7 @@ const VACANCY_SIMILARITY_STOPWORDS = new Set([
 function getManualVacancyNarrative(page, lang) {
   const isPl = lang === 'pl';
   const isRu = lang === 'ru';
+  const seed = hashString(`${page.slug || ''}:${lang}:narrative`);
   const localize = (baseKey) => {
     const keyOrder = isPl
       ? [`${baseKey}_pl`, `${baseKey}_ua`, baseKey]
@@ -2577,20 +2578,78 @@ function getManualVacancyNarrative(page, lang) {
   const tasks = collect('tasks');
   const details = collect('details');
 
-  const intro = isPl
-    ? `${city}. Wynagrodzenie: ${salary}. Grafik: ${shift}${pattern ? `, ${pattern}` : ''}. Umowa: ${contract}. Start: ${start}.`
-    : (isRu
-      ? `${city}. Оплата: ${salary}. График: ${shift}${pattern ? `, ${pattern}` : ''}. Договор: ${contract}. Старт: ${start}.`
-      : `${city}. Оплата: ${salary}. Графік: ${shift}${pattern ? `, ${pattern}` : ''}. Договір: ${contract}. Старт: ${start}.`);
-  const offerLead = isPl
-    ? 'Co realnie dostajesz poza stawką:'
-    : (isRu ? 'Что сотрудник получает помимо базовой ставки:' : 'Що працівник реально отримує окрім базової ставки:');
-  const taskLead = isPl
-    ? 'Jak wygląda codzienna zmiana:'
-    : (isRu ? 'Как выглядит рабочая смена на практике:' : 'Як виглядає робоча зміна на практиці:');
-  const detailLead = isPl
-    ? 'Wymagania i organizacja wejścia do zespołu:'
-    : (isRu ? 'Требования и организация входа в команду:' : 'Вимоги та організація входу в команду:');
+  const introVariants = isPl ? [
+    `${city}. Wynagrodzenie: ${salary}. Grafik: ${shift}${pattern ? `, ${pattern}` : ''}. Umowa: ${contract}. Start: ${start}.`,
+    `Poszukujemy kandydata w mieście ${city}. Oferujemy ${salary} na podstawie ${contract}. Praca w systemie: ${shift}${pattern ? ` (${pattern})` : ''}. Możliwy start: ${start}.`,
+    `Nowa oferta pracy w ${city} z wynagrodzeniem ${salary}. Typ umowy to ${contract}, a grafik obejmuje ${shift}${pattern ? ` - ${pattern}` : ''}. Zaczynamy: ${start}.`,
+    `Zatrudnimy pracownika (${city}). Zarobki wynoszą ${salary}, praca na ${contract}. Grafik to ${shift}${pattern ? ` (${pattern})` : ''}, rozpoczęcie: ${start}.`
+  ] : (isRu ? [
+    `${city}. Оплата: ${salary}. График: ${shift}${pattern ? `, ${pattern}` : ''}. Договор: ${contract}. Старт: ${start}.`,
+    `Ищем кандидата в городе ${city}. Мы предлагаем ${salary} по договору ${contract}. График работы: ${shift}${pattern ? ` (${pattern})` : ''}. Возможный старт: ${start}.`,
+    `Открыта вакансия в ${city} с оплатой ${salary}. Тип договора — ${contract}, график включает ${shift}${pattern ? ` - ${pattern}` : ''}. Начинаем: ${start}.`,
+    `Приглашаем на работу (${city}). Зарплата ${salary}, оформление по ${contract}. Рабочий график: ${shift}${pattern ? ` (${pattern})` : ''}, выход на работу: ${start}.`
+  ] : [
+    `${city}. Оплата: ${salary}. Графік: ${shift}${pattern ? `, ${pattern}` : ''}. Договір: ${contract}. Старт: ${start}.`,
+    `Шукаємо кандидата в місті ${city}. Ми пропонуємо ${salary} за договором ${contract}. Графік роботи: ${shift}${pattern ? ` (${pattern})` : ''}. Можливий старт: ${start}.`,
+    `Відкрита вакансія в ${city} з оплатою ${salary}. Тип договору — ${contract}, графік включає ${shift}${pattern ? ` - ${pattern}` : ''}. Починаємо: ${start}.`,
+    `Запрошуємо на роботу (${city}). Зарплата ${salary}, оформлення за ${contract}. Робочий графік: ${shift}${pattern ? ` (${pattern})` : ''}, вихід на роботу: ${start}.`
+  ]);
+
+  const intro = introVariants[seed % introVariants.length];
+
+  const offerLeadVariants = isPl ? [
+    'Co realnie dostajesz poza stawką:',
+    'Dodatkowe benefity na tym stanowisku:',
+    'Oprócz wynagrodzenia podstawowego oferujemy:',
+    'Co zyskujesz podejmując tę pracę:'
+  ] : (isRu ? [
+    'Что сотрудник получает помимо базовой ставки:',
+    'Дополнительные преимущества на этой должности:',
+    'Помимо основной зарплаты мы предлагаем:',
+    'Что вы получаете, приступая к работе:'
+  ] : [
+    'Що працівник реально отримує окрім базової ставки:',
+    'Додаткові переваги на цій посаді:',
+    'Окрім основної зарплати ми пропонуємо:',
+    'Що ви отримуєте, розпочинаючи цю роботу:'
+  ]);
+  const offerLead = offerLeadVariants[(seed + 1) % offerLeadVariants.length];
+
+  const taskLeadVariants = isPl ? [
+    'Jak wygląda codzienna zmiana:',
+    'Twoje główne obowiązki to:',
+    'Czym będziesz się zajmować na co dzień:',
+    'Typowy dzień pracy obejmuje:'
+  ] : (isRu ? [
+    'Как выглядит рабочая смена на практике:',
+    'Ваши основные обязанности:',
+    'Чем предстоит заниматься каждый день:',
+    'Типичный рабочий день включает:'
+  ] : [
+    'Як виглядає робоча зміна на практиці:',
+    'Ваші основні обов\'язки:',
+    'Чим ви будете займатися щодня:',
+    'Типовий робочий день включає:'
+  ]);
+  const taskLead = taskLeadVariants[(seed + 2) % taskLeadVariants.length];
+
+  const detailLeadVariants = isPl ? [
+    'Wymagania i organizacja wejścia do zespołu:',
+    'Czego oczekujemy na start:',
+    'Proces wdrożenia i nasze wymagania:',
+    'Ważne informacje o wejściu w projekt:'
+  ] : (isRu ? [
+    'Требования и организация входа в команду:',
+    'Что мы ожидаем на старте:',
+    'Процесс адаптации и наши требования:',
+    'Важная информация о входе в проект:'
+  ] : [
+    'Вимоги та організація входу в команду:',
+    'Що ми очікуємо на старті:',
+    'Процес адаптації та наші вимоги:',
+    'Важлива інформація про вхід у проєкт:'
+  ]);
+  const detailLead = detailLeadVariants[(seed + 3) % detailLeadVariants.length];
 
   const paragraph = (lead, items) => (items.length ? `${lead} ${items.join(' ')}`.trim() : '');
   const rendered = [
@@ -3174,6 +3233,40 @@ async function build() {
     const tpl = pageTpl;
     const description = page.excerpt || page.description || '';
     const isVacancy = isVacancyPage(page);
+
+    // DIVERSIFY JOB TITLES (Anti-Doorway)
+    if (isVacancy) {
+      const seed = hashString(page.slug || '');
+      const roleUa = page.title;
+      const rolePl = page.title_pl || page.title;
+      const roleRu = page.title_ru || page.title;
+      const cityUa = page.city || '';
+      const cityPl = page.city_pl || page.city || '';
+      const cityRu = page.city_ru || page.city || '';
+
+      const titleTemplatesUa = [
+        `${roleUa} у ${cityUa} — ставка, графік, умови`,
+        `${roleUa} (${cityUa}) — актуальна вакансія`,
+        `Робота: ${roleUa} у ${cityUa}`,
+        `Шукаємо: ${roleUa} (${cityUa})`
+      ];
+      const titleTemplatesPl = [
+        `${rolePl} w ${cityPl} — stawka, grafik, warunki`,
+        `${rolePl} (${cityPl}) — aktualna oferta`,
+        `Praca: ${rolePl} w ${cityPl}`,
+        `Szukamy: ${rolePl} (${cityPl})`
+      ];
+      const titleTemplatesRu = [
+        `${roleRu} в ${cityRu} — ставка, график, условия`,
+        `${roleRu} (${cityRu}) — актуальная вакансия`,
+        `Работа: ${roleRu} в ${cityRu}`,
+        `Ищем: ${roleRu} (${cityRu})`
+      ];
+
+      page.title = titleTemplatesUa[seed % titleTemplatesUa.length];
+      page.title_pl = titleTemplatesPl[seed % titleTemplatesPl.length];
+      page.title_ru = titleTemplatesRu[seed % titleTemplatesRu.length];
+    }
 
     const useManualVacancyText = isVacancy && page.manual_vacancy_text === true;
     const content = isVacancy
