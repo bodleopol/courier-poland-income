@@ -2117,29 +2117,109 @@ const JOB_QUESTIONS_POOL = {
 const CHECKLIST_SEED_OFFSET = 17;
 const QUESTIONS_SEED_OFFSET = 29;
 
+
 const JOB_POSITIVE_POOL = {
-  ua: ['Стабільні виплати без затримок', 'Можливість узгоджувати графік з координатором', 'Зрозумілі задачі без прихованих умов', 'Допомога з оформленням документів з першого дня', 'Лояльне ставлення до новачків без досвіду', 'Прозорий облік відпрацьованих годин'],
-  pl: ['Stabilne wypłaty bez opóźnień', 'Możliwość ustalenia grafiku z koordynatorem', 'Jasne zadania bez ukrytych warunków', 'Pomoc z dokumentami od pierwszego dnia', 'Dobre podejście do osób bez doświadczenia', 'Przejrzyste rozliczanie przepracowanych godzin'],
-  ru: ['Стабильные выплаты без задержек', 'Возможность согласовывать график с координатором', 'Понятные задачи без скрытых условий', 'Помощь с документами с первого дня', 'Лояльное отношение к новичкам без опыта', 'Прозрачный учет отработанных часов']
+  ua: [
+    'Стабільні виплати без затримок', 'Можливість узгоджувати графік з координатором', 'Зрозумілі задачі без прихованих умов',
+    'Допомога з оформленням документів з першого дня', 'Лояльне ставлення до новачків без досвіду', 'Прозорий облік відпрацьованих годин',
+    'Дружній колектив та підтримка від старших змін', 'Регулярні премії за виконання норм', 'Можливість брати додаткові години для більшого заробітку',
+    'Безкоштовний робочий одяг та взуття', 'Комфортна температура на робочому місці (не холодно)', 'Адекватне керівництво, яке йде назустріч',
+    'Можливість підвищення та переходу на легші процеси', 'Швидка адаптація завдяки детальному навчанню', 'Офіційне працевлаштування з оплачуваними лікарняними'
+  ],
+  pl: [
+    'Stabilne wypłaty bez opóźnień', 'Możliwość ustalenia grafiku z koordynatorem', 'Jasne zadania bez ukrytych warunków',
+    'Pomoc z dokumentami od pierwszego dnia', 'Dobre podejście do osób bez doświadczenia', 'Przejrzyste rozliczanie przepracowanych godzin',
+    'Przyjazny zespół i wsparcie od brygadzistów', 'Regularne premie za wyrobienie normy', 'Możliwość brania nadgodzin dla większych zarobków',
+    'Darmowa odzież robocza i obuwie', 'Komfortowa temperatura w miejscu pracy (nie jest zimno)', 'Rozsądne kierownictwo, które jest pomocne',
+    'Możliwość awansu i przejścia na łatwiejsze procesy', 'Szybka adaptacja dzięki szczegółowemu szkoleniu', 'Legalne zatrudnienie z płatnymi L4'
+  ],
+  ru: [
+    'Стабильные выплаты без задержек', 'Возможность согласовывать график с координатором', 'Понятные задачи без скрытых условий',
+    'Помощь с документами с первого дня', 'Лояльное отношение к новичкам без опыта', 'Прозрачный учет отработанных часов',
+    'Дружный коллектив и поддержка от старших смен', 'Регулярные премии за выполнение норм', 'Возможность брать дополнительные часы для большего заработка',
+    'Бесплатная рабочая одежда и обувь', 'Комфортная температура на рабочем месте (не холодно)', 'Адекватное руководство, идущее навстречу',
+    'Возможность повышения и перехода на более легкие процессы', 'Быстрая адаптация благодаря детальному обучению', 'Официальное трудоустройство с оплачиваемыми больничными'
+  ]
 };
 
 const JOB_ROUTINE_POOL = {
-  ua: ['Зміна починається з короткого інструктажу та перевірки безпеки', 'Темп роботи залежить від сезону та кількості замовлень', 'Передбачені дві офіційні перерви протягом зміни', 'Більшість часу проводиться на ногах або в русі', 'Комунікація з бригадиром відбувається через месенджер'],
-  pl: ['Zmiana zaczyna się od krótkiego instruktażu BHP', 'Tempo pracy zależy od sezonu i liczby zamówień', 'Są dwie oficjalne przerwy w trakcie zmiany', 'Większość czasu spędza się na nogach lub w ruchu', 'Komunikacja z brygadzistą odbywa się przez komunikator'],
-  ru: ['Смена начинается с короткого инструктажа и проверки безопасности', 'Темп работы зависит от сезона и количества заказов', 'Предусмотрены два официальных перерыва во время смены', 'Большую часть времени проводится на ногах или в движении', 'Связь с бригадиром происходит через мессенджер']
+  ua: [
+    'Зміна починається з короткого інструктажу та перевірки безпеки', 'Темп роботи залежить від сезону та кількості замовлень',
+    'Передбачені дві офіційні перерви протягом зміни', 'Більшість часу проводиться на ногах або в русі', 'Комунікація з бригадиром відбувається через месенджер',
+    'Кожен працівник має своє закріплене робоче місце', 'Завдання видаються на початку зміни сканером', 'Обідня перерва триває 30 хвилин і не оплачується',
+    'Наприкінці зміни потрібно прибрати своє робоче місце', 'Робота вимагає постійної концентрації уваги', 'Доступ до телефонів під час роботи обмежений',
+    'Музика грає на фоні, що допомагає тримати темп', 'Є можливість змінювати процеси кожні кілька годин', 'Робота в команді з 3-4 людей на одному етапі',
+    'Щотижня відбувається ротація змін (ранкова/вечірня)'
+  ],
+  pl: [
+    'Zmiana zaczyna się od krótkiego instruktażu BHP', 'Tempo pracy zależy od sezonu i liczby zamówień',
+    'Są dwie oficjalne przerwy w trakcie zmiany', 'Większość czasu spędza się na nogach lub w ruchu', 'Komunikacja z brygadzistą odbywa się przez komunikator',
+    'Każdy pracownik ma swoje stałe miejsce pracy', 'Zadania przydzielane są na początku zmiany przez skaner', 'Przerwa obiadowa trwa 30 minut i jest bezpłatna',
+    'Pod koniec zmiany trzeba posprzątać swoje stanowisko', 'Praca wymaga ciągłej koncentracji uwagi', 'Dostęp do telefonów w trakcie pracy jest ograniczony',
+    'W tle gra muzyka, co pomaga utrzymać tempo', 'Można zmieniać procesy co kilka godzin', 'Praca w zespole 3-4 osobowym na jednym etapie',
+    'Co tydzień następuje rotacja zmian (poranna/popołudniowa)'
+  ],
+  ru: [
+    'Смена начинается с короткого инструктажа и проверки безопасности', 'Темп работы зависит от сезона и количества заказов',
+    'Предусмотрены два официальных перерыва во время смены', 'Большую часть времени проводится на ногах или в движении', 'Связь с бригадиром происходит через мессенджер',
+    'У каждого работника есть свое закрепленное рабочее место', 'Задачи выдаются в начале смены сканером', 'Обеденный перерыв длится 30 минут и не оплачивается',
+    'В конце смены нужно убрать свое рабочее место', 'Работа требует постоянной концентрации внимания', 'Доступ к телефонам во время работы ограничен',
+    'Музыка играет на фоне, что помогает держать темп', 'Есть возможность менять процессы каждые несколько часов', 'Работа в команде из 3-4 человек на одном этапе',
+    'Каждую неделю происходит ротация смен (утренняя/вечерняя)'
+  ]
 };
 
 const JOB_RISK_POOL = {
-  ua: ['Перший тиждень може бути фізично важким під час адаптації', 'Бувають затримки з видачею перепусток або документів на старті', 'Часто змінюються локації виконання завдань на обʼєкті', 'В сезон потрібно бути готовим до понаднормових годин', 'Шум та високий темп роботи на лінії'],
-  pl: ['Pierwszy tydzień może być trudny fizycznie w czasie adaptacji', 'Zdarzają się opóźnienia z przepustkami na starcie', 'Często zmieniają się lokalizacje zadań na obiekcie', 'W sezonie trzeba być gotowym na nadgodziny', 'Hałas i szybkie tempo pracy na linii'],
-  ru: ['Первая неделя может быть физически тяжелой во время адаптации', 'Бывают задержки с пропусками или документами на старте', 'Часто меняются локации задач на объекте', 'В сезон нужно быть готовым к сверхурочным', 'Шум и высокий темп работы на линии']
+  ua: [
+    'Перший тиждень може бути фізично важким під час адаптації', 'Бувають затримки з видачею перепусток або документів на старті',
+    'Часто змінюються локації виконання завдань на обʼєкті', 'В сезон потрібно бути готовим до понаднормових годин', 'Шум та високий темп роботи на лінії',
+    'Довгий доїзд до роботи, якщо жити в іншому кінці міста', 'Штрафи за запізнення або порушення техніки безпеки', 'Температура в цеху може опускатися до 15 градусів взимку',
+    'Монотонні рухи можуть викликати втому в руках', 'Суворі вимоги до якості та швидкості виконання норм', 'Іноді доводиться піднімати вантажі до 15-20 кг',
+    'Складні стосунки з деякими місцевими координаторами', 'Графік може непередбачувано змінюватися за день до зміни', 'Запах специфічних матеріалів або картону на складі',
+    'Пил у приміщенні, що може викликати алергію'
+  ],
+  pl: [
+    'Pierwszy tydzień może być trudny fizycznie w czasie adaptacji', 'Zdarzają się opóźnienia z przepustkami na starcie',
+    'Często zmieniają się lokalizacje zadań na obiekcie', 'W sezonie trzeba być gotowym na nadgodziny', 'Hałas i szybkie tempo pracy na linii',
+    'Długi dojazd, jeśli mieszkasz na drugim końcu miasta', 'Kary finansowe za spóźnienia lub łamanie BHP', 'Temperatura na hali może spadać do 15 stopni zimą',
+    'Monotonne ruchy mogą powodować zmęczenie rąk', 'Surowe wymogi co do jakości i szybkości wyrabiania normy', 'Czasami trzeba podnosić ciężary do 15-20 kg',
+    'Trudne relacje z niektórymi lokalnymi koordynatorami', 'Grafik może ulec nagłej zmianie z dnia na dzień', 'Zapach specyficznych materiałów lub kartonu na magazynie',
+    'Kurz w pomieszczeniu, co może powodować alergie'
+  ],
+  ru: [
+    'Первая неделя может быть физически тяжелой во время адаптации', 'Бывают задержки с пропусками или документами на старте',
+    'Часто меняются локации задач на объекте', 'В сезон нужно быть готовым к сверхурочным', 'Шум и высокий темп работы на линии',
+    'Долгий доезд до работы, если жить в другом конце города', 'Штрафы за опоздания или нарушение техники безопасности', 'Температура в цеху может опускаться до 15 градусов зимой',
+    'Монотонные движения могут вызывать усталость в руках', 'Строгие требования к качеству и скорости выполнения норм', 'Иногда приходится поднимать грузы до 15-20 кг',
+    'Сложные отношения с некоторыми местными координаторами', 'График может непредсказуемо меняться за день до смены', 'Запах специфических материалов или картона на складе',
+    'Пыль в помещении, что может вызывать аллергию'
+  ]
 };
 
 const JOB_NEGATIVE_POOL = {
-  ua: ['Тим, хто не любить працювати в інтенсивному ритмі або в команді', 'Тим, хто шукає підробіток лише на кілька тижнів', 'Кандидатам, які не готові до роботи в нічні зміни (якщо вони є)', 'Тим, хто має проблеми зі спиною чи суглобами'],
-  pl: ['Osobom, które nie lubią pracy w szybkim tempie lub w zespole', 'Osobom szukającym pracy dorywczej tylko na kilka tygodni', 'Kandydatom niegotowym na nocne zmiany (jeśli występują)', 'Osobom z problemami z kręgosłupem lub stawami'],
-  ru: ['Тем, кто не любит работать в интенсивном ритме или в команде', 'Тем, кто ищет подработку только на пару недель', 'Кандидатам, которые не готовы к ночным сменам (если они есть)', 'Тем, у кого есть проблемы со спиной или суставами']
+  ua: [
+    'Тим, хто не любить працювати в інтенсивному ритмі або в команді', 'Тим, хто шукає підробіток лише на кілька тижнів',
+    'Кандидатам, які не готові до роботи в нічні зміни (якщо вони є)', 'Тим, хто має проблеми зі спиною чи суглобами',
+    'Людям, які погано переносять монотонну і рутинну роботу', 'Тим, хто очікує повільного та розслабленого темпу', 'Кандидатам з алергією на пил або різкі запахи',
+    'Особам, які не готові до ранніх підйомів о 4-5 ранку', 'Тим, хто уникає фізичних навантажень будь-якого рівня', 'Студентам, які шукають гнучкий графік для навчання',
+    'Тим, хто не хоче працювати по вихідних', 'Людям без мінімального розуміння польської мови', 'Кандидатам, які часто хворіють або пропускають роботу'
+  ],
+  pl: [
+    'Osobom, które nie lubią pracy w szybkim tempie lub w zespole', 'Osobom szukającym pracy dorywczej tylko na kilka tygodni',
+    'Kandydatom niegotowym na nocne zmiany (jeśli występują)', 'Osobom z problemami z kręgosłupem lub stawami',
+    'Osobom, które źle znoszą monotonną i rutynową pracę', 'Osobom oczekującym wolnego i luźnego tempa', 'Kandydatom z alergią na kurz lub ostre zapachy',
+    'Osobom niegotowym na wczesne wstawanie o 4-5 rano', 'Osobom unikającym wysiłku fizycznego', 'Studentom szukającym bardzo elastycznego grafiku',
+    'Osobom, które nie chcą pracować w weekendy', 'Osobom bez minimalnej znajomości języka polskiego', 'Kandydatom, którzy często chorują lub opuszczają pracę'
+  ],
+  ru: [
+    'Тем, кто не любит работать в интенсивном ритме или в команде', 'Тем, кто ищет подработку только на пару недель',
+    'Кандидатам, которые не готовы к ночным сменам (если они есть)', 'Тем, у кого есть проблемы со спиной или суставами',
+    'Людям, которые плохо переносят монотонную и рутинную работу', 'Тем, кто ожидает медленного и расслабленного темпа', 'Кандидатам с аллергией на пыль или резкие запахи',
+    'Лицам, которые не готовы к ранним подъемам в 4-5 утра', 'Тем, кто избегает физических нагрузок любого уровня', 'Студентам, ищущим гибкий график для учебы',
+    'Тем, кто не хочет работать по выходным', 'Людям без минимального понимания польского языка', 'Кандидатам, которые часто болеют или пропускают работу'
+  ]
 };
+
 
 function buildJobHumanBlock(page, lang, variant = 'full') {
   const isPl = lang === 'pl';
@@ -2147,12 +2227,34 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   const seed = hashString(`${page?.slug || ''}:${lang}`);
   const cityStr = escapeHtml(isPl ? page.city_pl || page.city : (isRu ? page.city_ru || page.city : page.city)) || '';
 
-  // H2 Headings
-  const h2Pos = isPl ? `Co wyróżnia tę ofertę w ${cityStr}` : (isRu ? `Что отличает эту вакансию в ${cityStr}` : `Що відрізняє цю вакансію від інших у ${cityStr}`);
-  const h2Routine = isPl ? 'Realne warunki zmiany' : (isRu ? 'Реальные условия смены' : 'Реальні умови зміни (по днях)');
-  const h2Risk = isPl ? 'Możliwe ryzyka i trudności' : (isRu ? 'Возможные риски и сложности' : 'Ризики та “червоні прапори” цієї вакансії');
-  const h2Neg = isPl ? 'Dla kogo NIE jest ta praca' : (isRu ? 'Кому НЕ подойдет эта работа' : 'Кому НЕ підійде ця робота');
-  const h3Case = isPl ? 'Opinia kandydata:' : (isRu ? 'Отзыв кандидата:' : 'Кейс кандидата:');
+
+  // H2 Headings Diversification
+  const posHeadingsPl = [`Co wyróżnia tę ofertę w ${cityStr}`, `Dlaczego warto pracować w ${cityStr}`, `Główne zalety tej oferty w ${cityStr}`, `Plusy tej pracy na tle innych`, `Co zyskasz wybierając tę posadę`];
+  const posHeadingsRu = [`Что отличает эту вакансию в ${cityStr}`, `Преимущества работы в ${cityStr}`, `Главные плюсы этой позиции`, `Почему стоит выбрать эту работу`, `Что вы получите от этой вакансии`];
+  const posHeadingsUa = [`Що відрізняє цю вакансію від інших у ${cityStr}`, `Чому варто обрати цю роботу в ${cityStr}`, `Головні переваги цієї пропозиції`, `Плюси цієї роботи на тлі інших`, `Що ви отримаєте від цієї вакансії`];
+
+  const routineHeadingsPl = ['Realne warunki zmiany', 'Jak wygląda typowy dzień', 'Przebieg dnia roboczego', 'Codzienne obowiązki w praktyce', 'Harmonogram i organizacja pracy'];
+  const routineHeadingsRu = ['Реальные условия смены', 'Как выглядит типичный день', 'Рабочая рутина на практике', 'Повседневные задачи', 'Организация рабочего процесса'];
+  const routineHeadingsUa = ['Реальні умови зміни (по днях)', 'Як виглядає типовий день', 'Робоча рутина на практиці', 'Повсякденні завдання та процеси', 'Організація робочого дня'];
+
+  const riskHeadingsPl = ['Możliwe ryzyka i trudności', 'Z czym trzeba się liczyć', 'Ciemne strony i wyzwania', 'Potencjalne trudności', 'Na co zwrócić uwagę przed startem'];
+  const riskHeadingsRu = ['Возможные риски и сложности', 'С чем придется столкнуться', 'Потенциальные трудности', 'Подводные камни этой работы', 'К чему нужно быть готовым'];
+  const riskHeadingsUa = ['Ризики та “червоні прапори” цієї вакансії', 'З якими труднощами можна зіткнутися', 'Потенційні виклики та мінуси', 'Підводні камені цієї роботи', 'До чого потрібно бути готовим'];
+
+  const negHeadingsPl = ['Dla kogo NIE jest ta praca', 'Kto nie odnajdzie się na tym stanowisku', 'Komu odradzamy tę ofertę', 'Kto powinien szukać dalej', 'Dla kogo to nie będzie dobry wybór'];
+  const negHeadingsRu = ['Кому НЕ подойдет эта работа', 'Кому мы не советуем эту вакансию', 'Кто не справится с этой работой', 'Кому стоит поискать другие варианты', 'Для кого это будет плохой выбор'];
+  const negHeadingsUa = ['Кому НЕ підійде ця робота', 'Кому ми не радимо цю вакансію', 'Хто не впорається з цими умовами', 'Кому варто пошукати інші варіанти', 'Для кого це буде поганий вибір'];
+
+  const caseHeadingsPl = ['Opinia kandydata:', 'Z doświadczenia pracownika:', 'Co mówią ludzie:', 'Historie z życia wzięte:', 'Komentarz z pierwszej ręki:'];
+  const caseHeadingsRu = ['Отзыв кандидата:', 'Из опыта работника:', 'Что говорят люди:', 'Реальные истории:', 'Комментарий из первых рук:'];
+  const caseHeadingsUa = ['Кейс кандидата:', 'З досвіду працівника:', 'Що кажуть люди:', 'Реальні історії з місця:', 'Коментар з перших вуст:'];
+
+  const h2Pos = isPl ? posHeadingsPl[seed % posHeadingsPl.length] : (isRu ? posHeadingsRu[seed % posHeadingsRu.length] : posHeadingsUa[seed % posHeadingsUa.length]);
+  const h2Routine = isPl ? routineHeadingsPl[(seed + 1) % routineHeadingsPl.length] : (isRu ? routineHeadingsRu[(seed + 1) % routineHeadingsRu.length] : routineHeadingsUa[(seed + 1) % routineHeadingsUa.length]);
+  const h2Risk = isPl ? riskHeadingsPl[(seed + 2) % riskHeadingsPl.length] : (isRu ? riskHeadingsRu[(seed + 2) % riskHeadingsRu.length] : riskHeadingsUa[(seed + 2) % riskHeadingsUa.length]);
+  const h2Neg = isPl ? negHeadingsPl[(seed + 3) % negHeadingsPl.length] : (isRu ? negHeadingsRu[(seed + 3) % negHeadingsRu.length] : negHeadingsUa[(seed + 3) % negHeadingsUa.length]);
+  const h3Case = isPl ? caseHeadingsPl[(seed + 4) % caseHeadingsPl.length] : (isRu ? caseHeadingsRu[(seed + 4) % caseHeadingsRu.length] : caseHeadingsUa[(seed + 4) % caseHeadingsUa.length]);
+
 
   // Content selection
   const positiveHtml = pickList(JOB_POSITIVE_POOL[lang] || JOB_POSITIVE_POOL.ua, 2, seed + 1)
@@ -2929,10 +3031,15 @@ async function build() {
     const excerptRu = toRussianFallbackText(enrichVacancyExcerpt(p, 'ru'));
     jobTranslations[`job.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
 
-    // Use SEO fields if available, otherwise fallback to standard title/excerpt
-    const metaTitleUa = p.seo_title_ua || `${p.title} — Rybezh`;
-    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title} — Rybezh`);
-    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu} — Rybezh`);
+    // Diversify SEO Title Suffixes
+    const suffixesPl = [' — Rybezh', ' | Oferta pracy', ' (Bez pośredników)', ' - Aplikuj teraz'];
+    const suffixesRu = [' — Rybezh', ' | Вакансия', ' (Без посредников)', ' - Откликнуться'];
+    const suffixesUa = [' — Rybezh', ' | Вакансія', ' (Без посередників)', ' - Відгукнутися'];
+    const suffixIndex = Math.abs(hashString(p.slug)) % 4;
+
+    const metaTitleUa = p.seo_title_ua || `${p.title}${suffixesUa[suffixIndex]}`;
+    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title}${suffixesPl[suffixIndex]}`);
+    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu}${suffixesRu[suffixIndex]}`);
     jobTranslations[`job.${p.slug}.meta_title`] = { ua: metaTitleUa, pl: metaTitlePl, ru: metaTitleRu };
 
     const metaDescUa = p.meta_description_ua || p.excerpt;
@@ -2951,9 +3058,14 @@ async function build() {
     jobTranslations[`blog.${p.slug}.title`] = { ua: p.title, pl: p.title_pl || p.title, ru: titleRu };
 
     // Use SEO fields if available, otherwise fallback to standard title/excerpt
-    const metaTitleUa = p.seo_title_ua || `${p.title} — Rybezh`;
-    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title} — Rybezh`);
-    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu} — Rybezh`);
+    const suffixesBlogPl = [' — Rybezh', ' | Poradnik', ' (Aktualizacja)', ' - Wskazówki'];
+    const suffixesBlogRu = [' — Rybezh', ' | Гайд', ' (Обновлено)', ' - Советы'];
+    const suffixesBlogUa = [' — Rybezh', ' | Гайд', ' (Оновлено)', ' - Поради'];
+    const suffixBlogIndex = Math.abs(hashString(p.slug)) % 4;
+
+    const metaTitleUa = p.seo_title_ua || `${p.title}${suffixesBlogUa[suffixBlogIndex]}`;
+    const metaTitlePl = p.seo_title_pl || (p.seo_title_ua ? p.seo_title_ua : `${p.title_pl || p.title}${suffixesBlogPl[suffixBlogIndex]}`);
+    const metaTitleRu = p.seo_title_ru || (p.seo_title_ua ? toRussianFallbackText(p.seo_title_ua) : `${titleRu}${suffixesBlogRu[suffixBlogIndex]}`);
     jobTranslations[`blog.${p.slug}.meta_title`] = { ua: metaTitleUa, pl: metaTitlePl, ru: metaTitleRu };
 
     const metaDescUa = p.meta_description_ua || p.excerpt;
@@ -3422,11 +3534,15 @@ async function build() {
           <span class="related-title">${escapeHtml(rv.title)}</span>
           <span class="related-meta">📍 ${escapeHtml(rv.city)} • ${escapeHtml(rv.salary)}</span>
         </a>`).join('');
+      const simPl = ['Podobne oferty', 'Inne w tej branży', 'Propozycje z tego sektora', 'To też może Cię zainteresować'][Math.abs(hashString(page.slug)) % 4];
+      const simRu = ['Похожие вакансии', 'Другие предложения в этой сфере', 'Вас также может заинтересовать', 'Еще варианты в этом городе'][Math.abs(hashString(page.slug)) % 4];
+      const simUa = ['Схожі вакансії', 'Інші пропозиції у цій сфері', 'Вас також може зацікавити', 'Ще варіанти в цьому місті'][Math.abs(hashString(page.slug)) % 4];
+
       relatedHtml = `
         <div class="related-vacancies">
-          <h3 data-lang-content="ua" data-i18n="related.title">Схожі вакансії</h3>
-          <h3 data-lang-content="pl" style="display:none">Podobne oferty</h3>
-          <h3 data-lang-content="ru" style="display:none">Похожие вакансии</h3>
+          <h3 data-lang-content="ua" data-i18n="related.title">${simUa}</h3>
+          <h3 data-lang-content="pl" style="display:none">${simPl}</h3>
+          <h3 data-lang-content="ru" style="display:none">${simRu}</h3>
           <div class="related-grid">${relatedCards}</div>
         </div>`;
     }
@@ -3438,11 +3554,16 @@ async function build() {
       { ua: 'Як перевірити вакансію на шахрайство', pl: 'Jak sprawdzić ofertę pracy pod kątem oszustwa', ru: 'Как проверить вакансию на мошенничество', href: '/red-flag.html' },
       { ua: 'Рейтинг довіри компаній — Rybezh Proof', pl: 'Ranking zaufania firm — Rybezh Proof', ru: 'Рейтинг доверия компаний — Rybezh Proof', href: '/proof.html' }
     ];
+
+    const guidesPl = ['📚 Przydatne przewodniki', '📚 Warto przeczytać przed startem', '📚 Materiały dla kandydatów', '📚 Poradniki i wskazówki'][(Math.abs(hashString(page.slug)) + 1) % 4];
+    const guidesRu = ['📚 Полезные гайды', '📚 Советуем прочитать перед стартом', '📚 Материалы для кандидатов', '📚 Инструкции и советы'][(Math.abs(hashString(page.slug)) + 1) % 4];
+    const guidesUa = ['📚 Корисні гайди', '📚 Радимо прочитати перед стартом', '📚 Матеріали для кандидатів', '📚 Інструкції та поради'][(Math.abs(hashString(page.slug)) + 1) % 4];
+
     const guidesHtml = `
       <div class="related-guides">
-        <h3 data-lang-content="ua">📚 Корисні гайди</h3>
-        <h3 data-lang-content="pl" style="display:none">📚 Przydatne przewodniki</h3>
-        <h3 data-lang-content="ru" style="display:none">📚 Полезные гайды</h3>
+        <h3 data-lang-content="ua">${guidesUa}</h3>
+        <h3 data-lang-content="pl" style="display:none">${guidesPl}</h3>
+        <h3 data-lang-content="ru" style="display:none">${guidesRu}</h3>
         <ul class="guides-list">
           ${topicGuides.map(g => `
             <li>
