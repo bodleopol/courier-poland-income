@@ -3118,8 +3118,8 @@ async function build() {
           title = 'Оренда транспорту для курʼєрів і таксі в Польщі | Авто, Скутери, Мото';
           desc = 'Економна оренда транспорту: Kia Soluto (LPG) для Uber/Bolt, скутери 50cc та мотоцикли (від 2л/100км) для Glovo/Wolt, надійні гірські велосипеди. Без застави.';
         } else if (p === 'bogdan-tiutenko.html') {
-          title = 'Богдан Тютенко (Bohdan Tiutenko) — Інвестор, Операційний директор | Львів';
-          desc = 'Богдан Тютенко (Bohdan Tiutenko) — Інвестор та Операційний директор платформи Rybezh. Проживає у місті Львів. Експертиза: Логістика, Інвестиції, Менеджмент.';
+          title = 'Богдан Тютенко — Інвестор';
+          desc = 'Богдан Тютенко — Інвестор платформи Rybezh. Проживає у місті Львів.';
         }
 
         pContent = pageTpl
@@ -3132,6 +3132,32 @@ async function build() {
           .replace(/{{CITY}}/g, '')
           .replace(/{{CTA_LINK}}/g, '/apply.html')
           .replace(/{{CTA_TEXT}}/g, 'Подати заявку');
+      }
+
+      if (p === 'bogdan-tiutenko.html') {
+        let bTitle = 'Богдан Тютенко — Інвестор';
+        let bDesc = 'Богдан Тютенко — Інвестор платформи Rybezh. Проживає у місті Львів.';
+        pContent = pContent.replace('<title>', '<title data-i18n="bogdan.meta_title">');
+        pContent = pContent.replace(
+          /<meta name="description" content="[^"]*">/,
+          '<meta name="description" data-i18n="bogdan.meta_description" data-i18n-attr="content" content="' + bDesc + '">'
+        );
+        pContent = pContent.replace(
+          /<meta property="og:title" content="[^"]*">/,
+          '<meta property="og:title" data-i18n="bogdan.meta_title" data-i18n-attr="content" content="' + bTitle + '">'
+        );
+        pContent = pContent.replace(
+          /<meta property="og:description" content="[^"]*">/,
+          '<meta property="og:description" data-i18n="bogdan.meta_description" data-i18n-attr="content" content="' + bDesc + '">'
+        );
+        pContent = pContent.replace(
+          /<meta name="twitter:title" content="[^"]*">/,
+          '<meta name="twitter:title" data-i18n="bogdan.meta_title" data-i18n-attr="content" content="' + bTitle + '">'
+        );
+        pContent = pContent.replace(
+          /<meta name="twitter:description" content="[^"]*">/,
+          '<meta name="twitter:description" data-i18n="bogdan.meta_description" data-i18n-attr="content" content="' + bDesc + '">'
+        );
       }
 
       pContent = sanitizeStaticHtmlHead(pContent);
