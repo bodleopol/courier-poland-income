@@ -1,3 +1,8 @@
+let currentSeed = 12345;
+function random() {
+  currentSeed = (currentSeed * 9301 + 49297) % 233280;
+  return currentSeed / 233280;
+}
 import fs from 'fs';
 import path from 'path';
 
@@ -184,9 +189,9 @@ const words3 = [
 ];
 
 function generateRandomParamIndices() {
-  const i1 = Math.floor(Math.random() * words1.length);
-  const i2 = Math.floor(Math.random() * words2.length);
-  const i3 = Math.floor(Math.random() * words3.length);
+  const i1 = Math.floor(random() * words1.length);
+  const i2 = Math.floor(random() * words2.length);
+  const i3 = Math.floor(random() * words3.length);
   return { i1, i2, i3 };
 }
 
@@ -222,7 +227,7 @@ for (let i = allQuestions.length; i < totalQuestionsNeeded; i++) {
   const indices5 = generateRandomParamIndices();
   parameterCount += 5;
 
-  const correctOptionIndex = Math.floor(Math.random() * 4);
+  const correctOptionIndex = Math.floor(random() * 4);
   const correctOptionLetter = optionsArray[correctOptionIndex];
 
   const q = {

@@ -229,12 +229,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Utility function to shuffle an array
-  function shuffleArray(array) {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-    }
-    return newArray;
+  function shuffleArray(array, seedStr = 'quiz') {
+  const shuffled = [...array];
+  let hash = 0;
+  for (let i = 0; i < seedStr.length; i++) {
+    hash = ((hash << 5) - hash) + seedStr.charCodeAt(i);
+    hash |= 0;
   }
+  let seed = Math.abs(hash);
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    seed = (seed * 9301 + 49297) % 233280;
+    const rand = seed / 233280;
+    const j = Math.floor(rand * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 });
