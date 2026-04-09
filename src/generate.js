@@ -2329,28 +2329,6 @@ function buildVacancyProofFormScript() {
       return rounded;
     }
 
-    function fallbackScoreBySlug(slug) {
-      var raw = String(slug || 'rybezh-proof-fallback');
-      var hash = 0;
-      for (var i = 0; i < raw.length; i++) {
-        hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-      }
-      var span = (PROOF_MAX_SCORE - PROOF_MIN_SCORE + 1);
-      return PROOF_MIN_SCORE + (hash % span);
-    }
-
-    function fallbackCountBySlug(slug) {
-      var raw = String(slug || 'rybezh-proof-count-fallback');
-      var hash = 0;
-      for (var i = 0; i < raw.length; i++) {
-        hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-      }
-      var min = 5;
-      var max = 30;
-      var span = (max - min + 1);
-      return min + (hash % span);
-    }
-
     function verdictByScore(score, lang) {
       if (score >= 80) return lang === 'pl' ? 'Stabilna i bezpieczna oferta według opinii.' : 'Стабільна та безпечна вакансія за відгуками.';
       if (score >= 60) return lang === 'pl' ? 'Warunki ogólnie OK, ale warto doprecyzować detale.' : 'Умови загалом ок, але варто уточнити деталі.';
@@ -2572,210 +2550,6 @@ const VACANCY_SIMILARITY_STOPWORDS = new Set([
   ...VACANCY_SIMILARITY_STOPWORDS_RU
 ]);
 
-function cosineSimilarity(textA, textB) {
-  const tokenize = (text) => String(text || '')
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
-    .split(/\s+/)
-    .filter(Boolean)
-    .filter(token => token.length >= MIN_SIMILARITY_TOKEN_LENGTH)
-    .filter(token => !VACANCY_SIMILARITY_STOPWORDS.has(token));
-  const aTokens = tokenize(textA);
-  const bTokens = tokenize(textB);
-  if (!aTokens.length || !bTokens.length) return 0;
-  const aFreq = new Map();
-  const bFreq = new Map();
-  for (const token of aTokens) aFreq.set(token, (aFreq.get(token) || 0) + 1);
-  for (const token of bTokens) bFreq.set(token, (bFreq.get(token) || 0) + 1);
-  let dot = 0;
-  for (const [token, countA] of aFreq.entries()) {
-    const countB = bFreq.get(token) || 0;
-    dot += countA * countB;
-  }
-  const normA = Math.sqrt(Array.from(aFreq.values()).reduce((sum, val) => sum + (val * val), 0));
-  const normB = Math.sqrt(Array.from(bFreq.values()).reduce((sum, val) => sum + (val * val), 0));
-  if (!normA || !normB) return 0;
-  return dot / (normA * normB);
-}
-
-function getVacancyNarrative(page, lang, variationState) {
-  const isPl = lang === 'pl';
-  const isRu = lang === 'ru';
-  const localize = (baseKey) => {
-    const value = isPl
-      ? (page[`${baseKey}_pl`] || page[`${baseKey}_ua`] || page[baseKey])
-      : (isRu ? (page[`${baseKey}_ru`] || page[`${baseKey}_ua`] || page[`${baseKey}_pl`] || page[baseKey]) : (page[`${baseKey}_ua`] || page[baseKey]));
-    return isRu ? toRussianFallbackText(value || '') : (value || '');
-  };
-  const collect = (baseKey) => {
-    const value = localize(baseKey);
-    return Array.isArray(value) ? value : (value ? [String(value)] : []);
-  };
-
-  const city = localize('city');
-  const salary = localize('salary');
-  const contract = localize('contract');
-  const shift = localize('shift');
-  const pattern = localize('pattern');
-  const start = localize('start');
-  const offers = collect('offers').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
-  const tasks = collect('tasks').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
-  const details = [...collect('details'), ...collect('requirements')].map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
-  const housing = collect('housing').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
-  const process = collect('shift_structure').map(item => String(item || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
-
-  const introByModel = {
-    A: isPl ? `Na tej zmianie dzień zaczyna się w ${city}: wchodzisz w rytm ${shift}${pattern ? `, ${pattern}` : ''}.` : (isRu ? `На этой позиции смена в ${city} начинается по графику ${shift}${pattern ? `, ${pattern}` : ''}.` : `На цій позиції день у ${city} стартує в ритмі ${shift}${pattern ? `, ${pattern}` : ''}.`),
-    B: isPl ? `Lokalizacja: ${city}. Stawka: ${salary}. Umowa: ${contract}.` : (isRu ? `Локация: ${city}. Оплата: ${salary}. Договор: ${contract}.` : `Локація: ${city}. Оплата: ${salary}. Договір: ${contract}.`),
-    C: isPl ? `W ${city} oferta łączy pracę ${shift} z realnym wdrożeniem i zapleczem organizacyjnym.` : (isRu ? `В ${city} вакансия сочетает смену ${shift} с продуманной адаптацией и бытовыми условиями.` : `У ${city} вакансія поєднує зміну ${shift} з продуманою адаптацією та побутом.`),
-    D: isPl ? `Ta pozycja w ${city} będzie odpowiednia dla osób szukających stabilności. W ostatnich tygodniach głównym plusem według kandydatów jest tu grafik: ${shift}.` : (isRu ? `Эта позиция в ${city} подойдет тем, кто ищет стабильность. В последние недели главный плюс по отзывам кандидатов — это график: ${shift}.` : `Ця позиція у ${city} підійде тим, хто шукає стабільність. За останні тижні головний плюс за відгуками кандидатів — це графік: ${shift}.`),
-    E: isPl ? `Najważniejszy punkt tej oferty to harmonogram: ${shift}${pattern ? ` i ${pattern}` : ''}.` : (isRu ? `Ключевой акцент этой вакансии — график: ${shift}${pattern ? ` и ${pattern}` : ''}.` : `Ключовий акцент цієї вакансії — графік: ${shift}${pattern ? ` та ${pattern}` : ''}.`),
-    F: isPl ? `Ostatnio dostaliśmy kilka opinii o tej ofercie z ${city}. Główna zaleta: jasne zasady, umowa ${contract} i przewidywalne wypłaty.` : (isRu ? `Недавно мы получили несколько отзывов об этой вакансии из ${city}. Главный плюс: понятные условия, ${contract} и предсказуемые выплаты.` : `Нещодавно ми отримали кілька відгуків про цю вакансію з ${city}. Головний плюс: зрозумілі умови, ${contract} та передбачувані виплати.`),
-    G: isPl ? `W tej ofercie od pierwszego dnia wiadomo, za co odpowiadasz i jak wygląda wejście na zmianę.` : (isRu ? `В этой вакансии с первого дня понятно, за что вы отвечаете и как устроен вход в смену.` : `У цій вакансії з першого дня зрозуміло, за що ви відповідаєте і як проходить вхід у зміну.`),
-    H: isPl ? `Ta oferta w ${city} jest dobrym startem, zwłaszcza ze względu na stawki rzędu ${salary}. Często wybierana przez osoby poszukujące pewności.` : (isRu ? `Эта вакансия в ${city} — хороший старт, особенно из-за оплаты уровня ${salary}. Часто выбирается теми, кто ищет надежность.` : `Ця вакансія у ${city} — хороший старт, особливо завдяки оплаті рівня ${salary}. Часто обирається тими, хто шукає надійність.`)
-  };
-
-  const segmentPool = {
-    salary: isPl ? `Wynagrodzenie trzyma poziom ${salary}, a start zaplanowano ${start || 'po uzgodnieniu'}.` : (isRu ? `Оплата держится на уровне ${salary}, выход возможен ${start || 'по согласованию'}.` : `Оплата тримається на рівні ${salary}, старт можливий ${start || 'за узгодженням'}.`),
-    terms: isPl ? `Współpraca odbywa się w formule ${contract}${pattern ? `, tryb: ${pattern}` : ''}.` : (isRu ? `Сотрудничество оформляется как ${contract}${pattern ? `, режим: ${pattern}` : ''}.` : `Співпраця оформлюється як ${contract}${pattern ? `, режим: ${pattern}` : ''}.`),
-    offers: offers.slice(0, 2).join(' '),
-    tasks: tasks.slice(0, 2).join(' '),
-    details: details.slice(0, 2).join(' '),
-    housing: housing.slice(0, 2).join(' '),
-    process: process.slice(0, 2).join(' ')
-  };
-  const modelOrder = {
-    A: ['offers', 'tasks', 'terms', 'details'],
-    B: ['salary', 'terms', 'tasks', 'offers'],
-    C: ['housing', 'terms', 'tasks', 'details'],
-    D: ['salary', 'tasks', 'details'],
-    E: ['terms', 'tasks', 'offers', 'details'],
-    F: ['salary', 'offers', 'tasks', 'details'],
-    G: ['details', 'tasks', 'terms', 'offers'],
-    H: ['process', 'tasks', 'offers', 'terms']
-  };
-  const modelParagraphLimit = { A: 3, B: 2, C: 3, D: 1, E: 2, F: 2, G: 2, H: 3 };
-  const langRecent = variationState?.recentByLang?.[lang] || [];
-  const nextModel = (model) => VACANCY_NARRATIVE_MODELS[(VACANCY_NARRATIVE_MODELS.indexOf(model) + 1) % VACANCY_NARRATIVE_MODELS.length];
-  let model = VACANCY_NARRATIVE_MODELS[Math.abs(hashString(`${page.slug || ''}-${lang}`)) % VACANCY_NARRATIVE_MODELS.length];
-  if (variationState?.lastModelByLang?.[lang] && variationState.lastModelByLang[lang] === model) {
-    model = nextModel(model);
-  }
-
-  const buildModelText = (selectedModel) => {
-    const orderedSegments = modelOrder[selectedModel]
-      .map(key => segmentPool[key])
-      .filter(Boolean);
-    const fallback = isPl
-      ? 'Na rozmowie od razu omawiamy szczegóły startu i zakres pierwszych zmian.'
-      : (isRu ? 'На первом контакте сразу проговариваем условия выхода и задачи на первые смены.' : 'Під час першого контакту одразу узгоджуємо умови виходу та задачі на перші зміни.');
-    const text = [introByModel[selectedModel], ...orderedSegments, fallback]
-      .join(' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-    return text;
-  };
-  const isTooSimilarToRecent = (text) => langRecent.some(prev => cosineSimilarity(prev, text) > MAX_VACANCY_TEXT_SIMILARITY);
-
-  let chosenText = buildModelText(model);
-  for (let i = 0; i < VACANCY_NARRATIVE_MODELS.length; i++) {
-    const tooSimilar = isTooSimilarToRecent(chosenText);
-    if (!tooSimilar) break;
-    model = nextModel(model);
-    chosenText = buildModelText(model);
-  }
-  if (isTooSimilarToRecent(chosenText)) {
-    const allSegmentKeys = Object.keys(segmentPool).filter((key) => segmentPool[key]);
-    for (let attempt = 0; attempt < VACANCY_NARRATIVE_MODELS.length; attempt++) {
-      const introModel = VACANCY_NARRATIVE_MODELS[(VACANCY_NARRATIVE_MODELS.indexOf(model) + attempt) % VACANCY_NARRATIVE_MODELS.length];
-      const orderedKeys = allSegmentKeys
-        .slice()
-        .sort((a, b) => {
-          const aHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${a}`);
-          const bHash = hashString(`${page.slug || ''}-${lang}-${attempt}-${b}`);
-          const aNum = Number(aHash);
-          const bNum = Number(bHash);
-          if (Number.isFinite(aNum) && Number.isFinite(bNum)) return aNum - bNum;
-          return String(aHash).localeCompare(String(bHash)) || a.localeCompare(b);
-        });
-      const candidate = [
-        introByModel[introModel],
-        ...orderedKeys.map((key) => segmentPool[key]).filter(Boolean),
-        isPl
-          ? `Podczas wdrożenia omawiamy harmonogram pierwszych zmian i odpowiedzialność krok po kroku.`
-          : (isRu
-            ? `Во время выхода подробно проговариваем задачи первой недели и порядок работы по смене.`
-            : `Під час виходу детально узгоджуємо задачі першого тижня та порядок роботи в зміні.`)
-      ].join(' ').replace(/\s+/g, ' ').trim();
-      if (!isTooSimilarToRecent(candidate)) {
-        chosenText = candidate;
-        model = introModel;
-        break;
-      }
-    }
-  }
-
-  const needsExtendedNarrative = Boolean(page && page.enforce_long_narrative);
-  if (needsExtendedNarrative && chosenText.length < MIN_EXTENDED_NARRATIVE_LENGTH) {
-    const extensionPool = [
-      ...offers.slice(2),
-      ...tasks.slice(2),
-      ...details.slice(2),
-      ...housing.slice(2),
-      ...process.slice(2),
-      segmentPool.salary,
-      segmentPool.terms
-    ].filter(Boolean);
-    for (const extra of extensionPool) {
-      if (chosenText.length >= MIN_EXTENDED_NARRATIVE_LENGTH) break;
-      chosenText = `${chosenText} ${extra}`.replace(/\s+/g, ' ').trim();
-    }
-    if (chosenText.length < MIN_EXTENDED_NARRATIVE_LENGTH) {
-      chosenText = `${chosenText} ${segmentPool.terms || segmentPool.salary || ''}`.replace(/\s+/g, ' ').trim();
-    }
-  }
-  if (needsExtendedNarrative) {
-    const slug = String(page?.slug || '');
-    const vacancyCodeCandidate = slug.split('-').pop();
-    const vacancyCode = /^\d+$/.test(vacancyCodeCandidate || '') ? vacancyCodeCandidate : '';
-    if (vacancyCode) {
-      const uniqueTailVariants = isPl
-        ? [
-          `Podczas kontaktu podaj kod oferty ${vacancyCode} — wtedy od razu przekazujemy plan pierwszego tygodnia i osobę wdrażającą.`,
-          `W zgłoszeniu wpisz kod oferty ${vacancyCode}; to przyspiesza rozmowę i pozwala od razu ustalić realną datę startu.`,
-          `Kod oferty ${vacancyCode} przypisany jest do konkretnej brygady, dlatego na rozmowie od razu omawiamy jej rytm pracy i obowiązki.`
-        ]
-        : (isRu
-          ? [
-            `Во время отклика укажите код вакансии ${vacancyCode} — так мы сразу даем план первой недели и контакт наставника.`,
-            `Если в заявке указать код вакансии ${vacancyCode}, на первом звонке быстрее согласуем дату выхода и задачи на старт.`,
-            `Код вакансии ${vacancyCode} закреплен за конкретной бригадой, поэтому на собеседовании сразу объясняем ее порядок работы.`
-          ]
-          : [
-            `Під час відгуку вкажіть код вакансії ${vacancyCode} — так ми одразу надаємо план першого тижня та контакт наставника.`,
-            `Якщо у заявці зазначити код вакансії ${vacancyCode}, на першому дзвінку швидше узгодимо дату виходу і стартові задачі.`,
-            `Код вакансії ${vacancyCode} закріплений за конкретною бригадою, тому на співбесіді одразу пояснюємо її робочий ритм.`
-          ]);
-      const uniqueTail = uniqueTailVariants[Math.abs(hashString(`${slug}-${lang}-${UNIQUE_TAIL_HASH_SUFFIX}`)) % uniqueTailVariants.length];
-      chosenText = `${chosenText} ${uniqueTail}`.replace(/\s+/g, ' ').trim();
-    }
-  }
-
-  const sentences = chosenText.match(/[^.!?]+[.!?]?/g)?.map(s => s.trim()).filter(Boolean) || [chosenText];
-  const paragraphTarget = modelParagraphLimit[model] || 2;
-  const chunkSize = Math.max(1, Math.ceil(sentences.length / paragraphTarget));
-  const paragraphs = [];
-  for (let i = 0; i < sentences.length; i += chunkSize) {
-    paragraphs.push(sentences.slice(i, i + chunkSize).join(' ').trim());
-  }
-  if (variationState?.recentByLang?.[lang]) {
-    variationState.lastModelByLang[lang] = model;
-    variationState.recentByLang[lang].push(chosenText);
-    if (variationState.recentByLang[lang].length > 100) variationState.recentByLang[lang].shift();
-  }
-  const rendered = paragraphs.filter(Boolean).map(p => `<p>${escapeHtml(p)}</p>`).join('');
-  return `<div class="vacancy-description">${rendered}</div>`;
-}
 
 function getManualVacancyNarrative(page, lang) {
   const isPl = lang === 'pl';
@@ -3401,30 +3175,15 @@ async function build() {
     const description = page.excerpt || page.description || '';
     const isVacancy = isVacancyPage(page);
 
-    // Dynamically diversify job titles to prevent exact matches
-    if (isVacancy && page.is_generated !== false) {
-      const slugHash = Math.abs(hashString(page.slug || ''));
-      const uaSuffixes = ['— ставка, графік, маршрут', '— реальні умови та відгуки', '— детальний опис', '— умови від роботодавця', '— зарплата та графік', '— чесний огляд вакансії'];
-      const plSuffixes = ['— stawka, grafik, dojazd', '— realne warunki i opinie', '— szczegółowy opis', '— warunki od pracodawcy', '— wypłaty i grafik', '— uczciwa opinia o ofercie'];
-      const ruSuffixes = ['— ставка, график, маршрут', '— реальные условия и отзывы', '— подробное описание', '— условия от работодателя', '— зарплата и график', '— честный обзор вакансии'];
-
-      const titleUa = (page.title || '') + ' ' + uaSuffixes[slugHash % uaSuffixes.length];
-      const titlePl = (page.title_pl || page.title || '') + ' ' + plSuffixes[slugHash % plSuffixes.length];
-      const titleRu = (page.title_ru || page.title || '') + ' ' + ruSuffixes[slugHash % ruSuffixes.length];
-
-      page.title = titleUa;
-      page.title_pl = titlePl;
-      page.title_ru = titleRu;
-    }
     const useManualVacancyText = isVacancy && page.manual_vacancy_text === true;
     const content = isVacancy
-      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ua') : getVacancyNarrative(page, 'ua', vacancyNarrativeVariationState))
+      ? (getManualVacancyNarrative(page, 'ua'))
       : (page.body || page.content || page.excerpt || '');
     const contentPl = isVacancy
-      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'pl') : getVacancyNarrative(page, 'pl', vacancyNarrativeVariationState))
+      ? (getManualVacancyNarrative(page, 'pl'))
       : (page.body_pl || page.body || '');
     const contentRu = isVacancy
-      ? (useManualVacancyText ? getManualVacancyNarrative(page, 'ru') : getVacancyNarrative(page, 'ru', vacancyNarrativeVariationState))
+      ? (getManualVacancyNarrative(page, 'ru'))
       : toRussianFallbackText(page.body_ru || page.body || '');
 
     // Choose structure variant (30% short, 40% medium, 30% detailed)

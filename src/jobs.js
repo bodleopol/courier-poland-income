@@ -103,28 +103,6 @@
     return Math.max(PROOF_MIN_SCORE, Math.min(PROOF_MAX_SCORE, Math.round(numeric)));
   }
 
-  function fallbackProofScoreBySlug(slug) {
-    const raw = String(slug || 'rybezh-proof-fallback');
-    let hash = 0;
-    for (let i = 0; i < raw.length; i++) {
-      hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-    }
-    const span = PROOF_MAX_SCORE - PROOF_MIN_SCORE + 1;
-    return PROOF_MIN_SCORE + (hash % span);
-  }
-
-  function fallbackProofCountBySlug(slug) {
-    const raw = String(slug || 'rybezh-proof-count-fallback');
-    let hash = 0;
-    for (let i = 0; i < raw.length; i++) {
-      hash = (hash * 31 + raw.charCodeAt(i)) >>> 0;
-    }
-    const min = 5;
-    const max = 30;
-    const span = max - min + 1;
-    return min + (hash % span);
-  }
-
   function getProofDataForJob(job) {
     const map = window.PROOF_AGGREGATES || {};
     const real = map[job.slug];
@@ -136,8 +114,8 @@
     }
 
     return {
-      score: fallbackProofScoreBySlug(job.slug),
-      count: fallbackProofCountBySlug(job.slug)
+      score: 0,
+      count: 0
     };
   }
 
