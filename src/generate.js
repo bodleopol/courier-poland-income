@@ -4174,7 +4174,7 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
 
     let indexHtml = pageTpl
       .replace(/{{CTA_LINK}}/g, "/apply.html")
-      .replace(/{{TITLE}}/g, "Знайди роботу в Польщі")
+      .replace(/{{TITLE}}/g, "Rybezh")
       .replace(/{{DESCRIPTION}}/g, "Актуальні вакансії в різних сферах по всій Польщі. Легальне працевлаштування та підтримка.")
       .replace(/{{KEYWORDS}}/g, 'робота в польщі, вакансії польща, працевлаштування')
       .replace(/{{CONTENT}}/g, indexContent)
