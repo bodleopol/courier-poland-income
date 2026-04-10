@@ -2931,6 +2931,13 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
     const portraitContent = await fs.readFile(path.join(SRC, 'portrait-bohdan.jpg'));
     await fs.writeFile(path.join(DIST, 'portrait-bohdan.jpg'), portraitContent);
+    try {
+      const camineContent = await fs.readFile(path.join(SRC, 'camine-sobre-la-muerte.jpg'));
+      await fs.writeFile(path.join(DIST, 'camine-sobre-la-muerte.jpg'), camineContent);
+    } catch (e) {
+      console.log("Could not copy camine-sobre-la-muerte.jpg", e);
+    }
+
   } catch (e) {
     console.warn('⚠️ Bogdan Tiutenko images not found');
   }
