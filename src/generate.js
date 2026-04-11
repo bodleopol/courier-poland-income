@@ -2931,6 +2931,9 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
     const portraitContent = await fs.readFile(path.join(SRC, 'portrait-bohdan.jpg'));
     await fs.writeFile(path.join(DIST, 'portrait-bohdan.jpg'), portraitContent);
+
+    const portraitPaintingContent = await fs.readFile(path.join(SRC, 'portrait-bohdan-painting.jpg'));
+    await fs.writeFile(path.join(DIST, 'portrait-bohdan-painting.jpg'), portraitPaintingContent);
   } catch (e) {
     console.warn('⚠️ Bogdan Tiutenko images not found');
   }
