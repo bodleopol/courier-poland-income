@@ -41,3 +41,11 @@ venv
 testenv
 dist/quiz-data.json
 src/quiz-data.json
+analyze_posts.py
+check_doorway.cjs
+fix_generator.cjs
+fix_posts.js
+fix_posts_doorway.cjs
+fix_posts_wiki.py
+fix_all_posts.py
+src/posts.json
