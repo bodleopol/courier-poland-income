@@ -254,11 +254,25 @@
               <div class="hint" data-lang-content="ua">Додайте професійне фото для кращого враження</div>
             </div>
             <div class="form-group">
-              <label data-lang-content="ua" style="display:block">Посилання (LinkedIn/Портфоліо)</label>
-              <label data-lang-content="pl" style="display:none">Link (LinkedIn/Portfolio)</label>
+              <label data-lang-content="ua" style="display:block">Посилання (LinkedIn/Портфоліо) (необов'язково)</label>
+              <label data-lang-content="pl" style="display:none">Link (LinkedIn/Portfolio) (opcjonalnie)</label>
               <input type="url" id="cv-link" placeholder="https://linkedin.com/in/olena">
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Дата народження (необов'язково)</label>
+              <label data-lang-content="pl" style="display:none">Data urodzenia (opcjonalnie)</label>
+              <input type="date" id="cv-dob">
+            </div>
+            <div class="form-group">
+              <label data-lang-content="ua" style="display:block">Очікувана зарплата (необов'язково)</label>
+              <label data-lang-content="pl" style="display:none">Oczekiwane wynagrodzenie (opcjonalnie)</label>
+              <input type="text" id="cv-salary" placeholder="5000 PLN">
+            </div>
+          </div>
+
           <div style="text-align:right;margin-top:1rem;">
             <button class="btn-generate" onclick="goStep(2)"><span data-lang-content="ua" style="display:inline">Далі</span><span data-lang-content="pl" style="display:none">Dalej</span> →</button>
           </div>
@@ -298,6 +312,15 @@
             </div>
           </div>
           <button class="btn-action secondary" onclick="addExp()" style="margin-top:0.5rem;">+ <span data-lang-content="ua" style="display:inline">Додати ще</span><span data-lang-content="pl" style="display:none">Dodaj kolejne</span></button>
+
+          <h2 style="margin-top:1.5rem;">🏅 <span data-lang-content="ua" style="display:inline">Курси та Сертифікати (необов'язково)</span><span data-lang-content="pl" style="display:none">Kursy i Certyfikaty (opcjonalnie)</span></h2>
+          <div id="certs-list"></div>
+          <button class="btn-action secondary" onclick="addCertEntry()" style="margin-top:0.5rem;margin-bottom:1.5rem;">+ <span data-lang-content="ua" style="display:inline">Додати сертифікат</span><span data-lang-content="pl" style="display:none">Dodaj certyfikat</span></button>
+
+          <h2 style="margin-top:1.5rem;">🎯 <span data-lang-content="ua" style="display:inline">Хобі та інтереси (необов'язково)</span><span data-lang-content="pl" style="display:none">Zainteresowania (opcjonalnie)</span></h2>
+          <div class="form-group">
+            <input type="text" id="cv-hobbies" placeholder="Спорт, Читання, Фотографія / Sport, Czytanie">
+          </div>
 
           <h2 style="margin-top:1.5rem;">🎓 <span data-lang-content="ua" style="display:inline">Освіта</span><span data-lang-content="pl" style="display:none">Wykształcenie</span></h2>
           <div class="form-row">
@@ -514,6 +537,21 @@
     };
     function cvT(k) { var l = getLang(); return (cvLabels[k] && cvLabels[k][l]) || cvLabels[k].ua; }
 
+    window.addCertEntry = function() {
+      const list = $('certs-list');
+      const div = document.createElement('div');
+      div.className = 'exp-entry form-row';
+      div.innerHTML = `<div class="form-group" style="flex:2">
+          <label>${$('cv-lang') && $('cv-lang').value === 'pl' ? 'Nazwa kursu/certyfikatu' : 'Назва курсу/сертифікату'}</label>
+          <input type="text" class="cert-name" placeholder="${$('cv-lang') && $('cv-lang').value === 'pl' ? 'Kurs spawacza MAG' : 'Курс зварювальника MAG'}">
+        </div>
+        <div class="form-group" style="flex:1">
+          <label>${$('cv-lang') && $('cv-lang').value === 'pl' ? 'Rok' : 'Рік'}</label>
+          <input type="text" class="cert-year" placeholder="2023">
+        </div>`;
+      list.appendChild(div);
+    };
+
     window.addExp = function() {
       const list = $('exp-list');
       const div = document.createElement('div');
@@ -590,6 +628,18 @@
       const enLevel = $('cv-lang-en').value;
       const ruLevel = $('cv-lang-ru').value;
       const link = $('cv-link').value || '';
+      const dob = $('cv-dob') ? $('cv-dob').value : '';
+      const salary = $('cv-salary') ? $('cv-salary').value : '';
+
+      const hobbies = $('cv-hobbies') ? $('cv-hobbies').value : '';
+
+      // Collect certs
+      const certs = [];
+      document.querySelectorAll('.exp-entry .cert-name').forEach((el, index) => {
+        const name = el.value;
+        const year = document.querySelectorAll('.exp-entry .cert-year')[index] ? document.querySelectorAll('.exp-entry .cert-year')[index].value : '';
+        if (name) certs.push({ name, year });
+      });
 
       // Collect experience
       const exps = [];
@@ -610,10 +660,13 @@
       }
       html += `<div>`;
       html += `<h3 style="border:none;margin-bottom:0.25rem;padding:0;">${name}</h3>`;
-      html += `<div class="contact-line" style="margin-bottom:0;">${email} | ${phone} | ${city}</div>`;
+      html += `<div class="contact-line" style="margin-bottom:0;">${email} | ${phone} | ${city}`;
+      if (dob) html += ` | ${isPl ? 'Data ur.' : 'Дата нар.'} ${dob}`;
+      html += `</div>`;
       if (link) {
         html += `<div style="font-size:0.85rem;margin-top:0.25rem;"><a href="${link}" target="_blank" style="color:#0f766e;text-decoration:none;">${link}</a></div>`;
       }
+
       html += `</div></div>`;
 
       // Objective
@@ -635,6 +688,16 @@
         });
       }
 
+      // Certifications
+      if (certs.length) {
+        html += `<h4 style="margin-top:1.5rem;margin-bottom:0.75rem;padding-bottom:0.25rem;border-bottom:1px solid #e5e7eb;color:#0f766e;text-transform:uppercase;font-size:1.1rem;letter-spacing:0.05em;">${isPl ? 'KURSY I CERTYFIKATY' : 'КУРСИ ТА СЕРТИФІКАТИ'}</h4>`;
+        html += `<ul style="margin:0;padding-left:1.5rem;font-size:0.95rem;color:#374151;">`;
+        certs.forEach(c => {
+          html += `<li style="margin-bottom:0.25rem;"><strong>${c.name}</strong> ${c.year ? '(' + c.year + ')' : ''}</li>`;
+        });
+        html += `</ul>`;
+      }
+
       // Education
       if (school || degree) {
         html += `<h4>${isPl ? 'WYKSZTAŁCENIE' : 'ОСВІТА'}</h4>`;
@@ -653,6 +716,18 @@
       html += `<p>🇵🇱 ${isPl ? 'Polski' : 'Польська'} — ${plLevel}</p>`;
       if (enLevel) html += `<p>🇬🇧 ${isPl ? 'Angielski' : 'Англійська'} — ${enLevel}</p>`;
       if (ruLevel) html += `<p>🇷🇺 ${isPl ? 'Rosyjski' : 'Російська'} — ${ruLevel}</p>`;
+
+      // Hobbies
+      if (hobbies) {
+        html += `<h4 style="margin-top:1.5rem;margin-bottom:0.75rem;padding-bottom:0.25rem;border-bottom:1px solid #e5e7eb;color:#0f766e;text-transform:uppercase;font-size:1.1rem;letter-spacing:0.05em;">${isPl ? 'ZAINTERESOWANIA' : 'ХОБІ ТА ІНТЕРЕСИ'}</h4>`;
+        html += `<p style="margin:0;font-size:0.95rem;color:#374151;">${hobbies}</p>`;
+      }
+
+      // Additional Info (Salary)
+      if (salary) {
+        html += `<h4 style="margin-top:1.5rem;margin-bottom:0.75rem;padding-bottom:0.25rem;border-bottom:1px solid #e5e7eb;color:#0f766e;text-transform:uppercase;font-size:1.1rem;letter-spacing:0.05em;">${isPl ? 'INFORMACJE DODATKOWE' : 'ДОДАТКОВА ІНФОРМАЦІЯ'}</h4>`;
+        html += `<p style="margin:0;font-size:0.95rem;color:#374151;">${isPl ? 'Oczekiwane wynagrodzenie' : 'Очікувана зарплата'}: ${salary}</p>`;
+      }
 
       // RODO
       html += `<hr style="margin:1.5rem 0;border-color:#e5e7eb;">`;
