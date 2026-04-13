@@ -449,6 +449,8 @@ function mainRandom() {
     'nav.tool.map': {"ua":"🗺️ Карта українців","pl":"🗺️ Mapa Ukraińców","ru":"🗺️ Карта русскоязычных","en":"📍 Map of Ukrainians"},
     'nav.tool.quiz': {"ua":"📚 Навчання / Тести","pl":"📚 Szkolenia / Testy","ru":"📚 Обучение / Тесты","en":"📚 Training / Quizzes"},
     'nav.tool.redflag': {"ua":"🚩 Перевірка вакансій","pl":"🚩 Sprawdzanie ofert","ru":"🚩 Проверка вакансий","en":"🚩 Job Checker"},
+    'nav.tool.tinder': {"ua":"🔥 Tinder Вакансій","pl":"🔥 Tinder Ofert","ru":"🔥 Tinder Вакансий","en":"🔥 Job Tinder"},
+    'nav.tool.tinder.short': {"ua":"🔥 Tinder Вакансій","pl":"🔥 Tinder Ofert","ru":"🔥 Tinder Вакансий","en":"🔥 Job Tinder"},
     'nav.tools': {"ua":"🛠️ Інструменти","pl":"🛠️ Narzędzia","ru":"🛠️ Инструменты","en":"🛠️ Tools"},
     'placeholder.city': {"ua":"Варшава, Краків...","pl":"Warszawa, Kraków...","en":"Warsaw, Krakow...","ru":"Варшава, Краков..."},
     'placeholder.contact': {"ua":"+48 123 456 789 або contacts@rybezh.site","pl":"+48 123 456 789 lub contacts@rybezh.site","en":"+48 123 456 789 or contacts@rybezh.site","ru":"+48 123 456 789 или contacts@rybezh.site"},

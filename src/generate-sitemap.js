@@ -180,6 +180,7 @@ const STATIC_SITEMAP_PAGES = [
   { url: 'red-flag.html',     priority: '0.8', changefreq: 'monthly' },
   { url: 'map.html',          priority: '0.9', changefreq: 'daily' },
   { url: 'proof.html',        priority: '0.9', changefreq: 'daily' },
+  { url: 'tinder.html',       priority: '0.7', changefreq: 'monthly' },
   { url: 'for-employers.html', priority: '0.7', changefreq: 'monthly' },
   { url: 'press.html',        priority: '0.5', changefreq: 'monthly' },
   { url: 'rent.html',         priority: '0.8', changefreq: 'monthly' },
