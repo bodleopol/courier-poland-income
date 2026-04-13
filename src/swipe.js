@@ -3,14 +3,14 @@
   let currentIndex = 0;
   let cart = [];
 
-  const container = document.getElementById('tinderCardsContainer');
-  const noMoreCards = document.getElementById('tinderNoMoreCards');
-  const btnNope = document.getElementById('tinderBtnNope');
-  const btnLike = document.getElementById('tinderBtnLike');
-  const cartList = document.getElementById('tinderCartList');
-  const cartCount = document.getElementById('tinderCartCount');
-  const cartEmpty = document.getElementById('tinderCartEmpty');
-  const applyAllBtn = document.getElementById('tinderApplyAllBtn');
+  const container = document.getElementById('swipeCardsContainer');
+  const noMoreCards = document.getElementById('swipeNoMoreCards');
+  const btnNope = document.getElementById('swipeBtnNope');
+  const btnLike = document.getElementById('swipeBtnLike');
+  const cartList = document.getElementById('swipeCartList');
+  const cartCount = document.getElementById('swipeCartCount');
+  const cartEmpty = document.getElementById('swipeCartEmpty');
+  const applyAllBtn = document.getElementById('swipeApplyAllBtn');
 
   // Helper to get localized field based on site lang
   function getLocalizedValue(job, field, lang) {
@@ -41,7 +41,7 @@
   // Load cart from localStorage
   function loadCart() {
     try {
-      const saved = localStorage.getItem('tinder_cart');
+      const saved = localStorage.getItem('swipe_cart');
       if (saved) {
         cart = JSON.parse(saved);
       }
@@ -54,7 +54,7 @@
 
   // Save cart to localStorage
   function saveCart() {
-    localStorage.setItem('tinder_cart', JSON.stringify(cart));
+    localStorage.setItem('swipe_cart', JSON.stringify(cart));
     renderCart();
   }
 
@@ -86,24 +86,24 @@
 
     cart.forEach((job, index) => {
       const item = document.createElement('div');
-      item.className = 'tinder-cart-item';
+      item.className = 'swipe-cart-item';
 
       const title = getLocalizedValue(job, 'title', lang);
       const city = getLocalizedValue(job, 'city', lang);
 
       item.innerHTML = `
-        <div class="tinder-cart-item-info">
-          <div class="tinder-cart-item-title">${title}</div>
-          <div class="tinder-cart-item-city">${city}</div>
+        <div class="swipe-cart-item-info">
+          <div class="swipe-cart-item-title">${title}</div>
+          <div class="swipe-cart-item-city">${city}</div>
         </div>
-        <button class="tinder-cart-item-remove" data-slug="${job.slug}">×</button>
+        <button class="swipe-cart-item-remove" data-slug="${job.slug}">×</button>
       `;
 
       cartList.appendChild(item);
     });
 
     // Add remove listeners
-    document.querySelectorAll('.tinder-cart-item-remove').forEach(btn => {
+    document.querySelectorAll('.swipe-cart-item-remove').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const slug = e.target.getAttribute('data-slug');
         cart = cart.filter(j => j.slug !== slug);
@@ -140,7 +140,7 @@
     const cartSlugs = cart.map(j => j.slug);
     jobs = rawJobs.filter(j => !cartSlugs.includes(j.slug));
 
-    // Shuffle jobs for Tinder-like experience
+    // Shuffle jobs for Swipe-like experience
     jobs = shuffleArray(jobs);
 
     renderCards();
@@ -150,7 +150,7 @@
     if (!container) return;
 
     // Remove existing cards
-    const existingCards = document.querySelectorAll('.tinder-card');
+    const existingCards = document.querySelectorAll('.swipe-card');
     existingCards.forEach(c => c.remove());
 
     const lang = localStorage.getItem('site_lang') || 'ua';
@@ -175,7 +175,7 @@
       const job = jobs[jobIndex];
 
       const card = document.createElement('div');
-      card.className = 'tinder-card';
+      card.className = 'swipe-card';
       // Stack effect styling
       const scale = 1 - (i * 0.05);
       const translateY = i * 15;
@@ -184,7 +184,7 @@
 
       if (i === 0) {
         // Only top card is draggable
-        card.id = 'tinderCurrentCard';
+        card.id = 'swipeCurrentCard';
         initDragAndDrop(card, job);
       }
 
@@ -195,15 +195,15 @@
       const excerpt = getLocalizedValue(job, 'excerpt', lang);
 
       card.innerHTML = `
-        <div class="tinder-badge like">LIKE</div>
-        <div class="tinder-badge nope">NOPE</div>
-        <div class="tinder-card-content">
-          ${job.category ? `<div class="tinder-card-category">${job.category}</div>` : ''}
-          <div class="tinder-card-title">${title}</div>
-          ${job.salary ? `<div class="tinder-card-salary">💰 ${job.salary}</div>` : ''}
-          ${company ? `<div class="tinder-card-detail">🏢 ${company}</div>` : ''}
-          <div class="tinder-card-detail">📍 ${city}</div>
-          <div class="tinder-card-excerpt">${excerpt}</div>
+        <div class="swipe-badge like">LIKE</div>
+        <div class="swipe-badge nope">NOPE</div>
+        <div class="swipe-card-content">
+          ${job.category ? `<div class="swipe-card-category">${job.category}</div>` : ''}
+          <div class="swipe-card-title">${title}</div>
+          ${job.salary ? `<div class="swipe-card-salary">💰 ${job.salary}</div>` : ''}
+          ${company ? `<div class="swipe-card-detail">🏢 ${company}</div>` : ''}
+          <div class="swipe-card-detail">📍 ${city}</div>
+          <div class="swipe-card-excerpt">${excerpt}</div>
         </div>
       `;
 
@@ -238,8 +238,8 @@
     let currentX = 0;
     let currentY = 0;
 
-    const badgeLike = card.querySelector('.tinder-badge.like');
-    const badgeNope = card.querySelector('.tinder-badge.nope');
+    const badgeLike = card.querySelector('.swipe-badge.like');
+    const badgeNope = card.querySelector('.swipe-badge.nope');
 
     function onMove(clientX, clientY) {
       if (!isDragging) return;
@@ -318,14 +318,14 @@
 
     if (btnNope) {
       btnNope.addEventListener('click', () => {
-        const card = document.getElementById('tinderCurrentCard');
+        const card = document.getElementById('swipeCurrentCard');
         if (card && jobs[currentIndex]) handleSwipe(card, jobs[currentIndex], -1);
       });
     }
 
     if (btnLike) {
       btnLike.addEventListener('click', () => {
-        const card = document.getElementById('tinderCurrentCard');
+        const card = document.getElementById('swipeCurrentCard');
         if (card && jobs[currentIndex]) handleSwipe(card, jobs[currentIndex], 1);
       });
     }
