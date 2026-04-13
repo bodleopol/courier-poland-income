@@ -3089,7 +3089,7 @@ async function build() {
 
   // copy static pages
   const staticPages = [
-  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'quiz.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'quiz-ru.html', 'bogdan-tiutenko.html'];
+  'respond.html','apply.html', 'about.html', 'contact.html', 'privacy.html', 'terms.html', 'company.html', 'faq.html', '404.html', 'calculator.html', 'cv-generator.html', 'red-flag.html', 'map.html', 'proof.html', 'for-employers.html', 'press.html', 'rent.html', 'quiz.html', 'swipe.html', 'swipe-ru.html', 'apply-ru.html', 'about-ru.html', 'contact-ru.html', 'privacy-ru.html', 'terms-ru.html', 'company-ru.html', 'faq-ru.html', 'calculator-ru.html', 'cv-generator-ru.html', 'red-flag-ru.html', 'map-ru.html', 'proof-ru.html', 'for-employers-ru.html', 'blog-ru.html', 'vacancies-ru.html', 'index-ru.html', 'game.html', 'quiz-ru.html', 'bogdan-tiutenko.html'];
   for (const p of staticPages) {
     try {
       let pContent = await fs.readFile(path.join(SRC, p), 'utf8');
@@ -3104,6 +3104,9 @@ async function build() {
         } else if (p === 'bogdan-tiutenko.html') {
           title = 'Богдан Тютенко — Інвестор';
           desc = 'Богдан Тютенко — Інвестор платформи Rybezh. Проживає у місті Львів.';
+        } else if (p.startsWith('swipe')) {
+          title = 'Свайп Вакансій | Свайпай та зберігай роботу в Польщі';
+          desc = 'Інноваційний пошук роботи в стилі Свайп. Свайпай вправо, щоб зберегти вакансію у кошик, та подай заявку на всі одразу.';
         }
 
         pContent = pageTpl
@@ -4348,6 +4351,14 @@ window.LATEST_JOBS = ${JSON.stringify(latestJobs)};
     } catch (e) {
       console.error('Error generating vacancies page:', e);
     }
+
+  // Copy swipe assets
+  try {
+    const swipeJsContent = await fs.readFile(path.join(SRC, 'swipe.js'), 'utf8');
+    await fs.writeFile(path.join(DIST, 'swipe.js'), swipeJsContent, 'utf8');
+  } catch (e) {
+    console.error('Error copying swipe.js:', e);
+  }
 
 
 
