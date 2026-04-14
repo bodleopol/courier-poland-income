@@ -3411,7 +3411,7 @@ async function build() {
   const links = [];
   for (const page of pagesToGenerate) {
     const tpl = pageTpl;
-    const description = page.excerpt || page.description || '';
+    const description = page.excerpt || page.description || page.description_ua || page.description_en || page.description_pl || page.description_ru || '';
     const isVacancy = isVacancyPage(page);
 
     // DIVERSIFY JOB TITLES (Anti-Doorway)
@@ -5181,8 +5181,8 @@ function buildJobPostingJsonLd(page) {
   const validThrough = toISODate(addDays(now, 60));
   const addr = cityToJobAddress(page.city);
 
-  // Prefer excerpt as short description; fall back to body stripped of HTML
-  const description = stripHtml(page.excerpt || page.description || page.body || '');
+  // Prefer excerpt as short description; fall back to localized descriptions or body stripped of HTML
+  const description = stripHtml(page.excerpt || page.description || page.description_ua || page.description_en || page.description_pl || page.description_ru || page.body || '');
   const url = `https://rybezh.site/${page.slug}.html`;
 
   // Try to parse salary from string like "5000-7000 PLN"
