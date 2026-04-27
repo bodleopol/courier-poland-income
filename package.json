@@ -4,7 +4,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
+    "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\"",
+    "build": "mkdir -p dist && cp -r src/* dist/"
   },
   "devDependencies": {
     "@cspell/dict-pl_pl": "^3.0.6",
