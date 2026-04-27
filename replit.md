@@ -39,3 +39,24 @@ The original Cloudflare Worker config (`wrangler.toml`, `src/worker.js`) is left
 - `scripts/` — One-off maintenance/data scripts (deduping, batch additions, IndexNow ping, etc.).
 - `dist/` — Generated site output (created by `npm run build`, not committed).
 - `server.js` — Replit static preview server.
+
+## Indexability & Anti-Doorway Rules
+
+To avoid Google "doorway page" penalties, generated vacancies are deduplicated *before* being written to disk:
+
+- **`src/indexability.js`** — single source of truth shared by `generate.js` and `generate-sitemap.js`.
+- A *manual* vacancy (`is_generated: false`) is always indexable.
+- A *generated* vacancy is indexable **only if** (a) it has an entry in `src/vacancy-enrichments.js`, **and** (b) it is the first slug to claim its `jobBase` (city + role + employment type) site-wide.
+- Non-indexable generated vacancies are **completely skipped** during build — no HTML file, no sitemap entry, no `jobs-data.json` record. They cannot be served at all.
+
+## Vacancy Enrichments
+
+`src/vacancy-enrichments.js` adds unique trilingual (UA/PL/RU) editorial content (quote, local tip, district detail) to a curated subset of generated vacancies. **Each entry directly enables one indexable vacancy page** — keep entries:
+
+- Keyed by exact slug from `src/content.json`.
+- Sorted alphabetically (helps merge diffs).
+- Hand-written, varied across cities, districts, and roles. Avoid templated/AI-style prose.
+
+## Class Naming
+
+Avoid "AI-generated" giveaway class names. The CSS uses neutral semantic names like `.vacancy-section-title`, `.vacancy-extra`, `.vacancy-extra__quote`, `.vacancy-extra__tip`, `.vacancy-extra__detail` — not `.job-human__*`, `.job-enrichment`, `.job-quote`, etc.

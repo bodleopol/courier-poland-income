@@ -14422,8 +14422,8 @@
     "category": "construction",
     "city": "Варшава",
     "city_pl": "Warszawa",
-    "title": "Електромонтажник в Варшава",
-    "title_pl": "Elektromonter w Warszawa",
+    "title": "Електромонтер — Варшава",
+    "title_pl": "Elektromonter — Warszawa",
     "salary": "36 - 57 PLN/h",
     "company": "PersonnelOne",
     "shift_ua": "2 дні / 2 дні",
@@ -14529,15 +14529,17 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: ротація зон кожні 2-3 год",
-    "shift_structure_pl": "Struktura zmiany: rotacja stref co 2-3 h"
+    "shift_structure_pl": "Struktura zmiany: rotacja stref co 2-3 h",
+    "title_en": "Electrician — Варшава",
+    "title_ru": "Электромонтёр — Варшава"
   },
   {
     "slug": "krakow-construction-elektryk-70",
     "category": "construction",
     "city": "Краків",
     "city_pl": "Kraków",
-    "title": "Електромонтажник в Краків",
-    "title_pl": "Elektryk w Kraków",
+    "title": "Електрик — Краків",
+    "title_pl": "Elektryk — Kraków",
     "salary": "38 - 54 PLN/h",
     "company": "StaffLine Serwis",
     "shift_ua": "Позмінно (3 зміни)",
@@ -14640,7 +14642,9 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: вечірня зона",
-    "shift_structure_pl": "Struktura zmiany: strefa wieczorna"
+    "shift_structure_pl": "Struktura zmiany: strefa wieczorna",
+    "title_en": "Electrician — Краків",
+    "title_ru": "Электрик — Краків"
   },
   {
     "slug": "wroclaw-construction-monter-sieci-71",
@@ -14756,8 +14760,8 @@
     "category": "construction",
     "city": "Познань",
     "city_pl": "Poznań",
-    "title": "Електрик — Познань",
-    "title_pl": "Elektromonter w Poznań",
+    "title": "Електромонтер — Познань",
+    "title_pl": "Elektromonter — Poznań",
     "salary": "6400 - 9500 PLN",
     "company": "LabourNet Group",
     "shift_ua": "Ранок / Вечір",
@@ -14859,7 +14863,9 @@
     "physical_ua": "Фізичні вимоги: робота на висоті",
     "physical_pl": "Wymagania fizyczne: praca na wysokości",
     "shift_structure_ua": "Структура зміни: ранкова зона",
-    "shift_structure_pl": "Struktura zmiany: strefa poranna"
+    "shift_structure_pl": "Struktura zmiany: strefa poranna",
+    "title_en": "Electrician — Познань",
+    "title_ru": "Электромонтёр — Познань"
   },
   {
     "slug": "gdansk-construction-monter-sieci-73",
@@ -15083,8 +15089,8 @@
     "category": "construction",
     "city": "Лодзь",
     "city_pl": "Łódź",
-    "title": "Монтер мереж у Лодзь",
-    "title_pl": "Elektromonter w Łódź",
+    "title": "Електромонтер — Лодзь",
+    "title_pl": "Elektromonter — Łódź",
     "salary": "6300 - 9500 PLN",
     "company": "ProStaff Polska",
     "shift_ua": "2 дні / 2 дні",
@@ -15187,15 +15193,17 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: нічна зона",
-    "shift_structure_pl": "Struktura zmiany: strefa nocna"
+    "shift_structure_pl": "Struktura zmiany: strefa nocna",
+    "title_en": "Electrician — Лодзь",
+    "title_ru": "Электромонтёр — Лодзь"
   },
   {
     "slug": "katowice-construction-elektryk-76",
     "category": "construction",
     "city": "Катовіце",
     "city_pl": "Katowice",
-    "title": "Монтер мереж у Катовіце",
-    "title_pl": "Elektryk w Katowice",
+    "title": "Електрик — Катовіце",
+    "title_pl": "Elektryk — Katowice",
     "salary": "6300 - 9400 PLN",
     "company": "WorkPlus Group",
     "shift_ua": "2 дні / 2 дні",
@@ -15299,7 +15307,9 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: ранкова зона",
-    "shift_structure_pl": "Struktura zmiany: strefa poranna"
+    "shift_structure_pl": "Struktura zmiany: strefa poranna",
+    "title_en": "Electrician — Катовіце",
+    "title_ru": "Электрик — Катовіце"
   },
   {
     "slug": "lublin-construction-monter-sieci-77",
@@ -15523,8 +15533,8 @@
     "category": "construction",
     "city": "Ряшів",
     "city_pl": "Rzeszów",
-    "title": "Монтер мереж в Ряшів",
-    "title_pl": "Elektromonter w Rzeszów",
+    "title": "Електромонтер — Ряшів",
+    "title_pl": "Elektromonter — Rzeszów",
     "salary": "37 - 55 PLN/h",
     "company": "WorkPlus Group",
     "shift_ua": "Тільки нічні",
@@ -15627,15 +15637,17 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: нічна зона",
-    "shift_structure_pl": "Struktura zmiany: strefa nocna"
+    "shift_structure_pl": "Struktura zmiany: strefa nocna",
+    "title_en": "Electrician — Ряшів",
+    "title_ru": "Электромонтёр — Ряшів"
   },
   {
     "slug": "torun-construction-elektryk-80",
     "category": "construction",
     "city": "Торунь",
     "city_pl": "Toruń",
-    "title": "Монтер мереж — Торунь",
-    "title_pl": "Elektryk w Toruń",
+    "title": "Електрик — Торунь",
+    "title_pl": "Elektryk — Toruń",
     "salary": "6100 - 9400 PLN",
     "company": "WorkPlus Group",
     "shift_ua": "2 дні / 2 дні",
@@ -15739,15 +15751,17 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: ротація зон кожні 2-3 год",
-    "shift_structure_pl": "Struktura zmiany: rotacja stref co 2-3 h"
+    "shift_structure_pl": "Struktura zmiany: rotacja stref co 2-3 h",
+    "title_en": "Electrician — Торунь",
+    "title_ru": "Электрик — Торунь"
   },
   {
     "slug": "plock-construction-elektryk-81",
     "category": "construction",
     "city": "Плоцьк",
     "city_pl": "Płock",
-    "title": "Електромонтажник — Плоцьк",
-    "title_pl": "Elektryk w Płock",
+    "title": "Електрик — Плоцьк",
+    "title_pl": "Elektryk — Płock",
     "salary": "6000 - 9600 PLN",
     "company": "TopStaffing",
     "shift_ua": "Позмінно (3 зміни)",
@@ -15853,7 +15867,9 @@
     "physical_ua": "Фізичні вимоги: піднімання до 25 кг",
     "physical_pl": "Wymagania fizyczne: dźwiganie do 25 kg",
     "shift_structure_ua": "Структура зміни: одна основна зона",
-    "shift_structure_pl": "Struktura zmiany: jedna główna strefa"
+    "shift_structure_pl": "Struktura zmiany: jedna główna strefa",
+    "title_en": "Electrician — Плоцьк",
+    "title_ru": "Электрик — Плоцьк"
   },
   {
     "slug": "sosnowiec-construction-monter-sieci-82",
@@ -15970,8 +15986,8 @@
     "category": "construction",
     "city": "Гдиня",
     "city_pl": "Gdynia",
-    "title": "Електрик — Гдиня",
-    "title_pl": "Elektromonter w Gdynia",
+    "title": "Електромонтер — Гдиня",
+    "title_pl": "Elektromonter — Gdynia",
     "salary": "6400 - 9900 PLN",
     "company": "FastLogistics Sp. z o.o.",
     "shift_ua": "Позмінно (3 зміни)",
@@ -16074,7 +16090,9 @@
     "physical_ua": "Фізичні вимоги: піднімання до 25 кг",
     "physical_pl": "Wymagania fizyczne: dźwiganie do 25 kg",
     "shift_structure_ua": "Структура зміни: нічна зона",
-    "shift_structure_pl": "Struktura zmiany: strefa nocna"
+    "shift_structure_pl": "Struktura zmiany: strefa nocna",
+    "title_en": "Electrician — Гдиня",
+    "title_ru": "Электромонтёр — Гдиня"
   },
   {
     "slug": "warsaw-construction-monter-instalacji-sanitarnych-84",
@@ -16302,8 +16320,8 @@
     "category": "construction",
     "city": "Вроцлав",
     "city_pl": "Wrocław",
-    "title": "Монтер санітарних систем — Вроцлав",
-    "title_pl": "Hydraulik w Wrocław",
+    "title": "Сантехнік — Вроцлав",
+    "title_pl": "Hydraulik — Wrocław",
     "salary": "38 - 52 PLN/h",
     "company": "BudPol Construction",
     "shift_ua": "Пн-Пт, 8:00-16:00",
@@ -16406,15 +16424,17 @@
     "physical_ua": "Фізичні вимоги: фізична витривалість",
     "physical_pl": "Wymagania fizyczne: wytrzymałość fizyczna",
     "shift_structure_ua": "Структура зміни: одна основна зона",
-    "shift_structure_pl": "Struktura zmiany: jedna główna strefa"
+    "shift_structure_pl": "Struktura zmiany: jedna główna strefa",
+    "title_en": "Plumber — Вроцлав",
+    "title_ru": "Сантехник — Вроцлав"
   },
   {
     "slug": "poznan-construction-hydraulik-87",
     "category": "construction",
     "city": "Познань",
     "city_pl": "Poznań",
-    "title": "Гідравлік у Познань",
-    "title_pl": "Hydraulik w Poznań",
+    "title": "Сантехнік — Познань",
+    "title_pl": "Hydraulik — Poznań",
     "salary": "6300 - 8800 PLN",
     "company": "PrimeKadra",
     "shift_ua": "2 дні / 2 дні",
@@ -16520,7 +16540,9 @@
     "physical_ua": "Фізичні вимоги: піднімання до 25 кг",
     "physical_pl": "Wymagania fizyczne: dźwiganie do 25 kg",
     "shift_structure_ua": "Структура зміни: ранкова зона",
-    "shift_structure_pl": "Struktura zmiany: strefa poranna"
+    "shift_structure_pl": "Struktura zmiany: strefa poranna",
+    "title_en": "Plumber — Познань",
+    "title_ru": "Сантехник — Познань"
   },
   {
     "slug": "gdansk-construction-monter-instalacji-sanitarnych-88",
@@ -16864,8 +16886,8 @@
     "category": "construction",
     "city": "Катовіце",
     "city_pl": "Katowice",
-    "title": "Монтер санітарних систем — Катовіце",
-    "title_pl": "Hydraulik w Katowice",
+    "title": "Сантехнік — Катовіце",
+    "title_pl": "Hydraulik — Katowice",
     "salary": "6200 - 9400 PLN",
     "company": "PersonnelOne",
     "shift_ua": "2 дні / 2 дні",
@@ -16966,7 +16988,9 @@
     "physical_ua": "Фізичні вимоги: робота на висоті",
     "physical_pl": "Wymagania fizyczne: praca na wysokości",
     "shift_structure_ua": "Структура зміни: одна основна зона",
-    "shift_structure_pl": "Struktura zmiany: jedna główna strefa"
+    "shift_structure_pl": "Struktura zmiany: jedna główna strefa",
+    "title_en": "Plumber — Катовіце",
+    "title_ru": "Сантехник — Катовіце"
   },
   {
     "slug": "lublin-construction-hydraulik-92",
@@ -17305,8 +17329,8 @@
     "category": "construction",
     "city": "Плоцьк",
     "city_pl": "Płock",
-    "title": "Монтер санітарних систем у Плоцьк",
-    "title_pl": "Hydraulik w Płock",
+    "title": "Сантехнік — Плоцьк",
+    "title_pl": "Hydraulik — Płock",
     "salary": "6200 - 8500 PLN",
     "company": "PersonnelOne",
     "shift_ua": "Ранок / Вечір",
@@ -17409,7 +17433,9 @@
     "physical_ua": "Фізичні вимоги: піднімання до 25 кг",
     "physical_pl": "Wymagania fizyczne: dźwiganie do 25 kg",
     "shift_structure_ua": "Структура зміни: одна основна зона",
-    "shift_structure_pl": "Struktura zmiany: jedna główna strefa"
+    "shift_structure_pl": "Struktura zmiany: jedna główna strefa",
+    "title_en": "Plumber — Плоцьк",
+    "title_ru": "Сантехник — Плоцьк"
   },
   {
     "slug": "sosnowiec-construction-monter-instalacji-sanitarnych-96",
@@ -18306,8 +18332,8 @@
     "category": "construction",
     "city": "Лодзь",
     "city_pl": "Łódź",
-    "title": "Зварювальник TIG — Лодзь",
-    "title_pl": "Ślusarz-spawacz w Łódź",
+    "title": "Слюсар-зварювальник — Лодзь",
+    "title_pl": "Ślusarz-spawacz — Łódź",
     "salary": "7400 - 11800 PLN",
     "company": "WorkPlus Group",
     "shift_ua": "2 дні / 2 дні",
@@ -18408,7 +18434,9 @@
     "physical_ua": "Фізичні вимоги: робота на висоті",
     "physical_pl": "Wymagania fizyczne: praca na wysokości",
     "shift_structure_ua": "Структура зміни: одна основна зона",
-    "shift_structure_pl": "Struktura zmiany: jedna główna strefa"
+    "shift_structure_pl": "Struktura zmiany: jedna główna strefa",
+    "title_en": "Locksmith-Welder — Лодзь",
+    "title_ru": "Слесарь-сварщик — Лодзь"
   },
   {
     "slug": "katowice-construction-spawacz-mig-mag-105",
@@ -21389,8 +21417,8 @@
     "category": "production",
     "city": "Лодзь",
     "city_pl": "Łódź",
-    "title": "Токар CNC — Лодзь",
-    "title_pl": "Frezer CNC w Łódź",
+    "title": "Фрезерувальник CNC — Лодзь",
+    "title_pl": "Frezer CNC — Łódź",
     "salary": "6600 - 10100 PLN",
     "company": "WorkPlus Group",
     "shift_ua": "Позмінно (3 зміни)",
@@ -21493,15 +21521,17 @@
     "physical_ua": "Фізичні вимоги: піднімання до 15 кг",
     "physical_pl": "Wymagania fizyczne: dźwiganie do 15 kg",
     "shift_structure_ua": "Структура зміни: ранкова зона",
-    "shift_structure_pl": "Struktura zmiany: strefa poranna"
+    "shift_structure_pl": "Struktura zmiany: strefa poranna",
+    "title_en": "CNC Milling Operator — Лодзь",
+    "title_ru": "Фрезеровщик ЧПУ — Лодзь"
   },
   {
     "slug": "katowice-production-frezer-cnc-133",
     "category": "production",
     "city": "Катовіце",
     "city_pl": "Katowice",
-    "title": "Оператор ЧПУ (CNC) у Катовіце",
-    "title_pl": "Frezer CNC w Katowice",
+    "title": "Фрезерувальник CNC — Катовіце",
+    "title_pl": "Frezer CNC — Katowice",
     "salary": "6500 - 10000 PLN",
     "company": "JobConnect",
     "shift_ua": "Тільки нічні",
@@ -21604,7 +21634,9 @@
     "physical_ua": "Фізичні вимоги: робота стоячи 6–8 год",
     "physical_pl": "Wymagania fizyczne: praca stojąca 6–8 h",
     "shift_structure_ua": "Структура зміни: вечірня зона",
-    "shift_structure_pl": "Struktura zmiany: strefa wieczorna"
+    "shift_structure_pl": "Struktura zmiany: strefa wieczorna",
+    "title_en": "CNC Milling Operator — Катовіце",
+    "title_ru": "Фрезеровщик ЧПУ — Катовіце"
   },
   {
     "slug": "lublin-production-frezer-cnc-134",
@@ -29469,8 +29501,8 @@
     "category": "hospitality",
     "city": "Краків",
     "city_pl": "Kraków",
-    "title": "Офіціант у Краків",
-    "title_pl": "Barista w Kraków",
+    "title": "Бариста — Краків",
+    "title_pl": "Barista — Kraków",
     "salary": "24 - 36 PLN/h",
     "company": "ProStaff Polska",
     "shift_ua": "Ранок / Вечір",
@@ -29567,7 +29599,9 @@
     "employment_type": "full-time",
     "date_posted": "2026-04-26",
     "is_generated": true,
-    "data_source": "generated"
+    "data_source": "generated",
+    "title_en": "Barista — Краків",
+    "title_ru": "Бариста — Краків"
   },
   {
     "slug": "wroclaw-hospitality-barman-208",
@@ -29883,8 +29917,8 @@
     "category": "hospitality",
     "city": "Люблін",
     "city_pl": "Lublin",
-    "title": "Бармен в Люблін",
-    "title_pl": "Barista w Lublin",
+    "title": "Бариста — Люблін",
+    "title_pl": "Barista — Lublin",
     "salary": "4400 - 6100 PLN",
     "company": "BudPol Construction",
     "shift_ua": "Пн-Пт, 8:00-16:00",
@@ -29977,15 +30011,17 @@
     "employment_type": "full-time",
     "date_posted": "2026-04-22",
     "is_generated": true,
-    "data_source": "generated"
+    "data_source": "generated",
+    "title_en": "Barista — Люблін",
+    "title_ru": "Бариста — Люблін"
   },
   {
     "slug": "bialystok-hospitality-barista-212",
     "category": "hospitality",
     "city": "Білосток",
     "city_pl": "Białystok",
-    "title": "Офіціант в Білосток",
-    "title_pl": "Barista w Białystok",
+    "title": "Бариста — Білосток",
+    "title_pl": "Barista — Białystok",
     "salary": "4100 - 5900 PLN",
     "company": "FlexWork Polska",
     "shift_ua": "Пн-Пт, 8:00-16:00",
@@ -30082,7 +30118,9 @@
     "employment_type": "full-time",
     "date_posted": "2026-04-24",
     "is_generated": true,
-    "data_source": "generated"
+    "data_source": "generated",
+    "title_en": "Barista — Білосток",
+    "title_ru": "Бариста — Білосток"
   },
   {
     "slug": "rzeszow-hospitality-barman-213",

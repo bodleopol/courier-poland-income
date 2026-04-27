@@ -2224,9 +2224,9 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   if (variant === 'simple') {
     return `
     <section class="job-human job-human--simple" aria-label="${escapeHtml(h2Pos)}">
-      <h2 class="job-human__title job-human-h2">${escapeHtml(h2Pos)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-base">${escapeHtml(h2Pos)}</h2>
       <ul class="job-human__single-list">${positiveHtml}</ul>
-      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Risk)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-spaced">${escapeHtml(h2Risk)}</h2>
       <ul class="job-human__single-list">${riskHtml}</ul>
     </section>
   `;
@@ -2234,16 +2234,16 @@ function buildJobHumanBlock(page, lang, variant = 'full') {
   
   return `
     <section class="job-human">
-      <h2 class="job-human__title job-human-h2-first">${escapeHtml(h2Pos)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-first">${escapeHtml(h2Pos)}</h2>
       <ul>${positiveHtml}</ul>
 
-      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Routine)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-spaced">${escapeHtml(h2Routine)}</h2>
       <ul>${routineHtml}</ul>
 
-      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Risk)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-spaced">${escapeHtml(h2Risk)}</h2>
       <ul>${riskHtml}</ul>
 
-      <h2 class="job-human__title job-human-h2-spaced">${escapeHtml(h2Neg)}</h2>
+      <h2 class="vacancy-section-title vacancy-section-spaced">${escapeHtml(h2Neg)}</h2>
       <ul>${negativeHtml}</ul>
 
       <div class="job-human-review-box">
@@ -2340,8 +2340,8 @@ function buildVacancyProofFormBlock(page) {
 
   return `
     <section class="job-proof" id="proof-form-anchor" aria-label="Rybezh Proof">
-      <h3 data-lang-content="ua">🧾 ${uaTitle}</h3>
-      <h3 data-lang-content="pl" style="display:none">🧾 ${plTitle}</h3>
+      <h3 data-lang-content="ua">${uaTitle}</h3>
+      <h3 data-lang-content="pl" style="display:none">${plTitle}</h3>
       <p data-lang-content="ua">Поділіться реальним досвідом роботи. Відгук буде перевірено модератором перед публікацією.</p>
       <p data-lang-content="pl" style="display:none">Podziel się realnym doświadczeniem. Opinia zostanie sprawdzona przez moderatora przed publikacją.</p>
       <form class="job-proof-form" data-proof-form novalidate>
@@ -2538,6 +2538,11 @@ function buildVacancyProofFormScript() {
         }
       });
     }
+
+    // Safe defaults when no community reviews exist yet — keeps the script
+    // from throwing ReferenceError when initProofSummaries falls back.
+    function fallbackScoreBySlug(slug) { return 0; }
+    function fallbackCountBySlug(slug) { return 0; }
 
     async function initProofSummaries() {
       var cards = document.querySelectorAll('[data-proof-summary][data-vacancy-slug]');
@@ -2807,13 +2812,20 @@ async function build() {
     page.excerpt_pl = enrichVacancyExcerpt(page, 'pl');
   });
 
-  // Log indexing stats to help track doorway risk
-  const indexablePages = pages;
-  const publicPages = indexablePages.map(p => {
+  // Compute indexability decisions ONCE up-front so that:
+  //   1. jobs-data.json (consumed by /vacancies.html and other listings) only
+  //      contains indexable, unique vacancies — no doorway/duplicate variants
+  //      are exposed to users or crawlers via internal links.
+  //   2. The HTML build below renders only indexable vacancies — duplicates
+  //      simply do not exist on disk and respond with a clean 404.
+  const nearDuplicateSlugs = detectNearDuplicateSlugs(pages);
+  const indexableVacancies = pages.filter(p => !nearDuplicateSlugs.has(p.slug));
+  const publicPages = indexableVacancies.map(p => {
     const { data_source, ...rest } = p;
     return rest;
   });
   await fs.writeFile(path.join(DIST, 'jobs-data.json'), JSON.stringify(publicPages), 'utf8');
+  console.log(`  📋 jobs-data.json: ${publicPages.length} indexable vacancies (${nearDuplicateSlugs.size} duplicate-pattern entries excluded)`);
 
   // Load categories
   const categoriesPath = path.join(SRC, 'categories.json');
@@ -3345,13 +3357,12 @@ async function build() {
     }
   }
 
-  // Only generate HTML for indexable vacancies (reduce doorway signals)
-  const pagesToGenerate = pages;
-
-  // Detect near-duplicate (city-spin) pages and mark them noindex to reduce doorway risk
-  const nearDuplicateSlugs = detectNearDuplicateSlugs(pagesToGenerate);
+  // Skip rendering duplicate-pattern vacancies entirely. They are not in the
+  // sitemap, not in jobs-data.json, and now not on disk either — the cleanest
+  // possible signal to crawlers that they do not exist as separate URLs.
+  const pagesToGenerate = indexableVacancies;
   if (nearDuplicateSlugs.size > 0) {
-    console.log(`  ℹ️  Near-duplicate doorway detection: ${nearDuplicateSlugs.size} secondary city-variant page(s) will be set to noindex, follow`);
+    console.log(`  🚫 Doorway elimination: ${nearDuplicateSlugs.size} duplicate-pattern vacancy page(s) excluded from build entirely`);
   }
 
   const vacancyNarrativeVariationState = {
@@ -3513,9 +3524,9 @@ async function build() {
       { ua: 'Рейтинг довіри компаній — Rybezh Proof', pl: 'Ranking zaufania firm — Rybezh Proof', ru: 'Рейтинг доверия компаний — Rybezh Proof', href: '/proof.html' }
     ];
 
-    const guidesPl = ['📚 Przydatne przewodniki', '📚 Warto przeczytać przed startem', '📚 Materiały dla kandydatów', '📚 Poradniki i wskazówki'][(Math.abs(hashString(page.slug)) + 1) % 4];
-    const guidesRu = ['📚 Полезные гайды', '📚 Советуем прочитать перед стартом', '📚 Материалы для кандидатов', '📚 Инструкции и советы'][(Math.abs(hashString(page.slug)) + 1) % 4];
-    const guidesUa = ['📚 Корисні гайди', '📚 Радимо прочитати перед стартом', '📚 Матеріали для кандидатів', '📚 Інструкції та поради'][(Math.abs(hashString(page.slug)) + 1) % 4];
+    const guidesPl = ['Przydatne przewodniki', 'Warto przeczytać przed startem', 'Materiały dla kandydatów', 'Poradniki i wskazówki'][(Math.abs(hashString(page.slug)) + 1) % 4];
+    const guidesRu = ['Полезные гайды', 'Советуем прочитать перед стартом', 'Материалы для кандидатов', 'Инструкции и советы'][(Math.abs(hashString(page.slug)) + 1) % 4];
+    const guidesUa = ['Корисні гайди', 'Радимо прочитати перед стартом', 'Матеріали для кандидатів', 'Інструкції та поради'][(Math.abs(hashString(page.slug)) + 1) % 4];
 
     const guidesHtml = `
       <div class="related-guides">
@@ -3537,21 +3548,21 @@ async function build() {
     let enrichmentHtml = '';
     if (enrichment) {
       enrichmentHtml = `
-        <div class="job-enrichment">
+        <div class="vacancy-extra">
           <div data-lang-content="ua">
-            <blockquote class="job-quote">${enrichment.quote_ua}</blockquote>
-            <div class="job-local-tip"><strong>📍 Район роботи:</strong> ${enrichment.tip_ua}</div>
-            <p class="job-insider">${enrichment.detail_ua}</p>
+            <blockquote class="vacancy-quote">${enrichment.quote_ua}</blockquote>
+            <div class="vacancy-tip"><strong>Район:</strong> ${enrichment.tip_ua}</div>
+            <p class="vacancy-detail">${enrichment.detail_ua}</p>
           </div>
           <div data-lang-content="pl" style="display:none">
-            <blockquote class="job-quote">${enrichment.quote_pl}</blockquote>
-            <div class="job-local-tip"><strong>📍 Okolica:</strong> ${enrichment.tip_pl}</div>
-            <p class="job-insider">${enrichment.detail_pl}</p>
+            <blockquote class="vacancy-quote">${enrichment.quote_pl}</blockquote>
+            <div class="vacancy-tip"><strong>Okolica:</strong> ${enrichment.tip_pl}</div>
+            <p class="vacancy-detail">${enrichment.detail_pl}</p>
           </div>
           <div data-lang-content="ru" style="display:none">
-            <blockquote class="job-quote">${enrichment.quote_ru || enrichment.quote_ua}</blockquote>
-            <div class="job-local-tip"><strong>📍 Район:</strong> ${enrichment.tip_ru || enrichment.tip_ua}</div>
-            <p class="job-insider">${enrichment.detail_ru || enrichment.detail_ua}</p>
+            <blockquote class="vacancy-quote">${enrichment.quote_ru || enrichment.quote_ua}</blockquote>
+            <div class="vacancy-tip"><strong>Район:</strong> ${enrichment.tip_ru || enrichment.tip_ua}</div>
+            <p class="vacancy-detail">${enrichment.detail_ru || enrichment.detail_ua}</p>
           </div>
         </div>`;
     }
@@ -3675,7 +3686,7 @@ async function build() {
       .job-conditions ul { list-style: none; padding: 0; margin: 0; }
       .job-conditions li { margin-bottom: 0.5rem; }
       .job-human { margin: 1.5rem 0 2rem; padding: 1.25rem; border-radius: 12px; border: 1px solid #e2e8f0; background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); }
-      .job-human__title { margin: 0 0 .5rem; color: #0f172a; font-size: 1.1rem; }
+      .vacancy-section-title { margin: 0 0 .5rem; color: #0f172a; font-size: 1.1rem; }
       .job-human__lead { margin: 0 0 1rem; color: #334155; }
       .job-human__grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .job-human__card { background: rgba(255,255,255,.9); border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
@@ -3688,9 +3699,9 @@ async function build() {
       .job-human__single-list li { margin: .5rem 0; color: #374151; }
       .job-notice { margin: 1rem 0 1.5rem; padding: 0.9rem 1rem; border-radius: 12px; border: 1px solid #f59e0b; background: #fffbeb; color: #92400e; display: flex; gap: .6rem; flex-direction: column; }
       .job-notice strong { font-weight: 700; }
-      .job-human-h2 { font-size: 1.15rem; }
-      .job-human-h2-first { font-size: 1.15rem; margin-top: 1rem; }
-      .job-human-h2-spaced { margin-top: 1.5rem; font-size: 1.15rem; }
+      .vacancy-section-base { font-size: 1.15rem; }
+      .vacancy-section-first { font-size: 1.15rem; margin-top: 1rem; }
+      .vacancy-section-spaced { margin-top: 1.5rem; font-size: 1.15rem; }
       .job-human-review-box { margin-top: 2rem; padding: 1rem; background: #f8fafc; border-left: 4px solid #3b82f6; border-radius: 4px; }
       .job-human-review-title { margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; color: #1e293b; }
       .job-human-review-comment { margin: 0; font-style: italic; color: #475569; }
@@ -3732,10 +3743,10 @@ async function build() {
       .related-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-2px); }
       .related-title { font-weight: 600; color: #1e3a5f; }
       .related-meta { font-size: .88rem; color: #64748b; }
-      .job-enrichment { margin: 2rem 0; padding: 1.5rem; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%); border: 1px solid #d1d5db; }
-      .job-quote { margin: 0 0 1rem; padding: .8rem 1rem; border-left: 4px solid #059669; background: rgba(255,255,255,.7); border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; line-height: 1.6; }
-      .job-local-tip { margin: .75rem 0; padding: .6rem .8rem; background: #fff; border-radius: 8px; color: #334155; line-height: 1.5; border: 1px solid #e5e7eb; }
-      .job-insider { margin: .5rem 0 0; color: #475569; line-height: 1.55; font-size: .95rem; }
+      .vacancy-extra { margin: 2rem 0; padding: 1.5rem; border-radius: 12px; background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%); border: 1px solid #d1d5db; }
+      .vacancy-quote { margin: 0 0 1rem; padding: .8rem 1rem; border-left: 4px solid #059669; background: rgba(255,255,255,.7); border-radius: 0 8px 8px 0; font-style: italic; color: #1e293b; line-height: 1.6; }
+      .vacancy-tip { margin: .75rem 0; padding: .6rem .8rem; background: #fff; border-radius: 8px; color: #334155; line-height: 1.5; border: 1px solid #e5e7eb; }
+      .vacancy-detail { margin: .5rem 0 0; color: #475569; line-height: 1.55; font-size: .95rem; }
       .job-proof { margin: 2rem 0; padding: 1rem; border-radius: 12px; border: 1px solid #e5e7eb; background: #fff; }
       .job-proof-summary { margin: 1.3rem 0 1rem; border: 1px solid #fecaca; background: #fff5f5; border-radius: 12px; padding: .95rem 1rem; }
       .job-proof-summary h3 { margin: 0; color: #7f1d1d; font-size: 1.02rem; }
