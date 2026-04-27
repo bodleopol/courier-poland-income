@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="latestJobs"></div>
+  <script src="dist/jobs.js"></script>
+  <script>
+    window.LATEST_JOBS = [
+      {
+        "title": "Тестова вакансія",
+        "slug": "test-vacancy",
+        "date_posted": "2026-03-28T19:08:12.173Z",
+        "salary_range": "5000-8000 PLN",
+        "city": "Warszawa",
+        "country": "Poland"
+      }
+    ];
+    // Need to mock what initHomePage does
+    const latestJobsGrid = document.getElementById('latestJobs');
+    renderJobs(window.LATEST_JOBS, latestJobsGrid);
+  </script>
+</body>
+</html>

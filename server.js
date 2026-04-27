@@ -9,6 +9,9 @@ const __dirname = path.dirname(__filename);
 const PORT = parseInt(process.env.PORT || '5000', 10);
 const HOST = '0.0.0.0';
 const DIST = path.join(__dirname, 'dist');
+const IS_PROD = process.env.NODE_ENV === 'production';
+const CACHE_HTML = IS_PROD ? 'public, max-age=300, must-revalidate' : 'no-cache, no-store, must-revalidate';
+const CACHE_ASSET = IS_PROD ? 'public, max-age=31536000, immutable' : 'no-cache, no-store, must-revalidate';
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -59,9 +62,10 @@ async function tryServe(filePath, res) {
     if (stat.isDirectory()) return false;
     const ext = path.extname(filePath).toLowerCase();
     const type = MIME[ext] || 'application/octet-stream';
+    const isHtml = ext === '.html' || ext === '.htm';
     res.writeHead(200, {
       'Content-Type': type,
-      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Cache-Control': isHtml ? CACHE_HTML : CACHE_ASSET,
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
     });

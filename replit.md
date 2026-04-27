@@ -12,8 +12,8 @@ Static website helping Ukrainian/Russian/Polish/English speakers find jobs in Po
 ## Replit Setup
 
 - **Dev/preview server:** `server.js` — a tiny zero-dep Node static file server that serves `dist/` on `0.0.0.0:5000`. It supports clean URLs (`/about` → `/about.html`), serves a custom `404.html`, and disables caching in dev so the iframe preview always shows fresh content.
-- **Workflow:** `Start application` runs `npm start` and waits for port 5000 (webview output).
-- **Build before serving:** Run `npm run build` to (re)generate the `dist/` folder. The workflow does not auto-build — re-run the build whenever pages, templates, or content change.
+- **Workflow:** `Start application` runs `npm run build && npm start` and waits for port 5000 (webview output). The build step regenerates `dist/` on every restart so the preview always reflects the latest source.
+- **Manual rebuild:** You can also run `npm run build` standalone to regenerate `dist/` without restarting the server.
 
 ## Useful Commands
 
