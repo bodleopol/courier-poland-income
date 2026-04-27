@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import ENRICHMENTS from './vacancy-enrichments.js';
+import { detectNearDuplicateSlugs } from './indexability.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,62 +12,11 @@ const TEMPLATES = path.join(SRC, 'templates');
 const DIST = path.join(process.cwd(), 'dist');
 const POSTS_PER_PAGE = 20;
 
-// Indexing strategy for vacancies to reduce doorway/scaled-content risk.
-// Keep a limited set of generated vacancies indexable; mark the rest as noindex.
-
-/**
- * Detects near-duplicate vacancy pages that share the same city prefix and job-type
- * base (slug without city prefix and trailing numeric ID).
- * Returns a Set of slugs that are secondary variants — these are marked noindex to
- * reduce AI-doorway / city-spin signals detected by the SEO audit.
- *
- * Algorithm:
- *   1. Extract city prefix (first hyphen-delimited segment) and job base
- *      (remaining segments with the trailing numeric suffix removed).
- *   2. Group pages by (cityPrefix, jobBase).
- *   3. For each group with 2+ pages, keep the first occurrence indexable;
- *      mark the rest as secondary (noindex).
- */
-function detectNearDuplicateSlugs(pages) {
-  const secondarySlugs = new Set();
-  const jobBases = new Set();
-
-  for (const page of pages) {
-    const slug = page.slug || '';
-
-    if (page.is_generated === false || page.data_source === 'manual' || page.data_source === 'local-business') {
-      // Manual pages are always indexable
-      continue;
-    }
-
-    const parts = slug.split('-');
-    if (parts.length < 2) continue;
-
-    let jobParts = parts.slice(1);
-    // Strip trailing pure-numeric ID (e.g. "-850")
-    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
-      jobParts = jobParts.slice(0, -1);
-    }
-
-    const jobBase = jobParts.join('-');
-    if (!jobBase) continue;
-
-    // We should group by BOTH city and job base to only deduplicate identical job roles WITHIN the same city.
-    // If we group ONLY by jobBase, then multiple cities cannot have the same job, which breaks the business logic.
-    const city = parts[0];
-    const groupKey = `${city}-${jobBase}`;
-
-    if (jobBases.has(groupKey)) {
-      // Mark all subsequent occurrences of the same job base IN THE SAME CITY as secondary
-      secondarySlugs.add(slug);
-    } else {
-      // Keep the first occurrence
-      jobBases.add(groupKey);
-    }
-  }
-
-  return secondarySlugs;
-}
+// Indexing strategy for vacancies to eliminate doorway / scaled-content signals.
+// See src/indexability.js for the rules. Generated vacancies are indexable only
+// when they have an enrichment AND are the first generated vacancy for their
+// jobBase across the whole site. Everything else is served noindex and excluded
+// from the sitemap.
 
 function setRobotsMeta(html, robotsContent) {
   const out = String(html || '');

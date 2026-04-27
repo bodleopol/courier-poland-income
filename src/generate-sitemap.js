@@ -2,6 +2,7 @@ const POSTS_PER_PAGE = 20;
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { detectNearDuplicateSlugs } from './indexability.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,51 +14,8 @@ const DIST_DIR = path.join(__dirname, '..', 'dist');
 const contentPath = path.join(__dirname, 'content.json');
 const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
 
-/**
- * Detects near-duplicate vacancy pages that share the same city prefix and job-type
- * base (slug without city prefix and trailing numeric ID).
- * Returns a Set of slugs that are secondary variants to be excluded from the sitemap.
- * Mirrors the same logic in generate.js to keep indexing decisions consistent.
- */
-function detectNearDuplicateSlugs(pages) {
-  const secondarySlugs = new Set();
-  const jobBases = new Set();
-
-  for (const page of pages) {
-    const slug = page.slug || '';
-
-    if (page.is_generated === false || page.data_source === 'manual' || page.data_source === 'local-business') {
-      // Manual pages are always indexable
-      continue;
-    }
-
-    const parts = slug.split('-');
-    if (parts.length < 2) continue;
-
-    let jobParts = parts.slice(1);
-    // Strip trailing pure-numeric ID (e.g. "-850")
-    if (jobParts.length > 0 && /^\d+$/.test(jobParts[jobParts.length - 1])) {
-      jobParts = jobParts.slice(0, -1);
-    }
-
-    const jobBase = jobParts.join('-');
-    if (!jobBase) continue;
-
-    const city = parts[0];
-    const groupKey = `${city}-${jobBase}`;
-
-    if (jobBases.has(groupKey)) {
-      // Mark all subsequent occurrences of the same job base IN THE SAME CITY as secondary
-      secondarySlugs.add(slug);
-    } else {
-      // Keep the first occurrence
-      jobBases.add(groupKey);
-    }
-  }
-
-  return secondarySlugs;
-}
-
+// Indexing strategy lives in src/indexability.js — this guarantees the sitemap and
+// the rendered HTML use exactly the same noindex decisions.
 const nearDuplicateSlugs = detectNearDuplicateSlugs(content);
 const indexableVacancies = content.filter(job => !nearDuplicateSlugs.has(job.slug));
 
