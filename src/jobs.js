@@ -18,47 +18,13 @@
   function isRuPage() {
     return window.location.pathname.endsWith('-ru.html');
   }
-  function toRuText(input) {
-    if (input === null || input === undefined) return '';
-    const replacements = [
-      [/\bВси\b/gi, 'Все'],
-      // Support both spellings: "Краків" and normalized fallback "Кракив"
-      [/\bКракі?в\b/gi, 'Краков'],
-      [/\bПольщі\b/gi, 'Польше'],
-      [/\bГданськ\b/gi, 'Гданьск'],
-      [/\bСосновець\b/gi, 'Сосновец'],
-      [/\bВроцлав\b/gi, 'Вроцлав'],
-      [/\bСтабільна\b/gi, 'Стабильная'],
-      [/\bбезпечна\b/gi, 'безопасная'],
-      [/\bвакансія\b/gi, 'вакансия'],
-      [/\bвідгуками\b/gi, 'отзывам'],
-      [/\bвидгуками\b/gi, 'отзывам'],
-      [/\bУмови\b/gi, 'Условия'],
-      [/\bзагалом\b/gi, 'в целом'],
-      [/\bварто\b/gi, 'стоит'],
-      [/\bуточнити\b/gi, 'уточнить'],
-      [/\bшукае\b/gi, 'ищет'],
-      [/\bдосвид\b/gi, 'опыт'],
-      [/\bпрацивник\b/gi, 'сотрудник'],
-      [/\bдоговир\b/gi, 'договор'],
-      [/\bробота\b/gi, 'работа'],
-      [/\bкоманди\b/gi, 'команды']
-    ];
-    let text = String(input)
-      .replace(/Стабільна та безпечна вакансія за відгуками\./gi, 'Стабильная и безопасная вакансия по отзывам.')
-      .replace(/Умови загалом ок, але варто уточнити деталі\./gi, 'Условия в целом хорошие, но стоит уточнить детали.')
-      .replace(/[іІїЇєЄґҐ]/g, (ch) => ({ і:'и', І:'И', ї:'и', Ї:'И', є:'е', Є:'Е', ґ:'г', Ґ:'Г' }[ch] || ch));
-    for (const [pattern, replacement] of replacements) {
-      text = text.replace(pattern, replacement);
-    }
-    return text;
-  }
   function getLocalizedValue(item, base, lang) {
     if (!item) return '';
     if (lang === 'pl') return item[`${base}_pl`] || item[base] || '';
-    if (lang === 'ru') return toRuText(item[`${base}_ru`] || item[base] || '');
+    if (lang === 'ru') return item[`${base}_ru`] || item[base] || '';
     return item[`${base}_ua`] || item[base] || '';
   }
+
   function vacanciesUrl() {
     if (isPlPage()) return '/vacancies-pl.html';
     if (isRuPage()) return '/vacancies-ru.html';
