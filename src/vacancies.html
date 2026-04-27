@@ -1,63 +1,59 @@
 <section class="vacancies-page">
   <div class="container">
-    <h2 data-i18n="vacancies.title">Всі вакансії</h2>
+    <h2>Всі вакансії</h2>
 
     <div class="human-note" role="note">
-      <h2 class="human-note__title" data-i18n="human.vacancies.title">Як читати вакансії на Rybezh</h2>
-      <p class="human-note__text" data-i18n="human.vacancies.lead">Ми стараємось писати без «води»: що робити, який графік, які документи і що з житлом/доїздом. Якщо бачите незрозумілий пункт — краще уточнити до старту.</p>
+      <h2 class="human-note__title">Як читати вакансії на Rybezh</h2>
+      <p class="human-note__text">Ми стараємось писати без «води»: що робити, який графік, які документи і що з житлом/доїздом. Якщо бачите незрозумілий пункт — краще уточнити до старту.</p>
       <ul class="human-note__list">
-        <li data-i18n="human.vacancies.li1">Фільтруйте за містом і категорією — так швидше знайдете адекватні варіанти.</li>
-        <li data-i18n="human.vacancies.li2">Дивіться на режим роботи та перерви — вони часто важливіші за «гучні бонуси».</li>
-        <li data-i18n="human.vacancies.li3">Під кожну вакансію можна подати заявку — ми допоможемо уточнити деталі.</li>
+        <li>Фільтруйте за містом і категорією — так швидше знайдете адекватні варіанти.</li>
+        <li>Дивіться на режим роботи та перерви — вони часто важливіші за «гучні бонуси».</li>
+        <li>Під кожну вакансію можна подати заявку — ми допоможемо уточнити деталі.</li>
       </ul>
     </div>
     
     <!-- Filters -->
     <div class="filters">
       <select id="categoryFilter" class="filter-select">
-        <option value="" data-i18n="filters.all_categories">Всі категорії</option>
+        <option value="">Всі категорії</option>
       </select>
       
       <select id="cityFilter" class="filter-select">
-        <option value="" data-i18n="city.all">Всі міста</option>
-        <option value="warsaw" data-i18n="city.warszawa">Варшава</option>
-        <option value="krakow" data-i18n="city.krakow">Краків</option>
-        <option value="wroclaw" data-i18n="city.wroclaw">Вроцлав</option>
-        <option value="poznan" data-i18n="city.poznan">Познань</option>
-        <option value="gdansk" data-i18n="city.gdansk">Гданськ</option>
-        <option value="szczecin" data-i18n="city.szczecin">Щецін</option>
-        <option value="lodz" data-i18n="city.lodz">Лодзь</option>
-        <option value="katowice" data-i18n="city.katowice">Катовіце</option>
-        <option value="lublin" data-i18n="city.lublin">Люблін</option>
-        <option value="bialystok" data-i18n="city.bialystok">Білосток</option>
-        <option value="rzeszow" data-i18n="city.rzeszow">Ряшів</option>
-        <option value="torun" data-i18n="city.torun">Торунь</option>
-        <option value="plock" data-i18n="city.plock">Плоцьк</option>
-        <option value="sosnowiec" data-i18n="city.sosnowiec">Сосновець</option>
-        <option value="gdynia" data-i18n="city.gdynia">Гдиня</option>
-        <option value="bydgoszcz" data-i18n="city.bydgoszcz">Бидгощ</option>
-        <option value="czestochowa" data-i18n="city.czestochowa">Ченстохова</option>
-        <option value="radom" data-i18n="city.radom">Радом</option>
-        <option value="kielce" data-i18n="city.kielce">Кельце</option>
-        <option value="gliwice" data-i18n="city.gliwice">Гливіце</option>
-        <option value="olsztyn" data-i18n="city.olsztyn">Ольштин</option>
-        <option value="bielsko" data-i18n="city.bielsko">Бєльско-Бяла</option>
-        <option value="opole" data-i18n="city.opole">Ополе</option>
+        <option value="">Всі міста</option>
+        <option value="warsaw">Варшава</option>
+        <option value="krakow">Краків</option>
+        <option value="wroclaw">Вроцлав</option>
+        <option value="poznan">Познань</option>
+        <option value="gdansk">Гданськ</option>
+        <option value="szczecin">Щецін</option>
+        <option value="lodz">Лодзь</option>
+        <option value="katowice">Катовіце</option>
+        <option value="lublin">Люблін</option>
+        <option value="bialystok">Білосток</option>
+        <option value="rzeszow">Жешув</option>
+        <option value="torun">Торунь</option>
+        <option value="plock">Плоцьк</option>
+        <option value="sosnowiec">Сосновець</option>
+        <option value="gdynia">Гдиня</option>
+        <option value="bydgoszcz">Бидгощ</option>
+        <option value="czestochowa">Ченстохова</option>
+        <option value="radom">Радом</option>
+        <option value="kielce">Кельце</option>
+        <option value="gliwice">Гливіце</option>
+        <option value="olsztyn">Ольштин</option>
+        <option value="bielsko">Бєльско-Бяла</option>
+        <option value="opole">Ополе</option>
       </select>
       
-      <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input" data-i18n="filters.salary_placeholder" data-i18n-attr="placeholder">
-
-      <label class="proof-filter-inline">
-        <input type="checkbox" id="proof75Filter">
-        <span data-i18n="filters.proof75">Тільки з Proof ≥ 75</span>
+      <input type="text" id="salaryFilter" placeholder="Мін. зарплата (PLN)" class="filter-input">Мін. зарплата (PLN)</span>
       </label>
       
-      <button id="resetFilters" class="btn btn-secondary" data-i18n="filters.reset">Скинути</button>
+      <button id="resetFilters" class="btn btn-secondary">Скинути</button>
     </div>
     
     <!-- Results count -->
     <div class="results-info">
-      <p><span id="resultsCount">0</span> <span data-i18n="vacancies.found">вакансій знайдено</span></p>
+      <p><span id="resultsCount">0</span> <span>вакансій знайдено</span></p>
     </div>
     
     <!-- Jobs Grid -->

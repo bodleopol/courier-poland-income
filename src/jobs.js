@@ -18,21 +18,27 @@
   function isRuPage() {
     return window.location.pathname.endsWith('-ru.html');
   }
+  function isEnPage() {
+    return window.location.pathname.endsWith('-en.html');
+  }
   function getLocalizedValue(item, base, lang) {
     if (!item) return '';
     if (lang === 'pl') return item[`${base}_pl`] || item[base] || '';
     if (lang === 'ru') return item[`${base}_ru`] || item[base] || '';
+    if (lang === 'en') return item[`${base}_en`] || item[base] || '';
     return item[`${base}_ua`] || item[base] || '';
   }
 
   function vacanciesUrl() {
     if (isPlPage()) return '/vacancies-pl.html';
     if (isRuPage()) return '/vacancies-ru.html';
+    if (isEnPage()) return '/vacancies-en.html';
     return '/vacancies.html';
   }
   function jobUrl(slug) {
     if (isPlPage()) return `/${slug}-pl.html`;
     if (isRuPage()) return `/${slug}-ru.html`;
+    if (isEnPage()) return `/${slug}-en.html`;
     return `/${slug}.html`;
   }
 
@@ -45,6 +51,7 @@
       const base = last.replace(/\.html$/, '');
       if (base.endsWith('-pl')) return base.slice(0, -3);
       if (base.endsWith('-ru')) return base.slice(0, -3);
+      if (base.endsWith('-en')) return base.slice(0, -3);
       return base;
     } catch (_) {
       return '';
@@ -166,6 +173,11 @@
       if (score >= 60) return 'Условия в целом хорошие, но стоит уточнить детали.';
       return 'Повышенный риск — проверьте условия перед стартом.';
     }
+    if (lang === 'en') {
+      if (score >= 80) return 'Stable and safe vacancy according to reviews.';
+      if (score >= 60) return 'Conditions are generally OK, but worth clarifying details.';
+      return 'Increased risk — check conditions before starting.';
+    }
     if (score >= 80) return 'Стабільна та безпечна вакансія за відгуками.';
     if (score >= 60) return 'Умови загалом ок, але варто уточнити деталі.';
     return 'Підвищений ризик — перевірте умови перед стартом.';
@@ -194,7 +206,7 @@
     const mobileNav = document.getElementById('mobileCategoryNav');
     if (!window.CATEGORIES || (!desktopNav && !mobileNav)) return;
 
-    const lang = localStorage.getItem('site_lang') || 'ua';
+    const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
     const categories = window.CATEGORIES || [];
 
     // Desktop: mega-menu with icons + descriptions
@@ -233,7 +245,7 @@
     const categoryGrid = document.getElementById('categoryGrid');
     if (window.CATEGORIES && categoryGrid) {
       categoryGrid.innerHTML = '';
-      const lang = localStorage.getItem('site_lang') || 'ua';
+      const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
       window.CATEGORIES.forEach(cat => {
         const card = document.createElement('a');
         card.href = `${vacanciesUrl()}?category=${cat.id}`;
@@ -275,7 +287,7 @@
       document.querySelectorAll('[data-city]').forEach(el => {
         const city = el.getAttribute('data-city');
         const count = cityCounts[city] || 0;
-        const lang = localStorage.getItem('site_lang') || 'ua';
+        const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
         const label = lang === 'pl'
           ? (count === 1 ? 'oferta' : 'ofert')
           : (count === 1 ? 'вакансія' : 'вакансій');
@@ -319,7 +331,7 @@
 
     // Populate category filter
     if (window.CATEGORIES && categoryFilter) {
-      const lang = localStorage.getItem('site_lang') || 'ua';
+      const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
       const defaultOption = categoryFilter.querySelector('option[value=""]');
       categoryFilter.innerHTML = '';
       if (defaultOption) {
@@ -439,7 +451,7 @@
 
         // Search query
         if (searchQuery) {
-          const lang = localStorage.getItem('site_lang') || 'ua';
+          const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
           const searchTexts = [...new Set([
             getLocalizedValue(job, 'title', lang),
             getLocalizedValue(job, 'excerpt', lang),
@@ -503,7 +515,7 @@
   function renderJobs(jobs, container, options = {}) {
     if (!container) return;
 
-    const lang = localStorage.getItem('site_lang') || 'ua';
+    const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
     const onlyHighProof = !!options.onlyHighProof;
 
     const preparedJobs = onlyHighProof
@@ -516,7 +528,7 @@
     container.innerHTML = '';
 
     if (preparedJobs.length === 0) {
-      const lang = localStorage.getItem('site_lang') || 'ua';
+      const lang = isPlPage() ? 'pl' : (isRuPage() ? 'ru' : (isEnPage() ? 'en' : 'ua'));
       const noResultsText = lang === 'pl'
         ? 'Nie znaleziono ofert. Spróbuj zmienić filtry.'
         : (lang === 'ru'

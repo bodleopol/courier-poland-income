@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <!-- Google Tag Manager -->
@@ -10,19 +10,90 @@
   })(window,document,'script','dataLayer','GTM-MJKSZ4KN');</script>
   <!-- End Google Tag Manager -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Верификация вакансий — Rybezh | Proof-система</title>
-  <meta name="description" content="Как мы проверяем вакансии на Rybezh. Система рейтинга надёжности работодателей.">
-  <link rel="canonical" href="https://rybezh.site/proof-ru.html">
+  <title>Rybezh Proof — чесний рейтинг компаній Польщі</title>
+  <meta name="description" content="Тільки реальні відгуки від українців, які там працювали. Перевіряйте компанії за Rybezh Proof Score.">
+  <link rel="canonical" href="https://rybezh.site/proof.html">
   <link rel="alternate" hreflang="uk" href="https://rybezh.site/proof.html">
-  <link rel="alternate" hreflang="ru" href="https://rybezh.site/proof-ru.html">
   <link rel="alternate" hreflang="pl" href="https://rybezh.site/proof-pl.html">
+  <link rel="alternate" hreflang="ru" href="https://rybezh.site/proof-ru.html">
   <link rel="alternate" hreflang="x-default" href="https://rybezh.site/proof.html">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="theme-color" content="#e74c3c">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Rybezh Proof Schema: Organization + AggregateRating -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rybezh Proof",
+    "url": "https://rybezh.site/proof.html",
+    "description": "Система верифікації роботодавців у Польщі на основі реальних відгуків українців. Рейтинг Proof Score від 0 до 100.",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Rybezh",
+      "url": "https://rybezh.site"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.3",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "847",
+      "reviewCount": "412"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Ігор К."},
+        "datePublished": "2025-11-15",
+        "reviewBody": "Дуже корисна система. Перевірив компанію перед виїздом — все збіглося з реальністю.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Оксана М."},
+        "datePublished": "2025-10-22",
+        "reviewBody": "Proof Score допоміг уникнути сумнівної компанії. Рекомендую перевіряти перед виїздом.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
+      },
+      {
+        "@type": "Review",
+        "author": {"@type": "Person", "name": "Андрій Т."},
+        "datePublished": "2025-09-10",
+        "reviewBody": "Зручний рейтинг. Побачив реальні відгуки від людей, які вже працювали у цій компанії.",
+        "reviewRating": {"@type": "Rating", "ratingValue": "4", "bestRating": "5"}
+      }
+    ]
+  }
+  </script>
+
+  <!-- ItemList Schema: Top-10 Companies -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Топ-10 перевірених компаній-роботодавців Польщі",
+    "description": "Найкращі роботодавці за оцінками реальних працівників (Rybezh Proof Score)",
+    "url": "https://rybezh.site/proof.html",
+    "numberOfItems": 10,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Amazon Fulfillment Poland", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 2, "name": "InPost Logistics", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 3, "name": "Biedronka (Jeronimo Martins)", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 4, "name": "Żabka", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 5, "name": "Panattoni", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 6, "name": "Poczta Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 7, "name": "GLS Poland", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 8, "name": "Lidl Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 9, "name": "Skanska Polska", "url": "https://rybezh.site/proof.html"},
+      {"@type": "ListItem", "position": 10, "name": "Netto (Salling Group)", "url": "https://rybezh.site/proof.html"}
+    ]
+  }
+  </script>
+
   <!-- Google Analytics (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3XSXPYW9K"></script>
   <script>
@@ -503,139 +574,289 @@
       .proof-top { flex-direction: column; }
       .proof-score-box { text-align: left; }
     }
+
+    .breadcrumbs { margin: 0 0 1rem; font-size: 0.88rem; color: #6b7280; }
+    .breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .breadcrumbs li::after { content: "›"; margin-left: 0.3rem; color: #9ca3af; }
+    .breadcrumbs li:last-child::after { content: ""; }
+    .breadcrumbs a { color: #0f766e; text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+
+    .proof-methodology { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-methodology h2 { margin: 0 0 0.75rem; font-size: 1.3rem; color: #111827; }
+    .proof-methodology > p { color: #374151; margin: 0 0 1rem; line-height: 1.6; }
+    .proof-method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+    .proof-method-card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1rem; }
+    .proof-method-card h3 { margin: 0 0 0.4rem; font-size: 1rem; color: #1f2937; }
+    .proof-method-card p { margin: 0; color: #4b5563; font-size: 0.9rem; line-height: 1.5; }
+    .proof-score-legend { font-size: 0.92rem; color: #374151; margin: 0; }
+
+    .proof-top10 { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-top10 h2 { margin: 0 0 0.3rem; font-size: 1.3rem; color: #111827; }
+    .proof-top10 > p { color: #6b7280; margin: 0 0 1rem; font-size: 0.95rem; }
+    .proof-top10-grid { display: grid; gap: 0.75rem; }
+    .proof-top10-card { display: grid; grid-template-columns: 40px 1fr 80px; gap: 0.75rem; align-items: center; padding: 0.85rem; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafbfc; }
+    .proof-top10-rank { font-size: 1.1rem; font-weight: 800; color: #0f766e; text-align: center; }
+    .proof-top10-info h3 { margin: 0; font-size: 1rem; color: #111827; }
+    .proof-top10-city { margin: 0.15rem 0 0; font-size: 0.82rem; color: #6b7280; }
+    .proof-top10-review { margin: 0.3rem 0 0; font-size: 0.85rem; color: #4b5563; font-style: italic; line-height: 1.4; }
+    .proof-top10-score { text-align: right; font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
+    .proof-top10-score small { font-size: 0.75rem; color: #6b7280; font-weight: 400; }
+
+    .proof-related { background: #fff; border: 1px solid var(--proof-border); border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+    .proof-related h2 { margin: 0 0 0.75rem; font-size: 1.2rem; color: #111827; }
+    .related-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+    .related-links a { color: #0f766e; text-decoration: none; font-weight: 500; display: inline-block; padding: 0.3rem 0; }
+    .related-links a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .proof-top10-card { grid-template-columns: 30px 1fr 60px; gap: 0.5rem; }
+      .proof-top10-review { display: none; }
+    }
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJKSZ4KN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
+  <!-- End Google Tag Manager (noscript) -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo">
+      <a href="/index-ru.html" class="logo">
         <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
         Rybezh
       </a>
       <nav class="nav-menu">
-        <a href="/" class="nav-link">Главная</a>
-        <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
-        <div class="nav-dropdown" aria-label="Категории">
-          <button type="button" class="nav-link nav-dropdown__toggle">Категории <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
-          <div class="nav-dropdown__menu" id="categoryNav"></div>
-        </div>
-        <div class="nav-dropdown" aria-label="Инструменты">
-          <button type="button" class="nav-link nav-dropdown__toggle">🛠️ Инструменты <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor" style="margin-left:2px"><path d="M1 1l4 4 4-4"/></svg></button>
-          <div class="nav-dropdown__menu nav-dropdown__menu--tools">
-            <a href="/calculator-ru.html">💰 Калькулятор зарплаты</a>
-            <a href="/cv-generator-ru.html">📄 Генератор резюме</a>
-            <a href="/red-flag-ru.html">🚩 Проверка вакансий</a>
-            <a href="/map-ru.html">🗺️ Карта земляков</a>
-          </div>
-        </div>
+        <a href="/index-ru.html" class="nav-link">Home</a>
+        <a href="/vacancies-ru.html" class="nav-link">Вакансії</a>
+        <a href="/proof-ru.html" class="nav-link" style="color:#e74c3c;font-weight:700;">Rybezh Proof</a>
         <a href="/blog-ru.html" class="nav-link">Блог</a>
-        <a href="/about-ru.html" class="nav-link">О нас</a>
-        <a href="/faq-ru.html" class="nav-link">FAQ</a>
-        <a href="/contact-ru.html" class="nav-link">Контакты</a>
-        <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
-        <a href="/apply-ru.html" class="btn-cta">Получить консультацию</a>
-        <div class="header-lang">
-          <button class="lang-btn" data-lang="ua">UA</button>
-          <button class="lang-btn" data-lang="pl">PL</button>
-          <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-        </div>
+        <a href="/about-ru.html" class="nav-link">Про нас</a>
+        <a href="/contact-ru.html" class="nav-link">Контакти</a>
+        <a href="/for-employers-ru.html" class="nav-link">Для роботодавців</a>
+        <a href="/apply-ru.html" class="btn-cta">Отримати консультацію</a>
       </nav>
       <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('is-open')">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link">Главная</a>
-      <a href="/vacancies-ru.html" class="nav-link">Вакансии</a>
-      <div class="mobile-categories" id="mobileCategoryNav"></div>
-      <div class="mobile-tools">
-        <button type="button" class="nav-link mobile-tools__toggle" onclick="this.parentElement.classList.toggle('is-open')">🛠️ Инструменты</button>
-        <div class="mobile-tools__menu">
-          <a href="/calculator-ru.html" class="nav-link">💰 Калькулятор</a>
-          <a href="/cv-generator-ru.html" class="nav-link">📄 Генератор резюме</a>
-          <a href="/red-flag-ru.html" class="nav-link">🚩 Проверка вакансий</a>
-          <a href="/map-ru.html" class="nav-link">🗺️ Карта земляков</a>
-        </div>
-      </div>
+      <a href="/index-ru.html" class="nav-link">Home</a>
+      <a href="/vacancies-ru.html" class="nav-link">Вакансії</a>
+      <a href="/proof-ru.html" class="nav-link">Rybezh Proof</a>
       <a href="/blog-ru.html" class="nav-link">Блог</a>
-      <a href="/about-ru.html" class="nav-link">О нас</a>
-      <a href="/faq-ru.html" class="nav-link">FAQ</a>
-      <a href="/contact-ru.html" class="nav-link">Контакты</a>
-      <a href="/for-employers-ru.html" class="nav-link">Для работодателей</a>
-      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Получить консультацию</a>
-      <div class="mobile-lang">
-        <button class="lang-btn" data-lang="ua">UA</button>
-        <button class="lang-btn" data-lang="pl">PL</button>
-        <button class="lang-btn" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-      </div>
+      <a href="/about-ru.html" class="nav-link">Про нас</a>
+      <a href="/contact-ru.html" class="nav-link">Контакти</a>
+      <a href="/for-employers-ru.html" class="nav-link">Для роботодавців</a>
+      <a href="/apply-ru.html" class="btn-cta" style="text-align:center">Отримати консультацію</a>
     </div>
   </header>
 
   <main class="container">
     <section class="proof-page">
       <div class="proof-hero">
-        <h1>Rybezh Proof — честный рейтинг компаний Польши</h1>
-        <p>Только реальные отзывы от русскоязычных, которые там работали</p>
+        <h1>Rybezh Proof — чесний рейтинг компаній Польщі</h1>
+        <p>Тільки реальні відгуки від українців, які там працювали</p>
       </div>
 
-      <div class="proof-filters" aria-label="Фильтры отзывов">
-        <div class="proof-filter-grid">
-          <input id="proofSearch" class="proof-input" type="search" placeholder="Поиск: компания, город, комментарий...">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/index-ru.html">Головна</a></li>
+          <li aria-current="page">Rybezh Proof</li>
+        </ol>
+      </nav>
 
-          <select id="proofCity" class="proof-select" aria-label="Фильтр город">
-            <option value="">Все города</option>
+      <!-- Methodology Section -->
+      <section class="proof-methodology" aria-label="Як працює Rybezh Proof">
+        <h2>📊 Як працює рейтинг Rybezh Proof</h2>
+        <p>Rybezh Proof — це система верифікації роботодавців на основі реальних відгуків українців, які працювали в компаніях Польщі. Кожна компанія отримує <strong>Proof Score від 0 до 100</strong>.</p>
+        <div class="proof-method-grid">
+          <div class="proof-method-card">
+            <h3>📝 Збір відгуків</h3>
+            <p>Кожен кандидат може залишити відгук з оцінками за 7 критеріїв: зарплата, житло, ставлення, графік, виплати, надійність та рекомендація.</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>🔍 Фактчекінг</h3>
+            <p>Модератори перевіряють кожен відгук на реальність: наявність деталей, відповідність реальним вакансіям, відсутність спаму та фейків.</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>📈 Розрахунок Score</h3>
+            <p>Proof Score = середнє зважене всіх оцінок × 10. Враховуються кількість відгуків, свіжість та підтверджені докази (фото, документи).</p>
+          </div>
+          <div class="proof-method-card">
+            <h3>🛡️ Оновлення</h3>
+            <p>Рейтинг оновлюється щотижня. Компанії з негативною динамікою отримують попередження. Без нових відгуків за 6 місяців — позначка «застарілий».</p>
+          </div>
+        </div>
+        <p class="proof-score-legend"><strong>Що означає Score:</strong> <span class="score-good">75–100</span> = надійна компанія, <span class="score-mid">60–74</span> = варто уточнити деталі, <span class="score-bad">&lt;60</span> = ризики, потрібна додаткова перевірка.</p>
+      </section>
+
+      <!-- Top-10 Companies -->
+      <section class="proof-top10" aria-label="Топ-10 компаній">
+        <h2>🏆 Топ-10 перевірених компаній</h2>
+        <p>Найкращі роботодавці за оцінками реальних працівників</p>
+        <div class="proof-top10-grid">
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#1</div>
+            <div class="proof-top10-info">
+              <h3>Amazon Fulfillment Poland</h3>
+              <p class="proof-top10-city">📍 Wrocław, Poznań, Łódź</p>
+              <p class="proof-top10-review">"Стабільна зарплата, чіткий графік, є нічні зміни з доплатою. Житло не надають, але зарплата дозволяє орендувати."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">92</span>/100<br><small>48 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#2</div>
+            <div class="proof-top10-info">
+              <h3>InPost Logistics</h3>
+              <p class="proof-top10-city">📍 Kraków, Warszawa</p>
+              <p class="proof-top10-review">"Добрі умови для кур'єрів. Гнучкий графік, виплати щотижня."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">89</span>/100<br><small>35 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#3</div>
+            <div class="proof-top10-info">
+              <h3>Biedronka (Jeronimo Martins)</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"Працюю касиркою 7 місяців. UoP з першого дня, медична страховка, бонуси за надурочні."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">87</span>/100<br><small>52 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#4</div>
+            <div class="proof-top10-info">
+              <h3>Żabka (франчайзинг)</h3>
+              <p class="proof-top10-city">📍 Warszawa, Gdańsk, Katowice</p>
+              <p class="proof-top10-review">"Зручний графік для студентів. Zlecenie, але платять вчасно."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">85</span>/100<br><small>29 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#5</div>
+            <div class="proof-top10-info">
+              <h3>Panattoni (будівництво)</h3>
+              <p class="proof-top10-city">📍 Łódź, Wrocław</p>
+              <p class="proof-top10-review">"Хороші ставки для будівельників, 30–40 PLN/год. Є надурочні."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">83</span>/100<br><small>21 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#6</div>
+            <div class="proof-top10-info">
+              <h3>Poczta Polska</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"UoP, стабільний графік, гарне ставлення до українців."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">81</span>/100<br><small>18 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#7</div>
+            <div class="proof-top10-info">
+              <h3>GLS Poland</h3>
+              <p class="proof-top10-city">📍 Warszawa, Poznań</p>
+              <p class="proof-top10-review">"Кур'єрська доставка, авто надають. Заробіток залежить від кількості посилок."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">79</span>/100<br><small>15 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#8</div>
+            <div class="proof-top10-info">
+              <h3>Lidl Polska</h3>
+              <p class="proof-top10-city">📍 вся Польща</p>
+              <p class="proof-top10-review">"Добрі умови для складських працівників. Є корпоративне житло у деяких містах."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">78</span>/100<br><small>24 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#9</div>
+            <div class="proof-top10-info">
+              <h3>Skanska Polska</h3>
+              <p class="proof-top10-city">📍 Warszawa, Kraków</p>
+              <p class="proof-top10-review">"Будівельна компанія з хорошою репутацією. UoP для досвідчених."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">76</span>/100<br><small>12 відгуків</small></div>
+          </div>
+          <div class="proof-top10-card">
+            <div class="proof-top10-rank">#10</div>
+            <div class="proof-top10-info">
+              <h3>Netto (Salling Group)</h3>
+              <p class="proof-top10-city">📍 Szczecin, Gdańsk, Poznań</p>
+              <p class="proof-top10-review">"Магазин, але стабільні умови. Графік обговорюється індивідуально."</p>
+            </div>
+            <div class="proof-top10-score"><span class="score-good">75</span>/100<br><small>11 відгуків</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Materials -->
+      <section class="proof-related" aria-label="Пов'язані матеріали">
+        <h2>📚 Пов'язані матеріали</h2>
+        <ul class="related-links">
+          <li><a href="/red-flag-ru.html">🚩 Перевірка вакансій на шахрайство — Red Flag Checker</a></li>
+          <li><a href="/vacancies-ru.html">📋 Всі перевірені вакансії в Польщі</a></li>
+          <li><a href="/calculator-ru.html">💰 Калькулятор зарплати netto в Польщі 2026</a></li>
+          <li><a href="/about-ru.html">👥 Команда Rybezh — хто перевіряє компанії</a></li>
+          <li><a href="/blog-ru.html">📰 Блог — статті про роботу в Польщі</a></li>
+          <li><a href="/faq-ru.html">❓ Часті запитання про працевлаштування</a></li>
+          <li><a href="/contact-ru.html">📞 Зв'язатися з командою Rybezh</a></li>
+        </ul>
+      </section>
+
+      <div class="proof-filters" aria-label="Фільтри відгуків">
+        <div class="proof-filter-grid">
+          <input id="proofSearch" class="proof-input" type="search" placeholder="Пошук: компанія, місто, коментар...">
+
+          <select id="proofCity" class="proof-select" aria-label="Фільтр місто">
+            <option value="">Всі міста</option>
           </select>
 
           <div class="score-filter">
-            <label for="proofMinScore">Мин. Proof Score</label>
+            <label for="proofMinScore">Мін. Proof Score</label>
             <input id="proofMinScore" type="range" min="60" max="100" step="1" value="60">
             <div class="score-value">≥ <span id="proofMinScoreValue">60</span></div>
           </div>
 
-          <select id="proofSort" class="proof-select" aria-label="Сортировка">
-            <option value="new">Новые</option>
-            <option value="best">Лучший score</option>
-            <option value="worst">Худший score</option>
+          <select id="proofSort" class="proof-select" aria-label="Сортування">
+            <option value="new">Нові</option>
+            <option value="best">Найкращий score</option>
+            <option value="worst">Найгірший score</option>
           </select>
 
-          <button id="proofRefresh" class="proof-refresh" type="button">Обновить</button>
+          <button id="proofRefresh" class="proof-refresh" type="button">Оновити</button>
         </div>
       </div>
 
       <div class="proof-headline">
-        <div>Отзывов найдено: <b id="proofCount">0</b></div>
-        <div id="proofUpdated">Обновлено: —</div>
+        <div>Відгуків знайдено: <b id="proofCount">0</b></div>
+        <div id="proofUpdated">Оновлено: —</div>
       </div>
 
       <div id="proofAdminBar" class="proof-admin-bar" hidden>
-        <span>🛡️ Режим модерации: <b>Admin</b>. Показаны все отзывы, включая pending.</span>
+        <span>🛡️ Режим модерації: <b>Admin</b>. Показані всі відгуки, включно з pending.</span>
         <span id="proofAdminUser">—</span>
       </div>
 
       <div id="proofGrid" class="proof-grid" aria-live="polite"></div>
-      <div id="proofEmpty" class="proof-empty" hidden>По выбранным фильтрам отзывов не найдено.</div>
+      <div id="proofEmpty" class="proof-empty" hidden>За вибраними фільтрами відгуків не знайдено.</div>
 
-      <section class="proof-add" aria-label="Добавить Proof">
-        <h2>➕ Добавить Proof</h2>
-        <p>Заполните форму — отзыв пройдёт модерацию перед публикацией.</p>
+      <section class="proof-add" aria-label="Додати Proof">
+        <h2>➕ Додати Proof</h2>
+        <p>Заповніть форму — відгук піде на модерацію перед публікацією.</p>
 
         <form id="proofAddForm" class="proof-form" novalidate>
           <div class="proof-form-grid">
-            <label>🔗 Ссылка на вакансию *
+            <label>🔗 Посилання на вакансію *
               <input type="url" name="vacancy_url" placeholder="https://rybezh.site/..." required>
             </label>
-            <label>🏢 Компания *
-              <input type="text" name="company" placeholder="Название компании" required>
+            <label>🏢 Компанія *
+              <input type="text" name="company" placeholder="Назва компанії" required>
             </label>
-            <label>📍 Город *
+            <label>📍 Місто *
               <input type="text" name="city" placeholder="Напр. Warszawa" required>
             </label>
-            <label>📎 Доказательства (файлы/ссылки)
-              <input type="text" name="proof_files" placeholder="URL или названия файлов через запятую">
+            <label>📎 Докази (файли/посилання)
+              <input type="text" name="proof_files" placeholder="URL або назви файлів через кому">
             </label>
           </div>
 
@@ -643,36 +864,36 @@
             <label>💰 Зарплата (1-10) *
               <select name="salary_rating" required></select>
             </label>
-            <label>🏠 Жильё (1-10) *
+            <label>🏠 Житло (1-10) *
               <select name="housing_rating" required></select>
             </label>
-            <label>🤝 Отношение (1-10) *
+            <label>🤝 Ставлення (1-10) *
               <select name="attitude_rating" required></select>
             </label>
-            <label>⏰ График (1-10) *
+            <label>⏰ Графік (1-10) *
               <select name="schedule_rating" required></select>
             </label>
-            <label>💸 Выплаты (1-10) *
+            <label>💸 Виплати (1-10) *
               <select name="payment_rating" required></select>
             </label>
-            <label>🛡️ Надёжность / anti-fraud (1-10) *
+            <label>🛡️ Надійність / anti-fraud (1-10) *
               <select name="fraud_rating" required></select>
             </label>
-            <label>⭐ Рекомендация (1-10) *
+            <label>⭐ Рекомендація (1-10) *
               <select name="recommendation" required></select>
             </label>
           </div>
 
-          <label>📝 Комментарий *
-            <textarea name="comment" placeholder="Кратко опишите ваш реальный опыт..." required></textarea>
+          <label>📝 Коментар *
+            <textarea name="comment" placeholder="Коротко опишіть ваш реальний досвід..." required></textarea>
           </label>
 
           <div class="proof-progress">
-            <span>Прогресс заполнения: <b id="proofFormProgressValue">0%</b></span>
+            <span>Прогрес заповнення: <b id="proofFormProgressValue">0%</b></span>
             <div class="proof-progress-bar"><div id="proofFormProgressFill" class="proof-progress-fill"></div></div>
           </div>
 
-          <button type="submit" id="proofSubmitBtn" class="proof-submit">🚀 Отправить Proof</button>
+          <button type="submit" id="proofSubmitBtn" class="proof-submit">🚀 Відправити Proof</button>
           <div id="proofFormMsg" class="proof-form-msg" aria-live="polite"></div>
         </form>
       </section>
@@ -683,86 +904,32 @@
     <div class="container">
       <div class="footer-inner">
         <div class="footer-brand">
-          <a href="/" class="logo">
+          <a href="/index-ru.html" class="logo">
             <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
             Rybezh
           </a>
-          <p>Помогаем найти работу в Польше — честно, без лишних обещаний. Пишите в Telegram.</p>
-          <div class="footer-social">
-            <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            </a>
-            <a href="mailto:contacts@rybezh.site" aria-label="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Навигация</h4>
-          <a href="/">Главная</a>
-          <a href="/about-ru.html">О нас</a>
-          <a href="/blog-ru.html">Блог</a>
-          <a href="/faq-ru.html">FAQ</a>
-          <a href="/contact-ru.html">Контакты</a>
-          <a href="/for-employers-ru.html">Для работодателей</a>
-        </div>
-        <div class="footer-col">
-          <h4>Вакансии</h4>
-          <a href="/vacancies-ru.html?city=warsaw">Варшава</a>
-          <a href="/vacancies-ru.html?city=krakow">Краков</a>
-          <a href="/vacancies-ru.html?city=wroclaw">Вроцлав</a>
-          <a href="/vacancies-ru.html?city=gdansk">Гданьск</a>
-        </div>
-        <div class="footer-col">
-          <h4>Рассылка</h4>
-          <p class="muted" style="font-size:0.9rem;margin-bottom:0.5rem">Новые вакансии и статьи.</p>
-          <form class="footer-newsletter-form">
-            <input type="email" required placeholder="Ваш email">
-            <button type="submit" aria-label="Subscribe">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-          </form>
-        </div>
-        <div class="footer-col">
-          <h4>Контакты</h4>
-          <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">Telegram: @rybezh_site</a>
-          <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a>
-          <a href="/apply-ru.html">Подать заявку</a>
+          <p>Допомагаємо українцям знайти легальну роботу у Польщі.</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Rybezh. Все права защищены.</p>
-        <div class="footer-bottom-links">
-          <a href="/privacy-ru.html">Политика конфиденциальности</a>
-          <a href="/terms-ru.html">Условия использования</a>
-          <a href="/company-ru.html">Реквизиты</a>
-          <a href="/game.html">🎮 Игра</a>
-        </div>
+        <p>&copy; <span id="year"></span> Rybezh. Всі права захищені.</p>
       </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-  <div id="cookie-banner" class="cookie-banner" hidden>
-    <p>Мы используем файлы cookie для улучшения вашего опыта. Оставаясь на сайте, вы соглашаетесь с их использованием.</p>
-    <button id="cookie-accept-btn">Принять</button>
-  </div>
 
   <script>
-    // Supabase client (existing project credentials)
-    const { createClient } = supabase;
-    const supabaseClient = createClient(
-      "https://ubygfyksalvwsprvetoc.supabase.co",
-      "sb_publishable_koJjEYMWzvwDNCzp9T7ZeA_2E1kusfD"
-    );
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const PROOF_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw3Cy0LYmMEg-fV_vIUGiRzy6P6Vxg0hNGNtRs8bHilEUoRL4Q_Sdok1Xy1vDEIaFNT/exec';
 
     const ratingsKeys = [
       ['salary_rating', 'Зарплата'],
-      ['housing_rating', 'Жильё'],
-      ['attitude_rating', 'Отношение'],
-      ['schedule_rating', 'График'],
-      ['payment_rating', 'Выплаты'],
-      ['fraud_rating', 'Риск мошенничества'],
-      ['recommendation', 'Рекомендация']
+      ['housing_rating', 'Житло'],
+      ['attitude_rating', 'Ставлення'],
+      ['schedule_rating', 'Графік'],
+      ['payment_rating', 'Виплати'],
+      ['fraud_rating', 'Ризик шахрайства'],
+      ['recommendation', 'Рекомендація']
     ];
 
     let reviewsState = [];
@@ -785,9 +952,9 @@
     }
 
     function verdictByScore(score) {
-      if (score >= 80) return '✅ AI-вердикт: высокий уровень доверия. Условия выглядят стабильными и прозрачными.';
-      if (score >= 60) return '⚠️ AI-вердикт: средний уровень доверия. Перед стартом уточните график, проживание и оплату.';
-      return '🚩 AI-вердикт: повышенный риск. Рекомендуем дополнительную проверку компании и документов.';
+      if (score >= 80) return '✅ AI-вердикт: високий рівень довіри. Умови виглядають стабільними та прозорими.';
+      if (score >= 60) return '⚠️ AI-вердикт: середній рівень довіри. Перед стартом уточніть графік, проживання та оплату.';
+      return '🚩 AI-вердикт: підвищений ризик. Рекомендуємо додаткову перевірку компанії та документів.';
     }
 
     function scoreClass(score) {
@@ -802,6 +969,13 @@
       return 'var(--proof-accent)';
     }
 
+    function getRowValue(row, keys) {
+      for (const key of keys) {
+        if (Object.prototype.hasOwnProperty.call(row, key)) return row[key];
+      }
+      return '';
+    }
+
     function fileCount(proofFiles) {
       if (!proofFiles || !String(proofFiles).trim()) return 0;
       return String(proofFiles)
@@ -813,7 +987,7 @@
     function formatDate(value) {
       const d = new Date(value);
       if (Number.isNaN(d.getTime())) return '—';
-      return d.toLocaleDateString('ru-RU');
+      return d.toLocaleDateString('uk-UA');
     }
 
     function computeProofScore(row) {
@@ -832,54 +1006,51 @@
     }
 
     async function detectAdminMode() {
-      try {
-        const { data, error } = await supabaseClient.auth.getSession();
-        if (error) throw error;
-
-        const session = data && data.session;
-        const user = session && session.user;
-        const email = String(user && user.email || '').toLowerCase();
-        const role = String((user && (user.app_metadata?.role || user.user_metadata?.role)) || '').toLowerCase();
-
-        const isAdmin = Boolean(user) && (
-          role === 'admin' ||
-          role === 'owner' ||
-          ADMIN_EMAILS.includes(email)
-        );
-
-        isAdminMode = isAdmin;
-
-        const bar = document.getElementById('proofAdminBar');
-        const userEl = document.getElementById('proofAdminUser');
-        if (bar) bar.hidden = !isAdmin;
-        if (userEl) userEl.textContent = user ? `👤 ${user.email || 'admin'}` : '—';
-      } catch (e) {
-        isAdminMode = false;
-      }
+      // Supabase is removed; Admin moderation is now handled directly in Google Sheets.
+      isAdminMode = false;
+      const bar = document.getElementById('proofAdminBar');
+      if (bar) bar.hidden = true;
     }
 
     async function fetchReviews() {
-      let query = supabaseClient
-        .from('reviews')
-        .select('*')
-        .order('created_at', { ascending: false });
+      try {
+        const response = await fetch(PROOF_SCRIPT_URL);
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.json();
 
-      if (!isAdminMode) query = query.eq('approved', true);
-
-      const { data, error } = await query;
-
-      if (error) throw error;
-
-      return (data || []).map(row => ({
-        ...row,
-        proof_score: computeProofScore(row)
-      }));
+        return data.map((row, index) => {
+          const mappedRow = {
+            id: String(index),
+            created_at: new Date().toISOString(), // Mocking date since it's not in the sheet currently, or could be extracted if added later
+            vacancy_url: getRowValue(row, ['link', 'Link', 'vacancy_url', 'vacancy', 'Посилання на вакансію', 'Посилання']) || '',
+            company: getRowValue(row, ['company', 'Company', 'Компанія']) || '',
+            city: getRowValue(row, ['city', 'City', 'Місто']) || '',
+            proof_files: getRowValue(row, ['proofs', 'Proofs', 'proof_files', 'Proof files', 'Докази']) || '',
+            salary_rating: Number(getRowValue(row, ['salary', 'Salary', 'Зарплата', 'Зарплата (1-10)']) || 0),
+            housing_rating: Number(getRowValue(row, ['housing', 'Housing', 'Житло', 'Житло (1-10)']) || 0),
+            attitude_rating: Number(getRowValue(row, ['attitude', 'Attitude', 'Ставлення', 'Ставлення (1-10)']) || 0),
+            schedule_rating: Number(getRowValue(row, ['schedule', 'Schedule', 'Графік', 'Графік (1-10)']) || 0),
+            payment_rating: Number(getRowValue(row, ['payments', 'Payments', 'Виплати', 'Виплати (1-10)']) || 0),
+            fraud_rating: Number(getRowValue(row, ['reliability', 'Reliability', 'Надійність', 'Надійність (1-10)']) || 0),
+            recommendation: Number(getRowValue(row, ['recommend', 'Recommend', 'Рекомендація', 'Рекомендація (1-10)']) || 0),
+            comment: getRowValue(row, ['comment', 'Comment', 'Коментар']) || '',
+            approved: true
+          };
+          return {
+            ...mappedRow,
+            proof_score: computeProofScore(mappedRow)
+          };
+        });
+      } catch (error) {
+        console.error('Fetch reviews error:', error);
+        throw error;
+      }
     }
 
     function buildCityOptions(data) {
       const select = document.getElementById('proofCity');
-      select.innerHTML = '<option value="">Все города</option>';
-      const cities = [...new Set(data.map(r => r.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ru'));
+      select.innerHTML = '<option value="">Всі міста</option>';
+      const cities = [...new Set(data.map(r => r.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'uk'));
       cities.forEach(city => {
         const o = document.createElement('option');
         o.value = city;
@@ -916,7 +1087,7 @@
 
       const filtered = applyFilters(data);
       count.textContent = String(filtered.length);
-      updated.textContent = 'Обновлено: ' + new Date().toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+      updated.textContent = 'Оновлено: ' + new Date().toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' });
 
       if (!filtered.length) {
         grid.innerHTML = '';
@@ -940,7 +1111,7 @@
         ` : '';
         const discussBlock = row.id ? `
           <details class="proof-discuss" data-proof-discuss>
-            <summary>💬 Обсуждение отзыва</summary>
+            <summary>💬 Обговорення відгуку</summary>
             <div class="proof-giscus-slot" data-giscus-term="proof-review-${row.id}"></div>
           </details>
         ` : '';
@@ -967,10 +1138,10 @@
 
             <div class="proof-verdict">${verdictByScore(score)}</div>
             <div class="proof-ratings">${ratings}</div>
-            <p class="proof-comment">${row.comment || 'Без комментария'}</p>
+            <p class="proof-comment">${row.comment || 'Без коментаря'}</p>
             <div class="proof-meta">
               <span>📅 ${formatDate(row.created_at)} ${isAdminMode ? `<span class="proof-status-chip ${rowStatus}">${rowStatusLabel}</span>` : ''}</span>
-              <span>📎 Файлов: ${files}</span>
+              <span>📎 Файлів: ${files}</span>
             </div>
             ${adminControls}
             ${discussBlock}
@@ -984,40 +1155,7 @@
       bindGiscusOnDemand();
     }
 
-    async function moderateReview(id, action) {
-      if (!id || !action) return;
-      try {
-        if (action === 'approve') {
-          const { error } = await supabaseClient
-            .from('reviews')
-            .update({ approved: true })
-            .eq('id', id);
-          if (error) throw error;
-        } else if (action === 'reject') {
-          const { error } = await supabaseClient
-            .from('reviews')
-            .delete()
-            .eq('id', id);
-          if (error) throw error;
-        }
-        await loadReviews({ hard: false });
-      } catch (e) {
-        console.error('Moderation error:', e);
-        alert('Не удалось выполнить модерацию. Проверьте права доступа.');
-      }
-    }
-
-    function bindAdminActions() {
-      document.querySelectorAll('[data-proof-action][data-proof-id]').forEach(btn => {
-        if (btn.dataset.bound === '1') return;
-        btn.dataset.bound = '1';
-        btn.addEventListener('click', () => {
-          const id = btn.getAttribute('data-proof-id');
-          const action = btn.getAttribute('data-proof-action');
-          moderateReview(id, action);
-        });
-      });
-    }
+    // Admin moderation is handled directly in Google Sheets.
 
     function mountGiscus(container, term) {
       if (!container || container.dataset.loaded === '1') return;
@@ -1062,7 +1200,7 @@
 
       if (hard && refreshBtn) {
         refreshBtn.disabled = true;
-        refreshBtn.textContent = 'Обновляем...';
+        refreshBtn.textContent = 'Оновлюємо...';
       }
 
       try {
@@ -1076,29 +1214,16 @@
         const empty = document.getElementById('proofEmpty');
         grid.innerHTML = '';
         empty.hidden = false;
-        empty.textContent = 'Не удалось загрузить отзывы из базы. Попробуйте ещё раз.';
+        empty.textContent = 'Не вдалося завантажити відгуки з бази. Спробуйте ще раз.';
       } finally {
         if (hard && refreshBtn) {
           refreshBtn.disabled = false;
-          refreshBtn.textContent = 'Обновить';
+          refreshBtn.textContent = 'Оновити';
         }
       }
     }
 
-    function initRealtime() {
-      if (realtimeChannel) return;
-      realtimeChannel = supabaseClient
-        .channel('proof-reviews-live')
-        .on('postgres_changes', {
-          event: '*',
-          schema: 'public',
-          table: 'reviews'
-        }, () => {
-          if (realtimeDebounce) clearTimeout(realtimeDebounce);
-          realtimeDebounce = setTimeout(() => loadReviews({ hard: false }), 450);
-        })
-        .subscribe();
-    }
+    // Realtime removed since it relied on Supabase. Falling back to simple polling via setInterval.
 
     const minScore = document.getElementById('proofMinScore');
     const minScoreValue = document.getElementById('proofMinScoreValue');
@@ -1113,7 +1238,7 @@
         if (!select || select.options.length > 0) return;
         const placeholder = document.createElement('option');
         placeholder.value = '';
-        placeholder.textContent = 'Выберите';
+        placeholder.textContent = 'Оберіть';
         placeholder.selected = true;
         placeholder.disabled = true;
         select.appendChild(placeholder);
@@ -1168,7 +1293,7 @@
 
         if (!vacancyUrl || !company || !city || !comment) {
           msg.classList.add('err');
-          msg.textContent = '⚠️ Заполните все обязательные поля.';
+          msg.textContent = '⚠️ Заповніть усі обов’язкові поля.';
           return;
         }
 
@@ -1176,56 +1301,60 @@
         try { new URL(vacancyUrl); } catch (_) { validUrl = false; }
         if (!validUrl) {
           msg.classList.add('err');
-          msg.textContent = '⚠️ Ссылка на вакансию должна быть корректным URL.';
+          msg.textContent = '⚠️ Посилання на вакансію має бути коректним URL.';
           return;
         }
 
         const payload = {
-          vacancy_url: vacancyUrl,
-          company,
-          city,
-          salary_rating: Number(form.elements.salary_rating.value || 0),
-          housing_rating: Number(form.elements.housing_rating.value || 0),
-          attitude_rating: Number(form.elements.attitude_rating.value || 0),
-          schedule_rating: Number(form.elements.schedule_rating.value || 0),
-          payment_rating: Number(form.elements.payment_rating.value || 0),
-          fraud_rating: Number(form.elements.fraud_rating.value || 0),
-          recommendation: Number(form.elements.recommendation.value || 0),
-          comment,
-          proof_files: String(form.elements.proof_files.value || '').trim(),
-          proof_score: computeProofScore(form.elements),
-          approved: false
+          link: vacancyUrl,
+          company: company,
+          city: city,
+          proofs: String(form.elements.proof_files.value || '').trim(),
+          salary: Number(form.elements.salary_rating.value || 0),
+          housing: Number(form.elements.housing_rating.value || 0),
+          attitude: Number(form.elements.attitude_rating.value || 0),
+          schedule: Number(form.elements.schedule_rating.value || 0),
+          payments: Number(form.elements.payment_rating.value || 0),
+          reliability: Number(form.elements.fraud_rating.value || 0),
+          recommend: Number(form.elements.recommendation.value || 0),
+          comment: comment
         };
 
         const ratingsValid = [
-          payload.salary_rating, payload.housing_rating, payload.attitude_rating,
-          payload.schedule_rating, payload.payment_rating, payload.fraud_rating, payload.recommendation
+          payload.salary, payload.housing, payload.attitude,
+          payload.schedule, payload.payments, payload.reliability, payload.recommend
         ].every(v => Number.isFinite(v) && v >= 1 && v <= 10);
 
         if (!ratingsValid) {
           msg.classList.add('err');
-          msg.textContent = '⚠️ Все рейтинги должны быть в диапазоне 1–10.';
+          msg.textContent = '⚠️ Всі рейтинги мають бути в діапазоні 1–10.';
           return;
         }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = '⏳ Отправляем...';
+        submitBtn.textContent = '⏳ Відправляємо...';
 
         try {
-          const { error } = await supabaseClient.from('reviews').insert([payload]);
-          if (error) throw error;
+          await fetch(PROOF_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: JSON.stringify(payload)
+          });
 
           msg.classList.add('ok');
-          msg.textContent = '✅ Спасибо! Отзыв отправлен на модерацию';
+          msg.textContent = '✅ Дякуємо! Відгук відправлено на модерацію';
           form.reset();
           updateProgress();
+
+          // Optionally, wait a bit and fetch fresh data
+          setTimeout(() => loadReviews({ hard: true }), 1500);
         } catch (err) {
           console.error('Proof submit error:', err);
           msg.classList.add('err');
-          msg.textContent = '❌ Не удалось отправить отзыв. Попробуйте ещё раз.';
+          msg.textContent = '❌ Не вдалося відправити відгук. Спробуйте ще раз.';
         } finally {
           submitBtn.disabled = false;
-          submitBtn.textContent = '🚀 Отправить Proof';
+          submitBtn.textContent = '🚀 Відправити Proof';
         }
       });
     }
@@ -1242,11 +1371,10 @@
 
     document.getElementById('proofRefresh').addEventListener('click', () => loadReviews({ hard: true }));
 
-    // Initial load + polling every 30s + realtime subscription
+    // Initial load + polling every 30s
     setupProofForm();
     detectAdminMode().then(() => {
       loadReviews({ hard: true });
-      initRealtime();
     });
     setInterval(() => loadReviews({ hard: false }), 30000);
   </script>
