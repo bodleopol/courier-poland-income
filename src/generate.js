@@ -2929,10 +2929,6 @@ async function build() {
     await fs.writeFile(path.join(DIST, 'bogdan-moto-2.png'), moto2Content);
     const dogContent = await fs.readFile(path.join(SRC, 'bogdan-dog.jpg'));
     await fs.writeFile(path.join(DIST, 'bogdan-dog.jpg'), dogContent);
-    try {
-      const moto1Content = await fs.readFile(path.join(SRC, 'bogdan-moto-1.png'));
-      await fs.writeFile(path.join(DIST, 'bogdan-moto-1.png'), moto1Content);
-    } catch {}
     const portraitContent = await fs.readFile(path.join(SRC, 'portrait-bohdan.jpg'));
     await fs.writeFile(path.join(DIST, 'portrait-bohdan.jpg'), portraitContent);
   } catch (e) {
