@@ -49,3 +49,4 @@ fix_posts_doorway.cjs
 fix_posts_wiki.py
 fix_all_posts.py
 src/posts.json
+dist

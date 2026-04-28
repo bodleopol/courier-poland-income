@@ -112,11 +112,19 @@
     });
   }
 
+
+  // Deterministic PRNG to avoid Math.random() SEO doorway penalties
+  let seed = 12345;
+  function pseudoRandom() {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  }
+
   // Shuffle array utility
   function shuffleArray(array) {
     const arr = array.slice();
     for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(pseudoRandom() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
     return arr;

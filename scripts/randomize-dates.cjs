@@ -8,10 +8,17 @@ const POSTS = path.join(ROOT, 'src', 'posts.json');
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
+
+let seed = 12345;
+function pseudoRandom() {
+  seed = (seed * 9301 + 49297) % 233280;
+  return seed / 233280;
+}
+
 function randDateInRange(startISO, endISO) {
   const s = new Date(startISO + 'T00:00:00Z').getTime();
   const e = new Date(endISO + 'T00:00:00Z').getTime();
-  const t = s + Math.floor(Math.random() * (e - s + 86400000));
+  const t = s + Math.floor(pseudoRandom() * (e - s + 86400000));
   const d = new Date(t);
   return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`;
 }

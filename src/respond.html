@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="respond.title">Відгукнутись на вакансію - Rybezh</title>
+  <title>Відгук на вакансію</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/features.css">
@@ -14,11 +14,11 @@
     <div class="container header-inner">
       <a href="/" class="brand">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="brand-icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-        <span class="brand-text" data-i18n="brand.name">Rybezh</span>
+        <span class="brand-text">Rybezh</span>
       </a>
       <nav class="desktop-nav">
-        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
-        <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+        <a href="/" class="nav-link">Головна</a>
+        <a href="/vacancies.html" class="nav-link">Вакансії</a>
         <div class="lang-switcher">
           <button class="lang-btn" data-lang="ua">UA</button>
           <button class="lang-btn" data-lang="pl">PL</button>
@@ -31,8 +31,8 @@
       </button>
     </div>
     <div class="mobile-menu">
-      <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
-      <a href="/vacancies.html" class="nav-link" data-i18n="nav.jobs">Вакансії</a>
+      <a href="/" class="nav-link">Головна</a>
+      <a href="/vacancies.html" class="nav-link">Вакансії</a>
       <div class="mobile-lang">
         <button class="lang-btn" data-lang="ua">UA</button>
         <button class="lang-btn" data-lang="pl">PL</button>
@@ -45,26 +45,24 @@
   <main class="container">
     <section class="apply-grid" aria-labelledby="respondHeading">
       <div class="apply-card">
-        <h1 id="respondHeading" class="apply-title" data-i18n="respond.title">Відгукнутись на вакансію</h1>
-        <p class="apply-intro" data-i18n="respond.intro">Заповніть форму, завантажте резюме та дайте відповіді на кілька питань.</p>
+        <h1 id="respondHeading" class="apply-title">Відгук на вакансію</h1>
+        <p class="apply-intro">Залиште свої контакти, і ми зв'яжемося з вами найближчим часом для обговорення деталей.</p>
 
         <form id="respondForm" class="form" novalidate>
           <input type="hidden" id="jobSlug" name="jobSlug" />
 
           <div class="row two">
             <label class="field">
-              <span class="field-label" data-i18n="label.name">Ім'я</span>
-              <input class="input" id="name" name="name" required placeholder="Петро" data-i18n="placeholder.name" data-i18n-attr="placeholder" />
-            </label>
+              <span class="field-label">Ім'я</span>
+              <input class="input" id="name" name="name" required placeholder="Петро" />Петро</label>
 
             <label class="field">
-              <span class="field-label" data-i18n="label.contact">Телефон або email</span>
-              <input class="input" id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com" data-i18n="placeholder.contact" data-i18n-attr="placeholder" />
-            </label>
+              <span class="field-label">Телефон або email</span>
+              <input class="input" id="contact" name="contact" required placeholder="+48 123 456 789 або email@mail.com" />+48 123 456 789 або contacts@rybezh.site</label>
           </div>
 
           <label class="field">
-            <span class="field-label" data-i18n="label.resume">Ваше резюме (CV)</span>
+            <span class="field-label">Резюме</span>
             <input class="input" id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required />
           </label>
 
@@ -73,11 +71,11 @@
 
           <label class="consent" style="margin-top: 1rem;">
             <input id="consent" type="checkbox" required/>
-            <span data-i18n="label.consent">Я погоджуюсь на обробку моїх контактних даних</span>
+            <span>Я погоджуюсь на обробку моїх контактних даних</span>
           </label>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit" data-i18n="btn.submit">Надіслати заявку</button>
+            <button class="btn btn-primary" type="submit">Надіслати заявку</button>
           </div>
 
           <div id="formMessage" role="status" aria-live="polite" class="form-message" hidden></div>
@@ -86,15 +84,15 @@
 
       <aside class="apply-aside" aria-labelledby="asideHeading">
         <div class="card small">
-          <h3 id="asideHeading" data-i18n="aside.help">Потрібна допомога?</h3>
-          <p class="muted" data-i18n="aside.text">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
-          <a class="btn btn-ghost" href="/" data-i18n="btn.back">Повернутись на головну</a>
+          <h3 id="asideHeading">Потрібна допомога?</h3>
+          <p class="muted">Ми допомагаємо з документами, легалізацією та підбором вакансій. Заявки обробляємо протягом 24 годин.</p>
+          <a class="btn btn-ghost" href="/">Повернутись на головну</a>
         </div>
 
         <div class="card contacts">
-          <h4 data-i18n="aside.contacts">Контакти</h4>
-          <p class="muted"><span data-i18n="label.telegram">Telegram</span>: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
-          <p class="muted"><span data-i18n="label.email">Пошта</span>: <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a></p>
+          <h4>Контакти</h4>
+          <p class="muted"><span>Telegram</span>: <a href="https://t.me/rybezh_site" target="_blank" rel="noopener noreferrer">@rybezh_site</a></p>
+          <p class="muted"><span>Пошта</span>: <a href="mailto:contacts@rybezh.site">contacts@rybezh.site</a></p>
         </div>
       </aside>
     </section>
@@ -103,7 +101,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Rybezh. <span data-i18n="footer.rights">Всі права захищені.</span></p>
+        <p>&copy; <span id="year"></span> Rybezh. <span>Всі права захищені.</span></p>
       </div>
     </div>
   </footer>
@@ -626,7 +624,7 @@ function applyTranslationsLocal(lang) {
           label.className = 'field';
           label.style.marginTop = '1rem';
           label.innerHTML = `
-            <span class="field-label" data-i18n="question.${qKey}"></span>
+            <span class="field-label">question.${qKey}</span>
             <textarea class="input textarea" name="${qKey}" rows="3" required></textarea>
           `;
           container.appendChild(label);
@@ -736,8 +734,8 @@ function applyTranslationsLocal(lang) {
   </script>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   <div id="cookie-banner" class="cookie-banner" hidden>
-    <p data-i18n="cookie.banner.text">Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.</p>
-    <button id="cookie-accept-btn" data-i18n="cookie.banner.accept">Прийняти</button>
+    <p>Ми використовуємо файли cookie для покращення вашого досвіду. Залишаючись на сайті, ви погоджуєтесь на їх використання.</p>
+    <button id="cookie-accept-btn">Прийняти</button>
   </div>
   <script src="/main.js"></script>
 </body>
