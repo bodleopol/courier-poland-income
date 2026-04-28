@@ -9,7 +9,8 @@
         <div class="search-card">
           <div class="search-bar">
             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-            <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія...">Пошук за містом або типом роботи</button>
+            <input type="text" id="jobSearch" placeholder="Назва професії, місто, категорія...">
+            <button type="button" class="search-btn" onclick="window.location.href='/vacancies.html?q=' + encodeURIComponent(document.getElementById('jobSearch').value)">Пошук</button>
           </div>
           <p class="search-hint">Актуальні вакансії в різних сферах по всій Польщі. Легальні умови та підтримка.</p>
         </div>
@@ -314,7 +315,7 @@
         </div>
         <h3>Олена Рибецька</h3>
         <p class="team-role">Засновниця Rybezh</p>
-        <p class="team-bio">6 років у логістиці в Польщі. Супроводжувала адаптацію нових працівників і бачила, де саме люди втрачають час і гроші через недосказаність. Rybezh задумала як сервіс, який говорить чесно: без шаблонних фраз, без прикрашення умов, зі зрозумілою мовою. Пише про стратегію працевлаштування, договори, легалізацію і загальну картину ринку.</p>
+        <p class="team-bio">6 років у логістиці в Польщі. Супроводжувала адаптацію нових працівникі�� і бачила, де саме люди втрачають час і гроші через недосказаність. Rybezh задумала як сервіс, який говорить чесно: без шаблонних фраз, без прикрашення умов, зі зрозумілою мовою. Пише про стратегію працевлаштування, договори, легалізацію і загальну картину ринку.</p>
         <a href="/about.html" class="team-link">Детальніше →</a>
       </div>
       <div class="team-card">
@@ -466,7 +467,7 @@
         <p class="testimonial-role">Прибиральниця, 7 міс. досвіду</p>
       </div>
     </div>
-    <p class="section-note">*Досвід кандидатів може відрізнятися залежно від міста та роботодавця</p>
+    <p class="section-note">*Досвід кандидатів може відрізнятися з��лежно від міста та роботодавця</p>
   </div>
 </section>
 
@@ -636,11 +637,24 @@ main.container {
   color: #0f172a;
 }
 
-.search-bar button {
+.search-bar button,
+.search-btn {
   border-radius: 12px;
   padding: 0.75rem 1.75rem;
   white-space: nowrap;
   box-shadow: none;
+  background: linear-gradient(135deg, #00a67e 0%, #0f766e 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #00a67e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 166, 126, 0.3);
 }
 
 .search-hint {
@@ -669,10 +683,10 @@ main.container {
 .category-card {
   background: white;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
   display: block;
@@ -680,14 +694,19 @@ main.container {
 
 .category-card:hover {
   border-color: #00a67e;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 166, 126, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 166, 126, 0.12);
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.15) rotate(5deg);
 }
 
 .category-icon {
   font-size: 3rem;
   display: block;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
 }
 
 .category-card h3 {
@@ -710,23 +729,30 @@ main.container {
 .city-card {
   background: white;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
 .city-card:hover {
   border-color: #00a67e;
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 166, 126, 0.12);
+}
+
+.city-card:hover .city-icon {
+  transform: scale(1.1);
 }
 
 .city-icon {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .city-card h3 {
@@ -751,18 +777,38 @@ main.container {
 .job-card {
   background: white;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   color: inherit;
   display: block;
   min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00a67e, #14b8a6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .job-card:hover {
   border-color: #00a67e;
-  box-shadow: 0 5px 20px rgba(0, 166, 126, 0.1);
+  box-shadow: 0 12px 40px rgba(0, 166, 126, 0.15);
+  transform: translateY(-4px);
+}
+
+.job-card:hover::before {
+  transform: scaleX(1);
 }
 
 .job-category {
@@ -899,9 +945,11 @@ main.container {
     border-radius: 12px;
   }
   
-  .search-bar button {
+  .search-bar button,
+  .search-btn {
     width: 100%;
     border-radius: 10px;
+    padding: 0.85rem 1.5rem;
   }
 
   .search-card {
