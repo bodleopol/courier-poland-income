@@ -1,10 +1,4 @@
-
-let mainSeed = 12345;
-function mainRandom() {
-  mainSeed = (mainSeed * 9301 + 49297) % 233280;
-  return mainSeed / 233280;
-}
-  /**
+/**
  * Rybezh Site - Main JavaScript
  * Features: i18n, Cookie Banner, Dark Theme, Scroll to Top, Animations
  */
@@ -20,6 +14,22 @@ function mainRandom() {
   // ============================================
   
   // Get current language
+  
+  // Translations object for i18n support
+  const translations = {
+    'footer.newsletter.success': {
+      ua: 'Дякуємо за підписку!',
+      pl: 'Dziękujemy za subskrypcję!',
+      ru: 'Спасибо за подписку!',
+      en: 'Thanks for subscribing!'
+    },
+    'footer.newsletter.placeholder': {
+      ua: 'Ваш email',
+      pl: 'Twój email',
+      ru: 'Ваш email',
+      en: 'Your email'
+    }
+  };
   
   function getLang() {
     const p = window.location.pathname;
@@ -733,121 +743,14 @@ function mainRandom() {
     init();
   }
 
+  // Stub for applyTranslations (translations now handled inline)
+  function applyTranslations() {
+    // No-op: translations are handled directly in each component
+  }
+
   // Expose to global scope
   window.applyTranslations = applyTranslations;
   window.initDateFormatting = initDateFormatting;
 
 
 })();
-
-// --- Floating Chatbot Initialization ---
-document.addEventListener('DOMContentLoaded', () => {
-  const apiKey = 'AIzaSyBoYwebJJvyB6MHzieLzBaXrOkggnsipX8';
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent`;
-
-  // Create UI Container
-  const container = document.createElement('div');
-  container.id = 'chatbot-container';
-
-  // Create FAB
-  const fab = document.createElement('button');
-  fab.id = 'chatbot-fab';
-  fab.setAttribute('aria-label', 'Chat with AI');
-  fab.innerHTML = `<svg viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>`;
-  container.appendChild(fab);
-
-  // Create Chat Window
-  const chatWindow = document.createElement('div');
-  chatWindow.id = 'chatbot-window';
-
-  const header = document.createElement('div');
-  header.id = 'chatbot-header';
-  header.innerHTML = `<span>AI Assistant</span><button id="chatbot-close" aria-label="Close">&times;</button>`;
-  chatWindow.appendChild(header);
-
-  const messagesArea = document.createElement('div');
-  messagesArea.id = 'chatbot-messages';
-  chatWindow.appendChild(messagesArea);
-
-  const inputArea = document.createElement('div');
-  inputArea.id = 'chatbot-input-area';
-
-  const inputField = document.createElement('input');
-  inputField.id = 'chatbot-input';
-  inputField.type = 'text';
-  inputField.placeholder = 'Type a message...';
-
-  const sendButton = document.createElement('button');
-  sendButton.id = 'chatbot-send';
-  sendButton.textContent = 'Send';
-
-  inputArea.appendChild(inputField);
-  inputArea.appendChild(sendButton);
-  chatWindow.appendChild(inputArea);
-
-  container.appendChild(chatWindow);
-  document.body.appendChild(container);
-
-  // Toggle Chat Window
-  fab.addEventListener('click', () => {
-    chatWindow.classList.toggle('is-open');
-    if (chatWindow.classList.contains('is-open')) {
-      inputField.focus();
-    }
-  });
-
-  document.getElementById('chatbot-close').addEventListener('click', () => {
-    chatWindow.classList.remove('is-open');
-  });
-
-  // Append message to UI
-  function appendMessage(text, sender) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = `chatbot-message ${sender}`;
-    msgDiv.textContent = text;
-    messagesArea.appendChild(msgDiv);
-    messagesArea.scrollTop = messagesArea.scrollHeight;
-  }
-
-  // Handle Send
-  async function sendMessage() {
-    const text = inputField.value.trim();
-    if (!text) return;
-
-    appendMessage(text, 'user');
-    inputField.value = '';
-    sendButton.disabled = true;
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-goog-api-key': apiKey
-        },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: text }] }]
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-      }
-
-      const data = await response.json();
-      const botText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't process that.";
-      appendMessage(botText, 'bot');
-    } catch (err) {
-      console.error('Chatbot API Error:', err);
-      appendMessage("Error communicating with AI. Please try again later.", 'bot');
-    } finally {
-      sendButton.disabled = false;
-      inputField.focus();
-    }
-  }
-
-  sendButton.addEventListener('click', sendMessage);
-  inputField.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') sendMessage();
-  });
-});
