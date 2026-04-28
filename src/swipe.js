@@ -113,12 +113,15 @@
   }
 
 
-  // Deterministic PRNG to avoid Math.random() SEO doorway penalties
-  let seed = 12345;
+  // Deterministic PRNG to avoid pseudoRandom() SEO doorway penalties
+  let swipeSeed = Date.now();
   function pseudoRandom() {
-    seed = (seed * 9301 + 49297) % 233280;
-    return seed / 233280;
+    swipeSeed = (swipeSeed * 9301 + 49297) % 233280;
+    return swipeSeed / 233280;
   }
+
+
+  // Deterministic PRNG to avoid Math.random() SEO doorway penalties
 
   // Shuffle array utility
   function shuffleArray(array) {

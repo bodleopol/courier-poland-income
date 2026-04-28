@@ -7,8 +7,8 @@
     "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\"",
     "build": "mkdir -p dist && cp -r src/* dist/ && npm run minify",
     "minify": "npm run minify:css && npm run minify:js",
-    "minify:css": "find dist -name *.css -exec npx cleancss -o {} {} \\;",
-    "minify:js": "find dist -name *.js -exec npx terser {} -o {} -c -m \\;"
+    "minify:css": "find dist -name '*.css' -exec npx cleancss -o {} {} \\;",
+    "minify:js": "find dist -name '*.js' -exec npx terser {} -o {} -c drop_console=true -m \\;"
   },
   "devDependencies": {
     "@cspell/dict-pl_pl": "^3.0.6",

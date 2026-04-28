@@ -1400,25 +1400,30 @@ details li {
   cursor: not-allowed;
 }
 
+
 /* --- OPTIMIZATION & UI ENHANCEMENTS --- */
-.btn-cta, .btn-primary, .btn-telegram, .btn-white {
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.btn-cta, .btn-primary {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
 }
-.btn-cta:hover, .btn-primary:hover, .btn-telegram:hover, .btn-white:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+.btn-cta:hover, .btn-primary:hover {
+  background-image: linear-gradient(45deg, var(--color-accent), #FF8C00, var(--color-accent));
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.6);
+  transform: translateY(-2px) scale(1.03);
 }
-.btn-cta:active, .btn-primary:active, .btn-telegram:active, .btn-white:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-.job-card, .search-card, .human-card {
+.job-card, .human-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .job-card:hover, .human-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
-  border-color: var(--color-accent);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 140, 0, 0.5);
 }
 .scroll-reveal {
   opacity: 0;
