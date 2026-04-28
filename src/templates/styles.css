@@ -1399,3 +1399,34 @@ details li {
   background-color: var(--color-secondary);
   cursor: not-allowed;
 }
+
+/* --- OPTIMIZATION & UI ENHANCEMENTS --- */
+.btn-cta, .btn-primary, .btn-telegram, .btn-white {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+.btn-cta:hover, .btn-primary:hover, .btn-telegram:hover, .btn-white:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+.btn-cta:active, .btn-primary:active, .btn-telegram:active, .btn-white:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.job-card, .search-card, .human-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.job-card:hover, .human-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-accent);
+}
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1), transform 0.6s cubic-bezier(0.5, 0, 0, 1);
+  will-change: opacity, transform;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
