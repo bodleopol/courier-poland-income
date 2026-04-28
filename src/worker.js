@@ -16,7 +16,6 @@ export default {
       headers.set('Cache-Control', 'public, max-age=31536000, immutable');
     } else if (pathname.endsWith('.html') || pathname === '/') {
       headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
-      headers.set('Content-Type', 'text/html; charset=utf-8');
     } else if (pathname.endsWith('.xml') || pathname.endsWith('.txt')) {
       headers.set('Cache-Control', 'public, max-age=86400');
     }
