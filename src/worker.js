@@ -12,9 +12,11 @@ export default {
 
     // Cache control for static assets (improves Core Web Vitals / PageSpeed)
     const pathname = url.pathname;
+    const contentType = (headers.get('Content-Type') || '').toLowerCase();
+
     if (/\.(css|js|svg|png|jpg|jpeg|webp|ico|woff2?)$/i.test(pathname)) {
       headers.set('Cache-Control', 'public, max-age=31536000, immutable');
-    } else if (pathname.endsWith('.html') || pathname === '/') {
+    } else if (pathname.endsWith('.html') || pathname === '/' || contentType.startsWith('text/html')) {
       headers.set('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
       headers.set('Content-Type', 'text/html; charset=utf-8');
     } else if (pathname.endsWith('.xml') || pathname.endsWith('.txt')) {
