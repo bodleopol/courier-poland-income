@@ -610,108 +610,6 @@
   }
 
   // ============================================
-  // 13. COMMENT THREADS (BLOG POSTS)
-  // ============================================
-
-  // ============================================
-  // 14. LIVE ACTIVITY (BLOG POSTS)
-  // ============================================
-  function initLiveActivity() {
-    const activity = document.querySelector('.js-live-activity');
-    const toastStack = document.querySelector('.js-live-toasts');
-    if (!activity || !toastStack) return;
-
-    const labels = {
-      ua: {
-        statusPool: [
-          'Користувач з Польщі читає цю сторінку',
-          'Хтось з Кракова переглядає статтю',
-          'Читач з Лодзі щойно відкрив пост',
-          'Хтось з Вроцлава зберіг вакансію'
-        ],
-        toastPool: [
-          'Хтось завантажив шаблон CV 2 хв тому',
-          'Новий коментар від Марини • 3 хв тому',
-          'Користувач з Гданська зберіг статтю',
-          'Запит на консультацію • щойно'
-        ]
-      },
-      pl: {
-        statusPool: [
-          'Użytkownik z Polski czyta tę stronę',
-          'Ktoś z Krakowa właśnie otworzył artykuł',
-          'Czytelnik z Łodzi przegląda post',
-          'Ktoś z Wrocławia zapisał ofertę'
-        ],
-        toastPool: [
-          'Ktoś pobrał szablon CV 2 min temu',
-          'Nowy komentarz od Mariny • 3 min temu',
-          'Użytkownik z Gdańska zapisał artykuł',
-          'Zapytanie o konsultację • przed chwilą'
-        ]
-      }
-    };
-
-    const setLabels = () => {
-      const lang = getLang();
-      const labelEl = activity.querySelector('.live-label');
-      const suffixEl = activity.querySelector('.live-suffix');
-      const label = activity.getAttribute(`data-label-${lang}`) || activity.getAttribute('data-label-ua') || '';
-      const suffix = activity.getAttribute(`data-suffix-${lang}`) || activity.getAttribute('data-suffix-ua') || '';
-      if (labelEl) labelEl.textContent = label;
-      if (suffixEl) suffixEl.textContent = suffix;
-    };
-
-    const countEl = activity.querySelector('[data-live-count]');
-    const statusEl = activity.querySelector('[data-live-status]');
-
-    const updateCount = () => {
-      const base = 14 + Math.floor(mainRandom() * 38);
-      if (countEl) countEl.textContent = String(base);
-    };
-
-    const updateStatus = () => {
-      const lang = getLang();
-      const pool = (labels[lang] || labels.ua).statusPool;
-      if (statusEl) statusEl.textContent = pool[Math.floor(mainRandom() * pool.length)];
-    };
-
-    const pushToast = () => {
-      const lang = getLang();
-      const pool = (labels[lang] || labels.ua).toastPool;
-      const toast = document.createElement('div');
-      toast.className = 'live-toast';
-      toast.textContent = pool[Math.floor(mainRandom() * pool.length)];
-      toastStack.appendChild(toast);
-      setTimeout(() => toast.classList.add('visible'), 50);
-      setTimeout(() => {
-        toast.classList.remove('visible');
-        setTimeout(() => toast.remove(), 600);
-      }, 5200);
-    };
-
-    setLabels();
-    updateCount();
-    updateStatus();
-    pushToast();
-
-    const statusTimer = setInterval(updateStatus, 9000 + mainRandom() * 7000);
-    const countTimer = setInterval(updateCount, 12000 + mainRandom() * 9000);
-    const toastTimer = setInterval(pushToast, 14000 + mainRandom() * 10000);
-
-    window.addEventListener('languageChanged', () => {
-      setLabels();
-      updateStatus();
-    });
-
-    window.addEventListener('beforeunload', () => {
-      clearInterval(statusTimer);
-      clearInterval(countTimer);
-      clearInterval(toastTimer);
-    });
-  }
-
-  // ============================================
   // INITIALIZE ALL
   // ============================================
   function init() {
@@ -732,8 +630,6 @@
     initRentForm();
     initCalculator();
 
-    // Disabled: synthetic "live activity" widget can look deceptive to users/search engines.
-    // initLiveActivity();
   }
 
   // Run on DOM ready
