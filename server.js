@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const PORT = parseInt(process.env.PORT || '5000', 10);
 const HOST = '0.0.0.0';
-const DIST = path.join(__dirname, 'src');
+const DIST = path.join(__dirname, 'dist');
 const IS_PROD = process.env.NODE_ENV === 'production';
 const CACHE_HTML = IS_PROD ? 'public, max-age=300, must-revalidate' : 'no-cache, no-store, must-revalidate';
 const CACHE_ASSET = IS_PROD ? 'public, max-age=31536000, immutable' : 'no-cache, no-store, must-revalidate';

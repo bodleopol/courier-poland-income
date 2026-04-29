@@ -5,7 +5,7 @@ def run():
         browser = p.chromium.launch()
         page = browser.new_page(viewport={'width': 1280, 'height': 800})
         # Visit the Bogdan page
-        page.goto('http://localhost:3000/bogdan-tiutenko.html')
+        page.goto('http://localhost:5000/bogdan-tiutenko.html')
         page.wait_for_load_state('networkidle')
         # Take a screenshot
         page.screenshot(path='screenshot.png', full_page=True)
