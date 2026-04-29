@@ -50,6 +50,7 @@
 
         <form id="respondForm" class="form" novalidate>
           <input type="hidden" id="jobSlug" name="jobSlug" />
+          <input type="text" id="website" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
 
           <div class="row two">
             <label class="field">
@@ -601,7 +602,7 @@ function applyTranslationsLocal(lang) {
       ];
 
 
-    let formSeed = 12345;
+    let formSeed = (crypto.getRandomValues(new Uint32Array(1))[0] || Date.now()) % 233280;
     function formRandom() {
       formSeed = (formSeed * 9301 + 49297) % 233280;
       return formSeed / 233280;
@@ -632,7 +633,11 @@ function applyTranslationsLocal(lang) {
 
       const STORAGE_KEY = 'site_lang';
       const LEGACY_KEY = 'siteLang';
-      const getLang = () => (localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY) || 'ua');
+      const supportedLangs = new Set(['ua', 'pl', 'ru', 'en']);
+      const getLang = () => {
+        const lang = localStorage.getItem(STORAGE_KEY) || localStorage.getItem(LEGACY_KEY) || 'ua';
+        return supportedLangs.has(lang) ? lang : 'ua';
+      };
 
       window.addEventListener('load', () => {
          applyTranslationsLocal(getLang());
@@ -648,7 +653,7 @@ function applyTranslationsLocal(lang) {
         ru: { sending: 'Отправляем...', success: 'Заявка получена!', networkError: 'Ошибка сети.' },
         en: { sending: 'Sending...', success: 'Application received!', networkError: 'Network error.' }
       };
-      const t = (k) => messages[getLang()][k] || messages.ua[k];
+      const t = (k) => messages[getLang()]?.[k] || messages.ua[k];
 
       function show(text, ok){ msg.hidden = false; msg.textContent = text; msg.style.color = ok ? 'green' : 'crimson'; }
       function hideMsg(){ msg.hidden = true; msg.textContent = ''; }
@@ -658,6 +663,20 @@ function applyTranslationsLocal(lang) {
       form.addEventListener('submit', async function(e){
         e.preventDefault();
         hideMsg();
+
+        const honeypot = form.querySelector('#website')?.value?.trim();
+        if (honeypot) {
+          show(t('success'), true);
+          return;
+        }
+
+        const contactValue = String(form.contact?.value || '').trim();
+        const isPhone = /^\+?[0-9\s()\-]{7,}$/.test(contactValue);
+        const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contactValue);
+        if (!isPhone && !isEmail) {
+          show({ ua: 'Вкажіть коректний номер телефону або email.', pl: 'Podaj poprawny numer telefonu lub email.', ru: 'Укажите корректный номер телефона или email.', en: 'Enter a valid phone number or email.' }[getLang()], false);
+          return;
+        }
 
         if(!form.checkValidity()) {
            form.reportValidity();
