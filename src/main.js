@@ -90,7 +90,8 @@
     }
 
     // Get saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', savedTheme);
     updateThemeIcon(savedTheme);
 
@@ -128,13 +129,16 @@
     document.body.appendChild(scrollBtn);
 
     // Show/hide on scroll
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       if (window.scrollY > 300) {
         scrollBtn.classList.add('visible');
       } else {
         scrollBtn.classList.remove('visible');
       }
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
 
     // Scroll to top on click
     scrollBtn.addEventListener('click', () => {
@@ -201,7 +205,8 @@
         const target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
         }
       });
     });
@@ -216,26 +221,38 @@
     
     if (!mobileMenu || !mobileToggle) return;
 
+    const setMenuState = (isOpen) => {
+      mobileMenu.classList.toggle('is-open', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    mobileToggle.setAttribute('aria-expanded', mobileMenu.classList.contains('is-open') ? 'true' : 'false');
+
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('is-open');
+      setMenuState(!isOpen);
+    });
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (mobileMenu.classList.contains('is-open') && 
           !mobileMenu.contains(e.target) && 
           !mobileToggle.contains(e.target)) {
-        mobileMenu.classList.remove('is-open');
+        setMenuState(false);
       }
     });
 
     // Close menu when clicking a link
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.remove('is-open');
+        setMenuState(false);
       });
     });
 
     // Close on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
-        mobileMenu.classList.remove('is-open');
+        setMenuState(false);
       }
     });
   }
