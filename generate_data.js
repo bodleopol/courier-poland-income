@@ -380,6 +380,16 @@ const bohdanProfile = {
       caption: t('Особистий кадр про витримку, контроль і спокій у складних умовах.', 'A personal image about endurance, control and calmness in demanding conditions.', 'Личный кадр о выдержке, контроле и спокойствии в сложных условиях.', 'Imagen personal sobre resistencia, control y calma en condiciones exigentes.')
     },
     {
+      image: 'assets/images/bohdan-tiutenko-ocean-surf.svg',
+      title: t('Пауза біля океану', 'Ocean pause', 'Пауза у океана', 'Pausa junto al océano'),
+      caption: t('Кадр про відновлення, внутрішній баланс і здатність тримати фокус поза робочим шумом.', 'A personal image about recovery, inner balance and the ability to keep focus away from work noise.', 'Кадр о восстановлении, внутреннем балансе и способности сохранять фокус вне рабочего шума.', 'Imagen sobre recuperación, equilibrio interior y capacidad de mantener el foco lejos del ruido laboral.')
+    },
+    {
+      image: 'assets/images/bohdan-tiutenko-art-space.svg',
+      title: t('Портрет у мистецькому просторі', 'Portrait in an art space', 'Портрет в художественном пространстве', 'Retrato en un espacio artístico'),
+      caption: t('Спокійний професійний образ у середовищі, де поєднуються культура, уважність і характер.', 'A calm professional portrait in a setting that connects culture, attention and character.', 'Спокойный профессиональный образ в среде, где соединяются культура, внимательность и характер.', 'Retrato profesional sereno en un entorno que une cultura, atención y carácter.')
+    },
+    {
       image: 'assets/images/bohdan-tiutenko-camine.svg',
       title: t('«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”', '«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”'),
       caption: t('Портрет, створений художницею, враженою історією життя Богдана.', 'Portrait created by an artist moved by Bohdan’s life story.', 'Портрет, созданный художницей, впечатленной историей жизни Богдана.', 'Retrato creado por una artista conmovida por la historia de vida de Bohdan.')

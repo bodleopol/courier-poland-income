@@ -131,6 +131,36 @@
         }
       },
       {
+        "image": "assets/images/bohdan-tiutenko-ocean-surf.svg",
+        "title": {
+          "uk": "Пауза біля океану",
+          "en": "Ocean pause",
+          "ru": "Пауза у океана",
+          "es": "Pausa junto al océano"
+        },
+        "caption": {
+          "uk": "Кадр про відновлення, внутрішній баланс і здатність тримати фокус поза робочим шумом.",
+          "en": "A personal image about recovery, inner balance and the ability to keep focus away from work noise.",
+          "ru": "Кадр о восстановлении, внутреннем балансе и способности сохранять фокус вне рабочего шума.",
+          "es": "Imagen sobre recuperación, equilibrio interior y capacidad de mantener el foco lejos del ruido laboral."
+        }
+      },
+      {
+        "image": "assets/images/bohdan-tiutenko-art-space.svg",
+        "title": {
+          "uk": "Портрет у мистецькому просторі",
+          "en": "Portrait in an art space",
+          "ru": "Портрет в художественном пространстве",
+          "es": "Retrato en un espacio artístico"
+        },
+        "caption": {
+          "uk": "Спокійний професійний образ у середовищі, де поєднуються культура, уважність і характер.",
+          "en": "A calm professional portrait in a setting that connects culture, attention and character.",
+          "ru": "Спокойный профессиональный образ в среде, где соединяются культура, внимательность и характер.",
+          "es": "Retrato profesional sereno en un entorno que une cultura, atención y carácter."
+        }
+      },
+      {
         "image": "assets/images/bohdan-tiutenko-camine.svg",
         "title": {
           "uk": "«Camine sobre la muerte, pero en mis manos queda vida»",
