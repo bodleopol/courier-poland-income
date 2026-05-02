@@ -1,0 +1,602 @@
+[
+  {
+    "slug": "openai",
+    "image": "https://logo.clearbit.com/openai.com",
+    "name": "OpenAI",
+    "founded": "2015",
+    "category": {
+      "uk": "Лабораторія ШІ та продуктова компанія",
+      "en": "AI lab and product company",
+      "ru": "Лаборатория ИИ и продуктовая компания",
+      "es": "Laboratorio de IA y empresa de producto"
+    },
+    "summary": {
+      "uk": "Розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах.",
+      "en": "Develops AI models and products used in business, education, software development and creative workflows.",
+      "ru": "Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов.",
+      "es": "Desarrolla modelos y productos de IA usados en negocios, educación, software y procesos creativos."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "deepmind",
+    "image": "https://logo.clearbit.com/deepmind.google",
+    "name": "Google DeepMind",
+    "founded": "2010",
+    "category": {
+      "uk": "Дослідницька компанія ШІ",
+      "en": "AI research company",
+      "ru": "Исследовательская компания ИИ",
+      "es": "Empresa de investigación en IA"
+    },
+    "summary": {
+      "uk": "Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google.",
+      "en": "Works on foundational AI systems, scientific challenges and Google products.",
+      "ru": "Работает над фундаментальными системами ИИ, научными задачами и продуктами Google.",
+      "es": "Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дослідження",
+        "Наука"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Research",
+        "Science"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Исследования",
+        "Наука"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Ciencia"
+      ]
+    }
+  },
+  {
+    "slug": "stripe",
+    "image": "https://logo.clearbit.com/stripe.com",
+    "name": "Stripe",
+    "founded": "2010",
+    "category": {
+      "uk": "Фінтех-інфраструктура",
+      "en": "Fintech infrastructure",
+      "ru": "Финтех-инфраструктура",
+      "es": "Infraestructura fintech"
+    },
+    "summary": {
+      "uk": "Будує API та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій.",
+      "en": "Builds APIs and financial infrastructure for online payments, billing, tax and global operations.",
+      "ru": "Строит API и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций.",
+      "es": "Construye APIs e infraestructura financiera para pagos online, billing, impuestos y operaciones globales."
+    },
+    "tags": {
+      "uk": [
+        "Фінтех",
+        "Програмування",
+        "Операції"
+      ],
+      "en": [
+        "Fintech",
+        "Software",
+        "Operations"
+      ],
+      "ru": [
+        "Финтех",
+        "Программирование",
+        "Операции"
+      ],
+      "es": [
+        "Fintech",
+        "Software",
+        "Operaciones"
+      ]
+    }
+  },
+  {
+    "slug": "spacex",
+    "image": "https://logo.clearbit.com/spacex.com",
+    "name": "SpaceX",
+    "founded": "2002",
+    "category": {
+      "uk": "Космічна інженерія",
+      "en": "Space engineering",
+      "ru": "Космическая инженерия",
+      "es": "Ingeniería espacial"
+    },
+    "summary": {
+      "uk": "Створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання.",
+      "en": "Builds rockets, satellite infrastructure and commercial launch services with a focus on reuse.",
+      "ru": "Создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование.",
+      "es": "Construye cohetes, infraestructura satelital y lanzamientos comerciales con foco en reutilización."
+    },
+    "tags": {
+      "uk": [
+        "Космос",
+        "Інженерія",
+        "Операції"
+      ],
+      "en": [
+        "Space",
+        "Engineering",
+        "Operations"
+      ],
+      "ru": [
+        "Космос",
+        "Инженерия",
+        "Операции"
+      ],
+      "es": [
+        "Espacio",
+        "Ingeniería",
+        "Operaciones"
+      ]
+    }
+  },
+  {
+    "slug": "canva",
+    "image": "https://logo.clearbit.com/canva.com",
+    "name": "Canva",
+    "founded": "2013",
+    "category": {
+      "uk": "Платформа дизайну",
+      "en": "Design platform",
+      "ru": "Дизайн-платформа",
+      "es": "Plataforma de diseño"
+    },
+    "summary": {
+      "uk": "Дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів.",
+      "en": "Gives teams and individuals simple tools for presentations, branding, video and marketing assets.",
+      "ru": "Дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга.",
+      "es": "Ofrece herramientas simples para presentaciones, marca, video y materiales de marketing."
+    },
+    "tags": {
+      "uk": [
+        "Дизайн",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Design",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Дизайн",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Diseño",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "hugging-face",
+    "image": "https://logo.clearbit.com/huggingface.co",
+    "name": "Hugging Face",
+    "founded": "2016",
+    "category": {
+      "uk": "Open-source платформа ШІ",
+      "en": "Open-source AI platform",
+      "ru": "Open-source платформа ИИ",
+      "es": "Plataforma open-source de IA"
+    },
+    "summary": {
+      "uk": "Підтримує спільноту моделей, датасетів і інструментів для машинного навчання.",
+      "en": "Supports a community of models, datasets and tools for machine learning.",
+      "ru": "Поддерживает сообщество моделей, датасетов и инструментов машинного обучения.",
+      "es": "Sostiene una comunidad de modelos, datos y herramientas de aprendizaje automático."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Open source",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Open source",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Open source",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Código abierto",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "figma",
+    "image": "https://logo.clearbit.com/figma.com",
+    "name": "Figma",
+    "founded": "2012",
+    "category": {
+      "uk": "Спільний дизайн у браузері",
+      "en": "Collaborative browser-based design",
+      "ru": "Совместный дизайн в браузере",
+      "es": "Diseño colaborativo en navegador"
+    },
+    "summary": {
+      "uk": "Перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди.",
+      "en": "Moved interface design into the cloud so product, design and engineering teams share one source of truth.",
+      "ru": "Перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды.",
+      "es": "Llevó el diseño de interfaces a la nube para alinear producto, diseño e ingeniería."
+    },
+    "tags": {
+      "uk": [
+        "Дизайн",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Design",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Дизайн",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Diseño",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "notion",
+    "image": "https://logo.clearbit.com/notion.so",
+    "name": "Notion",
+    "founded": "2013",
+    "category": {
+      "uk": "Продуктивність і знання",
+      "en": "Productivity and knowledge",
+      "ru": "Продуктивность и знания",
+      "es": "Productividad y conocimiento"
+    },
+    "summary": {
+      "uk": "Обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу.",
+      "en": "Combines documents, databases, wikis and workflows for teams of many sizes.",
+      "ru": "Объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба.",
+      "es": "Combina documentos, bases de datos, wikis y flujos para equipos de distintos tamaños."
+    },
+    "tags": {
+      "uk": [
+        "Програмування",
+        "Операції",
+        "Стартапи"
+      ],
+      "en": [
+        "Software",
+        "Operations",
+        "Startups"
+      ],
+      "ru": [
+        "Программирование",
+        "Операции",
+        "Стартапы"
+      ],
+      "es": [
+        "Software",
+        "Operaciones",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "anthropic",
+    "image": "https://logo.clearbit.com/anthropic.com",
+    "name": "Anthropic",
+    "founded": "2021",
+    "category": {
+      "uk": "AI safety та моделі",
+      "en": "AI safety and models",
+      "ru": "AI safety и модели",
+      "es": "Seguridad de IA y modelos"
+    },
+    "summary": {
+      "uk": "Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні AI-системи.",
+      "en": "Develops assistants and safety research focused on controllable and useful AI systems.",
+      "ru": "Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных AI-систем.",
+      "es": "Desarrolla asistentes e investigación de seguridad para sistemas de IA útiles y controlables."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дослідження",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Research",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Исследования",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "mistral-ai",
+    "image": "https://logo.clearbit.com/mistral.ai",
+    "name": "Mistral AI",
+    "founded": "2023",
+    "category": {
+      "uk": "Європейські AI-моделі",
+      "en": "European AI models",
+      "ru": "Европейские AI-модели",
+      "es": "Modelos europeos de IA"
+    },
+    "summary": {
+      "uk": "Будує відкриті та комерційні моделі ШІ, посилюючи європейську AI-екосистему.",
+      "en": "Builds open and commercial AI models, strengthening the European AI ecosystem.",
+      "ru": "Строит открытые и коммерческие модели ИИ, усиливая европейскую AI-экосистему.",
+      "es": "Construye modelos abiertos y comerciales, fortaleciendo el ecosistema europeo de IA."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "databricks",
+    "image": "https://logo.clearbit.com/databricks.com",
+    "name": "Databricks",
+    "founded": "2013",
+    "category": {
+      "uk": "Платформа даних та AI",
+      "en": "Data and AI platform",
+      "ru": "Платформа данных и AI",
+      "es": "Plataforma de datos e IA"
+    },
+    "summary": {
+      "uk": "Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств.",
+      "en": "Combines lakehouse architecture, analytics, ML and data governance for enterprises.",
+      "ru": "Объединяет lakehouse-архитектуру, аналитику, ML и управление данными для предприятий.",
+      "es": "Combina arquitectura lakehouse, analítica, ML y gobierno de datos para empresas."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Хмарні технології",
+        "Корпоративне ПЗ"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Cloud",
+        "Enterprise software"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Облачные технологии",
+        "Корпоративное ПО"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Cloud",
+        "Software empresarial"
+      ]
+    }
+  },
+  {
+    "slug": "grammarly",
+    "image": "https://logo.clearbit.com/grammarly.com",
+    "name": "Grammarly",
+    "founded": "2009",
+    "category": {
+      "uk": "AI для письма",
+      "en": "AI writing assistance",
+      "ru": "AI для письма",
+      "es": "IA para escritura"
+    },
+    "summary": {
+      "uk": "Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше.",
+      "en": "A Ukrainian-founded company helping people write more clearly, accurately and professionally.",
+      "ru": "Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее.",
+      "es": "Empresa fundada por ucranianos que ayuda a escribir con claridad, precisión y profesionalismo."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "preply",
+    "image": "https://logo.clearbit.com/preply.com",
+    "name": "Preply",
+    "founded": "2012",
+    "category": {
+      "uk": "EdTech-маркетплейс",
+      "en": "EdTech marketplace",
+      "ru": "EdTech-маркетплейс",
+      "es": "Marketplace EdTech"
+    },
+    "summary": {
+      "uk": "Платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу.",
+      "en": "A Ukrainian-rooted platform for online language learning with tutors around the world.",
+      "ru": "Платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру.",
+      "es": "Plataforma con raíces ucranianas para aprender idiomas online con tutores de todo el mundo."
+    },
+    "tags": {
+      "uk": [
+        "Освіта",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Education",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Образование",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Educación",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "gitlab",
+    "image": "https://logo.clearbit.com/gitlab.com",
+    "name": "GitLab",
+    "founded": "2011",
+    "category": {
+      "uk": "DevOps-платформа",
+      "en": "DevOps platform",
+      "ru": "DevOps-платформа",
+      "es": "Plataforma DevOps"
+    },
+    "summary": {
+      "uk": "Надає інструменти для репозиторіїв, CI/CD, безпеки та спільної розробки програмного забезпечення.",
+      "en": "Provides tools for repositories, CI/CD, security and collaborative software development.",
+      "ru": "Предоставляет инструменты для репозиториев, CI/CD, безопасности и совместной разработки ПО.",
+      "es": "Ofrece repositorios, CI/CD, seguridad y desarrollo colaborativo de software."
+    },
+    "tags": {
+      "uk": [
+        "Програмування",
+        "Open source",
+        "Операції"
+      ],
+      "en": [
+        "Software",
+        "Open source",
+        "Operations"
+      ],
+      "ru": [
+        "Программирование",
+        "Open source",
+        "Операции"
+      ],
+      "es": [
+        "Software",
+        "Código abierto",
+        "Operaciones"
+      ]
+    }
+  },
+  {
+    "slug": "scale-ai",
+    "image": "https://logo.clearbit.com/scale.com",
+    "name": "Scale AI",
+    "founded": "2016",
+    "category": {
+      "uk": "Дані для AI",
+      "en": "Data for AI",
+      "ru": "Данные для AI",
+      "es": "Datos para IA"
+    },
+    "summary": {
+      "uk": "Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи.",
+      "en": "Supports data preparation and evaluation workflows for companies building AI systems.",
+      "ru": "Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.",
+      "es": "Apoya preparación de datos y evaluación para empresas que crean sistemas de IA."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Операції",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Operations",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Операции",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Operaciones",
+        "Startups"
+      ]
+    }
+  }
+]

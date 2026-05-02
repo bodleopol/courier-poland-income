@@ -4,10 +4,55 @@ import path from 'path';
 const SRC_DIR = 'src';
 const DIST_DIR = 'dist';
 const TEMPLATE_FILE = path.join(SRC_DIR, 'templates', 'page.html');
+const translations = {
+  uk: {
+    navAria: 'Головна навігація',
+    navHome: 'Головна',
+    navStartups: 'Стартапи',
+    footerAbout: 'Міжнародна інформаційна база профілів спеціалістів, дослідників, інженерів, керівників і засновників компаній.',
+    footerNavTitle: 'Навігація',
+    footerScopeTitle: 'Про базу',
+    footerScopeText: 'Каталог створений як редакційна довідкова база про людей та організації, що впливають на технології, науку, космос і бізнес.',
+    footerLanguages: 'Доступні мови: українська, англійська, іспанська, російська.',
+    footerRights: 'Всі права захищені.'
+  },
+  en: {
+    navAria: 'Main navigation',
+    navHome: 'Home',
+    navStartups: 'Startups',
+    footerAbout: 'An international information base of specialists, researchers, engineers, executives and company founders.',
+    footerNavTitle: 'Navigation',
+    footerScopeTitle: 'About the directory',
+    footerScopeText: 'The catalogue is an editorial reference base about people and organisations shaping technology, science, space and business.',
+    footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
+    footerRights: 'All rights reserved.'
+  },
+  es: {
+    navAria: 'Navegación principal',
+    navHome: 'Inicio',
+    navStartups: 'Startups',
+    footerAbout: 'Base internacional de perfiles de especialistas, investigadores, ingenieros, directivos y fundadores de empresas.',
+    footerNavTitle: 'Navegación',
+    footerScopeTitle: 'Sobre la base',
+    footerScopeText: 'El catálogo es una base editorial de referencia sobre personas y organizaciones que influyen en tecnología, ciencia, espacio y negocios.',
+    footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español, ruso.',
+    footerRights: 'Todos los derechos reservados.'
+  },
+  ru: {
+    navAria: 'Главная навигация',
+    navHome: 'Главная',
+    navStartups: 'Стартапы',
+    footerAbout: 'Международная информационная база профилей специалистов, исследователей, инженеров, руководителей и основателей компаний.',
+    footerNavTitle: 'Навигация',
+    footerScopeTitle: 'О базе',
+    footerScopeText: 'Каталог создан как редакционная справочная база о людях и организациях, влияющих на технологии, науку, космос и бизнес.',
+    footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
+    footerRights: 'Все права защищены.'
+  }
+};
 
-if (!fs.existsSync(DIST_DIR)) {
-  fs.mkdirSync(DIST_DIR, { recursive: true });
-}
+fs.rmSync(DIST_DIR, { recursive: true, force: true });
+fs.mkdirSync(DIST_DIR, { recursive: true });
 
 function processDirectory(dirPath, destPath) {
   if (!fs.existsSync(destPath)) {
@@ -87,27 +132,16 @@ function compileHTML(srcFile, destFile) {
   content = content.replace(/<head.*?>[\s\S]*?<\/head>/gi, '');
   content = content.replace(/<body.*?>/gi, '');
   content = content.replace(/<\/body>/gi, '');
-  content = content.replace(/<header.*?>[\s\S]*?<\/header>/gi, '');
   content = content.replace(/<main.*?>/gi, '');
   content = content.replace(/<\/main>/gi, '');
-  content = content.replace(/<footer.*?>[\s\S]*?<\/footer>/gi, '');
 
   const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
-  // Inject dynamic cards into index pages
-  if (path.basename(srcFile).startsWith('index')) {
-      let cardsJson = {uk: '', ru: '', en: '', es: ''};
-      if (fs.existsSync('src/generated_index_cards.json')) {
-          cardsJson = JSON.parse(fs.readFileSync('src/generated_index_cards.json', 'utf8'));
-      }
-      const filename = path.basename(srcFile);
-      let langKey = 'uk';
-      if (filename.endsWith('-en.html')) langKey = 'en';
-      if (filename.endsWith('-es.html')) langKey = 'es';
-      if (filename.endsWith('-ru.html')) langKey = 'ru';
-
-      content = content.replace(/(<\/section>)/, `${cardsJson[langKey]}\n$1`);
-  }
+  const filename = path.basename(srcFile);
+  let lang = 'uk';
+  if (filename.endsWith('-en.html')) lang = 'en';
+  else if (filename.endsWith('-es.html')) lang = 'es';
+  else if (filename.endsWith('-ru.html')) lang = 'ru';
 
   let finalHtml = template.replace('{{CONTENT}}', () => content)
                           .replace('{{TITLE}}', title)
@@ -115,8 +149,6 @@ function compileHTML(srcFile, destFile) {
                           .replace('{{KEYWORDS}}', keywords)
                           .replace('</head>', `${styleBlock}\n</head>`);
 
-  // Basic canonical URL logic (simplified for this example)
-  const filename = path.basename(srcFile);
   const canonicalBase = 'https://rybezh.site/';
 
   let baseName = filename.replace(/-(en|es|ru)\.html$/, '.html');
@@ -136,11 +168,20 @@ function compileHTML(srcFile, destFile) {
                        .replace('{{CANONICAL_RU}}', canonicalMap.ru)
                        .replace('{{CANONICAL_EN}}', canonicalMap.en);
 
-  // Set lang attribute
-  let lang = 'uk';
-  if (filename.endsWith('-en.html')) lang = 'en';
-  else if (filename.endsWith('-es.html')) lang = 'es';
-  else if (filename.endsWith('-ru.html')) lang = 'ru';
+  const local = translations[lang];
+  const homeUrl = lang === 'uk' ? 'index.html' : `index-${lang}.html`;
+  const startupsUrl = lang === 'uk' ? 'startups.html' : `startups-${lang}.html`;
+  finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
+                       .replaceAll('{{NAV_HOME}}', local.navHome)
+                       .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
+                       .replaceAll('{{HOME_URL}}', homeUrl)
+                       .replaceAll('{{STARTUPS_URL}}', startupsUrl)
+                       .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
+                       .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
+                       .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
+                       .replaceAll('{{FOOTER_SCOPE_TEXT}}', local.footerScopeText)
+                       .replaceAll('{{FOOTER_LANGUAGES}}', local.footerLanguages)
+                       .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 
