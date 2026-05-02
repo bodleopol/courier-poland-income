@@ -161,6 +161,21 @@
         }
       },
       {
+        "image": "assets/images/bohdan-tiutenko-boat-dog.svg",
+        "title": {
+          "uk": "На воді з собакою",
+          "en": "On the water with a dog",
+          "ru": "На воде с собакой",
+          "es": "En el agua con un perro"
+        },
+        "caption": {
+          "uk": "Особистий кадр про турботу, довіру і спокій у простих моментах поза роботою.",
+          "en": "A personal image about care, trust and calm in simple moments outside work.",
+          "ru": "Личный кадр о заботе, доверии и спокойствии в простых моментах вне работы.",
+          "es": "Imagen personal sobre cuidado, confianza y calma en momentos sencillos fuera del trabajo."
+        }
+      },
+      {
         "image": "assets/images/bohdan-tiutenko-camine.svg",
         "title": {
           "uk": "«Camine sobre la muerte, pero en mis manos queda vida»",

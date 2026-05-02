@@ -390,6 +390,11 @@ const bohdanProfile = {
       caption: t('Спокійний професійний образ у середовищі, де поєднуються культура, уважність і характер.', 'A calm professional portrait in a setting that connects culture, attention and character.', 'Спокойный профессиональный образ в среде, где соединяются культура, внимательность и характер.', 'Retrato profesional sereno en un entorno que une cultura, atención y carácter.')
     },
     {
+      image: 'assets/images/bohdan-tiutenko-boat-dog.svg',
+      title: t('На воді з собакою', 'On the water with a dog', 'На воде с собакой', 'En el agua con un perro'),
+      caption: t('Особистий кадр про турботу, довіру і спокій у простих моментах поза роботою.', 'A personal image about care, trust and calm in simple moments outside work.', 'Личный кадр о заботе, доверии и спокойствии в простых моментах вне работы.', 'Imagen personal sobre cuidado, confianza y calma en momentos sencillos fuera del trabajo.')
+    },
+    {
       image: 'assets/images/bohdan-tiutenko-camine.svg',
       title: t('«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”', '«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”'),
       caption: t('Портрет, створений художницею, враженою історією життя Богдана.', 'Portrait created by an artist moved by Bohdan’s life story.', 'Портрет, созданный художницей, впечатленной историей жизни Богдана.', 'Retrato creado por una artista conmovida por la historia de vida de Bohdan.')
