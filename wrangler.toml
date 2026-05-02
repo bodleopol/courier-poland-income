@@ -1,6 +1,5 @@
 name = "rybezh-people-archive"
 compatibility_date = "2026-01-17"
-main = "src/worker.js"
 
 [build]
 command = "npm run build"
