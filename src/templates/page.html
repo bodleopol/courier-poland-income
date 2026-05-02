@@ -61,6 +61,12 @@
                     <p>{{FOOTER_SCOPE_TEXT}}</p>
                     <p>{{FOOTER_LANGUAGES}}</p>
                 </div>
+                <div class="footer-section official-footer">
+                    <h4>{{FOOTER_OFFICE_TITLE}}</h4>
+                    <p>{{FOOTER_OFFICE_ADDRESS}}</p>
+                    <p>{{FOOTER_TAX}}</p>
+                    <p>{{FOOTER_TEAM}}</p>
+                </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Rybezh. {{FOOTER_RIGHTS}}</p>
@@ -89,6 +95,31 @@
         }
 
         toggleSwitch.addEventListener('change', switchTheme, false);
+
+        const searchInput = document.querySelector('[data-profile-search]');
+        const cards = Array.from(document.querySelectorAll('[data-profile-grid] .profile-card'));
+        const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
+        let activeFilter = 'all';
+
+        function applyDirectoryFilters() {
+            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+            cards.forEach(card => {
+                const matchesSearch = !query || card.dataset.search.includes(query);
+                const matchesFilter = activeFilter === 'all' || card.dataset.rubric === activeFilter;
+                card.hidden = !(matchesSearch && matchesFilter);
+            });
+        }
+
+        if (searchInput && cards.length) {
+            searchInput.addEventListener('input', applyDirectoryFilters);
+        }
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.filter;
+                filterButtons.forEach(item => item.classList.toggle('active', item === button));
+                applyDirectoryFilters();
+            });
+        });
     </script>
 </body>
 </html>

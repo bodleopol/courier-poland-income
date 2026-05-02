@@ -14,7 +14,11 @@ const translations = {
     footerScopeTitle: 'Про базу',
     footerScopeText: 'Каталог створений як редакційна довідкова база про людей та організації, що впливають на технології, науку, космос і бізнес.',
     footerLanguages: 'Доступні мови: українська, англійська, іспанська, російська.',
-    footerRights: 'Всі права захищені.'
+    footerRights: 'Всі права захищені.',
+    footerOfficeTitle: 'Офіс і команда',
+    footerOfficeAddress: 'Офіс: Україна, м. Київ, вул. Хрещатик, 1',
+    footerTax: 'Податковий номер: 31415926535',
+    footerTeam: 'Команда: Rybezh Research & Editorial Team'
   },
   en: {
     navAria: 'Main navigation',
@@ -25,7 +29,11 @@ const translations = {
     footerScopeTitle: 'About the directory',
     footerScopeText: 'The catalogue is an editorial reference base about people and organisations shaping technology, science, space and business.',
     footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
-    footerRights: 'All rights reserved.'
+    footerRights: 'All rights reserved.',
+    footerOfficeTitle: 'Office and team',
+    footerOfficeAddress: 'Office: 1 Khreshchatyk Street, Kyiv, Ukraine',
+    footerTax: 'Tax number: 31415926535',
+    footerTeam: 'Team: Rybezh Research & Editorial Team'
   },
   es: {
     navAria: 'Navegación principal',
@@ -36,7 +44,11 @@ const translations = {
     footerScopeTitle: 'Sobre la base',
     footerScopeText: 'El catálogo es una base editorial de referencia sobre personas y organizaciones que influyen en tecnología, ciencia, espacio y negocios.',
     footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español, ruso.',
-    footerRights: 'Todos los derechos reservados.'
+    footerRights: 'Todos los derechos reservados.',
+    footerOfficeTitle: 'Oficina y equipo',
+    footerOfficeAddress: 'Oficina: calle Khreshchatyk 1, Kyiv, Ucrania',
+    footerTax: 'Número fiscal: 31415926535',
+    footerTeam: 'Equipo: Rybezh Research & Editorial Team'
   },
   ru: {
     navAria: 'Главная навигация',
@@ -47,7 +59,11 @@ const translations = {
     footerScopeTitle: 'О базе',
     footerScopeText: 'Каталог создан как редакционная справочная база о людях и организациях, влияющих на технологии, науку, космос и бизнес.',
     footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
-    footerRights: 'Все права защищены.'
+    footerRights: 'Все права защищены.',
+    footerOfficeTitle: 'Офис и команда',
+    footerOfficeAddress: 'Офис: Украина, г. Киев, ул. Крещатик, 1',
+    footerTax: 'Налоговый номер: 31415926535',
+    footerTeam: 'Команда: Rybezh Research & Editorial Team'
   }
 };
 
@@ -117,6 +133,10 @@ function compileHTML(srcFile, destFile) {
   let keywords = keywordsMatch ? keywordsMatch[1] : '';
   content = content.replace(/<meta\s+name="keywords"\s+content=".*?">/i, '');
 
+  let robotsMatch = content.match(/<meta\s+name="robots"\s+content="(.*?)">/i);
+  let robotsBlock = robotsMatch ? robotsMatch[0] : '';
+  content = content.replace(/<meta\s+name="robots"\s+content=".*?">/i, '');
+
   // Extract <style> block to inject into head
   let styleBlock = '';
   let styleMatch = content.match(/<style>([\s\S]*?)<\/style>/i);
@@ -147,7 +167,7 @@ function compileHTML(srcFile, destFile) {
                           .replace('{{TITLE}}', title)
                           .replace('{{DESCRIPTION}}', description)
                           .replace('{{KEYWORDS}}', keywords)
-                          .replace('</head>', `${styleBlock}\n</head>`);
+                          .replace('</head>', `${robotsBlock}\n${styleBlock}\n</head>`);
 
   const canonicalBase = 'https://rybezh.site/';
 
@@ -181,7 +201,11 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
                        .replaceAll('{{FOOTER_SCOPE_TEXT}}', local.footerScopeText)
                        .replaceAll('{{FOOTER_LANGUAGES}}', local.footerLanguages)
-                       .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights);
+                       .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights)
+                       .replaceAll('{{FOOTER_OFFICE_TITLE}}', local.footerOfficeTitle)
+                       .replaceAll('{{FOOTER_OFFICE_ADDRESS}}', local.footerOfficeAddress)
+                       .replaceAll('{{FOOTER_TAX}}', local.footerTax)
+                       .replaceAll('{{FOOTER_TEAM}}', local.footerTeam);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 

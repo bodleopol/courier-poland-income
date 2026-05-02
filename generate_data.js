@@ -339,6 +339,93 @@ const specialists = [
   }
 ];
 
+
+const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=720&background=eef4ff&color=2563eb&bold=true`;
+
+const bohdanProfile = {
+  slug: 'bohdan-tiutenko',
+  image: avatar('Bohdan Tiutenko'),
+  featured: true,
+  name: t('Богдан Тютенко', 'Bohdan Tiutenko', 'Богдан Тютенко', 'Bohdan Tiutenko'),
+  role: t('Операційний менеджер, ветеран і технологічний координатор', 'Operations manager, veteran and technology coordinator', 'Операционный менеджер, ветеран и технологический координатор', 'Gerente de operaciones, veterano y coordinador tecnológico'),
+  country: t('Україна', 'Ukraine', 'Украина', 'Ucrania'),
+  focus: t('операційне управління, кризова координація, командна дисципліна, технологічні процеси', 'operations management, crisis coordination, team discipline and technology workflows', 'операционное управление, кризисная координация, командная дисциплина, технологические процессы', 'gestión de operaciones, coordinación en crisis, disciplina de equipo y procesos tecnológicos'),
+  knownFor: t('поєднання військової витримки, підприємницького мислення та практичного управління командами', 'combining military resilience, entrepreneurial thinking and practical team management', 'сочетание военной выдержки, предпринимательского мышления и практического управления командами', 'combinar resiliencia militar, pensamiento emprendedor y gestión práctica de equipos'),
+  life: t(
+    'Богдан має досвід роботи в умовах високого тиску, де важливі відповідальність, швидке рішення, координація людей і доведення задач до результату. Його профіль подано як професійне резюме для рекрутингових команд: акцент зроблено на надійності, адаптивності, операційній дисципліні, здатності швидко входити в нові процеси та підтримувати команду у складних періодах. Він цікавиться технологічними продуктами, оптимізацією процесів, розвитком бізнесу та ролями, де потрібні тверезе мислення, комунікація і відповідальність за результат.',
+    'Bohdan has experience in high-pressure environments where responsibility, fast decisions, people coordination and delivery matter. This profile is written as a professional recruiting overview: it highlights reliability, adaptability, operational discipline, the ability to enter new workflows quickly and support a team during difficult periods. He is interested in technology products, process optimisation, business development and roles that require clear judgement, communication and ownership of results.',
+    'Богдан имеет опыт работы в условиях высокого давления, где важны ответственность, быстрые решения, координация людей и доведение задач до результата. Профиль оформлен как профессиональное резюме для рекрутинговых команд: акцент сделан на надежности, адаптивности, операционной дисциплине, способности быстро входить в новые процессы и поддерживать команду в сложные периоды. Ему интересны технологические продукты, оптимизация процессов, развитие бизнеса и роли, где нужны ясное мышление, коммуникация и ответственность за результат.',
+    'Bohdan tiene experiencia en entornos de alta presión donde importan la responsabilidad, las decisiones rápidas, la coordinación de personas y la entrega de resultados. Este perfil está escrito como una presentación profesional para equipos de reclutamiento: destaca fiabilidad, adaptabilidad, disciplina operativa, capacidad de entrar rápido en nuevos procesos y apoyar al equipo en periodos complejos. Le interesan productos tecnológicos, optimización de procesos, desarrollo de negocio y roles que requieren criterio claro, comunicación y responsabilidad por resultados.'
+  ),
+  tags: ['operations', 'leadership', 'startup', 'resilience', 'ukraine'],
+  gallery: [
+    {
+      image: 'assets/images/bohdan-tiutenko-profile.svg',
+      title: t('Професійний портрет', 'Professional portrait', 'Профессиональный портрет', 'Retrato profesional'),
+      caption: t('Фото для рекрутингового профілю та професійної презентації.', 'Image for a recruiting profile and professional presentation.', 'Изображение для рекрутингового профиля и профессиональной презентации.', 'Imagen para perfil de reclutamiento y presentación profesional.')
+    },
+    {
+      image: 'assets/images/bohdan-tiutenko-operations.svg',
+      title: t('Операційний досвід', 'Operations experience', 'Операционный опыт', 'Experiencia operativa'),
+      caption: t('Фокус на дисципліні, координації задач і стабільній роботі команди.', 'Focus on discipline, task coordination and stable team execution.', 'Фокус на дисциплине, координации задач и стабильной работе команды.', 'Enfoque en disciplina, coordinación de tareas y ejecución estable del equipo.')
+    },
+    {
+      image: 'assets/images/bohdan-tiutenko-team.svg',
+      title: t('Командна взаємодія', 'Team collaboration', 'Командное взаимодействие', 'Colaboración de equipo'),
+      caption: t('Підхід до роботи з людьми: чіткість, спокій і відповідальність.', 'Approach to people: clarity, calmness and responsibility.', 'Подход к работе с людьми: ясность, спокойствие и ответственность.', 'Trabajo con personas: claridad, calma y responsabilidad.')
+    },
+    {
+      image: 'assets/images/bohdan-tiutenko-camine.svg',
+      title: t('«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”', '«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”'),
+      caption: t('Портрет, створений художницею, враженою історією життя Богдана.', 'Portrait created by an artist moved by Bohdan’s life story.', 'Портрет, созданный художницей, впечатленной историей жизни Богдана.', 'Retrato creado por una artista conmovida por la historia de vida de Bohdan.')
+    }
+  ],
+  highlights: {
+    uk: ['Кризова координація і відповідальність за результат', 'Операційна дисципліна та швидке входження в процеси', 'Досвід командної взаємодії у складних умовах'],
+    en: ['Crisis coordination and ownership of outcomes', 'Operational discipline and fast onboarding into workflows', 'Team collaboration in demanding environments'],
+    ru: ['Кризисная координация и ответственность за результат', 'Операционная дисциплина и быстрое включение в процессы', 'Командное взаимодействие в сложных условиях'],
+    es: ['Coordinación en crisis y responsabilidad por resultados', 'Disciplina operativa y rápida adaptación a procesos', 'Colaboración de equipo en entornos exigentes']
+  }
+};
+
+const rubricTemplates = [
+  { tag: 'software', role: t('Software engineer', 'Software engineer', 'Инженер программного обеспечения', 'Ingeniero/a de software'), focus: t('backend, frontend, системний дизайн', 'backend, frontend and system design', 'backend, frontend и системный дизайн', 'backend, frontend y diseño de sistemas') },
+  { tag: 'operations', role: t('Operations director', 'Operations director', 'Операционный директор', 'Director/a de operaciones'), focus: t('масштабування процесів, KPI, якість виконання', 'process scaling, KPIs and execution quality', 'масштабирование процессов, KPI и качество исполнения', 'escala de procesos, KPIs y calidad de ejecución') },
+  { tag: 'science', role: t('Research scientist', 'Research scientist', 'Научный исследователь', 'Investigador/a científico/a'), focus: t('дослідницькі програми, дані, експерименти', 'research programmes, data and experiments', 'исследовательские программы, данные и эксперименты', 'programas de investigación, datos y experimentos') },
+  { tag: 'engineering', role: t('Systems engineer', 'Systems engineer', 'Системный инженер', 'Ingeniero/a de sistemas'), focus: t('інфраструктура, надійність, інтеграції', 'infrastructure, reliability and integrations', 'инфраструктура, надежность и интеграции', 'infraestructura, fiabilidad e integraciones') },
+  { tag: 'ceo', role: t('Founder / CEO', 'Founder / CEO', 'Основатель / CEO', 'Fundador/a / CEO'), focus: t('стратегія, продукт, побудова команд', 'strategy, product and team building', 'стратегия, продукт и построение команд', 'estrategia, producto y construcción de equipos') },
+  { tag: 'design', role: t('Product designer', 'Product designer', 'Продуктовый дизайнер', 'Diseñador/a de producto'), focus: t('UX, дослідження користувачів, дизайн-системи', 'UX, user research and design systems', 'UX, исследования пользователей и дизайн-системы', 'UX, investigación de usuarios y sistemas de diseño') },
+  { tag: 'biotech', role: t('Biotech specialist', 'Biotech specialist', 'Специалист по биотехнологиям', 'Especialista en biotecnología'), focus: t('лабораторні процеси, аналітика, регуляторика', 'laboratory workflows, analytics and regulation', 'лабораторные процессы, аналитика и регуляторика', 'procesos de laboratorio, analítica y regulación') },
+  { tag: 'fintech', role: t('Fintech product lead', 'Fintech product lead', 'Руководитель fintech-продукта', 'Líder de producto fintech'), focus: t('платежі, ризики, фінансова інфраструктура', 'payments, risk and financial infrastructure', 'платежи, риски и финансовая инфраструктура', 'pagos, riesgo e infraestructura financiera') }
+];
+
+const directoryNames = ['Alex Morgan','Maya Chen','Daniel Novak','Olena Shevchenko','Nora Patel','Luca Romano','Sara Kim','Mateo Garcia','Amina Hassan','Victor Silva','Iryna Kovalenko','Jonas Weber','Emma Laurent','Noah Brown','Sofia Rossi','Andrii Melnyk','Mila Horvat','Karim Haddad','Eva Novakova','Lucas Martin','Daria Ivanova','Tomasz Zielinski','Anika Rao','Hanna Muller','Diego Torres','Kateryna Bondar','Mark Johnson','Elena Petrova','Marta Lopez','Artem Savchuk','Leila Mansour','Robert Klein','Julia Adams','Pavlo Kravets','Natalia Costa','Omar Farouk','Anna Kowalska','George Wilson','Marina Sokolova','Ivan Horvat','Claire Dubois','Rafael Costa','Tetiana Moroz','Nina Fischer','Maxim Popov','Laura Jensen','Serhii Tkachenko','Miriam Cohen','Pedro Alvarez','Yana Litvin','Adrian Nowak','Ines Moreau','Mykola Lysenko','Fatima Zahra','Ethan Brooks','Alina Danyliuk','Hugo Bernard','Marta Nowak','Roman Hrytsenko','Sofia Almeida','David Cohen','Veronika Koval','Marco Ricci','Amelia Wright','Oksana Levchenko','Khalid Nasser','Lina Hoffmann','Bohdan Koval','Camila Santos','Yevhen Marchenko','Iris Novak','Kenji Sato','Li Wei','Maria Fernandez','James Carter','Dmytro Polishchuk','Alisa Romanenko','Youssef Amr','Isabel Cruz','Nikita Volkov','Greta Hansen','Taras Oliynyk','Marta Silva','Leo Schneider','Svitlana Klymenko','Zara Khan','Oscar Nilsson','Viktoria Mazur','Pablo Herrera','Oleh Rudenko','Emily Turner','Nadia Pavlenko','Sergio Ruiz','Maksym Bondarenko','Amara Okafor','Felix Meyer','Kira Sydorenko','Andrei Stoica','Lena Berg','Mikhail Orlov'];
+
+const extraSpecialists = directoryNames.map((name, index) => {
+  const template = rubricTemplates[index % rubricTemplates.length];
+  const n = t(name, name, name, name);
+  return {
+    slug: `directory-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${index + 1}`,
+    image: avatar(name),
+    name: n,
+    role: template.role,
+    country: t('Міжнародний профіль', 'International profile', 'Международный профиль', 'Perfil internacional'),
+    focus: template.focus,
+    knownFor: t('практичну експертизу у своїй галузі та роботу з міждисциплінарними командами', 'practical domain expertise and work with cross-functional teams', 'практическую экспертизу в своей сфере и работу с междисциплинарными командами', 'experiencia práctica en su área y trabajo con equipos multifuncionales'),
+    life: t(
+      'Короткий професійний запис у базі Rybezh: профіль структуровано для швидкого перегляду компетенцій, ролі та напрямів експертизи.',
+      'A concise Rybezh professional record structured for quick review of competencies, role and fields of expertise.',
+      'Краткая профессиональная запись в базе Rybezh: профиль структурирован для быстрого просмотра компетенций, роли и направлений экспертизы.',
+      'Registro profesional breve en Rybezh, estructurado para revisar rápidamente competencias, rol y áreas de experiencia.'
+    ),
+    tags: [template.tag, index % 2 ? 'leadership' : 'operations', index % 3 ? 'technology' : 'research'],
+    directoryEntry: true
+  };
+});
+
+specialists.unshift(bohdanProfile);
+specialists.push(...extraSpecialists);
+
 const tagLabels = {
   software: t('Програмування', 'Software', 'Программирование', 'Software'),
   research: t('Дослідження', 'Research', 'Исследования', 'Investigación'),
@@ -366,7 +453,10 @@ const tagLabels = {
   biotech: t('Біотехнології', 'Biotech', 'Биотехнологии', 'Biotecnología'),
   physics: t('Фізика', 'Physics', 'Физика', 'Física'),
   fintech: t('Фінтех', 'Fintech', 'Финтех', 'Fintech'),
-  design: t('Дизайн', 'Design', 'Дизайн', 'Diseño')
+  design: t('Дизайн', 'Design', 'Дизайн', 'Diseño'),
+  resilience: t('Стійкість', 'Resilience', 'Устойчивость', 'Resiliencia'),
+  ukraine: t('Україна', 'Ukraine', 'Украина', 'Ucrania'),
+  technology: t('Технології', 'Technology', 'Технологии', 'Tecnología')
 };
 
 const startups = [
@@ -529,7 +619,11 @@ const specialistOutput = specialists.map(person => {
     focus: person.focus,
     knownFor: person.knownFor,
     bio,
-    tags
+    tags,
+    featured: Boolean(person.featured),
+    gallery: person.gallery || [],
+    highlights: person.highlights || null,
+    directoryEntry: Boolean(person.directoryEntry)
   };
 });
 
