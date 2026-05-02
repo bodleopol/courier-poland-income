@@ -375,6 +375,11 @@ const bohdanProfile = {
       caption: t('Підхід до роботи з людьми: чіткість, спокій і відповідальність.', 'Approach to people: clarity, calmness and responsibility.', 'Подход к работе с людьми: ясность, спокойствие и ответственность.', 'Trabajo con personas: claridad, calma y responsabilidad.')
     },
     {
+      image: 'assets/images/bohdan-tiutenko-desert-motorcycle.svg',
+      title: t('Мотоподорож у пустелі', 'Desert motorcycle ride', 'Мотопоездка в пустыне', 'Ruta en moto por el desierto'),
+      caption: t('Особистий кадр про витримку, контроль і спокій у складних умовах.', 'A personal image about endurance, control and calmness in demanding conditions.', 'Личный кадр о выдержке, контроле и спокойствии в сложных условиях.', 'Imagen personal sobre resistencia, control y calma en condiciones exigentes.')
+    },
+    {
       image: 'assets/images/bohdan-tiutenko-camine.svg',
       title: t('«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”', '«Camine sobre la muerte, pero en mis manos queda vida»', '“Camine sobre la muerte, pero en mis manos queda vida”'),
       caption: t('Портрет, створений художницею, враженою історією життя Богдана.', 'Portrait created by an artist moved by Bohdan’s life story.', 'Портрет, созданный художницей, впечатленной историей жизни Богдана.', 'Retrato creado por una artista conmovida por la historia de vida de Bohdan.')

@@ -116,6 +116,21 @@
         }
       },
       {
+        "image": "assets/images/bohdan-tiutenko-desert-motorcycle.svg",
+        "title": {
+          "uk": "Мотоподорож у пустелі",
+          "en": "Desert motorcycle ride",
+          "ru": "Мотопоездка в пустыне",
+          "es": "Ruta en moto por el desierto"
+        },
+        "caption": {
+          "uk": "Особистий кадр про витримку, контроль і спокій у складних умовах.",
+          "en": "A personal image about endurance, control and calmness in demanding conditions.",
+          "ru": "Личный кадр о выдержке, контроле и спокойствии в сложных условиях.",
+          "es": "Imagen personal sobre resistencia, control y calma en condiciones exigentes."
+        }
+      },
+      {
         "image": "assets/images/bohdan-tiutenko-camine.svg",
         "title": {
           "uk": "«Camine sobre la muerte, pero en mis manos queda vida»",
