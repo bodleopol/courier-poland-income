@@ -26,6 +26,26 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/person-andrew-ng-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-andrew-ng-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-andrew-ng-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-andrew-ng.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/person-bohdan-tiutenko-en.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -66,6 +86,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/person-fei-fei-li-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-fei-fei-li-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-fei-fei-li-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-fei-fei-li.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-gwynne-shotwell-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-gwynne-shotwell-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-gwynne-shotwell-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-gwynne-shotwell.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/person-ilya-sutskever-en.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -82,6 +142,66 @@
   </url>
   <url>
     <loc>https://rybezh.site/person-ilya-sutskever.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-linus-torvalds-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-linus-torvalds-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-linus-torvalds-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-linus-torvalds.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-mira-murati-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-mira-murati-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-mira-murati-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-mira-murati.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-sam-altman-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-sam-altman-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-sam-altman-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/person-sam-altman.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -104,5 +224,25 @@
     <loc>https://rybezh.site/person-yann-lecun.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startups-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startups-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startups-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startups.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 </urlset>
