@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <link rel="canonical" href="{{CANONICAL}}">
+    <link rel="alternate" hreflang="uk" href="{{CANONICAL}}">
+    <link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
+    <link rel="alternate" hreflang="ru" href="{{CANONICAL_RU}}">
+    <link rel="alternate" hreflang="en" href="{{CANONICAL_EN}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="index.html">Rybezh</a></div>
+            <div style="display: flex; align-items: center;">
+                <div class="lang-switcher">
+                    <a href="{{CANONICAL}}">UA</a>
+                    <a href="{{CANONICAL_EN}}">EN</a>
+                    <a href="{{CANONICAL_ES}}">ES</a>
+                    <a href="{{CANONICAL_RU}}">RU</a>
+                </div>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        {{CONTENT}}
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Rybezh Global</h4>
+                    <p>Міжнародна інформаційна база видатних спеціалістів, керівників та інноваторів.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Навігація</h4>
+                    <nav class="nav-wrapper">
+                        <a href="index.html">Головна</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h4>Корпоративна Інформація</h4>
+                    <p><strong>Офіс:</strong> м. Київ, Україна, вул. Хрещатик 1</p>
+                    <p><strong>ІПН / Податковий номер:</strong> 31415926535</p>
+                    <p><strong>Команда:</strong> Rybezh Executive Team</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rybezh. Всі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>
