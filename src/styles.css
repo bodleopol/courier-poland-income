@@ -226,3 +226,31 @@ body[data-theme="dark"] .gallery figure {
 body[data-theme="dark"] .gallery figcaption {
     color: #94a3b8;
 }
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-container > div:last-child {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .content-wrapper {
+        margin: 20px;
+        padding: 20px;
+    }
+    .profile-avatar-large {
+        width: 150px;
+        height: 150px;
+    }
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tags {
+        justify-content: center;
+    }
+}
