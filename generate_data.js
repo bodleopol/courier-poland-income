@@ -169,7 +169,7 @@ function enrichStartupSummary(company, details) {
     if (notable) bits.push(notable);
     let extra = '';
     if (lang === 'uk') extra = bits.length ? ` Додатковий контекст: ${bits.join(' · ')}.` : '';
-    else if (lang === 'en') extra = bits.length ? ` Additional context: ${bits.join(' · ')}.` : '';
+    else if (lang === 'en') extra = bits.length ? ` Headquarters and focus: ${bits.join(' · ')}.` : '';
     else if (lang === 'ru') extra = bits.length ? ` Дополнительный контекст: ${bits.join(' · ')}.` : '';
     else extra = bits.length ? ` Contexto adicional: ${bits.join(' · ')}.` : '';
     let text = `${base}${extra}`.replace(/\s+/g, ' ').trim();
