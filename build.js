@@ -11,6 +11,7 @@ const translations = {
     navSpecialists: 'Спеціалісти',
     navStartups: 'Стартапи',
     navMethodology: 'Методологія',
+    navMenu: 'Меню',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
     navTerms: 'Умови',
@@ -34,6 +35,7 @@ const translations = {
     navSpecialists: 'Specialists',
     navStartups: 'Startups',
     navMethodology: 'Methodology',
+    navMenu: 'Menu',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
     navTerms: 'Terms',
@@ -57,6 +59,7 @@ const translations = {
     navSpecialists: 'Especialistas',
     navStartups: 'Startups',
     navMethodology: 'Metodología',
+    navMenu: 'Menú',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
     navTerms: 'Términos',
@@ -80,6 +83,7 @@ const translations = {
     navSpecialists: 'Специалисты',
     navStartups: 'Стартапы',
     navMethodology: 'Методология',
+    navMenu: 'Меню',
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
     navTerms: 'Условия',
@@ -228,6 +232,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
                        .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
+                       .replaceAll('{{NAV_MENU}}', local.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', local.navCookies)
                        .replaceAll('{{NAV_TERMS}}', local.navTerms)
