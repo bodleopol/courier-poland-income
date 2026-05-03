@@ -3584,6 +3584,136 @@
     "highlights": null
   },
   {
+    "slug": "sara-hooker",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sara_Hooker_2024.jpg?width=720",
+    "name": {
+      "uk": "Сара Хукер",
+      "en": "Sara Hooker",
+      "ru": "Сара Хукер",
+      "es": "Sara Hooker"
+    },
+    "role": {
+      "uk": "Дослідниця ШІ та CEO Cohere for AI",
+      "en": "AI researcher and CEO of Cohere for AI",
+      "ru": "Исследовательница ИИ и CEO Cohere for AI",
+      "es": "Investigadora de IA y CEO de Cohere for AI"
+    },
+    "country": {
+      "uk": "Канада",
+      "en": "Canada",
+      "ru": "Канада",
+      "es": "Canadá"
+    },
+    "focus": {
+      "uk": "ефективні моделі, відповідальний ШІ, інклюзивні дослідження",
+      "en": "efficient models, responsible AI, inclusive research",
+      "ru": "эффективные модели, ответственный ИИ, инклюзивные исследования",
+      "es": "modelos eficientes, IA responsable e investigación inclusiva"
+    },
+    "knownFor": {
+      "uk": "лідерство в дослідженнях ефективного та відповідального машинного навчання",
+      "en": "leadership in efficient and responsible machine-learning research",
+      "ru": "лидерство в исследованиях эффективного и ответственного машинного обучения",
+      "es": "liderazgo en investigación eficiente y responsable de aprendizaje automático"
+    },
+    "bio": {
+      "uk": "Її робота показує, що майбутнє ШІ будується не лише навколо масштабу, а й навколо якості даних, обчислень та відповідального впровадження. Редакційний контекст: Сара Хукер — Дослідниця ШІ та CEO Cohere for AI (Канада). Відомий внесок: лідерство в дослідженнях ефективного та відповідального машинного навчання. Професійний фокус: ефективні моделі, відповідальний ШІ, інклюзивні дослідження.",
+      "en": "Her work shows that AI progress is not only about scale, but also about data quality, compute efficiency and responsible deployment. Editorial context: Sara Hooker — AI researcher and CEO of Cohere for AI (Canada). Known for: leadership in efficient and responsible machine-learning research. Professional focus: efficient models, responsible AI, inclusive research.",
+      "ru": "Ее работа показывает, что прогресс ИИ строится не только на масштабе, но и на качестве данных, эффективности вычислений и ответственном внедрении. Редакционный контекст: Сара Хукер — Исследовательница ИИ и CEO Cohere for AI (Канада). Известен вкладом: лидерство в исследованиях эффективного и ответственного машинного обучения. Профессиональный фокус: эффективные модели, ответственный ИИ, инклюзивные исследования.",
+      "es": "Su trabajo muestra que el progreso de la IA no depende solo de la escala, sino también de la calidad de datos, la eficiencia de cómputo y el despliegue responsable. Contexto editorial: Sara Hooker — Investigadora de IA y CEO de Cohere for AI (Canadá). Reconocido por: liderazgo en investigación eficiente y responsable de aprendizaje automático. Enfoque profesional: modelos eficientes, IA responsable e investigación inclusiva."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дослідження",
+        "Наука"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Research",
+        "Science"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Исследования",
+        "Наука"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Ciencia"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "marina-von-neumann-whitman",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Marina_von_Neumann_Whitman_2016.jpg?width=720",
+    "name": {
+      "uk": "Маріна фон Нойман Вітман",
+      "en": "Marina von Neumann Whitman",
+      "ru": "Марина фон Нейман Уитман",
+      "es": "Marina von Neumann Whitman"
+    },
+    "role": {
+      "uk": "Економістка та професорка менеджменту",
+      "en": "Economist and management professor",
+      "ru": "Экономист и профессор менеджмента",
+      "es": "Economista y profesora de management"
+    },
+    "country": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "focus": {
+      "uk": "промислова політика, корпоративне управління, міжнародна економіка",
+      "en": "industrial policy, corporate governance, international economics",
+      "ru": "промышленная политика, корпоративное управление, международная экономика",
+      "es": "política industrial, gobierno corporativo y economía internacional"
+    },
+    "knownFor": {
+      "uk": "поєднання академічної роботи, державної служби та керівних ролей у корпораціях",
+      "en": "combining academic work, public service and executive roles in corporations",
+      "ru": "сочетание академической работы, госслужбы и руководящих ролей в корпорациях",
+      "es": "combinar academia, servicio público y roles ejecutivos en corporaciones"
+    },
+    "bio": {
+      "uk": "Її профіль додає до бази досвід на перетині університету, урядової аналітики та реального корпоративного управління. Редакційний контекст: Маріна фон Нойман Вітман — Економістка та професорка менеджменту (США). Відомий внесок: поєднання академічної роботи, державної служби та керівних ролей у корпораціях. Професійний фокус: промислова політика, корпоративне управління, міжнародна економіка.",
+      "en": "Her profile adds a cross-sector perspective spanning universities, policy analysis and practical corporate leadership. Editorial context: Marina von Neumann Whitman — Economist and management professor (United States). Known for: combining academic work, public service and executive roles in corporations. Professional focus: industrial policy, corporate governance, international economics.",
+      "ru": "Ее профиль добавляет межсекторный опыт на стыке университетов, государственной аналитики и практического корпоративного управления. Редакционный контекст: Марина фон Нейман Уитман — Экономист и профессор менеджмента (США). Известен вкладом: сочетание академической работы, госслужбы и руководящих ролей в корпорациях. Профессиональный фокус: промышленная политика, корпоративное управление, международная экономика.",
+      "es": "Su perfil aporta una mirada transversal entre universidad, análisis de políticas y liderazgo corporativo aplicado. Contexto editorial: Marina von Neumann Whitman — Economista y profesora de management (Estados Unidos). Reconocido por: combinar academia, servicio público y roles ejecutivos en corporaciones. Enfoque profesional: política industrial, gobierno corporativo y economía internacional."
+    },
+    "tags": {
+      "uk": [
+        "Наука",
+        "Освіта",
+        "Лідерство"
+      ],
+      "en": [
+        "Science",
+        "Education",
+        "Leadership"
+      ],
+      "ru": [
+        "Наука",
+        "Образование",
+        "Лидерство"
+      ],
+      "es": [
+        "Ciencia",
+        "Educación",
+        "Liderazgo"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
     "slug": "melanie-perkins",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Melanie_Perkins_at_TechCrunch_Disrupt_SF_2019.jpg?width=720",
     "name": {

@@ -4414,5 +4414,189 @@
       "ru": "Remote-first",
       "es": "Remote-first"
     }
+  },
+  {
+    "slug": "poolside",
+    "image": "https://logo.clearbit.com/poolside.ai",
+    "name": "Poolside",
+    "founded": "2023",
+    "category": {
+      "uk": "AI-стартап для розробників",
+      "en": "AI startup for developers",
+      "ru": "AI-стартап для разработчиков",
+      "es": "Startup de IA para desarrolladores"
+    },
+    "summary": {
+      "uk": "Створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті AI для software engineering.",
+      "en": "Builds models and tooling for software-automation workflows focused on professional engineering teams. Additional context: United States / France · Code generation, developer tools, foundation models · A new entrant in AI for software engineering.",
+      "ru": "Создает модели и инструменты для автоматизации программирования с фокусом на workflow профессиональных инженерных команд. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте AI для software engineering.",
+      "es": "Construye modelos y herramientas para automatizar programación, enfocadas en workflows de equipos de ingeniería profesionales. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en IA para software engineering."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США / Франція",
+      "en": "United States / France",
+      "ru": "США / Франция",
+      "es": "Estados Unidos / Francia"
+    },
+    "model": {
+      "uk": "Developer AI company",
+      "en": "Developer AI company",
+      "ru": "Developer AI company",
+      "es": "Compañía de IA para desarrolladores"
+    },
+    "market": {
+      "uk": "Code generation, developer tools, foundation models",
+      "en": "Code generation, developer tools, foundation models",
+      "ru": "Code generation, developer tools, foundation models",
+      "es": "Generación de código, developer tools y modelos fundacionales"
+    },
+    "notableFor": {
+      "uk": "Новий гравець у сегменті AI для software engineering",
+      "en": "A new entrant in AI for software engineering",
+      "ru": "Новый игрок в сегменте AI для software engineering",
+      "es": "Un nuevo actor en IA para software engineering"
+    },
+    "signals": {
+      "uk": [
+        "Ставка на core developer workflows",
+        "Модельний фокус для code generation",
+        "Видимий AI-devtools сегмент після 2023 року"
+      ],
+      "en": [
+        "A bet on core developer workflows",
+        "Model-centric work for code generation",
+        "Part of the visible AI devtools segment after 2023"
+      ],
+      "ru": [
+        "Ставка на core developer workflows",
+        "Модельный фокус для code generation",
+        "Часть заметного AI devtools-сегмента после 2023 года"
+      ],
+      "es": [
+        "Apuesta por workflows centrales de desarrolladores",
+        "Foco de modelos para code generation",
+        "Parte del segmento visible de AI devtools desde 2023"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Франція",
+      "en": "France",
+      "ru": "Франция",
+      "es": "Francia"
+    }
+  },
+  {
+    "slug": "harvey",
+    "image": "https://logo.clearbit.com/harvey.ai",
+    "name": "Harvey",
+    "founded": "2022",
+    "category": {
+      "uk": "Legal AI платформа",
+      "en": "Legal AI platform",
+      "ru": "Legal AI платформа",
+      "es": "Plataforma de IA legal"
+    },
+    "summary": {
+      "uk": "Розробляє AI-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical AI-продуктів нового циклу.",
+      "en": "Develops AI tooling for legal teams and large firms by combining generative models with legal domain expertise. Additional context: United States · Legal tech, professional services, document analysis · One of the most visible vertical-AI products of the new cycle.",
+      "ru": "Разрабатывает AI-инструменты для юридических команд и крупных фирм, сочетая генеративные модели с доменной экспертизой права. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical AI-продуктов нового цикла.",
+      "es": "Desarrolla herramientas de IA para equipos legales y grandes firmas, combinando modelos generativos con experiencia jurídica. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de IA vertical más visibles del nuevo ciclo."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Корпоративне ПЗ",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Enterprise software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Корпоративное ПО",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software empresarial",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Vertical AI startup",
+      "en": "Vertical AI startup",
+      "ru": "Vertical AI startup",
+      "es": "Startup de IA vertical"
+    },
+    "market": {
+      "uk": "Legal tech, professional services, document analysis",
+      "en": "Legal tech, professional services, document analysis",
+      "ru": "Legal tech, professional services, document analysis",
+      "es": "Legal tech, servicios profesionales y análisis documental"
+    },
+    "notableFor": {
+      "uk": "Один із найпомітніших vertical AI-продуктів нового циклу",
+      "en": "One of the most visible vertical-AI products of the new cycle",
+      "ru": "Один из самых заметных vertical AI-продуктов нового цикла",
+      "es": "Uno de los productos de IA vertical más visibles del nuevo ciclo"
+    },
+    "signals": {
+      "uk": [
+        "Чіткий юридичний use case",
+        "Сильний B2B AI narrative",
+        "Показує рух AI у vertical software"
+      ],
+      "en": [
+        "A clear legal use case",
+        "A strong B2B AI narrative",
+        "Shows how AI is moving into vertical software"
+      ],
+      "ru": [
+        "Четкий юридический use case",
+        "Сильный B2B AI narrative",
+        "Показывает движение ИИ в vertical software"
+      ],
+      "es": [
+        "Caso de uso legal claro",
+        "Narrativa fuerte de IA B2B",
+        "Muestra cómo la IA entra en software vertical"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    }
   }
 ]
