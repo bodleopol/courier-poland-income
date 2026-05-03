@@ -264,10 +264,10 @@
       "es": "liderar el software de vuelo de Apollo"
     },
     "bio": {
-      "uk": "Її робота показала, що програмне забезпечення може бути критичною інженерною дисципліною з власними методами контролю ризику.",
-      "en": "Her work helped define software as a critical engineering discipline with its own methods for managing risk.",
-      "ru": "Ее работа показала, что программное обеспечение является критической инженерной дисциплиной со своими методами управления риском.",
-      "es": "Su trabajo ayudó a definir el software como disciplina crítica de ingeniería con métodos propios de control de riesgo."
+      "uk": "Її робота показала, що програмне забезпечення може бути критичною інженерною дисципліною з власними методами контролю ризику. Редакційний контекст: Маргарет Гамільтон — Інженерка програмного забезпечення (США). Відомий внесок: керівництво розробкою бортового ПЗ Apollo. Професійний фокус: надійні системи, космічне ПЗ, системна архітектура.",
+      "en": "Her work helped define software as a critical engineering discipline with its own methods for managing risk. Editorial context: Margaret Hamilton — Software engineer (United States). Known for: leading the Apollo flight software effort. Professional focus: reliable systems, space software, systems architecture.",
+      "ru": "Ее работа показала, что программное обеспечение является критической инженерной дисциплиной со своими методами управления риском. Редакционный контекст: Маргарет Гамильтон — Инженер программного обеспечения (США). Известен вкладом: руководство разработкой бортового ПО Apollo. Профессиональный фокус: надежные системы, космическое ПО, системная архитектура.",
+      "es": "Su trabajo ayudó a definir el software como disciplina crítica de ingeniería con métodos propios de control de riesgo. Contexto editorial: Margaret Hamilton — Ingeniera de software (Estados Unidos). Reconocido por: liderar el software de vuelo de Apollo. Enfoque profesional: sistemas fiables, software espacial y arquitectura de sistemas."
     },
     "tags": {
       "uk": [
@@ -329,10 +329,10 @@
       "es": "crear HTTP, HTML, URL y la web moderna"
     },
     "bio": {
-      "uk": "Його підхід зробив інтернет платформою для спільних знань, бізнесу, науки та культури.",
-      "en": "His approach turned the internet into a platform for shared knowledge, business, science and culture.",
-      "ru": "Его подход сделал интернет платформой для знаний, бизнеса, науки и культуры.",
-      "es": "Su enfoque convirtió internet en una plataforma para conocimiento compartido, negocios, ciencia y cultura."
+      "uk": "Його підхід зробив інтернет платформою для спільних знань, бізнесу, науки та культури. Редакційний контекст: Тім Бернерс-Лі — Винахідник World Wide Web (Велика Британія). Відомий внесок: створення HTTP, HTML, URL та концепції вебу. Професійний фокус: відкритий веб, протоколи, цифрові права.",
+      "en": "His approach turned the internet into a platform for shared knowledge, business, science and culture. Editorial context: Tim Berners-Lee — Inventor of the World Wide Web (United Kingdom). Known for: creating HTTP, HTML, URL concepts and the Web itself. Professional focus: open web, protocols, digital rights.",
+      "ru": "Его подход сделал интернет платформой для знаний, бизнеса, науки и культуры. Редакционный контекст: Тим Бернерс-Ли — Изобретатель World Wide Web (Великобритания). Известен вкладом: создание HTTP, HTML, URL и самой концепции веба. Профессиональный фокус: открытый веб, протоколы, цифровые права.",
+      "es": "Su enfoque convirtió internet en una plataforma para conocimiento compartido, negocios, ciencia y cultura. Contexto editorial: Tim Berners-Lee — Inventor de la World Wide Web (Reino Unido). Reconocido por: crear HTTP, HTML, URL y la web moderna. Enfoque profesional: web abierta, protocolos y derechos digitales."
     },
     "tags": {
       "uk": [
@@ -394,10 +394,10 @@
       "es": "Linux y Git"
     },
     "bio": {
-      "uk": "Його інструменти стали інфраструктурою для серверів, хмарних платформ, мобільних пристроїв і команд розробників.",
-      "en": "His tools became infrastructure for servers, cloud platforms, mobile devices and software teams.",
-      "ru": "Его инструменты стали инфраструктурой для серверов, облаков, мобильных устройств и команд разработчиков.",
-      "es": "Sus herramientas se volvieron infraestructura para servidores, nubes, dispositivos móviles y equipos de software."
+      "uk": "Його інструменти стали інфраструктурою для серверів, хмарних платформ, мобільних пристроїв і команд розробників. Редакційний контекст: Лінус Торвальдс — Інженер ПЗ, засновник Linux (Фінляндія / США). Відомий внесок: Linux та Git. Професійний фокус: ядра ОС, open source, розподілена розробка.",
+      "en": "His tools became infrastructure for servers, cloud platforms, mobile devices and software teams. Editorial context: Linus Torvalds — Software engineer, creator of Linux (Finland / United States). Known for: Linux and Git. Professional focus: operating-system kernels, open source, distributed development.",
+      "ru": "Его инструменты стали инфраструктурой для серверов, облаков, мобильных устройств и команд разработчиков. Редакционный контекст: Линус Торвальдс — Инженер ПО, создатель Linux (Финляндия / США). Известен вкладом: Linux и Git. Профессиональный фокус: ядра ОС, open source, распределенная разработка.",
+      "es": "Sus herramientas se volvieron infraestructura para servidores, nubes, dispositivos móviles y equipos de software. Contexto editorial: Linus Torvalds — Ingeniero de software, creador de Linux (Finlandia / Estados Unidos). Reconocido por: Linux y Git. Enfoque profesional: núcleos de sistemas operativos, código abierto y desarrollo distribuido."
     },
     "tags": {
       "uk": [
@@ -459,10 +459,10 @@
       "es": "crear Python"
     },
     "bio": {
-      "uk": "Python став мовою для освіти, веброзробки, науки про дані, автоматизації й машинного навчання.",
-      "en": "Python became a language for education, web development, data science, automation and machine learning.",
-      "ru": "Python стал языком для образования, веб-разработки, науки о данных, автоматизации и машинного обучения.",
-      "es": "Python se convirtió en lenguaje para educación, web, ciencia de datos, automatización y aprendizaje automático."
+      "uk": "Python став мовою для освіти, веброзробки, науки про дані, автоматизації й машинного навчання. Редакційний контекст: Гвідо ван Россум — Програміст, творець Python (Нідерланди / США). Відомий внесок: створення Python. Професійний фокус: мови програмування, читабельність коду, спільноти розробників.",
+      "en": "Python became a language for education, web development, data science, automation and machine learning. Editorial context: Guido van Rossum — Programmer, creator of Python (Netherlands / United States). Known for: creating Python. Professional focus: programming languages, code readability, developer communities.",
+      "ru": "Python стал языком для образования, веб-разработки, науки о данных, автоматизации и машинного обучения. Редакционный контекст: Гвидо ван Россум — Программист, создатель Python (Нидерланды / США). Известен вкладом: создание Python. Профессиональный фокус: языки программирования, читаемость кода, сообщества разработчиков.",
+      "es": "Python se convirtió en lenguaje para educación, web, ciencia de datos, automatización y aprendizaje automático. Contexto editorial: Guido van Rossum — Programador, creador de Python (Países Bajos / Estados Unidos). Reconocido por: crear Python. Enfoque profesional: lenguajes de programación, legibilidad del código y comunidades de desarrolladores."
     },
     "tags": {
       "uk": [
@@ -524,10 +524,10 @@
       "es": "el algoritmo Spanning Tree Protocol"
     },
     "bio": {
-      "uk": "Її робота допомогла Ethernet-мережам масштабуватися без руйнівних петель і стала базою сучасної мережевої інженерії.",
-      "en": "Her work helped Ethernet networks scale without destructive loops and became a foundation of modern network engineering.",
-      "ru": "Ее работа помогла Ethernet-сетям масштабироваться без разрушительных петель и стала базой современной сетевой инженерии.",
-      "es": "Su trabajo permitió escalar redes Ethernet sin bucles destructivos y se volvió base de la ingeniería de redes moderna."
+      "uk": "Її робота допомогла Ethernet-мережам масштабуватися без руйнівних петель і стала базою сучасної мережевої інженерії. Редакційний контекст: Радія Перлман — Мережева інженерка (США). Відомий внесок: алгоритм Spanning Tree Protocol. Професійний фокус: мережеві протоколи, стійкість інфраструктури, безпека.",
+      "en": "Her work helped Ethernet networks scale without destructive loops and became a foundation of modern network engineering. Editorial context: Radia Perlman — Network engineer (United States). Known for: the Spanning Tree Protocol algorithm. Professional focus: network protocols, resilient infrastructure, security.",
+      "ru": "Ее работа помогла Ethernet-сетям масштабироваться без разрушительных петель и стала базой современной сетевой инженерии. Редакционный контекст: Радия Перлман — Сетевой инженер (США). Известен вкладом: алгоритм Spanning Tree Protocol. Профессиональный фокус: сетевые протоколы, устойчивость инфраструктуры, безопасность.",
+      "es": "Su trabajo permitió escalar redes Ethernet sin bucles destructivos y se volvió base de la ingeniería de redes moderna. Contexto editorial: Radia Perlman — Ingeniera de redes (Estados Unidos). Reconocido por: el algoritmo Spanning Tree Protocol. Enfoque profesional: protocolos de red, infraestructura resiliente y seguridad."
     },
     "tags": {
       "uk": [
@@ -589,10 +589,10 @@
       "es": "ImageNet y avances en reconocimiento visual"
     },
     "bio": {
-      "uk": "Вона поєднує фундаментальні дослідження з публічною розмовою про людськоцентричний ШІ.",
-      "en": "She combines foundational research with public work on human-centred AI.",
-      "ru": "Она сочетает фундаментальные исследования с публичной работой над человекоцентричным ИИ.",
-      "es": "Combina investigación fundamental con trabajo público sobre IA centrada en las personas."
+      "uk": "Вона поєднує фундаментальні дослідження з публічною розмовою про людськоцентричний ШІ. Редакційний контекст: Фей-Фей Лі — Дослідниця штучного інтелекту (США). Відомий внесок: ImageNet та розвиток візуального розпізнавання. Професійний фокус: компʼютерний зір, відповідальний ШІ, освіта.",
+      "en": "She combines foundational research with public work on human-centred AI. Editorial context: Fei-Fei Li — AI researcher (United States). Known for: ImageNet and advances in visual recognition. Professional focus: computer vision, responsible AI, education. The overview stays concise while anchoring geography, role and contribution.",
+      "ru": "Она сочетает фундаментальные исследования с публичной работой над человекоцентричным ИИ. Редакционный контекст: Фэй-Фэй Ли — Исследовательница ИИ (США). Известен вкладом: ImageNet и развитие визуального распознавания. Профессиональный фокус: компьютерное зрение, ответственный ИИ, образование.",
+      "es": "Combina investigación fundamental con trabajo público sobre IA centrada en las personas. Contexto editorial: Fei-Fei Li — Investigadora de IA (Estados Unidos). Reconocido por: ImageNet y avances en reconocimiento visual. Enfoque profesional: visión por computador, IA responsable y educación."
     },
     "tags": {
       "uk": [
@@ -654,10 +654,10 @@
       "es": "redes neuronales convolucionales y aportes clave al deep learning"
     },
     "bio": {
-      "uk": "Його дослідження вплинули на розпізнавання зображень, документообіг, робототехніку та сучасні AI-платформи.",
-      "en": "His research influenced image recognition, document processing, robotics and modern AI platforms.",
-      "ru": "Его исследования повлияли на распознавание изображений, обработку документов, робототехнику и современные AI-платформы.",
-      "es": "Su investigación influyó en reconocimiento de imágenes, procesamiento documental, robótica y plataformas modernas de IA."
+      "uk": "Його дослідження вплинули на розпізнавання зображень, документообіг, робототехніку та сучасні AI-платформи. Редакційний контекст: Ян Лекун — Дослідник ШІ, лауреат премії Тюрінга (Франція / США). Відомий внесок: згорткові нейронні мережі та фундаментальний внесок у deep learning. Професійний фокус: глибоке навчання, компʼютерний зір, самонавчальні системи.",
+      "en": "His research influenced image recognition, document processing, robotics and modern AI platforms. Editorial context: Yann LeCun — AI researcher, Turing Award laureate (France / United States). Known for: convolutional neural networks and foundational deep-learning work. Professional focus: deep learning, computer vision, self-supervised systems.",
+      "ru": "Его исследования повлияли на распознавание изображений, обработку документов, робототехнику и современные AI-платформы. Редакционный контекст: Ян Лекун — Исследователь ИИ, лауреат премии Тьюринга (Франция / США). Известен вкладом: сверточные нейронные сети и фундаментальный вклад в deep learning. Профессиональный фокус: глубокое обучение, компьютерное зрение, самообучающиеся системы.",
+      "es": "Su investigación influyó en reconocimiento de imágenes, procesamiento documental, robótica y plataformas modernas de IA. Contexto editorial: Yann LeCun — Investigador de IA, premio Turing (Francia / Estados Unidos). Reconocido por: redes neuronales convolucionales y aportes clave al deep learning. Enfoque profesional: aprendizaje profundo, visión por computador y sistemas autosupervisados."
     },
     "tags": {
       "uk": [
@@ -719,10 +719,10 @@
       "es": "DeepMind, AlphaGo y AlphaFold"
     },
     "bio": {
-      "uk": "Він будує команди, які переводять прориви ШІ з лабораторії у складні задачі біології, ігор та науки.",
-      "en": "He builds teams that move AI breakthroughs from the lab into difficult problems in biology, games and science.",
-      "ru": "Он строит команды, переводящие прорывы ИИ из лаборатории к сложным задачам биологии, игр и науки.",
-      "es": "Construye equipos que llevan avances de IA del laboratorio a problemas complejos en biología, juegos y ciencia."
+      "uk": "Він будує команди, які переводять прориви ШІ з лабораторії у складні задачі біології, ігор та науки. Редакційний контекст: Деміс Хассабіс — CEO Google DeepMind, дослідник ШІ (Велика Британія). Відомий внесок: DeepMind, AlphaGo та AlphaFold. Професійний фокус: штучний інтелект, нейронаука, наукові відкриття.",
+      "en": "He builds teams that move AI breakthroughs from the lab into difficult problems in biology, games and science. Editorial context: Demis Hassabis — CEO of Google DeepMind, AI researcher (United Kingdom). Known for: DeepMind, AlphaGo and AlphaFold. Professional focus: artificial intelligence, neuroscience, scientific discovery.",
+      "ru": "Он строит команды, переводящие прорывы ИИ из лаборатории к сложным задачам биологии, игр и науки. Редакционный контекст: Демис Хассабис — CEO Google DeepMind, исследователь ИИ (Великобритания). Известен вкладом: DeepMind, AlphaGo и AlphaFold. Профессиональный фокус: искусственный интеллект, нейронаука, научные открытия.",
+      "es": "Construye equipos que llevan avances de IA del laboratorio a problemas complejos en biología, juegos y ciencia. Contexto editorial: Demis Hassabis — CEO de Google DeepMind, investigador de IA (Reino Unido). Reconocido por: DeepMind, AlphaGo y AlphaFold. Enfoque profesional: inteligencia artificial, neurociencia y descubrimiento científico."
     },
     "tags": {
       "uk": [
@@ -784,10 +784,10 @@
       "es": "cofundar OpenAI y aportar al aprendizaje profundo"
     },
     "bio": {
-      "uk": "Його наукова робота стала частиною розвитку моделей, що змінили обробку мови, зору та генеративні системи.",
-      "en": "His scientific work became part of the model advances that changed language processing, vision and generative systems.",
-      "ru": "Его научная работа стала частью развития моделей, изменивших обработку языка, зрения и генеративные системы.",
-      "es": "Su trabajo científico formó parte de avances que cambiaron lenguaje, visión y sistemas generativos."
+      "uk": "Його наукова робота стала частиною розвитку моделей, що змінили обробку мови, зору та генеративні системи. Редакційний контекст: Ілля Суцкевер — Дослідник машинного навчання (Канада / Ізраїль / США). Відомий внесок: співзаснування OpenAI та внесок у глибоке навчання. Професійний фокус: нейронні мережі, великі моделі, безпека ШІ.",
+      "en": "His scientific work became part of the model advances that changed language processing, vision and generative systems. Editorial context: Ilya Sutskever — Machine-learning researcher (Canada / Israel / United States). Known for: co-founding OpenAI and contributing to deep learning. Professional focus: neural networks, large models, AI safety.",
+      "ru": "Его научная работа стала частью развития моделей, изменивших обработку языка, зрения и генеративные системы. Редакционный контекст: Илья Суцкевер — Исследователь машинного обучения (Канада / Израиль / США). Известен вкладом: соосновательство OpenAI и вклад в глубокое обучение. Профессиональный фокус: нейронные сети, большие модели, безопасность ИИ.",
+      "es": "Su trabajo científico formó parte de avances que cambiaron lenguaje, visión y sistemas generativos. Contexto editorial: Ilya Sutskever — Investigador de aprendizaje automático (Canadá / Israel / Estados Unidos). Reconocido por: cofundar OpenAI y aportar al aprendizaje profundo. Enfoque profesional: redes neuronales, grandes modelos y seguridad de IA."
     },
     "tags": {
       "uk": [
@@ -849,10 +849,10 @@
       "es": "liderar OpenAI y su trabajo previo en Y Combinator"
     },
     "bio": {
-      "uk": "Його карʼєра поєднує інкубацію стартапів, інвестиції та управління продуктами, що швидко входять у масове використання.",
-      "en": "His career combines startup incubation, investing and managing products that quickly enter mainstream use.",
-      "ru": "Его карьера объединяет инкубацию стартапов, инвестиции и управление продуктами, быстро входящими в массовое использование.",
-      "es": "Su carrera combina incubación de startups, inversión y gestión de productos que entran rápido al uso masivo."
+      "uk": "Його карʼєра поєднує інкубацію стартапів, інвестиції та управління продуктами, що швидко входять у масове використання. Редакційний контекст: Сем Альтман — CEO OpenAI, інвестор (США). Відомий внесок: керівництво OpenAI та попередню роботу в Y Combinator. Професійний фокус: штучний інтелект, стартапи, технологічна стратегія.",
+      "en": "His career combines startup incubation, investing and managing products that quickly enter mainstream use. Editorial context: Sam Altman — CEO of OpenAI, investor (United States). Known for: leading OpenAI and earlier work at Y Combinator. Professional focus: artificial intelligence, startups, technology strategy.",
+      "ru": "Его карьера объединяет инкубацию стартапов, инвестиции и управление продуктами, быстро входящими в массовое использование. Редакционный контекст: Сэм Альтман — CEO OpenAI, инвестор (США). Известен вкладом: руководство OpenAI и прежнюю работу в Y Combinator. Профессиональный фокус: искусственный интеллект, стартапы, технологическая стратегия.",
+      "es": "Su carrera combina incubación de startups, inversión y gestión de productos que entran rápido al uso masivo. Contexto editorial: Sam Altman — CEO de OpenAI, inversor (Estados Unidos). Reconocido por: liderar OpenAI y su trabajo previo en Y Combinator. Enfoque profesional: inteligencia artificial, startups y estrategia tecnológica."
     },
     "tags": {
       "uk": [
@@ -914,10 +914,10 @@
       "es": "Tesla, SpaceX, Starlink y otras empresas tecnológicas"
     },
     "bio": {
-      "uk": "Він просуває масштабні інженерні програми, де продукт, виробництво та програмне забезпечення розглядаються як єдина система.",
-      "en": "He drives large engineering programs where product, manufacturing and software are treated as one system.",
-      "ru": "Он продвигает крупные инженерные программы, где продукт, производство и ПО рассматриваются как единая система.",
-      "es": "Impulsa programas de ingeniería donde producto, fabricación y software se tratan como un solo sistema."
+      "uk": "Він просуває масштабні інженерні програми, де продукт, виробництво та програмне забезпечення розглядаються як єдина система. Редакційний контекст: Ілон Маск — Підприємець та CEO (ПАР / США). Відомий внесок: Tesla, SpaceX, Starlink та інші технологічні компанії. Професійний фокус: електромобілі, космос, енергетика, інфраструктура.",
+      "en": "He drives large engineering programs where product, manufacturing and software are treated as one system. Editorial context: Elon Musk — Entrepreneur and CEO (South Africa / United States). Known for: Tesla, SpaceX, Starlink and other technology companies. Professional focus: electric vehicles, space, energy, infrastructure.",
+      "ru": "Он продвигает крупные инженерные программы, где продукт, производство и ПО рассматриваются как единая система. Редакционный контекст: Илон Маск — Предприниматель и CEO (ЮАР / США). Известен вкладом: Tesla, SpaceX, Starlink и другие технологические компании. Профессиональный фокус: электромобили, космос, энергетика, инфраструктура.",
+      "es": "Impulsa programas de ingeniería donde producto, fabricación y software se tratan como un solo sistema. Contexto editorial: Elon Musk — Emprendedor y CEO (Sudáfrica / Estados Unidos). Reconocido por: Tesla, SpaceX, Starlink y otras empresas tecnológicas. Enfoque profesional: vehículos eléctricos, espacio, energía e infraestructura."
     },
     "tags": {
       "uk": [
@@ -979,10 +979,10 @@
       "es": "convertir NVIDIA en plataforma clave para el cómputo de IA"
     },
     "bio": {
-      "uk": "Його управління поєднує довгострокову ставку на архітектуру чипів із екосистемою розробників.",
-      "en": "His leadership combines a long-term bet on chip architecture with a developer ecosystem.",
-      "ru": "Его управление сочетает долгосрочную ставку на архитектуру чипов с экосистемой разработчиков.",
-      "es": "Su liderazgo combina una apuesta de largo plazo por arquitectura de chips con un ecosistema de desarrolladores."
+      "uk": "Його управління поєднує довгострокову ставку на архітектуру чипів із екосистемою розробників. Редакційний контекст: Дженсен Хуанг — CEO NVIDIA (Тайвань / США). Відомий внесок: перетворення NVIDIA на ключову платформу для ШІ. Професійний фокус: графічні процесори, AI-обчислення, апаратна інфраструктура.",
+      "en": "His leadership combines a long-term bet on chip architecture with a developer ecosystem. Editorial context: Jensen Huang — CEO of NVIDIA (Taiwan / United States). Known for: turning NVIDIA into a key platform for AI computing. Professional focus: GPUs, AI computing, hardware infrastructure.",
+      "ru": "Его управление сочетает долгосрочную ставку на архитектуру чипов с экосистемой разработчиков. Редакционный контекст: Дженсен Хуанг — CEO NVIDIA (Тайвань / США). Известен вкладом: превращение NVIDIA в ключевую платформу AI-вычислений. Профессиональный фокус: графические процессоры, AI-вычисления, аппаратная инфраструктура.",
+      "es": "Su liderazgo combina una apuesta de largo plazo por arquitectura de chips con un ecosistema de desarrolladores. Contexto editorial: Jensen Huang — CEO de NVIDIA (Taiwán / Estados Unidos). Reconocido por: convertir NVIDIA en plataforma clave para el cómputo de IA. Enfoque profesional: GPU, cómputo de IA e infraestructura de hardware."
     },
     "tags": {
       "uk": [
@@ -1044,10 +1044,10 @@
       "es": "liderar el giro de AMD hacia plataformas de procesadores competitivas"
     },
     "bio": {
-      "uk": "Її інженерна дисципліна й фокус на дорожніх картах продуктів стали прикладом технічного CEO.",
-      "en": "Her engineering discipline and focus on product roadmaps became a model for technical CEOs.",
-      "ru": "Ее инженерная дисциплина и фокус на продуктовых дорожных картах стали примером технического CEO.",
-      "es": "Su disciplina de ingeniería y foco en hojas de ruta de producto son modelo de liderazgo técnico."
+      "uk": "Її інженерна дисципліна й фокус на дорожніх картах продуктів стали прикладом технічного CEO. Редакційний контекст: Ліза Су — CEO AMD, інженерка-електронниця (Тайвань / США). Відомий внесок: поворот AMD до конкурентних процесорних платформ. Професійний фокус: напівпровідники, високопродуктивні обчислення, корпоративна стратегія.",
+      "en": "Her engineering discipline and focus on product roadmaps became a model for technical CEOs. Editorial context: Lisa Su — CEO of AMD, electrical engineer (Taiwan / United States). Known for: leading AMD's turnaround into competitive processor platforms. Professional focus: semiconductors, high-performance computing, corporate strategy.",
+      "ru": "Ее инженерная дисциплина и фокус на продуктовых дорожных картах стали примером технического CEO. Редакционный контекст: Лиза Су — CEO AMD, инженер-электронщик (Тайвань / США). Известен вкладом: разворот AMD к конкурентным процессорным платформам. Профессиональный фокус: полупроводники, высокопроизводительные вычисления, корпоративная стратегия.",
+      "es": "Su disciplina de ingeniería y foco en hojas de ruta de producto son modelo de liderazgo técnico. Contexto editorial: Lisa Su — CEO de AMD, ingeniera eléctrica (Taiwán / Estados Unidos). Reconocido por: liderar el giro de AMD hacia plataformas de procesadores competitivas. Enfoque profesional: semiconductores, computación de alto rendimiento y estrategia corporativa."
     },
     "tags": {
       "uk": [
@@ -1109,10 +1109,10 @@
       "es": "escalar las operaciones comerciales de lanzamiento de SpaceX"
     },
     "bio": {
-      "uk": "Вона є прикладом операційного керівника, який перетворює складну інженерію на повторюваний бізнес-процес.",
-      "en": "She is an example of an operations leader turning complex engineering into a repeatable business process.",
-      "ru": "Она является примером операционного руководителя, превращающего сложную инженерию в повторяемый бизнес-процесс.",
-      "es": "Es ejemplo de liderazgo operativo que convierte ingeniería compleja en proceso empresarial repetible."
+      "uk": "Вона є прикладом операційного керівника, який перетворює складну інженерію на повторюваний бізнес-процес. Редакційний контекст: Ґвінн Шотвелл — Президентка та COO SpaceX (США). Відомий внесок: масштабування комерційних запусків SpaceX. Професійний фокус: операційне управління, космічні запуски, комерційні контракти.",
+      "en": "She is an example of an operations leader turning complex engineering into a repeatable business process. Editorial context: Gwynne Shotwell — President and COO of SpaceX (United States). Known for: scaling SpaceX commercial launch operations. Professional focus: operations, space launches, commercial contracts.",
+      "ru": "Она является примером операционного руководителя, превращающего сложную инженерию в повторяемый бизнес-процесс. Редакционный контекст: Гвинн Шотвелл — Президент и COO SpaceX (США). Известен вкладом: масштабирование коммерческих запусков SpaceX. Профессиональный фокус: операционное управление, космические запуски, коммерческие контракты.",
+      "es": "Es ejemplo de liderazgo operativo que convierte ingeniería compleja en proceso empresarial repetible. Contexto editorial: Gwynne Shotwell — Presidenta y COO de SpaceX (Estados Unidos). Reconocido por: escalar las operaciones comerciales de lanzamiento de SpaceX. Enfoque profesional: operaciones, lanzamientos espaciales y contratos comerciales."
     },
     "tags": {
       "uk": [
@@ -1174,10 +1174,10 @@
       "es": "liderar Oracle durante grandes acuerdos empresariales y transformación cloud"
     },
     "bio": {
-      "uk": "Її профіль важливий для розуміння ролі фінансової дисципліни та операцій у великих технологічних компаніях.",
-      "en": "Her profile is important for understanding the role of financial discipline and operations in large technology companies.",
-      "ru": "Ее профиль важен для понимания роли финансовой дисциплины и операций в крупных технологических компаниях.",
-      "es": "Su perfil ayuda a entender el papel de disciplina financiera y operaciones en grandes tecnológicas."
+      "uk": "Її профіль важливий для розуміння ролі фінансової дисципліни та операцій у великих технологічних компаніях. Редакційний контекст: Сафра Кац — CEO Oracle (Ізраїль / США). Відомий внесок: керівництво Oracle у період великих корпоративних угод і хмарної трансформації. Професійний фокус: корпоративне ПЗ, фінанси, M&A, операційна ефективність.",
+      "en": "Her profile is important for understanding the role of financial discipline and operations in large technology companies. Editorial context: Safra Catz — CEO of Oracle (Israel / United States). Known for: leading Oracle through major enterprise deals and cloud transformation. Professional focus: enterprise software, finance, M&A, operational efficiency.",
+      "ru": "Ее профиль важен для понимания роли финансовой дисциплины и операций в крупных технологических компаниях. Редакционный контекст: Сафра Кац — CEO Oracle (Израиль / США). Известен вкладом: руководство Oracle в период крупных корпоративных сделок и облачной трансформации. Профессиональный фокус: корпоративное ПО, финансы, M&A, операционная эффективность.",
+      "es": "Su perfil ayuda a entender el papel de disciplina financiera y operaciones en grandes tecnológicas. Contexto editorial: Safra Catz — CEO de Oracle (Israel / Estados Unidos). Reconocido por: liderar Oracle durante grandes acuerdos empresariales y transformación cloud. Enfoque profesional: software empresarial, finanzas, fusiones y eficiencia operativa."
     },
     "tags": {
       "uk": [
@@ -1239,10 +1239,10 @@
       "es": "transformar GM hacia vehículos eléctricos y definidos por software"
     },
     "bio": {
-      "uk": "Її карʼєра від інженерних ролей до CEO демонструє, як операційні знання впливають на стратегічні рішення.",
-      "en": "Her path from engineering roles to CEO shows how operational knowledge shapes strategic decisions.",
-      "ru": "Ее путь от инженерных ролей до CEO показывает, как операционные знания влияют на стратегию.",
-      "es": "Su paso de ingeniería a CEO muestra cómo el conocimiento operativo moldea decisiones estratégicas."
+      "uk": "Її карʼєра від інженерних ролей до CEO демонструє, як операційні знання впливають на стратегічні рішення. Редакційний контекст: Мері Барра — CEO General Motors (США). Відомий внесок: трансформацію GM у напрямі електромобілів і програмно-керованих авто. Професійний фокус: автомобільна інженерія, електрифікація, виробничі системи.",
+      "en": "Her path from engineering roles to CEO shows how operational knowledge shapes strategic decisions. Editorial context: Mary Barra — CEO of General Motors (United States). Known for: transforming GM toward electric and software-defined vehicles. Professional focus: automotive engineering, electrification, manufacturing systems.",
+      "ru": "Ее путь от инженерных ролей до CEO показывает, как операционные знания влияют на стратегию. Редакционный контекст: Мэри Барра — CEO General Motors (США). Известен вкладом: трансформацию GM в сторону электромобилей и программно-управляемых авто. Профессиональный фокус: автомобильная инженерия, электрификация, производственные системы.",
+      "es": "Su paso de ingeniería a CEO muestra cómo el conocimiento operativo moldea decisiones estratégicas. Contexto editorial: Mary Barra — CEO de General Motors (Estados Unidos). Reconocido por: transformar GM hacia vehículos eléctricos y definidos por software. Enfoque profesional: ingeniería automotriz, electrificación y sistemas de fabricación."
     },
     "tags": {
       "uk": [
@@ -1304,10 +1304,10 @@
       "es": "reorientar Microsoft hacia cloud, código abierto e IA"
     },
     "bio": {
-      "uk": "Його управління часто розглядають як приклад культурної трансформації великої технологічної організації.",
-      "en": "His leadership is often studied as an example of cultural transformation in a large technology organisation.",
-      "ru": "Его управление часто изучают как пример культурной трансформации крупной технологической организации.",
-      "es": "Su liderazgo se estudia como ejemplo de transformación cultural en una gran tecnológica."
+      "uk": "Його управління часто розглядають як приклад культурної трансформації великої технологічної організації. Редакційний контекст: Сатья Наделла — CEO Microsoft (Індія / США). Відомий внесок: переорієнтацію Microsoft на cloud, open source та AI. Професійний фокус: хмарні сервіси, корпоративне ПЗ, AI-стратегія.",
+      "en": "His leadership is often studied as an example of cultural transformation in a large technology organisation. Editorial context: Satya Nadella — CEO of Microsoft (India / United States). Known for: reorienting Microsoft around cloud, open source and AI. Professional focus: cloud services, enterprise software, AI strategy.",
+      "ru": "Его управление часто изучают как пример культурной трансформации крупной технологической организации. Редакционный контекст: Сатья Наделла — CEO Microsoft (Индия / США). Известен вкладом: переориентацию Microsoft на cloud, open source и AI. Профессиональный фокус: облачные сервисы, корпоративное ПО, AI-стратегия.",
+      "es": "Su liderazgo se estudia como ejemplo de transformación cultural en una gran tecnológica. Contexto editorial: Satya Nadella — CEO de Microsoft (India / Estados Unidos). Reconocido por: reorientar Microsoft hacia cloud, código abierto e IA. Enfoque profesional: servicios cloud, software empresarial y estrategia de IA."
     },
     "tags": {
       "uk": [
@@ -1369,10 +1369,10 @@
       "es": "trabajo fundamental detrás de las vacunas de ARNm"
     },
     "bio": {
-      "uk": "Її наполегливі дослідження показують, як довга наукова лінія може змінити глобальну охорону здоровʼя.",
-      "en": "Her persistent research shows how a long scientific path can change global public health.",
-      "ru": "Ее настойчивые исследования показывают, как длинная научная линия может изменить глобальное здравоохранение.",
-      "es": "Su investigación persistente muestra cómo una larga línea científica puede cambiar la salud pública global."
+      "uk": "Її наполегливі дослідження показують, як довга наукова лінія може змінити глобальну охорону здоровʼя. Редакційний контекст: Каталін Каріко — Біохімікиня, лауреатка Нобелівської премії (Угорщина / США). Відомий внесок: фундаментальний внесок у мРНК-вакцини. Професійний фокус: мРНК, біотехнології, трансляційна медицина.",
+      "en": "Her persistent research shows how a long scientific path can change global public health. Editorial context: Katalin Kariko — Biochemist, Nobel laureate (Hungary / United States). Known for: foundational work behind mRNA vaccines. Professional focus: mRNA, biotechnology, translational medicine.",
+      "ru": "Ее настойчивые исследования показывают, как длинная научная линия может изменить глобальное здравоохранение. Редакционный контекст: Каталин Карико — Биохимик, лауреат Нобелевской премии (Венгрия / США). Известен вкладом: фундаментальный вклад в мРНК-вакцины. Профессиональный фокус: мРНК, биотехнологии, трансляционная медицина.",
+      "es": "Su investigación persistente muestra cómo una larga línea científica puede cambiar la salud pública global. Contexto editorial: Katalin Kariko — Bioquímica, premio Nobel (Hungría / Estados Unidos). Reconocido por: trabajo fundamental detrás de las vacunas de ARNm. Enfoque profesional: ARNm, biotecnología y medicina traslacional."
     },
     "tags": {
       "uk": [
@@ -1434,10 +1434,10 @@
       "es": "la amplificación de pulsos chirped"
     },
     "bio": {
-      "uk": "Її робота стала основою для потужних лазерів, що використовуються в медицині, промисловості та фундаментальній науці.",
-      "en": "Her work underpins powerful lasers used in medicine, industry and fundamental science.",
-      "ru": "Ее работа стала основой мощных лазеров для медицины, промышленности и фундаментальной науки.",
-      "es": "Su trabajo sostiene láseres potentes usados en medicina, industria y ciencia fundamental."
+      "uk": "Її робота стала основою для потужних лазерів, що використовуються в медицині, промисловості та фундаментальній науці. Редакційний контекст: Донна Стрікленд — Фізикиня, лауреатка Нобелівської премії (Канада). Відомий внесок: метод chirped pulse amplification. Професійний фокус: лазерна фізика, надкороткі імпульси, фотоніка.",
+      "en": "Her work underpins powerful lasers used in medicine, industry and fundamental science. Editorial context: Donna Strickland — Physicist, Nobel laureate (Canada). Known for: chirped pulse amplification. Professional focus: laser physics, ultrashort pulses, photonics. The overview stays concise while anchoring geography, role and contribution.",
+      "ru": "Ее работа стала основой мощных лазеров для медицины, промышленности и фундаментальной науки. Редакционный контекст: Донна Стрикленд — Физик, лауреат Нобелевской премии (Канада). Известен вкладом: метод усиления чирпированных импульсов. Профессиональный фокус: лазерная физика, ультракороткие импульсы, фотоника.",
+      "es": "Su trabajo sostiene láseres potentes usados en medicina, industria y ciencia fundamental. Contexto editorial: Donna Strickland — Física, premio Nobel (Canadá). Reconocido por: la amplificación de pulsos chirped. Enfoque profesional: física láser, pulsos ultracortos y fotónica. El resumen permanece compacto y ancla geografía, rol y contribución."
     },
     "tags": {
       "uk": [
@@ -1499,10 +1499,10 @@
       "es": "construir Stripe como plataforma de pagos en internet"
     },
     "bio": {
-      "uk": "Його робота цікава операційним командам, бо Stripe поєднує API-дизайн, комплаєнс і глобальну фінансову інфраструктуру.",
-      "en": "His work matters to operations teams because Stripe combines API design, compliance and global financial infrastructure.",
-      "ru": "Его работа важна операционным командам: Stripe объединяет API-дизайн, комплаенс и глобальную финансовую инфраструктуру.",
-      "es": "Su trabajo importa a equipos operativos porque Stripe combina diseño de API, cumplimiento e infraestructura financiera global."
+      "uk": "Його робота цікава операційним командам, бо Stripe поєднує API-дизайн, комплаєнс і глобальну фінансову інфраструктуру. Редакційний контекст: Патрік Коллісон — Співзасновник та CEO Stripe (Ірландія / США). Відомий внесок: створення Stripe як платформи для інтернет-платежів. Професійний фокус: фінтех, платіжна інфраструктура, стартап-екосистеми.",
+      "en": "His work matters to operations teams because Stripe combines API design, compliance and global financial infrastructure. Editorial context: Patrick Collison — Co-founder and CEO of Stripe (Ireland / United States). Known for: building Stripe as an internet payments platform. Professional focus: fintech, payments infrastructure, startup ecosystems.",
+      "ru": "Его работа важна операционным командам: Stripe объединяет API-дизайн, комплаенс и глобальную финансовую инфраструктуру. Редакционный контекст: Патрик Коллисон — Сооснователь и CEO Stripe (Ирландия / США). Известен вкладом: создание Stripe как платформы интернет-платежей. Профессиональный фокус: финтех, платежная инфраструктура, стартап-экосистемы.",
+      "es": "Su trabajo importa a equipos operativos porque Stripe combina diseño de API, cumplimiento e infraestructura financiera global. Contexto editorial: Patrick Collison — Cofundador y CEO de Stripe (Irlanda / Estados Unidos). Reconocido por: construir Stripe como plataforma de pagos en internet. Enfoque profesional: fintech, infraestructura de pagos y ecosistemas startup."
     },
     "tags": {
       "uk": [
@@ -1564,10 +1564,10 @@
       "es": "convertir Canva en una plataforma masiva de diseño"
     },
     "bio": {
-      "uk": "Її шлях показує, як простий користувацький досвід може відкрити професійні інструменти для мільйонів людей.",
-      "en": "Her path shows how simple user experience can open professional tools to millions of people.",
-      "ru": "Ее путь показывает, как простой пользовательский опыт открывает профессиональные инструменты миллионам людей.",
-      "es": "Su trayectoria muestra cómo una experiencia simple abre herramientas profesionales a millones de personas."
+      "uk": "Її шлях показує, як простий користувацький досвід може відкрити професійні інструменти для мільйонів людей. Редакційний контекст: Мелані Перкінс — Співзасновниця та CEO Canva (Австралія). Відомий внесок: перетворення Canva на масову платформу дизайну. Професійний фокус: дизайн-платформи, продуктова стратегія, глобальне масштабування.",
+      "en": "Her path shows how simple user experience can open professional tools to millions of people. Editorial context: Melanie Perkins — Co-founder and CEO of Canva (Australia). Known for: turning Canva into a mainstream design platform. Professional focus: design platforms, product strategy, global scaling.",
+      "ru": "Ее путь показывает, как простой пользовательский опыт открывает профессиональные инструменты миллионам людей. Редакционный контекст: Мелани Перкинс — Соосновательница и CEO Canva (Австралия). Известен вкладом: превращение Canva в массовую платформу дизайна. Профессиональный фокус: дизайн-платформы, продуктовая стратегия, глобальное масштабирование.",
+      "es": "Su trayectoria muestra cómo una experiencia simple abre herramientas profesionales a millones de personas. Contexto editorial: Melanie Perkins — Cofundadora y CEO de Canva (Australia). Reconocido por: convertir Canva en una plataforma masiva de diseño. Enfoque profesional: plataformas de diseño, estrategia de producto y escala global."
     },
     "tags": {
       "uk": [
@@ -1629,10 +1629,10 @@
       "es": "defensa práctica de la observabilidad moderna"
     },
     "bio": {
-      "uk": "Її досвід корисний для команд, які будують складні сервіси й хочуть швидко розуміти поведінку production-систем.",
-      "en": "Her experience is useful for teams building complex services and needing fast insight into production behaviour.",
-      "ru": "Ее опыт полезен командам, строящим сложные сервисы и стремящимся быстро понимать поведение production-систем.",
-      "es": "Su experiencia ayuda a equipos que construyen servicios complejos y necesitan entender rápido sistemas en producción."
+      "uk": "Її досвід корисний для команд, які будують складні сервіси й хочуть швидко розуміти поведінку production-систем. Редакційний контекст: Черіті Мейджорс — Співзасновниця Honeycomb, інженерка інфраструктури (США). Відомий внесок: практичну популяризацію сучасної спостережуваності систем. Професійний фокус: observability, SRE, операційна надійність.",
+      "en": "Her experience is useful for teams building complex services and needing fast insight into production behaviour. Editorial context: Charity Majors — Co-founder of Honeycomb, infrastructure engineer (United States). Known for: practical advocacy for modern observability. Professional focus: observability, SRE, operational reliability.",
+      "ru": "Ее опыт полезен командам, строящим сложные сервисы и стремящимся быстро понимать поведение production-систем. Редакционный контекст: Чэрити Мейджорс — Соосновательница Honeycomb, инженер инфраструктуры (США). Известен вкладом: практическую популяризацию современной наблюдаемости систем. Профессиональный фокус: observability, SRE, операционная надежность.",
+      "es": "Su experiencia ayuda a equipos que construyen servicios complejos y necesitan entender rápido sistemas en producción. Contexto editorial: Charity Majors — Cofundadora de Honeycomb, ingeniera de infraestructura (Estados Unidos). Reconocido por: defensa práctica de la observabilidad moderna. Enfoque profesional: observability, SRE y fiabilidad operativa."
     },
     "tags": {
       "uk": [
@@ -1694,10 +1694,10 @@
       "es": "escalar operaciones en Stripe y asesorar equipos directivos"
     },
     "bio": {
-      "uk": "Її профіль додає до бази менш публічний, але дуже важливий тип спеціаліста: операційного архітектора зростання.",
-      "en": "Her profile adds a less public but essential specialist type: the operating architect of growth.",
-      "ru": "Ее профиль добавляет менее публичный, но важный тип специалиста: операционного архитектора роста.",
-      "es": "Su perfil añade un tipo menos visible pero esencial: la arquitecta operativa del crecimiento."
+      "uk": "Її профіль додає до бази менш публічний, але дуже важливий тип спеціаліста: операційного архітектора зростання. Редакційний контекст: Клер Гʼюз Джонсон — Операційна директорка та радниця (США). Відомий внесок: масштабування операцій Stripe та роботу з керівними командами. Професійний фокус: операційні системи компаній, масштабування команд, менеджмент.",
+      "en": "Her profile adds a less public but essential specialist type: the operating architect of growth. Editorial context: Claire Hughes Johnson — Operations executive and advisor (United States). Known for: scaling Stripe operations and advising leadership teams. Professional focus: company operating systems, team scaling, management.",
+      "ru": "Ее профиль добавляет менее публичный, но важный тип специалиста: операционного архитектора роста. Редакционный контекст: Клэр Хьюз Джонсон — Операционный директор и советник (США). Известен вкладом: масштабирование операций Stripe и работу с руководящими командами. Профессиональный фокус: операционные системы компаний, масштабирование команд, менеджмент.",
+      "es": "Su perfil añade un tipo menos visible pero esencial: la arquitecta operativa del crecimiento. Contexto editorial: Claire Hughes Johnson — Ejecutiva de operaciones y asesora (Estados Unidos). Reconocido por: escalar operaciones en Stripe y asesorar equipos directivos. Enfoque profesional: sistemas operativos de empresa, escala de equipos y gestión."
     },
     "tags": {
       "uk": [
@@ -1759,10 +1759,10 @@
       "es": "liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA"
     },
     "bio": {
-      "uk": "Її профіль важливий для сучасного ринку після 2020 року, бо він показує, як AI-дослідження переходять у масові продукти та інструменти для бізнесу й розробників.",
-      "en": "Her profile matters for the post-2020 market because it shows how AI research becomes mainstream products and tools for businesses and developers.",
-      "ru": "Ее профиль важен для рынка после 2020 года, потому что показывает, как AI-исследования превращаются в массовые продукты и инструменты для бизнеса и разработчиков.",
-      "es": "Su perfil es clave para el mercado posterior a 2020 porque muestra cómo la investigación en IA se convierte en productos masivos y herramientas para empresas y desarrolladores."
+      "uk": "Її профіль важливий для сучасного ринку після 2020 року, бо він показує, як AI-дослідження переходять у масові продукти та інструменти для бізнесу й розробників. Редакційний контекст: Міра Мураті — Технологічна керівниця у сфері ШІ (Албанія / США). Відомий внесок: керівництво продуктовим розвитком ChatGPT та мультимодальних AI-систем. Професійний фокус: генеративний ШІ, продуктові рішення, research-to-product execution.",
+      "en": "Her profile matters for the post-2020 market because it shows how AI research becomes mainstream products and tools for businesses and developers. Editorial context: Mira Murati — AI technology executive (Albania / United States). Known for: leading product development around ChatGPT and multimodal AI systems. Professional focus: generative AI, product delivery, research-to-product execution.",
+      "ru": "Ее профиль важен для рынка после 2020 года, потому что показывает, как AI-исследования превращаются в массовые продукты и инструменты для бизнеса и разработчиков. Редакционный контекст: Мира Мураті — Технологический руководитель в сфере ИИ (Албания / США). Известен вкладом: руководство продуктовым развитием ChatGPT и мультимодальных AI-систем. Профессиональный фокус: генеративный ИИ, продуктовые решения, research-to-product execution.",
+      "es": "Su perfil es clave para el mercado posterior a 2020 porque muestra cómo la investigación en IA se convierte en productos masivos y herramientas para empresas y desarrolladores. Contexto editorial: Mira Murati — Ejecutiva tecnológica de IA (Albania / Estados Unidos). Reconocido por: liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA. Enfoque profesional: IA generativa, entrega de producto y ejecución research-to-product."
     },
     "tags": {
       "uk": [
@@ -1845,10 +1845,10 @@
       "es": "desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables"
     },
     "bio": {
-      "uk": "Після 2020 року його імʼя стало одним із ключових у дискусії про безпеку, масштабування та відповідальне впровадження генеративного ШІ.",
-      "en": "After 2020 his name became central to the discussion around safety, scaling and responsible deployment of generative AI.",
-      "ru": "После 2020 года его имя стало одним из ключевых в разговоре о безопасности, масштабировании и ответственном внедрении генеративного ИИ.",
-      "es": "Después de 2020 su nombre se volvió central en la discusión sobre seguridad, escalamiento y despliegue responsable de la IA generativa."
+      "uk": "Після 2020 року його імʼя стало одним із ключових у дискусії про безпеку, масштабування та відповідальне впровадження генеративного ШІ. Редакційний контекст: Даріо Амодеї — CEO Anthropic, дослідник ШІ (США). Відомий внесок: розвиток Anthropic і фокус на безпечних та керованих AI-моделях. Професійний фокус: AI safety, великі моделі, наукова стратегія.",
+      "en": "After 2020 his name became central to the discussion around safety, scaling and responsible deployment of generative AI. Editorial context: Dario Amodei — CEO of Anthropic, AI researcher (United States). Known for: building Anthropic and focusing on safe, controllable AI models. Professional focus: AI safety, large models, research strategy.",
+      "ru": "После 2020 года его имя стало одним из ключевых в разговоре о безопасности, масштабировании и ответственном внедрении генеративного ИИ. Редакционный контекст: Дарио Амодеи — CEO Anthropic, исследователь ИИ (США). Известен вкладом: развитие Anthropic и фокус на безопасных и управляемых AI-моделях. Профессиональный фокус: AI safety, большие модели, научная стратегия.",
+      "es": "Después de 2020 su nombre se volvió central en la discusión sobre seguridad, escalamiento y despliegue responsable de la IA generativa. Contexto editorial: Dario Amodei — CEO de Anthropic, investigador de IA (Estados Unidos). Reconocido por: desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables. Enfoque profesional: seguridad de IA, grandes modelos y estrategia de investigación."
     },
     "tags": {
       "uk": [
@@ -1931,10 +1931,10 @@
       "es": "construir Mistral AI como una de las startups europeas de IA más visibles desde 2023"
     },
     "bio": {
-      "uk": "Його профіль додає до бази нову хвилю технічних засновників, які швидко формують європейський ринок генеративного ШІ.",
-      "en": "His profile adds a new wave of technical founders who are rapidly shaping the European generative-AI market.",
-      "ru": "Его профиль добавляет новую волну технических основателей, быстро формирующих европейский рынок генеративного ИИ.",
-      "es": "Su perfil añade una nueva ola de fundadores técnicos que están moldeando con rapidez el mercado europeo de IA generativa."
+      "uk": "Його профіль додає до бази нову хвилю технічних засновників, які швидко формують європейський ринок генеративного ШІ. Редакційний контекст: Артур Менш — CEO Mistral AI, інженер машинного навчання (Франція). Відомий внесок: побудову Mistral AI як одного з найпомітніших європейських AI-стартапів після 2023 року. Професійний фокус: європейські AI-моделі, open models, інженерія inference.",
+      "en": "His profile adds a new wave of technical founders who are rapidly shaping the European generative-AI market. Editorial context: Arthur Mensch — CEO of Mistral AI, machine-learning engineer (France). Known for: building Mistral AI into one of the most visible European AI startups after 2023. Professional focus: European AI models, open models, inference engineering.",
+      "ru": "Его профиль добавляет новую волну технических основателей, быстро формирующих европейский рынок генеративного ИИ. Редакционный контекст: Артур Менш — CEO Mistral AI, инженер машинного обучения (Франция). Известен вкладом: создание Mistral AI как одного из самых заметных европейских AI-стартапов после 2023 года. Профессиональный фокус: европейские AI-модели, open models, инженерия inference.",
+      "es": "Su perfil añade una nueva ola de fundadores técnicos que están moldeando con rapidez el mercado europeo de IA generativa. Contexto editorial: Arthur Mensch — CEO de Mistral AI, ingeniero de aprendizaje automático (Francia). Reconocido por: construir Mistral AI como una de las startups europeas de IA más visibles desde 2023. Enfoque profesional: modelos europeos de IA, open models e ingeniería de inference."
     },
     "tags": {
       "uk": [
@@ -2017,10 +2017,10 @@
       "es": "DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft"
     },
     "bio": {
-      "uk": "Після 2020 року його роль показує, як AI-підприємці переходять від досліджень до широкого продуктового розгортання у великих технологічних компаніях.",
-      "en": "After 2020 his role shows how AI entrepreneurs move from research into broad product deployment inside major technology companies.",
-      "ru": "После 2020 года его роль показывает, как AI-предприниматели переходят от исследований к широкому продуктовому внедрению внутри крупных технологических компаний.",
-      "es": "Después de 2020 su papel muestra cómo los emprendedores de IA pasan de la investigación al despliegue amplio de producto dentro de grandes tecnológicas."
+      "uk": "Після 2020 року його роль показує, як AI-підприємці переходять від досліджень до широкого продуктового розгортання у великих технологічних компаніях. Редакційний контекст: Мустафа Сулейман — CEO Microsoft AI, підприємець у сфері ШІ (Велика Британія). Відомий внесок: DeepMind, Inflection AI та управління новими AI-напрямами у Microsoft. Професійний фокус: AI products, consumer systems, стратегія впровадження.",
+      "en": "After 2020 his role shows how AI entrepreneurs move from research into broad product deployment inside major technology companies. Editorial context: Mustafa Suleyman — CEO of Microsoft AI, AI entrepreneur (United Kingdom). Known for: DeepMind, Inflection AI and leading new AI directions at Microsoft. Professional focus: AI products, consumer systems, deployment strategy.",
+      "ru": "После 2020 года его роль показывает, как AI-предприниматели переходят от исследований к широкому продуктовому внедрению внутри крупных технологических компаний. Редакционный контекст: Мустафа Сулейман — CEO Microsoft AI, предприниматель в сфере ИИ (Великобритания). Известен вкладом: DeepMind, Inflection AI и руководство новыми AI-направлениями в Microsoft. Профессиональный фокус: AI products, consumer systems, стратегия внедрения.",
+      "es": "Después de 2020 su papel muestra cómo los emprendedores de IA pasan de la investigación al despliegue amplio de producto dentro de grandes tecnológicas. Contexto editorial: Mustafa Suleyman — CEO de Microsoft AI, emprendedor de IA (Reino Unido). Reconocido por: DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft. Enfoque profesional: productos de IA, sistemas de consumo y estrategia de despliegue."
     },
     "tags": {
       "uk": [
@@ -2103,10 +2103,10 @@
       "es": "liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos"
     },
     "bio": {
-      "uk": "Його профіль додає до бази сегмент сучасних керівників, які після 2020 року будують фундамент для data та AI-інфраструктури в enterprise-середовищі.",
-      "en": "His profile adds the segment of modern leaders who after 2020 are building the data and AI infrastructure foundation for enterprise environments.",
-      "ru": "Его профиль добавляет сегмент современных руководителей, которые после 2020 года строят фундамент data- и AI-инфраструктуры для enterprise-среды.",
-      "es": "Su perfil añade el segmento de líderes modernos que, después de 2020, construyen la base de infraestructura de datos e IA para entornos enterprise."
+      "uk": "Його профіль додає до бази сегмент сучасних керівників, які після 2020 року будують фундамент для data та AI-інфраструктури в enterprise-середовищі. Редакційний контекст: Шрідхар Рамасвамі — CEO Snowflake, керівник data/AI-платформ (Індія / США). Відомий внесок: керівництво Snowflake у фазі активної інтеграції AI у корпоративні data-платформи. Професійний фокус: data cloud, AI infrastructure, корпоративні платформи даних.",
+      "en": "His profile adds the segment of modern leaders who after 2020 are building the data and AI infrastructure foundation for enterprise environments. Editorial context: Sridhar Ramaswamy — CEO of Snowflake, data and AI platform executive (India / United States). Known for: leading Snowflake through an active phase of AI integration into enterprise data platforms. Professional focus: data cloud, AI infrastructure, enterprise data platforms.",
+      "ru": "Его профиль добавляет сегмент современных руководителей, которые после 2020 года строят фундамент data- и AI-инфраструктуры для enterprise-среды. Редакционный контекст: Шридхар Рамасвами — CEO Snowflake, руководитель data/AI-платформ (Индия / США). Известен вкладом: руководство Snowflake в фазе активной интеграции ИИ в корпоративные data-платформы. Профессиональный фокус: data cloud, AI infrastructure, корпоративные платформы данных.",
+      "es": "Su perfil añade el segmento de líderes modernos que, después de 2020, construyen la base de infraestructura de datos e IA para entornos enterprise. Contexto editorial: Sridhar Ramaswamy — CEO de Snowflake, ejecutivo de plataformas de datos e IA (India / Estados Unidos). Reconocido por: liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos. Enfoque profesional: data cloud, infraestructura de IA y plataformas empresariales de datos."
     },
     "tags": {
       "uk": [
@@ -2189,10 +2189,10 @@
       "es": "liderar GitHub en la era de Copilot y del desarrollo asistido por IA"
     },
     "bio": {
-      "uk": "Після 2020 року його роль стала показовою для нового покоління платформ, де AI безпосередньо змінює щоденну роботу програмістів.",
-      "en": "After 2020 his role became a strong example of the new platform generation where AI directly changes the daily work of software engineers.",
-      "ru": "После 2020 года его роль стала показательной для нового поколения платформ, где ИИ напрямую меняет ежедневную работу программистов.",
-      "es": "Después de 2020 su papel se volvió un ejemplo claro de la nueva generación de plataformas donde la IA cambia directamente el trabajo diario de los programadores."
+      "uk": "Після 2020 року його роль стала показовою для нового покоління платформ, де AI безпосередньо змінює щоденну роботу програмістів. Редакційний контекст: Томас Домке — CEO GitHub, лідер developer platform (Німеччина / США). Відомий внесок: розвиток GitHub у добу Copilot і AI-assisted software development. Професійний фокус: developer tools, Copilot, collaborative software platforms.",
+      "en": "After 2020 his role became a strong example of the new platform generation where AI directly changes the daily work of software engineers. Editorial context: Thomas Dohmke — CEO of GitHub, developer platform leader (Germany / United States). Known for: leading GitHub in the Copilot era of AI-assisted software development. Professional focus: developer tools, Copilot, collaborative software platforms.",
+      "ru": "После 2020 года его роль стала показательной для нового поколения платформ, где ИИ напрямую меняет ежедневную работу программистов. Редакционный контекст: Томас Домке — CEO GitHub, лидер developer platform (Германия / США). Известен вкладом: развитие GitHub в эпоху Copilot и AI-assisted software development. Профессиональный фокус: developer tools, Copilot, collaborative software platforms.",
+      "es": "Después de 2020 su papel se volvió un ejemplo claro de la nueva generación de plataformas donde la IA cambia directamente el trabajo diario de los programadores. Contexto editorial: Thomas Dohmke — CEO de GitHub, líder de plataforma para desarrolladores (Alemania / Estados Unidos). Reconocido por: liderar GitHub en la era de Copilot y del desarrollo asistido por IA. Enfoque profesional: herramientas para desarrolladores, Copilot y plataformas colaborativas de software."
     },
     "tags": {
       "uk": [
@@ -2275,10 +2275,10 @@
       "es": "desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020"
     },
     "bio": {
-      "uk": "Її профіль показує сучасний зріз product leadership у мережевих продуктах, де важливі і архітектура платформи, і довіра користувачів.",
-      "en": "Her profile shows a modern slice of product leadership in networked products where platform architecture and user trust matter equally.",
-      "ru": "Ее профиль показывает современный срез product leadership в сетевых продуктах, где одинаково важны архитектура платформы и доверие пользователей.",
-      "es": "Su perfil muestra una visión moderna del liderazgo de producto en servicios de red, donde importan tanto la arquitectura de plataforma como la confianza de los usuarios."
+      "uk": "Її профіль показує сучасний зріз product leadership у мережевих продуктах, де важливі і архітектура платформи, і довіра користувачів. Редакційний контекст: Джей Грейбер — CEO Bluesky, product та protocol leader (США). Відомий внесок: розвиток Bluesky як нової соціальної платформи на базі відкритого протоколу після 2020 року. Професійний фокус: децентралізовані соціальні мережі, протоколи, продуктова стратегія.",
+      "en": "Her profile shows a modern slice of product leadership in networked products where platform architecture and user trust matter equally. Editorial context: Jay Graber — CEO of Bluesky, product and protocol leader (United States). Known for: building Bluesky as a new social platform on an open protocol after 2020. Professional focus: decentralised social platforms, protocols, product strategy.",
+      "ru": "Ее профиль показывает современный срез product leadership в сетевых продуктах, где одинаково важны архитектура платформы и доверие пользователей. Редакционный контекст: Джей Грейбер — CEO Bluesky, product и protocol leader (США). Известен вкладом: развитие Bluesky как новой социальной платформы на базе открытого протокола после 2020 года. Профессиональный фокус: децентрализованные социальные платформы, протоколы, продуктовая стратегия.",
+      "es": "Su perfil muestra una visión moderna del liderazgo de producto en servicios de red, donde importan tanto la arquitectura de plataforma como la confianza de los usuarios. Contexto editorial: Jay Graber — CEO de Bluesky, líder de producto y protocolo (Estados Unidos). Reconocido por: desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020. Enfoque profesional: plataformas sociales descentralizadas, protocolos y estrategia de producto."
     },
     "tags": {
       "uk": [
@@ -2361,10 +2361,10 @@
       "es": "un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas"
     },
     "bio": {
-      "uk": "Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу.",
-      "en": "Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy.",
-      "ru": "Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла.",
-      "es": "Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital."
+      "uk": "Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу. Редакційний контекст: Ліна Хан — Голова FTC, регуляторка цифрових платформ (США). Відомий внесок: помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року. Професійний фокус: регулювання Big Tech, конкуренція, цифрові ринки.",
+      "en": "Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy. Editorial context: Lina Khan — FTC chair, digital-platform regulator (United States). Known for: a visible role in the post-2020 regulatory debate around major technology platforms. Professional focus: Big Tech regulation, competition, digital markets.",
+      "ru": "Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла. Редакционный контекст: Лина Хан — Глава FTC, регулятор цифровых платформ (США). Известен вкладом: заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года. Профессиональный фокус: регулирование Big Tech, конкуренция, цифровые рынки.",
+      "es": "Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital. Contexto editorial: Lina Khan — Presidenta de la FTC y reguladora de plataformas digitales (Estados Unidos). Reconocido por: un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas. Enfoque profesional: regulación de Big Tech, competencia y mercados digitales."
     },
     "tags": {
       "uk": [

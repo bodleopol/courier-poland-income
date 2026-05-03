@@ -9,19 +9,30 @@
   </div>
 </section>
 
-<section class="directory-panel" aria-label="Buscar en el directorio">
+<section class="directory-panel" data-directory-panel aria-label="Buscar en el directorio">
   <div class="directory-toolbar">
     <label class="search-label">Buscar en el directorio
       <input type="search" data-directory-search placeholder="Escribe un nombre, rol, país o etiqueta">
     </label>
     <button class="btn secondary directory-reset" type="button" data-directory-reset>Restablecer</button>
   </div>
+  <div class="directory-toolbar-secondary">
+    <label class="directory-select-label">Ordenar<select class="directory-select" data-directory-sort>
+    <option value="default">Orden del catálogo</option>
+    <option value="newest">Más recientes</option>
+    <option value="az">Nombre A-Z</option>
+  </select></label>
+    <label class="directory-select-label">País<select class="directory-select" data-directory-country>
+    <option value="">Todos los países</option><option value="Albania / Estados Unidos">Albania / Estados Unidos</option><option value="Alemania / Estados Unidos">Alemania / Estados Unidos</option><option value="Australia">Australia</option><option value="Canadá">Canadá</option><option value="Canadá / Israel / Estados Unidos">Canadá / Israel / Estados Unidos</option><option value="Estados Unidos">Estados Unidos</option><option value="Finlandia / Estados Unidos">Finlandia / Estados Unidos</option><option value="Francia">Francia</option><option value="Francia / Estados Unidos">Francia / Estados Unidos</option><option value="Hungría / Estados Unidos">Hungría / Estados Unidos</option><option value="India / Estados Unidos">India / Estados Unidos</option><option value="Irlanda / Estados Unidos">Irlanda / Estados Unidos</option><option value="Israel / Estados Unidos">Israel / Estados Unidos</option><option value="Países Bajos / Estados Unidos">Países Bajos / Estados Unidos</option><option value="Reino Unido">Reino Unido</option><option value="Sudáfrica / Estados Unidos">Sudáfrica / Estados Unidos</option><option value="Taiwán / Estados Unidos">Taiwán / Estados Unidos</option><option value="Ucrania / Perú">Ucrania / Perú</option>
+  </select></label>
+  </div>
   <p class="directory-hint">Busca por nombre, rol, país, nicho o etiqueta tecnológica.</p>
-  <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Todos los sectores</button><button class="filter-chip" type="button" data-filter="operations">Operaciones</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="engineering">Ingeniería</button><button class="filter-chip" type="button" data-filter="science">Ciencia</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
+  <p class="directory-share-hint">Los filtros y la búsqueda se guardan en la URL para compartir el enlace.</p>
+  <div class="filter-bar" data-directory-industry-chips><button class="filter-chip active" type="button" data-filter="all">Todos los sectores</button><button class="filter-chip" type="button" data-filter="operations">Operaciones</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="engineering">Ingeniería</button><button class="filter-chip" type="button" data-filter="science">Ciencia</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
   <p class="directory-results"><strong data-results-count>32</strong> Resultados encontrados</p>
 </section>
 
-<section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-search="bohdan tiutenko director de operaciones y gerente de logística foodtech ucrania / perú operaciones liderazgo logística analítica de datos foodtech resiliencia ucrania operations leadership logistics data analytics foodtech resilience ukraine">
+<section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Ucrania / Perú" data-sort-name="Bohdan Tiutenko" data-catalog-order="0" data-search="bohdan tiutenko director de operaciones y gerente de logística foodtech ucrania / perú operaciones liderazgo logística analítica de datos foodtech resiliencia ucrania operations leadership logistics data analytics foodtech resilience ukraine">
     <img src="assets/images/bohdan-tiutenko-profile.svg" alt="Bohdan Tiutenko" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Bohdan%20Tiutenko&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Ucrania / Perú</p>
@@ -31,7 +42,7 @@
       <a class="btn" href="person-bohdan-tiutenko-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="margaret hamilton ingeniera de software estados unidos software espacio ingeniería software space engineering">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Estados Unidos" data-sort-name="Margaret Hamilton" data-catalog-order="1" data-search="margaret hamilton ingeniera de software estados unidos software espacio ingeniería software space engineering">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Margaret_Hamilton_-_restoration.jpg?width=720" alt="Margaret Hamilton" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Margaret%20Hamilton&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -41,7 +52,7 @@
       <a class="btn" href="person-margaret-hamilton-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="tim berners-lee inventor de la world wide web reino unido software internet estándares software internet standards">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Reino Unido" data-sort-name="Tim Berners-Lee" data-catalog-order="2" data-search="tim berners-lee inventor de la world wide web reino unido software internet estándares software internet standards">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee_(cropped).jpg?width=720" alt="Tim Berners-Lee" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Tim%20Berners-Lee&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Reino Unido</p>
@@ -51,7 +62,7 @@
       <a class="btn" href="person-tim-berners-lee-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="linus torvalds ingeniero de software, creador de linux finlandia / estados unidos software código abierto infraestructura software open source infrastructure">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Finlandia / Estados Unidos" data-sort-name="Linus Torvalds" data-catalog-order="3" data-search="linus torvalds ingeniero de software, creador de linux finlandia / estados unidos software código abierto infraestructura software open source infrastructure">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg?width=720" alt="Linus Torvalds" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Linus%20Torvalds&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Finlandia / Estados Unidos</p>
@@ -61,7 +72,7 @@
       <a class="btn" href="person-linus-torvalds-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="guido van rossum programador, creador de python países bajos / estados unidos software diseño de lenguajes educación software language design education">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Países Bajos / Estados Unidos" data-sort-name="Guido van Rossum" data-catalog-order="4" data-search="guido van rossum programador, creador de python países bajos / estados unidos software diseño de lenguajes educación software language design education">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Guido_van_Rossum_OSCON_2006.jpg?width=720" alt="Guido van Rossum" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Guido%20van%20Rossum&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Países Bajos / Estados Unidos</p>
@@ -71,7 +82,7 @@
       <a class="btn" href="person-guido-van-rossum-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="engineering" data-search="radia perlman ingeniera de redes estados unidos ingeniería internet infraestructura engineering internet infrastructure">
+<article class="card profile-card" data-directory-card data-filter-key="engineering" data-country="Estados Unidos" data-sort-name="Radia Perlman" data-catalog-order="5" data-search="radia perlman ingeniera de redes estados unidos ingeniería internet infraestructura engineering internet infrastructure">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Radia_Perlman_2009.jpg?width=720" alt="Radia Perlman" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Radia%20Perlman&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -81,7 +92,7 @@
       <a class="btn" href="person-radia-perlman-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="fei-fei li investigadora de ia estados unidos inteligencia artificial investigación educación artificial intelligence research education">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Estados Unidos" data-sort-name="Fei-Fei Li" data-catalog-order="6" data-search="fei-fei li investigadora de ia estados unidos inteligencia artificial investigación educación artificial intelligence research education">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fei-Fei_Li_at_AI_for_Good_2017.jpg?width=720" alt="Fei-Fei Li" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Fei-Fei%20Li&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -91,7 +102,7 @@
       <a class="btn" href="person-fei-fei-li-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="science" data-search="yann lecun investigador de ia, premio turing francia / estados unidos inteligencia artificial investigación ciencia artificial intelligence research science">
+<article class="card profile-card" data-directory-card data-filter-key="science" data-country="Francia / Estados Unidos" data-sort-name="Yann LeCun" data-catalog-order="7" data-search="yann lecun investigador de ia, premio turing francia / estados unidos inteligencia artificial investigación ciencia artificial intelligence research science">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yann_LeCun_-_2018_(cropped).jpg?width=720" alt="Yann LeCun" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Yann%20LeCun&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Francia / Estados Unidos</p>
@@ -101,7 +112,7 @@
       <a class="btn" href="person-yann-lecun-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="demis hassabis ceo de google deepmind, investigador de ia reino unido inteligencia artificial ceo investigación artificial intelligence ceo research">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Reino Unido" data-sort-name="Demis Hassabis" data-catalog-order="8" data-search="demis hassabis ceo de google deepmind, investigador de ia reino unido inteligencia artificial ceo investigación artificial intelligence ceo research">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Demis_Hassabis_Royal_Society.jpg?width=720" alt="Demis Hassabis" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Demis%20Hassabis&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Reino Unido</p>
@@ -111,7 +122,7 @@
       <a class="btn" href="person-demis-hassabis-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="ilya sutskever investigador de aprendizaje automático canadá / israel / estados unidos inteligencia artificial investigación startups artificial intelligence research startups">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Canadá / Israel / Estados Unidos" data-sort-name="Ilya Sutskever" data-catalog-order="9" data-search="ilya sutskever investigador de aprendizaje automático canadá / israel / estados unidos inteligencia artificial investigación startups artificial intelligence research startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ilya_Sutskever_2017.jpg?width=720" alt="Ilya Sutskever" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ilya%20Sutskever&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Canadá / Israel / Estados Unidos</p>
@@ -121,7 +132,7 @@
       <a class="btn" href="person-ilya-sutskever-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="sam altman ceo de openai, inversor estados unidos inteligencia artificial ceo startups artificial intelligence ceo startups">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Estados Unidos" data-sort-name="Sam Altman" data-catalog-order="10" data-search="sam altman ceo de openai, inversor estados unidos inteligencia artificial ceo startups artificial intelligence ceo startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sam_Altman_2024.jpg?width=720" alt="Sam Altman" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sam%20Altman&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -131,7 +142,7 @@
       <a class="btn" href="person-sam-altman-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="engineering" data-search="elon musk emprendedor y ceo sudáfrica / estados unidos ceo ingeniería espacio ceo engineering space">
+<article class="card profile-card" data-directory-card data-filter-key="engineering" data-country="Sudáfrica / Estados Unidos" data-sort-name="Elon Musk" data-catalog-order="11" data-search="elon musk emprendedor y ceo sudáfrica / estados unidos ceo ingeniería espacio ceo engineering space">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Elon_Musk_Royal_Society.jpg?width=720" alt="Elon Musk" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Elon%20Musk&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Sudáfrica / Estados Unidos</p>
@@ -141,7 +152,7 @@
       <a class="btn" href="person-elon-musk-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="jensen huang ceo de nvidia taiwán / estados unidos ceo hardware inteligencia artificial ceo hardware artificial intelligence">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Taiwán / Estados Unidos" data-sort-name="Jensen Huang" data-catalog-order="12" data-search="jensen huang ceo de nvidia taiwán / estados unidos ceo hardware inteligencia artificial ceo hardware artificial intelligence">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jensen_Huang_2023.jpg?width=720" alt="Jensen Huang" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Jensen%20Huang&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Taiwán / Estados Unidos</p>
@@ -151,7 +162,7 @@
       <a class="btn" href="person-jensen-huang-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="lisa su ceo de amd, ingeniera eléctrica taiwán / estados unidos ceo hardware operaciones ceo hardware operations">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Taiwán / Estados Unidos" data-sort-name="Lisa Su" data-catalog-order="13" data-search="lisa su ceo de amd, ingeniera eléctrica taiwán / estados unidos ceo hardware operaciones ceo hardware operations">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lisa_Su_2015.jpg?width=720" alt="Lisa Su" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Lisa%20Su&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Taiwán / Estados Unidos</p>
@@ -161,7 +172,7 @@
       <a class="btn" href="person-lisa-su-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="gwynne shotwell presidenta y coo de spacex estados unidos coo espacio operaciones coo space operations">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Estados Unidos" data-sort-name="Gwynne Shotwell" data-catalog-order="14" data-search="gwynne shotwell presidenta y coo de spacex estados unidos coo espacio operaciones coo space operations">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gwynne_Shotwell_at_2018_Commercial_Crew_announcement.jpg?width=720" alt="Gwynne Shotwell" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Gwynne%20Shotwell&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -171,7 +182,7 @@
       <a class="btn" href="person-gwynne-shotwell-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="safra catz ceo de oracle israel / estados unidos ceo operaciones software empresarial ceo operations enterprise software">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Israel / Estados Unidos" data-sort-name="Safra Catz" data-catalog-order="15" data-search="safra catz ceo de oracle israel / estados unidos ceo operaciones software empresarial ceo operations enterprise software">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Safra_Catz_-_World_Economic_Forum_Annual_Meeting_2012.jpg?width=720" alt="Safra Catz" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Safra%20Catz&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Israel / Estados Unidos</p>
@@ -181,7 +192,7 @@
       <a class="btn" href="person-safra-catz-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="engineering" data-search="mary barra ceo de general motors estados unidos ceo ingeniería operaciones ceo engineering operations">
+<article class="card profile-card" data-directory-card data-filter-key="engineering" data-country="Estados Unidos" data-sort-name="Mary Barra" data-catalog-order="16" data-search="mary barra ceo de general motors estados unidos ceo ingeniería operaciones ceo engineering operations">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary_Barra_2014.jpg?width=720" alt="Mary Barra" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mary%20Barra&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -191,7 +202,7 @@
       <a class="btn" href="person-mary-barra-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="satya nadella ceo de microsoft india / estados unidos ceo cloud inteligencia artificial ceo cloud artificial intelligence">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="India / Estados Unidos" data-sort-name="Satya Nadella" data-catalog-order="17" data-search="satya nadella ceo de microsoft india / estados unidos ceo cloud inteligencia artificial ceo cloud artificial intelligence">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Satya_Nadella_2023.jpg?width=720" alt="Satya Nadella" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Satya%20Nadella&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">India / Estados Unidos</p>
@@ -201,7 +212,7 @@
       <a class="btn" href="person-satya-nadella-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="science" data-search="katalin kariko bioquímica, premio nobel hungría / estados unidos ciencia biotecnología investigación science biotech research">
+<article class="card profile-card" data-directory-card data-filter-key="science" data-country="Hungría / Estados Unidos" data-sort-name="Katalin Kariko" data-catalog-order="18" data-search="katalin kariko bioquímica, premio nobel hungría / estados unidos ciencia biotecnología investigación science biotech research">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Katalin_Kariko_2021_(cropped).jpg?width=720" alt="Katalin Kariko" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Katalin%20Kariko&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Hungría / Estados Unidos</p>
@@ -211,7 +222,7 @@
       <a class="btn" href="person-katalin-kariko-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="science" data-search="donna strickland física, premio nobel canadá ciencia física investigación science physics research">
+<article class="card profile-card" data-directory-card data-filter-key="science" data-country="Canadá" data-sort-name="Donna Strickland" data-catalog-order="19" data-search="donna strickland física, premio nobel canadá ciencia física investigación science physics research">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Donna_Strickland_EM1B5767_(46122789402)_(cropped).jpg?width=720" alt="Donna Strickland" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Donna%20Strickland&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Canadá</p>
@@ -221,7 +232,7 @@
       <a class="btn" href="person-donna-strickland-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="patrick collison cofundador y ceo de stripe irlanda / estados unidos ceo fintech startups ceo fintech startups">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Irlanda / Estados Unidos" data-sort-name="Patrick Collison" data-catalog-order="20" data-search="patrick collison cofundador y ceo de stripe irlanda / estados unidos ceo fintech startups ceo fintech startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Patrick_Collison_Web_Summit_2018.jpg?width=720" alt="Patrick Collison" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Patrick%20Collison&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Irlanda / Estados Unidos</p>
@@ -231,7 +242,7 @@
       <a class="btn" href="person-patrick-collison-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="melanie perkins cofundadora y ceo de canva australia ceo diseño startups ceo design startups">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Australia" data-sort-name="Melanie Perkins" data-catalog-order="21" data-search="melanie perkins cofundadora y ceo de canva australia ceo diseño startups ceo design startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Melanie_Perkins_at_TechCrunch_Disrupt_SF_2019.jpg?width=720" alt="Melanie Perkins" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Melanie%20Perkins&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Australia</p>
@@ -241,7 +252,7 @@
       <a class="btn" href="person-melanie-perkins-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="engineering" data-search="charity majors cofundadora de honeycomb, ingeniera de infraestructura estados unidos ingeniería startups operaciones engineering startups operations">
+<article class="card profile-card" data-directory-card data-filter-key="engineering" data-country="Estados Unidos" data-sort-name="Charity Majors" data-catalog-order="22" data-search="charity majors cofundadora de honeycomb, ingeniera de infraestructura estados unidos ingeniería startups operaciones engineering startups operations">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Charity_Majors_2019.jpg?width=720" alt="Charity Majors" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Charity%20Majors&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -251,7 +262,7 @@
       <a class="btn" href="person-charity-majors-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="claire hughes johnson ejecutiva de operaciones y asesora estados unidos coo operaciones startups coo operations startups">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Estados Unidos" data-sort-name="Claire Hughes Johnson" data-catalog-order="23" data-search="claire hughes johnson ejecutiva de operaciones y asesora estados unidos coo operaciones startups coo operations startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claire_Hughes_Johnson_2017.jpg?width=720" alt="Claire Hughes Johnson" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Claire%20Hughes%20Johnson&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -261,7 +272,7 @@
       <a class="btn" href="person-claire-hughes-johnson-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="mira murati ejecutiva tecnológica de ia albania / estados unidos inteligencia artificial operaciones liderazgo artificial intelligence operations leadership">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Albania / Estados Unidos" data-sort-name="Mira Murati" data-catalog-order="24" data-search="mira murati ejecutiva tecnológica de ia albania / estados unidos inteligencia artificial operaciones liderazgo artificial intelligence operations leadership">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mira_Murati_2024.jpg?width=720" alt="Mira Murati" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mira%20Murati&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Albania / Estados Unidos</p>
@@ -271,7 +282,7 @@
       <a class="btn" href="person-mira-murati-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="dario amodei ceo de anthropic, investigador de ia estados unidos inteligencia artificial ceo investigación artificial intelligence ceo research">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Estados Unidos" data-sort-name="Dario Amodei" data-catalog-order="25" data-search="dario amodei ceo de anthropic, investigador de ia estados unidos inteligencia artificial ceo investigación artificial intelligence ceo research">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dario_Amodei_2023.jpg?width=720" alt="Dario Amodei" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Dario%20Amodei&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -281,7 +292,7 @@
       <a class="btn" href="person-dario-amodei-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="arthur mensch ceo de mistral ai, ingeniero de aprendizaje automático francia inteligencia artificial ceo startups artificial intelligence ceo startups">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="Francia" data-sort-name="Arthur Mensch" data-catalog-order="26" data-search="arthur mensch ceo de mistral ai, ingeniero de aprendizaje automático francia inteligencia artificial ceo startups artificial intelligence ceo startups">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Arthur_Mensch_2024.jpg?width=720" alt="Arthur Mensch" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Arthur%20Mensch&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Francia</p>
@@ -291,7 +302,7 @@
       <a class="btn" href="person-arthur-mensch-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="mustafa suleyman ceo de microsoft ai, emprendedor de ia reino unido inteligencia artificial ceo operaciones artificial intelligence ceo operations">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Reino Unido" data-sort-name="Mustafa Suleyman" data-catalog-order="27" data-search="mustafa suleyman ceo de microsoft ai, emprendedor de ia reino unido inteligencia artificial ceo operaciones artificial intelligence ceo operations">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Suleyman_2024.jpg?width=720" alt="Mustafa Suleyman" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mustafa%20Suleyman&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Reino Unido</p>
@@ -301,7 +312,7 @@
       <a class="btn" href="person-mustafa-suleyman-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="ceo" data-search="sridhar ramaswamy ceo de snowflake, ejecutivo de plataformas de datos e ia india / estados unidos ceo cloud inteligencia artificial ceo cloud artificial intelligence">
+<article class="card profile-card" data-directory-card data-filter-key="ceo" data-country="India / Estados Unidos" data-sort-name="Sridhar Ramaswamy" data-catalog-order="28" data-search="sridhar ramaswamy ceo de snowflake, ejecutivo de plataformas de datos e ia india / estados unidos ceo cloud inteligencia artificial ceo cloud artificial intelligence">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sridhar_Ramaswamy_2024.jpg?width=720" alt="Sridhar Ramaswamy" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sridhar%20Ramaswamy&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">India / Estados Unidos</p>
@@ -311,7 +322,7 @@
       <a class="btn" href="person-sridhar-ramaswamy-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="thomas dohmke ceo de github, líder de plataforma para desarrolladores alemania / estados unidos software ceo inteligencia artificial software ceo artificial intelligence">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Alemania / Estados Unidos" data-sort-name="Thomas Dohmke" data-catalog-order="29" data-search="thomas dohmke ceo de github, líder de plataforma para desarrolladores alemania / estados unidos software ceo inteligencia artificial software ceo artificial intelligence">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thomas_Dohmke_2023.jpg?width=720" alt="Thomas Dohmke" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Thomas%20Dohmke&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Alemania / Estados Unidos</p>
@@ -321,7 +332,7 @@
       <a class="btn" href="person-thomas-dohmke-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="software" data-search="jay graber ceo de bluesky, líder de producto y protocolo estados unidos software ceo diseño software ceo design">
+<article class="card profile-card" data-directory-card data-filter-key="software" data-country="Estados Unidos" data-sort-name="Jay Graber" data-catalog-order="30" data-search="jay graber ceo de bluesky, líder de producto y protocolo estados unidos software ceo diseño software ceo design">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jay_Graber_2024.jpg?width=720" alt="Jay Graber" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Jay%20Graber&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>
@@ -331,7 +342,7 @@
       <a class="btn" href="person-jay-graber-es.html">Abrir perfil</a>
     </div>
   </article>
-<article class="card profile-card" data-directory-card data-filter-key="operations" data-search="lina khan presidenta de la ftc y reguladora de plataformas digitales estados unidos operaciones liderazgo tecnología operations leadership technology">
+<article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Estados Unidos" data-sort-name="Lina Khan" data-catalog-order="31" data-search="lina khan presidenta de la ftc y reguladora de plataformas digitales estados unidos operaciones liderazgo tecnología operations leadership technology">
     <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lina_Khan_2022.jpg?width=720" alt="Lina Khan" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Lina%20Khan&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Estados Unidos</p>

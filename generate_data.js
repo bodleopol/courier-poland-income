@@ -6,6 +6,180 @@ const t = (uk, en, ru, es) => ({ uk, en, ru, es });
 const commons = file => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURI(file.replaceAll(' ', '_'))}?width=720`;
 const logo = domain => `https://logo.clearbit.com/${domain}`;
 
+const MIN_BIO_LENGTH = 280;
+
+function bioAddition(person, lang) {
+  const name = person.name[lang];
+  const role = person.role[lang];
+  const country = person.country[lang];
+  const focus = person.focus[lang];
+  const known = person.knownFor[lang];
+  if (lang === 'uk') {
+    return `Редакційний контекст: ${name} — ${role} (${country}). Відомий внесок: ${known}. Професійний фокус: ${focus}.`;
+  }
+  if (lang === 'en') {
+    return `Editorial context: ${name} — ${role} (${country}). Known for: ${known}. Professional focus: ${focus}.`;
+  }
+  if (lang === 'ru') {
+    return `Редакционный контекст: ${name} — ${role} (${country}). Известен вкладом: ${known}. Профессиональный фокус: ${focus}.`;
+  }
+  return `Contexto editorial: ${name} — ${role} (${country}). Reconocido por: ${known}. Enfoque profesional: ${focus}.`;
+}
+
+function bioTail(lang) {
+  if (lang === 'uk') return ' Цей огляд тримає фокус на фактах карʼєри, географії та професійному позиціонуванні.';
+  if (lang === 'en') return ' The overview stays concise while anchoring geography, role and contribution.';
+  if (lang === 'ru') return ' Обзор остаётся компактным и опирается на географию, роль и вклад.';
+  return ' El resumen permanece compacto y ancla geografía, rol y contribución.';
+}
+
+function enrichBio(person) {
+  const out = {};
+  for (const lang of langs) {
+    let text = String(person.life[lang] ?? '').trim();
+    if (text.length < MIN_BIO_LENGTH) {
+      text = `${text} ${bioAddition(person, lang)}`.replace(/\s+/g, ' ').trim();
+    }
+    if (text.length < MIN_BIO_LENGTH) {
+      text = `${text}${bioTail(lang)}`.replace(/\s+/g, ' ').trim();
+    }
+    out[lang] = text;
+  }
+  return out;
+}
+
+function regionalCountry(hqText, lang) {
+  const raw = String(hqText ?? '').trim();
+  if (!raw) return '';
+  const parts = raw.split(/[,/|]/).map(s => s.trim()).filter(Boolean);
+  const last = parts[parts.length - 1] || raw;
+  if (lang === 'uk') {
+    if (/україна/i.test(last)) return 'Україна';
+    if (/united states|usa|сша/i.test(last)) return 'США';
+    if (/united kingdom|britain|велика британія|великобританія/i.test(last)) return 'Велика Британія';
+    if (/france|франція/i.test(last)) return 'Франція';
+    if (/canada|канада/i.test(last)) return 'Канада';
+    if (/germany|німеччин/i.test(last)) return 'Німеччина';
+    if (/spain|іспанія/i.test(last)) return 'Іспанія';
+    if (/польщ/i.test(last)) return 'Польща';
+    if (/estonia|естонія/i.test(last)) return 'Естонія';
+    if (/latvia|латвія/i.test(last)) return 'Латвія';
+    if (/lithuania|литва/i.test(last)) return 'Литва';
+    if (/netherlands|нідерланд/i.test(last)) return 'Нідерланди';
+    if (/ireland|ірландія/i.test(last)) return 'Ірландія';
+    if (/sweden|швеція/i.test(last)) return 'Швеція';
+    if (/finland|фінляндія/i.test(last)) return 'Фінляндія';
+    if (/india|індія/i.test(last)) return 'Індія';
+    if (/china|кита/i.test(last)) return 'Китай';
+    if (/japan|японія/i.test(last)) return 'Японія';
+    if (/singapore|сінгапур/i.test(last)) return 'Сінгапур';
+    if (/israel|ізраїль/i.test(last)) return 'Ізраїль';
+    if (/australia|австралія/i.test(last)) return 'Австралія';
+    if (/perú|перу/i.test(last)) return 'Перу';
+    return last;
+  }
+  if (lang === 'ru') {
+    if (/украин/i.test(last)) return 'Украина';
+    if (/united states|usa|сша/i.test(last)) return 'США';
+    if (/united kingdom|britain|великобритани/i.test(last)) return 'Великобритания';
+    if (/france|франц/i.test(last)) return 'Франция';
+    if (/canada|канад/i.test(last)) return 'Канада';
+    if (/german/i.test(last)) return 'Германия';
+    if (/spain|испани/i.test(last)) return 'Испания';
+    if (/poland|польш/i.test(last)) return 'Польша';
+    if (/estonia|эстони/i.test(last)) return 'Эстония';
+    if (/latvia|латви/i.test(last)) return 'Латвия';
+    if (/lithuania|литв/i.test(last)) return 'Литва';
+    if (/netherlands|нидерланд/i.test(last)) return 'Нидерланды';
+    if (/ireland|ирланд/i.test(last)) return 'Ирландия';
+    if (/sweden|швед/i.test(last)) return 'Швеция';
+    if (/finland|финлянд/i.test(last)) return 'Финляндия';
+    if (/india|инди/i.test(last)) return 'Индия';
+    if (/china|кита/i.test(last)) return 'Китай';
+    if (/japan|япони/i.test(last)) return 'Япония';
+    if (/singapore|сингапур/i.test(last)) return 'Сингапур';
+    if (/israel|израил/i.test(last)) return 'Израиль';
+    if (/australia|австрал/i.test(last)) return 'Австралия';
+    if (/perú|перу/i.test(last)) return 'Перу';
+    return last;
+  }
+  if (lang === 'es') {
+    if (/ucrania|україн/i.test(last)) return 'Ucrania';
+    if (/united states|usa|estados unidos/i.test(last)) return 'Estados Unidos';
+    if (/united kingdom|reino unido/i.test(last)) return 'Reino Unido';
+    if (/france|francia/i.test(last)) return 'Francia';
+    if (/canada/i.test(last)) return 'Canadá';
+    if (/germany|alemania/i.test(last)) return 'Alemania';
+    if (/spain|españa/i.test(last)) return 'España';
+    if (/poland|polonia/i.test(last)) return 'Polonia';
+    if (/estonia/i.test(last)) return 'Estonia';
+    if (/latvia|letonia/i.test(last)) return 'Letonia';
+    if (/lithuania|lituania/i.test(last)) return 'Lituania';
+    if (/netherlands|países bajos/i.test(last)) return 'Países Bajos';
+    if (/ireland|irlanda/i.test(last)) return 'Irlanda';
+    if (/sweden|suecia/i.test(last)) return 'Suecia';
+    if (/finland|finlandia/i.test(last)) return 'Finlandia';
+    if (/india/i.test(last)) return 'India';
+    if (/china/i.test(last)) return 'China';
+    if (/japan|japón/i.test(last)) return 'Japón';
+    if (/singapore|singapur/i.test(last)) return 'Singapur';
+    if (/israel/i.test(last)) return 'Israel';
+    if (/australia/i.test(last)) return 'Australia';
+    if (/perú|peru/i.test(last)) return 'Perú';
+    return last;
+  }
+  // en default
+  if (/ukrain/i.test(last)) return 'Ukraine';
+  if (/united states|\busa\b/i.test(last)) return 'United States';
+  if (/united kingdom|\buk\b/i.test(last)) return 'United Kingdom';
+  if (/france/i.test(last)) return 'France';
+  if (/canada/i.test(last)) return 'Canada';
+  if (/germany/i.test(last)) return 'Germany';
+  if (/spain/i.test(last)) return 'Spain';
+  if (/poland/i.test(last)) return 'Poland';
+  if (/estonia/i.test(last)) return 'Estonia';
+  if (/latvia/i.test(last)) return 'Latvia';
+  if (/lithuania/i.test(last)) return 'Lithuania';
+  if (/netherlands/i.test(last)) return 'Netherlands';
+  if (/ireland/i.test(last)) return 'Ireland';
+  if (/sweden/i.test(last)) return 'Sweden';
+  if (/finland/i.test(last)) return 'Finland';
+  if (/india/i.test(last)) return 'India';
+  if (/china/i.test(last)) return 'China';
+  if (/japan/i.test(last)) return 'Japan';
+  if (/singapore/i.test(last)) return 'Singapore';
+  if (/israel/i.test(last)) return 'Israel';
+  if (/australia/i.test(last)) return 'Australia';
+  if (/peru/i.test(last)) return 'Peru';
+  return last;
+}
+
+function enrichStartupSummary(company, details) {
+  const minLen = 220;
+  const out = {};
+  for (const lang of langs) {
+    let base = String(company.summary[lang] ?? '').trim();
+    const hq = details?.hq?.[lang];
+    const market = details?.market?.[lang];
+    const notable = details?.notableFor?.[lang];
+    const bits = [];
+    if (hq) bits.push(hq);
+    if (market) bits.push(market);
+    if (notable) bits.push(notable);
+    let extra = '';
+    if (lang === 'uk') extra = bits.length ? ` Додатковий контекст: ${bits.join(' · ')}.` : '';
+    else if (lang === 'en') extra = bits.length ? ` Additional context: ${bits.join(' · ')}.` : '';
+    else if (lang === 'ru') extra = bits.length ? ` Дополнительный контекст: ${bits.join(' · ')}.` : '';
+    else extra = bits.length ? ` Contexto adicional: ${bits.join(' · ')}.` : '';
+    let text = `${base}${extra}`.replace(/\s+/g, ' ').trim();
+    if (text.length < minLen && notable) {
+      text = `${base} ${notable}.${extra}`.replace(/\s+/g, ' ').trim();
+    }
+    out[lang] = text;
+  }
+  return out;
+}
+
 const specialists = [
   {
     slug: 'ada-lovelace',
@@ -1142,6 +1316,198 @@ const startupDetails = {
       ['Сильный инженерный use case', 'Ориентация на reliability и backend teams', 'Показывает спрос на глубокую инфраструктуру после 2019 года'],
       ['Caso de uso de ingeniería fuerte', 'Orientado a reliability y equipos backend', 'Muestra demanda por infraestructura profunda después de 2019']
     )
+  },
+  openai: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('AI-лабораторія та продуктова компанія', 'AI research lab and product company', 'AI-лаборатория и продуктовая компания', 'Laboratorio de IA y empresa de producto'),
+    market: t('LLM, API, chat, enterprise adoption', 'LLM, API, chat, enterprise adoption', 'LLM, API, чат, корпоративное внедрение', 'LLM, API, chat y adopción enterprise'),
+    notableFor: t('ChatGPT та екосистема моделей для розробників і бізнесу', 'ChatGPT and a broad model ecosystem for developers and enterprises', 'ChatGPT и широкая экосистема моделей для разработчиков и бизнеса', 'ChatGPT y un ecosistema amplio de modelos para desarrolladores y empresas'),
+    signals: t(
+      ['Дослідницький корінь і масовий продуктовий вплив', 'Сильний developer та enterprise API-layer', 'Центральний гравець хвилі foundation-моделей'],
+      ['Research roots with mainstream product impact', 'Strong developer and enterprise API tier', 'A central player in the foundation-model wave'],
+      ['Исследовательские корни и массовое продуктовое влияние', 'Сильный developer и enterprise API-слой', 'Центральный игрок волны foundation-моделей'],
+      ['Raíces de investigación con impacto masivo en producto', 'Fuerte capa API para desarrolladores y enterprise', 'Actor central en la ola de modelos fundacionales']
+    )
+  },
+  deepmind: {
+    hq: t('Лондон, Велика Британія', 'London, United Kingdom', 'Лондон, Великобритания', 'Londres, Reino Unido'),
+    model: t('AI-дослідження в складі Google', 'AI research inside Google', 'Исследования ИИ внутри Google', 'Investigación en IA dentro de Google'),
+    market: t('Foundation research, science, Google products', 'Foundation research, science, Google products', 'Фундаментальные исследования, наука, продукты Google', 'Investigación fundamental, ciencia y productos Google'),
+    notableFor: t('AlphaFold, AlphaGo та фундаментальні AI-системи', 'AlphaFold, AlphaGo and foundational AI systems', 'AlphaFold, AlphaGo и фундаментальные AI-системы', 'AlphaFold, AlphaGo y sistemas de IA fundamentales'),
+    signals: t(
+      ['Сильний звʼязок із науковими задачами', 'Інтеграція з інфраструктурою Google', 'Видима AI-дослідницька база у Великій Британії'],
+      ['Strong ties to scientific challenges', 'Integrated with Google-scale infrastructure', 'A visible UK-based AI research hub'],
+      ['Сильная связь с научными задачами', 'Интеграция с инфраструктурой Google', 'Заметная база AI-исследований в Великобритании'],
+      ['Vínculos fuertes con retos científicos', 'Integración con infraestructura a escala Google', 'Centro visible de investigación en IA en el Reino Unido']
+    )
+  },
+  stripe: {
+    hq: t('Дублін / Сан-Франциско', 'Dublin / San Francisco', 'Дублин / Сан-Франциско', 'Dublín / San Francisco'),
+    model: t('Глобальна платіжна інфраструктура', 'Global payments infrastructure', 'Глобальная платежная инфраструктура', 'Infraestructura global de pagos'),
+    market: t('Payments API, billing, tax, financial infrastructure', 'Payments API, billing, tax, financial infrastructure', 'Payments API, биллинг, налоги, финансовая инфраструктура', 'API de pagos, billing, impuestos e infraestructura financiera'),
+    notableFor: t('Developer-centric платіжні API, що сформували інтернет-комерцію', 'Developer-centric payment APIs that shaped internet commerce', 'Developer-centric платежные API, повлиявшие на интернет-коммерцию', 'API de pagos centrados en desarrolladores que marcaron el comercio online'),
+    signals: t(
+      ['Платіжний шар для SaaS і маркетплейсів', 'Сильний фокус на документації та інтеграції', 'Інфраструктурний продукт із глобальним охопленням'],
+      ['Payments layer for SaaS and marketplaces', 'Strong docs and integration culture', 'Infrastructure product with global footprint'],
+      ['Платежный слой для SaaS и маркетплейсов', 'Сильная документация и интеграции', 'Инфраструктурный продукт с глобальным охватом'],
+      ['Capa de pagos para SaaS y marketplaces', 'Fuerte cultura de docs e integración', 'Producto de infraestructura con alcance global']
+    )
+  },
+  spacex: {
+    hq: t('Хоторн, США', 'Hawthorne, United States', 'Хоторн, США', 'Hawthorne, Estados Unidos'),
+    model: t('Космічна інженерія та запуски', 'Space engineering and launch services', 'Космическая инженерия и запуски', 'Ingeniería espacial y servicios de lanzamiento'),
+    market: t('Launch, Starlink, reusable rockets', 'Launch, Starlink, reusable rockets', 'Запуски, Starlink, многоразовые ракеты', 'Lanzamientos, Starlink y cohetes reutilizables'),
+    notableFor: t('Повторне використання ступенів і комерційні запуски', 'Reusable stages and commercial launch cadence', 'Многоразовые ступени и коммерческий темп запусков', 'Etapas reutilizables y cadencia de lanzamientos comerciales'),
+    signals: t(
+      ['Інтеграція виробництва та інженерії', 'Starlink як масштабна інфраструктурна мережа', 'Вплив на вартість доступу до орбіти'],
+      ['Tight integration of manufacturing and engineering', 'Starlink as large-scale infrastructure', 'Impact on cost to reach orbit'],
+      ['Интеграция производства и инженерии', 'Starlink как крупная инфраструктурная сеть', 'Влияние на стоимость выхода на орбиту'],
+      ['Integración estrecha de manufactura e ingeniería', 'Starlink como infraestructura a gran escala', 'Impacto en el coste de acceso a órbita']
+    )
+  },
+  canva: {
+    hq: t('Сідней, Австралія', 'Sydney, Australia', 'Сидней, Австралия', 'Sídney, Australia'),
+    model: t('Платформа дизайну для команд', 'Design platform for teams', 'Дизайн-платформа для команд', 'Plataforma de diseño para equipos'),
+    market: t('Templates, brand, video, marketing teams', 'Templates, brand, video, marketing teams', 'Шаблоны, бренд, видео, маркетинговые команды', 'Plantillas, marca, vídeo y equipos de marketing'),
+    notableFor: t('Масовий продукт дизайну з глибокою локалізацією', 'Mass-market design product with broad localization', 'Массовый продукт дизайна с широкой локализацией', 'Producto de diseño de masas con fuerte localización'),
+    signals: t(
+      ['Простий UX для не-дизайнерів', 'Швидке масштабування між країнами', 'Перетин продуктивності й маркетингу'],
+      ['Simple UX for non-designers', 'Fast international scaling', 'Spanning productivity and marketing'],
+      ['Простой UX для не-дизайнеров', 'Быстрое международное масштабирование', 'Пересечение продуктивности и маркетинга'],
+      ['UX simple para no diseñadores', 'Escalado internacional rápido', 'Cruza productividad y marketing']
+    )
+  },
+  'hugging-face': {
+    hq: t('Нью-Йорк / Париж', 'New York / Paris', 'Нью-Йорк / Париж', 'Nueva York / París'),
+    model: t('Спільнота open-source ML', 'Open-source ML community hub', 'Сообщество open-source ML', 'Hub comunitario de ML open-source'),
+    market: t('Models hub, datasets, transformers ecosystem', 'Models hub, datasets, transformers ecosystem', 'Хаб моделей, датасеты, экосистема transformers', 'Hub de modelos, datasets y ecosistema transformers'),
+    notableFor: t('Центральний репозиторій моделей для ML-спільноти', 'Central model hub for the ML community', 'Центральный репозиторий моделей для ML-сообщества', 'Repositorio central de modelos para la comunidad ML'),
+    signals: t(
+      ['Відкриті моделі та колаборація', 'Інтеграція з провідними фреймворками', 'Міст між дослідженням і продуктом'],
+      ['Open models and collaboration', 'Integration with major frameworks', 'Bridge between research and product'],
+      ['Открытые модели и коллаборация', 'Интеграция с ключевыми фреймворками', 'Мост между исследованием и продуктом'],
+      ['Modelos abiertos y colaboración', 'Integración con frameworks principales', 'Puente entre investigación y producto']
+    )
+  },
+  figma: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Спільний дизайн у хмарі', 'Collaborative design in the cloud', 'Совместный дизайн в облаке', 'Diseño colaborativo en la nube'),
+    market: t('UI design, design systems, dev handoff', 'UI design, design systems, dev handoff', 'UI-дизайн, дизайн-системы, handoff разработке', 'UI, sistemas de diseño y handoff a desarrollo'),
+    notableFor: t('Мультиплеєр-дизайн як стандарт для продуктових команд', 'Multiplayer design as a standard for product teams', 'Мультиплеер-дизайн как стандарт для продуктовых команд', 'Diseño multijugador como estándar para equipos de producto'),
+    signals: t(
+      ['Ключовий інструмент для веб і мобільних команд', 'Інтеграція з інженерним workflow', 'Висока частка у enterprise design ops'],
+      ['Core tool for web and mobile teams', 'Embedded in engineering workflows', 'Strong presence in enterprise design ops'],
+      ['Ключевой инструмент для web и mobile команд', 'Встроенность в инженерные процессы', 'Сильная доля в enterprise design ops'],
+      ['Herramienta central para equipos web y móvil', 'Integrada en flujos de ingeniería', 'Fuerte presencia en design ops enterprise']
+    )
+  },
+  notion: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Workspace для документів і баз даних', 'Workspace for docs and databases', 'Workspace для документов и баз данных', 'Workspace para documentos y bases de datos'),
+    market: t('Knowledge base, wiki, team productivity', 'Knowledge base, wiki, team productivity', 'Knowledge base, wiki, командная продуктивность', 'Base de conocimiento, wiki y productividad de equipo'),
+    notableFor: t('Гнучкі бази даних у документному середовищі', 'Flexible databases inside a doc-like workspace', 'Гибкие базы данных в документной среде', 'Bases de datos flexibles dentro de un workspace tipo doc'),
+    signals: t(
+      ['Популярність серед стартапів і knowledge teams', 'Швидкий цикл продуктових функцій', 'Конкуренція з класичними wiki та docs'],
+      ['Popular with startups and knowledge teams', 'Fast product iteration cycle', 'Competes with classic wikis and docs'],
+      ['Популярность среди стартапов и knowledge-команд', 'Быстрый цикл продуктовых функций', 'Конкуренция с классическими wiki и docs'],
+      ['Popular entre startups y equipos de conocimiento', 'Iteración rápida de producto', 'Compite con wikis y docs clásicos']
+    )
+  },
+  databricks: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Lakehouse та AI-платформа даних', 'Lakehouse and data AI platform', 'Lakehouse и data AI-платформа', 'Lakehouse y plataforma de datos e IA'),
+    market: t('Data engineering, ML, analytics, governance', 'Data engineering, ML, analytics, governance', 'Data engineering, ML, аналитика, governance', 'Data engineering, ML, analítica y gobierno de datos'),
+    notableFor: t('Lakehouse-архітектура як міст між сховищами даних і ML', 'Lakehouse architecture bridging warehouses and ML', 'Lakehouse-архитектура как мост между хранилищами и ML', 'Arquitectura lakehouse entre almacenes y ML'),
+    signals: t(
+      ['Сильний enterprise сегмент', 'Інтеграція з Spark та хмарними екосистемами', 'Центральний шар для data + AI команд'],
+      ['Strong enterprise adoption', 'Spark and cloud ecosystem integration', 'Central layer for data and AI teams'],
+      ['Сильный enterprise-сегмент', 'Интеграция со Spark и облачными экосистемами', 'Центральный слой для data и AI команд'],
+      ['Fuerte adopción enterprise', 'Integración con Spark y ecosistemas cloud', 'Capa central para equipos de datos e IA']
+    )
+  },
+  grammarly: {
+    hq: t('Київ / Сан-Франциско', 'Kyiv / San Francisco', 'Киев / Сан-Франциско', 'Kyiv / San Francisco'),
+    model: t('AI-assistant для письма', 'AI assistant for writing', 'AI-ассистент для письма', 'Asistente de IA para escritura'),
+    market: t('Writing assistance, communication, productivity', 'Writing assistance, communication, productivity', 'Помощь в письме, коммуникации, продуктивность', 'Asistencia de escritura, comunicación y productividad'),
+    notableFor: t('Глобальний продукт із українським корінням у сегменті writing AI', 'Global product with Ukrainian roots in writing AI', 'Глобальный продукт с украинскими корнями в writing AI', 'Producto global con raíces ucranianas en IA de escritura'),
+    signals: t(
+      ['Глибока інтеграція в браузер і робочі процеси', 'Фокус на ясність і тон комунікації', 'Широка база користувачів'],
+      ['Deep integration into browsers and workflows', 'Focus on clarity and tone', 'Large global user base'],
+      ['Глубокая интеграция в браузер и workflow', 'Фокус на ясность и тон', 'Широкая база пользователей'],
+      ['Integración profunda en navegadores y flujos', 'Foco en claridad y tono', 'Gran base de usuarios global']
+    )
+  },
+  preply: {
+    hq: t('Барселона / Київ', 'Barcelona / Kyiv', 'Барселона / Киев', 'Barcelona / Kyiv'),
+    model: t('Маркетплейс онлайн-репетиторів', 'Online tutoring marketplace', 'Маркетплейс онлайн-репетиторов', 'Marketplace de tutoría online'),
+    market: t('Language learning, marketplace, EdTech', 'Language learning, marketplace, EdTech', 'Изучение языков, маркетплейс, EdTech', 'Aprendizaje de idiomas, marketplace y EdTech'),
+    notableFor: t('Глобальний двосторонній маркетплейс для мовної освіти', 'Global two-sided marketplace for language education', 'Глобальный двусторонний маркетплейс языкового обучения', 'Marketplace global bidireccional para idiomas'),
+    signals: t(
+      ['Масштабування між країнами та часовими поясами', 'Баланс між tutor supply і learner demand', 'Сильний фокус на якості уроків'],
+      ['Cross-border scaling across time zones', 'Balances tutor supply and learner demand', 'Quality-focused lesson experience'],
+      ['Масштабирование между странами и часовыми поясами', 'Баланс supply репетиторов и спроса', 'Фокус на качестве уроков'],
+      ['Escalado cross-border', 'Equilibrio oferta-demanda de tutores', 'Experiencia de calidad en lecciones']
+    )
+  },
+  gitlab: {
+    hq: t('Сан-Франциско / Амстердам', 'San Francisco / Amsterdam', 'Сан-Франциско / Амстердам', 'San Francisco / Ámsterdam'),
+    model: t('DevOps-платформа з відкритим кодом', 'Open-core DevOps platform', 'Open-core DevOps-платформа', 'Plataforma DevOps open-core'),
+    market: t('Git, CI/CD, security scanning, collaboration', 'Git, CI/CD, security scanning, collaboration', 'Git, CI/CD, security, коллаборация', 'Git, CI/CD, seguridad y colaboración'),
+    notableFor: t('Повний цикл DevOps в одному застосунку', 'Full DevOps lifecycle in one application', 'Полный цикл DevOps в одном приложении', 'Ciclo DevOps completo en una sola aplicación'),
+    signals: t(
+      ['Сильна спільнота open source', 'Широке використання в enterprise', 'Remote-first культура продукту'],
+      ['Strong open-source community', 'Broad enterprise adoption', 'Remote-first product culture'],
+      ['Сильное open-source сообщество', 'Широкое enterprise-использование', 'Remote-first культура продукта'],
+      ['Comunidad open source fuerte', 'Amplia adopción enterprise', 'Cultura de producto remote-first']
+    )
+  },
+  'scale-ai': {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Дані та анотація для AI', 'Data and labeling for AI', 'Данные и разметка для AI', 'Datos y etiquetado para IA'),
+    market: t('Training data, evaluation, AI operations', 'Training data, evaluation, AI operations', 'Обучающие данные, evaluation, AI ops', 'Datos de entrenamiento, evaluación y ops de IA'),
+    notableFor: t('Інфраструктура підготовки даних для моделей нового покоління', 'Data preparation infrastructure for modern models', 'Инфраструктура подготовки данных для современных моделей', 'Infraestructura de datos para modelos modernos'),
+    signals: t(
+      ['Тісний звʼязок із defence та enterprise AI', 'Масштаб анотаційних операцій', 'Ключовий шар для training pipelines'],
+      ['Close ties to defence and enterprise AI', 'Large-scale labeling operations', 'Key layer for training pipelines'],
+      ['Связь с defence и enterprise AI', 'Масштаб операций разметки', 'Ключевой слой для training pipelines'],
+      ['Vínculos con defensa e IA enterprise', 'Operaciones de etiquetado a gran escala', 'Capa clave para pipelines de entrenamiento']
+    )
+  },
+  vercel: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Edge та frontend cloud', 'Edge and frontend cloud', 'Edge и frontend cloud', 'Cloud edge y frontend'),
+    market: t('Next.js ecosystem, serverless, edge delivery', 'Next.js ecosystem, serverless, edge delivery', 'Экосистема Next.js, serverless, edge', 'Ecosistema Next.js, serverless y edge'),
+    notableFor: t('Швидке розгортання frontend і developer experience для сучасного вебу', 'Fast frontend deployment and DX for the modern web', 'Быстрый деплой frontend и DX для современного веба', 'Despliegue rápido de frontend y DX para la web moderna'),
+    signals: t(
+      ['Тісна інтеграція з Next.js', 'Edge delivery як конкурентна перевага', 'Популярність серед modern web-команд'],
+      ['Tight Next.js integration', 'Edge delivery as a differentiator', 'Popular with modern web teams'],
+      ['Тесная интеграция с Next.js', 'Edge delivery как преимущество', 'Популярность среди современных web-команд'],
+      ['Integración fuerte con Next.js', 'Edge delivery como diferencial', 'Popular entre equipos web modernos']
+    )
+  },
+  revolut: {
+    hq: t('Лондон, Велика Британія', 'London, United Kingdom', 'Лондон, Великобритания', 'Londres, Reino Unido'),
+    model: t('Необанк і фінтех-суперап', 'Neobank and fintech super-app', 'Необанк и финтех-суперап', 'Neobanco y super-app fintech'),
+    market: t('Cards, FX, business accounts, global banking', 'Cards, FX, business accounts, global banking', 'Карты, FX, бизнес-счета, глобальный банкинг', 'Tarjetas, FX, cuentas business y banca global'),
+    notableFor: t('Швидке міжнародне масштабування фінтех-продуктів', 'Fast international scaling of fintech features', 'Быстрое международное масштабирование финтех-функций', 'Escalado internacional rápido de funciones fintech'),
+    signals: t(
+      ['Сильний mobile-first UX', 'Глобальні ліцензії та комплаєнс', 'Розширення від споживача до бізнесу'],
+      ['Strong mobile-first UX', 'Global licensing and compliance', 'Expansion from consumer to business'],
+      ['Сильный mobile-first UX', 'Глобальные лицензии и комплаенс', 'Расширение от consumer к бизнесу'],
+      ['UX mobile-first fuerte', 'Licencias y cumplimiento global', 'Expansión de consumidor a negocio']
+    )
+  },
+  'ajax-systems': {
+    hq: t('Київ, Україна', 'Kyiv, Ukraine', 'Киев, Украина', 'Kyiv, Ucrania'),
+    model: t('Wireless security та smart home hardware', 'Wireless security and smart-home hardware', 'Wireless security и smart-home hardware', 'Hardware de seguridad inalámbrica y hogar inteligente'),
+    market: t('Intrusion sensors, hubs, global retail', 'Intrusion sensors, hubs, global retail', 'Датчики, хабы, глобальный ритейл', 'Sensores, hubs y retail global'),
+    notableFor: t('Український hardware-бренд із міжнародною мережею партнерів', 'Ukrainian hardware brand with international partner network', 'Украинский hardware-бренд с международной сетью партнеров', 'Marca hardware ucraniana con red internacional de socios'),
+    signals: t(
+      ['Фокус на wireless reliability', 'Роздрібні та B2B канали', 'Приклад hardware scale-up з України'],
+      ['Focus on wireless reliability', 'Retail and B2B channels', 'Example of hardware scale-up from Ukraine'],
+      ['Фокус на wireless reliability', 'Розничные и B2B каналы', 'Пример hardware scale-up из Украины'],
+      ['Foco en fiabilidad wireless', 'Canales retail y B2B', 'Ejemplo de hardware scale-up desde Ucrania']
+    )
   }
 };
 
@@ -1151,12 +1517,7 @@ const specialistOutput = curatedSpecialists.map(person => {
     tags[lang] = person.tags.map(tag => tagLabels[tag]?.[lang] || tag);
   }
 
-  const bio = {
-    uk: person.life.uk,
-    en: person.life.en,
-    ru: person.life.ru,
-    es: person.life.es
-  };
+  const bio = enrichBio(person);
 
   return {
     slug: person.slug,
@@ -1179,7 +1540,13 @@ const startupOutput = startups.map(company => {
   for (const lang of langs) {
     tags[lang] = company.tags.map(tag => tagLabels[tag]?.[lang] || tag);
   }
-  return { ...company, ...(startupDetails[company.slug] || {}), tags };
+  const details = startupDetails[company.slug] || {};
+  const hqCountry = {};
+  for (const lang of langs) {
+    hqCountry[lang] = regionalCountry(details.hq?.[lang], lang);
+  }
+  const summary = enrichStartupSummary(company, details);
+  return { ...company, ...details, summary, tags, hqCountry };
 });
 
 fs.writeFileSync('src/specialists.json', `${JSON.stringify(specialistOutput, null, 2)}\n`);

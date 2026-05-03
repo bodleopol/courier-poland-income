@@ -15,377 +15,391 @@
   </div>
 </section>
 
-<section class="directory-panel" aria-label="Поиск по каталогу">
+<section class="directory-panel" data-directory-panel aria-label="Поиск по каталогу">
   <div class="directory-toolbar">
     <label class="search-label">Поиск по каталогу
       <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
     </label>
     <button class="btn secondary directory-reset" type="button" data-directory-reset>Сбросить</button>
   </div>
+  <div class="directory-toolbar-secondary">
+    <label class="directory-select-label">Сортировка<select class="directory-select" data-directory-sort>
+    <option value="default">Как в каталоге</option>
+    <option value="newest">Сначала новые</option>
+    <option value="az">По имени A-Z</option>
+  </select></label>
+    <label class="directory-select-label">Страна<select class="directory-select" data-directory-country>
+    <option value="">Все страны</option><option value="Австралия">Австралия</option><option value="Амстердам">Амстердам</option><option value="Великобритания">Великобритания</option><option value="Канада">Канада</option><option value="Киев">Киев</option><option value="Майами">Майами</option><option value="Нью-Йорк">Нью-Йорк</option><option value="Париж">Париж</option><option value="США">США</option><option value="Украина">Украина</option><option value="Франция">Франция</option>
+  </select></label>
+    <label class="directory-select-label">Год основания<select class="directory-select" data-directory-year>
+    <option value="">Все годы</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2019">2019</option><option value="2018">2018</option><option value="2016">2016</option><option value="2015">2015</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2002">2002</option>
+  </select></label>
+  </div>
   <p class="directory-hint">Ищите по имени, роли, стране, рыночной нише или технологическому тегу.</p>
-  <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Все категории</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Финтех</button><button class="filter-chip" type="button" data-filter="operations">Операции</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-share-hint">Фильтры и поиск сохраняются в адресе страницы — ссылку можно передать.</p>
+  <div class="filter-bar" data-directory-industry-chips><button class="filter-chip active" type="button" data-filter="all">Все категории</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Финтех</button><button class="filter-chip" type="button" data-filter="operations">Операции</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
   <p class="directory-results"><strong data-results-count>33</strong> Найдено результатов</p>
 </section>
 
-<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai лаборатория ии и продуктовая компания разрабатывает модели и продукты ии для бизнеса, образования, разработки по и творческих процессов. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2015" data-sort-name="OpenAI" data-catalog-order="0" data-search="openai лаборатория ии и продуктовая компания разрабатывает модели и продукты ии для бизнеса, образования, разработки по и творческих процессов. дополнительный контекст: сан-франциско, сша · llm, api, чат, корпоративное внедрение · chatgpt и широкая экосистема моделей для разработчиков и бизнеса. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=OpenAI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2015</p>
       <h3>OpenAI</h3>
       <p class="meta">Лаборатория ИИ и продуктовая компания</p>
-      <p>Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов.</p>
+      <p>Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов. Дополнительный контекст: Сан-Франциско, США · LLM, API, чат, корпоративное внедрение · ChatGPT и широкая экосистема моделей для разработчиков и бизнеса.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-openai-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="google deepmind исследовательская компания ии работает над фундаментальными системами ии, научными задачами и продуктами google. искусственный интеллект исследования наука artificial intelligence research science">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Великобритания" data-founded="2010" data-sort-name="Google DeepMind" data-catalog-order="1" data-search="google deepmind исследовательская компания ии работает над фундаментальными системами ии, научными задачами и продуктами google. дополнительный контекст: лондон, великобритания · фундаментальные исследования, наука, продукты google · alphafold, alphago и фундаментальные ai-системы. искусственный интеллект исследования наука artificial intelligence research science">
     <img src="https://logo.clearbit.com/deepmind.google" alt="Google DeepMind" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Google%20DeepMind&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2010</p>
       <h3>Google DeepMind</h3>
       <p class="meta">Исследовательская компания ИИ</p>
-      <p>Работает над фундаментальными системами ИИ, научными задачами и продуктами Google.</p>
+      <p>Работает над фундаментальными системами ИИ, научными задачами и продуктами Google. Дополнительный контекст: Лондон, Великобритания · Фундаментальные исследования, наука, продукты Google · AlphaFold, AlphaGo и фундаментальные AI-системы.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Исследования</span><span class="tag">Наука</span></div>
       <a class="btn" href="startup-deepmind-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="stripe финтех-инфраструктура строит api и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций. финтех программирование операции fintech software operations">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Франция" data-founded="2010" data-sort-name="Stripe" data-catalog-order="2" data-search="stripe финтех-инфраструктура строит api и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций. дополнительный контекст: дублин / сан-франциско · payments api, биллинг, налоги, финансовая инфраструктура · developer-centric платежные api, повлиявшие на интернет-коммерцию. финтех программирование операции fintech software operations">
     <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Stripe&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2010</p>
       <h3>Stripe</h3>
       <p class="meta">Финтех-инфраструктура</p>
-      <p>Строит API и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций.</p>
+      <p>Строит API и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций. Дополнительный контекст: Дублин / Сан-Франциско · Payments API, биллинг, налоги, финансовая инфраструктура · Developer-centric платежные API, повлиявшие на интернет-коммерцию.</p>
       <div class="tags"><span class="tag">Финтех</span><span class="tag">Программирование</span><span class="tag">Операции</span></div>
       <a class="btn" href="startup-stripe-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="spacex космическая инженерия создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование. космос инженерия операции space engineering operations">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="США" data-founded="2002" data-sort-name="SpaceX" data-catalog-order="3" data-search="spacex космическая инженерия создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование. дополнительный контекст: хоторн, сша · запуски, starlink, многоразовые ракеты · многоразовые ступени и коммерческий темп запусков. космос инженерия операции space engineering operations">
     <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SpaceX&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2002</p>
       <h3>SpaceX</h3>
       <p class="meta">Космическая инженерия</p>
-      <p>Создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование.</p>
+      <p>Создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование. Дополнительный контекст: Хоторн, США · Запуски, Starlink, многоразовые ракеты · Многоразовые ступени и коммерческий темп запусков.</p>
       <div class="tags"><span class="tag">Космос</span><span class="tag">Инженерия</span><span class="tag">Операции</span></div>
       <a class="btn" href="startup-spacex-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="canva дизайн-платформа дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга. дизайн программирование стартапы design software startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="Австралия" data-founded="2013" data-sort-name="Canva" data-catalog-order="4" data-search="canva дизайн-платформа дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга. дополнительный контекст: сидней, австралия · шаблоны, бренд, видео, маркетинговые команды · массовый продукт дизайна с широкой локализацией. дизайн программирование стартапы design software startups">
     <img src="https://logo.clearbit.com/canva.com" alt="Canva" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Canva&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
       <h3>Canva</h3>
       <p class="meta">Дизайн-платформа</p>
-      <p>Дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга.</p>
+      <p>Дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга. Дополнительный контекст: Сидней, Австралия · Шаблоны, бренд, видео, маркетинговые команды · Массовый продукт дизайна с широкой локализацией.</p>
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-canva-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="hugging face open-source платформа ии поддерживает сообщество моделей, датасетов и инструментов машинного обучения. искусственный интеллект open source стартапы artificial intelligence open source startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Париж" data-founded="2016" data-sort-name="Hugging Face" data-catalog-order="5" data-search="hugging face open-source платформа ии поддерживает сообщество моделей, датасетов и инструментов машинного обучения. дополнительный контекст: нью-йорк / париж · хаб моделей, датасеты, экосистема transformers · центральный репозиторий моделей для ml-сообщества. искусственный интеллект open source стартапы artificial intelligence open source startups">
     <img src="https://logo.clearbit.com/huggingface.co" alt="Hugging Face" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Hugging%20Face&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2016</p>
       <h3>Hugging Face</h3>
       <p class="meta">Open-source платформа ИИ</p>
-      <p>Поддерживает сообщество моделей, датасетов и инструментов машинного обучения.</p>
+      <p>Поддерживает сообщество моделей, датасетов и инструментов машинного обучения. Дополнительный контекст: Нью-Йорк / Париж · Хаб моделей, датасеты, экосистема transformers · Центральный репозиторий моделей для ML-сообщества.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Open source</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-hugging-face-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="figma совместный дизайн в браузере перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды. дизайн программирование стартапы design software startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2012" data-sort-name="Figma" data-catalog-order="6" data-search="figma совместный дизайн в браузере перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды. дополнительный контекст: сан-франциско, сша · ui-дизайн, дизайн-системы, handoff разработке · мультиплеер-дизайн как стандарт для продуктовых команд. дизайн программирование стартапы design software startups">
     <img src="https://logo.clearbit.com/figma.com" alt="Figma" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Figma&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2012</p>
       <h3>Figma</h3>
       <p class="meta">Совместный дизайн в браузере</p>
-      <p>Перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды.</p>
+      <p>Перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды. Дополнительный контекст: Сан-Франциско, США · UI-дизайн, дизайн-системы, handoff разработке · Мультиплеер-дизайн как стандарт для продуктовых команд.</p>
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-figma-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="notion продуктивность и знания объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба. программирование операции стартапы software operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2013" data-sort-name="Notion" data-catalog-order="7" data-search="notion продуктивность и знания объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба. дополнительный контекст: сан-франциско, сша · knowledge base, wiki, командная продуктивность · гибкие базы данных в документной среде. программирование операции стартапы software operations startups">
     <img src="https://logo.clearbit.com/notion.so" alt="Notion" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Notion&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
       <h3>Notion</h3>
       <p class="meta">Продуктивность и знания</p>
-      <p>Объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба.</p>
+      <p>Объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба. Дополнительный контекст: Сан-Франциско, США · Knowledge base, wiki, командная продуктивность · Гибкие базы данных в документной среде.</p>
       <div class="tags"><span class="tag">Программирование</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-notion-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="anthropic ai safety и модели разрабатывает ассистентов и исследования безопасности для контролируемых и полезных ai-систем. искусственный интеллект исследования стартапы artificial intelligence research startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2021" data-sort-name="Anthropic" data-catalog-order="8" data-search="anthropic ai safety и модели разрабатывает ассистентов и исследования безопасности для контролируемых и полезных ai-систем. дополнительный контекст: сан-франциско, сша · ai assistants, model apis, enterprise adoption · claude, constitutional ai и безопасное масштабирование моделей. искусственный интеллект исследования стартапы artificial intelligence research startups">
     <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Anthropic&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2021</p>
       <h3>Anthropic</h3>
       <p class="meta">AI safety и модели</p>
-      <p>Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных AI-систем.</p>
+      <p>Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных AI-систем. Дополнительный контекст: Сан-Франциско, США · AI assistants, model APIs, enterprise adoption · Claude, constitutional AI и безопасное масштабирование моделей.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Исследования</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-anthropic-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="mistral ai европейские ai-модели строит открытые и коммерческие модели ии, усиливая европейскую ai-экосистему. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франция" data-founded="2023" data-sort-name="Mistral AI" data-catalog-order="9" data-search="mistral ai европейские ai-модели строит открытые и коммерческие модели ии, усиливая европейскую ai-экосистему. дополнительный контекст: париж, франция · open models, european ai, inference products · одна из самых заметных европейских ai-компаний нового цикла. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/mistral.ai" alt="Mistral AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mistral%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2023</p>
       <h3>Mistral AI</h3>
       <p class="meta">Европейские AI-модели</p>
-      <p>Строит открытые и коммерческие модели ИИ, усиливая европейскую AI-экосистему.</p>
+      <p>Строит открытые и коммерческие модели ИИ, усиливая европейскую AI-экосистему. Дополнительный контекст: Париж, Франция · Open models, European AI, inference products · Одна из самых заметных европейских AI-компаний нового цикла.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-mistral-ai-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="databricks платформа данных и ai объединяет lakehouse-архитектуру, аналитику, ml и управление данными для предприятий. искусственный интеллект облачные технологии корпоративное по artificial intelligence cloud enterprise software">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2013" data-sort-name="Databricks" data-catalog-order="10" data-search="databricks платформа данных и ai объединяет lakehouse-архитектуру, аналитику, ml и управление данными для предприятий. дополнительный контекст: сан-франциско, сша · data engineering, ml, аналитика, governance · lakehouse-архитектура как мост между хранилищами и ml. искусственный интеллект облачные технологии корпоративное по artificial intelligence cloud enterprise software">
     <img src="https://logo.clearbit.com/databricks.com" alt="Databricks" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Databricks&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
       <h3>Databricks</h3>
       <p class="meta">Платформа данных и AI</p>
-      <p>Объединяет lakehouse-архитектуру, аналитику, ML и управление данными для предприятий.</p>
+      <p>Объединяет lakehouse-архитектуру, аналитику, ML и управление данными для предприятий. Дополнительный контекст: Сан-Франциско, США · Data engineering, ML, аналитика, governance · Lakehouse-архитектура как мост между хранилищами и ML.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Облачные технологии</span><span class="tag">Корпоративное ПО</span></div>
       <a class="btn" href="startup-databricks-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="grammarly ai для письма компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франция" data-founded="2009" data-sort-name="Grammarly" data-catalog-order="11" data-search="grammarly ai для письма компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. дополнительный контекст: киев / сан-франциско · помощь в письме, коммуникации, продуктивность · глобальный продукт с украинскими корнями в writing ai. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Grammarly&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2009</p>
       <h3>Grammarly</h3>
       <p class="meta">AI для письма</p>
-      <p>Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее.</p>
+      <p>Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. Дополнительный контекст: Киев / Сан-Франциско · Помощь в письме, коммуникации, продуктивность · Глобальный продукт с украинскими корнями в writing AI.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-grammarly-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="preply edtech-маркетплейс платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру. образование программирование стартапы education software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Киев" data-founded="2012" data-sort-name="Preply" data-catalog-order="12" data-search="preply edtech-маркетплейс платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру. дополнительный контекст: барселона / киев · изучение языков, маркетплейс, edtech · глобальный двусторонний маркетплейс языкового обучения. образование программирование стартапы education software startups">
     <img src="https://logo.clearbit.com/preply.com" alt="Preply" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Preply&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2012</p>
       <h3>Preply</h3>
       <p class="meta">EdTech-маркетплейс</p>
-      <p>Платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру.</p>
+      <p>Платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру. Дополнительный контекст: Барселона / Киев · Изучение языков, маркетплейс, EdTech · Глобальный двусторонний маркетплейс языкового обучения.</p>
       <div class="tags"><span class="tag">Образование</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-preply-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="gitlab devops-платформа предоставляет инструменты для репозиториев, ci/cd, безопасности и совместной разработки по. программирование open source операции software open source operations">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Амстердам" data-founded="2011" data-sort-name="GitLab" data-catalog-order="13" data-search="gitlab devops-платформа предоставляет инструменты для репозиториев, ci/cd, безопасности и совместной разработки по. дополнительный контекст: сан-франциско / амстердам · git, ci/cd, security, коллаборация · полный цикл devops в одном приложении. программирование open source операции software open source operations">
     <img src="https://logo.clearbit.com/gitlab.com" alt="GitLab" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=GitLab&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2011</p>
       <h3>GitLab</h3>
       <p class="meta">DevOps-платформа</p>
-      <p>Предоставляет инструменты для репозиториев, CI/CD, безопасности и совместной разработки ПО.</p>
+      <p>Предоставляет инструменты для репозиториев, CI/CD, безопасности и совместной разработки ПО. Дополнительный контекст: Сан-Франциско / Амстердам · Git, CI/CD, security, коллаборация · Полный цикл DevOps в одном приложении.</p>
       <div class="tags"><span class="tag">Программирование</span><span class="tag">Open source</span><span class="tag">Операции</span></div>
       <a class="btn" href="startup-gitlab-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="scale ai данные для ai поддерживает подготовку данных и evaluation-процессы для компаний, создающих ai-системы. искусственный интеллект операции стартапы artificial intelligence operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="США" data-founded="2016" data-sort-name="Scale AI" data-catalog-order="14" data-search="scale ai данные для ai поддерживает подготовку данных и evaluation-процессы для компаний, создающих ai-системы. дополнительный контекст: сан-франциско, сша · обучающие данные, evaluation, ai ops · инфраструктура подготовки данных для современных моделей. искусственный интеллект операции стартапы artificial intelligence operations startups">
     <img src="https://logo.clearbit.com/scale.com" alt="Scale AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Scale%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2016</p>
       <h3>Scale AI</h3>
       <p class="meta">Данные для AI</p>
-      <p>Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.</p>
+      <p>Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы. Дополнительный контекст: Сан-Франциско, США · Обучающие данные, evaluation, AI ops · Инфраструктура подготовки данных для современных моделей.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-scale-ai-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cursor ai-инструменты для разработчиков создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2023" data-sort-name="Cursor" data-catalog-order="15" data-search="cursor ai-инструменты для разработчиков создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. дополнительный контекст: сша · ai coding, codebase navigation, engineering workflows · сочетание ai-ассистента, codebase search и редактора для разработчиков. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/cursor.com" alt="Cursor" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cursor&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2023</p>
       <h3>Cursor</h3>
       <p class="meta">AI-инструменты для разработчиков</p>
-      <p>Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.</p>
+      <p>Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. Дополнительный контекст: США · AI coding, codebase navigation, engineering workflows · Сочетание AI-ассистента, codebase search и редактора для разработчиков.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-cursor-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="vercel облачная платформа для фронтенд-команд поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд. облачные технологии программирование стартапы cloud software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2015" data-sort-name="Vercel" data-catalog-order="16" data-search="vercel облачная платформа для фронтенд-команд поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд. быстрый деплой frontend и dx для современного веба. дополнительный контекст: сан-франциско, сша · экосистема next.js, serverless, edge · быстрый деплой frontend и dx для современного веба. облачные технологии программирование стартапы cloud software startups">
     <img src="https://logo.clearbit.com/vercel.com" alt="Vercel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Vercel&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2015</p>
       <h3>Vercel</h3>
       <p class="meta">Облачная платформа для фронтенд-команд</p>
-      <p>Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.</p>
+      <p>Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд. Быстрый деплой frontend и DX для современного веба. Дополнительный контекст: Сан-Франциско, США · Экосистема Next.js, serverless, edge · Быстрый деплой frontend и DX для современного веба.</p>
       <div class="tags"><span class="tag">Облачные технологии</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-vercel-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="elevenlabs генеративный voice ai развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Нью-Йорк" data-founded="2022" data-sort-name="ElevenLabs" data-catalog-order="17" data-search="elevenlabs генеративный voice ai развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса. дополнительный контекст: лондон / нью-йорк · speech synthesis, voice agents, audio products · резкий рост в сегменте генеративного аудио. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=ElevenLabs&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>ElevenLabs</h3>
       <p class="meta">Генеративный voice AI</p>
-      <p>Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.</p>
+      <p>Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса. Дополнительный контекст: Лондон / Нью-Йорк · Speech synthesis, voice agents, audio products · Резкий рост в сегменте генеративного аудио.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-elevenlabs-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="revolut глобальная финтех-платформа объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении. финтех операции стартапы fintech operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Великобритания" data-founded="2015" data-sort-name="Revolut" data-catalog-order="18" data-search="revolut глобальная финтех-платформа объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении. дополнительный контекст: лондон, великобритания · карты, fx, бизнес-счета, глобальный банкинг · быстрое международное масштабирование финтех-функций. финтех операции стартапы fintech operations startups">
     <img src="https://logo.clearbit.com/revolut.com" alt="Revolut" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Revolut&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2015</p>
       <h3>Revolut</h3>
       <p class="meta">Глобальная финтех-платформа</p>
-      <p>Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.</p>
+      <p>Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении. Дополнительный контекст: Лондон, Великобритания · Карты, FX, бизнес-счета, глобальный банкинг · Быстрое международное масштабирование финтех-функций.</p>
       <div class="tags"><span class="tag">Финтех</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-revolut-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="hardware" data-search="ajax systems украинский hardware и security tech разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. аппаратное обеспечение инженерия стартапы hardware engineering startups">
+<article class="card startup-card" data-directory-card data-filter-key="hardware" data-country="Украина" data-founded="2011" data-sort-name="Ajax Systems" data-catalog-order="19" data-search="ajax systems украинский hardware и security tech разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. дополнительный контекст: киев, украина · датчики, хабы, глобальный ритейл · украинский hardware-бренд с международной сетью партнеров. аппаратное обеспечение инженерия стартапы hardware engineering startups">
     <img src="https://logo.clearbit.com/ajax.systems" alt="Ajax Systems" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ajax%20Systems&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2011</p>
       <h3>Ajax Systems</h3>
       <p class="meta">Украинский hardware и security tech</p>
-      <p>Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.</p>
+      <p>Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. Дополнительный контекст: Киев, Украина · Датчики, хабы, глобальный ритейл · Украинский hardware-бренд с международной сетью партнеров.</p>
       <div class="tags"><span class="tag">Аппаратное обеспечение</span><span class="tag">Инженерия</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-ajax-systems-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="perplexity ai-поисковый продукт развивает ai-поиск и ответы с веб-источниками, сочетая llm, retrieval и быстрый продуктовый интерфейс. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Perplexity" data-catalog-order="20" data-search="perplexity ai-поисковый продукт развивает ai-поиск и ответы с веб-источниками, сочетая llm, retrieval и быстрый продуктовый интерфейс. дополнительный контекст: сан-франциско, сша · search, retrieval, assistants, web answers · один из самых заметных ai search-продуктов нового цикла. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Perplexity&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>Perplexity</h3>
       <p class="meta">AI-поисковый продукт</p>
-      <p>Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс.</p>
+      <p>Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс. Дополнительный контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один из самых заметных AI search-продуктов нового цикла.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-perplexity-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="runway генеративное видео и креативные ai-инструменты создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения. искусственный интеллект дизайн стартапы artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2018" data-sort-name="Runway" data-catalog-order="21" data-search="runway генеративное видео и креативные ai-инструменты создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения. дополнительный контекст: нью-йорк, сша · video generation, media production, creator tools · генеративное видео как отдельный продуктовый сегмент. искусственный интеллект дизайн стартапы artificial intelligence design startups">
     <img src="https://logo.clearbit.com/runwayml.com" alt="Runway" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Runway&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2018</p>
       <h3>Runway</h3>
       <p class="meta">Генеративное видео и креативные AI-инструменты</p>
-      <p>Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения.</p>
+      <p>Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения. Дополнительный контекст: Нью-Йорк, США · Video generation, media production, creator tools · Генеративное видео как отдельный продуктовый сегмент.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Дизайн</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-runway-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="midjourney генеративные изображения развивает ai-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. искусственный интеллект дизайн стартапы artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2022" data-sort-name="Midjourney" data-catalog-order="22" data-search="midjourney генеративные изображения развивает ai-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. дополнительный контекст: сша · image generation, visual workflows, design exploration · один из самых сильных брендов в генеративных изображениях. искусственный интеллект дизайн стартапы artificial intelligence design startups">
     <img src="https://logo.clearbit.com/midjourney.com" alt="Midjourney" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Midjourney&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>Midjourney</h3>
       <p class="meta">Генеративные изображения</p>
-      <p>Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow.</p>
+      <p>Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. Дополнительный контекст: США · Image generation, visual workflows, design exploration · Один из самых сильных брендов в генеративных изображениях.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Дизайн</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-midjourney-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cohere enterprise llm-платформа работает над языковыми моделями и enterprise ai-решениями для поиска, автоматизации и knowledge workflows. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Канада" data-founded="2019" data-sort-name="Cohere" data-catalog-order="23" data-search="cohere enterprise llm-платформа работает над языковыми моделями и enterprise ai-решениями для поиска, автоматизации и knowledge workflows. дополнительный контекст: торонто, канада · enterprise llms, knowledge workflows, model apis · фокус на b2b-решении для языковых моделей. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/cohere.com" alt="Cohere" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cohere&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2019</p>
       <h3>Cohere</h3>
       <p class="meta">Enterprise LLM-платформа</p>
-      <p>Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows.</p>
+      <p>Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows. Дополнительный контекст: Торонто, Канада · Enterprise LLMs, knowledge workflows, model APIs · Фокус на B2B-решении для языковых моделей.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Корпоративное ПО</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-cohere-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="adept ai agents для software workflows строит агентные ai-системы для действий внутри программных интерфейсов и автоматизации knowledge work. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Adept" data-catalog-order="24" data-search="adept ai agents для software workflows строит агентные ai-системы для действий внутри программных интерфейсов и автоматизации knowledge work. дополнительный контекст: сша · software agents, ui actions, workflow automation · ставка на агентные системы, действующие внутри программной среды. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/adept.ai" alt="Adept" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Adept&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>Adept</h3>
       <p class="meta">AI agents для software workflows</p>
-      <p>Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work.</p>
+      <p>Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work. Дополнительный контекст: США · Software agents, UI actions, workflow automation · Ставка на агентные системы, действующие внутри программной среды.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-adept-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="poolside ai для разработчиков фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франция" data-founded="2023" data-sort-name="Poolside" data-catalog-order="25" data-search="poolside ai для разработчиков фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. дополнительный контекст: сша / франция · code generation, developer tools, foundation models · новый игрок в сегменте ai для software engineering. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/poolside.ai" alt="Poolside" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Poolside&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2023</p>
       <h3>Poolside</h3>
       <p class="meta">AI для разработчиков</p>
-      <p>Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows.</p>
+      <p>Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте AI для software engineering.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-poolside-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="harvey legal ai-платформа создает ai-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Harvey" data-catalog-order="26" data-search="harvey legal ai-платформа создает ai-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. дополнительный контекст: сша · legal tech, professional services, document analysis · один из самых заметных vertical ai-продуктов нового цикла. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/harvey.ai" alt="Harvey" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Harvey&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>Harvey</h3>
       <p class="meta">Legal AI-платформа</p>
-      <p>Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows.</p>
+      <p>Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical AI-продуктов нового цикла.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Корпоративное ПО</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-harvey-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="character.ai ai-платформа персонажей и разговорных агентов развивает потребительские ai-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. искусственный интеллект программирование стартапы artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2021" data-sort-name="Character.AI" data-catalog-order="27" data-search="character.ai ai-платформа персонажей и разговорных агентов развивает потребительские ai-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. дополнительный контекст: сша · conversational ai, consumer engagement, characters · выводит ai-персонажей в массовый потребительский продукт. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/character.ai" alt="Character.AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Character.AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2021</p>
       <h3>Character.AI</h3>
       <p class="meta">AI-платформа персонажей и разговорных агентов</p>
-      <p>Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия.</p>
+      <p>Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. Дополнительный контекст: США · Conversational AI, consumer engagement, characters · Выводит AI-персонажей в массовый потребительский продукт.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-character-ai-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="moonpay крипто- и финтех-инфраструктура строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows. финтех программирование стартапы fintech software startups">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Майами" data-founded="2019" data-sort-name="MoonPay" data-catalog-order="28" data-search="moonpay крипто- и финтех-инфраструктура строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows. дополнительный контекст: лондон / майами · payments, crypto onboarding, digital assets · платежный слой для цифровых активов и wallets. финтех программирование стартапы fintech software startups">
     <img src="https://logo.clearbit.com/moonpay.com" alt="MoonPay" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=MoonPay&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2019</p>
       <h3>MoonPay</h3>
       <p class="meta">Крипто- и финтех-инфраструктура</p>
-      <p>Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows.</p>
+      <p>Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows. Дополнительный контекст: Лондон / Майами · Payments, crypto onboarding, digital assets · Платежный слой для цифровых активов и wallets.</p>
       <div class="tags"><span class="tag">Финтех</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-moonpay-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="glean enterprise-поиск и knowledge ai создает корпоративный поиск и knowledge layer поверх документов, saas-данных и внутренних workflow. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2019" data-sort-name="Glean" data-catalog-order="29" data-search="glean enterprise-поиск и knowledge ai создает корпоративный поиск и knowledge layer поверх документов, saas-данных и внутренних workflow. дополнительный контекст: пало-альто, сша · internal search, knowledge access, enterprise productivity · поиск как knowledge layer для корпоративных команд. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/glean.com" alt="Glean" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Glean&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2019</p>
       <h3>Glean</h3>
       <p class="meta">Enterprise-поиск и knowledge AI</p>
-      <p>Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow.</p>
+      <p>Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow. Дополнительный контекст: Пало-Альто, США · Internal search, knowledge access, enterprise productivity · Поиск как knowledge layer для корпоративных команд.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Корпоративное ПО</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-glean-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="sierra customer ai-платформа строит ai-системы для customer experience, поддержки клиентов и enterprise conversational workflows. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2023" data-sort-name="Sierra" data-catalog-order="30" data-search="sierra customer ai-платформа строит ai-системы для customer experience, поддержки клиентов и enterprise conversational workflows. дополнительный контекст: сша · customer support, service operations, conversational ai · новый класс ai-сервиса для customer operations. искусственный интеллект корпоративное по стартапы artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/sierra.ai" alt="Sierra" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sierra&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2023</p>
       <h3>Sierra</h3>
       <p class="meta">Customer AI-платформа</p>
-      <p>Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows.</p>
+      <p>Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows. Дополнительный контекст: США · Customer support, service operations, conversational AI · Новый класс AI-сервиса для customer operations.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Корпоративное ПО</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-sierra-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="suno генеративная музыка развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. искусственный интеллект дизайн стартапы artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2022" data-sort-name="Suno" data-catalog-order="31" data-search="suno генеративная музыка развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. дополнительный контекст: сша · music generation, audio creation, creator tools · музыка как отдельный сегмент генеративного ии. искусственный интеллект дизайн стартапы artificial intelligence design startups">
     <img src="https://logo.clearbit.com/suno.com" alt="Suno" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Suno&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2022</p>
       <h3>Suno</h3>
       <p class="meta">Генеративная музыка</p>
-      <p>Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows.</p>
+      <p>Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. Дополнительный контекст: США · Music generation, audio creation, creator tools · Музыка как отдельный сегмент генеративного ИИ.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Дизайн</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-suno-ru.html">Подробнее</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="temporal платформа orchestration workflow создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов. программирование облачные технологии стартапы software cloud startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2019" data-sort-name="Temporal" data-catalog-order="32" data-search="temporal платформа orchestration workflow создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов. дополнительный контекст: сиэтл, сша · distributed systems, workflow orchestration, backend reliability · инфраструктурный подход к долгоживущим workflow и backend orchestration. программирование облачные технологии стартапы software cloud startups">
     <img src="https://logo.clearbit.com/temporal.io" alt="Temporal" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Temporal&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2019</p>
       <h3>Temporal</h3>
       <p class="meta">Платформа orchestration workflow</p>
-      <p>Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов.</p>
+      <p>Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов. Дополнительный контекст: Сиэтл, США · Distributed systems, workflow orchestration, backend reliability · Инфраструктурный подход к долгоживущим workflow и backend orchestration.</p>
       <div class="tags"><span class="tag">Программирование</span><span class="tag">Облачные технологии</span><span class="tag">Стартапы</span></div>
       <a class="btn" href="startup-temporal-ru.html">Подробнее</a>
     </div>

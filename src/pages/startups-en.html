@@ -15,377 +15,391 @@
   </div>
 </section>
 
-<section class="directory-panel" aria-label="Search the directory">
+<section class="directory-panel" data-directory-panel aria-label="Search the directory">
   <div class="directory-toolbar">
     <label class="search-label">Search the directory
       <input type="search" data-directory-search placeholder="Type a name, role, country or tag">
     </label>
     <button class="btn secondary directory-reset" type="button" data-directory-reset>Reset</button>
   </div>
+  <div class="directory-toolbar-secondary">
+    <label class="directory-select-label">Sort<select class="directory-select" data-directory-sort>
+    <option value="default">Catalog order</option>
+    <option value="newest">Newest first</option>
+    <option value="az">Name A-Z</option>
+  </select></label>
+    <label class="directory-select-label">Country<select class="directory-select" data-directory-country>
+    <option value="">All countries</option><option value="Amsterdam">Amsterdam</option><option value="Australia">Australia</option><option value="Canada">Canada</option><option value="France">France</option><option value="Kyiv">Kyiv</option><option value="Miami">Miami</option><option value="New York">New York</option><option value="Paris">Paris</option><option value="San Francisco">San Francisco</option><option value="Ukraine">Ukraine</option><option value="United Kingdom">United Kingdom</option><option value="United States">United States</option>
+  </select></label>
+    <label class="directory-select-label">Founded year<select class="directory-select" data-directory-year>
+    <option value="">All years</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2019">2019</option><option value="2018">2018</option><option value="2016">2016</option><option value="2015">2015</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2002">2002</option>
+  </select></label>
+  </div>
   <p class="directory-hint">Search by name, role, country, market segment or technology tag.</p>
-  <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">All categories</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="fintech">Fintech</button><button class="filter-chip" type="button" data-filter="operations">Operations</button><button class="filter-chip" type="button" data-filter="design">Design</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-share-hint">Filters and search stay in the URL so you can share a link.</p>
+  <div class="filter-bar" data-directory-industry-chips><button class="filter-chip active" type="button" data-filter="all">All categories</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="fintech">Fintech</button><button class="filter-chip" type="button" data-filter="operations">Operations</button><button class="filter-chip" type="button" data-filter="design">Design</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
   <p class="directory-results"><strong data-results-count>33</strong> Results found</p>
 </section>
 
-<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai ai lab and product company develops ai models and products used in business, education, software development and creative workflows. artificial intelligence software startups artificial intelligence software startups">
+<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2015" data-sort-name="OpenAI" data-catalog-order="0" data-search="openai ai lab and product company develops ai models and products used in business, education, software development and creative workflows. additional context: san francisco, united states · llm, api, chat, enterprise adoption · chatgpt and a broad model ecosystem for developers and enterprises. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=OpenAI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2015</p>
       <h3>OpenAI</h3>
       <p class="meta">AI lab and product company</p>
-      <p>Develops AI models and products used in business, education, software development and creative workflows.</p>
+      <p>Develops AI models and products used in business, education, software development and creative workflows. Additional context: San Francisco, United States · LLM, API, chat, enterprise adoption · ChatGPT and a broad model ecosystem for developers and enterprises.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-openai-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="google deepmind ai research company works on foundational ai systems, scientific challenges and google products. artificial intelligence research science artificial intelligence research science">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United Kingdom" data-founded="2010" data-sort-name="Google DeepMind" data-catalog-order="1" data-search="google deepmind ai research company works on foundational ai systems, scientific challenges and google products. alphafold, alphago and foundational ai systems. additional context: london, united kingdom · foundation research, science, google products · alphafold, alphago and foundational ai systems. artificial intelligence research science artificial intelligence research science">
     <img src="https://logo.clearbit.com/deepmind.google" alt="Google DeepMind" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Google%20DeepMind&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2010</p>
       <h3>Google DeepMind</h3>
       <p class="meta">AI research company</p>
-      <p>Works on foundational AI systems, scientific challenges and Google products.</p>
+      <p>Works on foundational AI systems, scientific challenges and Google products. AlphaFold, AlphaGo and foundational AI systems. Additional context: London, United Kingdom · Foundation research, science, Google products · AlphaFold, AlphaGo and foundational AI systems.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Research</span><span class="tag">Science</span></div>
       <a class="btn" href="startup-deepmind-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="stripe fintech infrastructure builds apis and financial infrastructure for online payments, billing, tax and global operations. fintech software operations fintech software operations">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="San Francisco" data-founded="2010" data-sort-name="Stripe" data-catalog-order="2" data-search="stripe fintech infrastructure builds apis and financial infrastructure for online payments, billing, tax and global operations. additional context: dublin / san francisco · payments api, billing, tax, financial infrastructure · developer-centric payment apis that shaped internet commerce. fintech software operations fintech software operations">
     <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Stripe&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2010</p>
       <h3>Stripe</h3>
       <p class="meta">Fintech infrastructure</p>
-      <p>Builds APIs and financial infrastructure for online payments, billing, tax and global operations.</p>
+      <p>Builds APIs and financial infrastructure for online payments, billing, tax and global operations. Additional context: Dublin / San Francisco · Payments API, billing, tax, financial infrastructure · Developer-centric payment APIs that shaped internet commerce.</p>
       <div class="tags"><span class="tag">Fintech</span><span class="tag">Software</span><span class="tag">Operations</span></div>
       <a class="btn" href="startup-stripe-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="spacex space engineering builds rockets, satellite infrastructure and commercial launch services with a focus on reuse. space engineering operations space engineering operations">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="United States" data-founded="2002" data-sort-name="SpaceX" data-catalog-order="3" data-search="spacex space engineering builds rockets, satellite infrastructure and commercial launch services with a focus on reuse. additional context: hawthorne, united states · launch, starlink, reusable rockets · reusable stages and commercial launch cadence. space engineering operations space engineering operations">
     <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SpaceX&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2002</p>
       <h3>SpaceX</h3>
       <p class="meta">Space engineering</p>
-      <p>Builds rockets, satellite infrastructure and commercial launch services with a focus on reuse.</p>
+      <p>Builds rockets, satellite infrastructure and commercial launch services with a focus on reuse. Additional context: Hawthorne, United States · Launch, Starlink, reusable rockets · Reusable stages and commercial launch cadence.</p>
       <div class="tags"><span class="tag">Space</span><span class="tag">Engineering</span><span class="tag">Operations</span></div>
       <a class="btn" href="startup-spacex-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="canva design platform gives teams and individuals simple tools for presentations, branding, video and marketing assets. design software startups design software startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="Australia" data-founded="2013" data-sort-name="Canva" data-catalog-order="4" data-search="canva design platform gives teams and individuals simple tools for presentations, branding, video and marketing assets. additional context: sydney, australia · templates, brand, video, marketing teams · mass-market design product with broad localization. design software startups design software startups">
     <img src="https://logo.clearbit.com/canva.com" alt="Canva" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Canva&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2013</p>
       <h3>Canva</h3>
       <p class="meta">Design platform</p>
-      <p>Gives teams and individuals simple tools for presentations, branding, video and marketing assets.</p>
+      <p>Gives teams and individuals simple tools for presentations, branding, video and marketing assets. Additional context: Sydney, Australia · Templates, brand, video, marketing teams · Mass-market design product with broad localization.</p>
       <div class="tags"><span class="tag">Design</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-canva-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="hugging face open-source ai platform supports a community of models, datasets and tools for machine learning. artificial intelligence open source startups artificial intelligence open source startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Paris" data-founded="2016" data-sort-name="Hugging Face" data-catalog-order="5" data-search="hugging face open-source ai platform supports a community of models, datasets and tools for machine learning. central model hub for the ml community. additional context: new york / paris · models hub, datasets, transformers ecosystem · central model hub for the ml community. artificial intelligence open source startups artificial intelligence open source startups">
     <img src="https://logo.clearbit.com/huggingface.co" alt="Hugging Face" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Hugging%20Face&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2016</p>
       <h3>Hugging Face</h3>
       <p class="meta">Open-source AI platform</p>
-      <p>Supports a community of models, datasets and tools for machine learning.</p>
+      <p>Supports a community of models, datasets and tools for machine learning. Central model hub for the ML community. Additional context: New York / Paris · Models hub, datasets, transformers ecosystem · Central model hub for the ML community.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Open source</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-hugging-face-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="figma collaborative browser-based design moved interface design into the cloud so product, design and engineering teams share one source of truth. design software startups design software startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="United States" data-founded="2012" data-sort-name="Figma" data-catalog-order="6" data-search="figma collaborative browser-based design moved interface design into the cloud so product, design and engineering teams share one source of truth. additional context: san francisco, united states · ui design, design systems, dev handoff · multiplayer design as a standard for product teams. design software startups design software startups">
     <img src="https://logo.clearbit.com/figma.com" alt="Figma" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Figma&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2012</p>
       <h3>Figma</h3>
       <p class="meta">Collaborative browser-based design</p>
-      <p>Moved interface design into the cloud so product, design and engineering teams share one source of truth.</p>
+      <p>Moved interface design into the cloud so product, design and engineering teams share one source of truth. Additional context: San Francisco, United States · UI design, design systems, dev handoff · Multiplayer design as a standard for product teams.</p>
       <div class="tags"><span class="tag">Design</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-figma-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="notion productivity and knowledge combines documents, databases, wikis and workflows for teams of many sizes. software operations startups software operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2013" data-sort-name="Notion" data-catalog-order="7" data-search="notion productivity and knowledge combines documents, databases, wikis and workflows for teams of many sizes. flexible databases inside a doc-like workspace. additional context: san francisco, united states · knowledge base, wiki, team productivity · flexible databases inside a doc-like workspace. software operations startups software operations startups">
     <img src="https://logo.clearbit.com/notion.so" alt="Notion" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Notion&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2013</p>
       <h3>Notion</h3>
       <p class="meta">Productivity and knowledge</p>
-      <p>Combines documents, databases, wikis and workflows for teams of many sizes.</p>
+      <p>Combines documents, databases, wikis and workflows for teams of many sizes. Flexible databases inside a doc-like workspace. Additional context: San Francisco, United States · Knowledge base, wiki, team productivity · Flexible databases inside a doc-like workspace.</p>
       <div class="tags"><span class="tag">Software</span><span class="tag">Operations</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-notion-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="anthropic ai safety and models develops assistants and safety research focused on controllable and useful ai systems. artificial intelligence research startups artificial intelligence research startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2021" data-sort-name="Anthropic" data-catalog-order="8" data-search="anthropic ai safety and models develops assistants and safety research focused on controllable and useful ai systems. additional context: san francisco, united states · ai assistants, model apis, enterprise adoption · claude, constitutional ai and safer model scaling. artificial intelligence research startups artificial intelligence research startups">
     <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Anthropic&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2021</p>
       <h3>Anthropic</h3>
       <p class="meta">AI safety and models</p>
-      <p>Develops assistants and safety research focused on controllable and useful AI systems.</p>
+      <p>Develops assistants and safety research focused on controllable and useful AI systems. Additional context: San Francisco, United States · AI assistants, model APIs, enterprise adoption · Claude, constitutional AI and safer model scaling.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Research</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-anthropic-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="mistral ai european ai models builds open and commercial ai models, strengthening the european ai ecosystem. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="France" data-founded="2023" data-sort-name="Mistral AI" data-catalog-order="9" data-search="mistral ai european ai models builds open and commercial ai models, strengthening the european ai ecosystem. additional context: paris, france · open models, european ai, inference products · one of the most visible european ai companies of the new cycle. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/mistral.ai" alt="Mistral AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mistral%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2023</p>
       <h3>Mistral AI</h3>
       <p class="meta">European AI models</p>
-      <p>Builds open and commercial AI models, strengthening the European AI ecosystem.</p>
+      <p>Builds open and commercial AI models, strengthening the European AI ecosystem. Additional context: Paris, France · Open models, European AI, inference products · One of the most visible European AI companies of the new cycle.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-mistral-ai-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="databricks data and ai platform combines lakehouse architecture, analytics, ml and data governance for enterprises. artificial intelligence cloud enterprise software artificial intelligence cloud enterprise software">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2013" data-sort-name="Databricks" data-catalog-order="10" data-search="databricks data and ai platform combines lakehouse architecture, analytics, ml and data governance for enterprises. additional context: san francisco, united states · data engineering, ml, analytics, governance · lakehouse architecture bridging warehouses and ml. artificial intelligence cloud enterprise software artificial intelligence cloud enterprise software">
     <img src="https://logo.clearbit.com/databricks.com" alt="Databricks" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Databricks&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2013</p>
       <h3>Databricks</h3>
       <p class="meta">Data and AI platform</p>
-      <p>Combines lakehouse architecture, analytics, ML and data governance for enterprises.</p>
+      <p>Combines lakehouse architecture, analytics, ML and data governance for enterprises. Additional context: San Francisco, United States · Data engineering, ML, analytics, governance · Lakehouse architecture bridging warehouses and ML.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Cloud</span><span class="tag">Enterprise software</span></div>
       <a class="btn" href="startup-databricks-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="grammarly ai writing assistance a ukrainian-founded company helping people write more clearly, accurately and professionally. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="San Francisco" data-founded="2009" data-sort-name="Grammarly" data-catalog-order="11" data-search="grammarly ai writing assistance a ukrainian-founded company helping people write more clearly, accurately and professionally. additional context: kyiv / san francisco · writing assistance, communication, productivity · global product with ukrainian roots in writing ai. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Grammarly&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2009</p>
       <h3>Grammarly</h3>
       <p class="meta">AI writing assistance</p>
-      <p>A Ukrainian-founded company helping people write more clearly, accurately and professionally.</p>
+      <p>A Ukrainian-founded company helping people write more clearly, accurately and professionally. Additional context: Kyiv / San Francisco · Writing assistance, communication, productivity · Global product with Ukrainian roots in writing AI.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-grammarly-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="preply edtech marketplace a ukrainian-rooted platform for online language learning with tutors around the world. education software startups education software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Kyiv" data-founded="2012" data-sort-name="Preply" data-catalog-order="12" data-search="preply edtech marketplace a ukrainian-rooted platform for online language learning with tutors around the world. global two-sided marketplace for language education. additional context: barcelona / kyiv · language learning, marketplace, edtech · global two-sided marketplace for language education. education software startups education software startups">
     <img src="https://logo.clearbit.com/preply.com" alt="Preply" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Preply&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2012</p>
       <h3>Preply</h3>
       <p class="meta">EdTech marketplace</p>
-      <p>A Ukrainian-rooted platform for online language learning with tutors around the world.</p>
+      <p>A Ukrainian-rooted platform for online language learning with tutors around the world. Global two-sided marketplace for language education. Additional context: Barcelona / Kyiv · Language learning, marketplace, EdTech · Global two-sided marketplace for language education.</p>
       <div class="tags"><span class="tag">Education</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-preply-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="gitlab devops platform provides tools for repositories, ci/cd, security and collaborative software development. software open source operations software open source operations">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Amsterdam" data-founded="2011" data-sort-name="GitLab" data-catalog-order="13" data-search="gitlab devops platform provides tools for repositories, ci/cd, security and collaborative software development. additional context: san francisco / amsterdam · git, ci/cd, security scanning, collaboration · full devops lifecycle in one application. software open source operations software open source operations">
     <img src="https://logo.clearbit.com/gitlab.com" alt="GitLab" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=GitLab&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2011</p>
       <h3>GitLab</h3>
       <p class="meta">DevOps platform</p>
-      <p>Provides tools for repositories, CI/CD, security and collaborative software development.</p>
+      <p>Provides tools for repositories, CI/CD, security and collaborative software development. Additional context: San Francisco / Amsterdam · Git, CI/CD, security scanning, collaboration · Full DevOps lifecycle in one application.</p>
       <div class="tags"><span class="tag">Software</span><span class="tag">Open source</span><span class="tag">Operations</span></div>
       <a class="btn" href="startup-gitlab-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="scale ai data for ai supports data preparation and evaluation workflows for companies building ai systems. artificial intelligence operations startups artificial intelligence operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="United States" data-founded="2016" data-sort-name="Scale AI" data-catalog-order="14" data-search="scale ai data for ai supports data preparation and evaluation workflows for companies building ai systems. additional context: san francisco, united states · training data, evaluation, ai operations · data preparation infrastructure for modern models. artificial intelligence operations startups artificial intelligence operations startups">
     <img src="https://logo.clearbit.com/scale.com" alt="Scale AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Scale%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2016</p>
       <h3>Scale AI</h3>
       <p class="meta">Data for AI</p>
-      <p>Supports data preparation and evaluation workflows for companies building AI systems.</p>
+      <p>Supports data preparation and evaluation workflows for companies building AI systems. Additional context: San Francisco, United States · Training data, evaluation, AI operations · Data preparation infrastructure for modern models.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Operations</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-scale-ai-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cursor ai tooling for developers builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2023" data-sort-name="Cursor" data-catalog-order="15" data-search="cursor ai tooling for developers builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. additional context: united states · ai coding, codebase navigation, engineering workflows · combining an ai assistant, codebase search and an editor for developers. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/cursor.com" alt="Cursor" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cursor&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2023</p>
       <h3>Cursor</h3>
       <p class="meta">AI tooling for developers</p>
-      <p>Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation.</p>
+      <p>Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. Additional context: United States · AI coding, codebase navigation, engineering workflows · Combining an AI assistant, codebase search and an editor for developers.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-cursor-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="vercel cloud platform for frontend teams supports deployment, edge infrastructure and product velocity for modern web teams. cloud software startups cloud software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2015" data-sort-name="Vercel" data-catalog-order="16" data-search="vercel cloud platform for frontend teams supports deployment, edge infrastructure and product velocity for modern web teams. additional context: san francisco, united states · next.js ecosystem, serverless, edge delivery · fast frontend deployment and dx for the modern web. cloud software startups cloud software startups">
     <img src="https://logo.clearbit.com/vercel.com" alt="Vercel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Vercel&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2015</p>
       <h3>Vercel</h3>
       <p class="meta">Cloud platform for frontend teams</p>
-      <p>Supports deployment, edge infrastructure and product velocity for modern web teams.</p>
+      <p>Supports deployment, edge infrastructure and product velocity for modern web teams. Additional context: San Francisco, United States · Next.js ecosystem, serverless, edge delivery · Fast frontend deployment and DX for the modern web.</p>
       <div class="tags"><span class="tag">Cloud</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-vercel-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="elevenlabs generative voice ai develops speech synthesis, voice agents and multilingual audio products for media, education and business. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="New York" data-founded="2022" data-sort-name="ElevenLabs" data-catalog-order="17" data-search="elevenlabs generative voice ai develops speech synthesis, voice agents and multilingual audio products for media, education and business. additional context: london / new york · speech synthesis, voice agents, audio products · rapid growth in generative audio. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=ElevenLabs&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>ElevenLabs</h3>
       <p class="meta">Generative voice AI</p>
-      <p>Develops speech synthesis, voice agents and multilingual audio products for media, education and business.</p>
+      <p>Develops speech synthesis, voice agents and multilingual audio products for media, education and business. Additional context: London / New York · Speech synthesis, voice agents, audio products · Rapid growth in generative audio.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-elevenlabs-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="revolut global fintech platform combines banking, cards, business accounts and international financial operations in one app. fintech operations startups fintech operations startups">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="United Kingdom" data-founded="2015" data-sort-name="Revolut" data-catalog-order="18" data-search="revolut global fintech platform combines banking, cards, business accounts and international financial operations in one app. additional context: london, united kingdom · cards, fx, business accounts, global banking · fast international scaling of fintech features. fintech operations startups fintech operations startups">
     <img src="https://logo.clearbit.com/revolut.com" alt="Revolut" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Revolut&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2015</p>
       <h3>Revolut</h3>
       <p class="meta">Global fintech platform</p>
-      <p>Combines banking, cards, business accounts and international financial operations in one app.</p>
+      <p>Combines banking, cards, business accounts and international financial operations in one app. Additional context: London, United Kingdom · Cards, FX, business accounts, global banking · Fast international scaling of fintech features.</p>
       <div class="tags"><span class="tag">Fintech</span><span class="tag">Operations</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-revolut-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="hardware" data-search="ajax systems ukrainian hardware and security tech builds security systems, sensors and communications infrastructure for homes and businesses worldwide. hardware engineering startups hardware engineering startups">
+<article class="card startup-card" data-directory-card data-filter-key="hardware" data-country="Ukraine" data-founded="2011" data-sort-name="Ajax Systems" data-catalog-order="19" data-search="ajax systems ukrainian hardware and security tech builds security systems, sensors and communications infrastructure for homes and businesses worldwide. additional context: kyiv, ukraine · intrusion sensors, hubs, global retail · ukrainian hardware brand with international partner network. hardware engineering startups hardware engineering startups">
     <img src="https://logo.clearbit.com/ajax.systems" alt="Ajax Systems" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ajax%20Systems&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2011</p>
       <h3>Ajax Systems</h3>
       <p class="meta">Ukrainian hardware and security tech</p>
-      <p>Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.</p>
+      <p>Builds security systems, sensors and communications infrastructure for homes and businesses worldwide. Additional context: Kyiv, Ukraine · Intrusion sensors, hubs, global retail · Ukrainian hardware brand with international partner network.</p>
       <div class="tags"><span class="tag">Hardware</span><span class="tag">Engineering</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-ajax-systems-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="perplexity ai search product builds ai-native search and answer experiences by combining llms, retrieval and a fast product interface. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2022" data-sort-name="Perplexity" data-catalog-order="20" data-search="perplexity ai search product builds ai-native search and answer experiences by combining llms, retrieval and a fast product interface. additional context: san francisco, united states · search, retrieval, assistants, web answers · one of the most visible ai search products of the new cycle. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Perplexity&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>Perplexity</h3>
       <p class="meta">AI search product</p>
-      <p>Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface.</p>
+      <p>Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface. Additional context: San Francisco, United States · Search, retrieval, assistants, web answers · One of the most visible AI search products of the new cycle.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-perplexity-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="runway generative video and creative ai tools builds products for generative video, media production and next-generation creative workflows. artificial intelligence design startups artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="United States" data-founded="2018" data-sort-name="Runway" data-catalog-order="21" data-search="runway generative video and creative ai tools builds products for generative video, media production and next-generation creative workflows. additional context: new york, united states · video generation, media production, creator tools · turning generative video into a standalone product segment. artificial intelligence design startups artificial intelligence design startups">
     <img src="https://logo.clearbit.com/runwayml.com" alt="Runway" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Runway&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2018</p>
       <h3>Runway</h3>
       <p class="meta">Generative video and creative AI tools</p>
-      <p>Builds products for generative video, media production and next-generation creative workflows.</p>
+      <p>Builds products for generative video, media production and next-generation creative workflows. Additional context: New York, United States · Video generation, media production, creator tools · Turning generative video into a standalone product segment.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Design</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-runway-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="midjourney generative imaging company builds image-generation ai systems that became part of modern design and visual workflows. artificial intelligence design startups artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="United States" data-founded="2022" data-sort-name="Midjourney" data-catalog-order="22" data-search="midjourney generative imaging company builds image-generation ai systems that became part of modern design and visual workflows. additional context: united states · image generation, visual workflows, design exploration · one of the strongest brands in generative imaging. artificial intelligence design startups artificial intelligence design startups">
     <img src="https://logo.clearbit.com/midjourney.com" alt="Midjourney" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Midjourney&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>Midjourney</h3>
       <p class="meta">Generative imaging company</p>
-      <p>Builds image-generation AI systems that became part of modern design and visual workflows.</p>
+      <p>Builds image-generation AI systems that became part of modern design and visual workflows. Additional context: United States · Image generation, visual workflows, design exploration · One of the strongest brands in generative imaging.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Design</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-midjourney-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cohere enterprise llm platform develops language models and enterprise ai products for search, automation and knowledge workflows. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Canada" data-founded="2019" data-sort-name="Cohere" data-catalog-order="23" data-search="cohere enterprise llm platform develops language models and enterprise ai products for search, automation and knowledge workflows. additional context: toronto, canada · enterprise llms, knowledge workflows, model apis · a strong b2b focus for language-model deployment. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/cohere.com" alt="Cohere" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cohere&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2019</p>
       <h3>Cohere</h3>
       <p class="meta">Enterprise LLM platform</p>
-      <p>Develops language models and enterprise AI products for search, automation and knowledge workflows.</p>
+      <p>Develops language models and enterprise AI products for search, automation and knowledge workflows. Additional context: Toronto, Canada · Enterprise LLMs, knowledge workflows, model APIs · A strong B2B focus for language-model deployment.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Enterprise software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-cohere-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="adept ai agents for software workflows builds agentic ai systems for acting inside software interfaces and automating knowledge work. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2022" data-sort-name="Adept" data-catalog-order="24" data-search="adept ai agents for software workflows builds agentic ai systems for acting inside software interfaces and automating knowledge work. additional context: united states · software agents, ui actions, workflow automation · a bet on agents that act inside software environments. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/adept.ai" alt="Adept" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Adept&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>Adept</h3>
       <p class="meta">AI agents for software workflows</p>
-      <p>Builds agentic AI systems for acting inside software interfaces and automating knowledge work.</p>
+      <p>Builds agentic AI systems for acting inside software interfaces and automating knowledge work. Additional context: United States · Software agents, UI actions, workflow automation · A bet on agents that act inside software environments.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-adept-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="poolside ai for software developers focuses on foundation models and products for software engineering teams and code-generation workflows. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="France" data-founded="2023" data-sort-name="Poolside" data-catalog-order="25" data-search="poolside ai for software developers focuses on foundation models and products for software engineering teams and code-generation workflows. additional context: united states / france · code generation, developer tools, foundation models · a new entrant in ai for software engineering. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/poolside.ai" alt="Poolside" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Poolside&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2023</p>
       <h3>Poolside</h3>
       <p class="meta">AI for software developers</p>
-      <p>Focuses on foundation models and products for software engineering teams and code-generation workflows.</p>
+      <p>Focuses on foundation models and products for software engineering teams and code-generation workflows. Additional context: United States / France · Code generation, developer tools, foundation models · A new entrant in AI for software engineering.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-poolside-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="harvey legal ai platform builds ai tools for legal teams, document analysis and professional knowledge workflows. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2022" data-sort-name="Harvey" data-catalog-order="26" data-search="harvey legal ai platform builds ai tools for legal teams, document analysis and professional knowledge workflows. additional context: united states · legal tech, professional services, document analysis · one of the most visible vertical-ai products of the new cycle. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/harvey.ai" alt="Harvey" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Harvey&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>Harvey</h3>
       <p class="meta">Legal AI platform</p>
-      <p>Builds AI tools for legal teams, document analysis and professional knowledge workflows.</p>
+      <p>Builds AI tools for legal teams, document analysis and professional knowledge workflows. Additional context: United States · Legal tech, professional services, document analysis · One of the most visible vertical-AI products of the new cycle.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Enterprise software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-harvey-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="character.ai ai character and conversational platform builds consumer ai products around personalised characters, chat experiences and long-session engagement. artificial intelligence software startups artificial intelligence software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2021" data-sort-name="Character.AI" data-catalog-order="27" data-search="character.ai ai character and conversational platform builds consumer ai products around personalised characters, chat experiences and long-session engagement. additional context: united states · conversational ai, consumer engagement, characters · bringing ai characters into a mass consumer product. artificial intelligence software startups artificial intelligence software startups">
     <img src="https://logo.clearbit.com/character.ai" alt="Character.AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Character.AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2021</p>
       <h3>Character.AI</h3>
       <p class="meta">AI character and conversational platform</p>
-      <p>Builds consumer AI products around personalised characters, chat experiences and long-session engagement.</p>
+      <p>Builds consumer AI products around personalised characters, chat experiences and long-session engagement. Additional context: United States · Conversational AI, consumer engagement, characters · Bringing AI characters into a mass consumer product.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-character-ai-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="moonpay crypto and fintech infrastructure builds payment and onboarding infrastructure for digital assets, wallets and global payment flows. fintech software startups fintech software startups">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Miami" data-founded="2019" data-sort-name="MoonPay" data-catalog-order="28" data-search="moonpay crypto and fintech infrastructure builds payment and onboarding infrastructure for digital assets, wallets and global payment flows. additional context: london / miami · payments, crypto onboarding, digital assets · a payment layer for digital assets and wallets. fintech software startups fintech software startups">
     <img src="https://logo.clearbit.com/moonpay.com" alt="MoonPay" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=MoonPay&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2019</p>
       <h3>MoonPay</h3>
       <p class="meta">Crypto and fintech infrastructure</p>
-      <p>Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows.</p>
+      <p>Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows. Additional context: London / Miami · Payments, crypto onboarding, digital assets · A payment layer for digital assets and wallets.</p>
       <div class="tags"><span class="tag">Fintech</span><span class="tag">Software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-moonpay-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="glean enterprise search and knowledge ai builds enterprise search and a knowledge layer across documents, saas data and internal workflows. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2019" data-sort-name="Glean" data-catalog-order="29" data-search="glean enterprise search and knowledge ai builds enterprise search and a knowledge layer across documents, saas data and internal workflows. additional context: palo alto, united states · internal search, knowledge access, enterprise productivity · search as a knowledge layer for enterprise teams. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/glean.com" alt="Glean" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Glean&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2019</p>
       <h3>Glean</h3>
       <p class="meta">Enterprise search and knowledge AI</p>
-      <p>Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows.</p>
+      <p>Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows. Additional context: Palo Alto, United States · Internal search, knowledge access, enterprise productivity · Search as a knowledge layer for enterprise teams.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Enterprise software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-glean-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="sierra customer ai platform builds ai systems for customer experience, support operations and enterprise conversational workflows. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2023" data-sort-name="Sierra" data-catalog-order="30" data-search="sierra customer ai platform builds ai systems for customer experience, support operations and enterprise conversational workflows. additional context: united states · customer support, service operations, conversational ai · a new class of ai service for customer operations. artificial intelligence enterprise software startups artificial intelligence enterprise software startups">
     <img src="https://logo.clearbit.com/sierra.ai" alt="Sierra" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sierra&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2023</p>
       <h3>Sierra</h3>
       <p class="meta">Customer AI platform</p>
-      <p>Builds AI systems for customer experience, support operations and enterprise conversational workflows.</p>
+      <p>Builds AI systems for customer experience, support operations and enterprise conversational workflows. Additional context: United States · Customer support, service operations, conversational AI · A new class of AI service for customer operations.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Enterprise software</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-sierra-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="design" data-search="suno generative music platform develops generative music models and products for creating audio, songs and new creative workflows. artificial intelligence design startups artificial intelligence design startups">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="United States" data-founded="2022" data-sort-name="Suno" data-catalog-order="31" data-search="suno generative music platform develops generative music models and products for creating audio, songs and new creative workflows. additional context: united states · music generation, audio creation, creator tools · music as a standalone generative-ai segment. artificial intelligence design startups artificial intelligence design startups">
     <img src="https://logo.clearbit.com/suno.com" alt="Suno" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Suno&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2022</p>
       <h3>Suno</h3>
       <p class="meta">Generative music platform</p>
-      <p>Develops generative music models and products for creating audio, songs and new creative workflows.</p>
+      <p>Develops generative music models and products for creating audio, songs and new creative workflows. Additional context: United States · Music generation, audio creation, creator tools · Music as a standalone generative-AI segment.</p>
       <div class="tags"><span class="tag">Artificial intelligence</span><span class="tag">Design</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-suno-en.html">Learn more</a>
     </div>
   </article>
-<article class="card startup-card" data-directory-card data-filter-key="software" data-search="temporal workflow orchestration platform builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes. software cloud startups software cloud startups">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="United States" data-founded="2019" data-sort-name="Temporal" data-catalog-order="32" data-search="temporal workflow orchestration platform builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes. additional context: seattle, united states · distributed systems, workflow orchestration, backend reliability · an infrastructure-first approach to long-running workflows and backend orchestration. software cloud startups software cloud startups">
     <img src="https://logo.clearbit.com/temporal.io" alt="Temporal" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Temporal&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Founded 2019</p>
       <h3>Temporal</h3>
       <p class="meta">Workflow orchestration platform</p>
-      <p>Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes.</p>
+      <p>Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes. Additional context: Seattle, United States · Distributed systems, workflow orchestration, backend reliability · An infrastructure-first approach to long-running workflows and backend orchestration.</p>
       <div class="tags"><span class="tag">Software</span><span class="tag">Cloud</span><span class="tag">Startups</span></div>
       <a class="btn" href="startup-temporal-en.html">Learn more</a>
     </div>

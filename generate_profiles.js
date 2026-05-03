@@ -154,7 +154,18 @@ const tr = {
     ],
     startupFilters: {
       all: 'Усі категорії'
-    }
+    },
+    directorySort: 'Сортування',
+    directorySortDefault: 'Як у каталозі',
+    directorySortNewest: 'Спочатку новіші',
+    directorySortAZ: 'За іменем A-Z',
+    directoryFilterCountry: 'Країна',
+    directoryFilterCountryAll: 'Усі країни',
+    directoryFilterIndustry: 'Індустрія / напрям',
+    directoryFilterIndustryAll: 'Усі напрями',
+    directoryFilterYear: 'Рік заснування',
+    directoryFilterYearAll: 'Усі роки',
+    directoryShareHint: 'Фільтри й пошук зберігаються в адресі сторінки — можна поділитися посиланням.'
   },
   en: {
     siteTitle: 'Rybezh - professional specialist and startup directory',
@@ -301,7 +312,18 @@ const tr = {
     ],
     startupFilters: {
       all: 'All categories'
-    }
+    },
+    directorySort: 'Sort',
+    directorySortDefault: 'Catalog order',
+    directorySortNewest: 'Newest first',
+    directorySortAZ: 'Name A-Z',
+    directoryFilterCountry: 'Country',
+    directoryFilterCountryAll: 'All countries',
+    directoryFilterIndustry: 'Industry',
+    directoryFilterIndustryAll: 'All industries',
+    directoryFilterYear: 'Founded year',
+    directoryFilterYearAll: 'All years',
+    directoryShareHint: 'Filters and search stay in the URL so you can share a link.'
   },
   es: {
     siteTitle: 'Rybezh - directorio profesional de especialistas y startups',
@@ -448,7 +470,18 @@ const tr = {
     ],
     startupFilters: {
       all: 'Todas las categorías'
-    }
+    },
+    directorySort: 'Ordenar',
+    directorySortDefault: 'Orden del catálogo',
+    directorySortNewest: 'Más recientes',
+    directorySortAZ: 'Nombre A-Z',
+    directoryFilterCountry: 'País',
+    directoryFilterCountryAll: 'Todos los países',
+    directoryFilterIndustry: 'Industria',
+    directoryFilterIndustryAll: 'Todas las industrias',
+    directoryFilterYear: 'Año de fundación',
+    directoryFilterYearAll: 'Todos los años',
+    directoryShareHint: 'Los filtros y la búsqueda se guardan en la URL para compartir el enlace.'
   },
   ru: {
     siteTitle: 'Rybezh - профессиональная база специалистов и стартапов',
@@ -595,7 +628,18 @@ const tr = {
     ],
     startupFilters: {
       all: 'Все категории'
-    }
+    },
+    directorySort: 'Сортировка',
+    directorySortDefault: 'Как в каталоге',
+    directorySortNewest: 'Сначала новые',
+    directorySortAZ: 'По имени A-Z',
+    directoryFilterCountry: 'Страна',
+    directoryFilterCountryAll: 'Все страны',
+    directoryFilterIndustry: 'Индустрия / направление',
+    directoryFilterIndustryAll: 'Все направления',
+    directoryFilterYear: 'Год основания',
+    directoryFilterYearAll: 'Все годы',
+    directoryShareHint: 'Фильтры и поиск сохраняются в адресе страницы — ссылку можно передать.'
   }
 };
 
@@ -668,17 +712,43 @@ function startupKey(company) {
 
 function filterButtons(keys, labels, lang, allLabel) {
   const items = [...new Set(keys)].filter(Boolean);
-  return `<div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">${escapeHtml(allLabel)}</button>${items.map(key => `<button class="filter-chip" type="button" data-filter="${escapeHtml(key)}">${escapeHtml(labels[key]?.[lang] || key)}</button>`).join('')}</div>`;
+  return `<div class="filter-bar" data-directory-industry-chips><button class="filter-chip active" type="button" data-filter="all">${escapeHtml(allLabel)}</button>${items.map(key => `<button class="filter-chip" type="button" data-filter="${escapeHtml(key)}">${escapeHtml(labels[key]?.[lang] || key)}</button>`).join('')}</div>`;
+}
+
+function directorySortSelect(lang) {
+  const l = tr[lang];
+  return `<label class="directory-select-label">${escapeHtml(l.directorySort)}<select class="directory-select" data-directory-sort>
+    <option value="default">${escapeHtml(l.directorySortDefault)}</option>
+    <option value="newest">${escapeHtml(l.directorySortNewest)}</option>
+    <option value="az">${escapeHtml(l.directorySortAZ)}</option>
+  </select></label>`;
+}
+
+function directoryCountrySelect(lang, countries) {
+  const l = tr[lang];
+  const opts = [...new Set(countries.map(c => String(c || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, lang === 'uk' ? 'uk' : lang));
+  return `<label class="directory-select-label">${escapeHtml(l.directoryFilterCountry)}<select class="directory-select" data-directory-country>
+    <option value="">${escapeHtml(l.directoryFilterCountryAll)}</option>${opts.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('')}
+  </select></label>`;
+}
+
+function directoryYearSelect(lang, years) {
+  const l = tr[lang];
+  const opts = [...new Set(years.map(y => String(y || '').trim()).filter(Boolean))].sort((a, b) => Number(b) - Number(a));
+  return `<label class="directory-select-label">${escapeHtml(l.directoryFilterYear)}<select class="directory-select" data-directory-year>
+    <option value="">${escapeHtml(l.directoryFilterYearAll)}</option>${opts.map(y => `<option value="${escapeHtml(y)}">${escapeHtml(y)}</option>`).join('')}
+  </select></label>`;
 }
 
 function cardSearchValue(parts) {
   return parts.join(' ').toLowerCase();
 }
 
-function profileCard(person, lang) {
+function profileCard(person, lang, orderIndex = 0) {
   const rubric = firstTagKey(person);
-  const haystack = cardSearchValue([person.name[lang], person.role[lang], person.country[lang], ...(person.tags[lang] || []), ...(person.tags.en || [])]);
-  return `<article class="card profile-card" data-directory-card data-filter-key="${escapeHtml(rubric)}" data-search="${escapeHtml(haystack)}">
+  const countryLabel = String(person.country[lang] ?? '').trim();
+  const haystack = cardSearchValue([person.name[lang], person.role[lang], countryLabel, ...(person.tags[lang] || []), ...(person.tags.en || [])]);
+  return `<article class="card profile-card" data-directory-card data-filter-key="${escapeHtml(rubric)}" data-country="${escapeHtml(countryLabel)}" data-sort-name="${escapeHtml(person.name[lang])}" data-catalog-order="${orderIndex}" data-search="${escapeHtml(haystack)}">
     ${image(person.image, person.name[lang])}
     <div class="card-body">
       <p class="eyebrow">${escapeHtml(person.country[lang])}</p>
@@ -690,10 +760,11 @@ function profileCard(person, lang) {
   </article>`;
 }
 
-function startupCard(company, lang) {
+function startupCard(company, lang, orderIndex = 0) {
   const key = startupKey(company);
+  const hqCountry = String(company.hqCountry?.[lang] ?? '').trim();
   const haystack = cardSearchValue([company.name, company.category[lang], company.summary[lang], ...(company.tags[lang] || []), ...(company.tags.en || [])]);
-  return `<article class="card startup-card" data-directory-card data-filter-key="${escapeHtml(key)}" data-search="${escapeHtml(haystack)}">
+  return `<article class="card startup-card" data-directory-card data-filter-key="${escapeHtml(key)}" data-country="${escapeHtml(hqCountry)}" data-founded="${escapeHtml(company.founded)}" data-sort-name="${escapeHtml(company.name)}" data-catalog-order="${orderIndex}" data-search="${escapeHtml(haystack)}">
     ${image(company.image, company.name)}
     <div class="card-body">
       <p class="eyebrow">${escapeHtml(tr[lang].founded)} ${escapeHtml(company.founded)}</p>
@@ -733,11 +804,11 @@ function insightCards(lang) {
 }
 
 function compactCards(list, lang, count = 6) {
-  return list.slice(0, count).map(entry => profileCard(entry, lang)).join('\n');
+  return list.slice(0, count).map((entry, idx) => profileCard(entry, lang, idx)).join('\n');
 }
 
 function compactStartupCards(list, lang, count = 6) {
-  return list.slice(0, count).map(entry => startupCard(entry, lang)).join('\n');
+  return list.slice(0, count).map((entry, idx) => startupCard(entry, lang, idx)).join('\n');
 }
 
 function countCard(value, label) {
@@ -980,19 +1051,24 @@ function writeSpecialists(lang, specialists) {
   </div>
 </section>
 
-<section class="directory-panel" aria-label="${escapeHtml(l.searchLabel)}">
+<section class="directory-panel" data-directory-panel aria-label="${escapeHtml(l.searchLabel)}">
   <div class="directory-toolbar">
     <label class="search-label">${escapeHtml(l.searchLabel)}
       <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
     </label>
     <button class="btn secondary directory-reset" type="button" data-directory-reset>${escapeHtml(l.resetFilters)}</button>
   </div>
+  <div class="directory-toolbar-secondary">
+    ${directorySortSelect(lang)}
+    ${directoryCountrySelect(lang, specialists.map(person => person.country[lang]))}
+  </div>
   <p class="directory-hint">${escapeHtml(l.searchHint)}</p>
+  <p class="directory-share-hint">${escapeHtml(l.directoryShareHint)}</p>
   ${filterButtons(specialists.map(firstTagKey), rubricLabels, lang, l.filterAll)}
   <p class="directory-results"><strong data-results-count>${specialists.length}</strong> ${escapeHtml(l.resultsLabel)}</p>
 </section>
 
-<section class="grid" data-directory-grid>${specialists.map(person => profileCard(person, lang)).join('\n')}</section>
+<section class="grid" data-directory-grid>${specialists.map((person, idx) => profileCard(person, lang, idx)).join('\n')}</section>
 <p class="empty-state" data-empty-state hidden>${escapeHtml(l.emptyState)}</p>
 
 <section class="split-panel">
@@ -1025,19 +1101,25 @@ function writeStartups(lang, startups) {
   </div>
 </section>
 
-<section class="directory-panel" aria-label="${escapeHtml(l.searchLabel)}">
+<section class="directory-panel" data-directory-panel aria-label="${escapeHtml(l.searchLabel)}">
   <div class="directory-toolbar">
     <label class="search-label">${escapeHtml(l.searchLabel)}
       <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
     </label>
     <button class="btn secondary directory-reset" type="button" data-directory-reset>${escapeHtml(l.resetFilters)}</button>
   </div>
+  <div class="directory-toolbar-secondary">
+    ${directorySortSelect(lang)}
+    ${directoryCountrySelect(lang, startups.map(company => company.hqCountry?.[lang]))}
+    ${directoryYearSelect(lang, startups.map(company => company.founded))}
+  </div>
   <p class="directory-hint">${escapeHtml(l.searchHint)}</p>
+  <p class="directory-share-hint">${escapeHtml(l.directoryShareHint)}</p>
   ${filterButtons(startups.map(startupKey), startupLabels, lang, l.startupFilters.all)}
   <p class="directory-results"><strong data-results-count>${startups.length}</strong> ${escapeHtml(l.resultsLabel)}</p>
 </section>
 
-<section class="grid startup-grid" data-directory-grid>${startups.map(company => startupCard(company, lang)).join('\n')}</section>
+<section class="grid startup-grid" data-directory-grid>${startups.map((company, idx) => startupCard(company, lang, idx)).join('\n')}</section>
 <p class="empty-state" data-empty-state hidden>${escapeHtml(l.emptyState)}</p>
 
 <section class="split-panel">
