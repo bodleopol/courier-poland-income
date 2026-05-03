@@ -1,3 +1,11 @@
+
+.brand img {
+  display: block;
+  width: 180px;
+  height: 40px;
+  object-fit: contain;
+}
+
 :root {
     --bg: #f4f7fb;
     --surface: #ffffff;
