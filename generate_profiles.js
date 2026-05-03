@@ -684,7 +684,20 @@ const description = (text, max = 160) => {
   return clean.length > max ? `${clean.slice(0, max - 1).trim()}...` : clean;
 };
 const fallback = alt => `https://ui-avatars.com/api/?name=${encodeURIComponent(alt)}&size=720&background=eef4ff&color=2563eb&bold=true`;
-const image = (src, alt, className = '') => `<img src="${escapeHtml(src || fallback(alt))}" alt="${escapeHtml(alt)}"${className ? ` class="${className}"` : ''} loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback(alt)}';">`;
+const localProfileFallbacks = new Map([
+  ['Emad Mostaque', 'assets/images/person-emad-mostaque-placeholder.svg'],
+  ['Емад Мостак', 'assets/images/person-emad-mostaque-placeholder.svg'],
+  ['Эмад Мостак', 'assets/images/person-emad-mostaque-placeholder.svg'],
+  ['Patrick Brown', 'assets/images/person-patrick-brown-placeholder.svg'],
+  ['Патрік Браун', 'assets/images/person-patrick-brown-placeholder.svg'],
+  ['Патрик Браун', 'assets/images/person-patrick-brown-placeholder.svg']
+]);
+const resolveImage = (src, alt) => {
+  const fallbackLocal = localProfileFallbacks.get(String(alt || '').trim());
+  if (src && !String(src).includes('ui-avatars.com')) return src;
+  return fallbackLocal || src || fallback(alt);
+};
+const image = (src, alt, className = '') => `<img src="${escapeHtml(resolveImage(src, alt))}" alt="${escapeHtml(alt)}"${className ? ` class="${className}"` : ''} loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback(alt)}';">`;
 function heroFacepile(specialists, lang) {
   const picks = specialists.filter(person => person.slug !== 'bohdan-tiutenko').slice(0, 5);
   if (!picks.length) return '';
@@ -951,6 +964,10 @@ function writeProfilePage(person, specialists, lang) {
     <h3>${escapeHtml(l.biography)}</h3>
     <p>${escapeHtml(person.bio[lang])}</p>
   </section>
+  ${person.slug === 'bohdan-tiutenko' ? `<section class="profile-verification">
+    <h3>${escapeHtml(lang === 'en' ? 'Verification and editorial standards' : lang === 'es' ? 'Verificación y estándares editoriales' : lang === 'ru' ? 'Проверка и редакционные стандарты' : 'Верифікація та редакційні стандарти')}</h3>
+    <p>${escapeHtml(lang === 'en' ? 'This profile was reviewed as an editorial page focused on career facts, role context, and measurable outcomes. The page avoids hidden SEO blocks and mass-duplicated template text.' : lang === 'es' ? 'Este perfil fue revisado como una página editorial con enfoque en hechos de carrera, contexto de roles y resultados medibles. La página evita bloques SEO ocultos y textos masivamente duplicados.' : lang === 'ru' ? 'Материал обновлён как редакционный профиль с фокусом на факты карьеры, контекст ролей и измеримые результаты. Страница не использует скрытые SEO-блоки и массовое дублирование шаблонных текстов.' : 'Матеріал оновлено як редакційний профіль з фокусом на факти карʼєри, контекст ролей та вимірювані результати. Сторінка не використовує приховані блоки SEO чи масове дублювання шаблонів.')}</p>
+  </section>` : ''}
   <section class="editorial-note">
     <h3>${escapeHtml(l.editorialNoteTitle)}</h3>
     <p>${escapeHtml(l.editorialNoteText)}</p>
