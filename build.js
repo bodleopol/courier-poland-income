@@ -18,45 +18,58 @@ function processDirectory(dirPath, destPath) {
 
   for (const entry of entries) {
     const srcFile = path.join(dirPath, entry.name);
-    const destFile = path.join(destPath, entry.name);
+    let destFile = path.join(destPath, entry.name);
 
     if (entry.isDirectory()) {
-      if (entry.name !== 'templates') { // Skip templates dir itself
+      if (entry.name !== 'templates' && entry.name !== 'pages') { // Skip templates and pages as pages are flattened
           processDirectory(srcFile, destFile);
       }
     } else {
-        if (srcFile.endsWith('.html') && dirPath === SRC_DIR) {
-            compileHTML(srcFile, destFile);
-        } else {
-            // Copy non-HTML files directly
+        // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
+        if (!srcFile.endsWith('.html') && dirPath === SRC_DIR) {
+            fs.copyFileSync(srcFile, destFile);
+        } else if (dirPath !== SRC_DIR && !srcFile.endsWith('.html')) {
             fs.copyFileSync(srcFile, destFile);
         }
     }
   }
 }
 
+function processPages(srcPath, destPath) {
+     if (!fs.existsSync(srcPath)) return;
+     const entries = fs.readdirSync(srcPath, { withFileTypes: true });
+     for (const entry of entries) {
+         const fullSrc = path.join(srcPath, entry.name);
+         if (entry.isDirectory()) {
+             processPages(fullSrc, destPath); // Flatten all pages to dist root
+         } else if (fullSrc.endsWith('.html') || fullSrc.endsWith('.xml')) {
+             if (fullSrc.endsWith('.html')) {
+                compileHTML(fullSrc, path.join(destPath, entry.name));
+             } else {
+                fs.copyFileSync(fullSrc, path.join(destPath, entry.name));
+             }
+         }
+     }
+}
+
 function compileHTML(srcFile, destFile) {
   let content = fs.readFileSync(srcFile, 'utf8');
 
-  // Check if it's already a full HTML document
-  if (content.trim().toLowerCase().startsWith('<!doctype html>')) {
-    fs.writeFileSync(destFile, content);
-    return;
-  }
-
-  const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
-
-  // Extract meta tags if they exist in the fragment, or just use content
+  // Extract meta tags if they exist in the fragment
   let titleMatch = content.match(/<title>(.*?)<\/title>/i);
   let title = titleMatch ? titleMatch[1] : 'Rybezh';
-  content = content.replace(/<title>.*?<\/title>/i, '');
+
+  // Only remove title if it exists, otherwise keep defaults
+  if (titleMatch) {
+      content = content.replace(/<title>.*?<\/title>/i, '');
+  }
 
   let descriptionMatch = content.match(/<meta\s+name="description"\s+content="(.*?)">/i);
-  let description = descriptionMatch ? descriptionMatch[1] : 'Rybezh: Information Base of Prominent People & Startups';
+  let description = descriptionMatch ? descriptionMatch[1] : '';
   content = content.replace(/<meta\s+name="description"\s+content=".*?">/i, '');
 
   let keywordsMatch = content.match(/<meta\s+name="keywords"\s+content="(.*?)">/i);
-  let keywords = keywordsMatch ? keywordsMatch[1] : 'tech, people, startups, rybezh';
+  let keywords = keywordsMatch ? keywordsMatch[1] : '';
   content = content.replace(/<meta\s+name="keywords"\s+content=".*?">/i, '');
 
   // Extract <style> block to inject into head
@@ -67,7 +80,83 @@ function compileHTML(srcFile, destFile) {
       content = content.replace(/<style>[\s\S]*?<\/style>/i, '');
   }
 
-  const filename = path.basename(srcFile);
+  // Strip doctype and html body wrappers if they mistakenly exist in fragments
+  content = content.replace(/<!doctype html>/gi, '');
+  content = content.replace(/<html.*?>/gi, '');
+  content = content.replace(/<\/html>/gi, '');
+  content = content.replace(/<head.*?>[\s\S]*?<\/head>/gi, '');
+  content = content.replace(/<body.*?>/gi, '');
+  content = content.replace(/<\/body>/gi, '');
+  content = content.replace(/<header.*?>[\s\S]*?<\/header>/gi, '');
+  content = content.replace(/<main.*?>/gi, '');
+  content = content.replace(/<\/main>/gi, '');
+  content = content.replace(/<footer.*?>[\s\S]*?<\/footer>/gi, '');
+
+  const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
+
+  // Inject dynamic cards into index pages
+  if (path.basename(srcFile).startsWith('index')) {
+      let cardsJson = {uk: '', ru: '', en: '', es: ''};
+      if (fs.existsSync('src/generated_index_cards.json')) {
+          cardsJson = JSON.parse(fs.readFileSync('src/generated_index_cards.json', 'utf8'));
+      }
+      const filename = path.basename(srcFile);
+      let langKey = 'uk';
+      if (filename.endsWith('-en.html')) langKey = 'en';
+      if (filename.endsWith('-es.html')) langKey = 'es';
+      if (filename.endsWith('-ru.html')) langKey = 'ru';
+
+      content = content.replace(/(<\/section>)/, `${cardsJson[langKey]}\n$1`);
+  }
+
+
+  const t = {
+    'uk': {
+        FOOTER_DESC: 'Міжнародна інформаційна база видатних спеціалістів, керівників та інноваторів.',
+        NAV: 'Навігація',
+        CORP: 'Корпоративна Інформація',
+        OFFICE: 'Офіс: м. Київ, Україна, вул. Хрещатик 1',
+        TAX: 'ІПН / Податковий номер: 31415926535',
+        TEAM: 'Команда: Rybezh Executive Team',
+        RIGHTS: '&copy; 2024 Rybezh. Всі права захищені.',
+        HOME: 'Головна',
+        STARTUPS: 'Стартапи'
+    },
+    'en': {
+        FOOTER_DESC: 'International information base of prominent specialists, executives and innovators.',
+        NAV: 'Navigation',
+        CORP: 'Corporate Information',
+        OFFICE: 'Office: Kyiv, Ukraine, Khreshchatyk st. 1',
+        TAX: 'Tax ID: 31415926535',
+        TEAM: 'Team: Rybezh Executive Team',
+        RIGHTS: '&copy; 2024 Rybezh. All rights reserved.',
+        HOME: 'Home',
+        STARTUPS: 'Startups'
+    },
+    'es': {
+        FOOTER_DESC: 'Base de información internacional de destacados especialistas, ejecutivos e innovadores.',
+        NAV: 'Navegación',
+        CORP: 'Información Corporativa',
+        OFFICE: 'Oficina: Kiev, Ucrania, calle Khreshchatyk 1',
+        TAX: 'ID Fiscal: 31415926535',
+        TEAM: 'Equipo: Rybezh Executive Team',
+        RIGHTS: '&copy; 2024 Rybezh. Todos los derechos reservados.',
+        HOME: 'Inicio',
+        STARTUPS: 'Startups'
+    },
+    'ru': {
+        FOOTER_DESC: 'Международная информационная база выдающихся специалистов, руководителей и инноваторов.',
+        NAV: 'Навигация',
+        CORP: 'Корпоративная Информация',
+        OFFICE: 'Офис: г. Киев, Украина, ул. Крещатик 1',
+        TAX: 'ИНН / Налоговый номер: 31415926535',
+        TEAM: 'Команда: Rybezh Executive Team',
+        RIGHTS: '&copy; 2024 Rybezh. Все права защищены.',
+        HOME: 'Главная',
+        STARTUPS: 'Стартапы'
+    }
+  };
+
 
   let finalHtml = template.replace('{{CONTENT}}', () => content)
                           .replace('{{TITLE}}', title)
@@ -76,15 +165,32 @@ function compileHTML(srcFile, destFile) {
                           .replace('</head>', `${styleBlock}\n</head>`);
 
   // Basic canonical URL logic (simplified for this example)
+  let lang = 'uk';
+  const filename = path.basename(srcFile);
+  if (filename.endsWith('-en.html')) lang = 'en';
+  else if (filename.endsWith('-es.html')) lang = 'es';
+  else if (filename.endsWith('-ru.html')) lang = 'ru';
+
+  finalHtml = finalHtml.replace('{{FOOTER_DESC}}', t[lang].FOOTER_DESC)
+                       .replace('{{NAV}}', t[lang].NAV)
+                       .replace('{{CORP}}', t[lang].CORP)
+                       .replace('{{OFFICE}}', t[lang].OFFICE)
+                       .replace('{{TAX}}', t[lang].TAX)
+                       .replace('{{TEAM}}', t[lang].TEAM)
+                       .replace('{{RIGHTS}}', t[lang].RIGHTS)
+                       .replace('{{HOME}}', t[lang].HOME)
+                       .replace('{{STARTUPS}}', t[lang].STARTUPS);
+
+  let navIndexLink = lang === 'uk' ? 'index.html' : `index-${lang}.html`;
+  let navStartupsLink = lang === 'uk' ? 'startups.html' : `startups-${lang}.html`;
+
+  finalHtml = finalHtml.replace('{{NAV_INDEX}}', navIndexLink)
+                       .replace('{{NAV_STARTUPS}}', navStartupsLink);
+
+
   const canonicalBase = 'https://rybezh.site/';
 
   let baseName = filename.replace(/-(en|es|ru)\.html$/, '.html');
-
-  let ukLink = baseName;
-  let ruLink = baseName === 'index.html' ? 'index-ru.html' : baseName.replace('.html', '-ru.html');
-  let enLink = baseName === 'index.html' ? 'index-en.html' : baseName.replace('.html', '-en.html');
-  let esLink = baseName === 'index.html' ? 'index-es.html' : baseName.replace('.html', '-es.html');
-
   if (baseName === 'index.html') {
       baseName = '';
   }
@@ -97,87 +203,12 @@ function compileHTML(srcFile, destFile) {
   };
 
   finalHtml = finalHtml.replace('{{CANONICAL}}', canonicalMap.uk)
-                       .replace('{{CANONICAL_ES}}', canonicalMap.es) // Still mapping the template var but using ES value
+                       .replace('{{CANONICAL_ES}}', canonicalMap.es)
                        .replace('{{CANONICAL_RU}}', canonicalMap.ru)
                        .replace('{{CANONICAL_EN}}', canonicalMap.en);
 
-
-  // Replace Lang Nav Links
-  finalHtml = finalHtml.replace(/<a href="index\.html">UK<\/a>/, `<a href="${ukLink}">UK</a>`)
-                       .replace(/<a href="index-ru\.html">RU<\/a>/, `<a href="${ruLink}">RU</a>`)
-                       .replace(/<a href="index-en\.html">EN<\/a>/, `<a href="${enLink}">EN</a>`)
-                       .replace(/<a href="index-es\.html">ES<\/a>/, `<a href="${esLink}">ES</a>`);
-
-
-
-  const t = {
-    'uk': {
-        TITLE: 'Інформаційна база видатних людей',
-        DESC: 'Вчені, директори, інженери, дослідники та технологічні лідери.',
-        OFFICE: 'Офіс',
-        COMPANY: 'ТОВ "Рыбеж" (Rybezh LLC)',
-        ADDR: 'Україна, м. Київ, вул. Хрещатик, 1',
-        LEGAL: 'Юридична інформація',
-        EDRPOU: 'ЄДРПОУ: 12345678',
-        NAV_INDEX: 'Головна / Люди',
-        NAV_STARTUPS: 'Стартапи / Компанії'
-    },
-    'en': {
-        TITLE: 'Information Base of Prominent People',
-        DESC: 'Scientists, directors, engineers, researchers, and tech leaders.',
-        OFFICE: 'Office',
-        COMPANY: 'Rybezh LLC',
-        ADDR: 'Ukraine, Kyiv, Khreshchatyk st., 1',
-        LEGAL: 'Legal Information',
-        EDRPOU: 'EDRPOU: 12345678',
-        NAV_INDEX: 'Home / People',
-        NAV_STARTUPS: 'Startups / Companies'
-    },
-    'ru': {
-        TITLE: 'Информационная база выдающихся людей',
-        DESC: 'Ученые, директора, инженеры, исследователи и технологические лидеры.',
-        OFFICE: 'Офис',
-        COMPANY: 'ООО "Рыбеж" (Rybezh LLC)',
-        ADDR: 'Украина, г. Киев, ул. Крещатик, 1',
-        LEGAL: 'Юридическая информация',
-        EDRPOU: 'ЕГРПОУ: 12345678',
-        NAV_INDEX: 'Главная / Люди',
-        NAV_STARTUPS: 'Стартапы / Компании'
-    },
-    'es': {
-        TITLE: 'Base de Información de Personas Destacadas',
-        DESC: 'Científicos, directores, ingenieros, investigadores y líderes tecnológicos.',
-        OFFICE: 'Oficina',
-        COMPANY: 'Rybezh LLC',
-        ADDR: 'Ucrania, Kiev, calle Khreshchatyk, 1',
-        LEGAL: 'Información Legal',
-        EDRPOU: 'EDRPOU: 12345678',
-        NAV_INDEX: 'Inicio / Personas',
-        NAV_STARTUPS: 'Startups / Empresas'
-    }
-  };
-
   // Set lang attribute
 
-  let lang = 'uk';
-  if (filename.endsWith('-en.html')) lang = 'en';
-  else if (filename.endsWith('-es.html')) lang = 'es';
-  else if (filename.endsWith('-ru.html')) lang = 'ru';
-
-  let navIndexLink = lang === 'uk' ? 'index.html' : `index-${lang}.html`;
-  let navStartupsLink = lang === 'uk' ? 'startups.html' : `startups-${lang}.html`;
-
-  finalHtml = finalHtml.replace('{{HEADER_TITLE}}', t[lang].TITLE)
-                       .replace('{{HEADER_DESC}}', t[lang].DESC)
-                       .replace('{{FOOTER_OFFICE}}', t[lang].OFFICE)
-                       .replace('{{FOOTER_COMPANY}}', t[lang].COMPANY)
-                       .replace('{{FOOTER_ADDRESS}}', t[lang].ADDR)
-                       .replace('{{FOOTER_LEGAL}}', t[lang].LEGAL)
-                       .replace('{{FOOTER_EDRPOU}}', t[lang].EDRPOU)
-                       .replace('{{NAV_INDEX}}', navIndexLink)
-                       .replace('{{NAV_STARTUPS}}', navStartupsLink)
-                       .replace('{{NAV_INDEX_TEXT}}', t[lang].NAV_INDEX)
-                       .replace('{{NAV_STARTUPS_TEXT}}', t[lang].NAV_STARTUPS);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 
@@ -185,4 +216,49 @@ function compileHTML(srcFile, destFile) {
 }
 
 processDirectory(SRC_DIR, DIST_DIR);
+processPages(path.join(SRC_DIR, 'pages'), DIST_DIR);
+
+function buildSitemap(distDir) {
+  let urls = [];
+  const BASE_URL = 'https://rybezh.site/';
+
+  function scanDir(dir) {
+    if (!fs.existsSync(dir)) return;
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        scanDir(path.join(dir, entry.name));
+      } else if (entry.name.endsWith('.html') && entry.name !== '404.html') {
+        const fullPath = path.join(dir, entry.name);
+        let relPath = path.relative(distDir, fullPath);
+        // Ensure forward slashes for URLs
+        relPath = relPath.replace(/\\/g, '/');
+
+        let priority = '0.6';
+        let changefreq = 'weekly';
+
+        if (relPath.startsWith('index')) {
+          priority = '1.0';
+          changefreq = 'daily';
+        } else if (relPath.startsWith('startups')) {
+          priority = '0.9';
+        } else if (relPath.startsWith('person-') || relPath.startsWith('generated_')) {
+          priority = '0.8';
+        }
+
+        const urlStr = `  <url>\n    <loc>${BASE_URL}${relPath}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+        urls.push(urlStr);
+      }
+    }
+  }
+
+  scanDir(distDir);
+
+  const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>`;
+
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
+  console.log(`Generated sitemap.xml with ${urls.length} URLs.`);
+}
+
+buildSitemap(DIST_DIR);
 console.log('Build completed successfully.');

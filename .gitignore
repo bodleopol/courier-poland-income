@@ -49,3 +49,9 @@ fix_posts_doorway.cjs
 fix_posts_wiki.py
 fix_all_posts.py
 src/posts.json
+
+
+dist/
+src/specialists.json
+src/pages/profiles/generated_*.html
+src/generated_index_cards.json

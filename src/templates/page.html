@@ -1,52 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{TITLE}}</title>
-<meta name="description" content="{{DESCRIPTION}}">
-<meta name="keywords" content="{{KEYWORDS}}">
-<link rel="stylesheet" href="styles.css">
-<link rel="canonical" href="{{CANONICAL}}">
-<link rel="alternate" hreflang="uk" href="{{CANONICAL}}">
-<link rel="alternate" hreflang="en" href="{{CANONICAL_EN}}">
-<link rel="alternate" hreflang="ru" href="{{CANONICAL_RU}}">
-<link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <link rel="canonical" href="{{CANONICAL}}">
+    <link rel="alternate" hreflang="uk" href="{{CANONICAL}}">
+    <link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
+    <link rel="alternate" hreflang="ru" href="{{CANONICAL_RU}}">
+    <link rel="alternate" hreflang="en" href="{{CANONICAL_EN}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<article class="content-wrapper">
-<header>
-    <div>
-        <h1>{{HEADER_TITLE}}</h1>
-        <p>{{HEADER_DESC}}</p>
-    </div>
-</header>
-<main>
-{{CONTENT}}
-</main>
-<footer>
-    <div class="footer-col">
-        <h4>{{FOOTER_OFFICE}}</h4>
-        <p>{{FOOTER_COMPANY}}</p>
-        <p>{{FOOTER_ADDRESS}}</p>
-    </div>
-    <div class="footer-col">
-        <h4>{{FOOTER_LEGAL}}</h4>
-        <p>{{FOOTER_EDRPOU}}</p>
-    </div>
-    <div class="nav-wrapper" style="grid-column: 1 / -1; display:flex; justify-content:space-between; margin-top:20px; border-top: 1px solid #334155; padding-top:20px;">
-        <nav class="main-nav">
-             <a href="{{NAV_INDEX}}" style="color: #93c5fd; margin-right: 15px; font-weight: bold; text-decoration: none;">{{NAV_INDEX_TEXT}}</a>
-             <a href="{{NAV_STARTUPS}}" style="color: #93c5fd; font-weight: bold; text-decoration: none;">{{NAV_STARTUPS_TEXT}}</a>
-        </nav>
-        <nav class="lang">
-            <a href="index.html">UK</a>
-            <a href="index-ru.html">RU</a>
-            <a href="index-en.html">EN</a>
-            <a href="index-es.html">ES</a>
-        </nav>
-    </div>
-</footer>
-</article>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo"><a href="{{NAV_INDEX}}">Rybezh</a></div>
+            <div style="display: flex; align-items: center;">
+                <div class="lang-switcher">
+                    <a href="{{CANONICAL}}">UA</a>
+                    <a href="{{CANONICAL_EN}}">EN</a>
+                    <a href="{{CANONICAL_ES}}">ES</a>
+                    <a href="{{CANONICAL_RU}}">RU</a>
+                </div>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        {{CONTENT}}
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Rybezh Global</h4>
+                    <p>{{FOOTER_DESC}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>{{NAV}}</h4>
+                    <nav class="nav-wrapper">
+                        <a href="{{NAV_INDEX}}">{{HOME}}</a>
+                        <a href="{{NAV_STARTUPS}}">{{STARTUPS}}</a>
+                    </nav>
+                </div>
+                <div class="footer-section">
+                    <h4>{{CORP}}</h4>
+                    <p><strong>{{OFFICE}}</strong></p>
+                    <p><strong>{{TAX}}</strong></p>
+                    <p><strong>{{TEAM}}</strong></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>{{RIGHTS}}</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.body.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
 </body>
 </html>

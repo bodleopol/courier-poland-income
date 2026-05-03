@@ -1,0 +1,4402 @@
+[
+  {
+    "slug": "maria-johnson-1",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-2",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-3",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-4",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-5",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-6",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-7",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-8",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-9",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-10",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-11",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-12",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-13",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-14",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-15",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-16",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-17",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-18",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-19",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-20",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-21",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-22",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-23",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-24",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-25",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-26",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-27",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-28",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-29",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-30",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-31",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-32",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-33",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-34",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-35",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-36",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-37",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-38",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-39",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-40",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-41",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-42",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-43",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-44",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-45",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-46",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-47",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-48",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-49",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-50",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-51",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-52",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-53",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-54",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-55",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-56",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-57",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-58",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-59",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-60",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-61",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-62",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-63",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-64",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-65",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-66",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-67",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-68",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-69",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-70",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-71",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-72",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-73",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-74",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-75",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-76",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-77",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-78",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-79",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-80",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-81",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-82",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-83",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-84",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-85",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-86",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-87",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-88",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-89",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-90",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "maria-johnson-91",
+    "image": "https://ui-avatars.com/api/?name=Maria+Johnson&size=200",
+    "name": {
+      "uk": "Maria Johnson (UK)",
+      "ru": "Maria Johnson (RU)",
+      "en": "Maria Johnson",
+      "es": "Maria Johnson (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Maria Johnson, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Maria Johnson, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Maria Johnson, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Maria Johnson, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "john-williams-92",
+    "image": "https://ui-avatars.com/api/?name=John+Williams&size=200",
+    "name": {
+      "uk": "John Williams (UK)",
+      "ru": "John Williams (RU)",
+      "en": "John Williams",
+      "es": "John Williams (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для John Williams, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для John Williams, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for John Williams, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de John Williams, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "anna-brown-93",
+    "image": "https://ui-avatars.com/api/?name=Anna+Brown&size=200",
+    "name": {
+      "uk": "Anna Brown (UK)",
+      "ru": "Anna Brown (RU)",
+      "en": "Anna Brown",
+      "es": "Anna Brown (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Anna Brown, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Anna Brown, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Anna Brown, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Anna Brown, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "david-jones-94",
+    "image": "https://ui-avatars.com/api/?name=David+Jones&size=200",
+    "name": {
+      "uk": "David Jones (UK)",
+      "ru": "David Jones (RU)",
+      "en": "David Jones",
+      "es": "David Jones (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для David Jones, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для David Jones, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for David Jones, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de David Jones, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "sarah-garcia-95",
+    "image": "https://ui-avatars.com/api/?name=Sarah+Garcia&size=200",
+    "name": {
+      "uk": "Sarah Garcia (UK)",
+      "ru": "Sarah Garcia (RU)",
+      "en": "Sarah Garcia",
+      "es": "Sarah Garcia (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Sarah Garcia, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Sarah Garcia, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Sarah Garcia, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Sarah Garcia, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "michael-miller-96",
+    "image": "https://ui-avatars.com/api/?name=Michael+Miller&size=200",
+    "name": {
+      "uk": "Michael Miller (UK)",
+      "ru": "Michael Miller (RU)",
+      "en": "Michael Miller",
+      "es": "Michael Miller (ES)"
+    },
+    "role": {
+      "uk": "Director (UK)",
+      "ru": "Director (RU)",
+      "en": "Director",
+      "es": "Director (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Michael Miller, досвідченого Director з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Michael Miller, опытного Director. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Michael Miller, an experienced Director. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Michael Miller, un experimentado Director. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "emily-davis-97",
+    "image": "https://ui-avatars.com/api/?name=Emily+Davis&size=200",
+    "name": {
+      "uk": "Emily Davis (UK)",
+      "ru": "Emily Davis (RU)",
+      "en": "Emily Davis",
+      "es": "Emily Davis (ES)"
+    },
+    "role": {
+      "uk": "Founder (UK)",
+      "ru": "Founder (RU)",
+      "en": "Founder",
+      "es": "Founder (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Emily Davis, досвідченого Founder з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Emily Davis, опытного Founder. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Emily Davis, an experienced Founder. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Emily Davis, un experimentado Founder. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "james-rodriguez-98",
+    "image": "https://ui-avatars.com/api/?name=James+Rodriguez&size=200",
+    "name": {
+      "uk": "James Rodriguez (UK)",
+      "ru": "James Rodriguez (RU)",
+      "en": "James Rodriguez",
+      "es": "James Rodriguez (ES)"
+    },
+    "role": {
+      "uk": "Scientist (UK)",
+      "ru": "Scientist (RU)",
+      "en": "Scientist",
+      "es": "Scientist (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для James Rodriguez, досвідченого Scientist з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для James Rodriguez, опытного Scientist. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for James Rodriguez, an experienced Scientist. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de James Rodriguez, un experimentado Scientist. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "jessica-martinez-99",
+    "image": "https://ui-avatars.com/api/?name=Jessica+Martinez&size=200",
+    "name": {
+      "uk": "Jessica Martinez (UK)",
+      "ru": "Jessica Martinez (RU)",
+      "en": "Jessica Martinez",
+      "es": "Jessica Martinez (ES)"
+    },
+    "role": {
+      "uk": "Designer (UK)",
+      "ru": "Designer (RU)",
+      "en": "Designer",
+      "es": "Designer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Jessica Martinez, досвідченого Designer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Jessica Martinez, опытного Designer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Jessica Martinez, an experienced Designer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Jessica Martinez, un experimentado Designer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  },
+  {
+    "slug": "alex-smith-100",
+    "image": "https://ui-avatars.com/api/?name=Alex+Smith&size=200",
+    "name": {
+      "uk": "Alex Smith (UK)",
+      "ru": "Alex Smith (RU)",
+      "en": "Alex Smith",
+      "es": "Alex Smith (ES)"
+    },
+    "role": {
+      "uk": "Software Engineer (UK)",
+      "ru": "Software Engineer (RU)",
+      "en": "Software Engineer",
+      "es": "Software Engineer (ES)"
+    },
+    "bio": {
+      "uk": "Це біографія для Alex Smith, досвідченого Software Engineer з України. Має багато років досвіду у своїй сфері та прагне до інновацій.",
+      "ru": "Это биография для Alex Smith, опытного Software Engineer. Имеет многолетний опыт в своей сфере и стремится к инновациям.",
+      "en": "This is the biography for Alex Smith, an experienced Software Engineer. They have years of experience in their field and are passionate about innovation.",
+      "es": "Esta es la biografía de Alex Smith, un experimentado Software Engineer. Tienen años de experiencia en su campo y les apasiona la innovación."
+    },
+    "tags": {
+      "uk": [
+        "Лідерство",
+        "Технології",
+        "Інновації"
+      ],
+      "ru": [
+        "Лидерство",
+        "Технологии",
+        "Инновации"
+      ],
+      "en": [
+        "Leadership",
+        "Technology",
+        "Innovation"
+      ],
+      "es": [
+        "Liderazgo",
+        "Tecnología",
+        "Innovación"
+      ]
+    }
+  }
+]

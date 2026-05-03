@@ -1,6 +1,6 @@
-# Rybezh — Пошук роботи в Польщі
+# Інформаційна база видатних людей
 
-Платформа для пошуку роботи в Польщі для всіх — від логістики та будівництва до IT, медицини та ресторанного бізнесу. Актуальні вакансії, калькулятор зарплати, генератор CV, перевірка вакансій та система верифікації Rybezh Proof.
+Інформаційна база видатних людей - вчені, директори, інженери, дослідники та технологічні лідери.
 
 **Сайт:** [rybezh.site](https://rybezh.site)
 
@@ -30,10 +30,6 @@ npm install
 ```bash
 npm run build
 ```
-
-### Utility Scripts
-
-One-off maintenance/data scripts are organized in `/scripts` (for example: `scripts/check.cjs`, `scripts/dedup.js`, `scripts/add-batch-*.cjs`).
 
 ### Deployment
 
