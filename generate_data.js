@@ -810,6 +810,28 @@ const specialists = [
     tags: ['ceo', 'fintech', 'startup']
   },
   {
+    slug: 'sara-hooker',
+    image: commons('Sara_Hooker_2024.jpg'),
+    name: t('Сара Хукер', 'Sara Hooker', 'Сара Хукер', 'Sara Hooker'),
+    role: t('Дослідниця ШІ та CEO Cohere for AI', 'AI researcher and CEO of Cohere for AI', 'Исследовательница ИИ и CEO Cohere for AI', 'Investigadora de IA y CEO de Cohere for AI'),
+    country: t('Канада', 'Canada', 'Канада', 'Canadá'),
+    focus: t('ефективні моделі, відповідальний ШІ, інклюзивні дослідження', 'efficient models, responsible AI, inclusive research', 'эффективные модели, ответственный ИИ, инклюзивные исследования', 'modelos eficientes, IA responsable e investigación inclusiva'),
+    knownFor: t('лідерство в дослідженнях ефективного та відповідального машинного навчання', 'leadership in efficient and responsible machine-learning research', 'лидерство в исследованиях эффективного и ответственного машинного обучения', 'liderazgo en investigación eficiente y responsable de aprendizaje automático'),
+    life: t('Її робота показує, що майбутнє ШІ будується не лише навколо масштабу, а й навколо якості даних, обчислень та відповідального впровадження.', 'Her work shows that AI progress is not only about scale, but also about data quality, compute efficiency and responsible deployment.', 'Ее работа показывает, что прогресс ИИ строится не только на масштабе, но и на качестве данных, эффективности вычислений и ответственном внедрении.', 'Su trabajo muestra que el progreso de la IA no depende solo de la escala, sino también de la calidad de datos, la eficiencia de cómputo y el despliegue responsable.'),
+    tags: ['ai', 'research', 'science']
+  },
+  {
+    slug: 'marina-von-neumann-whitman',
+    image: commons('Marina_von_Neumann_Whitman_2016.jpg'),
+    name: t('Маріна фон Нойман Вітман', 'Marina von Neumann Whitman', 'Марина фон Нейман Уитман', 'Marina von Neumann Whitman'),
+    role: t('Економістка та професорка менеджменту', 'Economist and management professor', 'Экономист и профессор менеджмента', 'Economista y profesora de management'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('промислова політика, корпоративне управління, міжнародна економіка', 'industrial policy, corporate governance, international economics', 'промышленная политика, корпоративное управление, международная экономика', 'política industrial, gobierno corporativo y economía internacional'),
+    knownFor: t('поєднання академічної роботи, державної служби та керівних ролей у корпораціях', 'combining academic work, public service and executive roles in corporations', 'сочетание академической работы, госслужбы и руководящих ролей в корпорациях', 'combinar academia, servicio público y roles ejecutivos en corporaciones'),
+    life: t('Її профіль додає до бази досвід на перетині університету, урядової аналітики та реального корпоративного управління.', 'Her profile adds a cross-sector perspective spanning universities, policy analysis and practical corporate leadership.', 'Ее профиль добавляет межсекторный опыт на стыке университетов, государственной аналитики и практического корпоративного управления.', 'Su perfil aporta una mirada transversal entre universidad, análisis de políticas y liderazgo corporativo aplicado.'),
+    tags: ['science', 'education', 'leadership']
+  },
+  {
     slug: 'melanie-perkins',
     image: commons('Melanie_Perkins_at_TechCrunch_Disrupt_SF_2019.jpg'),
     name: t('Мелані Перкінс', 'Melanie Perkins', 'Мелани Перкинс', 'Melanie Perkins'),
@@ -934,6 +956,8 @@ const selectedSpecialistSlugs = [
   'clara-shih',
   'greg-brockman',
   'mark-zuckerberg',
+  'marina-von-neumann-whitman',
+  'sara-hooker',
   'stewart-butterfield',
   'guillermo-rauch',
   'emad-mostaque',
@@ -1484,6 +1508,24 @@ const startups = [
     category: t('Автоматизація workflow між SaaS', 'Workflow automation between SaaS apps', 'Автоматизация workflow между SaaS', 'Automatización de workflows entre SaaS'),
     summary: t('Безкодові інтеграції між тисячами застосунків для маркетингу, продажів та операцій.', 'No-code integrations across thousands of apps for marketing, sales and operations.', 'No-code интеграции между тысячами приложений для маркетинга, продаж и операций.', 'Integraciones no-code entre miles de apps para marketing, ventas y operaciones.'),
     tags: ['software', 'operations', 'startup']
+  },
+  {
+    slug: 'poolside',
+    image: logo('poolside.ai'),
+    name: 'Poolside',
+    founded: '2023',
+    category: t('AI-стартап для розробників', 'AI startup for developers', 'AI-стартап для разработчиков', 'Startup de IA para desarrolladores'),
+    summary: t('Створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд.', 'Builds models and tooling for software-automation workflows focused on professional engineering teams.', 'Создает модели и инструменты для автоматизации программирования с фокусом на workflow профессиональных инженерных команд.', 'Construye modelos y herramientas para automatizar programación, enfocadas en workflows de equipos de ingeniería profesionales.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'harvey',
+    image: logo('harvey.ai'),
+    name: 'Harvey',
+    founded: '2022',
+    category: t('Legal AI платформа', 'Legal AI platform', 'Legal AI платформа', 'Plataforma de IA legal'),
+    summary: t('Розробляє AI-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права.', 'Develops AI tooling for legal teams and large firms by combining generative models with legal domain expertise.', 'Разрабатывает AI-инструменты для юридических команд и крупных фирм, сочетая генеративные модели с доменной экспертизой права.', 'Desarrolla herramientas de IA para equipos legales y grandes firmas, combinando modelos generativos con experiencia jurídica.'),
+    tags: ['ai', 'enterprise', 'startup']
   }
 ];
 
