@@ -16,10 +16,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Поиск по каталогу">
-  <label class="search-label">Поиск по каталогу
-    <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Поиск по каталогу
+      <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Сбросить</button>
+  </div>
+  <p class="directory-hint">Ищите по имени, роли, стране, рыночной нише или технологическому тегу.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Все категории</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Финтех</button><button class="filter-chip" type="button" data-filter="operations">Операции</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-results"><strong data-results-count>33</strong> Найдено результатов</p>
 </section>
 
 <section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai лаборатория ии и продуктовая компания разрабатывает модели и продукты ии для бизнеса, образования, разработки по и творческих процессов. искусственный интеллект программирование стартапы artificial intelligence software startups">

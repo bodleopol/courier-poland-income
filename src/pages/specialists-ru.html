@@ -10,10 +10,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Поиск по каталогу">
-  <label class="search-label">Поиск по каталогу
-    <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Поиск по каталогу
+      <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Сбросить</button>
+  </div>
+  <p class="directory-hint">Ищите по имени, роли, стране, рыночной нише или технологическому тегу.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Все направления</button><button class="filter-chip" type="button" data-filter="operations">Операции</button><button class="filter-chip" type="button" data-filter="software">Программирование</button><button class="filter-chip" type="button" data-filter="engineering">Инженерия</button><button class="filter-chip" type="button" data-filter="science">Наука</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
+  <p class="directory-results"><strong data-results-count>32</strong> Найдено результатов</p>
 </section>
 
 <section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-search="богдан тютенко директор по операциям и менеджер логистики foodtech украина / перу операции лидерство логистика аналитика данных foodtech устойчивость украина operations leadership logistics data analytics foodtech resilience ukraine">

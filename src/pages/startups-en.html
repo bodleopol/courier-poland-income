@@ -16,10 +16,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Search the directory">
-  <label class="search-label">Search the directory
-    <input type="search" data-directory-search placeholder="Type a name, role, country or tag">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Search the directory
+      <input type="search" data-directory-search placeholder="Type a name, role, country or tag">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Reset</button>
+  </div>
+  <p class="directory-hint">Search by name, role, country, market segment or technology tag.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">All categories</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="fintech">Fintech</button><button class="filter-chip" type="button" data-filter="operations">Operations</button><button class="filter-chip" type="button" data-filter="design">Design</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-results"><strong data-results-count>33</strong> Results found</p>
 </section>
 
 <section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai ai lab and product company develops ai models and products used in business, education, software development and creative workflows. artificial intelligence software startups artificial intelligence software startups">

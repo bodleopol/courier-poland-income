@@ -39,7 +39,10 @@ const tr = {
     startupsPageIntro: 'Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.',
     searchLabel: 'Пошук у каталозі',
     searchPlaceholder: 'Введіть імʼя, роль, країну або тег',
+    searchHint: 'Шукайте за імʼям, роллю, країною, нішею або технологічним тегом.',
     filterAll: 'Усі напрями',
+    resetFilters: 'Скинути',
+    resultsLabel: 'Знайдено результатів',
     emptyState: 'Нічого не знайдено. Спробуйте інший запит або скиньте фільтр.',
     viewProfile: 'Відкрити профіль',
     viewStartup: 'Детальніше',
@@ -183,7 +186,10 @@ const tr = {
     startupsPageIntro: 'A dedicated page for startups, product companies and technology platforms.',
     searchLabel: 'Search the directory',
     searchPlaceholder: 'Type a name, role, country or tag',
+    searchHint: 'Search by name, role, country, market segment or technology tag.',
     filterAll: 'All sectors',
+    resetFilters: 'Reset',
+    resultsLabel: 'Results found',
     emptyState: 'No matching entries found. Try another query or reset the filter.',
     viewProfile: 'Open profile',
     viewStartup: 'Learn more',
@@ -327,7 +333,10 @@ const tr = {
     startupsPageIntro: 'Una página dedicada a startups, compañías de producto y plataformas tecnológicas.',
     searchLabel: 'Buscar en el directorio',
     searchPlaceholder: 'Escribe un nombre, rol, país o etiqueta',
+    searchHint: 'Busca por nombre, rol, país, nicho o etiqueta tecnológica.',
     filterAll: 'Todos los sectores',
+    resetFilters: 'Restablecer',
+    resultsLabel: 'Resultados encontrados',
     emptyState: 'No se encontraron resultados. Prueba otra consulta o restablece el filtro.',
     viewProfile: 'Abrir perfil',
     viewStartup: 'Ver más',
@@ -471,7 +480,10 @@ const tr = {
     startupsPageIntro: 'Отдельная страница для стартапов, продуктовых компаний и технологических платформ.',
     searchLabel: 'Поиск по каталогу',
     searchPlaceholder: 'Введите имя, роль, страну или тег',
+    searchHint: 'Ищите по имени, роли, стране, рыночной нише или технологическому тегу.',
     filterAll: 'Все направления',
+    resetFilters: 'Сбросить',
+    resultsLabel: 'Найдено результатов',
     emptyState: 'Ничего не найдено. Попробуйте другой запрос или сбросьте фильтр.',
     viewProfile: 'Открыть профиль',
     viewStartup: 'Подробнее',
@@ -969,10 +981,15 @@ function writeSpecialists(lang, specialists) {
 </section>
 
 <section class="directory-panel" aria-label="${escapeHtml(l.searchLabel)}">
-  <label class="search-label">${escapeHtml(l.searchLabel)}
-    <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">${escapeHtml(l.searchLabel)}
+      <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>${escapeHtml(l.resetFilters)}</button>
+  </div>
+  <p class="directory-hint">${escapeHtml(l.searchHint)}</p>
   ${filterButtons(specialists.map(firstTagKey), rubricLabels, lang, l.filterAll)}
+  <p class="directory-results"><strong data-results-count>${specialists.length}</strong> ${escapeHtml(l.resultsLabel)}</p>
 </section>
 
 <section class="grid" data-directory-grid>${specialists.map(person => profileCard(person, lang)).join('\n')}</section>
@@ -1009,10 +1026,15 @@ function writeStartups(lang, startups) {
 </section>
 
 <section class="directory-panel" aria-label="${escapeHtml(l.searchLabel)}">
-  <label class="search-label">${escapeHtml(l.searchLabel)}
-    <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">${escapeHtml(l.searchLabel)}
+      <input type="search" data-directory-search placeholder="${escapeHtml(l.searchPlaceholder)}">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>${escapeHtml(l.resetFilters)}</button>
+  </div>
+  <p class="directory-hint">${escapeHtml(l.searchHint)}</p>
   ${filterButtons(startups.map(startupKey), startupLabels, lang, l.startupFilters.all)}
+  <p class="directory-results"><strong data-results-count>${startups.length}</strong> ${escapeHtml(l.resultsLabel)}</p>
 </section>
 
 <section class="grid startup-grid" data-directory-grid>${startups.map(company => startupCard(company, lang)).join('\n')}</section>

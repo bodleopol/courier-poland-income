@@ -16,10 +16,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Buscar en el directorio">
-  <label class="search-label">Buscar en el directorio
-    <input type="search" data-directory-search placeholder="Escribe un nombre, rol, país o etiqueta">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Buscar en el directorio
+      <input type="search" data-directory-search placeholder="Escribe un nombre, rol, país o etiqueta">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Restablecer</button>
+  </div>
+  <p class="directory-hint">Busca por nombre, rol, país, nicho o etiqueta tecnológica.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Todas las categorías</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="fintech">Fintech</button><button class="filter-chip" type="button" data-filter="operations">Operaciones</button><button class="filter-chip" type="button" data-filter="design">Diseño</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-results"><strong data-results-count>33</strong> Resultados encontrados</p>
 </section>
 
 <section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai laboratorio de ia y empresa de producto desarrolla modelos y productos de ia usados en negocios, educación, software y procesos creativos. inteligencia artificial software startups artificial intelligence software startups">

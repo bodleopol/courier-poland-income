@@ -10,10 +10,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Buscar en el directorio">
-  <label class="search-label">Buscar en el directorio
-    <input type="search" data-directory-search placeholder="Escribe un nombre, rol, país o etiqueta">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Buscar en el directorio
+      <input type="search" data-directory-search placeholder="Escribe un nombre, rol, país o etiqueta">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Restablecer</button>
+  </div>
+  <p class="directory-hint">Busca por nombre, rol, país, nicho o etiqueta tecnológica.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Todos los sectores</button><button class="filter-chip" type="button" data-filter="operations">Operaciones</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="engineering">Ingeniería</button><button class="filter-chip" type="button" data-filter="science">Ciencia</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
+  <p class="directory-results"><strong data-results-count>32</strong> Resultados encontrados</p>
 </section>
 
 <section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-search="bohdan tiutenko director de operaciones y gerente de logística foodtech ucrania / perú operaciones liderazgo logística analítica de datos foodtech resiliencia ucrania operations leadership logistics data analytics foodtech resilience ukraine">

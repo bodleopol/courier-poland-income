@@ -10,10 +10,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Search the directory">
-  <label class="search-label">Search the directory
-    <input type="search" data-directory-search placeholder="Type a name, role, country or tag">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Search the directory
+      <input type="search" data-directory-search placeholder="Type a name, role, country or tag">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Reset</button>
+  </div>
+  <p class="directory-hint">Search by name, role, country, market segment or technology tag.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">All sectors</button><button class="filter-chip" type="button" data-filter="operations">Operations</button><button class="filter-chip" type="button" data-filter="software">Software</button><button class="filter-chip" type="button" data-filter="engineering">Engineering</button><button class="filter-chip" type="button" data-filter="science">Science</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
+  <p class="directory-results"><strong data-results-count>32</strong> Results found</p>
 </section>
 
 <section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-search="bohdan tiutenko operations director and foodtech logistics manager ukraine / peru operations leadership logistics data analytics foodtech resilience ukraine operations leadership logistics data analytics foodtech resilience ukraine">

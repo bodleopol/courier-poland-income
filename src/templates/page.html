@@ -144,15 +144,30 @@
             declineCookiesButton.addEventListener('click', () => setCookieChoice('declined'));
         }
 
-        const directorySearchInputs = Array.from(document.querySelectorAll('[data-directory-search]'));
-        const directoryGrids = Array.from(document.querySelectorAll('[data-directory-grid]'));
+        const directoryPanels = Array.from(document.querySelectorAll('[data-directory-panel]'));
 
-        directoryGrids.forEach((grid, index) => {
-            const searchInput = directorySearchInputs[index] || null;
+        directoryPanels.forEach(panel => {
+            const grid = panel.parentElement?.querySelector?.('[data-directory-grid]');
+            if (!grid) return;
+            const searchInput = panel.querySelector('[data-directory-search]');
+            const resetButton = panel.querySelector('[data-directory-reset]');
+            const resultCount = panel.querySelector('[data-results-count]');
             const cards = Array.from(grid.querySelectorAll('[data-directory-card]'));
-            const filterButtons = Array.from(grid.parentElement?.querySelectorAll('[data-filter]') || []);
-            const emptyState = grid.parentElement?.nextElementSibling?.matches?.('[data-empty-state]') ? grid.parentElement.nextElementSibling : document.querySelector('[data-empty-state]');
+            const filterButtons = Array.from(panel.querySelectorAll('[data-filter]'));
+            const emptyState = panel.parentElement?.querySelector?.('[data-empty-state]');
             let activeFilter = 'all';
+
+            function updateResultsLabel(count) {
+                if (!resultCount) return;
+                resultCount.textContent = `${count}`;
+            }
+
+            function updateResetState() {
+                if (!resetButton) return;
+                const hasQuery = Boolean(searchInput && searchInput.value.trim());
+                const hasFilter = activeFilter !== 'all';
+                resetButton.hidden = !(hasQuery || hasFilter);
+            }
 
             function applyDirectoryFilters() {
                 const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
@@ -165,6 +180,8 @@
                     if (show) visible += 1;
                 });
                 if (emptyState) emptyState.hidden = visible !== 0;
+                updateResultsLabel(visible);
+                updateResetState();
             }
 
             if (searchInput && cards.length) {
@@ -178,6 +195,15 @@
                     applyDirectoryFilters();
                 });
             });
+
+            if (resetButton) {
+                resetButton.addEventListener('click', () => {
+                    if (searchInput) searchInput.value = '';
+                    activeFilter = 'all';
+                    filterButtons.forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+                    applyDirectoryFilters();
+                });
+            }
 
             applyDirectoryFilters();
         });

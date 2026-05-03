@@ -10,10 +10,15 @@
 </section>
 
 <section class="directory-panel" aria-label="Пошук у каталозі">
-  <label class="search-label">Пошук у каталозі
-    <input type="search" data-directory-search placeholder="Введіть імʼя, роль, країну або тег">
-  </label>
+  <div class="directory-toolbar">
+    <label class="search-label">Пошук у каталозі
+      <input type="search" data-directory-search placeholder="Введіть імʼя, роль, країну або тег">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Скинути</button>
+  </div>
+  <p class="directory-hint">Шукайте за імʼям, роллю, країною, нішею або технологічним тегом.</p>
   <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Усі напрями</button><button class="filter-chip" type="button" data-filter="operations">Операції</button><button class="filter-chip" type="button" data-filter="software">Програмування</button><button class="filter-chip" type="button" data-filter="engineering">Інженерія</button><button class="filter-chip" type="button" data-filter="science">Наука</button><button class="filter-chip" type="button" data-filter="ceo">CEO</button></div>
+  <p class="directory-results"><strong data-results-count>32</strong> Знайдено результатів</p>
 </section>
 
 <section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-search="богдан тютенко директор операцій та менеджер логістики foodtech україна / перу операції лідерство логістика аналітика даних foodtech стійкість україна operations leadership logistics data analytics foodtech resilience ukraine">
