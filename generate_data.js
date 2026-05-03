@@ -751,6 +751,69 @@ const startups = [
     category: t('Український hardware та security tech', 'Ukrainian hardware and security tech', 'Украинский hardware и security tech', 'Hardware y security tech ucraniano'),
     summary: t('Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.', 'Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.', 'Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.', 'Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global.'),
     tags: ['hardware', 'engineering', 'startup']
+  },
+  {
+    slug: 'perplexity',
+    image: logo('perplexity.ai'),
+    name: 'Perplexity',
+    founded: '2022',
+    category: t('Пошуковий AI-продукт', 'AI search product', 'AI-поисковый продукт', 'Producto de búsqueda con IA'),
+    summary: t('Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс.', 'Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface.', 'Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс.', 'Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'runway',
+    image: logo('runwayml.com'),
+    name: 'Runway',
+    founded: '2018',
+    category: t('Генеративне відео та креативні AI-інструменти', 'Generative video and creative AI tools', 'Генеративное видео и креативные AI-инструменты', 'Video generativo y herramientas creativas de IA'),
+    summary: t('Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління.', 'Builds products for generative video, media production and next-generation creative workflows.', 'Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения.', 'Construye productos para video generativo, producción multimedia y flujos creativos de nueva generación.'),
+    tags: ['ai', 'design', 'startup']
+  },
+  {
+    slug: 'midjourney',
+    image: logo('midjourney.com'),
+    name: 'Midjourney',
+    founded: '2022',
+    category: t('Генеративне зображення', 'Generative imaging company', 'Генеративные изображения', 'Empresa de imagen generativa'),
+    summary: t('Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow.', 'Builds image-generation AI systems that became part of modern design and visual workflows.', 'Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow.', 'Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales.'),
+    tags: ['ai', 'design', 'startup']
+  },
+  {
+    slug: 'cohere',
+    image: logo('cohere.com'),
+    name: 'Cohere',
+    founded: '2019',
+    category: t('Enterprise LLM-платформа', 'Enterprise LLM platform', 'Enterprise LLM-платформа', 'Plataforma empresarial de LLM'),
+    summary: t('Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows.', 'Develops language models and enterprise AI products for search, automation and knowledge workflows.', 'Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows.', 'Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento.'),
+    tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'adept',
+    image: logo('adept.ai'),
+    name: 'Adept',
+    founded: '2022',
+    category: t('AI agents для software workflows', 'AI agents for software workflows', 'AI agents для software workflows', 'Agentes de IA para flujos de software'),
+    summary: t('Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work.', 'Builds agentic AI systems for acting inside software interfaces and automating knowledge work.', 'Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work.', 'Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'poolside',
+    image: logo('poolside.ai'),
+    name: 'Poolside',
+    founded: '2023',
+    category: t('AI для розробників', 'AI for software developers', 'AI для разработчиков', 'IA para desarrolladores'),
+    summary: t('Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows.', 'Focuses on foundation models and products for software engineering teams and code-generation workflows.', 'Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows.', 'Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'harvey',
+    image: logo('harvey.ai'),
+    name: 'Harvey',
+    founded: '2022',
+    category: t('Legal AI-платформа', 'Legal AI platform', 'Legal AI-платформа', 'Plataforma legal con IA'),
+    summary: t('Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows.', 'Builds AI tools for legal teams, document analysis and professional knowledge workflows.', 'Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows.', 'Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento.'),
+    tags: ['ai', 'enterprise', 'startup']
   }
 ];
 

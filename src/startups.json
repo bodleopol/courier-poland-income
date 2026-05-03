@@ -798,5 +798,285 @@
         "Startups"
       ]
     }
+  },
+  {
+    "slug": "perplexity",
+    "image": "https://logo.clearbit.com/perplexity.ai",
+    "name": "Perplexity",
+    "founded": "2022",
+    "category": {
+      "uk": "Пошуковий AI-продукт",
+      "en": "AI search product",
+      "ru": "AI-поисковый продукт",
+      "es": "Producto de búsqueda con IA"
+    },
+    "summary": {
+      "uk": "Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс.",
+      "en": "Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface.",
+      "ru": "Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс.",
+      "es": "Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "runway",
+    "image": "https://logo.clearbit.com/runwayml.com",
+    "name": "Runway",
+    "founded": "2018",
+    "category": {
+      "uk": "Генеративне відео та креативні AI-інструменти",
+      "en": "Generative video and creative AI tools",
+      "ru": "Генеративное видео и креативные AI-инструменты",
+      "es": "Video generativo y herramientas creativas de IA"
+    },
+    "summary": {
+      "uk": "Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління.",
+      "en": "Builds products for generative video, media production and next-generation creative workflows.",
+      "ru": "Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения.",
+      "es": "Construye productos para video generativo, producción multimedia y flujos creativos de nueva generación."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дизайн",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Design",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Дизайн",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Diseño",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "midjourney",
+    "image": "https://logo.clearbit.com/midjourney.com",
+    "name": "Midjourney",
+    "founded": "2022",
+    "category": {
+      "uk": "Генеративне зображення",
+      "en": "Generative imaging company",
+      "ru": "Генеративные изображения",
+      "es": "Empresa de imagen generativa"
+    },
+    "summary": {
+      "uk": "Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow.",
+      "en": "Builds image-generation AI systems that became part of modern design and visual workflows.",
+      "ru": "Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow.",
+      "es": "Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дизайн",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Design",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Дизайн",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Diseño",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "cohere",
+    "image": "https://logo.clearbit.com/cohere.com",
+    "name": "Cohere",
+    "founded": "2019",
+    "category": {
+      "uk": "Enterprise LLM-платформа",
+      "en": "Enterprise LLM platform",
+      "ru": "Enterprise LLM-платформа",
+      "es": "Plataforma empresarial de LLM"
+    },
+    "summary": {
+      "uk": "Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows.",
+      "en": "Develops language models and enterprise AI products for search, automation and knowledge workflows.",
+      "ru": "Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows.",
+      "es": "Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Корпоративне ПЗ",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Enterprise software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Корпоративное ПО",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software empresarial",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "adept",
+    "image": "https://logo.clearbit.com/adept.ai",
+    "name": "Adept",
+    "founded": "2022",
+    "category": {
+      "uk": "AI agents для software workflows",
+      "en": "AI agents for software workflows",
+      "ru": "AI agents для software workflows",
+      "es": "Agentes de IA para flujos de software"
+    },
+    "summary": {
+      "uk": "Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work.",
+      "en": "Builds agentic AI systems for acting inside software interfaces and automating knowledge work.",
+      "ru": "Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work.",
+      "es": "Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "poolside",
+    "image": "https://logo.clearbit.com/poolside.ai",
+    "name": "Poolside",
+    "founded": "2023",
+    "category": {
+      "uk": "AI для розробників",
+      "en": "AI for software developers",
+      "ru": "AI для разработчиков",
+      "es": "IA para desarrolladores"
+    },
+    "summary": {
+      "uk": "Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows.",
+      "en": "Focuses on foundation models and products for software engineering teams and code-generation workflows.",
+      "ru": "Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows.",
+      "es": "Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    }
+  },
+  {
+    "slug": "harvey",
+    "image": "https://logo.clearbit.com/harvey.ai",
+    "name": "Harvey",
+    "founded": "2022",
+    "category": {
+      "uk": "Legal AI-платформа",
+      "en": "Legal AI platform",
+      "ru": "Legal AI-платформа",
+      "es": "Plataforma legal con IA"
+    },
+    "summary": {
+      "uk": "Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows.",
+      "en": "Builds AI tools for legal teams, document analysis and professional knowledge workflows.",
+      "ru": "Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows.",
+      "es": "Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Корпоративне ПЗ",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Enterprise software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Корпоративное ПО",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software empresarial",
+        "Startups"
+      ]
+    }
   }
 ]
