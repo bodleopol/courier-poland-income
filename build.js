@@ -8,62 +8,71 @@ const translations = {
   uk: {
     navAria: 'Головна навігація',
     navHome: 'Головна',
+    navSpecialists: 'Спеціалісти',
     navStartups: 'Стартапи',
-    footerAbout: 'Міжнародна інформаційна база профілів спеціалістів, дослідників, інженерів, керівників і засновників компаній.',
+    navMethodology: 'Методологія',
+    navPrivacy: 'Конфіденційність',
+    navCookies: 'Cookies',
+    navTerms: 'Умови',
+    footerAbout: 'Професійний редакційний каталог спеціалістів, керівників і технологічних компаній з акцентом на якісний контент і прозору навігацію.',
     footerNavTitle: 'Навігація',
     footerScopeTitle: 'Про базу',
-    footerScopeText: 'Каталог створений як редакційна довідкова база про людей та організації, що впливають на технології, науку, космос і бізнес.',
-    footerLanguages: 'Доступні мови: українська, англійська, іспанська, російська.',
+    footerScopeText: 'Каталог створений як редакційна довідкова база про людей та організації, що впливають на технології, інженерію, науку, операції та бізнес.',
+    footerLanguages: 'Доступні мови: українська, англійська, російська.',
     footerRights: 'Всі права захищені.',
-    footerOfficeTitle: 'Офіс і команда',
-    footerOfficeAddress: 'Офіс: Україна, м. Київ, вул. Хрещатик, 1',
-    footerTax: 'Податковий номер: 31415926535',
-    footerTeam: 'Команда: Rybezh Research & Editorial Team'
+    footerPoliciesTitle: 'Редакція і політики',
+    footerPoliciesText: 'Редакційний формат: інформаційний каталог, без doorway-сторінок і прихованого SEO-контенту.',
+    footerTeam: 'Команда: Rybezh Research & Editorial Team',
+    cookieTitle: 'Ми використовуємо лише базові cookies',
+    cookieText: 'Сайт зберігає вибір теми та вашу відповідь на cookies notice у браузері. Деталі описані на окремій сторінці політики cookies.',
+    cookieAccept: 'Прийняти',
+    cookieDecline: 'Відхилити'
   },
   en: {
     navAria: 'Main navigation',
     navHome: 'Home',
+    navSpecialists: 'Specialists',
     navStartups: 'Startups',
-    footerAbout: 'An international information base of specialists, researchers, engineers, executives and company founders.',
+    navMethodology: 'Methodology',
+    navPrivacy: 'Privacy',
+    navCookies: 'Cookies',
+    navTerms: 'Terms',
+    footerAbout: 'A professional editorial catalogue of specialists, executives and technology companies with an emphasis on quality content and transparent navigation.',
     footerNavTitle: 'Navigation',
     footerScopeTitle: 'About the directory',
-    footerScopeText: 'The catalogue is an editorial reference base about people and organisations shaping technology, science, space and business.',
-    footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
+    footerScopeText: 'The catalogue is an editorial reference base about people and organisations shaping technology, engineering, science, operations and business.',
+    footerLanguages: 'Available languages: Ukrainian, English, Russian.',
     footerRights: 'All rights reserved.',
-    footerOfficeTitle: 'Office and team',
-    footerOfficeAddress: 'Office: 1 Khreshchatyk Street, Kyiv, Ukraine',
-    footerTax: 'Tax number: 31415926535',
-    footerTeam: 'Team: Rybezh Research & Editorial Team'
-  },
-  es: {
-    navAria: 'Navegación principal',
-    navHome: 'Inicio',
-    navStartups: 'Startups',
-    footerAbout: 'Base internacional de perfiles de especialistas, investigadores, ingenieros, directivos y fundadores de empresas.',
-    footerNavTitle: 'Navegación',
-    footerScopeTitle: 'Sobre la base',
-    footerScopeText: 'El catálogo es una base editorial de referencia sobre personas y organizaciones que influyen en tecnología, ciencia, espacio y negocios.',
-    footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español, ruso.',
-    footerRights: 'Todos los derechos reservados.',
-    footerOfficeTitle: 'Oficina y equipo',
-    footerOfficeAddress: 'Oficina: calle Khreshchatyk 1, Kyiv, Ucrania',
-    footerTax: 'Número fiscal: 31415926535',
-    footerTeam: 'Equipo: Rybezh Research & Editorial Team'
+    footerPoliciesTitle: 'Editorial and policies',
+    footerPoliciesText: 'Editorial format: informational directory without doorway pages or hidden SEO content.',
+    footerTeam: 'Team: Rybezh Research & Editorial Team',
+    cookieTitle: 'We use only basic cookies',
+    cookieText: 'The site stores theme preference and your cookies-notice choice in the browser. See the cookies policy page for details.',
+    cookieAccept: 'Accept',
+    cookieDecline: 'Decline'
   },
   ru: {
     navAria: 'Главная навигация',
     navHome: 'Главная',
+    navSpecialists: 'Специалисты',
     navStartups: 'Стартапы',
-    footerAbout: 'Международная информационная база профилей специалистов, исследователей, инженеров, руководителей и основателей компаний.',
+    navMethodology: 'Методология',
+    navPrivacy: 'Конфиденциальность',
+    navCookies: 'Cookies',
+    navTerms: 'Условия',
+    footerAbout: 'Профессиональный редакционный каталог специалистов, руководителей и технологических компаний с акцентом на качественный контент и прозрачную навигацию.',
     footerNavTitle: 'Навигация',
     footerScopeTitle: 'О базе',
-    footerScopeText: 'Каталог создан как редакционная справочная база о людях и организациях, влияющих на технологии, науку, космос и бизнес.',
-    footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
+    footerScopeText: 'Каталог создан как редакционная справочная база о людях и организациях, влияющих на технологии, инженерию, науку, операции и бизнес.',
+    footerLanguages: 'Доступные языки: украинский, английский, русский.',
     footerRights: 'Все права защищены.',
-    footerOfficeTitle: 'Офис и команда',
-    footerOfficeAddress: 'Офис: Украина, г. Киев, ул. Крещатик, 1',
-    footerTax: 'Налоговый номер: 31415926535',
-    footerTeam: 'Команда: Rybezh Research & Editorial Team'
+    footerPoliciesTitle: 'Редакция и политики',
+    footerPoliciesText: 'Редакционный формат: информационный каталог без doorway-страниц и скрытого SEO-контента.',
+    footerTeam: 'Команда: Rybezh Research & Editorial Team',
+    cookieTitle: 'Мы используем только базовые cookies',
+    cookieText: 'Сайт сохраняет выбор темы и ваш ответ на cookies notice в браузере. Подробности - на странице политики cookies.',
+    cookieAccept: 'Принять',
+    cookieDecline: 'Отклонить'
   }
 };
 
@@ -129,10 +138,6 @@ function compileHTML(srcFile, destFile) {
   let description = descriptionMatch ? descriptionMatch[1] : '';
   content = content.replace(/<meta\s+name="description"\s+content=".*?">/i, '');
 
-  let keywordsMatch = content.match(/<meta\s+name="keywords"\s+content="(.*?)">/i);
-  let keywords = keywordsMatch ? keywordsMatch[1] : '';
-  content = content.replace(/<meta\s+name="keywords"\s+content=".*?">/i, '');
-
   let robotsMatch = content.match(/<meta\s+name="robots"\s+content="(.*?)">/i);
   let robotsBlock = robotsMatch ? robotsMatch[0] : '';
   content = content.replace(/<meta\s+name="robots"\s+content=".*?">/i, '');
@@ -160,18 +165,16 @@ function compileHTML(srcFile, destFile) {
   const filename = path.basename(srcFile);
   let lang = 'uk';
   if (filename.endsWith('-en.html')) lang = 'en';
-  else if (filename.endsWith('-es.html')) lang = 'es';
   else if (filename.endsWith('-ru.html')) lang = 'ru';
 
   let finalHtml = template.replace('{{CONTENT}}', () => content)
                           .replace('{{TITLE}}', title)
                           .replace('{{DESCRIPTION}}', description)
-                          .replace('{{KEYWORDS}}', keywords)
                           .replace('</head>', `${robotsBlock}\n${styleBlock}\n</head>`);
 
   const canonicalBase = 'https://rybezh.site/';
 
-  let baseName = filename.replace(/-(en|es|ru)\.html$/, '.html');
+  let baseName = filename.replace(/-(en|ru)\.html$/, '.html');
   if (baseName === 'index.html') {
       baseName = '';
   }
@@ -179,33 +182,50 @@ function compileHTML(srcFile, destFile) {
   const canonicalMap = {
       'uk': baseName ? canonicalBase + baseName : canonicalBase,
       'en': baseName ? canonicalBase + baseName.replace('.html', '-en.html') : canonicalBase + 'index-en.html',
-      'es': baseName ? canonicalBase + baseName.replace('.html', '-es.html') : canonicalBase + 'index-es.html',
       'ru': baseName ? canonicalBase + baseName.replace('.html', '-ru.html') : canonicalBase + 'index-ru.html',
   };
 
-  finalHtml = finalHtml.replace('{{CANONICAL}}', canonicalMap.uk)
-                       .replace('{{CANONICAL_ES}}', canonicalMap.es)
-                       .replace('{{CANONICAL_RU}}', canonicalMap.ru)
-                       .replace('{{CANONICAL_EN}}', canonicalMap.en);
+  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap.uk)
+                       .replaceAll('{{CANONICAL_RU}}', canonicalMap.ru)
+                       .replaceAll('{{CANONICAL_EN}}', canonicalMap.en);
 
   const local = translations[lang];
   const homeUrl = lang === 'uk' ? 'index.html' : `index-${lang}.html`;
+  const specialistsUrl = lang === 'uk' ? 'specialists.html' : `specialists-${lang}.html`;
   const startupsUrl = lang === 'uk' ? 'startups.html' : `startups-${lang}.html`;
+  const privacyUrl = lang === 'uk' ? 'privacy.html' : `privacy-${lang}.html`;
+  const cookiesUrl = lang === 'uk' ? 'cookies.html' : `cookies-${lang}.html`;
+  const termsUrl = lang === 'uk' ? 'terms.html' : `terms-${lang}.html`;
+  const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
+                       .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
+                       .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
+                       .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
+                       .replaceAll('{{NAV_COOKIES}}', local.navCookies)
+                       .replaceAll('{{NAV_TERMS}}', local.navTerms)
                        .replaceAll('{{HOME_URL}}', homeUrl)
+                       .replaceAll('{{SPECIALISTS_URL}}', specialistsUrl)
                        .replaceAll('{{STARTUPS_URL}}', startupsUrl)
+                       .replaceAll('{{PRIVACY_URL}}', privacyUrl)
+                       .replaceAll('{{COOKIES_URL}}', cookiesUrl)
+                       .replaceAll('{{TERMS_URL}}', termsUrl)
+                       .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
                        .replaceAll('{{FOOTER_SCOPE_TEXT}}', local.footerScopeText)
                        .replaceAll('{{FOOTER_LANGUAGES}}', local.footerLanguages)
                        .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights)
-                       .replaceAll('{{FOOTER_OFFICE_TITLE}}', local.footerOfficeTitle)
-                       .replaceAll('{{FOOTER_OFFICE_ADDRESS}}', local.footerOfficeAddress)
-                       .replaceAll('{{FOOTER_TAX}}', local.footerTax)
+                       .replaceAll('{{FOOTER_POLICIES_TITLE}}', local.footerPoliciesTitle)
+                       .replaceAll('{{FOOTER_POLICIES_TEXT}}', local.footerPoliciesText)
                        .replaceAll('{{FOOTER_TEAM}}', local.footerTeam);
+
+  finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', local.cookieTitle)
+                       .replaceAll('{{COOKIE_TEXT}}', local.cookieText)
+                       .replaceAll('{{COOKIE_ACCEPT}}', local.cookieAccept)
+                       .replaceAll('{{COOKIE_DECLINE}}', local.cookieDecline);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 

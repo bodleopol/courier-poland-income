@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const langs = ['uk', 'en', 'ru', 'es'];
+const langs = ['uk', 'en', 'ru'];
 
 const t = (uk, en, ru, es) => ({ uk, en, ru, es });
 const commons = file => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURI(file.replaceAll(' ', '_'))}?width=720`;
@@ -344,7 +344,7 @@ const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(na
 
 const bohdanProfile = {
   slug: 'bohdan-tiutenko',
-  image: avatar('Bohdan Tiutenko'),
+  image: 'assets/images/bohdan-tiutenko-profile.svg',
   featured: true,
   name: t('Богдан Тютенко', 'Bohdan Tiutenko', 'Богдан Тютенко', 'Bohdan Tiutenko'),
   role: t('Директор операцій та менеджер логістики Foodtech', 'Operations Director and Foodtech Logistics Manager', 'Директор по операциям и менеджер логистики Foodtech', 'Director de Operaciones y Gerente de Logística Foodtech'),
@@ -408,43 +408,36 @@ const bohdanProfile = {
   }
 };
 
-const rubricTemplates = [
-  { tag: 'software', role: t('Software engineer', 'Software engineer', 'Инженер программного обеспечения', 'Ingeniero/a de software'), focus: t('backend, frontend, системний дизайн', 'backend, frontend and system design', 'backend, frontend и системный дизайн', 'backend, frontend y diseño de sistemas') },
-  { tag: 'operations', role: t('Operations director', 'Operations director', 'Операционный директор', 'Director/a de operaciones'), focus: t('масштабування процесів, KPI, якість виконання', 'process scaling, KPIs and execution quality', 'масштабирование процессов, KPI и качество исполнения', 'escala de procesos, KPIs y calidad de ejecución') },
-  { tag: 'science', role: t('Research scientist', 'Research scientist', 'Научный исследователь', 'Investigador/a científico/a'), focus: t('дослідницькі програми, дані, експерименти', 'research programmes, data and experiments', 'исследовательские программы, данные и эксперименты', 'programas de investigación, datos y experimentos') },
-  { tag: 'engineering', role: t('Systems engineer', 'Systems engineer', 'Системный инженер', 'Ingeniero/a de sistemas'), focus: t('інфраструктура, надійність, інтеграції', 'infrastructure, reliability and integrations', 'инфраструктура, надежность и интеграции', 'infraestructura, fiabilidad e integraciones') },
-  { tag: 'ceo', role: t('Founder / CEO', 'Founder / CEO', 'Основатель / CEO', 'Fundador/a / CEO'), focus: t('стратегія, продукт, побудова команд', 'strategy, product and team building', 'стратегия, продукт и построение команд', 'estrategia, producto y construcción de equipos') },
-  { tag: 'design', role: t('Product designer', 'Product designer', 'Продуктовый дизайнер', 'Diseñador/a de producto'), focus: t('UX, дослідження користувачів, дизайн-системи', 'UX, user research and design systems', 'UX, исследования пользователей и дизайн-системы', 'UX, investigación de usuarios y sistemas de diseño') },
-  { tag: 'biotech', role: t('Biotech specialist', 'Biotech specialist', 'Специалист по биотехнологиям', 'Especialista en biotecnología'), focus: t('лабораторні процеси, аналітика, регуляторика', 'laboratory workflows, analytics and regulation', 'лабораторные процессы, аналитика и регуляторика', 'procesos de laboratorio, analítica y regulación') },
-  { tag: 'fintech', role: t('Fintech product lead', 'Fintech product lead', 'Руководитель fintech-продукта', 'Líder de producto fintech'), focus: t('платежі, ризики, фінансова інфраструктура', 'payments, risk and financial infrastructure', 'платежи, риски и финансовая инфраструктура', 'pagos, riesgo e infraestructura financiera') }
+const selectedSpecialistSlugs = [
+  'charity-majors',
+  'claire-hughes-johnson',
+  'demis-hassabis',
+  'donna-strickland',
+  'elon-musk',
+  'fei-fei-li',
+  'guido-van-rossum',
+  'gwynne-shotwell',
+  'ilya-sutskever',
+  'jensen-huang',
+  'katalin-kariko',
+  'linus-torvalds',
+  'lisa-su',
+  'margaret-hamilton',
+  'mary-barra',
+  'melanie-perkins',
+  'patrick-collison',
+  'radia-perlman',
+  'safra-catz',
+  'sam-altman',
+  'satya-nadella',
+  'tim-berners-lee',
+  'yann-lecun'
 ];
 
-const directoryNames = ['Alex Morgan','Maya Chen','Daniel Novak','Olena Shevchenko','Nora Patel','Luca Romano','Sara Kim','Mateo Garcia','Amina Hassan','Victor Silva','Iryna Kovalenko','Jonas Weber','Emma Laurent','Noah Brown','Sofia Rossi','Andrii Melnyk','Mila Horvat','Karim Haddad','Eva Novakova','Lucas Martin','Daria Ivanova','Tomasz Zielinski','Anika Rao','Hanna Muller','Diego Torres','Kateryna Bondar','Mark Johnson','Elena Petrova','Marta Lopez','Artem Savchuk','Leila Mansour','Robert Klein','Julia Adams','Pavlo Kravets','Natalia Costa','Omar Farouk','Anna Kowalska','George Wilson','Marina Sokolova','Ivan Horvat','Claire Dubois','Rafael Costa','Tetiana Moroz','Nina Fischer','Maxim Popov','Laura Jensen','Serhii Tkachenko','Miriam Cohen','Pedro Alvarez','Yana Litvin','Adrian Nowak','Ines Moreau','Mykola Lysenko','Fatima Zahra','Ethan Brooks','Alina Danyliuk','Hugo Bernard','Marta Nowak','Roman Hrytsenko','Sofia Almeida','David Cohen','Veronika Koval','Marco Ricci','Amelia Wright','Oksana Levchenko','Khalid Nasser','Lina Hoffmann','Bohdan Koval','Camila Santos','Yevhen Marchenko','Iris Novak','Kenji Sato','Li Wei','Maria Fernandez','James Carter','Dmytro Polishchuk','Alisa Romanenko','Youssef Amr','Isabel Cruz','Nikita Volkov','Greta Hansen','Taras Oliynyk','Marta Silva','Leo Schneider','Svitlana Klymenko','Zara Khan','Oscar Nilsson','Viktoria Mazur','Pablo Herrera','Oleh Rudenko','Emily Turner','Nadia Pavlenko','Sergio Ruiz','Maksym Bondarenko','Amara Okafor','Felix Meyer','Kira Sydorenko','Andrei Stoica','Lena Berg','Mikhail Orlov'];
-
-const extraSpecialists = directoryNames.map((name, index) => {
-  const template = rubricTemplates[index % rubricTemplates.length];
-  const n = t(name, name, name, name);
-  return {
-    slug: `directory-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${index + 1}`,
-    image: avatar(name),
-    name: n,
-    role: template.role,
-    country: t('Міжнародний профіль', 'International profile', 'Международный профиль', 'Perfil internacional'),
-    focus: template.focus,
-    knownFor: t('практичну експертизу у своїй галузі та роботу з міждисциплінарними командами', 'practical domain expertise and work with cross-functional teams', 'практическую экспертизу в своей сфере и работу с междисциплинарными командами', 'experiencia práctica en su área y trabajo con equipos multifuncionales'),
-    life: t(
-      'Короткий професійний запис у базі Rybezh: профіль структуровано для швидкого перегляду компетенцій, ролі та напрямів експертизи.',
-      'A concise Rybezh professional record structured for quick review of competencies, role and fields of expertise.',
-      'Краткая профессиональная запись в базе Rybezh: профиль структурирован для быстрого просмотра компетенций, роли и направлений экспертизы.',
-      'Registro profesional breve en Rybezh, estructurado para revisar rápidamente competencias, rol y áreas de experiencia.'
-    ),
-    tags: [template.tag, index % 2 ? 'leadership' : 'operations', index % 3 ? 'technology' : 'research'],
-    directoryEntry: true
-  };
-});
-
-specialists.unshift(bohdanProfile);
-specialists.push(...extraSpecialists);
+const curatedSpecialists = [
+  bohdanProfile,
+  ...specialists.filter(person => selectedSpecialistSlugs.includes(person.slug))
+];
 
 const tagLabels = {
   software: t('Програмування', 'Software', 'Программирование', 'Software'),
@@ -617,10 +610,55 @@ const startups = [
     category: t('Дані для AI', 'Data for AI', 'Данные для AI', 'Datos para IA'),
     summary: t('Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи.', 'Supports data preparation and evaluation workflows for companies building AI systems.', 'Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.', 'Apoya preparación de datos y evaluación para empresas que crean sistemas de IA.'),
     tags: ['ai', 'operations', 'startup']
+  },
+  {
+    slug: 'cursor',
+    image: logo('cursor.com'),
+    name: 'Cursor',
+    founded: '2023',
+    category: t('AI-інструменти для розробників', 'AI tooling for developers', 'AI-инструменты для разработчиков', 'Herramientas de IA para desarrolladores'),
+    summary: t('Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію.', 'Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation.', 'Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.', 'Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'vercel',
+    image: logo('vercel.com'),
+    name: 'Vercel',
+    founded: '2015',
+    category: t('Хмарна платформа для фронтенду', 'Cloud platform for frontend teams', 'Облачная платформа для фронтенд-команд', 'Plataforma cloud para equipos frontend'),
+    summary: t('Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд.', 'Supports deployment, edge infrastructure and product velocity for modern web teams.', 'Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.', 'Impulsa despliegue, edge infrastructure y velocidad de producto para equipos web modernos.'),
+    tags: ['cloud', 'software', 'startup']
+  },
+  {
+    slug: 'elevenlabs',
+    image: logo('elevenlabs.io'),
+    name: 'ElevenLabs',
+    founded: '2022',
+    category: t('Генеративний voice AI', 'Generative voice AI', 'Генеративный voice AI', 'IA generativa de voz'),
+    summary: t('Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу.', 'Develops speech synthesis, voice agents and multilingual audio products for media, education and business.', 'Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.', 'Desarrolla síntesis de voz, voice agents y productos de audio multilingües para medios, educación y empresas.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'revolut',
+    image: logo('revolut.com'),
+    name: 'Revolut',
+    founded: '2015',
+    category: t('Глобальний фінтех-сервіс', 'Global fintech platform', 'Глобальная финтех-платформа', 'Plataforma fintech global'),
+    summary: t('Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку.', 'Combines banking, cards, business accounts and international financial operations in one app.', 'Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.', 'Combina banca, tarjetas, cuentas de negocio y operaciones financieras globales en una sola app.'),
+    tags: ['fintech', 'operations', 'startup']
+  },
+  {
+    slug: 'ajax-systems',
+    image: logo('ajax.systems'),
+    name: 'Ajax Systems',
+    founded: '2011',
+    category: t('Український hardware та security tech', 'Ukrainian hardware and security tech', 'Украинский hardware и security tech', 'Hardware y security tech ucraniano'),
+    summary: t('Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.', 'Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.', 'Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.', 'Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global.'),
+    tags: ['hardware', 'engineering', 'startup']
   }
 ];
 
-const specialistOutput = specialists.map(person => {
+const specialistOutput = curatedSpecialists.map(person => {
   const tags = {};
   for (const lang of langs) {
     tags[lang] = person.tags.map(tag => tagLabels[tag]?.[lang] || tag);
@@ -645,8 +683,7 @@ const specialistOutput = specialists.map(person => {
     tags,
     featured: Boolean(person.featured),
     gallery: person.gallery || [],
-    highlights: person.highlights || null,
-    directoryEntry: Boolean(person.directoryEntry)
+    highlights: person.highlights || null
   };
 });
 

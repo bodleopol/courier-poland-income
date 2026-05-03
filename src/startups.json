@@ -31,11 +31,6 @@
         "Искусственный интеллект",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -71,11 +66,6 @@
         "Искусственный интеллект",
         "Исследования",
         "Наука"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Investigación",
-        "Ciencia"
       ]
     }
   },
@@ -111,11 +101,6 @@
         "Финтех",
         "Программирование",
         "Операции"
-      ],
-      "es": [
-        "Fintech",
-        "Software",
-        "Operaciones"
       ]
     }
   },
@@ -151,11 +136,6 @@
         "Космос",
         "Инженерия",
         "Операции"
-      ],
-      "es": [
-        "Espacio",
-        "Ingeniería",
-        "Operaciones"
       ]
     }
   },
@@ -191,11 +171,6 @@
         "Дизайн",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Diseño",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -231,11 +206,6 @@
         "Искусственный интеллект",
         "Open source",
         "Стартапы"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Código abierto",
-        "Startups"
       ]
     }
   },
@@ -271,11 +241,6 @@
         "Дизайн",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Diseño",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -311,11 +276,6 @@
         "Программирование",
         "Операции",
         "Стартапы"
-      ],
-      "es": [
-        "Software",
-        "Operaciones",
-        "Startups"
       ]
     }
   },
@@ -351,11 +311,6 @@
         "Искусственный интеллект",
         "Исследования",
         "Стартапы"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Investigación",
-        "Startups"
       ]
     }
   },
@@ -391,11 +346,6 @@
         "Искусственный интеллект",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -431,11 +381,6 @@
         "Искусственный интеллект",
         "Облачные технологии",
         "Корпоративное ПО"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Cloud",
-        "Software empresarial"
       ]
     }
   },
@@ -471,11 +416,6 @@
         "Искусственный интеллект",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Inteligencia artificial",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -511,11 +451,6 @@
         "Образование",
         "Программирование",
         "Стартапы"
-      ],
-      "es": [
-        "Educación",
-        "Software",
-        "Startups"
       ]
     }
   },
@@ -551,11 +486,6 @@
         "Программирование",
         "Open source",
         "Операции"
-      ],
-      "es": [
-        "Software",
-        "Código abierto",
-        "Operaciones"
       ]
     }
   },
@@ -591,11 +521,181 @@
         "Искусственный интеллект",
         "Операции",
         "Стартапы"
+      ]
+    }
+  },
+  {
+    "slug": "cursor",
+    "image": "https://logo.clearbit.com/cursor.com",
+    "name": "Cursor",
+    "founded": "2023",
+    "category": {
+      "uk": "AI-інструменти для розробників",
+      "en": "AI tooling for developers",
+      "ru": "AI-инструменты для разработчиков",
+      "es": "Herramientas de IA para desarrolladores"
+    },
+    "summary": {
+      "uk": "Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію.",
+      "en": "Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation.",
+      "ru": "Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.",
+      "es": "Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
       ],
-      "es": [
-        "Inteligencia artificial",
-        "Operaciones",
+      "en": [
+        "Artificial intelligence",
+        "Software",
         "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ]
+    }
+  },
+  {
+    "slug": "vercel",
+    "image": "https://logo.clearbit.com/vercel.com",
+    "name": "Vercel",
+    "founded": "2015",
+    "category": {
+      "uk": "Хмарна платформа для фронтенду",
+      "en": "Cloud platform for frontend teams",
+      "ru": "Облачная платформа для фронтенд-команд",
+      "es": "Plataforma cloud para equipos frontend"
+    },
+    "summary": {
+      "uk": "Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд.",
+      "en": "Supports deployment, edge infrastructure and product velocity for modern web teams.",
+      "ru": "Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.",
+      "es": "Impulsa despliegue, edge infrastructure y velocidad de producto para equipos web modernos."
+    },
+    "tags": {
+      "uk": [
+        "Хмарні технології",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Cloud",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Облачные технологии",
+        "Программирование",
+        "Стартапы"
+      ]
+    }
+  },
+  {
+    "slug": "elevenlabs",
+    "image": "https://logo.clearbit.com/elevenlabs.io",
+    "name": "ElevenLabs",
+    "founded": "2022",
+    "category": {
+      "uk": "Генеративний voice AI",
+      "en": "Generative voice AI",
+      "ru": "Генеративный voice AI",
+      "es": "IA generativa de voz"
+    },
+    "summary": {
+      "uk": "Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу.",
+      "en": "Develops speech synthesis, voice agents and multilingual audio products for media, education and business.",
+      "ru": "Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.",
+      "es": "Desarrolla síntesis de voz, voice agents y productos de audio multilingües para medios, educación y empresas."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ]
+    }
+  },
+  {
+    "slug": "revolut",
+    "image": "https://logo.clearbit.com/revolut.com",
+    "name": "Revolut",
+    "founded": "2015",
+    "category": {
+      "uk": "Глобальний фінтех-сервіс",
+      "en": "Global fintech platform",
+      "ru": "Глобальная финтех-платформа",
+      "es": "Plataforma fintech global"
+    },
+    "summary": {
+      "uk": "Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку.",
+      "en": "Combines banking, cards, business accounts and international financial operations in one app.",
+      "ru": "Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.",
+      "es": "Combina banca, tarjetas, cuentas de negocio y operaciones financieras globales en una sola app."
+    },
+    "tags": {
+      "uk": [
+        "Фінтех",
+        "Операції",
+        "Стартапи"
+      ],
+      "en": [
+        "Fintech",
+        "Operations",
+        "Startups"
+      ],
+      "ru": [
+        "Финтех",
+        "Операции",
+        "Стартапы"
+      ]
+    }
+  },
+  {
+    "slug": "ajax-systems",
+    "image": "https://logo.clearbit.com/ajax.systems",
+    "name": "Ajax Systems",
+    "founded": "2011",
+    "category": {
+      "uk": "Український hardware та security tech",
+      "en": "Ukrainian hardware and security tech",
+      "ru": "Украинский hardware и security tech",
+      "es": "Hardware y security tech ucraniano"
+    },
+    "summary": {
+      "uk": "Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.",
+      "en": "Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.",
+      "ru": "Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.",
+      "es": "Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global."
+    },
+    "tags": {
+      "uk": [
+        "Апаратне забезпечення",
+        "Інженерія",
+        "Стартапи"
+      ],
+      "en": [
+        "Hardware",
+        "Engineering",
+        "Startups"
+      ],
+      "ru": [
+        "Аппаратное обеспечение",
+        "Инженерия",
+        "Стартапы"
       ]
     }
   }

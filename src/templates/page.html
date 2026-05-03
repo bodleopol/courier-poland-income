@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
     <meta name="description" content="{{DESCRIPTION}}">
-    <meta name="keywords" content="{{KEYWORDS}}">
     <link rel="canonical" href="{{CANONICAL}}">
     <link rel="alternate" hreflang="uk" href="{{CANONICAL}}">
-    <link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
     <link rel="alternate" hreflang="ru" href="{{CANONICAL_RU}}">
     <link rel="alternate" hreflang="en" href="{{CANONICAL_EN}}">
+    <link rel="alternate" hreflang="x-default" href="{{CANONICAL}}">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
         <div class="header-container">
-            <div class="logo"><a href="index.html">Rybezh</a></div>
+            <div class="logo">
+                <a href="{{HOME_URL}}">Rybezh</a>
+                <span class="logo-caption">People Archive</span>
+            </div>
             <nav class="main-nav" aria-label="{{NAV_ARIA}}">
                 <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
+                <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
                 <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
+                <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
             </nav>
             <div class="header-tools">
                 <div class="lang-switcher">
                     <a href="{{CANONICAL}}">UA</a>
                     <a href="{{CANONICAL_EN}}">EN</a>
-                    <a href="{{CANONICAL_ES}}">ES</a>
                     <a href="{{CANONICAL_RU}}">RU</a>
                 </div>
                 <div class="theme-switch-wrapper">
@@ -52,7 +55,12 @@
                     <h4>{{FOOTER_NAV_TITLE}}</h4>
                     <nav class="footer-nav">
                         <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
+                        <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
                         <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
+                        <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
+                        <a href="{{COOKIES_URL}}">{{NAV_COOKIES}}</a>
+                        <a href="{{TERMS_URL}}">{{NAV_TERMS}}</a>
+                        <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
                         <a href="sitemap.xml">Sitemap</a>
                     </nav>
                 </div>
@@ -62,10 +70,14 @@
                     <p>{{FOOTER_LANGUAGES}}</p>
                 </div>
                 <div class="footer-section official-footer">
-                    <h4>{{FOOTER_OFFICE_TITLE}}</h4>
-                    <p>{{FOOTER_OFFICE_ADDRESS}}</p>
-                    <p>{{FOOTER_TAX}}</p>
-                    <p>{{FOOTER_TEAM}}</p>
+                    <h4>{{FOOTER_POLICIES_TITLE}}</h4>
+                    <p>{{FOOTER_POLICIES_TEXT}}</p>
+                    <div class="footer-policy-links">
+                        <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
+                        <a href="{{COOKIES_URL}}">{{NAV_COOKIES}}</a>
+                        <a href="{{TERMS_URL}}">{{NAV_TERMS}}</a>
+                        <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -73,11 +85,21 @@
             </div>
         </div>
     </footer>
+    <div class="cookie-banner" data-cookie-banner hidden>
+        <div class="cookie-banner__content">
+            <p class="cookie-banner__title">{{COOKIE_TITLE}}</p>
+            <p>{{COOKIE_TEXT}}</p>
+        </div>
+        <div class="cookie-banner__actions">
+            <button class="btn" type="button" data-cookie-accept>{{COOKIE_ACCEPT}}</button>
+            <button class="btn secondary" type="button" data-cookie-decline>{{COOKIE_DECLINE}}</button>
+        </div>
+    </div>
     <script>
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
         const currentTheme = localStorage.getItem('theme');
 
-        if (currentTheme) {
+        if (toggleSwitch && currentTheme) {
             document.body.setAttribute('data-theme', currentTheme);
             if (currentTheme === 'dark') {
                 toggleSwitch.checked = true;
@@ -94,31 +116,68 @@
             }
         }
 
-        toggleSwitch.addEventListener('change', switchTheme, false);
-
-        const searchInput = document.querySelector('[data-profile-search]');
-        const cards = Array.from(document.querySelectorAll('[data-profile-grid] .profile-card'));
-        const filterButtons = Array.from(document.querySelectorAll('[data-filter]'));
-        let activeFilter = 'all';
-
-        function applyDirectoryFilters() {
-            const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
-            cards.forEach(card => {
-                const matchesSearch = !query || card.dataset.search.includes(query);
-                const matchesFilter = activeFilter === 'all' || card.dataset.rubric === activeFilter;
-                card.hidden = !(matchesSearch && matchesFilter);
-            });
+        if (toggleSwitch) {
+            toggleSwitch.addEventListener('change', switchTheme, false);
         }
 
-        if (searchInput && cards.length) {
-            searchInput.addEventListener('input', applyDirectoryFilters);
+        const cookieBanner = document.querySelector('[data-cookie-banner]');
+        const cookieChoice = localStorage.getItem('cookie-consent');
+        const acceptCookiesButton = document.querySelector('[data-cookie-accept]');
+        const declineCookiesButton = document.querySelector('[data-cookie-decline]');
+
+        if (cookieBanner && !cookieChoice) {
+            cookieBanner.hidden = false;
         }
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                activeFilter = button.dataset.filter;
-                filterButtons.forEach(item => item.classList.toggle('active', item === button));
-                applyDirectoryFilters();
+
+        function setCookieChoice(value) {
+            localStorage.setItem('cookie-consent', value);
+            if (cookieBanner) cookieBanner.hidden = true;
+        }
+
+        if (acceptCookiesButton) {
+            acceptCookiesButton.addEventListener('click', () => setCookieChoice('accepted'));
+        }
+
+        if (declineCookiesButton) {
+            declineCookiesButton.addEventListener('click', () => setCookieChoice('declined'));
+        }
+
+        const directorySearchInputs = Array.from(document.querySelectorAll('[data-directory-search]'));
+        const directoryGrids = Array.from(document.querySelectorAll('[data-directory-grid]'));
+
+        directoryGrids.forEach((grid, index) => {
+            const searchInput = directorySearchInputs[index] || null;
+            const cards = Array.from(grid.querySelectorAll('[data-directory-card]'));
+            const filterButtons = Array.from(grid.parentElement?.querySelectorAll('[data-filter]') || []);
+            const emptyState = grid.parentElement?.nextElementSibling?.matches?.('[data-empty-state]') ? grid.parentElement.nextElementSibling : document.querySelector('[data-empty-state]');
+            let activeFilter = 'all';
+
+            function applyDirectoryFilters() {
+                const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+                let visible = 0;
+                cards.forEach(card => {
+                    const matchesSearch = !query || card.dataset.search.includes(query);
+                    const matchesFilter = activeFilter === 'all' || card.dataset.filterKey === activeFilter;
+                    const show = matchesSearch && matchesFilter;
+                    card.hidden = !show;
+                    if (show) visible += 1;
+                });
+                if (emptyState) emptyState.hidden = visible !== 0;
+            }
+
+            if (searchInput && cards.length) {
+                searchInput.addEventListener('input', applyDirectoryFilters);
+            }
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    activeFilter = button.dataset.filter;
+                    filterButtons.forEach(item => item.classList.toggle('active', item === button));
+                    applyDirectoryFilters();
+                });
             });
+
+            applyDirectoryFilters();
         });
     </script>
 </body>

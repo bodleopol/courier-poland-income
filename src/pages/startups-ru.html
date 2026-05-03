@@ -1,15 +1,28 @@
-<title>Много стартапов и технологических компаний | Rybezh</title>
-<meta name="description" content="Отдельная база компаний показывает команды, продукты и операционные модели современной инновационной экономики.">
-<meta name="keywords" content="Стартапы, startup database, technology companies, Rybezh">
+<title>Каталог стартапов | Rybezh</title>
+<meta name="description" content="Отдельная страница для стартапов, продуктовых компаний и технологических платформ.">
 
 <section class="hero slim">
-  <div class="hero-content">
-    <p class="eyebrow">Стартапы</p>
-    <h1>Много стартапов и технологических компаний</h1>
-    <p>Отдельная база компаний показывает команды, продукты и операционные модели современной инновационной экономики.</p>
+  <div class="hero-copy">
+    <p class="eyebrow">Rybezh People Archive</p>
+    <h1>Каталог стартапов</h1>
+    <p>Отдельная страница для стартапов, продуктовых компаний и технологических платформ.</p>
+  </div>
+  <div class="hero-panel">
+    <div class="stat-card"><strong>20</strong><span>Все стартапы</span></div>
+    <div class="stat-card"><strong>0</strong><span>AI</span></div>
+    <div class="stat-card"><strong>13</strong><span>Software</span></div>
+    <div class="stat-card"><strong>2</strong><span>Fintech</span></div>
   </div>
 </section>
-<section class="grid"><article class="card startup-card">
+
+<section class="directory-panel" aria-label="Поиск по каталогу">
+  <label class="search-label">Поиск по каталогу
+    <input type="search" data-directory-search placeholder="Введите имя, роль, страну или тег">
+  </label>
+  <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Все категории</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Финтех</button><button class="filter-chip" type="button" data-filter="operations">Операции</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+</section>
+
+<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai лаборатория ии и продуктовая компания разрабатывает модели и продукты ии для бизнеса, образования, разработки по и творческих процессов. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=OpenAI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2015</p>
@@ -19,7 +32,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="google deepmind исследовательская компания ии работает над фундаментальными системами ии, научными задачами и продуктами google. искусственный интеллект исследования наука artificial intelligence research science">
     <img src="https://logo.clearbit.com/deepmind.google" alt="Google DeepMind" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Google%20DeepMind&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2010</p>
@@ -29,7 +42,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Исследования</span><span class="tag">Наука</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="stripe финтех-инфраструктура строит api и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций. финтех программирование операции fintech software operations">
     <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Stripe&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2010</p>
@@ -39,7 +52,7 @@
       <div class="tags"><span class="tag">Финтех</span><span class="tag">Программирование</span><span class="tag">Операции</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="spacex космическая инженерия создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование. космос инженерия операции space engineering operations">
     <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SpaceX&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2002</p>
@@ -49,7 +62,7 @@
       <div class="tags"><span class="tag">Космос</span><span class="tag">Инженерия</span><span class="tag">Операции</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="canva дизайн-платформа дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга. дизайн программирование стартапы design software startups">
     <img src="https://logo.clearbit.com/canva.com" alt="Canva" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Canva&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
@@ -59,7 +72,7 @@
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="hugging face open-source платформа ии поддерживает сообщество моделей, датасетов и инструментов машинного обучения. искусственный интеллект open source стартапы artificial intelligence open source startups">
     <img src="https://logo.clearbit.com/huggingface.co" alt="Hugging Face" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Hugging%20Face&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2016</p>
@@ -69,7 +82,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Open source</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="figma совместный дизайн в браузере перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды. дизайн программирование стартапы design software startups">
     <img src="https://logo.clearbit.com/figma.com" alt="Figma" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Figma&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2012</p>
@@ -79,7 +92,7 @@
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="notion продуктивность и знания объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба. программирование операции стартапы software operations startups">
     <img src="https://logo.clearbit.com/notion.so" alt="Notion" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Notion&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
@@ -89,7 +102,7 @@
       <div class="tags"><span class="tag">Программирование</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="anthropic ai safety и модели разрабатывает ассистентов и исследования безопасности для контролируемых и полезных ai-систем. искусственный интеллект исследования стартапы artificial intelligence research startups">
     <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Anthropic&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2021</p>
@@ -99,7 +112,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Исследования</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="mistral ai европейские ai-модели строит открытые и коммерческие модели ии, усиливая европейскую ai-экосистему. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/mistral.ai" alt="Mistral AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mistral%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2023</p>
@@ -109,7 +122,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="databricks платформа данных и ai объединяет lakehouse-архитектуру, аналитику, ml и управление данными для предприятий. искусственный интеллект облачные технологии корпоративное по artificial intelligence cloud enterprise software">
     <img src="https://logo.clearbit.com/databricks.com" alt="Databricks" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Databricks&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2013</p>
@@ -119,7 +132,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Облачные технологии</span><span class="tag">Корпоративное ПО</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="grammarly ai для письма компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. искусственный интеллект программирование стартапы artificial intelligence software startups">
     <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Grammarly&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2009</p>
@@ -129,7 +142,7 @@
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="preply edtech-маркетплейс платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру. образование программирование стартапы education software startups">
     <img src="https://logo.clearbit.com/preply.com" alt="Preply" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Preply&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2012</p>
@@ -139,7 +152,7 @@
       <div class="tags"><span class="tag">Образование</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="gitlab devops-платформа предоставляет инструменты для репозиториев, ci/cd, безопасности и совместной разработки по. программирование open source операции software open source operations">
     <img src="https://logo.clearbit.com/gitlab.com" alt="GitLab" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=GitLab&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2011</p>
@@ -149,7 +162,7 @@
       <div class="tags"><span class="tag">Программирование</span><span class="tag">Open source</span><span class="tag">Операции</span></div>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="scale ai данные для ai поддерживает подготовку данных и evaluation-процессы для компаний, создающих ai-системы. искусственный интеллект операции стартапы artificial intelligence operations startups">
     <img src="https://logo.clearbit.com/scale.com" alt="Scale AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Scale%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Основано 2016</p>
@@ -158,4 +171,64 @@
       <p>Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.</p>
       <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
     </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cursor ai-инструменты для разработчиков создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. искусственный интеллект программирование стартапы artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/cursor.com" alt="Cursor" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cursor&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Основано 2023</p>
+      <h3>Cursor</h3>
+      <p class="meta">AI-инструменты для разработчиков</p>
+      <p>Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.</p>
+      <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="vercel облачная платформа для фронтенд-команд поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд. облачные технологии программирование стартапы cloud software startups">
+    <img src="https://logo.clearbit.com/vercel.com" alt="Vercel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Vercel&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Основано 2015</p>
+      <h3>Vercel</h3>
+      <p class="meta">Облачная платформа для фронтенд-команд</p>
+      <p>Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.</p>
+      <div class="tags"><span class="tag">Облачные технологии</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="elevenlabs генеративный voice ai развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса. искусственный интеллект программирование стартапы artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=ElevenLabs&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Основано 2022</p>
+      <h3>ElevenLabs</h3>
+      <p class="meta">Генеративный voice AI</p>
+      <p>Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.</p>
+      <div class="tags"><span class="tag">Искусственный интеллект</span><span class="tag">Программирование</span><span class="tag">Стартапы</span></div>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="revolut глобальная финтех-платформа объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении. финтех операции стартапы fintech operations startups">
+    <img src="https://logo.clearbit.com/revolut.com" alt="Revolut" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Revolut&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Основано 2015</p>
+      <h3>Revolut</h3>
+      <p class="meta">Глобальная финтех-платформа</p>
+      <p>Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.</p>
+      <div class="tags"><span class="tag">Финтех</span><span class="tag">Операции</span><span class="tag">Стартапы</span></div>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="hardware" data-search="ajax systems украинский hardware и security tech разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. аппаратное обеспечение инженерия стартапы hardware engineering startups">
+    <img src="https://logo.clearbit.com/ajax.systems" alt="Ajax Systems" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ajax%20Systems&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Основано 2011</p>
+      <h3>Ajax Systems</h3>
+      <p class="meta">Украинский hardware и security tech</p>
+      <p>Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.</p>
+      <div class="tags"><span class="tag">Аппаратное обеспечение</span><span class="tag">Инженерия</span><span class="tag">Стартапы</span></div>
+    </div>
   </article></section>
+<p class="empty-state" data-empty-state hidden>Ничего не найдено. Попробуйте другой запрос или сбросьте фильтр.</p>
+
+<section class="split-panel">
+  <div>
+    <p class="eyebrow">Редакционная методология</p>
+    <h2>Редакционная методология</h2>
+    <p>Сайт не использует массово сгенерированные doorway-страницы, скрытый текст или шаблоны из одних ключевых слов. Каждый профиль содержит фото, роль, фокус, биографию и понятный редакционный контекст.</p>
+  </div>
+  <a class="btn" href="methodology-ru.html">Открыть методологию</a>
+</section>
