@@ -689,6 +689,7 @@ function startupCard(company, lang) {
       <p class="meta">${escapeHtml(company.category[lang])}</p>
       <p>${escapeHtml(company.summary[lang])}</p>
       ${tagMarkup(company.tags[lang].slice(0, 3))}
+      <a class="btn" href="${pageName(`startup-${company.slug}`, lang)}">${escapeHtml(tr[lang].viewStartup)}</a>
     </div>
   </article>`;
 }
@@ -766,6 +767,67 @@ function highlights(person, lang) {
     <h3>${escapeHtml(tr[lang].highlights)}</h3>
     <ul>${person.highlights[lang].map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
   </section>`;
+}
+
+function startupSignals(company, lang) {
+  if (!company.signals?.[lang]?.length) return '';
+  return `<section class="highlight-list startup-signals">
+    <h3>${escapeHtml(tr[lang].highlights)}</h3>
+    <ul>${company.signals[lang].map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+  </section>`;
+}
+
+function relatedStartups(company, startups, lang) {
+  const sameCategory = startupKey(company);
+  const related = startups.filter(entry => entry.slug !== company.slug && startupKey(entry) === sameCategory).slice(0, 4);
+  if (!related.length) return '';
+  return `<section class="profile-related">
+    ${sectionIntro(tr[lang].relatedProfiles, tr[lang].relatedProfiles, tr[lang].startupsText)}
+    <div class="grid startup-grid">${related.map(entry => startupCard(entry, lang)).join('\n')}</div>
+  </section>`;
+}
+
+function writeStartupPage(company, startups, lang) {
+  const l = tr[lang];
+  const title = `${company.name} - ${company.category[lang]} | Rybezh`;
+  const file = path.join(PAGES_DIR, pageName(`startup-${company.slug}`, lang));
+  const content = `
+<title>${escapeHtml(title)}</title>
+<meta name="description" content="${escapeHtml(description(company.summary[lang]))}">
+
+<article class="content-wrapper startup-page">
+  <a class="back-link" href="${pageName('startups', lang)}">${escapeHtml(l.viewAllStartups)}</a>
+  <header class="profile-header startup-header">
+    ${image(company.image, company.name, 'profile-avatar-large startup-logo-large')}
+    <div class="profile-info">
+      <p class="eyebrow">${escapeHtml(l.founded)} ${escapeHtml(company.founded)}</p>
+      <h1>${escapeHtml(company.name)}</h1>
+      <h2>${escapeHtml(company.category[lang])}</h2>
+      ${tagMarkup(company.tags[lang])}
+    </div>
+  </header>
+  <section class="profile-facts startup-facts">
+    <div><strong>${escapeHtml(l.founded)}</strong><span>${escapeHtml(company.founded)}</span></div>
+    <div><strong>HQ</strong><span>${escapeHtml(company.hq?.[lang] || company.name)}</span></div>
+    <div><strong>Model</strong><span>${escapeHtml(company.model?.[lang] || company.category[lang])}</span></div>
+  </section>
+  <section class="profile-content">
+    <h3>${escapeHtml(l.biography)}</h3>
+    <p>${escapeHtml(company.summary[lang])}</p>
+  </section>
+  <section class="profile-facts startup-facts startup-facts-secondary">
+    <div><strong>Market</strong><span>${escapeHtml(company.market?.[lang] || company.category[lang])}</span></div>
+    <div><strong>${escapeHtml(l.knownFor)}</strong><span>${escapeHtml(company.notableFor?.[lang] || company.summary[lang])}</span></div>
+    <div><strong>Category key</strong><span>${escapeHtml(startupKey(company))}</span></div>
+  </section>
+  ${startupSignals(company, lang)}
+  <section class="editorial-note">
+    <h3>${escapeHtml(l.editorialNoteTitle)}</h3>
+    <p>${escapeHtml(l.editorialNoteText)}</p>
+  </section>
+  ${relatedStartups(company, startups, lang)}
+</article>`;
+  fs.writeFileSync(file, `${content.trim()}\n`);
 }
 
 function writeProfilePage(person, specialists, lang) {
@@ -997,6 +1059,9 @@ function writeSitemap(specialists) {
     for (const person of specialists) {
       urls.push({ loc: `${BASE_URL}${pageName(`person-${person.slug}`, lang)}`, priority: person.featured ? '0.9' : '0.7' });
     }
+    for (const startup of startups) {
+      urls.push({ loc: `${BASE_URL}${pageName(`startup-${startup.slug}`, lang)}`, priority: '0.65' });
+    }
   }
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1016,6 +1081,10 @@ clearGeneratedPages();
 
 for (const person of specialists) {
   for (const lang of langs) writeProfilePage(person, specialists, lang);
+}
+
+for (const startup of startups) {
+  for (const lang of langs) writeStartupPage(startup, startups, lang);
 }
 
 for (const lang of langs) {

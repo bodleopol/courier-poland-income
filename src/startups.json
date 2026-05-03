@@ -357,6 +357,52 @@
         "Investigación",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Дослідницька лабораторія та модельна компанія",
+      "en": "Research lab and model company",
+      "ru": "Исследовательская лаборатория и модельная компания",
+      "es": "Laboratorio de investigación y compañía de modelos"
+    },
+    "market": {
+      "uk": "AI assistants, model APIs, enterprise adoption",
+      "en": "AI assistants, model APIs, enterprise adoption",
+      "ru": "AI assistants, model APIs, enterprise adoption",
+      "es": "Asistentes de IA, APIs de modelos y adopción enterprise"
+    },
+    "notableFor": {
+      "uk": "Claude, constitutional AI і безпечне масштабування моделей",
+      "en": "Claude, constitutional AI and safer model scaling",
+      "ru": "Claude, constitutional AI и безопасное масштабирование моделей",
+      "es": "Claude, constitutional AI y escalamiento más seguro de modelos"
+    },
+    "signals": {
+      "uk": [
+        "Сильний фокус на model safety",
+        "Окремий бренд для enterprise AI",
+        "Швидке зростання серед корпоративних клієнтів"
+      ],
+      "en": [
+        "A visible focus on model safety",
+        "A distinct brand in enterprise AI",
+        "Fast traction with enterprise customers"
+      ],
+      "ru": [
+        "Сильный фокус на model safety",
+        "Отдельный бренд в enterprise AI",
+        "Быстрый рост среди корпоративных клиентов"
+      ],
+      "es": [
+        "Foco visible en model safety",
+        "Marca diferenciada en enterprise AI",
+        "Rápida tracción con clientes corporativos"
+      ]
     }
   },
   {
@@ -396,6 +442,52 @@
         "Inteligencia artificial",
         "Software",
         "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Париж, Франція",
+      "en": "Paris, France",
+      "ru": "Париж, Франция",
+      "es": "París, Francia"
+    },
+    "model": {
+      "uk": "AI startup з відкритими та комерційними моделями",
+      "en": "AI startup with open and commercial models",
+      "ru": "AI startup с открытыми и коммерческими моделями",
+      "es": "Startup de IA con modelos abiertos y comerciales"
+    },
+    "market": {
+      "uk": "Open models, European AI, inference products",
+      "en": "Open models, European AI, inference products",
+      "ru": "Open models, European AI, inference products",
+      "es": "Open models, IA europea y productos de inference"
+    },
+    "notableFor": {
+      "uk": "Одна з найпомітніших європейських AI-компаній нового циклу",
+      "en": "One of the most visible European AI companies of the new cycle",
+      "ru": "Одна из самых заметных европейских AI-компаний нового цикла",
+      "es": "Una de las compañías europeas de IA más visibles del nuevo ciclo"
+    },
+    "signals": {
+      "uk": [
+        "Позиціонується як європейська AI-альтернатива",
+        "Працює з open models",
+        "Швидко вийшла в центр AI-ринку після 2023 року"
+      ],
+      "en": [
+        "Positioned as a European AI alternative",
+        "Works with open models",
+        "Reached the center of the AI market quickly after 2023"
+      ],
+      "ru": [
+        "Позиционируется как европейская AI-альтернатива",
+        "Работает с open models",
+        "Быстро вышла в центр AI-рынка после 2023 года"
+      ],
+      "es": [
+        "Se posiciona como alternativa europea de IA",
+        "Trabaja con open models",
+        "Llegó rápido al centro del mercado de IA tras 2023"
       ]
     }
   },
@@ -637,6 +729,52 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Developer tool startup",
+      "en": "Developer tool startup",
+      "ru": "Developer tool startup",
+      "es": "Startup de herramientas para desarrolladores"
+    },
+    "market": {
+      "uk": "AI coding, codebase navigation, engineering workflows",
+      "en": "AI coding, codebase navigation, engineering workflows",
+      "ru": "AI coding, codebase navigation, engineering workflows",
+      "es": "Codificación con IA, navegación del codebase y workflows de ingeniería"
+    },
+    "notableFor": {
+      "uk": "Поєднання AI-асистента, codebase search і редактора для розробників",
+      "en": "Combining an AI assistant, codebase search and an editor for developers",
+      "ru": "Сочетание AI-ассистента, codebase search и редактора для разработчиков",
+      "es": "Combinar asistente de IA, búsqueda en el codebase y editor para desarrolladores"
+    },
+    "signals": {
+      "uk": [
+        "Сильний фокус на продуктивності інженерів",
+        "Орієнтація на командні workflow",
+        "Продукт нової хвилі AI-native developer tools"
+      ],
+      "en": [
+        "A strong focus on engineering productivity",
+        "Built around team workflows",
+        "Part of the new wave of AI-native developer tools"
+      ],
+      "ru": [
+        "Сильный фокус на продуктивности инженеров",
+        "Ориентация на командные workflow",
+        "Часть новой волны AI-native developer tools"
+      ],
+      "es": [
+        "Fuerte foco en productividad de ingeniería",
+        "Orientado a workflows de equipo",
+        "Parte de la nueva ola de developer tools AI-native"
+      ]
     }
   },
   {
@@ -716,6 +854,52 @@
         "Inteligencia artificial",
         "Software",
         "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Лондон / Нью-Йорк",
+      "en": "London / New York",
+      "ru": "Лондон / Нью-Йорк",
+      "es": "Londres / Nueva York"
+    },
+    "model": {
+      "uk": "Voice AI startup",
+      "en": "Voice AI startup",
+      "ru": "Voice AI startup",
+      "es": "Startup de voice AI"
+    },
+    "market": {
+      "uk": "Speech synthesis, voice agents, audio products",
+      "en": "Speech synthesis, voice agents, audio products",
+      "ru": "Speech synthesis, voice agents, audio products",
+      "es": "Síntesis de voz, voice agents y productos de audio"
+    },
+    "notableFor": {
+      "uk": "Різке зростання в сегменті генеративного аудіо",
+      "en": "Rapid growth in generative audio",
+      "ru": "Резкий рост в сегменте генеративного аудио",
+      "es": "Crecimiento rápido en audio generativo"
+    },
+    "signals": {
+      "uk": [
+        "Мультимовний voice stack",
+        "Продукти для медіа і бізнесу",
+        "Видимий бренд у voice AI після 2022 року"
+      ],
+      "en": [
+        "A multilingual voice stack",
+        "Products for media and business teams",
+        "A visible brand in voice AI after 2022"
+      ],
+      "ru": [
+        "Мультиязычный voice stack",
+        "Продукты для медиа и бизнеса",
+        "Заметный бренд в voice AI после 2022 года"
+      ],
+      "es": [
+        "Stack de voz multilingüe",
+        "Productos para medios y empresas",
+        "Marca visible en voice AI desde 2022"
       ]
     }
   },
@@ -837,6 +1021,52 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "AI search startup",
+      "en": "AI search startup",
+      "ru": "AI search startup",
+      "es": "Startup de búsqueda con IA"
+    },
+    "market": {
+      "uk": "Search, retrieval, assistants, web answers",
+      "en": "Search, retrieval, assistants, web answers",
+      "ru": "Search, retrieval, assistants, web answers",
+      "es": "Búsqueda, retrieval, asistentes y respuestas web"
+    },
+    "notableFor": {
+      "uk": "Один із найпомітніших AI search-продуктів нового циклу",
+      "en": "One of the most visible AI search products of the new cycle",
+      "ru": "Один из самых заметных AI search-продуктов нового цикла",
+      "es": "Uno de los productos de AI search más visibles del nuevo ciclo"
+    },
+    "signals": {
+      "uk": [
+        "Фокус на швидких відповідях із джерелами",
+        "Сильний consumer AI brand",
+        "Швидкий ріст після 2022 року"
+      ],
+      "en": [
+        "A focus on fast source-linked answers",
+        "A strong consumer AI brand",
+        "Fast growth after 2022"
+      ],
+      "ru": [
+        "Фокус на быстрых ответах с источниками",
+        "Сильный consumer AI brand",
+        "Быстрый рост после 2022 года"
+      ],
+      "es": [
+        "Foco en respuestas rápidas con fuentes",
+        "Marca fuerte de consumer AI",
+        "Crecimiento rápido desde 2022"
+      ]
     }
   },
   {
@@ -876,6 +1106,52 @@
         "Inteligencia artificial",
         "Diseño",
         "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Нью-Йорк, США",
+      "en": "New York, United States",
+      "ru": "Нью-Йорк, США",
+      "es": "Nueva York, Estados Unidos"
+    },
+    "model": {
+      "uk": "Creative AI company",
+      "en": "Creative AI company",
+      "ru": "Creative AI company",
+      "es": "Compañía de IA creativa"
+    },
+    "market": {
+      "uk": "Video generation, media production, creator tools",
+      "en": "Video generation, media production, creator tools",
+      "ru": "Video generation, media production, creator tools",
+      "es": "Generación de video, producción multimedia y creator tools"
+    },
+    "notableFor": {
+      "uk": "Генеративне відео як окремий продуктовий сегмент",
+      "en": "Turning generative video into a standalone product segment",
+      "ru": "Генеративное видео как отдельный продуктовый сегмент",
+      "es": "Convertir el video generativo en un segmento de producto propio"
+    },
+    "signals": {
+      "uk": [
+        "Орієнтація на creative teams",
+        "AI-відео як центральний продукт",
+        "Сильна присутність у креативному ринку після 2018 року"
+      ],
+      "en": [
+        "Built for creative teams",
+        "AI video as the core product",
+        "A strong presence in the creative market after 2018"
+      ],
+      "ru": [
+        "Ориентация на creative teams",
+        "AI-видео как центральный продукт",
+        "Сильное присутствие на креативном рынке после 2018 года"
+      ],
+      "es": [
+        "Orientada a equipos creativos",
+        "Video con IA como producto central",
+        "Fuerte presencia en el mercado creativo desde 2018"
       ]
     }
   },
@@ -917,6 +1193,52 @@
         "Diseño",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Generative imaging company",
+      "en": "Generative imaging company",
+      "ru": "Generative imaging company",
+      "es": "Compañía de imagen generativa"
+    },
+    "market": {
+      "uk": "Image generation, visual workflows, design exploration",
+      "en": "Image generation, visual workflows, design exploration",
+      "ru": "Image generation, visual workflows, design exploration",
+      "es": "Generación de imágenes, flujos visuales y exploración de diseño"
+    },
+    "notableFor": {
+      "uk": "Один із найсильніших брендів у генеративних зображеннях",
+      "en": "One of the strongest brands in generative imaging",
+      "ru": "Один из самых сильных брендов в генеративных изображениях",
+      "es": "Una de las marcas más fuertes en imagen generativa"
+    },
+    "signals": {
+      "uk": [
+        "Сильне adoption серед дизайнерів",
+        "Висока впізнаваність бренду",
+        "Продуктова ніша сформувалася після 2022 року"
+      ],
+      "en": [
+        "Strong adoption among designers",
+        "High brand recognition",
+        "The product niche solidified after 2022"
+      ],
+      "ru": [
+        "Сильное adoption среди дизайнеров",
+        "Высокая узнаваемость бренда",
+        "Продуктовая ниша сформировалась после 2022 года"
+      ],
+      "es": [
+        "Fuerte adopción entre diseñadores",
+        "Alta recordación de marca",
+        "El nicho se consolidó después de 2022"
+      ]
     }
   },
   {
@@ -956,6 +1278,52 @@
         "Inteligencia artificial",
         "Software empresarial",
         "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Торонто, Канада",
+      "en": "Toronto, Canada",
+      "ru": "Торонто, Канада",
+      "es": "Toronto, Canadá"
+    },
+    "model": {
+      "uk": "Enterprise AI company",
+      "en": "Enterprise AI company",
+      "ru": "Enterprise AI company",
+      "es": "Compañía de IA empresarial"
+    },
+    "market": {
+      "uk": "Enterprise LLMs, knowledge workflows, model APIs",
+      "en": "Enterprise LLMs, knowledge workflows, model APIs",
+      "ru": "Enterprise LLMs, knowledge workflows, model APIs",
+      "es": "LLMs enterprise, knowledge workflows y APIs de modelos"
+    },
+    "notableFor": {
+      "uk": "Фокус на B2B-рішенні для мовних моделей",
+      "en": "A strong B2B focus for language-model deployment",
+      "ru": "Фокус на B2B-решении для языковых моделей",
+      "es": "Foco fuerte en despliegue B2B de modelos de lenguaje"
+    },
+    "signals": {
+      "uk": [
+        "Орієнтація на корпоративний ринок",
+        "Сильна позиція в enterprise LLM-сегменті",
+        "Пост-2019 AI-компанія з інфраструктурним фокусом"
+      ],
+      "en": [
+        "Built for enterprise customers",
+        "A strong place in the enterprise LLM segment",
+        "A post-2019 AI company with infrastructure focus"
+      ],
+      "ru": [
+        "Ориентация на корпоративный рынок",
+        "Сильная позиция в enterprise LLM-сегменте",
+        "Пост-2019 AI-компания с инфраструктурным фокусом"
+      ],
+      "es": [
+        "Orientada a clientes enterprise",
+        "Posición fuerte en el segmento enterprise LLM",
+        "Compañía de IA post-2019 con foco de infraestructura"
       ]
     }
   },
@@ -997,6 +1365,52 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Agentic AI startup",
+      "en": "Agentic AI startup",
+      "ru": "Agentic AI startup",
+      "es": "Startup de IA agentica"
+    },
+    "market": {
+      "uk": "Software agents, UI actions, workflow automation",
+      "en": "Software agents, UI actions, workflow automation",
+      "ru": "Software agents, UI actions, workflow automation",
+      "es": "Agentes de software, acciones en UI y automatización de workflows"
+    },
+    "notableFor": {
+      "uk": "Ставка на агентні системи, що діють у програмному середовищі",
+      "en": "A bet on agents that act inside software environments",
+      "ru": "Ставка на агентные системы, действующие внутри программной среды",
+      "es": "Apuesta por agentes que actúan dentro de entornos de software"
+    },
+    "signals": {
+      "uk": [
+        "Фокус на software actions",
+        "Чіткий agentic AI narrative",
+        "Продуктовий сегмент нового циклу після 2022 року"
+      ],
+      "en": [
+        "Focused on software actions",
+        "A clear agentic-AI narrative",
+        "Part of a product segment that emerged after 2022"
+      ],
+      "ru": [
+        "Фокус на software actions",
+        "Четкий agentic AI narrative",
+        "Часть продуктового сегмента, возникшего после 2022 года"
+      ],
+      "es": [
+        "Foco en acciones dentro del software",
+        "Narrativa clara de IA agentica",
+        "Parte de un segmento surgido después de 2022"
+      ]
     }
   },
   {
@@ -1037,6 +1451,52 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "США / Франція",
+      "en": "United States / France",
+      "ru": "США / Франция",
+      "es": "Estados Unidos / Francia"
+    },
+    "model": {
+      "uk": "Developer AI company",
+      "en": "Developer AI company",
+      "ru": "Developer AI company",
+      "es": "Compañía de IA para desarrolladores"
+    },
+    "market": {
+      "uk": "Code generation, developer tools, foundation models",
+      "en": "Code generation, developer tools, foundation models",
+      "ru": "Code generation, developer tools, foundation models",
+      "es": "Generación de código, developer tools y modelos fundacionales"
+    },
+    "notableFor": {
+      "uk": "Новий гравець у сегменті AI для software engineering",
+      "en": "A new entrant in AI for software engineering",
+      "ru": "Новый игрок в сегменте AI для software engineering",
+      "es": "Un nuevo actor en IA para software engineering"
+    },
+    "signals": {
+      "uk": [
+        "Ставка на core developer workflows",
+        "Модельний фокус для code generation",
+        "Видимий AI-devtools сегмент після 2023 року"
+      ],
+      "en": [
+        "A bet on core developer workflows",
+        "Model-centric work for code generation",
+        "Part of the visible AI devtools segment after 2023"
+      ],
+      "ru": [
+        "Ставка на core developer workflows",
+        "Модельный фокус для code generation",
+        "Часть заметного AI devtools-сегмента после 2023 года"
+      ],
+      "es": [
+        "Apuesta por workflows centrales de desarrolladores",
+        "Foco de modelos para code generation",
+        "Parte del segmento visible de AI devtools desde 2023"
+      ]
     }
   },
   {
@@ -1076,6 +1536,568 @@
         "Inteligencia artificial",
         "Software empresarial",
         "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Vertical AI startup",
+      "en": "Vertical AI startup",
+      "ru": "Vertical AI startup",
+      "es": "Startup de IA vertical"
+    },
+    "market": {
+      "uk": "Legal tech, professional services, document analysis",
+      "en": "Legal tech, professional services, document analysis",
+      "ru": "Legal tech, professional services, document analysis",
+      "es": "Legal tech, servicios profesionales y análisis documental"
+    },
+    "notableFor": {
+      "uk": "Один із найпомітніших vertical AI-продуктів нового циклу",
+      "en": "One of the most visible vertical-AI products of the new cycle",
+      "ru": "Один из самых заметных vertical AI-продуктов нового цикла",
+      "es": "Uno de los productos de IA vertical más visibles del nuevo ciclo"
+    },
+    "signals": {
+      "uk": [
+        "Чіткий юридичний use case",
+        "Сильний B2B AI narrative",
+        "Показує рух AI у vertical software"
+      ],
+      "en": [
+        "A clear legal use case",
+        "A strong B2B AI narrative",
+        "Shows how AI is moving into vertical software"
+      ],
+      "ru": [
+        "Четкий юридический use case",
+        "Сильный B2B AI narrative",
+        "Показывает движение ИИ в vertical software"
+      ],
+      "es": [
+        "Caso de uso legal claro",
+        "Narrativa fuerte de IA B2B",
+        "Muestra cómo la IA entra en software vertical"
+      ]
+    }
+  },
+  {
+    "slug": "character-ai",
+    "image": "https://logo.clearbit.com/character.ai",
+    "name": "Character.AI",
+    "founded": "2021",
+    "category": {
+      "uk": "AI-платформа персонажів і розмовних агентів",
+      "en": "AI character and conversational platform",
+      "ru": "AI-платформа персонажей и разговорных агентов",
+      "es": "Plataforma de personajes y agentes conversacionales con IA"
+    },
+    "summary": {
+      "uk": "Розвиває споживчі AI-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії.",
+      "en": "Builds consumer AI products around personalised characters, chat experiences and long-session engagement.",
+      "ru": "Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия.",
+      "es": "Desarrolla productos de IA para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Consumer AI startup",
+      "en": "Consumer AI startup",
+      "ru": "Consumer AI startup",
+      "es": "Startup de IA para consumo"
+    },
+    "market": {
+      "uk": "Conversational AI, consumer engagement, characters",
+      "en": "Conversational AI, consumer engagement, characters",
+      "ru": "Conversational AI, consumer engagement, characters",
+      "es": "IA conversacional, engagement de consumo y personajes"
+    },
+    "notableFor": {
+      "uk": "Виводить AI-персонажів у масовий споживчий продукт",
+      "en": "Bringing AI characters into a mass consumer product",
+      "ru": "Выводит AI-персонажей в массовый потребительский продукт",
+      "es": "Lleva personajes de IA a un producto masivo de consumo"
+    },
+    "signals": {
+      "uk": [
+        "Consumer AI як окремий сегмент",
+        "Фокус на довгій взаємодії",
+        "Впізнавана ніша серед AI-продуктів після 2021 року"
+      ],
+      "en": [
+        "Consumer AI as a standalone segment",
+        "A focus on long-form interaction",
+        "A recognisable niche among post-2021 AI products"
+      ],
+      "ru": [
+        "Consumer AI как отдельный сегмент",
+        "Фокус на долгом взаимодействии",
+        "Узнаваемая ниша среди AI-продуктов после 2021 года"
+      ],
+      "es": [
+        "Consumer AI como segmento propio",
+        "Foco en interacción prolongada",
+        "Un nicho reconocible entre productos de IA después de 2021"
+      ]
+    }
+  },
+  {
+    "slug": "moonpay",
+    "image": "https://logo.clearbit.com/moonpay.com",
+    "name": "MoonPay",
+    "founded": "2019",
+    "category": {
+      "uk": "Крипто- та фінтех-інфраструктура",
+      "en": "Crypto and fintech infrastructure",
+      "ru": "Крипто- и финтех-инфраструктура",
+      "es": "Infraestructura crypto y fintech"
+    },
+    "summary": {
+      "uk": "Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows.",
+      "en": "Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows.",
+      "ru": "Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows.",
+      "es": "Construye infraestructura de pagos y onboarding para activos digitales, wallets y flujos globales de pago."
+    },
+    "tags": {
+      "uk": [
+        "Фінтех",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Fintech",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Финтех",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Fintech",
+        "Software",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Лондон / Маямі",
+      "en": "London / Miami",
+      "ru": "Лондон / Майами",
+      "es": "Londres / Miami"
+    },
+    "model": {
+      "uk": "Fintech infrastructure startup",
+      "en": "Fintech infrastructure startup",
+      "ru": "Fintech infrastructure startup",
+      "es": "Startup de infraestructura fintech"
+    },
+    "market": {
+      "uk": "Payments, crypto onboarding, digital assets",
+      "en": "Payments, crypto onboarding, digital assets",
+      "ru": "Payments, crypto onboarding, digital assets",
+      "es": "Pagos, crypto onboarding y activos digitales"
+    },
+    "notableFor": {
+      "uk": "Платіжний шар для цифрових активів і wallets",
+      "en": "A payment layer for digital assets and wallets",
+      "ru": "Платежный слой для цифровых активов и wallets",
+      "es": "Una capa de pagos para activos digitales y wallets"
+    },
+    "signals": {
+      "uk": [
+        "Комбінація fintech і web3 onboarding",
+        "Інфраструктурний продукт для партнерських команд",
+        "Видимий гравець хвилі після 2019 року"
+      ],
+      "en": [
+        "A mix of fintech and web3 onboarding",
+        "Infrastructure for partner ecosystems",
+        "A visible player of the post-2019 wave"
+      ],
+      "ru": [
+        "Комбинация fintech и web3 onboarding",
+        "Инфраструктурный продукт для партнерских экосистем",
+        "Заметный игрок волны после 2019 года"
+      ],
+      "es": [
+        "Combinación de fintech y web3 onboarding",
+        "Infraestructura para ecosistemas de socios",
+        "Actor visible de la ola posterior a 2019"
+      ]
+    }
+  },
+  {
+    "slug": "glean",
+    "image": "https://logo.clearbit.com/glean.com",
+    "name": "Glean",
+    "founded": "2019",
+    "category": {
+      "uk": "Enterprise-пошук і knowledge AI",
+      "en": "Enterprise search and knowledge AI",
+      "ru": "Enterprise-поиск и knowledge AI",
+      "es": "Búsqueda enterprise y knowledge AI"
+    },
+    "summary": {
+      "uk": "Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів.",
+      "en": "Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows.",
+      "ru": "Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow.",
+      "es": "Construye búsqueda enterprise y una capa de conocimiento sobre documentos, datos SaaS y flujos internos."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Корпоративне ПЗ",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Enterprise software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Корпоративное ПО",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software empresarial",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Пало-Альто, США",
+      "en": "Palo Alto, United States",
+      "ru": "Пало-Альто, США",
+      "es": "Palo Alto, Estados Unidos"
+    },
+    "model": {
+      "uk": "Enterprise search startup",
+      "en": "Enterprise search startup",
+      "ru": "Enterprise search startup",
+      "es": "Startup de búsqueda enterprise"
+    },
+    "market": {
+      "uk": "Internal search, knowledge access, enterprise productivity",
+      "en": "Internal search, knowledge access, enterprise productivity",
+      "ru": "Internal search, knowledge access, enterprise productivity",
+      "es": "Búsqueda interna, acceso al conocimiento y productividad enterprise"
+    },
+    "notableFor": {
+      "uk": "Пошук як knowledge layer для корпоративних команд",
+      "en": "Search as a knowledge layer for enterprise teams",
+      "ru": "Поиск как knowledge layer для корпоративных команд",
+      "es": "Búsqueda como capa de conocimiento para equipos enterprise"
+    },
+    "signals": {
+      "uk": [
+        "Сильний enterprise use case",
+        "Працює поверх SaaS-інструментів",
+        "Релевантність зросла разом із knowledge AI-попитом"
+      ],
+      "en": [
+        "A strong enterprise use case",
+        "Works across SaaS systems",
+        "Its relevance rose with demand for knowledge AI"
+      ],
+      "ru": [
+        "Сильный enterprise use case",
+        "Работает поверх SaaS-систем",
+        "Актуальность выросла вместе со спросом на knowledge AI"
+      ],
+      "es": [
+        "Caso de uso enterprise sólido",
+        "Opera sobre sistemas SaaS",
+        "Su relevancia creció junto a la demanda de knowledge AI"
+      ]
+    }
+  },
+  {
+    "slug": "sierra",
+    "image": "https://logo.clearbit.com/sierra.ai",
+    "name": "Sierra",
+    "founded": "2023",
+    "category": {
+      "uk": "Customer AI-платформа",
+      "en": "Customer AI platform",
+      "ru": "Customer AI-платформа",
+      "es": "Plataforma de Customer AI"
+    },
+    "summary": {
+      "uk": "Будує AI-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise.",
+      "en": "Builds AI systems for customer experience, support operations and enterprise conversational workflows.",
+      "ru": "Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows.",
+      "es": "Construye sistemas de IA para customer experience, soporte y flujos conversacionales a nivel enterprise."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Корпоративне ПЗ",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Enterprise software",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Корпоративное ПО",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Software empresarial",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Customer AI startup",
+      "en": "Customer AI startup",
+      "ru": "Customer AI startup",
+      "es": "Startup de Customer AI"
+    },
+    "market": {
+      "uk": "Customer support, service operations, conversational AI",
+      "en": "Customer support, service operations, conversational AI",
+      "ru": "Customer support, service operations, conversational AI",
+      "es": "Soporte al cliente, operaciones de servicio e IA conversacional"
+    },
+    "notableFor": {
+      "uk": "Новий клас AI-сервісу для customer operations",
+      "en": "A new class of AI service for customer operations",
+      "ru": "Новый класс AI-сервиса для customer operations",
+      "es": "Una nueva clase de servicio de IA para customer operations"
+    },
+    "signals": {
+      "uk": [
+        "Фокус на customer-facing workflows",
+        "Сильний enterprise service narrative",
+        "Частина нової хвилі agentic support products"
+      ],
+      "en": [
+        "Focused on customer-facing workflows",
+        "A strong enterprise service narrative",
+        "Part of the new wave of agentic support products"
+      ],
+      "ru": [
+        "Фокус на customer-facing workflows",
+        "Сильный enterprise service narrative",
+        "Часть новой волны agentic support products"
+      ],
+      "es": [
+        "Foco en workflows orientados al cliente",
+        "Narrativa fuerte de servicio enterprise",
+        "Parte de la nueva ola de productos agentic de soporte"
+      ]
+    }
+  },
+  {
+    "slug": "suno",
+    "image": "https://logo.clearbit.com/suno.com",
+    "name": "Suno",
+    "founded": "2022",
+    "category": {
+      "uk": "Генеративна музика",
+      "en": "Generative music platform",
+      "ru": "Генеративная музыка",
+      "es": "Plataforma de música generativa"
+    },
+    "summary": {
+      "uk": "Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows.",
+      "en": "Develops generative music models and products for creating audio, songs and new creative workflows.",
+      "ru": "Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows.",
+      "es": "Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Дизайн",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Design",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Дизайн",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Diseño",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "model": {
+      "uk": "Generative audio startup",
+      "en": "Generative audio startup",
+      "ru": "Generative audio startup",
+      "es": "Startup de audio generativo"
+    },
+    "market": {
+      "uk": "Music generation, audio creation, creator tools",
+      "en": "Music generation, audio creation, creator tools",
+      "ru": "Music generation, audio creation, creator tools",
+      "es": "Generación musical, creación de audio y creator tools"
+    },
+    "notableFor": {
+      "uk": "Музика як окремий сегмент генеративного AI",
+      "en": "Music as a standalone generative-AI segment",
+      "ru": "Музыка как отдельный сегмент генеративного ИИ",
+      "es": "La música como segmento propio de IA generativa"
+    },
+    "signals": {
+      "uk": [
+        "Швидко сформувала нову категорію",
+        "Сильна creative AI-присутність",
+        "Показує розширення AI за межі тексту й коду"
+      ],
+      "en": [
+        "Helped define a new category quickly",
+        "A strong creative-AI presence",
+        "Shows AI expanding beyond text and code"
+      ],
+      "ru": [
+        "Быстро сформировала новую категорию",
+        "Сильное присутствие в creative AI",
+        "Показывает расширение ИИ за пределы текста и кода"
+      ],
+      "es": [
+        "Ayudó a definir una nueva categoría con rapidez",
+        "Fuerte presencia en creative AI",
+        "Muestra a la IA expandiéndose más allá de texto y código"
+      ]
+    }
+  },
+  {
+    "slug": "temporal",
+    "image": "https://logo.clearbit.com/temporal.io",
+    "name": "Temporal",
+    "founded": "2019",
+    "category": {
+      "uk": "Workflow orchestration platform",
+      "en": "Workflow orchestration platform",
+      "ru": "Платформа orchestration workflow",
+      "es": "Plataforma de orquestación de workflows"
+    },
+    "summary": {
+      "uk": "Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів.",
+      "en": "Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes.",
+      "ru": "Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов.",
+      "es": "Construye infraestructura para workflows distribuidos fiables, orquestación backend y procesos de servicio resilientes."
+    },
+    "tags": {
+      "uk": [
+        "Програмування",
+        "Хмарні технології",
+        "Стартапи"
+      ],
+      "en": [
+        "Software",
+        "Cloud",
+        "Startups"
+      ],
+      "ru": [
+        "Программирование",
+        "Облачные технологии",
+        "Стартапы"
+      ],
+      "es": [
+        "Software",
+        "Cloud",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Сіетл, США",
+      "en": "Seattle, United States",
+      "ru": "Сиэтл, США",
+      "es": "Seattle, Estados Unidos"
+    },
+    "model": {
+      "uk": "Infrastructure software startup",
+      "en": "Infrastructure software startup",
+      "ru": "Infrastructure software startup",
+      "es": "Startup de software de infraestructura"
+    },
+    "market": {
+      "uk": "Distributed systems, workflow orchestration, backend reliability",
+      "en": "Distributed systems, workflow orchestration, backend reliability",
+      "ru": "Distributed systems, workflow orchestration, backend reliability",
+      "es": "Sistemas distribuidos, orquestación de workflows y fiabilidad backend"
+    },
+    "notableFor": {
+      "uk": "Інфраструктурний підхід до довгоживучих workflow і backend orchestration",
+      "en": "An infrastructure-first approach to long-running workflows and backend orchestration",
+      "ru": "Инфраструктурный подход к долгоживущим workflow и backend orchestration",
+      "es": "Un enfoque de infraestructura para workflows de larga duración y orquestación backend"
+    },
+    "signals": {
+      "uk": [
+        "Сильний інженерний use case",
+        "Орієнтація на reliability і backend teams",
+        "Показує попит на глибоку інфраструктуру після 2019 року"
+      ],
+      "en": [
+        "A strong engineering use case",
+        "Built for reliability and backend teams",
+        "Shows demand for deep infrastructure after 2019"
+      ],
+      "ru": [
+        "Сильный инженерный use case",
+        "Ориентация на reliability и backend teams",
+        "Показывает спрос на глубокую инфраструктуру после 2019 года"
+      ],
+      "es": [
+        "Caso de uso de ingeniería fuerte",
+        "Orientado a reliability y equipos backend",
+        "Muestra demanda por infraestructura profunda después de 2019"
       ]
     }
   }
