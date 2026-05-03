@@ -1,15 +1,33 @@
-<title>Багато стартапів і технологічних компаній | Rybezh</title>
-<meta name="description" content="Окрема база компаній показує команди, продукти й операційні моделі сучасної інноваційної економіки.">
-<meta name="keywords" content="Стартапи, startup database, technology companies, Rybezh">
+<title>Каталог стартапів | Rybezh</title>
+<meta name="description" content="Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.">
 
 <section class="hero slim">
-  <div class="hero-content">
-    <p class="eyebrow">Стартапи</p>
-    <h1>Багато стартапів і технологічних компаній</h1>
-    <p>Окрема база компаній показує команди, продукти й операційні моделі сучасної інноваційної економіки.</p>
+  <div class="hero-copy">
+    <p class="eyebrow">Rybezh People Archive</p>
+    <h1>Каталог стартапів</h1>
+    <p>Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.</p>
+  </div>
+  <div class="hero-panel">
+    <div class="stat-card"><strong>33</strong><span>Усі стартапи</span></div>
+    <div class="stat-card"><strong>0</strong><span>AI</span></div>
+    <div class="stat-card"><strong>22</strong><span>Software</span></div>
+    <div class="stat-card"><strong>3</strong><span>Fintech</span></div>
   </div>
 </section>
-<section class="grid"><article class="card startup-card">
+
+<section class="directory-panel" aria-label="Пошук у каталозі">
+  <div class="directory-toolbar">
+    <label class="search-label">Пошук у каталозі
+      <input type="search" data-directory-search placeholder="Введіть імʼя, роль, країну або тег">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Скинути</button>
+  </div>
+  <p class="directory-hint">Шукайте за імʼям, роллю, країною, нішею або технологічним тегом.</p>
+  <div class="filter-bar"><button class="filter-chip active" type="button" data-filter="all">Усі категорії</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Фінтех</button><button class="filter-chip" type="button" data-filter="operations">Операції</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-results"><strong data-results-count>33</strong> Знайдено результатів</p>
+</section>
+
+<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-search="openai лабораторія ші та продуктова компанія розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці пз і творчих процесах. штучний інтелект програмування стартапи artificial intelligence software startups">
     <img src="https://logo.clearbit.com/openai.com" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=OpenAI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2015</p>
@@ -17,9 +35,10 @@
       <p class="meta">Лабораторія ШІ та продуктова компанія</p>
       <p>Розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-openai.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="google deepmind дослідницька компанія ші працює над фундаментальними системами ші, науковими задачами та продуктами google. штучний інтелект дослідження наука artificial intelligence research science">
     <img src="https://logo.clearbit.com/deepmind.google" alt="Google DeepMind" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Google%20DeepMind&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2010</p>
@@ -27,9 +46,10 @@
       <p class="meta">Дослідницька компанія ШІ</p>
       <p>Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Дослідження</span><span class="tag">Наука</span></div>
+      <a class="btn" href="startup-deepmind.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="stripe фінтех-інфраструктура будує api та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій. фінтех програмування операції fintech software operations">
     <img src="https://logo.clearbit.com/stripe.com" alt="Stripe" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Stripe&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2010</p>
@@ -37,9 +57,10 @@
       <p class="meta">Фінтех-інфраструктура</p>
       <p>Будує API та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій.</p>
       <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-stripe.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="spacex космічна інженерія створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання. космос інженерія операції space engineering operations">
     <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=SpaceX&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2002</p>
@@ -47,9 +68,10 @@
       <p class="meta">Космічна інженерія</p>
       <p>Створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання.</p>
       <div class="tags"><span class="tag">Космос</span><span class="tag">Інженерія</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-spacex.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="canva платформа дизайну дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів. дизайн програмування стартапи design software startups">
     <img src="https://logo.clearbit.com/canva.com" alt="Canva" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Canva&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2013</p>
@@ -57,9 +79,10 @@
       <p class="meta">Платформа дизайну</p>
       <p>Дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів.</p>
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-canva.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="hugging face open-source платформа ші підтримує спільноту моделей, датасетів і інструментів для машинного навчання. штучний інтелект open source стартапи artificial intelligence open source startups">
     <img src="https://logo.clearbit.com/huggingface.co" alt="Hugging Face" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Hugging%20Face&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2016</p>
@@ -67,9 +90,10 @@
       <p class="meta">Open-source платформа ШІ</p>
       <p>Підтримує спільноту моделей, датасетів і інструментів для машинного навчання.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Open source</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-hugging-face.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="figma спільний дизайн у браузері перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди. дизайн програмування стартапи design software startups">
     <img src="https://logo.clearbit.com/figma.com" alt="Figma" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Figma&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2012</p>
@@ -77,9 +101,10 @@
       <p class="meta">Спільний дизайн у браузері</p>
       <p>Перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди.</p>
       <div class="tags"><span class="tag">Дизайн</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-figma.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="notion продуктивність і знання обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу. програмування операції стартапи software operations startups">
     <img src="https://logo.clearbit.com/notion.so" alt="Notion" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Notion&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2013</p>
@@ -87,9 +112,10 @@
       <p class="meta">Продуктивність і знання</p>
       <p>Обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу.</p>
       <div class="tags"><span class="tag">Програмування</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-notion.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="anthropic ai safety та моделі розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні ai-системи. штучний інтелект дослідження стартапи artificial intelligence research startups">
     <img src="https://logo.clearbit.com/anthropic.com" alt="Anthropic" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Anthropic&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2021</p>
@@ -97,9 +123,10 @@
       <p class="meta">AI safety та моделі</p>
       <p>Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні AI-системи.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Дослідження</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-anthropic.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="mistral ai європейські ai-моделі будує відкриті та комерційні моделі ші, посилюючи європейську ai-екосистему. штучний інтелект програмування стартапи artificial intelligence software startups">
     <img src="https://logo.clearbit.com/mistral.ai" alt="Mistral AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Mistral%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2023</p>
@@ -107,9 +134,10 @@
       <p class="meta">Європейські AI-моделі</p>
       <p>Будує відкриті та комерційні моделі ШІ, посилюючи європейську AI-екосистему.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-mistral-ai.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="databricks платформа даних та ai поєднує lakehouse-архітектуру, аналітику, ml та управління даними для підприємств. штучний інтелект хмарні технології корпоративне пз artificial intelligence cloud enterprise software">
     <img src="https://logo.clearbit.com/databricks.com" alt="Databricks" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Databricks&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2013</p>
@@ -117,9 +145,10 @@
       <p class="meta">Платформа даних та AI</p>
       <p>Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Хмарні технології</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-databricks.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="grammarly ai для письма українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. штучний інтелект програмування стартапи artificial intelligence software startups">
     <img src="https://logo.clearbit.com/grammarly.com" alt="Grammarly" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Grammarly&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2009</p>
@@ -127,9 +156,10 @@
       <p class="meta">AI для письма</p>
       <p>Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-grammarly.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="preply edtech-маркетплейс платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу. освіта програмування стартапи education software startups">
     <img src="https://logo.clearbit.com/preply.com" alt="Preply" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Preply&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2012</p>
@@ -137,9 +167,10 @@
       <p class="meta">EdTech-маркетплейс</p>
       <p>Платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу.</p>
       <div class="tags"><span class="tag">Освіта</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-preply.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="gitlab devops-платформа надає інструменти для репозиторіїв, ci/cd, безпеки та спільної розробки програмного забезпечення. програмування open source операції software open source operations">
     <img src="https://logo.clearbit.com/gitlab.com" alt="GitLab" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=GitLab&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2011</p>
@@ -147,9 +178,10 @@
       <p class="meta">DevOps-платформа</p>
       <p>Надає інструменти для репозиторіїв, CI/CD, безпеки та спільної розробки програмного забезпечення.</p>
       <div class="tags"><span class="tag">Програмування</span><span class="tag">Open source</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-gitlab.html">Детальніше</a>
     </div>
   </article>
-<article class="card startup-card">
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-search="scale ai дані для ai підтримує підготовку даних і evaluation-процеси для компаній, що створюють ai-системи. штучний інтелект операції стартапи artificial intelligence operations startups">
     <img src="https://logo.clearbit.com/scale.com" alt="Scale AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Scale%20AI&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Засновано 2016</p>
@@ -157,5 +189,214 @@
       <p class="meta">Дані для AI</p>
       <p>Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи.</p>
       <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-scale-ai.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cursor ai-інструменти для розробників створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/cursor.com" alt="Cursor" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cursor&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Cursor</h3>
+      <p class="meta">AI-інструменти для розробників</p>
+      <p>Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-cursor.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="vercel хмарна платформа для фронтенду підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд. хмарні технології програмування стартапи cloud software startups">
+    <img src="https://logo.clearbit.com/vercel.com" alt="Vercel" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Vercel&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2015</p>
+      <h3>Vercel</h3>
+      <p class="meta">Хмарна платформа для фронтенду</p>
+      <p>Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-vercel.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="elevenlabs генеративний voice ai розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=ElevenLabs&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>ElevenLabs</h3>
+      <p class="meta">Генеративний voice AI</p>
+      <p>Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-elevenlabs.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="revolut глобальний фінтех-сервіс поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку. фінтех операції стартапи fintech operations startups">
+    <img src="https://logo.clearbit.com/revolut.com" alt="Revolut" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Revolut&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2015</p>
+      <h3>Revolut</h3>
+      <p class="meta">Глобальний фінтех-сервіс</p>
+      <p>Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-revolut.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="hardware" data-search="ajax systems український hardware та security tech розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку. апаратне забезпечення інженерія стартапи hardware engineering startups">
+    <img src="https://logo.clearbit.com/ajax.systems" alt="Ajax Systems" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ajax%20Systems&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2011</p>
+      <h3>Ajax Systems</h3>
+      <p class="meta">Український hardware та security tech</p>
+      <p>Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.</p>
+      <div class="tags"><span class="tag">Апаратне забезпечення</span><span class="tag">Інженерія</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-ajax-systems.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="perplexity пошуковий ai-продукт розвиває ai-пошук і відповіді з вебджерелами, поєднуючи llm, retrieval та швидкий продуктовий інтерфейс. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Perplexity&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Perplexity</h3>
+      <p class="meta">Пошуковий AI-продукт</p>
+      <p>Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-perplexity.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="runway генеративне відео та креативні ai-інструменти створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління. штучний інтелект дизайн стартапи artificial intelligence design startups">
+    <img src="https://logo.clearbit.com/runwayml.com" alt="Runway" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Runway&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2018</p>
+      <h3>Runway</h3>
+      <p class="meta">Генеративне відео та креативні AI-інструменти</p>
+      <p>Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-runway.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="midjourney генеративне зображення розвиває ai-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. штучний інтелект дизайн стартапи artificial intelligence design startups">
+    <img src="https://logo.clearbit.com/midjourney.com" alt="Midjourney" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Midjourney&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Midjourney</h3>
+      <p class="meta">Генеративне зображення</p>
+      <p>Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-midjourney.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="cohere enterprise llm-платформа працює над мовними моделями та enterprise ai-рішеннями для пошуку, автоматизації й knowledge workflows. штучний інтелект корпоративне пз стартапи artificial intelligence enterprise software startups">
+    <img src="https://logo.clearbit.com/cohere.com" alt="Cohere" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Cohere&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Cohere</h3>
+      <p class="meta">Enterprise LLM-платформа</p>
+      <p>Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-cohere.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="adept ai agents для software workflows будує агентні ai-системи для дій у програмних інтерфейсах і автоматизації knowledge work. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/adept.ai" alt="Adept" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Adept&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Adept</h3>
+      <p class="meta">AI agents для software workflows</p>
+      <p>Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-adept.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="poolside ai для розробників фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/poolside.ai" alt="Poolside" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Poolside&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Poolside</h3>
+      <p class="meta">AI для розробників</p>
+      <p>Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-poolside.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="harvey legal ai-платформа створює ai-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. штучний інтелект корпоративне пз стартапи artificial intelligence enterprise software startups">
+    <img src="https://logo.clearbit.com/harvey.ai" alt="Harvey" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Harvey&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Harvey</h3>
+      <p class="meta">Legal AI-платформа</p>
+      <p>Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-harvey.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="character.ai ai-платформа персонажів і розмовних агентів розвиває споживчі ai-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. штучний інтелект програмування стартапи artificial intelligence software startups">
+    <img src="https://logo.clearbit.com/character.ai" alt="Character.AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Character.AI&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2021</p>
+      <h3>Character.AI</h3>
+      <p class="meta">AI-платформа персонажів і розмовних агентів</p>
+      <p>Розвиває споживчі AI-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-character-ai.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-search="moonpay крипто- та фінтех-інфраструктура будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows. фінтех програмування стартапи fintech software startups">
+    <img src="https://logo.clearbit.com/moonpay.com" alt="MoonPay" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=MoonPay&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>MoonPay</h3>
+      <p class="meta">Крипто- та фінтех-інфраструктура</p>
+      <p>Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-moonpay.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="glean enterprise-пошук і knowledge ai створює корпоративний пошук і knowledge layer поверх документів, saas-даних та внутрішніх робочих процесів. штучний інтелект корпоративне пз стартапи artificial intelligence enterprise software startups">
+    <img src="https://logo.clearbit.com/glean.com" alt="Glean" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Glean&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Glean</h3>
+      <p class="meta">Enterprise-пошук і knowledge AI</p>
+      <p>Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-glean.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="sierra customer ai-платформа будує ai-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. штучний інтелект корпоративне пз стартапи artificial intelligence enterprise software startups">
+    <img src="https://logo.clearbit.com/sierra.ai" alt="Sierra" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Sierra&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Sierra</h3>
+      <p class="meta">Customer AI-платформа</p>
+      <p>Будує AI-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-sierra.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-search="suno генеративна музика розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. штучний інтелект дизайн стартапи artificial intelligence design startups">
+    <img src="https://logo.clearbit.com/suno.com" alt="Suno" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Suno&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Suno</h3>
+      <p class="meta">Генеративна музика</p>
+      <p>Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows.</p>
+      <div class="tags"><span class="tag">Штучний інтелект</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-suno.html">Детальніше</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-search="temporal workflow orchestration platform створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів. програмування хмарні технології стартапи software cloud startups">
+    <img src="https://logo.clearbit.com/temporal.io" alt="Temporal" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Temporal&size=720&background=eef4ff&color=2563eb&bold=true';">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Temporal</h3>
+      <p class="meta">Workflow orchestration platform</p>
+      <p>Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Хмарні технології</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-temporal.html">Детальніше</a>
     </div>
   </article></section>
+<p class="empty-state" data-empty-state hidden>Нічого не знайдено. Спробуйте інший запит або скиньте фільтр.</p>
+
+<section class="split-panel">
+  <div>
+    <p class="eyebrow">Редакційна методологія</p>
+    <h2>Редакційна методологія</h2>
+    <p>Сайт не використовує масово згенеровані doorway-сторінки, прихований текст чи SEO-шаблони без змісту. Кожен профіль має фото, професійну роль, фокус, коротку біографію та видимий контекст публікації.</p>
+  </div>
+  <a class="btn" href="methodology.html">Перейти до методології</a>
+</section>

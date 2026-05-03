@@ -336,6 +336,94 @@ const specialists = [
     knownFor: t('організацію запуску першого супутника і перших пілотованих польотів', 'organising the first satellite launch and early crewed flights', 'организацию запуска первого спутника и первых пилотируемых полетов', 'organizar el primer satélite y los primeros vuelos tripulados'),
     life: t('Він уособлює роль системного інженера, який обʼєднує науку, виробництво, ризик і командну координацію.', 'He represents the systems engineer who combines science, manufacturing, risk and team coordination.', 'Он олицетворяет системного инженера, объединяющего науку, производство, риск и командную координацию.', 'Representa al ingeniero de sistemas que une ciencia, fabricación, riesgo y coordinación de equipos.'),
     tags: ['space', 'engineering', 'leadership']
+  },
+  {
+    slug: 'mira-murati',
+    image: commons('Mira_Murati_2024.jpg'),
+    name: t('Міра Мураті', 'Mira Murati', 'Мира Мураті', 'Mira Murati'),
+    role: t('Технологічна керівниця у сфері ШІ', 'AI technology executive', 'Технологический руководитель в сфере ИИ', 'Ejecutiva tecnológica de IA'),
+    country: t('Албанія / США', 'Albania / United States', 'Албания / США', 'Albania / Estados Unidos'),
+    focus: t('генеративний ШІ, продуктові рішення, research-to-product execution', 'generative AI, product delivery, research-to-product execution', 'генеративный ИИ, продуктовые решения, research-to-product execution', 'IA generativa, entrega de producto y ejecución research-to-product'),
+    knownFor: t('керівництво продуктовим розвитком ChatGPT та мультимодальних AI-систем', 'leading product development around ChatGPT and multimodal AI systems', 'руководство продуктовым развитием ChatGPT и мультимодальных AI-систем', 'liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA'),
+    life: t('Її профіль важливий для сучасного ринку після 2020 року, бо він показує, як AI-дослідження переходять у масові продукти та інструменти для бізнесу й розробників.', 'Her profile matters for the post-2020 market because it shows how AI research becomes mainstream products and tools for businesses and developers.', 'Ее профиль важен для рынка после 2020 года, потому что показывает, как AI-исследования превращаются в массовые продукты и инструменты для бизнеса и разработчиков.', 'Su perfil es clave para el mercado posterior a 2020 porque muestra cómo la investigación en IA se convierte en productos masivos y herramientas para empresas y desarrolladores.'),
+    tags: ['ai', 'operations', 'leadership']
+  },
+  {
+    slug: 'dario-amodei',
+    image: commons('Dario_Amodei_2023.jpg'),
+    name: t('Даріо Амодеї', 'Dario Amodei', 'Дарио Амодеи', 'Dario Amodei'),
+    role: t('CEO Anthropic, дослідник ШІ', 'CEO of Anthropic, AI researcher', 'CEO Anthropic, исследователь ИИ', 'CEO de Anthropic, investigador de IA'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('AI safety, великі моделі, наукова стратегія', 'AI safety, large models, research strategy', 'AI safety, большие модели, научная стратегия', 'seguridad de IA, grandes modelos y estrategia de investigación'),
+    knownFor: t('розвиток Anthropic і фокус на безпечних та керованих AI-моделях', 'building Anthropic and focusing on safe, controllable AI models', 'развитие Anthropic и фокус на безопасных и управляемых AI-моделях', 'desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables'),
+    life: t('Після 2020 року його імʼя стало одним із ключових у дискусії про безпеку, масштабування та відповідальне впровадження генеративного ШІ.', 'After 2020 his name became central to the discussion around safety, scaling and responsible deployment of generative AI.', 'После 2020 года его имя стало одним из ключевых в разговоре о безопасности, масштабировании и ответственном внедрении генеративного ИИ.', 'Después de 2020 su nombre se volvió central en la discusión sobre seguridad, escalamiento y despliegue responsable de la IA generativa.'),
+    tags: ['ai', 'ceo', 'research']
+  },
+  {
+    slug: 'arthur-mensch',
+    image: commons('Arthur_Mensch_2024.jpg'),
+    name: t('Артур Менш', 'Arthur Mensch', 'Артур Менш', 'Arthur Mensch'),
+    role: t('CEO Mistral AI, інженер машинного навчання', 'CEO of Mistral AI, machine-learning engineer', 'CEO Mistral AI, инженер машинного обучения', 'CEO de Mistral AI, ingeniero de aprendizaje automático'),
+    country: t('Франція', 'France', 'Франция', 'Francia'),
+    focus: t('європейські AI-моделі, open models, інженерія inference', 'European AI models, open models, inference engineering', 'европейские AI-модели, open models, инженерия inference', 'modelos europeos de IA, open models e ingeniería de inference'),
+    knownFor: t('побудову Mistral AI як одного з найпомітніших європейських AI-стартапів після 2023 року', 'building Mistral AI into one of the most visible European AI startups after 2023', 'создание Mistral AI как одного из самых заметных европейских AI-стартапов после 2023 года', 'construir Mistral AI como una de las startups europeas de IA más visibles desde 2023'),
+    life: t('Його профіль додає до бази нову хвилю технічних засновників, які швидко формують європейський ринок генеративного ШІ.', 'His profile adds a new wave of technical founders who are rapidly shaping the European generative-AI market.', 'Его профиль добавляет новую волну технических основателей, быстро формирующих европейский рынок генеративного ИИ.', 'Su perfil añade una nueva ola de fundadores técnicos que están moldeando con rapidez el mercado europeo de IA generativa.'),
+    tags: ['ai', 'ceo', 'startup']
+  },
+  {
+    slug: 'mustafa-suleyman',
+    image: commons('Mustafa_Suleyman_2024.jpg'),
+    name: t('Мустафа Сулейман', 'Mustafa Suleyman', 'Мустафа Сулейман', 'Mustafa Suleyman'),
+    role: t('CEO Microsoft AI, підприємець у сфері ШІ', 'CEO of Microsoft AI, AI entrepreneur', 'CEO Microsoft AI, предприниматель в сфере ИИ', 'CEO de Microsoft AI, emprendedor de IA'),
+    country: t('Велика Британія', 'United Kingdom', 'Великобритания', 'Reino Unido'),
+    focus: t('AI products, consumer systems, стратегія впровадження', 'AI products, consumer systems, deployment strategy', 'AI products, consumer systems, стратегия внедрения', 'productos de IA, sistemas de consumo y estrategia de despliegue'),
+    knownFor: t('DeepMind, Inflection AI та управління новими AI-напрямами у Microsoft', 'DeepMind, Inflection AI and leading new AI directions at Microsoft', 'DeepMind, Inflection AI и руководство новыми AI-направлениями в Microsoft', 'DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft'),
+    life: t('Після 2020 року його роль показує, як AI-підприємці переходять від досліджень до широкого продуктового розгортання у великих технологічних компаніях.', 'After 2020 his role shows how AI entrepreneurs move from research into broad product deployment inside major technology companies.', 'После 2020 года его роль показывает, как AI-предприниматели переходят от исследований к широкому продуктовому внедрению внутри крупных технологических компаний.', 'Después de 2020 su papel muestra cómo los emprendedores de IA pasan de la investigación al despliegue amplio de producto dentro de grandes tecnológicas.'),
+    tags: ['ai', 'ceo', 'operations']
+  },
+  {
+    slug: 'sridhar-ramaswamy',
+    image: commons('Sridhar_Ramaswamy_2024.jpg'),
+    name: t('Шрідхар Рамасвамі', 'Sridhar Ramaswamy', 'Шридхар Рамасвами', 'Sridhar Ramaswamy'),
+    role: t('CEO Snowflake, керівник data/AI-платформ', 'CEO of Snowflake, data and AI platform executive', 'CEO Snowflake, руководитель data/AI-платформ', 'CEO de Snowflake, ejecutivo de plataformas de datos e IA'),
+    country: t('Індія / США', 'India / United States', 'Индия / США', 'India / Estados Unidos'),
+    focus: t('data cloud, AI infrastructure, корпоративні платформи даних', 'data cloud, AI infrastructure, enterprise data platforms', 'data cloud, AI infrastructure, корпоративные платформы данных', 'data cloud, infraestructura de IA y plataformas empresariales de datos'),
+    knownFor: t('керівництво Snowflake у фазі активної інтеграції AI у корпоративні data-платформи', 'leading Snowflake through an active phase of AI integration into enterprise data platforms', 'руководство Snowflake в фазе активной интеграции ИИ в корпоративные data-платформы', 'liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos'),
+    life: t('Його профіль додає до бази сегмент сучасних керівників, які після 2020 року будують фундамент для data та AI-інфраструктури в enterprise-середовищі.', 'His profile adds the segment of modern leaders who after 2020 are building the data and AI infrastructure foundation for enterprise environments.', 'Его профиль добавляет сегмент современных руководителей, которые после 2020 года строят фундамент data- и AI-инфраструктуры для enterprise-среды.', 'Su perfil añade el segmento de líderes modernos que, después de 2020, construyen la base de infraestructura de datos e IA para entornos enterprise.'),
+    tags: ['ceo', 'cloud', 'ai']
+  },
+  {
+    slug: 'thomas-dohmke',
+    image: commons('Thomas_Dohmke_2023.jpg'),
+    name: t('Томас Домке', 'Thomas Dohmke', 'Томас Домке', 'Thomas Dohmke'),
+    role: t('CEO GitHub, лідер developer platform', 'CEO of GitHub, developer platform leader', 'CEO GitHub, лидер developer platform', 'CEO de GitHub, líder de plataforma para desarrolladores'),
+    country: t('Німеччина / США', 'Germany / United States', 'Германия / США', 'Alemania / Estados Unidos'),
+    focus: t('developer tools, Copilot, collaborative software platforms', 'developer tools, Copilot, collaborative software platforms', 'developer tools, Copilot, collaborative software platforms', 'herramientas para desarrolladores, Copilot y plataformas colaborativas de software'),
+    knownFor: t('розвиток GitHub у добу Copilot і AI-assisted software development', 'leading GitHub in the Copilot era of AI-assisted software development', 'развитие GitHub в эпоху Copilot и AI-assisted software development', 'liderar GitHub en la era de Copilot y del desarrollo asistido por IA'),
+    life: t('Після 2020 року його роль стала показовою для нового покоління платформ, де AI безпосередньо змінює щоденну роботу програмістів.', 'After 2020 his role became a strong example of the new platform generation where AI directly changes the daily work of software engineers.', 'После 2020 года его роль стала показательной для нового поколения платформ, где ИИ напрямую меняет ежедневную работу программистов.', 'Después de 2020 su papel se volvió un ejemplo claro de la nueva generación de plataformas donde la IA cambia directamente el trabajo diario de los programadores.'),
+    tags: ['software', 'ceo', 'ai']
+  },
+  {
+    slug: 'jay-graber',
+    image: commons('Jay_Graber_2024.jpg'),
+    name: t('Джей Грейбер', 'Jay Graber', 'Джей Грейбер', 'Jay Graber'),
+    role: t('CEO Bluesky, product та protocol leader', 'CEO of Bluesky, product and protocol leader', 'CEO Bluesky, product и protocol leader', 'CEO de Bluesky, líder de producto y protocolo'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('децентралізовані соціальні мережі, протоколи, продуктова стратегія', 'decentralised social platforms, protocols, product strategy', 'децентрализованные социальные платформы, протоколы, продуктовая стратегия', 'plataformas sociales descentralizadas, protocolos y estrategia de producto'),
+    knownFor: t('розвиток Bluesky як нової соціальної платформи на базі відкритого протоколу після 2020 року', 'building Bluesky as a new social platform on an open protocol after 2020', 'развитие Bluesky как новой социальной платформы на базе открытого протокола после 2020 года', 'desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020'),
+    life: t('Її профіль показує сучасний зріз product leadership у мережевих продуктах, де важливі і архітектура платформи, і довіра користувачів.', 'Her profile shows a modern slice of product leadership in networked products where platform architecture and user trust matter equally.', 'Ее профиль показывает современный срез product leadership в сетевых продуктах, где одинаково важны архитектура платформы и доверие пользователей.', 'Su perfil muestra una visión moderna del liderazgo de producto en servicios de red, donde importan tanto la arquitectura de plataforma como la confianza de los usuarios.'),
+    tags: ['software', 'ceo', 'design']
+  },
+  {
+    slug: 'lina-khan',
+    image: commons('Lina_Khan_2022.jpg'),
+    name: t('Ліна Хан', 'Lina Khan', 'Лина Хан', 'Lina Khan'),
+    role: t('Голова FTC, регуляторка цифрових платформ', 'FTC chair, digital-platform regulator', 'Глава FTC, регулятор цифровых платформ', 'Presidenta de la FTC y reguladora de plataformas digitales'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('регулювання Big Tech, конкуренція, цифрові ринки', 'Big Tech regulation, competition, digital markets', 'регулирование Big Tech, конкуренция, цифровые рынки', 'regulación de Big Tech, competencia y mercados digitales'),
+    knownFor: t('помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року', 'a visible role in the post-2020 regulatory debate around major technology platforms', 'заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года', 'un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas'),
+    life: t('Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу.', 'Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy.', 'Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла.', 'Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital.'),
+    tags: ['operations', 'leadership', 'technology']
   }
 ];
 
@@ -344,7 +432,7 @@ const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(na
 
 const bohdanProfile = {
   slug: 'bohdan-tiutenko',
-  image: avatar('Bohdan Tiutenko'),
+  image: 'assets/images/bohdan-tiutenko-profile.svg',
   featured: true,
   name: t('Богдан Тютенко', 'Bohdan Tiutenko', 'Богдан Тютенко', 'Bohdan Tiutenko'),
   role: t('Директор операцій та менеджер логістики Foodtech', 'Operations Director and Foodtech Logistics Manager', 'Директор по операциям и менеджер логистики Foodtech', 'Director de Operaciones y Gerente de Logística Foodtech'),
@@ -408,43 +496,111 @@ const bohdanProfile = {
   }
 };
 
-const rubricTemplates = [
-  { tag: 'software', role: t('Software engineer', 'Software engineer', 'Инженер программного обеспечения', 'Ingeniero/a de software'), focus: t('backend, frontend, системний дизайн', 'backend, frontend and system design', 'backend, frontend и системный дизайн', 'backend, frontend y diseño de sistemas') },
-  { tag: 'operations', role: t('Operations director', 'Operations director', 'Операционный директор', 'Director/a de operaciones'), focus: t('масштабування процесів, KPI, якість виконання', 'process scaling, KPIs and execution quality', 'масштабирование процессов, KPI и качество исполнения', 'escala de procesos, KPIs y calidad de ejecución') },
-  { tag: 'science', role: t('Research scientist', 'Research scientist', 'Научный исследователь', 'Investigador/a científico/a'), focus: t('дослідницькі програми, дані, експерименти', 'research programmes, data and experiments', 'исследовательские программы, данные и эксперименты', 'programas de investigación, datos y experimentos') },
-  { tag: 'engineering', role: t('Systems engineer', 'Systems engineer', 'Системный инженер', 'Ingeniero/a de sistemas'), focus: t('інфраструктура, надійність, інтеграції', 'infrastructure, reliability and integrations', 'инфраструктура, надежность и интеграции', 'infraestructura, fiabilidad e integraciones') },
-  { tag: 'ceo', role: t('Founder / CEO', 'Founder / CEO', 'Основатель / CEO', 'Fundador/a / CEO'), focus: t('стратегія, продукт, побудова команд', 'strategy, product and team building', 'стратегия, продукт и построение команд', 'estrategia, producto y construcción de equipos') },
-  { tag: 'design', role: t('Product designer', 'Product designer', 'Продуктовый дизайнер', 'Diseñador/a de producto'), focus: t('UX, дослідження користувачів, дизайн-системи', 'UX, user research and design systems', 'UX, исследования пользователей и дизайн-системы', 'UX, investigación de usuarios y sistemas de diseño') },
-  { tag: 'biotech', role: t('Biotech specialist', 'Biotech specialist', 'Специалист по биотехнологиям', 'Especialista en biotecnología'), focus: t('лабораторні процеси, аналітика, регуляторика', 'laboratory workflows, analytics and regulation', 'лабораторные процессы, аналитика и регуляторика', 'procesos de laboratorio, analítica y regulación') },
-  { tag: 'fintech', role: t('Fintech product lead', 'Fintech product lead', 'Руководитель fintech-продукта', 'Líder de producto fintech'), focus: t('платежі, ризики, фінансова інфраструктура', 'payments, risk and financial infrastructure', 'платежи, риски и финансовая инфраструктура', 'pagos, riesgo e infraestructura financiera') }
+const selectedSpecialistSlugs = [
+  'arthur-mensch',
+  'charity-majors',
+  'claire-hughes-johnson',
+  'dario-amodei',
+  'demis-hassabis',
+  'donna-strickland',
+  'elon-musk',
+  'fei-fei-li',
+  'guido-van-rossum',
+  'gwynne-shotwell',
+  'ilya-sutskever',
+  'jensen-huang',
+  'jay-graber',
+  'katalin-kariko',
+  'lina-khan',
+  'linus-torvalds',
+  'lisa-su',
+  'margaret-hamilton',
+  'mary-barra',
+  'melanie-perkins',
+  'mira-murati',
+  'mustafa-suleyman',
+  'patrick-collison',
+  'radia-perlman',
+  'safra-catz',
+  'sam-altman',
+  'sridhar-ramaswamy',
+  'satya-nadella',
+  'thomas-dohmke',
+  'tim-berners-lee',
+  'yann-lecun'
 ];
 
-const directoryNames = ['Alex Morgan','Maya Chen','Daniel Novak','Olena Shevchenko','Nora Patel','Luca Romano','Sara Kim','Mateo Garcia','Amina Hassan','Victor Silva','Iryna Kovalenko','Jonas Weber','Emma Laurent','Noah Brown','Sofia Rossi','Andrii Melnyk','Mila Horvat','Karim Haddad','Eva Novakova','Lucas Martin','Daria Ivanova','Tomasz Zielinski','Anika Rao','Hanna Muller','Diego Torres','Kateryna Bondar','Mark Johnson','Elena Petrova','Marta Lopez','Artem Savchuk','Leila Mansour','Robert Klein','Julia Adams','Pavlo Kravets','Natalia Costa','Omar Farouk','Anna Kowalska','George Wilson','Marina Sokolova','Ivan Horvat','Claire Dubois','Rafael Costa','Tetiana Moroz','Nina Fischer','Maxim Popov','Laura Jensen','Serhii Tkachenko','Miriam Cohen','Pedro Alvarez','Yana Litvin','Adrian Nowak','Ines Moreau','Mykola Lysenko','Fatima Zahra','Ethan Brooks','Alina Danyliuk','Hugo Bernard','Marta Nowak','Roman Hrytsenko','Sofia Almeida','David Cohen','Veronika Koval','Marco Ricci','Amelia Wright','Oksana Levchenko','Khalid Nasser','Lina Hoffmann','Bohdan Koval','Camila Santos','Yevhen Marchenko','Iris Novak','Kenji Sato','Li Wei','Maria Fernandez','James Carter','Dmytro Polishchuk','Alisa Romanenko','Youssef Amr','Isabel Cruz','Nikita Volkov','Greta Hansen','Taras Oliynyk','Marta Silva','Leo Schneider','Svitlana Klymenko','Zara Khan','Oscar Nilsson','Viktoria Mazur','Pablo Herrera','Oleh Rudenko','Emily Turner','Nadia Pavlenko','Sergio Ruiz','Maksym Bondarenko','Amara Okafor','Felix Meyer','Kira Sydorenko','Andrei Stoica','Lena Berg','Mikhail Orlov'];
+const specialistEnhancements = {
+  'mira-murati': {
+    highlights: {
+      uk: ['Запуск мультимодальних AI-продуктів для масового ринку', 'Поєднання research, product delivery і швидкої ітерації', 'Роль технологічного керівника в генеративному AI-циклі'],
+      en: ['Launching multimodal AI products for mass adoption', 'Combining research, product delivery and fast iteration', 'A technology-executive role inside the generative-AI cycle'],
+      ru: ['Запуск мультимодальных AI-продуктов для массового рынка', 'Сочетание research, product delivery и быстрой итерации', 'Роль технологического руководителя в цикле генеративного ИИ'],
+      es: ['Lanzamiento de productos multimodales de IA para adopción masiva', 'Combinación de research, entrega de producto e iteración rápida', 'Un rol ejecutivo tecnológico dentro del ciclo de IA generativa']
+    }
+  },
+  'dario-amodei': {
+    highlights: {
+      uk: ['Фокус на AI safety і керованості моделей', 'Будівництво нової дослідницької компанії після 2020 року', 'Вплив на дискусію про масштабування генеративного ШІ'],
+      en: ['A strong focus on AI safety and model controllability', 'Building a new research company after 2020', 'Influencing the discussion around scaling generative AI'],
+      ru: ['Фокус на AI safety и управляемости моделей', 'Построение новой исследовательской компании после 2020 года', 'Влияние на дискуссию о масштабировании генеративного ИИ'],
+      es: ['Foco en seguridad de IA y controlabilidad de modelos', 'Construcción de una nueva empresa de investigación después de 2020', 'Influencia en el debate sobre el escalamiento de la IA generativa']
+    }
+  },
+  'arthur-mensch': {
+    highlights: {
+      uk: ['Представник нової хвилі європейських AI-засновників', 'Ставка на open models і європейський ринок', 'Швидке масштабування AI-компанії після 2023 року'],
+      en: ['Part of the new wave of European AI founders', 'A bet on open models and the European market', 'Fast scaling of an AI company after 2023'],
+      ru: ['Представитель новой волны европейских AI-основателей', 'Ставка на open models и европейский рынок', 'Быстрое масштабирование AI-компании после 2023 года'],
+      es: ['Parte de la nueva ola de fundadores europeos de IA', 'Apuesta por open models y el mercado europeo', 'Escalamiento rápido de una compañía de IA después de 2023']
+    }
+  },
+  'mustafa-suleyman': {
+    highlights: {
+      uk: ['Перехід від AI-лабораторій до масового продуктового впровадження', 'Досвід у DeepMind, Inflection AI та Microsoft AI', 'Фокус на споживчих AI-продуктах і стратегії запуску'],
+      en: ['A bridge from AI labs into mass product deployment', 'Experience across DeepMind, Inflection AI and Microsoft AI', 'A focus on consumer AI products and deployment strategy'],
+      ru: ['Переход от AI-лабораторий к массовому продуктовому внедрению', 'Опыт в DeepMind, Inflection AI и Microsoft AI', 'Фокус на потребительских AI-продуктах и стратегии запуска'],
+      es: ['Un puente entre laboratorios de IA y despliegue masivo de producto', 'Experiencia en DeepMind, Inflection AI y Microsoft AI', 'Foco en productos de IA para consumo y estrategia de despliegue']
+    }
+  },
+  'sridhar-ramaswamy': {
+    highlights: {
+      uk: ['Data cloud і AI як інфраструктурний шар підприємств', 'Керівництво платформою у фазі AI-інтеграції', 'Сильний enterprise-контекст після 2020 року'],
+      en: ['Data cloud and AI as enterprise infrastructure', 'Leading a platform through AI integration', 'A strong enterprise context after 2020'],
+      ru: ['Data cloud и AI как инфраструктурный слой предприятий', 'Управление платформой в фазе AI-интеграции', 'Сильный enterprise-контекст после 2020 года'],
+      es: ['Data cloud e IA como capa de infraestructura empresarial', 'Liderar una plataforma en fase de integración de IA', 'Fuerte contexto enterprise después de 2020']
+    }
+  },
+  'thomas-dohmke': {
+    highlights: {
+      uk: ['Лідер платформи розробників у добу Copilot', 'Фокус на AI-assisted software development', 'Приклад зміни щоденних інженерних workflow після 2020 року'],
+      en: ['A developer-platform leader in the Copilot era', 'A focus on AI-assisted software development', 'An example of daily engineering workflow change after 2020'],
+      ru: ['Лидер developer-платформы в эпоху Copilot', 'Фокус на AI-assisted software development', 'Пример изменения ежедневных инженерных workflow после 2020 года'],
+      es: ['Un líder de plataforma para desarrolladores en la era Copilot', 'Foco en desarrollo asistido por IA', 'Ejemplo del cambio en workflows de ingeniería después de 2020']
+    }
+  },
+  'jay-graber': {
+    highlights: {
+      uk: ['Відкриті протоколи як продуктова стратегія', 'Лідерство у новому циклі соціальних платформ', 'Поєднання архітектури мережі та довіри користувачів'],
+      en: ['Open protocols as product strategy', 'Leadership in a new cycle of social platforms', 'Combining network architecture with user trust'],
+      ru: ['Открытые протоколы как продуктовая стратегия', 'Лидерство в новом цикле социальных платформ', 'Сочетание архитектуры сети и доверия пользователей'],
+      es: ['Protocolos abiertos como estrategia de producto', 'Liderazgo en un nuevo ciclo de plataformas sociales', 'Combinación de arquitectura de red y confianza del usuario']
+    }
+  },
+  'lina-khan': {
+    highlights: {
+      uk: ['Регуляторний вплив на цифрові ринки після 2020 року', 'Публічна роль у дискусії про Big Tech', 'Додає до бази перспективу правил, а не тільки продуктів'],
+      en: ['Regulatory influence on digital markets after 2020', 'A visible public role in the Big Tech debate', 'Adds the perspective of rules, not only products'],
+      ru: ['Регуляторное влияние на цифровые рынки после 2020 года', 'Публичная роль в дискуссии о Big Tech', 'Добавляет перспективу правил, а не только продуктов'],
+      es: ['Influencia regulatoria sobre mercados digitales después de 2020', 'Un papel público visible en el debate sobre Big Tech', 'Añade la perspectiva de reglas, no solo de productos']
+    }
+  }
+};
 
-const extraSpecialists = directoryNames.map((name, index) => {
-  const template = rubricTemplates[index % rubricTemplates.length];
-  const n = t(name, name, name, name);
-  return {
-    slug: `directory-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${index + 1}`,
-    image: avatar(name),
-    name: n,
-    role: template.role,
-    country: t('Міжнародний профіль', 'International profile', 'Международный профиль', 'Perfil internacional'),
-    focus: template.focus,
-    knownFor: t('практичну експертизу у своїй галузі та роботу з міждисциплінарними командами', 'practical domain expertise and work with cross-functional teams', 'практическую экспертизу в своей сфере и работу с междисциплинарными командами', 'experiencia práctica en su área y trabajo con equipos multifuncionales'),
-    life: t(
-      'Короткий професійний запис у базі Rybezh: профіль структуровано для швидкого перегляду компетенцій, ролі та напрямів експертизи.',
-      'A concise Rybezh professional record structured for quick review of competencies, role and fields of expertise.',
-      'Краткая профессиональная запись в базе Rybezh: профиль структурирован для быстрого просмотра компетенций, роли и направлений экспертизы.',
-      'Registro profesional breve en Rybezh, estructurado para revisar rápidamente competencias, rol y áreas de experiencia.'
-    ),
-    tags: [template.tag, index % 2 ? 'leadership' : 'operations', index % 3 ? 'technology' : 'research'],
-    directoryEntry: true
-  };
-});
-
-specialists.unshift(bohdanProfile);
-specialists.push(...extraSpecialists);
+const curatedSpecialists = [
+  bohdanProfile,
+  ...specialists.filter(person => selectedSpecialistSlugs.includes(person.slug))
+].map(person => ({ ...person, ...(specialistEnhancements[person.slug] || {}) }));
 
 const tagLabels = {
   software: t('Програмування', 'Software', 'Программирование', 'Software'),
@@ -617,20 +773,389 @@ const startups = [
     category: t('Дані для AI', 'Data for AI', 'Данные для AI', 'Datos para IA'),
     summary: t('Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи.', 'Supports data preparation and evaluation workflows for companies building AI systems.', 'Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.', 'Apoya preparación de datos y evaluación para empresas que crean sistemas de IA.'),
     tags: ['ai', 'operations', 'startup']
+  },
+  {
+    slug: 'cursor',
+    image: logo('cursor.com'),
+    name: 'Cursor',
+    founded: '2023',
+    category: t('AI-інструменти для розробників', 'AI tooling for developers', 'AI-инструменты для разработчиков', 'Herramientas de IA para desarrolladores'),
+    summary: t('Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію.', 'Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation.', 'Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.', 'Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'vercel',
+    image: logo('vercel.com'),
+    name: 'Vercel',
+    founded: '2015',
+    category: t('Хмарна платформа для фронтенду', 'Cloud platform for frontend teams', 'Облачная платформа для фронтенд-команд', 'Plataforma cloud para equipos frontend'),
+    summary: t('Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд.', 'Supports deployment, edge infrastructure and product velocity for modern web teams.', 'Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.', 'Impulsa despliegue, edge infrastructure y velocidad de producto para equipos web modernos.'),
+    tags: ['cloud', 'software', 'startup']
+  },
+  {
+    slug: 'elevenlabs',
+    image: logo('elevenlabs.io'),
+    name: 'ElevenLabs',
+    founded: '2022',
+    category: t('Генеративний voice AI', 'Generative voice AI', 'Генеративный voice AI', 'IA generativa de voz'),
+    summary: t('Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу.', 'Develops speech synthesis, voice agents and multilingual audio products for media, education and business.', 'Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.', 'Desarrolla síntesis de voz, voice agents y productos de audio multilingües para medios, educación y empresas.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'revolut',
+    image: logo('revolut.com'),
+    name: 'Revolut',
+    founded: '2015',
+    category: t('Глобальний фінтех-сервіс', 'Global fintech platform', 'Глобальная финтех-платформа', 'Plataforma fintech global'),
+    summary: t('Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку.', 'Combines banking, cards, business accounts and international financial operations in one app.', 'Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.', 'Combina banca, tarjetas, cuentas de negocio y operaciones financieras globales en una sola app.'),
+    tags: ['fintech', 'operations', 'startup']
+  },
+  {
+    slug: 'ajax-systems',
+    image: logo('ajax.systems'),
+    name: 'Ajax Systems',
+    founded: '2011',
+    category: t('Український hardware та security tech', 'Ukrainian hardware and security tech', 'Украинский hardware и security tech', 'Hardware y security tech ucraniano'),
+    summary: t('Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.', 'Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.', 'Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.', 'Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global.'),
+    tags: ['hardware', 'engineering', 'startup']
+  },
+  {
+    slug: 'perplexity',
+    image: logo('perplexity.ai'),
+    name: 'Perplexity',
+    founded: '2022',
+    category: t('Пошуковий AI-продукт', 'AI search product', 'AI-поисковый продукт', 'Producto de búsqueda con IA'),
+    summary: t('Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс.', 'Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface.', 'Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс.', 'Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'runway',
+    image: logo('runwayml.com'),
+    name: 'Runway',
+    founded: '2018',
+    category: t('Генеративне відео та креативні AI-інструменти', 'Generative video and creative AI tools', 'Генеративное видео и креативные AI-инструменты', 'Video generativo y herramientas creativas de IA'),
+    summary: t('Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління.', 'Builds products for generative video, media production and next-generation creative workflows.', 'Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения.', 'Construye productos para video generativo, producción multimedia y flujos creativos de nueva generación.'),
+    tags: ['ai', 'design', 'startup']
+  },
+  {
+    slug: 'midjourney',
+    image: logo('midjourney.com'),
+    name: 'Midjourney',
+    founded: '2022',
+    category: t('Генеративне зображення', 'Generative imaging company', 'Генеративные изображения', 'Empresa de imagen generativa'),
+    summary: t('Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow.', 'Builds image-generation AI systems that became part of modern design and visual workflows.', 'Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow.', 'Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales.'),
+    tags: ['ai', 'design', 'startup']
+  },
+  {
+    slug: 'cohere',
+    image: logo('cohere.com'),
+    name: 'Cohere',
+    founded: '2019',
+    category: t('Enterprise LLM-платформа', 'Enterprise LLM platform', 'Enterprise LLM-платформа', 'Plataforma empresarial de LLM'),
+    summary: t('Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows.', 'Develops language models and enterprise AI products for search, automation and knowledge workflows.', 'Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows.', 'Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento.'),
+    tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'adept',
+    image: logo('adept.ai'),
+    name: 'Adept',
+    founded: '2022',
+    category: t('AI agents для software workflows', 'AI agents for software workflows', 'AI agents для software workflows', 'Agentes de IA para flujos de software'),
+    summary: t('Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work.', 'Builds agentic AI systems for acting inside software interfaces and automating knowledge work.', 'Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work.', 'Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'poolside',
+    image: logo('poolside.ai'),
+    name: 'Poolside',
+    founded: '2023',
+    category: t('AI для розробників', 'AI for software developers', 'AI для разработчиков', 'IA para desarrolladores'),
+    summary: t('Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows.', 'Focuses on foundation models and products for software engineering teams and code-generation workflows.', 'Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows.', 'Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'harvey',
+    image: logo('harvey.ai'),
+    name: 'Harvey',
+    founded: '2022',
+    category: t('Legal AI-платформа', 'Legal AI platform', 'Legal AI-платформа', 'Plataforma legal con IA'),
+    summary: t('Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows.', 'Builds AI tools for legal teams, document analysis and professional knowledge workflows.', 'Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows.', 'Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento.'),
+    tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'character-ai',
+    image: logo('character.ai'),
+    name: 'Character.AI',
+    founded: '2021',
+    category: t('AI-платформа персонажів і розмовних агентів', 'AI character and conversational platform', 'AI-платформа персонажей и разговорных агентов', 'Plataforma de personajes y agentes conversacionales con IA'),
+    summary: t('Розвиває споживчі AI-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії.', 'Builds consumer AI products around personalised characters, chat experiences and long-session engagement.', 'Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия.', 'Desarrolla productos de IA para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'moonpay',
+    image: logo('moonpay.com'),
+    name: 'MoonPay',
+    founded: '2019',
+    category: t('Крипто- та фінтех-інфраструктура', 'Crypto and fintech infrastructure', 'Крипто- и финтех-инфраструктура', 'Infraestructura crypto y fintech'),
+    summary: t('Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows.', 'Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows.', 'Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows.', 'Construye infraestructura de pagos y onboarding para activos digitales, wallets y flujos globales de pago.'),
+    tags: ['fintech', 'software', 'startup']
+  },
+  {
+    slug: 'glean',
+    image: logo('glean.com'),
+    name: 'Glean',
+    founded: '2019',
+    category: t('Enterprise-пошук і knowledge AI', 'Enterprise search and knowledge AI', 'Enterprise-поиск и knowledge AI', 'Búsqueda enterprise y knowledge AI'),
+    summary: t('Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів.', 'Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows.', 'Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow.', 'Construye búsqueda enterprise y una capa de conocimiento sobre documentos, datos SaaS y flujos internos.'),
+    tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'sierra',
+    image: logo('sierra.ai'),
+    name: 'Sierra',
+    founded: '2023',
+    category: t('Customer AI-платформа', 'Customer AI platform', 'Customer AI-платформа', 'Plataforma de Customer AI'),
+    summary: t('Будує AI-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise.', 'Builds AI systems for customer experience, support operations and enterprise conversational workflows.', 'Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows.', 'Construye sistemas de IA para customer experience, soporte y flujos conversacionales a nivel enterprise.'),
+    tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'suno',
+    image: logo('suno.com'),
+    name: 'Suno',
+    founded: '2022',
+    category: t('Генеративна музика', 'Generative music platform', 'Генеративная музыка', 'Plataforma de música generativa'),
+    summary: t('Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows.', 'Develops generative music models and products for creating audio, songs and new creative workflows.', 'Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows.', 'Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos.'),
+    tags: ['ai', 'design', 'startup']
+  },
+  {
+    slug: 'temporal',
+    image: logo('temporal.io'),
+    name: 'Temporal',
+    founded: '2019',
+    category: t('Workflow orchestration platform', 'Workflow orchestration platform', 'Платформа orchestration workflow', 'Plataforma de orquestación de workflows'),
+    summary: t('Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів.', 'Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes.', 'Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов.', 'Construye infraestructura para workflows distribuidos fiables, orquestación backend y procesos de servicio resilientes.'),
+    tags: ['software', 'cloud', 'startup']
   }
 ];
 
-const specialistOutput = specialists.map(person => {
+const startupDetails = {
+  anthropic: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Дослідницька лабораторія та модельна компанія', 'Research lab and model company', 'Исследовательская лаборатория и модельная компания', 'Laboratorio de investigación y compañía de modelos'),
+    market: t('AI assistants, model APIs, enterprise adoption', 'AI assistants, model APIs, enterprise adoption', 'AI assistants, model APIs, enterprise adoption', 'Asistentes de IA, APIs de modelos y adopción enterprise'),
+    notableFor: t('Claude, constitutional AI і безпечне масштабування моделей', 'Claude, constitutional AI and safer model scaling', 'Claude, constitutional AI и безопасное масштабирование моделей', 'Claude, constitutional AI y escalamiento más seguro de modelos'),
+    signals: t(
+      ['Сильний фокус на model safety', 'Окремий бренд для enterprise AI', 'Швидке зростання серед корпоративних клієнтів'],
+      ['A visible focus on model safety', 'A distinct brand in enterprise AI', 'Fast traction with enterprise customers'],
+      ['Сильный фокус на model safety', 'Отдельный бренд в enterprise AI', 'Быстрый рост среди корпоративных клиентов'],
+      ['Foco visible en model safety', 'Marca diferenciada en enterprise AI', 'Rápida tracción con clientes corporativos']
+    )
+  },
+  'mistral-ai': {
+    hq: t('Париж, Франція', 'Paris, France', 'Париж, Франция', 'París, Francia'),
+    model: t('AI startup з відкритими та комерційними моделями', 'AI startup with open and commercial models', 'AI startup с открытыми и коммерческими моделями', 'Startup de IA con modelos abiertos y comerciales'),
+    market: t('Open models, European AI, inference products', 'Open models, European AI, inference products', 'Open models, European AI, inference products', 'Open models, IA europea y productos de inference'),
+    notableFor: t('Одна з найпомітніших європейських AI-компаній нового циклу', 'One of the most visible European AI companies of the new cycle', 'Одна из самых заметных европейских AI-компаний нового цикла', 'Una de las compañías europeas de IA más visibles del nuevo ciclo'),
+    signals: t(
+      ['Позиціонується як європейська AI-альтернатива', 'Працює з open models', 'Швидко вийшла в центр AI-ринку після 2023 року'],
+      ['Positioned as a European AI alternative', 'Works with open models', 'Reached the center of the AI market quickly after 2023'],
+      ['Позиционируется как европейская AI-альтернатива', 'Работает с open models', 'Быстро вышла в центр AI-рынка после 2023 года'],
+      ['Se posiciona como alternativa europea de IA', 'Trabaja con open models', 'Llegó rápido al centro del mercado de IA tras 2023']
+    )
+  },
+  cursor: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Developer tool startup', 'Developer tool startup', 'Developer tool startup', 'Startup de herramientas para desarrolladores'),
+    market: t('AI coding, codebase navigation, engineering workflows', 'AI coding, codebase navigation, engineering workflows', 'AI coding, codebase navigation, engineering workflows', 'Codificación con IA, navegación del codebase y workflows de ingeniería'),
+    notableFor: t('Поєднання AI-асистента, codebase search і редактора для розробників', 'Combining an AI assistant, codebase search and an editor for developers', 'Сочетание AI-ассистента, codebase search и редактора для разработчиков', 'Combinar asistente de IA, búsqueda en el codebase y editor para desarrolladores'),
+    signals: t(
+      ['Сильний фокус на продуктивності інженерів', 'Орієнтація на командні workflow', 'Продукт нової хвилі AI-native developer tools'],
+      ['A strong focus on engineering productivity', 'Built around team workflows', 'Part of the new wave of AI-native developer tools'],
+      ['Сильный фокус на продуктивности инженеров', 'Ориентация на командные workflow', 'Часть новой волны AI-native developer tools'],
+      ['Fuerte foco en productividad de ingeniería', 'Orientado a workflows de equipo', 'Parte de la nueva ola de developer tools AI-native']
+    )
+  },
+  elevenlabs: {
+    hq: t('Лондон / Нью-Йорк', 'London / New York', 'Лондон / Нью-Йорк', 'Londres / Nueva York'),
+    model: t('Voice AI startup', 'Voice AI startup', 'Voice AI startup', 'Startup de voice AI'),
+    market: t('Speech synthesis, voice agents, audio products', 'Speech synthesis, voice agents, audio products', 'Speech synthesis, voice agents, audio products', 'Síntesis de voz, voice agents y productos de audio'),
+    notableFor: t('Різке зростання в сегменті генеративного аудіо', 'Rapid growth in generative audio', 'Резкий рост в сегменте генеративного аудио', 'Crecimiento rápido en audio generativo'),
+    signals: t(
+      ['Мультимовний voice stack', 'Продукти для медіа і бізнесу', 'Видимий бренд у voice AI після 2022 року'],
+      ['A multilingual voice stack', 'Products for media and business teams', 'A visible brand in voice AI after 2022'],
+      ['Мультиязычный voice stack', 'Продукты для медиа и бизнеса', 'Заметный бренд в voice AI после 2022 года'],
+      ['Stack de voz multilingüe', 'Productos para medios y empresas', 'Marca visible en voice AI desde 2022']
+    )
+  },
+  perplexity: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('AI search startup', 'AI search startup', 'AI search startup', 'Startup de búsqueda con IA'),
+    market: t('Search, retrieval, assistants, web answers', 'Search, retrieval, assistants, web answers', 'Search, retrieval, assistants, web answers', 'Búsqueda, retrieval, asistentes y respuestas web'),
+    notableFor: t('Один із найпомітніших AI search-продуктів нового циклу', 'One of the most visible AI search products of the new cycle', 'Один из самых заметных AI search-продуктов нового цикла', 'Uno de los productos de AI search más visibles del nuevo ciclo'),
+    signals: t(
+      ['Фокус на швидких відповідях із джерелами', 'Сильний consumer AI brand', 'Швидкий ріст після 2022 року'],
+      ['A focus on fast source-linked answers', 'A strong consumer AI brand', 'Fast growth after 2022'],
+      ['Фокус на быстрых ответах с источниками', 'Сильный consumer AI brand', 'Быстрый рост после 2022 года'],
+      ['Foco en respuestas rápidas con fuentes', 'Marca fuerte de consumer AI', 'Crecimiento rápido desde 2022']
+    )
+  },
+  runway: {
+    hq: t('Нью-Йорк, США', 'New York, United States', 'Нью-Йорк, США', 'Nueva York, Estados Unidos'),
+    model: t('Creative AI company', 'Creative AI company', 'Creative AI company', 'Compañía de IA creativa'),
+    market: t('Video generation, media production, creator tools', 'Video generation, media production, creator tools', 'Video generation, media production, creator tools', 'Generación de video, producción multimedia y creator tools'),
+    notableFor: t('Генеративне відео як окремий продуктовий сегмент', 'Turning generative video into a standalone product segment', 'Генеративное видео как отдельный продуктовый сегмент', 'Convertir el video generativo en un segmento de producto propio'),
+    signals: t(
+      ['Орієнтація на creative teams', 'AI-відео як центральний продукт', 'Сильна присутність у креативному ринку після 2018 року'],
+      ['Built for creative teams', 'AI video as the core product', 'A strong presence in the creative market after 2018'],
+      ['Ориентация на creative teams', 'AI-видео как центральный продукт', 'Сильное присутствие на креативном рынке после 2018 года'],
+      ['Orientada a equipos creativos', 'Video con IA como producto central', 'Fuerte presencia en el mercado creativo desde 2018']
+    )
+  },
+  midjourney: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Generative imaging company', 'Generative imaging company', 'Generative imaging company', 'Compañía de imagen generativa'),
+    market: t('Image generation, visual workflows, design exploration', 'Image generation, visual workflows, design exploration', 'Image generation, visual workflows, design exploration', 'Generación de imágenes, flujos visuales y exploración de diseño'),
+    notableFor: t('Один із найсильніших брендів у генеративних зображеннях', 'One of the strongest brands in generative imaging', 'Один из самых сильных брендов в генеративных изображениях', 'Una de las marcas más fuertes en imagen generativa'),
+    signals: t(
+      ['Сильне adoption серед дизайнерів', 'Висока впізнаваність бренду', 'Продуктова ніша сформувалася після 2022 року'],
+      ['Strong adoption among designers', 'High brand recognition', 'The product niche solidified after 2022'],
+      ['Сильное adoption среди дизайнеров', 'Высокая узнаваемость бренда', 'Продуктовая ниша сформировалась после 2022 года'],
+      ['Fuerte adopción entre diseñadores', 'Alta recordación de marca', 'El nicho se consolidó después de 2022']
+    )
+  },
+  cohere: {
+    hq: t('Торонто, Канада', 'Toronto, Canada', 'Торонто, Канада', 'Toronto, Canadá'),
+    model: t('Enterprise AI company', 'Enterprise AI company', 'Enterprise AI company', 'Compañía de IA empresarial'),
+    market: t('Enterprise LLMs, knowledge workflows, model APIs', 'Enterprise LLMs, knowledge workflows, model APIs', 'Enterprise LLMs, knowledge workflows, model APIs', 'LLMs enterprise, knowledge workflows y APIs de modelos'),
+    notableFor: t('Фокус на B2B-рішенні для мовних моделей', 'A strong B2B focus for language-model deployment', 'Фокус на B2B-решении для языковых моделей', 'Foco fuerte en despliegue B2B de modelos de lenguaje'),
+    signals: t(
+      ['Орієнтація на корпоративний ринок', 'Сильна позиція в enterprise LLM-сегменті', 'Пост-2019 AI-компанія з інфраструктурним фокусом'],
+      ['Built for enterprise customers', 'A strong place in the enterprise LLM segment', 'A post-2019 AI company with infrastructure focus'],
+      ['Ориентация на корпоративный рынок', 'Сильная позиция в enterprise LLM-сегменте', 'Пост-2019 AI-компания с инфраструктурным фокусом'],
+      ['Orientada a clientes enterprise', 'Posición fuerte en el segmento enterprise LLM', 'Compañía de IA post-2019 con foco de infraestructura']
+    )
+  },
+  adept: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Agentic AI startup', 'Agentic AI startup', 'Agentic AI startup', 'Startup de IA agentica'),
+    market: t('Software agents, UI actions, workflow automation', 'Software agents, UI actions, workflow automation', 'Software agents, UI actions, workflow automation', 'Agentes de software, acciones en UI y automatización de workflows'),
+    notableFor: t('Ставка на агентні системи, що діють у програмному середовищі', 'A bet on agents that act inside software environments', 'Ставка на агентные системы, действующие внутри программной среды', 'Apuesta por agentes que actúan dentro de entornos de software'),
+    signals: t(
+      ['Фокус на software actions', 'Чіткий agentic AI narrative', 'Продуктовий сегмент нового циклу після 2022 року'],
+      ['Focused on software actions', 'A clear agentic-AI narrative', 'Part of a product segment that emerged after 2022'],
+      ['Фокус на software actions', 'Четкий agentic AI narrative', 'Часть продуктового сегмента, возникшего после 2022 года'],
+      ['Foco en acciones dentro del software', 'Narrativa clara de IA agentica', 'Parte de un segmento surgido después de 2022']
+    )
+  },
+  poolside: {
+    hq: t('США / Франція', 'United States / France', 'США / Франция', 'Estados Unidos / Francia'),
+    model: t('Developer AI company', 'Developer AI company', 'Developer AI company', 'Compañía de IA para desarrolladores'),
+    market: t('Code generation, developer tools, foundation models', 'Code generation, developer tools, foundation models', 'Code generation, developer tools, foundation models', 'Generación de código, developer tools y modelos fundacionales'),
+    notableFor: t('Новий гравець у сегменті AI для software engineering', 'A new entrant in AI for software engineering', 'Новый игрок в сегменте AI для software engineering', 'Un nuevo actor en IA para software engineering'),
+    signals: t(
+      ['Ставка на core developer workflows', 'Модельний фокус для code generation', 'Видимий AI-devtools сегмент після 2023 року'],
+      ['A bet on core developer workflows', 'Model-centric work for code generation', 'Part of the visible AI devtools segment after 2023'],
+      ['Ставка на core developer workflows', 'Модельный фокус для code generation', 'Часть заметного AI devtools-сегмента после 2023 года'],
+      ['Apuesta por workflows centrales de desarrolladores', 'Foco de modelos para code generation', 'Parte del segmento visible de AI devtools desde 2023']
+    )
+  },
+  harvey: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Vertical AI startup', 'Vertical AI startup', 'Vertical AI startup', 'Startup de IA vertical'),
+    market: t('Legal tech, professional services, document analysis', 'Legal tech, professional services, document analysis', 'Legal tech, professional services, document analysis', 'Legal tech, servicios profesionales y análisis documental'),
+    notableFor: t('Один із найпомітніших vertical AI-продуктів нового циклу', 'One of the most visible vertical-AI products of the new cycle', 'Один из самых заметных vertical AI-продуктов нового цикла', 'Uno de los productos de IA vertical más visibles del nuevo ciclo'),
+    signals: t(
+      ['Чіткий юридичний use case', 'Сильний B2B AI narrative', 'Показує рух AI у vertical software'],
+      ['A clear legal use case', 'A strong B2B AI narrative', 'Shows how AI is moving into vertical software'],
+      ['Четкий юридический use case', 'Сильный B2B AI narrative', 'Показывает движение ИИ в vertical software'],
+      ['Caso de uso legal claro', 'Narrativa fuerte de IA B2B', 'Muestra cómo la IA entra en software vertical']
+    )
+  },
+  'character-ai': {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Consumer AI startup', 'Consumer AI startup', 'Consumer AI startup', 'Startup de IA para consumo'),
+    market: t('Conversational AI, consumer engagement, characters', 'Conversational AI, consumer engagement, characters', 'Conversational AI, consumer engagement, characters', 'IA conversacional, engagement de consumo y personajes'),
+    notableFor: t('Виводить AI-персонажів у масовий споживчий продукт', 'Bringing AI characters into a mass consumer product', 'Выводит AI-персонажей в массовый потребительский продукт', 'Lleva personajes de IA a un producto masivo de consumo'),
+    signals: t(
+      ['Consumer AI як окремий сегмент', 'Фокус на довгій взаємодії', 'Впізнавана ніша серед AI-продуктів після 2021 року'],
+      ['Consumer AI as a standalone segment', 'A focus on long-form interaction', 'A recognisable niche among post-2021 AI products'],
+      ['Consumer AI как отдельный сегмент', 'Фокус на долгом взаимодействии', 'Узнаваемая ниша среди AI-продуктов после 2021 года'],
+      ['Consumer AI como segmento propio', 'Foco en interacción prolongada', 'Un nicho reconocible entre productos de IA después de 2021']
+    )
+  },
+  moonpay: {
+    hq: t('Лондон / Маямі', 'London / Miami', 'Лондон / Майами', 'Londres / Miami'),
+    model: t('Fintech infrastructure startup', 'Fintech infrastructure startup', 'Fintech infrastructure startup', 'Startup de infraestructura fintech'),
+    market: t('Payments, crypto onboarding, digital assets', 'Payments, crypto onboarding, digital assets', 'Payments, crypto onboarding, digital assets', 'Pagos, crypto onboarding y activos digitales'),
+    notableFor: t('Платіжний шар для цифрових активів і wallets', 'A payment layer for digital assets and wallets', 'Платежный слой для цифровых активов и wallets', 'Una capa de pagos para activos digitales y wallets'),
+    signals: t(
+      ['Комбінація fintech і web3 onboarding', 'Інфраструктурний продукт для партнерських команд', 'Видимий гравець хвилі після 2019 року'],
+      ['A mix of fintech and web3 onboarding', 'Infrastructure for partner ecosystems', 'A visible player of the post-2019 wave'],
+      ['Комбинация fintech и web3 onboarding', 'Инфраструктурный продукт для партнерских экосистем', 'Заметный игрок волны после 2019 года'],
+      ['Combinación de fintech y web3 onboarding', 'Infraestructura para ecosistemas de socios', 'Actor visible de la ola posterior a 2019']
+    )
+  },
+  glean: {
+    hq: t('Пало-Альто, США', 'Palo Alto, United States', 'Пало-Альто, США', 'Palo Alto, Estados Unidos'),
+    model: t('Enterprise search startup', 'Enterprise search startup', 'Enterprise search startup', 'Startup de búsqueda enterprise'),
+    market: t('Internal search, knowledge access, enterprise productivity', 'Internal search, knowledge access, enterprise productivity', 'Internal search, knowledge access, enterprise productivity', 'Búsqueda interna, acceso al conocimiento y productividad enterprise'),
+    notableFor: t('Пошук як knowledge layer для корпоративних команд', 'Search as a knowledge layer for enterprise teams', 'Поиск как knowledge layer для корпоративных команд', 'Búsqueda como capa de conocimiento para equipos enterprise'),
+    signals: t(
+      ['Сильний enterprise use case', 'Працює поверх SaaS-інструментів', 'Релевантність зросла разом із knowledge AI-попитом'],
+      ['A strong enterprise use case', 'Works across SaaS systems', 'Its relevance rose with demand for knowledge AI'],
+      ['Сильный enterprise use case', 'Работает поверх SaaS-систем', 'Актуальность выросла вместе со спросом на knowledge AI'],
+      ['Caso de uso enterprise sólido', 'Opera sobre sistemas SaaS', 'Su relevancia creció junto a la demanda de knowledge AI']
+    )
+  },
+  sierra: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Customer AI startup', 'Customer AI startup', 'Customer AI startup', 'Startup de Customer AI'),
+    market: t('Customer support, service operations, conversational AI', 'Customer support, service operations, conversational AI', 'Customer support, service operations, conversational AI', 'Soporte al cliente, operaciones de servicio e IA conversacional'),
+    notableFor: t('Новий клас AI-сервісу для customer operations', 'A new class of AI service for customer operations', 'Новый класс AI-сервиса для customer operations', 'Una nueva clase de servicio de IA para customer operations'),
+    signals: t(
+      ['Фокус на customer-facing workflows', 'Сильний enterprise service narrative', 'Частина нової хвилі agentic support products'],
+      ['Focused on customer-facing workflows', 'A strong enterprise service narrative', 'Part of the new wave of agentic support products'],
+      ['Фокус на customer-facing workflows', 'Сильный enterprise service narrative', 'Часть новой волны agentic support products'],
+      ['Foco en workflows orientados al cliente', 'Narrativa fuerte de servicio enterprise', 'Parte de la nueva ola de productos agentic de soporte']
+    )
+  },
+  suno: {
+    hq: t('США', 'United States', 'США', 'Estados Unidos'),
+    model: t('Generative audio startup', 'Generative audio startup', 'Generative audio startup', 'Startup de audio generativo'),
+    market: t('Music generation, audio creation, creator tools', 'Music generation, audio creation, creator tools', 'Music generation, audio creation, creator tools', 'Generación musical, creación de audio y creator tools'),
+    notableFor: t('Музика як окремий сегмент генеративного AI', 'Music as a standalone generative-AI segment', 'Музыка как отдельный сегмент генеративного ИИ', 'La música como segmento propio de IA generativa'),
+    signals: t(
+      ['Швидко сформувала нову категорію', 'Сильна creative AI-присутність', 'Показує розширення AI за межі тексту й коду'],
+      ['Helped define a new category quickly', 'A strong creative-AI presence', 'Shows AI expanding beyond text and code'],
+      ['Быстро сформировала новую категорию', 'Сильное присутствие в creative AI', 'Показывает расширение ИИ за пределы текста и кода'],
+      ['Ayudó a definir una nueva categoría con rapidez', 'Fuerte presencia en creative AI', 'Muestra a la IA expandiéndose más allá de texto y código']
+    )
+  },
+  temporal: {
+    hq: t('Сіетл, США', 'Seattle, United States', 'Сиэтл, США', 'Seattle, Estados Unidos'),
+    model: t('Infrastructure software startup', 'Infrastructure software startup', 'Infrastructure software startup', 'Startup de software de infraestructura'),
+    market: t('Distributed systems, workflow orchestration, backend reliability', 'Distributed systems, workflow orchestration, backend reliability', 'Distributed systems, workflow orchestration, backend reliability', 'Sistemas distribuidos, orquestación de workflows y fiabilidad backend'),
+    notableFor: t('Інфраструктурний підхід до довгоживучих workflow і backend orchestration', 'An infrastructure-first approach to long-running workflows and backend orchestration', 'Инфраструктурный подход к долгоживущим workflow и backend orchestration', 'Un enfoque de infraestructura para workflows de larga duración y orquestación backend'),
+    signals: t(
+      ['Сильний інженерний use case', 'Орієнтація на reliability і backend teams', 'Показує попит на глибоку інфраструктуру після 2019 року'],
+      ['A strong engineering use case', 'Built for reliability and backend teams', 'Shows demand for deep infrastructure after 2019'],
+      ['Сильный инженерный use case', 'Ориентация на reliability и backend teams', 'Показывает спрос на глубокую инфраструктуру после 2019 года'],
+      ['Caso de uso de ingeniería fuerte', 'Orientado a reliability y equipos backend', 'Muestra demanda por infraestructura profunda después de 2019']
+    )
+  }
+};
+
+const specialistOutput = curatedSpecialists.map(person => {
   const tags = {};
   for (const lang of langs) {
     tags[lang] = person.tags.map(tag => tagLabels[tag]?.[lang] || tag);
   }
 
   const bio = {
-    uk: `${person.name.uk} — ${person.role.uk}. Професійний фокус: ${person.focus.uk}. Ключовий внесок: ${person.knownFor.uk}. ${person.life.uk}`,
-    en: `${person.name.en} is known as ${person.role.en}. Professional focus: ${person.focus.en}. Key contribution: ${person.knownFor.en}. ${person.life.en}`,
-    ru: `${person.name.ru} — ${person.role.ru}. Профессиональный фокус: ${person.focus.ru}. Ключевой вклад: ${person.knownFor.ru}. ${person.life.ru}`,
-    es: `${person.name.es} destaca como ${person.role.es}. Foco profesional: ${person.focus.es}. Contribución clave: ${person.knownFor.es}. ${person.life.es}`
+    uk: person.life.uk,
+    en: person.life.en,
+    ru: person.life.ru,
+    es: person.life.es
   };
 
   return {
@@ -645,8 +1170,7 @@ const specialistOutput = specialists.map(person => {
     tags,
     featured: Boolean(person.featured),
     gallery: person.gallery || [],
-    highlights: person.highlights || null,
-    directoryEntry: Boolean(person.directoryEntry)
+    highlights: person.highlights || null
   };
 });
 
@@ -655,7 +1179,7 @@ const startupOutput = startups.map(company => {
   for (const lang of langs) {
     tags[lang] = company.tags.map(tag => tagLabels[tag]?.[lang] || tag);
   }
-  return { ...company, tags };
+  return { ...company, ...(startupDetails[company.slug] || {}), tags };
 });
 
 fs.writeFileSync('src/specialists.json', `${JSON.stringify(specialistOutput, null, 2)}\n`);
