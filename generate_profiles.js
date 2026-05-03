@@ -7,31 +7,33 @@ const PAGES_DIR = 'src/pages';
 const PROFILES_DIR = path.join(PAGES_DIR, 'profiles');
 const BASE_URL = 'https://rybezh.site/';
 const langs = ['uk', 'en', 'es', 'ru'];
+/** Add `src/assets/images/maria-rubezh-founder.webp` (or .jpg) for the founder photo; until then the onerror handler shows initials. */
+const FOUNDER_IMAGE = 'assets/images/maria-rubezh-founder.webp';
 
 const tr = {
   uk: {
-    siteTitle: 'Rybezh - професійна база спеціалістів і стартапів',
-    siteDescription: 'Редакційно відібрана база сучасних програмістів, інженерів, CEO, директорів з операцій та технологічних стартапів.',
-    heroEyebrow: 'Редакційна база професіоналів',
-    heroTitle: 'Професійний каталог спеціалістів, лідерів команд і технологічних компаній',
-    heroText: 'Rybezh збирає перевірені профілі програмістів, інженерів, дослідників, директорів, засновників стартапів і операційних лідерів. У центрі - сучасні професіонали, зрозуміла структура профілю, фотографії та прозора редакційна політика.',
+    siteTitle: 'Rybezh.site — каталог спеціалістів і стартапів',
+    siteDescription: 'Редакційний довідник Rybezh.site: інженери, керівники, операції та технологічні компанії — з фото, структурою профілю та чіткими правилами публікації.',
+    heroEyebrow: 'Rybezh.site · редакційний каталог',
+    heroTitle: 'Каталог людей і компаній, з яким зручно працювати рекрутерам і командам',
+    heroText: 'Ми збираємо профілі так, щоб було видно роль, географію, фокус і факти карʼєри — без «води» й без прихованих SEO-блоків. Це довідник для тих, хто швидко звіряє контекст: HR, засновники, інвестори й операційні лідери.',
     heroPrimary: 'Переглянути базу спеціалістів',
     heroSecondary: 'Сторінка стартапів',
-    heroPhotoStrip: 'Живі фото профілів із каталогу',
+    heroPhotoStrip: 'Фрагменти фото з профілів каталогу',
     featuredTitle: 'Рекомендовані профілі',
-    featuredText: 'Добірка спеціалістів, чиї ролі добре показують сучасний технологічний ринок: software, infrastructure, AI, product, operations і executive management.',
+    featuredText: 'Кілька профілів, які добре показують спектр бази: від інженерії та продукту до операцій і керівних ролей.',
     sectorsTitle: 'Напрями, які ми покриваємо',
-    sectorsText: 'Каталог сфокусовано на ролях, де професійний досвід, реальні системи і командний менеджмент мають критичне значення.',
-    insightsTitle: 'Що нового на сайті',
-    insightsText: 'Ми відділили головну сторінку від повного каталогу, додали юридичні сторінки, політику cookies, редакційну методологію та професійний футер з навігацією.',
+    sectorsText: 'Нам важливі ролі, де рішення приймають на основі систем, даних і командної координації — а не лише презентацій.',
+    insightsTitle: 'Що змінилося на сайті',
+    insightsText: 'Головна відокремлена від повного списку, стартапи винесені окремо, додані політики та сторінка методології — щоб зрозуміло, як ми публікуємо матеріали.',
     latestTitle: 'Останні додані профілі',
-    latestText: 'Сучасні фахівці, засновники та технічні керівники, активні у світовій екосистемі після 2000 року.',
+    latestText: 'Сучасні фахівці та керівники, переважно активні після 2000 року — з акцентом на технології, інженерію та бізнес-масштаб.',
     specialistsTitle: 'Уся база спеціалістів',
-    specialistsText: 'Повний каталог із пошуком, фільтрами за напрямом та картками профілів, придатними для швидкого редакційного перегляду.',
+    specialistsText: 'Повний список з пошуком і фільтрами: можна швидко знайти людину за країною, напрямом або тегом.',
     startupsTitle: 'Окрема сторінка стартапів',
-    startupsText: 'Ми винесли стартапи на окрему сторінку, щоб каталог людей не перетворювався на змішаний список, а компанії можна було переглядати як окремий інформаційний шар.',
+    startupsText: 'Компанії зібрані окремо, щоб не змішувати людей і продукти в одній стрічці й легше порівнювати контекст ринку.',
     standardsTitle: 'Редакційні стандарти та якість',
-    standardsText: 'Сайт не використовує масово згенеровані doorway-сторінки, прихований текст чи SEO-шаблони без змісту. Кожен профіль має фото, професійну роль, фокус, коротку біографію та видимий контекст публікації.',
+    standardsText: 'Жодних масових «порожніх» сторінок під пошук: у профілі є фото, роль, фокус і зрозумілий текст. Якщо дані застаріли — їх варто оновити через редакцію.',
     standardsPrimary: 'Перейти до методології',
     standardsSecondary: 'Політика конфіденційності',
     specialistsPageTitle: 'Каталог спеціалістів',
@@ -61,7 +63,7 @@ const tr = {
     founded: 'Засновано',
     profileBack: 'Назад до каталогу',
     methodologyTitle: 'Редакційна методологія',
-    methodologyIntro: 'Rybezh - це редакційна база, де сторінки будуються навколо змісту, а не навколо ключових слів.',
+    methodologyIntro: 'Rybezh.site — редакційна база: сторінки зʼявляються там, де є зміст для читача, а не заради ключових слів.',
     privacyTitle: 'Політика конфіденційності',
     privacyIntro: 'Ця сторінка пояснює, які технічні дані може обробляти статичний сайт та як ми працюємо з редакційними матеріалами.',
     cookiesTitle: 'Політика cookies',
@@ -74,24 +76,31 @@ const tr = {
     notFoundText: 'Можливо, сторінку було перенесено або запитуваний профіль більше не підтримується.',
     notFoundPrimary: 'На головну',
     notFoundSecondary: 'До каталогу спеціалістів',
+    siteByline: 'Rybezh.site',
+    founderTrustTitle: 'Засновниця проєкту',
+    founderTrustText: 'Каталог веде Марія Рубеж: редакційний фокус, перевірка фактів і єдиний тон матеріалів.',
+    founderTrustAlt: 'Марія Рубеж, засновниця Rybezh.site',
+    profileCTATitle: 'Звʼязок щодо цього профілю',
+    profileCTAText: 'Рекрутери та операційні команди можуть написати на редакційну пошту — вкажіть компанію, роль і короткий контекст запиту.',
+    profileCTALinkLabel: 'Написати на jobs.r@protonmail.com',
     trust: [
-      'Профілі з фотографіями та структурованими фактами',
-      'Окремі сторінки для спеціалістів, стартапів і правових документів',
-      'Локалізація: українська, англійська, іспанська, російська'
+      'Кожен профіль з фото й структурою: роль, країна, фокус, біографія',
+      'Окремі розділи для людей, стартапів і юридичних сторінок',
+      'Чотири мови інтерфейсу: українська, англійська, іспанська, російська'
     ],
     sectors: [
       { title: 'Програмування', text: 'Backend, frontend, distributed systems, DevOps та developer tooling.' },
       { title: 'Інженерія', text: 'Hardware, systems engineering, reliability, infrastructure та space tech.' },
       { title: 'Керівники', text: 'CEO, COO, технічні директори, стратегія та масштабування компаній.' },
       { title: 'Штучний інтелект', text: 'Дослідники AI, product builders, safety, data та model platforms.' },
-      { title: 'Операції', text: 'Execution, SOPs, logistics, P&L, hiring systems і delivery excellence.' },
+      { title: 'Операції', text: 'Польові процеси, SOPs, логістика, P&L, найм і стабільна якість сервісу.' },
       { title: 'Стартапи', text: 'Окремий каталог для продуктових компаній, інструментів і платформ.' }
     ],
     insightCards: [
-      { title: 'Без doorway-патернів', text: 'Масові thin-профілі та шаблонні noindex-сторінки прибрані з генератора.' },
-      { title: 'Професійний футер і політики', text: 'Додано privacy, cookies, terms і methodology для прозорості сайту.' },
-      { title: 'Окрема сторінка стартапів', text: 'Компанії винесено в окремий каталог з власною структурою та фокусом.' },
-      { title: 'Краща головна сторінка', text: 'Головна тепер працює як редакційна вітрина, а не як нескінченний SEO-список.' }
+      { title: 'Менше шуму в каталозі', text: 'Генератор не підставляє десятки однакових «тонких» профілів — кожна сторінка має сенс для читача.' },
+      { title: 'Прозорі правила', text: 'Є сторінки privacy, cookies, terms і методологія — видно, як ми ставимося до даних і контенту.' },
+      { title: 'Стартапи окремо', text: 'Компанії не змішані з людьми в одній стрічці: зручніше шукати й порівнювати.' },
+      { title: 'Головна як вітрина', text: 'На головній — добірка й пояснення, а не нескінченний список під пошукові запити.' }
     ],
     methodologySections: [
       {
@@ -142,7 +151,7 @@ const tr = {
     termsSections: [
       {
         title: '1. Характер сервісу',
-        body: 'Rybezh є інформаційним каталогом. Він не гарантує працевлаштування, інвестиції, партнерство чи комерційний результат від перегляду будь-якого профілю або сторінки стартапу.'
+        body: 'Rybezh.site — інформаційний каталог. Він не гарантує працевлаштування, інвестиції, партнерство чи комерційний результат від перегляду будь-якого профілю або сторінки стартапу.'
       },
       {
         title: '2. Точність даних',
@@ -166,31 +175,35 @@ const tr = {
     directoryFilterIndustryAll: 'Усі напрями',
     directoryFilterYear: 'Рік заснування',
     directoryFilterYearAll: 'Усі роки',
-    directoryShareHint: 'Фільтри й пошук зберігаються в адресі сторінки — можна поділитися посиланням.'
+    directoryShareHint: 'Фільтри й пошук зберігаються в адресі сторінки — можна поділитися посиланням.',
+    methodologyFounderNote: {
+      title: 'Редакція та засновниця',
+      body: 'Каталог веде Марія Рубеж (Rybezh.site): ми вирівнюємо тон між мовами, перевіряємо факти там, де це можливо, і не публікуємо сторінки лише заради ключових слів.'
+    }
   },
   en: {
-    siteTitle: 'Rybezh - professional specialist and startup directory',
-    siteDescription: 'An editorial directory of modern programmers, engineers, executives, operations leaders and technology startups.',
-    heroEyebrow: 'Editorial professional archive',
-    heroTitle: 'A professional directory of specialists, technology leaders and startup companies',
-    heroText: 'Rybezh brings together structured profiles of programmers, engineers, researchers, directors, startup founders and operations leaders. The focus is on modern professionals, visible profile photography, clean structure and transparent editorial standards.',
+    siteTitle: 'Rybezh.site — specialist and startup directory',
+    siteDescription: 'Rybezh.site is an editorial directory of engineers, executives, operations leaders and technology companies — with photos, structured profiles and clear publishing rules.',
+    heroEyebrow: 'Rybezh.site · editorial directory',
+    heroTitle: 'A people-and-companies catalogue recruiters can actually use',
+    heroText: 'Profiles are built so role, geography, focus and career facts read clearly — without filler copy or hidden SEO blocks. The site is a reference layer for HR teams, founders, investors and operators who need fast context.',
     heroPrimary: 'Browse specialists',
     heroSecondary: 'Explore startups',
-    heroPhotoStrip: 'Real faces from the directory',
+    heroPhotoStrip: 'Sample photos from directory profiles',
     featuredTitle: 'Featured profiles',
-    featuredText: 'A curated selection of people whose careers reflect the modern technology market: software, infrastructure, AI, product, operations and executive management.',
+    featuredText: 'A short list that shows the range of the archive: from engineering and product to operations and executive roles.',
     sectorsTitle: 'What the catalogue covers',
-    sectorsText: 'The directory focuses on roles where professional depth, system thinking and team execution matter.',
+    sectorsText: 'We prioritise roles where decisions depend on systems, data and team coordination — not slide decks alone.',
     insightsTitle: 'What changed on the site',
-    insightsText: 'The homepage is now separated from the full directory, legal pages and cookies policy were added, and the site has an explicit editorial methodology.',
+    insightsText: 'The homepage is split from the full list, startups have their own section, and policy plus methodology pages explain how we publish.',
     latestTitle: 'Recently added profiles',
-    latestText: 'Contemporary specialists, founders and technical leaders active in the post-2000 global ecosystem.',
+    latestText: 'Contemporary specialists and leaders, mostly active after 2000, with emphasis on technology, engineering and business scale.',
     specialistsTitle: 'Full specialist directory',
-    specialistsText: 'A searchable, filterable base of profiles designed for quick editorial review and professional navigation.',
+    specialistsText: 'The complete list with search and filters — find someone by country, sector or tag in a few clicks.',
     startupsTitle: 'Dedicated startups page',
-    startupsText: 'Startups now live on a separate page so the people directory remains clear and companies are presented as their own knowledge layer.',
+    startupsText: 'Companies live on a separate route so people and products are not mixed in one endless feed.',
     standardsTitle: 'Editorial standards and quality controls',
-    standardsText: 'The site does not use mass-generated doorway pages, hidden text or keyword-only templates. Every profile includes a photo, role, focus, biography and clear editorial framing.',
+    standardsText: 'No mass-produced empty pages for search traffic: every profile has a photo, role, focus and readable text. Outdated facts should be corrected through the editorial process.',
     standardsPrimary: 'Read methodology',
     standardsSecondary: 'Privacy policy',
     specialistsPageTitle: 'Specialist directory',
@@ -220,7 +233,7 @@ const tr = {
     founded: 'Founded',
     profileBack: 'Back to directory',
     methodologyTitle: 'Editorial methodology',
-    methodologyIntro: 'Rybezh is built as an editorial knowledge base where pages exist for content value, not just for search traffic.',
+    methodologyIntro: 'Rybezh.site is an editorial knowledge base: pages exist where they help a reader, not only to chase keywords.',
     privacyTitle: 'Privacy policy',
     privacyIntro: 'This page explains which technical data may be processed by a static site and how editorial materials are handled.',
     cookiesTitle: 'Cookies policy',
@@ -233,24 +246,31 @@ const tr = {
     notFoundText: 'The page may have been moved or the requested profile is no longer maintained.',
     notFoundPrimary: 'Go to homepage',
     notFoundSecondary: 'Open specialist directory',
+    siteByline: 'Rybezh.site',
+    founderTrustTitle: 'Project founder',
+    founderTrustText: 'Maria Rubezh leads the catalogue: editorial focus, fact-checking and a consistent voice across languages.',
+    founderTrustAlt: 'Maria Rubezh, founder of Rybezh.site',
+    profileCTATitle: 'Contact about this profile',
+    profileCTAText: 'Recruiters and operations teams can email the editorial inbox — include company, role and a short context for the request.',
+    profileCTALinkLabel: 'Email jobs.r@protonmail.com',
     trust: [
-      'Profiles with photography and structured facts',
-      'Separate pages for specialists, startups and legal policies',
-      'Localization in Ukrainian, English, Spanish and Russian'
+      'Every profile includes a photo plus structure: role, country, focus and biography',
+      'Separate sections for people, startups and legal pages',
+      'Four interface languages: Ukrainian, English, Spanish and Russian'
     ],
     sectors: [
       { title: 'Software', text: 'Backend, frontend, distributed systems, DevOps and developer tooling.' },
       { title: 'Engineering', text: 'Hardware, systems engineering, reliability, infrastructure and space tech.' },
       { title: 'Executives', text: 'CEO, COO, technical executives, strategy and company scaling.' },
       { title: 'Artificial intelligence', text: 'AI research, product builders, safety, data and model platforms.' },
-      { title: 'Operations', text: 'Execution, SOPs, logistics, P&L, hiring systems and delivery excellence.' },
+      { title: 'Operations', text: 'Field execution, SOPs, logistics, P&L, hiring and reliable service quality.' },
       { title: 'Startups', text: 'A dedicated catalogue for product companies, tools and platforms.' }
     ],
     insightCards: [
-      { title: 'Doorway patterns removed', text: 'Mass thin-profile generation and template noindex pages were removed from the generator.' },
-      { title: 'Legal and policy pages added', text: 'Privacy, cookies, terms and methodology are now part of the site architecture.' },
-      { title: 'Separate startup catalogue', text: 'Companies have their own destination instead of being mixed into the people index.' },
-      { title: 'Professional homepage', text: 'The homepage now works as an editorial overview instead of an endless SEO list.' }
+      { title: 'Less catalogue noise', text: 'The generator does not mint dozens of identical thin profiles — each page should earn its place.' },
+      { title: 'Clear rules', text: 'Privacy, cookies, terms and methodology explain how we handle data and content.' },
+      { title: 'Startups on their own', text: 'Companies are not blended with people in one stream, which makes scanning easier.' },
+      { title: 'Homepage as a showcase', text: 'The landing page introduces the archive instead of dumping an infinite SEO list.' }
     ],
     methodologySections: [
       {
@@ -301,7 +321,7 @@ const tr = {
     termsSections: [
       {
         title: '1. Nature of the service',
-        body: 'Rybezh is an informational directory. It does not guarantee employment, investment, partnerships or commercial outcomes from any profile or startup page.'
+        body: 'Rybezh.site is an informational directory. It does not guarantee employment, investment, partnerships or commercial outcomes from any profile or startup page.'
       },
       {
         title: '2. Accuracy of information',
@@ -325,31 +345,35 @@ const tr = {
     directoryFilterIndustryAll: 'All industries',
     directoryFilterYear: 'Founded year',
     directoryFilterYearAll: 'All years',
-    directoryShareHint: 'Filters and search stay in the URL so you can share a link.'
+    directoryShareHint: 'Filters and search stay in the URL so you can share a link.',
+    methodologyFounderNote: {
+      title: 'Editorial voice',
+      body: 'The catalogue is led by Maria Rubezh (Rybezh.site). We keep tone consistent across languages, verify facts where possible, and avoid publishing pages that exist only for keywords.'
+    }
   },
   es: {
-    siteTitle: 'Rybezh - directorio profesional de especialistas y startups',
-    siteDescription: 'Un directorio editorial de programadores, ingenieros, ejecutivos, líderes de operaciones y startups tecnológicas contemporáneas.',
-    heroEyebrow: 'Archivo editorial de profesionales',
-    heroTitle: 'Un directorio profesional de especialistas, líderes tecnológicos y compañías startup',
-    heroText: 'Rybezh reúne perfiles estructurados de programadores, ingenieros, investigadores, directivos, fundadores de startups y líderes de operaciones. El foco está en profesionales contemporáneos, fotografía visible en el perfil, estructura clara y estándares editoriales transparentes.',
+    siteTitle: 'Rybezh.site — directorio de especialistas y startups',
+    siteDescription: 'Directorio editorial de Rybezh.site: ingenieros, ejecutivos, operaciones y compañías tecnológicas, con fotos, estructura clara y reglas de publicación explícitas.',
+    heroEyebrow: 'Rybezh.site · directorio editorial',
+    heroTitle: 'Un catálogo de personas y empresas pensado para reclutamiento y equipos',
+    heroText: 'Armamos perfiles para que se entienda rol, geografía, foco y hechos de carrera — sin texto de relleno ni bloques SEO ocultos. Sirve como capa de contexto para reclutadores, fundadores, inversionistas y equipos de operaciones.',
     heroPrimary: 'Ver especialistas',
     heroSecondary: 'Explorar startups',
-    heroPhotoStrip: 'Rostros reales del directorio',
+    heroPhotoStrip: 'Muestras de fotos de perfiles del directorio',
     featuredTitle: 'Perfiles destacados',
-    featuredText: 'Una selección curada de personas cuyas carreras reflejan el mercado tecnológico moderno: software, infraestructura, IA, producto, operaciones y gestión ejecutiva.',
+    featuredText: 'Una lista corta que muestra el espectro del archivo: de ingeniería y producto a operaciones y roles ejecutivos.',
     sectorsTitle: 'Qué cubre el catálogo',
-    sectorsText: 'El directorio se enfoca en roles donde importan la profundidad profesional, el pensamiento sistémico y la ejecución de equipos.',
+    sectorsText: 'Priorizamos roles donde las decisiones dependen de sistemas, datos y coordinación de equipos — no solo de presentaciones.',
     insightsTitle: 'Qué cambió en el sitio',
-    insightsText: 'La portada ahora está separada del directorio completo, se añadieron páginas legales y política de cookies, y el sitio tiene una metodología editorial explícita.',
+    insightsText: 'La portada está separada del listado completo, las startups tienen su propia sección, y las páginas de políticas y metodología explican cómo publicamos.',
     latestTitle: 'Perfiles añadidos recientemente',
-    latestText: 'Especialistas, fundadores y líderes técnicos contemporáneos activos en el ecosistema global posterior al año 2000.',
+    latestText: 'Especialistas y líderes contemporáneos, en su mayoría activos después del 2000, con foco en tecnología, ingeniería y escala de negocio.',
     specialistsTitle: 'Directorio completo de especialistas',
-    specialistsText: 'Una base de perfiles con búsqueda y filtros, pensada para revisión editorial rápida y navegación profesional.',
+    specialistsText: 'Lista completa con búsqueda y filtros: encuentra por país, sector o etiqueta en pocos clics.',
     startupsTitle: 'Página dedicada a startups',
-    startupsText: 'Las startups viven ahora en una página separada para que el directorio de personas se mantenga claro y las compañías se presenten como una capa propia de conocimiento.',
+    startupsText: 'Las compañías viven en otra ruta para no mezclar personas y productos en un solo flujo interminable.',
     standardsTitle: 'Estándares editoriales y control de calidad',
-    standardsText: 'El sitio no usa páginas doorway generadas en masa, texto oculto ni plantillas vacías orientadas solo a keywords. Cada perfil incluye foto, rol, foco, biografía y contexto editorial visible.',
+    standardsText: 'Sin páginas vacías masivas para tráfico de búsqueda: cada perfil trae foto, rol, foco y texto legible. Los datos desactualizados se corrigen por vía editorial.',
     standardsPrimary: 'Leer metodología',
     standardsSecondary: 'Política de privacidad',
     specialistsPageTitle: 'Directorio de especialistas',
@@ -379,7 +403,7 @@ const tr = {
     founded: 'Fundada',
     profileBack: 'Volver al directorio',
     methodologyTitle: 'Metodología editorial',
-    methodologyIntro: 'Rybezh se construye como una base editorial de conocimiento donde las páginas existen por su valor de contenido, no solo por tráfico de búsqueda.',
+    methodologyIntro: 'Rybezh.site es una base editorial: las páginas existen cuando aportan al lector, no solo para perseguir keywords.',
     privacyTitle: 'Política de privacidad',
     privacyIntro: 'Esta página explica qué datos técnicos puede procesar un sitio estático y cómo se gestionan los materiales editoriales.',
     cookiesTitle: 'Política de cookies',
@@ -392,24 +416,31 @@ const tr = {
     notFoundText: 'La página puede haber sido movida o el perfil solicitado ya no está disponible.',
     notFoundPrimary: 'Ir a la portada',
     notFoundSecondary: 'Abrir directorio de especialistas',
+    siteByline: 'Rybezh.site',
+    founderTrustTitle: 'Fundadora del proyecto',
+    founderTrustText: 'María Rubezh dirige el catálogo: foco editorial, verificación de hechos y tono coherente entre idiomas.',
+    founderTrustAlt: 'María Rubezh, fundadora de Rybezh.site',
+    profileCTATitle: 'Contacto sobre este perfil',
+    profileCTAText: 'Reclutadores y equipos de operaciones pueden escribir al correo editorial — indica empresa, rol y un contexto breve del pedido.',
+    profileCTALinkLabel: 'Escribir a jobs.r@protonmail.com',
     trust: [
-      'Perfiles con fotografía y datos estructurados',
-      'Páginas separadas para especialistas, startups y políticas legales',
-      'Localización en ucraniano, inglés, español y ruso'
+      'Cada perfil incluye foto y estructura: rol, país, foco y biografía',
+      'Secciones separadas para personas, startups y páginas legales',
+      'Cuatro idiomas de interfaz: ucraniano, inglés, español y ruso'
     ],
     sectors: [
       { title: 'Software', text: 'Backend, frontend, sistemas distribuidos, DevOps y herramientas para desarrolladores.' },
       { title: 'Ingeniería', text: 'Hardware, systems engineering, reliability, infrastructure y space tech.' },
       { title: 'Ejecutivos', text: 'CEO, COO, directivos técnicos, estrategia y escalado de compañías.' },
       { title: 'Inteligencia artificial', text: 'Investigación en IA, product builders, safety, data y plataformas de modelos.' },
-      { title: 'Operaciones', text: 'Execution, SOPs, logistics, P&L, hiring systems y excelencia operativa.' },
+      { title: 'Operaciones', text: 'Ejecución en campo, SOPs, logística, P&L, contratación y calidad de servicio estable.' },
       { title: 'Startups', text: 'Un catálogo dedicado a compañías de producto, herramientas y plataformas.' }
     ],
     insightCards: [
-      { title: 'Patrones doorway eliminados', text: 'La generación masiva de perfiles thin y páginas noindex de plantilla fue eliminada del generador.' },
-      { title: 'Páginas legales añadidas', text: 'Privacy, cookies, terms y methodology ahora forman parte de la arquitectura del sitio.' },
-      { title: 'Catálogo separado de startups', text: 'Las compañías tienen su propio destino en lugar de mezclarse con el índice de personas.' },
-      { title: 'Portada más profesional', text: 'La portada ahora funciona como una visión editorial y no como una lista SEO interminable.' }
+      { title: 'Menos ruido en el catálogo', text: 'El generador no crea decenas de perfiles thin idénticos: cada página debe justificar su existencia.' },
+      { title: 'Reglas claras', text: 'Privacidad, cookies, términos y metodología explican cómo tratamos datos y contenido.' },
+      { title: 'Startups aparte', text: 'Las compañías no se mezclan con personas en un solo listado, lo que facilita el escaneo.' },
+      { title: 'Portada como escaparate', text: 'La landing presenta el archivo en lugar de volcar una lista SEO interminable.' }
     ],
     methodologySections: [
       {
@@ -460,7 +491,7 @@ const tr = {
     termsSections: [
       {
         title: '1. Naturaleza del servicio',
-        body: 'Rybezh es un directorio informativo. No garantiza empleo, inversión, alianzas ni resultados comerciales derivados de cualquier perfil o página de startup.'
+        body: 'Rybezh.site es un directorio informativo. No garantiza empleo, inversión, alianzas ni resultados comerciales derivados de cualquier perfil o página de startup.'
       },
       {
         title: '2. Exactitud de la información',
@@ -484,31 +515,35 @@ const tr = {
     directoryFilterIndustryAll: 'Todas las industrias',
     directoryFilterYear: 'Año de fundación',
     directoryFilterYearAll: 'Todos los años',
-    directoryShareHint: 'Los filtros y la búsqueda se guardan en la URL para compartir el enlace.'
+    directoryShareHint: 'Los filtros y la búsqueda se guardan en la URL para compartir el enlace.',
+    methodologyFounderNote: {
+      title: 'Quién revisa los textos',
+      body: 'El catálogo lo coordina María Rubezh (Rybezh.site): alineamos el tono entre idiomas, verificamos hechos cuando es posible y no publicamos páginas pensadas solo para palabras clave.'
+    }
   },
   ru: {
-    siteTitle: 'Rybezh - профессиональная база специалистов и стартапов',
-    siteDescription: 'Редакционный каталог современных программистов, инженеров, руководителей, операционных лидеров и технологических стартапов.',
-    heroEyebrow: 'Редакционная база профессионалов',
-    heroTitle: 'Профессиональный каталог специалистов, технологических лидеров и стартапов',
-    heroText: 'Rybezh объединяет структурированные профили программистов, инженеров, исследователей, директоров, основателей стартапов и операционных лидеров. В фокусе - современные специалисты, видимые фотографии профиля, понятная структура и прозрачные редакционные стандарты.',
+    siteTitle: 'Rybezh.site — каталог специалистов и стартапов',
+    siteDescription: 'Редакционный справочник Rybezh.site: инженеры, руководители, операции и технологические компании — с фото, структурой профиля и понятными правилами публикации.',
+    heroEyebrow: 'Rybezh.site · редакционный каталог',
+    heroTitle: 'Справочник людей и компаний, с которым удобно работать рекрутерам и командам',
+    heroText: 'Профили собраны так, чтобы сразу читались роль, география, фокус и факты карьеры — без «воды» и без скрытых SEO-блоков. Это справочный слой для HR, основателей, инвесторов и операционных лидеров, которым нужен быстрый контекст.',
     heroPrimary: 'Открыть базу специалистов',
     heroSecondary: 'Посмотреть стартапы',
-    heroPhotoStrip: 'Реальные фото профилей из каталога',
+    heroPhotoStrip: 'Фрагменты фото из профилей каталога',
     featuredTitle: 'Рекомендованные профили',
-    featuredText: 'Подборка людей, чьи карьеры хорошо показывают современный технологический рынок: software, infrastructure, AI, product, operations и executive management.',
+    featuredText: 'Небольшая подборка, которая показывает спектр базы: от инженерии и продукта до операций и руководящих ролей.',
     sectorsTitle: 'Какие направления покрывает каталог',
-    sectorsText: 'Каталог сфокусирован на ролях, где важны профессиональная глубина, системное мышление и качество исполнения.',
-    insightsTitle: 'Что нового на сайте',
-    insightsText: 'Главная страница теперь отделена от полного каталога, добавлены юридические страницы и политика cookies, а также редакционная методология.',
+    sectorsText: 'Нам важны роли, где решения принимают на основе систем, данных и командной координации — а не только презентаций.',
+    insightsTitle: 'Что изменилось на сайте',
+    insightsText: 'Главная отделена от полного списка, стартапы вынесены отдельно, добавлены страницы политик и методологии — видно, как мы публикуем материалы.',
     latestTitle: 'Недавно добавленные профили',
-    latestText: 'Современные специалисты, основатели и технические лидеры, активные в глобальной экосистеме после 2000 года.',
+    latestText: 'Современные специалисты и руководители, в основном активные после 2000 года — с акцентом на технологии, инженерию и масштаб бизнеса.',
     specialistsTitle: 'Полный каталог специалистов',
-    specialistsText: 'Поисковая и фильтруемая база профилей, удобная для быстрого редакционного обзора и профессиональной навигации.',
+    specialistsText: 'Полный список с поиском и фильтрами: можно быстро найти человека по стране, направлению или тегу.',
     startupsTitle: 'Отдельная страница стартапов',
-    startupsText: 'Стартапы вынесены на отдельную страницу, чтобы каталог людей оставался чистым, а компании были представлены как самостоятельный информационный слой.',
+    startupsText: 'Компании собраны на отдельном маршруте, чтобы не смешивать людей и продукты в одной ленте и проще сравнивать контекст рынка.',
     standardsTitle: 'Редакционные стандарты и контроль качества',
-    standardsText: 'Сайт не использует массово сгенерированные doorway-страницы, скрытый текст или шаблоны из одних ключевых слов. Каждый профиль содержит фото, роль, фокус, биографию и понятный редакционный контекст.',
+    standardsText: 'Без массовых «пустых» страниц под поиск: у профиля есть фото, роль, фокус и читаемый текст. Устаревшие данные стоит обновлять через редакцию.',
     standardsPrimary: 'Открыть методологию',
     standardsSecondary: 'Политика конфиденциальности',
     specialistsPageTitle: 'Каталог специалистов',
@@ -538,7 +573,7 @@ const tr = {
     founded: 'Основано',
     profileBack: 'Назад в каталог',
     methodologyTitle: 'Редакционная методология',
-    methodologyIntro: 'Rybezh строится как редакционная база знаний, где страницы существуют ради содержания, а не только ради поискового трафика.',
+    methodologyIntro: 'Rybezh.site — редакционная база: страницы появляются там, где есть смысл для читателя, а не ради ключевых слов.',
     privacyTitle: 'Политика конфиденциальности',
     privacyIntro: 'На этой странице объясняется, какие технические данные может обрабатывать статический сайт и как мы работаем с редакционными материалами.',
     cookiesTitle: 'Политика cookies',
@@ -551,24 +586,31 @@ const tr = {
     notFoundText: 'Возможно, страница была перенесена или запрошенный профиль больше не поддерживается.',
     notFoundPrimary: 'На главную',
     notFoundSecondary: 'В каталог специалистов',
+    siteByline: 'Rybezh.site',
+    founderTrustTitle: 'Основательница проекта',
+    founderTrustText: 'Каталог ведёт Мария Рубеж: редакционный фокус, проверка фактов и единый тон материалов.',
+    founderTrustAlt: 'Мария Рубеж, основательница Rybezh.site',
+    profileCTATitle: 'Связь по этому профилю',
+    profileCTAText: 'Рекрутеры и операционные команды могут написать на редакционную почту — укажите компанию, роль и краткий контекст запроса.',
+    profileCTALinkLabel: 'Написать на jobs.r@protonmail.com',
     trust: [
-      'Профили с фотографиями и структурированными фактами',
-      'Отдельные страницы для специалистов, стартапов и правовых документов',
-      'Локализация: украинский, английский, испанский, русский'
+      'У каждого профиля есть фото и структура: роль, страна, фокус, биография',
+      'Отдельные разделы для людей, стартапов и юридических страниц',
+      'Четыре языка интерфейса: украинский, английский, испанский, русский'
     ],
     sectors: [
       { title: 'Программирование', text: 'Backend, frontend, distributed systems, DevOps и developer tooling.' },
       { title: 'Инженерия', text: 'Hardware, systems engineering, reliability, infrastructure и space tech.' },
       { title: 'Руководители', text: 'CEO, COO, технические директора, стратегия и масштабирование компаний.' },
       { title: 'Искусственный интеллект', text: 'AI research, product builders, safety, data и model platforms.' },
-      { title: 'Операции', text: 'Execution, SOPs, logistics, P&L, hiring systems и delivery excellence.' },
+      { title: 'Операции', text: 'Полевые процессы, SOPs, логистика, P&L, найм и стабильное качество сервиса.' },
       { title: 'Стартапы', text: 'Отдельный каталог для продуктовых компаний, инструментов и платформ.' }
     ],
     insightCards: [
-      { title: 'Doorway-паттерны убраны', text: 'Массовая генерация thin-профилей и шаблонных noindex-страниц удалена из генератора.' },
-      { title: 'Добавлены правовые страницы', text: 'Privacy, cookies, terms и methodology теперь встроены в архитектуру сайта.' },
-      { title: 'Отдельный каталог стартапов', text: 'Компании вынесены в самостоятельный раздел вместо смешивания с профилями людей.' },
-      { title: 'Более профессиональная главная', text: 'Главная страница теперь работает как редакционная витрина, а не как бесконечный SEO-список.' }
+      { title: 'Меньше шума в каталоге', text: 'Генератор не подставляет десятки одинаковых «тонких» профилей — у каждой страницы должен быть смысл для читателя.' },
+      { title: 'Прозрачные правила', text: 'Есть страницы privacy, cookies, terms и методология — видно, как мы относимся к данным и контенту.' },
+      { title: 'Стартапы отдельно', text: 'Компании не смешаны с людьми в одной ленте — удобнее искать и сравнивать.' },
+      { title: 'Главная как витрина', text: 'На главной — подборка и пояснение, а не бесконечный список под поисковые запросы.' }
     ],
     methodologySections: [
       {
@@ -619,7 +661,7 @@ const tr = {
     termsSections: [
       {
         title: '1. Характер сервиса',
-        body: 'Rybezh - это информационный каталог. Он не гарантирует трудоустройство, инвестиции, партнерства или коммерческий результат от просмотра любого профиля или страницы стартапа.'
+        body: 'Rybezh.site — информационный каталог. Он не гарантирует трудоустройство, инвестиции, партнёрство или коммерческий результат от просмотра любого профиля или страницы стартапа.'
       },
       {
         title: '2. Точность информации',
@@ -643,7 +685,11 @@ const tr = {
     directoryFilterIndustryAll: 'Все направления',
     directoryFilterYear: 'Год основания',
     directoryFilterYearAll: 'Все годы',
-    directoryShareHint: 'Фильтры и поиск сохраняются в адресе страницы — ссылку можно передать.'
+    directoryShareHint: 'Фильтры и поиск сохраняются в адресе страницы — ссылку можно передать.',
+    methodologyFounderNote: {
+      title: 'Редакция и основательница',
+      body: 'Каталог ведёт Мария Рубеж (Rybezh.site): выравниваем тон между языками, проверяем факты там, где это возможно, и не публикуем страницы только ради ключевых слов.'
+    }
   }
 };
 
@@ -801,6 +847,28 @@ function startupCard(company, lang, orderIndex = 0) {
 
 function featureList(items) {
   return `<ul class="trust-list">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+}
+
+function founderTrustBlock(lang) {
+  const l = tr[lang];
+  return `<aside class="founder-trust" aria-labelledby="founder-trust-heading">
+  <div class="founder-trust__media">${image(FOUNDER_IMAGE, l.founderTrustAlt, 'founder-trust__photo')}</div>
+  <div class="founder-trust__copy">
+    <p class="eyebrow">${escapeHtml(l.siteByline)}</p>
+    <h2 id="founder-trust-heading">${escapeHtml(l.founderTrustTitle)}</h2>
+    <p>${escapeHtml(l.founderTrustText)}</p>
+  </div>
+</aside>`;
+}
+
+function profileRecruiterCta(person, lang) {
+  if (person.slug !== 'bohdan-tiutenko') return '';
+  const l = tr[lang];
+  return `<section class="profile-recruiter-cta" aria-labelledby="profile-cta-title">
+    <h3 id="profile-cta-title">${escapeHtml(l.profileCTATitle)}</h3>
+    <p>${escapeHtml(l.profileCTAText)}</p>
+    <a class="btn" href="mailto:jobs.r@protonmail.com?subject=${encodeURIComponent(person.name[lang])}">${escapeHtml(l.profileCTALinkLabel)}</a>
+  </section>`;
 }
 
 function sectionIntro(eyebrow, title, text) {
@@ -964,10 +1032,7 @@ function writeProfilePage(person, specialists, lang) {
     <h3>${escapeHtml(l.biography)}</h3>
     <p>${escapeHtml(person.bio[lang])}</p>
   </section>
-  ${person.slug === 'bohdan-tiutenko' ? `<section class="profile-verification">
-    <h3>${escapeHtml(lang === 'en' ? 'Verification and editorial standards' : lang === 'es' ? 'Verificación y estándares editoriales' : lang === 'ru' ? 'Проверка и редакционные стандарты' : 'Верифікація та редакційні стандарти')}</h3>
-    <p>${escapeHtml(lang === 'en' ? 'This profile was reviewed as an editorial page focused on career facts, role context, and measurable outcomes. The page avoids hidden SEO blocks and mass-duplicated template text.' : lang === 'es' ? 'Este perfil fue revisado como una página editorial con enfoque en hechos de carrera, contexto de roles y resultados medibles. La página evita bloques SEO ocultos y textos masivamente duplicados.' : lang === 'ru' ? 'Материал обновлён как редакционный профиль с фокусом на факты карьеры, контекст ролей и измеримые результаты. Страница не использует скрытые SEO-блоки и массовое дублирование шаблонных текстов.' : 'Матеріал оновлено як редакційний профіль з фокусом на факти карʼєри, контекст ролей та вимірювані результати. Сторінка не використовує приховані блоки SEO чи масове дублювання шаблонів.')}</p>
-  </section>` : ''}
+  ${profileRecruiterCta(person, lang)}
   <section class="editorial-note">
     <h3>${escapeHtml(l.editorialNoteTitle)}</h3>
     <p>${escapeHtml(l.editorialNoteText)}</p>
@@ -985,16 +1050,17 @@ function policySection(section) {
   </section>`;
 }
 
-function writeContentPage(lang, base, title, intro, sections) {
+function writeContentPage(lang, base, title, intro, sections, extraHtml = '') {
   writePage(pageName(base, lang), `
 <title>${escapeHtml(title)} | Rybezh</title>
 <meta name="description" content="${escapeHtml(description(intro))}">
 
 <article class="content-wrapper policy-page">
-  <p class="eyebrow">Rybezh People Archive</p>
+  <p class="eyebrow">${escapeHtml(tr[lang].siteByline)}</p>
   <h1>${escapeHtml(title)}</h1>
   <p class="lead">${escapeHtml(intro)}</p>
   ${sections.map(policySection).join('\n')}
+  ${extraHtml}
 </article>`);
 }
 
@@ -1018,6 +1084,7 @@ function writeIndex(lang, specialists, startups) {
     ${heroFacepile(specialists, lang)}
     <p class="hero-photo-caption">${escapeHtml(l.heroPhotoStrip)}</p>
     ${featureList(l.trust)}
+    ${founderTrustBlock(lang)}
   </div>
   <div class="hero-panel">
     ${countCard(String(specialists.length), l.viewAllSpecialists)}
@@ -1073,7 +1140,7 @@ function writeSpecialists(lang, specialists) {
 
 <section class="hero slim">
   <div class="hero-copy">
-    <p class="eyebrow">Rybezh People Archive</p>
+    <p class="eyebrow">${escapeHtml(l.siteByline)}</p>
     <h1>${escapeHtml(l.specialistsPageTitle)}</h1>
     <p>${escapeHtml(l.specialistsPageIntro)}</p>
   </div>
@@ -1117,7 +1184,7 @@ function writeStartups(lang, startups) {
 
 <section class="hero slim">
   <div class="hero-copy">
-    <p class="eyebrow">Rybezh People Archive</p>
+    <p class="eyebrow">${escapeHtml(l.siteByline)}</p>
     <h1>${escapeHtml(l.startupsPageTitle)}</h1>
     <p>${escapeHtml(l.startupsPageIntro)}</p>
   </div>
@@ -1223,7 +1290,7 @@ for (const lang of langs) {
   writeIndex(lang, specialists, startups);
   writeSpecialists(lang, specialists);
   writeStartups(lang, startups);
-  writeContentPage(lang, 'methodology', tr[lang].methodologyTitle, tr[lang].methodologyIntro, tr[lang].methodologySections);
+  writeContentPage(lang, 'methodology', tr[lang].methodologyTitle, tr[lang].methodologyIntro, tr[lang].methodologySections, policySection(tr[lang].methodologyFounderNote));
   writeContentPage(lang, 'privacy', tr[lang].privacyTitle, tr[lang].privacyIntro, tr[lang].privacySections);
   writeContentPage(lang, 'cookies', tr[lang].cookiesTitle, tr[lang].cookiesIntro, tr[lang].cookiesSections);
   writeContentPage(lang, 'terms', tr[lang].termsTitle, tr[lang].termsIntro, tr[lang].termsSections);
