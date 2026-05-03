@@ -194,6 +194,22 @@
             target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
         }, true);
 
+        const dynamicTiles = Array.from(document.querySelectorAll('[data-dynamic-tiles] .dynamic-tile'));
+        if (dynamicTiles.length) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            dynamicTiles.forEach((tile, idx) => {
+                tile.style.transitionDelay = `${idx * 90}ms`;
+                io.observe(tile);
+            });
+        }
+
         const directoryPanels = Array.from(document.querySelectorAll('[data-directory-panel]'));
 
         directoryPanels.forEach(panel => {
