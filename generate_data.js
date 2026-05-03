@@ -899,8 +899,18 @@ const bohdanProfile = {
     },
     {
       image: 'assets/images/bohdan-tiutenko-painting.jpg',
-      title: t('Портрет (живопис)', 'Painted portrait', 'Портрет (живопись)', 'Retrato al óleo'),
-      caption: t('Окремий кадр для презентаційного контексту; не є частиною корпоративного брендингу.', 'A standalone image for presentation contexts; not part of corporate branding.', 'Отдельный кадр для презентационного контекста; не является частью корпоративного брендинга.', 'Imagen aparte para contextos de presentación; no forma parte del branding corporativo.')
+      title: t(
+        '«Camine sobre la muerte, pero en mis manos queda vida»',
+        '“Camine sobre la muerte, pero en mis manos queda vida”',
+        '«Camine sobre la muerte, pero en mis manos queda vida»',
+        '«Camine sobre la muerte, pero en mis manos queda vida»'
+      ),
+      caption: t(
+        'Живописний портрет за мотивами життєвого шляху Богдана Тютенка; його написала відома художниця, вражена його історією. Окремий кадр для презентаційного контексту, не корпоративний брендинг.',
+        'Oil portrait inspired by Bohdan Tiutenko’s path in life, painted by a well-known artist moved by his story. A standalone piece for presentation use, not corporate branding.',
+        'Живописный портрет, вдохновлённый жизненным путём Богдана Тютенко; написала известная художница, которую тронула его история. Отдельный кадр для презентаций, не корпоративный брендинг.',
+        'Retrato al óleo inspirado en la trayectoria de Bohdan Tiutenko; lo pintó una artista reconocida, conmovida por su historia. Pieza aparte para contextos de presentación, no branding corporativo.'
+      )
     }
   ],
   highlights: {
