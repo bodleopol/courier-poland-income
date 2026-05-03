@@ -16,7 +16,7 @@
 </head>
 <body>
     <header class="site-header">
-        <div class="header-container">
+        <div class="header-container" data-header-container>
             <div class="logo">
                 <a href="{{HOME_URL}}" class="brand"><img src="assets/images/rybezh-logo.svg" alt="Rybezh" width="180" height="40"></a>
                 <span class="logo-caption">People Archive</span>
@@ -148,12 +148,51 @@
 
         const navToggle = document.querySelector('.nav-toggle');
         const mainNav = document.getElementById('main-nav');
-        if (navToggle && mainNav) {
+        const headerContainer = document.querySelector('[data-header-container]');
+        const mobileMq = window.matchMedia('(max-width: 980px)');
+
+        function closeMobileMenu() {
+            if (!mainNav || !headerContainer) return;
+            mainNav.classList.remove('is-open');
+            headerContainer.classList.remove('menu-open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        if (navToggle && mainNav && headerContainer) {
             navToggle.addEventListener('click', () => {
                 const isOpen = mainNav.classList.toggle('is-open');
+                headerContainer.classList.toggle('menu-open', isOpen);
                 navToggle.setAttribute('aria-expanded', String(isOpen));
             });
+
+            mainNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMq.matches) closeMobileMenu();
+                });
+            });
+
+            mobileMq.addEventListener('change', e => {
+                if (!e.matches) closeMobileMenu();
+            });
         }
+
+        document.addEventListener('error', event => {
+            const target = event.target;
+            if (!(target instanceof HTMLImageElement)) return;
+            if (target.dataset.fallbackApplied === 'true') return;
+
+            target.dataset.fallbackApplied = 'true';
+            const name = (target.getAttribute('alt') || 'Startup').trim();
+            const initials = name
+                .split(/\s+/)
+                .filter(Boolean)
+                .slice(0, 2)
+                .map(part => part[0]?.toUpperCase() || '')
+                .join('') || 'ST';
+
+            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='720' height='420' viewBox='0 0 720 420'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23eef4ff'/><stop offset='1' stop-color='%23dbeafe'/></linearGradient></defs><rect width='720' height='420' fill='url(%23g)'/><text x='50%' y='52%' text-anchor='middle' fill='%232563eb' font-size='150' font-family='Inter,Segoe UI,Arial,sans-serif' font-weight='700'>${initials}</text></svg>`;
+            target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+        }, true);
 
         const directoryPanels = Array.from(document.querySelectorAll('[data-directory-panel]'));
 
