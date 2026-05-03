@@ -7,46 +7,48 @@ const commons = file => `https://commons.wikimedia.org/wiki/Special:FilePath/${e
 const logo = domain => `https://logo.clearbit.com/${domain}`;
 const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=720&background=eef4ff&color=2563eb&bold=true`;
 
-const MIN_BIO_LENGTH = 280;
-
-function bioAddition(person, lang) {
+function mergeBio(person, lang) {
   const name = person.name[lang];
   const role = person.role[lang];
   const country = person.country[lang];
   const focus = person.focus[lang];
   const known = person.knownFor[lang];
+  let tail = '';
   if (lang === 'uk') {
-    return `Редакційний контекст: ${name} — ${role} (${country}). Відомий внесок: ${known}. Професійний фокус: ${focus}.`;
+    tail = `${name} (${country}) — ${role}. Відомий внесок: ${known}. Фокус: ${focus}.`;
+  } else if (lang === 'en') {
+    tail = `${name} (${country}) is ${role}. Known for ${known}. Focus: ${focus}.`;
+  } else if (lang === 'ru') {
+    tail = `${name} (${country}) — ${role}. Известен вкладом: ${known}. Фокус: ${focus}.`;
+  } else {
+    tail = `${name} (${country}) — ${role}. Reconocido por: ${known}. Enfoque: ${focus}.`;
   }
-  if (lang === 'en') {
-    return `Editorial context: ${name} — ${role} (${country}). Known for: ${known}. Professional focus: ${focus}.`;
-  }
-  if (lang === 'ru') {
-    return `Редакционный контекст: ${name} — ${role} (${country}). Известен вкладом: ${known}. Профессиональный фокус: ${focus}.`;
-  }
-  return `Contexto editorial: ${name} — ${role} (${country}). Reconocido por: ${known}. Enfoque profesional: ${focus}.`;
-}
-
-function bioTail(lang) {
-  if (lang === 'uk') return ' Цей огляд тримає фокус на фактах карʼєри, географії та професійному позиціонуванні.';
-  if (lang === 'en') return ' The overview stays concise while anchoring geography, role and contribution.';
-  if (lang === 'ru') return ' Обзор остаётся компактным и опирается на географию, роль и вклад.';
-  return ' El resumen permanece compacto y ancla geografía, rol y contribución.';
+  const lead = String(person.life[lang] ?? '').trim();
+  if (!lead) return tail;
+  if (/[.!?…]\s*$/.test(lead)) return `${lead} ${tail}`;
+  return `${lead}. ${tail}`;
 }
 
 function enrichBio(person) {
   const out = {};
   for (const lang of langs) {
-    let text = String(person.life[lang] ?? '').trim();
-    if (text.length < MIN_BIO_LENGTH) {
-      text = `${text} ${bioAddition(person, lang)}`.replace(/\s+/g, ' ').trim();
-    }
-    if (text.length < MIN_BIO_LENGTH) {
-      text = `${text}${bioTail(lang)}`.replace(/\s+/g, ' ').trim();
-    }
-    out[lang] = text;
+    out[lang] = mergeBio(person, lang).replace(/\s+/g, ' ').trim();
   }
   return out;
+}
+
+function defaultGalleryFor(person) {
+  const caption = {};
+  for (const lang of langs) {
+    caption[lang] = `${person.role[lang]} — ${person.knownFor[lang]}`;
+  }
+  return [
+    {
+      image: person.image,
+      title: person.name,
+      caption
+    }
+  ];
 }
 
 function regionalCountry(hqText, lang) {
@@ -168,10 +170,10 @@ function enrichStartupSummary(company, details) {
     if (market) bits.push(market);
     if (notable) bits.push(notable);
     let extra = '';
-    if (lang === 'uk') extra = bits.length ? ` Додатковий контекст: ${bits.join(' · ')}.` : '';
-    else if (lang === 'en') extra = bits.length ? ` Additional context: ${bits.join(' · ')}.` : '';
-    else if (lang === 'ru') extra = bits.length ? ` Дополнительный контекст: ${bits.join(' · ')}.` : '';
-    else extra = bits.length ? ` Contexto adicional: ${bits.join(' · ')}.` : '';
+    if (lang === 'uk') extra = bits.length ? ` Штаб і напрям: ${bits.join(' · ')}.` : '';
+    else if (lang === 'en') extra = bits.length ? ` HQ and focus: ${bits.join(' · ')}.` : '';
+    else if (lang === 'ru') extra = bits.length ? ` Штаб и фокус: ${bits.join(' · ')}.` : '';
+    else extra = bits.length ? ` Sede y foco: ${bits.join(' · ')}.` : '';
     let text = `${base}${extra}`.replace(/\s+/g, ' ').trim();
     if (text.length < minLen && notable) {
       text = `${base} ${notable}.${extra}`.replace(/\s+/g, ' ').trim();
@@ -850,15 +852,15 @@ const bohdanProfile = {
   image: 'assets/images/bohdan-tiutenko-img0018.jpg',
   featured: true,
   name: t('Богдан Тютенко', 'Bohdan Tiutenko', 'Богдан Тютенко', 'Bohdan Tiutenko'),
-  role: t('Директор операцій та менеджер логістики Foodtech', 'Operations Director and Foodtech Logistics Manager', 'Директор по операциям и менеджер логистики Foodtech', 'Director de Operaciones y Gerente de Logística Foodtech'),
+  role: t('Кандидат на посаду операційного директора (COO) · Foodtech і last-mile', 'Chief Operating Officer candidate · Foodtech and last-mile', 'Кандидат на роль операционного директора (COO) · Foodtech и last-mile', 'Candidato a director de operaciones (COO) · Foodtech y última milla'),
   country: t('Україна / Перу', 'Ukraine / Peru', 'Украина / Перу', 'Ucrania / Perú'),
   focus: t('Foodtech, last-mile logistics, P&L, флот +150 курʼєрів, Power BI, SQL, Excel, Kommo CRM', 'Foodtech, last-mile logistics, P&L, 150+ courier fleets, Power BI, SQL, Excel and Kommo CRM', 'Foodtech, last-mile logistics, P&L, флот +150 курьеров, Power BI, SQL, Excel, Kommo CRM', 'Foodtech, logística de última milla, P&L, flotas de +150 repartidores, Power BI, SQL, Excel y Kommo CRM'),
   knownFor: t('масштабування last-mile операцій, контроль P&L і data-driven оптимізацію витрат до 20%', 'scaling last-mile operations, P&L ownership and data-driven cost optimisation up to 20%', 'масштабирование last-mile операций, контроль P&L и data-driven оптимизацию затрат до 20%', 'escalar operaciones de última milla, ownership de P&L y optimización de costos basada en datos hasta un 20%'),
   life: t(
-    'Порядок із хаосу: як досвід виживання формує бізнес-лідерів. Спеціальний матеріал від команди Rybezh. У сучасному корпоративному світі слово «криза» звучить щодня, але для Богдана Тютенка, який керує операційними процесами у Лімі (Перу), це насамперед керована система рішень. До 2014 року Богдан навчався у Донецькому національному технічному університеті, поєднуючи інтерес до програмування, математики та бойових мистецтв. Після початку війни на сході України він пройшов жорсткий конкурсний відбір до ГУР: психологічні, математичні та фізичні етапи, які із сотень кандидатів подолали лише близько 80 людей. Подальший досвід, описаний у його автобіографічній книзі «Хаос і надія: Донбасс 2014», сформував ключову управлінську звичку: діяти на випередження, швидко оцінювати ризики та брати відповідальність у критичний момент. Найсильніші уроки Богдан отримав у період «Південного котла», коли власними очима бачив, як руйнуються ланцюги постачання і як помилки в координації коштують надто дорого. Саме тоді він зробив висновок, який згодом став основою його менеджменту: жодна стратегія не працює без бездоганної логістики, прозорих даних і чітких SOPs. У цивільній карʼєрі він переніс цей підхід у foodtech та last-mile operations. У Rocket (2018–2021) Богдан керував City Operations під час масштабування, вів флот 150+ курʼєрів, запроваджував контроль метрик через Power BI та Excel і підтримував середній час доставки до 35 хвилин. У Лімі, працюючи з dark kitchens і Yango, він посилив data-аналітику: оптимізація FIFO знизила втрати на 18%, а системна оптимізація процесів і витрат дала до 20% економії при зростанні операційної стабільності. Колеги відзначають його спокій під час Tier 2/3 інцидентів: замість емоційної реакції — SQL-аналіз, ізоляція першопричини, швидке відновлення сервісу та утримання SLA на рівні 99.9%. Сьогодні Богдан Тютенко — кандидат на роль директора, який поєднує кризову стійкість, дисципліну виконання, P&L ownership і здатність перетворювати хаос у керовану систему. Для компаній, що шукають лідера для періодів турбулентності, його історія є практичним доказом компетентності.',
-    'Bohdan Tiutenko is an operations leader in Foodtech and last-mile logistics with 5+ years of experience across Ukraine and Peru. His management style was shaped by technical thinking, sport and crisis-tested responsibility: before his business career, he studied programming, trained in martial arts and passed a competitive selection process for a Ukrainian intelligence unit, where only a limited group was selected from several hundred candidates. That background gave him practical discipline, fast situational analysis, self-control and team coordination under uncertainty. At Rocket, he managed City Operations during aggressive delivery-platform scaling, grew a fleet of 150+ couriers, owned P&L, introduced SOPs and Power BI / Excel dashboards, and kept average delivery time under 35 minutes. In Lima, he worked with dark kitchens, FIFO/PEPS inventory control, production and dispatch workflows, reducing operational waste by 18% and increasing order-processing capacity by 25%. At Yango, he improved data visibility by 40%, contributed to a 12% SLA improvement and maintained 99.9% service continuity. For senior roles, his value is the combination of P&L ownership, data analytics, crisis management, team building and hands-on logistics execution. Education: computer systems and network maintenance technician; engineering studies in Donetsk were interrupted by the war. Languages: Ukrainian and Russian native, Spanish C1, English B2.',
-    'Богдан Тютенко — операционный руководитель в Foodtech и last-mile логистике с опытом более 5 лет в Украине и Перу. Его управленческий стиль сформировался на пересечении технического мышления, спорта и опыта ответственности в кризисных условиях: до бизнес-карьеры он учился на программировании, занимался боевыми искусствами и прошел конкурсный отбор в разведывательное подразделение, где из нескольких сотен кандидатов выбрали ограниченную группу. Этот этап дал ему практику дисциплины, быстрого анализа ситуации, самоконтроля и командной координации в условиях неопределенности. В Rocket он управлял City Operations в период активного масштабирования платформы доставки, развивал флот более 150 курьеров, отвечал за P&L, внедрял SOPs и dashboards в Power BI и Excel, удерживая среднее время доставки ниже 35 минут. В Лиме он работал с dark kitchens, FIFO/PEPS, производством и dispatch-процессами, снижая операционные потери на 18% и повышая пропускную способность заказов на 25%. В Yango он улучшил видимость данных на 40%, способствовал росту SLA на 12% и поддерживал непрерывность сервиса 99.9%. Для директорских ролей его ценность — сочетание P&L ownership, data analytics, кризисного менеджмента, построения команд и практической логистики. Образование: техник по обслуживанию систем и компьютерных сетей; инженерное обучение в Донецке было прервано войной. Языки: украинский и русский — родные, испанский — C1, английский — B2.',
-    'Bohdan Tiutenko es un líder de operaciones en Foodtech y logística de última milla con más de 5 años de experiencia entre Ucrania y Perú. Su estilo de gestión se formó entre pensamiento técnico, deporte y responsabilidad probada en crisis: antes de su carrera empresarial estudió programación, practicó artes marciales y superó un proceso competitivo de selección para una unidad de inteligencia ucraniana, donde solo un grupo limitado fue elegido entre varios cientos de candidatos. Esa etapa le aportó disciplina práctica, análisis rápido de situaciones, autocontrol y coordinación de equipos bajo incertidumbre. En Rocket gestionó City Operations durante una etapa de expansión agresiva de la plataforma de delivery, escaló una flota de +150 repartidores, asumió P&L, implementó SOPs y dashboards en Power BI / Excel, manteniendo el tiempo promedio de entrega por debajo de 35 minutos. En Lima trabajó con dark kitchens, control PEPS/FIFO, producción y despacho, reduciendo mermas operativas en 18% y aumentando la capacidad de procesamiento de órdenes en 25%. En Yango mejoró la visibilidad de datos en 40%, contribuyó a una mejora de SLA del 12% y mantuvo continuidad de servicio al 99.9%. Para roles directivos, su valor combina ownership de P&L, data analytics, gestión de crisis, construcción de equipos y ejecución logística práctica. Educación: técnico en mantenimiento de sistemas y redes informáticas; estudios de ingeniería en Donetsk interrumpidos por la guerra. Idiomas: ucraniano y ruso nativos, español C1, inglés B2.'
+    'Текст підготувала редакція Rybezh.site разом із засновницею Оленою Рибецькою. У корпоративному середовищі слово «криза» звучить часто; для Богдана Тютенка, який веде операції в Лімі (Перу), це передусім послідовність рішень і метрик. До 2014 року він навчався в Донецькому національному технічному університеті, поєднуючи програмування, математику та бойові мистецтва. Після початку війни на сході України пройшов конкурсний відбір до ГУР — багатоетапний відбір, який подолала невелика група з сотень кандидатів. Досвід, зокрема описаний у книзі «Хаос і надія: Донбасс 2014», закріпив звичку діяти на випередження, швидко зважувати ризики і брати відповідальність у гострий момент; на «Південному котлі» він на власні очі бачив, як рветься логістика ланцюгів постачання. Звідси правило, яке він переніс у бізнес: стратегія тримається на логістиці, прозорих даних і чітких SOP. У Rocket (2018–2021) керував міськими операціями під час масштабування доставки, флотом 150+ курʼєрів, впроваджував Power BI та Excel для контролю метрик і тримав середній час доставки до 35 хвилин. У Лімі з dark kitchens і Yango посилив аналітику: FIFO зменшив втрати на 18%, системна робота з процесами й витратами дала до 20% економії при зростанні стабільності. У інцидентах Tier 2/3 колеги відзначають спокійну реакцію — SQL, пошук першопричини, відновлення сервісу, SLA близько 99.9%. Цільова роль зараз — операційний директор: поєднання P&L, кризової стійкості, побудови команд і практичного керування last-mile.',
+    'This profile was written by the Rybezh.site editorial team with founder Olena Rybetska. Bohdan Tiutenko is targeting a chief operating officer role in foodtech and last-mile logistics, with 5+ years across Ukraine and Peru. His leadership blends technical literacy, sport-level discipline and crisis-tested judgement: before business he studied programming, trained in martial arts and completed a competitive selection process for a Ukrainian intelligence unit, where a small group was chosen from several hundred candidates. That experience reinforced fast situational analysis, self-control and team coordination under uncertainty. At Rocket he led city operations during aggressive delivery scaling, grew a fleet of 150+ couriers, owned P&L, rolled out SOPs and Power BI / Excel dashboards, and kept average delivery time under 35 minutes. In Lima, with dark kitchens and Yango, he deepened analytics: FIFO cut waste by 18%, systematic process and cost work delivered up to 20% savings while stability improved; data visibility rose by about 40%, SLA improved by roughly 12% and service continuity stayed near 99.9%. In Tier 2/3 incidents colleagues note a calm playbook: SQL, root-cause isolation, service recovery. Education: technician in computer systems and network maintenance; engineering studies in Donetsk were interrupted by war. Languages: Ukrainian and Russian native, Spanish C1, English B2.',
+    'Текст подготовила редакция Rybezh.site вместе с основательницей Еленой Рыбецкой. Богдан Тютенко претендует на роль операционного директора (COO) в foodtech и last-mile логистике; опыт более пяти лет в Украине и Перу. Его стиль сочетает техническое мышление, спортивную дисциплину и ответственность, проверенную в кризисе: до бизнеса он учился программированию, занимался единоборствами и прошел конкурсный отбор в разведывательное подразделение, куда из сотен кандидатов взяли ограниченную группу. Это дало практику быстрого анализа, самоконтроля и координации команды в неопределенности. В Rocket он руководил городскими операциями при агрессивном масштабировании доставки, вел флот 150+ курьеров, отвечал за P&L, внедрял SOP и дашборды в Power BI и Excel, удерживая среднее время доставки ниже 35 минут. В Лиме с dark kitchens и Yango усилил аналитику: FIFO снизил потери на 18%, системная работа с процессами и затратами дала до 20% экономии при росте стабильности; видимость данных выросла примерно на 40%, SLA улучшился примерно на 12%, непрерывность сервиса оставалась около 99.9%. В инцидентах Tier 2/3 коллеги отмечают спокойный протокол: SQL, поиск первопричины, восстановление сервиса. Образование: техник по обслуживанию систем и компьютерных сетей; инженерное обучение в Донецке прервано войной. Языки: украинский и русский — родные, испанский — C1, английский — B2.',
+    'Este perfil lo redactó el equipo editorial de Rybezh.site junto a la fundadora Olena Rybetska. Bohdan Tiutenko aspira a un rol de director de operaciones (COO) en foodtech y logística de última milla, con más de cinco años entre Ucrania y Perú. Su liderazgo une rigor técnico, disciplina deportiva y juicio probado en crisis: antes del negocio estudió programación, practicó artes marciales y superó un proceso competitivo para una unidad de inteligencia ucraniana donde solo un grupo reducido pasó entre cientos de candidatos. Eso reforzó análisis rápido, autocontrol y coordinación de equipos bajo incertidumbre. En Rocket dirigió operaciones urbanas en una fase de expansión agresiva del delivery, escaló una flota de +150 repartidores, asumió P&L, implementó SOPs y tableros en Power BI / Excel y mantuvo el tiempo medio de entrega por debajo de 35 minutos. En Lima, con dark kitchens y Yango, profundizó en analítica: FIFO redujo mermas un 18%, el trabajo sistemático con procesos y costos aportó hasta un 20% de ahorro con más estabilidad; la visibilidad de datos subió alrededor de un 40%, el SLA mejoró cerca de un 12% y la continuidad del servicio se mantuvo cerca del 99.9%. En incidentes Tier 2/3 destaca un protocolo calmado: SQL, aislamiento de causa raíz y recuperación del servicio. Educación: técnico en mantenimiento de sistemas y redes; estudios de ingeniería en Donetsk interrumpidos por la guerra. Idiomas: ucraniano y ruso nativos, español C1, inglés B2.'
   ),
   tags: ['operations', 'leadership', 'logistics', 'analytics', 'foodtech', 'resilience', 'ukraine'],
   gallery: [
@@ -904,10 +906,10 @@ const bohdanProfile = {
     }
   ],
   highlights: {
-    uk: ['P&L ownership і зниження операційних витрат до 20%', 'Масштабування last-mile флоту понад 150 курʼєрів', 'Конкурсний відбір до розвідки, дисципліна і командна координація', 'Power BI, SQL, Excel, Kommo CRM, SOPs і KPI/OKR управління', 'Покращення SLA на 12% і безперервність сервісу 99.9%'],
-    en: ['P&L ownership and operating-cost reduction up to 20%', 'Scaling last-mile fleets of 150+ couriers', 'Competitive intelligence-unit selection, discipline and team coordination', 'Power BI, SQL, Excel, Kommo CRM, SOPs and KPI/OKR management', '12% SLA improvement and 99.9% service continuity'],
-    ru: ['P&L ownership и снижение операционных затрат до 20%', 'Масштабирование last-mile флота более 150 курьеров', 'Конкурсный отбор в разведку, дисциплина и командная координация', 'Power BI, SQL, Excel, Kommo CRM, SOPs и управление KPI/OKR', 'Улучшение SLA на 12% и непрерывность сервиса 99.9%'],
-    es: ['Ownership de P&L y reducción de costos operativos hasta 20%', 'Escalamiento de flotas last-mile de +150 repartidores', 'Selección competitiva en inteligencia, disciplina y coordinación de equipo', 'Power BI, SQL, Excel, Kommo CRM, SOPs y gestión KPI/OKR', 'Mejora de SLA del 12% y continuidad de servicio al 99.9%']
+    uk: ['Ціль — COO / операційний директор: повний цикл від стратегії до поля', 'P&L, unit economics, SOP, найм і performance-менеджмент для 150+ курʼєрів', 'Кризове керування, пост-мортеми, Tier 2/3 без паніки', 'Power BI, SQL, Excel, Kommo CRM; середній час доставки до 35 хв', 'FIFO та процеси: −18% втрат, до −20% витрат, SLA ~99.9%'],
+    en: ['Targeting COO / head of operations: strategy through field execution', 'P&L, unit economics, SOPs, hiring and performance for 150+ couriers', 'Crisis leadership, blameless postmortems, calm Tier 2/3 response', 'Power BI, SQL, Excel, Kommo CRM; average delivery time under 35 minutes', 'FIFO and process redesign: 18% waste cut, up to 20% cost savings, ~99.9% SLA'],
+    ru: ['Цель — COO / операционный директор: от стратегии до поля', 'P&L, unit economics, SOP, найм и performance для 150+ курьеров', 'Кризисное управление, постмортемы, Tier 2/3 без паники', 'Power BI, SQL, Excel, Kommo CRM; среднее время доставки ниже 35 минут', 'FIFO и процесы: −18% потерь, до −20% затрат, SLA ~99.9%'],
+    es: ['Objetivo: COO / director de operaciones: de la estrategia al terreno', 'P&L, unit economics, SOPs, hiring y performance para +150 repartidores', 'Liderazgo en crisis, postmortems, incidentes Tier 2/3 con calma', 'Power BI, SQL, Excel, Kommo CRM; tiempo medio de entrega bajo 35 minutos', 'FIFO y procesos: −18% mermas, hasta −20% costos, SLA ~99.9%']
   }
 };
 
@@ -1092,7 +1094,7 @@ const startups = [
     name: 'Google DeepMind',
     founded: '2010',
     category: t('Дослідницька компанія ШІ', 'AI research company', 'Исследовательская компания ИИ', 'Empresa de investigación en IA'),
-    summary: t('Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google.', 'Works on foundational AI systems, scientific challenges and Google products.', 'Работает над фундаментальными системами ИИ, научными задачами и продуктами Google.', 'Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google.'),
+    summary: t('Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google.', 'Works on foundational AI systems, scientific challenges and Google products; known for AlphaFold, AlphaGo and other core AI systems.', 'Работает над фундаментальными системами ИИ, научными задачами и продуктами Google.', 'Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google.'),
     tags: ['ai', 'research', 'science']
   },
   {
@@ -2127,7 +2129,7 @@ const specialistOutput = curatedSpecialists.map(person => {
     bio,
     tags,
     featured: Boolean(person.featured),
-    gallery: person.gallery || [],
+    gallery: person.gallery?.length ? person.gallery : defaultGalleryFor(person),
     highlights: person.highlights || null
   };
 });
