@@ -21,7 +21,8 @@
                 <a href="{{HOME_URL}}">Rybezh</a>
                 <span class="logo-caption">People Archive</span>
             </div>
-            <nav class="main-nav" aria-label="{{NAV_ARIA}}">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ {{NAV_MENU}}</button>
+            <nav id="main-nav" class="main-nav" aria-label="{{NAV_ARIA}}">
                 <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
                 <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
                 <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
@@ -70,6 +71,7 @@
                     <h4>{{FOOTER_SCOPE_TITLE}}</h4>
                     <p>{{FOOTER_SCOPE_TEXT}}</p>
                     <p>{{FOOTER_LANGUAGES}}</p>
+                    <p><strong>Email:</strong> <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
                 </div>
                 <div class="footer-section official-footer">
                     <h4>{{FOOTER_POLICIES_TITLE}}</h4>
@@ -142,6 +144,15 @@
 
         if (declineCookiesButton) {
             declineCookiesButton.addEventListener('click', () => setCookieChoice('declined'));
+        }
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.getElementById('main-nav');
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mainNav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
         }
 
         const directoryPanels = Array.from(document.querySelectorAll('[data-directory-panel]'));
