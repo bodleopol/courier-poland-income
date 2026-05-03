@@ -1724,5 +1724,525 @@
     "featured": false,
     "gallery": [],
     "highlights": null
+  },
+  {
+    "slug": "mira-murati",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mira_Murati_2024.jpg?width=720",
+    "name": {
+      "uk": "Міра Мураті",
+      "en": "Mira Murati",
+      "ru": "Мира Мураті",
+      "es": "Mira Murati"
+    },
+    "role": {
+      "uk": "Технологічна керівниця у сфері ШІ",
+      "en": "AI technology executive",
+      "ru": "Технологический руководитель в сфере ИИ",
+      "es": "Ejecutiva tecnológica de IA"
+    },
+    "country": {
+      "uk": "Албанія / США",
+      "en": "Albania / United States",
+      "ru": "Албания / США",
+      "es": "Albania / Estados Unidos"
+    },
+    "focus": {
+      "uk": "генеративний ШІ, продуктові рішення, research-to-product execution",
+      "en": "generative AI, product delivery, research-to-product execution",
+      "ru": "генеративный ИИ, продуктовые решения, research-to-product execution",
+      "es": "IA generativa, entrega de producto y ejecución research-to-product"
+    },
+    "knownFor": {
+      "uk": "керівництво продуктовим розвитком ChatGPT та мультимодальних AI-систем",
+      "en": "leading product development around ChatGPT and multimodal AI systems",
+      "ru": "руководство продуктовым развитием ChatGPT и мультимодальных AI-систем",
+      "es": "liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA"
+    },
+    "bio": {
+      "uk": "Міра Мураті — Технологічна керівниця у сфері ШІ. Професійний фокус: генеративний ШІ, продуктові рішення, research-to-product execution. Ключовий внесок: керівництво продуктовим розвитком ChatGPT та мультимодальних AI-систем. Її профіль важливий для сучасного ринку після 2020 року, бо він показує, як AI-дослідження переходять у масові продукти та інструменти для бізнесу й розробників.",
+      "en": "Mira Murati is known as AI technology executive. Professional focus: generative AI, product delivery, research-to-product execution. Key contribution: leading product development around ChatGPT and multimodal AI systems. Her profile matters for the post-2020 market because it shows how AI research becomes mainstream products and tools for businesses and developers.",
+      "ru": "Мира Мураті — Технологический руководитель в сфере ИИ. Профессиональный фокус: генеративный ИИ, продуктовые решения, research-to-product execution. Ключевой вклад: руководство продуктовым развитием ChatGPT и мультимодальных AI-систем. Ее профиль важен для рынка после 2020 года, потому что показывает, как AI-исследования превращаются в массовые продукты и инструменты для бизнеса и разработчиков.",
+      "es": "Mira Murati destaca como Ejecutiva tecnológica de IA. Foco profesional: IA generativa, entrega de producto y ejecución research-to-product. Contribución clave: liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA. Su perfil es clave para el mercado posterior a 2020 porque muestra cómo la investigación en IA se convierte en productos masivos y herramientas para empresas y desarrolladores."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "Операції",
+        "Лідерство"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "Operations",
+        "Leadership"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "Операции",
+        "Лидерство"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Operaciones",
+        "Liderazgo"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "dario-amodei",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dario_Amodei_2023.jpg?width=720",
+    "name": {
+      "uk": "Даріо Амодеї",
+      "en": "Dario Amodei",
+      "ru": "Дарио Амодеи",
+      "es": "Dario Amodei"
+    },
+    "role": {
+      "uk": "CEO Anthropic, дослідник ШІ",
+      "en": "CEO of Anthropic, AI researcher",
+      "ru": "CEO Anthropic, исследователь ИИ",
+      "es": "CEO de Anthropic, investigador de IA"
+    },
+    "country": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "focus": {
+      "uk": "AI safety, великі моделі, наукова стратегія",
+      "en": "AI safety, large models, research strategy",
+      "ru": "AI safety, большие модели, научная стратегия",
+      "es": "seguridad de IA, grandes modelos y estrategia de investigación"
+    },
+    "knownFor": {
+      "uk": "розвиток Anthropic і фокус на безпечних та керованих AI-моделях",
+      "en": "building Anthropic and focusing on safe, controllable AI models",
+      "ru": "развитие Anthropic и фокус на безопасных и управляемых AI-моделях",
+      "es": "desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables"
+    },
+    "bio": {
+      "uk": "Даріо Амодеї — CEO Anthropic, дослідник ШІ. Професійний фокус: AI safety, великі моделі, наукова стратегія. Ключовий внесок: розвиток Anthropic і фокус на безпечних та керованих AI-моделях. Після 2020 року його імʼя стало одним із ключових у дискусії про безпеку, масштабування та відповідальне впровадження генеративного ШІ.",
+      "en": "Dario Amodei is known as CEO of Anthropic, AI researcher. Professional focus: AI safety, large models, research strategy. Key contribution: building Anthropic and focusing on safe, controllable AI models. After 2020 his name became central to the discussion around safety, scaling and responsible deployment of generative AI.",
+      "ru": "Дарио Амодеи — CEO Anthropic, исследователь ИИ. Профессиональный фокус: AI safety, большие модели, научная стратегия. Ключевой вклад: развитие Anthropic и фокус на безопасных и управляемых AI-моделях. После 2020 года его имя стало одним из ключевых в разговоре о безопасности, масштабировании и ответственном внедрении генеративного ИИ.",
+      "es": "Dario Amodei destaca como CEO de Anthropic, investigador de IA. Foco profesional: seguridad de IA, grandes modelos y estrategia de investigación. Contribución clave: desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables. Después de 2020 su nombre se volvió central en la discusión sobre seguridad, escalamiento y despliegue responsable de la IA generativa."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "CEO",
+        "Дослідження"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "CEO",
+        "Research"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "CEO",
+        "Исследования"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "CEO",
+        "Investigación"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "arthur-mensch",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur_Mensch_2024.jpg?width=720",
+    "name": {
+      "uk": "Артур Менш",
+      "en": "Arthur Mensch",
+      "ru": "Артур Менш",
+      "es": "Arthur Mensch"
+    },
+    "role": {
+      "uk": "CEO Mistral AI, інженер машинного навчання",
+      "en": "CEO of Mistral AI, machine-learning engineer",
+      "ru": "CEO Mistral AI, инженер машинного обучения",
+      "es": "CEO de Mistral AI, ingeniero de aprendizaje automático"
+    },
+    "country": {
+      "uk": "Франція",
+      "en": "France",
+      "ru": "Франция",
+      "es": "Francia"
+    },
+    "focus": {
+      "uk": "європейські AI-моделі, open models, інженерія inference",
+      "en": "European AI models, open models, inference engineering",
+      "ru": "европейские AI-модели, open models, инженерия inference",
+      "es": "modelos europeos de IA, open models e ingeniería de inference"
+    },
+    "knownFor": {
+      "uk": "побудову Mistral AI як одного з найпомітніших європейських AI-стартапів після 2023 року",
+      "en": "building Mistral AI into one of the most visible European AI startups after 2023",
+      "ru": "создание Mistral AI как одного из самых заметных европейских AI-стартапов после 2023 года",
+      "es": "construir Mistral AI como una de las startups europeas de IA más visibles desde 2023"
+    },
+    "bio": {
+      "uk": "Артур Менш — CEO Mistral AI, інженер машинного навчання. Професійний фокус: європейські AI-моделі, open models, інженерія inference. Ключовий внесок: побудову Mistral AI як одного з найпомітніших європейських AI-стартапів після 2023 року. Його профіль додає до бази нову хвилю технічних засновників, які швидко формують європейський ринок генеративного ШІ.",
+      "en": "Arthur Mensch is known as CEO of Mistral AI, machine-learning engineer. Professional focus: European AI models, open models, inference engineering. Key contribution: building Mistral AI into one of the most visible European AI startups after 2023. His profile adds a new wave of technical founders who are rapidly shaping the European generative-AI market.",
+      "ru": "Артур Менш — CEO Mistral AI, инженер машинного обучения. Профессиональный фокус: европейские AI-модели, open models, инженерия inference. Ключевой вклад: создание Mistral AI как одного из самых заметных европейских AI-стартапов после 2023 года. Его профиль добавляет новую волну технических основателей, быстро формирующих европейский рынок генеративного ИИ.",
+      "es": "Arthur Mensch destaca como CEO de Mistral AI, ingeniero de aprendizaje automático. Foco profesional: modelos europeos de IA, open models e ingeniería de inference. Contribución clave: construir Mistral AI como una de las startups europeas de IA más visibles desde 2023. Su perfil añade una nueva ola de fundadores técnicos que están moldeando con rapidez el mercado europeo de IA generativa."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "CEO",
+        "Стартапи"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "CEO",
+        "Startups"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "CEO",
+        "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "CEO",
+        "Startups"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "mustafa-suleyman",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mustafa_Suleyman_2024.jpg?width=720",
+    "name": {
+      "uk": "Мустафа Сулейман",
+      "en": "Mustafa Suleyman",
+      "ru": "Мустафа Сулейман",
+      "es": "Mustafa Suleyman"
+    },
+    "role": {
+      "uk": "CEO Microsoft AI, підприємець у сфері ШІ",
+      "en": "CEO of Microsoft AI, AI entrepreneur",
+      "ru": "CEO Microsoft AI, предприниматель в сфере ИИ",
+      "es": "CEO de Microsoft AI, emprendedor de IA"
+    },
+    "country": {
+      "uk": "Велика Британія",
+      "en": "United Kingdom",
+      "ru": "Великобритания",
+      "es": "Reino Unido"
+    },
+    "focus": {
+      "uk": "AI products, consumer systems, стратегія впровадження",
+      "en": "AI products, consumer systems, deployment strategy",
+      "ru": "AI products, consumer systems, стратегия внедрения",
+      "es": "productos de IA, sistemas de consumo y estrategia de despliegue"
+    },
+    "knownFor": {
+      "uk": "DeepMind, Inflection AI та управління новими AI-напрямами у Microsoft",
+      "en": "DeepMind, Inflection AI and leading new AI directions at Microsoft",
+      "ru": "DeepMind, Inflection AI и руководство новыми AI-направлениями в Microsoft",
+      "es": "DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft"
+    },
+    "bio": {
+      "uk": "Мустафа Сулейман — CEO Microsoft AI, підприємець у сфері ШІ. Професійний фокус: AI products, consumer systems, стратегія впровадження. Ключовий внесок: DeepMind, Inflection AI та управління новими AI-напрямами у Microsoft. Після 2020 року його роль показує, як AI-підприємці переходять від досліджень до широкого продуктового розгортання у великих технологічних компаніях.",
+      "en": "Mustafa Suleyman is known as CEO of Microsoft AI, AI entrepreneur. Professional focus: AI products, consumer systems, deployment strategy. Key contribution: DeepMind, Inflection AI and leading new AI directions at Microsoft. After 2020 his role shows how AI entrepreneurs move from research into broad product deployment inside major technology companies.",
+      "ru": "Мустафа Сулейман — CEO Microsoft AI, предприниматель в сфере ИИ. Профессиональный фокус: AI products, consumer systems, стратегия внедрения. Ключевой вклад: DeepMind, Inflection AI и руководство новыми AI-направлениями в Microsoft. После 2020 года его роль показывает, как AI-предприниматели переходят от исследований к широкому продуктовому внедрению внутри крупных технологических компаний.",
+      "es": "Mustafa Suleyman destaca como CEO de Microsoft AI, emprendedor de IA. Foco profesional: productos de IA, sistemas de consumo y estrategia de despliegue. Contribución clave: DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft. Después de 2020 su papel muestra cómo los emprendedores de IA pasan de la investigación al despliegue amplio de producto dentro de grandes tecnológicas."
+    },
+    "tags": {
+      "uk": [
+        "Штучний інтелект",
+        "CEO",
+        "Операції"
+      ],
+      "en": [
+        "Artificial intelligence",
+        "CEO",
+        "Operations"
+      ],
+      "ru": [
+        "Искусственный интеллект",
+        "CEO",
+        "Операции"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "CEO",
+        "Operaciones"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "sridhar-ramaswamy",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sridhar_Ramaswamy_2024.jpg?width=720",
+    "name": {
+      "uk": "Шрідхар Рамасвамі",
+      "en": "Sridhar Ramaswamy",
+      "ru": "Шридхар Рамасвами",
+      "es": "Sridhar Ramaswamy"
+    },
+    "role": {
+      "uk": "CEO Snowflake, керівник data/AI-платформ",
+      "en": "CEO of Snowflake, data and AI platform executive",
+      "ru": "CEO Snowflake, руководитель data/AI-платформ",
+      "es": "CEO de Snowflake, ejecutivo de plataformas de datos e IA"
+    },
+    "country": {
+      "uk": "Індія / США",
+      "en": "India / United States",
+      "ru": "Индия / США",
+      "es": "India / Estados Unidos"
+    },
+    "focus": {
+      "uk": "data cloud, AI infrastructure, корпоративні платформи даних",
+      "en": "data cloud, AI infrastructure, enterprise data platforms",
+      "ru": "data cloud, AI infrastructure, корпоративные платформы данных",
+      "es": "data cloud, infraestructura de IA y plataformas empresariales de datos"
+    },
+    "knownFor": {
+      "uk": "керівництво Snowflake у фазі активної інтеграції AI у корпоративні data-платформи",
+      "en": "leading Snowflake through an active phase of AI integration into enterprise data platforms",
+      "ru": "руководство Snowflake в фазе активной интеграции ИИ в корпоративные data-платформы",
+      "es": "liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos"
+    },
+    "bio": {
+      "uk": "Шрідхар Рамасвамі — CEO Snowflake, керівник data/AI-платформ. Професійний фокус: data cloud, AI infrastructure, корпоративні платформи даних. Ключовий внесок: керівництво Snowflake у фазі активної інтеграції AI у корпоративні data-платформи. Його профіль додає до бази сегмент сучасних керівників, які після 2020 року будують фундамент для data та AI-інфраструктури в enterprise-середовищі.",
+      "en": "Sridhar Ramaswamy is known as CEO of Snowflake, data and AI platform executive. Professional focus: data cloud, AI infrastructure, enterprise data platforms. Key contribution: leading Snowflake through an active phase of AI integration into enterprise data platforms. His profile adds the segment of modern leaders who after 2020 are building the data and AI infrastructure foundation for enterprise environments.",
+      "ru": "Шридхар Рамасвами — CEO Snowflake, руководитель data/AI-платформ. Профессиональный фокус: data cloud, AI infrastructure, корпоративные платформы данных. Ключевой вклад: руководство Snowflake в фазе активной интеграции ИИ в корпоративные data-платформы. Его профиль добавляет сегмент современных руководителей, которые после 2020 года строят фундамент data- и AI-инфраструктуры для enterprise-среды.",
+      "es": "Sridhar Ramaswamy destaca como CEO de Snowflake, ejecutivo de plataformas de datos e IA. Foco profesional: data cloud, infraestructura de IA y plataformas empresariales de datos. Contribución clave: liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos. Su perfil añade el segmento de líderes modernos que, después de 2020, construyen la base de infraestructura de datos e IA para entornos enterprise."
+    },
+    "tags": {
+      "uk": [
+        "CEO",
+        "Хмарні технології",
+        "Штучний інтелект"
+      ],
+      "en": [
+        "CEO",
+        "Cloud",
+        "Artificial intelligence"
+      ],
+      "ru": [
+        "CEO",
+        "Облачные технологии",
+        "Искусственный интеллект"
+      ],
+      "es": [
+        "CEO",
+        "Cloud",
+        "Inteligencia artificial"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "thomas-dohmke",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas_Dohmke_2023.jpg?width=720",
+    "name": {
+      "uk": "Томас Домке",
+      "en": "Thomas Dohmke",
+      "ru": "Томас Домке",
+      "es": "Thomas Dohmke"
+    },
+    "role": {
+      "uk": "CEO GitHub, лідер developer platform",
+      "en": "CEO of GitHub, developer platform leader",
+      "ru": "CEO GitHub, лидер developer platform",
+      "es": "CEO de GitHub, líder de plataforma para desarrolladores"
+    },
+    "country": {
+      "uk": "Німеччина / США",
+      "en": "Germany / United States",
+      "ru": "Германия / США",
+      "es": "Alemania / Estados Unidos"
+    },
+    "focus": {
+      "uk": "developer tools, Copilot, collaborative software platforms",
+      "en": "developer tools, Copilot, collaborative software platforms",
+      "ru": "developer tools, Copilot, collaborative software platforms",
+      "es": "herramientas para desarrolladores, Copilot y plataformas colaborativas de software"
+    },
+    "knownFor": {
+      "uk": "розвиток GitHub у добу Copilot і AI-assisted software development",
+      "en": "leading GitHub in the Copilot era of AI-assisted software development",
+      "ru": "развитие GitHub в эпоху Copilot и AI-assisted software development",
+      "es": "liderar GitHub en la era de Copilot y del desarrollo asistido por IA"
+    },
+    "bio": {
+      "uk": "Томас Домке — CEO GitHub, лідер developer platform. Професійний фокус: developer tools, Copilot, collaborative software platforms. Ключовий внесок: розвиток GitHub у добу Copilot і AI-assisted software development. Після 2020 року його роль стала показовою для нового покоління платформ, де AI безпосередньо змінює щоденну роботу програмістів.",
+      "en": "Thomas Dohmke is known as CEO of GitHub, developer platform leader. Professional focus: developer tools, Copilot, collaborative software platforms. Key contribution: leading GitHub in the Copilot era of AI-assisted software development. After 2020 his role became a strong example of the new platform generation where AI directly changes the daily work of software engineers.",
+      "ru": "Томас Домке — CEO GitHub, лидер developer platform. Профессиональный фокус: developer tools, Copilot, collaborative software platforms. Ключевой вклад: развитие GitHub в эпоху Copilot и AI-assisted software development. После 2020 года его роль стала показательной для нового поколения платформ, где ИИ напрямую меняет ежедневную работу программистов.",
+      "es": "Thomas Dohmke destaca como CEO de GitHub, líder de plataforma para desarrolladores. Foco profesional: herramientas para desarrolladores, Copilot y plataformas colaborativas de software. Contribución clave: liderar GitHub en la era de Copilot y del desarrollo asistido por IA. Después de 2020 su papel se volvió un ejemplo claro de la nueva generación de plataformas donde la IA cambia directamente el trabajo diario de los programadores."
+    },
+    "tags": {
+      "uk": [
+        "Програмування",
+        "CEO",
+        "Штучний інтелект"
+      ],
+      "en": [
+        "Software",
+        "CEO",
+        "Artificial intelligence"
+      ],
+      "ru": [
+        "Программирование",
+        "CEO",
+        "Искусственный интеллект"
+      ],
+      "es": [
+        "Software",
+        "CEO",
+        "Inteligencia artificial"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "jay-graber",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jay_Graber_2024.jpg?width=720",
+    "name": {
+      "uk": "Джей Грейбер",
+      "en": "Jay Graber",
+      "ru": "Джей Грейбер",
+      "es": "Jay Graber"
+    },
+    "role": {
+      "uk": "CEO Bluesky, product та protocol leader",
+      "en": "CEO of Bluesky, product and protocol leader",
+      "ru": "CEO Bluesky, product и protocol leader",
+      "es": "CEO de Bluesky, líder de producto y protocolo"
+    },
+    "country": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "focus": {
+      "uk": "децентралізовані соціальні мережі, протоколи, продуктова стратегія",
+      "en": "decentralised social platforms, protocols, product strategy",
+      "ru": "децентрализованные социальные платформы, протоколы, продуктовая стратегия",
+      "es": "plataformas sociales descentralizadas, protocolos y estrategia de producto"
+    },
+    "knownFor": {
+      "uk": "розвиток Bluesky як нової соціальної платформи на базі відкритого протоколу після 2020 року",
+      "en": "building Bluesky as a new social platform on an open protocol after 2020",
+      "ru": "развитие Bluesky как новой социальной платформы на базе открытого протокола после 2020 года",
+      "es": "desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020"
+    },
+    "bio": {
+      "uk": "Джей Грейбер — CEO Bluesky, product та protocol leader. Професійний фокус: децентралізовані соціальні мережі, протоколи, продуктова стратегія. Ключовий внесок: розвиток Bluesky як нової соціальної платформи на базі відкритого протоколу після 2020 року. Її профіль показує сучасний зріз product leadership у мережевих продуктах, де важливі і архітектура платформи, і довіра користувачів.",
+      "en": "Jay Graber is known as CEO of Bluesky, product and protocol leader. Professional focus: decentralised social platforms, protocols, product strategy. Key contribution: building Bluesky as a new social platform on an open protocol after 2020. Her profile shows a modern slice of product leadership in networked products where platform architecture and user trust matter equally.",
+      "ru": "Джей Грейбер — CEO Bluesky, product и protocol leader. Профессиональный фокус: децентрализованные социальные платформы, протоколы, продуктовая стратегия. Ключевой вклад: развитие Bluesky как новой социальной платформы на базе открытого протокола после 2020 года. Ее профиль показывает современный срез product leadership в сетевых продуктах, где одинаково важны архитектура платформы и доверие пользователей.",
+      "es": "Jay Graber destaca como CEO de Bluesky, líder de producto y protocolo. Foco profesional: plataformas sociales descentralizadas, protocolos y estrategia de producto. Contribución clave: desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020. Su perfil muestra una visión moderna del liderazgo de producto en servicios de red, donde importan tanto la arquitectura de plataforma como la confianza de los usuarios."
+    },
+    "tags": {
+      "uk": [
+        "Програмування",
+        "CEO",
+        "Дизайн"
+      ],
+      "en": [
+        "Software",
+        "CEO",
+        "Design"
+      ],
+      "ru": [
+        "Программирование",
+        "CEO",
+        "Дизайн"
+      ],
+      "es": [
+        "Software",
+        "CEO",
+        "Diseño"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
+  },
+  {
+    "slug": "lina-khan",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lina_Khan_2022.jpg?width=720",
+    "name": {
+      "uk": "Ліна Хан",
+      "en": "Lina Khan",
+      "ru": "Лина Хан",
+      "es": "Lina Khan"
+    },
+    "role": {
+      "uk": "Голова FTC, регуляторка цифрових платформ",
+      "en": "FTC chair, digital-platform regulator",
+      "ru": "Глава FTC, регулятор цифровых платформ",
+      "es": "Presidenta de la FTC y reguladora de plataformas digitales"
+    },
+    "country": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
+    },
+    "focus": {
+      "uk": "регулювання Big Tech, конкуренція, цифрові ринки",
+      "en": "Big Tech regulation, competition, digital markets",
+      "ru": "регулирование Big Tech, конкуренция, цифровые рынки",
+      "es": "regulación de Big Tech, competencia y mercados digitales"
+    },
+    "knownFor": {
+      "uk": "помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року",
+      "en": "a visible role in the post-2020 regulatory debate around major technology platforms",
+      "ru": "заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года",
+      "es": "un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas"
+    },
+    "bio": {
+      "uk": "Ліна Хан — Голова FTC, регуляторка цифрових платформ. Професійний фокус: регулювання Big Tech, конкуренція, цифрові ринки. Ключовий внесок: помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року. Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу.",
+      "en": "Lina Khan is known as FTC chair, digital-platform regulator. Professional focus: Big Tech regulation, competition, digital markets. Key contribution: a visible role in the post-2020 regulatory debate around major technology platforms. Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy.",
+      "ru": "Лина Хан — Глава FTC, регулятор цифровых платформ. Профессиональный фокус: регулирование Big Tech, конкуренция, цифровые рынки. Ключевой вклад: заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года. Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла.",
+      "es": "Lina Khan destaca como Presidenta de la FTC y reguladora de plataformas digitales. Foco profesional: regulación de Big Tech, competencia y mercados digitales. Contribución clave: un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas. Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital."
+    },
+    "tags": {
+      "uk": [
+        "Операції",
+        "Лідерство",
+        "Технології"
+      ],
+      "en": [
+        "Operations",
+        "Leadership",
+        "Technology"
+      ],
+      "ru": [
+        "Операции",
+        "Лидерство",
+        "Технологии"
+      ],
+      "es": [
+        "Operaciones",
+        "Liderazgo",
+        "Tecnología"
+      ]
+    },
+    "featured": false,
+    "gallery": [],
+    "highlights": null
   }
 ]

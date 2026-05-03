@@ -336,6 +336,94 @@ const specialists = [
     knownFor: t('організацію запуску першого супутника і перших пілотованих польотів', 'organising the first satellite launch and early crewed flights', 'организацию запуска первого спутника и первых пилотируемых полетов', 'organizar el primer satélite y los primeros vuelos tripulados'),
     life: t('Він уособлює роль системного інженера, який обʼєднує науку, виробництво, ризик і командну координацію.', 'He represents the systems engineer who combines science, manufacturing, risk and team coordination.', 'Он олицетворяет системного инженера, объединяющего науку, производство, риск и командную координацию.', 'Representa al ingeniero de sistemas que une ciencia, fabricación, riesgo y coordinación de equipos.'),
     tags: ['space', 'engineering', 'leadership']
+  },
+  {
+    slug: 'mira-murati',
+    image: commons('Mira_Murati_2024.jpg'),
+    name: t('Міра Мураті', 'Mira Murati', 'Мира Мураті', 'Mira Murati'),
+    role: t('Технологічна керівниця у сфері ШІ', 'AI technology executive', 'Технологический руководитель в сфере ИИ', 'Ejecutiva tecnológica de IA'),
+    country: t('Албанія / США', 'Albania / United States', 'Албания / США', 'Albania / Estados Unidos'),
+    focus: t('генеративний ШІ, продуктові рішення, research-to-product execution', 'generative AI, product delivery, research-to-product execution', 'генеративный ИИ, продуктовые решения, research-to-product execution', 'IA generativa, entrega de producto y ejecución research-to-product'),
+    knownFor: t('керівництво продуктовим розвитком ChatGPT та мультимодальних AI-систем', 'leading product development around ChatGPT and multimodal AI systems', 'руководство продуктовым развитием ChatGPT и мультимодальных AI-систем', 'liderar el desarrollo de producto alrededor de ChatGPT y sistemas multimodales de IA'),
+    life: t('Її профіль важливий для сучасного ринку після 2020 року, бо він показує, як AI-дослідження переходять у масові продукти та інструменти для бізнесу й розробників.', 'Her profile matters for the post-2020 market because it shows how AI research becomes mainstream products and tools for businesses and developers.', 'Ее профиль важен для рынка после 2020 года, потому что показывает, как AI-исследования превращаются в массовые продукты и инструменты для бизнеса и разработчиков.', 'Su perfil es clave para el mercado posterior a 2020 porque muestra cómo la investigación en IA se convierte en productos masivos y herramientas para empresas y desarrolladores.'),
+    tags: ['ai', 'operations', 'leadership']
+  },
+  {
+    slug: 'dario-amodei',
+    image: commons('Dario_Amodei_2023.jpg'),
+    name: t('Даріо Амодеї', 'Dario Amodei', 'Дарио Амодеи', 'Dario Amodei'),
+    role: t('CEO Anthropic, дослідник ШІ', 'CEO of Anthropic, AI researcher', 'CEO Anthropic, исследователь ИИ', 'CEO de Anthropic, investigador de IA'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('AI safety, великі моделі, наукова стратегія', 'AI safety, large models, research strategy', 'AI safety, большие модели, научная стратегия', 'seguridad de IA, grandes modelos y estrategia de investigación'),
+    knownFor: t('розвиток Anthropic і фокус на безпечних та керованих AI-моделях', 'building Anthropic and focusing on safe, controllable AI models', 'развитие Anthropic и фокус на безопасных и управляемых AI-моделях', 'desarrollar Anthropic y enfocarse en modelos de IA seguros y controlables'),
+    life: t('Після 2020 року його імʼя стало одним із ключових у дискусії про безпеку, масштабування та відповідальне впровадження генеративного ШІ.', 'After 2020 his name became central to the discussion around safety, scaling and responsible deployment of generative AI.', 'После 2020 года его имя стало одним из ключевых в разговоре о безопасности, масштабировании и ответственном внедрении генеративного ИИ.', 'Después de 2020 su nombre se volvió central en la discusión sobre seguridad, escalamiento y despliegue responsable de la IA generativa.'),
+    tags: ['ai', 'ceo', 'research']
+  },
+  {
+    slug: 'arthur-mensch',
+    image: commons('Arthur_Mensch_2024.jpg'),
+    name: t('Артур Менш', 'Arthur Mensch', 'Артур Менш', 'Arthur Mensch'),
+    role: t('CEO Mistral AI, інженер машинного навчання', 'CEO of Mistral AI, machine-learning engineer', 'CEO Mistral AI, инженер машинного обучения', 'CEO de Mistral AI, ingeniero de aprendizaje automático'),
+    country: t('Франція', 'France', 'Франция', 'Francia'),
+    focus: t('європейські AI-моделі, open models, інженерія inference', 'European AI models, open models, inference engineering', 'европейские AI-модели, open models, инженерия inference', 'modelos europeos de IA, open models e ingeniería de inference'),
+    knownFor: t('побудову Mistral AI як одного з найпомітніших європейських AI-стартапів після 2023 року', 'building Mistral AI into one of the most visible European AI startups after 2023', 'создание Mistral AI как одного из самых заметных европейских AI-стартапов после 2023 года', 'construir Mistral AI como una de las startups europeas de IA más visibles desde 2023'),
+    life: t('Його профіль додає до бази нову хвилю технічних засновників, які швидко формують європейський ринок генеративного ШІ.', 'His profile adds a new wave of technical founders who are rapidly shaping the European generative-AI market.', 'Его профиль добавляет новую волну технических основателей, быстро формирующих европейский рынок генеративного ИИ.', 'Su perfil añade una nueva ola de fundadores técnicos que están moldeando con rapidez el mercado europeo de IA generativa.'),
+    tags: ['ai', 'ceo', 'startup']
+  },
+  {
+    slug: 'mustafa-suleyman',
+    image: commons('Mustafa_Suleyman_2024.jpg'),
+    name: t('Мустафа Сулейман', 'Mustafa Suleyman', 'Мустафа Сулейман', 'Mustafa Suleyman'),
+    role: t('CEO Microsoft AI, підприємець у сфері ШІ', 'CEO of Microsoft AI, AI entrepreneur', 'CEO Microsoft AI, предприниматель в сфере ИИ', 'CEO de Microsoft AI, emprendedor de IA'),
+    country: t('Велика Британія', 'United Kingdom', 'Великобритания', 'Reino Unido'),
+    focus: t('AI products, consumer systems, стратегія впровадження', 'AI products, consumer systems, deployment strategy', 'AI products, consumer systems, стратегия внедрения', 'productos de IA, sistemas de consumo y estrategia de despliegue'),
+    knownFor: t('DeepMind, Inflection AI та управління новими AI-напрямами у Microsoft', 'DeepMind, Inflection AI and leading new AI directions at Microsoft', 'DeepMind, Inflection AI и руководство новыми AI-направлениями в Microsoft', 'DeepMind, Inflection AI y el liderazgo de nuevas direcciones de IA en Microsoft'),
+    life: t('Після 2020 року його роль показує, як AI-підприємці переходять від досліджень до широкого продуктового розгортання у великих технологічних компаніях.', 'After 2020 his role shows how AI entrepreneurs move from research into broad product deployment inside major technology companies.', 'После 2020 года его роль показывает, как AI-предприниматели переходят от исследований к широкому продуктовому внедрению внутри крупных технологических компаний.', 'Después de 2020 su papel muestra cómo los emprendedores de IA pasan de la investigación al despliegue amplio de producto dentro de grandes tecnológicas.'),
+    tags: ['ai', 'ceo', 'operations']
+  },
+  {
+    slug: 'sridhar-ramaswamy',
+    image: commons('Sridhar_Ramaswamy_2024.jpg'),
+    name: t('Шрідхар Рамасвамі', 'Sridhar Ramaswamy', 'Шридхар Рамасвами', 'Sridhar Ramaswamy'),
+    role: t('CEO Snowflake, керівник data/AI-платформ', 'CEO of Snowflake, data and AI platform executive', 'CEO Snowflake, руководитель data/AI-платформ', 'CEO de Snowflake, ejecutivo de plataformas de datos e IA'),
+    country: t('Індія / США', 'India / United States', 'Индия / США', 'India / Estados Unidos'),
+    focus: t('data cloud, AI infrastructure, корпоративні платформи даних', 'data cloud, AI infrastructure, enterprise data platforms', 'data cloud, AI infrastructure, корпоративные платформы данных', 'data cloud, infraestructura de IA y plataformas empresariales de datos'),
+    knownFor: t('керівництво Snowflake у фазі активної інтеграції AI у корпоративні data-платформи', 'leading Snowflake through an active phase of AI integration into enterprise data platforms', 'руководство Snowflake в фазе активной интеграции ИИ в корпоративные data-платформы', 'liderar Snowflake en una etapa de integración activa de IA en plataformas empresariales de datos'),
+    life: t('Його профіль додає до бази сегмент сучасних керівників, які після 2020 року будують фундамент для data та AI-інфраструктури в enterprise-середовищі.', 'His profile adds the segment of modern leaders who after 2020 are building the data and AI infrastructure foundation for enterprise environments.', 'Его профиль добавляет сегмент современных руководителей, которые после 2020 года строят фундамент data- и AI-инфраструктуры для enterprise-среды.', 'Su perfil añade el segmento de líderes modernos que, después de 2020, construyen la base de infraestructura de datos e IA para entornos enterprise.'),
+    tags: ['ceo', 'cloud', 'ai']
+  },
+  {
+    slug: 'thomas-dohmke',
+    image: commons('Thomas_Dohmke_2023.jpg'),
+    name: t('Томас Домке', 'Thomas Dohmke', 'Томас Домке', 'Thomas Dohmke'),
+    role: t('CEO GitHub, лідер developer platform', 'CEO of GitHub, developer platform leader', 'CEO GitHub, лидер developer platform', 'CEO de GitHub, líder de plataforma para desarrolladores'),
+    country: t('Німеччина / США', 'Germany / United States', 'Германия / США', 'Alemania / Estados Unidos'),
+    focus: t('developer tools, Copilot, collaborative software platforms', 'developer tools, Copilot, collaborative software platforms', 'developer tools, Copilot, collaborative software platforms', 'herramientas para desarrolladores, Copilot y plataformas colaborativas de software'),
+    knownFor: t('розвиток GitHub у добу Copilot і AI-assisted software development', 'leading GitHub in the Copilot era of AI-assisted software development', 'развитие GitHub в эпоху Copilot и AI-assisted software development', 'liderar GitHub en la era de Copilot y del desarrollo asistido por IA'),
+    life: t('Після 2020 року його роль стала показовою для нового покоління платформ, де AI безпосередньо змінює щоденну роботу програмістів.', 'After 2020 his role became a strong example of the new platform generation where AI directly changes the daily work of software engineers.', 'После 2020 года его роль стала показательной для нового поколения платформ, где ИИ напрямую меняет ежедневную работу программистов.', 'Después de 2020 su papel se volvió un ejemplo claro de la nueva generación de plataformas donde la IA cambia directamente el trabajo diario de los programadores.'),
+    tags: ['software', 'ceo', 'ai']
+  },
+  {
+    slug: 'jay-graber',
+    image: commons('Jay_Graber_2024.jpg'),
+    name: t('Джей Грейбер', 'Jay Graber', 'Джей Грейбер', 'Jay Graber'),
+    role: t('CEO Bluesky, product та protocol leader', 'CEO of Bluesky, product and protocol leader', 'CEO Bluesky, product и protocol leader', 'CEO de Bluesky, líder de producto y protocolo'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('децентралізовані соціальні мережі, протоколи, продуктова стратегія', 'decentralised social platforms, protocols, product strategy', 'децентрализованные социальные платформы, протоколы, продуктовая стратегия', 'plataformas sociales descentralizadas, protocolos y estrategia de producto'),
+    knownFor: t('розвиток Bluesky як нової соціальної платформи на базі відкритого протоколу після 2020 року', 'building Bluesky as a new social platform on an open protocol after 2020', 'развитие Bluesky как новой социальной платформы на базе открытого протокола после 2020 года', 'desarrollar Bluesky como una nueva plataforma social basada en un protocolo abierto después de 2020'),
+    life: t('Її профіль показує сучасний зріз product leadership у мережевих продуктах, де важливі і архітектура платформи, і довіра користувачів.', 'Her profile shows a modern slice of product leadership in networked products where platform architecture and user trust matter equally.', 'Ее профиль показывает современный срез product leadership в сетевых продуктах, где одинаково важны архитектура платформы и доверие пользователей.', 'Su perfil muestra una visión moderna del liderazgo de producto en servicios de red, donde importan tanto la arquitectura de plataforma como la confianza de los usuarios.'),
+    tags: ['software', 'ceo', 'design']
+  },
+  {
+    slug: 'lina-khan',
+    image: commons('Lina_Khan_2022.jpg'),
+    name: t('Ліна Хан', 'Lina Khan', 'Лина Хан', 'Lina Khan'),
+    role: t('Голова FTC, регуляторка цифрових платформ', 'FTC chair, digital-platform regulator', 'Глава FTC, регулятор цифровых платформ', 'Presidenta de la FTC y reguladora de plataformas digitales'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('регулювання Big Tech, конкуренція, цифрові ринки', 'Big Tech regulation, competition, digital markets', 'регулирование Big Tech, конкуренция, цифровые рынки', 'regulación de Big Tech, competencia y mercados digitales'),
+    knownFor: t('помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року', 'a visible role in the post-2020 regulatory debate around major technology platforms', 'заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года', 'un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas'),
+    life: t('Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу.', 'Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy.', 'Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла.', 'Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital.'),
+    tags: ['operations', 'leadership', 'technology']
   }
 ];
 
@@ -409,8 +497,10 @@ const bohdanProfile = {
 };
 
 const selectedSpecialistSlugs = [
+  'arthur-mensch',
   'charity-majors',
   'claire-hughes-johnson',
+  'dario-amodei',
   'demis-hassabis',
   'donna-strickland',
   'elon-musk',
@@ -419,17 +509,23 @@ const selectedSpecialistSlugs = [
   'gwynne-shotwell',
   'ilya-sutskever',
   'jensen-huang',
+  'jay-graber',
   'katalin-kariko',
+  'lina-khan',
   'linus-torvalds',
   'lisa-su',
   'margaret-hamilton',
   'mary-barra',
   'melanie-perkins',
+  'mira-murati',
+  'mustafa-suleyman',
   'patrick-collison',
   'radia-perlman',
   'safra-catz',
   'sam-altman',
+  'sridhar-ramaswamy',
   'satya-nadella',
+  'thomas-dohmke',
   'tim-berners-lee',
   'yann-lecun'
 ];
