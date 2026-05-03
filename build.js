@@ -41,7 +41,7 @@ const translations = {
     footerNavTitle: 'Navigation',
     footerScopeTitle: 'About the directory',
     footerScopeText: 'The catalogue is an editorial reference base about people and organisations shaping technology, engineering, science, operations and business.',
-    footerLanguages: 'Available languages: Ukrainian, English, Russian.',
+    footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
     footerRights: 'All rights reserved.',
     footerPoliciesTitle: 'Editorial and policies',
     footerPoliciesText: 'Editorial format: informational directory without doorway pages or hidden SEO content.',
@@ -50,6 +50,29 @@ const translations = {
     cookieText: 'The site stores theme preference and your cookies-notice choice in the browser. See the cookies policy page for details.',
     cookieAccept: 'Accept',
     cookieDecline: 'Decline'
+  },
+  es: {
+    navAria: 'Navegación principal',
+    navHome: 'Inicio',
+    navSpecialists: 'Especialistas',
+    navStartups: 'Startups',
+    navMethodology: 'Metodología',
+    navPrivacy: 'Privacidad',
+    navCookies: 'Cookies',
+    navTerms: 'Términos',
+    footerAbout: 'Un catálogo editorial profesional de especialistas, directivos y compañías tecnológicas con énfasis en contenido de calidad y navegación transparente.',
+    footerNavTitle: 'Navegación',
+    footerScopeTitle: 'Sobre la base',
+    footerScopeText: 'El catálogo es una base editorial de referencia sobre personas y organizaciones que influyen en tecnología, ingeniería, ciencia, operaciones y negocios.',
+    footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español y ruso.',
+    footerRights: 'Todos los derechos reservados.',
+    footerPoliciesTitle: 'Editorial y políticas',
+    footerPoliciesText: 'Formato editorial: directorio informativo sin páginas doorway ni contenido SEO oculto.',
+    footerTeam: 'Equipo: Rybezh Research & Editorial Team',
+    cookieTitle: 'Usamos solo cookies básicas',
+    cookieText: 'El sitio guarda la preferencia de tema y tu elección del aviso de cookies en el navegador. Consulta la política de cookies para más detalles.',
+    cookieAccept: 'Aceptar',
+    cookieDecline: 'Rechazar'
   },
   ru: {
     navAria: 'Главная навигация',
@@ -64,7 +87,7 @@ const translations = {
     footerNavTitle: 'Навигация',
     footerScopeTitle: 'О базе',
     footerScopeText: 'Каталог создан как редакционная справочная база о людях и организациях, влияющих на технологии, инженерию, науку, операции и бизнес.',
-    footerLanguages: 'Доступные языки: украинский, английский, русский.',
+    footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
     footerRights: 'Все права защищены.',
     footerPoliciesTitle: 'Редакция и политики',
     footerPoliciesText: 'Редакционный формат: информационный каталог без doorway-страниц и скрытого SEO-контента.',
@@ -165,6 +188,7 @@ function compileHTML(srcFile, destFile) {
   const filename = path.basename(srcFile);
   let lang = 'uk';
   if (filename.endsWith('-en.html')) lang = 'en';
+  else if (filename.endsWith('-es.html')) lang = 'es';
   else if (filename.endsWith('-ru.html')) lang = 'ru';
 
   let finalHtml = template.replace('{{CONTENT}}', () => content)
@@ -174,18 +198,20 @@ function compileHTML(srcFile, destFile) {
 
   const canonicalBase = 'https://rybezh.site/';
 
-  let baseName = filename.replace(/-(en|ru)\.html$/, '.html');
+  let baseName = filename.replace(/-(en|es|ru)\.html$/, '.html');
   if (baseName === 'index.html') {
       baseName = '';
   }
 
   const canonicalMap = {
-      'uk': baseName ? canonicalBase + baseName : canonicalBase,
-      'en': baseName ? canonicalBase + baseName.replace('.html', '-en.html') : canonicalBase + 'index-en.html',
-      'ru': baseName ? canonicalBase + baseName.replace('.html', '-ru.html') : canonicalBase + 'index-ru.html',
+      uk: baseName ? canonicalBase + baseName : canonicalBase,
+      en: baseName ? canonicalBase + baseName.replace('.html', '-en.html') : canonicalBase + 'index-en.html',
+      es: baseName ? canonicalBase + baseName.replace('.html', '-es.html') : canonicalBase + 'index-es.html',
+      ru: baseName ? canonicalBase + baseName.replace('.html', '-ru.html') : canonicalBase + 'index-ru.html',
   };
 
-  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap.uk)
+  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap[lang])
+                       .replaceAll('{{CANONICAL_ES}}', canonicalMap.es)
                        .replaceAll('{{CANONICAL_RU}}', canonicalMap.ru)
                        .replaceAll('{{CANONICAL_EN}}', canonicalMap.en);
 

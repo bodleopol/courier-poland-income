@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const langs = ['uk', 'en', 'ru'];
+const langs = ['uk', 'en', 'ru', 'es'];
 
 const t = (uk, en, ru, es) => ({ uk, en, ru, es });
 const commons = file => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURI(file.replaceAll(' ', '_'))}?width=720`;

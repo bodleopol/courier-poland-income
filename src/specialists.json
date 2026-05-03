@@ -65,6 +65,15 @@
         "Foodtech",
         "Устойчивость",
         "Украина"
+      ],
+      "es": [
+        "Operaciones",
+        "Liderazgo",
+        "Logística",
+        "Analítica de datos",
+        "Foodtech",
+        "Resiliencia",
+        "Ucrania"
       ]
     },
     "featured": true,
@@ -275,6 +284,11 @@
         "Программирование",
         "Космос",
         "Инженерия"
+      ],
+      "es": [
+        "Software",
+        "Espacio",
+        "Ingeniería"
       ]
     },
     "featured": false,
@@ -335,6 +349,11 @@
         "Программирование",
         "Интернет",
         "Стандарты"
+      ],
+      "es": [
+        "Software",
+        "Internet",
+        "Estándares"
       ]
     },
     "featured": false,
@@ -395,6 +414,11 @@
         "Программирование",
         "Open source",
         "Инфраструктура"
+      ],
+      "es": [
+        "Software",
+        "Código abierto",
+        "Infraestructura"
       ]
     },
     "featured": false,
@@ -455,6 +479,11 @@
         "Программирование",
         "Дизайн языков",
         "Образование"
+      ],
+      "es": [
+        "Software",
+        "Diseño de lenguajes",
+        "Educación"
       ]
     },
     "featured": false,
@@ -515,6 +544,11 @@
         "Инженерия",
         "Интернет",
         "Инфраструктура"
+      ],
+      "es": [
+        "Ingeniería",
+        "Internet",
+        "Infraestructura"
       ]
     },
     "featured": false,
@@ -575,6 +609,11 @@
         "Искусственный интеллект",
         "Исследования",
         "Образование"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Educación"
       ]
     },
     "featured": false,
@@ -635,6 +674,11 @@
         "Искусственный интеллект",
         "Исследования",
         "Наука"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Ciencia"
       ]
     },
     "featured": false,
@@ -695,6 +739,11 @@
         "Искусственный интеллект",
         "CEO",
         "Исследования"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "CEO",
+        "Investigación"
       ]
     },
     "featured": false,
@@ -755,6 +804,11 @@
         "Искусственный интеллект",
         "Исследования",
         "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "Investigación",
+        "Startups"
       ]
     },
     "featured": false,
@@ -815,6 +869,11 @@
         "Искусственный интеллект",
         "CEO",
         "Стартапы"
+      ],
+      "es": [
+        "Inteligencia artificial",
+        "CEO",
+        "Startups"
       ]
     },
     "featured": false,
@@ -875,6 +934,11 @@
         "CEO",
         "Инженерия",
         "Космос"
+      ],
+      "es": [
+        "CEO",
+        "Ingeniería",
+        "Espacio"
       ]
     },
     "featured": false,
@@ -935,6 +999,11 @@
         "CEO",
         "Аппаратное обеспечение",
         "Искусственный интеллект"
+      ],
+      "es": [
+        "CEO",
+        "Hardware",
+        "Inteligencia artificial"
       ]
     },
     "featured": false,
@@ -995,6 +1064,11 @@
         "CEO",
         "Аппаратное обеспечение",
         "Операции"
+      ],
+      "es": [
+        "CEO",
+        "Hardware",
+        "Operaciones"
       ]
     },
     "featured": false,
@@ -1055,6 +1129,11 @@
         "COO",
         "Космос",
         "Операции"
+      ],
+      "es": [
+        "COO",
+        "Espacio",
+        "Operaciones"
       ]
     },
     "featured": false,
@@ -1115,6 +1194,11 @@
         "CEO",
         "Операции",
         "Корпоративное ПО"
+      ],
+      "es": [
+        "CEO",
+        "Operaciones",
+        "Software empresarial"
       ]
     },
     "featured": false,
@@ -1175,6 +1259,11 @@
         "CEO",
         "Инженерия",
         "Операции"
+      ],
+      "es": [
+        "CEO",
+        "Ingeniería",
+        "Operaciones"
       ]
     },
     "featured": false,
@@ -1235,6 +1324,11 @@
         "CEO",
         "Облачные технологии",
         "Искусственный интеллект"
+      ],
+      "es": [
+        "CEO",
+        "Cloud",
+        "Inteligencia artificial"
       ]
     },
     "featured": false,
@@ -1295,6 +1389,11 @@
         "Наука",
         "Биотехнологии",
         "Исследования"
+      ],
+      "es": [
+        "Ciencia",
+        "Biotecnología",
+        "Investigación"
       ]
     },
     "featured": false,
@@ -1355,6 +1454,11 @@
         "Наука",
         "Физика",
         "Исследования"
+      ],
+      "es": [
+        "Ciencia",
+        "Física",
+        "Investigación"
       ]
     },
     "featured": false,
@@ -1415,6 +1519,11 @@
         "CEO",
         "Финтех",
         "Стартапы"
+      ],
+      "es": [
+        "CEO",
+        "Fintech",
+        "Startups"
       ]
     },
     "featured": false,
@@ -1475,6 +1584,11 @@
         "CEO",
         "Дизайн",
         "Стартапы"
+      ],
+      "es": [
+        "CEO",
+        "Diseño",
+        "Startups"
       ]
     },
     "featured": false,
@@ -1535,6 +1649,11 @@
         "Инженерия",
         "Стартапы",
         "Операции"
+      ],
+      "es": [
+        "Ingeniería",
+        "Startups",
+        "Operaciones"
       ]
     },
     "featured": false,
@@ -1595,6 +1714,11 @@
         "COO",
         "Операции",
         "Стартапы"
+      ],
+      "es": [
+        "COO",
+        "Operaciones",
+        "Startups"
       ]
     },
     "featured": false,

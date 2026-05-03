@@ -6,7 +6,7 @@ const STARTUPS_FILE = 'src/startups.json';
 const PAGES_DIR = 'src/pages';
 const PROFILES_DIR = path.join(PAGES_DIR, 'profiles');
 const BASE_URL = 'https://rybezh.site/';
-const langs = ['uk', 'en', 'ru'];
+const langs = ['uk', 'en', 'es', 'ru'];
 
 const tr = {
   uk: {
@@ -73,7 +73,7 @@ const tr = {
     trust: [
       'Профілі з фотографіями та структурованими фактами',
       'Окремі сторінки для спеціалістів, стартапів і правових документів',
-      'Локалізація: українська, англійська, російська'
+      'Локалізація: українська, англійська, іспанська, російська'
     ],
     sectors: [
       { title: 'Програмування', text: 'Backend, frontend, distributed systems, DevOps та developer tooling.' },
@@ -217,7 +217,7 @@ const tr = {
     trust: [
       'Profiles with photography and structured facts',
       'Separate pages for specialists, startups and legal policies',
-      'Localization in Ukrainian, English and Russian'
+      'Localization in Ukrainian, English, Spanish and Russian'
     ],
     sectors: [
       { title: 'Software', text: 'Backend, frontend, distributed systems, DevOps and developer tooling.' },
@@ -297,6 +297,150 @@ const tr = {
       all: 'All categories'
     }
   },
+  es: {
+    siteTitle: 'Rybezh - directorio profesional de especialistas y startups',
+    siteDescription: 'Un directorio editorial de programadores, ingenieros, ejecutivos, líderes de operaciones y startups tecnológicas contemporáneas.',
+    heroEyebrow: 'Archivo editorial de profesionales',
+    heroTitle: 'Un directorio profesional de especialistas, líderes tecnológicos y compañías startup',
+    heroText: 'Rybezh reúne perfiles estructurados de programadores, ingenieros, investigadores, directivos, fundadores de startups y líderes de operaciones. El foco está en profesionales contemporáneos, fotografía visible en el perfil, estructura clara y estándares editoriales transparentes.',
+    heroPrimary: 'Ver especialistas',
+    heroSecondary: 'Explorar startups',
+    featuredTitle: 'Perfiles destacados',
+    featuredText: 'Una selección curada de personas cuyas carreras reflejan el mercado tecnológico moderno: software, infraestructura, IA, producto, operaciones y gestión ejecutiva.',
+    sectorsTitle: 'Qué cubre el catálogo',
+    sectorsText: 'El directorio se enfoca en roles donde importan la profundidad profesional, el pensamiento sistémico y la ejecución de equipos.',
+    insightsTitle: 'Qué cambió en el sitio',
+    insightsText: 'La portada ahora está separada del directorio completo, se añadieron páginas legales y política de cookies, y el sitio tiene una metodología editorial explícita.',
+    latestTitle: 'Perfiles añadidos recientemente',
+    latestText: 'Especialistas, fundadores y líderes técnicos contemporáneos activos en el ecosistema global posterior al año 2000.',
+    specialistsTitle: 'Directorio completo de especialistas',
+    specialistsText: 'Una base de perfiles con búsqueda y filtros, pensada para revisión editorial rápida y navegación profesional.',
+    startupsTitle: 'Página dedicada a startups',
+    startupsText: 'Las startups viven ahora en una página separada para que el directorio de personas se mantenga claro y las compañías se presenten como una capa propia de conocimiento.',
+    standardsTitle: 'Estándares editoriales y control de calidad',
+    standardsText: 'El sitio no usa páginas doorway generadas en masa, texto oculto ni plantillas vacías orientadas solo a keywords. Cada perfil incluye foto, rol, foco, biografía y contexto editorial visible.',
+    standardsPrimary: 'Leer metodología',
+    standardsSecondary: 'Política de privacidad',
+    specialistsPageTitle: 'Directorio de especialistas',
+    specialistsPageIntro: 'Busca programadores, ingenieros, CTO, CEO, COO, investigadores y líderes de operaciones.',
+    startupsPageTitle: 'Directorio de startups',
+    startupsPageIntro: 'Una página dedicada a startups, compañías de producto y plataformas tecnológicas.',
+    searchLabel: 'Buscar en el directorio',
+    searchPlaceholder: 'Escribe un nombre, rol, país o etiqueta',
+    filterAll: 'Todos los sectores',
+    emptyState: 'No se encontraron resultados. Prueba otra consulta o restablece el filtro.',
+    viewProfile: 'Abrir perfil',
+    viewStartup: 'Ver más',
+    viewAllSpecialists: 'Ver directorio completo',
+    viewAllStartups: 'Ver todas las startups',
+    country: 'País / región',
+    focus: 'Foco profesional',
+    knownFor: 'Reconocido por',
+    biography: 'Resumen profesional',
+    highlights: 'Fortalezas clave',
+    gallery: 'Galería',
+    relatedProfiles: 'Perfiles relacionados',
+    editorialNoteTitle: 'Nota editorial',
+    editorialNoteText: 'Esta página está redactada como un perfil editorial informativo, no como una doorway page ni como una landing automática para buscadores.',
+    founded: 'Fundada',
+    profileBack: 'Volver al directorio',
+    methodologyTitle: 'Metodología editorial',
+    methodologyIntro: 'Rybezh se construye como una base editorial de conocimiento donde las páginas existen por su valor de contenido, no solo por tráfico de búsqueda.',
+    privacyTitle: 'Política de privacidad',
+    privacyIntro: 'Esta página explica qué datos técnicos puede procesar un sitio estático y cómo se gestionan los materiales editoriales.',
+    cookiesTitle: 'Política de cookies',
+    cookiesIntro: 'El sitio utiliza solo almacenamiento técnico básico para el tema de la interfaz y la elección del aviso de cookies.',
+    termsTitle: 'Términos de uso',
+    termsIntro: 'El directorio está pensado para uso editorial y de referencia. No es una agencia de contratación ni una oferta.',
+    languagesStat: 'Idiomas del sitio',
+    techProfilesStat: 'Perfiles técnicos',
+    notFoundTitle: 'Página no encontrada',
+    notFoundText: 'La página puede haber sido movida o el perfil solicitado ya no está disponible.',
+    notFoundPrimary: 'Ir a la portada',
+    notFoundSecondary: 'Abrir directorio de especialistas',
+    trust: [
+      'Perfiles con fotografía y datos estructurados',
+      'Páginas separadas para especialistas, startups y políticas legales',
+      'Localización en ucraniano, inglés, español y ruso'
+    ],
+    sectors: [
+      { title: 'Software', text: 'Backend, frontend, sistemas distribuidos, DevOps y herramientas para desarrolladores.' },
+      { title: 'Ingeniería', text: 'Hardware, systems engineering, reliability, infrastructure y space tech.' },
+      { title: 'Ejecutivos', text: 'CEO, COO, directivos técnicos, estrategia y escalado de compañías.' },
+      { title: 'Inteligencia artificial', text: 'Investigación en IA, product builders, safety, data y plataformas de modelos.' },
+      { title: 'Operaciones', text: 'Execution, SOPs, logistics, P&L, hiring systems y excelencia operativa.' },
+      { title: 'Startups', text: 'Un catálogo dedicado a compañías de producto, herramientas y plataformas.' }
+    ],
+    insightCards: [
+      { title: 'Patrones doorway eliminados', text: 'La generación masiva de perfiles thin y páginas noindex de plantilla fue eliminada del generador.' },
+      { title: 'Páginas legales añadidas', text: 'Privacy, cookies, terms y methodology ahora forman parte de la arquitectura del sitio.' },
+      { title: 'Catálogo separado de startups', text: 'Las compañías tienen su propio destino en lugar de mezclarse con el índice de personas.' },
+      { title: 'Portada más profesional', text: 'La portada ahora funciona como una visión editorial y no como una lista SEO interminable.' }
+    ],
+    methodologySections: [
+      {
+        title: '1. Alcance editorial',
+        body: 'Publicamos páginas sobre especialistas y compañías como una base de referencia. La prioridad va a profesionales contemporáneos posteriores al año 2000, especialmente programadores, ingenieros, ejecutivos y fundadores en sectores tecnológicos.'
+      },
+      {
+        title: '2. Requisitos del perfil',
+        body: 'Cada perfil debe incluir nombre, rol, foto, foco profesional, aporte clave, biografía breve y etiquetas temáticas. Las páginas construidas solo con keywords o texto de relleno generado por máquina no pertenecen aquí.'
+      },
+      {
+        title: '3. Política anti-doorway',
+        body: 'No usamos doorway pages generadas en masa, texto oculto, enlazado interno manipulativo ni páginas creadas solo para capturar clics desde buscadores. Si una página no aporta valor editorial, no debe publicarse.'
+      },
+      {
+        title: '4. Fuentes y correcciones',
+        body: 'Los perfiles se basan en contexto profesional público, biografías y materiales editoriales aportados. Si un perfil se vuelve inexacto o desactualizado, debe revisarse, actualizarse o retirarse.'
+      }
+    ],
+    privacySections: [
+      {
+        title: '1. Datos técnicos',
+        body: 'Un sitio estático puede procesar temporalmente metadatos estándar de la solicitud, como IP, user agent y hora de acceso, cuando esto es necesario para el hosting o la CDN a fin de entregar páginas y dar seguridad básica.'
+      },
+      {
+        title: '2. Almacenamiento local',
+        body: 'El navegador guarda solo preferencias técnicas mínimas: el tema de la interfaz y la respuesta al aviso de cookies. Estos valores permanecen en tu navegador y no se usan para perfiles publicitarios.'
+      },
+      {
+        title: '3. Materiales editoriales',
+        body: 'La información de los perfiles se publica como contenido editorial de referencia. Si representas a una persona o compañía y necesitas una corrección, el perfil debe revisarse mediante una actualización editorial manual.'
+      }
+    ],
+    cookiesSections: [
+      {
+        title: '1. Qué se usa',
+        body: 'El sitio usa solo un mecanismo técnico de almacenamiento para la preferencia del tema y la elección del aviso de cookies. No es publicidad comportamental ni tracking de terceros.'
+      },
+      {
+        title: '2. Por qué se usa',
+        body: 'Guardar la preferencia del tema mantiene estable la interfaz entre visitas, mientras que guardar la respuesta al aviso evita que el banner reaparezca innecesariamente.'
+      },
+      {
+        title: '3. Cómo rechazarlo',
+        body: 'Puedes borrar localStorage en el navegador o rechazarlo desde el banner. El sitio seguirá funcionando, pero la preferencia de tema y la elección sobre cookies no persistirán.'
+      }
+    ],
+    termsSections: [
+      {
+        title: '1. Naturaleza del servicio',
+        body: 'Rybezh es un directorio informativo. No garantiza empleo, inversión, alianzas ni resultados comerciales derivados de cualquier perfil o página de startup.'
+      },
+      {
+        title: '2. Exactitud de la información',
+        body: 'Intentamos mantener los perfiles actualizados, pero los lectores deben verificar de forma independiente cualquier dato crítico. Los roles y compañías reales pueden cambiar más rápido de lo que se actualiza una página editorial.'
+      },
+      {
+        title: '3. Uso del contenido',
+        body: 'Los materiales del sitio pueden citarse con atribución. No se permite copiar automáticamente todo el catálogo para crear clones o sitios doorway secundarios.'
+      }
+    ],
+    startupFilters: {
+      all: 'Todas las categorías'
+    }
+  },
   ru: {
     siteTitle: 'Rybezh - профессиональная база специалистов и стартапов',
     siteDescription: 'Редакционный каталог современных программистов, инженеров, руководителей, операционных лидеров и технологических стартапов.',
@@ -361,7 +505,7 @@ const tr = {
     trust: [
       'Профили с фотографиями и структурированными фактами',
       'Отдельные страницы для специалистов, стартапов и правовых документов',
-      'Локализация: украинский, английский, русский'
+      'Локализация: украинский, английский, испанский, русский'
     ],
     sectors: [
       { title: 'Программирование', text: 'Backend, frontend, distributed systems, DevOps и developer tooling.' },
@@ -445,27 +589,27 @@ const tr = {
 
 const rubricOrder = ['software', 'engineering', 'operations', 'ceo', 'coo', 'ai', 'science', 'design', 'biotech', 'fintech', 'cloud', 'space'];
 const rubricLabels = {
-  software: { uk: 'Програмування', en: 'Software', ru: 'Программирование' },
-  engineering: { uk: 'Інженерія', en: 'Engineering', ru: 'Инженерия' },
-  operations: { uk: 'Операції', en: 'Operations', ru: 'Операции' },
-  ceo: { uk: 'CEO', en: 'CEO', ru: 'CEO' },
-  coo: { uk: 'COO', en: 'COO', ru: 'COO' },
-  ai: { uk: 'ШІ', en: 'AI', ru: 'ИИ' },
-  science: { uk: 'Наука', en: 'Science', ru: 'Наука' },
-  design: { uk: 'Дизайн', en: 'Design', ru: 'Дизайн' },
-  biotech: { uk: 'Біотех', en: 'Biotech', ru: 'Биотех' },
-  fintech: { uk: 'Фінтех', en: 'Fintech', ru: 'Финтех' },
-  cloud: { uk: 'Хмара', en: 'Cloud', ru: 'Облако' },
-  space: { uk: 'Космос', en: 'Space', ru: 'Космос' }
+  software: { uk: 'Програмування', en: 'Software', es: 'Software', ru: 'Программирование' },
+  engineering: { uk: 'Інженерія', en: 'Engineering', es: 'Ingeniería', ru: 'Инженерия' },
+  operations: { uk: 'Операції', en: 'Operations', es: 'Operaciones', ru: 'Операции' },
+  ceo: { uk: 'CEO', en: 'CEO', es: 'CEO', ru: 'CEO' },
+  coo: { uk: 'COO', en: 'COO', es: 'COO', ru: 'COO' },
+  ai: { uk: 'ШІ', en: 'AI', es: 'IA', ru: 'ИИ' },
+  science: { uk: 'Наука', en: 'Science', es: 'Ciencia', ru: 'Наука' },
+  design: { uk: 'Дизайн', en: 'Design', es: 'Diseño', ru: 'Дизайн' },
+  biotech: { uk: 'Біотех', en: 'Biotech', es: 'Biotech', ru: 'Биотех' },
+  fintech: { uk: 'Фінтех', en: 'Fintech', es: 'Fintech', ru: 'Финтех' },
+  cloud: { uk: 'Хмара', en: 'Cloud', es: 'Cloud', ru: 'Облако' },
+  space: { uk: 'Космос', en: 'Space', es: 'Espacio', ru: 'Космос' }
 };
 const startupLabels = {
-  ai: { uk: 'ШІ', en: 'AI', ru: 'ИИ' },
-  fintech: { uk: 'Фінтех', en: 'Fintech', ru: 'Финтех' },
-  design: { uk: 'Дизайн', en: 'Design', ru: 'Дизайн' },
-  software: { uk: 'Софт', en: 'Software', ru: 'Софт' },
-  cloud: { uk: 'Хмара', en: 'Cloud', ru: 'Облако' },
-  hardware: { uk: 'Hardware', en: 'Hardware', ru: 'Hardware' },
-  operations: { uk: 'Операції', en: 'Operations', ru: 'Операции' }
+  ai: { uk: 'ШІ', en: 'AI', es: 'IA', ru: 'ИИ' },
+  fintech: { uk: 'Фінтех', en: 'Fintech', es: 'Fintech', ru: 'Финтех' },
+  design: { uk: 'Дизайн', en: 'Design', es: 'Diseño', ru: 'Дизайн' },
+  software: { uk: 'Софт', en: 'Software', es: 'Software', ru: 'Софт' },
+  cloud: { uk: 'Хмара', en: 'Cloud', es: 'Cloud', ru: 'Облако' },
+  hardware: { uk: 'Hardware', en: 'Hardware', es: 'Hardware', ru: 'Hardware' },
+  operations: { uk: 'Операції', en: 'Operations', es: 'Operaciones', ru: 'Операции' }
 };
 
 const suffix = lang => (lang === 'uk' ? '' : `-${lang}`);
