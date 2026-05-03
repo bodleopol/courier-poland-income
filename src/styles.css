@@ -456,6 +456,11 @@ input:checked + .slider:before {
 .info-card {
     padding: 24px;
 }
+.insight-card img {
+    height: 150px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+}
 
 .tags {
     display: flex;
@@ -522,6 +527,44 @@ input:checked + .slider:before {
     margin-top: 28px;
     padding: 32px;
     border-radius: 28px;
+}
+
+.dynamic-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.dynamic-tile {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ffffff, #f2f8ff);
+    box-shadow: var(--shadow);
+    transform: translateY(16px);
+    opacity: 0;
+    transition: transform .5s ease, opacity .5s ease, box-shadow .2s ease;
+}
+
+.dynamic-tile.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.dynamic-tile:hover {
+    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+}
+
+.dynamic-tile img {
+    height: 96px;
+    border-radius: 14px;
+}
+
+.dynamic-tile h3 {
+    margin: 0 0 6px;
 }
 
 .split-panel p {
