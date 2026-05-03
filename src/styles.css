@@ -631,6 +631,46 @@ input:checked + .slider:before {
     justify-content: space-between;
 }
 
+.directory-toolbar-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    align-items: end;
+}
+
+.directory-select-label {
+    display: grid;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.directory-select {
+    min-width: 200px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.directory-select:focus {
+    outline: 2px solid rgba(37, 99, 235, 0.18);
+    border-color: var(--brand);
+}
+
+.directory-share-hint {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-weight: 600;
+}
+
 .directory-toolbar-main {
     flex: 1 1 420px;
 }

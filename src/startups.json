@@ -11,10 +11,10 @@
       "es": "Laboratorio de IA y empresa de producto"
     },
     "summary": {
-      "uk": "Розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах.",
-      "en": "Develops AI models and products used in business, education, software development and creative workflows.",
-      "ru": "Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов.",
-      "es": "Desarrolla modelos y productos de IA usados en negocios, educación, software y procesos creativos."
+      "uk": "Розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах. Додатковий контекст: Сан-Франциско, США · LLM, API, chat, enterprise adoption · ChatGPT та екосистема моделей для розробників і бізнесу.",
+      "en": "Develops AI models and products used in business, education, software development and creative workflows. Additional context: San Francisco, United States · LLM, API, chat, enterprise adoption · ChatGPT and a broad model ecosystem for developers and enterprises.",
+      "ru": "Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов. Дополнительный контекст: Сан-Франциско, США · LLM, API, чат, корпоративное внедрение · ChatGPT и широкая экосистема моделей для разработчиков и бизнеса.",
+      "es": "Desarrolla modelos y productos de IA usados en negocios, educación, software y procesos creativos. Contexto adicional: San Francisco, Estados Unidos · LLM, API, chat y adopción enterprise · ChatGPT y un ecosistema amplio de modelos para desarrolladores y empresas."
     },
     "tags": {
       "uk": [
@@ -37,6 +37,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "AI-лабораторія та продуктова компанія",
+      "en": "AI research lab and product company",
+      "ru": "AI-лаборатория и продуктовая компания",
+      "es": "Laboratorio de IA y empresa de producto"
+    },
+    "market": {
+      "uk": "LLM, API, chat, enterprise adoption",
+      "en": "LLM, API, chat, enterprise adoption",
+      "ru": "LLM, API, чат, корпоративное внедрение",
+      "es": "LLM, API, chat y adopción enterprise"
+    },
+    "notableFor": {
+      "uk": "ChatGPT та екосистема моделей для розробників і бізнесу",
+      "en": "ChatGPT and a broad model ecosystem for developers and enterprises",
+      "ru": "ChatGPT и широкая экосистема моделей для разработчиков и бизнеса",
+      "es": "ChatGPT y un ecosistema amplio de modelos para desarrolladores y empresas"
+    },
+    "signals": {
+      "uk": [
+        "Дослідницький корінь і масовий продуктовий вплив",
+        "Сильний developer та enterprise API-layer",
+        "Центральний гравець хвилі foundation-моделей"
+      ],
+      "en": [
+        "Research roots with mainstream product impact",
+        "Strong developer and enterprise API tier",
+        "A central player in the foundation-model wave"
+      ],
+      "ru": [
+        "Исследовательские корни и массовое продуктовое влияние",
+        "Сильный developer и enterprise API-слой",
+        "Центральный игрок волны foundation-моделей"
+      ],
+      "es": [
+        "Raíces de investigación con impacto masivo en producto",
+        "Fuerte capa API para desarrolladores y enterprise",
+        "Actor central en la ola de modelos fundacionales"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -51,10 +103,10 @@
       "es": "Empresa de investigación en IA"
     },
     "summary": {
-      "uk": "Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google.",
-      "en": "Works on foundational AI systems, scientific challenges and Google products.",
-      "ru": "Работает над фундаментальными системами ИИ, научными задачами и продуктами Google.",
-      "es": "Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google."
+      "uk": "Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google. Додатковий контекст: Лондон, Велика Британія · Foundation research, science, Google products · AlphaFold, AlphaGo та фундаментальні AI-системи.",
+      "en": "Works on foundational AI systems, scientific challenges and Google products. AlphaFold, AlphaGo and foundational AI systems. Additional context: London, United Kingdom · Foundation research, science, Google products · AlphaFold, AlphaGo and foundational AI systems.",
+      "ru": "Работает над фундаментальными системами ИИ, научными задачами и продуктами Google. Дополнительный контекст: Лондон, Великобритания · Фундаментальные исследования, наука, продукты Google · AlphaFold, AlphaGo и фундаментальные AI-системы.",
+      "es": "Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google. Contexto adicional: Londres, Reino Unido · Investigación fundamental, ciencia y productos Google · AlphaFold, AlphaGo y sistemas de IA fundamentales."
     },
     "tags": {
       "uk": [
@@ -77,6 +129,58 @@
         "Investigación",
         "Ciencia"
       ]
+    },
+    "hq": {
+      "uk": "Лондон, Велика Британія",
+      "en": "London, United Kingdom",
+      "ru": "Лондон, Великобритания",
+      "es": "Londres, Reino Unido"
+    },
+    "model": {
+      "uk": "AI-дослідження в складі Google",
+      "en": "AI research inside Google",
+      "ru": "Исследования ИИ внутри Google",
+      "es": "Investigación en IA dentro de Google"
+    },
+    "market": {
+      "uk": "Foundation research, science, Google products",
+      "en": "Foundation research, science, Google products",
+      "ru": "Фундаментальные исследования, наука, продукты Google",
+      "es": "Investigación fundamental, ciencia y productos Google"
+    },
+    "notableFor": {
+      "uk": "AlphaFold, AlphaGo та фундаментальні AI-системи",
+      "en": "AlphaFold, AlphaGo and foundational AI systems",
+      "ru": "AlphaFold, AlphaGo и фундаментальные AI-системы",
+      "es": "AlphaFold, AlphaGo y sistemas de IA fundamentales"
+    },
+    "signals": {
+      "uk": [
+        "Сильний звʼязок із науковими задачами",
+        "Інтеграція з інфраструктурою Google",
+        "Видима AI-дослідницька база у Великій Британії"
+      ],
+      "en": [
+        "Strong ties to scientific challenges",
+        "Integrated with Google-scale infrastructure",
+        "A visible UK-based AI research hub"
+      ],
+      "ru": [
+        "Сильная связь с научными задачами",
+        "Интеграция с инфраструктурой Google",
+        "Заметная база AI-исследований в Великобритании"
+      ],
+      "es": [
+        "Vínculos fuertes con retos científicos",
+        "Integración con infraestructura a escala Google",
+        "Centro visible de investigación en IA en el Reino Unido"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Велика Британія",
+      "en": "United Kingdom",
+      "ru": "Великобритания",
+      "es": "Reino Unido"
     }
   },
   {
@@ -91,10 +195,10 @@
       "es": "Infraestructura fintech"
     },
     "summary": {
-      "uk": "Будує API та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій.",
-      "en": "Builds APIs and financial infrastructure for online payments, billing, tax and global operations.",
-      "ru": "Строит API и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций.",
-      "es": "Construye APIs e infraestructura financiera para pagos online, billing, impuestos y operaciones globales."
+      "uk": "Будує API та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій. Додатковий контекст: Дублін / Сан-Франциско · Payments API, billing, tax, financial infrastructure · Developer-centric платіжні API, що сформували інтернет-комерцію.",
+      "en": "Builds APIs and financial infrastructure for online payments, billing, tax and global operations. Additional context: Dublin / San Francisco · Payments API, billing, tax, financial infrastructure · Developer-centric payment APIs that shaped internet commerce.",
+      "ru": "Строит API и финансовую инфраструктуру для онлайн-платежей, биллинга, налогов и глобальных операций. Дополнительный контекст: Дублин / Сан-Франциско · Payments API, биллинг, налоги, финансовая инфраструктура · Developer-centric платежные API, повлиявшие на интернет-коммерцию.",
+      "es": "Construye APIs e infraestructura financiera para pagos online, billing, impuestos y operaciones globales. Contexto adicional: Dublín / San Francisco · API de pagos, billing, impuestos e infraestructura financiera · API de pagos centrados en desarrolladores que marcaron el comercio online."
     },
     "tags": {
       "uk": [
@@ -117,6 +221,58 @@
         "Software",
         "Operaciones"
       ]
+    },
+    "hq": {
+      "uk": "Дублін / Сан-Франциско",
+      "en": "Dublin / San Francisco",
+      "ru": "Дублин / Сан-Франциско",
+      "es": "Dublín / San Francisco"
+    },
+    "model": {
+      "uk": "Глобальна платіжна інфраструктура",
+      "en": "Global payments infrastructure",
+      "ru": "Глобальная платежная инфраструктура",
+      "es": "Infraestructura global de pagos"
+    },
+    "market": {
+      "uk": "Payments API, billing, tax, financial infrastructure",
+      "en": "Payments API, billing, tax, financial infrastructure",
+      "ru": "Payments API, биллинг, налоги, финансовая инфраструктура",
+      "es": "API de pagos, billing, impuestos e infraestructura financiera"
+    },
+    "notableFor": {
+      "uk": "Developer-centric платіжні API, що сформували інтернет-комерцію",
+      "en": "Developer-centric payment APIs that shaped internet commerce",
+      "ru": "Developer-centric платежные API, повлиявшие на интернет-коммерцию",
+      "es": "API de pagos centrados en desarrolladores que marcaron el comercio online"
+    },
+    "signals": {
+      "uk": [
+        "Платіжний шар для SaaS і маркетплейсів",
+        "Сильний фокус на документації та інтеграції",
+        "Інфраструктурний продукт із глобальним охопленням"
+      ],
+      "en": [
+        "Payments layer for SaaS and marketplaces",
+        "Strong docs and integration culture",
+        "Infrastructure product with global footprint"
+      ],
+      "ru": [
+        "Платежный слой для SaaS и маркетплейсов",
+        "Сильная документация и интеграции",
+        "Инфраструктурный продукт с глобальным охватом"
+      ],
+      "es": [
+        "Capa de pagos para SaaS y marketplaces",
+        "Fuerte cultura de docs e integración",
+        "Producto de infraestructura con alcance global"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Сан-Франциско",
+      "en": "San Francisco",
+      "ru": "Франция",
+      "es": "San Francisco"
     }
   },
   {
@@ -131,10 +287,10 @@
       "es": "Ingeniería espacial"
     },
     "summary": {
-      "uk": "Створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання.",
-      "en": "Builds rockets, satellite infrastructure and commercial launch services with a focus on reuse.",
-      "ru": "Создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование.",
-      "es": "Construye cohetes, infraestructura satelital y lanzamientos comerciales con foco en reutilización."
+      "uk": "Створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання. Додатковий контекст: Хоторн, США · Launch, Starlink, reusable rockets · Повторне використання ступенів і комерційні запуски.",
+      "en": "Builds rockets, satellite infrastructure and commercial launch services with a focus on reuse. Additional context: Hawthorne, United States · Launch, Starlink, reusable rockets · Reusable stages and commercial launch cadence.",
+      "ru": "Создает ракеты, спутниковую инфраструктуру и коммерческие запуски с фокусом на повторное использование. Дополнительный контекст: Хоторн, США · Запуски, Starlink, многоразовые ракеты · Многоразовые ступени и коммерческий темп запусков.",
+      "es": "Construye cohetes, infraestructura satelital y lanzamientos comerciales con foco en reutilización. Contexto adicional: Hawthorne, Estados Unidos · Lanzamientos, Starlink y cohetes reutilizables · Etapas reutilizables y cadencia de lanzamientos comerciales."
     },
     "tags": {
       "uk": [
@@ -157,6 +313,58 @@
         "Ingeniería",
         "Operaciones"
       ]
+    },
+    "hq": {
+      "uk": "Хоторн, США",
+      "en": "Hawthorne, United States",
+      "ru": "Хоторн, США",
+      "es": "Hawthorne, Estados Unidos"
+    },
+    "model": {
+      "uk": "Космічна інженерія та запуски",
+      "en": "Space engineering and launch services",
+      "ru": "Космическая инженерия и запуски",
+      "es": "Ingeniería espacial y servicios de lanzamiento"
+    },
+    "market": {
+      "uk": "Launch, Starlink, reusable rockets",
+      "en": "Launch, Starlink, reusable rockets",
+      "ru": "Запуски, Starlink, многоразовые ракеты",
+      "es": "Lanzamientos, Starlink y cohetes reutilizables"
+    },
+    "notableFor": {
+      "uk": "Повторне використання ступенів і комерційні запуски",
+      "en": "Reusable stages and commercial launch cadence",
+      "ru": "Многоразовые ступени и коммерческий темп запусков",
+      "es": "Etapas reutilizables y cadencia de lanzamientos comerciales"
+    },
+    "signals": {
+      "uk": [
+        "Інтеграція виробництва та інженерії",
+        "Starlink як масштабна інфраструктурна мережа",
+        "Вплив на вартість доступу до орбіти"
+      ],
+      "en": [
+        "Tight integration of manufacturing and engineering",
+        "Starlink as large-scale infrastructure",
+        "Impact on cost to reach orbit"
+      ],
+      "ru": [
+        "Интеграция производства и инженерии",
+        "Starlink как крупная инфраструктурная сеть",
+        "Влияние на стоимость выхода на орбиту"
+      ],
+      "es": [
+        "Integración estrecha de manufactura e ingeniería",
+        "Starlink como infraestructura a gran escala",
+        "Impacto en el coste de acceso a órbita"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -171,10 +379,10 @@
       "es": "Plataforma de diseño"
     },
     "summary": {
-      "uk": "Дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів.",
-      "en": "Gives teams and individuals simple tools for presentations, branding, video and marketing assets.",
-      "ru": "Дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга.",
-      "es": "Ofrece herramientas simples para presentaciones, marca, video y materiales de marketing."
+      "uk": "Дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів. Додатковий контекст: Сідней, Австралія · Templates, brand, video, marketing teams · Масовий продукт дизайну з глибокою локалізацією.",
+      "en": "Gives teams and individuals simple tools for presentations, branding, video and marketing assets. Additional context: Sydney, Australia · Templates, brand, video, marketing teams · Mass-market design product with broad localization.",
+      "ru": "Дает командам и пользователям простые инструменты для презентаций, брендинга, видео и маркетинга. Дополнительный контекст: Сидней, Австралия · Шаблоны, бренд, видео, маркетинговые команды · Массовый продукт дизайна с широкой локализацией.",
+      "es": "Ofrece herramientas simples para presentaciones, marca, video y materiales de marketing. Contexto adicional: Sídney, Australia · Plantillas, marca, vídeo y equipos de marketing · Producto de diseño de masas con fuerte localización."
     },
     "tags": {
       "uk": [
@@ -197,6 +405,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сідней, Австралія",
+      "en": "Sydney, Australia",
+      "ru": "Сидней, Австралия",
+      "es": "Sídney, Australia"
+    },
+    "model": {
+      "uk": "Платформа дизайну для команд",
+      "en": "Design platform for teams",
+      "ru": "Дизайн-платформа для команд",
+      "es": "Plataforma de diseño para equipos"
+    },
+    "market": {
+      "uk": "Templates, brand, video, marketing teams",
+      "en": "Templates, brand, video, marketing teams",
+      "ru": "Шаблоны, бренд, видео, маркетинговые команды",
+      "es": "Plantillas, marca, vídeo y equipos de marketing"
+    },
+    "notableFor": {
+      "uk": "Масовий продукт дизайну з глибокою локалізацією",
+      "en": "Mass-market design product with broad localization",
+      "ru": "Массовый продукт дизайна с широкой локализацией",
+      "es": "Producto de diseño de masas con fuerte localización"
+    },
+    "signals": {
+      "uk": [
+        "Простий UX для не-дизайнерів",
+        "Швидке масштабування між країнами",
+        "Перетин продуктивності й маркетингу"
+      ],
+      "en": [
+        "Simple UX for non-designers",
+        "Fast international scaling",
+        "Spanning productivity and marketing"
+      ],
+      "ru": [
+        "Простой UX для не-дизайнеров",
+        "Быстрое международное масштабирование",
+        "Пересечение продуктивности и маркетинга"
+      ],
+      "es": [
+        "UX simple para no diseñadores",
+        "Escalado internacional rápido",
+        "Cruza productividad y marketing"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Австралія",
+      "en": "Australia",
+      "ru": "Австралия",
+      "es": "Australia"
     }
   },
   {
@@ -211,10 +471,10 @@
       "es": "Plataforma open-source de IA"
     },
     "summary": {
-      "uk": "Підтримує спільноту моделей, датасетів і інструментів для машинного навчання.",
-      "en": "Supports a community of models, datasets and tools for machine learning.",
-      "ru": "Поддерживает сообщество моделей, датасетов и инструментов машинного обучения.",
-      "es": "Sostiene una comunidad de modelos, datos y herramientas de aprendizaje automático."
+      "uk": "Підтримує спільноту моделей, датасетів і інструментів для машинного навчання. Центральний репозиторій моделей для ML-спільноти. Додатковий контекст: Нью-Йорк / Париж · Models hub, datasets, transformers ecosystem · Центральний репозиторій моделей для ML-спільноти.",
+      "en": "Supports a community of models, datasets and tools for machine learning. Central model hub for the ML community. Additional context: New York / Paris · Models hub, datasets, transformers ecosystem · Central model hub for the ML community.",
+      "ru": "Поддерживает сообщество моделей, датасетов и инструментов машинного обучения. Дополнительный контекст: Нью-Йорк / Париж · Хаб моделей, датасеты, экосистема transformers · Центральный репозиторий моделей для ML-сообщества.",
+      "es": "Sostiene una comunidad de modelos, datos y herramientas de aprendizaje automático. Contexto adicional: Nueva York / París · Hub de modelos, datasets y ecosistema transformers · Repositorio central de modelos para la comunidad ML."
     },
     "tags": {
       "uk": [
@@ -237,6 +497,58 @@
         "Código abierto",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Нью-Йорк / Париж",
+      "en": "New York / Paris",
+      "ru": "Нью-Йорк / Париж",
+      "es": "Nueva York / París"
+    },
+    "model": {
+      "uk": "Спільнота open-source ML",
+      "en": "Open-source ML community hub",
+      "ru": "Сообщество open-source ML",
+      "es": "Hub comunitario de ML open-source"
+    },
+    "market": {
+      "uk": "Models hub, datasets, transformers ecosystem",
+      "en": "Models hub, datasets, transformers ecosystem",
+      "ru": "Хаб моделей, датасеты, экосистема transformers",
+      "es": "Hub de modelos, datasets y ecosistema transformers"
+    },
+    "notableFor": {
+      "uk": "Центральний репозиторій моделей для ML-спільноти",
+      "en": "Central model hub for the ML community",
+      "ru": "Центральный репозиторий моделей для ML-сообщества",
+      "es": "Repositorio central de modelos para la comunidad ML"
+    },
+    "signals": {
+      "uk": [
+        "Відкриті моделі та колаборація",
+        "Інтеграція з провідними фреймворками",
+        "Міст між дослідженням і продуктом"
+      ],
+      "en": [
+        "Open models and collaboration",
+        "Integration with major frameworks",
+        "Bridge between research and product"
+      ],
+      "ru": [
+        "Открытые модели и коллаборация",
+        "Интеграция с ключевыми фреймворками",
+        "Мост между исследованием и продуктом"
+      ],
+      "es": [
+        "Modelos abiertos y colaboración",
+        "Integración con frameworks principales",
+        "Puente entre investigación y producto"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Париж",
+      "en": "Paris",
+      "ru": "Париж",
+      "es": "París"
     }
   },
   {
@@ -251,10 +563,10 @@
       "es": "Diseño colaborativo en navegador"
     },
     "summary": {
-      "uk": "Перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди.",
-      "en": "Moved interface design into the cloud so product, design and engineering teams share one source of truth.",
-      "ru": "Перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды.",
-      "es": "Llevó el diseño de interfaces a la nube para alinear producto, diseño e ingeniería."
+      "uk": "Перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди. Додатковий контекст: Сан-Франциско, США · UI design, design systems, dev handoff · Мультиплеєр-дизайн як стандарт для продуктових команд.",
+      "en": "Moved interface design into the cloud so product, design and engineering teams share one source of truth. Additional context: San Francisco, United States · UI design, design systems, dev handoff · Multiplayer design as a standard for product teams.",
+      "ru": "Перенесла дизайн интерфейсов в облако, где продукт, дизайн и разработка работают с единым источником правды. Дополнительный контекст: Сан-Франциско, США · UI-дизайн, дизайн-системы, handoff разработке · Мультиплеер-дизайн как стандарт для продуктовых команд.",
+      "es": "Llevó el diseño de interfaces a la nube para alinear producto, diseño e ingeniería. Contexto adicional: San Francisco, Estados Unidos · UI, sistemas de diseño y handoff a desarrollo · Diseño multijugador como estándar para equipos de producto."
     },
     "tags": {
       "uk": [
@@ -277,6 +589,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Спільний дизайн у хмарі",
+      "en": "Collaborative design in the cloud",
+      "ru": "Совместный дизайн в облаке",
+      "es": "Diseño colaborativo en la nube"
+    },
+    "market": {
+      "uk": "UI design, design systems, dev handoff",
+      "en": "UI design, design systems, dev handoff",
+      "ru": "UI-дизайн, дизайн-системы, handoff разработке",
+      "es": "UI, sistemas de diseño y handoff a desarrollo"
+    },
+    "notableFor": {
+      "uk": "Мультиплеєр-дизайн як стандарт для продуктових команд",
+      "en": "Multiplayer design as a standard for product teams",
+      "ru": "Мультиплеер-дизайн как стандарт для продуктовых команд",
+      "es": "Diseño multijugador como estándar para equipos de producto"
+    },
+    "signals": {
+      "uk": [
+        "Ключовий інструмент для веб і мобільних команд",
+        "Інтеграція з інженерним workflow",
+        "Висока частка у enterprise design ops"
+      ],
+      "en": [
+        "Core tool for web and mobile teams",
+        "Embedded in engineering workflows",
+        "Strong presence in enterprise design ops"
+      ],
+      "ru": [
+        "Ключевой инструмент для web и mobile команд",
+        "Встроенность в инженерные процессы",
+        "Сильная доля в enterprise design ops"
+      ],
+      "es": [
+        "Herramienta central para equipos web y móvil",
+        "Integrada en flujos de ingeniería",
+        "Fuerte presencia en design ops enterprise"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -291,10 +655,10 @@
       "es": "Productividad y conocimiento"
     },
     "summary": {
-      "uk": "Обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу.",
-      "en": "Combines documents, databases, wikis and workflows for teams of many sizes.",
-      "ru": "Объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба.",
-      "es": "Combina documentos, bases de datos, wikis y flujos para equipos de distintos tamaños."
+      "uk": "Обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу. Гнучкі бази даних у документному середовищі. Додатковий контекст: Сан-Франциско, США · Knowledge base, wiki, team productivity · Гнучкі бази даних у документному середовищі.",
+      "en": "Combines documents, databases, wikis and workflows for teams of many sizes. Flexible databases inside a doc-like workspace. Additional context: San Francisco, United States · Knowledge base, wiki, team productivity · Flexible databases inside a doc-like workspace.",
+      "ru": "Объединяет документы, базы данных, wiki и рабочие процессы для команд разного масштаба. Дополнительный контекст: Сан-Франциско, США · Knowledge base, wiki, командная продуктивность · Гибкие базы данных в документной среде.",
+      "es": "Combina documentos, bases de datos, wikis y flujos para equipos de distintos tamaños. Contexto adicional: San Francisco, Estados Unidos · Base de conocimiento, wiki y productividad de equipo · Bases de datos flexibles dentro de un workspace tipo doc."
     },
     "tags": {
       "uk": [
@@ -317,6 +681,58 @@
         "Operaciones",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Workspace для документів і баз даних",
+      "en": "Workspace for docs and databases",
+      "ru": "Workspace для документов и баз данных",
+      "es": "Workspace para documentos y bases de datos"
+    },
+    "market": {
+      "uk": "Knowledge base, wiki, team productivity",
+      "en": "Knowledge base, wiki, team productivity",
+      "ru": "Knowledge base, wiki, командная продуктивность",
+      "es": "Base de conocimiento, wiki y productividad de equipo"
+    },
+    "notableFor": {
+      "uk": "Гнучкі бази даних у документному середовищі",
+      "en": "Flexible databases inside a doc-like workspace",
+      "ru": "Гибкие базы данных в документной среде",
+      "es": "Bases de datos flexibles dentro de un workspace tipo doc"
+    },
+    "signals": {
+      "uk": [
+        "Популярність серед стартапів і knowledge teams",
+        "Швидкий цикл продуктових функцій",
+        "Конкуренція з класичними wiki та docs"
+      ],
+      "en": [
+        "Popular with startups and knowledge teams",
+        "Fast product iteration cycle",
+        "Competes with classic wikis and docs"
+      ],
+      "ru": [
+        "Популярность среди стартапов и knowledge-команд",
+        "Быстрый цикл продуктовых функций",
+        "Конкуренция с классическими wiki и docs"
+      ],
+      "es": [
+        "Popular entre startups y equipos de conocimiento",
+        "Iteración rápida de producto",
+        "Compite con wikis y docs clásicos"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -331,10 +747,10 @@
       "es": "Seguridad de IA y modelos"
     },
     "summary": {
-      "uk": "Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні AI-системи.",
-      "en": "Develops assistants and safety research focused on controllable and useful AI systems.",
-      "ru": "Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных AI-систем.",
-      "es": "Desarrolla asistentes e investigación de seguridad para sistemas de IA útiles y controlables."
+      "uk": "Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні AI-системи. Додатковий контекст: Сан-Франциско, США · AI assistants, model APIs, enterprise adoption · Claude, constitutional AI і безпечне масштабування моделей.",
+      "en": "Develops assistants and safety research focused on controllable and useful AI systems. Additional context: San Francisco, United States · AI assistants, model APIs, enterprise adoption · Claude, constitutional AI and safer model scaling.",
+      "ru": "Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных AI-систем. Дополнительный контекст: Сан-Франциско, США · AI assistants, model APIs, enterprise adoption · Claude, constitutional AI и безопасное масштабирование моделей.",
+      "es": "Desarrolla asistentes e investigación de seguridad para sistemas de IA útiles y controlables. Contexto adicional: San Francisco, Estados Unidos · Asistentes de IA, APIs de modelos y adopción enterprise · Claude, constitutional AI y escalamiento más seguro de modelos."
     },
     "tags": {
       "uk": [
@@ -403,6 +819,12 @@
         "Marca diferenciada en enterprise AI",
         "Rápida tracción con clientes corporativos"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -417,10 +839,10 @@
       "es": "Modelos europeos de IA"
     },
     "summary": {
-      "uk": "Будує відкриті та комерційні моделі ШІ, посилюючи європейську AI-екосистему.",
-      "en": "Builds open and commercial AI models, strengthening the European AI ecosystem.",
-      "ru": "Строит открытые и коммерческие модели ИИ, усиливая европейскую AI-экосистему.",
-      "es": "Construye modelos abiertos y comerciales, fortaleciendo el ecosistema europeo de IA."
+      "uk": "Будує відкриті та комерційні моделі ШІ, посилюючи європейську AI-екосистему. Додатковий контекст: Париж, Франція · Open models, European AI, inference products · Одна з найпомітніших європейських AI-компаній нового циклу.",
+      "en": "Builds open and commercial AI models, strengthening the European AI ecosystem. Additional context: Paris, France · Open models, European AI, inference products · One of the most visible European AI companies of the new cycle.",
+      "ru": "Строит открытые и коммерческие модели ИИ, усиливая европейскую AI-экосистему. Дополнительный контекст: Париж, Франция · Open models, European AI, inference products · Одна из самых заметных европейских AI-компаний нового цикла.",
+      "es": "Construye modelos abiertos y comerciales, fortaleciendo el ecosistema europeo de IA. Contexto adicional: París, Francia · Open models, IA europea y productos de inference · Una de las compañías europeas de IA más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
@@ -489,6 +911,12 @@
         "Trabaja con open models",
         "Llegó rápido al centro del mercado de IA tras 2023"
       ]
+    },
+    "hqCountry": {
+      "uk": "Франція",
+      "en": "France",
+      "ru": "Франция",
+      "es": "Francia"
     }
   },
   {
@@ -503,10 +931,10 @@
       "es": "Plataforma de datos e IA"
     },
     "summary": {
-      "uk": "Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств.",
-      "en": "Combines lakehouse architecture, analytics, ML and data governance for enterprises.",
-      "ru": "Объединяет lakehouse-архитектуру, аналитику, ML и управление данными для предприятий.",
-      "es": "Combina arquitectura lakehouse, analítica, ML y gobierno de datos para empresas."
+      "uk": "Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств. Додатковий контекст: Сан-Франциско, США · Data engineering, ML, analytics, governance · Lakehouse-архітектура як міст між сховищами даних і ML.",
+      "en": "Combines lakehouse architecture, analytics, ML and data governance for enterprises. Additional context: San Francisco, United States · Data engineering, ML, analytics, governance · Lakehouse architecture bridging warehouses and ML.",
+      "ru": "Объединяет lakehouse-архитектуру, аналитику, ML и управление данными для предприятий. Дополнительный контекст: Сан-Франциско, США · Data engineering, ML, аналитика, governance · Lakehouse-архитектура как мост между хранилищами и ML.",
+      "es": "Combina arquitectura lakehouse, analítica, ML y gobierno de datos para empresas. Contexto adicional: San Francisco, Estados Unidos · Data engineering, ML, analítica y gobierno de datos · Arquitectura lakehouse entre almacenes y ML."
     },
     "tags": {
       "uk": [
@@ -529,6 +957,58 @@
         "Cloud",
         "Software empresarial"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Lakehouse та AI-платформа даних",
+      "en": "Lakehouse and data AI platform",
+      "ru": "Lakehouse и data AI-платформа",
+      "es": "Lakehouse y plataforma de datos e IA"
+    },
+    "market": {
+      "uk": "Data engineering, ML, analytics, governance",
+      "en": "Data engineering, ML, analytics, governance",
+      "ru": "Data engineering, ML, аналитика, governance",
+      "es": "Data engineering, ML, analítica y gobierno de datos"
+    },
+    "notableFor": {
+      "uk": "Lakehouse-архітектура як міст між сховищами даних і ML",
+      "en": "Lakehouse architecture bridging warehouses and ML",
+      "ru": "Lakehouse-архитектура как мост между хранилищами и ML",
+      "es": "Arquitectura lakehouse entre almacenes y ML"
+    },
+    "signals": {
+      "uk": [
+        "Сильний enterprise сегмент",
+        "Інтеграція з Spark та хмарними екосистемами",
+        "Центральний шар для data + AI команд"
+      ],
+      "en": [
+        "Strong enterprise adoption",
+        "Spark and cloud ecosystem integration",
+        "Central layer for data and AI teams"
+      ],
+      "ru": [
+        "Сильный enterprise-сегмент",
+        "Интеграция со Spark и облачными экосистемами",
+        "Центральный слой для data и AI команд"
+      ],
+      "es": [
+        "Fuerte adopción enterprise",
+        "Integración con Spark y ecosistemas cloud",
+        "Capa central para equipos de datos e IA"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -543,10 +1023,10 @@
       "es": "IA para escritura"
     },
     "summary": {
-      "uk": "Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше.",
-      "en": "A Ukrainian-founded company helping people write more clearly, accurately and professionally.",
-      "ru": "Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее.",
-      "es": "Empresa fundada por ucranianos que ayuda a escribir con claridad, precisión y profesionalismo."
+      "uk": "Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. Додатковий контекст: Київ / Сан-Франциско · Writing assistance, communication, productivity · Глобальний продукт із українським корінням у сегменті writing AI.",
+      "en": "A Ukrainian-founded company helping people write more clearly, accurately and professionally. Additional context: Kyiv / San Francisco · Writing assistance, communication, productivity · Global product with Ukrainian roots in writing AI.",
+      "ru": "Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. Дополнительный контекст: Киев / Сан-Франциско · Помощь в письме, коммуникации, продуктивность · Глобальный продукт с украинскими корнями в writing AI.",
+      "es": "Empresa fundada por ucranianos que ayuda a escribir con claridad, precisión y profesionalismo. Contexto adicional: Kyiv / San Francisco · Asistencia de escritura, comunicación y productividad · Producto global con raíces ucranianas en IA de escritura."
     },
     "tags": {
       "uk": [
@@ -569,6 +1049,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Київ / Сан-Франциско",
+      "en": "Kyiv / San Francisco",
+      "ru": "Киев / Сан-Франциско",
+      "es": "Kyiv / San Francisco"
+    },
+    "model": {
+      "uk": "AI-assistant для письма",
+      "en": "AI assistant for writing",
+      "ru": "AI-ассистент для письма",
+      "es": "Asistente de IA para escritura"
+    },
+    "market": {
+      "uk": "Writing assistance, communication, productivity",
+      "en": "Writing assistance, communication, productivity",
+      "ru": "Помощь в письме, коммуникации, продуктивность",
+      "es": "Asistencia de escritura, comunicación y productividad"
+    },
+    "notableFor": {
+      "uk": "Глобальний продукт із українським корінням у сегменті writing AI",
+      "en": "Global product with Ukrainian roots in writing AI",
+      "ru": "Глобальный продукт с украинскими корнями в writing AI",
+      "es": "Producto global con raíces ucranianas en IA de escritura"
+    },
+    "signals": {
+      "uk": [
+        "Глибока інтеграція в браузер і робочі процеси",
+        "Фокус на ясність і тон комунікації",
+        "Широка база користувачів"
+      ],
+      "en": [
+        "Deep integration into browsers and workflows",
+        "Focus on clarity and tone",
+        "Large global user base"
+      ],
+      "ru": [
+        "Глубокая интеграция в браузер и workflow",
+        "Фокус на ясность и тон",
+        "Широкая база пользователей"
+      ],
+      "es": [
+        "Integración profunda en navegadores y flujos",
+        "Foco en claridad y tono",
+        "Gran base de usuarios global"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Сан-Франциско",
+      "en": "San Francisco",
+      "ru": "Франция",
+      "es": "San Francisco"
     }
   },
   {
@@ -583,10 +1115,10 @@
       "es": "Marketplace EdTech"
     },
     "summary": {
-      "uk": "Платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу.",
-      "en": "A Ukrainian-rooted platform for online language learning with tutors around the world.",
-      "ru": "Платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру.",
-      "es": "Plataforma con raíces ucranianas para aprender idiomas online con tutores de todo el mundo."
+      "uk": "Платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу. Додатковий контекст: Барселона / Київ · Language learning, marketplace, EdTech · Глобальний двосторонній маркетплейс для мовної освіти.",
+      "en": "A Ukrainian-rooted platform for online language learning with tutors around the world. Global two-sided marketplace for language education. Additional context: Barcelona / Kyiv · Language learning, marketplace, EdTech · Global two-sided marketplace for language education.",
+      "ru": "Платформа с украинскими корнями для онлайн-изучения языков с преподавателями по всему миру. Дополнительный контекст: Барселона / Киев · Изучение языков, маркетплейс, EdTech · Глобальный двусторонний маркетплейс языкового обучения.",
+      "es": "Plataforma con raíces ucranianas para aprender idiomas online con tutores de todo el mundo. Contexto adicional: Barcelona / Kyiv · Aprendizaje de idiomas, marketplace y EdTech · Marketplace global bidireccional para idiomas."
     },
     "tags": {
       "uk": [
@@ -609,6 +1141,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Барселона / Київ",
+      "en": "Barcelona / Kyiv",
+      "ru": "Барселона / Киев",
+      "es": "Barcelona / Kyiv"
+    },
+    "model": {
+      "uk": "Маркетплейс онлайн-репетиторів",
+      "en": "Online tutoring marketplace",
+      "ru": "Маркетплейс онлайн-репетиторов",
+      "es": "Marketplace de tutoría online"
+    },
+    "market": {
+      "uk": "Language learning, marketplace, EdTech",
+      "en": "Language learning, marketplace, EdTech",
+      "ru": "Изучение языков, маркетплейс, EdTech",
+      "es": "Aprendizaje de idiomas, marketplace y EdTech"
+    },
+    "notableFor": {
+      "uk": "Глобальний двосторонній маркетплейс для мовної освіти",
+      "en": "Global two-sided marketplace for language education",
+      "ru": "Глобальный двусторонний маркетплейс языкового обучения",
+      "es": "Marketplace global bidireccional para idiomas"
+    },
+    "signals": {
+      "uk": [
+        "Масштабування між країнами та часовими поясами",
+        "Баланс між tutor supply і learner demand",
+        "Сильний фокус на якості уроків"
+      ],
+      "en": [
+        "Cross-border scaling across time zones",
+        "Balances tutor supply and learner demand",
+        "Quality-focused lesson experience"
+      ],
+      "ru": [
+        "Масштабирование между странами и часовыми поясами",
+        "Баланс supply репетиторов и спроса",
+        "Фокус на качестве уроков"
+      ],
+      "es": [
+        "Escalado cross-border",
+        "Equilibrio oferta-demanda de tutores",
+        "Experiencia de calidad en lecciones"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Київ",
+      "en": "Kyiv",
+      "ru": "Киев",
+      "es": "Kyiv"
     }
   },
   {
@@ -623,10 +1207,10 @@
       "es": "Plataforma DevOps"
     },
     "summary": {
-      "uk": "Надає інструменти для репозиторіїв, CI/CD, безпеки та спільної розробки програмного забезпечення.",
-      "en": "Provides tools for repositories, CI/CD, security and collaborative software development.",
-      "ru": "Предоставляет инструменты для репозиториев, CI/CD, безопасности и совместной разработки ПО.",
-      "es": "Ofrece repositorios, CI/CD, seguridad y desarrollo colaborativo de software."
+      "uk": "Надає інструменти для репозиторіїв, CI/CD, безпеки та спільної розробки програмного забезпечення. Додатковий контекст: Сан-Франциско / Амстердам · Git, CI/CD, security scanning, collaboration · Повний цикл DevOps в одному застосунку.",
+      "en": "Provides tools for repositories, CI/CD, security and collaborative software development. Additional context: San Francisco / Amsterdam · Git, CI/CD, security scanning, collaboration · Full DevOps lifecycle in one application.",
+      "ru": "Предоставляет инструменты для репозиториев, CI/CD, безопасности и совместной разработки ПО. Дополнительный контекст: Сан-Франциско / Амстердам · Git, CI/CD, security, коллаборация · Полный цикл DevOps в одном приложении.",
+      "es": "Ofrece repositorios, CI/CD, seguridad y desarrollo colaborativo de software. Ciclo DevOps completo en una sola aplicación. Contexto adicional: San Francisco / Ámsterdam · Git, CI/CD, seguridad y colaboración · Ciclo DevOps completo en una sola aplicación."
     },
     "tags": {
       "uk": [
@@ -649,6 +1233,58 @@
         "Código abierto",
         "Operaciones"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско / Амстердам",
+      "en": "San Francisco / Amsterdam",
+      "ru": "Сан-Франциско / Амстердам",
+      "es": "San Francisco / Ámsterdam"
+    },
+    "model": {
+      "uk": "DevOps-платформа з відкритим кодом",
+      "en": "Open-core DevOps platform",
+      "ru": "Open-core DevOps-платформа",
+      "es": "Plataforma DevOps open-core"
+    },
+    "market": {
+      "uk": "Git, CI/CD, security scanning, collaboration",
+      "en": "Git, CI/CD, security scanning, collaboration",
+      "ru": "Git, CI/CD, security, коллаборация",
+      "es": "Git, CI/CD, seguridad y colaboración"
+    },
+    "notableFor": {
+      "uk": "Повний цикл DevOps в одному застосунку",
+      "en": "Full DevOps lifecycle in one application",
+      "ru": "Полный цикл DevOps в одном приложении",
+      "es": "Ciclo DevOps completo en una sola aplicación"
+    },
+    "signals": {
+      "uk": [
+        "Сильна спільнота open source",
+        "Широке використання в enterprise",
+        "Remote-first культура продукту"
+      ],
+      "en": [
+        "Strong open-source community",
+        "Broad enterprise adoption",
+        "Remote-first product culture"
+      ],
+      "ru": [
+        "Сильное open-source сообщество",
+        "Широкое enterprise-использование",
+        "Remote-first культура продукта"
+      ],
+      "es": [
+        "Comunidad open source fuerte",
+        "Amplia adopción enterprise",
+        "Cultura de producto remote-first"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Амстердам",
+      "en": "Amsterdam",
+      "ru": "Амстердам",
+      "es": "Ámsterdam"
     }
   },
   {
@@ -663,10 +1299,10 @@
       "es": "Datos para IA"
     },
     "summary": {
-      "uk": "Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи.",
-      "en": "Supports data preparation and evaluation workflows for companies building AI systems.",
-      "ru": "Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы.",
-      "es": "Apoya preparación de datos y evaluación para empresas que crean sistemas de IA."
+      "uk": "Підтримує підготовку даних і evaluation-процеси для компаній, що створюють AI-системи. Додатковий контекст: Сан-Франциско, США · Training data, evaluation, AI operations · Інфраструктура підготовки даних для моделей нового покоління.",
+      "en": "Supports data preparation and evaluation workflows for companies building AI systems. Additional context: San Francisco, United States · Training data, evaluation, AI operations · Data preparation infrastructure for modern models.",
+      "ru": "Поддерживает подготовку данных и evaluation-процессы для компаний, создающих AI-системы. Дополнительный контекст: Сан-Франциско, США · Обучающие данные, evaluation, AI ops · Инфраструктура подготовки данных для современных моделей.",
+      "es": "Apoya preparación de datos y evaluación para empresas que crean sistemas de IA. Contexto adicional: San Francisco, Estados Unidos · Datos de entrenamiento, evaluación y ops de IA · Infraestructura de datos para modelos modernos."
     },
     "tags": {
       "uk": [
@@ -689,6 +1325,58 @@
         "Operaciones",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Дані та анотація для AI",
+      "en": "Data and labeling for AI",
+      "ru": "Данные и разметка для AI",
+      "es": "Datos y etiquetado para IA"
+    },
+    "market": {
+      "uk": "Training data, evaluation, AI operations",
+      "en": "Training data, evaluation, AI operations",
+      "ru": "Обучающие данные, evaluation, AI ops",
+      "es": "Datos de entrenamiento, evaluación y ops de IA"
+    },
+    "notableFor": {
+      "uk": "Інфраструктура підготовки даних для моделей нового покоління",
+      "en": "Data preparation infrastructure for modern models",
+      "ru": "Инфраструктура подготовки данных для современных моделей",
+      "es": "Infraestructura de datos para modelos modernos"
+    },
+    "signals": {
+      "uk": [
+        "Тісний звʼязок із defence та enterprise AI",
+        "Масштаб анотаційних операцій",
+        "Ключовий шар для training pipelines"
+      ],
+      "en": [
+        "Close ties to defence and enterprise AI",
+        "Large-scale labeling operations",
+        "Key layer for training pipelines"
+      ],
+      "ru": [
+        "Связь с defence и enterprise AI",
+        "Масштаб операций разметки",
+        "Ключевой слой для training pipelines"
+      ],
+      "es": [
+        "Vínculos con defensa e IA enterprise",
+        "Operaciones de etiquetado a gran escala",
+        "Capa clave para pipelines de entrenamiento"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -703,10 +1391,10 @@
       "es": "Herramientas de IA para desarrolladores"
     },
     "summary": {
-      "uk": "Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію.",
-      "en": "Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation.",
-      "ru": "Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию.",
-      "es": "Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización."
+      "uk": "Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. Додатковий контекст: США · AI coding, codebase navigation, engineering workflows · Поєднання AI-асистента, codebase search і редактора для розробників.",
+      "en": "Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. Additional context: United States · AI coding, codebase navigation, engineering workflows · Combining an AI assistant, codebase search and an editor for developers.",
+      "ru": "Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. Дополнительный контекст: США · AI coding, codebase navigation, engineering workflows · Сочетание AI-ассистента, codebase search и редактора для разработчиков.",
+      "es": "Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización. Contexto adicional: Estados Unidos · Codificación con IA, navegación del codebase y workflows de ingeniería · Combinar asistente de IA, búsqueda en el codebase y editor para desarrolladores."
     },
     "tags": {
       "uk": [
@@ -775,6 +1463,12 @@
         "Orientado a workflows de equipo",
         "Parte de la nueva ola de developer tools AI-native"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -789,10 +1483,10 @@
       "es": "Plataforma cloud para equipos frontend"
     },
     "summary": {
-      "uk": "Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд.",
-      "en": "Supports deployment, edge infrastructure and product velocity for modern web teams.",
-      "ru": "Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд.",
-      "es": "Impulsa despliegue, edge infrastructure y velocidad de producto para equipos web modernos."
+      "uk": "Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд. Додатковий контекст: Сан-Франциско, США · Next.js ecosystem, serverless, edge delivery · Швидке розгортання frontend і developer experience для сучасного вебу.",
+      "en": "Supports deployment, edge infrastructure and product velocity for modern web teams. Additional context: San Francisco, United States · Next.js ecosystem, serverless, edge delivery · Fast frontend deployment and DX for the modern web.",
+      "ru": "Поддерживает деплой, edge-инфраструктуру и скорость продуктовых веб-команд. Быстрый деплой frontend и DX для современного веба. Дополнительный контекст: Сан-Франциско, США · Экосистема Next.js, serverless, edge · Быстрый деплой frontend и DX для современного веба.",
+      "es": "Impulsa despliegue, edge infrastructure y velocidad de producto para equipos web modernos. Contexto adicional: San Francisco, Estados Unidos · Ecosistema Next.js, serverless y edge · Despliegue rápido de frontend y DX para la web moderna."
     },
     "tags": {
       "uk": [
@@ -815,6 +1509,58 @@
         "Software",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Сан-Франциско, США",
+      "en": "San Francisco, United States",
+      "ru": "Сан-Франциско, США",
+      "es": "San Francisco, Estados Unidos"
+    },
+    "model": {
+      "uk": "Edge та frontend cloud",
+      "en": "Edge and frontend cloud",
+      "ru": "Edge и frontend cloud",
+      "es": "Cloud edge y frontend"
+    },
+    "market": {
+      "uk": "Next.js ecosystem, serverless, edge delivery",
+      "en": "Next.js ecosystem, serverless, edge delivery",
+      "ru": "Экосистема Next.js, serverless, edge",
+      "es": "Ecosistema Next.js, serverless y edge"
+    },
+    "notableFor": {
+      "uk": "Швидке розгортання frontend і developer experience для сучасного вебу",
+      "en": "Fast frontend deployment and DX for the modern web",
+      "ru": "Быстрый деплой frontend и DX для современного веба",
+      "es": "Despliegue rápido de frontend y DX para la web moderna"
+    },
+    "signals": {
+      "uk": [
+        "Тісна інтеграція з Next.js",
+        "Edge delivery як конкурентна перевага",
+        "Популярність серед modern web-команд"
+      ],
+      "en": [
+        "Tight Next.js integration",
+        "Edge delivery as a differentiator",
+        "Popular with modern web teams"
+      ],
+      "ru": [
+        "Тесная интеграция с Next.js",
+        "Edge delivery как преимущество",
+        "Популярность среди современных web-команд"
+      ],
+      "es": [
+        "Integración fuerte con Next.js",
+        "Edge delivery como diferencial",
+        "Popular entre equipos web modernos"
+      ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -829,10 +1575,10 @@
       "es": "IA generativa de voz"
     },
     "summary": {
-      "uk": "Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу.",
-      "en": "Develops speech synthesis, voice agents and multilingual audio products for media, education and business.",
-      "ru": "Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса.",
-      "es": "Desarrolla síntesis de voz, voice agents y productos de audio multilingües para medios, educación y empresas."
+      "uk": "Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу. Додатковий контекст: Лондон / Нью-Йорк · Speech synthesis, voice agents, audio products · Різке зростання в сегменті генеративного аудіо.",
+      "en": "Develops speech synthesis, voice agents and multilingual audio products for media, education and business. Additional context: London / New York · Speech synthesis, voice agents, audio products · Rapid growth in generative audio.",
+      "ru": "Развивает синтез речи, voice agents и мультиязычные аудиопродукты для медиа, образования и бизнеса. Дополнительный контекст: Лондон / Нью-Йорк · Speech synthesis, voice agents, audio products · Резкий рост в сегменте генеративного аудио.",
+      "es": "Desarrolla síntesis de voz, voice agents y productos de audio multilingües para medios, educación y empresas. Contexto adicional: Londres / Nueva York · Síntesis de voz, voice agents y productos de audio · Crecimiento rápido en audio generativo."
     },
     "tags": {
       "uk": [
@@ -901,6 +1647,12 @@
         "Productos para medios y empresas",
         "Marca visible en voice AI desde 2022"
       ]
+    },
+    "hqCountry": {
+      "uk": "Нью-Йорк",
+      "en": "New York",
+      "ru": "Нью-Йорк",
+      "es": "Nueva York"
     }
   },
   {
@@ -915,10 +1667,10 @@
       "es": "Plataforma fintech global"
     },
     "summary": {
-      "uk": "Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку.",
-      "en": "Combines banking, cards, business accounts and international financial operations in one app.",
-      "ru": "Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении.",
-      "es": "Combina banca, tarjetas, cuentas de negocio y operaciones financieras globales en una sola app."
+      "uk": "Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку. Додатковий контекст: Лондон, Велика Британія · Cards, FX, business accounts, global banking · Швидке міжнародне масштабування фінтех-продуктів.",
+      "en": "Combines banking, cards, business accounts and international financial operations in one app. Additional context: London, United Kingdom · Cards, FX, business accounts, global banking · Fast international scaling of fintech features.",
+      "ru": "Объединяет банкинг, карты, бизнес-счета и международные финансовые операции в одном приложении. Дополнительный контекст: Лондон, Великобритания · Карты, FX, бизнес-счета, глобальный банкинг · Быстрое международное масштабирование финтех-функций.",
+      "es": "Combina banca, tarjetas, cuentas de negocio y operaciones financieras globales en una sola app. Contexto adicional: Londres, Reino Unido · Tarjetas, FX, cuentas business y banca global · Escalado internacional rápido de funciones fintech."
     },
     "tags": {
       "uk": [
@@ -941,6 +1693,58 @@
         "Operaciones",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Лондон, Велика Британія",
+      "en": "London, United Kingdom",
+      "ru": "Лондон, Великобритания",
+      "es": "Londres, Reino Unido"
+    },
+    "model": {
+      "uk": "Необанк і фінтех-суперап",
+      "en": "Neobank and fintech super-app",
+      "ru": "Необанк и финтех-суперап",
+      "es": "Neobanco y super-app fintech"
+    },
+    "market": {
+      "uk": "Cards, FX, business accounts, global banking",
+      "en": "Cards, FX, business accounts, global banking",
+      "ru": "Карты, FX, бизнес-счета, глобальный банкинг",
+      "es": "Tarjetas, FX, cuentas business y banca global"
+    },
+    "notableFor": {
+      "uk": "Швидке міжнародне масштабування фінтех-продуктів",
+      "en": "Fast international scaling of fintech features",
+      "ru": "Быстрое международное масштабирование финтех-функций",
+      "es": "Escalado internacional rápido de funciones fintech"
+    },
+    "signals": {
+      "uk": [
+        "Сильний mobile-first UX",
+        "Глобальні ліцензії та комплаєнс",
+        "Розширення від споживача до бізнесу"
+      ],
+      "en": [
+        "Strong mobile-first UX",
+        "Global licensing and compliance",
+        "Expansion from consumer to business"
+      ],
+      "ru": [
+        "Сильный mobile-first UX",
+        "Глобальные лицензии и комплаенс",
+        "Расширение от consumer к бизнесу"
+      ],
+      "es": [
+        "UX mobile-first fuerte",
+        "Licencias y cumplimiento global",
+        "Expansión de consumidor a negocio"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Велика Британія",
+      "en": "United Kingdom",
+      "ru": "Великобритания",
+      "es": "Reino Unido"
     }
   },
   {
@@ -955,10 +1759,10 @@
       "es": "Hardware y security tech ucraniano"
     },
     "summary": {
-      "uk": "Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку.",
-      "en": "Builds security systems, sensors and communications infrastructure for homes and businesses worldwide.",
-      "ru": "Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру.",
-      "es": "Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global."
+      "uk": "Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку. Додатковий контекст: Київ, Україна · Intrusion sensors, hubs, global retail · Український hardware-бренд із міжнародною мережею партнерів.",
+      "en": "Builds security systems, sensors and communications infrastructure for homes and businesses worldwide. Additional context: Kyiv, Ukraine · Intrusion sensors, hubs, global retail · Ukrainian hardware brand with international partner network.",
+      "ru": "Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. Дополнительный контекст: Киев, Украина · Датчики, хабы, глобальный ритейл · Украинский hardware-бренд с международной сетью партнеров.",
+      "es": "Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global. Contexto adicional: Kyiv, Ucrania · Sensores, hubs y retail global · Marca hardware ucraniana con red internacional de socios."
     },
     "tags": {
       "uk": [
@@ -981,6 +1785,58 @@
         "Ingeniería",
         "Startups"
       ]
+    },
+    "hq": {
+      "uk": "Київ, Україна",
+      "en": "Kyiv, Ukraine",
+      "ru": "Киев, Украина",
+      "es": "Kyiv, Ucrania"
+    },
+    "model": {
+      "uk": "Wireless security та smart home hardware",
+      "en": "Wireless security and smart-home hardware",
+      "ru": "Wireless security и smart-home hardware",
+      "es": "Hardware de seguridad inalámbrica y hogar inteligente"
+    },
+    "market": {
+      "uk": "Intrusion sensors, hubs, global retail",
+      "en": "Intrusion sensors, hubs, global retail",
+      "ru": "Датчики, хабы, глобальный ритейл",
+      "es": "Sensores, hubs y retail global"
+    },
+    "notableFor": {
+      "uk": "Український hardware-бренд із міжнародною мережею партнерів",
+      "en": "Ukrainian hardware brand with international partner network",
+      "ru": "Украинский hardware-бренд с международной сетью партнеров",
+      "es": "Marca hardware ucraniana con red internacional de socios"
+    },
+    "signals": {
+      "uk": [
+        "Фокус на wireless reliability",
+        "Роздрібні та B2B канали",
+        "Приклад hardware scale-up з України"
+      ],
+      "en": [
+        "Focus on wireless reliability",
+        "Retail and B2B channels",
+        "Example of hardware scale-up from Ukraine"
+      ],
+      "ru": [
+        "Фокус на wireless reliability",
+        "Розничные и B2B каналы",
+        "Пример hardware scale-up из Украины"
+      ],
+      "es": [
+        "Foco en fiabilidad wireless",
+        "Canales retail y B2B",
+        "Ejemplo de hardware scale-up desde Ucrania"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Україна",
+      "en": "Ukraine",
+      "ru": "Украина",
+      "es": "Ucrania"
     }
   },
   {
@@ -995,10 +1851,10 @@
       "es": "Producto de búsqueda con IA"
     },
     "summary": {
-      "uk": "Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс.",
-      "en": "Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface.",
-      "ru": "Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс.",
-      "es": "Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida."
+      "uk": "Розвиває AI-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс. Додатковий контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один із найпомітніших AI search-продуктів нового циклу.",
+      "en": "Builds AI-native search and answer experiences by combining LLMs, retrieval and a fast product interface. Additional context: San Francisco, United States · Search, retrieval, assistants, web answers · One of the most visible AI search products of the new cycle.",
+      "ru": "Развивает AI-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс. Дополнительный контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один из самых заметных AI search-продуктов нового цикла.",
+      "es": "Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida. Contexto adicional: San Francisco, Estados Unidos · Búsqueda, retrieval, asistentes y respuestas web · Uno de los productos de AI search más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
@@ -1067,6 +1923,12 @@
         "Marca fuerte de consumer AI",
         "Crecimiento rápido desde 2022"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1081,10 +1943,10 @@
       "es": "Video generativo y herramientas creativas de IA"
     },
     "summary": {
-      "uk": "Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління.",
-      "en": "Builds products for generative video, media production and next-generation creative workflows.",
-      "ru": "Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения.",
-      "es": "Construye productos para video generativo, producción multimedia y flujos creativos de nueva generación."
+      "uk": "Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління. Додатковий контекст: Нью-Йорк, США · Video generation, media production, creator tools · Генеративне відео як окремий продуктовий сегмент.",
+      "en": "Builds products for generative video, media production and next-generation creative workflows. Additional context: New York, United States · Video generation, media production, creator tools · Turning generative video into a standalone product segment.",
+      "ru": "Создает продукты для генеративного видео, медиа-производства и креативных workflow нового поколения. Дополнительный контекст: Нью-Йорк, США · Video generation, media production, creator tools · Генеративное видео как отдельный продуктовый сегмент.",
+      "es": "Construye productos para video generativo, producción multimedia y flujos creativos de nueva generación. Contexto adicional: Nueva York, Estados Unidos · Generación de video, producción multimedia y creator tools · Convertir el video generativo en un segmento de producto propio."
     },
     "tags": {
       "uk": [
@@ -1153,6 +2015,12 @@
         "Video con IA como producto central",
         "Fuerte presencia en el mercado creativo desde 2018"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1167,10 +2035,10 @@
       "es": "Empresa de imagen generativa"
     },
     "summary": {
-      "uk": "Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow.",
-      "en": "Builds image-generation AI systems that became part of modern design and visual workflows.",
-      "ru": "Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow.",
-      "es": "Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales."
+      "uk": "Розвиває AI-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. Додатковий контекст: США · Image generation, visual workflows, design exploration · Один із найсильніших брендів у генеративних зображеннях.",
+      "en": "Builds image-generation AI systems that became part of modern design and visual workflows. Additional context: United States · Image generation, visual workflows, design exploration · One of the strongest brands in generative imaging.",
+      "ru": "Развивает AI-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. Дополнительный контекст: США · Image generation, visual workflows, design exploration · Один из самых сильных брендов в генеративных изображениях.",
+      "es": "Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales. Contexto adicional: Estados Unidos · Generación de imágenes, flujos visuales y exploración de diseño · Una de las marcas más fuertes en imagen generativa."
     },
     "tags": {
       "uk": [
@@ -1239,6 +2107,12 @@
         "Alta recordación de marca",
         "El nicho se consolidó después de 2022"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1253,10 +2127,10 @@
       "es": "Plataforma empresarial de LLM"
     },
     "summary": {
-      "uk": "Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows.",
-      "en": "Develops language models and enterprise AI products for search, automation and knowledge workflows.",
-      "ru": "Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows.",
-      "es": "Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento."
+      "uk": "Працює над мовними моделями та enterprise AI-рішеннями для пошуку, автоматизації й knowledge workflows. Додатковий контекст: Торонто, Канада · Enterprise LLMs, knowledge workflows, model APIs · Фокус на B2B-рішенні для мовних моделей.",
+      "en": "Develops language models and enterprise AI products for search, automation and knowledge workflows. Additional context: Toronto, Canada · Enterprise LLMs, knowledge workflows, model APIs · A strong B2B focus for language-model deployment.",
+      "ru": "Работает над языковыми моделями и enterprise AI-решениями для поиска, автоматизации и knowledge workflows. Дополнительный контекст: Торонто, Канада · Enterprise LLMs, knowledge workflows, model APIs · Фокус на B2B-решении для языковых моделей.",
+      "es": "Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento. Contexto adicional: Toronto, Canadá · LLMs enterprise, knowledge workflows y APIs de modelos · Foco fuerte en despliegue B2B de modelos de lenguaje."
     },
     "tags": {
       "uk": [
@@ -1325,6 +2199,12 @@
         "Posición fuerte en el segmento enterprise LLM",
         "Compañía de IA post-2019 con foco de infraestructura"
       ]
+    },
+    "hqCountry": {
+      "uk": "Канада",
+      "en": "Canada",
+      "ru": "Канада",
+      "es": "Canadá"
     }
   },
   {
@@ -1339,10 +2219,10 @@
       "es": "Agentes de IA para flujos de software"
     },
     "summary": {
-      "uk": "Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work.",
-      "en": "Builds agentic AI systems for acting inside software interfaces and automating knowledge work.",
-      "ru": "Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work.",
-      "es": "Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual."
+      "uk": "Будує агентні AI-системи для дій у програмних інтерфейсах і автоматизації knowledge work. Додатковий контекст: США · Software agents, UI actions, workflow automation · Ставка на агентні системи, що діють у програмному середовищі.",
+      "en": "Builds agentic AI systems for acting inside software interfaces and automating knowledge work. Additional context: United States · Software agents, UI actions, workflow automation · A bet on agents that act inside software environments.",
+      "ru": "Строит агентные AI-системы для действий внутри программных интерфейсов и автоматизации knowledge work. Дополнительный контекст: США · Software agents, UI actions, workflow automation · Ставка на агентные системы, действующие внутри программной среды.",
+      "es": "Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual. Contexto adicional: Estados Unidos · Agentes de software, acciones en UI y automatización de workflows · Apuesta por agentes que actúan dentro de entornos de software."
     },
     "tags": {
       "uk": [
@@ -1411,6 +2291,12 @@
         "Narrativa clara de IA agentica",
         "Parte de un segmento surgido después de 2022"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1425,10 +2311,10 @@
       "es": "IA para desarrolladores"
     },
     "summary": {
-      "uk": "Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows.",
-      "en": "Focuses on foundation models and products for software engineering teams and code-generation workflows.",
-      "ru": "Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows.",
-      "es": "Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código."
+      "uk": "Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті AI для software engineering.",
+      "en": "Focuses on foundation models and products for software engineering teams and code-generation workflows. Additional context: United States / France · Code generation, developer tools, foundation models · A new entrant in AI for software engineering.",
+      "ru": "Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте AI для software engineering.",
+      "es": "Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en IA para software engineering."
     },
     "tags": {
       "uk": [
@@ -1497,6 +2383,12 @@
         "Foco de modelos para code generation",
         "Parte del segmento visible de AI devtools desde 2023"
       ]
+    },
+    "hqCountry": {
+      "uk": "Франція",
+      "en": "France",
+      "ru": "Франция",
+      "es": "Francia"
     }
   },
   {
@@ -1511,10 +2403,10 @@
       "es": "Plataforma legal con IA"
     },
     "summary": {
-      "uk": "Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows.",
-      "en": "Builds AI tools for legal teams, document analysis and professional knowledge workflows.",
-      "ru": "Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows.",
-      "es": "Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento."
+      "uk": "Створює AI-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical AI-продуктів нового циклу.",
+      "en": "Builds AI tools for legal teams, document analysis and professional knowledge workflows. Additional context: United States · Legal tech, professional services, document analysis · One of the most visible vertical-AI products of the new cycle.",
+      "ru": "Создает AI-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical AI-продуктов нового цикла.",
+      "es": "Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de IA vertical más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
@@ -1583,6 +2475,12 @@
         "Narrativa fuerte de IA B2B",
         "Muestra cómo la IA entra en software vertical"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1597,10 +2495,10 @@
       "es": "Plataforma de personajes y agentes conversacionales con IA"
     },
     "summary": {
-      "uk": "Розвиває споживчі AI-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії.",
-      "en": "Builds consumer AI products around personalised characters, chat experiences and long-session engagement.",
-      "ru": "Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия.",
-      "es": "Desarrolla productos de IA para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada."
+      "uk": "Розвиває споживчі AI-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. Додатковий контекст: США · Conversational AI, consumer engagement, characters · Виводить AI-персонажів у масовий споживчий продукт.",
+      "en": "Builds consumer AI products around personalised characters, chat experiences and long-session engagement. Additional context: United States · Conversational AI, consumer engagement, characters · Bringing AI characters into a mass consumer product.",
+      "ru": "Развивает потребительские AI-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. Дополнительный контекст: США · Conversational AI, consumer engagement, characters · Выводит AI-персонажей в массовый потребительский продукт.",
+      "es": "Desarrolla productos de IA para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada. Contexto adicional: Estados Unidos · IA conversacional, engagement de consumo y personajes · Lleva personajes de IA a un producto masivo de consumo."
     },
     "tags": {
       "uk": [
@@ -1669,6 +2567,12 @@
         "Foco en interacción prolongada",
         "Un nicho reconocible entre productos de IA después de 2021"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1683,10 +2587,10 @@
       "es": "Infraestructura crypto y fintech"
     },
     "summary": {
-      "uk": "Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows.",
-      "en": "Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows.",
-      "ru": "Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows.",
-      "es": "Construye infraestructura de pagos y onboarding para activos digitales, wallets y flujos globales de pago."
+      "uk": "Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows. Додатковий контекст: Лондон / Маямі · Payments, crypto onboarding, digital assets · Платіжний шар для цифрових активів і wallets.",
+      "en": "Builds payment and onboarding infrastructure for digital assets, wallets and global payment flows. Additional context: London / Miami · Payments, crypto onboarding, digital assets · A payment layer for digital assets and wallets.",
+      "ru": "Строит платежную и onboarding-инфраструктуру для цифровых активов, wallets и глобальных payment flows. Дополнительный контекст: Лондон / Майами · Payments, crypto onboarding, digital assets · Платежный слой для цифровых активов и wallets.",
+      "es": "Construye infraestructura de pagos y onboarding para activos digitales, wallets y flujos globales de pago. Contexto adicional: Londres / Miami · Pagos, crypto onboarding y activos digitales · Una capa de pagos para activos digitales y wallets."
     },
     "tags": {
       "uk": [
@@ -1755,6 +2659,12 @@
         "Infraestructura para ecosistemas de socios",
         "Actor visible de la ola posterior a 2019"
       ]
+    },
+    "hqCountry": {
+      "uk": "Маямі",
+      "en": "Miami",
+      "ru": "Майами",
+      "es": "Miami"
     }
   },
   {
@@ -1769,10 +2679,10 @@
       "es": "Búsqueda enterprise y knowledge AI"
     },
     "summary": {
-      "uk": "Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів.",
-      "en": "Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows.",
-      "ru": "Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow.",
-      "es": "Construye búsqueda enterprise y una capa de conocimiento sobre documentos, datos SaaS y flujos internos."
+      "uk": "Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів. Додатковий контекст: Пало-Альто, США · Internal search, knowledge access, enterprise productivity · Пошук як knowledge layer для корпоративних команд.",
+      "en": "Builds enterprise search and a knowledge layer across documents, SaaS data and internal workflows. Additional context: Palo Alto, United States · Internal search, knowledge access, enterprise productivity · Search as a knowledge layer for enterprise teams.",
+      "ru": "Создает корпоративный поиск и knowledge layer поверх документов, SaaS-данных и внутренних workflow. Дополнительный контекст: Пало-Альто, США · Internal search, knowledge access, enterprise productivity · Поиск как knowledge layer для корпоративных команд.",
+      "es": "Construye búsqueda enterprise y una capa de conocimiento sobre documentos, datos SaaS y flujos internos. Contexto adicional: Palo Alto, Estados Unidos · Búsqueda interna, acceso al conocimiento y productividad enterprise · Búsqueda como capa de conocimiento para equipos enterprise."
     },
     "tags": {
       "uk": [
@@ -1841,6 +2751,12 @@
         "Opera sobre sistemas SaaS",
         "Su relevancia creció junto a la demanda de knowledge AI"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1855,10 +2771,10 @@
       "es": "Plataforma de Customer AI"
     },
     "summary": {
-      "uk": "Будує AI-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise.",
-      "en": "Builds AI systems for customer experience, support operations and enterprise conversational workflows.",
-      "ru": "Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows.",
-      "es": "Construye sistemas de IA para customer experience, soporte y flujos conversacionales a nivel enterprise."
+      "uk": "Будує AI-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. Додатковий контекст: США · Customer support, service operations, conversational AI · Новий клас AI-сервісу для customer operations.",
+      "en": "Builds AI systems for customer experience, support operations and enterprise conversational workflows. Additional context: United States · Customer support, service operations, conversational AI · A new class of AI service for customer operations.",
+      "ru": "Строит AI-системы для customer experience, поддержки клиентов и enterprise conversational workflows. Дополнительный контекст: США · Customer support, service operations, conversational AI · Новый класс AI-сервиса для customer operations.",
+      "es": "Construye sistemas de IA para customer experience, soporte y flujos conversacionales a nivel enterprise. Contexto adicional: Estados Unidos · Soporte al cliente, operaciones de servicio e IA conversacional · Una nueva clase de servicio de IA para customer operations."
     },
     "tags": {
       "uk": [
@@ -1927,6 +2843,12 @@
         "Narrativa fuerte de servicio enterprise",
         "Parte de la nueva ola de productos agentic de soporte"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -1941,10 +2863,10 @@
       "es": "Plataforma de música generativa"
     },
     "summary": {
-      "uk": "Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows.",
-      "en": "Develops generative music models and products for creating audio, songs and new creative workflows.",
-      "ru": "Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows.",
-      "es": "Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos."
+      "uk": "Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. Додатковий контекст: США · Music generation, audio creation, creator tools · Музика як окремий сегмент генеративного AI.",
+      "en": "Develops generative music models and products for creating audio, songs and new creative workflows. Additional context: United States · Music generation, audio creation, creator tools · Music as a standalone generative-AI segment.",
+      "ru": "Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. Дополнительный контекст: США · Music generation, audio creation, creator tools · Музыка как отдельный сегмент генеративного ИИ.",
+      "es": "Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos. Contexto adicional: Estados Unidos · Generación musical, creación de audio y creator tools · La música como segmento propio de IA generativa."
     },
     "tags": {
       "uk": [
@@ -2013,6 +2935,12 @@
         "Fuerte presencia en creative AI",
         "Muestra a la IA expandiéndose más allá de texto y código"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   },
   {
@@ -2027,10 +2955,10 @@
       "es": "Plataforma de orquestación de workflows"
     },
     "summary": {
-      "uk": "Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів.",
-      "en": "Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes.",
-      "ru": "Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов.",
-      "es": "Construye infraestructura para workflows distribuidos fiables, orquestación backend y procesos de servicio resilientes."
+      "uk": "Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів. Додатковий контекст: Сіетл, США · Distributed systems, workflow orchestration, backend reliability · Інфраструктурний підхід до довгоживучих workflow і backend orchestration.",
+      "en": "Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes. Additional context: Seattle, United States · Distributed systems, workflow orchestration, backend reliability · An infrastructure-first approach to long-running workflows and backend orchestration.",
+      "ru": "Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов. Дополнительный контекст: Сиэтл, США · Distributed systems, workflow orchestration, backend reliability · Инфраструктурный подход к долгоживущим workflow и backend orchestration.",
+      "es": "Construye infraestructura para workflows distribuidos fiables, orquestación backend y procesos de servicio resilientes. Contexto adicional: Seattle, Estados Unidos · Sistemas distribuidos, orquestación de workflows y fiabilidad backend · Un enfoque de infraestructura para workflows de larga duración y orquestación backend."
     },
     "tags": {
       "uk": [
@@ -2099,6 +3027,12 @@
         "Orientado a reliability y equipos backend",
         "Muestra demanda por infraestructura profunda después de 2019"
       ]
+    },
+    "hqCountry": {
+      "uk": "США",
+      "en": "United States",
+      "ru": "США",
+      "es": "Estados Unidos"
     }
   }
 ]

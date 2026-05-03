@@ -155,7 +155,62 @@
             const cards = Array.from(grid.querySelectorAll('[data-directory-card]'));
             const filterButtons = Array.from(panel.querySelectorAll('[data-filter]'));
             const emptyState = panel.parentElement?.querySelector?.('[data-empty-state]');
+            const sortSelect = panel.querySelector('[data-directory-sort]');
+            const countrySelect = panel.querySelector('[data-directory-country]');
+            const yearSelect = panel.querySelector('[data-directory-year]');
             let activeFilter = 'all';
+
+            function sortCardsInDom(mode) {
+                const sorted = [...cards];
+                if (mode === 'az') {
+                    sorted.sort((a, b) => (a.dataset.sortName || '').localeCompare(b.dataset.sortName || '', undefined, { sensitivity: 'base' }));
+                } else if (mode === 'newest') {
+                    sorted.sort((a, b) => {
+                        const fy = parseInt(a.dataset.founded, 10);
+                        const ty = parseInt(b.dataset.founded, 10);
+                        if (!Number.isNaN(fy) && !Number.isNaN(ty) && fy !== ty) return ty - fy;
+                        const fo = parseInt(a.dataset.catalogOrder, 10) || 0;
+                        const to = parseInt(b.dataset.catalogOrder, 10) || 0;
+                        return to - fo;
+                    });
+                } else {
+                    sorted.sort((a, b) => (parseInt(a.dataset.catalogOrder, 10) || 0) - (parseInt(b.dataset.catalogOrder, 10) || 0));
+                }
+                sorted.forEach(c => grid.appendChild(c));
+            }
+
+            function collectParams() {
+                const p = new URLSearchParams();
+                if (searchInput && searchInput.value.trim()) p.set('q', searchInput.value.trim());
+                if (activeFilter && activeFilter !== 'all') p.set('cat', activeFilter);
+                if (countrySelect && countrySelect.value) p.set('c', countrySelect.value);
+                if (yearSelect && yearSelect.value) p.set('y', yearSelect.value);
+                if (sortSelect && sortSelect.value && sortSelect.value !== 'default') p.set('sort', sortSelect.value);
+                return p;
+            }
+
+            function syncUrl() {
+                const u = new URL(window.location.href);
+                const qs = collectParams().toString();
+                u.search = qs ? `?${qs}` : '';
+                window.history.replaceState({}, '', u);
+            }
+
+            function applyFromUrl() {
+                const sp = new URL(window.location.href).searchParams;
+                if (searchInput) searchInput.value = sp.get('q') || '';
+                activeFilter = sp.get('cat') || 'all';
+                filterButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.filter === activeFilter);
+                });
+                if (countrySelect) countrySelect.value = sp.get('c') || '';
+                if (yearSelect) yearSelect.value = sp.get('y') || '';
+                let sortVal = sp.get('sort') || 'default';
+                if (!['default', 'newest', 'az'].includes(sortVal)) sortVal = 'default';
+                if (sortSelect) sortSelect.value = sortVal;
+                sortCardsInDom(sortSelect ? sortSelect.value : 'default');
+                applyDirectoryFilters(false);
+            }
 
             function updateResultsLabel(count) {
                 if (!resultCount) return;
@@ -166,26 +221,40 @@
                 if (!resetButton) return;
                 const hasQuery = Boolean(searchInput && searchInput.value.trim());
                 const hasFilter = activeFilter !== 'all';
-                resetButton.hidden = !(hasQuery || hasFilter);
+                const hasCountry = Boolean(countrySelect && countrySelect.value);
+                const hasYear = Boolean(yearSelect && yearSelect.value);
+                const hasSort = Boolean(sortSelect && sortSelect.value !== 'default');
+                resetButton.hidden = !(hasQuery || hasFilter || hasCountry || hasYear || hasSort);
             }
 
-            function applyDirectoryFilters() {
+            function matchesCountry(card) {
+                if (!countrySelect || !countrySelect.value) return true;
+                return (card.dataset.country || '').trim() === countrySelect.value;
+            }
+
+            function matchesYear(card) {
+                if (!yearSelect || !yearSelect.value) return true;
+                return (card.dataset.founded || '') === yearSelect.value;
+            }
+
+            function applyDirectoryFilters(pushHistory) {
                 const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
                 let visible = 0;
                 cards.forEach(card => {
                     const matchesSearch = !query || card.dataset.search.includes(query);
                     const matchesFilter = activeFilter === 'all' || card.dataset.filterKey === activeFilter;
-                    const show = matchesSearch && matchesFilter;
+                    const show = matchesSearch && matchesFilter && matchesCountry(card) && matchesYear(card);
                     card.hidden = !show;
                     if (show) visible += 1;
                 });
                 if (emptyState) emptyState.hidden = visible !== 0;
                 updateResultsLabel(visible);
                 updateResetState();
+                if (pushHistory !== false) syncUrl();
             }
 
             if (searchInput && cards.length) {
-                searchInput.addEventListener('input', applyDirectoryFilters);
+                searchInput.addEventListener('input', () => applyDirectoryFilters());
             }
 
             filterButtons.forEach(button => {
@@ -196,16 +265,31 @@
                 });
             });
 
+            if (countrySelect) countrySelect.addEventListener('change', () => applyDirectoryFilters());
+            if (yearSelect) yearSelect.addEventListener('change', () => applyDirectoryFilters());
+            if (sortSelect) {
+                sortSelect.addEventListener('change', () => {
+                    sortCardsInDom(sortSelect.value);
+                    applyDirectoryFilters();
+                });
+            }
+
             if (resetButton) {
                 resetButton.addEventListener('click', () => {
                     if (searchInput) searchInput.value = '';
                     activeFilter = 'all';
                     filterButtons.forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+                    if (countrySelect) countrySelect.value = '';
+                    if (yearSelect) yearSelect.value = '';
+                    if (sortSelect) sortSelect.value = 'default';
+                    sortCardsInDom('default');
                     applyDirectoryFilters();
                 });
             }
 
-            applyDirectoryFilters();
+            window.addEventListener('popstate', applyFromUrl);
+
+            applyFromUrl();
         });
     </script>
 </body>
