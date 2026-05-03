@@ -84,10 +84,16 @@ main {
 }
 
 .logo {
+    display: grid;
+    gap: 10px;
+}
+
+
+.logo-caption {
     color: var(--brand);
-    font-size: 1.42rem;
+    font-size: clamp(1.55rem, 3.4vw, 2.3rem);
     font-weight: 800;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
 }
 
 .brand-subtitle {
@@ -1003,23 +1009,57 @@ body[data-theme="dark"] .btn.secondary {
 @media (max-width: 980px) {
     .nav-toggle {
         display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .header-container,
+    .header-container {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .header-container .logo {
+        max-width: calc(100% - 140px);
+    }
+
     .main-nav,
     .header-tools {
+        width: 100%;
         align-items: flex-start;
         flex-direction: column;
     }
 
     .main-nav {
-        width: 100%;
         justify-content: flex-start;
         display: none;
+        gap: 10px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
     }
 
     .main-nav.is-open {
         display: flex;
+    }
+
+    .header-tools {
+        display: none;
+        gap: 12px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface);
+    }
+
+    .header-container.menu-open .header-tools {
+        display: flex;
+    }
+
+    .lang-switcher {
+        width: min(100%, 360px);
+        justify-content: space-between;
     }
 
     .hero,
