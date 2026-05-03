@@ -951,6 +951,10 @@ function writeProfilePage(person, specialists, lang) {
     <h3>${escapeHtml(l.biography)}</h3>
     <p>${escapeHtml(person.bio[lang])}</p>
   </section>
+  ${person.slug === 'bohdan-tiutenko' ? `<section class="profile-verification">
+    <h3>${escapeHtml(lang === 'en' ? 'Verification and editorial standards' : lang === 'es' ? 'Verificación y estándares editoriales' : lang === 'ru' ? 'Проверка и редакционные стандарты' : 'Верифікація та редакційні стандарти')}</h3>
+    <p>${escapeHtml(lang === 'en' ? 'This profile was reviewed as an editorial page focused on career facts, role context, and measurable outcomes. The page avoids hidden SEO blocks and mass-duplicated template text.' : lang === 'es' ? 'Este perfil fue revisado como una página editorial con enfoque en hechos de carrera, contexto de roles y resultados medibles. La página evita bloques SEO ocultos y textos masivamente duplicados.' : lang === 'ru' ? 'Материал обновлён как редакционный профиль с фокусом на факты карьеры, контекст ролей и измеримые результаты. Страница не использует скрытые SEO-блоки и массовое дублирование шаблонных текстов.' : 'Матеріал оновлено як редакційний профіль з фокусом на факти карʼєри, контекст ролей та вимірювані результати. Сторінка не використовує приховані блоки SEO чи масове дублювання шаблонів.')}</p>
+  </section>` : ''}
   <section class="editorial-note">
     <h3>${escapeHtml(l.editorialNoteTitle)}</h3>
     <p>${escapeHtml(l.editorialNoteText)}</p>

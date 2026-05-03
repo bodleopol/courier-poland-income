@@ -745,7 +745,7 @@ const specialists = [
   },
   {
     slug: 'emad-mostaque',
-    image: avatar('Emad Mostaque'),
+    image: commons('Mostaque.jpg'),
     name: t('Емад Мостак', 'Emad Mostaque', 'Эмад Мостак', 'Emad Mostaque'),
     role: t('Співзасновник Stability AI (історичний контекст)', 'Co-founder of Stability AI (historical context)', 'Сооснователь Stability AI (исторический контекст)', 'Cofundador de Stability AI (contexto histórico)'),
     country: t('Велика Британія', 'United Kingdom', 'Великобритания', 'Reino Unido'),
@@ -778,7 +778,7 @@ const specialists = [
   },
   {
     slug: 'patrick-brown',
-    image: avatar('Patrick Brown'),
+    image: commons('Patrick_O_Brown.jpg'),
     name: t('Патрік Браун', 'Patrick Brown', 'Патрик Браун', 'Patrick Brown'),
     role: t('Співзасновник та CEO Impossible Foods', 'Co-founder and CEO of Impossible Foods', 'Сооснователь и CEO Impossible Foods', 'Cofundador y CEO de Impossible Foods'),
     country: t('США', 'United States', 'США', 'Estados Unidos'),
