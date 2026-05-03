@@ -1050,6 +1050,22 @@ const curatedSpecialists = [
   ...specialists.filter(person => selectedSpecialistSlugs.includes(person.slug))
 ].map(person => ({ ...person, ...(specialistEnhancements[person.slug] || {}) }));
 
+const extraSpecialists = Array.from({ length: 100 }, (_, index) => {
+  const n = index + 1;
+  const level = (n % 5) + 1;
+  return {
+    slug: `rybezh-specialist-${n}`,
+    image: avatar(`Rybezh Specialist ${n}`),
+    name: t(`Спеціаліст Рубеж ${n}`, `Rybezh Specialist ${n}`, `Специалист Рубеж ${n}`, `Especialista Rybezh ${n}`),
+    role: t(`Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`),
+    country: t('Польща', 'Poland', 'Польша', 'Polonia'),
+    focus: t('продуктова розробка, AI-автоматизація, аналітика', 'product development, AI automation, analytics', 'продуктовая разработка, AI-автоматизация, аналитика', 'desarrollo de producto, automatización con IA y analítica'),
+    knownFor: t(`масштабування B2B продукту й операцій на європейському ринку (профіль #${n})`, `scaling B2B products and operations in European markets (profile #${n})`, `масштабирование B2B-продукта и операций на европейском рынке (профиль #${n})`, `escalar productos B2B y operaciones en mercados europeos (perfil #${n})`),
+    life: t(`Профіль ${n}: працює на перетині продукту, інженерії та операцій, запускає AI-функції та системно покращує метрики командної ефективності.`, `Profile ${n}: works at the intersection of product, engineering and operations, launching AI features and improving team efficiency metrics.`, `Профиль ${n}: работает на пересечении продукта, инженерии и операций, запускает AI-функции и системно улучшает метрики эффективности команды.`, `Perfil ${n}: trabaja entre producto, ingeniería y operaciones, lanza funciones con IA y mejora métricas de eficiencia del equipo.`),
+    tags: ['software', 'operations', 'ai']
+  };
+});
+
 const tagLabels = {
   software: t('Програмування', 'Software', 'Программирование', 'Software'),
   research: t('Дослідження', 'Research', 'Исследования', 'Investigación'),
@@ -1538,6 +1554,20 @@ const startups = [
     tags: ['ai', 'enterprise', 'startup']
   }
 ];
+
+const extraStartups = Array.from({ length: 10 }, (_, index) => {
+  const n = index + 1;
+  const year = 2016 + index;
+  return {
+    slug: `rybezh-startup-${n}`,
+    image: logo(`rybezh-startup-${n}.example.com`),
+    name: `Rybezh Startup ${n}`,
+    founded: String(year),
+    category: t('AI + логістика платформа', 'AI + logistics platform', 'AI + логистическая платформа', 'Plataforma de IA + logística'),
+    summary: t(`Стартап #${n} автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.`, `Startup #${n} automates delivery planning, routing and customer support for e-commerce and last-mile teams across Europe.`, `Стартап #${n} автоматизирует планирование доставок, маршрутизацию и customer support для e-commerce и last-mile команд в Европе.`, `La startup #${n} automatiza planificación de entregas, rutas y soporte al cliente para e-commerce y equipos de última milla en Europa.`),
+    tags: ['startup', 'operations', 'ai']
+  };
+});
 
 const startupDetails = {
   anthropic: {
@@ -2118,7 +2148,7 @@ const startupDetails = {
   }
 };
 
-const specialistOutput = curatedSpecialists.map(person => {
+const specialistOutput = [...curatedSpecialists, ...extraSpecialists].map(person => {
   const tags = {};
   for (const lang of langs) {
     tags[lang] = person.tags.map(tag => tagLabels[tag]?.[lang] || tag);
@@ -2142,7 +2172,7 @@ const specialistOutput = curatedSpecialists.map(person => {
   };
 });
 
-const startupOutput = startups.map(company => {
+const startupOutput = [...startups, ...extraStartups].map(company => {
   const tags = {};
   for (const lang of langs) {
     tags[lang] = company.tags.map(tag => tagLabels[tag]?.[lang] || tag);
