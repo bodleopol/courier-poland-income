@@ -17,6 +17,7 @@ const tr = {
     heroText: 'Rybezh збирає перевірені профілі програмістів, інженерів, дослідників, директорів, засновників стартапів і операційних лідерів. У центрі - сучасні професіонали, зрозуміла структура профілю, фотографії та прозора редакційна політика.',
     heroPrimary: 'Переглянути базу спеціалістів',
     heroSecondary: 'Сторінка стартапів',
+    heroPhotoStrip: 'Живі фото профілів із каталогу',
     featuredTitle: 'Рекомендовані профілі',
     featuredText: 'Добірка спеціалістів, чиї ролі добре показують сучасний технологічний ринок: software, infrastructure, AI, product, operations і executive management.',
     sectorsTitle: 'Напрями, які ми покриваємо',
@@ -175,6 +176,7 @@ const tr = {
     heroText: 'Rybezh brings together structured profiles of programmers, engineers, researchers, directors, startup founders and operations leaders. The focus is on modern professionals, visible profile photography, clean structure and transparent editorial standards.',
     heroPrimary: 'Browse specialists',
     heroSecondary: 'Explore startups',
+    heroPhotoStrip: 'Real faces from the directory',
     featuredTitle: 'Featured profiles',
     featuredText: 'A curated selection of people whose careers reflect the modern technology market: software, infrastructure, AI, product, operations and executive management.',
     sectorsTitle: 'What the catalogue covers',
@@ -333,6 +335,7 @@ const tr = {
     heroText: 'Rybezh reúne perfiles estructurados de programadores, ingenieros, investigadores, directivos, fundadores de startups y líderes de operaciones. El foco está en profesionales contemporáneos, fotografía visible en el perfil, estructura clara y estándares editoriales transparentes.',
     heroPrimary: 'Ver especialistas',
     heroSecondary: 'Explorar startups',
+    heroPhotoStrip: 'Rostros reales del directorio',
     featuredTitle: 'Perfiles destacados',
     featuredText: 'Una selección curada de personas cuyas carreras reflejan el mercado tecnológico moderno: software, infraestructura, IA, producto, operaciones y gestión ejecutiva.',
     sectorsTitle: 'Qué cubre el catálogo',
@@ -491,6 +494,7 @@ const tr = {
     heroText: 'Rybezh объединяет структурированные профили программистов, инженеров, исследователей, директоров, основателей стартапов и операционных лидеров. В фокусе - современные специалисты, видимые фотографии профиля, понятная структура и прозрачные редакционные стандарты.',
     heroPrimary: 'Открыть базу специалистов',
     heroSecondary: 'Посмотреть стартапы',
+    heroPhotoStrip: 'Реальные фото профилей из каталога',
     featuredTitle: 'Рекомендованные профили',
     featuredText: 'Подборка людей, чьи карьеры хорошо показывают современный технологический рынок: software, infrastructure, AI, product, operations и executive management.',
     sectorsTitle: 'Какие направления покрывает каталог',
@@ -681,6 +685,11 @@ const description = (text, max = 160) => {
 };
 const fallback = alt => `https://ui-avatars.com/api/?name=${encodeURIComponent(alt)}&size=720&background=eef4ff&color=2563eb&bold=true`;
 const image = (src, alt, className = '') => `<img src="${escapeHtml(src || fallback(alt))}" alt="${escapeHtml(alt)}"${className ? ` class="${className}"` : ''} loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback(alt)}';">`;
+function heroFacepile(specialists, lang) {
+  const picks = specialists.filter(person => person.slug !== 'bohdan-tiutenko').slice(0, 5);
+  if (!picks.length) return '';
+  return `<div class="hero-facepile" aria-hidden="true">${picks.map(person => `<span class="hero-face">${image(person.image, person.name[lang], 'hero-avatar')}</span>`).join('')}</div>`;
+}
 const tagMarkup = (items = []) => `<div class="tags">${items.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('')}</div>`;
 
 function clearGeneratedPages() {
@@ -989,6 +998,8 @@ function writeIndex(lang, specialists, startups) {
       <a class="btn" href="${pageName('specialists', lang)}">${escapeHtml(l.heroPrimary)}</a>
       <a class="btn secondary" href="${pageName('startups', lang)}">${escapeHtml(l.heroSecondary)}</a>
     </div>
+    ${heroFacepile(specialists, lang)}
+    <p class="hero-photo-caption">${escapeHtml(l.heroPhotoStrip)}</p>
     ${featureList(l.trust)}
   </div>
   <div class="hero-panel">

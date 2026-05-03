@@ -5,6 +5,7 @@ const langs = ['uk', 'en', 'ru', 'es'];
 const t = (uk, en, ru, es) => ({ uk, en, ru, es });
 const commons = file => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURI(file.replaceAll(' ', '_'))}?width=720`;
 const logo = domain => `https://logo.clearbit.com/${domain}`;
+const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=720&background=eef4ff&color=2563eb&bold=true`;
 
 const MIN_BIO_LENGTH = 280;
 
@@ -457,28 +458,6 @@ const specialists = [
     tags: ['science', 'physics', 'research']
   },
   {
-    slug: 'patrick-collison',
-    image: commons('Patrick_Collison_Web_Summit_2018.jpg'),
-    name: t('Патрік Коллісон', 'Patrick Collison', 'Патрик Коллисон', 'Patrick Collison'),
-    role: t('Співзасновник та CEO Stripe', 'Co-founder and CEO of Stripe', 'Сооснователь и CEO Stripe', 'Cofundador y CEO de Stripe'),
-    country: t('Ірландія / США', 'Ireland / United States', 'Ирландия / США', 'Irlanda / Estados Unidos'),
-    focus: t('фінтех, платіжна інфраструктура, стартап-екосистеми', 'fintech, payments infrastructure, startup ecosystems', 'финтех, платежная инфраструктура, стартап-экосистемы', 'fintech, infraestructura de pagos y ecosistemas startup'),
-    knownFor: t('створення Stripe як платформи для інтернет-платежів', 'building Stripe as an internet payments platform', 'создание Stripe как платформы интернет-платежей', 'construir Stripe como plataforma de pagos en internet'),
-    life: t('Його робота цікава операційним командам, бо Stripe поєднує API-дизайн, комплаєнс і глобальну фінансову інфраструктуру.', 'His work matters to operations teams because Stripe combines API design, compliance and global financial infrastructure.', 'Его работа важна операционным командам: Stripe объединяет API-дизайн, комплаенс и глобальную финансовую инфраструктуру.', 'Su trabajo importa a equipos operativos porque Stripe combina diseño de API, cumplimiento e infraestructura financiera global.'),
-    tags: ['ceo', 'fintech', 'startup']
-  },
-  {
-    slug: 'melanie-perkins',
-    image: commons('Melanie_Perkins_at_TechCrunch_Disrupt_SF_2019.jpg'),
-    name: t('Мелані Перкінс', 'Melanie Perkins', 'Мелани Перкинс', 'Melanie Perkins'),
-    role: t('Співзасновниця та CEO Canva', 'Co-founder and CEO of Canva', 'Соосновательница и CEO Canva', 'Cofundadora y CEO de Canva'),
-    country: t('Австралія', 'Australia', 'Австралия', 'Australia'),
-    focus: t('дизайн-платформи, продуктова стратегія, глобальне масштабування', 'design platforms, product strategy, global scaling', 'дизайн-платформы, продуктовая стратегия, глобальное масштабирование', 'plataformas de diseño, estrategia de producto y escala global'),
-    knownFor: t('перетворення Canva на масову платформу дизайну', 'turning Canva into a mainstream design platform', 'превращение Canva в массовую платформу дизайна', 'convertir Canva en una plataforma masiva de diseño'),
-    life: t('Її шлях показує, як простий користувацький досвід може відкрити професійні інструменти для мільйонів людей.', 'Her path shows how simple user experience can open professional tools to millions of people.', 'Ее путь показывает, как простой пользовательский опыт открывает профессиональные инструменты миллионам людей.', 'Su trayectoria muestra cómo una experiencia simple abre herramientas profesionales a millones de personas.'),
-    tags: ['ceo', 'design', 'startup']
-  },
-  {
     slug: 'charity-majors',
     image: commons('Charity_Majors_2019.jpg'),
     name: t('Черіті Мейджорс', 'Charity Majors', 'Чэрити Мейджорс', 'Charity Majors'),
@@ -598,11 +577,251 @@ const specialists = [
     knownFor: t('помітну роль у регуляторній дискусії навколо великих технологічних платформ після 2020 року', 'a visible role in the post-2020 regulatory debate around major technology platforms', 'заметную роль в регуляторной дискуссии вокруг крупных технологических платформ после 2020 года', 'un papel visible en el debate regulatorio posterior a 2020 sobre las grandes plataformas tecnológicas'),
     life: t('Її профіль додає до бази не лише засновників і CEO, а й тих, хто формує правила гри для цифрової економіки нового циклу.', 'Her profile adds not only founders and CEOs but also the people shaping the rules of the new-cycle digital economy.', 'Ее профиль добавляет в базу не только основателей и CEO, но и тех, кто формирует правила игры для цифровой экономики нового цикла.', 'Su perfil añade a la base no solo fundadores y CEOs, sino también a quienes están definiendo las reglas de la nueva economía digital.'),
     tags: ['operations', 'leadership', 'technology']
+  },
+  {
+    slug: 'jeff-dean',
+    image: commons('JeffDean2019.jpg'),
+    name: t('Джефф Дін', 'Jeff Dean', 'Джефф Дин', 'Jeff Dean'),
+    role: t('SVP Google Research та Google DeepMind, інженер систем ШІ', 'SVP Google Research and Google DeepMind, AI systems engineer', 'SVP Google Research и Google DeepMind, инженер AI-систем', 'SVP de Google Research y Google DeepMind, ingeniero de sistemas de IA'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('великі моделі, інфраструктура навчання, масштабовані системи ML', 'large models, training infrastructure, scalable ML systems', 'большие модели, инфраструктура обучения, масштабируемые ML-системы', 'grandes modelos, infraestructura de entrenamiento y sistemas ML escalables'),
+    knownFor: t('архітектуру та інженерію TensorFlow, MapReduce та ключових Google AI-систем', 'architecture and engineering behind TensorFlow, MapReduce and core Google AI systems', 'архитектуру и инженерию TensorFlow, MapReduce и ключевых Google AI-систем', 'la arquitectura e ingeniería detrás de TensorFlow, MapReduce y sistemas centrales de IA en Google'),
+    life: t('Його профіль показує шар технічного лідерства в Big Tech, де дослідження і продакшн-інфраструктура зводяться в одному карʼєрному треку.', 'His profile illustrates technical leadership in Big Tech where research and production infrastructure live in one career thread.', 'Его профиль показывает слой технического лидерства в Big Tech, где исследования и production-инфраструктура идут в одной карьерной линии.', 'Su perfil muestra liderazgo técnico en Big Tech donde investigación e infraestructura de producción comparten el mismo hilo profesional.'),
+    tags: ['ai', 'software', 'engineering']
+  },
+  {
+    slug: 'sundar-pichai',
+    image: commons('Sundar_Pichai_(cropped).jpg'),
+    name: t('Сундар Пічаї', 'Sundar Pichai', 'Сундар Пичаи', 'Sundar Pichai'),
+    role: t('CEO Alphabet та Google', 'CEO of Alphabet and Google', 'CEO Alphabet и Google', 'CEO de Alphabet y Google'),
+    country: t('Індія / США', 'India / United States', 'Индия / США', 'India / Estados Unidos'),
+    focus: t('стратегія продуктів, хмара, пошук, Android та AI-платформи', 'product strategy, cloud, search, Android and AI platforms', 'стратегия продуктов, облако, поиск, Android и AI-платформы', 'estrategia de producto, cloud, búsqueda, Android y plataformas de IA'),
+    knownFor: t('керівництво Google в епоху хмарних сервісів і інтеграції AI у продукти мільярдної аудиторії', 'leading Google through the cloud era and embedding AI into products used by billions', 'руководство Google в эпоху облачных сервисов и встраивание ИИ в продукты для миллиардной аудитории', 'liderar Google en la era cloud e integrar IA en productos usados por miles de millones de personas'),
+    life: t('Його шлях часто наводять як приклад інженерного CEO з глибоким розумінням платформ і екосистем.', 'His path is often cited as an example of a platform-minded CEO with deep ecosystem judgement.', 'Его путь часто приводят как пример инженерного CEO с глубоким пониманием платформ и экосистем.', 'Su trayectoria suele citarse como ejemplo de un CEO con mentalidad de plataforma y juicio de ecosistema.'),
+    tags: ['ceo', 'cloud', 'ai']
+  },
+  {
+    slug: 'sergey-brin',
+    image: commons('Sergey_Brin_Moscow_September_2015.jpg'),
+    name: t('Сергій Брін', 'Sergey Brin', 'Сергей Брин', 'Sergey Brin'),
+    role: t('Співзасновник Google, технологічний підприємець', 'Google co-founder, technology entrepreneur', 'Сооснователь Google, технологический предприниматель', 'Cofundador de Google, emprendedor tecnológico'),
+    country: t('СРСР / США', 'Soviet Union / United States', 'СССР / США', 'URSS / Estados Unidos'),
+    focus: t('пошукові системи, масштаб інтернет-сервісів, deep-tech інвестиції', 'search systems, scaling internet services, deep-tech investing', 'поисковые системы, масштаб интернет-сервисов, deep-tech инвестиции', 'sistemas de búsqueda, escala de servicios de internet e inversión deep tech'),
+    knownFor: t('співстворення Google та формування культури data-driven продуктів', 'co-creating Google and shaping a data-driven product culture', 'сооснование Google и формирование культуры data-driven продуктов', 'cofundar Google y moldear una cultura de producto basada en datos'),
+    life: t('Його профіль доповнює каталог ранніх архітекторів сучасного вебу та рекламних платформ.', 'His profile complements the catalogue with one of the architects of the modern web and ad platforms.', 'Его профиль дополняет каталог ранними архитекторами современного веба и рекламных платформ.', 'Su perfil complementa el catálogo como uno de los arquitectos de la web moderna y las plataformas publicitarias.'),
+    tags: ['software', 'leadership', 'startup']
+  },
+  {
+    slug: 'larry-page',
+    image: commons('Larry_Page_in_the_European_Parliament,_17_June_2009.jpg'),
+    name: t('Ларрі Пейдж', 'Larry Page', 'Ларри Пейдж', 'Larry Page'),
+    role: t('Співзасновник Google, інженер-підприємець', 'Google co-founder, engineer-entrepreneur', 'Сооснователь Google, инженер-предприниматель', 'Cofundador de Google, ingeniero emprendedor'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('алгоритми пошуку, інженерія великих розподілених систем', 'search algorithms, engineering of large distributed systems', 'алгоритмы поиска, инженерия больших распределенных систем', 'algoritmos de búsqueda e ingeniería de sistemas distribuidos a gran escala'),
+    knownFor: t('PageRank та перетворення пошуку на глобальну технологічну платформу', 'PageRank and turning search into a global technology platform', 'PageRank и превращение поиска в глобальную технологическую платформу', 'PageRank y convertir la búsqueda en una plataforma tecnológica global'),
+    life: t('Його історія нагадує, що масштаб Big Tech починається з конкретної інженерної ідеї та рішучої ітерації.', 'His story reminds us that Big Tech scale starts from a concrete engineering idea and relentless iteration.', 'Его история напоминает, что масштаб Big Tech начинается с конкретной инженерной идеи и настойчивой итерации.', 'Su historia recuerda que la escala Big Tech nace de una idea de ingeniería concreta y una iteración implacable.'),
+    tags: ['software', 'engineering', 'startup']
+  },
+  {
+    slug: 'andy-jassy',
+    image: commons('Andy_Jassy_keynote_image_(cropped).jpg'),
+    name: t('Енді Джассі', 'Andy Jassy', 'Энди Джасси', 'Andy Jassy'),
+    role: t('Президент та CEO Amazon', 'President and CEO of Amazon', 'Президент и CEO Amazon', 'Presidente y CEO de Amazon'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('хмарна інфраструктура, e-commerce, операційна масштабованість', 'cloud infrastructure, e-commerce, operational scale', 'облачная инфраструктура, e-commerce, операционная масштабируемость', 'infraestructura cloud, comercio electrónico y escala operativa'),
+    knownFor: t('побудову AWS як двигуна хмарних сервісів і розширення екосистеми Amazon', 'building AWS as the cloud-services engine and expanding the Amazon ecosystem', 'построение AWS как двигателя облачных сервисов и расширение экосистемы Amazon', 'construir AWS como motor de servicios cloud y ampliar el ecosistema de Amazon'),
+    life: t('Його карʼєра ілюструє, як інфраструктурний продукт може стати окремим світовим шаром для індустрії.', 'His career shows how an infrastructure product can become its own global layer for the industry.', 'Его карьера показывает, как инфраструктурный продукт может стать отдельным глобальным слоем для индустрии.', 'Su carrera muestra cómo un producto de infraestructura puede volverse una capa global para la industria.'),
+    tags: ['ceo', 'cloud', 'operations']
+  },
+  {
+    slug: 'adam-selipsky',
+    image: commons('Adam_Selipsky_-_AWS_re_Invent_2021_-_Database_Keynote_(cropped).jpg'),
+    name: t('Адам Селіпскі', 'Adam Selipsky', 'Адам Селипски', 'Adam Selipsky'),
+    role: t('Колишній CEO Amazon Web Services (AWS)', 'Former CEO of Amazon Web Services (AWS)', 'Бывший CEO Amazon Web Services (AWS)', 'Ex CEO de Amazon Web Services (AWS)'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('хмарні сервіси для підприємств, go-to-market, масштабування AWS', 'enterprise cloud services, go-to-market, scaling AWS', 'облачные сервисы для предприятий, go-to-market, масштабирование AWS', 'servicios cloud enterprise, go-to-market y escalamiento de AWS'),
+    knownFor: t('керівництво клієнтським розширенням AWS та поєднання інфраструктури з практиками підприємств', 'leading AWS customer expansion and pairing infrastructure with enterprise practice', 'руководство расширением клиентской базы AWS и сочетание инфраструктуры с enterprise-практиками', 'liderar la expansión de clientes de AWS y alinear infraestructura con prácticas empresariales'),
+    life: t('Цей профіль підкреслює операційний шар хмарного бізнесу: не лише технічні регіони, а й масштабований GTM.', 'This profile highlights the operational side of cloud: not only technical regions but scalable go-to-market motion.', 'Этот профиль подчеркивает операционный слой облачного бизнеса: не только технические регионы, но и масштабируемый GTM.', 'Este perfil enfatiza la capa operativa de la nube: no solo regiones técnicas sino un GTM escalable.'),
+    tags: ['ceo', 'cloud', 'enterprise']
+  },
+  {
+    slug: 'werner-vogels',
+    image: commons('Werner_Vogels.jpg'),
+    name: t('Вернер Фогельс', 'Werner Vogels', 'Вернер Фогельс', 'Werner Vogels'),
+    role: t('CTO та віце-президент Amazon', 'CTO and vice president of Amazon', 'CTO и вице-президент Amazon', 'CTO y vicepresidente de Amazon'),
+    country: t('Нідерланди / США', 'Netherlands / United States', 'Нидерланды / США', 'Países Bajos / Estados Unidos'),
+    focus: t('розподілені системи, надійність, архітектура хмарних сервісів', 'distributed systems, reliability, cloud service architecture', 'распределенные системы, надежность, архитектура облачных сервисов', 'sistemas distribuidos, fiabilidad y arquitectura de servicios cloud'),
+    knownFor: t('архітектурні принципи та практики, що сформували культуру AWS', 'architectural principles and practices that shaped the AWS culture', 'архитектурные принципы и практики, сформировавшие культуру AWS', 'principios y prácticas arquitectónicas que moldearon la cultura de AWS'),
+    life: t('Для інженерних команд його імʼя асоціюється з дисципліною масштабованих систем у продакшені.', 'For engineering teams his name is tied to discipline around scalable systems in production.', 'Для инженерных команд его имя связано с дисциплиной масштабируемых систем в продакшене.', 'Para equipos de ingeniería su nombre evoca disciplina en sistemas escalables en producción.'),
+    tags: ['engineering', 'cloud', 'operations']
+  },
+  {
+    slug: 'kevin-scott',
+    image: commons('Kevin_Scott_Microsoft.jpg'),
+    name: t('Кевін Скотт', 'Kevin Scott', 'Кевин Скотт', 'Kevin Scott'),
+    role: t('CTO Microsoft, лідер інженерних платформ', 'CTO of Microsoft, engineering platforms leader', 'CTO Microsoft, лидер инженерных платформ', 'CTO de Microsoft, líder de plataformas de ingeniería'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('AI-платформи, інженерна культура, масштабування R&D', 'AI platforms, engineering culture, scaling R&D', 'AI-платформы, инженерная культура, масштабирование R&D', 'plataformas de IA, cultura de ingeniería y escalamiento de I+D'),
+    knownFor: t('єднання довгострокової AI-стратегії Microsoft із практикою розробників і підприємств', 'connecting Microsoft\'s long-term AI strategy with developer and enterprise practice', 'связь долгосрочной AI-стратегии Microsoft с практикой разработчиков и предприятий', 'conectar la estrategia de IA a largo plazo de Microsoft con prácticas de desarrolladores y empresas'),
+    life: t('Його роль показує, як CTO у великій компанії координує продуктові лінії, партнерства й відкриті інструменти.', 'His role shows how a CTO at a large company aligns product lines, partnerships and open tooling.', 'Его роль показывает, как CTO в большой компании выравнивает продуктовые линии, партнерства и открытые инструменты.', 'Su papel muestra cómo un CTO alinea líneas de producto, alianzas y herramientas abiertas en una gran empresa.'),
+    tags: ['ai', 'software', 'engineering']
+  },
+  {
+    slug: 'scott-guthrie',
+    image: commons('Scott_Guthrie_(cropped).jpg'),
+    name: t('Скотт Гатрі', 'Scott Guthrie', 'Скотт Гатри', 'Scott Guthrie'),
+    role: t('EVP Cloud + AI Group, Microsoft', 'EVP Cloud + AI Group, Microsoft', 'EVP Cloud + AI Group, Microsoft', 'EVP Cloud + AI Group, Microsoft'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('Azure, хмарні сервіси для підприємств, developer tooling', 'Azure, enterprise cloud services, developer tooling', 'Azure, облачные сервисы для предприятий, developer tooling', 'Azure, servicios cloud empresariales y herramientas para desarrolladores'),
+    knownFor: t('розбудову Azure як конкурентної хмарної платформи та екосистеми .NET', 'building Azure as a competitive cloud platform and the .NET ecosystem', 'развитие Azure как конкурентной облачной платформы и экосистемы .NET', 'impulsar Azure como plataforma cloud competitiva y la comunidad .NET'),
+    life: t('Інженерні команди часто звертаються до його профілю як до прикладу поєднання платформи й спільноти розробників.', 'Engineering teams often reference his profile as an example of blending platform and developer community.', 'Инженерные команды часто ссылаются на его профиль как на пример сочетания платформы и сообщества разработчиков.', 'Los equipos de ingeniería citan su perfil como ejemplo de combinar plataforma y comunidad de desarrolladores.'),
+    tags: ['cloud', 'software', 'enterprise']
+  },
+  {
+    slug: 'larry-ellison',
+    image: commons('Larry_Ellison_on_stage.jpg'),
+    name: t('Ларрі Еллісон', 'Larry Ellison', 'Ларри Эллисон', 'Larry Ellison'),
+    role: t('Співзасновник та головний технологічний офіцер Oracle', 'Oracle co-founder and chief technology officer', 'Сооснователь и CTO Oracle', 'Cofundador y CTO de Oracle'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('корпоративні бази даних, хмарна трансформація, інженерія ПЗ', 'enterprise databases, cloud transformation, software engineering', 'корпоративные базы данных, облачная трансформация, инженерия ПО', 'bases de datos empresariales, transformación cloud e ingeniería de software'),
+    knownFor: t('формування ринку реляційних БД для бізнесу та масштабування Oracle у хмару', 'shaping the enterprise relational database market and scaling Oracle toward cloud', 'формирование рынка реляционных БД для бизнеса и масштабирование Oracle к облаку', 'moldear el mercado de bases relacionales enterprise y escalar Oracle hacia la nube'),
+    life: t('Його профіль допомагає зрозуміти довгу історію enterprise-software як інженерної та комерційної дисципліни.', 'His profile helps explain the long arc of enterprise software as both engineering and commercial discipline.', 'Его профиль помогает понять долгую историю enterprise-software как инженерной и коммерческой дисциплины.', 'Su perfil ayuda a entender el arco largo del software enterprise como disciplina técnica y comercial.'),
+    tags: ['ceo', 'enterprise', 'cloud']
+  },
+  {
+    slug: 'clara-shih',
+    image: commons('Clara_Shih_(cropped).jpg'),
+    name: t('Клара Ших', 'Clara Shih', 'Клара Ших', 'Clara Shih'),
+    role: t('CEO Salesforce AI', 'CEO of Salesforce AI', 'CEO Salesforce AI', 'CEO de Salesforce AI'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('AI для CRM, корпоративні застосування моделей, продуктова стратегія', 'AI for CRM, enterprise model applications, product strategy', 'AI для CRM, корпоративные применения моделей, продуктовая стратегия', 'IA para CRM, aplicaciones empresariales de modelos y estrategia de producto'),
+    knownFor: t('інтеграцію генеративного AI у Salesforce та роботу з підприємницькими workflow', 'integrating generative AI into Salesforce and enterprise workflows', 'интеграцию генеративного ИИ в Salesforce и корпоративные workflow', 'integrar IA generativa en Salesforce y flujos de trabajo empresariales'),
+    life: t('Вона представляє покоління продуктових лідерів, які поєднують класичний SaaS із новою хвилею моделей.', 'She represents product leaders blending classic SaaS with the new wave of models.', 'Она представляет поколение продуктовых лидеров, соединяющих классический SaaS с новой волной моделей.', 'Representa a líderes de producto que combinan SaaS clásico con la nueva ola de modelos.'),
+    tags: ['ai', 'enterprise', 'leadership']
+  },
+  {
+    slug: 'greg-brockman',
+    image: commons('Greg_Brockman_OpenAI_DevDay_(cropped).jpg'),
+    name: t('Грег Брокман', 'Greg Brockman', 'Грег Брокман', 'Greg Brockman'),
+    role: t('Президент та співзасновник OpenAI', 'President and co-founder of OpenAI', 'Президент и сооснователь OpenAI', 'Presidente y cofundador de OpenAI'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('інженерія великих моделей, API-платформи, операційне масштабування AI', 'large-model engineering, API platforms, operational AI scale', 'инженерия больших моделей, API-платформы, операционное масштабирование ИИ', 'ingeniería de grandes modelos, plataformas API y escala operativa de IA'),
+    knownFor: t('співстворення інженерної бази OpenAI та екосистеми для розробників', 'co-building OpenAI\'s engineering foundation and developer ecosystem', 'сооснование инженерной базы OpenAI и экосистемы для разработчиков', 'cofundar la base de ingeniería de OpenAI y el ecosistema para desarrolladores'),
+    life: t('Його профіль корисний для розуміння, як дослідницька організація перетворюється на масштабну продуктово-інженерну структуру.', 'His profile helps explain how a research organisation becomes a large product-engineering organisation.', 'Его профиль полезен для понимания, как исследовательская организация превращается в крупную продуктово-инженерную структуру.', 'Su perfil ayuda a explicar cómo una organización de investigación se convierte en una gran estructura de producto e ingeniería.'),
+    tags: ['ai', 'software', 'startup']
+  },
+  {
+    slug: 'mark-zuckerberg',
+    image: commons('Mark_Zuckerberg_F8_2018_Keynote_(cropped).jpg'),
+    name: t('Марк Цукерберг', 'Mark Zuckerberg', 'Марк Цукерберг', 'Mark Zuckerberg'),
+    role: t('Співзасновник та CEO Meta', 'Co-founder and CEO of Meta', 'Сооснователь и CEO Meta', 'Cofundador y CEO de Meta'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('соціальні платформи, рекламні системи, інвестиції в VR та AI', 'social platforms, advertising systems, VR and AI investment', 'социальные платформы, рекламные системы, инвестиции в VR и ИИ', 'plataformas sociales, publicidad e inversión en RV e IA'),
+    knownFor: t('Facebook / Meta як глобальну мережу та центр інженерних масштабів у споживчому інтернеті', 'Facebook / Meta as a global network and engineering centre for consumer internet scale', 'Facebook / Meta как глобальную сеть и инженерный центр масштаба потребительского интернета', 'Facebook / Meta como red global y centro de ingeniería a escala de internet para consumo'),
+    life: t('Його карʼєра ілюструє поєднання продуктового бачення та постійних інфраструктурних викликів у соціальних мережах.', 'His career illustrates product vision paired with persistent infrastructure challenges in social networks.', 'Его карьера иллюстрирует сочетание продуктового видения и постоянных инфраструктурных вызовов в социальных сетях.', 'Su carrera ilustra visión de producto junto a retos persistentes de infraestructura en redes sociales.'),
+    tags: ['ceo', 'software', 'ai']
+  },
+  {
+    slug: 'stewart-butterfield',
+    image: commons('Stewart_Butterfield_-_TechCrunch_Disrupt_SF_2019_-_Day_2_(48687869896)_(cropped).jpg'),
+    name: t('Стюарт Баттерфілд', 'Stewart Butterfield', 'Стюарт Баттерфилд', 'Stewart Butterfield'),
+    role: t('Співзасновник Slack та Flickr, продуктовий підприємець', 'Co-founder of Slack and Flickr, product entrepreneur', 'Сооснователь Slack и Flickr, продуктовый предприниматель', 'Cofundador de Slack y Flickr, emprendedor de producto'),
+    country: t('Канада / США', 'Canada / United States', 'Канада / США', 'Canadá / Estados Unidos'),
+    focus: t('комунікаційні продукти для команд, SaaS-UX, enterprise collaboration', 'team communication products, SaaS UX, enterprise collaboration', 'коммуникационные продукты для команд, SaaS UX, enterprise collaboration', 'productos de comunicación para equipos, UX SaaS y colaboración enterprise'),
+    knownFor: t('перехід від споживчого фото-сервісу до корпоративного чату Slack', 'moving from a consumer photo product to enterprise chat with Slack', 'переход от потребительского фото-сервиса к корпоративному чату Slack', 'pasar de un producto de fotos para consumo al chat empresarial Slack'),
+    life: t('Цей профіль показує тип засновника, який декілька разів знаходить продуктовий fit у різних доменах.', 'This profile shows a founder who repeatedly finds product-market fit across domains.', 'Этот профиль показывает основателя, который несколько раз находит product-market fit в разных доменах.', 'Este perfil muestra a un fundador que encuentra encaje producto-mercado en varios dominios.'),
+    tags: ['ceo', 'software', 'startup']
+  },
+  {
+    slug: 'guillermo-rauch',
+    image: commons('Guillermo_Rauch.jpg'),
+    name: t('Гільєрмо Рауч', 'Guillermo Rauch', 'Гильермо Рауч', 'Guillermo Rauch'),
+    role: t('CEO Vercel, інженер open-source', 'CEO of Vercel, open-source engineer', 'CEO Vercel, open-source инженер', 'CEO de Vercel, ingeniero open source'),
+    country: t('Аргентина / США', 'Argentina / United States', 'Аргентина / США', 'Argentina / Estados Unidos'),
+    focus: t('frontend cloud, Next.js, developer experience', 'frontend cloud, Next.js, developer experience', 'frontend cloud, Next.js, developer experience', 'frontend cloud, Next.js y developer experience'),
+    knownFor: t('створення Next.js та розвиток modern web deployment платформи Vercel', 'creating Next.js and growing Vercel as a modern web deployment platform', 'создание Next.js и развитие Vercel как платформы современного web deployment', 'crear Next.js y hacer crecer Vercel como plataforma de despliegue web moderno'),
+    life: t('Його профіль додає до бази незалежні стартапи інструментів для розробників поза межами гігантських корпорацій.', 'His profile adds independent developer-tool startups outside the giant corporate umbrella.', 'Его профиль добавляет независимые стартапы инструментов для разработчиков вне гигантских корпораций.', 'Su perfil añade startups independientes de herramientas para desarrolladores fuera del paraguas corporativo gigante.'),
+    tags: ['software', 'startup', 'engineering']
+  },
+  {
+    slug: 'emad-mostaque',
+    image: avatar('Emad Mostaque'),
+    name: t('Емад Мостак', 'Emad Mostaque', 'Эмад Мостак', 'Emad Mostaque'),
+    role: t('Співзасновник Stability AI (історичний контекст)', 'Co-founder of Stability AI (historical context)', 'Сооснователь Stability AI (исторический контекст)', 'Cofundador de Stability AI (contexto histórico)'),
+    country: t('Велика Британія', 'United Kingdom', 'Великобритания', 'Reino Unido'),
+    focus: t('відкриті моделі зображень, спільнота дослідників, генеративний ШІ', 'open image models, researcher community, generative AI', 'открытые модели изображений, сообщество исследователей, генеративный ИИ', 'modelos de imagen abiertos, comunidad investigadora e IA generativa'),
+    knownFor: t('хвилю Stable Diffusion як відкритої альтернативи у генеративних зображеннях', 'the Stable Diffusion wave as an open alternative in generative imaging', 'волну Stable Diffusion как открытую альтернативу в генеративных изображениях', 'la ola Stable Diffusion como alternativa abierta en imagen generativa'),
+    life: t('Редакційно його профіль включено як маркер нової хвилі відкритих моделей і спільнот навколо них.', 'Editorially his profile marks the new wave of open models and the communities around them.', 'Редакционно его профиль включен как маркер новой волны открытых моделей и сообществ вокруг них.', 'Editorialmente su perfil marca la nueva ola de modelos abiertos y las comunidades en torno a ellos.'),
+    tags: ['ai', 'startup', 'research']
+  },
+  {
+    slug: 'john-collison',
+    image: commons('John_Collison_Web_Summit_2018_-_Day_3_(45687496374)_(cropped).jpg'),
+    name: t('Джон Коллісон', 'John Collison', 'Джон Коллисон', 'John Collison'),
+    role: t('Співзасновник та президент Stripe', 'Co-founder and president of Stripe', 'Сооснователь и президент Stripe', 'Cofundador y presidente de Stripe'),
+    country: t('Ірландія / США', 'Ireland / United States', 'Ирландия / США', 'Irlanda / Estados Unidos'),
+    focus: t('фінтех-операції, міжнародне масштабування, продуктова інфраструктура', 'fintech operations, international scaling, product infrastructure', 'финтех-операции, международное масштабирование, продуктовая инфраструктура', 'operaciones fintech, escala internacional e infraestructura de producto'),
+    knownFor: t('побудову Stripe разом із братом як глобального шару платежів для інтернету', 'building Stripe with his brother as a global payments layer for the internet', 'построение Stripe вместе с братом как глобального платежного слоя для интернета', 'construir Stripe junto a su hermano como capa global de pagos para internet'),
+    life: t('Цей профіль доповнює Patrick Collison як приклад співпраці співзасновників у глибоко технічному фінтехі.', 'This profile complements Patrick Collison as an example of sibling co-founders in deep technical fintech.', 'Этот профиль дополняет Patrick Collison как пример sibling co-founders в глубоком техническом финтехе.', 'Este perfil complementa a Patrick Collison como ejemplo de cofundadores hermanos en fintech profundamente técnico.'),
+    tags: ['ceo', 'fintech', 'startup']
+  },
+  {
+    slug: 'daniel-ek',
+    image: commons('Daniel_Ek_(cropped).jpg'),
+    name: t('Даніель Ек', 'Daniel Ek', 'Даниэль Эк', 'Daniel Ek'),
+    role: t('Співзасновник та CEO Spotify', 'Co-founder and CEO of Spotify', 'Сооснователь и CEO Spotify', 'Cofundador y CEO de Spotify'),
+    country: t('Швеція', 'Sweden', 'Швеция', 'Suecia'),
+    focus: t('стрімінг аудіо, рекомендаційні системи, глобальні медіа-платформи', 'audio streaming, recommendation systems, global media platforms', 'стриминг аудио, рекомендательные системы, глобальные медиа-платформы', 'streaming de audio, sistemas de recomendación y plataformas mediáticas globales'),
+    knownFor: t('перетворення Spotify на референсний стрімінговий продукт нового покоління', 'turning Spotify into a reference streaming product for a new generation', 'превращение Spotify в референсный стриминговый продукт нового поколения', 'convertir Spotify en un producto de streaming de referencia para una nueva generación'),
+    life: t('Його карʼєра показує перетин музики, даних і масштабованої інженерії в споживчому інтернеті.', 'His career shows the intersection of music, data and scalable engineering in consumer internet.', 'Его карьера показывает пересечение музыки, данных и масштабируемой инженерии в потребительском интернете.', 'Su carrera muestra la intersección de música, datos e ingeniería escalable en internet de consumo.'),
+    tags: ['ceo', 'software', 'startup']
+  },
+  {
+    slug: 'patrick-brown',
+    image: avatar('Patrick Brown'),
+    name: t('Патрік Браун', 'Patrick Brown', 'Патрик Браун', 'Patrick Brown'),
+    role: t('Співзасновник та CEO Impossible Foods', 'Co-founder and CEO of Impossible Foods', 'Сооснователь и CEO Impossible Foods', 'Cofundador y CEO de Impossible Foods'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('foodtech, біотех інгредієнтів, сталість та масштаб виробництва', 'foodtech, ingredient biotech, sustainability and manufacturing scale', 'foodtech, биотех ингредиентов, устойчивость и масштаб производства', 'foodtech, biotecnología de ingredientes, sostenibilidad y escala industrial'),
+    knownFor: t('розробку рослинного «heme» та масовий retail для альтернативного білка', 'plant-based heme innovation and retail scale for alternative protein', 'разработку растительного heme и массовый retail для альтернативного белка', 'innovación en heme vegetal y escala retail para proteína alternativa'),
+    life: t('Його профіль розширює каталог стартапами глибокої науки в харчовій індустрії.', 'His profile expands the catalogue with deep-science startups in food.', 'Его профиль расширяет каталог стартапами глубокой науки в пищевой индустрии.', 'Su perfil amplía el catálogo con startups de ciencia profunda en alimentación.'),
+    tags: ['biotech', 'startup', 'science']
+  },
+  {
+    slug: 'eric-vishria',
+    image: avatar('Eric Vishria'),
+    name: t('Ерік Вішрія', 'Eric Vishria', 'Эрик Вишрия', 'Eric Vishria'),
+    role: t('Інвестор та операційний партнер Benchmark', 'Investor and operating partner at Benchmark', 'Инвестор и операционный партнер Benchmark', 'Inversor y socio operativo en Benchmark'),
+    country: t('США', 'United States', 'США', 'Estados Unidos'),
+    focus: t('B2B SaaS, хмарні продукти, перехід стартапів у фазу масштабу', 'B2B SaaS, cloud products, guiding startups into scale-up phase', 'B2B SaaS, облачные продукты, переход стартапов в фазу масштаба', 'B2B SaaS, productos cloud y guiar startups a fase de escala'),
+    knownFor: t('досвід операційного партнера у венчурному фонді з сильним B2B-фокусом', 'experience as an operating partner in a leading B2B venture firm', 'опыт операционного партнера в венчурном фонде с сильным B2B-фокусом', 'experiencia como socio operativo en una firma de venture con fuerte foco B2B'),
+    life: t('Його профіль додає маловідомий шар каталогу — інвестори та операційні партнери, які формують стартапи зсередини.', 'His profile adds a less visible layer: investors and operating partners shaping startups from the inside.', 'Его профиль добавляет менее видимый слой — инвесторы и операционные партнеры, формирующие стартапы изнутри.', 'Su perfil añade una capa menos visible: inversores y socios operativos que moldean startups desde dentro.'),
+    tags: ['startup', 'operations', 'leadership']
+  },
+  {
+    slug: 'patrick-collison',
+    image: commons('Patrick_Collison_Web_Summit_2018.jpg'),
+    name: t('Патрік Коллісон', 'Patrick Collison', 'Патрик Коллисон', 'Patrick Collison'),
+    role: t('Співзасновник та CEO Stripe', 'Co-founder and CEO of Stripe', 'Сооснователь и CEO Stripe', 'Cofundador y CEO de Stripe'),
+    country: t('Ірландія / США', 'Ireland / United States', 'Ирландия / США', 'Irlanda / Estados Unidos'),
+    focus: t('фінтех, платіжна інфраструктура, стартап-екосистеми', 'fintech, payments infrastructure, startup ecosystems', 'финтех, платежная инфраструктура, стартап-экосистемы', 'fintech, infraestructura de pagos y ecosistemas startup'),
+    knownFor: t('створення Stripe як платформи для інтернет-платежів', 'building Stripe as an internet payments platform', 'создание Stripe как платформы интернет-платежей', 'construir Stripe como plataforma de pagos en internet'),
+    life: t('Його робота цікава операційним командам, бо Stripe поєднує API-дизайн, комплаєнс і глобальну фінансову інфраструктуру.', 'His work matters to operations teams because Stripe combines API design, compliance and global financial infrastructure.', 'Его работа важна операционным командам: Stripe объединяет API-дизайн, комплаенс и глобальную финансовую инфраструктуру.', 'Su trabajo importa a equipos operativos porque Stripe combina diseño de API, cumplimiento e infraestructura financiera global.'),
+    tags: ['ceo', 'fintech', 'startup']
+  },
+  {
+    slug: 'melanie-perkins',
+    image: commons('Melanie_Perkins_at_TechCrunch_Disrupt_SF_2019.jpg'),
+    name: t('Мелані Перкінс', 'Melanie Perkins', 'Мелани Перкинс', 'Melanie Perkins'),
+    role: t('Співзасновниця та CEO Canva', 'Co-founder and CEO of Canva', 'Соосновательница и CEO Canva', 'Cofundadora y CEO de Canva'),
+    country: t('Австралія', 'Australia', 'Австралия', 'Australia'),
+    focus: t('дизайн-платформи, продуктова стратегія, глобальне масштабування', 'design platforms, product strategy, global scaling', 'дизайн-платформы, продуктовая стратегия, глобальное масштабирование', 'plataformas de diseño, estrategia de producto y escala global'),
+    knownFor: t('перетворення Canva на масову платформу дизайну', 'turning Canva into a mainstream design platform', 'превращение Canva в массовую платформу дизайна', 'convertir Canva en una plataforma masiva de diseño'),
+    life: t('Її шлях показує, як простий користувацький досвід може відкрити професійні інструменти для мільйонів людей.', 'Her path shows how simple user experience can open professional tools to millions of people.', 'Ее путь показывает, как простой пользовательский опыт открывает профессиональные инструменты миллионам людей.', 'Su trayectoria muestra cómo una experiencia simple abre herramientas profesionales a millones de personas.'),
+    tags: ['ceo', 'design', 'startup']
   }
 ];
 
-
-const avatar = name => `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=720&background=eef4ff&color=2563eb&bold=true`;
 
 const bohdanProfile = {
   slug: 'bohdan-tiutenko',
@@ -701,7 +920,28 @@ const selectedSpecialistSlugs = [
   'satya-nadella',
   'thomas-dohmke',
   'tim-berners-lee',
-  'yann-lecun'
+  'yann-lecun',
+  'jeff-dean',
+  'sundar-pichai',
+  'sergey-brin',
+  'larry-page',
+  'andy-jassy',
+  'adam-selipsky',
+  'werner-vogels',
+  'kevin-scott',
+  'scott-guthrie',
+  'larry-ellison',
+  'clara-shih',
+  'greg-brockman',
+  'mark-zuckerberg',
+  'stewart-butterfield',
+  'guillermo-rauch',
+  'emad-mostaque',
+  'john-collison',
+  'daniel-ek',
+  'patrick-brown',
+  'patrick-collison',
+  'melanie-perkins'
 ];
 
 const specialistEnhancements = {
@@ -1109,6 +1349,141 @@ const startups = [
     category: t('Workflow orchestration platform', 'Workflow orchestration platform', 'Платформа orchestration workflow', 'Plataforma de orquestación de workflows'),
     summary: t('Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів.', 'Builds infrastructure for reliable distributed workflows, backend orchestration and resilient service processes.', 'Создает инфраструктуру для надежных distributed workflows, backend orchestration и устойчивых сервисных процессов.', 'Construye infraestructura para workflows distribuidos fiables, orquestación backend y procesos de servicio resilientes.'),
     tags: ['software', 'cloud', 'startup']
+  },
+  {
+    slug: 'microsoft',
+    image: logo('microsoft.com'),
+    name: 'Microsoft',
+    founded: '1975',
+    category: t('Платформа хмарних та корпоративних сервісів', 'Cloud and enterprise platform', 'Платформа облачных и корпоративных сервисов', 'Plataforma cloud y corporativa'),
+    summary: t('Azure, Microsoft 365, Windows та AI-сервіси для підприємств і розробників по всьому світу.', 'Azure, Microsoft 365, Windows and AI services for enterprises and developers worldwide.', 'Azure, Microsoft 365, Windows и AI-сервисы для предприятий и разработчиков по всему миру.', 'Azure, Microsoft 365, Windows y servicios de IA para empresas y desarrolladores en todo el mundo.'),
+    tags: ['cloud', 'software', 'enterprise']
+  },
+  {
+    slug: 'google-cloud',
+    image: logo('cloud.google.com'),
+    name: 'Google Cloud',
+    founded: '2008',
+    category: t('Хмарна платформа та інфраструктура даних', 'Cloud platform and data infrastructure', 'Облачная платформа и инфраструктура данных', 'Plataforma cloud e infraestructura de datos'),
+    summary: t('GCP поєднує compute, дані, ML та корпоративні сервіси з екосистемою Google.', 'GCP combines compute, data, ML and enterprise services within Google\'s ecosystem.', 'GCP объединяет compute, данные, ML и корпоративные сервисы в экосистеме Google.', 'GCP combina cómputo, datos, ML y servicios empresariales dentro del ecosistema de Google.'),
+    tags: ['cloud', 'ai', 'enterprise']
+  },
+  {
+    slug: 'amazon-web-services',
+    image: logo('aws.amazon.com'),
+    name: 'Amazon Web Services',
+    founded: '2006',
+    category: t('Хмарна інфраструктура', 'Cloud infrastructure', 'Облачная инфраструктура', 'Infraestructura cloud'),
+    summary: t('Широкий каталог IaaS та PaaS: compute, сховища, мережі, бази даних та AI-сервіси.', 'A broad IaaS/PaaS catalogue spanning compute, storage, networking, databases and AI services.', 'Широкий каталог IaaS и PaaS: compute, хранилища, сети, базы данных и AI-сервисы.', 'Catálogo amplio de IaaS/PaaS con cómputo, almacenamiento, redes, bases de datos y servicios de IA.'),
+    tags: ['cloud', 'operations', 'enterprise']
+  },
+  {
+    slug: 'meta',
+    image: logo('meta.com'),
+    name: 'Meta',
+    founded: '2004',
+    category: t('Соціальні платформи та метавсесвіт', 'Social platforms and metaverse', 'Социальные платформы и метавселенная', 'Plataformas sociales y metaverso'),
+    summary: t('Сімейство продуктів Facebook, Instagram, WhatsApp та інвестиції в VR і AI інфраструктуру.', 'Product family spanning Facebook, Instagram, WhatsApp plus VR and AI infrastructure investments.', 'Семейство продуктов Facebook, Instagram, WhatsApp и инвестиции в VR и AI-инфраструктуру.', 'Familia de productos Facebook, Instagram, WhatsApp más inversiones en infraestructura de RV e IA.'),
+    tags: ['software', 'ai', 'operations']
+  },
+  {
+    slug: 'oracle-cloud',
+    image: logo('oracle.com'),
+    name: 'Oracle Cloud',
+    founded: '2012',
+    category: t('Хмарні бази даних та корпоративні застосування', 'Cloud databases and enterprise applications', 'Облачные базы данных и корпоративные приложения', 'Bases de datos cloud y aplicaciones empresariales'),
+    summary: t('Корпоративні SaaS, бази даних та інфраструктура для місійно-критичних систем.', 'Enterprise SaaS, databases and infrastructure for mission-critical systems.', 'Корпоративные SaaS, базы данных и инфраструктура для mission-critical систем.', 'SaaS empresarial, bases de datos e infraestructura para sistemas críticos.'),
+    tags: ['cloud', 'enterprise', 'software']
+  },
+  {
+    slug: 'snowflake',
+    image: logo('snowflake.com'),
+    name: 'Snowflake',
+    founded: '2012',
+    category: t('Платформа даних у хмарі', 'Cloud data platform', 'Облачная платформа данных', 'Plataforma de datos en la nube'),
+    summary: t('Сервіс даних для аналітики, обміну даними та інтеграції AI workloads enterprise-середовищ.', 'Data platform for analytics, data sharing and AI workloads in enterprise environments.', 'Платформа данных для аналитики, обмена данными и AI workloads в enterprise-среде.', 'Plataforma de datos para analítica, intercambio de datos y cargas de IA en entornos enterprise.'),
+    tags: ['cloud', 'ai', 'enterprise']
+  },
+  {
+    slug: 'salesforce',
+    image: logo('salesforce.com'),
+    name: 'Salesforce',
+    founded: '1999',
+    category: t('CRM та корпоративні хмарні застосування', 'CRM and enterprise cloud applications', 'CRM и корпоративные облачные приложения', 'CRM y aplicaciones cloud empresariales'),
+    summary: t('Хмарний CRM та платформа для продажів, сервісу й маркетингу з екосистемою AppExchange.', 'Cloud CRM and platform for sales, service and marketing with an AppExchange ecosystem.', 'Облачный CRM и платформа для продаж, сервиса и маркетинга с экосистемой AppExchange.', 'CRM cloud y plataforma para ventas, servicio y marketing con ecosistema AppExchange.'),
+    tags: ['enterprise', 'software', 'operations']
+  },
+  {
+    slug: 'palantir',
+    image: logo('palantir.com'),
+    name: 'Palantir',
+    founded: '2003',
+    category: t('Платформа даних та аналітики', 'Data analytics platform', 'Платформа данных и аналитики', 'Plataforma de datos y analítica'),
+    summary: t('Спеціалізовані рішення для інтеграції даних та операційних систем для організацій та державних замовників.', 'Specialised data integration and operational software for organisations and government customers.', 'Специализированная интеграция данных и операционные системы для организаций и госсектора.', 'Integración de datos y software operativo especializado para organizaciones y sector público.'),
+    tags: ['software', 'enterprise', 'operations']
+  },
+  {
+    slug: 'datadog',
+    image: logo('datadoghq.com'),
+    name: 'Datadog',
+    founded: '2010',
+    category: t('Observability та моніторинг', 'Observability and monitoring', 'Observability и мониторинг', 'Observabilidad y monitorización'),
+    summary: t('Метрики, логи, трейси та security-сигнали для хмарних і контейнерних середовищ.', 'Metrics, logs, traces and security signals for cloud and container environments.', 'Метрики, логи, трейсы и security-сигналы для облачных и контейнерных сред.', 'Métricas, logs, trazas y señales de seguridad para entornos cloud y contenedores.'),
+    tags: ['software', 'cloud', 'operations']
+  },
+  {
+    slug: 'mongodb',
+    image: logo('mongodb.com'),
+    name: 'MongoDB',
+    founded: '2007',
+    category: t('База даних та data-платформа', 'Database and data platform', 'База данных и data-платформа', 'Base de datos y plataforma de datos'),
+    summary: t('Документно-орієнтована база та Atlas як повністю керований хмарний сервіс даних.', 'Document-oriented database plus Atlas as a managed cloud data service.', 'Документо-ориентированная база и Atlas как управляемый облачный сервис данных.', 'Base orientada a documentos más Atlas como servicio de datos gestionado en la nube.'),
+    tags: ['software', 'cloud', 'enterprise']
+  },
+  {
+    slug: 'supabase',
+    image: logo('supabase.com'),
+    name: 'Supabase',
+    founded: '2020',
+    category: t('Open-source Firebase-альтернатива', 'Open-source Firebase alternative', 'Open-source альтернатива Firebase', 'Alternativa open-source a Firebase'),
+    summary: t('Postgres, auth і realtime APIs як developer-first backend для стартапів та indie-команд.', 'Postgres, auth and realtime APIs as a developer-first backend for startups and indie teams.', 'Postgres, auth и realtime APIs как developer-first backend для стартапов и indie-команд.', 'Postgres, auth y APIs realtime como backend developer-first para startups y equipos indie.'),
+    tags: ['software', 'open-source', 'startup']
+  },
+  {
+    slug: 'posthog',
+    image: logo('posthog.com'),
+    name: 'PostHog',
+    founded: '2020',
+    category: t('Product analytics open-source', 'Open-source product analytics', 'Product analytics open-source', 'Product analytics open source'),
+    summary: t('Інструменти для продуктової аналітики та експериментів з відкритим кодом для інженерних команд.', 'Open-source analytics and experimentation tooling for engineering-led product teams.', 'Открытые инструменты продуктовой аналитики и экспериментов для инженерных команд.', 'Análisis de producto y experimentación open source para equipos liderados por ingeniería.'),
+    tags: ['software', 'open-source', 'startup']
+  },
+  {
+    slug: 'linear',
+    image: logo('linear.app'),
+    name: 'Linear',
+    founded: '2019',
+    category: t('Інструмент керування продуктом', 'Product delivery workflow tool', 'Инструмент управления продуктом', 'Herramienta de delivery de producto'),
+    summary: t('Швидкий issue tracker та roadmap-платформа для сучасних software-команд.', 'Fast issue tracking and roadmap workflows for modern software teams.', 'Быстрый issue tracker и roadmap-платформа для современных software-команд.', 'Issue tracking rápido y workflows de roadmap para equipos de software modernos.'),
+    tags: ['software', 'design', 'startup']
+  },
+  {
+    slug: 'retool',
+    image: logo('retool.com'),
+    name: 'Retool',
+    founded: '2017',
+    category: t('Internal tools платформа', 'Internal tools platform', 'Платформа internal tools', 'Plataforma de internal tools'),
+    summary: t('Дозволяє швидко будувати внутрішні адмін-панелі й операційні інструменти поверх API.', 'Helps teams ship internal admin panels and operational tools quickly on top of APIs.', 'Позволяет быстро создавать внутренние админки и операционные инструменты поверх API.', 'Permite lanzar paneles internos y herramientas operativas rápidamente sobre APIs.'),
+    tags: ['software', 'enterprise', 'startup']
+  },
+  {
+    slug: 'zapier',
+    image: logo('zapier.com'),
+    name: 'Zapier',
+    founded: '2011',
+    category: t('Автоматизація workflow між SaaS', 'Workflow automation between SaaS apps', 'Автоматизация workflow между SaaS', 'Automatización de workflows entre SaaS'),
+    summary: t('Безкодові інтеграції між тисячами застосунків для маркетингу, продажів та операцій.', 'No-code integrations across thousands of apps for marketing, sales and operations.', 'No-code интеграции между тысячами приложений для маркетинга, продаж и операций.', 'Integraciones no-code entre miles de apps para marketing, ventas y operaciones.'),
+    tags: ['software', 'operations', 'startup']
   }
 ];
 
@@ -1507,6 +1882,186 @@ const startupDetails = {
       ['Focus on wireless reliability', 'Retail and B2B channels', 'Example of hardware scale-up from Ukraine'],
       ['Фокус на wireless reliability', 'Розничные и B2B каналы', 'Пример hardware scale-up из Украины'],
       ['Foco en fiabilidad wireless', 'Canales retail y B2B', 'Ejemplo de hardware scale-up desde Ucrania']
+    )
+  },
+  microsoft: {
+    hq: t('Редмонд, США', 'Redmond, United States', 'Редмонд, США', 'Redmond, Estados Unidos'),
+    model: t('Платформа Azure та корпоративний софт', 'Azure platform and enterprise software', 'Платформа Azure и корпоративное ПО', 'Plataforma Azure y software empresarial'),
+    market: t('Azure, Microsoft 365, Windows, AI Copilot', 'Azure, Microsoft 365, Windows, AI Copilot', 'Azure, Microsoft 365, Windows, AI Copilot', 'Azure, Microsoft 365, Windows y Copilot'),
+    notableFor: t('Інтеграція AI-послуг у корпоративні та developer екосистеми', 'Integrating AI services across enterprise and developer ecosystems', 'Интеграция AI-сервисов в корпоративные и developer экосистемы', 'Integrar servicios de IA en ecosistemas empresariales y de desarrolladores'),
+    signals: t(
+      ['Широкий enterprise-каталог сервісів', 'Сильний акцент на партнерства й marketplace', 'Швидка інтеграція моделей у productivity suite'],
+      ['Broad enterprise service catalogue', 'Strong partner and marketplace motion', 'Fast model integration into productivity suites'],
+      ['Широкий enterprise-каталог сервисов', 'Сильный партнерский marketplace', 'Быстрая интеграция моделей в productivity suite'],
+      ['Catálogo amplio de servicios enterprise', 'Fuerte movimiento de socios y marketplace', 'Integración rápida de modelos en suites de productividad']
+    )
+  },
+  'google-cloud': {
+    hq: t('Маунтін-Вью, США', 'Mountain View, United States', 'Маунтин-Вью, США', 'Mountain View, Estados Unidos'),
+    model: t('Хмарна платформа GCP', 'GCP cloud platform', 'Облачная платформа GCP', 'Plataforma cloud GCP'),
+    market: t('Compute, data, ML APIs, enterprise workloads', 'Compute, data, ML APIs, enterprise workloads', 'Compute, data, ML APIs, enterprise workloads', 'Compute, datos, APIs de ML y cargas enterprise'),
+    notableFor: t('Поєднання інфраструктури Google з AI-сервісами для підприємств', 'Google-scale infrastructure paired with enterprise AI services', 'Инфраструктура масштаба Google и enterprise AI-сервисы', 'Infraestructura a escala Google con servicios de IA empresarial'),
+    signals: t(
+      ['Інтеграція з екосистемою Google Workspace та даними', 'Datacenter footprint для AI inference та ML ops', 'Широкий набір managed сервісів для даних'],
+      ['Integration with Workspace and data estates', 'Datacenter footprint for inference and ML ops', 'Broad managed data stack'],
+      ['Интеграция с Workspace и данными', 'Footprint для inference и ML ops', 'Широкий managed стек данных'],
+      ['Integración con Workspace y estates de datos', 'Footprint para inferencia y ML ops', 'Stack gestionado amplio para datos']
+    )
+  },
+  'amazon-web-services': {
+    hq: t('Сіетл, США', 'Seattle, United States', 'Сиэтл, США', 'Seattle, Estados Unidos'),
+    model: t('Глобальна хмарна інфраструктура AWS', 'Global AWS cloud infrastructure', 'Глобальная облачная инфраструктура AWS', 'Infraestructura cloud global de AWS'),
+    market: t('IaaS, PaaS, regions, edge', 'IaaS, PaaS, regions, edge', 'IaaS, PaaS, регионы, edge', 'IaaS, PaaS, regiones y edge'),
+    notableFor: t('Найширший каталог сервісів хмарної інфраструктури для індустрії', 'The broadest catalogue of cloud primitives shaping modern engineering', 'Самый широкий каталог облачных примитивов для индустрии', 'El catálogo más amplio de primitivas cloud que moldea la ingeniería moderna'),
+    signals: t(
+      ['Лідерство за регіонами та службами даних', 'Партнерська екосистема ISV', 'Орієнтація на reliability та масштаб'],
+      ['Leadership in regions and data services', 'Large ISV partner ecosystem', 'Reliability-first scaling mindset'],
+      ['Лидерство по регионам и data-сервисам', 'Экосистема ISV-партнеров', 'Фокус на reliability и масштабе'],
+      ['Liderazgo en regiones y servicios de datos', 'Gran ecosistema ISV', 'Mentalidad de fiabilidad y escala']
+    )
+  },
+  meta: {
+    hq: t('Менло-Парк, США', 'Menlo Park, United States', 'Менло-Парк, США', 'Menlo Park, Estados Unidos'),
+    model: t('Сімейство споживчих платформ і Reality Labs', 'Consumer platforms family and Reality Labs', 'Семейство потребительских платформ и Reality Labs', 'Familia de plataformas de consumo y Reality Labs'),
+    market: t('Social graphs, ads infrastructure, VR', 'Social graphs, ads infrastructure, VR', 'Social graphs, ads infrastructure, VR', 'Grafos sociales, publicidad e infraestructura RV'),
+    notableFor: t('Масштаб інженерних систем для мільярдів користувачів', 'Engineering systems operated at multi-billion-user scale', 'Инженерные системы масштаба миллиардов пользователей', 'Sistemas de ingeniería para miles de millones de usuarios'),
+    signals: t(
+      ['Один із найбільших інтернет-рекламних стеків', 'Інвестиції в Llama та відкриті моделі', 'VR як довгострокова ставка на апаратуру'],
+      ['One of the largest internet ad stacks', 'Investment in Llama and open models', 'VR as long-term hardware bet'],
+      ['Один из крупнейших интернет-рекламных стеков', 'Инвестиции в Llama и open models', 'VR как долгосрочная ставка на железо'],
+      ['Uno de los stacks publicitarios más grandes', 'Inversión en Llama y modelos abiertos', 'RV como apuesta de hardware a largo plazo']
+    )
+  },
+  'oracle-cloud': {
+    hq: t('Остін / Редвуд-Шорс, США', 'Austin / Redwood Shores, United States', 'Остин / Редвуд-Шорс, США', 'Austin / Redwood Shores, Estados Unidos'),
+    model: t('Корпоративні бази даних та SaaS', 'Enterprise databases and SaaS', 'Корпоративные базы данных и SaaS', 'Bases de datos y SaaS empresarial'),
+    market: t('Database cloud, ERP, mission-critical workloads', 'Database cloud, ERP, mission-critical workloads', 'Database cloud, ERP, mission-critical workloads', 'Database cloud, ERP y cargas críticas'),
+    notableFor: t('Традиція enterprise БД та перехід до повністю керованих хмарних сервісів', 'Enterprise database heritage shifting toward managed cloud services', 'Наследие enterprise БД и переход к managed cloud', 'Herencia de bases enterprise y salto a servicios cloud gestionados'),
+    signals: t(
+      ['Фокус на місійно-критичні системи', 'Глибокі інтеграції з IT організаціями', 'Конкуренція в сегменті data platforms'],
+      ['Focus on mission-critical systems', 'Deep integration with IT organisations', 'Competitive data-platform positioning'],
+      ['Фокус на mission-critical системы', 'Глубокая интеграция с IT-организациями', 'Конкуренция в data platforms'],
+      ['Enfoque en sistemas críticos', 'Integración profunda con TI', 'Posicionamiento competitivo en data platforms']
+    )
+  },
+  snowflake: {
+    hq: t('Бозман, США', 'Bozeman, United States', 'Бозман, США', 'Bozeman, Estados Unidos'),
+    model: t('Cloud data platform', 'Cloud data platform', 'Облачная data-платформа', 'Plataforma de datos en la nube'),
+    market: t('Analytics, sharing, AI workloads', 'Analytics, sharing, AI workloads', 'Analytics, sharing, AI workloads', 'Analítica, intercambio y cargas de IA'),
+    notableFor: t('Архітектура data sharing між організаціями в одному cloud-сервісі', 'Data-sharing architecture connecting organisations within one platform', 'Архитектура data sharing между организациями', 'Arquitectura de intercambio de datos entre organizaciones'),
+    signals: t(
+      ['Популярність серед enterprise data команд', 'Еластичне масштабування compute', 'Розширення до AI та apps у каталозі даних'],
+      ['Popular with enterprise data teams', 'Elastic compute scaling', 'Expansion toward AI and apps on shared data'],
+      ['Популярность среди enterprise data-команд', 'Эластичное масштабирование compute', 'Расширение к AI и приложениям'],
+      ['Popular entre equipos de datos enterprise', 'Escala elástica de cómputo', 'Expansión hacia IA y apps sobre datos']
+    )
+  },
+  salesforce: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('CRM та enterprise хмарні застосування', 'CRM and enterprise cloud apps', 'CRM и корпоративные облачные приложения', 'CRM y aplicaciones cloud empresariales'),
+    market: t('Sales, service, marketing clouds', 'Sales, service, marketing clouds', 'Sales, service, marketing clouds', 'Sales, service y marketing cloud'),
+    notableFor: t('AppExchange як маркетплейс розширень для enterprise workflow', 'AppExchange marketplace extending enterprise workflows', 'AppExchange как маркетплейс расширений для enterprise', 'Marketplace AppExchange para extender flujos enterprise'),
+    signals: t(
+      ['Глибока інтеграція з корпоративними процесами', 'Сильний partner channel', 'Додавання AI-layer до CRM даних'],
+      ['Deep tie-in to enterprise processes', 'Strong partner channel', 'Adding AI layers over CRM data'],
+      ['Глубокая связь с enterprise-процессами', 'Сильный партнерский канал', 'AI-слой поверх CRM-данных'],
+      ['Integración profunda con procesos enterprise', 'Canal de socios fuerte', 'Capas de IA sobre datos CRM']
+    )
+  },
+  palantir: {
+    hq: t('Денвер / Лондон', 'Denver / London', 'Денвер / Лондон', 'Denver / Londres'),
+    model: t('Платформа інтеграції даних для організацій', 'Data integration platform for organisations', 'Платформа интеграции данных для организаций', 'Plataforma de integración de datos para organizaciones'),
+    market: t('Government, defence, commercial analytics', 'Government, defence, commercial analytics', 'Government, defence, commercial analytics', 'Gobierno, defensa y analítica comercial'),
+    notableFor: t('Спеціалізовані рішення для складних операційних даних', 'Specialised tooling for complex operational data estates', 'Специализированные решения для операционных данных', 'Herramientas especializadas para datos operativos complejos'),
+    signals: t(
+      ['Фокус на інтеграцію багатьох джерел', 'Сильний enterprise sales motion', 'Дискусії щодо етики даних і прозорості'],
+      ['Focus on multi-source integration', 'Heavy enterprise sales motion', 'Public debate on data ethics and transparency'],
+      ['Фокус на интеграцию источников', 'Сильный enterprise sales', 'Публичные дискуссии об этике данных'],
+      ['Foco en integración multifuente', 'Movimiento enterprise fuerte', 'Debate público sobre ética de datos']
+    )
+  },
+  datadog: {
+    hq: t('Нью-Йорк, США', 'New York, United States', 'Нью-Йорк, США', 'Nueva York, Estados Unidos'),
+    model: t('Observability SaaS', 'Observability SaaS', 'Observability SaaS', 'SaaS de observabilidad'),
+    market: t('Metrics, logs, traces, security', 'Metrics, logs, traces, security', 'Metrics, logs, traces, security', 'Métricas, logs, trazas y seguridad'),
+    notableFor: t('Єдиний екран для інженерних команд щодо продакшен-систем', 'Single pane for engineering teams monitoring production systems', 'Единый экран для команд, мониторящих продакшен', 'Panel único para equipos que monitorizan producción'),
+    signals: t(
+      ['Високий enterprise adoption у SaaS-команд', 'Розширення в security та cloud cost insights', 'Орієнтація на developer-first продаж'],
+      ['High adoption among SaaS-native teams', 'Expansion into security and cost insights', 'Developer-first go-to-market'],
+      ['Высокое adoption среди SaaS-команд', 'Расширение в security и cost insights', 'Developer-first GTM'],
+      ['Alta adopción en equipos SaaS', 'Expansión a seguridad y costes', 'GTM developer-first']
+    )
+  },
+  mongodb: {
+    hq: t('Нью-Йорк, США', 'New York, United States', 'Нью-Йорк, США', 'Nueva York, Estados Unidos'),
+    model: t('Документна база та Atlas cloud', 'Document database and Atlas cloud', 'Документная база и Atlas cloud', 'Base documental y Atlas cloud'),
+    market: t('Developer data platform, search, analytics', 'Developer data platform, search, analytics', 'Developer data platform, search, analytics', 'Plataforma de datos para desarrolladores, búsqueda y analítica'),
+    notableFor: t('Atlas як повністю керований сервіс навколо MongoDB', 'Atlas as the managed service wrapping MongoDB', 'Atlas как managed-сервис вокруг MongoDB', 'Atlas como servicio gestionado alrededor de MongoDB'),
+    signals: t(
+      ['Популярність у стартапів і enterprise', 'Гнучка модель документів для швидких продуктів', 'Розширення до search та analytics workloads'],
+      ['Popular across startups and enterprises', 'Flexible document model for fast products', 'Expansion into search and analytics workloads'],
+      ['Популярность у стартапов и enterprise', 'Гибкая документная модель', 'Расширение к search и analytics'],
+      ['Popular en startups y enterprise', 'Modelo documental flexible', 'Expansión a búsqueda y analítica']
+    )
+  },
+  supabase: {
+    hq: t('Сингапур / віддалена команда', 'Singapore / remote-first team', 'Сингапур / удаленная команда', 'Singapur / equipo remote-first'),
+    model: t('Open-source Firebase-альтернатива на Postgres', 'Open-source Firebase alternative on Postgres', 'Open-source альтернатива Firebase на Postgres', 'Alternativa open-source a Firebase sobre Postgres'),
+    market: t('Auth, Postgres, realtime APIs', 'Auth, Postgres, realtime APIs', 'Auth, Postgres, realtime APIs', 'Auth, Postgres y APIs en tiempo real'),
+    notableFor: t('Швидкий backend для indie hackers і продуктових MVP', 'Fast backend layer for indie hackers and MVP teams', 'Быстрый backend для indie hackers и MVP-команд', 'Backend rápido para indie hackers y equipos MVP'),
+    signals: t(
+      ['Сильна спільнота open source', 'Фокус на developer experience', 'Конкуренція з класичним Firebase'],
+      ['Strong open-source community', 'Developer-experience focus', 'Competes directly with Firebase-class offerings'],
+      ['Сильное open-source сообщество', 'Фокус на DX', 'Конкуренция с Firebase-классом'],
+      ['Comunidad open source fuerte', 'Foco en DX', 'Compite con ofertas tipo Firebase']
+    )
+  },
+  posthog: {
+    hq: t('Лондон / віддалено', 'London / remote', 'Лондон / удаленно', 'Londres / remoto'),
+    model: t('Product analytics open-source', 'Open-source product analytics', 'Product analytics open-source', 'Product analytics open source'),
+    market: t('Product analytics, experimentation, session replay', 'Product analytics, experimentation, session replay', 'Product analytics, experimentation, session replay', 'Analítica de producto, experimentación y replay de sesiones'),
+    notableFor: t('Self-host та cloud варіанти для інженерних команд', 'Self-host and cloud deployment paths for engineering-led teams', 'Self-host и cloud для инженерных команд', 'Rutas self-host y cloud para equipos liderados por ingeniería'),
+    signals: t(
+      ['Відкритий код як конкурентна перевага', 'Фокус на продуктові експерименти', 'Зростання разом із modern SaaS стеком'],
+      ['Open source as differentiation', 'Experimentation-focused roadmap', 'Growth alongside modern SaaS stacks'],
+      ['Open source как дифференциатор', 'Фокус на эксперименты', 'Рост вместе со стеком SaaS'],
+      ['Open source como diferenciador', 'Hoja de ruta centrada en experimentación', 'Crece junto al stack SaaS moderno']
+    )
+  },
+  linear: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Issue tracking для продуктових команд', 'Issue tracking for product engineering teams', 'Issue tracking для продуктовых команд', 'Issue tracking para equipos de producto'),
+    market: t('Roadmaps, cycles, integrations', 'Roadmaps, cycles, integrations', 'Roadmaps, cycles, integrations', 'Roadmaps, ciclos e integraciones'),
+    notableFor: t('Швидкий UX як конкурентна перевага над класичними трекерами', 'Speed and UX as differentiation versus legacy trackers', 'Скорость и UX как преимущество над legacy-трекерами', 'Velocidad y UX frente a trackers legacy'),
+    signals: t(
+      ['Сильний бренд серед startup-команд', 'Інтеграції з GitHub та дизайн-інструментами', 'Фокус на keyboard-first workflow'],
+      ['Strong brand among startup teams', 'Integrations with GitHub and design tools', 'Keyboard-first workflow culture'],
+      ['Сильный бренд среди стартап-команд', 'Интеграции с GitHub и дизайном', 'Культура keyboard-first'],
+      ['Marca fuerte en startups', 'Integraciones con GitHub y diseño', 'Cultura keyboard-first']
+    )
+  },
+  retool: {
+    hq: t('Сан-Франциско, США', 'San Francisco, United States', 'Сан-Франциско, США', 'San Francisco, Estados Unidos'),
+    model: t('Internal tools builder', 'Internal tools builder', 'Конструктор internal tools', 'Constructor de internal tools'),
+    market: t('Admin panels, ops dashboards, workflows', 'Admin panels, ops dashboards, workflows', 'Admin panels, ops dashboards, workflows', 'Paneles admin, dashboards operativos y workflows'),
+    notableFor: t('Швидке створення внутрішніх інструментів поверх API та баз даних', 'Rapid assembly of internal tools atop APIs and databases', 'Быстрая сборка internal tools поверх API и БД', 'Montaje rápido de herramientas internas sobre APIs y bases de datos'),
+    signals: t(
+      ['Популярність у fintech та ops-командах', 'Баланс між no-code та engineer control', 'Розширення до mobile та automation'],
+      ['Popular with fintech and ops teams', 'Balances no-code speed with engineer control', 'Expansion toward mobile and automation'],
+      ['Популярность у fintech и ops', 'Баланс no-code и контроля инженера', 'Расширение к mobile и автоматизации'],
+      ['Popular en fintech y ops', 'Equilibra no-code y control de ingeniería', 'Expansión a móvil y automatización']
+    )
+  },
+  zapier: {
+    hq: t('Роллі / віддалено', 'Remote-first', 'Remote-first', 'Remote-first'),
+    model: t('Автоматизація SaaS-інтеграцій', 'SaaS workflow automation', 'Автоматизация SaaS-интеграций', 'Automatización de workflows SaaS'),
+    market: t('No-code automation, enterprise plans', 'No-code automation, enterprise plans', 'No-code automation, enterprise plans', 'Automatización no-code y planes enterprise'),
+    notableFor: t('Каталог із тисячами конекторів між SaaS-додатками', 'A catalogue of thousands of connectors across SaaS apps', 'Каталог тысяч коннекторов между SaaS', 'Catálogo de miles de conectores entre apps SaaS'),
+    signals: t(
+      ['Масовий self-serve growth', 'Enterprise функції для централізованого керування', 'Конкуренція з native автоматизаціями SaaS'],
+      ['Large self-serve growth motion', 'Enterprise controls for central IT', 'Competes with native SaaS automations'],
+      ['Массовый self-serve рост', 'Enterprise-контроль для IT', 'Конкуренция с native автоматизациями'],
+      ['Gran crecimiento self-serve', 'Controles enterprise para TI', 'Compite con automatizaciones nativas']
     )
   }
 };
