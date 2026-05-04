@@ -19,7 +19,7 @@
         <div class="header-container" data-header-container>
             <div class="logo">
                 <a href="{{HOME_URL}}" class="brand"><img src="assets/images/rybezh-logo.svg" alt="Rybezh" width="180" height="40"></a>
-                <span class="logo-caption">People Archive</span>
+                <span class="logo-caption">People Archive</span><span class="brand-subtitle">Curated profiles · startups · analytics</span>
             </div>
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ {{NAV_MENU}}</button>
             <nav id="main-nav" class="main-nav" aria-label="{{NAV_ARIA}}">
@@ -27,6 +27,7 @@
                 <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
                 <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
                 <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
+                <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
             </nav>
             <div class="header-tools">
                 <div class="lang-switcher">
@@ -85,6 +86,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
+                <p class="footer-note">Rybezh.site — editorial directory with verified structure, visual hierarchy and responsive components.</p>
                 <p>&copy; 2026 Rybezh. {{FOOTER_RIGHTS}}</p>
             </div>
         </div>
@@ -190,8 +192,14 @@
                 .map(part => part[0]?.toUpperCase() || '')
                 .join('') || 'ST';
 
-            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='720' height='420' viewBox='0 0 720 420'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%23eef4ff'/><stop offset='1' stop-color='%23dbeafe'/></linearGradient></defs><rect width='720' height='420' fill='url(%23g)'/><text x='50%' y='52%' text-anchor='middle' fill='%232563eb' font-size='150' font-family='Inter,Segoe UI,Arial,sans-serif' font-weight='700'>${initials}</text></svg>`;
-            target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+            const pool = [
+                'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80'
+            ];
+            const index = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % pool.length;
+            target.src = pool[index];
         }, true);
 
         
@@ -207,22 +215,40 @@
         }
 
         function ensureCardImages() {
-            const cards = document.querySelectorAll('.card, .profile-card, .startup-card');
-            cards.forEach(card => {
-                if (card.querySelector('img')) return;
-                const name = card.querySelector('h3, h2')?.textContent?.trim() || 'Profile';
-                const img = document.createElement('img');
-                img.loading = 'lazy';
-                img.alt = name;
-                const pool = [
-                    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
-                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
-                ];
+            const cards = document.querySelectorAll('.card, .profile-card, .startup-card, article');
+            const pool = [
+                'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+                'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80'
+            ];
+
+            const pickImage = (name) => {
                 const index = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % pool.length;
-                img.src = pool[index];
-                card.insertBefore(img, card.firstChild);
+                return pool[index];
+            };
+
+            cards.forEach(card => {
+                const name = card.querySelector('h1, h2, h3')?.textContent?.trim() || 'Profile';
+                let img = card.querySelector('img');
+
+                if (!img) {
+                    img = document.createElement('img');
+                    img.loading = 'lazy';
+                    img.alt = name;
+                    img.src = pickImage(name);
+                    card.insertBefore(img, card.firstChild);
+                }
+
+                if (!img.getAttribute('src') || img.getAttribute('src') === '#') {
+                    img.src = pickImage(name);
+                }
+
+                img.classList.add('smart-post-image');
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.setAttribute('referrerpolicy', 'no-referrer');
             });
         }
 
@@ -459,6 +485,23 @@
             window.addEventListener('popstate', applyFromUrl);
 
             applyFromUrl();
+
+            const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
+            if (isHome) {
+                const host = document.querySelector('.hero-panel');
+                if (host && !document.querySelector('.live-tiles')) {
+                    const d = new Date();
+                    const fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'uk', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+                    const tiles = document.createElement('section');
+                    tiles.className = 'live-tiles';
+                    tiles.innerHTML = `
+                        <article class="live-tile"><span>UTC update</span><strong>${fmt.format(d)}</strong></article>
+                        <article class="live-tile"><span>Visible cards</span><strong>${document.querySelectorAll('.card').length}</strong></article>
+                        <article class="live-tile"><span>Images loaded</span><strong>${document.querySelectorAll('img').length}</strong></article>
+                    `;
+                    host.appendChild(tiles);
+                }
+            }
         });
     </script>
 </body>
