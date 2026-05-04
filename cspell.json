@@ -4,7 +4,6 @@
   "dictionaries": [
     "ru_ru",
     "uk_ua",
-    "es_ES",
     "es-es"
   ],
   "dictionaryDefinitions": [
@@ -15,6 +14,10 @@
     {
       "name": "uk_ua",
       "path": "./node_modules/@cspell/dict-uk-ua/uk_ua.trie"
+    },
+    {
+      "name": "es-es",
+      "path": "./node_modules/@cspell/dict-es-es/Spanish.trie.gz"
     }
   ],
   "ignorePaths": [
@@ -23,25 +26,5 @@
     "src/specialists.json",
     "src/startups.json",
     "package-lock.json"
-  ],
-  "words": [
-    "Rybezh",
-    "Sitemap",
-    "OpenAI",
-    "DeepMind",
-    "ImageNet",
-    "LinuxCon",
-    "COBOL",
-    "Apollo",
-    "Mercury",
-    "Vostok",
-    "NVIDIA",
-    "Fintech",
-    "DevOps",
-    "EdTech",
-    "lakehouse",
-    "observability",
-    "autosupervised",
-    "chirped"
   ]
 }
