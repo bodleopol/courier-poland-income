@@ -1279,3 +1279,147 @@ body[data-theme="dark"] .btn.secondary {
   .metrics-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .insight-grid { grid-template-columns:1fr; }
 }
+
+/* Mobile-first hardening */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+
+  body { line-height: 1.55; }
+
+  main {
+    padding: 18px 14px 20px;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-container {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 150px;
+    height: 34px;
+  }
+
+  .nav-toggle {
+    min-height: 44px;
+    padding: 10px 12px;
+  }
+
+  .main-nav a,
+  .lang-switcher a,
+  .btn,
+  .filter-chip,
+  .directory-select,
+  .search-label input {
+    min-height: 44px;
+  }
+
+  .hero {
+    border-radius: 20px;
+    padding: 18px 14px;
+    gap: 18px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.55rem, 8vw, 2rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-copy p,
+  .section-intro p,
+  .lead,
+  .card p { font-size: 0.95rem; }
+
+  .hero-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .stat-card strong { font-size: 1.35rem; }
+
+  .content-wrapper,
+  .directory-panel,
+  .split-panel,
+  .profile-recruiter-cta,
+  .policy-section {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .grid,
+  .compact-grid,
+  .startup-grid,
+  .featured-grid,
+  .gallery-grid,
+  .dynamic-tiles,
+  .company-facts,
+  .profile-facts {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card,
+  .info-card {
+    border-radius: 18px;
+  }
+
+  .card-body { padding: 14px; }
+
+  .profile-header {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .profile-avatar-large { height: 220px; border-radius: 16px; }
+
+  .profile-info h1 {
+    font-size: clamp(1.55rem, 8vw, 2.15rem);
+    line-height: 1.08;
+  }
+
+  .profile-info h2 {
+    font-size: 1rem;
+  }
+
+  .startup-card img {
+    height: 132px;
+    padding: 18px;
+  }
+
+  .profile-card img {
+    height: 220px;
+  }
+
+  .gallery-grid img {
+    height: 190px;
+  }
+
+  .cookie-banner {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-panel { grid-template-columns: 1fr; }
+  .hero-actions,
+  .stacked-actions { flex-direction: column; }
+  .hero-actions .btn,
+  .stacked-actions .btn,
+  .split-panel .btn { width: 100%; }
+  .tags { gap: 6px; }
+  .tag { font-size: 0.73rem; padding: 4px 9px; }
+}

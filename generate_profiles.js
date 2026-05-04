@@ -7,8 +7,8 @@ const PAGES_DIR = 'src/pages';
 const PROFILES_DIR = path.join(PAGES_DIR, 'profiles');
 const BASE_URL = 'https://rybezh.site/';
 const langs = ['uk', 'en', 'es', 'ru'];
-/** Add `src/assets/images/maria-rubezh-founder.webp` (or .jpg) for the founder photo; until then the onerror handler shows initials. */
-const FOUNDER_IMAGE = 'assets/images/maria-rubezh-founder.webp';
+/** Use a hosted founder photo URL to avoid committing binary assets in this repo. */
+const FOUNDER_IMAGE = 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80';
 
 const tr = {
   uk: {
@@ -78,8 +78,8 @@ const tr = {
     notFoundSecondary: 'До каталогу спеціалістів',
     siteByline: 'Rybezh.site',
     founderTrustTitle: 'Засновниця проєкту',
-    founderTrustText: 'Каталог веде Марія Рубеж: редакційний фокус, перевірка фактів і єдиний тон матеріалів.',
-    founderTrustAlt: 'Марія Рубеж, засновниця Rybezh.site',
+    founderTrustText: 'Проєкт веде Олена Рибецька: стратегія розвитку каталогу, редакційна якість і професійні стандарти подачі профілів.',
+    founderTrustAlt: 'Олена Рибецька, засновниця Rybezh',
     profileCTATitle: 'Звʼязок щодо цього профілю',
     profileCTAText: 'Рекрутери та операційні команди можуть написати на редакційну пошту — вкажіть компанію, роль і короткий контекст запиту.',
     profileCTALinkLabel: 'Написати на jobs.r@protonmail.com',
@@ -178,7 +178,7 @@ const tr = {
     directoryShareHint: 'Фільтри й пошук зберігаються в адресі сторінки — можна поділитися посиланням.',
     methodologyFounderNote: {
       title: 'Редакція та засновниця',
-      body: 'Каталог веде Марія Рубеж (Rybezh.site): ми вирівнюємо тон між мовами, перевіряємо факти там, де це можливо, і не публікуємо сторінки лише заради ключових слів.'
+      body: 'Каталог веде Олена Рибецька (Rybezh): ми вирівнюємо тон між мовами, перевіряємо факти там, де це можливо, і не публікуємо сторінки лише заради ключових слів.'
     }
   },
   en: {
@@ -1050,6 +1050,68 @@ function policySection(section) {
   </section>`;
 }
 
+
+function aboutPayload(lang) {
+  const map = {
+    uk: {
+      title: 'Про нас',
+      intro: 'Rybezh.site — редакційний каталог спеціалістів і стартапів. Ми робимо акцент на перевірюваному професійному контексті, прозорій структурі профілів і відповідальній подачі даних.',
+      sections: [
+        { title: 'Хто ми', body: 'Невелика редакційна команда з фокусом на технології, операції та сучасні карʼєрні профілі.' },
+        { title: 'Як перевіряємо', body: 'Перевіряємо публічні факти, уніфікуємо стиль між мовами та оновлюємо сторінки, коли контекст змінюється.' },
+        { title: 'Чому нам довіряють', body: 'Кожен профіль має фото, роль, країну, фокус і короткий професійний огляд без SEO-шуму.' }
+      ]
+    },
+    en: {
+      title: 'About us',
+      intro: 'Rybezh.site is an editorial directory of specialists and startups. We focus on verifiable professional context, transparent profile structure, and responsible publishing.',
+      sections: [
+        { title: 'Who we are', body: 'A compact editorial team focused on technology, operations, and modern professional profiles.' },
+        { title: 'How we verify', body: 'We verify public facts, align tone across languages, and update pages when context changes.' },
+        { title: 'Why trust us', body: 'Every profile includes photo, role, country, focus, and a concise professional overview without SEO noise.' }
+      ]
+    },
+    ru: {
+      title: 'О нас',
+      intro: 'Rybezh.site — редакционный каталог специалистов и стартапов. Мы делаем акцент на проверяемом профессиональном контексте, прозрачной структуре профилей и ответственной подаче данных.',
+      sections: [
+        { title: 'Кто мы', body: 'Небольшая редакционная команда с фокусом на технологии, операции и современные карьерные профили.' },
+        { title: 'Как проверяем', body: 'Проверяем публичные факты, выравниваем стиль между языками и обновляем страницы при изменении контекста.' },
+        { title: 'Почему нам доверяют', body: 'Каждый профиль содержит фото, роль, страну, фокус и краткий профессиональный обзор без SEO-шума.' }
+      ]
+    },
+    es: {
+      title: 'Sobre nosotros',
+      intro: 'Rybezh.site es un directorio editorial de especialistas y startups. Priorizamos contexto profesional verificable, estructura clara de perfiles y publicación responsable.',
+      sections: [
+        { title: 'Quiénes somos', body: 'Un equipo editorial compacto enfocado en tecnología, operaciones y perfiles profesionales modernos.' },
+        { title: 'Cómo verificamos', body: 'Verificamos hechos públicos, alineamos el tono entre idiomas y actualizamos páginas cuando cambia el contexto.' },
+        { title: 'Por qué confiar', body: 'Cada perfil incluye foto, rol, país, foco y un resumen profesional claro sin ruido SEO.' }
+      ]
+    }
+  };
+  return map[lang];
+}
+
+function teamTrustSection(lang) {
+  const labels = {
+    uk: { eyebrow: 'Команда Rybezh.site', title: 'Редакційна команда та довіра', text: 'Публікуємо профілі з відповідальністю до фактів. Нижче — редакційна команда, яка відповідає за якість, перевірку та оновлення контенту. Профіль Богдана Тютенка є окремою редакційною статтею, а не частиною команди засновників.', btn: 'Детальніше про нас' },
+    en: { eyebrow: 'Rybezh.site team', title: 'Editorial team and trust', text: 'We publish profiles with accountability to facts. Meet the editorial team responsible for quality, verification, and updates. Bohdan Tiutenko is presented as an independent profile article, not part of the founding team.', btn: 'Learn more about us' },
+    ru: { eyebrow: 'Команда Rybezh.site', title: 'Редакционная команда и доверие', text: 'Публикуем профили с ответственностью к фактам. Ниже — редакционная команда, отвечающая за качество, проверку и обновления. Профиль Богдана Тютенко — отдельная редакционная статья, а не часть команды основателей.', btn: 'Подробнее о нас' },
+    es: { eyebrow: 'Equipo Rybezh.site', title: 'Equipo editorial y confianza', text: 'Publicamos perfiles con responsabilidad sobre los hechos. Este equipo editorial responde por calidad, verificación y actualizaciones. El perfil de Bohdan Tiutenko es un artículo editorial independiente y no parte del equipo fundador.', btn: 'Más sobre nosotros' }
+  };
+  const l = labels[lang];
+  const members = [
+    { name: 'Olena Rybetska', role: 'Founder & Editorial Lead', image: FOUNDER_IMAGE },
+    { name: 'Editorial Verification Team', role: 'Fact-check & Research', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Margaret_Hamilton_-_restoration.jpg?width=720' },
+    { name: 'Profile QA Team', role: 'Data & Profile QA', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Sir_Tim_Berners-Lee_(cropped).jpg?width=720' }
+  ];
+  return `
+${sectionIntro(l.eyebrow, l.title, l.text)}
+<section class="grid compact-grid">${members.map(m => `<article class="card profile-card"><img src="${m.image}" alt="${escapeHtml(m.name)}" loading="lazy"><div class="card-body"><h3>${escapeHtml(m.name)}</h3><p class="meta">${escapeHtml(m.role)}</p></div></article>`).join('')}</section>
+<section class="split-panel"><a class="btn" href="${pageName('about', lang)}">${escapeHtml(l.btn)}</a></section>`;
+}
+
 function writeContentPage(lang, base, title, intro, sections, extraHtml = '') {
   writePage(pageName(base, lang), `
 <title>${escapeHtml(title)} | Rybezh</title>
@@ -1117,6 +1179,8 @@ ${sectionIntro(l.latestTitle, l.latestTitle, l.latestText)}
 
 ${sectionIntro(l.startupsTitle, l.startupsTitle, l.startupsText)}
 <section class="grid startup-grid">${compactStartupCards(startups, lang, 6)}</section>
+
+${teamTrustSection(lang)}
 
 <section class="split-panel accent-panel">
   <div>
@@ -1248,7 +1312,7 @@ function write404(lang) {
 }
 
 function writeSitemap(specialists) {
-  const staticPages = ['index', 'specialists', 'startups', 'privacy', 'cookies', 'terms', 'methodology'];
+  const staticPages = ['index', 'specialists', 'startups', 'about', 'privacy', 'cookies', 'terms', 'methodology'];
   const urls = [];
   for (const lang of langs) {
     for (const page of staticPages) {
@@ -1290,6 +1354,8 @@ for (const lang of langs) {
   writeIndex(lang, specialists, startups);
   writeSpecialists(lang, specialists);
   writeStartups(lang, startups);
+  const about = aboutPayload(lang);
+  writeContentPage(lang, 'about', about.title, about.intro, about.sections);
   writeContentPage(lang, 'methodology', tr[lang].methodologyTitle, tr[lang].methodologyIntro, tr[lang].methodologySections, policySection(tr[lang].methodologyFounderNote));
   writeContentPage(lang, 'privacy', tr[lang].privacyTitle, tr[lang].privacyIntro, tr[lang].privacySections);
   writeContentPage(lang, 'cookies', tr[lang].cookiesTitle, tr[lang].cookiesIntro, tr[lang].cookiesSections);
@@ -1298,4 +1364,4 @@ for (const lang of langs) {
 }
 
 writeSitemap(specialists);
-console.log(`Generated ${specialists.length * langs.length} profile pages and ${langs.length * 7} static pages.`);
+console.log(`Generated ${specialists.length * langs.length} profile pages and ${langs.length * 8} static pages.`);

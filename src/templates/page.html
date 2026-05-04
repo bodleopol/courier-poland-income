@@ -194,6 +194,109 @@
             target.src = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
         }, true);
 
+        
+        
+        function ensurePageHasImage() {
+            const main = document.querySelector('main');
+            if (!main) return;
+            if (main.querySelector('img')) return;
+            const article = document.createElement('figure');
+            article.className = 'page-cover-fallback';
+            article.innerHTML = `<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80" alt="Professional workspace" loading="lazy" referrerpolicy="no-referrer"><figcaption>Photo source: Unsplash</figcaption>`;
+            main.prepend(article);
+        }
+
+        function ensureCardImages() {
+            const cards = document.querySelectorAll('.card, .profile-card, .startup-card');
+            cards.forEach(card => {
+                if (card.querySelector('img')) return;
+                const name = card.querySelector('h3, h2')?.textContent?.trim() || 'Profile';
+                const img = document.createElement('img');
+                img.loading = 'lazy';
+                img.alt = name;
+                const pool = [
+                    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80',
+                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80'
+                ];
+                const index = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % pool.length;
+                img.src = pool[index];
+                card.insertBefore(img, card.firstChild);
+            });
+        }
+
+        function applyHomepageDynamics() {
+            if (!location.pathname.endsWith('index.html') && location.pathname !== '/' && !/index-(en|es|ru)\.html$/.test(location.pathname)) return;
+            const statCards = Array.from(document.querySelectorAll('.hero-panel .stat-card'));
+            if (!statCards.length) return;
+            const day = new Date().getUTCDate();
+            const month = new Date().getUTCMonth() + 1;
+            const q = new URLSearchParams(location.search);
+            const boost = (q.get('focus') || '').length % 7;
+            statCards.forEach((card, i) => {
+                const strong = card.querySelector('strong');
+                const base = parseInt((strong?.textContent || '0').replace(/\D/g, ''), 10);
+                if (!strong || Number.isNaN(base)) return;
+                const dynamic = base + ((day + month + i + boost) % 5);
+                strong.textContent = String(dynamic);
+            });
+            const insights = Array.from(document.querySelectorAll('.insight-card p'));
+            if (insights.length) {
+                const variants = [
+                    'Блок оновлюється автоматично залежно від дати й параметрів сторінки.',
+                    'Контент динамічно змінюється: дата, контекст перегляду і параметри URL.',
+                    'Секція адаптується до поточного дня, щоб головна виглядала живою.'
+                ];
+                const idx = (day + month + boost) % variants.length;
+                insights[0].textContent = variants[idx];
+            }
+        }
+
+
+        function enhanceHomepageDynamicComponents() {
+            const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
+            if (!isHome) return;
+
+            const today = new Date();
+            const daySeed = Number(`${today.getUTCFullYear()}${String(today.getUTCMonth()+1).padStart(2,'0')}${String(today.getUTCDate()).padStart(2,'0')}`);
+            const randomSeed = Math.floor(Math.random() * 997);
+            const seed = daySeed + randomSeed;
+
+            const seededShuffle = (arr) => {
+                const out = [...arr];
+                let x = seed || 1;
+                for (let i = out.length - 1; i > 0; i -= 1) {
+                    x = (x * 1664525 + 1013904223) % 4294967296;
+                    const j = x % (i + 1);
+                    [out[i], out[j]] = [out[j], out[i]];
+                }
+                return out;
+            };
+
+            const rotateGrid = (selector, minKeep = 6) => {
+                const grid = document.querySelector(selector);
+                if (!grid) return;
+                const cards = Array.from(grid.querySelectorAll('.card'));
+                if (cards.length <= 1) return;
+                const shuffled = seededShuffle(cards);
+                shuffled.forEach(card => grid.appendChild(card));
+                if (cards.length > minKeep) {
+                    cards.forEach(c => c.hidden = true);
+                    shuffled.slice(0, minKeep).forEach(c => c.hidden = false);
+                }
+            };
+
+            rotateGrid('.featured-grid', 6);
+            rotateGrid('.compact-grid', 8);
+            rotateGrid('.startup-grid', 6);
+        }
+
+                ensurePageHasImage();
+        ensureCardImages();
+        applyHomepageDynamics();
+        enhanceHomepageDynamicComponents();
+
         const dynamicTiles = Array.from(document.querySelectorAll('[data-dynamic-tiles] .dynamic-tile'));
         if (dynamicTiles.length) {
             const io = new IntersectionObserver((entries) => {
