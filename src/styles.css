@@ -1543,3 +1543,11 @@ body[data-theme="dark"] .btn.secondary {
     max-height: 280px;
   }
 }
+
+.editorial-team-shell { border: 1px solid #dbe4f3; background: #f8fbff; border-radius: 20px; padding: 24px; margin: 32px 0; }
+.editorial-team-shell .compact-grid .card { background: #fff; }
+
+
+.card { content-visibility: auto; contain-intrinsic-size: 320px; }
+.profile-card img, .startup-card img { display:block; object-fit: cover; }
+
