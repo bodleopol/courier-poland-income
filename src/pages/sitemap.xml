@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/about.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/privacy.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1112,6 +1117,11 @@
   </url>
   <url>
     <loc>https://rybezh.site/startups-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/about-en.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2216,6 +2226,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/about-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/privacy-es.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -3312,6 +3327,11 @@
   </url>
   <url>
     <loc>https://rybezh.site/startups-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/about-ru.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
