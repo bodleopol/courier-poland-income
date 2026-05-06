@@ -67,6 +67,11 @@ function replaceClearbitLogoImages(html, basename) {
 }
 const translations = {
   uk: {
+    skipLink: 'Перейти до вмісту',
+    brandTagline: 'Редакційний архів · експерти · компанії',
+    footerTagline:
+      'Rybezh.site — міжнародна редакційна платформа зі структурованими профілями, прозорими правилами та людською перевіркою матеріалів.',
+    contactLabel: 'Редакційний контакт:',
     navAria: 'Головна навігація',
     navHome: 'Головна',
     navSpecialists: 'Спеціалісти',
@@ -76,14 +81,17 @@ const translations = {
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
     navTerms: 'Умови',
-    footerAbout: 'Rybezh.site — інформаційна редакційна база спеціалістів, керівників і технологічних компаній: структуровані профілі, прозора навігація та зрозумілі правила публікації.',
+    footerAbout:
+      'Rybezh.site — міжнародна багатомовна платформа з кураторськими профілями спеціалістів, фаундерів і компаній: чітка структура, перевірені джерела та редакційна відповідальність.',
     footerNavTitle: 'Навігація',
-    footerScopeTitle: 'Про базу',
-    footerScopeText: 'Матеріали зібрані як довідкова інформаційна база про людей та організації в технологіях, інженерії, науці, операціях і бізнесі — для швидкого професійного контексту.',
-    footerLanguages: 'Доступні мови: українська, англійська, російська.',
+    footerScopeTitle: 'Що це за архів',
+    footerScopeText:
+      'Ми документуємо професійний контекст — хто будує продукти, які рішення формують галузі та як компанії позиціонуються на ринку. Це не маркетплейс послуг і не дошка вакансій.',
+    footerLanguages: 'Доступні мови: українська, англійська, іспанська, російська.',
     footerRights: 'Всі права захищені.',
     footerPoliciesTitle: 'Редакція і політики',
-    footerPoliciesText: 'Редакційний формат: інформаційна база з прозорою структурою сторінок і без прихованого службового тексту.',
+    footerPoliciesText:
+      'Матеріали готуються людьми: є методологія оновлень, політики даних і зрозумілі правила цитування та виправлень.',
     footerTeam: 'Команда: Rybezh.site',
     cookieTitle: 'Ми використовуємо лише базові cookies',
     cookieText: 'Сайт зберігає вибір теми та вашу відповідь на cookies notice у браузері. Деталі описані на окремій сторінці політики cookies.',
@@ -91,6 +99,11 @@ const translations = {
     cookieDecline: 'Відхилити'
   },
   en: {
+    skipLink: 'Skip to content',
+    brandTagline: 'Editorial archive · experts · companies',
+    footerTagline:
+      'Rybezh.site is an international editorial platform—structured profiles, transparent policies, and human review—not a job board or lead funnel.',
+    contactLabel: 'Editorial contact:',
     navAria: 'Main navigation',
     navHome: 'Home',
     navSpecialists: 'Specialists',
@@ -100,14 +113,17 @@ const translations = {
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
     navTerms: 'Terms',
-    footerAbout: 'Rybezh.site is an editorial information base of specialists, executives and technology companies — structured profiles, transparent navigation and clear publishing rules.',
+    footerAbout:
+      'Rybezh.site is a multilingual editorial archive of specialists, founders, and companies—curated presentation, sourced context, and accountable updates.',
     footerNavTitle: 'Navigation',
-    footerScopeTitle: 'About the directory',
-    footerScopeText: 'Materials are organised as a reference information base about people and organisations in technology, engineering, science, operations and business — built for fast professional context.',
+    footerScopeTitle: 'About this archive',
+    footerScopeText:
+      'We publish professional context: who is building, how organisations position themselves, and what signals matter for research—not vacancies, not automated listings.',
     footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
     footerRights: 'All rights reserved.',
     footerPoliciesTitle: 'Editorial and policies',
-    footerPoliciesText: 'Editorial format: informational knowledge base with transparent page structure and no hidden boilerplate text.',
+    footerPoliciesText:
+      'Editorial workflow, privacy, and methodology pages spell out how profiles are composed, corrected, and maintained.',
     footerTeam: 'Team: Rybezh.site',
     cookieTitle: 'We use only basic cookies',
     cookieText: 'The site stores theme preference and your cookies-notice choice in the browser. See the cookies policy page for details.',
@@ -115,6 +131,11 @@ const translations = {
     cookieDecline: 'Decline'
   },
   es: {
+    skipLink: 'Ir al contenido',
+    brandTagline: 'Archivo editorial · expertos · empresas',
+    footerTagline:
+      'Rybezh.site es una plataforma editorial internacional con perfiles estructurados y revisión humana: no es un portal de empleo ni un directorio automatizado.',
+    contactLabel: 'Contacto editorial:',
     navAria: 'Navegación principal',
     navHome: 'Inicio',
     navSpecialists: 'Especialistas',
@@ -124,14 +145,17 @@ const translations = {
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
     navTerms: 'Términos',
-    footerAbout: 'Rybezh.site es una base editorial informativa de especialistas, directivos y compañías tecnológicas: perfiles estructurados, navegación transparente y reglas claras de publicación.',
+    footerAbout:
+      'Rybezh.site es un archivo editorial multilingüe de especialistas, fundadores y empresas tecnológicas: narrativa curada, fuentes explícitas y estándares de calidad.',
     footerNavTitle: 'Navegación',
-    footerScopeTitle: 'Sobre la base',
-    footerScopeText: 'Los materiales están organizados como una base de referencia sobre personas y organizaciones en tecnología, ingeniería, ciencia, operaciones y negocios — pensada para contexto profesional rápido.',
+    footerScopeTitle: 'Qué es este archivo',
+    footerScopeText:
+      'Publicamos contexto profesional — trayectorias, mandatos y posicionamiento — para lectura pausada y comparación rigurosa. No publicamos vacantes ni listados masivos generados por máquinas.',
     footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español y ruso.',
     footerRights: 'Todos los derechos reservados.',
     footerPoliciesTitle: 'Editorial y políticas',
-    footerPoliciesText: 'Formato editorial: base informativa con estructura de páginas transparente y sin texto oculto de plantilla.',
+    footerPoliciesText:
+      'La metodología y las políticas describen cómo redactamos, corregimos y conservamos cada ficha.',
     footerTeam: 'Equipo: Rybezh.site',
     cookieTitle: 'Usamos solo cookies básicas',
     cookieText: 'El sitio guarda la preferencia de tema y tu elección del aviso de cookies en el navegador. Consulta la política de cookies para más detalles.',
@@ -139,6 +163,11 @@ const translations = {
     cookieDecline: 'Rechazar'
   },
   ru: {
+    skipLink: 'Перейти к содержимому',
+    brandTagline: 'Редакционный архив · эксперты · компании',
+    footerTagline:
+      'Rybezh.site — международная редакционная платформа со структурированными профилями и человеческой проверкой; это не сайт вакансий и не SEO-каталог.',
+    contactLabel: 'Редакционная связь:',
     navAria: 'Главная навигация',
     navHome: 'Главная',
     navSpecialists: 'Специалисты',
@@ -148,14 +177,17 @@ const translations = {
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
     navTerms: 'Условия',
-    footerAbout: 'Rybezh.site — редакционная информационная база специалистов, руководителей и технологических компаний: структурированные профили, прозрачная навигация и понятные правила публикации.',
+    footerAbout:
+      'Rybezh.site — многоязычный редакционный архив специалистов, фаундеров и технологических компаний: выверенная подача, указание контекста и ответственность за факты.',
     footerNavTitle: 'Навигация',
-    footerScopeTitle: 'О базе',
-    footerScopeText: 'Материалы собраны как справочная информационная база о людях и организациях в технологиях, инженерии, науке, операциях и бизнесе — для быстрого профессионального контекста.',
+    footerScopeTitle: 'Что это за архив',
+    footerScopeText:
+      'Мы фиксируем профессиональный контекст — роли, география, фокус компаний — для вдумчивого чтения и анализа. Здесь нет массовых списков вакансий и шаблонных SEO-страниц.',
     footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
     footerRights: 'Все права защищены.',
     footerPoliciesTitle: 'Редакция и политики',
-    footerPoliciesText: 'Редакционный формат: информационная база с прозрачной структурой страниц и без скрытого служебного текста.',
+    footerPoliciesText:
+      'Методология и политики объясняют, как материалы собираются, проверяются и обновляются.',
     footerTeam: 'Команда: Rybezh.site',
     cookieTitle: 'Мы используем только базовые cookies',
     cookieText: 'Сайт сохраняет выбор темы и ваш ответ на cookies notice в браузере. Подробности - на странице политики cookies.',
@@ -286,7 +318,11 @@ function compileHTML(srcFile, destFile) {
   const cookiesUrl = lang === 'uk' ? 'cookies.html' : `cookies-${lang}.html`;
   const termsUrl = lang === 'uk' ? 'terms.html' : `terms-${lang}.html`;
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
-  finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
+  finalHtml = finalHtml.replaceAll('{{SKIP_LINK}}', local.skipLink)
+                       .replaceAll('{{BRAND_TAGLINE}}', local.brandTagline)
+                       .replaceAll('{{FOOTER_TAGLINE}}', local.footerTagline)
+                       .replaceAll('{{CONTACT_LABEL}}', local.contactLabel)
+                       .replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
