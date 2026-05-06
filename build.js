@@ -182,13 +182,9 @@ function processDirectory(dirPath, destPath) {
       if (entry.name !== 'templates' && entry.name !== 'pages') { // Skip templates and pages as pages are flattened
           processDirectory(srcFile, destFile);
       }
-    } else {
-        // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
-        if (!srcFile.endsWith('.html') && dirPath === SRC_DIR) {
-            fs.copyFileSync(srcFile, destFile);
-        } else if (dirPath !== SRC_DIR && !srcFile.endsWith('.html')) {
-            fs.copyFileSync(srcFile, destFile);
-        }
+    } else if (!srcFile.endsWith('.html')) {
+      // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
+      fs.copyFileSync(srcFile, destFile);
     }
   }
 }
