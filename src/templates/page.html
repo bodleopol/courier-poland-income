@@ -320,6 +320,11 @@
             });
         }
 
+        const liveTrack = document.querySelector('[data-live-track]');
+        if (liveTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            liveTrack.innerHTML = `${liveTrack.innerHTML}${liveTrack.innerHTML}`;
+        }
+
         const directoryPanels = Array.from(document.querySelectorAll('[data-directory-panel]'));
 
         directoryPanels.forEach(panel => {
