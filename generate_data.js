@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { stripAiPublicText } from './scripts/strip-ai-text.mjs';
 
 const langs = ['uk', 'en', 'ru', 'es'];
 
@@ -44,7 +45,7 @@ function enrichBio(person) {
     if (text.length < MIN_BIO_LENGTH) {
       text = `${text}${bioTail(lang)}`.replace(/\s+/g, ' ').trim();
     }
-    out[lang] = text;
+    out[lang] = stripAiPublicText(text);
   }
   return out;
 }
@@ -176,7 +177,35 @@ function enrichStartupSummary(company, details) {
     if (text.length < minLen && notable) {
       text = `${base} ${notable}.${extra}`.replace(/\s+/g, ' ').trim();
     }
-    out[lang] = text;
+    out[lang] = stripAiPublicText(text);
+  }
+  return out;
+}
+
+function sanitizeMultilangRecord(record) {
+  if (!record) return record;
+  const out = {};
+  for (const lang of langs) {
+    out[lang] = stripAiPublicText(record[lang]);
+  }
+  return out;
+}
+
+function sanitizeGallery(gallery) {
+  if (!gallery?.length) return gallery || [];
+  return gallery.map(item => ({
+    image: stripAiPublicText(item.image),
+    title: sanitizeMultilangRecord(item.title),
+    caption: sanitizeMultilangRecord(item.caption)
+  }));
+}
+
+function sanitizeHighlights(highlights) {
+  if (!highlights) return null;
+  const out = {};
+  for (const lang of langs) {
+    const list = highlights[lang];
+    out[lang] = Array.isArray(list) ? list.map(s => stripAiPublicText(s)) : list;
   }
   return out;
 }
@@ -305,7 +334,7 @@ const specialists = [
   },
   {
     slug: 'fei-fei-li',
-    image: commons('Fei-Fei_Li_at_AI_for_Good_2017.jpg'),
+    image: commons('P20230620AS-0276_(53233832252).jpg'),
     name: t('Фей-Фей Лі', 'Fei-Fei Li', 'Фэй-Фэй Ли', 'Fei-Fei Li'),
     role: t('Дослідниця штучного інтелекту', 'AI researcher', 'Исследовательница ИИ', 'Investigadora de IA'),
     country: t('США', 'United States', 'США', 'Estados Unidos'),
@@ -701,7 +730,7 @@ const specialists = [
   },
   {
     slug: 'greg-brockman',
-    image: commons('Greg_Brockman_OpenAI_DevDay_(cropped).jpg'),
+    image: commons('Greg_Brockman,_2019.jpg'),
     name: t('Грег Брокман', 'Greg Brockman', 'Грег Брокман', 'Greg Brockman'),
     role: t('Президент та співзасновник OpenAI', 'President and co-founder of OpenAI', 'Президент и сооснователь OpenAI', 'Presidente y cofundador de OpenAI'),
     country: t('США', 'United States', 'США', 'Estados Unidos'),
@@ -855,47 +884,82 @@ const bohdanProfile = {
   focus: t('last-mile, міські операції, керування флотом курʼєрів, P&L, KPI/OKR, SOPs, Power BI, Excel / Power Query, SQL, Kommo CRM', 'last-mile, city operations, courier fleet management, P&L, KPI/OKRs, SOPs, Power BI, Excel / Power Query, SQL, Kommo CRM', 'last-mile, городские операции, управление флотом курьеров, P&L, KPI/OKR, SOPs, Power BI, Excel / Power Query, SQL, Kommo CRM', 'last-mile, operaciones urbanas, gestión de flota de repartidores, P&L, KPI/OKR, SOPs, Power BI, Excel / Power Query, SQL, Kommo CRM'),
   knownFor: t('практичне поєднання польових операцій з аналітикою даних у доставці та foodtech', 'combining hands-on delivery operations with data-driven management in foodtech', 'сочетание полевых операций доставки с управлением на основе данных в foodtech', 'combinar operaciones de reparto en campo con gestión basada en datos en foodtech'),
   life: t(
-    'Богдан Тютенко — операційний менеджер із понад 5 роками практичного досвіду в last-mile логістиці та foodtech. Працює на стику польових процесів і аналітики: організація зміни, координація курʼєрів, контроль витрат, P&L і якість сервісу. Під час роботи в Rocket Ukraine відповідав за city operations у фазі активного росту, зокрема за масштабування флоту понад 150 курʼєрів та стабільність доставки в пікові години. У Лімі працював із dark kitchens: синхронізував виробництво й dispatch, впроваджував облік FIFO/PEPS, зменшував втрати та вирівнював темп роботи між брендами. У ролях в Yango і суміжних проєктах фокусувався на KPI/OKR, SOP-процесах і швидкому реагуванні на інциденти без втрати якості. Інструменти: Power BI, SQL, Excel/Power Query, Kommo CRM. Робочий стиль — спокійний, структурний і практичний: спочатку розібрати вузьке місце, потім зафіксувати рішення в процесі, щоб команда могла повторювати результат. Мови: українська та російська — рідні, іспанська — C1, англійська — B2. Зараз базується в Лімі (Перу) та відкритий до ролей у сфері операцій, логістики й foodtech, де важливі надійність, темп і вимірюваний результат.',
-    'Bohdan Tiutenko is an operations-focused professional with 5+ years of hands-on experience in last-mile logistics and foodtech environments. His work sits between field execution and data-driven management: shift operations, courier coordination, cost control, P&L, and service reliability. During Rocket Ukraine’s growth phase, he handled city operations responsibilities, including scaling a fleet of 150+ couriers and keeping delivery performance stable during peak periods. In Lima, he worked with dark kitchen teams, coordinating production and dispatch, applying FIFO/PEPS inventory routines, and improving workflow consistency across brands. In Yango-related and adjacent roles, he focused on KPI/OKR discipline, SOP implementation, and incident response under time pressure. Tools: Power BI, SQL, Excel/Power Query, Kommo CRM. His leadership style is pragmatic and structured: identify bottlenecks quickly, implement clear process fixes, and make results repeatable for the team. Languages: Ukrainian and Russian (native), Spanish (C1), English (B2). Based in Lima, Peru, he is open to operations, logistics, and foodtech roles where measurable execution and system stability matter.',
-    'Богдан Тютенко — операционный специалист с опытом более 5 лет в last-mile логистике и foodtech. Его сильная сторона — сочетание полевой операционной работы и управления на основе данных: координация курьеров, диспетчеризация, контроль затрат, P&L и стабильность сервиса. В Rocket Ukraine во время активного роста платформы он отвечал за city operations, включая масштабирование флота более 150 курьеров и поддержание качества доставки в пиковые часы. В Лиме работал с dark kitchens: выстраивал связку производства и dispatch, внедрял учёт FIFO/PEPS и снижал операционные потери. В ролях в Yango и смежных проектах фокусировался на KPI/OKR, стандартизации SOP и быстром реагировании на инциденты. Инструменты: Power BI, SQL, Excel/Power Query, Kommo CRM. Стиль управления — практичный и структурный: быстро находить узкие места, фиксировать рабочие решения в процессах и делать результат повторяемым для команды. Языки: украинский и русский — родные, испанский — C1, английский — B2. Сейчас базируется в Лиме (Перу) и открыт к ролям в операциях, логистике и foodtech, где важны надёжность и измеримый результат.',
-    'Bohdan Tiutenko es un profesional de operaciones con más de 5 años de experiencia práctica en logística de última milla y entornos foodtech. Combina ejecución en campo con gestión basada en datos: coordinación de repartidores, despacho, control de costos, P&L y continuidad del servicio. Durante la etapa de crecimiento de Rocket Ukraine, asumió responsabilidades de city operations, incluyendo el escalado de una flota de más de 150 repartidores y la estabilidad operativa en horas pico. En Lima trabajó con dark kitchens, coordinando producción y despacho, aplicando FIFO/PEPS y mejorando la eficiencia entre marcas. En roles relacionados con Yango y proyectos afines, se centró en disciplina KPI/OKR, estandarización de SOPs y respuesta a incidentes bajo presión. Herramientas: Power BI, SQL, Excel/Power Query, Kommo CRM. Su estilo de liderazgo es pragmático y estructurado: detectar cuellos de botella, aplicar mejoras claras y volver el resultado repetible para el equipo. Idiomas: ucraniano y ruso nativos, español C1, inglés B2. Actualmente vive en Lima, Perú, y está abierto a roles en operaciones, logística y foodtech donde importen la fiabilidad y los resultados medibles.'
+    'Операційний менеджер із понад 5 роками практичного досвіду в last-mile логістиці та foodtech. Працює на стику польових процесів і аналітики: організація зміни, координація курʼєрів, контроль витрат, P&L і якість сервісу. Під час роботи в Rocket Ukraine відповідав за city operations у фазі активного росту, зокрема за масштабування флоту понад 150 курʼєрів та стабільність доставки в пікові години. У Лімі працював із dark kitchens: синхронізував виробництво й dispatch, впроваджував облік FIFO/PEPS, зменшував втрати та вирівнював темп роботи між брендами. У ролях у Yango та суміжних проєктах фокусувався на KPI/OKR, SOP-процесах і швидкому реагуванні на інциденти без втрати якості. Інструменти: Power BI, SQL, Excel/Power Query, Kommo CRM. Робочий стиль — спокійний, структурний і практичний: спочатку розібрати вузьке місце, потім зафіксувати рішення в процесі, щоб команда могла повторювати результат. Мови: українська та російська — рідні, іспанська — C1, англійська — B2. Зараз базується в Лімі (Перу) та відкритий до ролей у сфері операцій, логістики й foodtech, де важливі надійність, темп і вимірюваний результат.',
+    'Operations-focused professional with 5+ years of hands-on experience in last-mile logistics and foodtech environments. The work sits between field execution and data-driven management: shift operations, courier coordination, cost control, P&L, and service reliability. During Rocket Ukraine’s growth phase, handled city operations responsibilities, including scaling a fleet of 150+ couriers and keeping delivery performance stable during peak periods. In Lima, worked with dark kitchen teams, coordinating production and dispatch, applying FIFO/PEPS inventory routines, and improving workflow consistency across brands. In Yango-related and adjacent roles, focused on KPI/OKR discipline, SOP implementation, and incident response under time pressure. Tools: Power BI, SQL, Excel/Power Query, Kommo CRM. Leadership style is pragmatic and structured: identify bottlenecks quickly, implement clear process fixes, and make results repeatable for the team. Languages: Ukrainian and Russian (native), Spanish (C1), English (B2). Based in Lima, Peru, open to operations, logistics, and foodtech roles where measurable execution and system stability matter.',
+    'Операционный специалист с опытом более 5 лет в last-mile логистике и foodtech. Сильная сторона — сочетание полевой операционной работы и управления на основе данных: координация курьеров, диспетчеризация, контроль затрат, P&L и стабильность сервиса. В Rocket Ukraine во время активного роста платформы отвечал за city operations, включая масштабирование флота более 150 курьеров и поддержание качества доставки в пиковые часы. В Лиме работал с dark kitchens: выстраивал связку производства и dispatch, внедрял учёт FIFO/PEPS и снижал операционные потери. В ролях в Yango и смежных проектах фокусировался на KPI/OKR, стандартизации SOP и быстром реагировании на инциденты. Инструменты: Power BI, SQL, Excel/Power Query, Kommo CRM. Стиль управления — практичный и структурный: быстро находить узкие места, фиксировать рабочие решения в процессах и делать результат повторяемым для команды. Языки: украинский и русский — родные, испанский — C1, английский — B2. Сейчас базируется в Лиме (Перу) и открыт к ролям в операциях, логистике и foodtech, где важны надёжность и измеримый результат.',
+    'Profesional de operaciones con más de 5 años de experiencia práctica en logística de última milla y entornos foodtech. Combina ejecución en campo con gestión basada en datos: coordinación de repartidores, despacho, control de costos, P&L y continuidad del servicio. Durante la etapa de crecimiento de Rocket Ukraine, asumió responsabilidades de city operations, incluyendo el escalado de una flota de más de 150 repartidores y la estabilidad operativa en horas pico. En Lima trabajó con dark kitchens, coordinando producción y despacho, aplicando FIFO/PEPS y mejorando la eficiencia entre marcas. En roles relacionados con Yango y proyectos afines, se centró en disciplina KPI/OKR, estandarización de SOPs y respuesta a incidentes bajo presión. Herramientas: Power BI, SQL, Excel/Power Query, Kommo CRM. Estilo de liderazgo pragmático y estructurado: detectar cuellos de botella, aplicar mejoras claras y volver el resultado repetible para el equipo. Idiomas: ucraniano y ruso nativos, español C1, inglés B2. Actualmente vive en Lima, Perú, y está abierto a roles en operaciones, logística y foodtech donde importen la fiabilidad y los resultados medibles.'
   ),
   tags: ['operations', 'leadership', 'logistics', 'analytics', 'foodtech', 'resilience', 'ukraine'],
   gallery: [
     {
       image: 'assets/images/bohdan-tiutenko-img0018.jpg',
       title: t('Професійний портрет', 'Professional portrait', 'Профессиональный портрет', 'Retrato profesional'),
-      caption: t('Фото для рекрутингового профілю та професійної презентації.', 'Image for a recruiting profile and professional presentation.', 'Изображение для рекрутингового профиля и профессиональной презентации.', 'Imagen para perfil de reclutamiento y presentación profesional.')
+      caption: t(
+        'Головне фото профілю: нейтральний фон і відкрита поза, зручні для швидкого впізнавання в каталозі та для першого контакту з рекрутером.',
+        'Primary profile photo: neutral background and an open posture that reads quickly in the directory and on first contact with a recruiter.',
+        'Основное фото профиля: нейтральный фон и открытая поза — удобно для быстрого узнавания в каталоге и при первом контакте с рекрутером.',
+        'Foto principal del perfil: fondo neutro y postura abierta, fácil de reconocer en el directorio y en el primer contacto con reclutamiento.'
+      )
     },
     {
       image: 'assets/images/1777671624758~3.png',
       title: t('Операційний досвід', 'Operations experience', 'Операционный опыт', 'Experiencia operativa'),
-      caption: t('Фокус на дисципліні, координації задач і стабільній роботі команди.', 'Focus on discipline, task coordination and stable team execution.', 'Фокус на дисциплине, координации задач и стабильной работе команды.', 'Enfoque en disciplina, coordinación de tareas y ejecución estable del equipo.')
+      caption: t(
+        'Робочий кадр ближче до «операційного поля»: акцент на дисципліні пріоритетів, синхронізації людей і процесів і стабільному темпі навіть у пікові години.',
+        'A work-adjacent frame closer to the operations floor: priorities stay visible, people and processes stay aligned, and the team keeps a steady pace through peaks.',
+        'Кадр ближе к «операционному полю»: приоритеты читаются, люди и процессы синхронизированы, команда держит стабильный темп в пик.',
+        'Encuadre cercano al terreno operativo: prioridades claras, personas y procesos alineados y ritmo estable incluso en horas pico.'
+      )
     },
     {
       image: 'assets/images/IMG_0018.jpg',
       title: t('Командна взаємодія', 'Team collaboration', 'Командное взаимодействие', 'Colaboración de equipo'),
-      caption: t('Підхід до роботи з людьми: чіткість, спокій і відповідальність.', 'Approach to people: clarity, calmness and responsibility.', 'Подход к работе с людьми: ясность, спокойствие и ответственность.', 'Trabajo con personas: claridad, calma y responsabilidad.')
+      caption: t(
+        'Командний кадр: підкреслює спокійне лідерство, прозорі правила зміни та підтримку передбачуваного сервісу для курʼєрів і кінцевих клієнтів.',
+        'Team-facing frame: calm leadership, clear shift rules and predictable service quality for couriers and end customers.',
+        'Командный кадр: спокойное лидерство, прозрачные правила смены и предсказуемое качество сервиса для курьеров и клиентов.',
+        'Imagen de equipo: liderazgo sereno, reglas claras de turno y calidad de servicio predecible para repartidores y clientes.'
+      )
     },
     {
       image: 'assets/images/Polish_20260102_233010540.jpg',
       title: t('Мотоподорож у пустелі', 'Desert motorcycle ride', 'Мотопоездка в пустыне', 'Ruta en moto por el desierto'),
-      caption: t('Особистий кадр про витримку, контроль і спокій у складних умовах.', 'A personal image about endurance, control and calmness in demanding conditions.', 'Личный кадр о выдержке, контроле и спокойствии в сложных условиях.', 'Imagen personal sobre resistencia, control y calma en condiciones exigentes.')
+      caption: t(
+        'Особистий епізод поза офісом: метафора витримки й самоконтролю — навички, які переносяться в керування інцидентами та непередбачуваними піками доставки.',
+        'A personal moment outside the office: a metaphor for endurance and self-control—skills that map directly to incident handling and unpredictable delivery peaks.',
+        'Личный кадр вне офиса: метафора выдержки и самоконтроля — навыки, которые помогают в инцидентах и непредсказуемых пиках доставки.',
+        'Momento personal fuera de oficina: resistencia y autocontrol, transferibles a incidentes y picos impredecibles de reparto.'
+      )
     },
     {
       image: 'assets/images/EDrop_1775166765355.png',
       title: t('Пауза біля океану', 'Ocean pause', 'Пауза у океана', 'Pausa junto al océano'),
-      caption: t('Кадр про відновлення, внутрішній баланс і здатність тримати фокус поза робочим шумом.', 'A personal image about recovery, inner balance and the ability to keep focus away from work noise.', 'Кадр о восстановлении, внутреннем балансе и способности сохранять фокус вне рабочего шума.', 'Imagen sobre recuperación, equilibrio interior y capacidad de mantener el foco lejos del ruido laboral.')
+      caption: t(
+        'Пауза біля води: нагадує про баланс між інтенсивними операціями та відновленням ресурсу — важливо для довгих змін і стабільних рішень під тиском.',
+        'A pause by the water: a reminder to balance intense operations with recovery—critical for long shifts and steady decisions under pressure.',
+        'Пауза у воды: баланс между интенсивными операциями и восстановлением — важно для длинных смен и устойчивых решений под давлением.',
+        'Pausa junto al agua: equilibrio entre operaciones intensas y recuperación, clave para turnos largos y decisiones firmes bajo presión.'
+      )
     },
     {
       image: 'assets/images/IMG_2361~2.jpg',
       title: t('Портрет у мистецькому просторі', 'Portrait in an art space', 'Портрет в художественном пространстве', 'Retrato en un espacio artístico'),
-      caption: t('Спокійний професійний образ у середовищі, де поєднуються культура, уважність і характер.', 'A calm professional portrait in a setting that connects culture, attention and character.', 'Спокойный профессиональный образ в среде, где соединяются культура, внимательность и характер.', 'Retrato profesional sereno en un entorno que une cultura, atención y carácter.')
+      caption: t(
+        'Портрет у культурному просторі: підкреслює увагу до деталей, повагу до контексту та здатність тримати професійний тон у різних середовищах.',
+        'Portrait in a cultural setting: attention to detail, respect for context and a steady professional tone across different environments.',
+        'Портрет в культурной среде: внимание к деталям, уважение к контексту и устойчивый профессиональный тон в разных условиях.',
+        'Retrato en un entorno cultural: detalle, respeto al contexto y tono profesional estable en distintos escenarios.'
+      )
     },
     {
       image: 'assets/images/bohdan-tiutenko-edrop.png',
       title: t('На воді з собакою', 'On the water with a dog', 'На воде с собакой', 'En el agua con un perro'),
-      caption: t('Особистий кадр про турботу, довіру і спокій у простих моментах поза роботою.', 'A personal image about care, trust and calm in simple moments outside work.', 'Личный кадр о заботе, доверии и спокойствии в простых моментах вне работы.', 'Imagen personal sobre cuidado, confianza y calma en momentos sencillos fuera del trabajo.')
+      caption: t(
+        'Особистий кадр на воді: м’які навички — турбота, довіра та спокійна комунікація — які підсилюють культуру безпеки й підтримки в операційних командах.',
+        'On the water with a dog: care, trust and calm communication—the softer skills that reinforce safety culture and support in operations teams.',
+        'Личный кадр на воде: забота, доверие и спокойная коммуникация — «мягкие» навыки, которые усиливают культуру безопасности в операционных командах.',
+        'Momento personal en el agua: cuidado, confianza y comunicación tranquila, habilidades que refuerzan la cultura de seguridad en operaciones.'
+      )
     },
     {
       image: 'assets/images/bohdan-tiutenko-painting.jpg',
@@ -906,10 +970,10 @@ const bohdanProfile = {
         '«Camine sobre la muerte, pero en mis manos queda vida»'
       ),
       caption: t(
-        'Живописний портрет за мотивами життєвого шляху Богдана Тютенка. Використовується як окремий візуальний елемент для презентаційного контексту.',
-        'Oil portrait inspired by Bohdan Tiutenko’s life path. Used as a standalone visual for presentation context, not corporate branding.',
-        'Живописный портрет по мотивам жизненного пути Богдана Тютенко. Используется как отдельный визуальный элемент для презентационного контекста, не корпоративный брендинг.',
-        'Retrato al óleo inspirado en la trayectoria de Bohdan Tiutenko. Se usa como pieza visual de presentación, no como branding corporativo.'
+        'Живописний портрет за мотивами особистої історії: окремий художній матеріал для презентаційного контексту, не корпоративний брендинг і не частина службової верифікації.',
+        'Oil portrait inspired by a personal story: a standalone artistic asset for presentation context—not corporate branding and not part of formal verification.',
+        'Живописный портрет по мотивам личной истории: отдельный художественный материал для презентаций, не корпоративный брендинг и не элемент формальной верификации.',
+        'Retrato al óleo inspirado en una historia personal: pieza artística independiente para presentaciones, no branding corporativo ni verificación formal.'
       )
     }
   ],
@@ -1069,10 +1133,10 @@ const extraSpecialists = Array.from({ length: 100 }, (_, index) => {
     name: t(`Спеціаліст Рубеж ${n}`, `Rybezh Specialist ${n}`, `Специалист Рубеж ${n}`, `Especialista Rybezh ${n}`),
     role: t(`Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`, `Senior Product Engineer L${level}`),
     country,
-    focus: t('продуктова розробка, AI-автоматизація, аналітика', 'product development, AI automation, analytics', 'продуктовая разработка, AI-автоматизация, аналитика', 'desarrollo de producto, automatización con IA y analítica'),
+    focus: t('продуктова розробка, автоматизація процесів, аналітика', 'product development, workflow automation, analytics', 'продуктовая разработка, автоматизация процессов, аналитика', 'desarrollo de producto, automatización de flujos y analítica'),
     knownFor: t(`масштабування B2B продукту й операцій у міжнародних командах (профіль #${n})`, `scaling B2B products and operations in international teams (profile #${n})`, `масштабирование B2B-продукта и операций в международных командах (профиль #${n})`, `escalar productos B2B y operaciones en equipos internacionales (perfil #${n})`),
-    life: t(`Профіль ${n}: працює на перетині продукту, інженерії та операцій, запускає AI-функції та системно покращує метрики командної ефективності.`, `Profile ${n}: works at the intersection of product, engineering and operations, launching AI features and improving team efficiency metrics.`, `Профиль ${n}: работает на пересечении продукта, инженерии и операций, запускает AI-функции и системно улучшает метрики эффективности команды.`, `Perfil ${n}: trabaja entre producto, ingeniería y operaciones, lanza funciones con IA y mejora métricas de eficiencia del equipo.`),
-    tags: ['software', 'operations', 'ai']
+    life: t(`Профіль ${n}: працює на перетині продукту, інженерії та операцій, запускає функції автоматизації та системно покращує метрики командної ефективності.`, `Profile ${n}: works at the intersection of product, engineering and operations, launching automation features and improving team efficiency metrics.`, `Профиль ${n}: работает на пересечении продукта, инженерии и операций, запускает функции автоматизации и системно улучшает метрики эффективности команды.`, `Perfil ${n}: trabaja entre producto, ingeniería y operaciones, lanza funciones de automatización y mejora métricas de eficiencia del equipo.`),
+    tags: ['software', 'operations', 'analytics']
   };
 });
 
@@ -1562,6 +1626,20 @@ const startups = [
     category: t('Legal AI платформа', 'Legal AI platform', 'Legal AI платформа', 'Plataforma de IA legal'),
     summary: t('Розробляє AI-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права.', 'Develops AI tooling for legal teams and large firms by combining generative models with legal domain expertise.', 'Разрабатывает AI-инструменты для юридических команд и крупных фирм, сочетая генеративные модели с доменной экспертизой права.', 'Desarrolla herramientas de IA para equipos legales y grandes firmas, combinando modelos generativos con experiencia jurídica.'),
     tags: ['ai', 'enterprise', 'startup']
+  },
+  {
+    slug: 'cargoflow',
+    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80',
+    name: 'CargoFlow',
+    founded: '2024',
+    category: t('Логістичний стартап для e-commerce', 'Logistics startup for e-commerce', 'Логистический стартап для e-commerce', 'Startup logístico para e-commerce'),
+    summary: t(
+      'Молодий стартап із фокусом на last-mile маршрути, SLA-контроль і операції доставки для e-commerce команд у Центральній Європі.',
+      'An early-stage team focused on last-mile routing, SLA control and delivery operations for e-commerce teams in Central Europe.',
+      'Ранняя команда с фокусом на last-mile маршруты, SLA-контроль и операции доставки для e-commerce в Центральной Европе.',
+      'Equipo en etapa temprana centrado en rutas last-mile, control de SLA y operaciones de reparto para e-commerce en Europa Central.'
+    ),
+    tags: ['operations', 'software', 'startup']
   }
 ];
 
@@ -2144,6 +2222,18 @@ const startupDetails = {
       ['Popular en fintech y ops', 'Equilibra no-code y control de ingeniería', 'Expansión a móvil y automatización']
     )
   },
+  cargoflow: {
+    hq: t('Варшава, Польща / Україна', 'Warsaw, Poland / Ukraine', 'Варшава, Польша / Украина', 'Varsovia, Polonia / Ucrania'),
+    model: t('Планування last-mile і SLA-моніторинг', 'Last-mile planning and SLA monitoring', 'Планирование last-mile и мониторинг SLA', 'Planificación last-mile y monitoreo de SLA'),
+    market: t('E-commerce доставка, локальні курʼєрські мережі, операційні дашборди', 'E-commerce delivery, local courier networks, ops dashboards', 'E-commerce доставка, локальные курьерские сети, ops dashboards', 'Entrega e-commerce, redes locales de reparto, dashboards operativos'),
+    notableFor: t('Фокус на практичних інструментах для операційних менеджерів малих і середніх команд', 'Practical tooling for ops managers in small and mid-sized teams', 'Практичные инструменты для операционных менеджеров небольших и средних команд', 'Herramientas prácticas para managers de operaciones en equipos pequeños y medianos'),
+    signals: t(
+      ['Проста аналітика для контролю запізнень', 'Маршрути з урахуванням локальних обмежень', 'Орієнтація на e-commerce у Центральній Європі'],
+      ['Lightweight analytics for delay tracking', 'Routing tuned to local constraints', 'Focus on e-commerce in Central Europe'],
+      ['Простая аналитика задержек', 'Маршруты с учётом локальных ограничений', 'Фокус на e-commerce в Центральной Европе'],
+      ['Analítica ligera de retrasos', 'Rutas con restricciones locales', 'Enfoque en e-commerce en Europa Central']
+    )
+  },
   zapier: {
     hq: t('Роллі / віддалено', 'Remote-first', 'Remote-first', 'Remote-first'),
     model: t('Автоматизація SaaS-інтеграцій', 'SaaS workflow automation', 'Автоматизация SaaS-интеграций', 'Automatización de workflows SaaS'),
@@ -2161,31 +2251,36 @@ const startupDetails = {
 const specialistOutput = [...curatedSpecialists, ...extraSpecialists].map(person => {
   const tags = {};
   for (const lang of langs) {
-    tags[lang] = person.tags.map(tag => tagLabels[tag]?.[lang] || tag);
+    tags[lang] = person.tags.map(tag => stripAiPublicText(tagLabels[tag]?.[lang] || tag));
   }
 
   const bio = enrichBio(person);
+  const name = sanitizeMultilangRecord(person.name);
+  const role = sanitizeMultilangRecord(person.role);
+  const country = sanitizeMultilangRecord(person.country);
+  const focus = sanitizeMultilangRecord(person.focus);
+  const knownFor = sanitizeMultilangRecord(person.knownFor);
 
   return {
     slug: person.slug,
-    image: person.image,
-    name: person.name,
-    role: person.role,
-    country: person.country,
-    focus: person.focus,
-    knownFor: person.knownFor,
+    image: stripAiPublicText(person.image),
+    name,
+    role,
+    country,
+    focus,
+    knownFor,
     bio,
     tags,
     featured: Boolean(person.featured),
-    gallery: person.gallery || [],
-    highlights: person.highlights || null
+    gallery: sanitizeGallery(person.gallery || []),
+    highlights: sanitizeHighlights(person.highlights || null)
   };
 });
 
 const startupOutput = [...startups, ...extraStartups].map(company => {
   const tags = {};
   for (const lang of langs) {
-    tags[lang] = company.tags.map(tag => tagLabels[tag]?.[lang] || tag);
+    tags[lang] = company.tags.map(tag => stripAiPublicText(tagLabels[tag]?.[lang] || tag));
   }
   const details = startupDetails[company.slug] || {};
   const hqCountry = {};
@@ -2193,8 +2288,21 @@ const startupOutput = [...startups, ...extraStartups].map(company => {
     hqCountry[lang] = regionalCountry(details.hq?.[lang], lang);
   }
   const summary = enrichStartupSummary(company, details);
-  return { ...company, ...details, summary, tags, hqCountry };
+  const merged = { ...company, ...details, summary, tags, hqCountry };
+  return {
+    ...merged,
+    name: stripAiPublicText(merged.name),
+    image: stripAiPublicText(merged.image),
+    category: merged.category ? sanitizeMultilangRecord(merged.category) : merged.category,
+    summary: sanitizeMultilangRecord(merged.summary),
+    hq: merged.hq ? sanitizeMultilangRecord(merged.hq) : merged.hq,
+    market: merged.market ? sanitizeMultilangRecord(merged.market) : merged.market,
+    model: merged.model ? sanitizeMultilangRecord(merged.model) : merged.model,
+    notableFor: merged.notableFor ? sanitizeMultilangRecord(merged.notableFor) : merged.notableFor,
+    signals: merged.signals ? sanitizeHighlights(merged.signals) : merged.signals
+  };
 });
+
 
 fs.writeFileSync('src/specialists.json', `${JSON.stringify(specialistOutput, null, 2)}\n`);
 fs.writeFileSync('src/startups.json', `${JSON.stringify(startupOutput, null, 2)}\n`);

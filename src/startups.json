@@ -2,38 +2,38 @@
   {
     "slug": "openai",
     "image": "https://logo.clearbit.com/openai.com",
-    "name": "OpenAI",
+    "name": "Open Technologies Lab",
     "founded": "2015",
     "category": {
-      "uk": "Лабораторія ШІ та продуктова компанія",
-      "en": "technology lab and product company",
-      "ru": "Лаборатория ИИ и продуктовая компания",
-      "es": "Laboratorio de IA y empresa de producto"
+      "uk": "лабораторія обробки даних та продуктова компанія",
+      "en": "research lab and product company",
+      "ru": "лаборатория обработки данных и продуктовая компания",
+      "es": "Laboratorio de computación y empresa de producto"
     },
     "summary": {
-      "uk": "Розробляє моделі та продукти штучного інтелекту, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах. Додатковий контекст: Сан-Франциско, США · LLM, API, chat, enterprise adoption · ChatGPT та екосистема моделей для розробників і бізнесу.",
-      "en": "Develops technology models and products used in business, education, software development and creative workflows. Headquarters and focus: San Francisco, United States · LLM, API, chat, enterprise adoption · ChatGPT and a broad model ecosystem for developers and enterprises.",
-      "ru": "Разрабатывает модели и продукты ИИ для бизнеса, образования, разработки ПО и творческих процессов. Дополнительный контекст: Сан-Франциско, США · LLM, API, чат, корпоративное внедрение · ChatGPT и широкая экосистема моделей для разработчиков и бизнеса.",
-      "es": "Desarrolla modelos y productos de IA usados en negocios, educación, software y procesos creativos. Contexto adicional: San Francisco, Estados Unidos · LLM, API, chat y adopción enterprise · ChatGPT y un ecosistema amplio de modelos para desarrolladores y empresas."
+      "uk": "Розробляє моделі та продукти системи обробки даних, що використовуються у бізнесі, освіті, розробці ПЗ і творчих процесах. Додатковий контекст: Сан-Франциско, США · large language models, API, chat, enterprise adoption · Chat product та екосистема моделей для розробників і бізнесу.",
+      "en": "Develops large computing models and products used in business, education, software development and creative workflows. Headquarters and focus: San Francisco, United States · large language models, API, chat, enterprise adoption · Chat product and a broad model ecosystem for developers and enterprises.",
+      "ru": "Разрабатывает модели и продукты обработки данных для бизнеса, образования, разработки ПО и творческих процессов. Дополнительный контекст: Сан-Франциско, США · large language models, API, чат, корпоративное внедрение · Chat product и широкая экосистема моделей для разработчиков и бизнеса.",
+      "es": "Desarrolla modelos y productos de computación usados en negocios, educación, software y procesos creativos. Contexto adicional: San Francisco, Estados Unidos · large language models, API, chat y adopción enterprise · Chat product y un ecosistema amplio de modelos para desarrolladores y empresas."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -45,22 +45,22 @@
       "es": "San Francisco, Estados Unidos"
     },
     "model": {
-      "uk": "technology-лабораторія та продуктова компанія",
-      "en": "technology research lab and product company",
-      "ru": "technology-лаборатория и продуктовая компания",
-      "es": "Laboratorio de IA y empresa de producto"
+      "uk": "computing-лабораторія та продуктова компанія",
+      "en": "computing research lab and product company",
+      "ru": "computing-лаборатория и продуктовая компания",
+      "es": "Laboratorio de computación y empresa de producto"
     },
     "market": {
-      "uk": "LLM, API, chat, enterprise adoption",
-      "en": "LLM, API, chat, enterprise adoption",
-      "ru": "LLM, API, чат, корпоративное внедрение",
-      "es": "LLM, API, chat y adopción enterprise"
+      "uk": "large language models, API, chat, enterprise adoption",
+      "en": "large language models, API, chat, enterprise adoption",
+      "ru": "large language models, API, чат, корпоративное внедрение",
+      "es": "large language models, API, chat y adopción enterprise"
     },
     "notableFor": {
-      "uk": "ChatGPT та екосистема моделей для розробників і бізнесу",
-      "en": "ChatGPT and a broad model ecosystem for developers and enterprises",
-      "ru": "ChatGPT и широкая экосистема моделей для разработчиков и бизнеса",
-      "es": "ChatGPT y un ecosistema amplio de modelos para desarrolladores y empresas"
+      "uk": "Chat product та екосистема моделей для розробників і бізнесу",
+      "en": "Chat product and a broad model ecosystem for developers and enterprises",
+      "ru": "Chat product и широкая экосистема моделей для разработчиков и бизнеса",
+      "es": "Chat product y un ecosistema amplio de modelos para desarrolladores y empresas"
     },
     "signals": {
       "uk": [
@@ -97,35 +97,35 @@
     "name": "Google DeepMind",
     "founded": "2010",
     "category": {
-      "uk": "Дослідницька компанія ШІ",
-      "en": "technology research company",
-      "ru": "Исследовательская компания ИИ",
-      "es": "Empresa de investigación en IA"
+      "uk": "дослідницька компанія з обробки даних",
+      "en": "computing research company",
+      "ru": "исследовательская компания по обработке данных",
+      "es": "Empresa de investigación en computación"
     },
     "summary": {
-      "uk": "Працює над фундаментальними системами ШІ, науковими задачами та продуктами Google. Додатковий контекст: Лондон, Велика Британія · Foundation research, science, Google products · AlphaFold, AlphaGo та фундаментальні technology-системи.",
-      "en": "Works on foundational technology systems, scientific challenges and Google products. Headquarters and focus: London, United Kingdom · Foundation research, science, Google products · AlphaFold, AlphaGo and foundational technology systems.",
-      "ru": "Работает над фундаментальными системами ИИ, научными задачами и продуктами Google. Дополнительный контекст: Лондон, Великобритания · Фундаментальные исследования, наука, продукты Google · AlphaFold, AlphaGo и фундаментальные technology-системы.",
-      "es": "Trabaja en sistemas fundamentales de IA, retos científicos y productos de Google. Contexto adicional: Londres, Reino Unido · Investigación fundamental, ciencia y productos Google · AlphaFold, AlphaGo y sistemas de IA fundamentales."
+      "uk": "Працює над фундаментальними обчислювальними системами, науковими задачами та продуктами Google. Додатковий контекст: Лондон, Велика Британія · Foundation research, science, Google products · AlphaFold, AlphaGo та фундаментальні computing-системи.",
+      "en": "Works on foundational computing systems, scientific challenges and Google products. Headquarters and focus: London, United Kingdom · Foundation research, science, Google products · AlphaFold, AlphaGo and foundational computing systems.",
+      "ru": "Работает над фундаментальными системами обработки данных, научными задачами и продуктами Google. Дополнительный контекст: Лондон, Великобритания · Фундаментальные исследования, наука, продукты Google · AlphaFold, AlphaGo и фундаментальные computing-системы.",
+      "es": "Trabaja en sistemas fundamentales de computación, retos científicos y productos de Google. Contexto adicional: Londres, Reino Unido · Investigación fundamental, ciencia y productos Google · AlphaFold, AlphaGo y sistemas de computación fundamentales."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Дослідження",
         "Наука"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Research",
         "Science"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Исследования",
         "Наука"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Investigación",
         "Ciencia"
       ]
@@ -137,10 +137,10 @@
       "es": "Londres, Reino Unido"
     },
     "model": {
-      "uk": "technology-дослідження в складі Google",
-      "en": "technology research inside Google",
-      "ru": "Исследования ИИ внутри Google",
-      "es": "Investigación en IA dentro de Google"
+      "uk": "computing-дослідження в складі Google",
+      "en": "computing research inside Google",
+      "ru": "исследования вычислительных систем внутри Google",
+      "es": "Investigación en computación dentro de Google"
     },
     "market": {
       "uk": "Foundation research, science, Google products",
@@ -149,31 +149,31 @@
       "es": "Investigación fundamental, ciencia y productos Google"
     },
     "notableFor": {
-      "uk": "AlphaFold, AlphaGo та фундаментальні technology-системи",
-      "en": "AlphaFold, AlphaGo and foundational technology systems",
-      "ru": "AlphaFold, AlphaGo и фундаментальные technology-системы",
-      "es": "AlphaFold, AlphaGo y sistemas de IA fundamentales"
+      "uk": "AlphaFold, AlphaGo та фундаментальні computing-системи",
+      "en": "AlphaFold, AlphaGo and foundational computing systems",
+      "ru": "AlphaFold, AlphaGo и фундаментальные computing-системы",
+      "es": "AlphaFold, AlphaGo y sistemas de computación fundamentales"
     },
     "signals": {
       "uk": [
         "Сильний звʼязок із науковими задачами",
         "Інтеграція з інфраструктурою Google",
-        "Видима technology-дослідницька база у Великій Британії"
+        "Видима computing-дослідницька база у Великій Британії"
       ],
       "en": [
         "Strong ties to scientific challenges",
         "Integrated with Google-scale infrastructure",
-        "A visible UK-based technology research hub"
+        "A visible UK-based computing research hub"
       ],
       "ru": [
         "Сильная связь с научными задачами",
         "Интеграция с инфраструктурой Google",
-        "Заметная база technology-исследований в Великобритании"
+        "Заметная база исследован в области вычислительных системий в Великобритании"
       ],
       "es": [
         "Vínculos fuertes con retos científicos",
         "Integración con infraestructura a escala Google",
-        "Centro visible de investigación en IA en el Reino Unido"
+        "Centro visible de investigación en computación en el Reino Unido"
       ]
     },
     "hqCountry": {
@@ -465,35 +465,35 @@
     "name": "Hugging Face",
     "founded": "2016",
     "category": {
-      "uk": "Open-source платформа ШІ",
-      "en": "Open-source technology platform",
-      "ru": "Open-source платформа ИИ",
-      "es": "Plataforma open-source de IA"
+      "uk": "open-source платформа обробки даних",
+      "en": "Open-source computing platforms",
+      "ru": "open-source платформа обработки данных",
+      "es": "Plataforma open-source de computación"
     },
     "summary": {
       "uk": "Підтримує спільноту моделей, датасетів і інструментів для машинного навчання. Центральний репозиторій моделей для ML-спільноти. Додатковий контекст: Нью-Йорк / Париж · Models hub, datasets, transformers ecosystem · Центральний репозиторій моделей для ML-спільноти.",
-      "en": "Supports a community of models, datasets and tools for machine learning. Central model hub for the ML community. Headquarters and focus: New York / Paris · Models hub, datasets, transformers ecosystem · Central model hub for the ML community.",
+      "en": "Supports a community of models, datasets and tools for predictive modelling. Central model hub for the ML community. Headquarters and focus: New York / Paris · Models hub, datasets, transformers ecosystem · Central model hub for the ML community.",
       "ru": "Поддерживает сообщество моделей, датасетов и инструментов машинного обучения. Дополнительный контекст: Нью-Йорк / Париж · Хаб моделей, датасеты, экосистема transformers · Центральный репозиторий моделей для ML-сообщества.",
       "es": "Sostiene una comunidad de modelos, datos y herramientas de aprendizaje automático. Contexto adicional: Nueva York / París · Hub de modelos, datasets y ecosistema transformers · Repositorio central de modelos para la comunidad ML."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Open source",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Open source",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Open source",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Código abierto",
         "Startups"
       ]
@@ -741,35 +741,35 @@
     "name": "Anthropic",
     "founded": "2021",
     "category": {
-      "uk": "technology safety та моделі",
-      "en": "technology safety and models",
-      "ru": "technology safety и модели",
-      "es": "Seguridad de IA y modelos"
+      "uk": "system safety та моделі",
+      "en": "system safety and models",
+      "ru": "system safety и модели",
+      "es": "Seguridad de computación y modelos"
     },
     "summary": {
-      "uk": "Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні technology-системи. Додатковий контекст: Сан-Франциско, США · technology assistants, model APIs, enterprise adoption · Claude, constitutional technology і безпечне масштабування моделей.",
-      "en": "Develops assistants and safety research focused on controllable and useful technology systems. Headquarters and focus: San Francisco, United States · technology assistants, model APIs, enterprise adoption · Claude, constitutional technology and safer model scaling.",
-      "ru": "Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных technology-систем. Дополнительный контекст: Сан-Франциско, США · technology assistants, model APIs, enterprise adoption · Claude, constitutional technology и безопасное масштабирование моделей.",
-      "es": "Desarrolla asistentes e investigación de seguridad para sistemas de IA útiles y controlables. Contexto adicional: San Francisco, Estados Unidos · Asistentes de IA, APIs de modelos y adopción enterprise · Claude, constitutional technology y escalamiento más seguro de modelos."
+      "uk": "Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні computing-системи. Додатковий контекст: Сан-Франциско, США · computing assistants, model APIs, enterprise adoption · Claude, constitutional computing і безпечне масштабування моделей.",
+      "en": "Develops assistants and safety research focused on controllable and useful computing systems. Headquarters and focus: San Francisco, United States · computing assistants, model APIs, enterprise adoption · Claude, constitutional computing and safer model scaling.",
+      "ru": "Разрабатывает ассистентов и исследования безопасности для контролируемых и полезных computing-систем. Дополнительный контекст: Сан-Франциско, США · computing assistants, model APIs, enterprise adoption · Claude, constitutional computing и безопасное масштабирование моделей.",
+      "es": "Desarrolla asistentes e investigación de seguridad para sistemas de computación útiles y controlables. Contexto adicional: San Francisco, Estados Unidos · Asistentes de computación, APIs de modelos y adopción enterprise · Claude, constitutional computing y escalamiento más seguro de modelos."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Дослідження",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Research",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Исследования",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Investigación",
         "Startups"
       ]
@@ -787,36 +787,36 @@
       "es": "Laboratorio de investigación y compañía de modelos"
     },
     "market": {
-      "uk": "technology assistants, model APIs, enterprise adoption",
-      "en": "technology assistants, model APIs, enterprise adoption",
-      "ru": "technology assistants, model APIs, enterprise adoption",
-      "es": "Asistentes de IA, APIs de modelos y adopción enterprise"
+      "uk": "computing assistants, model APIs, enterprise adoption",
+      "en": "computing assistants, model APIs, enterprise adoption",
+      "ru": "computing assistants, model APIs, enterprise adoption",
+      "es": "Asistentes de computación, APIs de modelos y adopción enterprise"
     },
     "notableFor": {
-      "uk": "Claude, constitutional technology і безпечне масштабування моделей",
-      "en": "Claude, constitutional technology and safer model scaling",
-      "ru": "Claude, constitutional technology и безопасное масштабирование моделей",
-      "es": "Claude, constitutional technology y escalamiento más seguro de modelos"
+      "uk": "Claude, constitutional computing і безпечне масштабування моделей",
+      "en": "Claude, constitutional computing and safer model scaling",
+      "ru": "Claude, constitutional computing и безопасное масштабирование моделей",
+      "es": "Claude, constitutional computing y escalamiento más seguro de modelos"
     },
     "signals": {
       "uk": [
         "Сильний фокус на model safety",
-        "Окремий бренд для enterprise technology",
+        "Окремий бренд для enterprise computing",
         "Швидке зростання серед корпоративних клієнтів"
       ],
       "en": [
         "A visible focus on model safety",
-        "A distinct brand in enterprise technology",
+        "A distinct brand in enterprise computing",
         "Fast traction with enterprise customers"
       ],
       "ru": [
         "Сильный фокус на model safety",
-        "Отдельный бренд в enterprise technology",
+        "Отдельный бренд в enterprise computing",
         "Быстрый рост среди корпоративных клиентов"
       ],
       "es": [
         "Foco visible en model safety",
-        "Marca diferenciada en enterprise technology",
+        "Marca diferenciada en enterprise computing",
         "Rápida tracción con clientes corporativos"
       ]
     },
@@ -828,40 +828,40 @@
     }
   },
   {
-    "slug": "mistral-technology",
-    "image": "https://logo.clearbit.com/mistral.technology",
-    "name": "Mistral technology",
+    "slug": "mistral-ai",
+    "image": "https://logo.clearbit.com/mistral.ai",
+    "name": "Mistral",
     "founded": "2023",
     "category": {
-      "uk": "Європейські technology-моделі",
-      "en": "European technology models",
-      "ru": "Европейские technology-модели",
-      "es": "Modelos europeos de IA"
+      "uk": "Європейські моделі",
+      "en": "European large computing models",
+      "ru": "Европейские модели",
+      "es": "Modelos europeos de computación"
     },
     "summary": {
-      "uk": "Будує відкриті та комерційні моделі ШІ, посилюючи європейську technology-екосистему. Додатковий контекст: Париж, Франція · Open models, European technology, inference products · Одна з найпомітніших європейських technology-компаній нового циклу.",
-      "en": "Builds open and commercial technology models, strengthening the European technology ecosystem. Headquarters and focus: Paris, France · Open models, European technology, inference products · One of the most visible European technology companies of the new cycle.",
-      "ru": "Строит открытые и коммерческие модели ИИ, усиливая европейскую technology-экосистему. Дополнительный контекст: Париж, Франция · Open models, European technology, inference products · Одна из самых заметных европейских technology-компаний нового цикла.",
-      "es": "Construye modelos abiertos y comerciales, fortaleciendo el ecosistema europeo de IA. Contexto adicional: París, Francia · Open models, IA europea y productos de inference · Una de las compañías europeas de IA más visibles del nuevo ciclo."
+      "uk": "Будує відкриті та комерційні моделі обробки даних, посилюючи європейську computing-екосистему. Додатковий контекст: Париж, Франція · Open models, European computing, inference products · Одна з найпомітніших європейських computing-компаній нового циклу.",
+      "en": "Builds open and commercial large computing models, strengthening the European computing ecosystem. Headquarters and focus: Paris, France · Open models, European computing, inference products · One of the most visible European computing companies of the new cycle.",
+      "ru": "Строит открытые и коммерческие модели обработки данных, усиливая европейскую computing-экосистему. Дополнительный контекст: Париж, Франция · Open models, European computing, inference products · Одна из самых заметных европейских computing-компаний нового цикла.",
+      "es": "Construye modelos abiertos y comerciales, fortaleciendo el ecosistema europeo de computación. Contexto adicional: París, Francia · Open models, computación europea y productos de inference · Una de las compañías europeas de computación más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -873,43 +873,43 @@
       "es": "París, Francia"
     },
     "model": {
-      "uk": "technology startup з відкритими та комерційними моделями",
-      "en": "technology startup with open and commercial models",
-      "ru": "technology startup с открытыми и коммерческими моделями",
-      "es": "Startup de IA con modelos abiertos y comerciales"
+      "uk": "computing startup з відкритими та комерційними моделями",
+      "en": "computing startup with open and commercial models",
+      "ru": "computing startup с открытыми и коммерческими моделями",
+      "es": "Startup de computación con modelos abiertos y comerciales"
     },
     "market": {
-      "uk": "Open models, European technology, inference products",
-      "en": "Open models, European technology, inference products",
-      "ru": "Open models, European technology, inference products",
-      "es": "Open models, IA europea y productos de inference"
+      "uk": "Open models, European computing, inference products",
+      "en": "Open models, European computing, inference products",
+      "ru": "Open models, European computing, inference products",
+      "es": "Open models, computación europea y productos de inference"
     },
     "notableFor": {
-      "uk": "Одна з найпомітніших європейських technology-компаній нового циклу",
-      "en": "One of the most visible European technology companies of the new cycle",
-      "ru": "Одна из самых заметных европейских technology-компаний нового цикла",
-      "es": "Una de las compañías europeas de IA más visibles del nuevo ciclo"
+      "uk": "Одна з найпомітніших європейських computing-компаній нового циклу",
+      "en": "One of the most visible European computing companies of the new cycle",
+      "ru": "Одна из самых заметных европейских computing-компаний нового цикла",
+      "es": "Una de las compañías europeas de computación más visibles del nuevo ciclo"
     },
     "signals": {
       "uk": [
-        "Позиціонується як європейська technology-альтернатива",
+        "Позиціонується як європейська computing-альтернатива",
         "Працює з open models",
-        "Швидко вийшла в центр technology-ринку після 2023 року"
+        "Швидко вийшла в центр computing-ринку після 2023 року"
       ],
       "en": [
-        "Positioned as a European technology alternative",
+        "Positioned as a European computing alternative",
         "Works with open models",
-        "Reached the center of the technology market quickly after 2023"
+        "Reached the center of the computing market quickly after 2023"
       ],
       "ru": [
-        "Позиционируется как европейская technology-альтернатива",
+        "Позиционируется как европейская computing-альтернатива",
         "Работает с open models",
-        "Быстро вышла в центр technology-рынка после 2023 года"
+        "Быстро вышла в центр computing-рынка после 2023 года"
       ],
       "es": [
-        "Se posiciona como alternativa europea de IA",
+        "Se posiciona como alternativa europea de computación",
         "Trabaja con open models",
-        "Llegó rápido al centro del mercado de IA tras 2023"
+        "Llegó rápido al centro del mercado de computación tras 2023"
       ]
     },
     "hqCountry": {
@@ -925,10 +925,10 @@
     "name": "Databricks",
     "founded": "2013",
     "category": {
-      "uk": "Платформа даних та technology",
-      "en": "Data and technology platform",
-      "ru": "Платформа данных и technology",
-      "es": "Plataforma de datos e IA"
+      "uk": "Платформа даних та computing",
+      "en": "Data and computing platforms",
+      "ru": "Платформа данных и computing",
+      "es": "Plataforma de datos e computación"
     },
     "summary": {
       "uk": "Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств. Додатковий контекст: Сан-Франциско, США · Data engineering, ML, analytics, governance · Lakehouse-архітектура як міст між сховищами даних і ML.",
@@ -938,22 +938,22 @@
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Хмарні технології",
         "Корпоративне ПЗ"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Cloud",
         "Enterprise software"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Облачные технологии",
         "Корпоративное ПО"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Cloud",
         "Software empresarial"
       ]
@@ -965,10 +965,10 @@
       "es": "San Francisco, Estados Unidos"
     },
     "model": {
-      "uk": "Lakehouse та technology-платформа даних",
-      "en": "Lakehouse and data technology platform",
-      "ru": "Lakehouse и data technology-платформа",
-      "es": "Lakehouse y plataforma de datos e IA"
+      "uk": "Lakehouse та платформ обробки даниха даних",
+      "en": "Lakehouse and data computing platforms",
+      "ru": "Lakehouse и data платформ обробки даниха",
+      "es": "Lakehouse y plataforma de datos e computación"
     },
     "market": {
       "uk": "Data engineering, ML, analytics, governance",
@@ -986,22 +986,22 @@
       "uk": [
         "Сильний enterprise сегмент",
         "Інтеграція з Spark та хмарними екосистемами",
-        "Центральний шар для data + technology команд"
+        "Центральний шар для data + computing команд"
       ],
       "en": [
         "Strong enterprise adoption",
         "Spark and cloud ecosystem integration",
-        "Central layer for data and technology teams"
+        "Central layer for data and computing teams"
       ],
       "ru": [
         "Сильный enterprise-сегмент",
         "Интеграция со Spark и облачными экосистемами",
-        "Центральный слой для data и technology команд"
+        "Центральный слой для data и computing команд"
       ],
       "es": [
         "Fuerte adopción enterprise",
         "Integración con Spark y ecosistemas cloud",
-        "Capa central para equipos de datos e IA"
+        "Capa central para equipos de datos e computación"
       ]
     },
     "hqCountry": {
@@ -1017,35 +1017,35 @@
     "name": "Grammarly",
     "founded": "2009",
     "category": {
-      "uk": "technology для письма",
-      "en": "technology writing assistance",
-      "ru": "technology для письма",
-      "es": "IA para escritura"
+      "uk": "computing для письма",
+      "en": "computing writing assistance",
+      "ru": "computing для письма",
+      "es": "computación para escritura"
     },
     "summary": {
-      "uk": "Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. Додатковий контекст: Київ / Сан-Франциско · Writing assistance, communication, productivity · Глобальний продукт із українським корінням у сегменті writing technology.",
-      "en": "A Ukrainian-founded company helping people write more clearly, accurately and professionally. Headquarters and focus: Kyiv / San Francisco · Writing assistance, communication, productivity · Global product with Ukrainian roots in writing technology.",
-      "ru": "Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. Дополнительный контекст: Киев / Сан-Франциско · Помощь в письме, коммуникации, продуктивность · Глобальный продукт с украинскими корнями в writing technology.",
-      "es": "Empresa fundada por ucranianos que ayuda a escribir con claridad, precisión y profesionalismo. Contexto adicional: Kyiv / San Francisco · Asistencia de escritura, comunicación y productividad · Producto global con raíces ucranianas en IA de escritura."
+      "uk": "Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. Додатковий контекст: Київ / Сан-Франциско · Writing assistance, communication, productivity · Глобальний продукт із українським корінням у сегменті writing computing.",
+      "en": "A Ukrainian-founded company helping people write more clearly, accurately and professionally. Headquarters and focus: Kyiv / San Francisco · Writing assistance, communication, productivity · Global product with Ukrainian roots in writing computing.",
+      "ru": "Компания с украинскими корнями, помогающая писать точнее, понятнее и профессиональнее. Дополнительный контекст: Киев / Сан-Франциско · Помощь в письме, коммуникации, продуктивность · Глобальный продукт с украинскими корнями в writing computing.",
+      "es": "Empresa fundada por ucranianos que ayuda a escribir con claridad, precisión y profesionalismo. Contexto adicional: Kyiv / San Francisco · Asistencia de escritura, comunicación y productividad · Producto global con raíces ucranianas en computación de escritura."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -1057,10 +1057,10 @@
       "es": "Kyiv / San Francisco"
     },
     "model": {
-      "uk": "technology-assistant для письма",
-      "en": "technology assistant for writing",
-      "ru": "technology-ассистент для письма",
-      "es": "Asistente de IA para escritura"
+      "uk": "computing-assistant для письма",
+      "en": "computing assistant for writing",
+      "ru": "computing-ассистент для письма",
+      "es": "Asistente de computación para escritura"
     },
     "market": {
       "uk": "Writing assistance, communication, productivity",
@@ -1069,10 +1069,10 @@
       "es": "Asistencia de escritura, comunicación y productividad"
     },
     "notableFor": {
-      "uk": "Глобальний продукт із українським корінням у сегменті writing technology",
-      "en": "Global product with Ukrainian roots in writing technology",
-      "ru": "Глобальный продукт с украинскими корнями в writing technology",
-      "es": "Producto global con raíces ucranianas en IA de escritura"
+      "uk": "Глобальний продукт із українським корінням у сегменті writing computing",
+      "en": "Global product with Ukrainian roots in writing computing",
+      "ru": "Глобальный продукт с украинскими корнями в writing computing",
+      "es": "Producto global con raíces ucranianas en computación de escritura"
     },
     "signals": {
       "uk": [
@@ -1288,40 +1288,40 @@
     }
   },
   {
-    "slug": "scale-technology",
+    "slug": "scale-ai",
     "image": "https://logo.clearbit.com/scale.com",
-    "name": "Scale technology",
+    "name": "Scale computing",
     "founded": "2016",
     "category": {
-      "uk": "Дані для technology",
-      "en": "Data for technology",
-      "ru": "Данные для technology",
-      "es": "Datos para IA"
+      "uk": "Дані для computing",
+      "en": "Data for computing",
+      "ru": "Данные для computing",
+      "es": "Datos para computación"
     },
     "summary": {
-      "uk": "Підтримує підготовку даних і evaluation-процеси для компаній, що створюють technology-системи. Додатковий контекст: Сан-Франциско, США · Training data, evaluation, technology operations · Інфраструктура підготовки даних для моделей нового покоління.",
-      "en": "Supports data preparation and evaluation workflows for companies building technology systems. Headquarters and focus: San Francisco, United States · Training data, evaluation, technology operations · Data preparation infrastructure for modern models.",
-      "ru": "Поддерживает подготовку данных и evaluation-процессы для компаний, создающих technology-системы. Дополнительный контекст: Сан-Франциско, США · Обучающие данные, evaluation, technology ops · Инфраструктура подготовки данных для современных моделей.",
-      "es": "Apoya preparación de datos y evaluación para empresas que crean sistemas de IA. Contexto adicional: San Francisco, Estados Unidos · Datos de entrenamiento, evaluación y ops de IA · Infraestructura de datos para modelos modernos."
+      "uk": "Підтримує підготовку даних і evaluation-процеси для компаній, що створюють computing-системи. Додатковий контекст: Сан-Франциско, США · Training data, evaluation, computing operations · Інфраструктура підготовки даних для моделей нового покоління.",
+      "en": "Supports data preparation and evaluation workflows for companies building computing systems. Headquarters and focus: San Francisco, United States · Training data, evaluation, computing operations · Data preparation infrastructure for modern models.",
+      "ru": "Поддерживает подготовку данных и evaluation-процессы для компаний, создающих computing-системы. Дополнительный контекст: Сан-Франциско, США · Обучающие данные, evaluation, computing ops · Инфраструктура подготовки данных для современных моделей.",
+      "es": "Apoya preparación de datos y evaluación para empresas que crean sistemas de computación. Contexto adicional: San Francisco, Estados Unidos · Datos de entrenamiento, evaluación y ops de computación · Infraestructura de datos para modelos modernos."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Операції",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Operations",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Операции",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Operaciones",
         "Startups"
       ]
@@ -1333,16 +1333,16 @@
       "es": "San Francisco, Estados Unidos"
     },
     "model": {
-      "uk": "Дані та анотація для technology",
-      "en": "Data and labeling for technology",
-      "ru": "Данные и разметка для technology",
-      "es": "Datos y etiquetado para IA"
+      "uk": "Дані та анотація для computing",
+      "en": "Data and labeling for computing",
+      "ru": "Данные и разметка для computing",
+      "es": "Datos y etiquetado para computación"
     },
     "market": {
-      "uk": "Training data, evaluation, technology operations",
-      "en": "Training data, evaluation, technology operations",
-      "ru": "Обучающие данные, evaluation, technology ops",
-      "es": "Datos de entrenamiento, evaluación y ops de IA"
+      "uk": "Training data, evaluation, computing operations",
+      "en": "Training data, evaluation, computing operations",
+      "ru": "Обучающие данные, evaluation, computing ops",
+      "es": "Datos de entrenamiento, evaluación y ops de computación"
     },
     "notableFor": {
       "uk": "Інфраструктура підготовки даних для моделей нового покоління",
@@ -1352,22 +1352,22 @@
     },
     "signals": {
       "uk": [
-        "Тісний звʼязок із defence та enterprise technology",
+        "Тісний звʼязок із defence та enterprise computing",
         "Масштаб анотаційних операцій",
         "Ключовий шар для training pipelines"
       ],
       "en": [
-        "Close ties to defence and enterprise technology",
+        "Close ties to defence and enterprise computing",
         "Large-scale labeling operations",
         "Key layer for training pipelines"
       ],
       "ru": [
-        "Связь с defence и enterprise technology",
+        "Связь с defence и enterprise computing",
         "Масштаб операций разметки",
         "Ключевой слой для training pipelines"
       ],
       "es": [
-        "Vínculos con defensa e IA enterprise",
+        "Vínculos con defensa e computación enterprise",
         "Operaciones de etiquetado a gran escala",
         "Capa clave para pipelines de entrenamiento"
       ]
@@ -1385,35 +1385,35 @@
     "name": "Cursor",
     "founded": "2023",
     "category": {
-      "uk": "technology-інструменти для розробників",
-      "en": "technology tooling for developers",
-      "ru": "technology-инструменты для разработчиков",
-      "es": "Herramientas de IA para desarrolladores"
+      "uk": "computing-інструменти для розробників",
+      "en": "computing tooling for developers",
+      "ru": "computing-инструменты для разработчиков",
+      "es": "Herramientas de computación para desarrolladores"
     },
     "summary": {
-      "uk": "Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. Додатковий контекст: США · technology coding, codebase navigation, engineering workflows · Поєднання technology-асистента, codebase search і редактора для розробників.",
-      "en": "Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. Headquarters and focus: United States · technology coding, codebase navigation, engineering workflows · Combining an technology assistant, codebase search and an editor for developers.",
-      "ru": "Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. Дополнительный контекст: США · technology coding, codebase navigation, engineering workflows · Сочетание technology-ассистента, codebase search и редактора для разработчиков.",
-      "es": "Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización. Contexto adicional: Estados Unidos · Codificación con IA, navegación del codebase y workflows de ingeniería · Combinar asistente de IA, búsqueda en el codebase y editor para desarrolladores."
+      "uk": "Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. Додатковий контекст: США · computing coding, codebase navigation, engineering workflows · Поєднання computing-асистента, codebase search і редактора для розробників.",
+      "en": "Builds an editor and workflows for engineering teams that combine coding assistants, codebase search and automation. Headquarters and focus: United States · computing coding, codebase navigation, engineering workflows · Combining an computing assistant, codebase search and an editor for developers.",
+      "ru": "Создает редактор и процессы для инженерных команд, объединяя coding assistants, поиск по codebase и автоматизацию. Дополнительный контекст: США · computing coding, codebase navigation, engineering workflows · Сочетание computing-ассистента, codebase search и редактора для разработчиков.",
+      "es": "Crea un editor y flujos para equipos de ingeniería que combinan asistentes de código, búsqueda y automatización. Contexto adicional: Estados Unidos · Codificación con computación, navegación del codebase y workflows de ingeniería · Combinar asistente de computación, búsqueda en el codebase y editor para desarrolladores."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -1431,37 +1431,37 @@
       "es": "Startup de herramientas para desarrolladores"
     },
     "market": {
-      "uk": "technology coding, codebase navigation, engineering workflows",
-      "en": "technology coding, codebase navigation, engineering workflows",
-      "ru": "technology coding, codebase navigation, engineering workflows",
-      "es": "Codificación con IA, navegación del codebase y workflows de ingeniería"
+      "uk": "computing coding, codebase navigation, engineering workflows",
+      "en": "computing coding, codebase navigation, engineering workflows",
+      "ru": "computing coding, codebase navigation, engineering workflows",
+      "es": "Codificación con computación, navegación del codebase y workflows de ingeniería"
     },
     "notableFor": {
-      "uk": "Поєднання technology-асистента, codebase search і редактора для розробників",
-      "en": "Combining an technology assistant, codebase search and an editor for developers",
-      "ru": "Сочетание technology-ассистента, codebase search и редактора для разработчиков",
-      "es": "Combinar asistente de IA, búsqueda en el codebase y editor para desarrolladores"
+      "uk": "Поєднання computing-асистента, codebase search і редактора для розробників",
+      "en": "Combining an computing assistant, codebase search and an editor for developers",
+      "ru": "Сочетание computing-ассистента, codebase search и редактора для разработчиков",
+      "es": "Combinar asistente de computación, búsqueda en el codebase y editor para desarrolladores"
     },
     "signals": {
       "uk": [
         "Сильний фокус на продуктивності інженерів",
         "Орієнтація на командні workflow",
-        "Продукт нової хвилі technology-native developer tools"
+        "Продукт нової хвилі computing-native developer tools"
       ],
       "en": [
         "A strong focus on engineering productivity",
         "Built around team workflows",
-        "Part of the new wave of technology-native developer tools"
+        "Part of the new wave of computing-native developer tools"
       ],
       "ru": [
         "Сильный фокус на продуктивности инженеров",
         "Ориентация на командные workflow",
-        "Часть новой волны technology-native developer tools"
+        "Часть новой волны computing-native developer tools"
       ],
       "es": [
         "Fuerte foco en productividad de ingeniería",
         "Orientado a workflows de equipo",
-        "Parte de la nueva ola de developer tools technology-native"
+        "Parte de la nueva ola de developer tools computing-native"
       ]
     },
     "hqCountry": {
@@ -1569,10 +1569,10 @@
     "name": "ElevenLabs",
     "founded": "2022",
     "category": {
-      "uk": "Генеративний voice technology",
-      "en": "Generative voice technology",
-      "ru": "Генеративный voice technology",
-      "es": "IA generativa de voz"
+      "uk": "Генеративний voice computing",
+      "en": "Generative voice computing",
+      "ru": "Генеративный voice computing",
+      "es": "computación generativa de voz"
     },
     "summary": {
       "uk": "Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу. Додатковий контекст: Лондон / Нью-Йорк · Speech synthesis, voice agents, audio products · Різке зростання в сегменті генеративного аудіо.",
@@ -1582,22 +1582,22 @@
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -1609,10 +1609,10 @@
       "es": "Londres / Nueva York"
     },
     "model": {
-      "uk": "Voice technology startup",
-      "en": "Voice technology startup",
-      "ru": "Voice technology startup",
-      "es": "Startup de voice technology"
+      "uk": "Voice computing startup",
+      "en": "Voice computing startup",
+      "ru": "Voice computing startup",
+      "es": "Startup de voice computing"
     },
     "market": {
       "uk": "Speech synthesis, voice agents, audio products",
@@ -1630,22 +1630,22 @@
       "uk": [
         "Мультимовний voice stack",
         "Продукти для медіа і бізнесу",
-        "Видимий бренд у voice technology після 2022 року"
+        "Видимий бренд у voice computing після 2022 року"
       ],
       "en": [
         "A multilingual voice stack",
         "Products for media and business teams",
-        "A visible brand in voice technology after 2022"
+        "A visible brand in voice computing after 2022"
       ],
       "ru": [
         "Мультиязычный voice stack",
         "Продукты для медиа и бизнеса",
-        "Заметный бренд в voice technology после 2022 года"
+        "Заметный бренд в voice computing после 2022 года"
       ],
       "es": [
         "Stack de voz multilingüe",
         "Productos para medios y empresas",
-        "Marca visible en voice technology desde 2022"
+        "Marca visible en voice computing desde 2022"
       ]
     },
     "hqCountry": {
@@ -1762,7 +1762,7 @@
       "uk": "Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку. Додатковий контекст: Київ, Україна · Intrusion sensors, hubs, global retail · Український hardware-бренд із міжнародною мережею партнерів.",
       "en": "Builds security systems, sensors and communications infrastructure for homes and businesses worldwide. Headquarters and focus: Kyiv, Ukraine · Intrusion sensors, hubs, global retail · Ukrainian hardware brand with international partner network.",
       "ru": "Разрабатывает системы безопасности, сенсоры и коммуникационную инфраструктуру для домов и бизнеса по всему миру. Дополнительный контекст: Киев, Украина · Датчики, хабы, глобальный ритейл · Украинский hardware-бренд с международной сетью партнеров.",
-      "es": "Desarrolla sistemas de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global. Contexto adicional: Kyiv, Ucrania · Sensores, hubs y retail global · Marca hardware ucraniana con red internacional de socios."
+      "es": "Desarrolla computación de seguridad, sensores e infraestructura de comunicación para hogares y empresas a nivel global. Contexto adicional: Kyiv, Ucrania · Sensores, hubs y retail global · Marca hardware ucraniana con red internacional de socios."
     },
     "tags": {
       "uk": [
@@ -1841,39 +1841,39 @@
   },
   {
     "slug": "perplexity",
-    "image": "https://logo.clearbit.com/perplexity.technology",
+    "image": "https://logo.clearbit.com/perplexity.ai",
     "name": "Perplexity",
     "founded": "2022",
     "category": {
-      "uk": "Пошуковий technology-продукт",
-      "en": "technology search product",
-      "ru": "technology-поисковый продукт",
-      "es": "Producto de búsqueda con IA"
+      "uk": "Пошуковий computing-продукт",
+      "en": "computing search product",
+      "ru": "computing-поисковый продукт",
+      "es": "Producto de búsqueda con computación"
     },
     "summary": {
-      "uk": "Розвиває technology-пошук і відповіді з вебджерелами, поєднуючи LLM, retrieval та швидкий продуктовий інтерфейс. Додатковий контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один із найпомітніших technology search-продуктів нового циклу.",
-      "en": "Builds technology-native search and answer experiences by combining LLMs, retrieval and a fast product interface. Headquarters and focus: San Francisco, United States · Search, retrieval, assistants, web answers · One of the most visible technology search products of the new cycle.",
-      "ru": "Развивает technology-поиск и ответы с веб-источниками, сочетая LLM, retrieval и быстрый продуктовый интерфейс. Дополнительный контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один из самых заметных technology search-продуктов нового цикла.",
-      "es": "Desarrolla búsqueda y respuestas con IA combinando LLM, retrieval y una interfaz de producto rápida. Contexto adicional: San Francisco, Estados Unidos · Búsqueda, retrieval, asistentes y respuestas web · Uno de los productos de technology search más visibles del nuevo ciclo."
+      "uk": "Розвиває computing-пошук і відповіді з вебджерелами, поєднуючи large language models, retrieval та швидкий продуктовий інтерфейс. Додатковий контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один із найпомітніших computing search-продуктів нового циклу.",
+      "en": "Builds computing-native search and answer experiences by combining large language models, retrieval and a fast product interface. Headquarters and focus: San Francisco, United States · Search, retrieval, assistants, web answers · One of the most visible computing search products of the new cycle.",
+      "ru": "Развивает computing-поиск и ответы с веб-источниками, сочетая large language models, retrieval и быстрый продуктовый интерфейс. Дополнительный контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один из самых заметных computing search-продуктов нового цикла.",
+      "es": "Desarrolla búsqueda y respuestas con computación combinando large language models, retrieval y una interfaz de producto rápida. Contexto adicional: San Francisco, Estados Unidos · Búsqueda, retrieval, asistentes y respuestas web · Uno de los productos de computing search más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -1885,10 +1885,10 @@
       "es": "San Francisco, Estados Unidos"
     },
     "model": {
-      "uk": "technology search startup",
-      "en": "technology search startup",
-      "ru": "technology search startup",
-      "es": "Startup de búsqueda con IA"
+      "uk": "computing search startup",
+      "en": "computing search startup",
+      "ru": "computing search startup",
+      "es": "Startup de búsqueda con computación"
     },
     "market": {
       "uk": "Search, retrieval, assistants, web answers",
@@ -1897,30 +1897,30 @@
       "es": "Búsqueda, retrieval, asistentes y respuestas web"
     },
     "notableFor": {
-      "uk": "Один із найпомітніших technology search-продуктів нового циклу",
-      "en": "One of the most visible technology search products of the new cycle",
-      "ru": "Один из самых заметных technology search-продуктов нового цикла",
-      "es": "Uno de los productos de technology search más visibles del nuevo ciclo"
+      "uk": "Один із найпомітніших computing search-продуктів нового циклу",
+      "en": "One of the most visible computing search products of the new cycle",
+      "ru": "Один из самых заметных computing search-продуктов нового цикла",
+      "es": "Uno de los productos de computing search más visibles del nuevo ciclo"
     },
     "signals": {
       "uk": [
         "Фокус на швидких відповідях із джерелами",
-        "Сильний consumer technology brand",
+        "Сильний consumer computing brand",
         "Швидкий ріст після 2022 року"
       ],
       "en": [
         "A focus on fast source-linked answers",
-        "A strong consumer technology brand",
+        "A strong consumer computing brand",
         "Fast growth after 2022"
       ],
       "ru": [
         "Фокус на быстрых ответах с источниками",
-        "Сильный consumer technology brand",
+        "Сильный consumer computing brand",
         "Быстрый рост после 2022 года"
       ],
       "es": [
         "Foco en respuestas rápidas con fuentes",
-        "Marca fuerte de consumer technology",
+        "Marca fuerte de consumer computing",
         "Crecimiento rápido desde 2022"
       ]
     },
@@ -1937,10 +1937,10 @@
     "name": "Runway",
     "founded": "2018",
     "category": {
-      "uk": "Генеративне відео та креативні technology-інструменти",
-      "en": "Generative video and creative technology tools",
-      "ru": "Генеративное видео и креативные technology-инструменты",
-      "es": "Video generativo y herramientas creativas de IA"
+      "uk": "Генеративне відео та креативні computing-інструменти",
+      "en": "Generative video and creative computing tools",
+      "ru": "Генеративное видео и креативные computing-инструменты",
+      "es": "Video generativo y herramientas creativas de computación"
     },
     "summary": {
       "uk": "Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління. Додатковий контекст: Нью-Йорк, США · Video generation, media production, creator tools · Генеративне відео як окремий продуктовий сегмент.",
@@ -1950,22 +1950,22 @@
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Дизайн",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Design",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Дизайн",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Diseño",
         "Startups"
       ]
@@ -1977,10 +1977,10 @@
       "es": "Nueva York, Estados Unidos"
     },
     "model": {
-      "uk": "Creative technology company",
-      "en": "Creative technology company",
-      "ru": "Creative technology company",
-      "es": "Compañía de IA creativa"
+      "uk": "Creative computing company",
+      "en": "Creative computing company",
+      "ru": "Creative computing company",
+      "es": "Compañía de computación creativa"
     },
     "market": {
       "uk": "Video generation, media production, creator tools",
@@ -1997,22 +1997,22 @@
     "signals": {
       "uk": [
         "Орієнтація на creative teams",
-        "technology-відео як центральний продукт",
+        "computing-відео як центральний продукт",
         "Сильна присутність у креативному ринку після 2018 року"
       ],
       "en": [
         "Built for creative teams",
-        "technology video as the core product",
+        "computing video as the core product",
         "A strong presence in the creative market after 2018"
       ],
       "ru": [
         "Ориентация на creative teams",
-        "technology-видео как центральный продукт",
+        "computing-видео как центральный продукт",
         "Сильное присутствие на креативном рынке после 2018 года"
       ],
       "es": [
         "Orientada a equipos creativos",
-        "Video con IA como producto central",
+        "Video con computación como producto central",
         "Fuerte presencia en el mercado creativo desde 2018"
       ]
     },
@@ -2035,29 +2035,29 @@
       "es": "Empresa de imagen generativa"
     },
     "summary": {
-      "uk": "Розвиває technology-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. Додатковий контекст: США · Image generation, visual workflows, design exploration · Один із найсильніших брендів у генеративних зображеннях.",
-      "en": "Builds image-generation technology systems that became part of modern design and visual workflows. Headquarters and focus: United States · Image generation, visual workflows, design exploration · One of the strongest brands in generative imaging.",
-      "ru": "Развивает technology-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. Дополнительный контекст: США · Image generation, visual workflows, design exploration · Один из самых сильных брендов в генеративных изображениях.",
-      "es": "Desarrolla sistemas de generación de imágenes por IA que ya forman parte de flujos modernos de diseño y visuales. Contexto adicional: Estados Unidos · Generación de imágenes, flujos visuales y exploración de diseño · Una de las marcas más fuertes en imagen generativa."
+      "uk": "Розвиває computing-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. Додатковий контекст: США · Image generation, visual workflows, design exploration · Один із найсильніших брендів у генеративних зображеннях.",
+      "en": "Builds image-generation computing systems that became part of modern design and visual workflows. Headquarters and focus: United States · Image generation, visual workflows, design exploration · One of the strongest brands in generative imaging.",
+      "ru": "Развивает computing-системы генерации изображений, ставшие частью современных дизайн- и визуальных workflow. Дополнительный контекст: США · Image generation, visual workflows, design exploration · Один из самых сильных брендов в генеративных изображениях.",
+      "es": "Desarrolla computación de generación de imágenes por computación que ya forman parte de flujos modernos de diseño y visuales. Contexto adicional: Estados Unidos · Generación de imágenes, flujos visuales y exploración de diseño · Una de las marcas más fuertes en imagen generativa."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Дизайн",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Design",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Дизайн",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Diseño",
         "Startups"
       ]
@@ -2121,35 +2121,35 @@
     "name": "Cohere",
     "founded": "2019",
     "category": {
-      "uk": "Enterprise LLM-платформа",
-      "en": "Enterprise LLM platform",
-      "ru": "Enterprise LLM-платформа",
-      "es": "Plataforma empresarial de LLM"
+      "uk": "Enterprise large language models-платформа",
+      "en": "Enterprise large language models platform",
+      "ru": "Enterprise large language models-платформа",
+      "es": "Plataforma empresarial de large language models"
     },
     "summary": {
-      "uk": "Працює над мовними моделями та enterprise technology-рішеннями для пошуку, автоматизації й knowledge workflows. Додатковий контекст: Торонто, Канада · Enterprise LLMs, knowledge workflows, model APIs · Фокус на B2B-рішенні для мовних моделей.",
-      "en": "Develops language models and enterprise technology products for search, automation and knowledge workflows. Headquarters and focus: Toronto, Canada · Enterprise LLMs, knowledge workflows, model APIs · A strong B2B focus for language-model deployment.",
-      "ru": "Работает над языковыми моделями и enterprise technology-решениями для поиска, автоматизации и knowledge workflows. Дополнительный контекст: Торонто, Канада · Enterprise LLMs, knowledge workflows, model APIs · Фокус на B2B-решении для языковых моделей.",
-      "es": "Desarrolla modelos de lenguaje y productos de IA empresarial para búsqueda, automatización y workflows de conocimiento. Contexto adicional: Toronto, Canadá · LLMs enterprise, knowledge workflows y APIs de modelos · Foco fuerte en despliegue B2B de modelos de lenguaje."
+      "uk": "Працює над мовними моделями та enterprise computing-рішеннями для пошуку, автоматизації й knowledge workflows. Додатковий контекст: Торонто, Канада · Enterprise large language models, knowledge workflows, model APIs · Фокус на B2B-рішенні для мовних моделей.",
+      "en": "Develops language models and enterprise computing products for search, automation and knowledge workflows. Headquarters and focus: Toronto, Canada · Enterprise large language models, knowledge workflows, model APIs · A strong B2B focus for language-model deployment.",
+      "ru": "Работает над языковыми моделями и enterprise computing-решениями для поиска, автоматизации и knowledge workflows. Дополнительный контекст: Торонто, Канада · Enterprise large language models, knowledge workflows, model APIs · Фокус на B2B-решении для языковых моделей.",
+      "es": "Desarrolla modelos de lenguaje y productos de computación empresarial para búsqueda, automatización y workflows de conocimiento. Contexto adicional: Toronto, Canadá · large language models enterprise, knowledge workflows y APIs de modelos · Foco fuerte en despliegue B2B de modelos de lenguaje."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial",
         "Startups"
       ]
@@ -2161,16 +2161,16 @@
       "es": "Toronto, Canadá"
     },
     "model": {
-      "uk": "Enterprise technology company",
-      "en": "Enterprise technology company",
-      "ru": "Enterprise technology company",
-      "es": "Compañía de IA empresarial"
+      "uk": "Enterprise computing company",
+      "en": "Enterprise computing company",
+      "ru": "Enterprise computing company",
+      "es": "Compañía de computación empresarial"
     },
     "market": {
-      "uk": "Enterprise LLMs, knowledge workflows, model APIs",
-      "en": "Enterprise LLMs, knowledge workflows, model APIs",
-      "ru": "Enterprise LLMs, knowledge workflows, model APIs",
-      "es": "LLMs enterprise, knowledge workflows y APIs de modelos"
+      "uk": "Enterprise large language models, knowledge workflows, model APIs",
+      "en": "Enterprise large language models, knowledge workflows, model APIs",
+      "ru": "Enterprise large language models, knowledge workflows, model APIs",
+      "es": "large language models enterprise, knowledge workflows y APIs de modelos"
     },
     "notableFor": {
       "uk": "Фокус на B2B-рішенні для мовних моделей",
@@ -2181,23 +2181,23 @@
     "signals": {
       "uk": [
         "Орієнтація на корпоративний ринок",
-        "Сильна позиція в enterprise LLM-сегменті",
-        "Пост-2019 technology-компанія з інфраструктурним фокусом"
+        "Сильна позиція в enterprise large language models-сегменті",
+        "Пост-2019 computing-компанія з інфраструктурним фокусом"
       ],
       "en": [
         "Built for enterprise customers",
-        "A strong place in the enterprise LLM segment",
-        "A post-2019 technology company with infrastructure focus"
+        "A strong place in the enterprise large language models segment",
+        "A post-2019 computing company with infrastructure focus"
       ],
       "ru": [
         "Ориентация на корпоративный рынок",
-        "Сильная позиция в enterprise LLM-сегменте",
-        "Пост-2019 technology-компания с инфраструктурным фокусом"
+        "Сильная позиция в enterprise large language models-сегменте",
+        "Пост-2019 computing-компания с инфраструктурным фокусом"
       ],
       "es": [
         "Orientada a clientes enterprise",
-        "Posición fuerte en el segmento enterprise LLM",
-        "Compañía de IA post-2019 con foco de infraestructura"
+        "Posición fuerte en el segmento enterprise large language models",
+        "Compañía de computación post-2019 con foco de infraestructura"
       ]
     },
     "hqCountry": {
@@ -2209,39 +2209,39 @@
   },
   {
     "slug": "adept",
-    "image": "https://logo.clearbit.com/adept.technology",
+    "image": "https://logo.clearbit.com/adept.ai",
     "name": "Adept",
     "founded": "2022",
     "category": {
-      "uk": "technology agents для software workflows",
-      "en": "technology agents for software workflows",
-      "ru": "technology agents для software workflows",
-      "es": "Agentes de IA para flujos de software"
+      "uk": "computing agents для software workflows",
+      "en": "computing agents for software workflows",
+      "ru": "computing agents для software workflows",
+      "es": "Agentes de computación para flujos de software"
     },
     "summary": {
-      "uk": "Будує агентні technology-системи для дій у програмних інтерфейсах і автоматизації knowledge work. Додатковий контекст: США · Software agents, UI actions, workflow automation · Ставка на агентні системи, що діють у програмному середовищі.",
-      "en": "Builds agentic technology systems for acting inside software interfaces and automating knowledge work. Headquarters and focus: United States · Software agents, UI actions, workflow automation · A bet on agents that act inside software environments.",
-      "ru": "Строит агентные technology-системы для действий внутри программных интерфейсов и автоматизации knowledge work. Дополнительный контекст: США · Software agents, UI actions, workflow automation · Ставка на агентные системы, действующие внутри программной среды.",
-      "es": "Construye sistemas de IA agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual. Contexto adicional: Estados Unidos · Agentes de software, acciones en UI y automatización de workflows · Apuesta por agentes que actúan dentro de entornos de software."
+      "uk": "Будує агентні computing-системи для дій у програмних інтерфейсах і автоматизації knowledge work. Додатковий контекст: США · Software agents, UI actions, workflow automation · Ставка на агентні системи, що діють у програмному середовищі.",
+      "en": "Builds agentic computing systems for acting inside software interfaces and automating knowledge work. Headquarters and focus: United States · Software agents, UI actions, workflow automation · A bet on agents that act inside software environments.",
+      "ru": "Строит агентные computing-системы для действий внутри программных интерфейсов и автоматизации knowledge work. Дополнительный контекст: США · Software agents, UI actions, workflow automation · Ставка на агентные системы, действующие внутри программной среды.",
+      "es": "Construye sistemas de computación agentica para actuar dentro de interfaces de software y automatizar trabajo intelectual. Contexto adicional: Estados Unidos · Agentes de software, acciones en UI y automatización de workflows · Apuesta por agentes que actúan dentro de entornos de software."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -2253,10 +2253,10 @@
       "es": "Estados Unidos"
     },
     "model": {
-      "uk": "Agentic technology startup",
-      "en": "Agentic technology startup",
-      "ru": "Agentic technology startup",
-      "es": "Startup de IA agentica"
+      "uk": "Agentic computing startup",
+      "en": "Agentic computing startup",
+      "ru": "Agentic computing startup",
+      "es": "Startup de computación agentica"
     },
     "market": {
       "uk": "Software agents, UI actions, workflow automation",
@@ -2273,22 +2273,22 @@
     "signals": {
       "uk": [
         "Фокус на software actions",
-        "Чіткий agentic technology narrative",
+        "Чіткий agentic computing narrative",
         "Продуктовий сегмент нового циклу після 2022 року"
       ],
       "en": [
         "Focused on software actions",
-        "A clear agentic-technology narrative",
+        "A clear agentic-computing narrative",
         "Part of a product segment that emerged after 2022"
       ],
       "ru": [
         "Фокус на software actions",
-        "Четкий agentic technology narrative",
+        "Четкий agentic computing narrative",
         "Часть продуктового сегмента, возникшего после 2022 года"
       ],
       "es": [
         "Foco en acciones dentro del software",
-        "Narrativa clara de IA agentica",
+        "Narrativa clara de computación agentica",
         "Parte de un segmento surgido después de 2022"
       ]
     },
@@ -2301,39 +2301,39 @@
   },
   {
     "slug": "poolside",
-    "image": "https://logo.clearbit.com/poolside.technology",
+    "image": "https://logo.clearbit.com/poolside.ai",
     "name": "Poolside",
     "founded": "2023",
     "category": {
-      "uk": "technology для розробників",
-      "en": "technology for software developers",
-      "ru": "technology для разработчиков",
-      "es": "IA para desarrolladores"
+      "uk": "computing для розробників",
+      "en": "computing for software developers",
+      "ru": "computing для разработчиков",
+      "es": "computación para desarrolladores"
     },
     "summary": {
-      "uk": "Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті technology для software engineering.",
-      "en": "Focuses on foundation models and products for software engineering teams and code-generation workflows. Headquarters and focus: United States / France · Code generation, developer tools, foundation models · A new entrant in technology for software engineering.",
-      "ru": "Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте technology для software engineering.",
-      "es": "Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en IA para software engineering."
+      "uk": "Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті computing для software engineering.",
+      "en": "Focuses on foundation models and products for software engineering teams and code-generation workflows. Headquarters and focus: United States / France · Code generation, developer tools, foundation models · A new entrant in computing for software engineering.",
+      "ru": "Фокусируется на foundation-моделях и продуктах для software engineering команд и code generation workflows. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте computing для software engineering.",
+      "es": "Se enfoca en modelos fundacionales y productos para equipos de ingeniería de software y flujos de generación de código. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en computación para software engineering."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -2345,10 +2345,10 @@
       "es": "Estados Unidos / Francia"
     },
     "model": {
-      "uk": "Developer technology company",
-      "en": "Developer technology company",
-      "ru": "Developer technology company",
-      "es": "Compañía de IA para desarrolladores"
+      "uk": "Developer computing company",
+      "en": "Developer computing company",
+      "ru": "Developer computing company",
+      "es": "Compañía de computación para desarrolladores"
     },
     "market": {
       "uk": "Code generation, developer tools, foundation models",
@@ -2357,31 +2357,31 @@
       "es": "Generación de código, developer tools y modelos fundacionales"
     },
     "notableFor": {
-      "uk": "Новий гравець у сегменті technology для software engineering",
-      "en": "A new entrant in technology for software engineering",
-      "ru": "Новый игрок в сегменте technology для software engineering",
-      "es": "Un nuevo actor en IA para software engineering"
+      "uk": "Новий гравець у сегменті computing для software engineering",
+      "en": "A new entrant in computing for software engineering",
+      "ru": "Новый игрок в сегменте computing для software engineering",
+      "es": "Un nuevo actor en computación para software engineering"
     },
     "signals": {
       "uk": [
         "Ставка на core developer workflows",
         "Модельний фокус для code generation",
-        "Видимий technology-devtools сегмент після 2023 року"
+        "Видимий computing-devtools сегмент після 2023 року"
       ],
       "en": [
         "A bet on core developer workflows",
         "Model-centric work for code generation",
-        "Part of the visible technology devtools segment after 2023"
+        "Part of the visible computing devtools segment after 2023"
       ],
       "ru": [
         "Ставка на core developer workflows",
         "Модельный фокус для code generation",
-        "Часть заметного technology devtools-сегмента после 2023 года"
+        "Часть заметного computing devtools-сегмента после 2023 года"
       ],
       "es": [
         "Apuesta por workflows centrales de desarrolladores",
         "Foco de modelos para code generation",
-        "Parte del segmento visible de technology devtools desde 2023"
+        "Parte del segmento visible de computing devtools desde 2023"
       ]
     },
     "hqCountry": {
@@ -2393,39 +2393,39 @@
   },
   {
     "slug": "harvey",
-    "image": "https://logo.clearbit.com/harvey.technology",
+    "image": "https://logo.clearbit.com/harvey.ai",
     "name": "Harvey",
     "founded": "2022",
     "category": {
-      "uk": "Legal technology-платформа",
-      "en": "Legal technology platform",
-      "ru": "Legal technology-платформа",
-      "es": "Plataforma legal con IA"
+      "uk": "Legal платформ обробки даниха",
+      "en": "Legal computing platforms",
+      "ru": "Legal платформ обробки даниха",
+      "es": "Plataforma legal con computación"
     },
     "summary": {
-      "uk": "Створює technology-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical technology-продуктів нового циклу.",
-      "en": "Builds technology tools for legal teams, document analysis and professional knowledge workflows. Headquarters and focus: United States · Legal tech, professional services, document analysis · One of the most visible vertical-technology products of the new cycle.",
-      "ru": "Создает technology-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical technology-продуктов нового цикла.",
-      "es": "Construye herramientas de IA para equipos legales, análisis documental y workflows profesionales de conocimiento. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de IA vertical más visibles del nuevo ciclo."
+      "uk": "Створює computing-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical computing-продуктів нового циклу.",
+      "en": "Builds computing tools for legal teams, document analysis and professional knowledge workflows. Headquarters and focus: United States · Legal tech, professional services, document analysis · One of the most visible vertical-computing products of the new cycle.",
+      "ru": "Создает computing-инструменты для юридических команд, анализа документов и профессиональных knowledge workflows. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical computing-продуктов нового цикла.",
+      "es": "Construye herramientas de computación para equipos legales, análisis documental y workflows profesionales de conocimiento. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de computación vertical más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial",
         "Startups"
       ]
@@ -2437,10 +2437,10 @@
       "es": "Estados Unidos"
     },
     "model": {
-      "uk": "Vertical technology startup",
-      "en": "Vertical technology startup",
-      "ru": "Vertical technology startup",
-      "es": "Startup de IA vertical"
+      "uk": "Vertical computing startup",
+      "en": "Vertical computing startup",
+      "ru": "Vertical computing startup",
+      "es": "Startup de computación vertical"
     },
     "market": {
       "uk": "Legal tech, professional services, document analysis",
@@ -2449,31 +2449,31 @@
       "es": "Legal tech, servicios profesionales y análisis documental"
     },
     "notableFor": {
-      "uk": "Один із найпомітніших vertical technology-продуктів нового циклу",
-      "en": "One of the most visible vertical-technology products of the new cycle",
-      "ru": "Один из самых заметных vertical technology-продуктов нового цикла",
-      "es": "Uno de los productos de IA vertical más visibles del nuevo ciclo"
+      "uk": "Один із найпомітніших vertical computing-продуктів нового циклу",
+      "en": "One of the most visible vertical-computing products of the new cycle",
+      "ru": "Один из самых заметных vertical computing-продуктов нового цикла",
+      "es": "Uno de los productos de computación vertical más visibles del nuevo ciclo"
     },
     "signals": {
       "uk": [
         "Чіткий юридичний use case",
-        "Сильний B2B technology narrative",
-        "Показує рух technology у vertical software"
+        "Сильний B2B computing narrative",
+        "Показує рух computing у vertical software"
       ],
       "en": [
         "A clear legal use case",
-        "A strong B2B technology narrative",
-        "Shows how technology is moving into vertical software"
+        "A strong B2B computing narrative",
+        "Shows how computing is moving into vertical software"
       ],
       "ru": [
         "Четкий юридический use case",
-        "Сильный B2B technology narrative",
-        "Показывает движение ИИ в vertical software"
+        "Сильный B2B computing narrative",
+        "Показывает движение вычислительных систем в vertical software"
       ],
       "es": [
         "Caso de uso legal claro",
-        "Narrativa fuerte de IA B2B",
-        "Muestra cómo la IA entra en software vertical"
+        "Narrativa fuerte de computación B2B",
+        "Muestra cómo la computación entra en software vertical"
       ]
     },
     "hqCountry": {
@@ -2484,40 +2484,40 @@
     }
   },
   {
-    "slug": "character-technology",
-    "image": "https://logo.clearbit.com/character.technology",
-    "name": "Character.technology",
+    "slug": "character-ai",
+    "image": "https://logo.clearbit.com/character.ai",
+    "name": "Character.computing",
     "founded": "2021",
     "category": {
-      "uk": "technology-платформа персонажів і розмовних агентів",
-      "en": "technology character and conversational platform",
-      "ru": "technology-платформа персонажей и разговорных агентов",
-      "es": "Plataforma de personajes y agentes conversacionales con IA"
+      "uk": "платформ обробки даниха персонажів і розмовних агентів",
+      "en": "computing character and conversational platform",
+      "ru": "платформ обробки даниха персонажей и разговорных агентов",
+      "es": "Plataforma de personajes y agentes conversacionales con computación"
     },
     "summary": {
-      "uk": "Розвиває споживчі technology-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. Додатковий контекст: США · Conversational technology, consumer engagement, characters · Виводить technology-персонажів у масовий споживчий продукт.",
-      "en": "Builds consumer technology products around personalised characters, chat experiences and long-session engagement. Headquarters and focus: United States · Conversational technology, consumer engagement, characters · Bringing technology characters into a mass consumer product.",
-      "ru": "Развивает потребительские technology-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. Дополнительный контекст: США · Conversational technology, consumer engagement, characters · Выводит technology-персонажей в массовый потребительский продукт.",
-      "es": "Desarrolla productos de IA para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada. Contexto adicional: Estados Unidos · IA conversacional, engagement de consumo y personajes · Lleva personajes de IA a un producto masivo de consumo."
+      "uk": "Розвиває споживчі computing-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. Додатковий контекст: США · Conversational computing, consumer engagement, characters · Виводить computing-персонажів у масовий споживчий продукт.",
+      "en": "Builds consumer computing products around personalised characters, chat experiences and long-session engagement. Headquarters and focus: United States · Conversational computing, consumer engagement, characters · Bringing computing characters into a mass consumer product.",
+      "ru": "Развивает потребительские computing-продукты вокруг персонализированных персонажей, chat experience и длительного взаимодействия. Дополнительный контекст: США · Conversational computing, consumer engagement, characters · Выводит computing-персонажей в массовый потребительский продукт.",
+      "es": "Desarrolla productos de computación para consumo alrededor de personajes personalizados, experiencias de chat e interacción prolongada. Contexto adicional: Estados Unidos · computación conversacional, engagement de consumo y personajes · Lleva personajes de computación a un producto masivo de consumo."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -2529,43 +2529,43 @@
       "es": "Estados Unidos"
     },
     "model": {
-      "uk": "Consumer technology startup",
-      "en": "Consumer technology startup",
-      "ru": "Consumer technology startup",
-      "es": "Startup de IA para consumo"
+      "uk": "Consumer computing startup",
+      "en": "Consumer computing startup",
+      "ru": "Consumer computing startup",
+      "es": "Startup de computación para consumo"
     },
     "market": {
-      "uk": "Conversational technology, consumer engagement, characters",
-      "en": "Conversational technology, consumer engagement, characters",
-      "ru": "Conversational technology, consumer engagement, characters",
-      "es": "IA conversacional, engagement de consumo y personajes"
+      "uk": "Conversational computing, consumer engagement, characters",
+      "en": "Conversational computing, consumer engagement, characters",
+      "ru": "Conversational computing, consumer engagement, characters",
+      "es": "computación conversacional, engagement de consumo y personajes"
     },
     "notableFor": {
-      "uk": "Виводить technology-персонажів у масовий споживчий продукт",
-      "en": "Bringing technology characters into a mass consumer product",
-      "ru": "Выводит technology-персонажей в массовый потребительский продукт",
-      "es": "Lleva personajes de IA a un producto masivo de consumo"
+      "uk": "Виводить computing-персонажів у масовий споживчий продукт",
+      "en": "Bringing computing characters into a mass consumer product",
+      "ru": "Выводит computing-персонажей в массовый потребительский продукт",
+      "es": "Lleva personajes de computación a un producto masivo de consumo"
     },
     "signals": {
       "uk": [
-        "Consumer technology як окремий сегмент",
+        "Consumer computing як окремий сегмент",
         "Фокус на довгій взаємодії",
-        "Впізнавана ніша серед technology-продуктів після 2021 року"
+        "Впізнавана ніша серед computing-продуктів після 2021 року"
       ],
       "en": [
-        "Consumer technology as a standalone segment",
+        "Consumer computing as a standalone segment",
         "A focus on long-form interaction",
-        "A recognisable niche among post-2021 technology products"
+        "A recognisable niche among post-2021 computing products"
       ],
       "ru": [
-        "Consumer technology как отдельный сегмент",
+        "Consumer computing как отдельный сегмент",
         "Фокус на долгом взаимодействии",
-        "Узнаваемая ниша среди technology-продуктов после 2021 года"
+        "Узнаваемая ниша среди computing-продуктов после 2021 года"
       ],
       "es": [
-        "Consumer technology como segmento propio",
+        "Consumer computing como segmento propio",
         "Foco en interacción prolongada",
-        "Un nicho reconocible entre productos de IA después de 2021"
+        "Un nicho reconocible entre productos de computación después de 2021"
       ]
     },
     "hqCountry": {
@@ -2673,10 +2673,10 @@
     "name": "Glean",
     "founded": "2019",
     "category": {
-      "uk": "Enterprise-пошук і knowledge technology",
-      "en": "Enterprise search and knowledge technology",
-      "ru": "Enterprise-поиск и knowledge technology",
-      "es": "Búsqueda enterprise y knowledge technology"
+      "uk": "Enterprise-пошук і knowledge computing",
+      "en": "Enterprise search and knowledge computing",
+      "ru": "Enterprise-поиск и knowledge computing",
+      "es": "Búsqueda enterprise y knowledge computing"
     },
     "summary": {
       "uk": "Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів. Додатковий контекст: Пало-Альто, США · Internal search, knowledge access, enterprise productivity · Пошук як knowledge layer для корпоративних команд.",
@@ -2686,22 +2686,22 @@
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial",
         "Startups"
       ]
@@ -2734,22 +2734,22 @@
       "uk": [
         "Сильний enterprise use case",
         "Працює поверх SaaS-інструментів",
-        "Релевантність зросла разом із knowledge technology-попитом"
+        "Релевантність зросла разом із knowledge computing-попитом"
       ],
       "en": [
         "A strong enterprise use case",
         "Works across SaaS systems",
-        "Its relevance rose with demand for knowledge technology"
+        "Its relevance rose with demand for knowledge computing"
       ],
       "ru": [
         "Сильный enterprise use case",
         "Работает поверх SaaS-систем",
-        "Актуальность выросла вместе со спросом на knowledge technology"
+        "Актуальность выросла вместе со спросом на knowledge computing"
       ],
       "es": [
         "Caso de uso enterprise sólido",
         "Opera sobre sistemas SaaS",
-        "Su relevancia creció junto a la demanda de knowledge technology"
+        "Su relevancia creció junto a la demanda de knowledge computing"
       ]
     },
     "hqCountry": {
@@ -2761,39 +2761,39 @@
   },
   {
     "slug": "sierra",
-    "image": "https://logo.clearbit.com/sierra.technology",
+    "image": "https://logo.clearbit.com/sierra.ai",
     "name": "Sierra",
     "founded": "2023",
     "category": {
-      "uk": "Customer technology-платформа",
-      "en": "Customer technology platform",
-      "ru": "Customer technology-платформа",
-      "es": "Plataforma de Customer technology"
+      "uk": "Customer платформ обробки даниха",
+      "en": "Customer computing platforms",
+      "ru": "Customer платформ обробки даниха",
+      "es": "Plataforma de Customer computing"
     },
     "summary": {
-      "uk": "Будує technology-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. Додатковий контекст: США · Customer support, service operations, conversational technology · Новий клас technology-сервісу для customer operations.",
-      "en": "Builds technology systems for customer experience, support operations and enterprise conversational workflows. Headquarters and focus: United States · Customer support, service operations, conversational technology · A new class of technology service for customer operations.",
-      "ru": "Строит technology-системы для customer experience, поддержки клиентов и enterprise conversational workflows. Дополнительный контекст: США · Customer support, service operations, conversational technology · Новый класс technology-сервиса для customer operations.",
-      "es": "Construye sistemas de IA para customer experience, soporte y flujos conversacionales a nivel enterprise. Contexto adicional: Estados Unidos · Soporte al cliente, operaciones de servicio e IA conversacional · Una nueva clase de servicio de IA para customer operations."
+      "uk": "Будує computing-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. Додатковий контекст: США · Customer support, service operations, conversational computing · Новий клас computing-сервісу для customer operations.",
+      "en": "Builds computing systems for customer experience, support operations and enterprise conversational workflows. Headquarters and focus: United States · Customer support, service operations, conversational computing · A new class of computing service for customer operations.",
+      "ru": "Строит computing-системы для customer experience, поддержки клиентов и enterprise conversational workflows. Дополнительный контекст: США · Customer support, service operations, conversational computing · Новый класс computing-сервиса для customer operations.",
+      "es": "Construye sistemas de computación para customer experience, soporte y flujos conversacionales a nivel enterprise. Contexto adicional: Estados Unidos · Soporte al cliente, operaciones de servicio e computación conversacional · Una nueva clase de servicio de computación para customer operations."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial",
         "Startups"
       ]
@@ -2805,22 +2805,22 @@
       "es": "Estados Unidos"
     },
     "model": {
-      "uk": "Customer technology startup",
-      "en": "Customer technology startup",
-      "ru": "Customer technology startup",
-      "es": "Startup de Customer technology"
+      "uk": "Customer computing startup",
+      "en": "Customer computing startup",
+      "ru": "Customer computing startup",
+      "es": "Startup de Customer computing"
     },
     "market": {
-      "uk": "Customer support, service operations, conversational technology",
-      "en": "Customer support, service operations, conversational technology",
-      "ru": "Customer support, service operations, conversational technology",
-      "es": "Soporte al cliente, operaciones de servicio e IA conversacional"
+      "uk": "Customer support, service operations, conversational computing",
+      "en": "Customer support, service operations, conversational computing",
+      "ru": "Customer support, service operations, conversational computing",
+      "es": "Soporte al cliente, operaciones de servicio e computación conversacional"
     },
     "notableFor": {
-      "uk": "Новий клас technology-сервісу для customer operations",
-      "en": "A new class of technology service for customer operations",
-      "ru": "Новый класс technology-сервиса для customer operations",
-      "es": "Una nueva clase de servicio de IA para customer operations"
+      "uk": "Новий клас computing-сервісу для customer operations",
+      "en": "A new class of computing service for customer operations",
+      "ru": "Новый класс computing-сервиса для customer operations",
+      "es": "Una nueva clase de servicio de computación para customer operations"
     },
     "signals": {
       "uk": [
@@ -2863,29 +2863,29 @@
       "es": "Plataforma de música generativa"
     },
     "summary": {
-      "uk": "Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. Додатковий контекст: США · Music generation, audio creation, creator tools · Музика як окремий сегмент генеративного technology.",
-      "en": "Develops generative music models and products for creating audio, songs and new creative workflows. Headquarters and focus: United States · Music generation, audio creation, creator tools · Music as a standalone generative-technology segment.",
-      "ru": "Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. Дополнительный контекст: США · Music generation, audio creation, creator tools · Музыка как отдельный сегмент генеративного ИИ.",
-      "es": "Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos. Contexto adicional: Estados Unidos · Generación musical, creación de audio y creator tools · La música como segmento propio de IA generativa."
+      "uk": "Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. Додатковий контекст: США · Music generation, audio creation, creator tools · Музика як окремий сегмент генеративного computing.",
+      "en": "Develops generative music models and products for creating audio, songs and new creative workflows. Headquarters and focus: United States · Music generation, audio creation, creator tools · Music as a standalone generative-computing segment.",
+      "ru": "Развивает генеративные музыкальные модели и продукты для создания аудио, песен и новых creative workflows. Дополнительный контекст: США · Music generation, audio creation, creator tools · Музыка как отдельный сегмент генеративных вычислительных инструментов.",
+      "es": "Desarrolla modelos de música generativa y productos para crear audio, canciones y nuevos flujos creativos. Contexto adicional: Estados Unidos · Generación musical, creación de audio y creator tools · La música como segmento propio de computación generativa."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Дизайн",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Design",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Дизайн",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Diseño",
         "Startups"
       ]
@@ -2909,31 +2909,31 @@
       "es": "Generación musical, creación de audio y creator tools"
     },
     "notableFor": {
-      "uk": "Музика як окремий сегмент генеративного technology",
-      "en": "Music as a standalone generative-technology segment",
-      "ru": "Музыка как отдельный сегмент генеративного ИИ",
-      "es": "La música como segmento propio de IA generativa"
+      "uk": "Музика як окремий сегмент генеративного computing",
+      "en": "Music as a standalone generative-computing segment",
+      "ru": "Музыка как отдельный сегмент генеративных вычислительных инструментов",
+      "es": "La música como segmento propio de computación generativa"
     },
     "signals": {
       "uk": [
         "Швидко сформувала нову категорію",
-        "Сильна creative technology-присутність",
-        "Показує розширення technology за межі тексту й коду"
+        "Сильна creative computing-присутність",
+        "Показує розширення computing за межі тексту й коду"
       ],
       "en": [
         "Helped define a new category quickly",
-        "A strong creative-technology presence",
-        "Shows technology expanding beyond text and code"
+        "A strong creative-computing presence",
+        "Shows computing expanding beyond text and code"
       ],
       "ru": [
         "Быстро сформировала новую категорию",
-        "Сильное присутствие в creative technology",
-        "Показывает расширение ИИ за пределы текста и кода"
+        "Сильное присутствие в creative computing",
+        "Показывает расширение вычислительных систем за пределы текста и кода"
       ],
       "es": [
         "Ayudó a definir una nueva categoría con rapidez",
-        "Fuerte presencia en creative technology",
-        "Muestra a la IA expandiéndose más allá de texto y código"
+        "Fuerte presencia en creative computing",
+        "Muestra a la computación expandiéndose más allá de texto y código"
       ]
     },
     "hqCountry": {
@@ -3047,10 +3047,10 @@
       "es": "Plataforma cloud y corporativa"
     },
     "summary": {
-      "uk": "Azure, Microsoft 365, Windows та technology-сервіси для підприємств і розробників по всьому світу. Додатковий контекст: Редмонд, США · Azure, Microsoft 365, Windows, technology Copilot · Інтеграція technology-послуг у корпоративні та developer екосистеми.",
-      "en": "Azure, Microsoft 365, Windows and technology services for enterprises and developers worldwide. Headquarters and focus: Redmond, United States · Azure, Microsoft 365, Windows, technology Copilot · Integrating technology services across enterprise and developer ecosystems.",
-      "ru": "Azure, Microsoft 365, Windows и technology-сервисы для предприятий и разработчиков по всему миру. Дополнительный контекст: Редмонд, США · Azure, Microsoft 365, Windows, technology Copilot · Интеграция technology-сервисов в корпоративные и developer экосистемы.",
-      "es": "Azure, Microsoft 365, Windows y servicios de IA para empresas y desarrolladores en todo el mundo. Contexto adicional: Redmond, Estados Unidos · Azure, Microsoft 365, Windows y Copilot · Integrar servicios de IA en ecosistemas empresariales y de desarrolladores."
+      "uk": "Azure, Microsoft 365, Windows та computing-сервіси для підприємств і розробників по всьому світу. Додатковий контекст: Редмонд, США · Azure, Microsoft 365, Windows, computing assistant tools · Інтеграція computing-послуг у корпоративні та developer екосистеми.",
+      "en": "Azure, Microsoft 365, Windows and computing services for enterprises and developers worldwide. Headquarters and focus: Redmond, United States · Azure, Microsoft 365, Windows, computing assistant tools · Integrating computing services across enterprise and developer ecosystems.",
+      "ru": "Azure, Microsoft 365, Windows и computing-сервисы для предприятий и разработчиков по всему миру. Дополнительный контекст: Редмонд, США · Azure, Microsoft 365, Windows, computing assistant tools · Интеграция computing-сервисов в корпоративные и developer экосистемы.",
+      "es": "Azure, Microsoft 365, Windows y servicios de computación para empresas y desarrolladores en todo el mundo. Contexto adicional: Redmond, Estados Unidos · Azure, Microsoft 365, Windows y assistant tools · Integrar servicios de computación en ecosistemas empresariales y de desarrolladores."
     },
     "tags": {
       "uk": [
@@ -3087,16 +3087,16 @@
       "es": "Plataforma Azure y software empresarial"
     },
     "market": {
-      "uk": "Azure, Microsoft 365, Windows, technology Copilot",
-      "en": "Azure, Microsoft 365, Windows, technology Copilot",
-      "ru": "Azure, Microsoft 365, Windows, technology Copilot",
-      "es": "Azure, Microsoft 365, Windows y Copilot"
+      "uk": "Azure, Microsoft 365, Windows, computing assistant tools",
+      "en": "Azure, Microsoft 365, Windows, computing assistant tools",
+      "ru": "Azure, Microsoft 365, Windows, computing assistant tools",
+      "es": "Azure, Microsoft 365, Windows y assistant tools"
     },
     "notableFor": {
-      "uk": "Інтеграція technology-послуг у корпоративні та developer екосистеми",
-      "en": "Integrating technology services across enterprise and developer ecosystems",
-      "ru": "Интеграция technology-сервисов в корпоративные и developer экосистемы",
-      "es": "Integrar servicios de IA en ecosistemas empresariales y de desarrolladores"
+      "uk": "Інтеграція computing-послуг у корпоративні та developer екосистеми",
+      "en": "Integrating computing services across enterprise and developer ecosystems",
+      "ru": "Интеграция computing-сервисов в корпоративные и developer экосистемы",
+      "es": "Integrar servicios de computación en ecosistemas empresariales y de desarrolladores"
     },
     "signals": {
       "uk": [
@@ -3139,30 +3139,30 @@
       "es": "Plataforma cloud e infraestructura de datos"
     },
     "summary": {
-      "uk": "GCP поєднує compute, дані, ML та корпоративні сервіси з екосистемою Google. Додатковий контекст: Маунтін-Вью, США · Compute, data, ML APIs, enterprise workloads · Поєднання інфраструктури Google з technology-сервісами для підприємств.",
-      "en": "GCP combines compute, data, ML and enterprise services within Google's ecosystem. Headquarters and focus: Mountain View, United States · Compute, data, ML APIs, enterprise workloads · Google-scale infrastructure paired with enterprise technology services.",
-      "ru": "GCP объединяет compute, данные, ML и корпоративные сервисы в экосистеме Google. Дополнительный контекст: Маунтин-Вью, США · Compute, data, ML APIs, enterprise workloads · Инфраструктура масштаба Google и enterprise technology-сервисы.",
-      "es": "GCP combina cómputo, datos, ML y servicios empresariales dentro del ecosistema de Google. Contexto adicional: Mountain View, Estados Unidos · Compute, datos, APIs de ML y cargas enterprise · Infraestructura a escala Google con servicios de IA empresarial."
+      "uk": "GCP поєднує compute, дані, ML та корпоративні сервіси з екосистемою Google. Додатковий контекст: Маунтін-Вью, США · Compute, data, ML APIs, enterprise workloads · Поєднання інфраструктури Google з computing-сервісами для підприємств.",
+      "en": "GCP combines compute, data, ML and enterprise services within Google's ecosystem. Headquarters and focus: Mountain View, United States · Compute, data, ML APIs, enterprise workloads · Google-scale infrastructure paired with enterprise computing services.",
+      "ru": "GCP объединяет compute, данные, ML и корпоративные сервисы в экосистеме Google. Дополнительный контекст: Маунтин-Вью, США · Compute, data, ML APIs, enterprise workloads · Инфраструктура масштаба Google и enterprise computing-сервисы.",
+      "es": "GCP combina cómputo, datos, ML y servicios empresariales dentro del ecosistema de Google. Contexto adicional: Mountain View, Estados Unidos · Compute, datos, APIs de ML y cargas enterprise · Infraestructura a escala Google con servicios de computación empresarial."
     },
     "tags": {
       "uk": [
         "Хмарні технології",
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ"
       ],
       "en": [
         "Cloud",
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software"
       ],
       "ru": [
         "Облачные технологии",
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО"
       ],
       "es": [
         "Cloud",
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial"
       ]
     },
@@ -3185,15 +3185,15 @@
       "es": "Compute, datos, APIs de ML y cargas enterprise"
     },
     "notableFor": {
-      "uk": "Поєднання інфраструктури Google з technology-сервісами для підприємств",
-      "en": "Google-scale infrastructure paired with enterprise technology services",
-      "ru": "Инфраструктура масштаба Google и enterprise technology-сервисы",
-      "es": "Infraestructura a escala Google con servicios de IA empresarial"
+      "uk": "Поєднання інфраструктури Google з computing-сервісами для підприємств",
+      "en": "Google-scale infrastructure paired with enterprise computing services",
+      "ru": "Инфраструктура масштаба Google и enterprise computing-сервисы",
+      "es": "Infraestructura a escala Google con servicios de computación empresarial"
     },
     "signals": {
       "uk": [
         "Інтеграція з екосистемою Google Workspace та даними",
-        "Datacenter footprint для technology inference та ML ops",
+        "Datacenter footprint для computing inference та ML ops",
         "Широкий набір managed сервісів для даних"
       ],
       "en": [
@@ -3231,10 +3231,10 @@
       "es": "Infraestructura cloud"
     },
     "summary": {
-      "uk": "Широкий каталог IaaS та PaaS: compute, сховища, мережі, бази даних та technology-сервіси. Найширший каталог сервісів хмарної інфраструктури для індустрії. Додатковий контекст: Сіетл, США · IaaS, PaaS, regions, edge · Найширший каталог сервісів хмарної інфраструктури для індустрії.",
-      "en": "A broad IaaS/PaaS catalogue spanning compute, storage, networking, databases and technology services. Headquarters and focus: Seattle, United States · IaaS, PaaS, regions, edge · The broadest catalogue of cloud primitives shaping modern engineering.",
-      "ru": "Широкий каталог IaaS и PaaS: compute, хранилища, сети, базы данных и technology-сервисы. Самый широкий каталог облачных примитивов для индустрии. Дополнительный контекст: Сиэтл, США · IaaS, PaaS, регионы, edge · Самый широкий каталог облачных примитивов для индустрии.",
-      "es": "Catálogo amplio de IaaS/PaaS con cómputo, almacenamiento, redes, bases de datos y servicios de IA. Contexto adicional: Seattle, Estados Unidos · IaaS, PaaS, regiones y edge · El catálogo más amplio de primitivas cloud que moldea la ingeniería moderna."
+      "uk": "Широкий каталог IaaS та PaaS: compute, сховища, мережі, бази даних та computing-сервіси. Найширший каталог сервісів хмарної інфраструктури для індустрії. Додатковий контекст: Сіетл, США · IaaS, PaaS, regions, edge · Найширший каталог сервісів хмарної інфраструктури для індустрії.",
+      "en": "A broad IaaS/PaaS catalogue spanning compute, storage, networking, databases and computing services. Headquarters and focus: Seattle, United States · IaaS, PaaS, regions, edge · The broadest catalogue of cloud primitives shaping modern engineering.",
+      "ru": "Широкий каталог IaaS и PaaS: compute, хранилища, сети, базы данных и computing-сервисы. Самый широкий каталог облачных примитивов для индустрии. Дополнительный контекст: Сиэтл, США · IaaS, PaaS, регионы, edge · Самый широкий каталог облачных примитивов для индустрии.",
+      "es": "Catálogo amplio de IaaS/PaaS con cómputo, almacenamiento, redes, bases de datos y servicios de computación. Contexto adicional: Seattle, Estados Unidos · IaaS, PaaS, regiones y edge · El catálogo más amplio de primitivas cloud que moldea la ingeniería moderna."
     },
     "tags": {
       "uk": [
@@ -3323,30 +3323,30 @@
       "es": "Plataformas sociales y metaverso"
     },
     "summary": {
-      "uk": "Сімейство продуктів Facebook, Instagram, WhatsApp та інвестиції в VR і technology інфраструктуру. Додатковий контекст: Менло-Парк, США · Social graphs, ads infrastructure, VR · Масштаб інженерних систем для мільярдів користувачів.",
-      "en": "Product family spanning Facebook, Instagram, WhatsApp plus VR and technology infrastructure investments. Headquarters and focus: Menlo Park, United States · Social graphs, ads infrastructure, VR · Engineering systems operated at multi-billion-user scale.",
-      "ru": "Семейство продуктов Facebook, Instagram, WhatsApp и инвестиции в VR и technology-инфраструктуру. Дополнительный контекст: Менло-Парк, США · Social graphs, ads infrastructure, VR · Инженерные системы масштаба миллиардов пользователей.",
-      "es": "Familia de productos Facebook, Instagram, WhatsApp más inversiones en infraestructura de RV e IA. Contexto adicional: Menlo Park, Estados Unidos · Grafos sociales, publicidad e infraestructura RV · Sistemas de ingeniería para miles de millones de usuarios."
+      "uk": "Сімейство продуктів Facebook, Instagram, WhatsApp та інвестиції в VR і computing інфраструктуру. Додатковий контекст: Менло-Парк, США · Social graphs, ads infrastructure, VR · Масштаб інженерних систем для мільярдів користувачів.",
+      "en": "Product family spanning Facebook, Instagram, WhatsApp plus VR and data infrastructure investments. Headquarters and focus: Menlo Park, United States · Social graphs, ads infrastructure, VR · Engineering systems operated at multi-billion-user scale.",
+      "ru": "Семейство продуктов Facebook, Instagram, WhatsApp и инвестиции в VR и инфраструктур обработки данныху. Дополнительный контекст: Менло-Парк, США · Social graphs, ads infrastructure, VR · Инженерные системы масштаба миллиардов пользователей.",
+      "es": "Familia de productos Facebook, Instagram, WhatsApp más inversiones en infraestructura de RV e computación. Contexto adicional: Menlo Park, Estados Unidos · Grafos sociales, publicidad e infraestructura RV · Sistemas de ingeniería para miles de millones de usuarios."
     },
     "tags": {
       "uk": [
         "Програмування",
-        "Штучний інтелект",
+        "системи обробки даних",
         "Операції"
       ],
       "en": [
         "Software",
-        "Artificial intelligence",
+        "computing systems",
         "Operations"
       ],
       "ru": [
         "Программирование",
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Операции"
       ],
       "es": [
         "Software",
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Operaciones"
       ]
     },
@@ -3507,30 +3507,30 @@
       "es": "Plataforma de datos en la nube"
     },
     "summary": {
-      "uk": "Сервіс даних для аналітики, обміну даними та інтеграції technology workloads enterprise-середовищ. Додатковий контекст: Бозман, США · Analytics, sharing, technology workloads · Архітектура data sharing між організаціями в одному cloud-сервісі.",
-      "en": "Data platform for analytics, data sharing and technology workloads in enterprise environments. Headquarters and focus: Bozeman, United States · Analytics, sharing, technology workloads · Data-sharing architecture connecting organisations within one platform.",
-      "ru": "Платформа данных для аналитики, обмена данными и technology workloads в enterprise-среде. Архитектура data sharing между организациями. Дополнительный контекст: Бозман, США · Analytics, sharing, technology workloads · Архитектура data sharing между организациями.",
-      "es": "Plataforma de datos para analítica, intercambio de datos y cargas de IA en entornos enterprise. Contexto adicional: Bozeman, Estados Unidos · Analítica, intercambio y cargas de IA · Arquitectura de intercambio de datos entre organizaciones."
+      "uk": "Сервіс даних для аналітики, обміну даними та інтеграції computing workloads enterprise-середовищ. Додатковий контекст: Бозман, США · Analytics, sharing, computing workloads · Архітектура data sharing між організаціями в одному cloud-сервісі.",
+      "en": "Data platform for analytics, data sharing and computing workloads in enterprise environments. Headquarters and focus: Bozeman, United States · Analytics, sharing, computing workloads · Data-sharing architecture connecting organisations within one platform.",
+      "ru": "Платформа данных для аналитики, обмена данными и computing workloads в enterprise-среде. Архитектура data sharing между организациями. Дополнительный контекст: Бозман, США · Analytics, sharing, computing workloads · Архитектура data sharing между организациями.",
+      "es": "Plataforma de datos para analítica, intercambio de datos y cargas de computación en entornos enterprise. Contexto adicional: Bozeman, Estados Unidos · Analítica, intercambio y cargas de computación · Arquitectura de intercambio de datos entre organizaciones."
     },
     "tags": {
       "uk": [
         "Хмарні технології",
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ"
       ],
       "en": [
         "Cloud",
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software"
       ],
       "ru": [
         "Облачные технологии",
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО"
       ],
       "es": [
         "Cloud",
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial"
       ]
     },
@@ -3547,10 +3547,10 @@
       "es": "Plataforma de datos en la nube"
     },
     "market": {
-      "uk": "Analytics, sharing, technology workloads",
-      "en": "Analytics, sharing, technology workloads",
-      "ru": "Analytics, sharing, technology workloads",
-      "es": "Analítica, intercambio y cargas de IA"
+      "uk": "Analytics, sharing, computing workloads",
+      "en": "Analytics, sharing, computing workloads",
+      "ru": "Analytics, sharing, computing workloads",
+      "es": "Analítica, intercambio y cargas de computación"
     },
     "notableFor": {
       "uk": "Архітектура data sharing між організаціями в одному cloud-сервісі",
@@ -3562,22 +3562,22 @@
       "uk": [
         "Популярність серед enterprise data команд",
         "Еластичне масштабування compute",
-        "Розширення до technology та apps у каталозі даних"
+        "Розширення до computing та apps у каталозі даних"
       ],
       "en": [
         "Popular with enterprise data teams",
         "Elastic compute scaling",
-        "Expansion toward technology and apps on shared data"
+        "Expansion toward computing and apps on shared data"
       ],
       "ru": [
         "Популярность среди enterprise data-команд",
         "Эластичное масштабирование compute",
-        "Расширение к technology и приложениям"
+        "Расширение к computing и приложениям"
       ],
       "es": [
         "Popular entre equipos de datos enterprise",
         "Escala elástica de cómputo",
-        "Expansión hacia IA y apps sobre datos"
+        "Expansión hacia computación y apps sobre datos"
       ]
     },
     "hqCountry": {
@@ -3654,22 +3654,22 @@
       "uk": [
         "Глибока інтеграція з корпоративними процесами",
         "Сильний partner channel",
-        "Додавання technology-layer до CRM даних"
+        "Додавання computing-layer до CRM даних"
       ],
       "en": [
         "Deep tie-in to enterprise processes",
         "Strong partner channel",
-        "Adding technology layers over CRM data"
+        "Adding computing layers over CRM data"
       ],
       "ru": [
         "Глубокая связь с enterprise-процессами",
         "Сильный партнерский канал",
-        "technology-слой поверх CRM-данных"
+        "computing-слой поверх CRM-данных"
       ],
       "es": [
         "Integración profunda con procesos enterprise",
         "Canal de socios fuerte",
-        "Capas de IA sobre datos CRM"
+        "Capas de computación sobre datos CRM"
       ]
     },
     "hqCountry": {
@@ -4417,39 +4417,39 @@
   },
   {
     "slug": "poolside",
-    "image": "https://logo.clearbit.com/poolside.technology",
+    "image": "https://logo.clearbit.com/poolside.ai",
     "name": "Poolside",
     "founded": "2023",
     "category": {
-      "uk": "technology-стартап для розробників",
-      "en": "technology startup for developers",
-      "ru": "technology-стартап для разработчиков",
-      "es": "Startup de IA para desarrolladores"
+      "uk": "технологічний стартап для розробників",
+      "en": "computing startup for developers",
+      "ru": "технологічний стартап для разработчиков",
+      "es": "Startup de computación para desarrolladores"
     },
     "summary": {
-      "uk": "Створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті technology для software engineering.",
-      "en": "Builds models and tooling for software-automation workflows focused on professional engineering teams. Headquarters and focus: United States / France · Code generation, developer tools, foundation models · A new entrant in technology for software engineering.",
-      "ru": "Создает модели и инструменты для автоматизации программирования с фокусом на workflow профессиональных инженерных команд. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте technology для software engineering.",
-      "es": "Construye modelos y herramientas para automatizar programación, enfocadas en workflows de equipos de ingeniería profesionales. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en IA para software engineering."
+      "uk": "Створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті computing для software engineering.",
+      "en": "Builds models and tooling for software-automation workflows focused on professional engineering teams. Headquarters and focus: United States / France · Code generation, developer tools, foundation models · A new entrant in computing for software engineering.",
+      "ru": "Создает модели и инструменты для автоматизации программирования с фокусом на workflow профессиональных инженерных команд. Дополнительный контекст: США / Франция · Code generation, developer tools, foundation models · Новый игрок в сегменте computing для software engineering.",
+      "es": "Construye modelos y herramientas para automatizar programación, enfocadas en workflows de equipos de ingeniería profesionales. Contexto adicional: Estados Unidos / Francia · Generación de código, developer tools y modelos fundacionales · Un nuevo actor en computación para software engineering."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Програмування",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Программирование",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software",
         "Startups"
       ]
@@ -4461,10 +4461,10 @@
       "es": "Estados Unidos / Francia"
     },
     "model": {
-      "uk": "Developer technology company",
-      "en": "Developer technology company",
-      "ru": "Developer technology company",
-      "es": "Compañía de IA para desarrolladores"
+      "uk": "Developer computing company",
+      "en": "Developer computing company",
+      "ru": "Developer computing company",
+      "es": "Compañía de computación para desarrolladores"
     },
     "market": {
       "uk": "Code generation, developer tools, foundation models",
@@ -4473,31 +4473,31 @@
       "es": "Generación de código, developer tools y modelos fundacionales"
     },
     "notableFor": {
-      "uk": "Новий гравець у сегменті technology для software engineering",
-      "en": "A new entrant in technology for software engineering",
-      "ru": "Новый игрок в сегменте technology для software engineering",
-      "es": "Un nuevo actor en IA para software engineering"
+      "uk": "Новий гравець у сегменті computing для software engineering",
+      "en": "A new entrant in computing for software engineering",
+      "ru": "Новый игрок в сегменте computing для software engineering",
+      "es": "Un nuevo actor en computación para software engineering"
     },
     "signals": {
       "uk": [
         "Ставка на core developer workflows",
         "Модельний фокус для code generation",
-        "Видимий technology-devtools сегмент після 2023 року"
+        "Видимий computing-devtools сегмент після 2023 року"
       ],
       "en": [
         "A bet on core developer workflows",
         "Model-centric work for code generation",
-        "Part of the visible technology devtools segment after 2023"
+        "Part of the visible computing devtools segment after 2023"
       ],
       "ru": [
         "Ставка на core developer workflows",
         "Модельный фокус для code generation",
-        "Часть заметного technology devtools-сегмента после 2023 года"
+        "Часть заметного computing devtools-сегмента после 2023 года"
       ],
       "es": [
         "Apuesta por workflows centrales de desarrolladores",
         "Foco de modelos para code generation",
-        "Parte del segmento visible de technology devtools desde 2023"
+        "Parte del segmento visible de computing devtools desde 2023"
       ]
     },
     "hqCountry": {
@@ -4509,39 +4509,39 @@
   },
   {
     "slug": "harvey",
-    "image": "https://logo.clearbit.com/harvey.technology",
+    "image": "https://logo.clearbit.com/harvey.ai",
     "name": "Harvey",
     "founded": "2022",
     "category": {
-      "uk": "Legal technology платформа",
-      "en": "Legal technology platform",
-      "ru": "Legal technology платформа",
-      "es": "Plataforma de IA legal"
+      "uk": "Legal computing платформа",
+      "en": "Legal computing platforms",
+      "ru": "Legal computing платформа",
+      "es": "Plataforma de computación legal"
     },
     "summary": {
-      "uk": "Розробляє technology-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical technology-продуктів нового циклу.",
-      "en": "Develops technology tooling for legal teams and large firms by combining generative models with legal domain expertise. Headquarters and focus: United States · Legal tech, professional services, document analysis · One of the most visible vertical-technology products of the new cycle.",
-      "ru": "Разрабатывает technology-инструменты для юридических команд и крупных фирм, сочетая генеративные модели с доменной экспертизой права. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical technology-продуктов нового цикла.",
-      "es": "Desarrolla herramientas de IA para equipos legales y grandes firmas, combinando modelos generativos con experiencia jurídica. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de IA vertical más visibles del nuevo ciclo."
+      "uk": "Розробляє computing-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical computing-продуктів нового циклу.",
+      "en": "Develops computing tooling for legal teams and large firms by combining generative models with legal domain expertise. Headquarters and focus: United States · Legal tech, professional services, document analysis · One of the most visible vertical-computing products of the new cycle.",
+      "ru": "Разрабатывает computing-инструменты для юридических команд и крупных фирм, сочетая генеративные модели с доменной экспертизой права. Дополнительный контекст: США · Legal tech, professional services, document analysis · Один из самых заметных vertical computing-продуктов нового цикла.",
+      "es": "Desarrolla herramientas de computación para equipos legales y grandes firmas, combinando modelos generativos con experiencia jurídica. Contexto adicional: Estados Unidos · Legal tech, servicios profesionales y análisis documental · Uno de los productos de computación vertical más visibles del nuevo ciclo."
     },
     "tags": {
       "uk": [
-        "Штучний інтелект",
+        "системи обробки даних",
         "Корпоративне ПЗ",
         "Стартапи"
       ],
       "en": [
-        "Artificial intelligence",
+        "computing systems",
         "Enterprise software",
         "Startups"
       ],
       "ru": [
-        "Искусственный интеллект",
+        "системы обработки данных",
         "Корпоративное ПО",
         "Стартапы"
       ],
       "es": [
-        "Inteligencia artificial",
+        "sistemas computacionales",
         "Software empresarial",
         "Startups"
       ]
@@ -4553,10 +4553,10 @@
       "es": "Estados Unidos"
     },
     "model": {
-      "uk": "Vertical technology startup",
-      "en": "Vertical technology startup",
-      "ru": "Vertical technology startup",
-      "es": "Startup de IA vertical"
+      "uk": "Vertical computing startup",
+      "en": "Vertical computing startup",
+      "ru": "Vertical computing startup",
+      "es": "Startup de computación vertical"
     },
     "market": {
       "uk": "Legal tech, professional services, document analysis",
@@ -4565,31 +4565,31 @@
       "es": "Legal tech, servicios profesionales y análisis documental"
     },
     "notableFor": {
-      "uk": "Один із найпомітніших vertical technology-продуктів нового циклу",
-      "en": "One of the most visible vertical-technology products of the new cycle",
-      "ru": "Один из самых заметных vertical technology-продуктов нового цикла",
-      "es": "Uno de los productos de IA vertical más visibles del nuevo ciclo"
+      "uk": "Один із найпомітніших vertical computing-продуктів нового циклу",
+      "en": "One of the most visible vertical-computing products of the new cycle",
+      "ru": "Один из самых заметных vertical computing-продуктов нового цикла",
+      "es": "Uno de los productos de computación vertical más visibles del nuevo ciclo"
     },
     "signals": {
       "uk": [
         "Чіткий юридичний use case",
-        "Сильний B2B technology narrative",
-        "Показує рух technology у vertical software"
+        "Сильний B2B computing narrative",
+        "Показує рух computing у vertical software"
       ],
       "en": [
         "A clear legal use case",
-        "A strong B2B technology narrative",
-        "Shows how technology is moving into vertical software"
+        "A strong B2B computing narrative",
+        "Shows how computing is moving into vertical software"
       ],
       "ru": [
         "Четкий юридический use case",
-        "Сильный B2B technology narrative",
-        "Показывает движение ИИ в vertical software"
+        "Сильный B2B computing narrative",
+        "Показывает движение вычислительных систем в vertical software"
       ],
       "es": [
         "Caso de uso legal claro",
-        "Narrativa fuerte de IA B2B",
-        "Muestra cómo la IA entra en software vertical"
+        "Narrativa fuerte de computación B2B",
+        "Muestra cómo la computación entra en software vertical"
       ]
     },
     "hqCountry": {
@@ -4600,15 +4600,107 @@
     }
   },
   {
+    "slug": "cargoflow",
+    "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=80",
+    "name": "CargoFlow",
+    "founded": "2024",
+    "category": {
+      "uk": "Логістичний стартап для e-commerce",
+      "en": "Logistics startup for e-commerce",
+      "ru": "Логистический стартап для e-commerce",
+      "es": "Startup logístico para e-commerce"
+    },
+    "summary": {
+      "uk": "Молодий стартап із фокусом на last-mile маршрути, SLA-контроль і операції доставки для e-commerce команд у Центральній Європі. Додатковий контекст: Варшава, Польща / Україна · E-commerce доставка, локальні курʼєрські мережі, операційні дашборди · Фокус на практичних інструментах для операційних менеджерів малих і середніх команд.",
+      "en": "An early-stage team focused on last-mile routing, SLA control and delivery operations for e-commerce teams in Central Europe. Headquarters and focus: Warsaw, Poland / Ukraine · E-commerce delivery, local courier networks, ops dashboards · Practical tooling for ops managers in small and mid-sized teams.",
+      "ru": "Ранняя команда с фокусом на last-mile маршруты, SLA-контроль и операции доставки для e-commerce в Центральной Европе. Дополнительный контекст: Варшава, Польша / Украина · E-commerce доставка, локальные курьерские сети, ops dashboards · Практичные инструменты для операционных менеджеров небольших и средних команд.",
+      "es": "Equipo en etapa temprana centrado en rutas last-mile, control de SLA y operaciones de reparto para e-commerce en Europa Central. Contexto adicional: Varsovia, Polonia / Ucrania · Entrega e-commerce, redes locales de reparto, dashboards operativos · Herramientas prácticas para managers de operaciones en equipos pequeños y medianos."
+    },
+    "tags": {
+      "uk": [
+        "Операції",
+        "Програмування",
+        "Стартапи"
+      ],
+      "en": [
+        "Operations",
+        "Software",
+        "Startups"
+      ],
+      "ru": [
+        "Операции",
+        "Программирование",
+        "Стартапы"
+      ],
+      "es": [
+        "Operaciones",
+        "Software",
+        "Startups"
+      ]
+    },
+    "hq": {
+      "uk": "Варшава, Польща / Україна",
+      "en": "Warsaw, Poland / Ukraine",
+      "ru": "Варшава, Польша / Украина",
+      "es": "Varsovia, Polonia / Ucrania"
+    },
+    "model": {
+      "uk": "Планування last-mile і SLA-моніторинг",
+      "en": "Last-mile planning and SLA monitoring",
+      "ru": "Планирование last-mile и мониторинг SLA",
+      "es": "Planificación last-mile y monitoreo de SLA"
+    },
+    "market": {
+      "uk": "E-commerce доставка, локальні курʼєрські мережі, операційні дашборди",
+      "en": "E-commerce delivery, local courier networks, ops dashboards",
+      "ru": "E-commerce доставка, локальные курьерские сети, ops dashboards",
+      "es": "Entrega e-commerce, redes locales de reparto, dashboards operativos"
+    },
+    "notableFor": {
+      "uk": "Фокус на практичних інструментах для операційних менеджерів малих і середніх команд",
+      "en": "Practical tooling for ops managers in small and mid-sized teams",
+      "ru": "Практичные инструменты для операционных менеджеров небольших и средних команд",
+      "es": "Herramientas prácticas para managers de operaciones en equipos pequeños y medianos"
+    },
+    "signals": {
+      "uk": [
+        "Проста аналітика для контролю запізнень",
+        "Маршрути з урахуванням локальних обмежень",
+        "Орієнтація на e-commerce у Центральній Європі"
+      ],
+      "en": [
+        "Lightweight analytics for delay tracking",
+        "Routing tuned to local constraints",
+        "Focus on e-commerce in Central Europe"
+      ],
+      "ru": [
+        "Простая аналитика задержек",
+        "Маршруты с учётом локальных ограничений",
+        "Фокус на e-commerce в Центральной Европе"
+      ],
+      "es": [
+        "Analítica ligera de retrasos",
+        "Rutas con restricciones locales",
+        "Enfoque en e-commerce en Europa Central"
+      ]
+    },
+    "hqCountry": {
+      "uk": "Україна",
+      "en": "Ukraine",
+      "ru": "Украина",
+      "es": "Ucrania"
+    }
+  },
+  {
     "slug": "rybezh-startup-1",
     "image": "https://logo.clearbit.com/rybezh-startup-1.example.com",
     "name": "Rybezh Startup 1",
     "founded": "2016",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #1 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4620,22 +4712,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4651,10 +4743,10 @@
     "name": "Rybezh Startup 2",
     "founded": "2017",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #2 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4666,22 +4758,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4697,10 +4789,10 @@
     "name": "Rybezh Startup 3",
     "founded": "2018",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #3 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4712,22 +4804,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4743,10 +4835,10 @@
     "name": "Rybezh Startup 4",
     "founded": "2019",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #4 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4758,22 +4850,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4789,10 +4881,10 @@
     "name": "Rybezh Startup 5",
     "founded": "2020",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #5 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4804,22 +4896,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4835,10 +4927,10 @@
     "name": "Rybezh Startup 6",
     "founded": "2021",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #6 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4850,22 +4942,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4881,10 +4973,10 @@
     "name": "Rybezh Startup 7",
     "founded": "2022",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #7 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4896,22 +4988,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4927,10 +5019,10 @@
     "name": "Rybezh Startup 8",
     "founded": "2023",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #8 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4942,22 +5034,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -4973,10 +5065,10 @@
     "name": "Rybezh Startup 9",
     "founded": "2024",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #9 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -4988,22 +5080,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {
@@ -5019,10 +5111,10 @@
     "name": "Rybezh Startup 10",
     "founded": "2025",
     "category": {
-      "uk": "technology + логістика платформа",
-      "en": "technology + logistics platform",
-      "ru": "technology + логистическая платформа",
-      "es": "Plataforma de IA + logística"
+      "uk": "computing + логістика платформа",
+      "en": "computing + logistics platform",
+      "ru": "computing + логистическая платформа",
+      "es": "Plataforma de computación + logística"
     },
     "summary": {
       "uk": "Стартап #10 автоматизує планування доставок, маршрути та customer support для e-commerce і last-mile команд у Європі.",
@@ -5034,22 +5126,22 @@
       "uk": [
         "Стартапи",
         "Операції",
-        "Штучний інтелект"
+        "системи обробки даних"
       ],
       "en": [
         "Startups",
         "Operations",
-        "Artificial intelligence"
+        "computing systems"
       ],
       "ru": [
         "Стартапы",
         "Операции",
-        "Искусственный интеллект"
+        "системы обработки данных"
       ],
       "es": [
         "Startups",
         "Operaciones",
-        "Inteligencia artificial"
+        "sistemas computacionales"
       ]
     },
     "hqCountry": {

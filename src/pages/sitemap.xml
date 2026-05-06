@@ -1056,6 +1056,11 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/startup-cargoflow.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/startup-rybezh-startup-1.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
@@ -2157,6 +2162,11 @@
   </url>
   <url>
     <loc>https://rybezh.site/startup-harvey-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startup-cargoflow-en.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -3266,6 +3276,11 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/startup-cargoflow-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/startup-rybezh-startup-1-es.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
@@ -4367,6 +4382,11 @@
   </url>
   <url>
     <loc>https://rybezh.site/startup-harvey-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/startup-cargoflow-ru.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.65</priority>
   </url>

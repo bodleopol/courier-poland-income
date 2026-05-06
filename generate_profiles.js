@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { stripAiPublicText } from './scripts/strip-ai-text.mjs';
 
 const SPECIALISTS_FILE = 'src/specialists.json';
 const STARTUPS_FILE = 'src/startups.json';
@@ -12,11 +13,11 @@ const FOUNDER_IMAGE = 'https://images.unsplash.com/photo-1487412720507-e7ab37603
 
 const tr = {
   uk: {
-    siteTitle: 'Rybezh.site — каталог спеціалістів і стартапів',
-    siteDescription: 'Редакційний довідник Rybezh.site: інженери, керівники, операції та технологічні компанії — з фото, структурою профілю та чіткими правилами публікації.',
-    heroEyebrow: 'Rybezh.site · редакційний каталог',
-    heroTitle: 'Каталог людей і компаній, з яким зручно працювати рекрутерам і командам',
-    heroText: 'Ми збираємо профілі так, щоб було видно роль, географію, фокус і факти карʼєри — без «води» й без прихованих SEO-блоків. Це довідник для тих, хто швидко звіряє контекст: HR, засновники, інвестори й операційні лідери.',
+    siteTitle: 'Rybezh.site — інформаційна база спеціалістів і стартапів',
+    siteDescription: 'Rybezh.site — інформаційна редакційна база: профілі спеціалістів і стартапів зі структурою, фото та зрозумілими правилами публікації для рекрутерів і команд.',
+    heroEyebrow: 'Rybezh.site · інформаційний каталог',
+    heroTitle: 'Інформаційна база людей і компаній для рекрутерів і команд',
+    heroText: 'Ми збираємо профілі як довідковий матеріал: роль, географія, фокус і факти карʼєри читаються одразу — без «води» й без прихованих SEO-блоків. Зручно швидко звіряти контекст HR, засновникам, інвесторам і операційним лідерам.',
     heroPrimary: 'Переглянути базу спеціалістів',
     heroSecondary: 'Сторінка стартапів',
     heroPhotoStrip: 'Фрагменти фото з профілів каталогу',
@@ -72,6 +73,7 @@ const tr = {
     termsIntro: 'Каталог призначено для довідкового та редакційного використання. Він не є кадровою агенцією чи офертою.',
     languagesStat: 'Мови сайту',
     techProfilesStat: 'Технічні профілі',
+    startupStatDataSystems: 'Обробка даних / стартапи',
     notFoundTitle: 'Сторінку не знайдено',
     notFoundText: 'Можливо, сторінку було перенесено або запитуваний профіль більше не підтримується.',
     notFoundPrimary: 'На головну',
@@ -83,6 +85,9 @@ const tr = {
     profileCTATitle: 'Звʼязок щодо цього профілю',
     profileCTAText: 'Рекрутери та операційні команди можуть написати на редакційну пошту — вкажіть компанію, роль і короткий контекст запиту.',
     profileCTALinkLabel: 'Написати на jobs.r@protonmail.com',
+    profileMailSubject: 'Запит щодо профілю Rybezh (операції / логістика)',
+    profileTrustTitle: 'Як редакція підходить до цього профілю',
+    profileTrustText: 'Матеріал зібрано з поданих даних і публічного професійного контексту; сторінка має фіксовану структуру і не оновлюється автоматично «під пошук». Якщо потрібне уточнення або виправлення фактів — напишіть на редакційну пошту з конкретикою.',
     trust: [
       'Кожен профіль з фото й структурою: роль, країна, фокус, біографія',
       'Окремі розділи для людей, стартапів і юридичних сторінок',
@@ -92,7 +97,7 @@ const tr = {
       { title: 'Програмування', text: 'Backend, frontend, distributed systems, DevOps та developer tooling.' },
       { title: 'Інженерія', text: 'Hardware, systems engineering, reliability, infrastructure та space tech.' },
       { title: 'Керівники', text: 'CEO, COO, технічні директори, стратегія та масштабування компаній.' },
-      { title: 'Штучний інтелект', text: 'Дослідники AI, product builders, safety, data та model platforms.' },
+      { title: 'Обчислювальні системи та дані', text: 'Дослідження моделей, інженерія платформ, безпека систем і робота з великими обсягами даних.' },
       { title: 'Операції', text: 'Польові процеси, SOPs, логістика, P&L, найм і стабільна якість сервісу.' },
       { title: 'Стартапи', text: 'Окремий каталог для продуктових компаній, інструментів і платформ.' }
     ],
@@ -182,11 +187,11 @@ const tr = {
     }
   },
   en: {
-    siteTitle: 'Rybezh.site — specialist and startup directory',
-    siteDescription: 'Rybezh.site is an editorial directory of engineers, executives, operations leaders and technology companies — with photos, structured profiles and clear publishing rules.',
-    heroEyebrow: 'Rybezh.site · editorial directory',
-    heroTitle: 'A people-and-companies catalogue recruiters can actually use',
-    heroText: 'Profiles are built so role, geography, focus and career facts read clearly — without filler copy or hidden SEO blocks. The site is a reference layer for HR teams, founders, investors and operators who need fast context.',
+    siteTitle: 'Rybezh.site — information base of specialists and startups',
+    siteDescription: 'Rybezh.site is an editorial information base: structured specialist and startup profiles with photos and clear publishing rules for recruiters and teams.',
+    heroEyebrow: 'Rybezh.site · editorial information directory',
+    heroTitle: 'An information base of people and companies for recruiters and teams',
+    heroText: 'Profiles are built as reference material: role, geography, focus and career facts read clearly — without filler copy or hidden SEO blocks. Useful when HR, founders, investors and operators need fast context.',
     heroPrimary: 'Browse specialists',
     heroSecondary: 'Explore startups',
     heroPhotoStrip: 'Sample photos from directory profiles',
@@ -242,6 +247,7 @@ const tr = {
     termsIntro: 'The directory is intended for editorial and reference use. It is not a staffing agency or an offer.',
     languagesStat: 'Site languages',
     techProfilesStat: 'Tech profiles',
+    startupStatDataSystems: 'Data / startup stack',
     notFoundTitle: 'Page not found',
     notFoundText: 'The page may have been moved or the requested profile is no longer maintained.',
     notFoundPrimary: 'Go to homepage',
@@ -253,6 +259,9 @@ const tr = {
     profileCTATitle: 'Contact about this profile',
     profileCTAText: 'Recruiters and operations teams can email the editorial inbox — include company, role and a short context for the request.',
     profileCTALinkLabel: 'Email jobs.r@protonmail.com',
+    profileMailSubject: 'Rybezh profile inquiry (operations / logistics)',
+    profileTrustTitle: 'How the editorial team treats this profile',
+    profileTrustText: 'The page is assembled from submitted materials and public professional context, uses a fixed structure, and is not auto-refreshed for search traffic. For factual corrections or clarifications, email the editorial inbox with specifics.',
     trust: [
       'Every profile includes a photo plus structure: role, country, focus and biography',
       'Separate sections for people, startups and legal pages',
@@ -262,7 +271,7 @@ const tr = {
       { title: 'Software', text: 'Backend, frontend, distributed systems, DevOps and developer tooling.' },
       { title: 'Engineering', text: 'Hardware, systems engineering, reliability, infrastructure and space tech.' },
       { title: 'Executives', text: 'CEO, COO, technical executives, strategy and company scaling.' },
-      { title: 'Artificial intelligence', text: 'AI research, product builders, safety, data and model platforms.' },
+      { title: 'Computing systems and data', text: 'Model research, platform engineering, system safety and large-scale data work.' },
       { title: 'Operations', text: 'Field execution, SOPs, logistics, P&L, hiring and reliable service quality.' },
       { title: 'Startups', text: 'A dedicated catalogue for product companies, tools and platforms.' }
     ],
@@ -352,11 +361,11 @@ const tr = {
     }
   },
   es: {
-    siteTitle: 'Rybezh.site — directorio de especialistas y startups',
-    siteDescription: 'Directorio editorial de Rybezh.site: ingenieros, ejecutivos, operaciones y compañías tecnológicas, con fotos, estructura clara y reglas de publicación explícitas.',
-    heroEyebrow: 'Rybezh.site · directorio editorial',
-    heroTitle: 'Un catálogo de personas y empresas pensado para reclutamiento y equipos',
-    heroText: 'Armamos perfiles para que se entienda rol, geografía, foco y hechos de carrera — sin texto de relleno ni bloques SEO ocultos. Sirve como capa de contexto para reclutadores, fundadores, inversionistas y equipos de operaciones.',
+    siteTitle: 'Rybezh.site — base informativa de especialistas y startups',
+    siteDescription: 'Rybezh.site es una base editorial informativa: perfiles estructurados de especialistas y startups, con fotos y reglas claras de publicación para reclutadores y equipos.',
+    heroEyebrow: 'Rybezh.site · catálogo informativo editorial',
+    heroTitle: 'Base informativa de personas y empresas para reclutamiento y equipos',
+    heroText: 'Los perfiles están armados como material de referencia: rol, geografía, foco y hechos de carrera se leen al instante — sin relleno ni bloques SEO ocultos. Útil cuando reclutadores, fundadores, inversionistas y operaciones necesitan contexto rápido.',
     heroPrimary: 'Ver especialistas',
     heroSecondary: 'Explorar startups',
     heroPhotoStrip: 'Muestras de fotos de perfiles del directorio',
@@ -412,6 +421,7 @@ const tr = {
     termsIntro: 'El directorio está pensado para uso editorial y de referencia. No es una agencia de contratación ni una oferta.',
     languagesStat: 'Idiomas del sitio',
     techProfilesStat: 'Perfiles técnicos',
+    startupStatDataSystems: 'Startups de datos / cómputo',
     notFoundTitle: 'Página no encontrada',
     notFoundText: 'La página puede haber sido movida o el perfil solicitado ya no está disponible.',
     notFoundPrimary: 'Ir a la portada',
@@ -423,6 +433,9 @@ const tr = {
     profileCTATitle: 'Contacto sobre este perfil',
     profileCTAText: 'Reclutadores y equipos de operaciones pueden escribir al correo editorial — indica empresa, rol y un contexto breve del pedido.',
     profileCTALinkLabel: 'Escribir a jobs.r@protonmail.com',
+    profileMailSubject: 'Consulta sobre perfil Rybezh (operaciones / logística)',
+    profileTrustTitle: 'Cómo trata la redacción este perfil',
+    profileTrustText: 'La página se arma con materiales enviados y contexto profesional público, tiene estructura fija y no se actualiza automáticamente para tráfico de búsqueda. Para correcciones o aclaraciones, escribe al correo editorial con detalles concretos.',
     trust: [
       'Cada perfil incluye foto y estructura: rol, país, foco y biografía',
       'Secciones separadas para personas, startups y páginas legales',
@@ -432,7 +445,7 @@ const tr = {
       { title: 'Software', text: 'Backend, frontend, sistemas distribuidos, DevOps y herramientas para desarrolladores.' },
       { title: 'Ingeniería', text: 'Hardware, systems engineering, reliability, infrastructure y space tech.' },
       { title: 'Ejecutivos', text: 'CEO, COO, directivos técnicos, estrategia y escalado de compañías.' },
-      { title: 'Inteligencia artificial', text: 'Investigación en IA, product builders, safety, data y plataformas de modelos.' },
+      { title: 'Sistemas computacionales y datos', text: 'Investigación de modelos, ingeniería de plataformas, seguridad de sistemas y trabajo con grandes volúmenes de datos.' },
       { title: 'Operaciones', text: 'Ejecución en campo, SOPs, logística, P&L, contratación y calidad de servicio estable.' },
       { title: 'Startups', text: 'Un catálogo dedicado a compañías de producto, herramientas y plataformas.' }
     ],
@@ -522,11 +535,11 @@ const tr = {
     }
   },
   ru: {
-    siteTitle: 'Rybezh.site — каталог специалистов и стартапов',
-    siteDescription: 'Редакционный справочник Rybezh.site: инженеры, руководители, операции и технологические компании — с фото, структурой профиля и понятными правилами публикации.',
-    heroEyebrow: 'Rybezh.site · редакционный каталог',
-    heroTitle: 'Справочник людей и компаний, с которым удобно работать рекрутерам и командам',
-    heroText: 'Профили собраны так, чтобы сразу читались роль, география, фокус и факты карьеры — без «воды» и без скрытых SEO-блоков. Это справочный слой для HR, основателей, инвесторов и операционных лидеров, которым нужен быстрый контекст.',
+    siteTitle: 'Rybezh.site — информационная база специалистов и стартапов',
+    siteDescription: 'Rybezh.site — редакционная информационная база: структурированные профили специалистов и стартапов с фото и понятными правилами публикации для рекрутеров и команд.',
+    heroEyebrow: 'Rybezh.site · информационный каталог',
+    heroTitle: 'Информационная база людей и компаний для рекрутеров и команд',
+    heroText: 'Профили собраны как справочный материал: роль, география, фокус и факты карьеры читаются сразу — без «воды» и без скрытых SEO-блоков. Удобно, когда HR, основателям, инвесторам и операционным лидерам нужен быстрый контекст.',
     heroPrimary: 'Открыть базу специалистов',
     heroSecondary: 'Посмотреть стартапы',
     heroPhotoStrip: 'Фрагменты фото из профилей каталога',
@@ -582,6 +595,7 @@ const tr = {
     termsIntro: 'Каталог предназначен для справочного и редакционного использования. Это не кадровое агентство и не оферта.',
     languagesStat: 'Языки сайта',
     techProfilesStat: 'Технические профили',
+    startupStatDataSystems: 'Стартапы данных / вычислений',
     notFoundTitle: 'Страница не найдена',
     notFoundText: 'Возможно, страница была перенесена или запрошенный профиль больше не поддерживается.',
     notFoundPrimary: 'На главную',
@@ -593,6 +607,9 @@ const tr = {
     profileCTATitle: 'Связь по этому профилю',
     profileCTAText: 'Рекрутеры и операционные команды могут написать на редакционную почту — укажите компанию, роль и краткий контекст запроса.',
     profileCTALinkLabel: 'Написать на jobs.r@protonmail.com',
+    profileMailSubject: 'Запрос по профилю Rybezh (операции / логистика)',
+    profileTrustTitle: 'Как редакция относится к этому профилю',
+    profileTrustText: 'Материал собран из предоставленных данных и публичного профессионального контекста, страница имеет фиксированную структуру и не обновляется автоматически «под поиск». Для уточнений или исправления фактов напишите на редакционную почту с конкретикой.',
     trust: [
       'У каждого профиля есть фото и структура: роль, страна, фокус, биография',
       'Отдельные разделы для людей, стартапов и юридических страниц',
@@ -602,7 +619,7 @@ const tr = {
       { title: 'Программирование', text: 'Backend, frontend, distributed systems, DevOps и developer tooling.' },
       { title: 'Инженерия', text: 'Hardware, systems engineering, reliability, infrastructure и space tech.' },
       { title: 'Руководители', text: 'CEO, COO, технические директора, стратегия и масштабирование компаний.' },
-      { title: 'Искусственный интеллект', text: 'AI research, product builders, safety, data и model platforms.' },
+      { title: 'Вычислительные системы и данные', text: 'Исследование моделей, инженерия платформ, безопасность систем и работа с большими объёмами данных.' },
       { title: 'Операции', text: 'Полевые процессы, SOPs, логистика, P&L, найм и стабильное качество сервиса.' },
       { title: 'Стартапы', text: 'Отдельный каталог для продуктовых компаний, инструментов и платформ.' }
     ],
@@ -700,7 +717,7 @@ const rubricLabels = {
   operations: { uk: 'Операції', en: 'Operations', es: 'Operaciones', ru: 'Операции' },
   ceo: { uk: 'CEO', en: 'CEO', es: 'CEO', ru: 'CEO' },
   coo: { uk: 'COO', en: 'COO', es: 'COO', ru: 'COO' },
-  ai: { uk: 'ШІ', en: 'AI', es: 'IA', ru: 'ИИ' },
+  ai: { uk: 'Обробка даних', en: 'Data systems', es: 'Sistemas de datos', ru: 'Обработка данных' },
   science: { uk: 'Наука', en: 'Science', es: 'Ciencia', ru: 'Наука' },
   design: { uk: 'Дизайн', en: 'Design', es: 'Diseño', ru: 'Дизайн' },
   biotech: { uk: 'Біотех', en: 'Biotech', es: 'Biotech', ru: 'Биотех' },
@@ -709,7 +726,7 @@ const rubricLabels = {
   space: { uk: 'Космос', en: 'Space', es: 'Espacio', ru: 'Космос' }
 };
 const startupLabels = {
-  ai: { uk: 'ШІ', en: 'AI', es: 'IA', ru: 'ИИ' },
+  ai: { uk: 'Обробка даних', en: 'Data systems', es: 'Sistemas de datos', ru: 'Обработка данных' },
   fintech: { uk: 'Фінтех', en: 'Fintech', es: 'Fintech', ru: 'Финтех' },
   design: { uk: 'Дизайн', en: 'Design', es: 'Diseño', ru: 'Дизайн' },
   software: { uk: 'Софт', en: 'Software', es: 'Software', ru: 'Софт' },
@@ -809,7 +826,7 @@ function directoryYearSelect(lang, years) {
 }
 
 function cardSearchValue(parts) {
-  return parts.join(' ').toLowerCase();
+  return stripAiPublicText(parts.join(' ')).toLowerCase();
 }
 
 function profileCard(person, lang, orderIndex = 0) {
@@ -864,10 +881,20 @@ function founderTrustBlock(lang) {
 function profileRecruiterCta(person, lang) {
   if (person.slug !== 'bohdan-tiutenko') return '';
   const l = tr[lang];
+  const subject = l.profileMailSubject || person.name[lang];
   return `<section class="profile-recruiter-cta" aria-labelledby="profile-cta-title">
     <h3 id="profile-cta-title">${escapeHtml(l.profileCTATitle)}</h3>
     <p>${escapeHtml(l.profileCTAText)}</p>
-    <a class="btn" href="mailto:jobs.r@protonmail.com?subject=${encodeURIComponent(person.name[lang])}">${escapeHtml(l.profileCTALinkLabel)}</a>
+    <a class="btn" href="mailto:jobs.r@protonmail.com?subject=${encodeURIComponent(subject)}">${escapeHtml(l.profileCTALinkLabel)}</a>
+  </section>`;
+}
+
+function profileTrustBlock(person, lang) {
+  if (person.slug !== 'bohdan-tiutenko') return '';
+  const l = tr[lang];
+  return `<section class="profile-trust-note" aria-labelledby="profile-trust-title">
+    <h3 id="profile-trust-title">${escapeHtml(l.profileTrustTitle)}</h3>
+    <p>${escapeHtml(l.profileTrustText)}</p>
   </section>`;
 }
 
@@ -915,7 +942,9 @@ function countByStartupTag(entries, key) {
 
 function relatedProfiles(person, specialists, lang) {
   const sameRubric = firstTagKey(person);
-  const related = specialists.filter(entry => entry.slug !== person.slug && firstTagKey(entry) === sameRubric).slice(0, 3);
+  const related = specialists
+    .filter(entry => entry.slug !== person.slug && entry.slug !== 'bohdan-tiutenko' && firstTagKey(entry) === sameRubric)
+    .slice(0, 3);
   if (!related.length) return '';
   return `<section class="profile-related">
     ${sectionIntro(tr[lang].relatedProfiles, tr[lang].relatedProfiles, tr[lang].specialistsText)}
@@ -1033,6 +1062,7 @@ function writeProfilePage(person, specialists, lang) {
     <p>${escapeHtml(person.bio[lang])}</p>
   </section>
   ${profileRecruiterCta(person, lang)}
+  ${profileTrustBlock(person, lang)}
   <section class="editorial-note">
     <h3>${escapeHtml(l.editorialNoteTitle)}</h3>
     <p>${escapeHtml(l.editorialNoteText)}</p>
@@ -1095,10 +1125,10 @@ function aboutPayload(lang) {
 
 function teamTrustSection(lang) {
   const labels = {
-    uk: { eyebrow: 'Команда Rybezh.site', title: 'Редакційна команда та довіра', text: 'Публікуємо профілі з відповідальністю до фактів. Нижче — редакційна команда, яка відповідає за якість, перевірку та оновлення контенту. Профіль Богдана Тютенка є окремою редакційною статтею, а не частиною команди засновників.', btn: 'Детальніше про нас' },
-    en: { eyebrow: 'Rybezh.site team', title: 'Editorial team and trust', text: 'We publish profiles with accountability to facts. Meet the editorial team responsible for quality, verification, and updates. Bohdan Tiutenko is presented as an independent profile article, not part of the founding team.', btn: 'Learn more about us' },
-    ru: { eyebrow: 'Команда Rybezh.site', title: 'Редакционная команда и доверие', text: 'Публикуем профили с ответственностью к фактам. Ниже — редакционная команда, отвечающая за качество, проверку и обновления. Профиль Богдана Тютенко — отдельная редакционная статья, а не часть команды основателей.', btn: 'Подробнее о нас' },
-    es: { eyebrow: 'Equipo Rybezh.site', title: 'Equipo editorial y confianza', text: 'Publicamos perfiles con responsabilidad sobre los hechos. Este equipo editorial responde por calidad, verificación y actualizaciones. El perfil de Bohdan Tiutenko es un artículo editorial independiente y no parte del equipo fundador.', btn: 'Más sobre nosotros' }
+    uk: { eyebrow: 'Команда Rybezh.site', title: 'Редакційна команда та довіра', text: 'Публікуємо профілі з відповідальністю до фактів. Нижче — редакційна команда, яка відповідає за якість, перевірку та оновлення контенту.', btn: 'Детальніше про нас' },
+    en: { eyebrow: 'Rybezh.site team', title: 'Editorial team and trust', text: 'We publish profiles with accountability to facts. Below is the editorial team responsible for quality, verification, and updates.', btn: 'Learn more about us' },
+    ru: { eyebrow: 'Команда Rybezh.site', title: 'Редакционная команда и доверие', text: 'Публикуем профили с ответственностью к фактам. Ниже — редакционная команда, отвечающая за качество, проверку и обновления.', btn: 'Подробнее о нас' },
+    es: { eyebrow: 'Equipo Rybezh.site', title: 'Equipo editorial y confianza', text: 'Publicamos perfiles con responsabilidad sobre los hechos. Este equipo editorial responde por calidad, verificación y actualizaciones.', btn: 'Más sobre nosotros' }
   };
   const l = labels[lang];
   const members = [
@@ -1128,8 +1158,10 @@ function writeContentPage(lang, base, title, intro, sections, extraHtml = '') {
 
 function writeIndex(lang, specialists, startups) {
   const l = tr[lang];
-  const featured = specialists.slice(0, 6);
-  const latest = specialists.slice(6, 12);
+  const featuredHead = specialists.filter(p => p.featured).slice(0, 6);
+  const rest = specialists.filter(p => !featuredHead.includes(p));
+  const featured = [...featuredHead, ...rest].slice(0, 6);
+  const latest = specialists.filter(p => !featured.includes(p)).slice(0, 6);
   const content = `
 <title>${escapeHtml(l.siteTitle)}</title>
 <meta name="description" content="${escapeHtml(description(l.siteDescription))}">
@@ -1254,7 +1286,7 @@ function writeStartups(lang, startups) {
   </div>
   <div class="hero-panel">
     ${countCard(String(startups.length), l.viewAllStartups)}
-    ${countCard(String(countByStartupTag(startups, 'ai')), 'AI')}
+    ${countCard(String(countByStartupTag(startups, 'ai')), l.startupStatDataSystems)}
     ${countCard(String(countByStartupTag(startups, 'software')), 'Software')}
     ${countCard(String(countByStartupTag(startups, 'fintech')), 'Fintech')}
   </div>
