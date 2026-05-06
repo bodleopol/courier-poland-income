@@ -12,19 +12,19 @@
     <link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
     <link rel="alternate" hreflang="x-default" href="{{CANONICAL}}">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rybezh.site","url":"https://rybezh.site/","description":"Editorial information base of specialists and startups.","logo":"https://rybezh.site/assets/images/rybezh-logo.svg","email":"jobs.r@protonmail.com"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Editorial information base with structured specialist and startup profiles.","inLanguage":["uk","en","es","ru"]}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rybezh.site","url":"https://rybezh.site/","description":"Multilingual editorial archive of specialists, founders, and technology companies.","logo":"https://rybezh.site/assets/images/rybezh-logo.svg","email":"jobs.r@protonmail.com"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Curated expert and company profiles with editorial methodology—research reference, not a job marketplace.","inLanguage":["uk","en","es","ru"]}</script>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">{{SKIP_LINK}}</a>
     <header class="site-header">
         <div class="header-container" data-header-container>
             <div class="logo">
                 <a href="{{HOME_URL}}" class="brand"><img src="assets/images/rybezh-logo.svg" alt="Rybezh" width="180" height="40"></a>
-                <span class="logo-caption">Rybezh.site</span><span class="brand-subtitle">Information base · specialists · startups</span>
+                <span class="logo-caption">Rybezh.site</span><span class="brand-subtitle">{{BRAND_TAGLINE}}</span>
             </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰</button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="{{NAV_MENU}}"><span class="nav-toggle__icon" aria-hidden="true"></span></button>
             <nav id="main-nav" class="main-nav" aria-label="{{NAV_ARIA}}">
                 <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
                 <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
@@ -75,7 +75,7 @@
                     <h4>{{FOOTER_SCOPE_TITLE}}</h4>
                     <p>{{FOOTER_SCOPE_TEXT}}</p>
                     <p>{{FOOTER_LANGUAGES}}</p>
-                    <p><strong>Email:</strong> <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
+                    <p><strong>{{CONTACT_LABEL}}</strong> <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
                 </div>
                 <div class="footer-section official-footer">
                     <h4>{{FOOTER_POLICIES_TITLE}}</h4>
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-note">Rybezh.site — editorial directory with verified structure, visual hierarchy and responsive components.</p>
+                <p class="footer-note">{{FOOTER_TAGLINE}}</p>
                 <p>&copy; 2026 Rybezh. {{FOOTER_RIGHTS}}</p>
             </div>
         </div>
@@ -256,53 +256,12 @@
         }
 
         function applyHomepageDynamics() {
-            /* Homepage “dynamics” are handled by enhanceHomepageDynamicComponents (card order).
-               Published counts stay exactly as in the HTML so figures stay auditable. */
-        }
-
-
-        function enhanceHomepageDynamicComponents() {
-            const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
-            if (!isHome) return;
-
-            const today = new Date();
-            const daySeed = Number(`${today.getUTCFullYear()}${String(today.getUTCMonth()+1).padStart(2,'0')}${String(today.getUTCDate()).padStart(2,'0')}`);
-            const randomSeed = Math.floor(Math.random() * 997);
-            const seed = daySeed + randomSeed;
-
-            const seededShuffle = (arr) => {
-                const out = [...arr];
-                let x = seed || 1;
-                for (let i = out.length - 1; i > 0; i -= 1) {
-                    x = (x * 1664525 + 1013904223) % 4294967296;
-                    const j = x % (i + 1);
-                    [out[i], out[j]] = [out[j], out[i]];
-                }
-                return out;
-            };
-
-            const rotateGrid = (selector, minKeep = 6) => {
-                const grid = document.querySelector(selector);
-                if (!grid) return;
-                const cards = Array.from(grid.querySelectorAll('.card'));
-                if (cards.length <= 1) return;
-                const shuffled = seededShuffle(cards);
-                shuffled.forEach(card => grid.appendChild(card));
-                if (cards.length > minKeep) {
-                    cards.forEach(c => c.hidden = true);
-                    shuffled.slice(0, minKeep).forEach(c => c.hidden = false);
-                }
-            };
-
-            rotateGrid('.featured-grid', 6);
-            rotateGrid('.compact-grid', 8);
-            rotateGrid('.startup-grid', 6);
+            /* Homepage surfaces stay in authored DOM order for editorial auditability. */
         }
 
                 ensurePageHasImage();
         ensureCardImages();
         applyHomepageDynamics();
-        enhanceHomepageDynamicComponents();
 
         const dynamicTiles = Array.from(document.querySelectorAll('[data-dynamic-tiles] .dynamic-tile'));
         if (dynamicTiles.length) {
@@ -471,23 +430,6 @@
             window.addEventListener('popstate', applyFromUrl);
 
             applyFromUrl();
-
-            const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
-            if (isHome) {
-                const host = document.querySelector('.hero-panel');
-                if (host && !document.querySelector('.live-tiles')) {
-                    const d = new Date();
-                    const fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'uk', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-                    const tiles = document.createElement('section');
-                    tiles.className = 'live-tiles';
-                    tiles.innerHTML = `
-                        <article class="live-tile"><span>UTC update</span><strong>${fmt.format(d)}</strong></article>
-                        <article class="live-tile"><span>Visible cards</span><strong>${document.querySelectorAll('.card').length}</strong></article>
-                        <article class="live-tile"><span>Images loaded</span><strong>${document.querySelectorAll('img').length}</strong></article>
-                    `;
-                    host.appendChild(tiles);
-                }
-            }
         });
     </script>
 </body>
