@@ -17,13 +17,14 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Editorial information base with structured specialist and startup profiles.","inLanguage":["uk","en","es","ru"]}</script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
         <div class="header-container" data-header-container>
             <div class="logo">
                 <a href="{{HOME_URL}}" class="brand"><img src="assets/images/rybezh-logo.svg" alt="Rybezh" width="180" height="40"></a>
                 <span class="logo-caption">Rybezh.site</span><span class="brand-subtitle">Information base · specialists · startups</span>
             </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ {{NAV_MENU}}</button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰</button>
             <nav id="main-nav" class="main-nav" aria-label="{{NAV_ARIA}}">
                 <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
                 <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
@@ -47,7 +48,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main id="main-content">
         {{CONTENT}}
     </main>
     <footer class="site-footer">
