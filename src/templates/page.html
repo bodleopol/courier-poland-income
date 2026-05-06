@@ -180,6 +180,76 @@
             });
         }
 
+        const UNSPLASH_POOL_CARD = [
+            'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80',
+            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=80'
+        ];
+
+        function hashPick(str, modulo) {
+            let h = 0;
+            for (let i = 0; i < str.length; i += 1) h = (h * 31 + str.charCodeAt(i)) >>> 0;
+            return h % modulo;
+        }
+
+        function unsplashForCard(title, variant) {
+            const base = (title || 'Catalog').trim();
+            const idx = hashPick(base + '|' + variant, UNSPLASH_POOL_CARD.length);
+            return UNSPLASH_POOL_CARD[idx];
+        }
+
+        function catalogIllustrationAlt(kind, title) {
+            const lang = (document.documentElement.lang || 'uk').slice(0, 2);
+            const t = (title || 'Entry').trim();
+            const templates = {
+                startup: {
+                    uk: `Ілюстрація сторінки компанії в каталозі (Unsplash): ${t}`,
+                    en: `Catalog company page illustration (Unsplash): ${t}`,
+                    es: `Ilustración de la ficha de empresa (Unsplash): ${t}`,
+                    ru: `Иллюстрация страницы компании в каталоге (Unsplash): ${t}`
+                },
+                person: {
+                    uk: `Ілюстрація профілю в каталозі (Unsplash): ${t}`,
+                    en: `Catalog profile illustration (Unsplash): ${t}`,
+                    es: `Ilustración de perfil en el catálogo (Unsplash): ${t}`,
+                    ru: `Иллюстрация профиля в каталоге (Unsplash): ${t}`
+                }
+            };
+            return templates[kind][lang] || templates[kind].uk;
+        }
+
+        function applyUnsplashToCatalogCards() {
+            document.querySelectorAll('.profile-card img, .startup-card img').forEach(img => {
+                const src = img.getAttribute('src') || '';
+                if (src.includes('images.unsplash.com')) return;
+                const card = img.closest('.profile-card, .startup-card');
+                const title = card?.querySelector('h3')?.textContent?.trim() || 'Entry';
+                const isStartup = Boolean(card?.classList.contains('startup-card'));
+                const variant = isStartup ? 'startup' : 'person';
+                img.src = unsplashForCard(title, variant);
+                img.setAttribute('referrerpolicy', 'no-referrer');
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.alt = catalogIllustrationAlt(isStartup ? 'startup' : 'person', title);
+            });
+
+            document.querySelectorAll('.profile-page .profile-avatar-large, .startup-page .startup-logo-large').forEach(img => {
+                const src = img.getAttribute('src') || '';
+                if (src.includes('images.unsplash.com')) return;
+                const h1 = document.querySelector('.profile-page h1, .startup-page h1')?.textContent?.trim() || 'Profile';
+                const isStartup = img.classList.contains('startup-logo-large');
+                img.src = unsplashForCard(h1, isStartup ? 'page-startup' : 'page-person');
+                img.setAttribute('referrerpolicy', 'no-referrer');
+                const pageKind = isStartup ? 'startup' : 'person';
+                img.alt = catalogIllustrationAlt(pageKind, h1);
+            });
+        }
+
         document.addEventListener('error', event => {
             const target = event.target;
             if (!(target instanceof HTMLImageElement)) return;
@@ -217,48 +287,91 @@
         }
 
         function ensureCardImages() {
-            const cards = document.querySelectorAll('.card, .profile-card, .startup-card, article');
-            const pool = [
-                'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
-                'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
-                'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
-                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
-                'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80'
-            ];
+            /* Images are provided in markup; catalog cards use applyUnsplashToCatalogCards for Unsplash art. */
+        }
 
-            const pickImage = (name) => {
-                const index = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % pool.length;
-                return pool[index];
+        function rotateHeroMosaic() {
+            const hero = document.querySelector('.hero-mosaic');
+            if (!hero) return;
+            const main = hero.querySelector('.hero-mosaic__main');
+            const strip = hero.querySelectorAll('.hero-mosaic__strip img');
+            if (!main || !strip.length) return;
+            const pool = [...UNSPLASH_POOL_CARD];
+            const seed = Date.now();
+            const pick = (i) => pool[(seed + i * 17) % pool.length];
+            main.src = pick(0);
+            strip.forEach((el, i) => { el.src = pick(i + 1); });
+        }
+
+        function initHomeExplorer() {
+            const root = document.querySelector('[data-home-explorer]');
+            if (!root) return;
+
+            const tabs = Array.from(root.querySelectorAll('[data-home-tab]'));
+            const panels = Array.from(root.querySelectorAll('[data-home-panel]'));
+            const labelEl = root.querySelector('[data-home-feed-label]');
+            const lang = (document.documentElement.lang || 'uk').slice(0, 2);
+            const messages = {
+                featured: { uk: 'Активна вкладка: рекомендовані профілі', en: 'Active tab: featured profiles', es: 'Pestaña activa: perfiles destacados', ru: 'Активная вкладка: рекомендуемые профили' },
+                recent: { uk: 'Активна вкладка: останні профілі', en: 'Active tab: recent profiles', es: 'Pestaña activa: perfiles recientes', ru: 'Активная вкладка: последние профили' },
+                startups: { uk: 'Активна вкладка: стартапи', en: 'Active tab: startups', es: 'Pestaña activa: startups', ru: 'Активная вкладка: стартапы' }
             };
+            const syncPanelCardAlts = () => {
+                panels.forEach(panel => {
+                    if (panel.hidden) return;
+                    panel.querySelectorAll('.profile-card img, .startup-card img').forEach(img => {
+                        const card = img.closest('.profile-card, .startup-card');
+                        const title = card?.querySelector('h3')?.textContent?.trim() || 'Entry';
+                        const isStartup = Boolean(card?.classList.contains('startup-card'));
+                        img.alt = catalogIllustrationAlt(isStartup ? 'startup' : 'person', title);
+                    });
+                });
+            };
+            function setTab(key) {
+                tabs.forEach(t => {
+                    const on = t.dataset.homeTab === key;
+                    t.classList.toggle('is-active', on);
+                    t.setAttribute('aria-selected', on ? 'true' : 'false');
+                });
+                panels.forEach(p => {
+                    const on = p.dataset.homePanel === key;
+                    p.classList.toggle('is-active', on);
+                    p.hidden = !on;
+                });
+                const msg = messages[key]?.[lang] || messages[key]?.uk;
+                if (labelEl && msg) labelEl.textContent = msg;
+                syncPanelCardAlts();
+            }
 
-            cards.forEach(card => {
-                const name = card.querySelector('h1, h2, h3')?.textContent?.trim() || 'Profile';
-                let img = card.querySelector('img');
+            let rotateTimer;
+            const keys = ['featured', 'recent', 'startups'];
+            let idx = 0;
 
-                if (!img) {
-                    img = document.createElement('img');
-                    img.loading = 'lazy';
-                    img.alt = name;
-                    img.src = pickImage(name);
-                    card.insertBefore(img, card.firstChild);
-                }
+            function scheduleRotate() {
+                clearInterval(rotateTimer);
+                rotateTimer = setInterval(() => {
+                    idx = (idx + 1) % keys.length;
+                    setTab(keys[idx]);
+                }, 14000);
+            }
 
-                if (!img.getAttribute('src') || img.getAttribute('src') === '#') {
-                    img.src = pickImage(name);
-                }
-
-                img.classList.add('smart-post-image');
-                img.loading = 'lazy';
-                img.decoding = 'async';
-                img.setAttribute('referrerpolicy', 'no-referrer');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const key = tab.dataset.homeTab;
+                    idx = keys.indexOf(key);
+                    if (idx < 0) idx = 0;
+                    setTab(key);
+                    scheduleRotate();
+                });
             });
+
+            setTab('featured');
+            scheduleRotate();
         }
 
         function applyHomepageDynamics() {
-            /* Homepage “dynamics” are handled by enhanceHomepageDynamicComponents (card order).
-               Published counts stay exactly as in the HTML so figures stay auditable. */
+            /* Stat figures stay as published in HTML; card order uses seeded shuffle on the homepage. */
         }
-
 
         function enhanceHomepageDynamicComponents() {
             const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
@@ -294,12 +407,15 @@
             };
 
             rotateGrid('.featured-grid', 6);
-            rotateGrid('.compact-grid', 8);
-            rotateGrid('.startup-grid', 6);
+            rotateGrid('.home-feed-grid', 8);
+            rotateGrid('.startup-grid:not(.home-feed-grid)', 6);
         }
 
                 ensurePageHasImage();
+        applyUnsplashToCatalogCards();
         ensureCardImages();
+        rotateHeroMosaic();
+        initHomeExplorer();
         applyHomepageDynamics();
         enhanceHomepageDynamicComponents();
 
@@ -465,23 +581,6 @@
             window.addEventListener('popstate', applyFromUrl);
 
             applyFromUrl();
-
-            const isHome = location.pathname === '/' || location.pathname.endsWith('index.html') || /index-(en|es|ru)\.html$/.test(location.pathname);
-            if (isHome) {
-                const host = document.querySelector('.hero-panel');
-                if (host && !document.querySelector('.live-tiles')) {
-                    const d = new Date();
-                    const fmt = new Intl.DateTimeFormat(document.documentElement.lang || 'uk', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
-                    const tiles = document.createElement('section');
-                    tiles.className = 'live-tiles';
-                    tiles.innerHTML = `
-                        <article class="live-tile"><span>UTC update</span><strong>${fmt.format(d)}</strong></article>
-                        <article class="live-tile"><span>Visible cards</span><strong>${document.querySelectorAll('.card').length}</strong></article>
-                        <article class="live-tile"><span>Images loaded</span><strong>${document.querySelectorAll('img').length}</strong></article>
-                    `;
-                    host.appendChild(tiles);
-                }
-            }
         });
     </script>
 </body>
