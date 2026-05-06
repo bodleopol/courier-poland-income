@@ -4,7 +4,7 @@ Date: 2026-05-03
 
 ## Project structure snapshot
 - Main source directories: `src/pages`, `src/assets/images`, `src/templates`, `scripts`.
-- Build/runtime scripts in repo root: `build.js`, `server.js`, `generate_data.js`, `generate_profiles.js`.
+- Build/runtime scripts in repo root: `build.js`, `server.js`.
 - Content scale:
   - `436` HTML pages total.
   - `192` startup pages.
