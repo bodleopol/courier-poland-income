@@ -23,8 +23,6 @@
   "ignorePaths": [
     "node_modules",
     "dist/**",
-    "src/specialists.json",
-    "src/startups.json",
     "package-lock.json"
   ]
 }

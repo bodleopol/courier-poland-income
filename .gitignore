@@ -52,6 +52,3 @@ src/posts.json
 
 
 dist/
-src/specialists.json
-src/pages/profiles/generated_*.html
-src/generated_index_cards.json

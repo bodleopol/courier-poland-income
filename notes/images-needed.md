@@ -4,8 +4,8 @@ Place files under `src/assets/images/` so they are copied to `dist/` by the buil
 
 ## Founder / brand (Rybezh.site)
 
-- **File:** `src/assets/images/maria-rubezh-founder.webp` (JPEG is also fine if you rename the constant in `generate_profiles.js` to `.jpg`)
-- **Use:** Homepage trust block (`founderTrustBlock` in `generate_profiles.js`)
+- **File:** `src/assets/images/maria-rubezh-founder.webp` (JPEG is also fine; update the `src` in the homepage trust block in `src/pages/index*.html` if you use `.jpg`)
+- **Use:** Homepage trust block (hero / founder section on `index*.html`)
 - **Alt text (localized in build):** e.g. Ukrainian: «Марія Рубеж, засновниця Rybezh.site»; English: «Maria Rubezh, founder of Rybezh.site»
 - **Source:** Use the official portrait provided by the Rybezh team (ensure you have rights to publish it on the site).
 
@@ -13,4 +13,4 @@ Until this file exists, the layout still renders: the `img` `onerror` handler fa
 
 ## Bohdan Tiutenko profile photos
 
-Existing assets in the repo (`bohdan-tiutenko-img0018.jpg`, gallery PNGs/JPEGs) are already wired in `generate_data.js`. No additional images required unless you want to replace them with higher-resolution versions.
+Existing assets in the repo (`bohdan-tiutenko-img0018.jpg`, gallery PNGs/JPEGs) are referenced from the Bohdan Tiutenko profile pages under `src/pages/profiles/`. No additional images required unless you want to replace them with higher-resolution versions.
