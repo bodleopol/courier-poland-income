@@ -4,6 +4,67 @@ import path from 'path';
 const SRC_DIR = 'src';
 const DIST_DIR = 'dist';
 const TEMPLATE_FILE = path.join(SRC_DIR, 'templates', 'page.html');
+
+/** Editorial Unsplash photos — reliable CDN, replaces broken third-party logo APIs in output HTML. */
+const UNSPLASH_STARTUP_POOL = [
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'
+];
+
+function hashStringForIndex(str, modulus) {
+  let h = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    h = (h * 31 + str.charCodeAt(i)) >>> 0;
+  }
+  return h % modulus;
+}
+
+function pickUnsplashFromPool(seed) {
+  return UNSPLASH_STARTUP_POOL[hashStringForIndex(seed, UNSPLASH_STARTUP_POOL.length)];
+}
+
+function extractImgAlt(tag) {
+  const d = tag.match(/\salt\s*=\s*"([^"]*)"/i);
+  if (d) return d[1].trim();
+  const s = tag.match(/\salt\s*=\s*'([^']*)'/i);
+  return s ? s[1].trim() : '';
+}
+
+/**
+ * Clearbit logo URLs often return empty or blocked responses without firing img onerror.
+ * Swap them for stable Unsplash hero imagery at build time.
+ */
+function replaceClearbitLogoImages(html, basename) {
+  return html.replace(/<img\b[^>]*\ssrc="https:\/\/logo\.clearbit\.com\/[^"]+"[^>]*>/gi, (full) => {
+    if (/images\.unsplash\.com/i.test(full)) return full;
+    let alt = extractImgAlt(full);
+    if (!alt) {
+      alt = basename
+        .replace(/\.html$/i, '')
+        .replace(/^startup-/i, '')
+        .replace(/-(en|es|ru)$/i, '')
+        .replace(/-/g, ' ')
+        .trim() || 'Startup';
+    }
+    const src = pickUnsplashFromPool(alt);
+    let next = full.replace(/\ssrc="https:\/\/logo\.clearbit\.com\/[^"]+"/i, ` src="${src}"`);
+    if (/\salt="/i.test(next)) {
+      next = next.replace(/\salt="[^"]*"/i, ` alt="${alt.replace(/"/g, '&quot;')}"`);
+    } else {
+      next = next.replace(/<img\b/i, `<img alt="${alt.replace(/"/g, '&quot;')}"`);
+    }
+    if (!/referrerpolicy/i.test(next)) {
+      next = next.replace(/>$/, ' referrerpolicy="no-referrer">');
+    }
+    return next;
+  });
+}
 const translations = {
   uk: {
     navAria: 'Головна навігація',
@@ -186,6 +247,8 @@ function compileHTML(srcFile, destFile) {
   content = content.replace(/<\/body>/gi, '');
   content = content.replace(/<main.*?>/gi, '');
   content = content.replace(/<\/main>/gi, '');
+
+  content = replaceClearbitLogoImages(content, path.basename(srcFile));
 
   const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
