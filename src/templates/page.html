@@ -255,30 +255,8 @@
         }
 
         function applyHomepageDynamics() {
-            if (!location.pathname.endsWith('index.html') && location.pathname !== '/' && !/index-(en|es|ru)\.html$/.test(location.pathname)) return;
-            const statCards = Array.from(document.querySelectorAll('.hero-panel .stat-card'));
-            if (!statCards.length) return;
-            const day = new Date().getUTCDate();
-            const month = new Date().getUTCMonth() + 1;
-            const q = new URLSearchParams(location.search);
-            const boost = (q.get('focus') || '').length % 7;
-            statCards.forEach((card, i) => {
-                const strong = card.querySelector('strong');
-                const base = parseInt((strong?.textContent || '0').replace(/\D/g, ''), 10);
-                if (!strong || Number.isNaN(base)) return;
-                const dynamic = base + ((day + month + i + boost) % 5);
-                strong.textContent = String(dynamic);
-            });
-            const insights = Array.from(document.querySelectorAll('.insight-card p'));
-            if (insights.length) {
-                const variants = [
-                    'Блок оновлюється автоматично залежно від дати й параметрів сторінки.',
-                    'Контент динамічно змінюється: дата, контекст перегляду і параметри URL.',
-                    'Секція адаптується до поточного дня, щоб головна виглядала живою.'
-                ];
-                const idx = (day + month + boost) % variants.length;
-                insights[0].textContent = variants[idx];
-            }
+            /* Homepage “dynamics” are handled by enhanceHomepageDynamicComponents (card order).
+               Published counts stay exactly as in the HTML so figures stay auditable. */
         }
 
 
