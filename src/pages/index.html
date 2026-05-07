@@ -21,7 +21,7 @@
 
 <section class="editorial-band" aria-label="Швидкі сценарії використання">
   <article><h3>Читайте стрічку</h3><p>Оновлювані пости у форматі, зручному для скролу й швидкого перегляду.</p></article>
-  <article><h3>Фільтруйте теми</h3><p>Оберіть AI, Product, Operations, Design або Leadership в один клік.</p></article>
+  <article><h3>Фільтруйте теми</h3><p>Оберіть Tech, Product, Operations, Design або Leadership в один клік.</p></article>
   <article><h3>Переходьте глибше</h3><p>З карток постів — до профілів людей, компаній та методології.</p></article>
 </section>
 
@@ -32,15 +32,22 @@
 </section>
 
 <section class="posts-controls" aria-label="Фільтри постів">
-  <button class="topic-chip is-active" data-topic="all">Усі</button>
-  <button class="topic-chip" data-topic="ai">AI</button>
-  <button class="topic-chip" data-topic="product">Product</button>
-  <button class="topic-chip" data-topic="operations">Operations</button>
-  <button class="topic-chip" data-topic="design">Design</button>
-  <button class="topic-chip" data-topic="leadership">Leadership</button>
+  <button class="topic-chip is-active" type="button" data-topic="all" aria-pressed="true">Усі</button>
+  <button class="topic-chip" type="button" data-topic="ai" aria-pressed="false">Tech</button>
+  <button class="topic-chip" type="button" data-topic="product" aria-pressed="false">Product</button>
+  <button class="topic-chip" type="button" data-topic="operations" aria-pressed="false">Operations</button>
+  <button class="topic-chip" type="button" data-topic="design" aria-pressed="false">Design</button>
+  <button class="topic-chip" type="button" data-topic="leadership" aria-pressed="false">Leadership</button>
 </section>
 
+<div class="posts-search">
+  <label for="posts-search-input">Пошук по заголовку або опису</label>
+  <input id="posts-search-input" type="search" placeholder="Наприклад: Tech, Design, Operations" autocomplete="off">
+</div>
+
 <section class="posts-grid" id="posts-grid" aria-live="polite"></section>
+<p class="posts-empty" id="posts-empty" hidden>За цим фільтром нічого не знайдено. Спробуйте іншу тему або очистіть пошук.</p>
+<noscript><p class="posts-empty">Для відображення динамічних постів увімкніть JavaScript у браузері.</p></noscript>
 
 <section class="split-panel">
   <div>
@@ -57,16 +64,16 @@
 <script>
 (() => {
   const posts = [
-    { title: 'Як AI-команди масштабують якість без втрати швидкості', topic: 'ai', date: '2026-05-01', excerpt: 'Розбираємо 5 практик: eval loops, human-in-the-loop, data contracts, safety gates і release cadences.', cta: 'Читати огляд', href: 'startups.html' },
+    { title: 'Як Tech-команди масштабують якість без втрати швидкості', topic: 'ai', date: '2026-05-01', excerpt: 'Розбираємо 5 практик: eval loops, human-in-the-loop, data contracts, safety gates і release cadences.', cta: 'Читати огляд', href: 'startups.html' },
     { title: 'Product-плитка: як показувати цінність за 7 секунд', topic: 'product', date: '2026-04-28', excerpt: 'Структура картки, яка працює: сильний заголовок, ясний бенефіт, короткий proof-point і чітка дія.', cta: 'Відкрити матеріал', href: 'methodology.html' },
     { title: 'Operations у 2026: дисципліна процесів важливіша за хаки', topic: 'operations', date: '2026-04-22', excerpt: 'Порівняння команд із сильним операційним контуром і команд, що покладаються лише на героїзм.', cta: 'Деталі', href: 'specialists.html' },
     { title: 'Design System для редакційного продукту', topic: 'design', date: '2026-04-18', excerpt: 'Від токенів до шаблонів карток: як зробити інтерфейс цілісним і легким для розширення.', cta: 'Переглянути', href: 'about.html' },
     { title: 'Leadership-практики, які зменшують шум у командах', topic: 'leadership', date: '2026-04-12', excerpt: 'Один пріоритет на спринт, публічні рішення й структурований фідбек замість мітингів заради мітингів.', cta: 'Дізнатись більше', href: 'specialists.html' },
-    { title: 'AI + Product: як не зламати UX швидкими експериментами', topic: 'ai', date: '2026-04-09', excerpt: 'Баланс між інновацією та стабільністю: feature flags, rolling cohorts, quality review board.', cta: 'Читати', href: 'startups.html' }
-  ];
+    { title: 'Tech + Product: як не зламати UX швидкими експериментами', topic: 'ai', date: '2026-04-09', excerpt: 'Баланс між інновацією та стабільністю: feature flags, rolling cohorts, quality review board.', cta: 'Читати', href: 'startups.html' }
+  ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const labelByTopic = {
-    ai: 'AI',
+    ai: 'Tech',
     product: 'Product',
     operations: 'Operations',
     design: 'Design',
@@ -77,14 +84,21 @@
   const chips = Array.from(document.querySelectorAll('.topic-chip'));
   const statPosts = document.getElementById('stat-posts');
   const statTopics = document.getElementById('stat-topics');
+  const searchInput = document.getElementById('posts-search-input');
+  const emptyState = document.getElementById('posts-empty');
 
   statPosts.textContent = String(posts.length);
   statTopics.textContent = String(new Set(posts.map((p) => p.topic)).size);
 
   const formatDate = (iso) => new Date(iso).toLocaleDateString('uk-UA', { day: '2-digit', month: 'long', year: 'numeric' });
 
-  const render = (topic) => {
-    const items = topic === 'all' ? posts : posts.filter((p) => p.topic === topic);
+  const render = (topic, query = '') => {
+    const normalizedQuery = query.trim().toLowerCase();
+    const byTopic = topic === 'all' ? posts : posts.filter((p) => p.topic === topic);
+    const items = normalizedQuery
+      ? byTopic.filter((p) => `${p.title} ${p.excerpt}`.toLowerCase().includes(normalizedQuery))
+      : byTopic;
+
     grid.innerHTML = items.map((post) => `
       <article class="post-tile">
         <div class="post-head">
@@ -96,14 +110,22 @@
         <a class="btn" href="${post.href}">${post.cta}</a>
       </article>
     `).join('');
+
+    emptyState.hidden = items.length > 0;
   };
 
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      chips.forEach((c) => c.classList.remove('is-active'));
+      chips.forEach((c) => { c.classList.remove('is-active'); c.setAttribute('aria-pressed', 'false'); });
       chip.classList.add('is-active');
-      render(chip.dataset.topic);
+      chip.setAttribute('aria-pressed', 'true');
+      render(chip.dataset.topic, searchInput.value);
     });
+  });
+
+  searchInput.addEventListener('input', () => {
+    const activeChip = document.querySelector('.topic-chip.is-active');
+    render(activeChip?.dataset.topic || 'all', searchInput.value);
   });
 
   render('all');
