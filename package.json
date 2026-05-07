@@ -4,9 +4,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\"",
-    "build": "node build.js",
-    "audit:content": "node scripts/audit-content.mjs"
+    "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
   },
   "devDependencies": {
     "@cspell/dict-es-es": "^3.0.8",
