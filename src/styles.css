@@ -1986,3 +1986,34 @@ body[data-theme="dark"] .btn.secondary {
     margin: 0;
     color: var(--muted);
 }
+
+.posts-search {
+  display: grid;
+  gap: 8px;
+  margin: 6px 0 16px;
+}
+
+.posts-search label {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.posts-search input {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  background: var(--surface);
+}
+
+.posts-empty {
+  margin-top: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.topic-chip:focus-visible,
+.posts-search input:focus-visible {
+  outline: 3px solid rgba(13, 148, 136, 0.35);
+  outline-offset: 2px;
+}
