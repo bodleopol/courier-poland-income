@@ -4,6 +4,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "content:wikimedia-to-unsplash": "node scripts/wikimedia-to-unsplash.mjs",
     "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
   },
   "devDependencies": {
