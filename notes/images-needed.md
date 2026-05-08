@@ -13,4 +13,4 @@ Until this file exists, the layout still renders: the `img` `onerror` handler fa
 
 ## Bohdan Tiutenko profile photos
 
-Existing assets in the repo (`bohdan-tiutenko-img0018.jpg`, gallery PNGs/JPEGs) are referenced from the Bohdan Tiutenko profile pages under `src/pages/profiles/`. No additional images required unless you want to replace them with higher-resolution versions.
+Existing assets in the repo (`bohdan-tiutenko-avatar.png` for the primary portrait, gallery PNGs/JPEGs) are referenced from the Bohdan Tiutenko profile pages under `src/pages/profiles/`. No additional images required unless you want to replace them with higher-resolution versions.
