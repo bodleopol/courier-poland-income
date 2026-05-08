@@ -258,7 +258,22 @@
         }
 
         function applyHomepageDynamics() {
-            /* Homepage surfaces stay in authored DOM order for editorial auditability. */
+            const filters = document.querySelectorAll('[data-home-filter]');
+            filters.forEach(group => {
+                const buttons = group.querySelectorAll('.filter-btn');
+                buttons.forEach(btn => {
+                    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+                    btn.addEventListener('click', () => {
+                        buttons.forEach(item => item.setAttribute('aria-pressed', item === btn ? 'true' : 'false'));
+                    });
+                });
+            });
+
+            const cards = Array.from(document.querySelectorAll('.featured-grid .profile-card, .startup-grid .startup-card'));
+            cards.forEach((card, index) => {
+                card.style.setProperty('--card-delay', `${Math.min(index, 10) * 40}ms`);
+                card.classList.add('is-dynamic-ready');
+            });
         }
 
                 ensurePageHasImage();

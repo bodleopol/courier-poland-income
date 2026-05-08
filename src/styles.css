@@ -2017,3 +2017,49 @@ body[data-theme="dark"] .btn.secondary {
   outline: 3px solid rgba(13, 148, 136, 0.35);
   outline-offset: 2px;
 }
+
+/* Homepage mobile/performance refinements */
+.dynamic-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dynamic-filters .filter-btn {
+  min-height: 40px;
+}
+
+.profile-card img,
+.startup-card img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.is-dynamic-ready {
+  animation: cardFadeIn 420ms ease both;
+  animation-delay: var(--card-delay, 0ms);
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+  main { padding: 18px 14px 28px; }
+  .hero--editorial {
+    padding: 20px 16px;
+    border-radius: 20px;
+    gap: 16px;
+  }
+  .hero-copy h1 { font-size: clamp(1.45rem, 7vw, 2rem); line-height: 1.2; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; text-align: center; }
+  .hero-panel--editorial { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .dynamic-filters { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; }
+  .dynamic-filters .filter-btn { white-space: nowrap; }
+}
+
+@media (max-width: 480px) {
+  .hero-panel--editorial { grid-template-columns: 1fr; }
+}
