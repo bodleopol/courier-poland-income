@@ -65,6 +65,38 @@ function replaceClearbitLogoImages(html, basename) {
     return next;
   });
 }
+
+function minifyCss(css) {
+  return css
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\s*([{}:;,>])\s*/g, '$1')
+    .replace(/;}/g, '}')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function minifyJs(js) {
+  return js
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/(^|[^:])\/\/.*$/gm, '$1')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*([{}();,:=+<>\-])\s*/g, '$1')
+    .trim();
+}
+
+function minifyHtml(html) {
+  return html
+    .replace(/>\s+</g, '><')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function minifyAssetIfNeeded(filePath, content) {
+  if (filePath.endsWith('.css')) return minifyCss(content);
+  if (filePath.endsWith('.js')) return minifyJs(content);
+  return content;
+}
+
 const translations = {
   uk: {
     navAria: 'Головна навігація',
@@ -184,7 +216,12 @@ function processDirectory(dirPath, destPath) {
       }
     } else if (!srcFile.endsWith('.html')) {
       // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
-      fs.copyFileSync(srcFile, destFile);
+      if (srcFile.endsWith('.css') || srcFile.endsWith('.js')) {
+        const rawAsset = fs.readFileSync(srcFile, 'utf8');
+        fs.writeFileSync(destFile, minifyAssetIfNeeded(srcFile, rawAsset));
+      } else {
+        fs.copyFileSync(srcFile, destFile);
+      }
     }
   }
 }
@@ -318,6 +355,10 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{COOKIE_DECLINE}}', local.cookieDecline);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
+
+  finalHtml = finalHtml.replace(/<style>([\s\S]*?)<\/style>/gi, (_, css) => `<style>${minifyCss(css)}</style>`);
+  finalHtml = finalHtml.replace(/<script>([\s\S]*?)<\/script>/gi, (_, js) => `<script>${minifyJs(js)}</script>`);
+  finalHtml = minifyHtml(finalHtml);
 
   fs.writeFileSync(destFile, finalHtml);
 }
