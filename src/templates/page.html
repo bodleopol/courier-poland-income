@@ -15,8 +15,8 @@
     <link rel="icon" href="assets/images/rybezh-logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/images/rybezh-logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rybezh.site","url":"https://rybezh.site/","description":"Multilingual editorial archive of specialists, founders, and technology companies.","logo":"https://rybezh.site/assets/images/rybezh-logo.svg","email":"jobs.r@protonmail.com"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Curated expert and company profiles with editorial methodology—research reference, not a job marketplace.","inLanguage":["uk","en","es","ru"]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rybezh.site","url":"https://rybezh.site/","description":"Multilingual directory of people and technology companies.","logo":"https://rybezh.site/assets/images/rybezh-logo.svg","email":"jobs.r@protonmail.com"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Reference pages about specialists and companies, with links to sources.","inLanguage":["uk","en","es","ru"]}</script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">{{SKIP_LINK}}</a>
@@ -70,7 +70,7 @@
                         <a href="{{COOKIES_URL}}">{{NAV_COOKIES}}</a>
                         <a href="{{TERMS_URL}}">{{NAV_TERMS}}</a>
                         <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
-                        <a href="sitemap.xml">Sitemap</a>
+                        <a href="sitemap.xml">{{FOOTER_SITEMAP}}</a>
                     </nav>
                 </div>
                 <div class="footer-section">
@@ -215,7 +215,7 @@
             if (main.querySelector('img')) return;
             const article = document.createElement('figure');
             article.className = 'page-cover-fallback';
-            article.innerHTML = `<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80" alt="Professional workspace" loading="lazy" referrerpolicy="no-referrer"><figcaption>Photo source: Unsplash</figcaption>`;
+            article.innerHTML = '<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" referrerpolicy="no-referrer">';
             main.prepend(article);
         }
 
@@ -250,7 +250,7 @@
                     img.src = pickImage(name);
                 }
 
-                img.classList.add('smart-post-image');
+                img.classList.add('card-cover-img');
                 img.loading = 'lazy';
                 img.decoding = 'async';
                 img.setAttribute('referrerpolicy', 'no-referrer');

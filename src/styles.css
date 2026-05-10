@@ -1136,6 +1136,37 @@ input:checked + .slider:before {
     text-align: center;
 }
 
+.footer-bottom p {
+    margin: 0 0 10px;
+}
+
+.footer-bottom p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-nav,
+.footer-policy-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-policy-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+}
+
+.footer-nav a,
+.footer-policy-links a {
+    display: inline-block;
+    padding: 6px 0;
+    min-height: 44px;
+    line-height: 1.35;
+    box-sizing: border-box;
+}
+
 .company-summary,
 .company-facts,
 .signal-list,
@@ -1389,6 +1420,11 @@ body[data-theme="dark"] .btn.secondary {
     .footer-container {
         padding-left: 18px;
         padding-right: 18px;
+    }
+
+    .site-footer {
+        padding-top: 40px;
+        padding-bottom: 20px;
     }
 
     .content-wrapper,
@@ -1689,7 +1725,7 @@ body[data-theme="dark"] .btn.secondary {
 }
 
 /* Post image quality and optimization */
-.smart-post-image,
+.card-cover-img,
 .card img,
 .profile-card img,
 .startup-card img {
@@ -1704,7 +1740,7 @@ body[data-theme="dark"] .btn.secondary {
   background: #e2e8f0;
 }
 
-.profile-header .smart-post-image,
+.profile-header .card-cover-img,
 .page-cover-fallback img {
   aspect-ratio: 4 / 3;
   max-height: 460px;
@@ -1712,7 +1748,7 @@ body[data-theme="dark"] .btn.secondary {
 }
 
 @media (max-width: 768px) {
-  .smart-post-image,
+  .card-cover-img,
   .card img,
   .profile-card img,
   .startup-card img {
