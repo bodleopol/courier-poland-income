@@ -108,17 +108,25 @@ const translations = {
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
     navTerms: 'Умови',
-    footerAbout: 'Rybezh.site — інформаційна редакційна база спеціалістів, керівників і технологічних компаній: структуровані профілі, прозора навігація та зрозумілі правила публікації.',
+    skipLink: 'Перейти до основного вмісту',
+    brandTagline: 'Профілі та компанії',
+    contactLabel: 'Написати:',
+    footerAbout:
+      'Редакційний довідник Rybezh.site: короткі профілі фахівців, керівників і технологічних компаній, з виходом на первинні джерела.',
     footerNavTitle: 'Навігація',
     footerScopeTitle: 'Про базу',
-    footerScopeText: 'Матеріали зібрані як довідкова інформаційна база про людей та організації в технологіях, інженерії, науці, операціях і бізнесі — для швидкого професійного контексту.',
-    footerLanguages: 'Доступні мови: українська, англійська, російська.',
-    footerRights: 'Всі права захищені.',
-    footerPoliciesTitle: 'Редакція і політики',
-    footerPoliciesText: 'Редакційний формат: інформаційна база з прозорою структурою сторінок і без прихованого службового тексту.',
-    footerTeam: 'Команда: Rybezh.site',
+    footerScopeText:
+      'Матеріали для орієнтації в темі; це не стрічка новин і не майданчик вакансій. Факти звіряйте з офіційними сайтами та публікаціями.',
+    footerLanguages: 'Мови: українська, англійська, іспанська, російська.',
+    footerRights: 'Усі права захищені.',
+    footerPoliciesTitle: 'Політики',
+    footerPoliciesText:
+      'Сторінки про конфіденційність, cookies та умови; як збираємо матеріали — у розділі «Методологія».',
+    footerTagline: 'Первинні джерела завжди мають пріоритет перед цим довідником.',
+    footerSitemap: 'Карта сайту',
     cookieTitle: 'Ми використовуємо лише базові cookies',
-    cookieText: 'Сайт зберігає вибір теми та вашу відповідь на cookies notice у браузері. Деталі описані на окремій сторінці політики cookies.',
+    cookieText:
+      'Сайт зберігає в браузері вибір теми та вашу відповідь щодо cookies. Деталі — на сторінці політики cookies.',
     cookieAccept: 'Прийняти',
     cookieDecline: 'Відхилити'
   },
@@ -132,17 +140,25 @@ const translations = {
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
     navTerms: 'Terms',
-    footerAbout: 'Rybezh.site is an editorial information base of specialists, executives and technology companies — structured profiles, transparent navigation and clear publishing rules.',
+    skipLink: 'Skip to main content',
+    brandTagline: 'People and companies',
+    contactLabel: 'Email:',
+    footerAbout:
+      'Rybezh.site is an editorial directory of specialists, leaders, and tech companies—short entries that point to primary sources.',
     footerNavTitle: 'Navigation',
-    footerScopeTitle: 'About the directory',
-    footerScopeText: 'Materials are organised as a reference information base about people and organisations in technology, engineering, science, operations and business — built for fast professional context.',
-    footerLanguages: 'Available languages: Ukrainian, English, Spanish, Russian.',
+    footerScopeTitle: 'About this site',
+    footerScopeText:
+      'Reference-style pages for context; not a news feed or a jobs board. Cross-check facts on official sites and publications.',
+    footerLanguages: 'Languages: Ukrainian, English, Spanish, Russian.',
     footerRights: 'All rights reserved.',
-    footerPoliciesTitle: 'Editorial and policies',
-    footerPoliciesText: 'Editorial format: informational knowledge base with transparent page structure and no hidden boilerplate text.',
-    footerTeam: 'Team: Rybezh.site',
+    footerPoliciesTitle: 'Policies',
+    footerPoliciesText:
+      'Privacy, cookies, and terms pages are linked above; methodology is explained in its own section.',
+    footerTagline: 'Primary sources outweigh this directory when they disagree.',
+    footerSitemap: 'Sitemap',
     cookieTitle: 'We use only basic cookies',
-    cookieText: 'The site stores theme preference and your cookies-notice choice in the browser. See the cookies policy page for details.',
+    cookieText:
+      'The site stores your theme choice and cookie-banner response in the browser. See the cookies policy for details.',
     cookieAccept: 'Accept',
     cookieDecline: 'Decline'
   },
@@ -156,17 +172,25 @@ const translations = {
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
     navTerms: 'Términos',
-    footerAbout: 'Rybezh.site es una base editorial informativa de especialistas, directivos y compañías tecnológicas: perfiles estructurados, navegación transparente y reglas claras de publicación.',
+    skipLink: 'Ir al contenido principal',
+    brandTagline: 'Perfiles y empresas',
+    contactLabel: 'Correo:',
+    footerAbout:
+      'Rybezh.site es un directorio editorial sobre especialistas, directivos y empresas tecnológicas, con enlaces a fuentes primarias.',
     footerNavTitle: 'Navegación',
-    footerScopeTitle: 'Sobre la base',
-    footerScopeText: 'Los materiales están organizados como una base de referencia sobre personas y organizaciones en tecnología, ingeniería, ciencia, operaciones y negocios — pensada para contexto profesional rápido.',
-    footerLanguages: 'Idiomas disponibles: ucraniano, inglés, español y ruso.',
+    footerScopeTitle: 'Sobre el sitio',
+    footerScopeText:
+      'Textos de referencia para orientarte; no es un medio de noticias ni un portal de empleo. Contrasta los datos en fuentes oficiales.',
+    footerLanguages: 'Idiomas: ucraniano, inglés, español y ruso.',
     footerRights: 'Todos los derechos reservados.',
-    footerPoliciesTitle: 'Editorial y políticas',
-    footerPoliciesText: 'Formato editorial: base informativa con estructura de páginas transparente y sin texto oculto de plantilla.',
-    footerTeam: 'Equipo: Rybezh.site',
+    footerPoliciesTitle: 'Políticas',
+    footerPoliciesText:
+      'Páginas de privacidad, cookies y términos enlazadas arriba; la metodología está en su propia sección.',
+    footerTagline: 'Si hay discrepancia, prevalecen las fuentes primarias.',
+    footerSitemap: 'Mapa del sitio',
     cookieTitle: 'Usamos solo cookies básicas',
-    cookieText: 'El sitio guarda la preferencia de tema y tu elección del aviso de cookies en el navegador. Consulta la política de cookies para más detalles.',
+    cookieText:
+      'El sitio guarda en el navegador el tema y tu respuesta al aviso de cookies. Más información en la política de cookies.',
     cookieAccept: 'Aceptar',
     cookieDecline: 'Rechazar'
   },
@@ -180,17 +204,25 @@ const translations = {
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
     navTerms: 'Условия',
-    footerAbout: 'Rybezh.site — редакционная информационная база специалистов, руководителей и технологических компаний: структурированные профили, прозрачная навигация и понятные правила публикации.',
+    skipLink: 'Перейти к основному содержимому',
+    brandTagline: 'Профили и компании',
+    contactLabel: 'Почта:',
+    footerAbout:
+      'Редакционный справочник Rybezh.site: краткие заметки о специалистах, руководителях и технологических компаниях, со ссылками на первоисточники.',
     footerNavTitle: 'Навигация',
-    footerScopeTitle: 'О базе',
-    footerScopeText: 'Материалы собраны как справочная информационная база о людях и организациях в технологиях, инженерии, науке, операциях и бизнесе — для быстрого профессионального контекста.',
-    footerLanguages: 'Доступные языки: украинский, английский, испанский, русский.',
+    footerScopeTitle: 'О сайте',
+    footerScopeText:
+      'Материалы для ориентира, это не новостная лента и не площадка вакансий. Факты сверяйте с официальными сайтами и публикациями.',
+    footerLanguages: 'Языки: украинский, английский, испанский, русский.',
     footerRights: 'Все права защищены.',
-    footerPoliciesTitle: 'Редакция и политики',
-    footerPoliciesText: 'Редакционный формат: информационная база с прозрачной структурой страниц и без скрытого служебного текста.',
-    footerTeam: 'Команда: Rybezh.site',
+    footerPoliciesTitle: 'Политики',
+    footerPoliciesText:
+      'Страницы о конфиденциальности, cookies и условиях — в ссылках выше; как собираем материалы — в разделе «Методология».',
+    footerTagline: 'При расхождении приоритет у первичных источников.',
+    footerSitemap: 'Карта сайта',
     cookieTitle: 'Мы используем только базовые cookies',
-    cookieText: 'Сайт сохраняет выбор темы и ваш ответ на cookies notice в браузере. Подробности - на странице политики cookies.',
+    cookieText:
+      'Сайт сохраняет в браузере выбор темы и ваш ответ по cookies. Подробности — на странице политики cookies.',
     cookieAccept: 'Принять',
     cookieDecline: 'Отклонить'
   }
@@ -347,7 +379,11 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights)
                        .replaceAll('{{FOOTER_POLICIES_TITLE}}', local.footerPoliciesTitle)
                        .replaceAll('{{FOOTER_POLICIES_TEXT}}', local.footerPoliciesText)
-                       .replaceAll('{{FOOTER_TEAM}}', local.footerTeam);
+                       .replaceAll('{{FOOTER_TAGLINE}}', local.footerTagline)
+                       .replaceAll('{{FOOTER_SITEMAP}}', local.footerSitemap)
+                       .replaceAll('{{SKIP_LINK}}', local.skipLink)
+                       .replaceAll('{{BRAND_TAGLINE}}', local.brandTagline)
+                       .replaceAll('{{CONTACT_LABEL}}', local.contactLabel);
 
   finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', local.cookieTitle)
                        .replaceAll('{{COOKIE_TEXT}}', local.cookieText)
