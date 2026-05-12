@@ -122,7 +122,7 @@ const translations = {
     footerRights: 'Усі права захищені.',
     footerPoliciesTitle: 'Політики',
     footerPoliciesText:
-      'Сторінки про конфіденційність, cookies та умови; як збираємо матеріали — у розділі «Методологія».',
+      'Сторінки про конфіденційність, cookies та умови; як збираємо матеріали — у розділі «Методологія»; типові запитання — у «Питання й відповіді».',
     footerTagline: 'Первинні джерела завжди мають пріоритет перед цим довідником.',
     footerSitemap: 'Карта сайту',
     cookieTitle: 'Ми використовуємо лише базові cookies',
@@ -155,7 +155,7 @@ const translations = {
     footerRights: 'All rights reserved.',
     footerPoliciesTitle: 'Policies',
     footerPoliciesText:
-      'Privacy, cookies, and terms pages are linked above; methodology is explained in its own section.',
+      'Privacy, cookies, and terms pages are linked above; methodology is explained in its own section, and common questions in the FAQ.',
     footerTagline: 'Primary sources outweigh this directory when they disagree.',
     footerSitemap: 'Sitemap',
     cookieTitle: 'We use only basic cookies',
@@ -188,7 +188,7 @@ const translations = {
     footerRights: 'Todos los derechos reservados.',
     footerPoliciesTitle: 'Políticas',
     footerPoliciesText:
-      'Páginas de privacidad, cookies y términos enlazadas arriba; la metodología está en su propia sección.',
+      'Páginas de privacidad, cookies y términos enlazadas arriba; la metodología está en su propia sección y las dudas frecuentes en Preguntas frecuentes.',
     footerTagline: 'Si hay discrepancia, prevalecen las fuentes primarias.',
     footerSitemap: 'Mapa del sitio',
     cookieTitle: 'Usamos solo cookies básicas',
@@ -221,7 +221,7 @@ const translations = {
     footerRights: 'Все права защищены.',
     footerPoliciesTitle: 'Политики',
     footerPoliciesText:
-      'Страницы о конфиденциальности, cookies и условиях — в ссылках выше; как собираем материалы — в разделе «Методология».',
+      'Страницы о конфиденциальности, cookies и условиях — в ссылках выше; как собираем материалы — в разделе «Методология»; типичные вопросы — в «Вопросы и ответы».',
     footerTagline: 'При расхождении приоритет у первичных источников.',
     footerSitemap: 'Карта сайта',
     cookieTitle: 'Мы используем только базовые cookies',
