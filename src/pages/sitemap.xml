@@ -81,6 +81,26 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/interview-drill-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/interview-drill-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/interview-drill-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/interview-drill.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/methodology-en.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
