@@ -129,7 +129,20 @@ const translations = {
     cookieText:
       'Сайт зберігає в браузері вибір теми та вашу відповідь щодо cookies. Деталі — на сторінці політики cookies.',
     cookieAccept: 'Прийняти',
-    cookieDecline: 'Відхилити'
+    cookieDecline: 'Відхилити',
+    navAbout: 'Про нас',
+    searchTitle: 'Пошук по сайту',
+    searchLabel: 'Запит',
+    searchPlaceholder: 'Сторінки, профілі, компанії…',
+    searchOpen: 'Пошук',
+    searchClose: 'Закрити вікно пошуку',
+    searchHint: 'Esc — закрити · Enter — відкрити вибране · Ctrl або ⌘ + K — з будь-якої сторінки',
+    searchLoading: 'Завантажуємо індекс…',
+    searchEmpty: 'За цим запитом нічого не знайдено. Спробуйте коротше слово або інше написання.',
+    searchError: 'Не вдалося завантажити індекс пошуку. Перезавантажте сторінку.',
+    searchCatSite: 'Сторінка',
+    searchCatPerson: 'Профіль людини',
+    searchCatStartup: 'Профіль компанії'
   },
   en: {
     navAria: 'Main navigation',
@@ -162,7 +175,20 @@ const translations = {
     cookieText:
       'The site stores your theme choice and cookie-banner response in the browser. See the cookies policy for details.',
     cookieAccept: 'Accept',
-    cookieDecline: 'Decline'
+    cookieDecline: 'Decline',
+    navAbout: 'About',
+    searchTitle: 'Search the site',
+    searchLabel: 'Query',
+    searchPlaceholder: 'Pages, people, companies…',
+    searchOpen: 'Search',
+    searchClose: 'Close search',
+    searchHint: 'Esc to close · Enter to open selection · Ctrl or ⌘ + K from anywhere',
+    searchLoading: 'Loading search index…',
+    searchEmpty: 'No matches for that query. Try a shorter word or different spelling.',
+    searchError: 'Could not load the search index. Refresh the page and try again.',
+    searchCatSite: 'Page',
+    searchCatPerson: 'Person profile',
+    searchCatStartup: 'Company profile'
   },
   es: {
     navAria: 'Navegación principal',
@@ -195,7 +221,20 @@ const translations = {
     cookieText:
       'El sitio guarda en el navegador el tema y tu respuesta al aviso de cookies. Más información en la política de cookies.',
     cookieAccept: 'Aceptar',
-    cookieDecline: 'Rechazar'
+    cookieDecline: 'Rechazar',
+    navAbout: 'Sobre nosotros',
+    searchTitle: 'Buscar en el sitio',
+    searchLabel: 'Consulta',
+    searchPlaceholder: 'Páginas, personas, empresas…',
+    searchOpen: 'Buscar',
+    searchClose: 'Cerrar búsqueda',
+    searchHint: 'Esc para cerrar · Enter para abrir · Ctrl o ⌘ + K desde cualquier página',
+    searchLoading: 'Cargando el índice…',
+    searchEmpty: 'Sin resultados. Prueba con una palabra más corta u otra grafía.',
+    searchError: 'No se pudo cargar el índice de búsqueda. Recarga la página.',
+    searchCatSite: 'Página',
+    searchCatPerson: 'Perfil de persona',
+    searchCatStartup: 'Perfil de empresa'
   },
   ru: {
     navAria: 'Главная навигация',
@@ -228,9 +267,93 @@ const translations = {
     cookieText:
       'Сайт сохраняет в браузере выбор темы и ваш ответ по cookies. Подробности — на странице политики cookies.',
     cookieAccept: 'Принять',
-    cookieDecline: 'Отклонить'
+    cookieDecline: 'Отклонить',
+    navAbout: 'О нас',
+    searchTitle: 'Поиск по сайту',
+    searchLabel: 'Запрос',
+    searchPlaceholder: 'Страницы, профили, компании…',
+    searchOpen: 'Поиск',
+    searchClose: 'Закрыть поиск',
+    searchHint: 'Esc — закрыть · Enter — открыть выбранное · Ctrl или ⌘ + K с любой страницы',
+    searchLoading: 'Загружаем индекс…',
+    searchEmpty: 'Ничего не найдено. Попробуйте другое слово или написание.',
+    searchError: 'Не удалось загрузить индекс поиска. Обновите страницу.',
+    searchCatSite: 'Страница',
+    searchCatPerson: 'Профиль человека',
+    searchCatStartup: 'Профиль компании'
   }
 };
+
+function walkHtmlFiles(dir, acc) {
+  const list = acc || [];
+  if (!fs.existsSync(dir)) return list;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) walkHtmlFiles(full, list);
+    else if (entry.name.endsWith('.html')) list.push(full);
+  }
+  return list;
+}
+
+function stripTagsForSearch(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function searchLangFromFilename(name) {
+  if (name.endsWith('-en.html')) return 'en';
+  if (name.endsWith('-es.html')) return 'es';
+  if (name.endsWith('-ru.html')) return 'ru';
+  return 'uk';
+}
+
+function searchKindFromPath(relPosix, base) {
+  if (relPosix.startsWith('profiles/')) {
+    if (base.startsWith('person-')) return 'person';
+    return 'person';
+  }
+  if (relPosix.startsWith('startups/')) return 'startup';
+  return 'site';
+}
+
+function generateSearchIndex(pagesRoot, outFile) {
+  const files = walkHtmlFiles(pagesRoot);
+  const items = [];
+  for (const full of files) {
+    const base = path.basename(full);
+    const relPosix = path.relative(pagesRoot, full).split(path.sep).join('/');
+    const raw = fs.readFileSync(full, 'utf8');
+    const titleMatch = raw.match(/<title>([\s\S]*?)<\/title>/i);
+    const title = titleMatch ? titleMatch[1].replace(/\s+/g, ' ').trim() : base.replace(/\.html$/i, '');
+    const descMatch = raw.match(/<meta\s+name="description"\s+content="([\s\S]*?)">/i);
+    const desc = descMatch ? descMatch[1].replace(/\s+/g, ' ').trim() : '';
+    let frag = raw;
+    if (titleMatch) frag = frag.replace(/<title>[\s\S]*?<\/title>/i, '');
+    if (descMatch) frag = frag.replace(/<meta\s+name="description"\s+content="[\s\S]*?">/i, '');
+    frag = frag.replace(/<style>[\s\S]*?<\/style>/gi, ' ');
+    const text = stripTagsForSearch(frag).slice(0, 1200);
+    items.push({
+      u: base,
+      l: searchLangFromFilename(base),
+      k: searchKindFromPath(relPosix, base),
+      t: title,
+      d: desc,
+      x: text
+    });
+  }
+  items.sort((a, b) => a.u.localeCompare(b.u));
+  fs.writeFileSync(outFile, JSON.stringify({ v: 1, generated: new Date().toISOString(), items }));
+}
 
 fs.rmSync(DIST_DIR, { recursive: true, force: true });
 fs.mkdirSync(DIST_DIR, { recursive: true });
@@ -254,7 +377,8 @@ function processDirectory(dirPath, destPath) {
       // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
       if (srcFile.endsWith('.css') || srcFile.endsWith('.js')) {
         const rawAsset = fs.readFileSync(srcFile, 'utf8');
-        fs.writeFileSync(destFile, minifyAssetIfNeeded(srcFile, rawAsset));
+        const skipMinifyJs = srcFile.endsWith('site-search.js');
+        fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
       }
@@ -360,12 +484,14 @@ function compileHTML(srcFile, destFile) {
   const termsUrl = lang === 'uk' ? 'terms.html' : `terms-${lang}.html`;
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
+  const aboutUrl = lang === 'uk' ? 'about.html' : `about-${lang}.html`;
   finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
                        .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
                        .replaceAll('{{NAV_FAQ}}', local.navFaq)
+                       .replaceAll('{{NAV_ABOUT}}', local.navAbout)
                        .replaceAll('{{NAV_MENU}}', local.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', local.navCookies)
@@ -378,6 +504,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{TERMS_URL}}', termsUrl)
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
+                       .replaceAll('{{ABOUT_URL}}', aboutUrl)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
@@ -395,7 +522,19 @@ function compileHTML(srcFile, destFile) {
   finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', local.cookieTitle)
                        .replaceAll('{{COOKIE_TEXT}}', local.cookieText)
                        .replaceAll('{{COOKIE_ACCEPT}}', local.cookieAccept)
-                       .replaceAll('{{COOKIE_DECLINE}}', local.cookieDecline);
+                       .replaceAll('{{COOKIE_DECLINE}}', local.cookieDecline)
+                       .replaceAll('{{SEARCH_TITLE}}', local.searchTitle)
+                       .replaceAll('{{SEARCH_LABEL}}', local.searchLabel)
+                       .replaceAll('{{SEARCH_PLACEHOLDER}}', local.searchPlaceholder)
+                       .replaceAll('{{SEARCH_OPEN}}', local.searchOpen)
+                       .replaceAll('{{SEARCH_CLOSE}}', local.searchClose)
+                       .replaceAll('{{SEARCH_HINT}}', local.searchHint)
+                       .replaceAll('{{SEARCH_LOADING}}', local.searchLoading)
+                       .replaceAll('{{SEARCH_EMPTY}}', local.searchEmpty)
+                       .replaceAll('{{SEARCH_ERROR}}', local.searchError)
+                       .replaceAll('{{SEARCH_CAT_SITE}}', local.searchCatSite)
+                       .replaceAll('{{SEARCH_CAT_PERSON}}', local.searchCatPerson)
+                       .replaceAll('{{SEARCH_CAT_STARTUP}}', local.searchCatStartup);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 
@@ -408,4 +547,5 @@ function compileHTML(srcFile, destFile) {
 
 processDirectory(SRC_DIR, DIST_DIR);
 processPages(path.join(SRC_DIR, 'pages'), DIST_DIR);
+generateSearchIndex(path.join(SRC_DIR, 'pages'), path.join(DIST_DIR, 'site-search-index.json'));
 console.log('Build completed successfully.');
