@@ -823,3 +823,20 @@
   </div>
   <a class="btn" href="methodology-en.html">Read methodology</a>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const grid = document.querySelector('[data-directory-grid]');
+    const sortSelect = document.querySelector('[data-directory-panel] [data-directory-sort]');
+    if (!grid) return;
+    if (sortSelect && sortSelect.value !== 'default') return;
+    const cards = Array.from(grid.querySelectorAll('[data-directory-card]'));
+    for (let i = cards.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    cards.forEach((c) => grid.appendChild(c));
+  }, 0);
+});
+</script>
