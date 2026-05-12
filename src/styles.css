@@ -2307,6 +2307,21 @@ body[data-theme="dark"] .btn.secondary {
   font-size: 0.86rem;
 }
 
+.home-hero-focus__loading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.live-card__signal-stamp {
+  font-size: 0.75rem;
+}
+
+.live-card__signal-grid {
+  display: grid;
+  gap: 10px;
+}
+
 .home-marquee {
   margin: 14px 0 22px;
   border-radius: 16px;
