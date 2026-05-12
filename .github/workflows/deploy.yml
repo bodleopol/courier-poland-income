@@ -10,6 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Transitive actions/upload-artifact inside upload-pages-artifact still targets Node 20 until
+# upstream bumps; this opts all JS actions on the runner into Node 24 (GitHub-supported).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
