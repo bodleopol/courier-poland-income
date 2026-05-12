@@ -1,4 +1,4 @@
-name = "rybezh-people-archive"
+name = "courier-poland-income"
 compatibility_date = "2026-01-17"
 main = "src/worker.js"
 
