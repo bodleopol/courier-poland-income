@@ -1,12 +1,12 @@
 <title>Rybezh.site — редакційний архів експертів і стартапів</title>
-<meta name="description" content="Rybezh.site — довідник експертів і стартапів: українська, англійська, іспанська, російська. Динамічна головна з добовою перетасовкою добірок.">
+<meta name="description" content="Rybezh.site — довідник експертів і стартапів: українська, англійська, іспанська, російська. Добірки на головній перетасовуються при кожному завантаженні сторінки.">
 
 <section class="home-hero-v2" aria-label="Rybezh.site — головний екран">
   <div class="home-hero-v2__grid">
     <div class="home-hero-v2__copy">
       <p class="eyebrow">Rybezh.site · Редакційний архів</p>
       <h1>Каталог експертів і компаній, зібраний для спокійного порівняння</h1>
-      <p>Короткі досьє про людей і компанії в технологіях і суміжних галузях: роль, регіон і посилання на контекст. Добірки на цій сторінці щодня перебудовуються в однаковому правилі — без «закріпленого» першого місця.</p>
+      <p>Короткі досьє про людей і компанії в технологіях і суміжних галузях: роль, регіон і посилання на контекст. Добірки на цій сторінці перетасовуються при кожному завантаженні — без «закріпленого» першого місця.</p>
       <div class="hero-actions">
         <a class="btn" href="specialists.html">Каталог експертів</a>
         <a class="btn secondary" href="startups.html">Каталог стартапів</a>
@@ -40,7 +40,7 @@
   <div class="section-intro section-intro--tight">
     <p class="eyebrow">Live desk</p>
     <h2>Пульс архіву в реальному часі</h2>
-    <p>Годинник локального часу, ротація редакційних нотаток, випадковий акцент і три сигнали, що оновлюються без перезавантаження сторінки.</p>
+    <p>Годинник локального часу, ротація редакційних нотаток, випадковий акцент і три сигнали, що оновлюються без перезавантаження сторінки. Добірки експертів унизу перетасовуються при кожному відкритті.</p>
   </div>
   <div class="live-layer__grid">
     <article class="live-card live-card--ticker fade-in">
@@ -91,7 +91,7 @@
 <div class="section-intro">
   <p class="eyebrow">Добірка на головній</p>
   <h2>Обрані експерти</h2>
-  <p>Порядок карток обчислюється на клієнті від календарної дати — усі профілі рівні щодо шансу опинитися першими.</p>
+  <p>Порядок карток обчислюється на клієнті при кожному відкритті сторінки — усі профілі рівні щодо шансу опинитися першими.</p>
 </div>
 
 <div class="dynamic-filters" data-filter-target="#featuredGridMount .profile-card" data-home-filter="experts">
@@ -184,10 +184,10 @@
 
 <div class="section-intro">
   <p class="eyebrow">Редакція Rybezh.site</p>
-  <h2>Редакційна колегія</h2>
-  <p>Люди будують структуру кожного досьє, відкрито фіксують правки й прибирають застарілі формулювання замість анонімних стрічок.</p>
+  <h2>Наші акценти з архіву</h2>
+  <p>Три випадкові профілі з тієї ж бази, що й у каталозі експертів — щораз інші імена, той самий формат картки.</p>
 </div>
-<section class="team-grid"><article class="card profile-card fade-in"><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="Олена Рибецька" loading="lazy"><div class="card-body"><h3>Олена Рибецька</h3><p class="meta">Засновниця та головна редакторка</p></div></article><article class="card profile-card fade-in"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Команда перевірки фактів" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, (max-width: 1120px) 50vw, 360px" referrerpolicy="no-referrer"><div class="card-body"><h3>Команда перевірки фактів</h3><p class="meta">Фактчек і дослідження</p></div></article><article class="card profile-card fade-in"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Команда QA профілів" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, (max-width: 1120px) 50vw, 360px" referrerpolicy="no-referrer"><div class="card-body"><h3>Команда QA профілів</h3><p class="meta">Дані та якість профілів</p></div></article></section>
+<section class="team-grid" id="editorialTeamMount" aria-live="polite"></section>
 <section class="split-panel split-panel--quiet">
   <div>
     <p class="eyebrow">Видання</p>
@@ -425,6 +425,7 @@
   </article>
 </template>
 
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -434,11 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/</g, '&lt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
-
-  const dayKey = () => {
-    const d = new Date();
-    return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
-  };
 
   function mulberry32(a) {
     return function () {
@@ -478,13 +474,29 @@ document.addEventListener('DOMContentLoaded', () => {
     return Array.from(mountEl.querySelectorAll('article'));
   }
 
-  const rngFeatured = mulberry32(dayKey() * 7919 + 104729);
-  const rngRecent = mulberry32(dayKey() * 104393 + 224737);
-  const rngStartups = mulberry32(dayKey() * 224737 + 577957);
+  function mountRandomArticleSubset(templateId, mountEl, count, rng) {
+    if (!mountEl) return;
+    const nodes = collectTemplateArticles(templateId);
+    if (!nodes.length) return;
+    const ordered = shuffle(nodes, rng).slice(0, Math.min(count, nodes.length));
+    mountEl.textContent = '';
+    ordered.forEach((node, i) => {
+      const el = node.cloneNode(true);
+      el.style.setProperty('--card-delay', `${i * 40}ms`);
+      el.classList.add('is-dynamic-ready');
+      mountEl.appendChild(el);
+    });
+  }
+
+  const sessionSeed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+  const rngFeatured = mulberry32(sessionSeed * 7919 + 104729);
+  const rngRecent = mulberry32(sessionSeed * 104393 + 224737);
+  const rngStartups = mulberry32(sessionSeed * 224737 + 577957);
 
   const featuredMounted = mountShuffledArticles('tpl-home-featured', document.getElementById('featuredGridMount'), rngFeatured);
   mountShuffledArticles('tpl-home-recent', document.getElementById('recentGridMount'), rngRecent);
   mountShuffledArticles('tpl-home-startups', document.getElementById('startupGridMount'), rngStartups);
+  mountRandomArticleSubset('tpl-home-featured', document.getElementById('editorialTeamMount'), 3, mulberry32(sessionSeed + 424242));
 
   const allFeaturedArticles = () =>
     Array.from(document.querySelectorAll('#featuredGridMount .profile-card'));
@@ -492,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderHeroFocus(cards) {
     const root = document.getElementById('heroFocusMount');
     if (!root || !cards.length) return;
-    const rng = mulberry32(dayKey() * 503 + 37);
+    const rng = mulberry32(sessionSeed * 503 + 37);
     const pick = cards[Math.floor(rng() * cards.length)];
     const img = pick.querySelector('img');
     const name = pick.querySelector('h3')?.textContent?.trim() || '';
@@ -525,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const a = document.getElementById('echoSlotA');
     const b = document.getElementById('echoSlotB');
     if (!a || !b || !cards.length) return;
-    const rng = mulberry32(dayKey() * 11003 + 79);
+    const rng = mulberry32(sessionSeed * 11003 + 79);
     const i1 = Math.floor(rng() * cards.length);
     let i2 = Math.floor(rng() * cards.length);
     if (cards.length > 1 && Math.random() < 0.45) i2 = i1;
@@ -568,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Картки адаптивні: mobile-first компонування без втрати контексту.',
     'Фокус тижня: операції, software та прикладна наука.',
     'Розділи для порівняння враховують вибрані фільтри на головній.',
-    'Головна не сортує за алфавітом — порядок добовий і детермінований.',
+    'Головна не сортує за алфавітом — порядок добірки змінюється при кожному завантаженні.',
     'Один профіль може зʼявитися в герої, сітці та дзеркальній стрічці одночасно.'
   ];
 
