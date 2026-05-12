@@ -104,6 +104,7 @@ const translations = {
     navSpecialists: 'Спеціалісти',
     navStartups: 'Стартапи',
     navMethodology: 'Методологія',
+    navFaq: 'Питання й відповіді',
     navMenu: 'Меню',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
@@ -136,6 +137,7 @@ const translations = {
     navSpecialists: 'Specialists',
     navStartups: 'Startups',
     navMethodology: 'Methodology',
+    navFaq: 'FAQ',
     navMenu: 'Menu',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
@@ -168,6 +170,7 @@ const translations = {
     navSpecialists: 'Especialistas',
     navStartups: 'Startups',
     navMethodology: 'Metodología',
+    navFaq: 'Preguntas frecuentes',
     navMenu: 'Menú',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
@@ -200,6 +203,7 @@ const translations = {
     navSpecialists: 'Специалисты',
     navStartups: 'Стартапы',
     navMethodology: 'Методология',
+    navFaq: 'Вопросы и ответы',
     navMenu: 'Меню',
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
@@ -355,11 +359,13 @@ function compileHTML(srcFile, destFile) {
   const cookiesUrl = lang === 'uk' ? 'cookies.html' : `cookies-${lang}.html`;
   const termsUrl = lang === 'uk' ? 'terms.html' : `terms-${lang}.html`;
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
+  const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
   finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
                        .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
+                       .replaceAll('{{NAV_FAQ}}', local.navFaq)
                        .replaceAll('{{NAV_MENU}}', local.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', local.navCookies)
@@ -371,6 +377,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{COOKIES_URL}}', cookiesUrl)
                        .replaceAll('{{TERMS_URL}}', termsUrl)
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
+                       .replaceAll('{{FAQ_URL}}', faqUrl)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
