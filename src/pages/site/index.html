@@ -24,6 +24,24 @@
   </aside>
 </section>
 
+<section class="live-layer" aria-label="Динамічна стрічка">
+  <div class="section-intro section-intro--tight">
+    <p class="eyebrow">Live</p>
+    <h2>Пульс головної сторінки</h2>
+    <p>Динамічна стрічка оновлюється на клієнті: ротація постів, випадкові експерти дня та smart-підбірки за інтересом.</p>
+  </div>
+  <div class="live-layer__grid">
+    <article class="live-card live-card--ticker fade-in">
+      <div class="live-card__head"><h3>Оновлення архіву</h3><span id="liveClock" aria-live="polite">--:--</span></div>
+      <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
+    </article>
+    <article class="live-card live-card--spotlight fade-in">
+      <div class="live-card__head"><h3>Експерт дня</h3><button class="btn secondary" id="refreshSpotlight" type="button">Оновити</button></div>
+      <div id="spotlightCard" class="spotlight-slot" aria-live="polite"></div>
+    </article>
+  </div>
+</section>
+
 <section class="editorial-band" aria-label="Як користуватися Rybezh.site">
   <article><h3>Шукати експертів</h3><p>Підбирайте спеціалістів за дисципліною, країною та практичним досвідом.</p></article>
   <article><h3>Порівнювати стартапи</h3><p>Оцінюйте фокус компанії й продукт в однаковому редакційному форматі.</p></article>
@@ -382,6 +400,30 @@
   border-color: var(--brand);
 }
 
+
+.live-layer {
+  margin: 2.5rem 0;
+}
+.live-layer__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+}
+.live-card {
+  border: 1px solid var(--line);
+  background: linear-gradient(150deg, color-mix(in srgb, var(--surface) 92%, #5b8cff 8%), var(--surface));
+  border-radius: 20px;
+  padding: 20px;
+}
+.live-card__head {display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}
+.live-ticker {list-style:none;display:grid;gap:10px;margin:0;padding:0}
+.live-ticker li {padding:10px 12px;border-radius:12px;background:var(--surface-muted);border:1px solid var(--line)}
+.spotlight-slot .mini-card h4{margin:0 0 6px}
+.spotlight-slot .mini-card p{margin:0 0 10px}
+@media (max-width: 900px){
+  .live-layer__grid{grid-template-columns:1fr}
+}
+
 /* Animations CSS */
 .fade-in {
   opacity: 0;
@@ -479,5 +521,58 @@ document.addEventListener('DOMContentLoaded', () => {
       statObserver.observe(stat.parentElement);
     }
   });
+
+  const liveEvents = [
+    'Нові профілі щодня проходять однаковий editorial QA цикл.',
+    'Теги синхронізовано між архівом експертів та стартапів.',
+    'Картки адаптивні: mobile-first компонування без втрати контексту.',
+    'Фокус тижня: операції, software та applied science.',
+    'Розділи для порівняння тепер рендеряться з урахуванням вибраних інтересів.'
+  ];
+
+  const renderTicker = () => {
+    const list = document.getElementById('liveTicker');
+    if (!list) return;
+    const shuffled = [...liveEvents].sort(() => Math.random() - 0.5).slice(0, 4);
+    list.innerHTML = shuffled.map(item => `<li>${item}</li>`).join('');
+  };
+
+  const expertCards = Array.from(document.querySelectorAll('.featured-grid .profile-card'));
+  const spotlightSlot = document.getElementById('spotlightCard');
+  const spotlightButton = document.getElementById('refreshSpotlight');
+
+  const rotateSpotlight = () => {
+    if (!spotlightSlot || !expertCards.length) return;
+    const pick = expertCards[Math.floor(Math.random() * expertCards.length)];
+    const name = pick.querySelector('h3')?.textContent?.trim() || 'Експерт';
+    const role = pick.querySelector('.meta')?.textContent?.trim() || '';
+    const region = pick.querySelector('.eyebrow')?.textContent?.trim() || '';
+    const href = pick.querySelector('a.btn')?.getAttribute('href') || 'specialists.html';
+    spotlightSlot.innerHTML = `<article class="mini-card"><p class="eyebrow">${region}</p><h4>${name}</h4><p>${role}</p><a class="btn" href="${href}">Перейти до профілю</a></article>`;
+  };
+
+  const nowClock = document.getElementById('liveClock');
+  const updateClock = () => {
+    if (!nowClock) return;
+    nowClock.textContent = new Date().toLocaleTimeString('uk-UA', {hour:'2-digit', minute:'2-digit'});
+  };
+
+  renderTicker();
+  rotateSpotlight();
+  updateClock();
+  setInterval(updateClock, 15000);
+  setInterval(renderTicker, 12000);
+  spotlightButton?.addEventListener('click', rotateSpotlight);
+
+  // randomize cards to avoid static first position
+  const randomizeGrid = (selector) => {
+    const grid = document.querySelector(selector);
+    if (!grid) return;
+    const cards = Array.from(grid.children);
+    cards.sort(() => Math.random() - 0.5).forEach(card => grid.appendChild(card));
+  };
+  randomizeGrid('.featured-grid');
+  randomizeGrid('.compact-grid');
+
 });
 </script>
