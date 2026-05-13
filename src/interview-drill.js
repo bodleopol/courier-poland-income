@@ -34,6 +34,7 @@
       copy: 'Копіювати пакет',
       copied: 'Скопійовано',
       errCopy: 'Копіювання недоступне',
+      randomBatch: 'Випадковий пакет',
     },
     en: {
       trackLabel: 'Role emphasis (combinator shift)',
@@ -56,6 +57,7 @@
       copy: 'Copy batch',
       copied: 'Copied',
       errCopy: 'Copy unavailable',
+      randomBatch: 'Random batch',
     },
     es: {
       trackLabel: 'Énfasis de rol (desplazamiento)',
@@ -78,6 +80,7 @@
       copy: 'Copiar lote',
       copied: 'Copiado',
       errCopy: 'Copia no disponible',
+      randomBatch: 'Lote aleatorio',
     },
     ru: {
       trackLabel: 'Акцент роли (сдвиг комбинаторики)',
@@ -100,6 +103,7 @@
       copy: 'Копировать пакет',
       copied: 'Скопировано',
       errCopy: 'Копирование недоступно',
+      randomBatch: 'Случайный пакет',
     },
   };
 
@@ -147,6 +151,7 @@
     next: root.querySelector('[data-iv-next]'),
     jump: root.querySelector('[data-iv-jump]'),
     jumpBtn: root.querySelector('[data-iv-jump-btn]'),
+    random: root.querySelector('[data-iv-random]'),
     prog: root.querySelector('[data-iv-progress]'),
     list: root.querySelector('[data-iv-list]'),
     live: root.querySelector('[data-iv-live]'),
@@ -163,8 +168,12 @@
     }
   }
 
-  function readPage() {
-    const q = new URLSearchParams(window.location.search).get('p');
+  function readPageFromUrlOrStorage(allowRandom) {
+    const sp = new URLSearchParams(window.location.search);
+    if (allowRandom && (sp.get('r') === '1' || sp.get('random') === '1')) {
+      return Math.floor(Math.random() * (maxPage + 1));
+    }
+    const q = sp.get('p');
     let p = q != null ? parseInt(q, 10) : NaN;
     if (Number.isNaN(p) || p < 0) {
       const ls = localStorage.getItem(`iv-page-${lang}`);
@@ -175,17 +184,49 @@
     return p;
   }
 
-  let page = readPage();
-  let track = parseInt(localStorage.getItem(`iv-track-${lang}`) || '0', 10) || 0;
+  function readTrackFromUrlOrStorage() {
+    const sp = new URLSearchParams(window.location.search);
+    const tRaw = sp.get('t') ?? sp.get('track');
+    let t = tRaw != null ? parseInt(tRaw, 10) : NaN;
+    if (Number.isNaN(t) || t < 0 || t > 7) {
+      t = parseInt(localStorage.getItem(`iv-track-${lang}`) || '0', 10) || 0;
+    }
+    if (t < 0 || t > 7) t = 0;
+    return t;
+  }
+
+  const initialSearch = new URLSearchParams(window.location.search);
+  const hadRandomParam = initialSearch.get('r') === '1' || initialSearch.get('random') === '1';
+  const hasExplicitParams =
+    initialSearch.has('p') || initialSearch.has('t') || initialSearch.has('track');
+
+  let page = readPageFromUrlOrStorage(true);
+  let track = readTrackFromUrlOrStorage();
   if (track < 0 || track > 7) track = 0;
   if (el.track) el.track.value = String(track);
 
-  function writePage(p) {
-    page = Math.max(0, Math.min(maxPage, p));
+  if (el.random) {
+    el.random.textContent = u.randomBatch;
+    el.random.setAttribute('aria-label', u.randomBatch);
+  }
+
+  function syncUrl() {
+    page = Math.max(0, Math.min(maxPage, page));
+    track = Math.max(0, Math.min(7, track));
     const url = new URL(window.location.href);
     url.searchParams.set('p', String(page));
+    if (track !== 0) url.searchParams.set('t', String(track));
+    else url.searchParams.delete('t');
+    url.searchParams.delete('r');
+    url.searchParams.delete('random');
     window.history.replaceState({}, '', url.toString());
     localStorage.setItem(`iv-page-${lang}`, String(page));
+    localStorage.setItem(`iv-track-${lang}`, String(track));
+  }
+
+  function writePage(p) {
+    page = Math.max(0, Math.min(maxPage, p));
+    syncUrl();
     render();
   }
 
@@ -240,7 +281,20 @@
 
   if (el.prev) el.prev.addEventListener('click', () => writePage(page - 1));
   if (el.next) el.next.addEventListener('click', () => writePage(page + 1));
-  if (el.track) el.track.addEventListener('change', () => render());
+  if (el.track) {
+    el.track.addEventListener('change', () => {
+      render();
+      syncUrl();
+    });
+  }
+
+  if (el.random) {
+    el.random.addEventListener('click', () => {
+      page = Math.floor(Math.random() * (maxPage + 1));
+      syncUrl();
+      render();
+    });
+  }
 
   if (el.jumpBtn && el.jump) {
     el.jumpBtn.addEventListener('click', () => {
@@ -275,7 +329,9 @@
   }
 
   window.addEventListener('popstate', () => {
-    page = readPage();
+    page = readPageFromUrlOrStorage(false);
+    track = readTrackFromUrlOrStorage();
+    if (el.track) el.track.value = String(track);
     render();
   });
 
@@ -292,4 +348,5 @@
   });
 
   render();
+  if (hadRandomParam || hasExplicitParams) syncUrl();
 })();
