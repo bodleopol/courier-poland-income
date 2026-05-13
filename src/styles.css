@@ -3824,3 +3824,14 @@ a.breadcrumb__item:hover {
   z-index: 1;
 }
 
+
+/* Premium intelligence redesign blocks */
+.intel-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:1.5rem;padding:2rem;border:1px solid var(--border-color);border-radius:24px;background:linear-gradient(160deg,rgba(89,111,255,.1),transparent 60%),var(--card-bg);margin:1rem 0 2rem}
+.intel-hero__panel ul{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}.intel-hero__panel li{display:grid;gap:.2rem;padding:.7rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-soft)}
+.intel-ribbon{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin-bottom:2rem}.intel-ribbon a{padding:1rem;border:1px solid var(--border-color);border-radius:14px;text-decoration:none}.intel-ribbon span{display:block;font-size:.72rem;opacity:.7}.intel-ribbon strong{font-size:.95rem}
+.drill-lab-head,.directory-intel,.startup-intel-band,.methodology-map{display:grid;grid-template-columns:1.2fr 1fr;gap:1rem;padding:1.25rem;border:1px solid var(--border-color);border-radius:18px;background:var(--bg-soft);margin:1rem 0}
+.drill-lab-head__stats{display:grid;gap:.65rem}.drill-lab-head__stats div{padding:.7rem;border-radius:12px;background:var(--card-bg);border:1px solid var(--border-color)}
+.startup-intel-band__chips{display:flex;flex-wrap:wrap;gap:.5rem;align-content:flex-start}.startup-intel-band__chips span{padding:.4rem .65rem;border-radius:999px;background:var(--card-bg);border:1px solid var(--border-color);font-size:.82rem}
+.methodology-map{grid-template-columns:1fr}.methodology-map__flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}.methodology-map__flow article{border:1px solid var(--border-color);background:var(--card-bg);border-radius:12px;padding:.85rem}
+@media (max-width:920px){.intel-hero,.drill-lab-head,.directory-intel,.startup-intel-band{grid-template-columns:1fr}.intel-ribbon{grid-template-columns:1fr 1fr}.methodology-map__flow{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.intel-ribbon,.methodology-map__flow{grid-template-columns:1fr}}
