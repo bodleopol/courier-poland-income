@@ -116,6 +116,18 @@ function minifyAssetIfNeeded(filePath, content) {
   return content;
 }
 
+
+function ensureGeneratedCatalogData() {
+  const generatedDir = path.join(SRC_DIR, 'generated');
+  if (!fs.existsSync(generatedDir)) {
+    fs.mkdirSync(generatedDir, { recursive: true });
+  }
+  execSync('node scripts/generate-bulk-directory.mjs', { stdio: 'inherit' });
+  execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit' });
+}
+
+ensureGeneratedCatalogData();
+
 const translations = {
   uk: {
     navAria: 'Головна навігація',
