@@ -2,173 +2,67 @@
 <meta name="description" content="Rybezh — багатомовний атлас людей і компаній у технологіях: короткі досьє, первинні джерела, чотири мови. Добірки на головній змінюються при завантаженні, без закріпленого «першого місця».">
 
 <style>
-.premium-intelligence-shell{position:relative;overflow:hidden;border:1px solid color-mix(in oklab,var(--line,#d8deea) 78%, transparent);border-radius:28px;padding:clamp(18px,3vw,34px);margin:0 0 2rem;background:linear-gradient(145deg,color-mix(in oklab,var(--panel,#fff) 95%,#6f8cff 5%),color-mix(in oklab,var(--panel,#fff) 90%,#0b1220 10%));box-shadow:0 24px 70px rgba(15,23,42,.15)}
-.premium-intelligence-shell:before{content:"";position:absolute;inset:-20% auto auto -12%;width:280px;height:280px;background:radial-gradient(circle,#7c9cff66,transparent 70%);pointer-events:none}
-.premium-intelligence-shell h2{font-size:clamp(1.4rem,2.5vw,2.3rem);margin:.4rem 0 .65rem}
-.intel-shell-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:stretch}
-.intel-shell-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
-.intel-shell-kpis div{padding:.7rem .8rem;border-radius:14px;background:color-mix(in oklab,var(--panel,#fff) 88%,#0b1220 12%);border:1px solid color-mix(in oklab,var(--line,#d8deea) 70%, transparent)}
-.intel-shell-kpis strong{display:block;font-size:1.15rem}
-@media (max-width:900px){.intel-shell-grid{grid-template-columns:1fr}.intel-shell-kpis{grid-template-columns:1fr 1fr}}
+.home-redesign{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:26px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(160deg,var(--surface),var(--surface-muted));margin-bottom:20px}
+.home-redesign__kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.home-redesign__kpis div{padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.quick-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.quick-nav a{display:block;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);text-decoration:none}
+.home-live-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.home-card{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+@media (max-width:980px){.home-redesign{grid-template-columns:1fr;padding:18px}.quick-nav{grid-template-columns:1fr 1fr}.home-live-grid{grid-template-columns:1fr}}
 </style>
-<section class="premium-intelligence-shell" aria-label="Platform intelligence">
-  <div class="intel-shell-grid">
-    <div>
-      <p class="eyebrow">Editorial Intelligence Engine</p>
-      <h2 data-premium-headline>Signal-first ecosystem navigation</h2>
-      <p data-premium-copy>Designed as an editorial operating surface: people, startups, operators, and methodology are connected by context rather than isolated cards.</p>
-      <div class="hero-actions">
-        <a class="btn" href="specialists.html">Explore specialists</a>
-        <a class="btn secondary" href="startups.html">Track startups</a>
-      </div>
-    </div>
-    <aside class="intel-shell-kpis" aria-label="Live platform signals">
-      <div><strong>Live graph</strong><span>Relations refresh each page view</span></div>
-      <div><strong>Verified editorial</strong><span>Human-curated summaries + evidence trails</span></div>
-      <div><strong>Semantic search</strong><span>Fuzzy + keyboard-first discovery</span></div>
-    </aside>
-  </div>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","potentialAction":{"@type":"SearchAction","target":"https://rybezh.site/search?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<script>
-(()=>{
-  const heads={
-    'index.html':['Intelligence platform for experts, startups, and operators','Editorial dashboard for ecosystem-level decisions'],
-    'interview-drill.html':['AI interview simulation laboratory','Session analytics for operator-grade interview prep'],
-    'specialists.html':['Relationship intelligence for specialists','Human-curated expertise graph with verification signals'],
-    'startups.html':['Startup intelligence ecosystem monitor','Funding-stage and maturity-aware startup mapping'],
-    'methodology.html':['Research-grade editorial methodology','Transparent framework, citations, and scoring logic']
-  };
-  const key=location.pathname.split('/').pop()||'index.html';
-  const pool=heads[key]||heads['index.html'];
-  const pick=pool[Math.floor(Math.random()*pool.length)];
-  const h=document.querySelector('[data-premium-headline]'); if(h) h.textContent=pick;
-})();
-</script>
-<section class="intel-hero" aria-label="Інтелект-платформа Rybezh">
+
+<section class="home-redesign" aria-label="Оновлена головна">
   <div>
-    <p class="eyebrow">Editorial Intelligence Platform</p>
-    <h1>Інтелект-платформа для експертів, стартапів та операторів</h1>
-    <p>Rybezh поєднує профілі, екосистемні сигнали і контекст взаємозвʼязків у форматі редакційного desk-продукту, а не статичного каталогу.</p>
+    <p class="eyebrow">Rybezh.site · Оновлений головний екран</p>
+    <h1>Каталог експертів і стартапів з чистою логікою навігації</h1>
+    <p>Переробили головну сторінку: спочатку зрозумілі маршрути, далі живі блоки і лише потім добірки карток. Це спрощує сценарій «зайшов → знайшов потрібний розділ → відкрив профілі».</p>
     <div class="hero-actions">
-      <a class="btn" href="specialists.html">Перейти до спеціалістів</a>
-      <a class="btn secondary" href="startups.html">Перейти до стартапів</a>
+      <a class="btn" href="specialists.html">Каталог спеціалістів</a>
+      <a class="btn secondary" href="startups.html">Каталог стартапів</a>
+      <a class="btn secondary" href="interview-drill.html">Тренажер співбесіди</a>
     </div>
   </div>
-  <aside class="intel-hero__panel">
-    <h3>Зріз екосистеми · live</h3>
-    <ul>
-      <li><strong>Люди</strong><span>82 активні профілі з тегами компетенцій</span></li>
-      <li><strong>Компанії</strong><span>52 досьє зі стадіями і ринковим контекстом</span></li>
-      <li><strong>Оновлення</strong><span>добірки перетасовуються при кожному відкритті</span></li>
-    </ul>
+  <aside>
+    <div class="home-redesign__kpis">
+      <div><strong>2000+</strong><span>згенерованих профілів спеціалістів</span></div>
+      <div><strong>150+</strong><span>карток компаній у базі</span></div>
+      <div><strong>4</strong><span>мови контенту</span></div>
+      <div><strong>Live</strong><span>перемішування добірок на клієнті</span></div>
+    </div>
+    <div class="home-hero-focus" id="heroFocusMount" aria-live="polite" style="margin-top:10px">
+      <span class="home-hero-focus__label">Акцент доби</span>
+      <p class="role home-hero-focus__loading">Підбираємо профіль…</p>
+    </div>
   </aside>
 </section>
 
-<section class="intel-ribbon" aria-label="Екосистемна навігація">
-  <a href="specialists.html"><span>Trending Specialists</span><strong>Семантичні графи експертизи</strong></a>
-  <a href="startups.html"><span>Featured Startups</span><strong>Стадії, ріст, кластери</strong></a>
-  <a href="methodology.html"><span>Methodology</span><strong>Прозорий research-фреймворк</strong></a>
-  <a href="interview-drill.html"><span>Interview Lab</span><strong>Симулятор з прогресом і режимами</strong></a>
+<section class="quick-nav" aria-label="Швидкі маршрути">
+  <a href="specialists.html"><span>Експерти</span><strong>Фільтри за ролями і країнами</strong></a>
+  <a href="startups.html"><span>Стартапи</span><strong>Порівняння компаній</strong></a>
+  <a href="methodology.html"><span>Методологія</span><strong>Як формується контент</strong></a>
+  <a href="faq.html"><span>FAQ</span><strong>Поширені питання</strong></a>
 </section>
 
-<section class="home-hero-v2" aria-label="Rybezh.site — головний екран">
-  <div class="home-hero-v2__grid">
-    <div class="home-hero-v2__copy">
-      <p class="eyebrow">Rybezh.site · Редакційний атлас</p>
-      <h1>Орієнтир для тих, хто порівнює експертів, фаундерів і продуктові команди</h1>
-      <p>Ми тримаємо однаковий каркас картки — роль, регіон, фокус і вихід на контекст — щоб швидко читати й звіряти факти. Добірки нижче змінюються при кожному відкритті: це навмисна антирейтингова механіка, а не «топ за версією алгоритму».</p>
-      <div class="hero-actions">
-        <a class="btn" href="specialists.html">Каталог експертів</a>
-        <a class="btn secondary" href="startups.html">Каталог стартапів</a>
-        <a class="btn secondary" href="interview-drill.html">Тренажер співбесіди</a>
-      </div>
-      <ul class="home-hero-v2__meta">
-        <li>Структура картки повторюється в архіві</li>
-        <li>Чотири мови видання</li>
-        <li>Окремі потоки: люди / компанії / методологія / тренажер співбесіди</li>
-      </ul>
-    </div>
-    <div class="home-hero-v2__bento" aria-label="Показники та акцент профілю">
-      <div class="home-hero-v2__stats">
-        <div class="stat-card"><strong>82</strong><span>Профілів спеціалістів</span></div>
-        <div class="stat-card"><strong>52</strong><span>Профілів стартапів</span></div>
-        <div class="stat-card"><strong>4</strong><span>Мови видання</span></div>
-        <div class="stat-card"><strong>Editorial</strong><span>Редакційний стандарт</span></div>
-      </div>
-      <div class="home-hero-focus" id="heroFocusMount" aria-live="polite">
-        <span class="home-hero-focus__label">Акцент доби</span>
-        <p class="role home-hero-focus__loading">Завантажуємо випадковий профіль з добірки…</p>
-      </div>
-    </div>
-  </div>
+<section class="home-live-grid" aria-label="Живі блоки">
+  <article class="home-card">
+    <h3>Оперативна стрічка</h3>
+    <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
+  </article>
+  <article class="home-card">
+    <h3>Експерт у фокусі</h3>
+    <div id="spotlightCard" class="spotlight-slot home-spotlight-vt" aria-live="polite"></div>
+  </article>
 </section>
 
-<div class="home-marquee" aria-hidden="true">
-  <div class="home-marquee__track" id="homeNameMarquee"></div>
-</div>
-
-<section class="home-compass" aria-label="Швидкий компас по сайту">
-  <div class="home-compass__inner">
-    <p class="eyebrow">Атлас за один клік</p>
-    <h2>Куди далі</h2>
-    <p class="home-compass__intro">П’ять випадкових маршрутів з одного набору — порядок змінюється при кожному завантаженні, без прихованих редиректів.</p>
-    <ul class="home-compass__list" id="homeCompassList"></ul>
-  </div>
+<section class="home-card" aria-label="Маршрути" style="margin-bottom:20px">
+  <p class="eyebrow">Рекомендовані переходи</p>
+  <ul class="home-compass__list" id="homeCompassList"></ul>
 </section>
 
-<section class="live-layer live-layer--v2" aria-label="Жива стрічка головної сторінки">
-  <div class="section-intro section-intro--tight">
-    <p class="eyebrow">Live desk</p>
-    <h2>Пульс архіву в реальному часі</h2>
-    <p>Годинник локального часу, ротація редакційних нотаток, випадковий акцент і три сигнали, що оновлюються без перезавантаження сторінки. Добірки експертів унизу перетасовуються при кожному відкритті.</p>
-  </div>
-  <div class="live-layer__grid">
-    <article class="live-card live-card--ticker fade-in">
-      <div class="live-card__head"><h3>Нотатки редакції</h3><span id="liveClock" aria-live="polite">--:--</span></div>
-      <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
-    </article>
-    <article class="live-card live-card--spotlight fade-in">
-      <div class="live-card__head"><h3>Експерт у фокусі</h3><button class="btn secondary" id="refreshSpotlight" type="button">Інший</button></div>
-      <div id="spotlightCard" class="spotlight-slot home-spotlight-vt" aria-live="polite"></div>
-    </article>
-    <article class="live-card live-card--signals fade-in" aria-label="Швидкі сигнали">
-      <div class="live-card__head"><h3>Сигнали</h3><span id="signalStamp" class="eyebrow live-card__signal-stamp"></span></div>
-      <div class="live-ticker live-card__signal-grid">
-        <div class="live-signal" id="liveSignalA"></div>
-        <div class="live-signal" id="liveSignalB"></div>
-        <div class="live-signal" id="liveSignalC"></div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="home-echo" aria-label="Другий рядок добірки">
-  <div class="home-echo__head">
-    <h2>Дзеркальна стрічка</h2>
-    <p>Тут профіль може повторитися з основної сітки — навмисно: показуємо, як одна й та сама картка виглядає в іншому контексті сторінки.</p>
-  </div>
-  <div class="home-echo__grid">
-    <div class="home-echo__slot" id="echoSlotA"></div>
-    <div class="home-echo__slot" id="echoSlotB"></div>
-  </div>
-</section>
-
-<section class="home-editorial-burst" aria-label="Редакційні пости">
-  <div class="home-editorial-burst__head">
-    <p class="eyebrow">Редакційні пости</p>
-    <h2>Короткі блоки, що змінюються</h2>
-    <p>Три міні-пости кожні кілька секунд вибираються випадково з пулу редакційних нотаток — окремо від карток людей, щоб не змішувати факти й декоративний шар.</p>
-  </div>
+<section class="home-card" aria-label="Редакційні пости" style="margin-bottom:20px">
+  <p class="eyebrow">Короткі редакційні нотатки</p>
   <div class="home-editorial-burst__grid" id="editorialBurst"></div>
-</section>
-
-<section class="editorial-band" aria-label="Як користуватися Rybezh.site">
-  <article><h3>Шукати експертів</h3><p>Підбирайте спеціалістів за дисципліною, країною та практичним досвідом.</p></article>
-  <article><h3>Порівнювати стартапи</h3><p>Оцінюйте фокус компанії й продукт в однаковому редакційному форматі.</p></article>
-  <article><h3>Читати методологію</h3><p>Дізнайтесь, як збираються, перевіряються й оновлюються профілі.</p></article>
 </section>
 
 <div class="section-intro">
@@ -674,10 +568,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   const burstEl = document.getElementById('editorialBurst');
+  let burstCursor = 0;
+  const burstDeck = shuffle(editorialPosts, mulberry32(sessionSeed ^ 5153));
   function renderBurst() {
     if (!burstEl) return;
-    const rng = mulberry32((Date.now() ^ sessionSeed) >>> 0);
-    const slice = shuffle(editorialPosts, rng).slice(0, 3);
+    if (burstCursor + 3 > burstDeck.length) { burstCursor = 0; }
+    const slice = burstDeck.slice(burstCursor, burstCursor + 3);
+    burstCursor += 3;
     burstEl.innerHTML = slice
       .map(
         (p) =>
@@ -693,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Фокус тижня: операції, software та прикладна наука.',
     'Розділи для порівняння враховують вибрані фільтри на головній.',
     'Головна не сортує за алфавітом — порядок добірки змінюється при кожному завантаженні.',
-    'Один профіль може зʼявитися в герої, сітці та дзеркальній стрічці одночасно.'
+    'Профілі в добірках не дублюються в межах однієї сесії перегляду.'
   ];
 
   const signalLines = [
@@ -726,11 +623,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const spotlightSlot = document.getElementById('spotlightCard');
   const spotlightButton = document.getElementById('refreshSpotlight');
+  let spotlightCursor = 0;
 
   const rotateSpotlight = () => {
     const expertCards = allFeaturedArticles();
     if (!spotlightSlot || !expertCards.length) return;
-    const pick = expertCards[Math.floor(Math.random() * expertCards.length)];
+    const ordered = shuffle(expertCards, mulberry32(sessionSeed ^ 9017));
+    const pick = ordered[spotlightCursor % ordered.length];
+    spotlightCursor += 1;
     const name = pick.querySelector('h3')?.textContent?.trim() || 'Експерт';
     const role = pick.querySelector('.meta')?.textContent?.trim() || '';
     const region = pick.querySelector('.eyebrow')?.textContent?.trim() || '';
