@@ -86,11 +86,11 @@ main {
 .header-container {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 14px 24px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 6px;
 }
 
 .brand {
@@ -139,7 +139,7 @@ main {
 .main-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 18px;
+    gap: 8px 12px;
     align-items: center;
     justify-content: center;
     flex: 1 1 280px;
@@ -172,7 +172,7 @@ main {
 }
 
 .main-nav a {
-    padding: 8px 10px;
+    padding: 6px 8px;
     border-radius: 10px;
 }
 
