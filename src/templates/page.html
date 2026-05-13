@@ -554,6 +554,25 @@
                 }
             });
         })();
+
+
+        function dedupeDirectoryCards() {
+            const sets = [
+                document.querySelectorAll('[data-directory-grid] [data-directory-card]'),
+                document.querySelectorAll('#featuredGridMount [data-directory-card], #recentGridMount [data-directory-card], #editorialTeamMount [data-directory-card]')
+            ];
+            sets.forEach(group => {
+                const seen = new Set();
+                group.forEach(card => {
+                    const key = (card.dataset.sortName || card.querySelector('h3')?.textContent || '').trim().toLowerCase();
+                    if (!key) return;
+                    if (seen.has(key)) card.remove();
+                    else seen.add(key);
+                });
+            });
+        }
+
+        dedupeDirectoryCards();
     </script>
 </body>
 </html>
