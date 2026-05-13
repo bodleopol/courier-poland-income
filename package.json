@@ -6,6 +6,9 @@
     "start": "node server.js",
     "lint:spell": "npx cspell \"**/*.{html,md,js,css,json}\""
   },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
   "devDependencies": {
     "@cspell/dict-es-es": "^3.0.8",
     "@cspell/dict-ru_ru": "^2.3.2",
