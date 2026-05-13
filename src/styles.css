@@ -4980,3 +4980,85 @@ body[data-rz-layout="3"] .profile-content {
 .intel-card--bridge {
   border-left: 3px solid color-mix(in oklab, #22d3ee 65%, transparent);
 }
+
+/* Interview drill: niche gate + session scorecard */
+.interview-drill--gated .iv-lab__rail,
+.interview-drill--gated .iv-lab__head,
+.interview-drill--gated .iv-feed,
+.interview-drill--gated .interview-drill__hint {
+  display: none !important;
+}
+
+.iv-assessment-gate {
+  padding: clamp(16px, 2.5vw, 28px);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--surface) 92%, #0f172a);
+  margin-bottom: 1rem;
+}
+
+.iv-gate-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+}
+
+.iv-gate-intro,
+.iv-gate-pick {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.iv-gate-pick {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.iv-niche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.iv-niche-card {
+  display: block;
+  text-align: left;
+  padding: 12px 14px !important;
+  height: auto;
+  white-space: normal;
+}
+
+.iv-niche-card--active {
+  border-color: color-mix(in oklab, var(--brand) 70%, var(--line)) !important;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--brand) 45%, transparent);
+}
+
+.iv-niche-card__t {
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.iv-gate-actions {
+  margin: 1.1rem 0 0;
+}
+
+.iv-session-summary {
+  margin-top: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, var(--line));
+  background: color-mix(in oklab, var(--surface-strong) 88%, #022c22);
+}
+
+.iv-summary-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.iv-summary-body {
+  margin: 0 0 0.85rem;
+  line-height: 1.55;
+  color: var(--text);
+}

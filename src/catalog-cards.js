@@ -292,9 +292,72 @@
     });
   }
 
+  function urlLocksDirectoryOrder() {
+    try {
+      const sp = new URLSearchParams(window.location.search);
+      if (sp.get('q')) return true;
+      if (sp.get('cat')) return true;
+      if (sp.get('c')) return true;
+      if (sp.get('y')) return true;
+      const sv = sp.get('sort');
+      if (sv && sv !== 'default') return true;
+    } catch {
+      /* ignore */
+    }
+    return false;
+  }
+
+  function mulberry32(a) {
+    return function () {
+      let t = (a += 0x6d2b79f5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function shuffleInPlace(arr, rng) {
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(rng() * (i + 1));
+      const tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+  }
+
+  /**
+   * Inline script may shuffle before card DOM is normalized; reshuffle here so order
+   * stays random after catalog-cards mutates cards (fixes static first card e.g. catalog-order 0).
+   */
+  function shuffleListingAndFeaturedGrids() {
+    const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+    const listingPage =
+      document.body.classList.contains('page-specialists') || document.body.classList.contains('page-startups');
+    if (listingPage && !urlLocksDirectoryOrder()) {
+      document.querySelectorAll('[data-directory-grid]').forEach((grid) => {
+        const items = Array.from(grid.querySelectorAll(':scope > [data-directory-card]'));
+        if (items.length < 2) return;
+        const rng = mulberry32(seed ^ 0x51ed);
+        shuffleInPlace(items, rng);
+        items.forEach((node, idx) => {
+          node.style.setProperty('--directory-card-i', String(idx));
+          grid.appendChild(node);
+        });
+      });
+    }
+    document.querySelectorAll('[data-shuffle-grid]').forEach((grid) => {
+      const items = Array.from(grid.querySelectorAll(':scope > article'));
+      if (items.length < 2) return;
+      const rng = mulberry32(seed ^ 0x91a7);
+      shuffleInPlace(items, rng);
+      items.forEach((node) => grid.appendChild(node));
+    });
+  }
+
   stripAndNormalizeListingCards();
   relocateProfileHeroToGallery();
   enhanceProfileOrStartupArticle();
   bindShareCopy();
   markDirectoryCards();
+  shuffleListingAndFeaturedGrids();
 })();

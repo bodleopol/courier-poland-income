@@ -10,8 +10,10 @@
   if (!mcBank && !openBank) return;
 
   const SIZE = window.INTERVIEW_BANK_SIZE || 10000;
-  const BATCH = window.INTERVIEW_BATCH_SIZE || 4;
-  const maxPage = Math.floor((SIZE - 1) / BATCH);
+  let batchSize = window.INTERVIEW_BATCH_SIZE || 4;
+  function maxPage() {
+    return Math.floor((SIZE - 1) / batchSize);
+  }
 
   const UI = {
     uk: {
@@ -28,7 +30,16 @@
       feedbackOk: 'Вірно.',
       feedbackBad: 'Еталонна відповідь позначена нижче.',
       copy: 'Копіювати пакет',
-      copied: 'Скопійовано'
+      copied: 'Скопійовано',
+      gateTitle: 'Оберіть нішу для модуля',
+      gateIntro:
+        'Спочатку виберіть напрям — потім зʼявиться серія з 10 MCQ (пʼять варіантів кожне). Після десятої відповіді покажемо підсумок сесії.',
+      gateStart: 'Почати модуль (10 питань)',
+      gatePick: 'Оберіть нішу',
+      summaryTitle: 'Підсумок модуля',
+      summaryBody: (pct) =>
+        `У цьому раунді: ${pct}% правильних відповідей. Це навчальний сигнал, а не оцінка карʼєри — повторіть модуль з іншою нішею або перейдіть до відкритих сценаріїв.`,
+      summaryAgain: 'Обрати іншу нішу'
     },
     en: {
       notes: 'Draft notes',
@@ -44,7 +55,16 @@
       feedbackOk: 'Correct.',
       feedbackBad: 'Benchmark answer is highlighted.',
       copy: 'Copy pack link',
-      copied: 'Copied'
+      copied: 'Copied',
+      gateTitle: 'Pick a niche to start',
+      gateIntro:
+        'Choose a track first — then you get a 10-question MCQ sprint (five options each). After the 10th answer we show a session scorecard.',
+      gateStart: 'Start module (10 questions)',
+      gatePick: 'Select a niche',
+      summaryTitle: 'Module scorecard',
+      summaryBody: (pct) =>
+        `This round: ${pct}% correct. This is a learning signal, not a career grade — try another niche or switch to open-ended prompts.`,
+      summaryAgain: 'Choose another niche'
     },
     es: {
       notes: 'Notas de respuesta',
@@ -60,7 +80,16 @@
       feedbackOk: 'Correcto.',
       feedbackBad: 'La respuesta de referencia queda marcada.',
       copy: 'Copiar enlace del paquete',
-      copied: 'Copiado'
+      copied: 'Copiado',
+      gateTitle: 'Elige un nicho para empezar',
+      gateIntro:
+        'Primero elige un track; luego verás 10 MCQ (cinco opciones). Tras la décima respuesta mostramos un resumen de la sesión.',
+      gateStart: 'Iniciar módulo (10 preguntas)',
+      gatePick: 'Selecciona un nicho',
+      summaryTitle: 'Resumen del módulo',
+      summaryBody: (pct) =>
+        `En esta ronda: ${pct}% aciertos. Es señal de aprendizaje, no una nota de carrera — prueba otro nicho o cambia a modo abierto.`,
+      summaryAgain: 'Elegir otro nicho'
     },
     ru: {
       notes: 'Заметки к ответу',
@@ -76,11 +105,28 @@
       feedbackOk: 'Верно.',
       feedbackBad: 'Эталонный ответ отмечен ниже.',
       copy: 'Копировать ссылку на пакет',
-      copied: 'Скопировано'
+      copied: 'Скопировано',
+      gateTitle: 'Выберите нишу для модуля',
+      gateIntro:
+        'Сначала выберите направление — затем появится серия из 10 MCQ (по пять вариантов). После десятого ответа покажем итог сессии.',
+      gateStart: 'Начать модуль (10 вопросов)',
+      gatePick: 'Выберите нишу',
+      summaryTitle: 'Итог модуля',
+      summaryBody: (pct) =>
+        `В этом раунде: ${pct}% верных ответов. Это учебный сигнал, не оценка карьеры — повторите с другой нишей или переключитесь на открытые сценарии.`,
+      summaryAgain: 'Выбрать другую нишу'
     }
   };
 
   const ui = UI[lang] || UI.uk;
+
+  function esc(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
 
   const el = {
     learn: document.querySelector('[data-iv-learn]'),
@@ -139,6 +185,90 @@
   scoreEl.className = 'interview-drill__progress';
   scoreEl.style.margin = '0';
   if (scoresMount) scoresMount.appendChild(scoreEl);
+
+  let gatePassed = !mcBank;
+  let moduleAnswersInPack = 0;
+  let selectedNicheSid = '';
+  const summaryHost = document.createElement('div');
+  summaryHost.className = 'iv-session-summary';
+  summaryHost.hidden = true;
+  if (el.feed?.parentElement) {
+    el.feed.parentElement.insertBefore(summaryHost, el.feed.nextSibling);
+  }
+
+  function nicheCards() {
+    const sids = ['lv2-tr0', 'lv2-tr6', 'lv2-tr4', 'lv2-tr2', 'lv2-tr9', 'lv2-tr11', 'lv2-tr13', 'lv2-tr23'];
+    return sids.map((sid) => ({
+      sid,
+      lab: mcBank?.specialties?.find((x) => x.id === sid)?.label || sid
+    }));
+  }
+
+  function mountGate() {
+    if (!mcBank || !el.feed) return;
+    selectedNicheSid = '';
+    const stage = root.querySelector('.iv-lab__stage');
+    if (!stage) return;
+    root.classList.add('interview-drill--gated');
+    stage.querySelector('.iv-assessment-gate')?.remove();
+    const gate = document.createElement('div');
+    gate.className = 'iv-assessment-gate';
+    const cards = nicheCards();
+    gate.innerHTML = `<h2 class="iv-gate-title">${esc(ui.gateTitle)}</h2><p class="iv-gate-intro">${esc(ui.gateIntro)}</p><p class="iv-gate-pick">${esc(ui.gatePick)}</p><div class="iv-niche-grid">${cards
+      .map(
+        (c) =>
+          `<button type="button" class="iv-niche-card btn secondary" data-sid="${esc(c.sid)}"><span class="iv-niche-card__t">${esc(c.lab)}</span></button>`
+      )
+      .join('')}</div><p class="iv-gate-actions"><button type="button" class="btn" data-iv-gate-start disabled>${esc(ui.gateStart)}</button></p>`;
+    stage.insertBefore(gate, stage.firstChild);
+    const startBtn = gate.querySelector('[data-iv-gate-start]');
+    gate.querySelectorAll('[data-sid]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedNicheSid = btn.getAttribute('data-sid') || '';
+        gate.querySelectorAll('[data-sid]').forEach((b) => b.classList.remove('iv-niche-card--active'));
+        btn.classList.add('iv-niche-card--active');
+        if (startBtn) startBtn.disabled = !selectedNicheSid;
+      });
+    });
+    startBtn?.addEventListener('click', () => {
+      if (selectedNicheSid) startModule(selectedNicheSid);
+    });
+  }
+
+  function startModule(sid) {
+    specialtyId = sid;
+    if (el.specialty) el.specialty.value = sid;
+    mode = 'mcq';
+    if (el.mode) el.mode.value = 'mcq';
+    batchSize = 10;
+    scoreOk = 0;
+    scoreTotal = 0;
+    page = Math.floor(Math.random() * (maxPage() + 1));
+    gatePassed = true;
+    summaryHost.hidden = true;
+    summaryHost.innerHTML = '';
+    root.classList.remove('interview-drill--gated');
+    root.querySelector('.iv-assessment-gate')?.remove();
+    render();
+  }
+
+  function showModuleSummary() {
+    const pct = scoreTotal ? Math.round((100 * scoreOk) / scoreTotal) : 0;
+    summaryHost.hidden = false;
+    const bodyText = typeof ui.summaryBody === 'function' ? ui.summaryBody(pct) : '';
+    summaryHost.innerHTML = `<h3 class="iv-summary-title">${esc(ui.summaryTitle)}</h3><p class="iv-summary-body">${esc(bodyText)}</p><button type="button" class="btn secondary iv-summary-reset">${esc(ui.summaryAgain)}</button>`;
+    summaryHost.querySelector('.iv-summary-reset')?.addEventListener('click', () => {
+      summaryHost.hidden = true;
+      summaryHost.innerHTML = '';
+      gatePassed = false;
+      batchSize = window.INTERVIEW_BATCH_SIZE || 4;
+      scoreOk = 0;
+      scoreTotal = 0;
+      updateMeter();
+      scoreEl.textContent = '';
+      mountGate();
+    });
+  }
 
   function mix32(a, b, c) {
     let x = (Math.imul(a, 374761393) + Math.imul(b, 668265263) + Math.imul(c, 1442695041)) >>> 0;
@@ -243,20 +373,14 @@
     }
   }
 
-  function esc(s) {
-    return String(s || '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
   function render() {
+    if (!gatePassed) return;
     if (!el.feed) return;
+    moduleAnswersInPack = 0;
     el.feed.innerHTML = '';
     let visible = 0;
-    for (let k = 0; k < BATCH; k += 1) {
-      const idx = page * BATCH + k;
+    for (let k = 0; k < batchSize; k += 1) {
+      const idx = page * batchSize + k;
       if (idx >= SIZE) break;
       const qObj = mode === 'mcq' ? mcqQuestion(specialtyId, idx) : null;
       const text = qObj ? qObj.stem : openQuestion(idx, track);
@@ -307,6 +431,10 @@
             updateMeter();
             fb.hidden = false;
             fb.textContent = oi === qObj.correctPos ? `✅ ${ui.feedbackOk}` : `❌ ${ui.feedbackBad}`;
+            if (batchSize >= 10 && gatePassed) {
+              moduleAnswersInPack += 1;
+              if (moduleAnswersInPack >= 10) showModuleSummary();
+            }
           });
           box.appendChild(row);
         });
@@ -345,10 +473,13 @@
       el.feed.appendChild(empty);
     }
 
-    if (el.prog) el.prog.textContent = `${ui.pack} ${page + 1} / ${maxPage + 1}`;
-    if (el.jump) el.jump.value = String(page + 1);
+    if (el.prog) el.prog.textContent = `${ui.pack} ${page + 1} / ${maxPage() + 1}`;
+    if (el.jump) {
+      el.jump.value = String(page + 1);
+      el.jump.setAttribute('max', String(maxPage() + 1));
+    }
     if (el.prev) el.prev.disabled = page <= 0;
-    if (el.next) el.next.disabled = page >= maxPage;
+    if (el.next) el.next.disabled = page >= maxPage();
     scoreEl.textContent = scoreTotal ? `${ui.score}: ${scoreOk}/${scoreTotal}` : '';
     updateMeter();
     renderLearn();
@@ -360,18 +491,18 @@
     render();
   });
   el.next?.addEventListener('click', () => {
-    page = Math.min(maxPage, page + 1);
+    page = Math.min(maxPage(), page + 1);
     render();
   });
   el.jumpBtn?.addEventListener('click', () => {
     const v = Number(el.jump?.value);
-    if (v >= 1 && v <= maxPage + 1) {
+    if (v >= 1 && v <= maxPage() + 1) {
       page = v - 1;
       render();
     }
   });
   el.random?.addEventListener('click', () => {
-    page = Math.floor(Math.random() * (maxPage + 1));
+    page = Math.floor(Math.random() * (maxPage() + 1));
     render();
   });
   topicSelect.addEventListener('change', () => {
@@ -432,6 +563,7 @@
     el.mode.innerHTML = '<option value="mcq">MCQ</option><option value="open">Open</option>';
     el.mode.addEventListener('change', () => {
       mode = el.mode.value;
+      if (mode === 'open') batchSize = window.INTERVIEW_BATCH_SIZE || 4;
       render();
     });
   }
@@ -455,5 +587,9 @@
             : 'Випадковий пакет';
   }
 
-  render();
+  if (mcBank && !gatePassed) {
+    mountGate();
+  } else {
+    render();
+  }
 })();
