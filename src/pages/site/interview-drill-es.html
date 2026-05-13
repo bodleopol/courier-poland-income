@@ -8,17 +8,26 @@
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site</p>
     <h1>Simulacro de entrevista</h1>
-    <p>Diez mil combinaciones únicas de contexto, estrés, rol, competencia y tipo de pregunta — para autoevaluación antes de entrevistas de liderazgo y técnica. Cada pantalla muestra <strong>cuatro</strong> consignas; no hay puntuación automática.</p>
+    <p>Diez mil combinaciones únicas de contexto, estrés, rol, competencia y tipo de pregunta — para autoevaluación antes de entrevistas de liderazgo y técnica. Cada pantalla muestra <strong>cuatro</strong> consignas. Hay un modo breve con <strong>cinco opciones</strong> y retroalimentación al elegir; los prompts abiertos siguen sin puntuación automática.</p>
   </div>
 </section>
 
 <section class="interview-disclaimer" aria-labelledby="iv-disclaimer-title">
   <h2 id="iv-disclaimer-title" class="interview-disclaimer__title">Cómo funciona</h2>
-  <p>Esto es un <strong>simulador de práctica</strong>, no un test con respuestas correctas ni sustituto de una entrevista real. Las preguntas se arman combinatoriamente a partir de listas y plantillas (véase <a href="methodology-es.html">Metodología</a>, apartado 5); el redactado puede parecerse entre sí, pero el índice de cada lote es único. Las notas se guardan solo en su navegador (localStorage). Respuestas breves en <a href="faq-es.html">Preguntas frecuentes</a>.</p>
+  <p>Esto es un <strong>simulador de práctica</strong>, no sustituto de una entrevista real. Las consignas abiertas se arman combinatoriamente (véase <a href="methodology-es.html">Metodología</a>, apartado 5); el redactado puede parecerse entre sí, pero el índice de cada lote es único. Además hay un <strong>modo test (MCQ)</strong>: cinco opciones y, tras elegir, se resalta la respuesta recomendada para aprendizaje. Las notas se guardan solo en su navegador (localStorage). Respuestas breves en <a href="faq-es.html">Preguntas frecuentes</a>.</p>
 </section>
 
 <section class="interview-drill" data-interview-drill aria-label="Simulacro de entrevista">
   <div class="interview-drill__toolbar">
+    <div class="interview-drill__field" data-iv-mode-wrap hidden>
+      <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Modo</label>
+      <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
+    </div>
+    <div class="interview-drill__field interview-drill__field--specialty" data-iv-specialty-wrap hidden>
+      <label class="interview-drill__label" data-iv-specialty-label for="iv-specialty">Especialidad</label>
+      <select id="iv-specialty" class="interview-drill__select interview-drill__select--specialty" data-iv-specialty></select>
+      <span class="interview-drill__micro" data-iv-specialty-hint></span>
+    </div>
     <div class="interview-drill__field">
       <label class="interview-drill__label" data-iv-track-label for="iv-track">Énfasis de rol</label>
       <select id="iv-track" class="interview-drill__select" data-iv-track></select>
@@ -38,9 +47,10 @@
     <button type="button" class="btn secondary" data-iv-random></button>
   </div>
   <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
+  <p class="interview-drill__context" data-iv-context hidden></p>
   <ol class="interview-drill__list" data-iv-list aria-label="Cuatro preguntas del lote actual"></ol>
   <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
-  <p class="interview-drill__hint">Consejo: <kbd>←</kbd> / <kbd>→</kbd> cambian de lote cuando el foco no está en un campo. Parámetros URL: <code>p</code> (índice de lote desde 0), <code>t</code> o <code>track</code> (desplazamiento de rol 0–7), <code>r=1</code> para un lote aleatorio al cargar.</p>
+  <p class="interview-drill__hint" data-iv-hint>Consejo: <kbd>←</kbd> / <kbd>→</kbd> cambian de lote cuando el foco no está en un campo.</p>
 </section>
 
 <section class="split-panel">
