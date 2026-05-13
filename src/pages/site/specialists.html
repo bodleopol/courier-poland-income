@@ -1,67 +1,44 @@
 <title>Каталог спеціалістів | Rybezh</title>
 <meta name="description" content="Пошук по програмістах, інженерах, CTO, CEO, COO, дослідниках та операційних лідерах.">
 
-<style>
-.premium-intelligence-shell{position:relative;overflow:hidden;border:1px solid color-mix(in oklab,var(--line,#d8deea) 78%, transparent);border-radius:28px;padding:clamp(18px,3vw,34px);margin:0 0 2rem;background:linear-gradient(145deg,color-mix(in oklab,var(--panel,#fff) 95%,#6f8cff 5%),color-mix(in oklab,var(--panel,#fff) 90%,#0b1220 10%));box-shadow:0 24px 70px rgba(15,23,42,.15)}
-.premium-intelligence-shell:before{content:"";position:absolute;inset:-20% auto auto -12%;width:280px;height:280px;background:radial-gradient(circle,#7c9cff66,transparent 70%);pointer-events:none}
-.premium-intelligence-shell h2{font-size:clamp(1.4rem,2.5vw,2.3rem);margin:.4rem 0 .65rem}
-.intel-shell-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:stretch}
-.intel-shell-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
-.intel-shell-kpis div{padding:.7rem .8rem;border-radius:14px;background:color-mix(in oklab,var(--panel,#fff) 88%,#0b1220 12%);border:1px solid color-mix(in oklab,var(--line,#d8deea) 70%, transparent)}
-.intel-shell-kpis strong{display:block;font-size:1.15rem}
-@media (max-width:900px){.intel-shell-grid{grid-template-columns:1fr}.intel-shell-kpis{grid-template-columns:1fr 1fr}}
-</style>
-<section class="premium-intelligence-shell" aria-label="Platform intelligence">
-  <div class="intel-shell-grid">
-    <div>
-      <p class="eyebrow">Editorial Intelligence Engine</p>
-      <h2 data-premium-headline>Signal-first ecosystem navigation</h2>
-      <p data-premium-copy>Designed as an editorial operating surface: people, startups, operators, and methodology are connected by context rather than isolated cards.</p>
-      <div class="hero-actions">
-        <a class="btn" href="specialists.html">Explore specialists</a>
-        <a class="btn secondary" href="startups.html">Track startups</a>
-      </div>
-    </div>
-    <aside class="intel-shell-kpis" aria-label="Live platform signals">
-      <div><strong>Live graph</strong><span>Relations refresh each page view</span></div>
-      <div><strong>Verified editorial</strong><span>Human-curated summaries + evidence trails</span></div>
-      <div><strong>Semantic search</strong><span>Fuzzy + keyboard-first discovery</span></div>
-    </aside>
-  </div>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","potentialAction":{"@type":"SearchAction","target":"https://rybezh.site/search?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<script>
-(()=>{
-  const heads={
-    'index.html':['Intelligence platform for experts, startups, and operators','Editorial dashboard for ecosystem-level decisions'],
-    'interview-drill.html':['AI interview simulation laboratory','Session analytics for operator-grade interview prep'],
-    'specialists.html':['Relationship intelligence for specialists','Human-curated expertise graph with verification signals'],
-    'startups.html':['Startup intelligence ecosystem monitor','Funding-stage and maturity-aware startup mapping'],
-    'methodology.html':['Research-grade editorial methodology','Transparent framework, citations, and scoring logic']
-  };
-  const key=location.pathname.split('/').pop()||'index.html';
-  const pool=heads[key]||heads['index.html'];
-  const pick=pool[Math.floor(Math.random()*pool.length)];
-  const h=document.querySelector('[data-premium-headline]'); if(h) h.textContent=pick;
-})();
-</script>
-
-<section class="hero slim">
-  <div class="hero-copy">
-    <p class="eyebrow">Rybezh.site</p>
+<header class="directory-page-head" aria-label="Каталог спеціалістів">
+  <div>
+    <p class="eyebrow">Люди · експертиза · зв’язки</p>
     <h1>Каталог спеціалістів</h1>
-    <p>Пошук по програмістах, інженерах, CTO, CEO, COO, дослідниках та операційних лідерах.</p>
+    <p>Тут не «паспорт» і не автобіографія: коротке досьє, теги як навігація, зовнішні посилання в профілі й фільтри, що ділять ту саму базу, що й пошук по сайту.</p>
+    <div class="hero-actions">
+      <a class="btn secondary" href="startups.html">Перейти до стартапів</a>
+      <a class="btn secondary" href="methodology.html">Методологія перевірки</a>
+    </div>
   </div>
-</section>
-
+  <div class="eco-graph-panel">
+    <h3>Карта зв’язків (прев’ю)</h3>
+    <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="specEco" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6366f1"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="180" rx="12" fill="color-mix(in oklab, var(--surface-muted) 90%, transparent)"/>
+      <g stroke="url(#specEco)" stroke-width="1.1" opacity="0.5">
+        <path d="M40 120 C90 40 150 160 220 70 S280 40 300 110"/>
+        <path d="M50 150 L120 90 L200 130 L270 60"/>
+      </g>
+      <circle cx="120" cy="90" r="14" fill="#60a5fa"/>
+      <circle cx="200" cy="130" r="11" fill="#34d399"/>
+      <circle cx="270" cy="60" r="10" fill="#f472b6"/>
+      <circle cx="50" cy="150" r="9" fill="#fbbf24"/>
+    </svg>
+    <p style="margin:10px 0 0;font-size:0.85rem;color:var(--muted)">У повному профілі праворуч — часова лінія ролі, зовнішні джерела та редакційна примітка. Теги з картки будують «колесо» експертизи.</p>
+  </div>
+</header>
 
 <section class="directory-intel">
   <article>
-    <p class="eyebrow">Ecosystem Intelligence</p>
-    <h2>Не просто список: карта впливу та експертизи</h2>
-    <p>Каталог зібраний як гібрид дослідницького desk і професійної мережі: теги, суміжні ролі, країни, компанії та індикатори впливу.</p>
+    <p class="eyebrow">Навігація каталогу</p>
+    <h2>Не просто список: контекст і фільтри на одній поверхні</h2>
+    <p>Кожна картка несе ті самі поля, що й повний профіль, але стисло. Пошук читає data-атрибути — тому швидкість і точність збігаються з тим, що ви бачите у фільтрах.</p>
   </article>
   <aside>
     <h3>Що можна робити</h3>

@@ -1,67 +1,113 @@
-<title>Rybezh.site — редакційний атлас операторів і стартапів</title>
-<meta name="description" content="Rybezh — багатомовний атлас людей і компаній у технологіях: короткі досьє, первинні джерела, чотири мови. Добірки на головній змінюються при завантаженні, без закріпленого «першого місця».">
+<title>Rybezh.site — редакційна платформа інтелекту про екосистеми</title>
+<meta name="description" content="Rybezh.site з’єднує профілі фахівців, стартапи, методологію та тренажер співбесіди в одній редакційній площині: первинні джерела, чотири мови, пошук і контекст замість «довідника за шаблоном».">
 
-<style>
-.home-redesign{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;padding:26px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(160deg,var(--surface),var(--surface-muted));margin-bottom:20px}
-.home-redesign__kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.home-redesign__kpis div{padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-.quick-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:20px}
-.quick-nav a{display:block;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);text-decoration:none}
-.home-live-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
-.home-card{padding:16px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
-@media (max-width:980px){.home-redesign{grid-template-columns:1fr;padding:18px}.quick-nav{grid-template-columns:1fr 1fr}.home-live-grid{grid-template-columns:1fr}}
-</style>
-
-<section class="home-redesign" aria-label="Оновлена головна">
-  <div>
-    <p class="eyebrow">Rybezh.site · Оновлений головний екран</p>
-    <h1>Каталог експертів і стартапів з чистою логікою навігації</h1>
-    <p>Переробили головну сторінку: спочатку зрозумілі маршрути, далі живі блоки і лише потім добірки карток. Це спрощує сценарій «зайшов → знайшов потрібний розділ → відкрив профілі».</p>
-    <div class="hero-actions">
+<section class="intel-dash-hero" aria-label="Головний екран Rybezh">
+  <div class="intel-dash-hero__copy">
+    <p class="eyebrow">Редакційний інтелект · екосистеми · оператори</p>
+    <h1>Платформа для спокійного читання людей, компаній і методів поруч</h1>
+    <p class="intel-dash-hero__lede">Ми не стрічка новин і не дошка вакансій. Це робочий стіл: короткі досьє, однакова логіка картки, зовнішні посилання й чесні межі того, що можна перевірити з браузера.</p>
+    <div class="intel-dash-hero__actions hero-actions">
       <a class="btn" href="specialists.html">Каталог спеціалістів</a>
       <a class="btn secondary" href="startups.html">Каталог стартапів</a>
-      <a class="btn secondary" href="interview-drill.html">Тренажер співбесіди</a>
+      <a class="btn secondary" href="interview-drill.html">Лабораторія співбесіди</a>
+    </div>
+    <div class="trust-micro" role="note">
+      <span>Первинні джерела мають пріоритет</span>
+      <span>Оновлення файлу видно в профілі</span>
+      <span>Швидкий пошук: <kbd>/</kbd> або <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
     </div>
   </div>
-  <aside>
-    <div class="home-redesign__kpis">
-      <div><strong>2000+</strong><span>згенерованих профілів спеціалістів</span></div>
-      <div><strong>150+</strong><span>карток компаній у базі</span></div>
-      <div><strong>4</strong><span>мови контенту</span></div>
-      <div><strong>Live</strong><span>перемішування добірок на клієнті</span></div>
+  <aside class="intel-dash-hero__aside">
+    <div class="home-hero-v2__stats" aria-label="Ключові показники">
+      <div class="stat-card"><strong>77</strong><span>профілів у каталозі людей</span></div>
+      <div class="stat-card"><strong>52</strong><span>карток компаній</span></div>
+      <div class="stat-card"><strong>4</strong><span>мови інтерфейсу й контенту</span></div>
+      <div class="stat-card"><strong>10k</strong><span>сценаріїв у тренажері</span></div>
     </div>
-    <div class="home-hero-focus" id="heroFocusMount" aria-live="polite" style="margin-top:10px">
+    <div class="intel-eco-canvas" aria-hidden="true">
+      <div class="intel-eco-canvas__cap"><span>Зв’язки</span><span>живий прев’ю-граф</span></div>
+      <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <linearGradient id="ecoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.75"/>
+          </linearGradient>
+        </defs>
+        <rect width="360" height="200" fill="transparent"/>
+        <g stroke="url(#ecoGrad)" stroke-width="1.2" opacity="0.55">
+          <line x1="60" y1="100" x2="140" y2="60"/>
+          <line x1="140" y1="60" x2="240" y2="90"/>
+          <line x1="240" y1="90" x2="300" y2="40"/>
+          <line x1="140" y1="60" x2="160" y2="150"/>
+          <line x1="160" y1="150" x2="260" y2="160"/>
+          <line x1="60" y1="100" x2="120" y2="170"/>
+        </g>
+        <circle cx="60" cy="100" r="10" fill="#60a5fa" opacity="0.95"/>
+        <circle cx="140" cy="60" r="12" fill="#818cf8" opacity="0.95"/>
+        <circle cx="240" cy="90" r="9" fill="#2dd4bf" opacity="0.95"/>
+        <circle cx="300" cy="40" r="8" fill="#38bdf8" opacity="0.95"/>
+        <circle cx="160" cy="150" r="11" fill="#a78bfa" opacity="0.95"/>
+        <circle cx="260" cy="160" r="9" fill="#34d399" opacity="0.95"/>
+        <circle cx="120" cy="170" r="8" fill="#f472b6" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="home-hero-focus" id="heroFocusMount" aria-live="polite">
       <span class="home-hero-focus__label">Акцент доби</span>
       <p class="role home-hero-focus__loading">Підбираємо профіль…</p>
+    </div>
+    <div class="intel-signals-rail" aria-label="Сигнали оновлення">
+      <p id="liveClock" aria-live="polite">--:--</p>
+      <p id="signalStamp" aria-live="polite" style="margin:0;font-size:0.78rem;color:var(--muted)"></p>
+      <div id="liveSignalA" class="signal-cell"></div>
+      <div id="liveSignalB" class="signal-cell"></div>
+      <div id="liveSignalC" class="signal-cell"></div>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin:0 0 6px">Імена з добірки</p>
+      <div id="homeNameMarquee" data-live-track class="home-marquee" aria-hidden="true"></div>
     </div>
   </aside>
 </section>
 
-<section class="quick-nav" aria-label="Швидкі маршрути">
-  <a href="specialists.html"><span>Експерти</span><strong>Фільтри за ролями і країнами</strong></a>
-  <a href="startups.html"><span>Стартапи</span><strong>Порівняння компаній</strong></a>
-  <a href="methodology.html"><span>Методологія</span><strong>Як формується контент</strong></a>
-  <a href="faq.html"><span>FAQ</span><strong>Поширені питання</strong></a>
+<nav class="intel-ribbon-nav" aria-label="Швидкі маршрути">
+  <a href="specialists.html"><span>Люди</span><strong>Фільтри, країни, теги</strong></a>
+  <a href="startups.html"><span>Компанії</span><strong>Стадії, ринки, зв’язки</strong></a>
+  <a href="methodology.html"><span>Методологія</span><strong>Як збираємо й правимо</strong></a>
+  <a href="interview-drill.html"><span>Тренажер</span><strong>Симуляція питань</strong></a>
+</nav>
+
+<section class="editorial-band" aria-label="Як читати Rybezh">
+  <article><h3>Орієнтир, не хайп</h3><p>Картки тримають однаковий каркас: регіон, мандат, фокус — щоб порівнювати швидко, без «унікальних» макетів у кожному профілі.</p></article>
+  <article><h3>Екосистемний погляд</h3><p>Люди й компанії живуть у різних каталогах, але з однаковою логікою тегів і пошуку — менше розриву між темами.</p></article>
+  <article><h3>Прозорі межі</h3><p>Тренажер співбесіди не оцінює людей з архіву; це окремий інструмент з власною методологією та локальними нотатками.</p></article>
 </section>
 
-<section class="home-live-grid" aria-label="Живі блоки">
-  <article class="home-card">
-    <h3>Оперативна стрічка</h3>
+<div class="intel-live-split">
+  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+    <h3 style="margin-top:0">Оперативні рядки</h3>
     <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
   </article>
-  <article class="home-card">
-    <h3>Експерт у фокусі</h3>
+  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+      <h3 style="margin:0">Експерт у фокусі</h3>
+      <button type="button" class="btn secondary" id="refreshSpotlight">Інший профіль</button>
+    </div>
     <div id="spotlightCard" class="spotlight-slot home-spotlight-vt" aria-live="polite"></div>
   </article>
-</section>
+</div>
 
-<section class="home-card" aria-label="Маршрути" style="margin-bottom:20px">
-  <p class="eyebrow">Рекомендовані переходи</p>
+<div class="intel-marquee-echo">
+  <div id="echoSlotA" aria-label="Дзеркальна картка A"></div>
+  <div id="echoSlotB" aria-label="Дзеркальна картка B"></div>
+</div>
+
+<section class="home-card" aria-label="Рекомендовані переходи" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+  <p class="eyebrow">Компас сторінок</p>
   <ul class="home-compass__list" id="homeCompassList"></ul>
 </section>
 
-<section class="home-card" aria-label="Редакційні пости" style="margin-bottom:20px">
-  <p class="eyebrow">Короткі редакційні нотатки</p>
+<section class="home-card" aria-label="Редакційні нотатки" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+  <p class="eyebrow">Короткі матеріали</p>
   <div class="home-editorial-burst__grid" id="editorialBurst"></div>
 </section>
 
