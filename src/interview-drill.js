@@ -44,6 +44,17 @@
       copied: 'Скопійовано',
       errCopy: 'Копіювання недоступне',
       randomBatch: 'Випадковий пакет',
+      difficulty: 'Складність',
+      diffAll: 'Усі рівні',
+      diff1: 'База',
+      diff2: 'Середній',
+      diff3: 'Просунутий',
+      topic: 'Фокус',
+      topicAll: 'Усі теми',
+      topicComm: 'Комунікація',
+      topicExec: 'Виконання',
+      topicTech: 'Техніка/якість',
+      score: (ok,total)=>`Результат MCQ: ${ok}/${total}`,
       mcqCorrect: 'Правильно.',
       mcqWrong: 'Неправильно. Найкраща відповідь позначена в підказці нижче.',
       mcqAriaChoice: (n) => `Варіант ${n + 1}`,
@@ -79,6 +90,17 @@
       copied: 'Copied',
       errCopy: 'Copy unavailable',
       randomBatch: 'Random batch',
+      difficulty: 'Difficulty',
+      diffAll: 'All levels',
+      diff1: 'Base',
+      diff2: 'Intermediate',
+      diff3: 'Advanced',
+      topic: 'Focus',
+      topicAll: 'All topics',
+      topicComm: 'Communication',
+      topicExec: 'Execution',
+      topicTech: 'Tech/quality',
+      score: (ok,total)=>`MCQ score: ${ok}/${total}`,
       mcqCorrect: 'Correct.',
       mcqWrong: 'Not the best answer. See the hint below for the recommended choice.',
       mcqAriaChoice: (n) => `Option ${n + 1}`,
@@ -235,7 +257,6 @@
     let salt = 1;
     while (picked.length < 4 && salt < 500) {
       const j = mix32(qIndex, si, salt) % wrongPool.length;
-      salt += 1;
       const w = wrongPool[j];
       if (w === correct || used.has(w)) continue;
       used.add(w);
@@ -256,6 +277,7 @@
   }
 
   const el = {
+    learn: document.querySelector('[data-iv-learn]'),
     track: root.querySelector('[data-iv-track]'),
     mode: root.querySelector('[data-iv-mode]'),
     specialty: root.querySelector('[data-iv-specialty]'),
@@ -270,6 +292,7 @@
     copy: root.querySelector('[data-iv-copy]'),
     hint: root.querySelector('[data-iv-hint]'),
     context: root.querySelector('[data-iv-context]'),
+    timer: null,
   };
 
   if (el.track) {
@@ -282,6 +305,20 @@
     }
   }
 
+
+  const extraBar = document.createElement('div');
+  extraBar.className = 'interview-drill__toolbar';
+  extraBar.innerHTML = `
+    <div class="interview-drill__field"><label class="interview-drill__label" for="iv-difficulty">${u.difficulty || 'Difficulty'}</label><select id="iv-difficulty" class="interview-drill__select" data-iv-difficulty></select></div>
+    <div class="interview-drill__field"><label class="interview-drill__label" for="iv-topic">${u.topic || 'Focus'}</label><select id="iv-topic" class="interview-drill__select" data-iv-topic></select></div>
+    <p class="interview-drill__progress" data-iv-score style="margin:0"></p>`;
+  root.insertBefore(extraBar, el.prog);
+  const diffSel = extraBar.querySelector('[data-iv-difficulty]');
+  const topicSel = extraBar.querySelector('[data-iv-topic]');
+  const scoreEl = extraBar.querySelector('[data-iv-score]');
+  [['all',u.diffAll],['1',u.diff1],['2',u.diff2],['3',u.diff3]].forEach(([v,l])=>{const o=document.createElement('option');o.value=v;o.textContent=l||v;diffSel.appendChild(o);});
+  [['all',u.topicAll],['comm',u.topicComm],['exec',u.topicExec],['tech',u.topicTech]].forEach(([v,l])=>{const o=document.createElement('option');o.value=v;o.textContent=l||v;topicSel.appendChild(o);});
+  let difficulty='all'; let topic='all'; let score={ok:0,total:0};
   if (MC && el.specialty) {
     el.specialty.innerHTML = '';
     for (const s of MC.specialties) {
@@ -411,13 +448,33 @@
   function writePage(p) {
     page = Math.max(0, Math.min(maxPage, p));
     syncUrl();
-    render();
+    if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
+      render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
   }
 
   function noteKey(i) {
     const spec = MC ? specialtyId : 'na';
     const m = MC ? mode : 'open';
     return `iv-note-${lang}-${m}-${spec}-${i}`;
+  }
+
+  function passFilter(text, idx) {
+    const d=((idx%3)+1).toString();
+    if (difficulty!=='all' && d!==difficulty) return false;
+    const low=String(text).toLowerCase();
+    const buckets={comm:['conflict','комун','communication','stakeholder'],exec:['roadmap','priorit','delivery','дедлайн','backlog'],tech:['slo','incident','security','test','latency','архіт','quality']};
+    if (topic==='all') return true;
+    return buckets[topic].some(k=>low.includes(k));
   }
 
   function render() {
@@ -452,6 +509,8 @@
       for (let k = 0; k < BATCH; k += 1) {
         const idx = page * BATCH + k;
         if (idx >= SIZE) break;
+        const probe = mode === 'mcq' && MC ? mcqQuestion(specialtyId, idx).stem : questionAt(idx, track);
+        if (!passFilter(probe, idx)) continue;
         const li = document.createElement('li');
         li.className = 'interview-drill__item';
 
@@ -490,6 +549,7 @@
             inp.addEventListener('change', () => {
               if (!inp.checked) return;
               const ok = oi === mq.correctIndex;
+              score.total += 1; if (ok) score.ok += 1; if (scoreEl) scoreEl.textContent = (u.score ? u.score(score.ok, score.total) : `Score: ${score.ok}/${score.total}`);
               feedback.hidden = false;
               feedback.textContent = ok ? u.mcqCorrect : u.mcqWrong;
               feedback.className =
@@ -550,7 +610,12 @@
       }
     }
 
+    if (el.learn) {
+      const lesson = mode==='mcq' ? '<strong>Шпаргалка MCQ:</strong> Спочатку відкиньте крайні варіанти, шукайте відповідь з ризиками, метриками і планом дій.' : '<strong>Шпаргалка STAR:</strong> Situation → Task → Action → Result + урок, що ви змінили в процесі.';
+      el.learn.innerHTML = `<p>${lesson}</p><ul><li>Говоріть мовою результатів: метрики, SLA, time-to-resolution.</li><li>Не перекладайте провину — показуйте власну роль і рішення.</li><li>Завершуйте відповідь планом на 30/60/90 днів.</li></ul>`;
+    }
     if (el.live) el.live.textContent = '';
+    if (el.prev) el.prev.disabled = page <= 0;
     if (el.next) el.next.disabled = page >= maxPage;
   }
 
@@ -558,19 +623,55 @@
   if (el.next) el.next.addEventListener('click', () => writePage(page + 1));
   if (el.track) {
     el.track.addEventListener('change', () => {
+      if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
       render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
       syncUrl();
     });
   }
   if (el.mode && MC) {
     el.mode.addEventListener('change', () => {
+      if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
       render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
       syncUrl();
     });
   }
   if (el.specialty && MC) {
     el.specialty.addEventListener('change', () => {
+      if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
       render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
       syncUrl();
     });
   }
@@ -579,7 +680,19 @@
     el.random.addEventListener('click', () => {
       page = Math.floor(Math.random() * (maxPage + 1));
       syncUrl();
+      if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
       render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
     });
   }
 
@@ -599,6 +712,8 @@
       for (let k = 0; k < BATCH; k += 1) {
         const idx = page * BATCH + k;
         if (idx >= SIZE) break;
+        const probe = mode === 'mcq' && MC ? mcqQuestion(specialtyId, idx).stem : questionAt(idx, track);
+        if (!passFilter(probe, idx)) continue;
         if (mode === 'mcq' && MC) {
           const mq = mcqQuestion(specialtyId, idx);
           lines.push(`${idx + 1}. ${mq.stem}`);
@@ -635,7 +750,19 @@
     if (el.track) el.track.value = String(track);
     if (el.mode && MC) el.mode.value = mode;
     if (el.specialty && MC) el.specialty.value = specialtyId;
-    render();
+    if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
+      render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
+
+  render();
   });
 
   document.addEventListener('keydown', (e) => {
@@ -649,6 +776,18 @@
       writePage(page - 1);
     }
   });
+
+  if (typeof diffSel !== 'undefined') { diffSel.addEventListener('change',()=>{difficulty=diffSel.value;render();}); topicSel.addEventListener('change',()=>{topic=topicSel.value;render();}); }
+  if (typeof diffSel !== 'undefined') {
+    diffSel.addEventListener('change', () => {
+      difficulty = diffSel.value;
+      render();
+    });
+    topicSel.addEventListener('change', () => {
+      topic = topicSel.value;
+      render();
+    });
+  }
 
   render();
   if (hadRandomParam || hasExplicitParams) syncUrl();
