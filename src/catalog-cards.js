@@ -8,7 +8,11 @@
       shareIn: b.dataset.catalogShareIn || 'LinkedIn',
       shareX: b.dataset.catalogShareX || 'X',
       shareFb: b.dataset.catalogShareFb || 'Facebook',
-      galleryHeading: b.dataset.catalogGalleryHeading || 'Photos'
+      shareTelegram: b.dataset.catalogShareTelegram || 'Telegram',
+      shareWhatsapp: b.dataset.catalogShareWhatsapp || 'WhatsApp',
+      shareNative: b.dataset.catalogShareNative || 'Share…',
+      galleryHeading: b.dataset.catalogGalleryHeading || 'Photos',
+      readProfile: b.dataset.catalogReadProfile || 'Read profile'
     };
   }
 
@@ -25,6 +29,10 @@
     const full = absUrl(href);
     const enc = encodeURIComponent(full);
     const encTitle = encodeURIComponent(titleText || '');
+    const waText = encodeURIComponent(`${titleText ? `${titleText} — ` : ''}${full}`);
+    const tgHref = `https://t.me/share/url?url=${enc}&text=${encTitle}`;
+    const waHref = `https://api.whatsapp.com/send?text=${waText}`;
+
     const d = document.createElement('details');
     d.className = 'directory-share';
     const sum = document.createElement('summary');
@@ -33,35 +41,65 @@
     const panel = document.createElement('div');
     panel.className = 'directory-share-panel';
     panel.setAttribute('role', 'group');
+
     const copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 'directory-share-copy';
     copyBtn.dataset.url = full;
     copyBtn.textContent = t.shareCopy;
-    const aIn = document.createElement('a');
-    aIn.className = 'directory-share-link';
-    aIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${enc}`;
-    aIn.target = '_blank';
-    aIn.rel = 'noopener noreferrer';
-    aIn.textContent = t.shareIn;
-    const aX = document.createElement('a');
-    aX.className = 'directory-share-link';
-    aX.href = `https://twitter.com/intent/tweet?url=${enc}&text=${encTitle}`;
-    aX.target = '_blank';
-    aX.rel = 'noopener noreferrer';
-    aX.textContent = t.shareX;
-    const aFb = document.createElement('a');
-    aFb.className = 'directory-share-link';
-    aFb.href = `https://www.facebook.com/sharer/sharer.php?u=${enc}`;
-    aFb.target = '_blank';
-    aFb.rel = 'noopener noreferrer';
-    aFb.textContent = t.shareFb;
-    panel.append(copyBtn, aIn, aX, aFb);
+
+    if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+      const nat = document.createElement('button');
+      nat.type = 'button';
+      nat.className = 'directory-share-native';
+      nat.textContent = t.shareNative;
+      nat.addEventListener('click', async (ev) => {
+        ev.preventDefault();
+        try {
+          await navigator.share({ title: titleText || document.title, url: full });
+        } catch {
+          /* user cancelled */
+        }
+      });
+      panel.appendChild(nat);
+    }
+
+    const mk = (href0, label, cls) => {
+      const a = document.createElement('a');
+      a.className = cls || 'directory-share-link';
+      a.href = href0;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = label;
+      return a;
+    };
+
+    panel.append(
+      copyBtn,
+      mk(`https://www.linkedin.com/sharing/share-offsite/?url=${enc}`, t.shareIn),
+      mk(`https://twitter.com/intent/tweet?url=${enc}&text=${encTitle}`, t.shareX),
+      mk(`https://www.facebook.com/sharer/sharer.php?u=${enc}`, t.shareFb),
+      mk(tgHref, t.shareTelegram),
+      mk(waHref, t.shareWhatsapp)
+    );
     d.append(sum, panel);
     return d;
   }
 
+  function truncateTeaser(raw, maxLen) {
+    const t = String(raw || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!t) return '';
+    if (t.length <= maxLen) return t;
+    const cut = t.slice(0, maxLen);
+    const sp = cut.lastIndexOf(' ');
+    const base = sp > 40 ? cut.slice(0, sp) : cut;
+    return `${base}…`;
+  }
+
   function stripAndNormalizeListingCards() {
+    const t = readI18n();
     const roots = [
       ...document.querySelectorAll(
         '[data-directory-grid], #featuredGridMount, #startupGridMount, #recentGridMount, #editorialTeamMount, .compact-grid'
@@ -74,26 +112,45 @@
         if (topImg) topImg.remove();
         const body = card.querySelector('.card-body');
         if (!body) return;
+
+        const meta = body.querySelector('p.meta');
+        let longBits = '';
         body.querySelectorAll('p').forEach((p) => {
           if (p.classList.contains('eyebrow') || p.classList.contains('meta') || p.classList.contains('card-teaser')) return;
+          const bit = p.textContent.trim();
+          if (bit) longBits = longBits ? `${longBits} ${bit}` : bit;
+        });
+
+        body.querySelector('.eyebrow')?.remove();
+        body.querySelector('.tags')?.remove();
+        body.querySelectorAll('p').forEach((p) => {
+          if (p.classList.contains('meta') || p.classList.contains('card-teaser')) return;
           p.remove();
         });
-        if (!body.querySelector('.card-teaser')) {
-          const meta = body.querySelector('p.meta');
-          if (meta) {
-            const te = document.createElement('p');
-            te.className = 'card-teaser';
-            const raw = meta.textContent.trim();
-            te.textContent = raw.length > 130 ? `${raw.slice(0, 127)}…` : raw;
-            meta.after(te);
-          }
+
+        let te = body.querySelector('.card-teaser');
+        if (!te) {
+          te = document.createElement('p');
+          te.className = 'card-teaser';
+          const raw = longBits || meta?.textContent.trim() || '';
+          te.textContent = truncateTeaser(raw, card.classList.contains('startup-card') ? 148 : 132);
+          if (meta) meta.after(te);
+          else body.querySelector('h3')?.after(te);
+        } else {
+          te.textContent = truncateTeaser(te.textContent, 148);
         }
-        if (body.querySelector('.directory-card-actions')) return;
+
+        if (body.querySelector('.directory-card-actions')) {
+          const readExisting = body.querySelector('.directory-card-actions .btn[href]');
+          if (readExisting) readExisting.textContent = t.readProfile;
+          return;
+        }
         const btn = body.querySelector('.btn[href]');
         if (!btn) return;
         const wrap = document.createElement('div');
         wrap.className = 'directory-card-actions';
         const read = btn.cloneNode(true);
+        read.textContent = t.readProfile;
         btn.replaceWith(wrap);
         wrap.appendChild(read);
         const title = body.querySelector('h3')?.textContent?.trim() || '';
@@ -130,6 +187,55 @@
     const fig = document.createElement('figure');
     fig.appendChild(heroImg);
     grid.prepend(fig);
+  }
+
+  function enhanceProfileOrStartupArticle() {
+    const root = document.querySelector('article.profile-page, article.startup-page');
+    if (!root) return;
+    root.classList.add('profile-article--intel');
+
+    const hdr = root.querySelector('.profile-header');
+    if (hdr) {
+      hdr.classList.add('profile-header--editorial');
+      const h1 = root.querySelector('h1')?.textContent?.trim() || '';
+      if (!hdr.querySelector('.profile-header-share') && h1) {
+        const wrap = document.createElement('div');
+        wrap.className = 'profile-header-share';
+        wrap.appendChild(buildShareDetails(window.location.href, h1));
+        hdr.appendChild(wrap);
+      }
+    }
+
+    const hdrNav = root.querySelector('.profile-header');
+    if (hdrNav && !root.querySelector('.profile-jump-nav')) {
+      const sections = [...root.querySelectorAll(':scope > section')].filter(
+        (s) => !s.classList.contains('profile-related')
+      );
+      const items = [];
+      sections.forEach((sec, idx) => {
+        const ht = sec.querySelector('h2, h3');
+        const label = ht?.textContent?.trim();
+        if (!label) return;
+        if (!sec.id) sec.id = `profile-section-${idx + 1}`;
+        items.push({ id: sec.id, label });
+      });
+      if (items.length > 1) {
+        const nav = document.createElement('nav');
+        nav.className = 'profile-jump-nav';
+        nav.setAttribute('aria-label', 'On this page');
+        const ul = document.createElement('ul');
+        items.forEach(({ id, label }) => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `#${id}`;
+          a.textContent = label;
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+        nav.appendChild(ul);
+        hdrNav.after(nav);
+      }
+    }
   }
 
   function bindShareCopy() {
@@ -176,7 +282,19 @@
     if (t.open) closeOtherShareDetails(t);
   });
 
+  function markDirectoryCards() {
+    document.querySelectorAll('[data-directory-grid]').forEach((grid) => {
+      const cards = grid.querySelectorAll('[data-directory-card]');
+      cards.forEach((card, i) => {
+        card.style.setProperty('--directory-card-i', String(i));
+      });
+      grid.classList.add('directory-grid--shuffled');
+    });
+  }
+
   stripAndNormalizeListingCards();
   relocateProfileHeroToGallery();
+  enhanceProfileOrStartupArticle();
   bindShareCopy();
+  markDirectoryCards();
 })();
