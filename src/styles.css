@@ -27,6 +27,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: clamp(72px, 14vw, 112px);
     overflow-x: clip;
 }
 
@@ -4185,6 +4186,17 @@ a.breadcrumb__item:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 18px;
+}
+
+/* Editorial listing feeds: no lead thumbnails on directory cards (DOM strip also runs in catalog-cards.js). */
+.page-specialists [data-directory-grid] > .profile-card > img,
+.page-startups [data-directory-grid] > .startup-card > img,
+[data-directory-grid] > [data-directory-card] > img,
+#featuredGridMount > [data-directory-card] > img,
+#startupGridMount > [data-directory-card] > img,
+#recentGridMount > [data-directory-card] > img,
+#editorialTeamMount > [data-directory-card] > img {
+  display: none !important;
 }
 
 @media (max-width: 900px) {
