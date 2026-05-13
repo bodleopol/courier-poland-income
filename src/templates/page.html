@@ -15,11 +15,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="site-search-index.js" defer></script>
     <script src="site-search.js" defer></script>
+    <script src="catalog-cards.js" defer></script>
     <link rel="icon" href="assets/images/rybezh-logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/images/rybezh-logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="{{BODY_CLASS}}" data-theme="dark">
+<body class="{{BODY_CLASS}}" data-theme="dark" data-catalog-share-open="{{CATALOG_SHARE_OPEN}}" data-catalog-share-copy="{{CATALOG_SHARE_COPY}}" data-catalog-share-copied="{{CATALOG_SHARE_COPIED}}" data-catalog-share-in="{{CATALOG_SHARE_IN}}" data-catalog-share-x="{{CATALOG_SHARE_X}}" data-catalog-share-fb="{{CATALOG_SHARE_FB}}" data-catalog-gallery-heading="{{CATALOG_GALLERY_HEADING}}">
     <a class="skip-link" href="#main-content">{{SKIP_LINK}}</a>
     <header class="site-header">
         <div class="header-container" data-header-container>
@@ -269,6 +270,8 @@
 
             const cards = document.querySelectorAll('.card.profile-card, .card.startup-card, .dynamic-tile');
             cards.forEach(card => {
+                if (card.hasAttribute('data-directory-card')) return;
+                if (card.closest('[data-directory-grid], #featuredGridMount, #startupGridMount, #recentGridMount, #editorialTeamMount, .compact-grid')) return;
                 const name = card.querySelector('h1, h2, h3')?.textContent?.trim() || 'Profile';
                 let img = card.querySelector(':scope > img');
 

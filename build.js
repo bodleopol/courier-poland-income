@@ -144,7 +144,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Умови',
     skipLink: 'Перейти до основного вмісту',
-    brandTagline: 'Редакційний інтелект: експерти, стартапи, оператори',
+    brandTagline: 'Rybezh: жива media-tech платформа інтелекту — граф екосистеми й статична база знань.',
     contactLabel: 'Написати:',
     footerAbout:
       'Редакційний довідник Rybezh.site: короткі профілі фахівців, керівників і технологічних компаній, з виходом на первинні джерела.',
@@ -185,7 +185,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Terms',
     skipLink: 'Skip to main content',
-    brandTagline: 'Editorial intelligence for experts, startups, and operators',
+    brandTagline: 'Rybezh: a living media-tech intelligence layer—ecosystem graph, static knowledge base.',
     contactLabel: 'Email:',
     footerAbout:
       'Rybezh.site is an editorial directory of specialists, leaders, and tech companies—short entries that point to primary sources.',
@@ -226,7 +226,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Términos',
     skipLink: 'Ir al contenido principal',
-    brandTagline: 'Atlas editorial de personas y empresas',
+    brandTagline: 'Rybezh: capa viva de inteligencia media-tech—grafo del ecosistema, base de conocimiento estática.',
     contactLabel: 'Correo:',
     footerAbout:
       'Rybezh.site es un directorio editorial sobre especialistas, directivos y empresas tecnológicas, con enlaces a fuentes primarias.',
@@ -267,7 +267,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Условия',
     skipLink: 'Перейти к основному содержимому',
-    brandTagline: 'Редакционный атлас людей и компаний',
+    brandTagline: 'Rybezh: живая media-tech платформа интеллекта — граф экосистемы и статичная база знаний.',
     contactLabel: 'Почта:',
     footerAbout:
       'Редакционный справочник Rybezh.site: краткие заметки о специалистах, руководителях и технологических компаниях, со ссылками на первоисточники.',
@@ -329,7 +329,14 @@ const editorialUi = {
     orgIntelAsideAria: 'Редакційний контекст компанії',
     orgTimelineTitle: 'Ключові опори',
     orgTimelineProduct: 'Продуктовий фокус у картці',
-    orgTimelineDesk: 'Знімок файлу'
+    orgTimelineDesk: 'Знімок файлу',
+    catalogShareOpen: 'Поділитися',
+    catalogShareCopy: 'Скопіювати посилання',
+    catalogShareCopied: 'Посилання скопійовано',
+    catalogShareIn: 'LinkedIn',
+    catalogShareX: 'X',
+    catalogShareFb: 'Facebook',
+    catalogGalleryHeading: 'Фотографії та візуальний контекст'
   },
   en: {
     navDockAria: 'Quick navigation',
@@ -362,7 +369,14 @@ const editorialUi = {
     orgIntelAsideAria: 'Company editorial context',
     orgTimelineTitle: 'Anchors',
     orgTimelineProduct: 'Product focus on this card',
-    orgTimelineDesk: 'File snapshot'
+    orgTimelineDesk: 'File snapshot',
+    catalogShareOpen: 'Share',
+    catalogShareCopy: 'Copy link',
+    catalogShareCopied: 'Link copied',
+    catalogShareIn: 'LinkedIn',
+    catalogShareX: 'X',
+    catalogShareFb: 'Facebook',
+    catalogGalleryHeading: 'Photos and visual context'
   },
   es: {
     navDockAria: 'Navegación rápida',
@@ -395,7 +409,14 @@ const editorialUi = {
     orgIntelAsideAria: 'Contexto editorial de la empresa',
     orgTimelineTitle: 'Anclas',
     orgTimelineProduct: 'Foco de producto en la ficha',
-    orgTimelineDesk: 'Instantánea del archivo'
+    orgTimelineDesk: 'Instantánea del archivo',
+    catalogShareOpen: 'Compartir',
+    catalogShareCopy: 'Copiar enlace',
+    catalogShareCopied: 'Enlace copiado',
+    catalogShareIn: 'LinkedIn',
+    catalogShareX: 'X',
+    catalogShareFb: 'Facebook',
+    catalogGalleryHeading: 'Fotos y contexto visual'
   },
   ru: {
     navDockAria: 'Быстрая навигация',
@@ -428,7 +449,14 @@ const editorialUi = {
     orgIntelAsideAria: 'Редакционный контекст компании',
     orgTimelineTitle: 'Опорные точки',
     orgTimelineProduct: 'Продуктовый фокус в карточке',
-    orgTimelineDesk: 'Снимок файла'
+    orgTimelineDesk: 'Снимок файла',
+    catalogShareOpen: 'Поделиться',
+    catalogShareCopy: 'Скопировать ссылку',
+    catalogShareCopied: 'Ссылка скопирована',
+    catalogShareIn: 'LinkedIn',
+    catalogShareX: 'X',
+    catalogShareFb: 'Facebook',
+    catalogGalleryHeading: 'Фотографии и визуальный контекст'
   }
 };
 
@@ -874,7 +902,8 @@ function processDirectory(dirPath, destPath) {
           srcFile.endsWith('interview-drill.js') ||
           srcFile.endsWith('interview-bank-data.js') ||
           srcFile.endsWith('site-search-index.js') ||
-          srcFile.endsWith('site-search.js');
+          srcFile.endsWith('site-search.js') ||
+          srcFile.endsWith('catalog-cards.js');
         fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
@@ -1090,7 +1119,14 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{FILTER_PEOPLE}}', localMerged.filterPeople)
                        .replaceAll('{{FILTER_COMPANIES}}', localMerged.filterCompanies)
                        .replaceAll('{{FILTER_PAGES}}', localMerged.filterPages)
-                       .replaceAll('{{CMD_CLOSE}}', localMerged.cmdClose);
+                       .replaceAll('{{CMD_CLOSE}}', localMerged.cmdClose)
+                       .replaceAll('{{CATALOG_SHARE_OPEN}}', escapeHtml(localMerged.catalogShareOpen))
+                       .replaceAll('{{CATALOG_SHARE_COPY}}', escapeHtml(localMerged.catalogShareCopy))
+                       .replaceAll('{{CATALOG_SHARE_COPIED}}', escapeHtml(localMerged.catalogShareCopied))
+                       .replaceAll('{{CATALOG_SHARE_IN}}', escapeHtml(localMerged.catalogShareIn))
+                       .replaceAll('{{CATALOG_SHARE_X}}', escapeHtml(localMerged.catalogShareX))
+                       .replaceAll('{{CATALOG_SHARE_FB}}', escapeHtml(localMerged.catalogShareFb))
+                       .replaceAll('{{CATALOG_GALLERY_HEADING}}', escapeHtml(localMerged.catalogGalleryHeading));
 
   finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', localMerged.cookieTitle)
                        .replaceAll('{{COOKIE_TEXT}}', localMerged.cookieText)

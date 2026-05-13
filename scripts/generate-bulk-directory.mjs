@@ -16,6 +16,7 @@ const STARTUPS = path.join(ROOT, 'src', 'pages', 'startups');
 const SPECIALIST_COUNT = 2000;
 const STARTUP_COUNT = 150;
 const CATALOG_ORDER_BASE = 10_000;
+const SHARE_SITE_BASE = 'https://rybezh.site/';
 
 const UNSPLASH_PEOPLE = [
   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=720&q=80',
@@ -127,10 +128,16 @@ const UI = {
     startupBtn: 'Відкрити каталог стартапів',
     editorial: 'Матеріал згенеровано як синтетичний редакційний зразок для наповнення довідника; перевіряйте факти за первинними джерелами.',
     founded: 'Засновано',
-    openProfile: 'Відкрити профіль',
-    learnMore: 'Детальніше',
+    openProfile: 'Прочитати',
+    learnMore: 'Прочитати',
+    shareOpen: 'Поділитися',
+    shareCopy: 'Скопіювати посилання',
+    shareLinkedIn: 'LinkedIn',
+    shareX: 'X',
+    shareFacebook: 'Facebook',
     photoAlt: 'Ілюстративне фото (Unsplash), тема: портрет спеціаліста',
     orgPhotoAlt: 'Ілюстративне фото (Unsplash), тема: команда та продукт',
+    galleryH: 'Фотографії з контексту',
     factsCountry: 'Країна / регіон',
     factsFocus: 'Професійний фокус',
     factsContrib: 'Ключовий внесок',
@@ -161,10 +168,16 @@ const UI = {
     startupBtn: 'Open startup catalogue',
     editorial: 'Synthetic editorial sample for directory volume; treat claims as illustrative and verify with primary sources.',
     founded: 'Founded',
-    openProfile: 'Open profile',
-    learnMore: 'Learn more',
+    openProfile: 'Read',
+    learnMore: 'Read',
+    shareOpen: 'Share',
+    shareCopy: 'Copy link',
+    shareLinkedIn: 'LinkedIn',
+    shareX: 'X',
+    shareFacebook: 'Facebook',
     photoAlt: 'Editorial stock portrait (Unsplash)',
     orgPhotoAlt: 'Editorial stock imagery (Unsplash): team and product',
+    galleryH: 'Photo context',
     factsCountry: 'Country / region',
     factsFocus: 'Professional focus',
     factsContrib: 'Signature contribution',
@@ -195,10 +208,16 @@ const UI = {
     startupBtn: 'Abrir catálogo de startups',
     editorial: 'Muestra editorial sintética para volumen del directorio; trate las afirmaciones como ilustrativas y contraste fuentes primarias.',
     founded: 'Fundada',
-    openProfile: 'Abrir perfil',
-    learnMore: 'Más información',
+    openProfile: 'Leer',
+    learnMore: 'Leer',
+    shareOpen: 'Compartir',
+    shareCopy: 'Copiar enlace',
+    shareLinkedIn: 'LinkedIn',
+    shareX: 'X',
+    shareFacebook: 'Facebook',
     photoAlt: 'Retrato editorial (Unsplash)',
     orgPhotoAlt: 'Imagen editorial (Unsplash): equipo y producto',
+    galleryH: 'Fotos de contexto',
     factsCountry: 'País / región',
     factsFocus: 'Enfoque profesional',
     factsContrib: 'Contribución distintiva',
@@ -229,10 +248,16 @@ const UI = {
     startupBtn: 'Открыть каталог стартапов',
     editorial: 'Синтетический редакционный образец для объёма справочника; проверяйте факты по первичным источникам.',
     founded: 'Основана',
-    openProfile: 'Открыть профиль',
-    learnMore: 'Подробнее',
+    openProfile: 'Читать',
+    learnMore: 'Читать',
+    shareOpen: 'Поделиться',
+    shareCopy: 'Скопировать ссылку',
+    shareLinkedIn: 'LinkedIn',
+    shareX: 'X',
+    shareFacebook: 'Facebook',
     photoAlt: 'Иллюстративный портрет (Unsplash)',
     orgPhotoAlt: 'Иллюстративное фото (Unsplash): команда и продукт',
+    galleryH: 'Фотографии в контексте',
     factsCountry: 'Страна / регион',
     factsFocus: 'Профессиональный фокус',
     factsContrib: 'Ключевой вклад',
@@ -271,6 +296,47 @@ function escapeHtml(s) {
 
 function escapeAttr(s) {
   return escapeHtml(s).replace(/\n/g, ' ');
+}
+
+function cardTeaserFromBio(text, maxLen = 118) {
+  const t = String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!t) return '';
+  if (t.length <= maxLen) return t;
+  const cut = t.slice(0, maxLen);
+  const sp = cut.lastIndexOf(' ');
+  const base = sp > 36 ? cut.slice(0, sp) : cut;
+  return `${base}…`;
+}
+
+function absoluteShareUrl(href) {
+  const h = String(href || '').trim();
+  if (!h) return '';
+  try {
+    return new URL(h, SHARE_SITE_BASE).toString();
+  } catch {
+    return SHARE_SITE_BASE + h.replace(/^\//, '');
+  }
+}
+
+function sharePanelHtml(lang, profileHref, titleText) {
+  const u = UI[lang];
+  const fullUrl = absoluteShareUrl(profileHref);
+  const enc = encodeURIComponent(fullUrl);
+  const encTitle = encodeURIComponent(titleText);
+  const inHref = `https://www.linkedin.com/sharing/share-offsite/?url=${enc}`;
+  const xHref = `https://twitter.com/intent/tweet?url=${enc}&text=${encTitle}`;
+  const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${enc}`;
+  return `<details class="directory-share">
+  <summary class="btn secondary">${escapeHtml(u.shareOpen)}</summary>
+  <div class="directory-share-panel" role="group">
+    <button type="button" class="directory-share-copy" data-url="${escapeAttr(fullUrl)}">${escapeHtml(u.shareCopy)}</button>
+    <a class="directory-share-link" href="${escapeAttr(inHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareLinkedIn)}</a>
+    <a class="directory-share-link" href="${escapeAttr(xHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareX)}</a>
+    <a class="directory-share-link" href="${escapeAttr(fbHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareFacebook)}</a>
+  </div>
+</details>`;
 }
 
 function pick(rng, arr) {
@@ -449,13 +515,14 @@ function writePersonProfile(lang, i, ctx) {
   const title = `${ctx.name} — ${ctx.roleShort} | Rybezh`;
   const desc = ctx.bio.slice(0, 155).replace(/\s+\S*$/, '') + '…';
   const tagsHtml = ctx.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+  const p2 = UNSPLASH_PEOPLE[(i * 7 + 3) % UNSPLASH_PEOPLE.length];
+  const p3 = UNSPLASH_PEOPLE[(i * 11 + 9) % UNSPLASH_PEOPLE.length];
   const html = `<title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeAttr(desc)}">
 
 <article class="content-wrapper profile-page">
   <a class="back-link" href="${hrefSpec}">${escapeHtml(u.backSpec)}</a>
-  <header class="profile-header">
-    <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(u.photoAlt)}" class="profile-avatar-large" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(ctx.name)}&size=720&background=eef4ff&color=2563eb&bold=true';">
+  <header class="profile-header profile-header--intel">
     <div class="profile-info">
       <p class="eyebrow">${escapeHtml(ctx.country)}</p>
       <h1>${escapeHtml(ctx.name)}</h1>
@@ -471,6 +538,20 @@ function writePersonProfile(lang, i, ctx) {
   <section class="profile-content">
     <h3>${escapeHtml(u.overviewH)}</h3>
     <p>${escapeHtml(ctx.bio)}</p>
+  </section>
+  <section class="profile-gallery" aria-label="${escapeAttr(u.galleryH)}">
+    <h3>${escapeHtml(u.galleryH)}</h3>
+    <div class="gallery-grid">
+      <figure>
+        <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(u.photoAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      </figure>
+      <figure>
+        <img src="${escapeAttr(p2)}" alt="${escapeAttr(u.photoAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      </figure>
+      <figure>
+        <img src="${escapeAttr(p3)}" alt="${escapeAttr(u.photoAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      </figure>
+    </div>
   </section>
   <section class="editorial-note">
     <h3>${escapeHtml(u.noteH)}</h3>
@@ -498,13 +579,14 @@ function writeStartupProfile(lang, i, ctx) {
   const title = `${ctx.brand} — ${ctx.metaLine} | Rybezh`;
   const desc = ctx.bio.slice(0, 155).replace(/\s+\S*$/, '') + '…';
   const tagsHtml = ctx.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
+  const o2 = UNSPLASH_ORG[(i * 5 + 2) % UNSPLASH_ORG.length];
+  const o3 = UNSPLASH_ORG[(i * 9 + 4) % UNSPLASH_ORG.length];
   const html = `<title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeAttr(desc)}">
 
 <article class="content-wrapper startup-page">
   <a class="back-link" href="${hrefSt}">${escapeHtml(u.backStart)}</a>
-  <header class="profile-header startup-header">
-    <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(ctx.brand)}" class="profile-avatar-large startup-logo-large" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(ctx.brand)}&size=720&background=eef4ff&color=2563eb&bold=true';">
+  <header class="profile-header startup-header profile-header--intel">
     <div class="profile-info">
       <p class="eyebrow">${escapeHtml(u.founded)} ${ctx.year}</p>
       <h1>${escapeHtml(ctx.brand)}</h1>
@@ -520,6 +602,20 @@ function writeStartupProfile(lang, i, ctx) {
   <section class="profile-content">
     <h3>${escapeHtml(u.startupOverviewH)}</h3>
     <p>${escapeHtml(ctx.bio)}</p>
+  </section>
+  <section class="profile-gallery" aria-label="${escapeAttr(u.galleryH)}">
+    <h3>${escapeHtml(u.galleryH)}</h3>
+    <div class="gallery-grid">
+      <figure>
+        <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(u.orgPhotoAlt)}" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+      <figure>
+        <img src="${escapeAttr(o2)}" alt="${escapeAttr(u.orgPhotoAlt)}" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+      <figure>
+        <img src="${escapeAttr(o3)}" alt="${escapeAttr(u.orgPhotoAlt)}" loading="lazy" referrerpolicy="no-referrer">
+      </figure>
+    </div>
   </section>
   <section class="profile-facts startup-facts startup-facts-secondary">
     <div><strong>${escapeHtml(u.startupMarket)}</strong><span>${escapeHtml(ctx.vertical)}</span></div>
@@ -566,14 +662,19 @@ function cardPerson(lang, i) {
   const href = `${slug}${lang === 'uk' ? '' : `-${lang}`}.html`;
   const order = CATALOG_ORDER_BASE + i;
   const search = `${name} ${roleShort} ${country} ${domain} ${tags.join(' ')}`.toLowerCase();
-  const catalogCard = `<article class="card profile-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-sort-name="${escapeAttr(name)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
-    <img src="${escapeAttr(photo)}" alt="${escapeAttr(name)}" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, (max-width: 1120px) 50vw, 360px" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=720&background=eef4ff&color=2563eb&bold=true';">
+  const teaser = cardTeaserFromBio(bio);
+  const shareBlock = sharePanelHtml(lang, href, name);
+  const catalogCard = `<article class="card profile-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-sort-name="${escapeAttr(name)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
     <div class="card-body">
       <p class="eyebrow">${escapeHtml(country)}</p>
       <h3>${escapeHtml(name)}</h3>
       <p class="meta">${escapeHtml(roleShort)}</p>
+      <p class="card-teaser">${escapeHtml(teaser)}</p>
       <div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
-      <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].openProfile)}</a>
+      <div class="directory-card-actions">
+        <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].openProfile)}</a>
+        ${shareBlock}
+      </div>
     </div>
   </article>`;
   const contrib =
@@ -635,15 +736,19 @@ function cardStartup(lang, i) {
           : `Снижает операционные риски заказчиков в ${vertical}.`;
   const search = `${brand} ${metaLine} ${country} ${city} ${vertical}`.toLowerCase();
   const foundedLabel = UI[lang].founded;
-  const catalogCard = `<article class="card startup-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-founded="${year}" data-sort-name="${escapeAttr(brand)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
-    <img src="${escapeAttr(photo)}" alt="${escapeAttr(brand)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(brand)}&size=720&background=eef4ff&color=2563eb&bold=true';">
+  const teaser = cardTeaserFromBio(bio);
+  const shareBlock = sharePanelHtml(lang, href, brand);
+  const catalogCard = `<article class="card startup-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-founded="${year}" data-sort-name="${escapeAttr(brand)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
     <div class="card-body">
       <p class="eyebrow">${escapeHtml(foundedLabel)} ${year}</p>
       <h3>${escapeHtml(brand)}</h3>
       <p class="meta">${escapeHtml(metaLine)}</p>
-      <p>${escapeHtml(bio.slice(0, 220))}…</p>
+      <p class="card-teaser">${escapeHtml(teaser)}</p>
       <div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
-      <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].learnMore)}</a>
+      <div class="directory-card-actions">
+        <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].learnMore)}</a>
+        ${shareBlock}
+      </div>
     </div>
   </article>`;
   return { brand, country, city, vertical, bio, photo, tags, filterKey, year, metaLine, model, contrib, catalogCard };
