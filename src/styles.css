@@ -3093,6 +3093,98 @@ body[data-theme='dark'] .home-compass {
   color: var(--muted);
 }
 
+.interview-drill__context {
+  margin: -8px 0 16px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.interview-drill__field--specialty {
+  min-width: 220px;
+  flex: 1 1 260px;
+}
+
+.interview-drill__micro {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.interview-drill__mcq {
+  margin: 0 0 10px;
+}
+
+.interview-drill__mcq-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.interview-drill__mcq-row input {
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.interview-drill__mcq-label {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  cursor: pointer;
+  padding: 2px 0 2px 4px;
+  border-radius: 8px;
+}
+
+.interview-drill__mcq-label--picked.interview-drill__mcq-label--correct {
+  color: #0f6d46;
+  font-weight: 600;
+}
+
+.interview-drill__mcq-label--picked.interview-drill__mcq-label--wrong {
+  color: #b42318;
+}
+
+.interview-drill__mcq-label--reveal {
+  box-shadow: inset 0 0 0 2px rgba(15, 109, 70, 0.35);
+}
+
+.interview-drill__mcq-feedback {
+  margin: 2px 0 10px;
+  font-size: 0.86rem;
+}
+
+.interview-drill__mcq-feedback--ok {
+  color: #0f6d46;
+}
+
+.interview-drill__mcq-feedback--bad {
+  color: #b42318;
+}
+
+body[data-theme="dark"] .interview-drill__mcq-label--picked.interview-drill__mcq-label--correct {
+  color: #6ee7b7;
+}
+
+body[data-theme="dark"] .interview-drill__mcq-label--picked.interview-drill__mcq-label--wrong {
+  color: #fca5a5;
+}
+
+body[data-theme="dark"] .interview-drill__mcq-label--reveal {
+  box-shadow: inset 0 0 0 2px rgba(110, 231, 183, 0.35);
+}
+
+body[data-theme="dark"] .interview-drill__mcq-feedback--ok {
+  color: #6ee7b7;
+}
+
+body[data-theme="dark"] .interview-drill__mcq-feedback--bad {
+  color: #fca5a5;
+}
+
 .interview-drill__list {
   margin: 0;
   padding: 0;

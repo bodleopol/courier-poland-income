@@ -8,17 +8,26 @@
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site</p>
     <h1>Тренажёр собеседования</h1>
-    <p>Десять тысяч уникальных комбинаций контекста, стрессора, роли, компетенции и типа вопроса — для самопроверки перед интервью на руководящие и технические позиции. На каждом экране <strong>четыре</strong> вопроса; автоматической оценки нет.</p>
+    <p>Десять тысяч уникальных комбинаций контекста, стрессора, роли, компетенции и типа вопроса — для самопроверки перед интервью на руководящие и технические позиции. На каждом экране <strong>четыре</strong> вопроса. Добавлен короткий тест с <strong>пятью вариантами</strong> и подсказкой после выбора; открытые сценарные ответы по-прежнему без автоматической оценки.</p>
   </div>
 </section>
 
 <section class="interview-disclaimer" aria-labelledby="iv-disclaimer-title">
   <h2 id="iv-disclaimer-title" class="interview-disclaimer__title">Как это устроено</h2>
-    <p>Это <strong>учебный симулятор</strong>, а не тест с «правильными» ответами и не замена реального собеседования. Формулировки собираются комбинаторно из кураторских списков и шаблонов (см. <a href="methodology-ru.html">«Методология»</a>, раздел 5), поэтому могут быть похожи, но индекс каждого пакета уникален. Заметки хранятся только в браузере (localStorage). Краткие ответы — в <a href="faq-ru.html">«Вопросы и ответы»</a>.</p>
+    <p>Это <strong>учебный симулятор</strong>, а не замена реального собеседования. Открытые сценарные формулировки собираются комбинаторно из кураторских списков и шаблонов (см. <a href="methodology-ru.html">«Методология»</a>, раздел 5), поэтому могут быть похожи, но индекс каждого пакета уникален. Отдельно есть <strong>режим MCQ</strong>: пять вариантов, после выбора отмечается рекомендуемый учебный ответ. Заметки хранятся только в браузере (localStorage). Краткие ответы — в <a href="faq-ru.html">«Вопросы и ответы»</a>.</p>
 </section>
 
 <section class="interview-drill" data-interview-drill aria-label="Тренажёр собеседования">
   <div class="interview-drill__toolbar">
+    <div class="interview-drill__field" data-iv-mode-wrap hidden>
+      <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Режим</label>
+      <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
+    </div>
+    <div class="interview-drill__field interview-drill__field--specialty" data-iv-specialty-wrap hidden>
+      <label class="interview-drill__label" data-iv-specialty-label for="iv-specialty">Специализация</label>
+      <select id="iv-specialty" class="interview-drill__select interview-drill__select--specialty" data-iv-specialty></select>
+      <span class="interview-drill__micro" data-iv-specialty-hint></span>
+    </div>
     <div class="interview-drill__field">
       <label class="interview-drill__label" data-iv-track-label for="iv-track">Акцент роли</label>
       <select id="iv-track" class="interview-drill__select" data-iv-track></select>
@@ -38,9 +47,10 @@
     <button type="button" class="btn secondary" data-iv-random></button>
   </div>
   <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
+  <p class="interview-drill__context" data-iv-context hidden></p>
   <ol class="interview-drill__list" data-iv-list aria-label="Четыре вопроса текущего пакета"></ol>
   <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
-  <p class="interview-drill__hint">Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода. В адресе можно задать <code>p</code> (индекс пакета с 0), <code>t</code> или <code>track</code> (сдвиг роли 0–7) и <code>r=1</code> для случайного пакета при открытии.</p>
+  <p class="interview-drill__hint" data-iv-hint>Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода.</p>
 </section>
 
 <section class="split-panel">

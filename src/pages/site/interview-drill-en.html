@@ -8,17 +8,26 @@
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site</p>
     <h1>Interview drill</h1>
-    <p>Ten thousand unique combinations of context, stressor, role, competency and question archetype — for self-check before leadership and technical interviews. Each screen shows <strong>four</strong> prompts; nothing is auto-scored.</p>
+    <p>Ten thousand unique combinations of context, stressor, role, competency and question archetype — for self-check before leadership and technical interviews. Each screen shows <strong>four</strong> prompts. There is also a short <strong>five-option</strong> drill with feedback after you pick an answer; open-ended prompts remain unscored.</p>
   </div>
 </section>
 
 <section class="interview-disclaimer" aria-labelledby="iv-disclaimer-title">
   <h2 id="iv-disclaimer-title" class="interview-disclaimer__title">How it works</h2>
-    <p>This is a <strong>practice simulator</strong>, not a scored test and not a substitute for a real interview. Prompts are assembled combinatorially from curated lists and templates (see <a href="methodology-en.html">Methodology</a>, section 5), so wording may feel similar across items, but each batch index is unique. Notes are stored only in your browser (localStorage). Short answers to common questions are in the <a href="faq-en.html">FAQ</a>.</p>
+    <p>This is a <strong>practice simulator</strong>, not a substitute for a real interview. Open-ended prompts are assembled combinatorially from curated lists and templates (see <a href="methodology-en.html">Methodology</a>, section 5), so wording may feel similar across items, but each batch index is unique. A separate <strong>MCQ mode</strong> offers five choices and highlights the recommended learning answer after you select one. Notes are stored only in your browser (localStorage). Short answers to common questions are in the <a href="faq-en.html">FAQ</a>.</p>
 </section>
 
 <section class="interview-drill" data-interview-drill aria-label="Interview drill">
   <div class="interview-drill__toolbar">
+    <div class="interview-drill__field" data-iv-mode-wrap hidden>
+      <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Mode</label>
+      <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
+    </div>
+    <div class="interview-drill__field interview-drill__field--specialty" data-iv-specialty-wrap hidden>
+      <label class="interview-drill__label" data-iv-specialty-label for="iv-specialty">Specialty</label>
+      <select id="iv-specialty" class="interview-drill__select interview-drill__select--specialty" data-iv-specialty></select>
+      <span class="interview-drill__micro" data-iv-specialty-hint></span>
+    </div>
     <div class="interview-drill__field">
       <label class="interview-drill__label" data-iv-track-label for="iv-track">Role emphasis</label>
       <select id="iv-track" class="interview-drill__select" data-iv-track></select>
@@ -38,9 +47,10 @@
     <button type="button" class="btn secondary" data-iv-random></button>
   </div>
   <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
+  <p class="interview-drill__context" data-iv-context hidden></p>
   <ol class="interview-drill__list" data-iv-list aria-label="Four questions in the current batch"></ol>
   <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
-  <p class="interview-drill__hint">Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field. URL query: <code>p</code> (batch index from 0), <code>t</code> or <code>track</code> (role shift 0–7), <code>r=1</code> for a random batch on load.</p>
+  <p class="interview-drill__hint" data-iv-hint>Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field.</p>
 </section>
 
 <section class="split-panel">
