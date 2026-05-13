@@ -107,7 +107,10 @@ const translations = {
     navMethodology: 'Методологія',
     navFaq: 'Питання й відповіді',
     navInterview: 'Тренажер співбесіди',
+    navAbout: 'Про видання',
     navMenu: 'Меню',
+    navLang: 'Версії мовою',
+    navTheme: 'Перемикач теми: світла або темна',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
     navTerms: 'Умови',
@@ -122,9 +125,9 @@ const translations = {
       'Матеріали для орієнтації в темі; це не стрічка новин і не майданчик вакансій. Факти звіряйте з офіційними сайтами та публікаціями.',
     footerLanguages: 'Мови: українська, англійська, іспанська, російська.',
     footerRights: 'Усі права захищені.',
-    footerPoliciesTitle: 'Політики',
+    footerPoliciesTitle: 'Юридичні сторінки',
     footerPoliciesText:
-      'Сторінки про конфіденційність, cookies та умови; як збираємо матеріали — у розділі «Методологія»; типові запитання — у «Питання й відповіді».',
+      'Конфіденційність, cookies та умови користування. Методологія, FAQ і тренажер — у колонці «Навігація».',
     footerTagline: 'Первинні джерела завжди мають пріоритет перед цим довідником.',
     footerSitemap: 'Карта сайту',
     cookieTitle: 'Ми використовуємо лише базові cookies',
@@ -141,7 +144,10 @@ const translations = {
     navMethodology: 'Methodology',
     navFaq: 'FAQ',
     navInterview: 'Interview drill',
+    navAbout: 'About',
     navMenu: 'Menu',
+    navLang: 'Language versions',
+    navTheme: 'Toggle light or dark theme',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
     navTerms: 'Terms',
@@ -156,9 +162,9 @@ const translations = {
       'Reference-style pages for context; not a news feed or a jobs board. Cross-check facts on official sites and publications.',
     footerLanguages: 'Languages: Ukrainian, English, Spanish, Russian.',
     footerRights: 'All rights reserved.',
-    footerPoliciesTitle: 'Policies',
+    footerPoliciesTitle: 'Legal pages',
     footerPoliciesText:
-      'Privacy, cookies, and terms pages are linked above; methodology is explained in its own section, and common questions in the FAQ.',
+      'Privacy, cookies, and terms of use. Methodology, FAQ, and the interview drill are in the Navigation column.',
     footerTagline: 'Primary sources outweigh this directory when they disagree.',
     footerSitemap: 'Sitemap',
     cookieTitle: 'We use only basic cookies',
@@ -175,7 +181,10 @@ const translations = {
     navMethodology: 'Metodología',
     navFaq: 'Preguntas frecuentes',
     navInterview: 'Simulacro de entrevista',
+    navAbout: 'Sobre el sitio',
     navMenu: 'Menú',
+    navLang: 'Versiones por idioma',
+    navTheme: 'Cambiar tema claro u oscuro',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
     navTerms: 'Términos',
@@ -190,9 +199,9 @@ const translations = {
       'Textos de referencia para orientarte; no es un medio de noticias ni un portal de empleo. Contrasta los datos en fuentes oficiales.',
     footerLanguages: 'Idiomas: ucraniano, inglés, español y ruso.',
     footerRights: 'Todos los derechos reservados.',
-    footerPoliciesTitle: 'Políticas',
+    footerPoliciesTitle: 'Páginas legales',
     footerPoliciesText:
-      'Páginas de privacidad, cookies y términos enlazadas arriba; la metodología está en su propia sección y las dudas frecuentes en Preguntas frecuentes.',
+      'Privacidad, cookies y términos. Metodología, preguntas frecuentes y simulacro de entrevista están en la columna Navegación.',
     footerTagline: 'Si hay discrepancia, prevalecen las fuentes primarias.',
     footerSitemap: 'Mapa del sitio',
     cookieTitle: 'Usamos solo cookies básicas',
@@ -209,7 +218,10 @@ const translations = {
     navMethodology: 'Методология',
     navFaq: 'Вопросы и ответы',
     navInterview: 'Тренажёр собеседования',
+    navAbout: 'Об издании',
     navMenu: 'Меню',
+    navLang: 'Языковые версии',
+    navTheme: 'Переключение светлой и тёмной темы',
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
     navTerms: 'Условия',
@@ -224,9 +236,9 @@ const translations = {
       'Материалы для ориентира, это не новостная лента и не площадка вакансий. Факты сверяйте с официальными сайтами и публикациями.',
     footerLanguages: 'Языки: украинский, английский, испанский, русский.',
     footerRights: 'Все права защищены.',
-    footerPoliciesTitle: 'Политики',
+    footerPoliciesTitle: 'Юридические страницы',
     footerPoliciesText:
-      'Страницы о конфиденциальности, cookies и условиях — в ссылках выше; как собираем материалы — в разделе «Методология»; типичные вопросы — в «Вопросы и ответы».',
+      'Конфиденциальность, cookies и условия. Методология, вопросы и ответы и тренажёр — в колонке «Навигация».',
     footerTagline: 'При расхождении приоритет у первичных источников.',
     footerSitemap: 'Карта сайта',
     cookieTitle: 'Мы используем только базовые cookies',
@@ -375,17 +387,21 @@ function compileHTML(srcFile, destFile) {
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
   const interviewUrl = lang === 'uk' ? 'interview-drill.html' : `interview-drill-${lang}.html`;
+  const aboutUrl = lang === 'uk' ? 'about.html' : `about-${lang}.html`;
   finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
                        .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
                        .replaceAll('{{NAV_FAQ}}', local.navFaq)
+                       .replaceAll('{{NAV_ABOUT}}', local.navAbout)
                        .replaceAll('{{NAV_INTERVIEW}}', local.navInterview)
                        .replaceAll('{{NAV_MENU}}', local.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', local.navCookies)
                        .replaceAll('{{NAV_TERMS}}', local.navTerms)
+                       .replaceAll('{{NAV_LANG}}', local.navLang)
+                       .replaceAll('{{NAV_THEME}}', local.navTheme)
                        .replaceAll('{{HOME_URL}}', homeUrl)
                        .replaceAll('{{SPECIALISTS_URL}}', specialistsUrl)
                        .replaceAll('{{STARTUPS_URL}}', startupsUrl)
@@ -395,6 +411,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
                        .replaceAll('{{INTERVIEW_URL}}', interviewUrl)
+                       .replaceAll('{{ABOUT_URL}}', aboutUrl)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)

@@ -39,7 +39,7 @@
 
 <section class="live-layer live-layer--v2" aria-label="Жива стрічка головної сторінки">
   <div class="section-intro section-intro--tight">
-    <p class="eyebrow">Live desk</p>
+    <p class="eyebrow">Жива стрічка</p>
     <h2>Пульс архіву в реальному часі</h2>
     <p>Годинник локального часу, ротація редакційних нотаток, випадковий акцент і три сигнали, що оновлюються без перезавантаження сторінки. Добірки експертів унизу перетасовуються при кожному відкритті.</p>
   </div>
@@ -78,7 +78,7 @@
   <div class="home-editorial-burst__head">
     <p class="eyebrow">Редакційні пости</p>
     <h2>Короткі блоки, що змінюються</h2>
-    <p>Три міні-пости змінюють тему й текст кожні кілька секунд — окремо від карток людей, щоб не змішувати факти й декоративний шар.</p>
+    <p>Три міні-пости змінюють тему й текст по колу кожні кілька секунд — окремо від карток людей, щоб не змішувати факти й декоративний шар.</p>
   </div>
   <div class="home-editorial-burst__grid" id="editorialBurst"></div>
 </section>
@@ -95,13 +95,13 @@
   <p>Порядок карток обчислюється на клієнті при кожному відкритті сторінки — усі профілі рівні щодо шансу опинитися першими.</p>
 </div>
 
-<div class="dynamic-filters" data-filter-target="#featuredGridMount .profile-card" data-home-filter="experts">
-  <button class="filter-btn active" data-filter="all">Всі експерти</button>
-  <button class="filter-btn" data-filter="software">Software</button>
-  <button class="filter-btn" data-filter="engineering">Інженерія</button>
-  <button class="filter-btn" data-filter="operations">Операції</button>
-  <button class="filter-btn" data-filter="ceo">Лідерство</button>
-  <button class="filter-btn" data-filter="science">Наука</button>
+<div class="dynamic-filters" role="group" aria-label="Фільтр добірки експертів на головній" data-filter-target="#featuredGridMount .profile-card" data-home-filter="experts">
+  <button type="button" class="filter-btn active" data-filter="all">Всі експерти</button>
+  <button type="button" class="filter-btn" data-filter="software">Software</button>
+  <button type="button" class="filter-btn" data-filter="engineering">Інженерія</button>
+  <button type="button" class="filter-btn" data-filter="operations">Операції</button>
+  <button type="button" class="filter-btn" data-filter="ceo">Лідерство</button>
+  <button type="button" class="filter-btn" data-filter="science">Наука</button>
 </div>
 <section class="grid featured-grid" id="featuredGridMount"></section>
 
@@ -174,12 +174,12 @@
   <h2>Обрані досьє стартапів</h2>
   <p>Картки компаній повторюють логіку профілів людей: фокус, географія й джерела зʼявляються раніше за декоративний текст.</p>
 </div>
-<div class="dynamic-filters" data-filter-target="#startupGridMount .startup-card" data-home-filter="companies">
-  <button class="filter-btn active" data-filter="all">Всі компанії</button>
-  <button class="filter-btn" data-filter="software">Software</button>
-  <button class="filter-btn" data-filter="fintech">Фінтех</button>
-  <button class="filter-btn" data-filter="operations">Операції</button>
-  <button class="filter-btn" data-filter="design">Дизайн</button>
+<div class="dynamic-filters" role="group" aria-label="Фільтр добірки стартапів на головній" data-filter-target="#startupGridMount .startup-card" data-home-filter="companies">
+  <button type="button" class="filter-btn active" data-filter="all">Всі компанії</button>
+  <button type="button" class="filter-btn" data-filter="software">Software</button>
+  <button type="button" class="filter-btn" data-filter="fintech">Фінтех</button>
+  <button type="button" class="filter-btn" data-filter="operations">Операції</button>
+  <button type="button" class="filter-btn" data-filter="design">Дизайн</button>
 </div>
 <section class="grid startup-grid" id="startupGridMount"></section>
 
@@ -519,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="home-hero-focus__row">
         <img src="${src}" alt="${esc(alt)}" width="76" height="76" loading="eager" decoding="async" referrerpolicy="no-referrer">
         <div>
-          <h2>${esc(name)}</h2>
+          <p class="home-hero-focus__name">${esc(name)}</p>
           <p class="role">${esc(role)}</p>
           <a class="btn" href="${href}">Відкрити профіль</a>
         </div>
@@ -570,7 +570,8 @@ document.addEventListener('DOMContentLoaded', () => {
     burstIndex = (burstIndex + 3) % editorialPosts.length;
     burstEl.innerHTML = slice
       .map(
-        (p) => `<article class="home-post-tile"><span class="topic">${p.topic}</span><h3>${p.title}</h3><p>${p.body}</p></article>`
+        (p) =>
+          `<article class="home-post-tile"><span class="topic">${esc(p.topic)}</span><h3>${esc(p.title)}</h3><p>${esc(p.body)}</p></article>`
       )
       .join('');
   }
@@ -668,6 +669,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
 
+  document.querySelectorAll('.dynamic-filters .filter-btn').forEach((b) => {
+    b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
+  });
+
   document.querySelectorAll('.dynamic-filters').forEach((filterContainer) => {
     filterContainer.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter-btn');
@@ -675,8 +680,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetSelector = filterContainer.getAttribute('data-filter-target');
       if (!targetSelector) return;
       const cards = document.querySelectorAll(targetSelector);
-      filterContainer.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      filterContainer.querySelectorAll('.filter-btn').forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       const filterValue = btn.getAttribute('data-filter');
       cards.forEach((card) => {
         if (filterValue === 'all' || card.getAttribute('data-filter-key') === filterValue) card.style.display = '';

@@ -33,19 +33,19 @@
                 <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
                 <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
                 <a href="{{FAQ_URL}}">{{NAV_FAQ}}</a>
+                <a href="{{ABOUT_URL}}">{{NAV_ABOUT}}</a>
                 <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
-                <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
             </nav>
             <div class="header-tools">
-                <div class="lang-switcher">
+                <nav class="lang-switcher" aria-label="{{NAV_LANG}}">
                     <a href="{{CANONICAL}}">UA</a>
                     <a href="{{CANONICAL_EN}}">EN</a>
                     <a href="{{CANONICAL_ES}}">ES</a>
                     <a href="{{CANONICAL_RU}}">RU</a>
-                </div>
+                </nav>
                 <div class="theme-switch-wrapper">
-                    <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
+                    <label class="theme-switch" for="theme-site-toggle">
+                        <input type="checkbox" id="theme-site-toggle" aria-label="{{NAV_THEME}}" />
                         <div class="slider round"></div>
                     </label>
                 </div>
@@ -64,15 +64,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>{{FOOTER_NAV_TITLE}}</h4>
-                    <nav class="footer-nav">
+                    <nav class="footer-nav" aria-label="{{FOOTER_NAV_TITLE}}">
                         <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
                         <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
                         <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
-                        <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
-                        <a href="{{COOKIES_URL}}">{{NAV_COOKIES}}</a>
-                        <a href="{{TERMS_URL}}">{{NAV_TERMS}}</a>
                         <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
                         <a href="{{FAQ_URL}}">{{NAV_FAQ}}</a>
+                        <a href="{{ABOUT_URL}}">{{NAV_ABOUT}}</a>
                         <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
                         <a href="sitemap.xml">{{FOOTER_SITEMAP}}</a>
                     </nav>
@@ -86,14 +84,11 @@
                 <div class="footer-section official-footer">
                     <h4>{{FOOTER_POLICIES_TITLE}}</h4>
                     <p>{{FOOTER_POLICIES_TEXT}}</p>
-                    <div class="footer-policy-links">
+                    <nav class="footer-policy-links" aria-label="{{FOOTER_POLICIES_TITLE}}">
                         <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
                         <a href="{{COOKIES_URL}}">{{NAV_COOKIES}}</a>
                         <a href="{{TERMS_URL}}">{{NAV_TERMS}}</a>
-                        <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
-                        <a href="{{FAQ_URL}}">{{NAV_FAQ}}</a>
-                        <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
-                    </div>
+                    </nav>
                 </div>
             </div>
             <div class="footer-bottom">
