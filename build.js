@@ -340,7 +340,14 @@ const editorialUi = {
     catalogShareWhatsapp: 'WhatsApp',
     catalogShareNative: 'Поділитися…',
     catalogReadProfile: 'Читати профіль',
-    catalogGalleryHeading: 'Фотографії та візуальний контекст'
+    catalogGalleryHeading: 'Фотографії та візуальний контекст',
+    intelBridgePersonTitle: 'Стартапи в сусідньому шарі',
+    intelBridgePersonIntro:
+      'Перехід у каталог компаній із попередньо введеним тегом з цього профілю — швидке орієнтування в екосистемі.',
+    intelBridgeOrgTitle: 'Люди в суміжних темах',
+    intelBridgeOrgIntro:
+      'Перехід у каталог спеціалістів із запитом за першим тегом компанії — для порівняння мандатів і досвіду.',
+    intelBridgeCta: 'Відкрити каталог'
   },
   en: {
     navDockAria: 'Quick navigation',
@@ -384,7 +391,14 @@ const editorialUi = {
     catalogShareWhatsapp: 'WhatsApp',
     catalogShareNative: 'Share…',
     catalogReadProfile: 'Read profile',
-    catalogGalleryHeading: 'Photos and visual context'
+    catalogGalleryHeading: 'Photos and visual context',
+    intelBridgePersonTitle: 'Companies in the adjacent lane',
+    intelBridgePersonIntro:
+      'Jump to the startup catalogue with a query prefilled from this dossier’s first tag—fast ecosystem orientation.',
+    intelBridgeOrgTitle: 'People on neighbouring mandates',
+    intelBridgeOrgIntro:
+      'Jump to the specialist catalogue using the company’s lead tag as a search seed to compare operators.',
+    intelBridgeCta: 'Open catalogue'
   },
   es: {
     navDockAria: 'Navegación rápida',
@@ -428,7 +442,14 @@ const editorialUi = {
     catalogShareWhatsapp: 'WhatsApp',
     catalogShareNative: 'Compartir…',
     catalogReadProfile: 'Ver perfil',
-    catalogGalleryHeading: 'Fotos y contexto visual'
+    catalogGalleryHeading: 'Fotos y contexto visual',
+    intelBridgePersonTitle: 'Empresas en la capa vecina',
+    intelBridgePersonIntro:
+      'Salta al catálogo de startups con una consulta tomada de la primera etiqueta de esta ficha.',
+    intelBridgeOrgTitle: 'Personas en mandatos afines',
+    intelBridgeOrgIntro:
+      'Salta al catálogo de especialistas usando la etiqueta principal de la empresa como semilla de búsqueda.',
+    intelBridgeCta: 'Abrir catálogo'
   },
   ru: {
     navDockAria: 'Быстрая навигация',
@@ -472,7 +493,14 @@ const editorialUi = {
     catalogShareWhatsapp: 'WhatsApp',
     catalogShareNative: 'Поделиться…',
     catalogReadProfile: 'Читать профиль',
-    catalogGalleryHeading: 'Фотографии и визуальный контекст'
+    catalogGalleryHeading: 'Фотографии и визуальный контекст',
+    intelBridgePersonTitle: 'Стартапы в соседнем слое',
+    intelBridgePersonIntro:
+      'Переход в каталог компаний с запросом по первому тегу этого досье — быстрая навигация по экосистеме.',
+    intelBridgeOrgTitle: 'Люди в смежных темах',
+    intelBridgeOrgIntro:
+      'Переход в каталог специалистов с поиском по ведущему тегу компании для сравнения мандатов.',
+    intelBridgeCta: 'Открыть каталог'
   }
 };
 
@@ -572,7 +600,7 @@ function buildExpertiseWheelStyle(tags) {
   return `conic-gradient(${parts.join(', ')})`;
 }
 
-function buildIntelAsidePerson(content, local, mtimeIso) {
+function buildIntelAsidePerson(content, local, mtimeIso, urls) {
   const sig = extractProfileSignals(content);
   const links = collectExternalLinks(content);
   const wheel = buildExpertiseWheelStyle(sig.tags.length ? sig.tags : ['—']);
@@ -583,6 +611,10 @@ function buildIntelAsidePerson(content, local, mtimeIso) {
   const linksHtml = links
     .map((u) => `<li><a href="${escapeAttr(u)}" rel="noopener noreferrer">${escapeHtml(u.replace(/^https?:\/\//i, ''))}</a></li>`)
     .join('');
+  const bridgeTag = (sig.tags && sig.tags[0]) || sig.h2 || sig.h1 || '';
+  const bridgeHref = bridgeTag
+    ? `${urls.startupsUrl}?q=${encodeURIComponent(bridgeTag)}`
+    : urls.startupsUrl;
 
   return `<aside class="profile-intel" aria-label="${escapeAttr(local.intelAsideAria)}">
     <div class="intel-card intel-card--verify">
@@ -617,6 +649,11 @@ function buildIntelAsidePerson(content, local, mtimeIso) {
       <p class="intel-card__muted">${escapeHtml(local.sourcesIntro)}</p>
       ${links.length ? `<ul class="intel-sources">${linksHtml}</ul>` : `<p class="intel-card__body">${escapeHtml('—')}</p>`}
     </div>
+    <div class="intel-card intel-card--bridge">
+      <p class="intel-card__eyebrow">${escapeHtml(local.intelBridgePersonTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.intelBridgePersonIntro)}</p>
+      <p><a class="btn secondary" href="${escapeAttr(bridgeHref)}">${escapeHtml(local.intelBridgeCta)}</a></p>
+    </div>
     <div class="intel-card intel-card--note">
       <p class="intel-card__eyebrow">${escapeHtml(local.deskNoteTitle)}</p>
       <p class="intel-card__body">${escapeHtml(local.deskNoteBody)}</p>
@@ -624,7 +661,7 @@ function buildIntelAsidePerson(content, local, mtimeIso) {
   </aside>`;
 }
 
-function buildIntelAsideStartup(content, local, mtimeIso) {
+function buildIntelAsideStartup(content, local, mtimeIso, urls) {
   const sig = extractProfileSignals(content);
   const links = collectExternalLinks(content);
   const wheel = buildExpertiseWheelStyle(sig.tags.length ? sig.tags : ['—']);
@@ -635,6 +672,10 @@ function buildIntelAsideStartup(content, local, mtimeIso) {
   const linksHtml = links
     .map((u) => `<li><a href="${escapeAttr(u)}" rel="noopener noreferrer">${escapeHtml(u.replace(/^https?:\/\//i, ''))}</a></li>`)
     .join('');
+  const bridgeTag = (sig.tags && sig.tags[0]) || sig.h2 || sig.h1 || '';
+  const bridgeHref = bridgeTag
+    ? `${urls.specialistsUrl}?q=${encodeURIComponent(bridgeTag)}`
+    : urls.specialistsUrl;
 
   return `<aside class="profile-intel profile-intel--org" aria-label="${escapeAttr(local.orgIntelAsideAria)}">
     <div class="intel-card intel-card--verify">
@@ -668,6 +709,11 @@ function buildIntelAsideStartup(content, local, mtimeIso) {
       <p class="intel-card__eyebrow">${escapeHtml(local.sourcesTitle)}</p>
       <p class="intel-card__muted">${escapeHtml(local.sourcesIntro)}</p>
       ${links.length ? `<ul class="intel-sources">${linksHtml}</ul>` : `<p class="intel-card__body">${escapeHtml('—')}</p>`}
+    </div>
+    <div class="intel-card intel-card--bridge">
+      <p class="intel-card__eyebrow">${escapeHtml(local.intelBridgeOrgTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.intelBridgeOrgIntro)}</p>
+      <p><a class="btn secondary" href="${escapeAttr(bridgeHref)}">${escapeHtml(local.intelBridgeCta)}</a></p>
     </div>
     <div class="intel-card intel-card--note">
       <p class="intel-card__eyebrow">${escapeHtml(local.deskNoteTitle)}</p>
@@ -919,7 +965,8 @@ function processDirectory(dirPath, destPath) {
           srcFile.endsWith('interview-bank-data.js') ||
           srcFile.endsWith('site-search-index.js') ||
           srcFile.endsWith('site-search.js') ||
-          srcFile.endsWith('catalog-cards.js');
+          srcFile.endsWith('catalog-cards.js') ||
+          srcFile.endsWith('intel-platform.js');
         fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
@@ -1025,11 +1072,13 @@ function compileHTML(srcFile, destFile) {
   const stat = fs.statSync(srcFile);
   const mtimeIso = stat.mtime.toISOString();
 
+  const urlPack = { homeUrl, specialistsUrl, startupsUrl, methodologyUrl, faqUrl, interviewUrl };
+
   let mainBody = content;
   if (pageKind === 'person') {
-    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsidePerson(content, localMerged, mtimeIso)}</div>`;
+    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsidePerson(content, localMerged, mtimeIso, urlPack)}</div>`;
   } else if (pageKind === 'startup') {
-    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsideStartup(content, localMerged, mtimeIso)}</div>`;
+    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsideStartup(content, localMerged, mtimeIso, urlPack)}</div>`;
   }
 
   const sig = extractProfileSignals(content);
@@ -1040,7 +1089,6 @@ function compileHTML(srcFile, destFile) {
   else if (pageKind === 'startups') entityTitle = localMerged.navStartups;
   else if (pageKind === 'article' || pageKind === 'page') entityTitle = personNameFromTitle(title);
 
-  const urlPack = { homeUrl, specialistsUrl, startupsUrl, methodologyUrl, faqUrl, interviewUrl };
   const breadcrumbNav = buildBreadcrumbHtml(pageKind, localMerged, urlPack, entityTitle);
 
   const schemaKind =

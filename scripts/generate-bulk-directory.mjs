@@ -385,7 +385,33 @@ function buildSpecialistBio(lang, name, country, domain, niche, years, rng) {
     es: `${name} es una figura poco visible en titulares generales, con más de ${years} años trabajando en «${domain}» desde ${country}. Esta ficha es un contexto editorial: el impacto aparece en herramientas, revisiones técnicas y mentoría, no en autopromoción ruidosa. El enfoque en ${niche} se nota donde importan la fiabilidad y las decisiones sensatas. ${extra} El resumen siguiente organiza foco, país y etiquetas; contrasta cualquier dato con fuentes primarias y sitios oficiales si existen.`,
     ru: `${name} — специалист, редко попадающий в широкие заголовки, с более чем ${years} годами практики в области «${domain}» в контексте ${country}. Это редакционная справка: влияние проявляется в инструментах, ревью и передаче опыта, а не в медийном шуме. Коллеги отмечают вклад в ${niche}, особенно там, где важны надёжность и аккуратные компромиссы. ${extra} Ниже — структурированный обзор фокуса, страны и тегов; сверяйте факты с первичными источниками и официальными страницами, если они доступны.`
   };
-  let text = blocks[lang];
+  const rhythm = {
+    uk: [
+      ' Редакція відстежує зміни у відкритих матеріалах; ця картка не замінює первинні джерела.',
+      ' Тон навмисно стриманий: без маркетингових обіцянок і без «універсальних» порад.',
+      ' Якщо контекст зміниться, оновлення пройде тим самим каналом, що й нові профілі.',
+      ' Нижче — структура для швидкого сканування, не закрита біографія.'
+    ],
+    en: [
+      ' Editors track changes in public material; this page is not a substitute for primary records.',
+      ' Tone stays deliberately cool—no marketing promises and no generic career advice.',
+      ' When context shifts, updates follow the same intake path as new dossiers.',
+      ' The sections below are for fast scanning, not a sealed biography.'
+    ],
+    es: [
+      ' La redacción sigue cambios en fuentes públicas; la ficha no sustituye registros primarios.',
+      ' El tono se mantiene sobrio: sin promesas de marketing ni consejos genéricos.',
+      ' Si cambia el contexto, las correcciones entran por el mismo canal que las altas nuevas.',
+      ' Lo siguiente sirve para escanear rápido, no como biografía cerrada.'
+    ],
+    ru: [
+      ' Редакция отслеживает изменения в открытых материалах; страница не заменяет первичные записи.',
+      ' Тон намеренно сдержан: без маркетинговых обещаний и без «универсальных» советов.',
+      ' При смене контекста правки проходят тем же каналом, что и новые досье.',
+      ' Блоки ниже — для быстрого сканирования, а не как закрытая биография.'
+    ]
+  };
+  let text = blocks[lang] + rhythm[lang][pickIdx(rng, rhythm[lang])];
   const pad = {
     uk: ` Додатковий абзац для повноти опису: акцент на ${domain}, ${niche}, ${country}; матеріал довідковий і не замінює первинні джерела.`,
     en: ` Additional briefing detail on ${domain}, ${niche}, and ${country}; reference-only, not a substitute for primary sources.`,
@@ -403,7 +429,33 @@ function buildStartupBio(lang, brand, city, vertical, wave, rng) {
     es: `${brand} es una startup poco ruidosa con base en ${city}, orientada a «${vertical}». Construye para un segmento estrecho, así que el nombre casi no aparece en medios generales, aunque la velocidad de ingeniería se nota en clientes. Este texto editorial resume mercado, modelo y fortalezas sin promesas vacías. ${brand} se presenta como ${wave}: menos titulares, más patrones de despliegue realistas, métricas transparentes y una ruta de escalado clara. Úsalo como contexto y contrasta datos financieros o legales con fuentes primarias.`,
     ru: `${brand} — низкошумный стартап со штабом в ${city}, сфокусированный на «${vertical}». Продукт ориентирован на узкую аудиторию, поэтому бренд редко попадает в новостные ленты, хотя скорость инженерных итераций заметна заказчикам. Ниже — редакционный обзор рынка, модели и сильных сторон без маркетинговых обещаний. ${brand} позиционирует себя как ${wave}: меньше заголовков, больше проверенных сценариев внедрения, прозрачные метрики и понятный путь масштабирования. Используйте страницу как справочную и сверяйте финансовые и юридические детали с первичными источниками.`
   };
-  let text = blocks[lang];
+  const rhythm = {
+    uk: [
+      ' Редакція не оцінює інвестиційну привабливість — лише фіксує публічний контекст.',
+      ' Дані про ринок і клієнтів краще звіряти з первинними матеріалами компанії.',
+      ' Якщо продуктова історія зміниться, оновлення пройде через стандартний редакційний канал.',
+      ' Теги в картці — орієнтири для пошуку, не юридична класифікація.'
+    ],
+    en: [
+      ' This desk does not score investment appeal—only public context.',
+      ' Market and customer claims should be checked against the company’s own disclosures.',
+      ' If the product story shifts, updates follow the standard editorial queue.',
+      ' Tags are wayfinding signals, not legal taxonomies.'
+    ],
+    es: [
+      ' La redacción no valora atractivo inversor: solo contexto público.',
+      ' Conviene contrastar mercado y clientes con divulgaciones propias de la empresa.',
+      ' Si cambia la historia de producto, las correcciones entran por la cola editorial habitual.',
+      ' Las etiquetas orientan la búsqueda; no son taxonomía legal.'
+    ],
+    ru: [
+      ' Редакция не оценивает инвестиционную привлекательность — только публичный контекст.',
+      ' Рыночные и клиентские тезисы лучше сверять с раскрытиями самой компании.',
+      ' Если продуктовая история изменится, правки пройдут стандартную редакционную очередь.',
+      ' Теги — ориентиры для поиска, а не юридическая классификация.'
+    ]
+  };
+  let text = blocks[lang] + rhythm[lang][pickIdx(rng, rhythm[lang])];
   const pad = {
     uk: ` Додатковий контекст: ${city}, ${vertical}, ${wave}; опис редакційний.`,
     en: ` Additional context: ${city}, ${vertical}, ${wave}; editorial summary.`,
