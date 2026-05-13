@@ -1380,6 +1380,45 @@ input:checked + .slider:before {
     box-shadow: 0 24px 50px rgba(37, 99, 235, 0.08);
 }
 
+@keyframes directory-card-settle {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.directory-grid--shuffled [data-directory-card] {
+    animation: directory-card-settle 0.42s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(min(var(--directory-card-i, 0), 40) * 14ms);
+}
+
+@keyframes shuffle-grid-tile {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.grid--shuffle-stagger > article {
+    animation: shuffle-grid-tile 0.48s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(min(var(--shuffle-i, 0), 30) * 32ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .directory-grid--shuffled [data-directory-card],
+    .grid--shuffle-stagger > article {
+        animation: none;
+    }
+}
+
 .cookie-banner {
     position: fixed;
     right: 24px;
