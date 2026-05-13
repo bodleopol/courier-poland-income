@@ -37,6 +37,15 @@
   <div class="home-marquee__track" id="homeNameMarquee"></div>
 </div>
 
+<section class="home-compass" aria-label="Швидкий компас по сайту">
+  <div class="home-compass__inner">
+    <p class="eyebrow">Атлас за один клік</p>
+    <h2>Куди далі</h2>
+    <p class="home-compass__intro">П’ять випадкових маршрутів з одного набору — порядок змінюється при кожному завантаженні, без прихованих редиректів.</p>
+    <ul class="home-compass__list" id="homeCompassList"></ul>
+  </div>
+</section>
+
 <section class="live-layer live-layer--v2" aria-label="Жива стрічка головної сторінки">
   <div class="section-intro section-intro--tight">
     <p class="eyebrow">Live desk</p>
@@ -78,7 +87,7 @@
   <div class="home-editorial-burst__head">
     <p class="eyebrow">Редакційні пости</p>
     <h2>Короткі блоки, що змінюються</h2>
-    <p>Три міні-пости змінюють тему й текст кожні кілька секунд — окремо від карток людей, щоб не змішувати факти й декоративний шар.</p>
+    <p>Три міні-пости кожні кілька секунд вибираються випадково з пулу редакційних нотаток — окремо від карток людей, щоб не змішувати факти й декоративний шар.</p>
   </div>
   <div class="home-editorial-burst__grid" id="editorialBurst"></div>
 </section>
@@ -499,6 +508,32 @@ document.addEventListener('DOMContentLoaded', () => {
   mountShuffledArticles('tpl-home-startups', document.getElementById('startupGridMount'), rngStartups);
   mountRandomArticleSubset('tpl-home-featured', document.getElementById('editorialTeamMount'), 3, mulberry32(sessionSeed + 424242));
 
+  const editorialBandEl = document.querySelector('.editorial-band');
+  if (editorialBandEl) {
+    const bandArticles = Array.from(editorialBandEl.querySelectorAll('article'));
+    shuffle(bandArticles, mulberry32(sessionSeed * 17 + 11)).forEach((node) => editorialBandEl.appendChild(node));
+  }
+
+  const compassLinks = [
+    { href: 'specialists.html', title: 'Усі експерти', blurb: 'Пошук, географія й тематичні фільтри в повному архіві.' },
+    { href: 'startups.html', title: 'Стартапи', blurb: 'Продуктові фокуси та джерела в однаковому форматі картки.' },
+    { href: 'methodology.html', title: 'Методологія', blurb: 'Як збираються профілі та банк тренажера співбесіди.' },
+    { href: 'faq.html', title: 'Питання й відповіді', blurb: 'Типові запитання про редакцію та оновлення записів.' },
+    { href: 'interview-drill.html?r=1', title: 'Тренажер: випадковий пакет', blurb: 'Відкрити симулятор зі вже перетасованим блоком питань.' },
+    { href: 'about.html', title: 'Про видання', blurb: 'Навіщо паритет мов і як зв’язатися з редакцією.' },
+    { href: 'privacy.html', title: 'Конфіденційність', blurb: 'Що зберігається локально у браузері та базові cookies.' }
+  ];
+  const compassList = document.getElementById('homeCompassList');
+  if (compassList) {
+    shuffle(compassLinks, mulberry32(sessionSeed * 200003 + 401))
+      .slice(0, 5)
+      .forEach((item) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a class="home-compass__link" href="${item.href}"><strong>${esc(item.title)}</strong><span>${esc(item.blurb)}</span></a>`;
+        compassList.appendChild(li);
+      });
+  }
+
   const allFeaturedArticles = () =>
     Array.from(document.querySelectorAll('#featuredGridMount .profile-card'));
 
@@ -558,19 +593,22 @@ document.addEventListener('DOMContentLoaded', () => {
     { topic: 'Оновлення', title: 'Що змінюється першим', body: 'Ролі й регіони виправляються в пріоритеті; декоративні зображення — після підтвердження прав.' },
     { topic: 'Якість', title: 'Теги як навігація', body: 'Фільтри на головній працюють на тих самих ключах, що й повний каталог експертів.' },
     { topic: 'Прозорість', title: 'Виправлення в одному каналі', body: 'Корекції проходять той самий шлях, що й нові матеріали — без прихованих перезаписів.' },
-    { topic: 'Мобільність', title: 'Читабельність на телефоні', body: 'Картки й стрічка адаптуються до вузького екрана: спочатку факти, потім контекст.' }
+    { topic: 'Мобільність', title: 'Читабельність на телефоні', body: 'Картки й стрічка адаптуються до вузького екрана: спочатку факти, потім контекст.' },
+    { topic: 'Інструменти', title: 'Тренажер без оцінювання', body: 'Десять тисяч комбінацій для самоперевірки; нотатки лишаються лише у вашому браузері.' },
+    { topic: 'Навігація', title: 'Один шаблон картки', body: 'Поле «мандат» і регіон завжди в одному місці — менше когнітивного шуму при порівнянні.' },
+    { topic: 'Ритм', title: 'Жива стрічка без стрічки новин', body: 'Годинник і сигнали — орієнтири для читача, а не алгоритмічна стрічка подій.' },
+    { topic: 'Межі', title: 'Не майданчик вакансій', body: 'Архів для орієнтації в темі; пропозиції роботи сюди не публікуємо.' }
   ];
 
-  let burstIndex = 0;
   const burstEl = document.getElementById('editorialBurst');
   function renderBurst() {
     if (!burstEl) return;
-    const slice = [];
-    for (let k = 0; k < 3; k += 1) slice.push(editorialPosts[(burstIndex + k) % editorialPosts.length]);
-    burstIndex = (burstIndex + 3) % editorialPosts.length;
+    const rng = mulberry32((Date.now() ^ sessionSeed) >>> 0);
+    const slice = shuffle(editorialPosts, rng).slice(0, 3);
     burstEl.innerHTML = slice
       .map(
-        (p) => `<article class="home-post-tile"><span class="topic">${p.topic}</span><h3>${p.title}</h3><p>${p.body}</p></article>`
+        (p) =>
+          `<article class="home-post-tile"><span class="topic">${esc(p.topic)}</span><h3>${esc(p.title)}</h3><p>${esc(p.body)}</p></article>`
       )
       .join('');
   }
