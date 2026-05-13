@@ -32,7 +32,7 @@
   <p class="directory-results"><strong data-results-count>77</strong> Results found</p>
 </section>
 
-<section class="grid" data-directory-grid><article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Ukraine / Peru" data-sort-name="Bohdan Tiutenko" data-catalog-order="0" data-search="bohdan tiutenko coo chief operating officer open to role head of operations foodtech last-mile rocket yango lima peru ukraine logistics power bi sql p&amp;l">
+<section class="grid" data-directory-grid data-shuffle-cards="1"><article class="card profile-card" data-directory-card data-filter-key="operations" data-country="Ukraine / Peru" data-sort-name="Bohdan Tiutenko" data-catalog-order="0" data-search="bohdan tiutenko coo chief operating officer open to role head of operations foodtech last-mile rocket yango lima peru ukraine logistics power bi sql p&amp;l">
     <img src="assets/images/bohdan-tiutenko-painting.jpg" alt="Bohdan Tiutenko, oil self-portrait" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, (max-width: 1120px) 50vw, 360px" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Bohdan%20Tiutenko&size=720&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">Ukraine / Peru</p>
@@ -823,20 +823,3 @@
   </div>
   <a class="btn" href="methodology-en.html">Read methodology</a>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const grid = document.querySelector('[data-directory-grid]');
-    const sortSelect = document.querySelector('[data-directory-panel] [data-directory-sort]');
-    if (!grid) return;
-    if (sortSelect && sortSelect.value !== 'default') return;
-    const cards = Array.from(grid.querySelectorAll('[data-directory-card]'));
-    for (let i = cards.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [cards[i], cards[j]] = [cards[j], cards[i]];
-    }
-    cards.forEach((c) => grid.appendChild(c));
-  }, 0);
-});
-</script>

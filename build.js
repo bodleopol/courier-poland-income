@@ -254,7 +254,11 @@ function processDirectory(dirPath, destPath) {
       // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
       if (srcFile.endsWith('.css') || srcFile.endsWith('.js')) {
         const rawAsset = fs.readFileSync(srcFile, 'utf8');
-        fs.writeFileSync(destFile, minifyAssetIfNeeded(srcFile, rawAsset));
+        const skipMinifyJs =
+          srcFile.endsWith('site-dynamic-pages.js') ||
+          srcFile.endsWith('interview-drill.js') ||
+          srcFile.endsWith('interview-bank-data.js');
+        fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
       }
