@@ -12,6 +12,8 @@
     <link rel="alternate" hreflang="es" href="{{CANONICAL_ES}}">
     <link rel="alternate" hreflang="x-default" href="{{CANONICAL}}">
     <link rel="stylesheet" href="styles.css">
+    <script src="site-search-index.js" defer></script>
+    <script src="site-search.js" defer></script>
     <link rel="icon" href="assets/images/rybezh-logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/images/rybezh-logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
@@ -37,6 +39,14 @@
                 <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
             </nav>
             <div class="header-tools">
+                <div class="site-search" data-site-search data-badge-person="{{SEARCH_BADGE_PERSON}}" data-badge-startup="{{SEARCH_BADGE_STARTUP}}" data-badge-page="{{SEARCH_BADGE_PAGE}}" data-empty="{{SEARCH_EMPTY}}" data-hint="{{SEARCH_HINT}}">
+                    <label class="site-search__wrap" for="site-search-input">
+                        <span class="site-search__sr-only">{{SEARCH_ARIA}}</span>
+                        <input id="site-search-input" class="site-search__input" type="search" data-site-search-input placeholder="{{SEARCH_PLACEHOLDER}}" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="site-search-panel" aria-expanded="false" aria-label="{{SEARCH_ARIA}}">
+                    </label>
+                    <div id="site-search-panel" class="site-search__panel" data-site-search-panel hidden role="listbox" aria-label="{{SEARCH_ARIA}}"></div>
+                    <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+                </div>
                 <div class="lang-switcher">
                     <a href="{{CANONICAL}}">UA</a>
                     <a href="{{CANONICAL_EN}}">EN</a>

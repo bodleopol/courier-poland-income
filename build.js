@@ -131,7 +131,14 @@ const translations = {
     cookieText:
       'Сайт зберігає в браузері вибір теми та вашу відповідь щодо cookies. Деталі — на сторінці політики cookies.',
     cookieAccept: 'Прийняти',
-    cookieDecline: 'Відхилити'
+    cookieDecline: 'Відхилити',
+    searchAria: 'Пошук по всьому сайту',
+    searchPlaceholder: 'Пошук: імʼя, компанія, сторінка…',
+    searchBadgePerson: 'Спеціаліст',
+    searchBadgeStartup: 'Стартап',
+    searchBadgePage: 'Сторінка',
+    searchEmpty: 'Нічого не знайдено',
+    searchHint: 'результатів у списку'
   },
   en: {
     navAria: 'Main navigation',
@@ -165,7 +172,14 @@ const translations = {
     cookieText:
       'The site stores your theme choice and cookie-banner response in the browser. See the cookies policy for details.',
     cookieAccept: 'Accept',
-    cookieDecline: 'Decline'
+    cookieDecline: 'Decline',
+    searchAria: 'Site-wide search',
+    searchPlaceholder: 'Search people, companies, pages…',
+    searchBadgePerson: 'Specialist',
+    searchBadgeStartup: 'Company',
+    searchBadgePage: 'Page',
+    searchEmpty: 'No matches',
+    searchHint: 'results in list'
   },
   es: {
     navAria: 'Navegación principal',
@@ -199,7 +213,14 @@ const translations = {
     cookieText:
       'El sitio guarda en el navegador el tema y tu respuesta al aviso de cookies. Más información en la política de cookies.',
     cookieAccept: 'Aceptar',
-    cookieDecline: 'Rechazar'
+    cookieDecline: 'Rechazar',
+    searchAria: 'Búsqueda en el sitio',
+    searchPlaceholder: 'Buscar personas, empresas, páginas…',
+    searchBadgePerson: 'Especialista',
+    searchBadgeStartup: 'Empresa',
+    searchBadgePage: 'Página',
+    searchEmpty: 'Sin resultados',
+    searchHint: 'resultados en la lista'
   },
   ru: {
     navAria: 'Главная навигация',
@@ -233,7 +254,14 @@ const translations = {
     cookieText:
       'Сайт сохраняет в браузере выбор темы и ваш ответ по cookies. Подробности — на странице политики cookies.',
     cookieAccept: 'Принять',
-    cookieDecline: 'Отклонить'
+    cookieDecline: 'Отклонить',
+    searchAria: 'Поиск по сайту',
+    searchPlaceholder: 'Поиск: имя, компания, страница…',
+    searchBadgePerson: 'Специалист',
+    searchBadgeStartup: 'Компания',
+    searchBadgePage: 'Страница',
+    searchEmpty: 'Ничего не найдено',
+    searchHint: 'результатов в списке'
   }
 };
 
@@ -244,6 +272,13 @@ try {
   execSync('node scripts/emit-interview-tables.mjs', { stdio: 'inherit', cwd: path.resolve() });
 } catch (e) {
   console.error('emit-interview-tables failed:', e.message);
+  process.exit(1);
+}
+
+try {
+  execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit', cwd: path.resolve() });
+} catch (e) {
+  console.error('emit-site-search-index failed:', e.message);
   process.exit(1);
 }
 
@@ -267,7 +302,10 @@ function processDirectory(dirPath, destPath) {
       if (srcFile.endsWith('.css') || srcFile.endsWith('.js')) {
         const rawAsset = fs.readFileSync(srcFile, 'utf8');
         const skipMinifyJs =
-          srcFile.endsWith('interview-drill.js') || srcFile.endsWith('interview-bank-data.js');
+          srcFile.endsWith('interview-drill.js') ||
+          srcFile.endsWith('interview-bank-data.js') ||
+          srcFile.endsWith('site-search-index.js') ||
+          srcFile.endsWith('site-search.js');
         fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
@@ -395,6 +433,13 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
                        .replaceAll('{{INTERVIEW_URL}}', interviewUrl)
+                       .replaceAll('{{SEARCH_ARIA}}', local.searchAria)
+                       .replaceAll('{{SEARCH_PLACEHOLDER}}', local.searchPlaceholder)
+                       .replaceAll('{{SEARCH_BADGE_PERSON}}', local.searchBadgePerson)
+                       .replaceAll('{{SEARCH_BADGE_STARTUP}}', local.searchBadgeStartup)
+                       .replaceAll('{{SEARCH_BADGE_PAGE}}', local.searchBadgePage)
+                       .replaceAll('{{SEARCH_EMPTY}}', local.searchEmpty)
+                       .replaceAll('{{SEARCH_HINT}}', local.searchHint)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
