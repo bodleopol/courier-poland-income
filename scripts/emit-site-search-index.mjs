@@ -111,7 +111,7 @@ function load(lang, specialistsFile, startupsFile) {
   const startHtml = fs.readFileSync(startPath, 'utf8');
   const people = extractCards(specHtml);
   const companies = extractCards(startHtml);
-  const pages = STATIC[lang] || [];
+  const pages = (STATIC[lang] || []).map((p) => ({ ...p, c: p.c ?? '' }));
   return [...people, ...companies, ...pages];
 }
 

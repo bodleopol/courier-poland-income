@@ -28,25 +28,28 @@
                 <a href="{{HOME_URL}}" class="brand"><img src="assets/images/rybezh-logo.svg" alt="Rybezh" width="180" height="40"></a>
                 <span class="logo-caption">Rybezh.site</span><span class="brand-subtitle">{{BRAND_TAGLINE}}</span>
             </div>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="{{NAV_MENU}}"><span class="nav-toggle__icon" aria-hidden="true"></span></button>
             <nav id="main-nav" class="main-nav" aria-label="{{NAV_ARIA}}">
-                <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
-                <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
-                <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
-                <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
-                <a href="{{FAQ_URL}}">{{NAV_FAQ}}</a>
-                <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
-                <a href="{{PRIVACY_URL}}">{{NAV_PRIVACY}}</a>
-            </nav>
-            <div class="header-tools">
-                <div class="site-search" data-site-search data-badge-person="{{SEARCH_BADGE_PERSON}}" data-badge-startup="{{SEARCH_BADGE_STARTUP}}" data-badge-page="{{SEARCH_BADGE_PAGE}}" data-empty="{{SEARCH_EMPTY}}" data-hint="{{SEARCH_HINT}}">
-                    <label class="site-search__wrap" for="site-search-input">
-                        <span class="site-search__sr-only">{{SEARCH_ARIA}}</span>
-                        <input id="site-search-input" class="site-search__input" type="search" data-site-search-input placeholder="{{SEARCH_PLACEHOLDER}}" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="site-search-panel" aria-expanded="false" aria-label="{{SEARCH_ARIA}}">
-                    </label>
-                    <div id="site-search-panel" class="site-search__panel" data-site-search-panel hidden role="listbox" aria-label="{{SEARCH_ARIA}}"></div>
-                    <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+                <div class="nav-group">
+                    <a href="{{HOME_URL}}">{{NAV_HOME}}</a>
+                    <a href="{{SPECIALISTS_URL}}">{{NAV_SPECIALISTS}}</a>
+                    <a href="{{STARTUPS_URL}}">{{NAV_STARTUPS}}</a>
                 </div>
+                <span class="nav-sep" aria-hidden="true"></span>
+                <div class="nav-group">
+                    <a href="{{METHODOLOGY_URL}}">{{NAV_METHODOLOGY}}</a>
+                    <a href="{{FAQ_URL}}">{{NAV_FAQ}}</a>
+                    <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
+                </div>
+            </nav>
+            <div class="site-search" data-site-search data-badge-person="{{SEARCH_BADGE_PERSON}}" data-badge-startup="{{SEARCH_BADGE_STARTUP}}" data-badge-page="{{SEARCH_BADGE_PAGE}}" data-empty="{{SEARCH_EMPTY}}" data-hint="{{SEARCH_HINT}}">
+                <label class="site-search__wrap" for="site-search-input">
+                    <span class="site-search__sr-only">{{SEARCH_ARIA}}</span>
+                    <input id="site-search-input" class="site-search__input" type="search" data-site-search-input placeholder="{{SEARCH_PLACEHOLDER}}" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="site-search-panel" aria-expanded="false" aria-label="{{SEARCH_ARIA}}">
+                </label>
+                <div id="site-search-panel" class="site-search__panel" data-site-search-panel hidden role="listbox" aria-label="{{SEARCH_ARIA}}"></div>
+                <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+            </div>
+            <div class="header-end">
                 <div class="lang-switcher">
                     <a href="{{CANONICAL}}">UA</a>
                     <a href="{{CANONICAL_EN}}">EN</a>
@@ -59,6 +62,7 @@
                         <div class="slider round"></div>
                     </label>
                 </div>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="{{NAV_MENU}}"><span class="nav-toggle__icon" aria-hidden="true"></span></button>
             </div>
         </div>
     </header>
@@ -91,7 +95,7 @@
                     <h4>{{FOOTER_SCOPE_TITLE}}</h4>
                     <p>{{FOOTER_SCOPE_TEXT}}</p>
                     <p>{{FOOTER_LANGUAGES}}</p>
-                    <p><strong>{{CONTACT_LABEL}}</strong> <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
+                    <p class="footer-contact"><strong>{{CONTACT_LABEL}}</strong> <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a></p>
                 </div>
                 <div class="footer-section official-footer">
                     <h4>{{FOOTER_POLICIES_TITLE}}</h4>
@@ -171,20 +175,17 @@
 
         const navToggle = document.querySelector('.nav-toggle');
         const mainNav = document.getElementById('main-nav');
-        const headerContainer = document.querySelector('[data-header-container]');
         const mobileMq = window.matchMedia('(max-width: 980px)');
 
         function closeMobileMenu() {
-            if (!mainNav || !headerContainer) return;
+            if (!mainNav) return;
             mainNav.classList.remove('is-open');
-            headerContainer.classList.remove('menu-open');
             if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
         }
 
-        if (navToggle && mainNav && headerContainer) {
+        if (navToggle && mainNav) {
             navToggle.addEventListener('click', () => {
                 const isOpen = mainNav.classList.toggle('is-open');
-                headerContainer.classList.toggle('menu-open', isOpen);
                 navToggle.setAttribute('aria-expanded', String(isOpen));
             });
 
