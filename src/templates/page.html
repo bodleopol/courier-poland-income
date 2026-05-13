@@ -17,9 +17,9 @@
     <script src="site-search.js" defer></script>
     <link rel="icon" href="assets/images/rybezh-logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/images/rybezh-logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="{{BODY_CLASS}}">
+<body class="{{BODY_CLASS}}" data-theme="dark">
     <a class="skip-link" href="#main-content">{{SKIP_LINK}}</a>
     <header class="site-header">
         <div class="header-container" data-header-container>
@@ -149,13 +149,11 @@
     </div>
     <script>
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        document.body.setAttribute('data-theme', currentTheme);
 
-        if (toggleSwitch && currentTheme) {
-            document.body.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
+        if (toggleSwitch) {
+            toggleSwitch.checked = currentTheme === 'dark';
         }
 
         function switchTheme(e) {

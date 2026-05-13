@@ -144,7 +144,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Умови',
     skipLink: 'Перейти до основного вмісту',
-    brandTagline: 'Редакційний атлас людей і компаній',
+    brandTagline: 'Редакційний інтелект: експерти, стартапи, оператори',
     contactLabel: 'Написати:',
     footerAbout:
       'Редакційний довідник Rybezh.site: короткі профілі фахівців, керівників і технологічних компаній, з виходом на первинні джерела.',
@@ -185,7 +185,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Terms',
     skipLink: 'Skip to main content',
-    brandTagline: 'Editorial atlas of people and companies',
+    brandTagline: 'Editorial intelligence for experts, startups, and operators',
     contactLabel: 'Email:',
     footerAbout:
       'Rybezh.site is an editorial directory of specialists, leaders, and tech companies—short entries that point to primary sources.',

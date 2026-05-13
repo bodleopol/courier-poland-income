@@ -1,67 +1,39 @@
 <title>Каталог стартапів | Rybezh</title>
 <meta name="description" content="Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.">
 
-<style>
-.premium-intelligence-shell{position:relative;overflow:hidden;border:1px solid color-mix(in oklab,var(--line,#d8deea) 78%, transparent);border-radius:28px;padding:clamp(18px,3vw,34px);margin:0 0 2rem;background:linear-gradient(145deg,color-mix(in oklab,var(--panel,#fff) 95%,#6f8cff 5%),color-mix(in oklab,var(--panel,#fff) 90%,#0b1220 10%));box-shadow:0 24px 70px rgba(15,23,42,.15)}
-.premium-intelligence-shell:before{content:"";position:absolute;inset:-20% auto auto -12%;width:280px;height:280px;background:radial-gradient(circle,#7c9cff66,transparent 70%);pointer-events:none}
-.premium-intelligence-shell h2{font-size:clamp(1.4rem,2.5vw,2.3rem);margin:.4rem 0 .65rem}
-.intel-shell-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:stretch}
-.intel-shell-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
-.intel-shell-kpis div{padding:.7rem .8rem;border-radius:14px;background:color-mix(in oklab,var(--panel,#fff) 88%,#0b1220 12%);border:1px solid color-mix(in oklab,var(--line,#d8deea) 70%, transparent)}
-.intel-shell-kpis strong{display:block;font-size:1.15rem}
-@media (max-width:900px){.intel-shell-grid{grid-template-columns:1fr}.intel-shell-kpis{grid-template-columns:1fr 1fr}}
-</style>
-<section class="premium-intelligence-shell" aria-label="Platform intelligence">
-  <div class="intel-shell-grid">
-    <div>
-      <p class="eyebrow">Editorial Intelligence Engine</p>
-      <h2 data-premium-headline>Signal-first ecosystem navigation</h2>
-      <p data-premium-copy>Designed as an editorial operating surface: people, startups, operators, and methodology are connected by context rather than isolated cards.</p>
-      <div class="hero-actions">
-        <a class="btn" href="specialists.html">Explore specialists</a>
-        <a class="btn secondary" href="startups.html">Track startups</a>
-      </div>
+<header class="directory-page-head" aria-label="Каталог стартапів">
+  <div>
+    <p class="eyebrow">Компанії · стадії · ринки</p>
+    <h1>Каталог стартапів і продуктових організацій</h1>
+    <p>Картки тримають продуктовий фокус, рік заснування, географію й теги категорії — щоб порівнювати компанії так само дисципліновано, як людей. Піктограма року на картці підказує «вік» запису в архіві.</p>
+    <div class="hero-actions">
+      <a class="btn secondary" href="specialists.html">До спеціалістів</a>
+      <a class="btn secondary" href="methodology.html">Як збираємо досьє</a>
     </div>
-    <aside class="intel-shell-kpis" aria-label="Live platform signals">
-      <div><strong>Live graph</strong><span>Relations refresh each page view</span></div>
-      <div><strong>Verified editorial</strong><span>Human-curated summaries + evidence trails</span></div>
-      <div><strong>Semantic search</strong><span>Fuzzy + keyboard-first discovery</span></div>
-    </aside>
   </div>
-</section>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","potentialAction":{"@type":"SearchAction","target":"https://rybezh.site/search?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<script>
-(()=>{
-  const heads={
-    'index.html':['Intelligence platform for experts, startups, and operators','Editorial dashboard for ecosystem-level decisions'],
-    'interview-drill.html':['AI interview simulation laboratory','Session analytics for operator-grade interview prep'],
-    'specialists.html':['Relationship intelligence for specialists','Human-curated expertise graph with verification signals'],
-    'startups.html':['Startup intelligence ecosystem monitor','Funding-stage and maturity-aware startup mapping'],
-    'methodology.html':['Research-grade editorial methodology','Transparent framework, citations, and scoring logic']
-  };
-  const key=location.pathname.split('/').pop()||'index.html';
-  const pool=heads[key]||heads['index.html'];
-  const pick=pool[Math.floor(Math.random()*pool.length)];
-  const h=document.querySelector('[data-premium-headline]'); if(h) h.textContent=pick;
-})();
-</script>
-
-<section class="hero slim">
-  <div class="hero-copy">
-    <p class="eyebrow">Rybezh.site</p>
-    <h1>Каталог стартапів</h1>
-    <p>Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.</p>
+  <div class="eco-graph-panel">
+    <h3>Кластери екосистеми</h3>
+    <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="stuEco" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#22d3ee"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="180" rx="12" fill="color-mix(in oklab, var(--surface-muted) 90%, transparent)"/>
+      <g stroke="url(#stuEco)" stroke-width="1.1" opacity="0.45">
+        <path d="M30 90 H290"/>
+        <path d="M160 20 V160"/>
+        <circle cx="90" cy="60" r="40" fill="none"/>
+      </g>
+      <circle cx="90" cy="60" r="12" fill="#38bdf8"/>
+      <circle cx="230" cy="120" r="14" fill="#818cf8"/>
+      <circle cx="200" cy="50" r="10" fill="#f472b6"/>
+      <circle cx="120" cy="140" r="11" fill="#34d399"/>
+    </svg>
+    <p style="margin:10px 0 0;font-size:0.85rem;color:var(--muted)">Фільтри за роком і країною синхронізовані з адресним рядком: можна зберегти шортлист як посилання.</p>
   </div>
-  <div class="hero-panel">
-    <div class="stat-card"><strong>52</strong><span>Усі стартапи</span></div>
-    <div class="stat-card"><strong>26</strong><span>Обробка даних / стартапи</span></div>
-    <div class="stat-card"><strong>39</strong><span>Software</span></div>
-    <div class="stat-card"><strong>3</strong><span>Fintech</span></div>
-  </div>
-</section>
-
+</header>
 
 <section class="startup-intel-band">
   <div>
@@ -69,7 +41,7 @@
     <h2>Екосистема компаній зі стадіями, динамікою та звʼязками</h2>
   </div>
   <div class="startup-intel-band__chips">
-    <span>Funding stage signals</span><span>Founder relationships</span><span>Market clusters</span><span>Related startups</span>
+    <span>Рік заснування як сигнал зрілості</span><span>Теги ринку й продукту</span><span>Однакова анатомія картки</span><span>Посилання на зовнішні джерела в досьє</span>
   </div>
 </section>
 

@@ -4,53 +4,94 @@
 <script src="interview-bank-data.js"></script>
 <script src="interview-drill.js" defer></script>
 
-<section class="hero slim">
-  <div class="hero-copy">
-    <p class="eyebrow">Rybezh.site</p>
-    <h1>Interview drill</h1>
-    <p>Ten thousand unique combinations of context, stressor, role, competency and question archetype — for self-check before leadership and technical interviews. Each screen shows <strong>four</strong> prompts. There is also a short <strong>five-option</strong> drill with feedback after you pick an answer; open-ended prompts remain unscored.</p>
+<section class="intel-dash-hero" style="margin-bottom:22px;padding:clamp(22px,3vw,36px)" aria-label="Interview laboratory">
+  <div class="intel-dash-hero__copy">
+    <p class="eyebrow">Simulation · session · analytics</p>
+    <h1 style="font-size:clamp(1.75rem,3.2vw,2.65rem)">Interview laboratory</h1>
+    <p class="intel-dash-hero__lede">Four prompts per screen, local notes only, optional MCQ mode with benchmark feedback after you choose. This is rehearsal for articulation—not a score on your career and not linked to directory profiles.</p>
+    <div class="trust-micro" role="note">
+      <span>Notes stay in the browser</span>
+      <span>MCQ reveals the teaching answer after pick</span>
+      <span>Arrow keys ← / → change batches</span>
+    </div>
   </div>
+  <aside class="intel-dash-hero__aside">
+    <div class="home-hero-v2__stats" aria-label="Bank scale">
+      <div class="stat-card"><strong>10k</strong><span>unique combinations</span></div>
+      <div class="stat-card"><strong>4×</strong><span>questions per screen</span></div>
+      <div class="stat-card"><strong>MCQ</strong><span>optional mode</span></div>
+      <div class="stat-card"><strong>0</strong><span>server-side answer logging</span></div>
+    </div>
+  </aside>
 </section>
 
 <section class="interview-disclaimer" aria-labelledby="iv-disclaimer-title">
   <h2 id="iv-disclaimer-title" class="interview-disclaimer__title">How it works</h2>
-    <p>This is a <strong>practice simulator</strong>, not a substitute for a real interview. Open-ended prompts are assembled combinatorially from curated lists and templates (see <a href="methodology-en.html">Methodology</a>, section 5), so wording may feel similar across items, but each batch index is unique. A separate <strong>MCQ mode</strong> offers five choices and highlights the recommended learning answer after you select one. Notes are stored only in your browser (localStorage). Short answers to common questions are in the <a href="faq-en.html">FAQ</a>.</p>
+  <p>This is a <strong>practice simulator</strong>, not a substitute for a real interview. Open-ended prompts are assembled combinatorially from curated lists and templates (see <a href="methodology-en.html">Methodology</a>, section 5), so wording may feel similar across items, but each batch index is unique. A separate <strong>MCQ mode</strong> offers five choices and highlights the recommended learning answer after you select one. Notes are stored only in your browser (localStorage). Short answers to common questions are in the <a href="faq-en.html">FAQ</a>.</p>
 </section>
 
-<section class="interview-drill" data-interview-drill aria-label="Interview drill">
-  <div class="interview-drill__toolbar">
-    <div class="interview-drill__field" data-iv-mode-wrap hidden>
-      <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Mode</label>
-      <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
+<section class="interview-disclaimer" aria-labelledby="iv-learn-title">
+  <h2 id="iv-learn-title" class="interview-disclaimer__title">Micro-primer before you practice</h2>
+  <p>The block below shifts with mode and filters so the drill is not a blind test.</p>
+  <div class="interview-learn" data-iv-learn></div>
+</section>
+
+<section class="iv-lab interview-drill interview-drill--lab" data-interview-drill aria-label="Interview drill">
+  <aside class="iv-lab__rail">
+    <h2>Session controls</h2>
+    <div data-iv-scores style="font-size:0.9rem;font-weight:700;color:var(--accent)"></div>
+    <div class="interview-drill__toolbar">
+      <div class="interview-drill__field" data-iv-mode-wrap hidden>
+        <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Mode</label>
+        <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
+      </div>
+      <div class="interview-drill__field interview-drill__field--specialty" data-iv-specialty-wrap hidden>
+        <label class="interview-drill__label" data-iv-specialty-label for="iv-specialty">Specialty</label>
+        <select id="iv-specialty" class="interview-drill__select interview-drill__select--specialty" data-iv-specialty></select>
+        <span class="interview-drill__micro" data-iv-specialty-hint></span>
+      </div>
+      <div class="interview-drill__field">
+        <label class="interview-drill__label" data-iv-track-label for="iv-track">Role emphasis</label>
+        <select id="iv-track" class="interview-drill__select" data-iv-track></select>
+      </div>
+      <div class="interview-drill__field">
+        <label class="interview-drill__label" for="iv-difficulty">Session pressure</label>
+        <select id="iv-difficulty" class="interview-drill__select" data-iv-difficulty>
+          <option value="steady">Standard cadence</option>
+          <option value="pressure">Tighter cadence</option>
+        </select>
+      </div>
+      <div class="interview-drill__nav">
+        <button type="button" class="btn secondary" data-iv-prev>Previous 4</button>
+        <button type="button" class="btn" data-iv-next>Next 4</button>
+      </div>
+      <div class="interview-drill__field interview-drill__field--jump">
+        <label class="interview-drill__label" for="iv-jump">Go to batch #</label>
+        <div class="interview-drill__jump">
+          <input id="iv-jump" class="interview-drill__input" type="number" min="1" max="2500" value="1" data-iv-jump>
+          <button type="button" class="btn secondary" data-iv-jump-btn>OK</button>
+        </div>
+      </div>
+      <button type="button" class="btn secondary interview-drill__copy" data-iv-copy>Copy batch link</button>
+      <button type="button" class="btn secondary" data-iv-random></button>
     </div>
-    <div class="interview-drill__field interview-drill__field--specialty" data-iv-specialty-wrap hidden>
-      <label class="interview-drill__label" data-iv-specialty-label for="iv-specialty">Specialty</label>
-      <select id="iv-specialty" class="interview-drill__select interview-drill__select--specialty" data-iv-specialty></select>
-      <span class="interview-drill__micro" data-iv-specialty-hint></span>
-    </div>
-    <div class="interview-drill__field">
-      <label class="interview-drill__label" data-iv-track-label for="iv-track">Role emphasis</label>
-      <select id="iv-track" class="interview-drill__select" data-iv-track></select>
-    </div>
-    <div class="interview-drill__nav">
-      <button type="button" class="btn secondary" data-iv-prev>Previous 4</button>
-      <button type="button" class="btn" data-iv-next>Next 4</button>
-    </div>
-    <div class="interview-drill__field interview-drill__field--jump">
-      <label class="interview-drill__label" for="iv-jump">Go to batch #</label>
-      <div class="interview-drill__jump">
-        <input id="iv-jump" class="interview-drill__input" type="number" min="1" max="2500" value="1" data-iv-jump>
-        <button type="button" class="btn secondary" data-iv-jump-btn>OK</button>
+  </aside>
+  <div class="iv-lab__stage">
+    <div class="iv-lab__head">
+      <div>
+        <p class="eyebrow" style="margin:0 0 4px">Current session</p>
+        <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
+        <p class="interview-drill__context" data-iv-context hidden style="margin:6px 0 0;font-size:0.88rem;color:var(--muted)"></p>
+      </div>
+      <div class="iv-lab__meter" data-iv-meter aria-label="MCQ confidence this session">
+        <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)">MCQ confidence</span>
+        <div class="iv-lab__meter-bar"><div class="iv-lab__meter-fill" data-iv-meter-fill></div></div>
       </div>
     </div>
-    <button type="button" class="btn secondary interview-drill__copy" data-iv-copy>Copy batch</button>
-    <button type="button" class="btn secondary" data-iv-random></button>
+    <div class="iv-feed" data-iv-feed tabindex="0" role="log" aria-label="Question and answer flow"></div>
+    <p class="interview-drill__hint" data-iv-hint style="margin:0;padding:12px 18px;border-top:1px solid var(--line)">Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field.</p>
+    <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
   </div>
-  <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
-  <p class="interview-drill__context" data-iv-context hidden></p>
-  <ol class="interview-drill__list" data-iv-list aria-label="Four questions in the current batch"></ol>
-  <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
-  <p class="interview-drill__hint" data-iv-hint>Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field.</p>
 </section>
 
 <section class="split-panel">

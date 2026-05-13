@@ -4,12 +4,25 @@
 <script src="interview-bank-data.js"></script>
 <script src="interview-drill.js" defer></script>
 
-<section class="hero slim">
-  <div class="hero-copy">
-    <p class="eyebrow">Rybezh.site</p>
-    <h1>Тренажёр собеседования</h1>
-    <p>Десять тысяч уникальных комбинаций контекста, стрессора, роли, компетенции и типа вопроса — для самопроверки перед интервью на руководящие и технические позиции. На каждом экране <strong>четыре</strong> вопроса. Добавлен короткий тест с <strong>пятью вариантами</strong> и подсказкой после выбора; открытые сценарные ответы по-прежнему без автоматической оценки.</p>
+<section class="intel-dash-hero" style="margin-bottom:22px;padding:clamp(22px,3vw,36px)" aria-label="Лаборатория собеседования">
+  <div class="intel-dash-hero__copy">
+    <p class="eyebrow">Симуляция · сессия · аналитика</p>
+    <h1 style="font-size:clamp(1.75rem,3.2vw,2.65rem)">Лаборатория собеседования</h1>
+    <p class="intel-dash-hero__lede">Четыре вопроса на экран, заметки только локально, отдельный режим MCQ с эталоном после выбора. Это тренировка формулировок, не оценка карьеры и не связь с профилями каталога.</p>
+    <div class="trust-micro" role="note">
+      <span>Заметки остаются в браузере</span>
+      <span>MCQ показывает учебный ответ после выбора</span>
+      <span>Стрелки ← / → листают пакеты</span>
+    </div>
   </div>
+  <aside class="intel-dash-hero__aside">
+    <div class="home-hero-v2__stats" aria-label="Масштаб банка">
+      <div class="stat-card"><strong>10k</strong><span>уникальных комбинаций</span></div>
+      <div class="stat-card"><strong>4×</strong><span>вопроса за раз</span></div>
+      <div class="stat-card"><strong>MCQ</strong><span>опциональный режим</span></div>
+      <div class="stat-card"><strong>0</strong><span>серверного логирования ответов</span></div>
+    </div>
+  </aside>
 </section>
 
 <section class="interview-disclaimer" aria-labelledby="iv-disclaimer-title">
@@ -17,8 +30,17 @@
     <p>Это <strong>учебный симулятор</strong>, а не замена реального собеседования. Открытые сценарные формулировки собираются комбинаторно из кураторских списков и шаблонов (см. <a href="methodology-ru.html">«Методология»</a>, раздел 5), поэтому могут быть похожи, но индекс каждого пакета уникален. Отдельно есть <strong>режим MCQ</strong>: пять вариантов, после выбора отмечается рекомендуемый учебный ответ. Заметки хранятся только в браузере (localStorage). Краткие ответы — в <a href="faq-ru.html">«Вопросы и ответы»</a>.</p>
 </section>
 
-<section class="interview-drill" data-interview-drill aria-label="Тренажёр собеседования">
-  <div class="interview-drill__toolbar">
+<section class="interview-disclaimer" aria-labelledby="iv-learn-title">
+  <h2 id="iv-learn-title" class="interview-disclaimer__title">Мини-введение перед практикой</h2>
+  <p>Блок ниже меняется вместе с режимом и фильтрами, чтобы тренажёр не был «слепым тестом».</p>
+  <div class="interview-learn" data-iv-learn></div>
+</section>
+
+<section class="iv-lab interview-drill interview-drill--lab" data-interview-drill aria-label="Тренажёр собеседования">
+  <aside class="iv-lab__rail">
+    <h2>Параметры сессии</h2>
+    <div data-iv-scores style="font-size:0.9rem;font-weight:700;color:var(--accent)"></div>
+    <div class="interview-drill__toolbar">
     <div class="interview-drill__field" data-iv-mode-wrap hidden>
       <label class="interview-drill__label" data-iv-mode-label for="iv-mode">Режим</label>
       <select id="iv-mode" class="interview-drill__select" data-iv-mode></select>
@@ -32,6 +54,13 @@
       <label class="interview-drill__label" data-iv-track-label for="iv-track">Акцент роли</label>
       <select id="iv-track" class="interview-drill__select" data-iv-track></select>
     </div>
+    <div class="interview-drill__field">
+      <label class="interview-drill__label" for="iv-difficulty">Темп сессии</label>
+      <select id="iv-difficulty" class="interview-drill__select" data-iv-difficulty>
+        <option value="steady">Обычный темп</option>
+        <option value="pressure">Плотнее ритм</option>
+      </select>
+    </div>
     <div class="interview-drill__nav">
       <button type="button" class="btn secondary" data-iv-prev>Предыдущие 4</button>
       <button type="button" class="btn" data-iv-next>Следующие 4</button>
@@ -43,14 +72,26 @@
         <button type="button" class="btn secondary" data-iv-jump-btn>OK</button>
       </div>
     </div>
-    <button type="button" class="btn secondary interview-drill__copy" data-iv-copy>Копировать пакет</button>
+    <button type="button" class="btn secondary interview-drill__copy" data-iv-copy>Копировать ссылку на пакет</button>
     <button type="button" class="btn secondary" data-iv-random></button>
+    </div>
+  </aside>
+  <div class="iv-lab__stage">
+    <div class="iv-lab__head">
+      <div>
+        <p class="eyebrow" style="margin:0 0 4px">Текущая сессия</p>
+        <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
+        <p class="interview-drill__context" data-iv-context hidden style="margin:6px 0 0;font-size:0.88rem;color:var(--muted)"></p>
+      </div>
+      <div class="iv-lab__meter" data-iv-meter aria-label="Точность MCQ в этой сессии">
+        <span style="font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)">Уверенность (MCQ)</span>
+        <div class="iv-lab__meter-bar"><div class="iv-lab__meter-fill" data-iv-meter-fill></div></div>
+      </div>
+    </div>
+    <div class="iv-feed" data-iv-feed tabindex="0" role="log" aria-label="Поток вопросов и ответов"></div>
+    <p class="interview-drill__hint" data-iv-hint style="margin:0;padding:12px 18px;border-top:1px solid var(--line)">Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода.</p>
+    <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
   </div>
-  <p class="interview-drill__progress" data-iv-progress aria-live="polite"></p>
-  <p class="interview-drill__context" data-iv-context hidden></p>
-  <ol class="interview-drill__list" data-iv-list aria-label="Четыре вопроса текущего пакета"></ol>
-  <p class="interview-drill__sr" data-iv-live aria-live="assertive"></p>
-  <p class="interview-drill__hint" data-iv-hint>Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода.</p>
 </section>
 
 <section class="split-panel">
