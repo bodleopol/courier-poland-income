@@ -56,7 +56,9 @@ function injectBulkCatalogHtml(html, filename) {
   const incPath = path.join(SRC_DIR, 'generated', incName);
   if (!fs.existsSync(incPath)) return html.replaceAll(marker, '');
   const bulk = fs.readFileSync(incPath, 'utf8');
-  return html.replaceAll(marker, bulk);
+  const withBulk = html.replaceAll(marker, bulk);
+  const totalCards = (withBulk.match(/data-directory-card/g) || []).length;
+  return withBulk.replace(/(<strong\s+data-results-count>)(\d+)(<\/strong>)/i, `$1${totalCards}$3`);
 }
 
 function replaceClearbitLogoImages(html, basename) {
