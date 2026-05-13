@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rng = mulberry32(sessionSeed * 11003 + 79);
     const i1 = Math.floor(rng() * cards.length);
     let i2 = Math.floor(rng() * cards.length);
-    if (cards.length > 1 && Math.random() < 0.45) i2 = i1;
+    if (cards.length > 1 && rng() < 0.45) i2 = i1;
     a.innerHTML = '';
     b.innerHTML = '';
     a.appendChild(cards[i1].cloneNode(true));
@@ -646,9 +646,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const sc = document.getElementById('liveSignalC');
     if (stamp) stamp.textContent = new Date().toLocaleString('uk-UA', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
     const pick = shuffle(signalLines, mulberry32(Date.now() % 200000 + 3)).slice(0, 3);
-    if (sa) sa.innerHTML = `<strong>${pick[0].h}</strong><span>${pick[0].p}</span>`;
-    if (sb) sb.innerHTML = `<strong>${pick[1].h}</strong><span>${pick[1].p}</span>`;
-    if (sc) sc.innerHTML = `<strong>${pick[2].h}</strong><span>${pick[2].p}</span>`;
+    if (sa && pick[0]) sa.innerHTML = `<strong>${pick[0].h}</strong><span>${pick[0].p}</span>`;
+    if (sb && pick[1]) sb.innerHTML = `<strong>${pick[1].h}</strong><span>${pick[1].p}</span>`;
+    if (sc && pick[2]) sc.innerHTML = `<strong>${pick[2].h}</strong><span>${pick[2].p}</span>`;
   }
 
   const spotlightSlot = document.getElementById('spotlightCard');
@@ -713,8 +713,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetSelector = filterContainer.getAttribute('data-filter-target');
       if (!targetSelector) return;
       const cards = document.querySelectorAll(targetSelector);
-      filterContainer.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      filterContainer.querySelectorAll('.filter-btn').forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       const filterValue = btn.getAttribute('data-filter');
       cards.forEach((card) => {
         if (filterValue === 'all' || card.getAttribute('data-filter-key') === filterValue) card.style.display = '';
