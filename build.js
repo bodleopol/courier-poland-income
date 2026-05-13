@@ -112,7 +112,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Умови',
     skipLink: 'Перейти до основного вмісту',
-    brandTagline: 'Профілі та компанії',
+    brandTagline: 'Редакційний атлас людей і компаній',
     contactLabel: 'Написати:',
     footerAbout:
       'Редакційний довідник Rybezh.site: короткі профілі фахівців, керівників і технологічних компаній, з виходом на первинні джерела.',
@@ -153,7 +153,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Terms',
     skipLink: 'Skip to main content',
-    brandTagline: 'People and companies',
+    brandTagline: 'Editorial atlas of people and companies',
     contactLabel: 'Email:',
     footerAbout:
       'Rybezh.site is an editorial directory of specialists, leaders, and tech companies—short entries that point to primary sources.',
@@ -194,7 +194,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Términos',
     skipLink: 'Ir al contenido principal',
-    brandTagline: 'Perfiles y empresas',
+    brandTagline: 'Atlas editorial de personas y empresas',
     contactLabel: 'Correo:',
     footerAbout:
       'Rybezh.site es un directorio editorial sobre especialistas, directivos y empresas tecnológicas, con enlaces a fuentes primarias.',
@@ -235,7 +235,7 @@ const translations = {
     navCookies: 'Cookies',
     navTerms: 'Условия',
     skipLink: 'Перейти к основному содержимому',
-    brandTagline: 'Профили и компании',
+    brandTagline: 'Редакционный атлас людей и компаний',
     contactLabel: 'Почта:',
     footerAbout:
       'Редакционный справочник Rybezh.site: краткие заметки о специалистах, руководителях и технологических компаниях, со ссылками на первоисточники.',
@@ -264,6 +264,536 @@ const translations = {
     searchHint: 'результатов в списке'
   }
 };
+
+const editorialUi = {
+  uk: {
+    navDockAria: 'Швидка навігація',
+    cmdOpenAria: 'Відкрити палітру пошуку',
+    cmdHint: 'Натисніть / або Ctrl+K',
+    cmdTitle: 'Пошук по Rybezh',
+    cmdClose: 'Закрити',
+    cmdRecent: 'Недавні запити',
+    cmdSuggested: 'Підказки',
+    filterAll: 'Усе',
+    filterPeople: 'Люди',
+    filterCompanies: 'Компанії',
+    filterPages: 'Сторінки',
+    breadcrumbAria: 'Навігаційний шлях',
+    intelAsideAria: 'Редакційний контекст',
+    timelineTitle: 'Лінія ролей',
+    timelineNow: 'Поточний опис у картці',
+    timelineDesk: 'Знімок файлу',
+    expertiseTitle: 'Граф експертизи',
+    influenceTitle: 'Зони впливу',
+    influenceIntro: 'Теги з профілю зібрані як сигнал тем — не формальна класифікація.',
+    sourcesTitle: 'Зовнішні посилання',
+    sourcesIntro: 'Поза Rybezh; первинні матеріали звіряйте на оригінальних сторінках.',
+    verifyTitle: 'Як перевіряємо',
+    verifyBody:
+      'Запис збирається з публічних джерел і проходить редакційний прохід. У розбіжностях пріоритет у первинних матеріалах.',
+    lastUpdated: 'Остання зміна файлу',
+    deskNoteTitle: 'Редакційна нотатка',
+    deskNoteBody: 'Короткий орієнтир для читання — не біографія й не оцінка заслуг.',
+    orgIntelAsideAria: 'Редакційний контекст компанії',
+    orgTimelineTitle: 'Ключові опори',
+    orgTimelineProduct: 'Продуктовий фокус у картці',
+    orgTimelineDesk: 'Знімок файлу'
+  },
+  en: {
+    navDockAria: 'Quick navigation',
+    cmdOpenAria: 'Open search palette',
+    cmdHint: 'Press / or Ctrl+K',
+    cmdTitle: 'Search Rybezh',
+    cmdClose: 'Close',
+    cmdRecent: 'Recent queries',
+    cmdSuggested: 'Suggestions',
+    filterAll: 'All',
+    filterPeople: 'People',
+    filterCompanies: 'Companies',
+    filterPages: 'Pages',
+    breadcrumbAria: 'Breadcrumb',
+    intelAsideAria: 'Editorial context',
+    timelineTitle: 'Role timeline',
+    timelineNow: 'Current framing on this card',
+    timelineDesk: 'File snapshot',
+    expertiseTitle: 'Expertise map',
+    influenceTitle: 'Influence areas',
+    influenceIntro: 'Tags from the card grouped as a light signal of themes—not a formal taxonomy.',
+    sourcesTitle: 'External references',
+    sourcesIntro: 'Outside Rybezh; verify primary material at the source.',
+    verifyTitle: 'Verification',
+    verifyBody:
+      'Compiled from public sources and edited for clarity. Primary sources win when facts diverge.',
+    lastUpdated: 'Last file update',
+    deskNoteTitle: 'Editorial note',
+    deskNoteBody: 'A concise briefing for reading—not a biography or an awards list.',
+    orgIntelAsideAria: 'Company editorial context',
+    orgTimelineTitle: 'Anchors',
+    orgTimelineProduct: 'Product focus on this card',
+    orgTimelineDesk: 'File snapshot'
+  },
+  es: {
+    navDockAria: 'Navegación rápida',
+    cmdOpenAria: 'Abrir paleta de búsqueda',
+    cmdHint: 'Pulsa / o Ctrl+K',
+    cmdTitle: 'Buscar en Rybezh',
+    cmdClose: 'Cerrar',
+    cmdRecent: 'Búsquedas recientes',
+    cmdSuggested: 'Sugerencias',
+    filterAll: 'Todo',
+    filterPeople: 'Personas',
+    filterCompanies: 'Empresas',
+    filterPages: 'Páginas',
+    breadcrumbAria: 'Migas de pan',
+    intelAsideAria: 'Contexto editorial',
+    timelineTitle: 'Línea de roles',
+    timelineNow: 'Encuadre actual en la ficha',
+    timelineDesk: 'Instantánea del archivo',
+    expertiseTitle: 'Mapa de expertise',
+    influenceTitle: 'Áreas de influencia',
+    influenceIntro: 'Etiquetas agrupadas como señal temática ligera, no taxonomía formal.',
+    sourcesTitle: 'Referencias externas',
+    sourcesIntro: 'Fuera de Rybezh; contrasta el material primario en origen.',
+    verifyTitle: 'Verificación',
+    verifyBody:
+      'Compilado desde fuentes públicas y editado para claridad. Las fuentes primarias prevalecen si hay discrepancias.',
+    lastUpdated: 'Última actualización del archivo',
+    deskNoteTitle: 'Nota editorial',
+    deskNoteBody: 'Resumen breve para lectura: no es biografía ni palmarés.',
+    orgIntelAsideAria: 'Contexto editorial de la empresa',
+    orgTimelineTitle: 'Anclas',
+    orgTimelineProduct: 'Foco de producto en la ficha',
+    orgTimelineDesk: 'Instantánea del archivo'
+  },
+  ru: {
+    navDockAria: 'Быстрая навигация',
+    cmdOpenAria: 'Открыть палитру поиска',
+    cmdHint: 'Нажмите / или Ctrl+K',
+    cmdTitle: 'Поиск по Rybezh',
+    cmdClose: 'Закрыть',
+    cmdRecent: 'Недавние запросы',
+    cmdSuggested: 'Подсказки',
+    filterAll: 'Всё',
+    filterPeople: 'Люди',
+    filterCompanies: 'Компании',
+    filterPages: 'Страницы',
+    breadcrumbAria: 'Навигационная цепочка',
+    intelAsideAria: 'Редакционный контекст',
+    timelineTitle: 'Линия ролей',
+    timelineNow: 'Текущее описание в карточке',
+    timelineDesk: 'Снимок файла',
+    expertiseTitle: 'Карта экспертизы',
+    influenceTitle: 'Зоны влияния',
+    influenceIntro: 'Теги из карточки как лёгкий сигнал тем — не формальная классификация.',
+    sourcesTitle: 'Внешние ссылки',
+    sourcesIntro: 'Вне Rybezh; первичные материалы сверяйте на оригинальных страницах.',
+    verifyTitle: 'Как проверяем',
+    verifyBody:
+      'Материал собран из публичных источников и проходит редакционную вычитку. При расхождениях приоритет у первичных источников.',
+    lastUpdated: 'Последнее изменение файла',
+    deskNoteTitle: 'Редакционная заметка',
+    deskNoteBody: 'Краткий ориентир для чтения — не биография и не список наград.',
+    orgIntelAsideAria: 'Редакционный контекст компании',
+    orgTimelineTitle: 'Опорные точки',
+    orgTimelineProduct: 'Продуктовый фокус в карточке',
+    orgTimelineDesk: 'Снимок файла'
+  }
+};
+
+function escapeAttr(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function escapeHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/"/g, '&quot;');
+}
+
+function extractOgImage(html) {
+  const m = html.match(/<img[^>]+src="([^"]+)"/i);
+  return m ? m[1].trim() : '';
+}
+
+function extractProfileSignals(html) {
+  const h1m = html.match(/<h1[^>]*>([^<]*)<\/h1>/i);
+  const h2m = html.match(/<h2[^>]*>([^<]*)<\/h2>/i);
+  const tags = [];
+  const reTag = /<span[^>]*class="[^"]*\btag\b[^"]*"[^>]*>([^<]+)<\/span>/gi;
+  let tm;
+  while ((tm = reTag.exec(html)) !== null) {
+    const v = tm[1].trim();
+    if (v && !tags.includes(v)) tags.push(v);
+  }
+  return {
+    h1: h1m ? h1m[1].trim() : '',
+    h2: h2m ? h2m[1].trim() : '',
+    tags
+  };
+}
+
+function collectExternalLinks(html) {
+  const out = [];
+  const re = /<a[^>]+href="(https?:\/\/[^"]+)"/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    if (!/rybezh\.site/i.test(m[1])) out.push(m[1]);
+  }
+  return [...new Set(out)].slice(0, 10);
+}
+
+function personNameFromTitle(title) {
+  const t = String(title || '');
+  const cut = t.split(/\s*[|]\s*/)[0].split(/\s*[—\-]\s*Rybezh/i)[0].trim();
+  return cut || 'Profile';
+}
+
+function detectPageKind(relPath, basename) {
+  if (/^profiles\/person-/i.test(relPath)) return 'person';
+  if (/^startups\/startup-/i.test(relPath)) return 'startup';
+  const base = basename.replace(/-(en|es|ru)\.html$/i, '.html');
+  if (base === 'methodology.html' || base === 'faq.html' || base === 'interview-drill.html') return 'article';
+  if (base === 'specialists.html') return 'specialists';
+  if (base === 'startups.html') return 'startups';
+  if (base === 'index.html') return 'home';
+  return 'page';
+}
+
+function ogLocaleForLang(lang) {
+  if (lang === 'en') return 'en_US';
+  if (lang === 'es') return 'es_ES';
+  if (lang === 'ru') return 'ru_RU';
+  return 'uk_UA';
+}
+
+function formatFileDate(iso) {
+  try {
+    const d = new Date(iso);
+    return d.toISOString().slice(0, 10);
+  } catch {
+    return '';
+  }
+}
+
+function buildExpertiseWheelStyle(tags) {
+  const palette = ['#6366f1', '#0d9488', '#f97316', '#8b5cf6', '#0ea5e9', '#e11d48'];
+  const n = Math.max(tags.length, 1);
+  const parts = [];
+  let acc = 0;
+  for (let i = 0; i < n; i += 1) {
+    const c = palette[i % palette.length];
+    const start = acc / n;
+    const end = (acc + 1) / n;
+    parts.push(`${c} ${start * 360}deg ${end * 360}deg`);
+    acc += 1;
+  }
+  return `conic-gradient(${parts.join(', ')})`;
+}
+
+function buildIntelAsidePerson(content, local, mtimeIso) {
+  const sig = extractProfileSignals(content);
+  const links = collectExternalLinks(content);
+  const wheel = buildExpertiseWheelStyle(sig.tags.length ? sig.tags : ['—']);
+  const dateStr = formatFileDate(mtimeIso);
+  const tagsHtml = sig.tags
+    .map((t) => `<li><span class="intel-influence__dot" aria-hidden="true"></span>${escapeHtml(t)}</li>`)
+    .join('');
+  const linksHtml = links
+    .map((u) => `<li><a href="${escapeAttr(u)}" rel="noopener noreferrer">${escapeHtml(u.replace(/^https?:\/\//i, ''))}</a></li>`)
+    .join('');
+
+  return `<aside class="profile-intel" aria-label="${escapeAttr(local.intelAsideAria)}">
+    <div class="intel-card intel-card--verify">
+      <p class="intel-card__eyebrow">${escapeHtml(local.verifyTitle)}</p>
+      <p class="intel-card__body">${escapeHtml(local.verifyBody)}</p>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.lastUpdated)}</p>
+      <p class="intel-card__strong">${escapeHtml(dateStr || '—')}</p>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.timelineTitle)}</p>
+      <ol class="intel-timeline">
+        <li><span class="intel-timeline__mark" aria-hidden="true"></span><div><strong>${escapeHtml(local.timelineNow)}</strong><p>${escapeHtml(sig.h2 || sig.h1 || '—')}</p></div></li>
+        <li><span class="intel-timeline__mark intel-timeline__mark--muted" aria-hidden="true"></span><div><strong>${escapeHtml(local.timelineDesk)}</strong><p>${escapeHtml(dateStr || '—')}</p></div></li>
+      </ol>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.expertiseTitle)}</p>
+      <div class="intel-expertise" role="img" aria-label="${escapeAttr(local.expertiseTitle)}">
+        <div class="intel-expertise__wheel" style="background:${wheel}"></div>
+        <ul class="intel-expertise__legend">${tagsHtml || `<li>${escapeHtml('—')}</li>`}</ul>
+      </div>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.influenceTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.influenceIntro)}</p>
+      <ul class="intel-influence">${tagsHtml || `<li>${escapeHtml('—')}</li>`}</ul>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.sourcesTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.sourcesIntro)}</p>
+      ${links.length ? `<ul class="intel-sources">${linksHtml}</ul>` : `<p class="intel-card__body">${escapeHtml('—')}</p>`}
+    </div>
+    <div class="intel-card intel-card--note">
+      <p class="intel-card__eyebrow">${escapeHtml(local.deskNoteTitle)}</p>
+      <p class="intel-card__body">${escapeHtml(local.deskNoteBody)}</p>
+    </div>
+  </aside>`;
+}
+
+function buildIntelAsideStartup(content, local, mtimeIso) {
+  const sig = extractProfileSignals(content);
+  const links = collectExternalLinks(content);
+  const wheel = buildExpertiseWheelStyle(sig.tags.length ? sig.tags : ['—']);
+  const dateStr = formatFileDate(mtimeIso);
+  const tagsHtml = sig.tags
+    .map((t) => `<li><span class="intel-influence__dot" aria-hidden="true"></span>${escapeHtml(t)}</li>`)
+    .join('');
+  const linksHtml = links
+    .map((u) => `<li><a href="${escapeAttr(u)}" rel="noopener noreferrer">${escapeHtml(u.replace(/^https?:\/\//i, ''))}</a></li>`)
+    .join('');
+
+  return `<aside class="profile-intel profile-intel--org" aria-label="${escapeAttr(local.orgIntelAsideAria)}">
+    <div class="intel-card intel-card--verify">
+      <p class="intel-card__eyebrow">${escapeHtml(local.verifyTitle)}</p>
+      <p class="intel-card__body">${escapeHtml(local.verifyBody)}</p>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.lastUpdated)}</p>
+      <p class="intel-card__strong">${escapeHtml(dateStr || '—')}</p>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.orgTimelineTitle)}</p>
+      <ol class="intel-timeline">
+        <li><span class="intel-timeline__mark" aria-hidden="true"></span><div><strong>${escapeHtml(local.orgTimelineProduct)}</strong><p>${escapeHtml(sig.h2 || sig.h1 || '—')}</p></div></li>
+        <li><span class="intel-timeline__mark intel-timeline__mark--muted" aria-hidden="true"></span><div><strong>${escapeHtml(local.orgTimelineDesk)}</strong><p>${escapeHtml(dateStr || '—')}</p></div></li>
+      </ol>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.expertiseTitle)}</p>
+      <div class="intel-expertise" role="img" aria-label="${escapeAttr(local.expertiseTitle)}">
+        <div class="intel-expertise__wheel" style="background:${wheel}"></div>
+        <ul class="intel-expertise__legend">${tagsHtml || `<li>${escapeHtml('—')}</li>`}</ul>
+      </div>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.influenceTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.influenceIntro)}</p>
+      <ul class="intel-influence">${tagsHtml || `<li>${escapeHtml('—')}</li>`}</ul>
+    </div>
+    <div class="intel-card">
+      <p class="intel-card__eyebrow">${escapeHtml(local.sourcesTitle)}</p>
+      <p class="intel-card__muted">${escapeHtml(local.sourcesIntro)}</p>
+      ${links.length ? `<ul class="intel-sources">${linksHtml}</ul>` : `<p class="intel-card__body">${escapeHtml('—')}</p>`}
+    </div>
+    <div class="intel-card intel-card--note">
+      <p class="intel-card__eyebrow">${escapeHtml(local.deskNoteTitle)}</p>
+      <p class="intel-card__body">${escapeHtml(local.deskNoteBody)}</p>
+    </div>
+  </aside>`;
+}
+
+function buildBreadcrumbHtml(kind, local, urls, entityTitle) {
+  if (kind === 'home') {
+    return `<nav class="breadcrumb" aria-label="${escapeAttr(local.breadcrumbAria)}"><span class="breadcrumb__item breadcrumb__item--current" aria-current="page">${escapeHtml(local.navHome)}</span></nav>`;
+  }
+
+  const items = [];
+  items.push({ label: local.navHome, href: urls.homeUrl });
+  if (kind === 'person') {
+    items.push({ label: local.navSpecialists, href: urls.specialistsUrl });
+    items.push({ label: entityTitle, href: null });
+  } else if (kind === 'startup') {
+    items.push({ label: local.navStartups, href: urls.startupsUrl });
+    items.push({ label: entityTitle, href: null });
+  } else if (kind === 'specialists') {
+    items.push({ label: local.navSpecialists, href: null });
+  } else if (kind === 'startups') {
+    items.push({ label: local.navStartups, href: null });
+  } else if (kind === 'article') {
+    items.push({ label: entityTitle, href: null });
+  } else {
+    items.push({ label: entityTitle, href: null });
+  }
+
+  const inner = items
+    .map((it, idx) => {
+      const isLast = idx === items.length - 1;
+      if (isLast || !it.href) {
+        return `<span class="breadcrumb__item${isLast ? ' breadcrumb__item--current' : ''}" ${isLast ? 'aria-current="page"' : ''}>${escapeHtml(it.label)}</span>`;
+      }
+      return `<a class="breadcrumb__item" href="${escapeAttr(it.href)}">${escapeHtml(it.label)}</a>`;
+    })
+    .join('<span class="breadcrumb__sep" aria-hidden="true">/</span>');
+
+  return `<nav class="breadcrumb" aria-label="${escapeAttr(local.breadcrumbAria)}">${inner}</nav>`;
+}
+
+function buildJsonLdGraph({
+  kind,
+  title,
+  description,
+  canonical,
+  lang,
+  sig,
+  sameAs,
+  entityTitle,
+  breadcrumbPairs
+}) {
+  const canonicalBase = 'https://rybezh.site/';
+  const orgId = `${canonicalBase}#rybezh-org`;
+  const siteId = `${canonicalBase}#rybezh-site`;
+  const graph = [];
+
+  graph.push({
+    '@type': 'Organization',
+    '@id': orgId,
+    name: 'Rybezh.site',
+    url: canonicalBase,
+    description: 'Editorial intelligence on people, operators, startups, and technology ecosystems.',
+    logo: `${canonicalBase}assets/images/rybezh-logo.svg`,
+    email: 'jobs.r@protonmail.com'
+  });
+
+  graph.push({
+    '@type': 'WebSite',
+    '@id': siteId,
+    name: 'Rybezh.site',
+    url: canonicalBase,
+    description: 'Reference and editorial pages about specialists and companies, with multilingual coverage.',
+    inLanguage: ['uk', 'en', 'es', 'ru'],
+    publisher: { '@id': orgId }
+  });
+
+  const webPage = {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: title,
+    description,
+    isPartOf: { '@id': siteId },
+    inLanguage: lang
+  };
+  graph.push(webPage);
+
+  if (breadcrumbPairs.length) {
+    graph.push({
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbPairs.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        item: p.item
+      }))
+    });
+  }
+
+  if (kind === 'person') {
+    graph.push({
+      '@type': 'Person',
+      '@id': `${canonical}#person`,
+      name: entityTitle || sig.h1,
+      jobTitle: sig.h2 || undefined,
+      description,
+      url: canonical,
+      knowsAbout: sig.tags.length ? sig.tags : undefined,
+      sameAs: sameAs.length ? sameAs : undefined,
+      mainEntityOfPage: { '@id': `${canonical}#webpage` }
+    });
+  } else if (kind === 'startup') {
+    graph.push({
+      '@type': 'Organization',
+      '@id': `${canonical}#company`,
+      name: entityTitle || sig.h1,
+      description,
+      url: canonical,
+      knowsAbout: sig.tags.length ? sig.tags : undefined,
+      sameAs: sameAs.length ? sameAs : undefined,
+      mainEntityOfPage: { '@id': `${canonical}#webpage` }
+    });
+  } else if (kind === 'article') {
+    graph.push({
+      '@type': 'Article',
+      '@id': `${canonical}#article`,
+      headline: title,
+      description,
+      url: canonical,
+      inLanguage: lang,
+      isPartOf: { '@id': siteId },
+      author: { '@id': orgId },
+      publisher: { '@id': orgId }
+    });
+  }
+
+  const payload = { '@context': 'https://schema.org', '@graph': graph };
+  return `<script type="application/ld+json">${JSON.stringify(payload)}</script>`;
+}
+
+function breadcrumbPairsForJson(kind, local, urls, canonical, entityTitle) {
+  const full = (href) => {
+    if (!href) return canonical;
+    if (href === 'index.html') return 'https://rybezh.site/';
+    return `https://rybezh.site/${href}`;
+  };
+  if (kind === 'home') {
+    return [{ name: local.navHome, item: full(urls.homeUrl) }];
+  }
+  const pairs = [{ name: local.navHome, item: full(urls.homeUrl) }];
+  if (kind === 'person') {
+    pairs.push({ name: local.navSpecialists, item: full(urls.specialistsUrl) });
+    pairs.push({ name: entityTitle, item: canonical });
+  } else if (kind === 'startup') {
+    pairs.push({ name: local.navStartups, item: full(urls.startupsUrl) });
+    pairs.push({ name: entityTitle, item: canonical });
+  } else if (kind === 'specialists') {
+    pairs.push({ name: local.navSpecialists, item: canonical });
+  } else if (kind === 'startups') {
+    pairs.push({ name: local.navStartups, item: canonical });
+  } else if (kind === 'article') {
+    pairs.push({ name: entityTitle, item: canonical });
+  } else {
+    pairs.push({ name: entityTitle, item: canonical });
+  }
+  return pairs;
+}
+
+function buildHeadInject({
+  title,
+  description,
+  canonical,
+  lang,
+  ogImage,
+  jsonLdHtml
+}) {
+  const canonicalBase = 'https://rybezh.site';
+  let absImg = ogImage || `${canonicalBase}/assets/images/rybezh-logo.svg`;
+  if (absImg && !/^https?:\/\//i.test(absImg)) {
+    absImg = `${canonicalBase}/${String(absImg).replace(/^\//, '')}`;
+  }
+  const safeT = escapeAttr(title);
+  const safeD = escapeAttr(description);
+  const safeUrl = escapeAttr(canonical);
+  const safeImg = escapeAttr(absImg);
+  const loc = ogLocaleForLang(lang);
+  return `<meta property="og:type" content="website">
+<meta property="og:title" content="${safeT}">
+<meta property="og:description" content="${safeD}">
+<meta property="og:url" content="${safeUrl}">
+<meta property="og:image" content="${safeImg}">
+<meta property="og:locale" content="${loc}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${safeT}">
+<meta name="twitter:description" content="${safeD}">
+<meta name="twitter:image" content="${safeImg}">
+${jsonLdHtml}`;
+}
 
 fs.rmSync(DIST_DIR, { recursive: true, force: true });
 fs.mkdirSync(DIST_DIR, { recursive: true });
@@ -379,11 +909,6 @@ function compileHTML(srcFile, destFile) {
   else if (filename.endsWith('-es.html')) lang = 'es';
   else if (filename.endsWith('-ru.html')) lang = 'ru';
 
-  let finalHtml = template.replace('{{CONTENT}}', () => content)
-                          .replace('{{TITLE}}', title)
-                          .replace('{{DESCRIPTION}}', description)
-                          .replace('</head>', `${robotsBlock}\n${styleBlock}\n</head>`);
-
   const canonicalBase = 'https://rybezh.site/';
 
   let baseName = filename.replace(/-(en|es|ru)\.html$/, '.html');
@@ -397,13 +922,9 @@ function compileHTML(srcFile, destFile) {
       es: baseName ? canonicalBase + baseName.replace('.html', '-es.html') : canonicalBase + 'index-es.html',
       ru: baseName ? canonicalBase + baseName.replace('.html', '-ru.html') : canonicalBase + 'index-ru.html',
   };
+  const canonicalNow = canonicalMap[lang];
 
-  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap[lang])
-                       .replaceAll('{{CANONICAL_ES}}', canonicalMap.es)
-                       .replaceAll('{{CANONICAL_RU}}', canonicalMap.ru)
-                       .replaceAll('{{CANONICAL_EN}}', canonicalMap.en);
-
-  const local = translations[lang];
+  const localMerged = { ...translations[lang], ...editorialUi[lang] };
   const homeUrl = lang === 'uk' ? 'index.html' : `index-${lang}.html`;
   const specialistsUrl = lang === 'uk' ? 'specialists.html' : `specialists-${lang}.html`;
   const startupsUrl = lang === 'uk' ? 'startups.html' : `startups-${lang}.html`;
@@ -413,17 +934,83 @@ function compileHTML(srcFile, destFile) {
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
   const interviewUrl = lang === 'uk' ? 'interview-drill.html' : `interview-drill-${lang}.html`;
-  finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
-                       .replaceAll('{{NAV_HOME}}', local.navHome)
-                       .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
-                       .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
-                       .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
-                       .replaceAll('{{NAV_FAQ}}', local.navFaq)
-                       .replaceAll('{{NAV_INTERVIEW}}', local.navInterview)
-                       .replaceAll('{{NAV_MENU}}', local.navMenu)
-                       .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
-                       .replaceAll('{{NAV_COOKIES}}', local.navCookies)
-                       .replaceAll('{{NAV_TERMS}}', local.navTerms)
+
+  const relPath = path.relative(path.join(SRC_DIR, 'pages'), srcFile).replace(/\\/g, '/');
+  const pageKind = detectPageKind(relPath, filename);
+  const stat = fs.statSync(srcFile);
+  const mtimeIso = stat.mtime.toISOString();
+
+  let mainBody = content;
+  if (pageKind === 'person') {
+    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsidePerson(content, localMerged, mtimeIso)}</div>`;
+  } else if (pageKind === 'startup') {
+    mainBody = `<div class="profile-layout"><div class="profile-layout__main">${content}</div>${buildIntelAsideStartup(content, localMerged, mtimeIso)}</div>`;
+  }
+
+  const sig = extractProfileSignals(content);
+  const sameAs = collectExternalLinks(content);
+  let entityTitle = sig.h1 || personNameFromTitle(title);
+  if (pageKind === 'home') entityTitle = localMerged.navHome;
+  else if (pageKind === 'specialists') entityTitle = localMerged.navSpecialists;
+  else if (pageKind === 'startups') entityTitle = localMerged.navStartups;
+  else if (pageKind === 'article' || pageKind === 'page') entityTitle = personNameFromTitle(title);
+
+  const urlPack = { homeUrl, specialistsUrl, startupsUrl, methodologyUrl, faqUrl, interviewUrl };
+  const breadcrumbNav = buildBreadcrumbHtml(pageKind, localMerged, urlPack, entityTitle);
+
+  const schemaKind =
+    pageKind === 'person' ? 'person' : pageKind === 'startup' ? 'startup' : pageKind === 'article' ? 'article' : 'none';
+
+  const bcPairs = breadcrumbPairsForJson(pageKind, localMerged, urlPack, canonicalNow, entityTitle);
+  const jsonLdHtml = buildJsonLdGraph({
+    kind: schemaKind,
+    title,
+    description,
+    canonical: canonicalNow,
+    lang,
+    sig,
+    sameAs,
+    entityTitle,
+    breadcrumbPairs: bcPairs
+  });
+
+  const headInject = buildHeadInject({
+    title,
+    description,
+    canonical: canonicalNow,
+    lang,
+    ogImage: extractOgImage(content),
+    jsonLdHtml
+  });
+
+  const slug = filename.replace(/\.html$/i, '').replace(/-(en|es|ru)$/i, '');
+  const bodyClass = `site-body page-${pageKind} doc-${slug}`;
+
+  const wrappedMain = `${breadcrumbNav}<div class="page-shell">${mainBody}</div>`;
+
+  let finalHtml = template.replace('{{CONTENT}}', () => wrappedMain)
+                          .replace('{{TITLE}}', escapeHtml(title))
+                          .replace('{{DESCRIPTION}}', escapeHtml(description))
+                          .replace('{{HEAD_INJECT}}', headInject)
+                          .replace('{{BODY_CLASS}}', bodyClass)
+                          .replace('</head>', `${robotsBlock}\n${styleBlock}\n</head>`);
+
+  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap[lang])
+                       .replaceAll('{{CANONICAL_ES}}', canonicalMap.es)
+                       .replaceAll('{{CANONICAL_RU}}', canonicalMap.ru)
+                       .replaceAll('{{CANONICAL_EN}}', canonicalMap.en);
+
+  finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', localMerged.navAria)
+                       .replaceAll('{{NAV_HOME}}', localMerged.navHome)
+                       .replaceAll('{{NAV_SPECIALISTS}}', localMerged.navSpecialists)
+                       .replaceAll('{{NAV_STARTUPS}}', localMerged.navStartups)
+                       .replaceAll('{{NAV_METHODOLOGY}}', localMerged.navMethodology)
+                       .replaceAll('{{NAV_FAQ}}', localMerged.navFaq)
+                       .replaceAll('{{NAV_INTERVIEW}}', localMerged.navInterview)
+                       .replaceAll('{{NAV_MENU}}', localMerged.navMenu)
+                       .replaceAll('{{NAV_PRIVACY}}', localMerged.navPrivacy)
+                       .replaceAll('{{NAV_COOKIES}}', localMerged.navCookies)
+                       .replaceAll('{{NAV_TERMS}}', localMerged.navTerms)
                        .replaceAll('{{HOME_URL}}', homeUrl)
                        .replaceAll('{{SPECIALISTS_URL}}', specialistsUrl)
                        .replaceAll('{{STARTUPS_URL}}', startupsUrl)
@@ -433,31 +1020,42 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
                        .replaceAll('{{INTERVIEW_URL}}', interviewUrl)
-                       .replaceAll('{{SEARCH_ARIA}}', local.searchAria)
-                       .replaceAll('{{SEARCH_PLACEHOLDER}}', local.searchPlaceholder)
-                       .replaceAll('{{SEARCH_BADGE_PERSON}}', local.searchBadgePerson)
-                       .replaceAll('{{SEARCH_BADGE_STARTUP}}', local.searchBadgeStartup)
-                       .replaceAll('{{SEARCH_BADGE_PAGE}}', local.searchBadgePage)
-                       .replaceAll('{{SEARCH_EMPTY}}', local.searchEmpty)
-                       .replaceAll('{{SEARCH_HINT}}', local.searchHint)
-                       .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
-                       .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
-                       .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
-                       .replaceAll('{{FOOTER_SCOPE_TEXT}}', local.footerScopeText)
-                       .replaceAll('{{FOOTER_LANGUAGES}}', local.footerLanguages)
-                       .replaceAll('{{FOOTER_RIGHTS}}', local.footerRights)
-                       .replaceAll('{{FOOTER_POLICIES_TITLE}}', local.footerPoliciesTitle)
-                       .replaceAll('{{FOOTER_POLICIES_TEXT}}', local.footerPoliciesText)
-                       .replaceAll('{{FOOTER_TAGLINE}}', local.footerTagline)
-                       .replaceAll('{{FOOTER_SITEMAP}}', local.footerSitemap)
-                       .replaceAll('{{SKIP_LINK}}', local.skipLink)
-                       .replaceAll('{{BRAND_TAGLINE}}', local.brandTagline)
-                       .replaceAll('{{CONTACT_LABEL}}', local.contactLabel);
+                       .replaceAll('{{SEARCH_ARIA}}', localMerged.searchAria)
+                       .replaceAll('{{SEARCH_PLACEHOLDER}}', localMerged.searchPlaceholder)
+                       .replaceAll('{{SEARCH_BADGE_PERSON}}', localMerged.searchBadgePerson)
+                       .replaceAll('{{SEARCH_BADGE_STARTUP}}', localMerged.searchBadgeStartup)
+                       .replaceAll('{{SEARCH_BADGE_PAGE}}', localMerged.searchBadgePage)
+                       .replaceAll('{{SEARCH_EMPTY}}', localMerged.searchEmpty)
+                       .replaceAll('{{SEARCH_HINT}}', localMerged.searchHint)
+                       .replaceAll('{{FOOTER_ABOUT}}', localMerged.footerAbout)
+                       .replaceAll('{{FOOTER_NAV_TITLE}}', localMerged.footerNavTitle)
+                       .replaceAll('{{FOOTER_SCOPE_TITLE}}', localMerged.footerScopeTitle)
+                       .replaceAll('{{FOOTER_SCOPE_TEXT}}', localMerged.footerScopeText)
+                       .replaceAll('{{FOOTER_LANGUAGES}}', localMerged.footerLanguages)
+                       .replaceAll('{{FOOTER_RIGHTS}}', localMerged.footerRights)
+                       .replaceAll('{{FOOTER_POLICIES_TITLE}}', localMerged.footerPoliciesTitle)
+                       .replaceAll('{{FOOTER_POLICIES_TEXT}}', localMerged.footerPoliciesText)
+                       .replaceAll('{{FOOTER_TAGLINE}}', localMerged.footerTagline)
+                       .replaceAll('{{FOOTER_SITEMAP}}', localMerged.footerSitemap)
+                       .replaceAll('{{SKIP_LINK}}', localMerged.skipLink)
+                       .replaceAll('{{BRAND_TAGLINE}}', localMerged.brandTagline)
+                       .replaceAll('{{CONTACT_LABEL}}', localMerged.contactLabel)
+                       .replaceAll('{{NAV_DOCK_ARIA}}', localMerged.navDockAria)
+                       .replaceAll('{{CMD_OPEN_ARIA}}', localMerged.cmdOpenAria)
+                       .replaceAll('{{CMD_HINT}}', localMerged.cmdHint)
+                       .replaceAll('{{CMD_TITLE}}', localMerged.cmdTitle)
+                       .replaceAll('{{CMD_RECENT}}', localMerged.cmdRecent)
+                       .replaceAll('{{CMD_SUGGESTED}}', localMerged.cmdSuggested)
+                       .replaceAll('{{FILTER_ALL}}', localMerged.filterAll)
+                       .replaceAll('{{FILTER_PEOPLE}}', localMerged.filterPeople)
+                       .replaceAll('{{FILTER_COMPANIES}}', localMerged.filterCompanies)
+                       .replaceAll('{{FILTER_PAGES}}', localMerged.filterPages)
+                       .replaceAll('{{CMD_CLOSE}}', localMerged.cmdClose);
 
-  finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', local.cookieTitle)
-                       .replaceAll('{{COOKIE_TEXT}}', local.cookieText)
-                       .replaceAll('{{COOKIE_ACCEPT}}', local.cookieAccept)
-                       .replaceAll('{{COOKIE_DECLINE}}', local.cookieDecline);
+  finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', localMerged.cookieTitle)
+                       .replaceAll('{{COOKIE_TEXT}}', localMerged.cookieText)
+                       .replaceAll('{{COOKIE_ACCEPT}}', localMerged.cookieAccept)
+                       .replaceAll('{{COOKIE_DECLINE}}', localMerged.cookieDecline);
 
   finalHtml = finalHtml.replace('<html lang="uk">', `<html lang="${lang}">`);
 

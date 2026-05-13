@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
     <meta name="description" content="{{DESCRIPTION}}">
+    {{HEAD_INJECT}}
     <link rel="canonical" href="{{CANONICAL}}">
     <link rel="alternate" hreflang="uk" href="{{CANONICAL}}">
     <link rel="alternate" hreflang="ru" href="{{CANONICAL_RU}}">
@@ -16,11 +17,9 @@
     <script src="site-search.js" defer></script>
     <link rel="icon" href="assets/images/rybezh-logo.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/images/rybezh-logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rybezh.site","url":"https://rybezh.site/","description":"Multilingual directory of people and technology companies.","logo":"https://rybezh.site/assets/images/rybezh-logo.svg","email":"jobs.r@protonmail.com"}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Rybezh.site","url":"https://rybezh.site/","description":"Reference pages about specialists and companies, with links to sources.","inLanguage":["uk","en","es","ru"]}</script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="{{BODY_CLASS}}">
     <a class="skip-link" href="#main-content">{{SKIP_LINK}}</a>
     <header class="site-header">
         <div class="header-container" data-header-container>
@@ -41,7 +40,7 @@
                     <a href="{{INTERVIEW_URL}}">{{NAV_INTERVIEW}}</a>
                 </div>
             </nav>
-            <div class="site-search" data-site-search data-badge-person="{{SEARCH_BADGE_PERSON}}" data-badge-startup="{{SEARCH_BADGE_STARTUP}}" data-badge-page="{{SEARCH_BADGE_PAGE}}" data-empty="{{SEARCH_EMPTY}}" data-hint="{{SEARCH_HINT}}">
+            <div class="site-search" data-site-search data-badge-person="{{SEARCH_BADGE_PERSON}}" data-badge-startup="{{SEARCH_BADGE_STARTUP}}" data-badge-page="{{SEARCH_BADGE_PAGE}}" data-empty="{{SEARCH_EMPTY}}" data-hint="{{SEARCH_HINT}}" data-filter-all="{{FILTER_ALL}}" data-filter-people="{{FILTER_PEOPLE}}" data-filter-companies="{{FILTER_COMPANIES}}" data-filter-pages="{{FILTER_PAGES}}" data-cmd-recent="{{CMD_RECENT}}" data-cmd-suggested="{{CMD_SUGGESTED}}">
                 <label class="site-search__wrap" for="site-search-input">
                     <span class="site-search__sr-only">{{SEARCH_ARIA}}</span>
                     <input id="site-search-input" class="site-search__input" type="search" data-site-search-input placeholder="{{SEARCH_PLACEHOLDER}}" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="site-search-panel" aria-expanded="false" aria-label="{{SEARCH_ARIA}}">
@@ -50,6 +49,7 @@
                 <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
             </div>
             <div class="header-end">
+                <button type="button" class="cmd-kicker" data-open-command aria-label="{{CMD_OPEN_ARIA}}"><kbd class="cmd-kicker__kbd">/</kbd><span class="cmd-kicker__txt">{{CMD_HINT}}</span></button>
                 <div class="lang-switcher">
                     <a href="{{CANONICAL}}">UA</a>
                     <a href="{{CANONICAL_EN}}">EN</a>
@@ -116,6 +116,27 @@
             </div>
         </div>
     </footer>
+    <nav class="mobile-dock" aria-label="{{NAV_DOCK_ARIA}}">
+        <a class="mobile-dock__item" href="{{HOME_URL}}"><span class="mobile-dock__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1h-5v-7H9v7H4a1 1 0 01-1-1v-10.5z"/></svg></span><span>{{NAV_HOME}}</span></a>
+        <a class="mobile-dock__item" href="{{SPECIALISTS_URL}}"><span class="mobile-dock__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M4 20v-1a4 4 0 014-4h8a4 4 0 014 4v1"/></svg></span><span>{{NAV_SPECIALISTS}}</span></a>
+        <a class="mobile-dock__item" href="{{STARTUPS_URL}}"><span class="mobile-dock__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18h16M7 14h10M10 10h4M12 6h0"/></svg></span><span>{{NAV_STARTUPS}}</span></a>
+        <button type="button" class="mobile-dock__item mobile-dock__item--btn" data-open-command><span class="mobile-dock__ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span><span>{{CMD_TITLE}}</span></button>
+    </nav>
+    <dialog id="site-command" class="command-dialog" aria-labelledby="cmd-dlg-title">
+        <div class="command-dialog__inner">
+            <div class="command-dialog__head">
+                <p id="cmd-dlg-title" class="command-dialog__title">{{CMD_TITLE}}</p>
+                <button type="button" class="command-dialog__close" data-close-command aria-label="{{CMD_CLOSE}}">×</button>
+            </div>
+            <input id="site-command-input" class="command-dialog__input" type="search" data-command-input autocomplete="off" placeholder="{{SEARCH_PLACEHOLDER}}" aria-label="{{SEARCH_ARIA}}">
+            <div class="command-dialog__filters" data-command-filters role="tablist" aria-label="{{CMD_TITLE}}"></div>
+            <div class="command-dialog__cols">
+                <div class="command-dialog__col"><p class="command-dialog__col-title">{{CMD_RECENT}}</p><div data-command-recent></div></div>
+                <div class="command-dialog__col"><p class="command-dialog__col-title">{{CMD_SUGGESTED}}</p><div data-command-suggested></div></div>
+            </div>
+            <div class="command-dialog__hits" data-command-hits role="listbox" aria-label="{{SEARCH_ARIA}}"></div>
+        </div>
+    </dialog>
     <div class="cookie-banner" data-cookie-banner hidden>
         <div class="cookie-banner__content">
             <p class="cookie-banner__title">{{COOKIE_TITLE}}</p>
