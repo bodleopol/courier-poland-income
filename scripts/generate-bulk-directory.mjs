@@ -135,6 +135,8 @@ const UI = {
     shareLinkedIn: 'LinkedIn',
     shareX: 'X',
     shareFacebook: 'Facebook',
+    shareTelegram: 'Telegram',
+    shareWhatsapp: 'WhatsApp',
     photoAlt: 'Ілюстративне фото (Unsplash), тема: портрет спеціаліста',
     orgPhotoAlt: 'Ілюстративне фото (Unsplash), тема: команда та продукт',
     galleryH: 'Фотографії з контексту',
@@ -175,6 +177,8 @@ const UI = {
     shareLinkedIn: 'LinkedIn',
     shareX: 'X',
     shareFacebook: 'Facebook',
+    shareTelegram: 'Telegram',
+    shareWhatsapp: 'WhatsApp',
     photoAlt: 'Editorial stock portrait (Unsplash)',
     orgPhotoAlt: 'Editorial stock imagery (Unsplash): team and product',
     galleryH: 'Photo context',
@@ -215,6 +219,8 @@ const UI = {
     shareLinkedIn: 'LinkedIn',
     shareX: 'X',
     shareFacebook: 'Facebook',
+    shareTelegram: 'Telegram',
+    shareWhatsapp: 'WhatsApp',
     photoAlt: 'Retrato editorial (Unsplash)',
     orgPhotoAlt: 'Imagen editorial (Unsplash): equipo y producto',
     galleryH: 'Fotos de contexto',
@@ -255,6 +261,8 @@ const UI = {
     shareLinkedIn: 'LinkedIn',
     shareX: 'X',
     shareFacebook: 'Facebook',
+    shareTelegram: 'Telegram',
+    shareWhatsapp: 'WhatsApp',
     photoAlt: 'Иллюстративный портрет (Unsplash)',
     orgPhotoAlt: 'Иллюстративное фото (Unsplash): команда и продукт',
     galleryH: 'Фотографии в контексте',
@@ -325,9 +333,12 @@ function sharePanelHtml(lang, profileHref, titleText) {
   const fullUrl = absoluteShareUrl(profileHref);
   const enc = encodeURIComponent(fullUrl);
   const encTitle = encodeURIComponent(titleText);
+  const waText = encodeURIComponent(`${titleText ? `${titleText} — ` : ''}${fullUrl}`);
   const inHref = `https://www.linkedin.com/sharing/share-offsite/?url=${enc}`;
   const xHref = `https://twitter.com/intent/tweet?url=${enc}&text=${encTitle}`;
   const fbHref = `https://www.facebook.com/sharer/sharer.php?u=${enc}`;
+  const tgHref = `https://t.me/share/url?url=${enc}&text=${encTitle}`;
+  const waHref = `https://api.whatsapp.com/send?text=${encodeURIComponent(waText)}`;
   return `<details class="directory-share">
   <summary class="btn secondary">${escapeHtml(u.shareOpen)}</summary>
   <div class="directory-share-panel" role="group">
@@ -335,6 +346,8 @@ function sharePanelHtml(lang, profileHref, titleText) {
     <a class="directory-share-link" href="${escapeAttr(inHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareLinkedIn)}</a>
     <a class="directory-share-link" href="${escapeAttr(xHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareX)}</a>
     <a class="directory-share-link" href="${escapeAttr(fbHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareFacebook)}</a>
+    <a class="directory-share-link" href="${escapeAttr(tgHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareTelegram)}</a>
+    <a class="directory-share-link" href="${escapeAttr(waHref)}" target="_blank" rel="noopener noreferrer">${escapeHtml(u.shareWhatsapp)}</a>
   </div>
 </details>`;
 }
@@ -666,11 +679,9 @@ function cardPerson(lang, i) {
   const shareBlock = sharePanelHtml(lang, href, name);
   const catalogCard = `<article class="card profile-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-sort-name="${escapeAttr(name)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
     <div class="card-body">
-      <p class="eyebrow">${escapeHtml(country)}</p>
       <h3>${escapeHtml(name)}</h3>
       <p class="meta">${escapeHtml(roleShort)}</p>
       <p class="card-teaser">${escapeHtml(teaser)}</p>
-      <div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
       <div class="directory-card-actions">
         <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].openProfile)}</a>
         ${shareBlock}
@@ -735,16 +746,13 @@ function cardStartup(lang, i) {
           ? `Reduce el riesgo operativo para clientes en ${vertical}.`
           : `Снижает операционные риски заказчиков в ${vertical}.`;
   const search = `${brand} ${metaLine} ${country} ${city} ${vertical}`.toLowerCase();
-  const foundedLabel = UI[lang].founded;
   const teaser = cardTeaserFromBio(bio);
   const shareBlock = sharePanelHtml(lang, href, brand);
   const catalogCard = `<article class="card startup-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-founded="${year}" data-sort-name="${escapeAttr(brand)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
     <div class="card-body">
-      <p class="eyebrow">${escapeHtml(foundedLabel)} ${year}</p>
       <h3>${escapeHtml(brand)}</h3>
       <p class="meta">${escapeHtml(metaLine)}</p>
       <p class="card-teaser">${escapeHtml(teaser)}</p>
-      <div class="tags">${tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
       <div class="directory-card-actions">
         <a class="btn" href="${escapeAttr(href)}">${escapeHtml(UI[lang].learnMore)}</a>
         ${shareBlock}

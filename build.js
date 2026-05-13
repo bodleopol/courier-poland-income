@@ -336,6 +336,10 @@ const editorialUi = {
     catalogShareIn: 'LinkedIn',
     catalogShareX: 'X',
     catalogShareFb: 'Facebook',
+    catalogShareTelegram: 'Telegram',
+    catalogShareWhatsapp: 'WhatsApp',
+    catalogShareNative: 'Поділитися…',
+    catalogReadProfile: 'Читати профіль',
     catalogGalleryHeading: 'Фотографії та візуальний контекст'
   },
   en: {
@@ -376,6 +380,10 @@ const editorialUi = {
     catalogShareIn: 'LinkedIn',
     catalogShareX: 'X',
     catalogShareFb: 'Facebook',
+    catalogShareTelegram: 'Telegram',
+    catalogShareWhatsapp: 'WhatsApp',
+    catalogShareNative: 'Share…',
+    catalogReadProfile: 'Read profile',
     catalogGalleryHeading: 'Photos and visual context'
   },
   es: {
@@ -416,6 +424,10 @@ const editorialUi = {
     catalogShareIn: 'LinkedIn',
     catalogShareX: 'X',
     catalogShareFb: 'Facebook',
+    catalogShareTelegram: 'Telegram',
+    catalogShareWhatsapp: 'WhatsApp',
+    catalogShareNative: 'Compartir…',
+    catalogReadProfile: 'Ver perfil',
     catalogGalleryHeading: 'Fotos y contexto visual'
   },
   ru: {
@@ -456,6 +468,10 @@ const editorialUi = {
     catalogShareIn: 'LinkedIn',
     catalogShareX: 'X',
     catalogShareFb: 'Facebook',
+    catalogShareTelegram: 'Telegram',
+    catalogShareWhatsapp: 'WhatsApp',
+    catalogShareNative: 'Поделиться…',
+    catalogReadProfile: 'Читать профиль',
     catalogGalleryHeading: 'Фотографии и визуальный контекст'
   }
 };
@@ -1126,6 +1142,10 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{CATALOG_SHARE_IN}}', escapeHtml(localMerged.catalogShareIn))
                        .replaceAll('{{CATALOG_SHARE_X}}', escapeHtml(localMerged.catalogShareX))
                        .replaceAll('{{CATALOG_SHARE_FB}}', escapeHtml(localMerged.catalogShareFb))
+                       .replaceAll('{{CATALOG_SHARE_TELEGRAM}}', escapeHtml(localMerged.catalogShareTelegram))
+                       .replaceAll('{{CATALOG_SHARE_WHATSAPP}}', escapeHtml(localMerged.catalogShareWhatsapp))
+                       .replaceAll('{{CATALOG_SHARE_NATIVE}}', escapeHtml(localMerged.catalogShareNative))
+                       .replaceAll('{{CATALOG_READ_PROFILE}}', escapeHtml(localMerged.catalogReadProfile))
                        .replaceAll('{{CATALOG_GALLERY_HEADING}}', escapeHtml(localMerged.catalogGalleryHeading));
 
   finalHtml = finalHtml.replaceAll('{{COOKIE_TITLE}}', localMerged.cookieTitle)
