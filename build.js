@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { execSync } from 'child_process';
 
 const SRC_DIR = 'src';
 const DIST_DIR = 'dist';
@@ -105,6 +106,7 @@ const translations = {
     navStartups: 'Стартапи',
     navMethodology: 'Методологія',
     navFaq: 'Питання й відповіді',
+    navInterview: 'Тренажер співбесіди',
     navMenu: 'Меню',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
@@ -138,6 +140,7 @@ const translations = {
     navStartups: 'Startups',
     navMethodology: 'Methodology',
     navFaq: 'FAQ',
+    navInterview: 'Interview drill',
     navMenu: 'Menu',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
@@ -171,6 +174,7 @@ const translations = {
     navStartups: 'Startups',
     navMethodology: 'Metodología',
     navFaq: 'Preguntas frecuentes',
+    navInterview: 'Simulacro de entrevista',
     navMenu: 'Menú',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
@@ -204,6 +208,7 @@ const translations = {
     navStartups: 'Стартапы',
     navMethodology: 'Методология',
     navFaq: 'Вопросы и ответы',
+    navInterview: 'Тренажёр собеседования',
     navMenu: 'Меню',
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
@@ -235,6 +240,13 @@ const translations = {
 fs.rmSync(DIST_DIR, { recursive: true, force: true });
 fs.mkdirSync(DIST_DIR, { recursive: true });
 
+try {
+  execSync('node scripts/emit-interview-tables.mjs', { stdio: 'inherit', cwd: path.resolve() });
+} catch (e) {
+  console.error('emit-interview-tables failed:', e.message);
+  process.exit(1);
+}
+
 function processDirectory(dirPath, destPath) {
   if (!fs.existsSync(destPath)) {
     fs.mkdirSync(destPath, { recursive: true });
@@ -254,7 +266,9 @@ function processDirectory(dirPath, destPath) {
       // We only copy non-HTML files here. HTML files in 'pages' are handled separately.
       if (srcFile.endsWith('.css') || srcFile.endsWith('.js')) {
         const rawAsset = fs.readFileSync(srcFile, 'utf8');
-        fs.writeFileSync(destFile, minifyAssetIfNeeded(srcFile, rawAsset));
+        const skipMinifyJs =
+          srcFile.endsWith('interview-drill.js') || srcFile.endsWith('interview-bank-data.js');
+        fs.writeFileSync(destFile, skipMinifyJs ? rawAsset : minifyAssetIfNeeded(srcFile, rawAsset));
       } else {
         fs.copyFileSync(srcFile, destFile);
       }
@@ -360,12 +374,14 @@ function compileHTML(srcFile, destFile) {
   const termsUrl = lang === 'uk' ? 'terms.html' : `terms-${lang}.html`;
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
+  const interviewUrl = lang === 'uk' ? 'interview-drill.html' : `interview-drill-${lang}.html`;
   finalHtml = finalHtml.replaceAll('{{NAV_ARIA}}', local.navAria)
                        .replaceAll('{{NAV_HOME}}', local.navHome)
                        .replaceAll('{{NAV_SPECIALISTS}}', local.navSpecialists)
                        .replaceAll('{{NAV_STARTUPS}}', local.navStartups)
                        .replaceAll('{{NAV_METHODOLOGY}}', local.navMethodology)
                        .replaceAll('{{NAV_FAQ}}', local.navFaq)
+                       .replaceAll('{{NAV_INTERVIEW}}', local.navInterview)
                        .replaceAll('{{NAV_MENU}}', local.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', local.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', local.navCookies)
@@ -378,6 +394,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{TERMS_URL}}', termsUrl)
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
+                       .replaceAll('{{INTERVIEW_URL}}', interviewUrl)
                        .replaceAll('{{FOOTER_ABOUT}}', local.footerAbout)
                        .replaceAll('{{FOOTER_NAV_TITLE}}', local.footerNavTitle)
                        .replaceAll('{{FOOTER_SCOPE_TITLE}}', local.footerScopeTitle)
