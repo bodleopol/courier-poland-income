@@ -11,6 +11,11 @@ node_modules/
 dist/
 public/
 
+# Generated bulk catalog (created by scripts/generate-bulk-directory.mjs during build)
+src/generated/
+src/pages/profiles/person-lp-*.html
+src/pages/startups/startup-lp-*.html
+
 # Firebase
 .firebase/
 

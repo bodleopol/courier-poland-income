@@ -104,11 +104,23 @@ const STATIC = {
   ],
 };
 
+function readCatalogWithBulk(filePath, lang, kind) {
+  const html = fs.readFileSync(filePath, 'utf8');
+  const incName =
+    kind === 'specialists' ? `bulk-specialists-${lang}.inc.html` : `bulk-startups-${lang}.inc.html`;
+  const incPath = path.join('src', 'generated', incName);
+  let bulk = '';
+  if (fs.existsSync(incPath)) {
+    bulk = fs.readFileSync(incPath, 'utf8');
+  }
+  return html + bulk;
+}
+
 function load(lang, specialistsFile, startupsFile) {
   const specPath = path.join(SITE, specialistsFile);
   const startPath = path.join(SITE, startupsFile);
-  const specHtml = fs.readFileSync(specPath, 'utf8');
-  const startHtml = fs.readFileSync(startPath, 'utf8');
+  const specHtml = readCatalogWithBulk(specPath, lang, 'specialists');
+  const startHtml = readCatalogWithBulk(startPath, lang, 'startups');
   const people = extractCards(specHtml);
   const companies = extractCards(startHtml);
   const pages = (STATIC[lang] || []).map((p) => ({ ...p, c: p.c ?? '' }));
