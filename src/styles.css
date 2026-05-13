@@ -4518,3 +4518,158 @@ body[data-theme="dark"] .startup-card[data-founded]::before {
 .interview-drill--lab .interview-drill__list {
   display: none !important;
 }
+
+/* —— Directory & home listing cards: intelligence tiles (no cover photo) —— */
+.directory-intel-card,
+[data-directory-grid] > .profile-card,
+[data-directory-grid] > .startup-card,
+#featuredGridMount > .profile-card,
+#startupGridMount > .startup-card,
+#recentGridMount > .profile-card,
+#editorialTeamMount > .profile-card,
+.compact-grid > .profile-card,
+.compact-grid > .startup-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(99, 102, 241, 0.14), transparent 55%),
+    radial-gradient(80% 60% at 0% 100%, rgba(20, 184, 166, 0.1), transparent 50%),
+    linear-gradient(165deg, color-mix(in oklab, var(--surface) 92%, #0f172a), var(--surface));
+  border: 1px solid color-mix(in oklab, var(--line) 88%, rgba(99, 102, 241, 0.35));
+}
+
+.directory-intel-card::after,
+[data-directory-grid] > .profile-card::after,
+[data-directory-grid] > .startup-card::after,
+#featuredGridMount > .profile-card::after,
+#startupGridMount > .startup-card::after,
+#recentGridMount > .profile-card::after,
+#editorialTeamMount > .profile-card::after,
+.compact-grid > .profile-card::after,
+.compact-grid > .startup-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg stroke='%236366f1' stroke-width='0.35' fill='none' opacity='0.5'%3E%3Cpath d='M10 80 C40 20 80 100 110 40'/%3E%3Cpath d='M0 40 L120 90'/%3E%3Ccircle cx='28' cy='32' r='2.2' fill='%2322d3ee'/%3E%3Ccircle cx='92' cy='78' r='2' fill='%23a78bfa'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  mix-blend-mode: soft-light;
+}
+
+.directory-intel-card .card-body,
+[data-directory-grid] > .profile-card .card-body,
+[data-directory-grid] > .startup-card .card-body,
+#featuredGridMount > .profile-card .card-body,
+#startupGridMount > .startup-card .card-body,
+#recentGridMount > .profile-card .card-body,
+#editorialTeamMount > .profile-card .card-body,
+.compact-grid > .profile-card .card-body,
+.compact-grid > .startup-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.card-teaser {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: color-mix(in oklab, var(--muted) 92%, var(--text));
+  max-height: 4.2em;
+  overflow: hidden;
+}
+
+.directory-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.directory-card-actions > .btn {
+  flex: 1 1 120px;
+  justify-content: center;
+  text-align: center;
+}
+
+.directory-share {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.directory-share > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.directory-share > summary::-webkit-details-marker {
+  display: none;
+}
+
+.directory-share-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+body[data-theme="dark"] .directory-share-panel {
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+}
+
+.directory-share-link,
+.directory-share-copy {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: var(--text);
+  background: color-mix(in oklab, var(--surface-muted) 88%, transparent);
+  cursor: pointer;
+}
+
+.directory-share-link:hover,
+.directory-share-copy:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: var(--surface);
+}
+
+.page-specialists [data-directory-grid] > .profile-card .tags,
+.page-startups [data-directory-grid] > .startup-card .tags,
+#featuredGridMount .profile-card .tags,
+#startupGridMount .startup-card .tags {
+  margin-bottom: 8px;
+  opacity: 0.92;
+}
+
+.profile-header--intel {
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.startup-header.profile-header--intel {
+  grid-template-columns: 1fr;
+}
+
+.profile-page .profile-gallery,
+.startup-page .profile-gallery {
+  margin-top: 28px;
+}
