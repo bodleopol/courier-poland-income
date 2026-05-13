@@ -1094,4 +1094,12 @@ function compileHTML(srcFile, destFile) {
 
 processDirectory(SRC_DIR, DIST_DIR);
 processPages(path.join(SRC_DIR, 'pages'), DIST_DIR);
+
+// Temporary build inputs can be very large and should not be bundled into serverless output.
+const GENERATED_TMP_DIR = path.join(SRC_DIR, 'generated');
+if (fs.existsSync(GENERATED_TMP_DIR)) {
+  fs.rmSync(GENERATED_TMP_DIR, { recursive: true, force: true });
+  console.log(`Removed temporary directory: ${GENERATED_TMP_DIR}`);
+}
+
 console.log('Build completed successfully.');
