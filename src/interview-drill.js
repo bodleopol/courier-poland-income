@@ -28,7 +28,23 @@
       feedbackOk: 'Вірно.',
       feedbackBad: 'Еталонна відповідь позначена нижче.',
       copy: 'Копіювати пакет',
-      copied: 'Скопійовано'
+      copied: 'Скопійовано',
+      focusEnter: 'Режим фокусу',
+      focusExit: 'Вийти з фокусу',
+      livePack: 'Пакет {a} з {b}',
+      nudge: [
+        'Прогрів: дихайте рівно — перша відповідь «на холодну» завжди найважча.',
+        'Набір темпу: тримайте структуру STAR і називайте метрики, навіть якщо це приблизні.',
+        'Розгін: ускладнюйте відповідь — ризики, відкат, стейкхолдери.',
+        'Закріплення: ви вже пройшли довгий шлях банку — залишайтеся конкретними до кінця.'
+      ],
+      coachMcq: 'MCQ',
+      coachOpen: 'Відкриті',
+      coachCadence: 'Темп',
+      coachHintMcq: 'Обирайте варіант із діями, метриками й планом відкату.',
+      coachHintOpen: 'Структура STAR: ситуація → задача → дія → результат (з цифрами, де можливо).',
+      coachHintSteady: 'Можна розгорнути думку, але тримайте видиму структуру абзаців.',
+      coachHintPressure: 'Коротші абзаци; явно фіксуйте ризики в кожній відповіді.'
     },
     en: {
       notes: 'Draft notes',
@@ -44,7 +60,23 @@
       feedbackOk: 'Correct.',
       feedbackBad: 'Benchmark answer is highlighted.',
       copy: 'Copy pack link',
-      copied: 'Copied'
+      copied: 'Copied',
+      focusEnter: 'Focus mode',
+      focusExit: 'Exit focus',
+      livePack: 'Pack {a} of {b}',
+      nudge: [
+        'Warm-up: breathe steady — the first answer is the hardest; clarity beats polish.',
+        'Build cadence: keep STAR visible and name metrics, even when they are directional.',
+        'Stretch: add rollback paths, stakeholders, and explicit tradeoffs.',
+        'Lock-in: you are deep in the bank — stay specific and finish strong.'
+      ],
+      coachMcq: 'MCQ',
+      coachOpen: 'Open',
+      coachCadence: 'Cadence',
+      coachHintMcq: 'Favor options with concrete actions, metrics, and rollback plans.',
+      coachHintOpen: 'Use STAR (Situation → Task → Action → Result) with numbers where possible.',
+      coachHintSteady: 'Allow fuller reasoning but keep a visible outline.',
+      coachHintPressure: 'Answer in shorter paragraphs; surface risks explicitly.'
     },
     es: {
       notes: 'Notas de respuesta',
@@ -60,7 +92,23 @@
       feedbackOk: 'Correcto.',
       feedbackBad: 'La respuesta de referencia queda marcada.',
       copy: 'Copiar enlace del paquete',
-      copied: 'Copiado'
+      copied: 'Copiado',
+      focusEnter: 'Modo foco',
+      focusExit: 'Salir del foco',
+      livePack: 'Paquete {a} de {b}',
+      nudge: [
+        'Calentamiento: respire con calma — la primera respuesta cuesta más; priorice claridad.',
+        'Ritmo: mantenga STAR visible y cite métricas, aunque sean orientativas.',
+        'Extensión: sume planes de reversión, partes y tradeoffs explícitos.',
+        'Cierre: ya recorrió mucho banco — sea concreto hasta el final.'
+      ],
+      coachMcq: 'MCQ',
+      coachOpen: 'Abierto',
+      coachCadence: 'Ritmo',
+      coachHintMcq: 'Busque acciones concretas, métricas y planes de reversión.',
+      coachHintOpen: 'Estructure con STAR (Situación → Tarea → Acción → Resultado) y cifras si puede.',
+      coachHintSteady: 'Puede desarrollar más, pero mantenga una estructura visible.',
+      coachHintPressure: 'Responda en párrafos más cortos y nombre riesgos con claridad.'
     },
     ru: {
       notes: 'Заметки к ответу',
@@ -76,11 +124,32 @@
       feedbackOk: 'Верно.',
       feedbackBad: 'Эталонный ответ отмечен ниже.',
       copy: 'Копировать ссылку на пакет',
-      copied: 'Скопировано'
+      copied: 'Скопировано',
+      focusEnter: 'Режим фокуса',
+      focusExit: 'Выйти из фокуса',
+      livePack: 'Пакет {a} из {b}',
+      nudge: [
+        'Разминка: дышите ровно — первый ответ самый трудный; ясность важнее «лака».',
+        'Набор темпа: держите STAR на виду и называйте метрики, пусть даже ориентиры.',
+        'Ускорение: добавляйте откат, стейкхолдеров и явные компромиссы.',
+        'Финиш: вы уже глубоко в банке — оставайтесь конкретными до конца.'
+      ],
+      coachMcq: 'MCQ',
+      coachOpen: 'Открытые',
+      coachCadence: 'Темп',
+      coachHintMcq: 'Ищите вариант с действиями, метриками и планом отката.',
+      coachHintOpen: 'Структура STAR — ситуация, задача, действие, результат с цифрами, где уместно.',
+      coachHintSteady: 'Можно развернуть мысль, но держите структуру.',
+      coachHintPressure: 'Короче абзацы, явно фиксируйте риски.'
     }
   };
 
   const ui = UI[lang] || UI.uk;
+
+  if (mcBank) {
+    root.querySelector('[data-iv-mode-wrap]')?.removeAttribute('hidden');
+    root.querySelector('[data-iv-specialty-wrap]')?.removeAttribute('hidden');
+  }
 
   const el = {
     learn: document.querySelector('[data-iv-learn]'),
@@ -96,8 +165,15 @@
     feed: root.querySelector('[data-iv-feed]'),
     copy: root.querySelector('[data-iv-copy]'),
     meterFill: root.querySelector('[data-iv-meter-fill]'),
-    difficulty: root.querySelector('[data-iv-difficulty]')
+    difficulty: root.querySelector('[data-iv-difficulty]'),
+    context: root.querySelector('[data-iv-context]'),
+    live: root.querySelector('[data-iv-live]'),
+    packFill: root.querySelector('[data-iv-pack-fill]'),
+    focusToggle: root.querySelector('[data-iv-focus-toggle]'),
+    diffSnap: root.querySelector('[data-iv-diff-snap]')
   };
+
+  const stageDots = root.querySelectorAll('[data-iv-stage-dot]');
 
   const topicSelect = document.createElement('select');
   topicSelect.className = 'interview-drill__select';
@@ -133,12 +209,22 @@
   let topic = 'all';
   let scoreOk = 0;
   let scoreTotal = 0;
+  let lastAnnouncedPage = -1;
 
   const scoresMount = root.querySelector('[data-iv-scores]');
   const scoreEl = document.createElement('p');
-  scoreEl.className = 'interview-drill__progress';
+  scoreEl.className = 'interview-drill__progress iv-score-chip';
   scoreEl.style.margin = '0';
   if (scoresMount) scoresMount.appendChild(scoreEl);
+
+  if (el.focusToggle) {
+    el.focusToggle.textContent = ui.focusEnter;
+    el.focusToggle.addEventListener('click', () => {
+      const on = root.classList.toggle('iv-lab--focus');
+      el.focusToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+      el.focusToggle.textContent = on ? ui.focusExit : ui.focusEnter;
+    });
+  }
 
   function mix32(a, b, c) {
     let x = (Math.imul(a, 374761393) + Math.imul(b, 668265263) + Math.imul(c, 1442695041)) >>> 0;
@@ -201,46 +287,62 @@
     el.meterFill.style.width = `${pct}%`;
   }
 
+  function sessionPhase() {
+    const ratio = maxPage > 0 ? page / maxPage : 0;
+    if (ratio < 0.12) return 0;
+    if (ratio < 0.42) return 1;
+    if (ratio < 0.74) return 2;
+    return 3;
+  }
+
+  function updateJourneyChrome() {
+    const phase = sessionPhase();
+    stageDots.forEach((dot, i) => {
+      dot.classList.toggle('iv-dot--active', i === phase);
+      dot.classList.toggle('iv-dot--done', i < phase);
+    });
+    if (el.packFill) {
+      const pct = maxPage >= 0 ? ((page + 1) / (maxPage + 1)) * 100 : 0;
+      el.packFill.style.width = `${pct}%`;
+    }
+    if (el.context) {
+      const line = ui.nudge[phase] || '';
+      el.context.textContent = line;
+      if (line) el.context.removeAttribute('hidden');
+      else el.context.setAttribute('hidden', '');
+    }
+  }
+
+  function updateDiffSnap() {
+    if (!el.diffSnap || !el.difficulty) return;
+    const pressure = el.difficulty.value === 'pressure';
+    el.diffSnap.classList.toggle('iv-diff-snap--pressure', pressure);
+    el.diffSnap.classList.toggle('iv-diff-snap--steady', !pressure);
+  }
+
+  function announcePackIfNeeded() {
+    if (!el.live || page === lastAnnouncedPage) return;
+    lastAnnouncedPage = page;
+    el.live.textContent = ui.livePack.replace('{a}', String(page + 1)).replace('{b}', String(maxPage + 1));
+  }
+
   function renderLearn() {
     if (!el.learn) return;
     const pressure = el.difficulty?.value === 'pressure';
-    const extra =
-      pressure ?
-        lang === 'en'
-          ? '<p><strong>Cadence:</strong> answer in shorter paragraphs; surface risks explicitly.</p>'
-          : lang === 'es'
-            ? '<p><strong>Ritmo:</strong> responda en párrafos más cortos y nombre riesgos con claridad.</p>'
-            : lang === 'ru'
-              ? '<p><strong>Темп:</strong> короче абзацы, явно фиксируйте риски.</p>'
-              : '<p><strong>Темп:</strong> відповідайте коротшими абзацами, фіксуйте ризики в кожній відповіді.</p>'
-        : lang === 'en'
-          ? '<p><strong>Cadence:</strong> allow fuller reasoning but keep a visible structure.</p>'
-          : lang === 'es'
-            ? '<p><strong>Ritmo:</strong> puede desarrollar más, pero mantenga una estructura visible.</p>'
-            : lang === 'ru'
-              ? '<p><strong>Темп:</strong> можно развернуть мысль, но держите структуру.</p>'
-              : '<p><strong>Темп:</strong> дозвольте собі розгорнути мислення, але тримайте структуру.</p>';
-    if (mode === 'mcq') {
-      const head =
-        lang === 'en'
-          ? '<p><strong>MCQ:</strong> prefer answers with concrete actions, metrics, and rollback plans.</p>'
-          : lang === 'es'
-            ? '<p><strong>MCQ:</strong> busque acciones concretas, métricas y planes de reversión.</p>'
-            : lang === 'ru'
-              ? '<p><strong>MCQ:</strong> ищите вариант с действиями, метриками и планом отката.</p>'
-              : '<p><strong>MCQ:</strong> шукайте варіант із діями, метриками й чітким планом відкату.</p>';
-      el.learn.innerHTML = head + extra;
-    } else {
-      const head =
-        lang === 'en'
-          ? '<p><strong>Open:</strong> use STAR (Situation → Task → Action → Result) with numbers where possible.</p>'
-          : lang === 'es'
-            ? '<p><strong>Abierto:</strong> estructure con STAR (Situación → Tarea → Acción → Resultado) y cifras si puede.</p>'
-            : lang === 'ru'
-              ? '<p><strong>Open:</strong> структура STAR — ситуация, задача, действие, результат с цифрами, где уместно.</p>'
-              : '<p><strong>Open:</strong> структура STAR — ситуація, задача, дія, результат з цифрами, де можливо.</p>';
-      el.learn.innerHTML = head + extra;
-    }
+    const modeKey = mode === 'mcq' ? ui.coachMcq : ui.coachOpen;
+    const modeBody = mode === 'mcq' ? ui.coachHintMcq : ui.coachHintOpen;
+    const cadenceBody = pressure ? ui.coachHintPressure : ui.coachHintSteady;
+    el.learn.innerHTML = `
+      <div class="iv-coach-grid">
+        <div class="iv-coach-card">
+          <p class="iv-coach-card__eyebrow">${modeKey}</p>
+          <p class="iv-coach-card__body">${modeBody}</p>
+        </div>
+        <div class="iv-coach-card iv-coach-card--accent">
+          <p class="iv-coach-card__eyebrow">${ui.coachCadence}</p>
+          <p class="iv-coach-card__body">${cadenceBody}</p>
+        </div>
+      </div>`;
   }
 
   function esc(s) {
@@ -279,12 +381,7 @@
       const host = document.createElement('div');
       host.className = 'iv-bubble iv-bubble--host';
       const hostLabel = document.createElement('p');
-      hostLabel.style.margin = '0 0 6px';
-      hostLabel.style.fontSize = '0.72rem';
-      hostLabel.style.fontWeight = '800';
-      hostLabel.style.letterSpacing = '0.08em';
-      hostLabel.style.textTransform = 'uppercase';
-      hostLabel.style.color = 'var(--muted)';
+      hostLabel.className = 'iv-bubble__label';
       hostLabel.textContent = ui.interviewer;
       const q = document.createElement('p');
       q.textContent = text;
@@ -306,7 +403,10 @@
             scoreEl.textContent = `${ui.score}: ${scoreOk}/${scoreTotal}`;
             updateMeter();
             fb.hidden = false;
-            fb.textContent = oi === qObj.correctPos ? `✅ ${ui.feedbackOk}` : `❌ ${ui.feedbackBad}`;
+            const ok = oi === qObj.correctPos;
+            fb.textContent = ok ? `✅ ${ui.feedbackOk}` : `❌ ${ui.feedbackBad}`;
+            fb.classList.toggle('interview-drill__mcq-feedback--ok', ok);
+            fb.classList.toggle('interview-drill__mcq-feedback--bad', !ok);
           });
           box.appendChild(row);
         });
@@ -317,12 +417,7 @@
       const you = document.createElement('div');
       you.className = 'iv-bubble iv-bubble--you';
       const youLabel = document.createElement('p');
-      youLabel.style.margin = '0 0 6px';
-      youLabel.style.fontSize = '0.72rem';
-      youLabel.style.fontWeight = '800';
-      youLabel.style.letterSpacing = '0.08em';
-      youLabel.style.textTransform = 'uppercase';
-      youLabel.style.color = 'var(--muted)';
+      youLabel.className = 'iv-bubble__label';
       youLabel.textContent = ui.you;
       const ta = document.createElement('textarea');
       ta.className = 'interview-drill__notes';
@@ -339,7 +434,7 @@
 
     if (!visible) {
       const empty = document.createElement('p');
-      empty.className = 'iv-bubble iv-bubble--host';
+      empty.className = 'iv-bubble iv-bubble--host iv-bubble--empty';
       empty.style.margin = '0';
       empty.textContent = ui.empty;
       el.feed.appendChild(empty);
@@ -351,7 +446,10 @@
     if (el.next) el.next.disabled = page >= maxPage;
     scoreEl.textContent = scoreTotal ? `${ui.score}: ${scoreOk}/${scoreTotal}` : '';
     updateMeter();
+    updateJourneyChrome();
+    updateDiffSnap();
     renderLearn();
+    announcePackIfNeeded();
     el.feed.scrollTop = 0;
   }
 
@@ -378,7 +476,10 @@
     topic = topicSelect.value;
     render();
   });
-  el.difficulty?.addEventListener('change', renderLearn);
+  el.difficulty?.addEventListener('change', () => {
+    updateDiffSnap();
+    renderLearn();
+  });
 
   el.copy?.addEventListener('click', async () => {
     const u = new URL(location.href);
@@ -455,5 +556,7 @@
             : 'Випадковий пакет';
   }
 
+  updateDiffSnap();
+  lastAnnouncedPage = -1;
   render();
 })();
