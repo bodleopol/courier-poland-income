@@ -9,11 +9,12 @@
     <div class="iv-studio-hero__main">
       <p class="iv-studio-hero__kicker">Laboratorio de entrevistas con IA</p>
       <h1 id="iv-studio-heading" class="iv-studio-hero__title">Entrene como si fuera en vivo — sin la ansiedad de ser juzgado.</h1>
-      <p class="iv-studio-hero__lede">Simulador combinatorio y calmado: cuatro consignas por pantalla, MCQ opcional con respuesta de referencia y notas que no salen de su dispositivo.</p>
+      <p class="iv-studio-hero__lede">Cuatro consignas vivas por pantalla, MCQ opcional con feedback pedagógico y notas que no salen de su dispositivo.</p>
       <div class="iv-studio-hero__cta">
-        <a class="btn iv-studio-hero__primary" href="#iv-sim-anchor">Iniciar sesión</a>
-        <a class="btn secondary iv-studio-hero__ghost" href="methodology-es.html">Metodología</a>
+        <a class="btn iv-studio-hero__primary" href="#iv-sim-anchor">Iniciar simulación de entrevista</a>
+        <a class="btn secondary iv-studio-hero__secondary" href="#iv-setup-anchor">Elegir rol y dificultad</a>
       </div>
+      <p class="iv-studio-hero__fineprint"><a href="methodology-es.html">Metodología</a> · <a href="faq-es.html">Preguntas frecuentes</a></p>
       <ul class="iv-studio-hero__pills" aria-label="Garantías de la sesión">
         <li>Notas solo en el navegador</li>
         <li>10k combinaciones</li>
@@ -49,12 +50,24 @@
   <div class="iv-coach-panel__intro">
     <p class="iv-coach-panel__kicker">Coach adaptativo</p>
     <h2 id="iv-coach-heading" class="iv-coach-panel__title">Señales antes de hablar</h2>
-    <p class="iv-coach-panel__sub">La franja cambia con el modo, la especialidad y el ritmo para que el simulacro no sea a ciegas.</p>
+    <details class="iv-coach-more">
+      <summary class="iv-coach-more__summary">Para qué sirve esta franja</summary>
+      <p class="iv-coach-panel__sub">Cambia con el modo, la especialidad y el ritmo para que el simulacro no sea a ciegas.</p>
+    </details>
   </div>
   <div class="interview-learn iv-coach-shell" data-iv-learn></div>
 </section>
 
 <section class="iv-lab iv-lab--studio interview-drill interview-drill--lab" data-interview-drill id="iv-sim-anchor" aria-label="Simulacro de entrevista">
+  <nav class="iv-flow" aria-label="Flujo guiado de la entrevista">
+    <ol class="iv-flow__list">
+      <li class="iv-flow__item is-active" data-iv-flow-step="0"><span class="iv-flow__dot" aria-hidden="true">1</span><span class="iv-flow__label">Configuración</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="1"><span class="iv-flow__dot" aria-hidden="true">2</span><span class="iv-flow__label">Práctica</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="2"><span class="iv-flow__dot" aria-hidden="true">3</span><span class="iv-flow__label">Respuesta</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="3"><span class="iv-flow__dot" aria-hidden="true">4</span><span class="iv-flow__label">Feedback</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="4"><span class="iv-flow__dot" aria-hidden="true">5</span><span class="iv-flow__label">Progreso</span></li>
+    </ol>
+  </nav>
   <header class="iv-lab__topbar">
     <div class="iv-lab__topbar-main">
       <div class="iv-lab__signal" aria-live="polite">
@@ -65,7 +78,14 @@
           <p class="iv-lab__nudge interview-drill__context" data-iv-context hidden></p>
         </div>
       </div>
-      <button type="button" class="btn secondary iv-lab__focus-btn" data-iv-focus-toggle aria-pressed="false"></button>
+      <div class="iv-lab__top-actions">
+        <div class="iv-lab__badges">
+          <span class="iv-lab__pill iv-lab__pill--status" data-iv-session-status></span>
+          <span class="iv-lab__pill iv-lab__pill--diff" data-iv-diff-badge></span>
+          <span class="iv-lab__pill iv-lab__pill--streak" data-iv-streak hidden></span>
+        </div>
+        <button type="button" class="btn secondary iv-lab__focus-btn" data-iv-focus-toggle aria-pressed="false"></button>
+      </div>
     </div>
     <div class="iv-lab__journey" data-iv-journey aria-label="Arco de sesión">
       <div class="iv-stage-dots" aria-hidden="true">
@@ -88,7 +108,7 @@
   </header>
 
   <div class="iv-lab__grid">
-    <aside class="iv-lab__rail">
+    <aside class="iv-lab__rail" id="iv-setup-anchor">
       <p class="iv-lab__rail-title">Controles de sesión</p>
       <div class="interview-drill__toolbar">
         <div class="interview-drill__field" data-iv-mode-wrap hidden>
@@ -127,7 +147,7 @@
     </aside>
 
     <div class="iv-lab__stage">
-      <div class="iv-feed" data-iv-feed tabindex="0" role="log" aria-label="Flujo de preguntas y respuestas"></div>
+      <div class="iv-feed iv-feed--sim" data-iv-feed tabindex="0" role="log" aria-label="Chat de entrevista y preguntas"></div>
       <div class="iv-lab__dock">
         <button type="button" class="btn secondary iv-lab__dock-prev" data-iv-prev>Anterior (4)</button>
         <button type="button" class="btn iv-lab__dock-next" data-iv-next>Siguiente (4)</button>

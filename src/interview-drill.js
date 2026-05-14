@@ -13,6 +13,9 @@
   const BATCH = window.INTERVIEW_BATCH_SIZE || 4;
   const maxPage = Math.floor((SIZE - 1) / BATCH);
 
+  const FLOW_KEY = `iv-flow-max-${lang}`;
+  const PACK_VISIT_KEY = `iv-pack-visits-${lang}`;
+
   const UI = {
     uk: {
       notes: 'Нотатки до відповіді',
@@ -32,6 +35,10 @@
       focusEnter: 'Режим фокусу',
       focusExit: 'Вийти з фокусу',
       livePack: 'Пакет {a} з {b}',
+      sessionLive: 'Симуляція активна',
+      streak: 'Серія · {n} пакетів',
+      mcqCoachOk: 'Сильний вибір: дії, власники ризику й план відкату узгоджені.',
+      mcqCoachMiss: 'Порівняйте з підсвіченим еталоном і сформулюйте рішення в одному реченні.',
       nudge: [
         'Прогрів: дихайте рівно — перша відповідь «на холодну» завжди найважча.',
         'Набір темпу: тримайте структуру STAR і називайте метрики, навіть якщо це приблизні.',
@@ -44,7 +51,8 @@
       coachHintMcq: 'Обирайте варіант із діями, метриками й планом відкату.',
       coachHintOpen: 'Структура STAR: ситуація → задача → дія → результат (з цифрами, де можливо).',
       coachHintSteady: 'Можна розгорнути думку, але тримайте видиму структуру абзаців.',
-      coachHintPressure: 'Коротші абзаци; явно фіксуйте ризики в кожній відповіді.'
+      coachHintPressure: 'Коротші абзаци; явно фіксуйте ризики в кожній відповіді.',
+      hintNext: 'Далі: натисніть «Наступні 4», коли закінчите цей блок.'
     },
     en: {
       notes: 'Draft notes',
@@ -64,6 +72,10 @@
       focusEnter: 'Focus mode',
       focusExit: 'Exit focus',
       livePack: 'Pack {a} of {b}',
+      sessionLive: 'Simulation live',
+      streak: 'Run streak · {n} packs',
+      mcqCoachOk: 'Strong pick — actions, owners, and rollback read as one story.',
+      mcqCoachMiss: 'Compare with the highlighted teaching answer, then restate the decision in one sentence.',
       nudge: [
         'Warm-up: breathe steady — the first answer is the hardest; clarity beats polish.',
         'Build cadence: keep STAR visible and name metrics, even when they are directional.',
@@ -76,7 +88,8 @@
       coachHintMcq: 'Favor options with concrete actions, metrics, and rollback plans.',
       coachHintOpen: 'Use STAR (Situation → Task → Action → Result) with numbers where possible.',
       coachHintSteady: 'Allow fuller reasoning but keep a visible outline.',
-      coachHintPressure: 'Answer in shorter paragraphs; surface risks explicitly.'
+      coachHintPressure: 'Answer in shorter paragraphs; surface risks explicitly.',
+      hintNext: 'Next: tap “Next 4” when you finish this block.'
     },
     es: {
       notes: 'Notas de respuesta',
@@ -96,6 +109,10 @@
       focusEnter: 'Modo foco',
       focusExit: 'Salir del foco',
       livePack: 'Paquete {a} de {b}',
+      sessionLive: 'Simulación activa',
+      streak: 'Racha · {n} lotes',
+      mcqCoachOk: 'Buena elección: acciones, responsables y reversión alineados.',
+      mcqCoachMiss: 'Contraste con la respuesta modelo resaltada y cierre en una frase.',
       nudge: [
         'Calentamiento: respire con calma — la primera respuesta cuesta más; priorice claridad.',
         'Ritmo: mantenga STAR visible y cite métricas, aunque sean orientativas.',
@@ -108,7 +125,8 @@
       coachHintMcq: 'Busque acciones concretas, métricas y planes de reversión.',
       coachHintOpen: 'Estructure con STAR (Situación → Tarea → Acción → Resultado) y cifras si puede.',
       coachHintSteady: 'Puede desarrollar más, pero mantenga una estructura visible.',
-      coachHintPressure: 'Responda en párrafos más cortos y nombre riesgos con claridad.'
+      coachHintPressure: 'Responda en párrafos más cortos y nombre riesgos con claridad.',
+      hintNext: 'Siguiente: pulse «Siguiente (4)» al cerrar este bloque.'
     },
     ru: {
       notes: 'Заметки к ответу',
@@ -128,6 +146,10 @@
       focusEnter: 'Режим фокуса',
       focusExit: 'Выйти из фокуса',
       livePack: 'Пакет {a} из {b}',
+      sessionLive: 'Симуляция активна',
+      streak: 'Серия · {n} пакетов',
+      mcqCoachOk: 'Сильный выбор: действия, владельцы рисков и откат согласованы.',
+      mcqCoachMiss: 'Сравните с подсвеченным эталоном и сформулируйте решение в одном предложении.',
       nudge: [
         'Разминка: дышите ровно — первый ответ самый трудный; ясность важнее «лака».',
         'Набор темпа: держите STAR на виду и называйте метрики, пусть даже ориентиры.',
@@ -140,7 +162,8 @@
       coachHintMcq: 'Ищите вариант с действиями, метриками и планом отката.',
       coachHintOpen: 'Структура STAR — ситуация, задача, действие, результат с цифрами, где уместно.',
       coachHintSteady: 'Можно развернуть мысль, но держите структуру.',
-      coachHintPressure: 'Короче абзацы, явно фиксируйте риски.'
+      coachHintPressure: 'Короче абзацы, явно фиксируйте риски.',
+      hintNext: 'Далее: нажмите «Следующие 4», когда закончите блок.'
     }
   };
 
@@ -170,10 +193,15 @@
     live: root.querySelector('[data-iv-live]'),
     packFill: root.querySelector('[data-iv-pack-fill]'),
     focusToggle: root.querySelector('[data-iv-focus-toggle]'),
-    diffSnap: root.querySelector('[data-iv-diff-snap]')
+    diffSnap: root.querySelector('[data-iv-diff-snap]'),
+    diffBadge: root.querySelector('[data-iv-diff-badge]'),
+    sessionStatus: root.querySelector('[data-iv-session-status]'),
+    streak: root.querySelector('[data-iv-streak]'),
+    hint: root.querySelector('[data-iv-hint]')
   };
 
   const stageDots = root.querySelectorAll('[data-iv-stage-dot]');
+  const flowSteps = root.querySelectorAll('[data-iv-flow-step]');
 
   const topicSelect = document.createElement('select');
   topicSelect.className = 'interview-drill__select';
@@ -203,6 +231,7 @@
   root.querySelector('.interview-drill__toolbar')?.appendChild(topicWrap);
 
   let page = Math.max(0, (Number(new URLSearchParams(location.search).get('p')) || 1) - 1);
+  const entryPage = page;
   let track = 0;
   let mode = mcBank ? 'mcq' : 'open';
   let specialtyId = mcBank?.specialties?.[0]?.id || '';
@@ -210,6 +239,36 @@
   let scoreOk = 0;
   let scoreTotal = 0;
   let lastAnnouncedPage = -1;
+  const answeredMcq = new Set();
+
+  function loadFlowMax() {
+    const v = Number(sessionStorage.getItem(FLOW_KEY));
+    return Number.isFinite(v) ? Math.max(0, Math.min(4, v)) : 0;
+  }
+
+  let flowMax = loadFlowMax();
+
+  function saveFlowMax() {
+    sessionStorage.setItem(FLOW_KEY, String(flowMax));
+  }
+
+  function touchFlow(n) {
+    const t = Math.min(4, Math.max(0, n));
+    const next = Math.max(flowMax, t);
+    if (next !== flowMax) {
+      flowMax = next;
+      saveFlowMax();
+      updateFlowVisual();
+    }
+  }
+
+  function updateFlowVisual() {
+    flowSteps.forEach((node, i) => {
+      node.classList.toggle('is-done', i < flowMax);
+      node.classList.toggle('is-active', i === flowMax);
+      node.classList.toggle('is-upcoming', i > flowMax);
+    });
+  }
 
   const scoresMount = root.querySelector('[data-iv-scores]');
   const scoreEl = document.createElement('p');
@@ -224,6 +283,70 @@
       el.focusToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
       el.focusToggle.textContent = on ? ui.focusExit : ui.focusEnter;
     });
+  }
+
+  root.addEventListener(
+    'change',
+    (e) => {
+      const t = e.target;
+      if (!(t instanceof Element)) return;
+      if (t.closest('.interview-drill__toolbar')) touchFlow(1);
+    },
+    true
+  );
+
+  root.addEventListener(
+    'input',
+    (e) => {
+      const t = e.target;
+      if (t instanceof HTMLTextAreaElement && t.closest('[data-iv-feed]')) {
+        touchFlow(2);
+        if (mode !== 'mcq' && t.value.trim().length >= 24) touchFlow(3);
+      }
+    },
+    true
+  );
+
+  el.feed?.addEventListener('focusin', () => {
+    touchFlow(1);
+  });
+
+  el.feed?.addEventListener('change', (e) => {
+    const t = e.target;
+    if (t instanceof HTMLInputElement && t.type === 'radio' && t.closest('.interview-drill__mcq--stack')) {
+      touchFlow(2);
+    }
+  });
+
+  function notePackVisit() {
+    if (!el.streak) return;
+    let arr = [];
+    try {
+      arr = JSON.parse(sessionStorage.getItem(PACK_VISIT_KEY) || '[]');
+    } catch {
+      arr = [];
+    }
+    if (!Array.isArray(arr)) arr = [];
+    const k = `${page}`;
+    if (!arr.includes(k)) arr.push(k);
+    sessionStorage.setItem(PACK_VISIT_KEY, JSON.stringify(arr.slice(-80)));
+    const n = arr.length;
+    if (n >= 2) {
+      el.streak.textContent = ui.streak.replace('{n}', String(n));
+      el.streak.removeAttribute('hidden');
+    } else {
+      el.streak.setAttribute('hidden', '');
+    }
+  }
+
+  function updateBadgesAndStatus() {
+    if (el.diffBadge && el.difficulty) {
+      const opt = el.difficulty.selectedOptions[0];
+      el.diffBadge.textContent = opt ? opt.textContent.trim() : '';
+    }
+    if (el.sessionStatus) {
+      el.sessionStatus.textContent = ui.sessionLive;
+    }
   }
 
   function mix32(a, b, c) {
@@ -318,6 +441,7 @@
     const pressure = el.difficulty.value === 'pressure';
     el.diffSnap.classList.toggle('iv-diff-snap--pressure', pressure);
     el.diffSnap.classList.toggle('iv-diff-snap--steady', !pressure);
+    updateBadgesAndStatus();
   }
 
   function announcePackIfNeeded() {
@@ -355,6 +479,9 @@
 
   function render() {
     if (!el.feed) return;
+    for (const key of [...answeredMcq]) {
+      if (!key.startsWith(`${page}-`)) answeredMcq.delete(key);
+    }
     el.feed.innerHTML = '';
     let visible = 0;
     for (let k = 0; k < BATCH; k += 1) {
@@ -366,7 +493,7 @@
       visible += 1;
 
       const turn = document.createElement('article');
-      turn.className = 'iv-turn';
+      turn.className = 'iv-turn iv-turn--card';
 
       const meta = document.createElement('div');
       meta.className = 'iv-turn__meta';
@@ -379,43 +506,66 @@
       turn.appendChild(meta);
 
       const host = document.createElement('div');
-      host.className = 'iv-bubble iv-bubble--host';
+      host.className = 'iv-bubble iv-bubble--host iv-q-card';
       const hostLabel = document.createElement('p');
       hostLabel.className = 'iv-bubble__label';
       hostLabel.textContent = ui.interviewer;
       const q = document.createElement('p');
+      q.className = 'iv-q-card__q';
       q.textContent = text;
       host.append(hostLabel, q);
 
       if (qObj) {
         const box = document.createElement('div');
-        box.className = 'interview-drill__mcq';
-        const fb = document.createElement('p');
-        fb.className = 'interview-drill__mcq-feedback';
+        box.className = 'interview-drill__mcq interview-drill__mcq--stack';
+        box.setAttribute('role', 'radiogroup');
+        const letters = ['A', 'B', 'C', 'D', 'E'];
+        const mcqKey = `${page}-${idx}`;
+        const fb = document.createElement('div');
+        fb.className = 'iv-mcq-feedback-block';
         fb.hidden = true;
+
         qObj.options.forEach((opt, oi) => {
-          const row = document.createElement('label');
-          row.className = 'interview-drill__mcq-row';
-          row.innerHTML = `<input type="radio" name="q-${idx}"> ${esc(opt)}`;
-          row.querySelector('input').addEventListener('change', () => {
+          const id = `iv-mcq-${idx}-${oi}`;
+          const lab = document.createElement('label');
+          lab.className = 'interview-drill__mcq-opt';
+          lab.setAttribute('for', id);
+          lab.innerHTML = `<span class="interview-drill__mcq-key" aria-hidden="true">${letters[oi]}</span><span class="interview-drill__mcq-txt">${esc(opt)}</span><input class="interview-drill__mcq-input" type="radio" name="q-${idx}" id="${id}">`;
+          const input = lab.querySelector('input');
+          input.addEventListener('change', () => {
+            if (answeredMcq.has(mcqKey)) return;
+            touchFlow(1);
+            touchFlow(2);
+            answeredMcq.add(mcqKey);
+            const ok = oi === qObj.correctPos;
             scoreTotal += 1;
-            if (oi === qObj.correctPos) scoreOk += 1;
+            if (ok) scoreOk += 1;
             scoreEl.textContent = `${ui.score}: ${scoreOk}/${scoreTotal}`;
             updateMeter();
             fb.hidden = false;
-            const ok = oi === qObj.correctPos;
-            fb.textContent = ok ? `✅ ${ui.feedbackOk}` : `❌ ${ui.feedbackBad}`;
-            fb.classList.toggle('interview-drill__mcq-feedback--ok', ok);
-            fb.classList.toggle('interview-drill__mcq-feedback--bad', !ok);
+            fb.classList.toggle('iv-mcq-feedback-block--ok', ok);
+            fb.classList.toggle('iv-mcq-feedback-block--bad', !ok);
+            fb.innerHTML = `<p class="iv-mcq-feedback-block__title">${ok ? `✅ ${ui.feedbackOk}` : `❌ ${ui.feedbackBad}`}</p><p class="iv-mcq-feedback-block__coach">${ok ? ui.mcqCoachOk : ui.mcqCoachMiss}</p>`;
+            touchFlow(3);
+            box.querySelectorAll('.interview-drill__mcq-opt').forEach((elLab, j) => {
+              elLab.classList.add('interview-drill__mcq-opt--locked');
+              const inp = elLab.querySelector('input');
+              if (inp) inp.disabled = true;
+              if (j === oi) {
+                elLab.classList.add('interview-drill__mcq-opt--picked');
+                elLab.classList.add(ok ? 'interview-drill__mcq-opt--correct' : 'interview-drill__mcq-opt--wrong');
+              }
+              if (j === qObj.correctPos && !ok) elLab.classList.add('interview-drill__mcq-opt--reveal');
+            });
           });
-          box.appendChild(row);
+          box.appendChild(lab);
         });
         host.appendChild(box);
         host.appendChild(fb);
       }
 
       const you = document.createElement('div');
-      you.className = 'iv-bubble iv-bubble--you';
+      you.className = 'iv-bubble iv-bubble--you iv-answer-card';
       const youLabel = document.createElement('p');
       youLabel.className = 'iv-bubble__label';
       youLabel.textContent = ui.you;
@@ -450,26 +600,55 @@
     updateDiffSnap();
     renderLearn();
     announcePackIfNeeded();
+    notePackVisit();
+    updateBadgesAndStatus();
+    updateDockHint();
     el.feed.scrollTop = 0;
   }
 
+  function updateDockHint() {
+    if (!el.hint || !el.next) return;
+    const base =
+      lang === 'en'
+        ? 'Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field.'
+        : lang === 'es'
+          ? 'Consejo: <kbd>←</kbd> / <kbd>→</kbd> cambian de lote cuando el foco no está en un campo.'
+          : lang === 'ru'
+            ? 'Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода.'
+            : 'Підказка: стрілки <kbd>←</kbd> / <kbd>→</kbd> перемикають пакети, коли фокус не в полі вводу.';
+    const extra = !el.next.disabled ? ` ${ui.hintNext}` : '';
+    el.hint.innerHTML = base + extra;
+  }
+
+  function advancePack() {
+    if (page !== entryPage) touchFlow(4);
+  }
+
   el.prev?.addEventListener('click', () => {
+    touchFlow(1);
     page = Math.max(0, page - 1);
+    advancePack();
     render();
   });
   el.next?.addEventListener('click', () => {
+    touchFlow(1);
     page = Math.min(maxPage, page + 1);
+    advancePack();
     render();
   });
   el.jumpBtn?.addEventListener('click', () => {
+    touchFlow(1);
     const v = Number(el.jump?.value);
     if (v >= 1 && v <= maxPage + 1) {
       page = v - 1;
+      advancePack();
       render();
     }
   });
   el.random?.addEventListener('click', () => {
+    touchFlow(1);
     page = Math.floor(Math.random() * (maxPage + 1));
+    advancePack();
     render();
   });
   topicSelect.addEventListener('change', () => {
@@ -500,10 +679,12 @@
     if (typing) return;
     if (e.key === 'ArrowLeft' && el.prev && !el.prev.disabled) {
       e.preventDefault();
+      touchFlow(1);
       el.prev.click();
     }
     if (e.key === 'ArrowRight' && el.next && !el.next.disabled) {
       e.preventDefault();
+      touchFlow(1);
       el.next.click();
     }
   });
@@ -557,6 +738,7 @@
   }
 
   updateDiffSnap();
+  updateFlowVisual();
   lastAnnouncedPage = -1;
   render();
 })();

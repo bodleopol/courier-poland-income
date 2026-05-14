@@ -9,11 +9,12 @@
     <div class="iv-studio-hero__main">
       <p class="iv-studio-hero__kicker">AI-лабораторія співбесіди</p>
       <h1 id="iv-studio-heading" class="iv-studio-hero__title">Тренуйтеся так, ніби це ефір — без тривоги оцінювання.</h1>
-      <p class="iv-studio-hero__lede">Спокійний комбінаторний симулятор: чотири запити на екран, опційний MCQ з еталоном після вибору, нотатки лише на вашому пристрої.</p>
+      <p class="iv-studio-hero__lede">Чотири живі запити на екран, опційний MCQ з навчальним зворотним зв’язком, нотатки лише на вашому пристрої.</p>
       <div class="iv-studio-hero__cta">
-        <a class="btn iv-studio-hero__primary" href="#iv-sim-anchor">Почати сесію</a>
-        <a class="btn secondary iv-studio-hero__ghost" href="methodology.html">Методологія</a>
+        <a class="btn iv-studio-hero__primary" href="#iv-sim-anchor">Розпочати симуляцію співбесіди</a>
+        <a class="btn secondary iv-studio-hero__secondary" href="#iv-setup-anchor">Обрати роль і складність</a>
       </div>
+      <p class="iv-studio-hero__fineprint"><a href="methodology.html">Методологія</a> · <a href="faq.html">Питання й відповіді</a></p>
       <ul class="iv-studio-hero__pills" aria-label="Гарантії сесії">
         <li>Нотатки лише в браузері</li>
         <li>10k унікальних міксів</li>
@@ -49,12 +50,24 @@
   <div class="iv-coach-panel__intro">
     <p class="iv-coach-panel__kicker">Адаптивний коуч</p>
     <h2 id="iv-coach-heading" class="iv-coach-panel__title">Сигнали перед тим, як говорити</h2>
-    <p class="iv-coach-panel__sub">Смуга оновлюється залежно від режиму, спеціалізації й тиску сесії — без «сліпого» тренування.</p>
+    <details class="iv-coach-more">
+      <summary class="iv-coach-more__summary">Навіщо ця смуга</summary>
+      <p class="iv-coach-panel__sub">Вона оновлюється залежно від режиму, спеціалізації й тиску сесії — без «сліпого» тренування.</p>
+    </details>
   </div>
   <div class="interview-learn iv-coach-shell" data-iv-learn></div>
 </section>
 
 <section class="iv-lab iv-lab--studio interview-drill interview-drill--lab" data-interview-drill id="iv-sim-anchor" aria-label="Тренажер співбесіди">
+  <nav class="iv-flow" aria-label="Сценарій сесії співбесіди">
+    <ol class="iv-flow__list">
+      <li class="iv-flow__item is-active" data-iv-flow-step="0"><span class="iv-flow__dot" aria-hidden="true">1</span><span class="iv-flow__label">Налаштування</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="1"><span class="iv-flow__dot" aria-hidden="true">2</span><span class="iv-flow__label">Практика</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="2"><span class="iv-flow__dot" aria-hidden="true">3</span><span class="iv-flow__label">Відповідь</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="3"><span class="iv-flow__dot" aria-hidden="true">4</span><span class="iv-flow__label">Зворотний зв’язок</span></li>
+      <li class="iv-flow__item" data-iv-flow-step="4"><span class="iv-flow__dot" aria-hidden="true">5</span><span class="iv-flow__label">Прогрес</span></li>
+    </ol>
+  </nav>
   <header class="iv-lab__topbar">
     <div class="iv-lab__topbar-main">
       <div class="iv-lab__signal" aria-live="polite">
@@ -65,7 +78,14 @@
           <p class="iv-lab__nudge interview-drill__context" data-iv-context hidden></p>
         </div>
       </div>
-      <button type="button" class="btn secondary iv-lab__focus-btn" data-iv-focus-toggle aria-pressed="false"></button>
+      <div class="iv-lab__top-actions">
+        <div class="iv-lab__badges">
+          <span class="iv-lab__pill iv-lab__pill--status" data-iv-session-status></span>
+          <span class="iv-lab__pill iv-lab__pill--diff" data-iv-diff-badge></span>
+          <span class="iv-lab__pill iv-lab__pill--streak" data-iv-streak hidden></span>
+        </div>
+        <button type="button" class="btn secondary iv-lab__focus-btn" data-iv-focus-toggle aria-pressed="false"></button>
+      </div>
     </div>
     <div class="iv-lab__journey" data-iv-journey aria-label="Етап сесії">
       <div class="iv-stage-dots" aria-hidden="true">
@@ -88,7 +108,7 @@
   </header>
 
   <div class="iv-lab__grid">
-    <aside class="iv-lab__rail">
+    <aside class="iv-lab__rail" id="iv-setup-anchor">
       <p class="iv-lab__rail-title">Параметри сесії</p>
       <div class="interview-drill__toolbar">
         <div class="interview-drill__field" data-iv-mode-wrap hidden>
@@ -127,7 +147,7 @@
     </aside>
 
     <div class="iv-lab__stage">
-      <div class="iv-feed" data-iv-feed tabindex="0" role="log" aria-label="Потік питань і відповідей"></div>
+      <div class="iv-feed iv-feed--sim" data-iv-feed tabindex="0" role="log" aria-label="Чат інтерв’ю та питання"></div>
       <div class="iv-lab__dock">
         <button type="button" class="btn secondary iv-lab__dock-prev" data-iv-prev>Попередні 4</button>
         <button type="button" class="btn iv-lab__dock-next" data-iv-next>Наступні 4</button>
