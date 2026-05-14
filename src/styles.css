@@ -5565,3 +5565,273 @@ body[data-rz-layout="3"] .profile-content {
 .intel-card--bridge {
   border-left: 3px solid color-mix(in oklab, #22d3ee 65%, transparent);
 }
+
+/* ——————————————————————————————————————————
+   MOBILE OPTIMISATION LAYER — 640px and below
+   —————————————————————————————————————————— */
+
+@media (max-width: 640px) {
+  /* Global layout */
+  main {
+    padding: 16px 14px 28px;
+  }
+
+  /* Header: compact on small screens */
+  .header-container {
+    padding: 8px 14px;
+    gap: 4px;
+  }
+
+  .logo-caption {
+    font-size: 1.25rem;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .lang-switcher {
+    gap: 4px;
+    font-size: 0.78rem;
+  }
+
+  /* Hero section */
+  .intel-dash-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .intel-dash-hero__copy h1 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.18;
+  }
+
+  .intel-dash-hero__lede {
+    font-size: 0.97rem;
+  }
+
+  .intel-dash-hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .intel-dash-hero__actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  .trust-micro {
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.78rem;
+  }
+
+  /* Stat cards */
+  .home-hero-v2__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 10px;
+  }
+
+  .stat-card strong {
+    font-size: 1.7rem;
+  }
+
+  /* Section intros */
+  .section-intro h2 {
+    font-size: clamp(1.3rem, 5vw, 1.75rem);
+  }
+
+  /* Editorial band: stack on mobile */
+  .editorial-band {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  /* Editorial principles: stack on mobile */
+  .editorial-principles__grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Interview Lab — hero */
+  .iv-studio-hero__grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  .iv-studio-hero__title {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+
+  .iv-studio-hero__cta {
+    flex-direction: column;
+  }
+
+  .iv-studio-hero__cta .btn {
+    width: 100%;
+    text-align: center;
+    min-height: 46px;
+  }
+
+  .iv-studio-hero__pills {
+    gap: 6px;
+  }
+
+  .iv-studio-hero__pills li {
+    font-size: 0.72rem;
+    padding: 5px 10px;
+  }
+
+  /* Interview Lab — simulator grid */
+  .iv-lab--studio .iv-lab__grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .iv-lab--studio .iv-lab__rail {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line);
+    padding: 12px 14px 14px;
+  }
+
+  .iv-lab__topbar {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .iv-lab__metrics {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Interview Lab — question feed */
+  .iv-lab--studio .iv-feed {
+    max-height: none;
+    padding: 12px 14px 8px;
+  }
+
+  .iv-turn {
+    margin-bottom: 14px;
+  }
+
+  .iv-bubble {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .interview-drill__notes {
+    font-size: 0.9rem;
+  }
+
+  /* Interview Lab — dock buttons */
+  .iv-lab__dock {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 14px;
+  }
+
+  .iv-lab__dock-prev,
+  .iv-lab__dock-next,
+  .iv-lab__dock-random {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+  }
+
+  /* MCQ options: full width on mobile */
+  .interview-drill__mcq-row {
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  /* Coach panel */
+  .iv-coach-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Cards: remove images on smallest screens */
+  .intel-ribbon-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  /* Split panels */
+  .split-panel {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .split-panel__actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .split-panel__actions .btn {
+    width: 100%;
+    text-align: center;
+    min-height: 44px;
+  }
+
+  /* Filter buttons: scroll horizontally */
+  .dynamic-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .dynamic-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-height: 36px;
+    padding: 6px 14px;
+  }
+
+  /* General button tap targets */
+  .btn {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Stacked actions */
+  .stacked-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .stacked-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Profile page header */
+  .profile-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Search input */
+  .site-search__input {
+    font-size: 16px; /* prevent iOS zoom */
+  }
+}
