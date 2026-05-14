@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const ROLES = [
   { id: "frontend", label: "Frontend Engineer", icon: "⚡", color: "#6366f1" },
@@ -19,7 +19,6 @@ const LANGUAGES = ["English", "Polish", "German", "French", "Spanish", "Portugue
 
 type QuestionType = "open" | "mcq";
 type Phase = "setup" | "session" | "complete";
-type SessionStep = "question" | "answering" | "feedback";
 
 interface Question {
   id: number;
@@ -234,6 +233,12 @@ function NotesPanel({
     }
   });
 
+  useEffect(() => {
+    try {
+      setNotes(localStorage.getItem(`interview_notes_${sessionKey}`) ?? "");
+    } catch {}
+  }, [sessionKey]);
+
   const save = useCallback(
     (val: string) => {
       setNotes(val);
@@ -353,7 +358,6 @@ function ConfidenceMeter({ score }: { score: number }) {
 
 export function InterviewLab() {
   const [phase, setPhase] = useState<Phase>("setup");
-  const [sessionStep, setSessionStep] = useState<SessionStep>("question");
 
   const [selectedRole, setSelectedRole] = useState("frontend");
   const [selectedDifficulty, setSelectedDifficulty] = useState("mid");
@@ -373,11 +377,10 @@ export function InterviewLab() {
 
   const questions = getQuestionsForRole(selectedRole).slice(0, packageCount);
   const currentQuestion = questions[currentIndex];
-  const progress = Math.round(((currentIndex) / questions.length) * 100);
+  const progress = Math.round(((currentIndex + 1) / questions.length) * 100);
   const role = ROLES.find((r) => r.id === selectedRole)!;
   const difficulty = DIFFICULTIES.find((d) => d.id === selectedDifficulty)!;
   const sessionKey = `${selectedRole}_${selectedDifficulty}`;
-  const answerRef = useRef<HTMLTextAreaElement>(null);
 
   const isMcq = mcqMode && currentQuestion?.type === "mcq";
 
@@ -387,15 +390,15 @@ export function InterviewLab() {
     setSelectedOption(null);
     setShowFeedback(false);
     setShowHint(false);
-    setSessionStep("question");
     setAnsweredCount(0);
     setStreak(0);
+    setConfidenceScore(72);
+    setNotesOpen(false);
     setPhase("session");
   };
 
   const handleSubmitAnswer = () => {
     setShowFeedback(true);
-    setSessionStep("feedback");
     setAnsweredCount((c) => c + 1);
     if (isMcq) {
       const correct = selectedOption === currentQuestion.correctOption;
@@ -416,7 +419,6 @@ export function InterviewLab() {
       setSelectedOption(null);
       setShowFeedback(false);
       setShowHint(false);
-      setSessionStep("question");
     }
   };
 
@@ -1346,7 +1348,6 @@ export function InterviewLab() {
                   </span>
                 </div>
                 <textarea
-                  ref={answerRef}
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
                   placeholder="Type your answer here… be thorough, think out loud."
@@ -1452,7 +1453,7 @@ export function InterviewLab() {
             <div
               style={{
                 height: "100%",
-                width: `${((currentIndex) / questions.length) * 100}%`,
+                width: `${((currentIndex + 1) / questions.length) * 100}%`,
                 background: "#6366f1",
                 transition: "width 0.3s",
               }}
