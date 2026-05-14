@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Team collaboration</title>
+  <desc id="desc">Clarity and responsibility</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#1d4ed8"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <radialGradient id="light" cx="30%" cy="25%" r="70%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#light)"/>
+  <circle cx="600" cy="330" r="145" fill="#e2e8f0" opacity="0.95"/>
+  <path d="M305 760c58-172 172-258 295-258s237 86 295 258" fill="#e2e8f0" opacity="0.95"/>
+  <rect x="110" y="90" width="980" height="720" rx="42" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="4"/>
+  <text x="600" y="115" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#ffffff">Team collaboration</text>
+  <text x="600" y="825" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" fill="#dbeafe">Clarity and responsibility</text>
+</svg>

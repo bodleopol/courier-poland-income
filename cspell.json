@@ -1,0 +1,28 @@
+{
+  "version": "0.2",
+  "language": "en,uk,ru,es",
+  "dictionaries": [
+    "ru_ru",
+    "uk_ua",
+    "es-es"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "ru_ru",
+      "path": "./node_modules/@cspell/dict-ru_ru/ru_ru.trie.gz"
+    },
+    {
+      "name": "uk_ua",
+      "path": "./node_modules/@cspell/dict-uk-ua/uk_ua.trie"
+    },
+    {
+      "name": "es-es",
+      "path": "./node_modules/@cspell/dict-es-es/Spanish.trie.gz"
+    }
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist/**",
+    "package-lock.json"
+  ]
+}

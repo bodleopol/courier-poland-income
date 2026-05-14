@@ -1,0 +1,750 @@
+<title>Rybezh.site — редакційна платформа інтелекту про екосистеми</title>
+<meta name="description" content="Rybezh.site з’єднує профілі фахівців, стартапи, методологію та тренажер співбесіди в одній редакційній площині: первинні джерела, чотири мови, пошук і контекст замість «довідника за шаблоном».">
+
+<section class="intel-dash-hero" aria-label="Головний екран Rybezh">
+  <div class="intel-dash-hero__copy">
+    <p class="eyebrow">Редакційний інтелект · екосистеми · оператори</p>
+    <h1>Платформа для спокійного читання людей, компаній і методів поруч</h1>
+    <p class="intel-dash-hero__lede">Ми не стрічка новин і не дошка вакансій. Це робочий стіл: короткі досьє, однакова логіка картки, зовнішні посилання й чесні межі того, що можна перевірити з браузера.</p>
+    <div class="intel-dash-hero__actions hero-actions">
+      <a class="btn" href="specialists.html">Каталог спеціалістів</a>
+      <a class="btn secondary" href="startups.html">Каталог стартапів</a>
+      <a class="btn secondary" href="interview-drill.html">Лабораторія співбесіди</a>
+    </div>
+    <div class="trust-micro" role="note">
+      <span>Первинні джерела мають пріоритет</span>
+      <span>Оновлення файлу видно в профілі</span>
+      <span>Швидкий пошук: <kbd>/</kbd> або <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+    </div>
+  </div>
+  <aside class="intel-dash-hero__aside">
+    <div class="home-hero-v2__stats" aria-label="Ключові показники">
+      <div class="stat-card"><strong>77</strong><span>профілів у каталозі людей</span></div>
+      <div class="stat-card"><strong>52</strong><span>карток компаній</span></div>
+      <div class="stat-card"><strong>4</strong><span>мови інтерфейсу й контенту</span></div>
+      <div class="stat-card"><strong>10k</strong><span>сценаріїв у тренажері</span></div>
+    </div>
+    <div class="intel-eco-canvas" aria-hidden="true">
+      <div class="intel-eco-canvas__cap"><span>Зв’язки</span><span>живий прев’ю-граф</span></div>
+      <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <defs>
+          <linearGradient id="ecoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.75"/>
+          </linearGradient>
+        </defs>
+        <rect width="360" height="200" fill="transparent"/>
+        <g stroke="url(#ecoGrad)" stroke-width="1.2" opacity="0.55">
+          <line x1="60" y1="100" x2="140" y2="60"/>
+          <line x1="140" y1="60" x2="240" y2="90"/>
+          <line x1="240" y1="90" x2="300" y2="40"/>
+          <line x1="140" y1="60" x2="160" y2="150"/>
+          <line x1="160" y1="150" x2="260" y2="160"/>
+          <line x1="60" y1="100" x2="120" y2="170"/>
+        </g>
+        <circle cx="60" cy="100" r="10" fill="#60a5fa" opacity="0.95"/>
+        <circle cx="140" cy="60" r="12" fill="#818cf8" opacity="0.95"/>
+        <circle cx="240" cy="90" r="9" fill="#2dd4bf" opacity="0.95"/>
+        <circle cx="300" cy="40" r="8" fill="#38bdf8" opacity="0.95"/>
+        <circle cx="160" cy="150" r="11" fill="#a78bfa" opacity="0.95"/>
+        <circle cx="260" cy="160" r="9" fill="#34d399" opacity="0.95"/>
+        <circle cx="120" cy="170" r="8" fill="#f472b6" opacity="0.9"/>
+      </svg>
+    </div>
+    <div class="home-hero-focus" id="heroFocusMount" aria-live="polite">
+      <span class="home-hero-focus__label">Акцент доби</span>
+      <p class="role home-hero-focus__loading">Підбираємо профіль…</p>
+    </div>
+    <div class="intel-signals-rail" aria-label="Сигнали оновлення">
+      <p id="liveClock" aria-live="polite">--:--</p>
+      <p id="signalStamp" aria-live="polite" style="margin:0;font-size:0.78rem;color:var(--muted)"></p>
+      <div id="liveSignalA" class="signal-cell"></div>
+      <div id="liveSignalB" class="signal-cell"></div>
+      <div id="liveSignalC" class="signal-cell"></div>
+    </div>
+    <div>
+      <p class="eyebrow" style="margin:0 0 6px">Імена з добірки</p>
+      <div id="homeNameMarquee" data-live-track class="home-marquee" aria-hidden="true"></div>
+    </div>
+  </aside>
+</section>
+
+<nav class="intel-ribbon-nav" aria-label="Швидкі маршрути">
+  <a href="specialists.html"><span>Люди</span><strong>Фільтри, країни, теги</strong></a>
+  <a href="startups.html"><span>Компанії</span><strong>Стадії, ринки, зв’язки</strong></a>
+  <a href="methodology.html"><span>Методологія</span><strong>Як збираємо й правимо</strong></a>
+  <a href="interview-drill.html"><span>Тренажер</span><strong>Симуляція питань</strong></a>
+</nav>
+
+<section class="editorial-band" aria-label="Як читати Rybezh">
+  <article><h3>Орієнтир, не хайп</h3><p>Картки тримають однаковий каркас: регіон, мандат, фокус — щоб порівнювати швидко, без «унікальних» макетів у кожному профілі.</p></article>
+  <article><h3>Екосистемний погляд</h3><p>Люди й компанії живуть у різних каталогах, але з однаковою логікою тегів і пошуку — менше розриву між темами.</p></article>
+  <article><h3>Прозорі межі</h3><p>Тренажер співбесіди не оцінює людей з архіву; це окремий інструмент з власною методологією та локальними нотатками.</p></article>
+</section>
+
+<div class="intel-live-split">
+  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+    <h3 style="margin-top:0">Оперативні рядки</h3>
+    <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
+  </article>
+  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+      <h3 style="margin:0">Експерт у фокусі</h3>
+      <button type="button" class="btn secondary" id="refreshSpotlight">Інший профіль</button>
+    </div>
+    <div id="spotlightCard" class="spotlight-slot home-spotlight-vt" aria-live="polite"></div>
+  </article>
+</div>
+
+<div class="intel-marquee-echo">
+  <div id="echoSlotA" aria-label="Дзеркальна картка A"></div>
+  <div id="echoSlotB" aria-label="Дзеркальна картка B"></div>
+</div>
+
+<section class="home-card" aria-label="Рекомендовані переходи" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+  <p class="eyebrow">Компас сторінок</p>
+  <ul class="home-compass__list" id="homeCompassList"></ul>
+</section>
+
+<section class="home-card" aria-label="Редакційні нотатки" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+  <p class="eyebrow">Короткі матеріали</p>
+  <div class="home-editorial-burst__grid" id="editorialBurst"></div>
+</section>
+
+<div class="section-intro">
+  <p class="eyebrow">Добірка на головній</p>
+  <h2>Обрані експерти</h2>
+  <p>Порядок карток обчислюється на клієнті при кожному відкритті сторінки — усі профілі рівні щодо шансу опинитися першими.</p>
+</div>
+
+<div class="dynamic-filters" data-filter-target="#featuredGridMount .profile-card" data-home-filter="experts">
+  <button class="filter-btn active" data-filter="all">Всі експерти</button>
+  <button class="filter-btn" data-filter="software">Software</button>
+  <button class="filter-btn" data-filter="engineering">Інженерія</button>
+  <button class="filter-btn" data-filter="operations">Операції</button>
+  <button class="filter-btn" data-filter="ceo">Лідерство</button>
+  <button class="filter-btn" data-filter="science">Наука</button>
+</div>
+<section class="grid featured-grid" id="featuredGridMount"></section>
+
+<div class="home-below-fold">
+<div class="section-intro">
+  <p class="eyebrow">Фокус матеріалів</p>
+  <h2>Де ми тримаємо редакційний фокус</h2>
+  <p>Пріоритет — дисципліни, де репутація тримається на системному мисленні, операційних доказах і відповідальному лідерстві, а не лише на презентаціях.</p>
+</div>
+<div class="grid sector-grid"><article class="info-card">
+    <h3>Software</h3>
+    <p>Бекенд, фронтенд, розподілені системи, DevOps і інструменти для розробників.</p>
+  </article><article class="info-card">
+    <h3>Інженерія</h3>
+    <p>Залізо, надійність, інфраструктура та програми на межі наземних і орбітальних стеків.</p>
+  </article><article class="info-card">
+    <h3>Лідерство</h3>
+    <p>Фаундери, CEO, COO й технічні керівники, які перекладають стратегію на повторюване виконання.</p>
+  </article><article class="info-card">
+    <h3>Обчислення та дані</h3>
+    <p>Дослідження моделей, платформена інженерія, практики безпеки й прикладна наука на даних.</p>
+  </article><article class="info-card">
+    <h3>Операції</h3>
+    <p>Польові програми, логістика, дисципліна маржі, стандарти сервісу й стійкі команди.</p>
+  </article><article class="info-card">
+    <h3>Компанії</h3>
+    <p>Стартапи винесені на окремий маршрут, щоб продуктові історії лишались порівнюваними окремо від профілів людей.</p>
+  </article></div>
+
+<section class="editorial-principles" aria-label="Редакційні принципи">
+  <div class="section-intro section-intro--tight">
+    <p class="eyebrow">Редакційна робота</p>
+    <h2>Зроблено для спокійного порівняння</h2>
+    <p>Верстка навмисно повторюється: географія, мандат і джерела зʼявляються в одному ритмі — чи то дослідник, чи венчурна компанія.</p>
+  </div>
+  <div class="editorial-principles__grid">
+    <article class="editorial-principle-card">
+      <h3>Структуровані факти</h3>
+      <p>Ролі, регіони й тематичні мітки узгоджені між мовами — менше термінологічної плутанини.</p>
+    </article>
+    <article class="editorial-principle-card">
+      <h3>Роздільні потоки</h3>
+      <p>Люди й організації публікуються окремо — менше шуму, коли порівнюєте таланти й постачальників.</p>
+    </article>
+    <article class="editorial-principle-card">
+      <h3>Методологія й політики</h3>
+      <p>Окремі сторінки про політики та збір матеріалів: джерела, виправлення та те, як часто оновлюємо записи.</p>
+    </article>
+  </div>
+</section>
+
+<div class="section-intro">
+  <p class="eyebrow">Нещодавно додані профілі</p>
+  <h2>Нещодавно додані профілі</h2>
+  <p>Окремий пул карток з власною перетасовкою — може накладатися на імена з основної добірки.</p>
+</div>
+<section class="grid compact-grid" id="recentGridMount"></section>
+
+<section class="split-panel">
+  <div>
+    <p class="eyebrow">Спеціалісти</p>
+    <h2>Повний архів експертів</h2>
+    <p>Пошук, географія й тематичні фільтри — коли потрібні всі профілі, а не лише добірка на головній.</p>
+  </div>
+  <a class="btn" href="specialists.html">Увесь архів експертів</a>
+</section>
+
+<div class="section-intro">
+  <p class="eyebrow">Компанії</p>
+  <h2>Обрані досьє стартапів</h2>
+  <p>Картки компаній повторюють логіку профілів людей: фокус, географія й джерела зʼявляються раніше за декоративний текст.</p>
+</div>
+<div class="dynamic-filters" data-filter-target="#startupGridMount .startup-card" data-home-filter="companies">
+  <button class="filter-btn active" data-filter="all">Всі компанії</button>
+  <button class="filter-btn" data-filter="software">Software</button>
+  <button class="filter-btn" data-filter="fintech">Фінтех</button>
+  <button class="filter-btn" data-filter="operations">Операції</button>
+  <button class="filter-btn" data-filter="design">Дизайн</button>
+</div>
+<section class="grid startup-grid" id="startupGridMount"></section>
+
+<div class="section-intro">
+  <p class="eyebrow">Редакція Rybezh.site</p>
+  <h2>Наші акценти з архіву</h2>
+  <p>Три випадкові профілі з тієї ж бази, що й у каталозі експертів — щораз інші імена, той самий формат картки.</p>
+</div>
+<section class="team-grid" id="editorialTeamMount" aria-live="polite"></section>
+<section class="split-panel split-panel--quiet">
+  <div>
+    <p class="eyebrow">Видання</p>
+    <h2>Більше про Rybezh.site</h2>
+    <p>Як працює редакція, навіщо паритет мов і як надсилати фактичні уточнення відповідально.</p>
+  </div>
+  <a class="btn secondary" href="about.html">Про видання</a>
+</section>
+
+<section class="split-panel accent-panel">
+  <div>
+    <p class="eyebrow">Стандарти</p>
+    <h2>Якість, яку можна перевірити</h2>
+    <p>У повній картці досьє є знімок, роль, регіон, фокус і розгорнутий текст; стрічки каталогу без превʼю-фото — лише роль і короткий тизер.</p>
+  </div>
+  <div class="stacked-actions">
+    <a class="btn" href="methodology.html">Методологія</a>
+    <a class="btn secondary" href="privacy.html">Політика конфіденційності</a>
+  </div>
+</section>
+</div>
+
+<template id="tpl-home-featured">
+<article class="card profile-card fade-in" data-directory-card data-filter-key="operations" data-country="Україна / Перу" data-sort-name="Богдан Тютенко" data-catalog-order="0" data-search="богдан тютенко coo операційний директор шукає роботу head of operations foodtech last-mile rocket yango ліма перу україна операції логістика power bi sql p&amp;l операційний директор керівник логістики аналітика даних стійкість">
+    <div class="card-body">
+      <p class="eyebrow">Україна / Перу</p>
+      <h3>Богдан Тютенко</h3>
+      <p class="meta">COO / операції — відкритий до пропозицій</p>
+      <div class="tags"><span class="tag">Операції</span><span class="tag">Лідерство</span><span class="tag">Логістика</span></div>
+      <a class="btn" href="person-bohdan-tiutenko.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="software" data-country="США" data-sort-name="Маргарет Гамільтон" data-catalog-order="0" data-search="маргарет гамільтон інженерка програмного забезпечення сша програмування космос інженерія">
+    <div class="card-body">
+      <p class="eyebrow">США</p>
+      <h3>Маргарет Гамільтон</h3>
+      <p class="meta">Інженерка програмного забезпечення</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Космос</span><span class="tag">Інженерія</span></div>
+      <a class="btn" href="person-margaret-hamilton.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="software" data-country="Велика Британія" data-sort-name="Тім Бернерс-Лі" data-catalog-order="0" data-search="тім бернерс-лі винахідник world wide web велика британія програмування інтернет стандарти">
+    <div class="card-body">
+      <p class="eyebrow">Велика Британія</p>
+      <h3>Тім Бернерс-Лі</h3>
+      <p class="meta">Винахідник World Wide Web</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Інтернет</span><span class="tag">Стандарти</span></div>
+      <a class="btn" href="person-tim-berners-lee.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="software" data-country="Фінляндія / США" data-sort-name="Лінус Торвальдс" data-catalog-order="0" data-search="лінус торвальдс інженер ПЗ творець linux фінляндія сша програмування open source інфраструктура">
+    <div class="card-body">
+      <p class="eyebrow">Фінляндія / США</p>
+      <h3>Лінус Торвальдс</h3>
+      <p class="meta">Інженер ПЗ, творець Linux</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Open source</span><span class="tag">Інфраструктура</span></div>
+      <a class="btn" href="person-linus-torvalds.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="software" data-country="Нідерланди / США" data-sort-name="Гвідо ван Россум" data-catalog-order="0" data-search="гвідо ван россум програміст творець python нідерланди сша програмування дизайн мов освіта">
+    <div class="card-body">
+      <p class="eyebrow">Нідерланди / США</p>
+      <h3>Гвідо ван Россум</h3>
+      <p class="meta">Програміст, творець Python</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Дизайн мов</span><span class="tag">Освіта</span></div>
+      <a class="btn" href="person-guido-van-rossum.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="engineering" data-country="США" data-sort-name="Радія Перлман" data-catalog-order="0" data-search="радія перлман мережева інженерка сша інженерія інтернет інфраструктура">
+    <div class="card-body">
+      <p class="eyebrow">США</p>
+      <h3>Радія Перлман</h3>
+      <p class="meta">Мережева інженерка</p>
+      <div class="tags"><span class="tag">Інженерія</span><span class="tag">Інтернет</span><span class="tag">Інфраструктура</span></div>
+      <a class="btn" href="person-radia-perlman.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="software" data-country="Канада" data-sort-name="Джулія Еванс" data-catalog-order="0" data-search="джулія еванс інженерка авторка технічних зинів канада програмування системи освіта">
+    <div class="card-body">
+      <p class="eyebrow">Канада</p>
+      <h3>Джулія Еванс</h3>
+      <p class="meta">Інженерка й авторка технічних зинів</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Системи</span><span class="tag">Освіта</span></div>
+      <a class="btn" href="person-julia-evans.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="science" data-country="Шотландія / Велика Британія" data-sort-name="Кетрін Хейманс" data-catalog-order="0" data-search="кетрін хейманс астрофізикиня популяризаторка науки шотландія велика британія наука космос освіта">
+    <div class="card-body">
+      <p class="eyebrow">Шотландія / Велика Британія</p>
+      <h3>Кетрін Хейманс</h3>
+      <p class="meta">Астрофізикиня й популяризаторка науки</p>
+      <div class="tags"><span class="tag">Наука</span><span class="tag">Космос</span><span class="tag">Освіта</span></div>
+      <a class="btn" href="person-catherine-heymans.html">Прочитати</a>
+    </div>
+  </article>
+</template>
+
+<template id="tpl-home-recent">
+<article class="card profile-card fade-in" data-directory-card data-filter-key="operations" data-country="США" data-sort-name="Фей-Фей Лі" data-catalog-order="0" data-search="фей-фей лі дослідниця системи обробки даних сша дослідження освіта">
+    <div class="card-body">
+      <p class="eyebrow">США</p>
+      <h3>Фей-Фей Лі</h3>
+      <p class="meta">Дослідниця системи обробки даних</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Освіта</span></div>
+      <a class="btn" href="person-fei-fei-li.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="science" data-country="Франція / США" data-sort-name="Ян Лекун" data-catalog-order="0" data-search="ян лекун дослідник систем обробки даних лауреат премії тюрінга франція сша наука">
+    <div class="card-body">
+      <p class="eyebrow">Франція / США</p>
+      <h3>Ян Лекун</h3>
+      <p class="meta">Дослідник систем обробки даних, лауреат премії Тюрінга</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Наука</span></div>
+      <a class="btn" href="person-yann-lecun.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="ceo" data-country="Велика Британія" data-sort-name="Деміс Хассабіс" data-catalog-order="0" data-search="деміс хассабіс ceo tech platform дослідник обробки даних велика британія">
+    <div class="card-body">
+      <p class="eyebrow">Велика Британія</p>
+      <h3>Деміс Хассабіс</h3>
+      <p class="meta">CEO Tech platform, дослідник систем обробки даних</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">CEO</span><span class="tag">Дослідження</span></div>
+      <a class="btn" href="person-demis-hassabis.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="operations" data-country="Канада / Ізраїль / США" data-sort-name="Ілля Суцкевер" data-catalog-order="0" data-search="ілля суцкевер дослідник машинного навчання канада ізраїль сша стартапи">
+    <div class="card-body">
+      <p class="eyebrow">Канада / Ізраїль / США</p>
+      <h3>Ілля Суцкевер</h3>
+      <p class="meta">Дослідник машинного навчання</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="person-ilya-sutskever.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="ceo" data-country="США" data-sort-name="Сем Альтман" data-catalog-order="0" data-search="сем альтман ceo openai інвестор сша стартапи computing systems ceo startups">
+    <div class="card-body">
+      <p class="eyebrow">США</p>
+      <h3>Сем Альтман</h3>
+      <p class="meta">CEO OpenAI, інвестор</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">CEO</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="person-sam-altman.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card profile-card fade-in" data-directory-card data-filter-key="engineering" data-country="ПАР / США" data-sort-name="Ілон Маск" data-catalog-order="0" data-search="ілон маск підприємець ceo південна африка сша космос інженерія">
+    <div class="card-body">
+      <p class="eyebrow">ПАР / США</p>
+      <h3>Ілон Маск</h3>
+      <p class="meta">Підприємець та CEO</p>
+      <div class="tags"><span class="tag">CEO</span><span class="tag">Інженерія</span><span class="tag">Космос</span></div>
+      <a class="btn" href="person-elon-musk.html">Прочитати</a>
+    </div>
+  </article>
+</template>
+
+<template id="tpl-home-startups">
+<article class="card startup-card fade-in" data-directory-card data-filter-key="software" data-country="США" data-founded="2015" data-sort-name="OpenAI" data-catalog-order="0" data-search="openai лабораторія обробки даних продуктова компанія моделі бізнес освіта сан-франциско api чат стартапи">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2015</p>
+      <h3>OpenAI</h3>
+      <p class="meta">Лабораторія обробки даних і продуктова компанія</p>
+      <p>Розробляє моделі та продукти для бізнесу, освіти, розробки ПЗ і творчих процесів. Сан-Франциско, США · API та інструменти для розробників · корпоративні рішення й екосистема партнерських інтеграцій.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-openai.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card fade-in" data-directory-card data-filter-key="software" data-country="Велика Британія" data-founded="2010" data-sort-name="Tech platform" data-catalog-order="1" data-search="tech platform дослідницька компанія обробка даних google alphafold лондон наука">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2010</p>
+      <h3>Tech platform</h3>
+      <p class="meta">Дослідницька компанія з обробки даних</p>
+      <p>Працює над фундаментальними системами обробки даних, науковими задачами й продуктами Google. Лондон, Велика Британія · дослідження, наука, продукти Google · AlphaFold, AlphaGo та базові обчислювальні системи.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Наука</span></div>
+      <a class="btn" href="startup-deepmind.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card fade-in" data-directory-card data-filter-key="fintech" data-country="Франція" data-founded="2010" data-sort-name="Stripe" data-catalog-order="2" data-search="stripe фінтех api платежі дублін сан-франциско білінг податки інтернет-комерція">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2010</p>
+      <h3>Stripe</h3>
+      <p class="meta">Фінтех-інфраструктура</p>
+      <p>Будує API й фінансову інфраструктуру для онлайн-платежів, білінгу, податків і глобальних операцій. Дублін / Сан-Франциско · платіжні API, які сформували практику інтернет-комерції.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-stripe.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card fade-in" data-directory-card data-filter-key="operations" data-country="США" data-founded="2002" data-sort-name="SpaceX" data-catalog-order="3" data-search="spacex ракети супутники запуски starlink хоторн сша багаторазові ступені">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2002</p>
+      <h3>SpaceX</h3>
+      <p class="meta">Космічна інженерія</p>
+      <p>Ракети, супутникова інфраструктура й комерційні запуски з акцентом на багаторазовість. Хоторн, США · Starlink, багаторазові ступені, регулярний комерційний графік запусків.</p>
+      <div class="tags"><span class="tag">Космос</span><span class="tag">Інженерія</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-spacex.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card fade-in" data-directory-card data-filter-key="design" data-country="Австралія" data-founded="2013" data-sort-name="Canva" data-catalog-order="4" data-search="canva дизайн презентації брендинг сідней австралія маркетинг шаблони">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2013</p>
+      <h3>Canva</h3>
+      <p class="meta">Дизайн-платформа</p>
+      <p>Інструменти для презентацій, брендингу, відео й маркетингу для команд і індивідуальних користувачів. Сідней, Австралія · шаблони, бренд, відео, маркетингові команди · масовий дизайн-продукт із широкою локалізацією.</p>
+      <div class="tags"><span class="tag">Дизайн</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-canva.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card fade-in" data-directory-card data-filter-key="software" data-country="Канада" data-founded="2022" data-sort-name="Field Notes" data-catalog-order="5" data-search="field notes saas польові нотатки інтервю аудити монреаль канада дослідження операції">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Field Notes</h3>
+      <p class="meta">SaaS для структурованих польових нотаток</p>
+      <p>Невеликий SaaS для команд, які збирають польові нотатки під час інтервʼю, аудитів і виїздів. Монреаль, Канада · UX-дослідження, операційні аудити, відповідність на місці — редакційний кейс без «unicorn»-наративу.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-fieldnotes.html">Прочитати</a>
+    </div>
+  </article>
+</template>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const esc = (s) =>
+    String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+
+  function mulberry32(a) {
+    return function () {
+      let t = (a += 0x6d2b79f5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function shuffle(arr, rng) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(rng() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function collectTemplateArticles(id) {
+    const tpl = document.getElementById(id);
+    if (!tpl || !tpl.content) return [];
+    return Array.from(tpl.content.children).filter((n) => n.tagName === 'ARTICLE');
+  }
+
+  function mountShuffledArticles(templateId, mountEl, rng) {
+    if (!mountEl) return [];
+    const nodes = collectTemplateArticles(templateId);
+    mountEl.textContent = '';
+    const ordered = shuffle(nodes, rng);
+    ordered.forEach((node, i) => {
+      const el = node.cloneNode(true);
+      el.style.setProperty('--card-delay', `${Math.min(i, 8) * 40}ms`);
+      el.classList.add('is-dynamic-ready');
+      mountEl.appendChild(el);
+    });
+    return Array.from(mountEl.querySelectorAll('article'));
+  }
+
+  function mountRandomArticleSubset(templateId, mountEl, count, rng) {
+    if (!mountEl) return;
+    const nodes = collectTemplateArticles(templateId);
+    if (!nodes.length) return;
+    const ordered = shuffle(nodes, rng).slice(0, Math.min(count, nodes.length));
+    mountEl.textContent = '';
+    ordered.forEach((node, i) => {
+      const el = node.cloneNode(true);
+      el.style.setProperty('--card-delay', `${i * 40}ms`);
+      el.classList.add('is-dynamic-ready');
+      mountEl.appendChild(el);
+    });
+  }
+
+  const sessionSeed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+  const rngFeatured = mulberry32(sessionSeed * 7919 + 104729);
+  const rngRecent = mulberry32(sessionSeed * 104393 + 224737);
+  const rngStartups = mulberry32(sessionSeed * 224737 + 577957);
+
+  const featuredMounted = mountShuffledArticles('tpl-home-featured', document.getElementById('featuredGridMount'), rngFeatured);
+  mountShuffledArticles('tpl-home-recent', document.getElementById('recentGridMount'), rngRecent);
+  mountShuffledArticles('tpl-home-startups', document.getElementById('startupGridMount'), rngStartups);
+  mountRandomArticleSubset('tpl-home-featured', document.getElementById('editorialTeamMount'), 3, mulberry32(sessionSeed + 424242));
+
+  const editorialBandEl = document.querySelector('.editorial-band');
+  if (editorialBandEl) {
+    const bandArticles = Array.from(editorialBandEl.querySelectorAll('article'));
+    shuffle(bandArticles, mulberry32(sessionSeed * 17 + 11)).forEach((node) => editorialBandEl.appendChild(node));
+  }
+
+  const compassLinks = [
+    { href: 'specialists.html', title: 'Усі експерти', blurb: 'Пошук, географія й тематичні фільтри в повному архіві.' },
+    { href: 'startups.html', title: 'Стартапи', blurb: 'Продуктові фокуси та джерела в однаковому форматі картки.' },
+    { href: 'methodology.html', title: 'Методологія', blurb: 'Як збираються профілі та банк тренажера співбесіди.' },
+    { href: 'faq.html', title: 'Питання й відповіді', blurb: 'Типові запитання про редакцію та оновлення записів.' },
+    { href: 'interview-drill.html?r=1', title: 'Тренажер: випадковий пакет', blurb: 'Відкрити симулятор зі вже перетасованим блоком питань.' },
+    { href: 'about.html', title: 'Про видання', blurb: 'Навіщо паритет мов і як зв’язатися з редакцією.' },
+    { href: 'privacy.html', title: 'Конфіденційність', blurb: 'Що зберігається локально у браузері та базові cookies.' }
+  ];
+  const compassList = document.getElementById('homeCompassList');
+  if (compassList) {
+    shuffle(compassLinks, mulberry32(sessionSeed * 200003 + 401))
+      .slice(0, 5)
+      .forEach((item) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a class="home-compass__link" href="${item.href}"><strong>${esc(item.title)}</strong><span>${esc(item.blurb)}</span></a>`;
+        compassList.appendChild(li);
+      });
+  }
+
+  const allFeaturedArticles = () =>
+    Array.from(document.querySelectorAll('#featuredGridMount .profile-card'));
+
+  function renderHeroFocus(cards) {
+    const root = document.getElementById('heroFocusMount');
+    if (!root || !cards.length) return;
+    const rng = mulberry32(sessionSeed * 503 + 37);
+    const pick = cards[Math.floor(rng() * cards.length)];
+    const img = pick.querySelector('img');
+    const name = pick.querySelector('h3')?.textContent?.trim() || '';
+    const role = pick.querySelector('.meta')?.textContent?.trim() || '';
+    const region = pick.querySelector('.eyebrow')?.textContent?.trim() || '';
+    const href = pick.querySelector('a.btn')?.getAttribute('href') || 'specialists.html';
+    const src = img?.getAttribute('src') || '';
+    const alt = img?.getAttribute('alt') || '';
+    root.innerHTML = `
+      <span class="home-hero-focus__label">Акцент доби · ${esc(region)}</span>
+      <div class="home-hero-focus__row">
+        <img src="${src}" alt="${esc(alt)}" width="76" height="76" loading="eager" decoding="async" referrerpolicy="no-referrer">
+        <div>
+          <h2>${esc(name)}</h2>
+          <p class="role">${esc(role)}</p>
+          <a class="btn" href="${href}">Прочитати</a>
+        </div>
+      </div>`;
+  }
+
+  function renderMarquee(cards) {
+    const track = document.getElementById('homeNameMarquee');
+    if (!track || !cards.length) return;
+    const names = cards.map((c) => c.querySelector('h3')?.textContent?.trim()).filter(Boolean);
+    const chips = names.map((n) => `<span class="home-marquee__chip">${esc(n)}</span>`).join('');
+    track.innerHTML = chips + chips;
+  }
+
+  function renderEcho(cards) {
+    const a = document.getElementById('echoSlotA');
+    const b = document.getElementById('echoSlotB');
+    if (!a || !b || !cards.length) return;
+    const rng = mulberry32(sessionSeed * 11003 + 79);
+    const i1 = Math.floor(rng() * cards.length);
+    let i2 = Math.floor(rng() * cards.length);
+    if (cards.length > 1 && rng() < 0.45) i2 = i1;
+    a.innerHTML = '';
+    b.innerHTML = '';
+    a.appendChild(cards[i1].cloneNode(true));
+    b.appendChild(cards[i2].cloneNode(true));
+  }
+
+  renderHeroFocus(featuredMounted.length ? featuredMounted : allFeaturedArticles());
+  renderMarquee(featuredMounted.length ? featuredMounted : allFeaturedArticles());
+  renderEcho(featuredMounted.length ? featuredMounted : allFeaturedArticles());
+
+  const editorialPosts = [
+    { topic: 'Методологія', title: 'Як зʼявляється новий профіль', body: 'Чернетка → фактчек → узгодження тегів між мовами → публікація. Без автоматичних біографій.' },
+    { topic: 'Архів', title: 'Порівняння без шуму', body: 'Однакові поля картки для людей і компаній, щоб швидко бачити географію, мандат і фокус.' },
+    { topic: 'Оновлення', title: 'Що змінюється першим', body: 'Ролі й регіони виправляються в пріоритеті; декоративні зображення — після підтвердження прав.' },
+    { topic: 'Якість', title: 'Теги як навігація', body: 'Фільтри на головній працюють на тих самих ключах, що й повний каталог експертів.' },
+    { topic: 'Прозорість', title: 'Виправлення в одному каналі', body: 'Корекції проходять той самий шлях, що й нові матеріали — без прихованих перезаписів.' },
+    { topic: 'Мобільність', title: 'Читабельність на телефоні', body: 'Картки й стрічка адаптуються до вузького екрана: спочатку факти, потім контекст.' },
+    { topic: 'Інструменти', title: 'Тренажер без оцінювання', body: 'Десять тисяч комбінацій для самоперевірки; нотатки лишаються лише у вашому браузері.' },
+    { topic: 'Навігація', title: 'Один шаблон картки', body: 'Поле «мандат» і регіон завжди в одному місці — менше когнітивного шуму при порівнянні.' },
+    { topic: 'Ритм', title: 'Жива стрічка без стрічки новин', body: 'Годинник і сигнали — орієнтири для читача, а не алгоритмічна стрічка подій.' },
+    { topic: 'Межі', title: 'Не майданчик вакансій', body: 'Архів для орієнтації в темі; пропозиції роботи сюди не публікуємо.' }
+  ];
+
+  const burstEl = document.getElementById('editorialBurst');
+  function renderBurst() {
+    if (!burstEl) return;
+    const rng = mulberry32((Date.now() ^ sessionSeed) >>> 0);
+    const slice = shuffle(editorialPosts, rng).slice(0, 3);
+    burstEl.innerHTML = slice
+      .map(
+        (p) =>
+          `<article class="home-post-tile"><span class="topic">${esc(p.topic)}</span><h3>${esc(p.title)}</h3><p>${esc(p.body)}</p></article>`
+      )
+      .join('');
+  }
+
+  const liveEvents = [
+    'Нові профілі проходять однаковий editorial QA цикл.',
+    'Теги синхронізовано між архівом експертів та стартапів.',
+    'Картки адаптивні: mobile-first компонування без втрати контексту.',
+    'Фокус тижня: операції, software та прикладна наука.',
+    'Розділи для порівняння враховують вибрані фільтри на головній.',
+    'Головна не сортує за алфавітом — порядок добірки змінюється при кожному завантаженні.',
+    'Один профіль може зʼявитися в герої, сітці та дзеркальній стрічці одночасно.'
+  ];
+
+  const signalLines = [
+    { h: 'Мови', p: 'Паритет UK / EN / ES / RU для ключових полів.' },
+    { h: 'Швидкість', p: 'content-visibility на нижніх блоках зменшує роботу композиції.' },
+    { h: 'Дані', p: 'Пошук у каталозі читає ті самі data-атрибути, що й фільтри тут.' },
+    { h: 'Адаптив', p: 'Стрічка й бенто-герой перебудовуються від 320px до широких екранів.' },
+    { h: 'Доступність', p: 'Кнопки фільтрів лишаються в логічному порядку фокусу після перемонтування.' }
+  ];
+
+  function renderTicker() {
+    const list = document.getElementById('liveTicker');
+    if (!list) return;
+    const rng = mulberry32(Date.now() % 100000 + 901);
+    const shuffled = shuffle(liveEvents, rng).slice(0, 4);
+    list.innerHTML = shuffled.map((item) => `<li>${item}</li>`).join('');
+  }
+
+  function renderSignals() {
+    const stamp = document.getElementById('signalStamp');
+    const sa = document.getElementById('liveSignalA');
+    const sb = document.getElementById('liveSignalB');
+    const sc = document.getElementById('liveSignalC');
+    if (stamp) stamp.textContent = new Date().toLocaleString('uk-UA', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
+    const pick = shuffle(signalLines, mulberry32(Date.now() % 200000 + 3)).slice(0, 3);
+    if (sa && pick[0]) sa.innerHTML = `<strong>${pick[0].h}</strong><span>${pick[0].p}</span>`;
+    if (sb && pick[1]) sb.innerHTML = `<strong>${pick[1].h}</strong><span>${pick[1].p}</span>`;
+    if (sc && pick[2]) sc.innerHTML = `<strong>${pick[2].h}</strong><span>${pick[2].p}</span>`;
+  }
+
+  const spotlightSlot = document.getElementById('spotlightCard');
+  const spotlightButton = document.getElementById('refreshSpotlight');
+
+  const rotateSpotlight = () => {
+    const expertCards = allFeaturedArticles();
+    if (!spotlightSlot || !expertCards.length) return;
+    const pick = expertCards[Math.floor(Math.random() * expertCards.length)];
+    const name = pick.querySelector('h3')?.textContent?.trim() || 'Експерт';
+    const role = pick.querySelector('.meta')?.textContent?.trim() || '';
+    const region = pick.querySelector('.eyebrow')?.textContent?.trim() || '';
+    const href = pick.querySelector('a.btn')?.getAttribute('href') || 'specialists.html';
+    spotlightSlot.innerHTML = `<article class="mini-card"><p class="eyebrow">${esc(region)}</p><h4>${esc(name)}</h4><p>${esc(role)}</p><a class="btn" href="${href}">Перейти до профілю</a></article>`;
+  };
+
+  const runSpotlightTransition = () => {
+    const go = () => rotateSpotlight();
+    if (!prefersReducedMotion && document.startViewTransition) document.startViewTransition(go);
+    else go();
+  };
+
+  const nowClock = document.getElementById('liveClock');
+  const updateClock = () => {
+    if (!nowClock) return;
+    nowClock.textContent = new Date().toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' });
+  };
+
+  renderTicker();
+  renderBurst();
+  renderSignals();
+  rotateSpotlight();
+  updateClock();
+
+  if (!prefersReducedMotion) {
+    setInterval(updateClock, 15000);
+    setInterval(renderTicker, 12000);
+    setInterval(renderBurst, 14000);
+    setInterval(renderSignals, 20000);
+  } else {
+    setInterval(updateClock, 60000);
+  }
+
+  spotlightButton?.addEventListener('click', runSpotlightTransition);
+
+  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+  document.querySelectorAll('.dynamic-filters').forEach((filterContainer) => {
+    filterContainer.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn || !filterContainer.contains(btn)) return;
+      const targetSelector = filterContainer.getAttribute('data-filter-target');
+      if (!targetSelector) return;
+      const cards = document.querySelectorAll(targetSelector);
+      filterContainer.querySelectorAll('.filter-btn').forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+      const filterValue = btn.getAttribute('data-filter');
+      cards.forEach((card) => {
+        if (filterValue === 'all' || card.getAttribute('data-filter-key') === filterValue) card.style.display = '';
+        else card.style.display = 'none';
+      });
+    });
+  });
+
+  const stats = document.querySelectorAll('.home-hero-v2__stats .stat-card strong');
+  stats.forEach((stat) => {
+    const text = stat.textContent.trim();
+    const target = parseInt(text, 10);
+    if (Number.isNaN(target)) return;
+    stat.textContent = '0';
+    let current = 0;
+    const duration = prefersReducedMotion ? 200 : 1500;
+    const step = () => {
+      current += target / (duration / 16);
+      if (current < target) {
+        stat.textContent = String(Math.ceil(current));
+        requestAnimationFrame(step);
+      } else stat.textContent = String(target);
+    };
+    const statObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (prefersReducedMotion) stat.textContent = String(target);
+          else requestAnimationFrame(step);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    statObserver.observe(stat.closest('.stat-card') || stat);
+  });
+});
+</script>

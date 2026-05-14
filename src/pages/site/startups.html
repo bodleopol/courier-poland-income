@@ -1,0 +1,613 @@
+<title>Каталог стартапів | Rybezh</title>
+<meta name="description" content="Окрема сторінка для стартапів, продуктових компаній та технологічних платформ.">
+
+<header class="directory-page-head" aria-label="Каталог стартапів">
+  <div>
+    <p class="eyebrow">Інтелект-платформа · граф екосистеми · статична база знань</p>
+    <h1>Каталог стартапів і продуктових організацій</h1>
+    <p>Зовні картка тримає лише назву, роль ринку й дуже короткий сигнал; повний огляд, мінімум 300 символів тексту й візуальні матеріали — всередині досьє. Рік і теги лишаються «вузлами» на графі екосистеми.</p>
+    <div class="hero-actions">
+      <a class="btn secondary" href="specialists.html">До спеціалістів</a>
+      <a class="btn secondary" href="methodology.html">Як збираємо досьє</a>
+    </div>
+  </div>
+  <div class="eco-graph-panel">
+    <h3>Кластери екосистеми</h3>
+    <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="stuEco" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#22d3ee"/>
+          <stop offset="100%" stop-color="#a78bfa"/>
+        </linearGradient>
+      </defs>
+      <rect width="320" height="180" rx="12" fill="color-mix(in oklab, var(--surface-muted) 90%, transparent)"/>
+      <g stroke="url(#stuEco)" stroke-width="1.1" opacity="0.45">
+        <path d="M30 90 H290"/>
+        <path d="M160 20 V160"/>
+        <circle cx="90" cy="60" r="40" fill="none"/>
+      </g>
+      <circle cx="90" cy="60" r="12" fill="#38bdf8"/>
+      <circle cx="230" cy="120" r="14" fill="#818cf8"/>
+      <circle cx="200" cy="50" r="10" fill="#f472b6"/>
+      <circle cx="120" cy="140" r="11" fill="#34d399"/>
+    </svg>
+    <p style="margin:10px 0 0;font-size:0.85rem;color:var(--muted)">Фільтри за роком і країною синхронізовані з адресним рядком: можна зберегти шортлист як посилання.</p>
+  </div>
+</header>
+
+<section class="startup-intel-band">
+  <div>
+    <p class="eyebrow">Startup Intelligence</p>
+    <h2>Екосистема компаній зі стадіями, динамікою та звʼязками</h2>
+  </div>
+  <div class="startup-intel-band__chips">
+    <span>Рік заснування як сигнал зрілості</span><span>Теги ринку й продукту</span><span>Однакова анатомія картки</span><span>Посилання на зовнішні джерела в досьє</span>
+  </div>
+</section>
+
+<section class="directory-panel" data-directory-panel aria-label="Пошук у каталозі">
+  <div class="directory-toolbar">
+    <label class="search-label">Пошук у каталозі
+      <input type="search" data-directory-search placeholder="Введіть імʼя, роль, країну або тег">
+    </label>
+    <button class="btn secondary directory-reset" type="button" data-directory-reset>Скинути</button>
+  </div>
+  <div class="directory-toolbar-secondary">
+    <label class="directory-select-label">Сортування<select class="directory-select" data-directory-sort>
+    <option value="default">Як у каталозі</option>
+    <option value="newest">Спочатку новіші</option>
+    <option value="az">За іменем A-Z</option>
+  </select></label>
+    <label class="directory-select-label">Країна<select class="directory-select" data-directory-country>
+    <option value="">Усі країни</option><option value="Австралія">Австралія</option><option value="Амстердам">Амстердам</option><option value="Велика Британія">Велика Британія</option><option value="віддалена команда">віддалена команда</option><option value="віддалено">віддалено</option><option value="Канада">Канада</option><option value="Київ">Київ</option><option value="Лондон">Лондон</option><option value="Маямі">Маямі</option><option value="Нью-Йорк">Нью-Йорк</option><option value="Париж">Париж</option><option value="Сан-Франциско">Сан-Франциско</option><option value="США">США</option><option value="Україна">Україна</option><option value="Франція">Франція</option>
+  </select></label>
+    <label class="directory-select-label">Рік заснування<select class="directory-select" data-directory-year>
+    <option value="">Усі роки</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option><option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="1999">1999</option><option value="1975">1975</option>
+  </select></label>
+  </div>
+  <p class="directory-hint">Шукайте за імʼям, роллю, країною, нішею або технологічним тегом.</p>
+  <p class="directory-share-hint">Фільтри й пошук зберігаються в адресі сторінки — можна поділитися посиланням.</p>
+  <div class="filter-bar" data-directory-industry-chips><button class="filter-chip active" type="button" data-filter="all">Усі категорії</button><button class="filter-chip" type="button" data-filter="software">Софт</button><button class="filter-chip" type="button" data-filter="fintech">Фінтех</button><button class="filter-chip" type="button" data-filter="operations">Операції</button><button class="filter-chip" type="button" data-filter="design">Дизайн</button><button class="filter-chip" type="button" data-filter="hardware">Hardware</button></div>
+  <p class="directory-results"><strong data-results-count>54</strong> Знайдено результатів</p>
+</section>
+
+<section class="grid startup-grid" data-directory-grid><article class="card startup-card" data-directory-card data-filter-key="software" data-country="Велика Британія" data-founded="2010" data-sort-name="Tech platform" data-catalog-order="1" data-search="Tech platform дослідницька компанія з обробки даних працює над фундаментальними обчислювальними системами, науковими задачами та продуктами google. додатковий контекст: лондон, велика британія · foundation research, science, google products · alphafold, alphago та фундаментальні computing-системи. системи обробки даних дослідження наука computing systems research science">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2010</p>
+      <h3>Tech platform</h3>
+      <p class="meta">дослідницька компанія з обробки даних</p>
+      <p>Працює над фундаментальними обчислювальними системами, науковими задачами та продуктами Google. Додатковий контекст: Лондон, Велика Британія · Foundation research, science, Google products · AlphaFold, AlphaGo та фундаментальні computing-системи.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Наука</span></div>
+      <a class="btn" href="startup-deepmind.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Сан-Франциско" data-founded="2010" data-sort-name="Stripe" data-catalog-order="2" data-search="stripe фінтех-інфраструктура будує api та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій. додатковий контекст: дублін / сан-франциско · payments api, billing, tax, financial infrastructure · developer-centric платіжні api, що сформували інтернет-комерцію. фінтех програмування операції fintech software operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2010</p>
+      <h3>Stripe</h3>
+      <p class="meta">Фінтех-інфраструктура</p>
+      <p>Будує API та фінансову інфраструктуру для онлайн-платежів, billing, податків і глобальних операцій. Додатковий контекст: Дублін / Сан-Франциско · Payments API, billing, tax, financial infrastructure · Developer-centric платіжні API, що сформували інтернет-комерцію.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-stripe.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="США" data-founded="2002" data-sort-name="SpaceX" data-catalog-order="3" data-search="spacex космічна інженерія створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання. додатковий контекст: хоторн, сша · launch, starlink, reusable rockets · повторне використання ступенів і комерційні запуски. космос інженерія операції space engineering operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2002</p>
+      <h3>SpaceX</h3>
+      <p class="meta">Космічна інженерія</p>
+      <p>Створює ракети, супутникову інфраструктуру та комерційні сервіси запусків із фокусом на повторне використання. Додатковий контекст: Хоторн, США · Launch, Starlink, reusable rockets · Повторне використання ступенів і комерційні запуски.</p>
+      <div class="tags"><span class="tag">Космос</span><span class="tag">Інженерія</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-spacex.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="Австралія" data-founded="2013" data-sort-name="Canva" data-catalog-order="4" data-search="canva платформа дизайну дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів. додатковий контекст: сідней, австралія · templates, brand, video, marketing teams · масовий продукт дизайну з глибокою локалізацією. дизайн програмування стартапи design software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2013</p>
+      <h3>Canva</h3>
+      <p class="meta">Платформа дизайну</p>
+      <p>Дає командам і приватним користувачам прості інструменти для презентацій, брендингу, відео та маркетингових матеріалів. Додатковий контекст: Сідней, Австралія · Templates, brand, video, marketing teams · Масовий продукт дизайну з глибокою локалізацією.</p>
+      <div class="tags"><span class="tag">Дизайн</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-canva.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Париж" data-founded="2016" data-sort-name="Hugging Face" data-catalog-order="5" data-search="hugging face open-source платформа обробки даних підтримує спільноту моделей, датасетів і інструментів для машинного навчання. центральний репозиторій моделей для ml-спільноти. додатковий контекст: нью-йорк / париж · models hub, datasets, transformers ecosystem · центральний репозиторій моделей для ml-спільноти. системи обробки даних open source стартапи computing systems open source startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2016</p>
+      <h3>Hugging Face</h3>
+      <p class="meta">open-source платформа обробки даних</p>
+      <p>Підтримує спільноту моделей, датасетів і інструментів для машинного навчання. Центральний репозиторій моделей для ML-спільноти. Додатковий контекст: Нью-Йорк / Париж · Models hub, datasets, transformers ecosystem · Центральний репозиторій моделей для ML-спільноти.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Open source</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-hugging-face.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2012" data-sort-name="Figma" data-catalog-order="6" data-search="figma спільний дизайн у браузері перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди. додатковий контекст: сан-франциско, сша · ui design, design systems, dev handoff · мультиплеєр-дизайн як стандарт для продуктових команд. дизайн програмування стартапи design software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2012</p>
+      <h3>Figma</h3>
+      <p class="meta">Спільний дизайн у браузері</p>
+      <p>Перенесла дизайн інтерфейсів у хмару, де продукт, дизайн і розробка працюють над одним джерелом правди. Додатковий контекст: Сан-Франциско, США · UI design, design systems, dev handoff · Мультиплеєр-дизайн як стандарт для продуктових команд.</p>
+      <div class="tags"><span class="tag">Дизайн</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-figma.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2013" data-sort-name="Notion" data-catalog-order="7" data-search="notion продуктивність і знання обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу. гнучкі бази даних у документному середовищі. додатковий контекст: сан-франциско, сша · knowledge base, wiki, team productivity · гнучкі бази даних у документному середовищі. програмування операції стартапи software operations startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2013</p>
+      <h3>Notion</h3>
+      <p class="meta">Продуктивність і знання</p>
+      <p>Обʼєднує документи, бази даних, wiki та робочі процеси для команд різного масштабу. Гнучкі бази даних у документному середовищі. Додатковий контекст: Сан-Франциско, США · Knowledge base, wiki, team productivity · Гнучкі бази даних у документному середовищі.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-notion.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2021" data-sort-name="Tech platform" data-catalog-order="8" data-search="Tech platform system safety та моделі розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні computing-системи. додатковий контекст: сан-франциско, сша · computing assistants, model apis, enterprise adoption · Tech platform, constitutional computing і безпечне масштабування моделей. системи обробки даних дослідження стартапи computing systems research startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2021</p>
+      <h3>Tech platform</h3>
+      <p class="meta">system safety та моделі</p>
+      <p>Розробляє асистентів і дослідження безпеки, орієнтовані на контрольовані та корисні computing-системи. Додатковий контекст: Сан-Франциско, США · computing assistants, model APIs, enterprise adoption · Tech platform, constitutional computing і безпечне масштабування моделей.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дослідження</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-anthropic.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франція" data-founded="2023" data-sort-name="Tech platform" data-catalog-order="9" data-search="Tech platform європейські моделі будує відкриті та комерційні моделі обробки даних, посилюючи європейську computing-екосистему. додатковий контекст: париж, франція · open models, european computing, inference products · одна з найпомітніших європейських computing-компаній нового циклу. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Tech platform</h3>
+      <p class="meta">Європейські моделі</p>
+      <p>Будує відкриті та комерційні моделі обробки даних, посилюючи європейську computing-екосистему. Додатковий контекст: Париж, Франція · Open models, European computing, inference products · Одна з найпомітніших європейських computing-компаній нового циклу.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-mistral-ai.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2013" data-sort-name="Databricks" data-catalog-order="10" data-search="databricks платформа даних та computing поєднує lakehouse-архітектуру, аналітику, ml та управління даними для підприємств. додатковий контекст: сан-франциско, сша · data engineering, ml, analytics, governance · lakehouse-архітектура як міст між сховищами даних і ml. системи обробки даних хмарні технології корпоративне пз computing systems cloud enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2013</p>
+      <h3>Databricks</h3>
+      <p class="meta">Платформа даних та computing</p>
+      <p>Поєднує lakehouse-архітектуру, аналітику, ML та управління даними для підприємств. Додатковий контекст: Сан-Франциско, США · Data engineering, ML, analytics, governance · Lakehouse-архітектура як міст між сховищами даних і ML.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Хмарні технології</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-databricks.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Сан-Франциско" data-founded="2009" data-sort-name="Grammarly" data-catalog-order="11" data-search="grammarly computing для письма українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. додатковий контекст: київ / сан-франциско · writing assistance, communication, productivity · глобальний продукт із українським корінням у сегменті writing computing. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2009</p>
+      <h3>Grammarly</h3>
+      <p class="meta">computing для письма</p>
+      <p>Українсько-заснована компанія, що допомагає писати точніше, зрозуміліше й професійніше. Додатковий контекст: Київ / Сан-Франциско · Writing assistance, communication, productivity · Глобальний продукт із українським корінням у сегменті writing computing.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-grammarly.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Київ" data-founded="2012" data-sort-name="Preply" data-catalog-order="12" data-search="preply edtech-маркетплейс платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу. додатковий контекст: барселона / київ · language learning, marketplace, edtech · глобальний двосторонній маркетплейс для мовної освіти. освіта програмування стартапи education software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2012</p>
+      <h3>Preply</h3>
+      <p class="meta">EdTech-маркетплейс</p>
+      <p>Платформа з українським корінням для онлайн-навчання мов із викладачами по всьому світу. Додатковий контекст: Барселона / Київ · Language learning, marketplace, EdTech · Глобальний двосторонній маркетплейс для мовної освіти.</p>
+      <div class="tags"><span class="tag">Освіта</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-preply.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Амстердам" data-founded="2011" data-sort-name="GitLab" data-catalog-order="13" data-search="gitlab devops-платформа надає інструменти для репозиторіїв, ci/cd, безпеки та спільної розробки програмного забезпечення. додатковий контекст: сан-франциско / амстердам · git, ci/cd, security scanning, collaboration · повний цикл devops в одному застосунку. програмування open source операції software open source operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2011</p>
+      <h3>GitLab</h3>
+      <p class="meta">DevOps-платформа</p>
+      <p>Надає інструменти для репозиторіїв, CI/CD, безпеки та спільної розробки програмного забезпечення. Додатковий контекст: Сан-Франциско / Амстердам · Git, CI/CD, security scanning, collaboration · Повний цикл DevOps в одному застосунку.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Open source</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-gitlab.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="США" data-founded="2016" data-sort-name="Scale computing" data-catalog-order="14" data-search="scale computing дані для computing підтримує підготовку даних і evaluation-процеси для компаній, що створюють computing-системи. додатковий контекст: сан-франциско, сша · training data, evaluation, computing operations · інфраструктура підготовки даних для моделей нового покоління. системи обробки даних операції стартапи computing systems operations startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2016</p>
+      <h3>Scale computing</h3>
+      <p class="meta">Дані для computing</p>
+      <p>Підтримує підготовку даних і evaluation-процеси для компаній, що створюють computing-системи. Додатковий контекст: Сан-Франциско, США · Training data, evaluation, computing operations · Інфраструктура підготовки даних для моделей нового покоління.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-scale-ai.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2023" data-sort-name="Tech platform" data-catalog-order="15" data-search="Tech platform computing-інструменти для розробників створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. додатковий контекст: сша · computing coding, codebase navigation, engineering workflows · поєднання computing-асистента, codebase search і редактора для розробників. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Tech platform</h3>
+      <p class="meta">computing-інструменти для розробників</p>
+      <p>Створює редактор і робочі процеси для інженерних команд, які поєднують coding assistants, codebase search та автоматизацію. Додатковий контекст: США · computing coding, codebase navigation, engineering workflows · Поєднання computing-асистента, codebase search і редактора для розробників.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-cursor.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2015" data-sort-name="Vercel" data-catalog-order="16" data-search="vercel хмарна платформа для фронтенду підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд. додатковий контекст: сан-франциско, сша · next.js ecosystem, serverless, edge delivery · швидке розгортання frontend і developer experience для сучасного вебу. хмарні технології програмування стартапи cloud software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2015</p>
+      <h3>Vercel</h3>
+      <p class="meta">Хмарна платформа для фронтенду</p>
+      <p>Підтримує розгортання, edge-інфраструктуру та продуктову швидкість для сучасних вебкоманд. Додатковий контекст: Сан-Франциско, США · Next.js ecosystem, serverless, edge delivery · Швидке розгортання frontend і developer experience для сучасного вебу.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-vercel.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Нью-Йорк" data-founded="2022" data-sort-name="ElevenLabs" data-catalog-order="17" data-search="elevenlabs генеративний voice computing розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу. додатковий контекст: лондон / нью-йорк · speech synthesis, voice agents, audio products · різке зростання в сегменті генеративного аудіо. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>ElevenLabs</h3>
+      <p class="meta">Генеративний voice computing</p>
+      <p>Розвиває синтез мовлення, voice agents і мультимовні аудіопродукти для медіа, освіти та бізнесу. Додатковий контекст: Лондон / Нью-Йорк · Speech synthesis, voice agents, audio products · Різке зростання в сегменті генеративного аудіо.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-elevenlabs.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Велика Британія" data-founded="2015" data-sort-name="Revolut" data-catalog-order="18" data-search="revolut глобальний фінтех-сервіс поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку. додатковий контекст: лондон, велика британія · cards, fx, business accounts, global banking · швидке міжнародне масштабування фінтех-продуктів. фінтех операції стартапи fintech operations startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2015</p>
+      <h3>Revolut</h3>
+      <p class="meta">Глобальний фінтех-сервіс</p>
+      <p>Поєднує банкінг, карткові продукти, бізнес-рахунки та міжнародні фінансові операції в одному застосунку. Додатковий контекст: Лондон, Велика Британія · Cards, FX, business accounts, global banking · Швидке міжнародне масштабування фінтех-продуктів.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-revolut.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="hardware" data-country="Україна" data-founded="2011" data-sort-name="Ajax Systems" data-catalog-order="19" data-search="ajax systems український hardware та security tech розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку. додатковий контекст: київ, україна · intrusion sensors, hubs, global retail · український hardware-бренд із міжнародною мережею партнерів. апаратне забезпечення інженерія стартапи hardware engineering startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2011</p>
+      <h3>Ajax Systems</h3>
+      <p class="meta">Український hardware та security tech</p>
+      <p>Розробляє охоронні системи, сенсори та звʼязкову інфраструктуру для домівок і бізнесу на глобальному ринку. Додатковий контекст: Київ, Україна · Intrusion sensors, hubs, global retail · Український hardware-бренд із міжнародною мережею партнерів.</p>
+      <div class="tags"><span class="tag">Апаратне забезпечення</span><span class="tag">Інженерія</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-ajax-systems.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Tech platform" data-catalog-order="20" data-search="Tech platform пошуковий computing-продукт розвиває computing-пошук і відповіді з вебджерелами, поєднуючи language models, retrieval та швидкий продуктовий інтерфейс. додатковий контекст: сан-франциско, сша · search, retrieval, assistants, web answers · один із найпомітніших computing search-продуктів нового циклу. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Tech platform</h3>
+      <p class="meta">Пошуковий computing-продукт</p>
+      <p>Розвиває computing-пошук і відповіді з вебджерелами, поєднуючи language models, retrieval та швидкий продуктовий інтерфейс. Додатковий контекст: Сан-Франциско, США · Search, retrieval, assistants, web answers · Один із найпомітніших computing search-продуктів нового циклу.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-perplexity.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2018" data-sort-name="Runway" data-catalog-order="21" data-search="runway генеративне відео та креативні computing-інструменти створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління. додатковий контекст: нью-йорк, сша · video generation, media production, creator tools · генеративне відео як окремий продуктовий сегмент. системи обробки даних дизайн стартапи computing systems design startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2018</p>
+      <h3>Runway</h3>
+      <p class="meta">Генеративне відео та креативні computing-інструменти</p>
+      <p>Створює продукти для генеративного відео, медіавиробництва та креативних workflow нового покоління. Додатковий контекст: Нью-Йорк, США · Video generation, media production, creator tools · Генеративне відео як окремий продуктовий сегмент.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-runway.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2022" data-sort-name="Tech platform" data-catalog-order="22" data-search="Tech platform генеративне зображення розвиває computing-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. додатковий контекст: сша · image generation, visual workflows, design exploration · один із найсильніших брендів у генеративних зображеннях. системи обробки даних дизайн стартапи computing systems design startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Tech platform</h3>
+      <p class="meta">Генеративне зображення</p>
+      <p>Розвиває computing-системи для генерації зображень, які стали частиною сучасних дизайн- і візуальних workflow. Додатковий контекст: США · Image generation, visual workflows, design exploration · Один із найсильніших брендів у генеративних зображеннях.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-midjourney.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Канада" data-founded="2019" data-sort-name="Cohere" data-catalog-order="23" data-search="cohere enterprise language models-платформа працює над мовними моделями та enterprise computing-рішеннями для пошуку, автоматизації й knowledge workflows. додатковий контекст: торонто, канада · enterprise language models, knowledge workflows, model apis · фокус на b2b-рішенні для мовних моделей. системи обробки даних корпоративне пз стартапи computing systems enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Cohere</h3>
+      <p class="meta">Enterprise language models-платформа</p>
+      <p>Працює над мовними моделями та enterprise computing-рішеннями для пошуку, автоматизації й knowledge workflows. Додатковий контекст: Торонто, Канада · Enterprise language models, knowledge workflows, model APIs · Фокус на B2B-рішенні для мовних моделей.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-cohere.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Adept" data-catalog-order="24" data-search="adept computing agents для software workflows будує агентні computing-системи для дій у програмних інтерфейсах і автоматизації knowledge work. додатковий контекст: сша · software agents, ui actions, workflow automation · ставка на агентні системи, що діють у програмному середовищі. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Adept</h3>
+      <p class="meta">computing agents для software workflows</p>
+      <p>Будує агентні computing-системи для дій у програмних інтерфейсах і автоматизації knowledge work. Додатковий контекст: США · Software agents, UI actions, workflow automation · Ставка на агентні системи, що діють у програмному середовищі.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-adept.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франція" data-founded="2023" data-sort-name="Poolside" data-catalog-order="25" data-search="poolside computing для розробників фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. додатковий контекст: сша / франція · code generation, developer tools, foundation models · новий гравець у сегменті computing для software engineering. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Poolside</h3>
+      <p class="meta">computing для розробників</p>
+      <p>Фокусується на foundation-моделях і продуктах для software engineering команд та code generation workflows. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті computing для software engineering.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-poolside.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Harvey" data-catalog-order="26" data-search="harvey legal платформ обробки даниха створює computing-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. додатковий контекст: сша · legal tech, professional services, document analysis · один із найпомітніших vertical computing-продуктів нового циклу. системи обробки даних корпоративне пз стартапи computing systems enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Harvey</h3>
+      <p class="meta">Legal платформ обробки даниха</p>
+      <p>Створює computing-інструменти для юридичних команд, документного аналізу та професійних knowledge workflows. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical computing-продуктів нового циклу.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-harvey.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2021" data-sort-name="Character.computing" data-catalog-order="27" data-search="character.computing платформ обробки даниха персонажів і розмовних агентів розвиває споживчі computing-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. додатковий контекст: сша · conversational computing, consumer engagement, characters · виводить computing-персонажів у масовий споживчий продукт. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2021</p>
+      <h3>Character.computing</h3>
+      <p class="meta">платформ обробки даниха персонажів і розмовних агентів</p>
+      <p>Розвиває споживчі computing-продукти навколо персоналізованих персонажів, chat experience та довгої взаємодії. Додатковий контекст: США · Conversational computing, consumer engagement, characters · Виводить computing-персонажів у масовий споживчий продукт.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-character-ai.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="fintech" data-country="Маямі" data-founded="2019" data-sort-name="MoonPay" data-catalog-order="28" data-search="moonpay крипто- та фінтех-інфраструктура будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows. додатковий контекст: лондон / маямі · payments, crypto onboarding, digital assets · платіжний шар для цифрових активів і wallets. фінтех програмування стартапи fintech software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>MoonPay</h3>
+      <p class="meta">Крипто- та фінтех-інфраструктура</p>
+      <p>Будує платіжну та onboarding-інфраструктуру для цифрових активів, wallets і глобальних payment flows. Додатковий контекст: Лондон / Маямі · Payments, crypto onboarding, digital assets · Платіжний шар для цифрових активів і wallets.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-moonpay.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2019" data-sort-name="Glean" data-catalog-order="29" data-search="glean enterprise-пошук і knowledge computing створює корпоративний пошук і knowledge layer поверх документів, saas-даних та внутрішніх робочих процесів. додатковий контекст: пало-альто, сша · internal search, knowledge access, enterprise productivity · пошук як knowledge layer для корпоративних команд. системи обробки даних корпоративне пз стартапи computing systems enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Glean</h3>
+      <p class="meta">Enterprise-пошук і knowledge computing</p>
+      <p>Створює корпоративний пошук і knowledge layer поверх документів, SaaS-даних та внутрішніх робочих процесів. Додатковий контекст: Пало-Альто, США · Internal search, knowledge access, enterprise productivity · Пошук як knowledge layer для корпоративних команд.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-glean.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2023" data-sort-name="Sierra" data-catalog-order="30" data-search="sierra customer платформ обробки даниха будує computing-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. додатковий контекст: сша · customer support, service operations, conversational computing · новий клас computing-сервісу для customer operations. системи обробки даних корпоративне пз стартапи computing systems enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Sierra</h3>
+      <p class="meta">Customer платформ обробки даниха</p>
+      <p>Будує computing-системи для customer experience, підтримки клієнтів і conversational workflows на рівні enterprise. Додатковий контекст: США · Customer support, service operations, conversational computing · Новий клас computing-сервісу для customer operations.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-sierra.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2022" data-sort-name="Tech platform" data-catalog-order="31" data-search="Tech platform генеративна музика розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. додатковий контекст: сша · music generation, audio creation, creator tools · музика як окремий сегмент генеративного computing. системи обробки даних дизайн стартапи computing systems design startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Tech platform</h3>
+      <p class="meta">Генеративна музика</p>
+      <p>Розвиває генеративні музичні моделі й продукти для створення аудіо, пісень і нових creative workflows. Додатковий контекст: США · Music generation, audio creation, creator tools · Музика як окремий сегмент генеративного computing.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-suno.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2019" data-sort-name="Temporal" data-catalog-order="32" data-search="temporal workflow orchestration platform створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів. додатковий контекст: сіетл, сша · distributed systems, workflow orchestration, backend reliability · інфраструктурний підхід до довгоживучих workflow і backend orchestration. програмування хмарні технології стартапи software cloud startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Temporal</h3>
+      <p class="meta">Workflow orchestration platform</p>
+      <p>Створює інфраструктуру для надійних distributed workflows, backend orchestration і стійких сервісних процесів. Додатковий контекст: Сіетл, США · Distributed systems, workflow orchestration, backend reliability · Інфраструктурний підхід до довгоживучих workflow і backend orchestration.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Хмарні технології</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-temporal.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="1975" data-sort-name="Microsoft" data-catalog-order="33" data-search="microsoft платформа хмарних та корпоративних сервісів azure, microsoft 365, windows та computing-сервіси для підприємств і розробників по всьому світу. додатковий контекст: редмонд, сша · azure, microsoft 365, windows, computing assistant tools · інтеграція computing-послуг у корпоративні та developer екосистеми. хмарні технології програмування корпоративне пз cloud software enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 1975</p>
+      <h3>Microsoft</h3>
+      <p class="meta">Платформа хмарних та корпоративних сервісів</p>
+      <p>Azure, Microsoft 365, Windows та computing-сервіси для підприємств і розробників по всьому світу. Додатковий контекст: Редмонд, США · Azure, Microsoft 365, Windows, computing assistant tools · Інтеграція computing-послуг у корпоративні та developer екосистеми.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">Програмування</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-microsoft.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2008" data-sort-name="Google Cloud" data-catalog-order="34" data-search="google cloud хмарна платформа та інфраструктура даних gcp поєднує compute, дані, ml та корпоративні сервіси з екосистемою google. додатковий контекст: маунтін-вью, сша · compute, data, ml apis, enterprise workloads · поєднання інфраструктури google з computing-сервісами для підприємств. хмарні технології системи обробки даних корпоративне пз cloud computing systems enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2008</p>
+      <h3>Google Cloud</h3>
+      <p class="meta">Хмарна платформа та інфраструктура даних</p>
+      <p>GCP поєднує compute, дані, ML та корпоративні сервіси з екосистемою Google. Додатковий контекст: Маунтін-Вью, США · Compute, data, ML APIs, enterprise workloads · Поєднання інфраструктури Google з computing-сервісами для підприємств.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-google-cloud.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2006" data-sort-name="Amazon Web Services" data-catalog-order="35" data-search="amazon web services хмарна інфраструктура широкий каталог iaas та paas: compute, сховища, мережі, бази даних та computing-сервіси. найширший каталог сервісів хмарної інфраструктури для індустрії. додатковий контекст: сіетл, сша · iaas, paas, regions, edge · найширший каталог сервісів хмарної інфраструктури для індустрії. хмарні технології операції корпоративне пз cloud operations enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2006</p>
+      <h3>Amazon Web Services</h3>
+      <p class="meta">Хмарна інфраструктура</p>
+      <p>Широкий каталог IaaS та PaaS: compute, сховища, мережі, бази даних та computing-сервіси. Найширший каталог сервісів хмарної інфраструктури для індустрії. Додатковий контекст: Сіетл, США · IaaS, PaaS, regions, edge · Найширший каталог сервісів хмарної інфраструктури для індустрії.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">Операції</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-amazon-web-services.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2004" data-sort-name="Meta" data-catalog-order="36" data-search="meta соціальні платформи та метавсесвіт сімейство продуктів facebook, instagram, whatsapp та інвестиції в vr і computing інфраструктуру. додатковий контекст: менло-парк, сша · social graphs, ads infrastructure, vr · масштаб інженерних систем для мільярдів користувачів. програмування системи обробки даних операції software computing systems operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2004</p>
+      <h3>Meta</h3>
+      <p class="meta">Соціальні платформи та метавсесвіт</p>
+      <p>Сімейство продуктів Facebook, Instagram, WhatsApp та інвестиції в VR і computing інфраструктуру. Додатковий контекст: Менло-Парк, США · Social graphs, ads infrastructure, VR · Масштаб інженерних систем для мільярдів користувачів.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">системи обробки даних</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-meta.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2012" data-sort-name="Oracle Cloud" data-catalog-order="37" data-search="oracle cloud хмарні бази даних та корпоративні застосування корпоративні saas, бази даних та інфраструктура для місійно-критичних систем. додатковий контекст: остін / редвуд-шорс, сша · database cloud, erp, mission-critical workloads · традиція enterprise бд та перехід до повністю керованих хмарних сервісів. хмарні технології корпоративне пз програмування cloud enterprise software software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2012</p>
+      <h3>Oracle Cloud</h3>
+      <p class="meta">Хмарні бази даних та корпоративні застосування</p>
+      <p>Корпоративні SaaS, бази даних та інфраструктура для місійно-критичних систем. Додатковий контекст: Остін / Редвуд-Шорс, США · Database cloud, ERP, mission-critical workloads · Традиція enterprise БД та перехід до повністю керованих хмарних сервісів.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Програмування</span></div>
+      <a class="btn" href="startup-oracle-cloud.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2012" data-sort-name="Snowflake" data-catalog-order="38" data-search="snowflake платформа даних у хмарі сервіс даних для аналітики, обміну даними та інтеграції computing workloads enterprise-середовищ. додатковий контекст: бозман, сша · analytics, sharing, computing workloads · архітектура data sharing між організаціями в одному cloud-сервісі. хмарні технології системи обробки даних корпоративне пз cloud computing systems enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2012</p>
+      <h3>Snowflake</h3>
+      <p class="meta">Платформа даних у хмарі</p>
+      <p>Сервіс даних для аналітики, обміну даними та інтеграції computing workloads enterprise-середовищ. Додатковий контекст: Бозман, США · Analytics, sharing, computing workloads · Архітектура data sharing між організаціями в одному cloud-сервісі.</p>
+      <div class="tags"><span class="tag">Хмарні технології</span><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-snowflake.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="1999" data-sort-name="Salesforce" data-catalog-order="39" data-search="salesforce crm та корпоративні хмарні застосування хмарний crm та платформа для продажів, сервісу й маркетингу з екосистемою appexchange. додатковий контекст: сан-франциско, сша · sales, service, marketing clouds · appexchange як маркетплейс розширень для enterprise workflow. корпоративне пз програмування операції enterprise software software operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 1999</p>
+      <h3>Salesforce</h3>
+      <p class="meta">CRM та корпоративні хмарні застосування</p>
+      <p>Хмарний CRM та платформа для продажів, сервісу й маркетингу з екосистемою AppExchange. Додатковий контекст: Сан-Франциско, США · Sales, service, marketing clouds · AppExchange як маркетплейс розширень для enterprise workflow.</p>
+      <div class="tags"><span class="tag">Корпоративне ПЗ</span><span class="tag">Програмування</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-salesforce.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Лондон" data-founded="2003" data-sort-name="Palantir" data-catalog-order="40" data-search="palantir платформа даних та аналітики спеціалізовані рішення для інтеграції даних та операційних систем для організацій та державних замовників. додатковий контекст: денвер / лондон · government, defence, commercial analytics · спеціалізовані рішення для складних операційних даних. програмування корпоративне пз операції software enterprise software operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2003</p>
+      <h3>Palantir</h3>
+      <p class="meta">Платформа даних та аналітики</p>
+      <p>Спеціалізовані рішення для інтеграції даних та операційних систем для організацій та державних замовників. Додатковий контекст: Денвер / Лондон · Government, defence, commercial analytics · Спеціалізовані рішення для складних операційних даних.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-palantir.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2010" data-sort-name="Datadog" data-catalog-order="41" data-search="datadog observability та моніторинг метрики, логи, трейси та security-сигнали для хмарних і контейнерних середовищ. єдиний екран для інженерних команд щодо продакшен-систем. додатковий контекст: нью-йорк, сша · metrics, logs, traces, security · єдиний екран для інженерних команд щодо продакшен-систем. програмування хмарні технології операції software cloud operations">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2010</p>
+      <h3>Datadog</h3>
+      <p class="meta">Observability та моніторинг</p>
+      <p>Метрики, логи, трейси та security-сигнали для хмарних і контейнерних середовищ. Єдиний екран для інженерних команд щодо продакшен-систем. Додатковий контекст: Нью-Йорк, США · Metrics, logs, traces, security · Єдиний екран для інженерних команд щодо продакшен-систем.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Хмарні технології</span><span class="tag">Операції</span></div>
+      <a class="btn" href="startup-datadog.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2007" data-sort-name="MongoDB" data-catalog-order="42" data-search="mongodb база даних та data-платформа документно-орієнтована база та atlas як повністю керований хмарний сервіс даних. atlas як повністю керований сервіс навколо mongodb. додатковий контекст: нью-йорк, сша · developer data platform, search, analytics · atlas як повністю керований сервіс навколо mongodb. програмування хмарні технології корпоративне пз software cloud enterprise software">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2007</p>
+      <h3>MongoDB</h3>
+      <p class="meta">База даних та data-платформа</p>
+      <p>Документно-орієнтована база та Atlas як повністю керований хмарний сервіс даних. Atlas як повністю керований сервіс навколо MongoDB. Додатковий контекст: Нью-Йорк, США · Developer data platform, search, analytics · Atlas як повністю керований сервіс навколо MongoDB.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Хмарні технології</span><span class="tag">Корпоративне ПЗ</span></div>
+      <a class="btn" href="startup-mongodb.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="віддалена команда" data-founded="2020" data-sort-name="Supabase" data-catalog-order="43" data-search="supabase open-source firebase-альтернатива postgres, auth і realtime apis як developer-first backend для стартапів та indie-команд. додатковий контекст: сингапур / віддалена команда · auth, postgres, realtime apis · швидкий backend для indie hackers і продуктових mvp. програмування open source стартапи software open source startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2020</p>
+      <h3>Supabase</h3>
+      <p class="meta">Open-source Firebase-альтернатива</p>
+      <p>Postgres, auth і realtime APIs як developer-first backend для стартапів та indie-команд. Додатковий контекст: Сингапур / віддалена команда · Auth, Postgres, realtime APIs · Швидкий backend для indie hackers і продуктових MVP.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Open source</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-supabase.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="віддалено" data-founded="2020" data-sort-name="PostHog" data-catalog-order="44" data-search="posthog product analytics open-source інструменти для продуктової аналітики та експериментів з відкритим кодом для інженерних команд. додатковий контекст: лондон / віддалено · product analytics, experimentation, session replay · self-host та cloud варіанти для інженерних команд. програмування open source стартапи software open source startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2020</p>
+      <h3>PostHog</h3>
+      <p class="meta">Product analytics open-source</p>
+      <p>Інструменти для продуктової аналітики та експериментів з відкритим кодом для інженерних команд. Додатковий контекст: Лондон / віддалено · Product analytics, experimentation, session replay · Self-host та cloud варіанти для інженерних команд.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Open source</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-posthog.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="design" data-country="США" data-founded="2019" data-sort-name="Linear" data-catalog-order="45" data-search="linear інструмент керування продуктом швидкий issue tracker та roadmap-платформа для сучасних software-команд. швидкий ux як конкурентна перевага над класичними трекерами. додатковий контекст: сан-франциско, сша · roadmaps, cycles, integrations · швидкий ux як конкурентна перевага над класичними трекерами. програмування дизайн стартапи software design startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2019</p>
+      <h3>Linear</h3>
+      <p class="meta">Інструмент керування продуктом</p>
+      <p>Швидкий issue tracker та roadmap-платформа для сучасних software-команд. Швидкий UX як конкурентна перевага над класичними трекерами. Додатковий контекст: Сан-Франциско, США · Roadmaps, cycles, integrations · Швидкий UX як конкурентна перевага над класичними трекерами.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Дизайн</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-linear.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2017" data-sort-name="Retool" data-catalog-order="46" data-search="retool internal tools платформа дозволяє швидко будувати внутрішні адмін-панелі й операційні інструменти поверх api. додатковий контекст: сан-франциско, сша · admin panels, ops dashboards, workflows · швидке створення внутрішніх інструментів поверх api та баз даних. програмування корпоративне пз стартапи software enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2017</p>
+      <h3>Retool</h3>
+      <p class="meta">Internal tools платформа</p>
+      <p>Дозволяє швидко будувати внутрішні адмін-панелі й операційні інструменти поверх API. Додатковий контекст: Сан-Франциско, США · Admin panels, ops dashboards, workflows · Швидке створення внутрішніх інструментів поверх API та баз даних.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-retool.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="віддалено" data-founded="2011" data-sort-name="Zapier" data-catalog-order="47" data-search="zapier автоматизація workflow між saas безкодові інтеграції між тисячами застосунків для маркетингу, продажів та операцій. каталог із тисячами конекторів між saas-додатками. додатковий контекст: роллі / віддалено · no-code automation, enterprise plans · каталог із тисячами конекторів між saas-додатками. програмування операції стартапи software operations startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2011</p>
+      <h3>Zapier</h3>
+      <p class="meta">Автоматизація workflow між SaaS</p>
+      <p>Безкодові інтеграції між тисячами застосунків для маркетингу, продажів та операцій. Каталог із тисячами конекторів між SaaS-додатками. Додатковий контекст: Роллі / віддалено · No-code automation, enterprise plans · Каталог із тисячами конекторів між SaaS-додатками.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-zapier.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Франція" data-founded="2023" data-sort-name="Poolside" data-catalog-order="48" data-search="poolside технологічний стартап для розробників створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд. додатковий контекст: сша / франція · code generation, developer tools, foundation models · новий гравець у сегменті computing для software engineering. системи обробки даних програмування стартапи computing systems software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>Poolside</h3>
+      <p class="meta">технологічний стартап для розробників</p>
+      <p>Створює моделі та інструменти для автоматизації програмування з фокусом на робочі процеси професійних інженерних команд. Додатковий контекст: США / Франція · Code generation, developer tools, foundation models · Новий гравець у сегменті computing для software engineering.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-poolside.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="США" data-founded="2022" data-sort-name="Harvey" data-catalog-order="49" data-search="harvey legal computing платформа розробляє computing-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права. додатковий контекст: сша · legal tech, professional services, document analysis · один із найпомітніших vertical computing-продуктів нового циклу. системи обробки даних корпоративне пз стартапи computing systems enterprise software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Harvey</h3>
+      <p class="meta">Legal computing платформа</p>
+      <p>Розробляє computing-інструменти для юридичних команд і великих фірм, поєднуючи генеративні моделі з доменною експертизою права. Додатковий контекст: США · Legal tech, professional services, document analysis · Один із найпомітніших vertical computing-продуктів нового циклу.</p>
+      <div class="tags"><span class="tag">системи обробки даних</span><span class="tag">Корпоративне ПЗ</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-harvey.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Україна" data-founded="2024" data-sort-name="CargoFlow" data-catalog-order="50" data-search="cargoflow логістичний стартап для e-commerce молодий стартап із фокусом на last-mile маршрути, sla-контроль і операції доставки для e-commerce команд у центральній європі. додатковий контекст: варшава, польща / україна · e-commerce доставка, локальні курʼєрські мережі, операційні дашборди · фокус на практичних інструментах для операційних менеджерів малих і середніх команд. операції програмування стартапи operations software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2024</p>
+      <h3>CargoFlow</h3>
+      <p class="meta">Логістичний стартап для e-commerce</p>
+      <p>Молодий стартап із фокусом на last-mile маршрути, SLA-контроль і операції доставки для e-commerce команд у Центральній Європі. Додатковий контекст: Варшава, Польща / Україна · E-commerce доставка, локальні курʼєрські мережі, операційні дашборди · Фокус на практичних інструментах для операційних менеджерів малих і середніх команд.</p>
+      <div class="tags"><span class="tag">Операції</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-cargoflow.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Канада" data-founded="2022" data-sort-name="Field Notes" data-catalog-order="51" data-search="field notes редакційний saas для польових заміток команд малий saas для команд, які збирають структуровані польові замітки під час інтервʼю, аудитів і виїзних перевірок. монреаль канада ux research ops audits compliance visits indie saas editorial case study canada operations software startups">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>Field Notes</h3>
+      <p class="meta">Редакційний SaaS для польових заміток команд</p>
+      <p>Малий SaaS для команд, які збирають структуровані польові замітки під час інтервʼю, аудитів і виїзних перевірок. Додатковий контекст: Монреаль, Канада · UX research, ops audits, compliance visits · Редакційний кейс: ніша між загальними нотатниками й важкими enterprise CMS.</p>
+      <div class="tags"><span class="tag">Програмування</span><span class="tag">Операції</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-fieldnotes.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="operations" data-country="Польща" data-founded="2023" data-sort-name="RoutePilot" data-catalog-order="52" data-search="routepilot платформа маршрутизації доставки польща автоматизує маршрути курʼєрів, контроль слотів і планування хвиль відправок для ecommerce-команд. варшава польща route optimization delivery slots courier operations ecommerce operations logistics startups poland">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2023</p>
+      <h3>RoutePilot</h3>
+      <p class="meta">Платформа маршрутизації доставки</p>
+      <p>Автоматизує маршрути курʼєрів, контроль слотів і планування хвиль відправок для e-commerce-команд. Додатковий контекст: Варшава, Польща · Route optimization, delivery slots, courier operations · Фокус на зменшенні холостого пробігу та зривів SLA.</p>
+      <div class="tags"><span class="tag">Операції</span><span class="tag">Логістика</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-routepilot.html">Прочитати</a>
+    </div>
+  </article>
+<article class="card startup-card" data-directory-card data-filter-key="software" data-country="Польща / Естонія" data-founded="2022" data-sort-name="InvoiceFlow" data-catalog-order="53" data-search="invoiceflow fintech saas для малого бізнесу автоматизує виставлення рахунків, платежі та звірку транзакцій для підприємців і сервісних компаній. краків таллін invoice automation payments reconciliation fintech saas startups poland estonia">
+    <div class="card-body">
+      <p class="eyebrow">Засновано 2022</p>
+      <h3>InvoiceFlow</h3>
+      <p class="meta">FinTech SaaS для малого бізнесу</p>
+      <p>Автоматизує виставлення рахунків, платежі та звірку транзакцій для підприємців і сервісних компаній. Додатковий контекст: Краків / Таллінн · Invoice automation, payments, reconciliation · Практичний продукт для команд, які хочуть швидший cash-flow.</p>
+      <div class="tags"><span class="tag">Фінтех</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <a class="btn" href="startup-invoiceflow.html">Прочитати</a>
+    </div>
+  </article><!--RYBEZH_BULK_INJECT--></section>
+<p class="empty-state" data-empty-state hidden>Нічого не знайдено. Спробуйте інший запит або скиньте фільтр.</p>
+
+<section class="split-panel">
+  <div>
+    <p class="eyebrow">Редакційна методологія</p>
+    <h2>Редакційна методологія</h2>
+    <p>Картки в стрічці без обкладинок: назва, секторний рядок і читабельний шортконтекст; візуал і розгорнутий огляд — у досьє компанії. Застарілі факти сигналізують про потребу оновити посилання через редакційний канал.</p>
+  </div>
+  <a class="btn" href="methodology.html">Перейти до методології</a>
+</section>
