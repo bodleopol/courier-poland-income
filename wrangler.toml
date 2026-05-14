@@ -3,7 +3,9 @@ compatibility_date = "2026-01-17"
 main = "src/worker.js"
 
 [build]
-command = "npm run build"
+# Root package.json invokes pnpm; use Corepack so Cloudflare Workers/Pages has a pnpm binary.
+# `pnpm install` pulls the full workspace (npm + package-lock.json alone does not).
+command = "corepack enable && pnpm install --frozen-lockfile && pnpm run build"
 
 [assets]
 directory = "./dist"
