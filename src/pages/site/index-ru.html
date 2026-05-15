@@ -4,8 +4,8 @@
 <section class="hero hero--editorial hero--atlas" aria-label="Главная Rybezh">
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site · Редакционный атлас</p>
-    <h1>Спокойная плоскость для сравнения инженеров, исследователей и продуктовых компаний</h1>
-    <p>У каждой карточки одинаковый позвоночник — роль, география, фокус и ссылки наружу — чтобы читать намерение и факты, а не декорации. Добор на главной пересобирается при каждом заходе: это про равные шансы, а не про застывший рейтинг.</p>
+    <h1>Спокойный справочник об инженерах, исследователях и продуктовых компаниях — с живым поиском</h1>
+    <p>Rybezh.site — это не новостная лента и не площадка вакансий. Короткие досье для ориентира: одинаковая структура карточки, внешние ссылки и ясные границы того, что можно проверить из браузера.</p>
     <div class="hero-actions">
       <a class="btn" href="specialists-ru.html">Открыть экспертов</a>
       <a class="btn secondary" href="startups-ru.html">Открыть стартапы</a>
@@ -16,6 +16,25 @@
       <li>Раздельные редакционные потоки для людей, компаний, методологии и тренажёра собеседования</li>
       <li>Украинский, английский, испанский и русский языки</li>
     </ul>
+    <div class="home-hero-search site-search site-search--hero" data-site-search data-badge-person="Специалист" data-badge-startup="Компания" data-badge-page="Страница" data-empty="Ничего не найдено" data-hint="результатов в списке" data-filter-all="Всё" data-filter-people="Люди" data-filter-companies="Компании" data-filter-pages="Страницы">
+      <p class="home-hero-search__label">Поиск по всему сайту</p>
+      <p class="home-hero-search__sub">Введите имя, компанию или страницу — подсказки появляются по мере ввода.</p>
+      <label class="site-search__wrap" for="home-hero-site-search-input-ru">
+        <span class="site-search__sr-only">Поиск по сайту</span>
+        <input id="home-hero-site-search-input-ru" class="site-search__input site-search__input--hero" type="search" data-site-search-input placeholder="Например: OpenAI, методология, Богдан Тютенко…" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="home-hero-site-search-panel-ru" aria-expanded="false" aria-label="Поиск по сайту">
+      </label>
+      <div id="home-hero-site-search-panel-ru" class="site-search__panel site-search__panel--hero" data-site-search-panel hidden role="listbox" aria-label="Поиск по сайту"></div>
+      <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+      <div class="home-hero-search__row">
+        <button type="button" class="btn secondary home-hero-search__wide-cmd" data-open-command>Расширенный поиск и фильтры</button>
+        <span class="home-hero-search__kbd-hint" aria-hidden="true"><kbd>/</kbd> · <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      </div>
+    </div>
+    <ol class="home-steps" aria-label="Три шага на Rybezh">
+      <li><strong>Найдите</strong> человека, компанию или страницу — здесь или в шапке; один индекс на весь сайт.</li>
+      <li><strong>Сравните карточки</strong> в каталогах специалистов и стартапов с одинаковой структурой полей.</li>
+      <li><strong>Проверьте факты</strong> по внешним ссылкам в досье; при расхождениях приоритет у первичных источников.</li>
+    </ol>
   </div>
   <aside class="hero-panel hero-panel--editorial" aria-label="Ключевые данные Rybezh.site">
     <div class="stat-card"><strong>77</strong><span>Профилей специалистов</span></div>

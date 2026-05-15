@@ -487,8 +487,12 @@
                 if (pushHistory !== false) syncUrl();
             }
 
+            let directoryInputTimer = 0;
             if (searchInput && cards.length) {
-                searchInput.addEventListener('input', () => applyDirectoryFilters());
+                searchInput.addEventListener('input', () => {
+                    window.clearTimeout(directoryInputTimer);
+                    directoryInputTimer = window.setTimeout(() => applyDirectoryFilters(), 200);
+                });
             }
 
             filterButtons.forEach(button => {
