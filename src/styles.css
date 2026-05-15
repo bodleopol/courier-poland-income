@@ -785,6 +785,16 @@ input:checked + .slider:before {
     background: rgba(37, 99, 235, 0.08);
 }
 
+.btn:focus-visible,
+.btn.secondary:focus-visible,
+.nav-toggle:focus-visible,
+.filter-btn:focus-visible,
+.filter-chip:focus-visible,
+.theme-switch input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
 .stacked-actions {
     display: flex;
     flex-wrap: wrap;
@@ -3855,13 +3865,41 @@ a.breadcrumb__item:hover {
   transform: translateY(0);
 }
 
-/* === Intelligence platform layer (2026) === */
+/* === Home & catalog layout (2026) === */
 .page-home .page-shell,
 .page-specialists .page-shell,
 .page-startups .page-shell,
 .page-article.doc-methodology .page-shell,
 .page-article.doc-interview-drill .page-shell {
   max-width: 1220px;
+}
+
+.home-surface-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.home-surface-card--mb {
+  margin-bottom: 20px;
+}
+
+.home-surface-card__title {
+  margin: 0 0 10px;
+}
+
+.home-surface-card__title--inline {
+  margin: 0;
+}
+
+.home-surface-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .intel-dash-hero {
@@ -4178,6 +4216,13 @@ a.breadcrumb__item:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.eco-graph-panel__note {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .page-specialists [data-directory-grid],
