@@ -1,5 +1,5 @@
 /**
- * Generates 2000 low-profile specialist profiles + 150 fictional startups,
+ * Generates 2000 low-profile specialist profiles + 500 fictional startups,
  * each with photo URLs and 300+ character descriptions in uk/en/es/ru.
  * Outputs: src/generated/*.inc.html, src/pages/profiles/person-lp-*.html,
  * src/pages/startups/startup-lp-*.html
@@ -14,7 +14,7 @@ const PROFILES = path.join(ROOT, 'src', 'pages', 'profiles');
 const STARTUPS = path.join(ROOT, 'src', 'pages', 'startups');
 
 const SPECIALIST_COUNT = 2000;
-const STARTUP_COUNT = 150;
+const STARTUP_COUNT = 500;
 const CATALOG_ORDER_BASE = 10_000;
 const SHARE_SITE_BASE = 'https://rybezh.site/';
 
@@ -652,6 +652,7 @@ function writeStartupProfile(lang, i, ctx) {
 <article class="content-wrapper startup-page">
   <a class="back-link" href="${hrefSt}">${escapeHtml(u.backStart)}</a>
   <header class="profile-header startup-header profile-header--intel">
+    <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(ctx.brand)}" class="profile-avatar-large startup-logo-large" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     <div class="profile-info">
       <p class="eyebrow">${escapeHtml(u.founded)} ${ctx.year}</p>
       <h1>${escapeHtml(ctx.brand)}</h1>
@@ -801,6 +802,7 @@ function cardStartup(lang, i) {
   const teaser = cardTeaserFromBio(bio);
   const shareBlock = sharePanelHtml(lang, href, brand);
   const catalogCard = `<article class="card startup-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-founded="${year}" data-sort-name="${escapeAttr(brand)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
+    <img src="${escapeAttr(photo)}" alt="${escapeAttr(brand)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     <div class="card-body">
       <h3>${escapeHtml(brand)}</h3>
       <p class="meta">${escapeHtml(metaLine)}</p>
@@ -838,6 +840,7 @@ function main() {
       startInc[lang].push(ctx.catalogCard);
       writeStartupProfile(lang, i, ctx);
     }
+    if (i % 100 === 0) process.stdout.write(`startups ${i}/${STARTUP_COUNT}\n`);
   }
 
   for (const lang of langs) {
