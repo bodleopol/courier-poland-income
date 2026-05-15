@@ -96,6 +96,26 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://rybezh.site/career-talent-atlas-en.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/career-talent-atlas-es.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/career-talent-atlas-ru.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://rybezh.site/career-talent-atlas.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://rybezh.site/interview-drill.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
