@@ -1,10 +1,10 @@
-<title>Rybezh.site — редакційна платформа інтелекту про екосистеми</title>
-<meta name="description" content="Rybezh.site з’єднує профілі фахівців, стартапи, методологію та тренажер співбесіди в одній редакційній площині: первинні джерела, чотири мови, пошук і контекст замість «довідника за шаблоном».">
+<title>Rybezh.site — довідник людей і компаній у технологіях</title>
+<meta name="description" content="Rybezh.site збирає профілі фахівців, стартапи, методологію та тренажер співбесіди на одній сторінці: первинні джерела, чотири мови, пошук і зрозуміле порівняння карток.">
 
 <section class="intel-dash-hero" aria-label="Головний екран Rybezh">
   <div class="intel-dash-hero__copy">
-    <p class="eyebrow">Редакційний інтелект · екосистеми · оператори</p>
-    <h1>Платформа для спокійного читання людей, компаній і методів поруч</h1>
+    <p class="eyebrow">Редакція · каталоги · методика</p>
+    <h1>Спокійне читання про людей, компанії й робочі методи поруч</h1>
     <p class="intel-dash-hero__lede">Ми не стрічка новин і не дошка вакансій. Це робочий стіл: короткі досьє, однакова логіка картки, зовнішні посилання й чесні межі того, що можна перевірити з браузера.</p>
     <div class="intel-dash-hero__actions hero-actions">
       <a class="btn" href="specialists.html">Каталог спеціалістів</a>
@@ -14,7 +14,7 @@
     <div class="trust-micro" role="note">
       <span>Первинні джерела мають пріоритет</span>
       <span>Оновлення файлу видно в профілі</span>
-      <span>Швидкий пошук: <kbd>/</kbd> або <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      <span>Пошук: <kbd>/</kbd> або <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
     </div>
   </div>
   <aside class="intel-dash-hero__aside">
@@ -22,10 +22,10 @@
       <div class="stat-card"><strong>77</strong><span>профілів у каталозі людей</span></div>
       <div class="stat-card"><strong>52</strong><span>карток компаній</span></div>
       <div class="stat-card"><strong>4</strong><span>мови інтерфейсу й контенту</span></div>
-      <div class="stat-card"><strong>10k</strong><span>сценаріїв у тренажері</span></div>
+      <div class="stat-card"><strong>10k</strong><span>комбінацій у тренажері</span></div>
     </div>
     <div class="intel-eco-canvas" aria-hidden="true">
-      <div class="intel-eco-canvas__cap"><span>Зв’язки</span><span>живий прев’ю-граф</span></div>
+      <div class="intel-eco-canvas__cap"><span>Зв’язки</span><span>схема (превʼю)</span></div>
       <svg viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" focusable="false">
         <defs>
           <linearGradient id="ecoGrad" x1="0" y1="0" x2="1" y2="1">
@@ -83,13 +83,13 @@
 </section>
 
 <div class="intel-live-split">
-  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
-    <h3 style="margin-top:0">Оперативні рядки</h3>
+  <article class="home-card home-surface-card">
+    <h3 class="home-surface-card__title">Оперативні рядки</h3>
     <ul id="liveTicker" class="live-ticker" aria-live="polite"></ul>
   </article>
-  <article class="home-card" style="padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
-      <h3 style="margin:0">Експерт у фокусі</h3>
+  <article class="home-card home-surface-card">
+    <div class="home-surface-card__head">
+      <h3 class="home-surface-card__title home-surface-card__title--inline">Експерт у фокусі</h3>
       <button type="button" class="btn secondary" id="refreshSpotlight">Інший профіль</button>
     </div>
     <div id="spotlightCard" class="spotlight-slot home-spotlight-vt" aria-live="polite"></div>
@@ -101,12 +101,12 @@
   <div id="echoSlotB" aria-label="Дзеркальна картка B"></div>
 </div>
 
-<section class="home-card" aria-label="Рекомендовані переходи" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+<section class="home-card home-surface-card home-surface-card--mb" aria-label="Рекомендовані переходи">
   <p class="eyebrow">Компас сторінок</p>
   <ul class="home-compass__list" id="homeCompassList"></ul>
 </section>
 
-<section class="home-card" aria-label="Редакційні нотатки" style="margin-bottom:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--surface)">
+<section class="home-card home-surface-card home-surface-card--mb" aria-label="Редакційні нотатки">
   <p class="eyebrow">Короткі матеріали</p>
   <div class="home-editorial-burst__grid" id="editorialBurst"></div>
 </section>
@@ -144,7 +144,7 @@
     <p>Фаундери, CEO, COO й технічні керівники, які перекладають стратегію на повторюване виконання.</p>
   </article><article class="info-card">
     <h3>Обчислення та дані</h3>
-    <p>Дослідження моделей, платформена інженерія, практики безпеки й прикладна наука на даних.</p>
+    <p>Статистика та моделі, платформена інженерія, практики безпеки й прикладна робота з даними.</p>
   </article><article class="info-card">
     <h3>Операції</h3>
     <p>Польові програми, логістика, дисципліна маржі, стандарти сервісу й стійкі команди.</p>
@@ -372,7 +372,7 @@
       <h3>OpenAI</h3>
       <p class="meta">Дослідницька та продуктова компанія</p>
       <p>Розробляє моделі та продукти для бізнесу, освіти, розробки ПЗ і творчих процесів. Сан-Франциско, США · API та інструменти для розробників · корпоративні рішення й екосистема партнерів.</p>
-      <div class="tags"><span class="tag">Мовні моделі</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
+      <div class="tags"><span class="tag">Текст і API</span><span class="tag">Програмування</span><span class="tag">Стартапи</span></div>
       <a class="btn" href="startup-openai.html">Прочитати</a>
     </div>
   </article>
@@ -588,8 +588,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { topic: 'Прозорість', title: 'Виправлення в одному каналі', body: 'Корекції проходять той самий шлях, що й нові матеріали — без прихованих перезаписів.' },
     { topic: 'Мобільність', title: 'Читабельність на телефоні', body: 'Картки й стрічка адаптуються до вузького екрана: спочатку факти, потім контекст.' },
     { topic: 'Інструменти', title: 'Тренажер без оцінювання', body: 'Десять тисяч комбінацій для самоперевірки; нотатки лишаються лише у вашому браузері.' },
-    { topic: 'Навігація', title: 'Один шаблон картки', body: 'Поле «мандат» і регіон завжди в одному місці — менше когнітивного шуму при порівнянні.' },
-    { topic: 'Ритм', title: 'Жива стрічка без стрічки новин', body: 'Годинник і сигнали — орієнтири для читача, а не алгоритмічна стрічка подій.' },
+    { topic: 'Навігація', title: 'Один шаблон картки', body: 'Поле «мандат» і регіон завжди в одному місці — менше зайвого шуму при порівнянні.' },
+    { topic: 'Ритм', title: 'Онлайн-орієнтири без стрічки новин', body: 'Годинник і короткі підказки допомагають орієнтуватися на сторінці, без стрічки подій.' },
     { topic: 'Межі', title: 'Не майданчик вакансій', body: 'Архів для орієнтації в темі; пропозиції роботи сюди не публікуємо.' }
   ];
 
@@ -607,20 +607,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const liveEvents = [
-    'Нові профілі проходять однаковий editorial QA цикл.',
-    'Теги синхронізовано між архівом експертів та стартапів.',
-    'Картки адаптивні: mobile-first компонування без втрати контексту.',
-    'Фокус тижня: операції, software та прикладна наука.',
-    'Розділи для порівняння враховують вибрані фільтри на головній.',
-    'Головна не сортує за алфавітом — порядок добірки змінюється при кожному завантаженні.',
-    'Один профіль може зʼявитися в герої, сітці та дзеркальній стрічці одночасно.'
+    'Нові профілі проходять ту саму перевірку фактів і тону.',
+    'Теги збігаються між архівом експертів і стартапів.',
+    'Верстка карток підлаштовується під вузький екран без втрати змісту.',
+    'Фокус тижня: операції, інженерія ПЗ і робота з даними.',
+    'Блоки порівняння враховують фільтри, які ви ввімкнули на головній.',
+    'Порядок добірки змінюється при кожному завантаженні — без зафіксованого «топу».',
+    'Один профіль може зʼявитися в герої, сітці й дзеркалі одночасно.'
   ];
 
   const signalLines = [
     { h: 'Мови', p: 'Паритет UK / EN / ES / RU для ключових полів.' },
-    { h: 'Швидкість', p: 'content-visibility на нижніх блоках зменшує роботу композиції.' },
+    { h: 'Швидкість', p: 'Частина блоків відкладає важку верстку до прокрутки, сторінка лишається плавною.' },
     { h: 'Дані', p: 'Пошук у каталозі читає ті самі data-атрибути, що й фільтри тут.' },
-    { h: 'Адаптив', p: 'Стрічка й бенто-герой перебудовуються від 320px до широких екранів.' },
+    { h: 'Адаптив', p: 'Герой і стрічка перебудовуються від вузького телефона до широкого монітора.' },
     { h: 'Доступність', p: 'Кнопки фільтрів лишаються в логічному порядку фокусу після перемонтування.' }
   ];
 
