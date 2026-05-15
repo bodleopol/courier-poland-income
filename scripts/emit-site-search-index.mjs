@@ -65,6 +65,7 @@ const STATIC = {
     { u: 'cookies.html', t: 'Політика cookies', s: 'cookies згода браузер', k: 'page' },
     { u: 'terms.html', t: 'Умови використання', s: 'умови terms правила сайту', k: 'page' },
     { u: 'interview-drill.html', t: 'Тренажер співбесіди', s: 'співбесіда інтервю тренажер питання сценарій', k: 'page' },
+    { u: 'career-talent-atlas.html', t: 'Карʼєрний атлас талантів', s: 'карєра таланти ніша професія гра атлас орієнтир', k: 'page' },
   ],
   en: [
     { u: 'index-en.html', t: 'Home', s: 'rybezh home archive experts startups directory', k: 'page' },
@@ -77,6 +78,7 @@ const STATIC = {
     { u: 'cookies-en.html', t: 'Cookie policy', s: 'cookies consent browser', k: 'page' },
     { u: 'terms-en.html', t: 'Terms of use', s: 'terms conditions site rules', k: 'page' },
     { u: 'interview-drill-en.html', t: 'Interview drill', s: 'interview practice drill questions leadership', k: 'page' },
+    { u: 'career-talent-atlas-en.html', t: 'Career talent atlas', s: 'career talent niche profession orientation game atlas', k: 'page' },
   ],
   es: [
     { u: 'index-es.html', t: 'Inicio', s: 'rybezh inicio archivo directorio expertos startups', k: 'page' },
@@ -89,6 +91,7 @@ const STATIC = {
     { u: 'cookies-es.html', t: 'Política de cookies', s: 'cookies consentimiento navegador', k: 'page' },
     { u: 'terms-es.html', t: 'Términos de uso', s: 'términos condiciones reglas sitio', k: 'page' },
     { u: 'interview-drill-es.html', t: 'Simulacro de entrevista', s: 'entrevista práctica simulacro preguntas liderazgo', k: 'page' },
+    { u: 'career-talent-atlas-es.html', t: 'Atlas de talento profesional', s: 'carrera talento nicho profesión juego orientación atlas', k: 'page' },
   ],
   ru: [
     { u: 'index-ru.html', t: 'Главная', s: 'rybezh главная архив каталог экспертов стартапы', k: 'page' },
@@ -101,6 +104,7 @@ const STATIC = {
     { u: 'cookies-ru.html', t: 'Политика cookies', s: 'cookies согласие браузер', k: 'page' },
     { u: 'terms-ru.html', t: 'Условия использования', s: 'условия terms правила сайта', k: 'page' },
     { u: 'interview-drill-ru.html', t: 'Тренажёр собеседования', s: 'собеседование интервью тренажёр вопросы', k: 'page' },
+    { u: 'career-talent-atlas-ru.html', t: 'Карьерный атлас талантов', s: 'карьера таланты ниша профессия игра ориентир атлас', k: 'page' },
   ],
 };
 

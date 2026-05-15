@@ -126,6 +126,7 @@ function ensureGeneratedCatalogData() {
   }
   execSync('node scripts/generate-bulk-directory.mjs', { stdio: 'inherit' });
   execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit' });
+  execSync('node scripts/emit-career-talent-atlas-data.mjs', { stdio: 'inherit' });
 }
 
 ensureGeneratedCatalogData();
@@ -139,6 +140,7 @@ const translations = {
     navMethodology: 'Методологія',
     navFaq: 'Питання й відповіді',
     navInterview: 'Тренажер співбесіди',
+    navTalent: 'Карʼєрний атлас',
     navMenu: 'Меню',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
@@ -180,6 +182,7 @@ const translations = {
     navMethodology: 'Methodology',
     navFaq: 'FAQ',
     navInterview: 'Interview drill',
+    navTalent: 'Career talent atlas',
     navMenu: 'Menu',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
@@ -221,6 +224,7 @@ const translations = {
     navMethodology: 'Metodología',
     navFaq: 'Preguntas frecuentes',
     navInterview: 'Simulacro de entrevista',
+    navTalent: 'Atlas de talento',
     navMenu: 'Menú',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
@@ -262,6 +266,7 @@ const translations = {
     navMethodology: 'Методология',
     navFaq: 'Вопросы и ответы',
     navInterview: 'Тренажёр собеседования',
+    navTalent: 'Карьерный атлас',
     navMenu: 'Меню',
     navPrivacy: 'Конфиденциальность',
     navCookies: 'Cookies',
@@ -562,7 +567,13 @@ function detectPageKind(relPath, basename) {
   if (/^profiles\/person-/i.test(relPath)) return 'person';
   if (/^startups\/startup-/i.test(relPath)) return 'startup';
   const base = basename.replace(/-(en|es|ru)\.html$/i, '.html');
-  if (base === 'methodology.html' || base === 'faq.html' || base === 'interview-drill.html') return 'article';
+  if (
+    base === 'methodology.html' ||
+    base === 'faq.html' ||
+    base === 'interview-drill.html' ||
+    base === 'career-talent-atlas.html'
+  )
+    return 'article';
   if (base === 'specialists.html') return 'specialists';
   if (base === 'startups.html') return 'startups';
   if (base === 'index.html') return 'home';
@@ -941,6 +952,13 @@ try {
   process.exit(1);
 }
 
+try {
+  execSync('node scripts/emit-career-talent-atlas-data.mjs', { stdio: 'inherit', cwd: path.resolve() });
+} catch (e) {
+  console.error('emit-career-talent-atlas-data failed:', e.message);
+  process.exit(1);
+}
+
 function processDirectory(dirPath, destPath) {
   if (!fs.existsSync(destPath)) {
     fs.mkdirSync(destPath, { recursive: true });
@@ -963,6 +981,8 @@ function processDirectory(dirPath, destPath) {
         const skipMinifyJs =
           srcFile.endsWith('interview-drill.js') ||
           srcFile.endsWith('interview-bank-data.js') ||
+          srcFile.endsWith('career-talent-atlas.js') ||
+          srcFile.endsWith('career-talent-atlas-data.js') ||
           srcFile.endsWith('site-search-index.js') ||
           srcFile.endsWith('site-search.js') ||
           srcFile.endsWith('catalog-cards.js') ||
@@ -1066,6 +1086,7 @@ function compileHTML(srcFile, destFile) {
   const methodologyUrl = lang === 'uk' ? 'methodology.html' : `methodology-${lang}.html`;
   const faqUrl = lang === 'uk' ? 'faq.html' : `faq-${lang}.html`;
   const interviewUrl = lang === 'uk' ? 'interview-drill.html' : `interview-drill-${lang}.html`;
+  const talentUrl = lang === 'uk' ? 'career-talent-atlas.html' : `career-talent-atlas-${lang}.html`;
 
   const relPath = path.relative(path.join(SRC_DIR, 'pages'), srcFile).replace(/\\/g, '/');
   const pageKind = detectPageKind(relPath, filename);
@@ -1140,6 +1161,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{NAV_METHODOLOGY}}', localMerged.navMethodology)
                        .replaceAll('{{NAV_FAQ}}', localMerged.navFaq)
                        .replaceAll('{{NAV_INTERVIEW}}', localMerged.navInterview)
+                       .replaceAll('{{NAV_TALENT}}', localMerged.navTalent)
                        .replaceAll('{{NAV_MENU}}', localMerged.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', localMerged.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', localMerged.navCookies)
@@ -1153,6 +1175,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{METHODOLOGY_URL}}', methodologyUrl)
                        .replaceAll('{{FAQ_URL}}', faqUrl)
                        .replaceAll('{{INTERVIEW_URL}}', interviewUrl)
+                       .replaceAll('{{TALENT_URL}}', talentUrl)
                        .replaceAll('{{SEARCH_ARIA}}', localMerged.searchAria)
                        .replaceAll('{{SEARCH_PLACEHOLDER}}', localMerged.searchPlaceholder)
                        .replaceAll('{{SEARCH_BADGE_PERSON}}', localMerged.searchBadgePerson)

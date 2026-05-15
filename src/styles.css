@@ -6137,3 +6137,505 @@ body[data-rz-layout="3"] .profile-content {
     font-size: 16px; /* prevent iOS zoom */
   }
 }
+
+/* --- Career Talent Atlas (career-talent-atlas*.html) --- */
+.page-article.doc-career-talent-atlas .talas-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  margin-bottom: 2rem;
+  background: radial-gradient(1200px 500px at 10% -10%, rgba(14, 165, 233, 0.35), transparent 55%),
+    radial-gradient(900px 480px at 90% 20%, rgba(139, 92, 246, 0.32), transparent 50%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.88));
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.page-article.doc-career-talent-atlas .talas-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 60h120M60 0v120' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.85);
+  margin: 0 0 0.75rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__title {
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.75rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+  color: #f8fafc;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__lede {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(226, 232, 240, 0.88);
+  margin: 0 0 1.25rem;
+  max-width: 62ch;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__stat {
+  min-width: 140px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__stat strong {
+  display: block;
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  color: #38bdf8;
+}
+
+.page-article.doc-career-talent-atlas .talas-hero__stat span {
+  font-size: 0.78rem;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.page-article.doc-career-talent-atlas .talas-app-wrap {
+  margin-top: 0.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-panel {
+  min-height: 280px;
+}
+
+.page-article.doc-career-talent-atlas .talas-card--splash {
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.page-article.doc-career-talent-atlas .talas-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+  margin: 0 0 0.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-lede {
+  margin: 0 0 1rem;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.page-article.doc-career-talent-atlas .talas-meta {
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.82);
+  margin: 0 0 1rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-disclosure {
+  font-size: 0.88rem;
+  color: rgba(148, 163, 184, 0.95);
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+
+.page-article.doc-career-talent-atlas .talas-primary {
+  margin-top: 0.25rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-step-head {
+  margin-bottom: 1.25rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  margin-bottom: 0.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-h2 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.5rem;
+  margin: 0.35rem 0 0.5rem;
+  color: #f1f5f9;
+}
+
+.page-article.doc-career-talent-atlas .talas-h3 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.2rem;
+  margin: 2rem 0 0.75rem;
+  color: #e2e8f0;
+}
+
+.page-article.doc-career-talent-atlas .talas-muted {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(148, 163, 184, 0.95);
+  line-height: 1.55;
+  max-width: 70ch;
+}
+
+.page-article.doc-career-talent-atlas .talas-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .page-article.doc-career-talent-atlas .talas-choice-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-article.doc-career-talent-atlas .talas-choice {
+  text-align: left;
+  padding: 1.1rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background: rgba(15, 23, 42, 0.55);
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.12s ease, background 0.15s ease;
+  font: inherit;
+}
+
+.page-article.doc-career-talent-atlas .talas-choice:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  background: rgba(30, 41, 59, 0.75);
+  transform: translateY(-1px);
+}
+
+.page-article.doc-career-talent-atlas .talas-choice--a {
+  border-left: 3px solid #38bdf8;
+}
+
+.page-article.doc-career-talent-atlas .talas-choice--b {
+  border-left: 3px solid #a78bfa;
+}
+
+.page-article.doc-career-talent-atlas .talas-choice__side {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+  margin-bottom: 0.45rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-choice__txt {
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: rgba(241, 245, 249, 0.95);
+}
+
+.page-article.doc-career-talent-atlas .talas-progress {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.page-article.doc-career-talent-atlas .talas-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(100, 116, 139, 0.55);
+}
+
+.page-article.doc-career-talent-atlas .talas-dot--on {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+}
+
+.page-article.doc-career-talent-atlas .talas-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-slider-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .page-article.doc-career-talent-atlas .talas-slider-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-article.doc-career-talent-atlas .talas-slider-label {
+  font-size: 0.88rem;
+  color: rgba(226, 232, 240, 0.92);
+}
+
+.page-article.doc-career-talent-atlas .talas-range {
+  width: 100%;
+  accent-color: #38bdf8;
+}
+
+.page-article.doc-career-talent-atlas .talas-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-stat {
+  padding: 0.65rem 1rem;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.page-article.doc-career-talent-atlas .talas-stat__n {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #7dd3fc;
+  font-variant-numeric: tabular-nums;
+}
+
+.page-article.doc-career-talent-atlas .talas-stat__l {
+  font-size: 0.75rem;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.page-article.doc-career-talent-atlas .talas-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-width: 640px;
+}
+
+.page-article.doc-career-talent-atlas .talas-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+}
+
+.page-article.doc-career-talent-atlas .talas-bar__label {
+  font-size: 0.82rem;
+  color: rgba(226, 232, 240, 0.88);
+}
+
+.page-article.doc-career-talent-atlas .talas-bar__track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(51, 65, 85, 0.65);
+  overflow: hidden;
+}
+
+.page-article.doc-career-talent-atlas .talas-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+}
+
+.page-article.doc-career-talent-atlas .talas-path-card {
+  padding: 1.25rem 1.35rem;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  max-width: 720px;
+}
+
+.page-article.doc-career-talent-atlas .talas-path-card__style {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a5b4fc;
+  margin: 0 0 0.35rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-path-card__sector {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0 0 0.65rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-path-card__body {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 0.95rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-list {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-card {
+  padding: 1.1rem 1.15rem;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-card header {
+  margin-bottom: 0.65rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-card h4 {
+  margin: 0.2rem 0 0.15rem;
+  font-size: 1rem;
+  color: #f8fafc;
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-card__sub {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(148, 163, 184, 0.95);
+  line-height: 1.4;
+}
+
+.page-article.doc-career-talent-atlas .talas-rank {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+}
+
+.page-article.doc-career-talent-atlas .talas-mini {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(148, 163, 184, 0.9);
+  margin: 0 0 0.35rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-niche-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: rgba(226, 232, 240, 0.88);
+  line-height: 1.45;
+}
+
+.page-article.doc-career-talent-atlas .talas-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.page-article.doc-career-talent-atlas .talas-error {
+  color: #fca5a5;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero {
+  background: radial-gradient(1000px 420px at 12% -10%, rgba(14, 165, 233, 0.2), transparent 55%),
+    radial-gradient(800px 400px at 88% 15%, rgba(139, 92, 246, 0.18), transparent 50%),
+    linear-gradient(145deg, #f8fafc, #e2e8f0);
+  border-color: rgba(100, 116, 139, 0.25);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__title {
+  color: #0f172a;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__lede,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__kicker {
+  color: #334155;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__stat {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(100, 116, 139, 0.2);
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__stat span {
+  color: #475569;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-hero__stat strong {
+  color: #0284c7;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-card--splash,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-choice,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-path-card,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-niche-card,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-stat {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(100, 116, 139, 0.22);
+  color: #0f172a;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-choice__txt {
+  color: #1e293b;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-h2,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-h3 {
+  color: #0f172a;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-muted,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-disclosure,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-meta,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-lede {
+  color: #475569;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-bar__label,
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-slider-label {
+  color: #334155;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-bar__track {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-niche-card h4 {
+  color: #0f172a;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-path-card__sector {
+  color: #0f172a;
+}
+
+body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-path-card__body {
+  color: #334155;
+}
