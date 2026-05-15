@@ -835,6 +835,9 @@ input:checked + .slider:before {
 .nav-toggle:focus-visible,
 .filter-btn:focus-visible,
 .filter-chip:focus-visible,
+.directory-reset:focus-visible,
+.directory-select:focus-visible,
+[data-directory-search]:focus-visible,
 .theme-switch input:focus-visible,
 .cmd-kicker:focus-visible,
 .mobile-dock__item:focus-visible,
@@ -3366,6 +3369,96 @@ body[data-theme="dark"] .interview-drill__notes {
 .page-shell {
   max-width: 1180px;
   margin: 0 auto;
+}
+
+/* Cross-page reading rhythm, anchors clear sticky header, link clarity */
+.page-shell :where(h2, h3) {
+  scroll-margin-top: 100px;
+}
+
+.policy-section[id],
+[id].policy-section {
+  scroll-margin-top: 96px;
+}
+
+.content-wrapper.policy-page .policy-section > p,
+.content-wrapper.policy-page > .lead {
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+.content-wrapper.policy-page .policy-section h2 {
+  font-size: clamp(1.16rem, 2.1vw, 1.4rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4em;
+}
+
+.content-wrapper.policy-page .policy-section {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-wrapper.policy-page .policy-section:hover {
+  border-color: color-mix(in oklab, var(--brand) 24%, var(--line));
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.07);
+}
+
+body[data-theme="dark"] .content-wrapper.policy-page .policy-section:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.content-wrapper.policy-page a:not(.btn) {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: color-mix(in oklab, var(--brand) 42%, transparent);
+}
+
+.content-wrapper.policy-page a:not(.btn):hover {
+  text-decoration-color: var(--brand-dark);
+}
+
+.page-shell code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.86em;
+  padding: 0.15em 0.45em;
+  border-radius: 6px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+}
+
+.profile-content > p {
+  line-height: 1.64;
+  max-width: 70ch;
+}
+
+.methodology-prologue__meta {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.method-toc a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.eco-graph-node:focus-visible {
+  outline: none;
+}
+
+.eco-graph-node:focus-visible circle {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+body[data-theme="dark"] ::selection {
+  background: rgba(96, 165, 250, 0.28);
 }
 
 .breadcrumb {
