@@ -4,8 +4,8 @@
 <section class="hero hero--editorial hero--atlas" aria-label="Inicio Rybezh">
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site · Atlas editorial</p>
-    <h1>Un mapa para comparar fundadoras, ingenieras y compañías con foco en producto</h1>
-    <p>Mantenemos el mismo espinazo en cada ficha—rol, región, foco y salida hacia contexto—para leer con criterio, no con marketing. Las selecciones de portada se barajan en cada visita: buscamos paridad, no un ranking congelado.</p>
+    <h1>Atlas editorial de fundadoras, ingenieras y compañías con foco en producto — con búsqueda inmediata</h1>
+    <p>Rybezh.site no es un medio de noticias ni un portal de empleo: fichas breves para orientarte, misma estructura de tarjeta, enlaces salientes y límites claros sobre lo que puedes comprobar desde el navegador.</p>
     <div class="hero-actions">
       <a class="btn" href="specialists-es.html">Explorar especialistas</a>
       <a class="btn secondary" href="startups-es.html">Explorar startups</a>
@@ -16,6 +16,25 @@
       <li>Flujos editoriales separados para personas, empresas, metodología y el simulacro de entrevista</li>
       <li>Disponible en ucraniano, inglés, español y ruso</li>
     </ul>
+    <div class="home-hero-search site-search site-search--hero" data-site-search data-badge-person="Especialista" data-badge-startup="Empresa" data-badge-page="Página" data-empty="Sin resultados" data-hint="resultados en la lista" data-filter-all="Todo" data-filter-people="Personas" data-filter-companies="Empresas" data-filter-pages="Páginas">
+      <p class="home-hero-search__label">Buscar en todo el sitio</p>
+      <p class="home-hero-search__sub">Escribe un nombre, empresa o página: las sugerencias se actualizan al instante.</p>
+      <label class="site-search__wrap" for="home-hero-site-search-input-es">
+        <span class="site-search__sr-only">Búsqueda en el sitio</span>
+        <input id="home-hero-site-search-input-es" class="site-search__input site-search__input--hero" type="search" data-site-search-input placeholder="Prueba OpenAI, metodología, Margaret Hamilton…" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="home-hero-site-search-panel-es" aria-expanded="false" aria-label="Búsqueda en el sitio">
+      </label>
+      <div id="home-hero-site-search-panel-es" class="site-search__panel site-search__panel--hero" data-site-search-panel hidden role="listbox" aria-label="Búsqueda en el sitio"></div>
+      <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+      <div class="home-hero-search__row">
+        <button type="button" class="btn secondary home-hero-search__wide-cmd" data-open-command>Búsqueda avanzada y filtros</button>
+        <span class="home-hero-search__kbd-hint" aria-hidden="true"><kbd>/</kbd> · <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      </div>
+    </div>
+    <ol class="home-steps" aria-label="Tres pasos en Rybezh">
+      <li><strong>Encuentra</strong> persona, empresa o página — aquí o en la cabecera; un solo índice para todo el sitio.</li>
+      <li><strong>Compara fichas</strong> en los catálogos de especialistas y startups con el mismo espinazo en cada tarjeta.</li>
+      <li><strong>Contrasta</strong> con enlaces externos en cada dossier; las fuentes primarias mandan si hay discrepancias.</li>
+    </ol>
   </div>
   <aside class="hero-panel hero-panel--editorial" aria-label="Indicadores de Rybezh.site">
     <div class="stat-card"><strong>77</strong><span>Perfiles de especialistas</span></div>

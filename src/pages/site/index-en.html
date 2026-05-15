@@ -4,8 +4,8 @@
 <section class="hero hero--editorial hero--atlas" aria-label="Rybezh home">
   <div class="hero-copy">
     <p class="eyebrow">Rybezh.site · Editorial atlas</p>
-    <h1>A calm surface for comparing builders, researchers, and product-led companies</h1>
-    <p>Each entry keeps the same spine—role, geography, focus, and pointers outward—so you read for judgment, not vibes. Featured tiles on this page reshuffle every time you land here; parity is the point, not a podium.</p>
+    <h1>An editorial atlas of people and tech companies — with instant search</h1>
+    <p>Rybezh.site is not a news feed or a jobs board. Short dossiers for orientation: the same card structure, outbound links, and clear limits on what you can check from a browser.</p>
     <div class="hero-actions">
       <a class="btn" href="specialists-en.html">Explore experts</a>
       <a class="btn secondary" href="startups-en.html">Explore startups</a>
@@ -16,6 +16,25 @@
       <li>Separate editorial streams for people, companies, methodology, and the interview drill</li>
       <li>Published in Ukrainian, English, Spanish, and Russian</li>
     </ul>
+    <div class="home-hero-search site-search site-search--hero" data-site-search data-badge-person="Specialist" data-badge-startup="Company" data-badge-page="Page" data-empty="No matches" data-hint="results in list" data-filter-all="All" data-filter-people="People" data-filter-companies="Companies" data-filter-pages="Pages">
+      <p class="home-hero-search__label">Search the whole site</p>
+      <p class="home-hero-search__sub">Type a name, company, or page title — suggestions update as you type.</p>
+      <label class="site-search__wrap" for="home-hero-site-search-input">
+        <span class="site-search__sr-only">Site-wide search</span>
+        <input id="home-hero-site-search-input" class="site-search__input site-search__input--hero" type="search" data-site-search-input placeholder="Try OpenAI, methodology, Margaret Hamilton…" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="home-hero-site-search-panel" aria-expanded="false" aria-label="Site-wide search">
+      </label>
+      <div id="home-hero-site-search-panel" class="site-search__panel site-search__panel--hero" data-site-search-panel hidden role="listbox" aria-label="Site-wide search"></div>
+      <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+      <div class="home-hero-search__row">
+        <button type="button" class="btn secondary home-hero-search__wide-cmd" data-open-command>Advanced search &amp; filters</button>
+        <span class="home-hero-search__kbd-hint" aria-hidden="true"><kbd>/</kbd> · <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      </div>
+    </div>
+    <ol class="home-steps" aria-label="Three steps on Rybezh">
+      <li><strong>Find</strong> a person, company, or page — search here or in the header; one index for the whole site.</li>
+      <li><strong>Compare cards</strong> in the specialists and startups catalogues with the same spine on every row.</li>
+      <li><strong>Verify</strong> claims using outbound links in each dossier; primary sources win when details diverge.</li>
+    </ol>
   </div>
   <aside class="hero-panel hero-panel--editorial" aria-label="Rybezh platform highlights">
     <div class="stat-card"><strong>77</strong><span>Specialist profiles</span></div>

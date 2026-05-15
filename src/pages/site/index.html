@@ -4,17 +4,34 @@
 <section class="intel-dash-hero" aria-label="Головний екран Rybezh">
   <div class="intel-dash-hero__copy">
     <p class="eyebrow">Редакція · каталоги · методика</p>
-    <h1>Спокійне читання про людей, компанії й робочі методи поруч</h1>
-    <p class="intel-dash-hero__lede">Ми не стрічка новин і не дошка вакансій. Це робочий стіл: короткі досьє, однакова логіка картки, зовнішні посилання й чесні межі того, що можна перевірити з браузера.</p>
+    <h1>Довідник людей і технологічних компаній — з пошуком і чіткими картками</h1>
+    <p class="intel-dash-hero__lede">Rybezh.site — це не стрічка новин і не дошка вакансій. Короткі досьє для орієнтації: однакова структура картки, зовнішні посилання та зрозумілі межі того, що можна перевірити з браузера.</p>
     <div class="intel-dash-hero__actions hero-actions">
       <a class="btn" href="specialists.html">Каталог спеціалістів</a>
       <a class="btn secondary" href="startups.html">Каталог стартапів</a>
       <a class="btn secondary" href="interview-drill.html">Лабораторія співбесіди</a>
     </div>
+    <div class="home-hero-search site-search site-search--hero" data-site-search data-badge-person="Спеціаліст" data-badge-startup="Стартап" data-badge-page="Сторінка" data-empty="Нічого не знайдено" data-hint="результатів у списку" data-filter-all="Усе" data-filter-people="Люди" data-filter-companies="Компанії" data-filter-pages="Сторінки">
+      <p class="home-hero-search__label">Пошук по всьому сайту</p>
+      <p class="home-hero-search__sub">Почніть вводити імʼя, компанію або назву сторінки — підказки зʼявляться одразу.</p>
+      <label class="site-search__wrap" for="home-hero-site-search-input">
+        <span class="site-search__sr-only">Пошук по всьому сайту</span>
+        <input id="home-hero-site-search-input" class="site-search__input site-search__input--hero" type="search" data-site-search-input placeholder="Наприклад: OpenAI, методологія, Богдан Тютенко…" autocomplete="off" enterkeyhint="search" role="combobox" aria-autocomplete="list" aria-controls="home-hero-site-search-panel" aria-expanded="false" aria-label="Пошук по всьому сайту">
+      </label>
+      <div id="home-hero-site-search-panel" class="site-search__panel site-search__panel--hero" data-site-search-panel hidden role="listbox" aria-label="Пошук по всьому сайту"></div>
+      <p class="site-search__live site-search__sr-only" data-site-search-live aria-live="polite"></p>
+      <div class="home-hero-search__row">
+        <button type="button" class="btn secondary home-hero-search__wide-cmd" data-open-command>Розширений пошук і фільтри</button>
+        <span class="home-hero-search__kbd-hint" aria-hidden="true"><kbd>/</kbd> · <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      </div>
+    </div>
+    <ol class="home-steps" aria-label="Три кроки з Rybezh">
+      <li><strong>Знайдіть запис</strong> через пошук тут або в шапці — люди, компанії й службові сторінки в одному індексі.</li>
+      <li><strong>Порівняйте картки</strong> у каталогах спеціалістів і стартапів: однакові поля, менше шуму.</li>
+      <li><strong>Перевірте факти</strong> за зовнішніми посиланнями в досьє; первинні джерела завжди важливіші за короткий опис.</li>
+    </ol>
     <div class="trust-micro" role="note">
-      <span>Первинні джерела мають пріоритет</span>
-      <span>Оновлення файлу видно в профілі</span>
-      <span>Пошук: <kbd>/</kbd> або <kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+      <span>Оновлення дати файлу видно в повному профілі · чотири мови контенту</span>
     </div>
   </div>
   <aside class="intel-dash-hero__aside">
