@@ -146,6 +146,30 @@
 
   const ui = UI[lang] || UI.uk;
 
+  const CALLING_UI={
+    uk:{title:'Лабораторія покликання',start:'Почати тест',practice:'Практика співбесіди',quick:'Швидкий тест · 12',deep:'Глибокий тест · 36',privacy:'Відповіді зберігаються лише локально в браузері.'},
+    en:{title:'Calling Lab',start:'Start test',practice:'Practice interview',quick:'Quick test · 12',deep:'Deep test · 36',privacy:'Answers are stored locally in your browser only.'},
+    es:{title:'Laboratorio de vocación',start:'Iniciar test',practice:'Practicar entrevista',quick:'Test rápido · 12',deep:'Test profundo · 36',privacy:'Las respuestas se guardan solo en tu navegador.'},
+    ru:{title:'Лаборатория призвания',start:'Начать тест',practice:'Практика собеседования',quick:'Быстрый тест · 12',deep:'Глубокий тест · 36',privacy:'Ответы хранятся только локально в браузере.'}
+  };
+  const cu=CALLING_UI[lang]||CALLING_UI.en;
+  const dims=['autonomy','stability','creativity','analysis','leadership','operations','communication','technicalDepth','risk','impact','income','learning'];
+  const qset=[
+   ['I prefer setting my own process', 'autonomy',2],['I want predictable routines','stability',2],['I enjoy ambiguous problems','creativity',2],['I like breaking problems into models','analysis',2],['I naturally coordinate people','leadership',2],['I optimize systems and execution','operations',2],['I gain energy from communication','communication',2],['I enjoy deep technical work','technicalDepth',2],['I tolerate uncertainty for upside','risk',2],['I choose purpose over status','impact',2],['Compensation strongly drives my choices','income',2],['I learn new domains quickly','learning',2]
+  ];
+  const shell=document.createElement('section'); shell.className='calling-lab-shell';
+  shell.innerHTML=`<h2>${cu.title}</h2><p>10–15 minutes. Reflection tool for work/life direction.</p><div class="calling-lab-actions"><button class="btn" data-c-start>${cu.start}</button><button class="btn secondary" data-c-practice>${cu.practice}</button></div><p><strong>Modes:</strong> ${cu.quick} · ${cu.deep} · Interview practice · Career stress test · Founder/operator test</p><p>${cu.privacy}</p><div data-c-body hidden></div>`;
+  root.before(shell);
+  const body=shell.querySelector('[data-c-body]'); let qi=0,total=12,score={}; dims.forEach(d=>score[d]=0);
+  shell.querySelector('[data-c-practice]').addEventListener('click',()=>root.scrollIntoView({behavior:'smooth'}));
+  function renderQ(){ const qq=qset[qi%qset.length]; const pct=Math.round((qi/total)*100); body.innerHTML=`<p>Question ${qi+1}/${total}</p><div class='calling-lab-progress'><span style='width:${pct}%'></span></div><h3>${qq[0]}</h3><div class='calling-lab-answers'><button class='btn secondary calling-lab-answer' data-v='0'>Not me</button><button class='btn secondary calling-lab-answer' data-v='1'>Sometimes</button><button class='btn calling-lab-answer' data-v='2'>Strongly me</button></div><p><button class='btn secondary' data-back>Back</button> <button class='btn secondary' data-restart>Restart</button></p>`;
+    body.querySelectorAll('[data-v]').forEach(b=>b.addEventListener('click',()=>{score[qq[1]] += Number(b.dataset.v);qi++; localStorage.setItem('calling-lab-state',JSON.stringify({qi,score,total})); qi>=total?renderResult():renderQ();}));
+    body.querySelector('[data-back]').onclick=()=>{if(qi>0)qi--;renderQ();}; body.querySelector('[data-restart]').onclick=()=>{qi=0;dims.forEach(d=>score[d]=0);renderQ();};
+  }
+  function renderResult(){ const top=Object.entries(score).sort((a,b)=>b[1]-a[1]); const txt=`Main archetype: ${top[0][0]}\nSecondary: ${top[1][0]}\nStrengths: ${top.slice(0,4).map(x=>x[0]).join(', ')}`; body.innerHTML=`<h3>Results</h3><p>${txt.replace(/\n/g,'<br>')}</p><p>7-day action plan: 1) journal daily work energy 2) test one role experiment 3) review with mentor.</p><div class='calling-lab-actions'><button class='btn' data-copy>Copy result</button><button class='btn secondary' data-share>Share result</button><button class='btn secondary' data-restart>Restart</button></div>`; body.querySelector('[data-copy]').onclick=()=>navigator.clipboard?.writeText(txt); body.querySelector('[data-share]').onclick=()=>navigator.share?.({title:cu.title,text:txt}); body.querySelector('[data-restart]').onclick=()=>{qi=0;dims.forEach(d=>score[d]=0);renderQ();}; }
+  shell.querySelector('[data-c-start]').addEventListener('click',()=>{body.hidden=false;renderQ();});
+
+
   if (mcBank) {
     root.querySelector('[data-iv-mode-wrap]')?.removeAttribute('hidden');
     root.querySelector('[data-iv-specialty-wrap]')?.removeAttribute('hidden');

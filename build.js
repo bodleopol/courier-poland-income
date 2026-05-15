@@ -138,7 +138,8 @@ const translations = {
     navStartups: 'Стартапи',
     navMethodology: 'Методологія',
     navFaq: 'Питання й відповіді',
-    navInterview: 'Тренажер співбесіди',
+    navInterview: 'Лабораторія покликання',
+    navSearch: 'Пошук',
     navMenu: 'Меню',
     navPrivacy: 'Конфіденційність',
     navCookies: 'Cookies',
@@ -179,7 +180,8 @@ const translations = {
     navStartups: 'Startups',
     navMethodology: 'Methodology',
     navFaq: 'FAQ',
-    navInterview: 'Interview drill',
+    navInterview: 'Calling Lab',
+    navSearch: 'Search',
     navMenu: 'Menu',
     navPrivacy: 'Privacy',
     navCookies: 'Cookies',
@@ -220,7 +222,8 @@ const translations = {
     navStartups: 'Startups',
     navMethodology: 'Metodología',
     navFaq: 'Preguntas frecuentes',
-    navInterview: 'Simulacro de entrevista',
+    navInterview: 'Laboratorio de vocación',
+    navSearch: 'Buscar',
     navMenu: 'Menú',
     navPrivacy: 'Privacidad',
     navCookies: 'Cookies',
@@ -1140,6 +1143,7 @@ function compileHTML(srcFile, destFile) {
                        .replaceAll('{{NAV_METHODOLOGY}}', localMerged.navMethodology)
                        .replaceAll('{{NAV_FAQ}}', localMerged.navFaq)
                        .replaceAll('{{NAV_INTERVIEW}}', localMerged.navInterview)
+                       .replaceAll('{{NAV_SEARCH}}', localMerged.navSearch)
                        .replaceAll('{{NAV_MENU}}', localMerged.navMenu)
                        .replaceAll('{{NAV_PRIVACY}}', localMerged.navPrivacy)
                        .replaceAll('{{NAV_COOKIES}}', localMerged.navCookies)
