@@ -4851,12 +4851,30 @@ body[data-theme="dark"] .startup-card[data-founded]::before {
   line-height: 1.55;
 }
 
+/* Eyebrow labels are <p>; keep UI chrome in the body sans stack (not Newsreader). */
+.iv-bubble p.iv-bubble__label {
+  font-family: "DM Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 .iv-bubble .interview-drill__mcq {
   margin-top: 12px;
 }
 
 .iv-bubble textarea.interview-drill__notes {
   margin-top: 8px;
+}
+
+@media (max-width: 720px) {
+  .iv-bubble--you {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .interview-drill__notes {
+    resize: none;
+  }
 }
 
 @media (max-width: 980px) {
@@ -4967,6 +4985,12 @@ body[data-theme="dark"] .startup-card[data-founded]::before {
   color: var(--text);
   border: 1px solid color-mix(in oklab, var(--line) 75%, var(--brand) 25%);
   background: color-mix(in oklab, var(--surface-strong) 88%, transparent);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .page-article.doc-interview-drill .iv-studio-hero__pills li:last-child {
+    display: none;
+  }
 }
 
 .page-article.doc-interview-drill .iv-studio-hero__panel {
@@ -5112,6 +5136,12 @@ body[data-theme="dark"] .startup-card[data-founded]::before {
   font-size: 0.88rem;
   line-height: 1.5;
   color: color-mix(in oklab, var(--text) 88%, var(--muted));
+}
+
+@media (max-width: 980px) {
+  .page-article.doc-interview-drill .split-panel {
+    margin-bottom: 28px;
+  }
 }
 
 .iv-lab.iv-lab--studio {
@@ -5345,14 +5375,20 @@ body[data-theme="dark"] .iv-lab.iv-lab--studio {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  align-items: stretch;
   padding: 12px 16px;
   border-top: 1px solid color-mix(in oklab, var(--line) 90%, transparent);
   background: color-mix(in oklab, var(--surface) 72%, transparent);
   backdrop-filter: blur(12px);
 }
 
+.iv-lab--studio .iv-lab__dock .btn {
+  flex: 1 1 0;
+  min-width: min(100%, 140px);
+  justify-content: center;
+}
+
 .iv-lab--studio .iv-lab__dock-next {
-  flex: 1 1 180px;
   font-weight: 650;
 }
 
@@ -6095,6 +6131,12 @@ body[data-rz-layout="3"] .profile-content {
     flex-direction: column;
     gap: 8px;
     padding: 10px 14px;
+  }
+
+  .iv-lab--studio .iv-lab__dock .btn {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
   }
 
   .iv-lab__dock-prev,
