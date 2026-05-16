@@ -63,11 +63,11 @@
   const COPY = {
     uk: {
       kicker: 'Карʼєрний атлас · Rybezh',
-      start: 'Почати сканування',
+      start: 'Почати тест',
       again: 'Пройти знову',
-      stepCards: 'Крок 1 — картки рішень',
+      stepCards: 'Крок 1 — питання та сценарії',
       stepQuiz: 'Крок 2 — калібрування',
-      stepResult: 'Ваш профіль',
+      stepResult: 'Ваш результат Calling Lab',
       cardProgress: 'Картка',
       of: 'з',
       pickHint: 'Оберіть варіант, який ближче до вашого природного стилю — тут немає оцінки «правильно».',
@@ -81,7 +81,7 @@
       rolesTitle: 'Приклади ролей у ніші',
       copySummary: 'Копіювати короткий підсумок',
       copied: 'Скопійовано',
-      disclosure: 'Це навчальний орієнтир, а не психометричний тест і не рекомендація найму. Відповіді не відправляються на сервер.',
+      disclosure: 'Приватність: відповіді зберігаються лише локально у браузері. Це інструмент рефлексії та навігації карʼєри, не медична/психологічна діагностика.',
       cards: [
         { A: 'Спочатку виміряти й структурувати, потім діяти.', B: 'Спочатку швидкий прототип, потім уточнення.' },
         { A: 'Глибоко опанувати один стек.', B: 'Тримати широкий периметр технологій.' },
@@ -97,7 +97,7 @@
     },
     en: {
       kicker: 'Career Talent Atlas · Rybezh',
-      start: 'Begin scan',
+      start: 'Start test',
       again: 'Run again',
       stepCards: 'Step 1 — decision cards',
       stepQuiz: 'Step 2 — calibration',
@@ -115,7 +115,7 @@
       rolesTitle: 'Example roles in this niche',
       copySummary: 'Copy short summary',
       copied: 'Copied',
-      disclosure: 'This is an educational compass, not a psychometric test or hiring signal. Nothing is sent to a server.',
+      disclosure: 'Privacy: answers are stored only in your browser. This is a reflection and career-navigation tool, not a medical or psychological diagnosis.',
       cards: [
         { A: 'Measure and frame first, then execute.', B: 'Ship a fast prototype, then refine.' },
         { A: 'Go deep on one stack.', B: 'Keep a wide technology perimeter.' },
@@ -131,7 +131,7 @@
     },
     es: {
       kicker: 'Atlas de talento profesional · Rybezh',
-      start: 'Iniciar escaneo',
+      start: 'Iniciar test',
       again: 'Repetir',
       stepCards: 'Paso 1 — tarjetas de decisión',
       stepQuiz: 'Paso 2 — calibración',
@@ -149,7 +149,7 @@
       rolesTitle: 'Roles de ejemplo en el nicho',
       copySummary: 'Copiar resumen breve',
       copied: 'Copiado',
-      disclosure: 'Brújula educativa, no test psicométrico ni señal de contratación. Nada se envía al servidor.',
+      disclosure: 'Privacidad: las respuestas se guardan solo en tu navegador. Es una herramienta de reflexión y orientación profesional, no un diagnóstico psicológico o médico.',
       cards: [
         { A: 'Medir y encuadrar primero, luego ejecutar.', B: 'Lanzar prototipo rápido y luego refinar.' },
         { A: 'Profundizar en un stack.', B: 'Mantener un perímetro tecnológico amplio.' },
@@ -165,7 +165,7 @@
     },
     ru: {
       kicker: 'Карьерный атлас талантов · Rybezh',
-      start: 'Начать сканирование',
+      start: 'Начать тест',
       again: 'Пройти снова',
       stepCards: 'Шаг 1 — карточки выбора',
       stepQuiz: 'Шаг 2 — калибровка',
@@ -183,7 +183,7 @@
       rolesTitle: 'Примеры ролей в нише',
       copySummary: 'Копировать краткое резюме',
       copied: 'Скопировано',
-      disclosure: 'Учебный компас, не психометрический тест и не сигнал найма. Данные не отправляются на сервер.',
+      disclosure: 'Приватность: ответы хранятся только локально в браузере. Это инструмент рефлексии и карьерной навигации, а не медицинская или психологическая диагностика.',
       cards: [
         { A: 'Сначала измерить и структурировать, потом действовать.', B: 'Сначала быстрый прототип, потом уточнение.' },
         { A: 'Глубоко в один стек.', B: 'Широкий периметр технологий.' },
