@@ -183,6 +183,9 @@ main {
     gap: 14px;
     flex-shrink: 0;
     margin-left: auto;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-width: 0;
 }
 
 .main-nav a,
@@ -232,6 +235,60 @@ a.breadcrumb__item:focus-visible,
     flex: 1 1 200px;
     min-width: 140px;
     max-width: 320px;
+}
+
+@media (max-width: 1240px) {
+    .header-container {
+        flex-wrap: wrap;
+        row-gap: 10px;
+        align-items: center;
+    }
+
+    .site-search {
+        order: 6;
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .header-end {
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+    }
+}
+
+/* Cross-page readability hardening */
+h1, h2, h3, h4,
+.hero-copy h1,
+.profile-info h1,
+.profile-info h2,
+.card h3,
+.info-card h3,
+.footer-section h4 {
+    overflow-wrap: anywhere;
+}
+
+p,
+li,
+.card-body p,
+.profile-meta,
+.footer-note {
+    overflow-wrap: break-word;
+}
+
+table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+pre,
+code {
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .site-search__wrap {
