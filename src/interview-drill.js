@@ -135,7 +135,10 @@
       coachHintMcq: 'Обирайте варіант із діями, метриками й планом відкату.',
       coachHintOpen: 'Структура STAR: ситуація → задача → дія → результат (з цифрами, де можливо).',
       coachHintSteady: 'Можна розгорнути думку, але тримайте видиму структуру абзаців.',
-      coachHintPressure: 'Коротші абзаци; явно фіксуйте ризики в кожній відповіді.'
+      coachHintPressure: 'Коротші абзаци; явно фіксуйте ризики в кожній відповіді.',
+      hintKbd:
+        'Підказка: стрілки <kbd>←</kbd> / <kbd>→</kbd> перемикають пакети, коли фокус не в полі вводу.',
+      hintTouch: 'Підказка: перемикайте пакети кнопками внизу екрана.'
     },
     en: {
       notes: 'Draft notes',
@@ -167,7 +170,9 @@
       coachHintMcq: 'Favor options with concrete actions, metrics, and rollback plans.',
       coachHintOpen: 'Use STAR (Situation → Task → Action → Result) with numbers where possible.',
       coachHintSteady: 'Allow fuller reasoning but keep a visible outline.',
-      coachHintPressure: 'Answer in shorter paragraphs; surface risks explicitly.'
+      coachHintPressure: 'Answer in shorter paragraphs; surface risks explicitly.',
+      hintKbd: 'Tip: <kbd>←</kbd> / <kbd>→</kbd> switch batches when focus is not in a field.',
+      hintTouch: 'Tip: use the buttons at the bottom to switch batches.'
     },
     es: {
       notes: 'Notas de respuesta',
@@ -199,7 +204,10 @@
       coachHintMcq: 'Busque acciones concretas, métricas y planes de reversión.',
       coachHintOpen: 'Estructure con STAR (Situación → Tarea → Acción → Resultado) y cifras si puede.',
       coachHintSteady: 'Puede desarrollar más, pero mantenga una estructura visible.',
-      coachHintPressure: 'Responda en párrafos más cortos y nombre riesgos con claridad.'
+      coachHintPressure: 'Responda en párrafos más cortos y nombre riesgos con claridad.',
+      hintKbd:
+        'Consejo: <kbd>←</kbd> / <kbd>→</kbd> cambian de lote cuando el foco no está en un campo.',
+      hintTouch: 'Consejo: cambia de lote con los botones inferiores.'
     },
     ru: {
       notes: 'Заметки к ответу',
@@ -231,7 +239,10 @@
       coachHintMcq: 'Ищите вариант с действиями, метриками и планом отката.',
       coachHintOpen: 'Структура STAR — ситуация, задача, действие, результат с цифрами, где уместно.',
       coachHintSteady: 'Можно развернуть мысль, но держите структуру.',
-      coachHintPressure: 'Короче абзацы, явно фиксируйте риски.'
+      coachHintPressure: 'Короче абзацы, явно фиксируйте риски.',
+      hintKbd:
+        'Подсказка: <kbd>←</kbd> / <kbd>→</kbd> переключают пакеты, когда фокус не в поле ввода.',
+      hintTouch: 'Подсказка: переключайте пакеты кнопками внизу экрана.'
     }
   };
 
@@ -645,6 +656,24 @@
           : lang === 'ru'
             ? 'Случайный пакет'
             : 'Випадковий пакет';
+  }
+
+  const hintEl = root.querySelector('[data-iv-hint]');
+  function applyPackHint() {
+    if (!hintEl) return;
+    const coarse = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (coarse) {
+      hintEl.textContent = ui.hintTouch;
+    } else {
+      hintEl.innerHTML = ui.hintKbd;
+    }
+  }
+  applyPackHint();
+  const coarseMq = window.matchMedia('(hover: none) and (pointer: coarse)');
+  if (typeof coarseMq.addEventListener === 'function') {
+    coarseMq.addEventListener('change', applyPackHint);
+  } else if (typeof coarseMq.addListener === 'function') {
+    coarseMq.addListener(applyPackHint);
   }
 
   updateDiffSnap();
