@@ -2,70 +2,93 @@
   const root = document.querySelector('[data-interview-drill]');
   if (!root || root.querySelector('[data-calling-lab]')) return;
   const lang = (document.documentElement.getAttribute('lang') || 'uk').slice(0, 2);
-  const i18n = {
-    en: { title: 'Calling Lab', start: 'Start discovery test', practice: 'Practice interview instead', subtitle: 'Find your professional direction in 10–15 minutes. Stored only in your browser.', privacy: 'Private by design: answers stay in localStorage. No server-side answer logging.' },
-    uk: { title: 'Лабораторія покликання', start: 'Почати тест', practice: 'Практикувати інтерв’ю', subtitle: 'Знайдіть професійний напрям за 10–15 хвилин. Дані зберігаються лише у вашому браузері.', privacy: 'Приватність: відповіді зберігаються локально. Сервер не отримує ваші відповіді.' },
-    es: { title: 'Laboratorio de Vocación', start: 'Iniciar test', practice: 'Practicar entrevista', subtitle: 'Encuentra tu dirección profesional en 10–15 minutos. Guardado solo en tu navegador.', privacy: 'Privacidad: respuestas guardadas localmente. No hay registro de respuestas en servidor.' },
-    ru: { title: 'Лаборатория призвания', start: 'Начать тест', practice: 'Практиковать интервью', subtitle: 'Найдите профессиональное направление за 10–15 минут. Хранится только в браузере.', privacy: 'Приватность: ответы хранятся локально. Сервер не логирует ответы.' }
+
+  const copy = {
+    en: {
+      badge: 'Career intelligence studio', title: 'Calling Lab', subtitle: 'A guided discovery experience for career direction, strengths, work style, and industry fit.',
+      privacy: 'Private by design: answers are saved in your browser only.', start: 'Start lab', resume: 'Continue saved session', reset: 'Reset',
+      practice: 'Open interview practice', back: 'Back', next: 'Next question', finish: 'View results', progress: 'Progress',
+      modes: { quick: 'Quick scan · 8', deep: 'Deep profile · 18', pivot: 'Career pivot · 12', founder: 'Founder/operator · 14' },
+      dimensions: ['Autonomy','Execution','Creativity','Analysis','Leadership','Collaboration','Risk'],
+      archetypes: { architect:'Systems Architect', operator:'Execution Operator', explorer:'Creative Explorer', catalyst:'Team Catalyst' },
+      summary: 'Top career fits', industry: 'Suggested industries', saved: 'Session saved locally',
+    },
+    uk: {
+      badge: 'Карʼєрна intelligence-студія', title: 'Лабораторія покликання', subtitle: 'Інтерактивна діагностика карʼєрного напряму, сильних сторін, стилю роботи та відповідних індустрій.',
+      privacy: 'Приватність: відповіді зберігаються лише у вашому браузері.', start: 'Почати лаб', resume: 'Продовжити збережене', reset: 'Скинути',
+      practice: 'Відкрити тренажер співбесіди', back: 'Назад', next: 'Далі', finish: 'До результату', progress: 'Прогрес',
+      modes: { quick: 'Швидкий скан · 8', deep: 'Глибокий профіль · 18', pivot: 'Карʼєрний півот · 12', founder: 'Фаундер/оператор · 14' },
+      dimensions: ['Автономія','Виконання','Креативність','Аналіз','Лідерство','Співпраця','Ризик'],
+      archetypes: { architect:'Архітектор систем', operator:'Оператор виконання', explorer:'Креативний дослідник', catalyst:'Командний каталізатор' },
+      summary: 'Найкращі траєкторії', industry: 'Рекомендовані індустрії', saved: 'Сесію збережено локально',
+    },
+    es: {
+      badge: 'Estudio de inteligencia profesional', title: 'Laboratorio de Vocación', subtitle: 'Descubre dirección profesional, fortalezas, estilo de trabajo e industrias adecuadas.',
+      privacy: 'Privacidad: las respuestas se guardan solo en tu navegador.', start: 'Iniciar laboratorio', resume: 'Continuar sesión', reset: 'Reiniciar',
+      practice: 'Abrir práctica de entrevista', back: 'Atrás', next: 'Siguiente', finish: 'Ver resultados', progress: 'Progreso',
+      modes: { quick: 'Escaneo rápido · 8', deep: 'Perfil profundo · 18', pivot: 'Cambio de carrera · 12', founder: 'Founder/operator · 14' },
+      dimensions: ['Autonomía','Ejecución','Creatividad','Análisis','Liderazgo','Colaboración','Riesgo'],
+      archetypes: { architect:'Arquitecto de Sistemas', operator:'Operador de Ejecución', explorer:'Explorador Creativo', catalyst:'Catalizador de Equipo' },
+      summary: 'Rutas recomendadas', industry: 'Industrias sugeridas', saved: 'Sesión guardada localmente',
+    },
+    ru: {
+      badge: 'Студия карьерной аналитики', title: 'Лаборатория призвания', subtitle: 'Интерактивный разбор карьерного направления, сильных сторон, стиля работы и подходящих индустрий.',
+      privacy: 'Приватность: ответы сохраняются только в браузере.', start: 'Начать лабораторию', resume: 'Продолжить сессию', reset: 'Сбросить',
+      practice: 'Открыть тренажёр интервью', back: 'Назад', next: 'Далее', finish: 'К результатам', progress: 'Прогресс',
+      modes: { quick: 'Быстрый скан · 8', deep: 'Глубокий профиль · 18', pivot: 'Карьерный поворот · 12', founder: 'Фаундер/оператор · 14' },
+      dimensions: ['Автономия','Исполнение','Креативность','Аналитика','Лидерство','Сотрудничество','Риск'],
+      archetypes: { architect:'Архитектор систем', operator:'Оператор исполнения', explorer:'Креативный исследователь', catalyst:'Командный катализатор' },
+      summary: 'Лучшие направления', industry: 'Рекомендованные индустрии', saved: 'Сессия сохранена локально',
+    }
   };
-  const t = i18n[lang] || i18n.en;
-  const modes = [{ id: 'quick', label: 'Quick · 12', q: 12 }, { id: 'deep', label: 'Deep · 36', q: 36 }, { id: 'stress', label: 'Stress · 18', q: 18 }, { id: 'founder', label: 'Founder/Operator · 16', q: 16 }];
-  const questions = Array.from({ length: 40 }).map((_, i) => ({
-    q: ['You have an unstructured challenge. What do you do first?', 'Which environment is best for your growth?', 'What motivates you most in work?'][i % 3],
-    a: [
-      { t: 'Design a novel approach', w: [2, 0, 2, 1, 1, 0, 1, 1, 1, 1, 0, 2] },
-      { t: 'Map systems and constraints', w: [1, 2, 0, 2, 0, 2, 0, 2, 0, 1, 1, 1] },
-      { t: 'Stabilize execution and delivery', w: [0, 2, 0, 1, 2, 2, 1, 0, 0, 1, 1, 0] }
-    ]
-  }));
-  const dims = ['autonomy', 'stability', 'creativity', 'analytical', 'leadership', 'operations', 'communication', 'technical', 'risk', 'impact', 'income', 'learning'];
-  const archetypes = ['Builder', 'Operator', 'Analyst', 'Researcher', 'Communicator', 'Founder', 'Systems thinker', 'Creative strategist', 'Field executor', 'Service leader'];
+  const t = copy[lang] || copy.en;
+  const modes = [
+    { id: 'quick', total: 8 }, { id: 'deep', total: 18 }, { id: 'pivot', total: 12 }, { id: 'founder', total: 14 }
+  ];
+  const banks = [
+    { q:['You inherit a messy project. Your first move?','Un proyecto desordenado: primer paso?','Вам дістався хаотичний проєкт. Перша дія?','Вам достался хаотичный проект. Первый шаг?'], a:[['Map dependencies + risks',[2,2,0,2,0,1,0]],['Talk to users and reframe goal',[1,0,1,1,1,2,1]],['Ship fast and iterate',[1,2,1,0,1,0,2]]] },
+    { q:['What energizes you most?','Qué te energiza más?','Що вас найбільше заряджає?','Что вас больше всего заряжает?'], a:[['Turning ambiguity into systems',[2,1,1,2,0,0,0]],['Running teams toward outcomes',[0,2,0,1,2,2,1]],['Creating original concepts',[1,0,2,1,0,1,1]]] },
+    { q:['Preferred work rhythm?','Ritmo de trabajo preferido?','Бажаний ритм роботи?','Предпочтительный ритм работы?'], a:[['Structured sprints',[1,2,0,1,1,1,0]],['Parallel exploration',[2,0,2,1,0,1,2]],['Client-facing execution',[0,2,1,0,2,2,1]]] },
+  ];
+  const qSet = Array.from({ length: 48 }, (_, i) => banks[i % banks.length]);
+  const KEY='rybezh-calling-lab-v2';
+  let state={mode:'quick',total:8,idx:0,scores:Array(7).fill(0),history:[]};
+  try{ const saved=JSON.parse(localStorage.getItem(KEY)||'null'); if(saved && Array.isArray(saved.scores)) state={...state,...saved}; }catch{}
 
-  root.insertAdjacentHTML('afterbegin', `<section class="calling-lab" data-calling-lab><div class="calling-lab__head"><p class="eyebrow">Rybezh.site</p><h2>${t.title}</h2><p>${t.subtitle}</p><p class="calling-lab__privacy">${t.privacy}</p></div><div class="calling-lab__modes">${modes.map(m => `<button class="btn secondary" data-mode="${m.id}" data-q="${m.q}">${m.label}</button>`).join('')}</div><div class="calling-lab__stage" data-stage><button class="btn" data-start>${t.start}</button> <button class="btn secondary" data-practice>${t.practice}</button></div></section>`);
-  const lab = root.querySelector('[data-calling-lab]');
-  const stage = lab.querySelector('[data-stage]');
-  let total = 12, idx = 0, scores = Array(dims.length).fill(0);
+  root.insertAdjacentHTML('afterbegin', `<section class="calling-lab" data-calling-lab><header class="calling-lab__head"><p class="eyebrow">${t.badge}</p><h2>${t.title}</h2><p>${t.subtitle}</p><p class="calling-lab__privacy">${t.privacy}</p></header><div class="calling-lab__modes">${modes.map(m=>`<button class="btn secondary" data-mode="${m.id}" data-q="${m.total}">${t.modes[m.id]}</button>`).join('')}</div><div class="calling-lab__stage" data-stage></div></section>`);
+  const lab=root.querySelector('[data-calling-lab]'); const stage=lab.querySelector('[data-stage]');
+  const save=()=>localStorage.setItem(KEY, JSON.stringify({...state,updatedAt:Date.now()}));
 
-  lab.querySelectorAll('[data-mode]').forEach((b, i) => b.addEventListener('click', () => {
-    lab.querySelectorAll('[data-mode]').forEach((x) => x.classList.remove('is-active'));
-    b.classList.add('is-active');
-    total = Number(b.dataset.q) || 12;
-    if (i === 0) b.classList.add('is-active');
-  }));
-
-  function renderResult() {
-    const pairs = dims.map((d, i) => [d, scores[i]]).sort((a, b) => b[1] - a[1]);
-    const main = archetypes[pairs[0][0].length % archetypes.length];
-    const second = archetypes[pairs[1][0].length % archetypes.length];
-    const summary = `${t.title}: ${main} / ${second}`;
-    localStorage.setItem('rybezh-calling-lab', JSON.stringify({ total, scores, updatedAt: Date.now() }));
-    stage.innerHTML = `<article class="calling-lab__card"><h3>${summary}</h3><div class="calling-lab__bars">${pairs.slice(0, 8).map(([k, v]) => `<p><span>${k}</span><b style="width:${Math.min(100, v * 5)}%"></b></p>`).join('')}</div><p>7-day action plan: write your strengths, run one micro-project, and interview two people from your target role.</p><div class="calling-lab__controls"><button class="btn" data-copy>Copy result</button><button class="btn secondary" data-share>Share result</button><button class="btn secondary" data-restart>Restart</button></div></article>`;
-    stage.querySelector('[data-copy]').addEventListener('click', () => navigator.clipboard?.writeText(summary));
-    stage.querySelector('[data-share]').addEventListener('click', () => navigator.share?.({ title: t.title, text: summary }));
-    stage.querySelector('[data-restart]').addEventListener('click', () => location.reload());
+  function archetype(){ const [a,b]=state.scores.map((v,i)=>[i,v]).sort((x,y)=>y[1]-x[1]); return (a[0]===0||a[0]===3)?t.archetypes.architect:(a[0]===1||a[0]===4)?t.archetypes.operator:(a[0]===2)?t.archetypes.explorer:t.archetypes.catalyst; }
+  function renderStart(){
+    stage.innerHTML=`<div class="calling-lab__controls"><button class="btn" data-start>${t.start}</button><button class="btn secondary" data-resume ${state.idx? '':'disabled'}>${t.resume}</button><button class="btn secondary" data-reset>${t.reset}</button><button class="btn secondary" data-practice>${t.practice}</button></div><p class="calling-lab__saved">${t.saved}</p>`;
+    stage.querySelector('[data-start]').onclick=()=>{state.idx=0;state.scores=Array(7).fill(0);state.history=[];renderQuestion();};
+    stage.querySelector('[data-resume]').onclick=()=>renderQuestion();
+    stage.querySelector('[data-reset]').onclick=()=>{localStorage.removeItem(KEY);state.idx=0;state.scores=Array(7).fill(0);state.history=[];renderStart();};
+    stage.querySelector('[data-practice]').onclick=()=>document.querySelector('[data-iv-feed]')?.scrollIntoView({behavior:'smooth'});
   }
-  function renderQuestion() {
-    const pct = Math.round((idx / total) * 100);
-    const item = questions[idx % questions.length];
-    stage.innerHTML = `<div class="calling-lab__progress"><div style="width:${pct}%"></div></div><p>${idx + 1}/${total} · ~${Math.max(1, Math.ceil((total - idx) * 0.75))} min</p><article class="calling-lab__card"><h3>${item.q}</h3><div class="calling-lab__answers"></div></article><div class="calling-lab__controls"><button class="btn secondary" data-back ${idx===0?'disabled':''}>Back</button><button class="btn secondary" data-restart>Restart</button></div>`;
-    const answers = stage.querySelector('.calling-lab__answers');
-    item.a.forEach((opt) => {
-      const btn = document.createElement('button');
-      btn.className = 'btn secondary';
-      btn.textContent = opt.t;
-      btn.addEventListener('click', () => {
-        opt.w.forEach((v, i) => scores[i] += v);
-        idx += 1;
-        if (idx >= total) renderResult(); else renderQuestion();
-      });
-      answers.appendChild(btn);
-    });
-    stage.querySelector('[data-back]').addEventListener('click', () => { if (idx > 0) idx -= 1; renderQuestion(); });
-    stage.querySelector('[data-restart]').addEventListener('click', () => location.reload());
+  function renderQuestion(){
+    const item=qSet[state.idx%qSet.length]; const q=item.q[lang==='es'?1:lang==='uk'?2:lang==='ru'?3:0];
+    const pct=Math.round((state.idx/state.total)*100);
+    stage.innerHTML=`<div class="calling-lab__progress-meta"><span>${t.progress}</span><strong>${state.idx+1}/${state.total}</strong></div><div class="calling-lab__progress"><div style="width:${pct}%"></div></div><article class="calling-lab__card"><h3>${q}</h3><div class="calling-lab__answers"></div></article><div class="calling-lab__controls"><button class="btn secondary" data-back ${state.idx===0?'disabled':''}>${t.back}</button><button class="btn" data-next disabled>${state.idx===state.total-1?t.finish:t.next}</button></div>`;
+    const answers=stage.querySelector('.calling-lab__answers'); let picked=null;
+    item.a.forEach((opt,n)=>{ const b=document.createElement('button'); b.className='btn secondary calling-lab__answer'; b.textContent=opt[0]; b.onclick=()=>{picked=n; answers.querySelectorAll('button').forEach(x=>x.classList.remove('is-active')); b.classList.add('is-active'); stage.querySelector('[data-next]').disabled=false;}; answers.appendChild(b);});
+    stage.querySelector('[data-back]').onclick=()=>{ if(state.idx>0){state.idx-=1; renderQuestion();}};
+    stage.querySelector('[data-next]').onclick=()=>{ if(picked===null)return; const w=item.a[picked][1]; w.forEach((v,i)=>state.scores[i]+=v); state.history[state.idx]=picked; state.idx++; save(); if(state.idx>=state.total) renderResult(); else renderQuestion(); };
   }
-  lab.querySelector('[data-start]').addEventListener('click', renderQuestion);
-  lab.querySelector('[data-practice]').addEventListener('click', () => document.querySelector('[data-iv-feed]')?.scrollIntoView({ behavior: 'smooth' }));
+  function renderResult(){
+    const top=state.scores.map((v,i)=>[t.dimensions[i],v]).sort((a,b)=>b[1]-a[1]);
+    const industries=[top[0][0],top[1][0]].join(' · ');
+    stage.innerHTML=`<article class="calling-lab__card"><h3>${archetype()}</h3><p><strong>${t.summary}:</strong> ${top.slice(0,3).map(x=>x[0]).join(', ')}</p><p><strong>${t.industry}:</strong> ${industries}</p><div class="calling-lab__bars">${top.map(([k,v])=>`<p><span>${k}</span><b style="width:${Math.min(100,v*6)}%"></b><em>${v}</em></p>`).join('')}</div><div class="calling-lab__controls"><button class="btn" data-restart>${t.start}</button><button class="btn secondary" data-share>Share</button></div></article>`;
+    stage.querySelector('[data-restart]').onclick=()=>{state.idx=0;state.scores=Array(7).fill(0);state.history=[];save();renderQuestion();};
+    stage.querySelector('[data-share]').onclick=()=>navigator.share?.({title:t.title,text:`${t.title}: ${archetype()}`});
+  }
+
+  lab.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{ lab.querySelectorAll('[data-mode]').forEach(x=>x.classList.remove('is-active')); btn.classList.add('is-active'); state.mode=btn.dataset.mode; state.total=Number(btn.dataset.q)||8; save(); });
+  lab.querySelector(`[data-mode="${state.mode}"]`)?.classList.add('is-active');
+  renderStart();
 })();
+
 (function () {
   'use strict';
 

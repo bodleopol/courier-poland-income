@@ -6679,3 +6679,55 @@ body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-path-card_
 .btn:active{transform:translateY(0)}
 .directory-card-actions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
 @media (max-width:700px){.calling-lab__bars p{grid-template-columns:1fr}.header-container{gap:10px}}
+
+/* 2026 premium redesign layer */
+:root {
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+main { padding-top: 34px; }
+.intel-dash-hero, .home-hero-v2 {
+  border-radius: var(--radius-xl);
+  border: 1px solid color-mix(in srgb, var(--line) 70%, #c7d2fe);
+  box-shadow: 0 14px 50px rgba(2, 6, 23, 0.08);
+}
+.section-intro p { max-width: 72ch; color: var(--muted); }
+.btn { border-radius: 999px; padding: 11px 17px; font-weight: 700; transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(30,58,138,.17); }
+.btn:active { transform: translateY(0); }
+.profile-card, .startup-card, .info-card, .home-surface-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--line) 85%, #cbd5e1);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+.profile-card:hover, .startup-card:hover { transform: translateY(-5px) scale(1.01); }
+.site-search__input { border-radius: 999px; min-height: 44px; }
+.site-search__panel { border-radius: 16px; box-shadow: 0 16px 40px rgba(15,23,42,.12); }
+.dynamic-filters .filter-btn { border-radius: 999px; font-weight: 700; }
+.dynamic-filters .filter-btn.active { box-shadow: inset 0 0 0 1px rgba(255,255,255,.5), 0 8px 24px rgba(37,99,235,.26); }
+
+.calling-lab { margin: 28px 0; border: 1px solid var(--line); background: linear-gradient(160deg,#ffffff,#eef5ff); border-radius: 24px; padding: clamp(16px,3vw,28px); box-shadow: 0 20px 50px rgba(15,23,42,.08); }
+.calling-lab__head p { max-width: 70ch; }
+.calling-lab__modes { display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 16px; }
+.calling-lab__stage { display:grid; gap:14px; }
+.calling-lab__progress { height:10px; border-radius:999px; background:#dbeafe; overflow:hidden; }
+.calling-lab__progress > div { height:100%; background:linear-gradient(90deg,#2563eb,#14b8a6); transition:width .35s ease; }
+.calling-lab__progress-meta { display:flex; justify-content:space-between; font-size:.86rem; color:var(--muted); }
+.calling-lab__card { border:1px solid var(--line); border-radius:20px; padding:16px; background:white; }
+.calling-lab__answers { display:grid; gap:10px; margin-top:14px; }
+.calling-lab__answer.is-active { background: color-mix(in srgb, var(--brand) 12%, white); border-color: color-mix(in srgb, var(--brand) 35%, var(--line)); }
+.calling-lab__controls { display:flex; flex-wrap:wrap; gap:10px; }
+.calling-lab__bars p { display:grid; grid-template-columns:minmax(90px,1fr) 4fr auto; gap:8px; align-items:center; margin:8px 0; font-size:.9rem; }
+.calling-lab__bars b { display:block; height:9px; border-radius:999px; background:linear-gradient(90deg,#4f46e5,#22c55e); }
+.calling-lab__saved { margin:0; color:var(--muted); font-size:.85rem; }
+
+@media (max-width: 780px) {
+  .intel-dash-hero { padding: 18px; }
+  .intel-ribbon-nav { gap: 8px; }
+  .intel-ribbon-nav a { min-width: calc(50% - 6px); }
+  .calling-lab__controls .btn { flex:1 1 46%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .profile-card, .startup-card { transition: none !important; }
+}
