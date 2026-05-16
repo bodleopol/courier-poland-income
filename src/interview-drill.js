@@ -1,4 +1,72 @@
 (function () {
+  const root = document.querySelector('[data-interview-drill]');
+  if (!root || root.querySelector('[data-calling-lab]')) return;
+  const lang = (document.documentElement.getAttribute('lang') || 'uk').slice(0, 2);
+  const i18n = {
+    en: { title: 'Calling Lab', start: 'Start discovery test', practice: 'Practice interview instead', subtitle: 'Find your professional direction in 10–15 minutes. Stored only in your browser.', privacy: 'Private by design: answers stay in localStorage. No server-side answer logging.' },
+    uk: { title: 'Лабораторія покликання', start: 'Почати тест', practice: 'Практикувати інтерв’ю', subtitle: 'Знайдіть професійний напрям за 10–15 хвилин. Дані зберігаються лише у вашому браузері.', privacy: 'Приватність: відповіді зберігаються локально. Сервер не отримує ваші відповіді.' },
+    es: { title: 'Laboratorio de Vocación', start: 'Iniciar test', practice: 'Practicar entrevista', subtitle: 'Encuentra tu dirección profesional en 10–15 minutos. Guardado solo en tu navegador.', privacy: 'Privacidad: respuestas guardadas localmente. No hay registro de respuestas en servidor.' },
+    ru: { title: 'Лаборатория призвания', start: 'Начать тест', practice: 'Практиковать интервью', subtitle: 'Найдите профессиональное направление за 10–15 минут. Хранится только в браузере.', privacy: 'Приватность: ответы хранятся локально. Сервер не логирует ответы.' }
+  };
+  const t = i18n[lang] || i18n.en;
+  const modes = [{ id: 'quick', label: 'Quick · 12', q: 12 }, { id: 'deep', label: 'Deep · 36', q: 36 }, { id: 'stress', label: 'Stress · 18', q: 18 }, { id: 'founder', label: 'Founder/Operator · 16', q: 16 }];
+  const questions = Array.from({ length: 40 }).map((_, i) => ({
+    q: ['You have an unstructured challenge. What do you do first?', 'Which environment is best for your growth?', 'What motivates you most in work?'][i % 3],
+    a: [
+      { t: 'Design a novel approach', w: [2, 0, 2, 1, 1, 0, 1, 1, 1, 1, 0, 2] },
+      { t: 'Map systems and constraints', w: [1, 2, 0, 2, 0, 2, 0, 2, 0, 1, 1, 1] },
+      { t: 'Stabilize execution and delivery', w: [0, 2, 0, 1, 2, 2, 1, 0, 0, 1, 1, 0] }
+    ]
+  }));
+  const dims = ['autonomy', 'stability', 'creativity', 'analytical', 'leadership', 'operations', 'communication', 'technical', 'risk', 'impact', 'income', 'learning'];
+  const archetypes = ['Builder', 'Operator', 'Analyst', 'Researcher', 'Communicator', 'Founder', 'Systems thinker', 'Creative strategist', 'Field executor', 'Service leader'];
+
+  root.insertAdjacentHTML('afterbegin', `<section class="calling-lab" data-calling-lab><div class="calling-lab__head"><p class="eyebrow">Rybezh.site</p><h2>${t.title}</h2><p>${t.subtitle}</p><p class="calling-lab__privacy">${t.privacy}</p></div><div class="calling-lab__modes">${modes.map(m => `<button class="btn secondary" data-mode="${m.id}" data-q="${m.q}">${m.label}</button>`).join('')}</div><div class="calling-lab__stage" data-stage><button class="btn" data-start>${t.start}</button> <button class="btn secondary" data-practice>${t.practice}</button></div></section>`);
+  const lab = root.querySelector('[data-calling-lab]');
+  const stage = lab.querySelector('[data-stage]');
+  let total = 12, idx = 0, scores = Array(dims.length).fill(0);
+
+  lab.querySelectorAll('[data-mode]').forEach((b, i) => b.addEventListener('click', () => {
+    lab.querySelectorAll('[data-mode]').forEach((x) => x.classList.remove('is-active'));
+    b.classList.add('is-active');
+    total = Number(b.dataset.q) || 12;
+    if (i === 0) b.classList.add('is-active');
+  }));
+
+  function renderResult() {
+    const pairs = dims.map((d, i) => [d, scores[i]]).sort((a, b) => b[1] - a[1]);
+    const main = archetypes[pairs[0][0].length % archetypes.length];
+    const second = archetypes[pairs[1][0].length % archetypes.length];
+    const summary = `${t.title}: ${main} / ${second}`;
+    localStorage.setItem('rybezh-calling-lab', JSON.stringify({ total, scores, updatedAt: Date.now() }));
+    stage.innerHTML = `<article class="calling-lab__card"><h3>${summary}</h3><div class="calling-lab__bars">${pairs.slice(0, 8).map(([k, v]) => `<p><span>${k}</span><b style="width:${Math.min(100, v * 5)}%"></b></p>`).join('')}</div><p>7-day action plan: write your strengths, run one micro-project, and interview two people from your target role.</p><div class="calling-lab__controls"><button class="btn" data-copy>Copy result</button><button class="btn secondary" data-share>Share result</button><button class="btn secondary" data-restart>Restart</button></div></article>`;
+    stage.querySelector('[data-copy]').addEventListener('click', () => navigator.clipboard?.writeText(summary));
+    stage.querySelector('[data-share]').addEventListener('click', () => navigator.share?.({ title: t.title, text: summary }));
+    stage.querySelector('[data-restart]').addEventListener('click', () => location.reload());
+  }
+  function renderQuestion() {
+    const pct = Math.round((idx / total) * 100);
+    const item = questions[idx % questions.length];
+    stage.innerHTML = `<div class="calling-lab__progress"><div style="width:${pct}%"></div></div><p>${idx + 1}/${total} · ~${Math.max(1, Math.ceil((total - idx) * 0.75))} min</p><article class="calling-lab__card"><h3>${item.q}</h3><div class="calling-lab__answers"></div></article><div class="calling-lab__controls"><button class="btn secondary" data-back ${idx===0?'disabled':''}>Back</button><button class="btn secondary" data-restart>Restart</button></div>`;
+    const answers = stage.querySelector('.calling-lab__answers');
+    item.a.forEach((opt) => {
+      const btn = document.createElement('button');
+      btn.className = 'btn secondary';
+      btn.textContent = opt.t;
+      btn.addEventListener('click', () => {
+        opt.w.forEach((v, i) => scores[i] += v);
+        idx += 1;
+        if (idx >= total) renderResult(); else renderQuestion();
+      });
+      answers.appendChild(btn);
+    });
+    stage.querySelector('[data-back]').addEventListener('click', () => { if (idx > 0) idx -= 1; renderQuestion(); });
+    stage.querySelector('[data-restart]').addEventListener('click', () => location.reload());
+  }
+  lab.querySelector('[data-start]').addEventListener('click', renderQuestion);
+  lab.querySelector('[data-practice]').addEventListener('click', () => document.querySelector('[data-iv-feed]')?.scrollIntoView({ behavior: 'smooth' }));
+})();
+(function () {
   'use strict';
 
   const root = document.querySelector('[data-interview-drill]');

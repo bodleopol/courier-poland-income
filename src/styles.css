@@ -6660,3 +6660,22 @@ body[data-theme='light'] .page-article.doc-career-talent-atlas .talas-path-card_
 .btn:hover { transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.calling-lab{margin:1.2rem 0 2rem;padding:1.2rem;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+.calling-lab__modes{display:flex;flex-wrap:wrap;gap:.5rem;margin:.9rem 0}
+.calling-lab__modes .is-active{background:var(--brand);color:#fff;border-color:transparent}
+.calling-lab__privacy{font-size:.9rem;color:var(--muted)}
+.calling-lab__card{border:1px solid var(--line);border-radius:14px;padding:1rem;background:var(--surface-muted)}
+.calling-lab__answers{display:grid;gap:.6rem;margin-top:.8rem}
+.calling-lab__controls{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+.calling-lab__progress{height:8px;background:var(--surface-strong);border-radius:999px;overflow:hidden;margin:.6rem 0}
+.calling-lab__progress>div{height:100%;background:linear-gradient(90deg,var(--brand),var(--accent))}
+.calling-lab__bars p{display:grid;grid-template-columns:150px 1fr;gap:.5rem;align-items:center}
+.calling-lab__bars b{display:block;height:8px;background:var(--brand);border-radius:99px}
+
+.site-header .main-nav a{padding:8px 10px}
+.btn{transition:all .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.directory-card-actions{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+@media (max-width:700px){.calling-lab__bars p{grid-template-columns:1fr}.header-container{gap:10px}}

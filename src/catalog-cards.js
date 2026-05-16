@@ -12,7 +12,8 @@
       shareWhatsapp: b.dataset.catalogShareWhatsapp || 'WhatsApp',
       shareNative: b.dataset.catalogShareNative || 'Share…',
       galleryHeading: b.dataset.catalogGalleryHeading || 'Photos',
-      readProfile: b.dataset.catalogReadProfile || 'Read profile'
+      readProfile: b.dataset.catalogReadProfile || 'Read profile',
+      readStartup: b.dataset.catalogReadStartup || 'Read startup'
     };
   }
 
@@ -132,7 +133,8 @@
         if (!te) {
           te = document.createElement('p');
           te.className = 'card-teaser';
-          const raw = longBits || meta?.textContent.trim() || '';
+          let raw = longBits || meta?.textContent.trim() || '';
+          raw = raw.replace(/\bTech platform\b/gi, 'AI infrastructure company').replace(/\bcomputing systems\b/gi, 'intelligent systems');
           te.textContent = truncateTeaser(raw, card.classList.contains('startup-card') ? 148 : 132);
           if (meta) meta.after(te);
           else body.querySelector('h3')?.after(te);
@@ -142,7 +144,7 @@
 
         if (body.querySelector('.directory-card-actions')) {
           const readExisting = body.querySelector('.directory-card-actions .btn[href]');
-          if (readExisting) readExisting.textContent = t.readProfile;
+          if (readExisting) readExisting.textContent = card.classList.contains('startup-card') ? t.readStartup : t.readProfile;
           return;
         }
         const btn = body.querySelector('.btn[href]');
@@ -150,7 +152,7 @@
         const wrap = document.createElement('div');
         wrap.className = 'directory-card-actions';
         const read = btn.cloneNode(true);
-        read.textContent = t.readProfile;
+        read.textContent = card.classList.contains('startup-card') ? t.readStartup : t.readProfile;
         btn.replaceWith(wrap);
         wrap.appendChild(read);
         const title = body.querySelector('h3')?.textContent?.trim() || '';
