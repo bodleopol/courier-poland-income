@@ -906,6 +906,13 @@ try {
 }
 
 try {
+  execSync('node scripts/emit-bulk-catalog-pages.mjs', { stdio: 'inherit', cwd: path.resolve() });
+} catch (e) {
+  console.error('emit-bulk-catalog-pages failed:', e.message);
+  process.exit(1);
+}
+
+try {
   execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit', cwd: path.resolve() });
 } catch (e) {
   console.error('emit-site-search-index failed:', e.message);
