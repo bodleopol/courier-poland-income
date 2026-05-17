@@ -47,6 +47,3 @@ Thumbs.db
 # Replit
 .cache/
 .local/
-
-# Bulk catalogue inject fragments (recreated by generate-bulk-directory.mjs; removed after node build.js)
-src/generated/
