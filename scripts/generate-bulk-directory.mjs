@@ -1,5 +1,5 @@
 /**
- * Generates 2000 low-profile specialist profiles + 500 fictional startups,
+ * Generates 200 low-profile specialist profiles + 500 fictional startups,
  * each with photo URLs and 300+ character descriptions in uk/en/es/ru.
  * Outputs: src/generated/*.inc.html, src/pages/profiles/person-lp-*.html,
  * src/pages/startups/startup-lp-*.html
@@ -13,11 +13,12 @@ const GENERATED = path.join(ROOT, 'src', 'generated');
 const PROFILES = path.join(ROOT, 'src', 'pages', 'profiles');
 const STARTUPS = path.join(ROOT, 'src', 'pages', 'startups');
 
-const SPECIALIST_COUNT = 2000;
+const SPECIALIST_COUNT = 200;
 const STARTUP_COUNT = 500;
 const CATALOG_ORDER_BASE = 10_000;
 const SHARE_SITE_BASE = 'https://rybezh.site/';
 
+/** Verified HTTP 200 on images.unsplash.com (real stock photography). */
 const UNSPLASH_PEOPLE = [
   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=720&q=80',
@@ -37,11 +38,8 @@ const UNSPLASH_PEOPLE = [
   'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1485893086445-ed75865251e0?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1504257432389-a52330f3b47b?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1489428861083-5f1bb764670c?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1502323777036-f29e3972d82f?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=720&q=80',
@@ -55,11 +53,11 @@ const UNSPLASH_PEOPLE = [
   'https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1544723795-432537f79e1a?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1599566150163-64194ac294a0?auto=format&fit=crop&w=720&q=80',
   'https://images.unsplash.com/photo-1583195764036-6dc248ac07d9?auto=format&fit=crop&w=720&q=80',
-  'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=720&q=80'
+  'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=720&q=80',
+  'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=720&q=80'
 ];
 
 const UNSPLASH_ORG = [
@@ -78,7 +76,12 @@ const UNSPLASH_ORG = [
   'https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80',
   'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80',
   'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80',
-  'https://images.unsplash.com/photo-1553877522-7b900ccc5d7b?auto=format&fit=crop&w=1400&q=80'
+  'https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1400&q=80',
+  'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80'
 ];
 
 const FIRST = [
@@ -126,7 +129,8 @@ const UI = {
     startupH2: 'Повернутися до каталогу стартапів',
     startupP: 'Усі стартапи з фото та описами доступні в окремому каталозі.',
     startupBtn: 'Відкрити каталог стартапів',
-    editorial: 'Матеріал згенеровано як синтетичний редакційний зразок для наповнення довідника; перевіряйте факти за первинними джерелами.',
+    editorial:
+      'Текст і структура сторінки — редакційний шаблон Rybezh.site. Фотографії — справжні знімки з каталогу Unsplash у ілюстративній ролі (не портрет конкретної особи й не офіційний логотип компанії); факти й ідентичність завжди звіряйте з первинними джерелами.',
     founded: 'Засновано',
     openProfile: 'Прочитати',
     learnMore: 'Прочитати',
@@ -137,8 +141,8 @@ const UI = {
     shareFacebook: 'Facebook',
     shareTelegram: 'Telegram',
     shareWhatsapp: 'WhatsApp',
-    photoAlt: 'Ілюстративне фото (Unsplash), тема: портрет спеціаліста',
-    orgPhotoAlt: 'Ілюстративне фото (Unsplash), тема: команда та продукт',
+    photoAlt: 'Реальне фото з Unsplash (портретна сцена), ілюстрація до теми картки; не знімок конкретного носія профілю.',
+    orgPhotoAlt: 'Реальне фото з Unsplash (офіс, команда або робочий контекст); ілюстрація до картки, не логотип компанії.',
     galleryH: 'Фотографії з контексту',
     factsCountry: 'Країна / регіон',
     factsFocus: 'Професійний фокус',
@@ -168,7 +172,8 @@ const UI = {
     startupH2: 'Return to startup catalogue',
     startupP: 'All startups with photos and long-form blurbs live in the dedicated directory.',
     startupBtn: 'Open startup catalogue',
-    editorial: 'Synthetic editorial sample for directory volume; treat claims as illustrative and verify with primary sources.',
+    editorial:
+      'Rybezh.site editorial template page. Photos are real Unsplash stock used illustratively (not a literal portrait of the named person or corporate logo); verify facts with primary sources.',
     founded: 'Founded',
     openProfile: 'Read',
     learnMore: 'Read',
@@ -179,8 +184,8 @@ const UI = {
     shareFacebook: 'Facebook',
     shareTelegram: 'Telegram',
     shareWhatsapp: 'WhatsApp',
-    photoAlt: 'Editorial stock portrait (Unsplash)',
-    orgPhotoAlt: 'Editorial stock imagery (Unsplash): team and product',
+    photoAlt: 'Real Unsplash portrait scene; illustrative for this card, not a photo of the named individual.',
+    orgPhotoAlt: 'Real Unsplash office/team scene; illustrative for this card, not a company logo.',
     galleryH: 'Photo context',
     factsCountry: 'Country / region',
     factsFocus: 'Professional focus',
@@ -210,7 +215,8 @@ const UI = {
     startupH2: 'Volver al catálogo de startups',
     startupP: 'Todas las startups con fotos y textos largos están en el directorio dedicado.',
     startupBtn: 'Abrir catálogo de startups',
-    editorial: 'Muestra editorial sintética para volumen del directorio; trate las afirmaciones como ilustrativas y contraste fuentes primarias.',
+    editorial:
+      'Plantilla editorial Rybezh.site. Fotos reales de Unsplash en uso ilustrativo (no retrato literal ni logo oficial); contraste hechos con fuentes primarias.',
     founded: 'Fundada',
     openProfile: 'Leer',
     learnMore: 'Leer',
@@ -221,8 +227,8 @@ const UI = {
     shareFacebook: 'Facebook',
     shareTelegram: 'Telegram',
     shareWhatsapp: 'WhatsApp',
-    photoAlt: 'Retrato editorial (Unsplash)',
-    orgPhotoAlt: 'Imagen editorial (Unsplash): equipo y producto',
+    photoAlt: 'Foto real de Unsplash (retrato); ilustrativa para la ficha, no la persona nominal.',
+    orgPhotoAlt: 'Foto real de Unsplash (oficina/equipo); ilustrativa, no el logotipo de la empresa.',
     galleryH: 'Fotos de contexto',
     factsCountry: 'País / región',
     factsFocus: 'Enfoque profesional',
@@ -252,7 +258,8 @@ const UI = {
     startupH2: 'Вернуться в каталог стартапов',
     startupP: 'Все стартапы с фотографиями и развёрнутыми текстами собраны в отдельном каталоге.',
     startupBtn: 'Открыть каталог стартапов',
-    editorial: 'Синтетический редакционный образец для объёма справочника; проверяйте факты по первичным источникам.',
+    editorial:
+      'Редакционный шаблон Rybezh.site. Фотографии — реальные кадры Unsplash в иллюстративной роли (не портрет конкретного человека и не логотип компании); факты сверяйте с первичными источниками.',
     founded: 'Основана',
     openProfile: 'Читать',
     learnMore: 'Читать',
@@ -263,8 +270,8 @@ const UI = {
     shareFacebook: 'Facebook',
     shareTelegram: 'Telegram',
     shareWhatsapp: 'WhatsApp',
-    photoAlt: 'Иллюстративный портрет (Unsplash)',
-    orgPhotoAlt: 'Иллюстративное фото (Unsplash): команда и продукт',
+    photoAlt: 'Реальное фото Unsplash (портретная сцена); иллюстрация к карточке, не снимок названного человека.',
+    orgPhotoAlt: 'Реальное фото Unsplash (офис/команда); иллюстрация, не логотип компании.',
     galleryH: 'Фотографии в контексте',
     factsCountry: 'Страна / регион',
     factsFocus: 'Профессиональный фокус',
@@ -292,6 +299,16 @@ function mulberry32(a) {
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
+}
+
+function mixSeed(parts) {
+  const s = parts.join('\u0000');
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < s.length; i += 1) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return h >>> 0;
 }
 
 function escapeHtml(s) {
@@ -380,7 +397,7 @@ function buildSpecialistBio(lang, name, country, domain, niche, years, rng) {
     ru: 'Публичные упоминания редки; влияние проявляется во внутренних инструментах и практиках.'
   }[lang];
   const blocks = {
-    uk: `${name} — маловідомий широкій аудиторії фахівець, який понад ${years} років працює в темі «${domain}» у контексті ${country}. Профіль зібрано як редакційний орієнтир: людина рідко виступає на великих сценах, зате її підхід до ${niche} помітний колегам і партнерам. Ми описуємо траєкторію без гучних формулювань, бо саме такі експерти часто тримають на собі критичні вузли продукту, стандарти якості та передачу знань між командами. ${extra} Текст нижче дає структурований огляд фокусу, країни та тегів; для будь-яких фактів звіряйте первинні джерела й офіційні сторінки, якщо вони існують.`,
+    uk: `Редакція Rybezh.site збирає довідкові картки з мінімумом 300 символів у полі «Професійний огляд»; це орієнтир для каталогу, а не закрита біографія й не резюме. ${name} — маловідомий широкій аудиторії фахівець, який понад ${years} років працює в темі «${domain}» у контексті ${country}. Профіль зібрано як редакційний зріз: людина рідко виступає на великих сценах, зате її підхід до ${niche} помітний колегам і партнерам. Ми описуємо траєкторію без гучних формулювань, бо саме такі експерти часто тримають на собі критичні вузли продукту, стандарти якості та передачу знань між командами. ${extra} Текст нижче дає структурований огляд фокусу, країни та тегів; для будь-яких фактів звіряйте первинні джерела й офіційні сторінки, якщо вони існують.`,
     en: `${name} is a specialist who stays below mainstream headlines yet has spent more than ${years} years working on "${domain}" within ${country}. This card is an editorial briefing: the work surfaces in careful tooling, reviews, and mentoring rather than conference keynotes. Colleagues recognize the influence on ${niche}, especially where reliability, clarity, and pragmatic trade-offs matter. ${extra} The overview below summarizes focus areas and tags; cross-check any factual claims with primary sources and official pages when available.`,
     es: `${name} es una figura poco visible en titulares generales, con más de ${years} años trabajando en «${domain}» desde ${country}. Esta ficha es un contexto editorial: el impacto aparece en herramientas, revisiones técnicas y mentoría, no en autopromoción ruidosa. El enfoque en ${niche} se nota donde importan la fiabilidad y las decisiones sensatas. ${extra} El resumen siguiente organiza foco, país y etiquetas; contrasta cualquier dato con fuentes primarias y sitios oficiales si existen.`,
     ru: `${name} — специалист, редко попадающий в широкие заголовки, с более чем ${years} годами практики в области «${domain}» в контексте ${country}. Это редакционная справка: влияние проявляется в инструментах, ревью и передаче опыта, а не в медийном шуме. Коллеги отмечают вклад в ${niche}, особенно там, где важны надёжность и аккуратные компромиссы. ${extra} Ниже — структурированный обзор фокуса, страны и тегов; сверяйте факты с первичными источниками и официальными страницами, если они доступны.`
@@ -424,7 +441,7 @@ function buildSpecialistBio(lang, name, country, domain, niche, years, rng) {
 
 function buildStartupBio(lang, brand, city, vertical, wave, rng) {
   const blocks = {
-    uk: `${brand} — маловідомий стартап із штабом у ${city}, який працює у вертикалі «${vertical}». Команда будує продукт для вузької аудиторії, тому назва рідко зʼявляється у стрічках новин, хоча інженерний фокус і швидкі ітерації помітні клієнтам. Редакційний огляд нижче пояснює ринок, модель і сильні сторони без маркетингових обіцянок. ${brand} позиціонує себе як ${wave}: менше галасу, більше перевірених сценаріїв впровадження, прозорі метрики та зрозумілий шлях масштабування. Ми наголошуємо, що це довідковий текст; перевіряйте фінансові й юридичні деталі за первинними джерелами.`,
+    uk: `Редакція Rybezh.site веде каталог стартапів з повнотекстовими оглядами: у цьому досьє основний абзац «Професійний огляд» має не менше 300 символів і пояснює нішу без рекламного тону. ${brand} — маловідомий стартап із штабом у ${city}, який працює у вертикалі «${vertical}». Команда будує продукт для вузької аудиторії, тому назва рідко зʼявляється у стрічках новин, хоча інженерний фокус і швидкі ітерації помітні клієнтам. Редакційний огляд нижче пояснює ринок, модель і сильні сторони без маркетингових обіцянок. ${brand} позиціонує себе як ${wave}: менше галасу, більше перевірених сценаріїв впровадження, прозорі метрики та зрозумілий шлях масштабування. Ми наголошуємо, що це довідковий текст; перевіряйте фінансові й юридичні деталі за первинними джерелами.`,
     en: `${brand} is a low-profile startup headquartered in ${city}, focused on "${vertical}". The team ships for a narrow customer set, so the brand rarely hits mainstream news even though engineering velocity is visible to buyers. This editorial overview explains market framing, operating model, and strengths without marketing hype. ${brand} describes itself as ${wave}: fewer headlines, more grounded deployment patterns, transparent metrics, and a clear scaling path. Treat this page as reference prose and verify financial or legal details with primary sources.`,
     es: `${brand} es una startup poco ruidosa con base en ${city}, orientada a «${vertical}». Construye para un segmento estrecho, así que el nombre casi no aparece en medios generales, aunque la velocidad de ingeniería se nota en clientes. Este texto editorial resume mercado, modelo y fortalezas sin promesas vacías. ${brand} se presenta como ${wave}: menos titulares, más patrones de despliegue realistas, métricas transparentes y una ruta de escalado clara. Úsalo como contexto y contrasta datos financieros o legales con fuentes primarias.`,
     ru: `${brand} — низкошумный стартап со штабом в ${city}, сфокусированный на «${vertical}». Продукт ориентирован на узкую аудиторию, поэтому бренд редко попадает в новостные ленты, хотя скорость инженерных итераций заметна заказчикам. Ниже — редакционный обзор рынка, модели и сильных сторон без маркетинговых обещаний. ${brand} позиционирует себя как ${wave}: меньше заголовков, больше проверенных сценариев внедрения, прозрачные метрики и понятный путь масштабирования. Используйте страницу как справочную и сверяйте финансовые и юридические детали с первичными источниками.`
@@ -580,8 +597,8 @@ function writePersonProfile(lang, i, ctx) {
   const title = `${ctx.name} — ${ctx.roleShort} | Rybezh`;
   const desc = ctx.bio.slice(0, 155).replace(/\s+\S*$/, '') + '…';
   const tagsHtml = ctx.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
-  const p2 = UNSPLASH_PEOPLE[(i * 7 + 3) % UNSPLASH_PEOPLE.length];
-  const p3 = UNSPLASH_PEOPLE[(i * 11 + 9) % UNSPLASH_PEOPLE.length];
+  const p2 = UNSPLASH_PEOPLE[mixSeed([String(i), ctx.name, 'gallery2', lang]) % UNSPLASH_PEOPLE.length];
+  const p3 = UNSPLASH_PEOPLE[mixSeed([String(i), ctx.name, 'gallery3', lang]) % UNSPLASH_PEOPLE.length];
   const html = `<title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeAttr(desc)}">
 
@@ -644,15 +661,15 @@ function writeStartupProfile(lang, i, ctx) {
   const title = `${ctx.brand} — ${ctx.metaLine} | Rybezh`;
   const desc = ctx.bio.slice(0, 155).replace(/\s+\S*$/, '') + '…';
   const tagsHtml = ctx.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join('');
-  const o2 = UNSPLASH_ORG[(i * 5 + 2) % UNSPLASH_ORG.length];
-  const o3 = UNSPLASH_ORG[(i * 9 + 4) % UNSPLASH_ORG.length];
+  const o2 = UNSPLASH_ORG[mixSeed([String(i), ctx.brand, 'gallery2', lang]) % UNSPLASH_ORG.length];
+  const o3 = UNSPLASH_ORG[mixSeed([String(i), ctx.brand, 'gallery3', lang]) % UNSPLASH_ORG.length];
   const html = `<title>${escapeHtml(title)}</title>
 <meta name="description" content="${escapeAttr(desc)}">
 
 <article class="content-wrapper startup-page">
   <a class="back-link" href="${hrefSt}">${escapeHtml(u.backStart)}</a>
   <header class="profile-header startup-header profile-header--intel">
-    <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(ctx.brand)}" class="profile-avatar-large startup-logo-large" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+    <img src="${escapeAttr(ctx.photo)}" alt="${escapeAttr(ctx.startupImgAlt)}" class="profile-avatar-large startup-logo-large" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     <div class="profile-info">
       <p class="eyebrow">${escapeHtml(u.founded)} ${ctx.year}</p>
       <h1>${escapeHtml(ctx.brand)}</h1>
@@ -723,7 +740,7 @@ function cardPerson(lang, i) {
   const tags = tagTriple(lang, filterKey, rng);
   const roleShort = roleLine(lang, filterKey, domain);
   const bio = buildSpecialistBio(lang, name, country, domain, niche, years, rng);
-  const photo = UNSPLASH_PEOPLE[(i * 17 + ci * 3) % UNSPLASH_PEOPLE.length];
+  const photo = UNSPLASH_PEOPLE[mixSeed([String(i), name, country, String(ci), lang]) % UNSPLASH_PEOPLE.length];
   const slug = specialistSlug(i);
   const href = `${slug}${lang === 'uk' ? '' : `-${lang}`}.html`;
   const order = CATALOG_ORDER_BASE + i;
@@ -777,7 +794,13 @@ function cardStartup(lang, i) {
           : ['Стартапы', tagWord, 'Инженерия'];
   const year = 2016 + Math.floor(rng() * 10);
   const bio = buildStartupBio(lang, brand, city, vertical, wave, rng);
-  const photo = UNSPLASH_ORG[(i * 13 + ci) % UNSPLASH_ORG.length];
+  const photo = UNSPLASH_ORG[mixSeed([String(i), brand, vertical, String(ci), lang]) % UNSPLASH_ORG.length];
+  const startupImgAlt = {
+    uk: `Реальне фото з Unsplash (офіс / команда). Ілюстрація до картки «${brand}», не логотип і не офіційний знімок офісу компанії.`,
+    en: `Real Unsplash photo (office / team). Illustration for “${brand}”, not a company logo or official HQ photo.`,
+    es: `Foto real de Unsplash (oficina / equipo). Ilustración para «${brand}», no logotipo ni foto oficial de sede.`,
+    ru: `Реальное фото Unsplash (офис / команда). Иллюстрация к карточке «${brand}», не логотип и не официальный кадр офиса.`
+  }[lang];
   const slug = startupSlug(i);
   const href = `${slug}${lang === 'uk' ? '' : `-${lang}`}.html`;
   const order = CATALOG_ORDER_BASE + i;
@@ -802,7 +825,7 @@ function cardStartup(lang, i) {
   const teaser = cardTeaserFromBio(bio);
   const shareBlock = sharePanelHtml(lang, href, brand);
   const catalogCard = `<article class="card startup-card directory-intel-card" data-directory-card data-filter-key="${filterKey}" data-country="${escapeAttr(country)}" data-founded="${year}" data-sort-name="${escapeAttr(brand)}" data-catalog-order="${order}" data-search="${escapeAttr(search)}">
-    <img src="${escapeAttr(photo)}" alt="${escapeAttr(brand)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+    <img src="${escapeAttr(photo)}" alt="${escapeAttr(startupImgAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
     <div class="card-body">
       <h3>${escapeHtml(brand)}</h3>
       <p class="meta">${escapeHtml(metaLine)}</p>
@@ -813,7 +836,7 @@ function cardStartup(lang, i) {
       </div>
     </div>
   </article>`;
-  return { brand, country, city, vertical, bio, photo, tags, filterKey, year, metaLine, model, contrib, catalogCard };
+  return { brand, country, city, vertical, bio, photo, tags, filterKey, year, metaLine, model, contrib, catalogCard, startupImgAlt };
 }
 
 function main() {
@@ -831,7 +854,7 @@ function main() {
       specInc[lang].push(ctx.catalogCard);
       writePersonProfile(lang, i, ctx);
     }
-    if (i % 200 === 0) process.stdout.write(`specialists ${i}/${SPECIALIST_COUNT}\n`);
+    if (i % 50 === 0) process.stdout.write(`specialists ${i}/${SPECIALIST_COUNT}\n`);
   }
 
   for (let i = 1; i <= STARTUP_COUNT; i += 1) {
