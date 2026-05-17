@@ -47,3 +47,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Bulk catalogue HTML from scripts/generate-bulk-directory.mjs (recreated by node build.js)
+src/pages/profiles/person-lp-*.html
+src/pages/startups/startup-lp-*.html
