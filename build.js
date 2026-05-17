@@ -41,26 +41,6 @@ function extractImgAlt(tag) {
  * Clearbit logo URLs often return empty or blocked responses without firing img onerror.
  * Swap them for stable Unsplash hero imagery at build time.
  */
-function injectBulkCatalogHtml(html, filename) {
-  const marker = '<!--RYBEZH_BULK_INJECT-->';
-  if (!html.includes(marker)) return html;
-  const base = filename.replace(/-(en|es|ru)\.html$/i, '.html');
-  let lang = 'uk';
-  if (filename.endsWith('-en.html')) lang = 'en';
-  else if (filename.endsWith('-es.html')) lang = 'es';
-  else if (filename.endsWith('-ru.html')) lang = 'ru';
-  let incName = '';
-  if (/^specialists\.html$/i.test(base)) incName = `bulk-specialists-${lang}.inc.html`;
-  else if (/^startups\.html$/i.test(base)) incName = `bulk-startups-${lang}.inc.html`;
-  if (!incName) return html.replaceAll(marker, '');
-  const incPath = path.join(SRC_DIR, 'generated', incName);
-  if (!fs.existsSync(incPath)) return html.replaceAll(marker, '');
-  const bulk = fs.readFileSync(incPath, 'utf8');
-  const withBulk = html.replaceAll(marker, bulk);
-  const totalCards = (withBulk.match(/data-directory-card/g) || []).length;
-  return withBulk.replace(/(<strong\s+data-results-count>)(\d+)(<\/strong>)/i, `$1${totalCards}$3`);
-}
-
 function replaceClearbitLogoImages(html, basename) {
   return html.replace(/<img\b[^>]*\ssrc="https:\/\/logo\.clearbit\.com\/[^"]+"[^>]*>/gi, (full) => {
     if (/images\.unsplash\.com/i.test(full)) return full;
@@ -117,19 +97,6 @@ function minifyAssetIfNeeded(filePath, content) {
   if (filePath.endsWith('.js')) return minifyJs(content);
   return content;
 }
-
-
-function ensureGeneratedCatalogData() {
-  const generatedDir = path.join(SRC_DIR, 'generated');
-  if (!fs.existsSync(generatedDir)) {
-    fs.mkdirSync(generatedDir, { recursive: true });
-  }
-  execSync('node scripts/generate-bulk-directory.mjs', { stdio: 'inherit' });
-  execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit' });
-  execSync('node scripts/emit-career-talent-atlas-data.mjs', { stdio: 'inherit' });
-}
-
-ensureGeneratedCatalogData();
 
 const translations = {
   uk: {
@@ -939,13 +906,6 @@ try {
 }
 
 try {
-  execSync('node scripts/generate-bulk-directory.mjs', { stdio: 'inherit', cwd: path.resolve() });
-} catch (e) {
-  console.error('generate-bulk-directory failed:', e.message);
-  process.exit(1);
-}
-
-try {
   execSync('node scripts/emit-site-search-index.mjs', { stdio: 'inherit', cwd: path.resolve() });
 } catch (e) {
   console.error('emit-site-search-index failed:', e.message);
@@ -1014,7 +974,6 @@ function processPages(srcPath, destPath) {
 
 function compileHTML(srcFile, destFile) {
   let content = fs.readFileSync(srcFile, 'utf8');
-  content = injectBulkCatalogHtml(content, path.basename(srcFile));
 
   // Extract meta tags if they exist in the fragment
   let titleMatch = content.match(/<title>(.*?)<\/title>/i);

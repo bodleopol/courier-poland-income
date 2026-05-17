@@ -5511,8 +5511,7 @@ body[data-theme="dark"] .iv-lab.iv-lab--studio {
   }
 }
 
-/* —— Directory & home listing cards: intelligence tiles (no cover photo) —— */
-.directory-intel-card,
+/* —— Directory & home listing cards (no cover photo) —— */
 [data-directory-grid] > .profile-card,
 [data-directory-grid] > .startup-card,
 #featuredGridMount > .profile-card,
@@ -5530,7 +5529,6 @@ body[data-theme="dark"] .iv-lab.iv-lab--studio {
   border: 1px solid color-mix(in oklab, var(--line) 88%, rgba(99, 102, 241, 0.35));
 }
 
-.directory-intel-card::after,
 [data-directory-grid] > .profile-card::after,
 [data-directory-grid] > .startup-card::after,
 #featuredGridMount > .profile-card::after,
@@ -5549,7 +5547,6 @@ body[data-theme="dark"] .iv-lab.iv-lab--studio {
   mix-blend-mode: soft-light;
 }
 
-.directory-intel-card .card-body,
 [data-directory-grid] > .profile-card .card-body,
 [data-directory-grid] > .startup-card .card-body,
 #featuredGridMount > .profile-card .card-body,

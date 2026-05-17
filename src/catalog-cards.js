@@ -133,13 +133,12 @@
         if (!te) {
           te = document.createElement('p');
           te.className = 'card-teaser';
-          let raw = longBits || meta?.textContent.trim() || '';
-          raw = raw.replace(/\bTech platform\b/gi, 'AI infrastructure company').replace(/\bcomputing systems\b/gi, 'intelligent systems');
+          const raw = longBits || meta?.textContent.trim() || '';
           te.textContent = truncateTeaser(raw, card.classList.contains('startup-card') ? 148 : 132);
           if (meta) meta.after(te);
           else body.querySelector('h3')?.after(te);
         } else {
-          te.textContent = truncateTeaser(te.textContent, 148);
+          te.textContent = truncateTeaser(te.textContent, card.classList.contains('startup-card') ? 148 : 132);
         }
 
         if (body.querySelector('.directory-card-actions')) {
