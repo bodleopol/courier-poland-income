@@ -1,5 +1,5 @@
 /**
- * Generates 2200 low-profile specialist profiles + 500 fictional startups,
+ * Generates 2200 low-profile specialist profiles + 1000 fictional startups,
  * each with photo URLs and 300+ character descriptions in uk/en/es/ru.
  * Outputs: src/generated/*.inc.html, src/pages/profiles/person-lp-*.html,
  * src/pages/startups/startup-lp-*.html
@@ -14,7 +14,7 @@ const PROFILES = path.join(ROOT, 'src', 'pages', 'profiles');
 const STARTUPS = path.join(ROOT, 'src', 'pages', 'startups');
 
 const SPECIALIST_COUNT = 2200;
-const STARTUP_COUNT = 500;
+const STARTUP_COUNT = 1000;
 const CATALOG_ORDER_BASE = 10_000;
 const SHARE_SITE_BASE = 'https://rybezh.site/';
 
