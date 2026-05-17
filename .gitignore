@@ -48,6 +48,5 @@ Thumbs.db
 .cache/
 .local/
 
-# Bulk catalogue HTML from scripts/generate-bulk-directory.mjs (recreated by node build.js)
-src/pages/profiles/person-lp-*.html
-src/pages/startups/startup-lp-*.html
+# Bulk catalogue inject fragments (recreated by generate-bulk-directory.mjs; removed after node build.js)
+src/generated/
