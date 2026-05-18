@@ -1,6 +1,6 @@
 /**
- * Curated Unsplash photography URLs (editorial stock, real camera work).
- * Used by emit-bulk-catalog-pages.mjs — rotate by hash so adjacent dossiers differ.
+ * Curated stock photography URLs (editorial use).
+ * Consumed by emit-bulk-catalog-pages.mjs for stable hero and portrait imagery.
  */
 export const PERSON_PHOTOS = [
   'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=720&q=80',
