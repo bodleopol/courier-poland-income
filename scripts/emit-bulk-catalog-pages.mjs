@@ -10,6 +10,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PERSON_PHOTOS, WORKPLACE_PHOTOS } from './bulk-catalog-photo-pools.mjs';
+import { pickPersonFullName, pickStartupDisplayName } from './bulk-catalog-name-pools.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PROFILES = path.join(ROOT, 'src/pages/profiles');
@@ -69,7 +70,6 @@ const LOCALES = {
       'віддалено',
       'віддалена команда'
     ],
-    personName: (n) => `Учасник екосистеми №${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
         operations: 'Операційний лідер',
@@ -78,7 +78,6 @@ const LOCALES = {
         science: 'Дослідниця / дослідник',
         ceo: 'CEO / співзасновниця'
       })[k],
-    startupName: (n) => `Команда на карті технологій №${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
         software: 'Продуктова платформа',
@@ -144,7 +143,6 @@ const LOCALES = {
       'remote',
       'Remote-first'
     ],
-    personName: (n) => `Ecosystem profile ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
         operations: 'Operations lead',
@@ -153,7 +151,6 @@ const LOCALES = {
         science: 'Research scientist',
         ceo: 'CEO / co-founder'
       })[k],
-    startupName: (n) => `Technology map company ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
         software: 'Product platform',
@@ -219,7 +216,6 @@ const LOCALES = {
       'remoto',
       'equipo remote-first'
     ],
-    personName: (n) => `Perfil del ecosistema ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
         operations: 'Liderazgo de operaciones',
@@ -228,7 +224,6 @@ const LOCALES = {
         science: 'Investigación científica',
         ceo: 'CEO / cofundadora'
       })[k],
-    startupName: (n) => `Empresa en el mapa ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
         software: 'Plataforma de producto',
@@ -294,7 +289,6 @@ const LOCALES = {
       'удаленно',
       'удаленная команда'
     ],
-    personName: (n) => `Участник экосистемы №${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
         operations: 'Операционный лидер',
@@ -303,7 +297,6 @@ const LOCALES = {
         science: 'Исследователь',
         ceo: 'CEO / сооснователь'
       })[k],
-    startupName: (n) => `Команда на карте технологий №${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
         software: 'Продуктовая платформа',
@@ -400,14 +393,13 @@ function pickStartupPhoto(langKey, slug) {
 }
 
 function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
-  const padId = String(n).padStart(5, '0');
   const sig = hash32(`${slug}:${langKey}`);
   const h = (sig >>> 0).toString(16).padStart(8, '0');
   const mix = (arr) => arr[(sig + n) % arr.length];
   if (langKey === 'uk') {
     const v1 = mix([
       'швидкість рішень під навантаженням',
-      'прозорі метрики й cadence релізів',
+      'прозорі метрики й ритм релізів',
       'культура code review та архітектурні ревʼю',
       'узгодженість продукту й операцій',
       'робота з ризиками постачання',
@@ -422,10 +414,10 @@ function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
       'інтеграції з хмарними сервісами'
     ]);
     return [
-      `${name} у матеріалі №${padId} подано як профіль у напрямі «${fk}»: роль «${role}», контекст «${country}». Номер допомагає відрізняти схожі картки й тримає узгодженість з іншими сторінками довідника Rybezh.`,
-      `Редакція описує типовий рисунок роботи в цьому сегменті для ${name}: зокрема ${v1}, водночас ${v2}. Це навігаційний текст, а не офіційна біографія — первинні джерела завжди мають пріоритет.`,
-      `Для порівняння експертів корисно тримати поруч країну «${country}», мандат «${role}» і тему «${fk}». Внутрішній ідентифікатор матеріалу ${h} дозволяє уникати повторюваних формулювань між сусідніми профілями.`,
-      `Укладаючи шортлист, перевіряйте публікації, реєстри й корпоративні сторінки. Текст готує редакція Rybezh; актуальність фактів і титулів звіряйте безпосередньо з первинними джерелами.`
+      `${name} — це експертний профіль у довіднику Rybezh у ролі «${role}» з орієнтацією на регіон «${country}». Кластер «${fk}» показує, з якими продуктовими й операційними задачами зазвичай пов’язують такий мандат, щоб HR і засновники могли швидко зіставити досвід із власним контекстом.`,
+      `Для ролей на кшталт «${role}» у публічних оглядах часто піднімають теми: ${v1} і ${v2}. Це не резюме й не офіційна біографія: це узагальнений огляд того, як ринок формулює сильні сторони подібних позицій; конкретні проєкти й титули перевіряйте з первинних джерел.`,
+      `Поєднання країни «${country}» і теми «${fk}» задає інституційний і технологічний фон, а роль «${role}» — очікуваний рівень відповідальності за дорожню карту, якість поставки та комунікацію зі стейкхолдерами (референс-ідентифікатор ${h}).`,
+      `Перш ніж запрошувати до співбесіди, зберіть публічні матеріали: доповіді, репозиторії, статті й підтвердження зайнятості. Редакція Rybezh підтримує сторінку в актуальному вигляді; юридичні та кадрові рішення приймайте лише після власної верифікації фактів.`
     ];
   }
   if (langKey === 'en') {
@@ -446,10 +438,10 @@ function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
       'cloud integration footprints'
     ]);
     return [
-      `${name} appears in dossier #${padId} under the “${fk}” lane: mandate “${role}”, geography “${country}”. The dossier number keeps neighbouring cards distinct while staying consistent across the Rybezh directory.`,
-      `Editorial copy outlines how work typically shows up for this profile, stressing ${v1} and ${v2}. Treat it as orientation, not an official biography; primary sources should decide any disputed fact.`,
-      `When comparing experts, keep country “${country}”, mandate “${role}”, and theme “${fk}” side by side. Internal reference ${h} varies phrasing so similar cards do not read as copy-paste duplicates.`,
-      `Shortlist with care: validate titles and employers on official channels. Rybezh editors maintain these pages; refresh facts directly with companies, filings, and first-hand publications.`
+      `${name} is filed in the Rybezh directory as a specialist profile for “${role}” with geography anchored in “${country}”. The “${fk}” lane signals the kinds of product and operating problems readers usually associate with this mandate so hiring teams can benchmark quickly.`,
+      `In day-to-day practice, profiles like ${name} are often described around ${v1} together with ${v2}. This is market-facing orientation, not a certified CV—verify employers, titles, and outcomes on primary channels before you rely on the summary.`,
+      `Pairing “${country}” with the “${fk}” theme sets institutional context, while “${role}” frames expected ownership for roadmaps, delivery quality, and stakeholder cadence (internal reference ${h}).`,
+      `Before interviews, collect artefacts: talks, repos, papers, and employment confirmations. Rybezh editors refresh the page; treat every line as provisional until your own diligence checks out.`
     ];
   }
   if (langKey === 'es') {
@@ -470,10 +462,10 @@ function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
       'integraciones cloud'
     ]);
     return [
-      `${name} se presenta en la ficha #${padId} dentro del carril «${fk}»: mandato «${role}», geografía «${country}». El número ayuda a distinguir fichas vecinas y mantiene coherencia con el resto del directorio Rybezh.`,
-      `El texto editorial resume cómo suele manifestarse el trabajo para este perfil, con foco en ${v1} y en ${v2}. Es orientación, no biografía oficial; ante dudas, ganan las fuentes primarias.`,
-      `Para comparar talento, mantén visibles el país «${country}», el mandato «${role}» y el filtro «${fk}». La referencia interna ${h} introduce variación léxica entre perfiles parecidos.`,
-      `Al priorizar candidatos, valida títulos y empleadores en canales oficiales. La redacción de Rybezh actualiza estas páginas; contrasta cifras y hitos con fuentes directas de cada organización.`
+      `${name} aparece en el directorio Rybezh como ficha de «${role}» con foco geográfico en «${country}». El carril «${fk}» resume qué problemas de producto y operaciones suelen asociarse a este mandato para acelerar comparaciones entre candidatos.`,
+      `En la práctica, perfiles como ${name} suelen destacar por ${v1} y, al mismo tiempo, por ${v2}. Es orientación de mercado, no biografía certificada: contrasta empleadores, títulos y resultados en fuentes primarias.`,
+      `La combinación de país «${country}» y tema «${fk}» aporta contexto institucional, mientras que «${role}» marca el nivel de ownership esperado sobre roadmap, calidad de entrega y rituales con stakeholders (referencia ${h}).`,
+      `Antes de entrevistas, reúne charlas, repos, artículos y confirmaciones laborales. La redacción de Rybezh mantiene la ficha; trata cada dato como provisional hasta tu propia diligencia.`
     ];
   }
   const v1 = mix([
@@ -493,15 +485,14 @@ function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
     'облачные интеграции'
   ]);
   return [
-    `${name} в материале №${padId} показан в полосе «${fk}»: мандат «${role}», география «${country}». Номер материала отделяет похожие карточки и синхронизирован с остальным справочником Rybezh.`,
-    `Редакция описывает типичный рисунок работы в сегменте для ${name}: в частности ${v1}, а также ${v2}. Это ориентир, а не официальная биография; при расхождениях верьте первичным источникам.`,
-    `Для сравнения держите рядом страну «${country}», мандат «${role}» и тему «${fk}». Внутренняя метка ${h} меняет формулировки, чтобы соседние страницы не читались как копии.`,
-    `При шортлисте проверяйте титулы и работодателей на официальных каналах. Текст ведёт редакция Rybezh; факты и даты уточняйте по первичным материалам компаний и реестров.`
+    `${name} — профиль в справочнике Rybezh в роли «${role}» с опорой на регион «${country}». Кластер «${fk}» показывает, какие продуктовые и операционные задачи рынок обычно связывает с таким мандатом, чтобы нанимающим командам было проще сопоставить опыт.`,
+    `На практике для роли «${role}» характерны акценты на ${v1} и на ${v2}. Это рыночный ориентир, а не заверенное резюме — сверяйте работодателей, титулы и результаты по первичным каналам.`,
+    `Сочетание страны «${country}» и темы «${fk}» задаёт институциональный фон, а роль «${role}» — ожидаемую зону ответственности за дорожную карту, качество поставки и коммуникации со стейкхолдерами (внутренняя метка ${h}).`,
+    `Перед интервью соберите публичные артефакты: выступления, репозитории, публикации и подтверждения занятости. Редакция Rybezh обновляет страницу; любые юридические и кадровые решения принимайте только после собственной проверки фактов.`
   ];
 }
 
 function startupProfileParagraphs(langKey, n, name, role, country, fk, slug, year) {
-  const padId = String(n).padStart(5, '0');
   const sig = hash32(`${slug}:${langKey}:s`);
   const h = (sig >>> 0).toString(16).padStart(8, '0');
   const mix = (arr) => arr[(sig + n + year) % arr.length];
@@ -509,39 +500,39 @@ function startupProfileParagraphs(langKey, n, name, role, country, fk, slug, yea
     const v1 = mix(['GTM-ритм', 'unit-економіка', 'партнерська мережа', 'продуктові інтеграції', 'безпека даних', 'операційні SLA']);
     const v2 = mix(['Series A', 'bootstrap', 'глобальний запуск', 'регуляторний аудит', 'ринок B2B', 'споживчий сегмент']);
     return [
-      `${name} у матеріалі №${padId} описаний як компанія з позицією «${role}», сегментом «${fk}», офісом у «${country}» і роком заснування ${year}. Номер матеріалу відокремлює схожі назви й полегшує навігацію довідником Rybezh.`,
-      `Огляд фіксує продуктовий фокус і типові сигнали зростання: ${v1}, а також контекст «${v2}». Це не інвестиційний меморандум — перевіряйте цифри на домені компанії, у звітах і реєстрах.`,
-      `Фільтр «${fk}» допомагає порівнювати сусідні команди з подібним профілем. Внутрішній ідентифікатор ${h} змінює формулювання між сторінками, щоб текст не виглядав шаблонним.`,
-      `Для due diligence зважайте на рік заснування, географію HQ і модель виручки. Редакція Rybezh оновлює картки; ключові факти підтверджуйте напряму з компанією та її публічними джерелами.`
+      `${name} — огляд команди в сегменті «${role}» з HQ у «${country}» та роком заснування ${year}. У картці підсвічено сімейство «${fk}», щоб інвестори й партнери могли швидко відфільтрувати схожі за моделлю виручки компанії.`,
+      `Текст описує, як ринок зазвичай читає продуктовий фокус і сигнали зростання: ${v1} на тлі «${v2}». Це не інвестиційний меморандум — усі цифри й юридичні події звіряйте на домені компанії, у звітах і державних реєстрах.`,
+      `Порівнюючи конкурентів, тримайте поруч географію «${country}», тег «${fk}» і позиціонування «${role}». Варіативність формулювань між сусідніми сторінками підтримує внутрішня референція ${h}, не змінюючи змісту фільтрів.`,
+      `Для due diligence зважайте на рік заснування, структуру виручки та залежність від ключових клієнтів. Редакція Rybezh оновлює опис; будь-які угоди й перевірки комплаєнсу завершуйте лише на підставі ваших первинних даних.`
     ];
   }
   if (langKey === 'en') {
     const v1 = mix(['GTM cadence', 'unit economics', 'partner network', 'product integrations', 'data security', 'operational SLAs']);
     const v2 = mix(['Series A', 'bootstrap', 'global launch', 'regulatory audit', 'B2B market', 'consumer segment']);
     return [
-      `${name} is covered in dossier #${padId} with positioning “${role}”, segment “${fk}”, HQ in “${country}”, and founding year ${year}. The dossier number separates similar names and keeps the Rybezh startup map easier to scan.`,
-      `The overview highlights product focus and common growth signals: ${v1}, alongside financing context “${v2}”. It is not an investment memo—validate claims on the corporate site and in regulatory filings.`,
-      `Tags under “${fk}” let you compare neighbouring companies with aligned narratives. Reference ${h} nudges wording so parallel profiles do not read as duplicates.`,
-      `For diligence, weigh founding vintage, HQ geography, and revenue motion. Rybezh editors curate these pages; treat every figure as provisional until confirmed with primary materials.`
+      `${name} is a concise company snapshot for “${role}” with HQ in “${country}” and founding year ${year}. The “${fk}” tag clusters comparable revenue motions so investors and partners can scan the Rybezh startup map faster.`,
+      `The narrative highlights how the market typically reads product focus and growth signals: ${v1} against “${v2}”. It is not an investment memo—validate figures on the corporate domain, filings, and registry extracts.`,
+      `When benchmarking peers, keep geography “${country}”, theme “${fk}”, and positioning “${role}” aligned. Lexical variation across neighbouring pages is carried by reference ${h} without changing filter semantics.`,
+      `For diligence, stress-test founding vintage, revenue concentration, and compliance posture. Rybezh editors maintain the copy; treat every metric as provisional until your own primary research confirms it.`
     ];
   }
   if (langKey === 'es') {
     const v1 = mix(['ritmo GTM', 'unit economics', 'red de partners', 'integraciones de producto', 'seguridad de datos', 'SLA operativos']);
     const v2 = mix(['Series A', 'bootstrap', 'lanzamiento global', 'auditoría regulatoria', 'mercado B2B', 'segmento consumer']);
     return [
-      `${name} aparece en la ficha #${padId} con posición «${role}», segmento «${fk}», sede en «${country}» y año de fundación ${year}. El número ayuda a separar marcas parecidas dentro del mapa de startups de Rybezh.`,
-      `El texto destaca foco de producto y señales de crecimiento: ${v1}, además del contexto «${v2}». No sustituye un memo de inversión: verifica cifras en el dominio corporativo y en registros públicos.`,
-      `El filtro «${fk}» facilita comparar compañías vecinas. La referencia ${h} introduce variación editorial entre fichas con perfiles similares.`,
-      `Para diligencia, contrasta año de fundación, geografía y modelo de ingresos. La redacción de Rybezh mantiene estas fichas; confirma datos sensibles con fuentes directas de cada equipo.`
+      `${name} resume a la compañía en el segmento «${role}» con sede en «${country}» y año de fundación ${year}. La etiqueta «${fk}» agrupa narrativas de ingresos parecidas para que inversores y socios comparen con rapidez en el mapa de startups de Rybezh.`,
+      `El texto explica cómo el mercado suele leer foco de producto y señales de crecimiento: ${v1} en el marco «${v2}». No sustituye un memo de inversión: verifica cifras en el dominio corporativo y en registros públicos.`,
+      `Al comparar pares, alinea país «${country}», tema «${fk}» y posición «${role}». La variación léxica entre fichas vecinas usa la referencia ${h} sin alterar el sentido de los filtros.`,
+      `Para diligencia, tensiona cohorte de fundación, concentración de ingresos y postura regulatoria. La redacción de Rybezh actualiza la ficha; confirma cada métrica con investigación primaria propia.`
     ];
   }
   const v1 = mix(['GTM-ритм', 'unit-экономика', 'партнёрская сеть', 'продуктовые интеграции', 'безопасность данных', 'операционные SLA']);
   const v2 = mix(['Series A', 'bootstrap', 'глобальный запуск', 'регуляторный аудит', 'рынок B2B', 'consumer-сегмент']);
   return [
-    `${name} в материале №${padId} представлен с позицией «${role}», сегментом «${fk}», HQ в «${country}» и годом основания ${year}. Номер материала отделяет похожие бренды и упрощает навигацию картой Rybezh.`,
-    `Обзор подчёркивает продуктовый фокус и типовые сигналы роста: ${v1}, плюс контекст «${v2}». Это не инвестиционный меморандум — сверяйте цифры на домене компании и в открытых реестрах.`,
-    `Фильтр «${fk}» помогает сравнивать соседние команды. Метка ${h} меняет формулировки, чтобы параллельные страницы не читались как копии.`,
-    `При due diligence учитывайте год основания, географию HQ и модель выручки. Редакция Rybezh обновляет карточки; ключевые факты подтверждайте с первичными материалами компаний.`
+    `${name} — сжатый обзор команды в сегменте «${role}» с HQ в «${country}» и годом основания ${year}. Тег «${fk}» группирует похожие модели монетизации, чтобы инвесторам и партнёрам было проще сравнивать карту Rybezh.`,
+    `Текст показывает, как рынок обычно читает продуктовый фокус и сигналы роста: ${v1} на фоне «${v2}». Это не инвестиционный меморандум — сверяйте цифры на домене компании, в отчётности и выписках реестров.`,
+    `При сравнении конкурентов держите в одном ряду страну «${country}», тему «${fk}» и позицию «${role}». Лексическое различие соседних страниц поддерживает метка ${h}, не меняя смысла фильтров.`,
+    `Для due diligence проверьте год основания, концентрацию выручки и комплаенс. Редакция Rybezh обновляет описание; любые сделки заключайте только после собственной первичной проверки.`
   ];
 }
 
@@ -549,7 +540,7 @@ function writePersonFile(langKey, n) {
   const L = LOCALES[langKey];
   const fk = FILTER_KEYS[n % FILTER_KEYS.length];
   const country = L.countriesPeople[n % L.countriesPeople.length];
-  const name = L.personName(n);
+  const name = pickPersonFullName(langKey, n - 1);
   const role = L.personRole(fk);
   const tags = L.tagSets[fk];
   const slug = personSlug(n);
@@ -609,7 +600,7 @@ function writeStartupFile(langKey, n) {
   const L = LOCALES[langKey];
   const fk = STARTUP_KEYS[n % STARTUP_KEYS.length];
   const country = L.countriesStartup[n % L.countriesStartup.length];
-  const name = L.startupName(n);
+  const name = pickStartupDisplayName(langKey, n - 1);
   const role = L.startupRole(fk);
   const tags = L.stags[fk];
   const slug = startupSlug(n);
@@ -670,13 +661,23 @@ function personCardHtml(langKey, n, order) {
   const L = LOCALES[langKey];
   const fk = FILTER_KEYS[n % FILTER_KEYS.length];
   const country = L.countriesPeople[n % L.countriesPeople.length];
-  const name = L.personName(n);
+  const name = pickPersonFullName(langKey, n - 1);
   const role = L.personRole(fk);
   const tags = L.tagSets[fk];
   const slug = personSlug(n);
+  const img = pickPersonPhoto(langKey, slug);
   const href = `${slug}${L.suffix}.html`;
   const search = `${name} ${role} ${country} ${tags.join(' ')} ${fk}`.toLowerCase().replace(/&/g, ' ');
+  const imgAlt =
+    langKey === 'uk'
+      ? `Портрет: ${name}`
+      : langKey === 'en'
+        ? `Portrait: ${name}`
+        : langKey === 'es'
+          ? `Retrato: ${name}`
+          : `Портрет: ${name}`;
   return `<article class="card profile-card" data-directory-card data-filter-key="${fk}" data-country="${esc(country)}" data-sort-name="${esc(name)}" data-catalog-order="${order}" data-search="${esc(search)}">
+    <img src="${esc(img)}" alt="${esc(imgAlt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="640" height="360" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=640&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">${esc(country)}</p>
       <h3>${esc(name)}</h3>
@@ -691,14 +692,24 @@ function startupCardHtml(langKey, n, order) {
   const L = LOCALES[langKey];
   const fk = STARTUP_KEYS[n % STARTUP_KEYS.length];
   const country = L.countriesStartup[n % L.countriesStartup.length];
-  const name = L.startupName(n);
+  const name = pickStartupDisplayName(langKey, n - 1);
   const role = L.startupRole(fk);
   const tags = L.stags[fk];
   const year = 2008 + (n % 18);
   const slug = startupSlug(n);
+  const img = pickStartupPhoto(langKey, slug);
   const href = `${slug}${L.suffix}.html`;
   const search = `${name} ${role} ${country} ${year} ${tags.join(' ')} ${fk}`.toLowerCase().replace(/&/g, ' ');
+  const imgAlt =
+    langKey === 'uk'
+      ? `Офіс і команда: ${name}`
+      : langKey === 'en'
+        ? `Office and team: ${name}`
+        : langKey === 'es'
+          ? `Oficina y equipo: ${name}`
+          : `Офис и команда: ${name}`;
   return `<article class="card startup-card" data-directory-card data-filter-key="${fk}" data-country="${esc(country)}" data-founded="${year}" data-sort-name="${esc(name)}" data-catalog-order="${order}" data-search="${esc(search)}">
+    <img src="${esc(img)}" alt="${esc(imgAlt)}" loading="lazy" referrerpolicy="no-referrer" width="640" height="220" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&size=640&background=eef4ff&color=2563eb&bold=true';">
     <div class="card-body">
       <p class="eyebrow">${esc(L.foundedEyebrow(year))}</p>
       <h3>${esc(name)}</h3>
