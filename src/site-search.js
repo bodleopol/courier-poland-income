@@ -119,11 +119,19 @@
     }
   }
 
+  function hashString(str) {
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+      hash = (hash * 33) ^ str.charCodeAt(i);
+    }
+    return hash >>> 0;
+  }
+
   function pickSuggestions(index, n) {
     const pool = index.filter((x) => x.k === 'person' || x.k === 'startup');
     if (!pool.length) return [];
     const out = [];
-    let a = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+    let a = hashString(window.location.pathname);
     function rnd() {
       a = (a * 1664525 + 1013904223) >>> 0;
       return a / 4294967296;
