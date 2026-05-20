@@ -72,20 +72,20 @@ const LOCALES = {
     personName: (n) => `Каталогний фахівець ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
-        operations: 'Операційний лідер (каталогний запис)',
-        software: 'Інженерка / інженер ПЗ (каталогний запис)',
-        engineering: 'Системна інженерія (каталогний запис)',
-        science: 'Дослідниця / дослідник (каталогний запис)',
-        ceo: 'CEO / співзасновниця (каталогний запис)'
+        operations: 'Операційний лідер',
+        software: 'Інженерка / інженер ПЗ',
+        engineering: 'Системна інженерія',
+        science: 'Дослідниця / дослідник',
+        ceo: 'CEO / співзасновниця'
       })[k],
     startupName: (n) => `Каталогний стартап ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
-        software: 'Продуктова платформа (каталогний запис)',
-        fintech: 'Фінтех-інфраструктура (каталогний запис)',
-        operations: 'Операційний софт (каталогний запис)',
-        design: 'Дизайн-системи (каталогний запис)',
-        hardware: 'Апаратний стек (каталогний запис)'
+        software: 'Продуктова платформа',
+        fintech: 'Фінтех-інфраструктура',
+        operations: 'Операційний софт',
+        design: 'Дизайн-системи',
+        hardware: 'Апаратний стек'
       })[k],
     readBtn: 'Прочитати',
     startupRead: 'Прочитати',
@@ -107,9 +107,9 @@ const LOCALES = {
     },
     foundedEyebrow: (y) => `Засновано ${y}`,
     metaPerson: (name, role) =>
-      `${name}: ${role}. Редакційний каталогний запис Rybezh — орієнтир для пошуку й фільтрів; первинні джерела мають пріоритет.`,
+      `${name}: ${role}. Короткий орієнтир у каталозі Rybezh; факти звіряйте з первинними джерелами.`,
     metaStartup: (name, role) =>
-      `${name}: ${role}. Редакційний каталогний запис Rybezh для порівняння секторів; перевіряйте факти на сайті компанії.`
+      `${name}: ${role}. Короткий орієнтир у каталозі Rybezh; дані компанії перевіряйте на офіційному сайті.`
   },
   en: {
     suffix: '-en',
@@ -147,20 +147,20 @@ const LOCALES = {
     personName: (n) => `Directory specialist ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
-        operations: 'Operations lead (catalog seed)',
-        software: 'Software engineer (catalog seed)',
-        engineering: 'Systems engineering (catalog seed)',
-        science: 'Research scientist (catalog seed)',
-        ceo: 'CEO / co-founder (catalog seed)'
+        operations: 'Operations lead',
+        software: 'Software engineer',
+        engineering: 'Systems engineering',
+        science: 'Research scientist',
+        ceo: 'CEO / co-founder'
       })[k],
     startupName: (n) => `Directory startup ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
-        software: 'Product platform (catalog seed)',
-        fintech: 'Fintech infrastructure (catalog seed)',
-        operations: 'Operations software (catalog seed)',
-        design: 'Design systems (catalog seed)',
-        hardware: 'Hardware stack (catalog seed)'
+        software: 'Product platform',
+        fintech: 'Fintech infrastructure',
+        operations: 'Operations software',
+        design: 'Design systems',
+        hardware: 'Hardware stack'
       })[k],
     readBtn: 'Read',
     startupRead: 'Read',
@@ -182,9 +182,9 @@ const LOCALES = {
     },
     foundedEyebrow: (y) => `Founded ${y}`,
     metaPerson: (name, role) =>
-      `${name}: ${role}. Editorial catalog seed on Rybezh for search and filters; prefer primary sources.`,
+      `${name}: ${role}. Short Rybezh directory note—verify facts with primary sources.`,
     metaStartup: (name, role) =>
-      `${name}: ${role}. Editorial catalog seed for sector comparisons; verify facts on the company site.`
+      `${name}: ${role}. Short Rybezh directory note—verify company facts on the official site.`
   },
   es: {
     suffix: '-es',
@@ -222,20 +222,20 @@ const LOCALES = {
     personName: (n) => `Especialista de catálogo ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
-        operations: 'Liderazgo de operaciones (semilla de catálogo)',
-        software: 'Ingeniería de software (semilla de catálogo)',
-        engineering: 'Ingeniería de sistemas (semilla de catálogo)',
-        science: 'Investigación científica (semilla de catálogo)',
-        ceo: 'CEO / cofundadora (semilla de catálogo)'
+        operations: 'Liderazgo de operaciones',
+        software: 'Ingeniería de software',
+        engineering: 'Ingeniería de sistemas',
+        science: 'Investigación científica',
+        ceo: 'CEO / cofundadora'
       })[k],
     startupName: (n) => `Startup de catálogo ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
-        software: 'Plataforma de producto (semilla de catálogo)',
-        fintech: 'Infraestructura fintech (semilla de catálogo)',
-        operations: 'Software operativo (semilla de catálogo)',
-        design: 'Sistemas de diseño (semilla de catálogo)',
-        hardware: 'Stack de hardware (semilla de catálogo)'
+        software: 'Plataforma de producto',
+        fintech: 'Infraestructura fintech',
+        operations: 'Software operativo',
+        design: 'Sistemas de diseño',
+        hardware: 'Stack de hardware'
       })[k],
     readBtn: 'Leer',
     startupRead: 'Ver más',
@@ -257,9 +257,9 @@ const LOCALES = {
     },
     foundedEyebrow: (y) => `Fundada en ${y}`,
     metaPerson: (name, role) =>
-      `${name}: ${role}. Ficha editorial semilla en Rybezh para búsqueda y filtros; priorizar fuentes primarias.`,
+      `${name}: ${role}. Nota breve del directorio Rybezh; contrastar con fuentes primarias.`,
     metaStartup: (name, role) =>
-      `${name}: ${role}. Ficha editorial semilla para comparar sectores; verificar datos en el sitio oficial.`
+      `${name}: ${role}. Nota breve del directorio Rybezh; verificar datos en el sitio oficial.`
   },
   ru: {
     suffix: '-ru',
@@ -297,20 +297,20 @@ const LOCALES = {
     personName: (n) => `Каталожный специалист ${String(n).padStart(5, '0')}`,
     personRole: (k) =>
       ({
-        operations: 'Операционный лидер (каталожная заготовка)',
-        software: 'Инженер ПО (каталожная заготовка)',
-        engineering: 'Системная инженерия (каталожная заготовка)',
-        science: 'Исследователь (каталожная заготовка)',
-        ceo: 'CEO / сооснователь (каталожная заготовка)'
+        operations: 'Операционный лидер',
+        software: 'Инженер ПО',
+        engineering: 'Системная инженерия',
+        science: 'Исследователь',
+        ceo: 'CEO / сооснователь'
       })[k],
     startupName: (n) => `Каталожный стартап ${String(n).padStart(5, '0')}`,
     startupRole: (k) =>
       ({
-        software: 'Продуктовая платформа (каталожная заготовка)',
-        fintech: 'Финтех-инфраструктура (каталожная заготовка)',
-        operations: 'Операционный софт (каталожная заготовка)',
-        design: 'Дизайн-системы (каталожная заготовка)',
-        hardware: 'Аппаратный стек (каталожная заготовка)'
+        software: 'Продуктовая платформа',
+        fintech: 'Финтех-инфраструктура',
+        operations: 'Операционный софт',
+        design: 'Дизайн-системы',
+        hardware: 'Аппаратный стек'
       })[k],
     readBtn: 'Читать',
     startupRead: 'Читать',
@@ -332,9 +332,9 @@ const LOCALES = {
     },
     foundedEyebrow: (y) => `Основана в ${y}`,
     metaPerson: (name, role) =>
-      `${name}: ${role}. Редакционная каталожная заготовка Rybezh для поиска и фильтров; приоритет у первичных источников.`,
+      `${name}: ${role}. Краткая справка в каталоге Rybezh; сверяйте факты с первичными источниками.`,
     metaStartup: (name, role) =>
-      `${name}: ${role}. Редакционная заготовка для сравнения секторов; проверяйте факты на сайте компании.`
+      `${name}: ${role}. Краткая справка в каталоге Rybezh; проверяйте данные на официальном сайте компании.`
   }
 };
 
@@ -399,149 +399,61 @@ function pickStartupPhoto(langKey, slug) {
   return pick(WORKPLACE_PHOTOS, hash32(`${slug}|${langKey}|cover`));
 }
 
-function personProfileParagraphs(langKey, n, name, role, country, fk, slug) {
-  const padId = String(n).padStart(5, '0');
-  const sig = hash32(`${slug}:${langKey}`);
-  const h = (sig >>> 0).toString(16).padStart(8, '0');
-  const mix = (arr) => arr[(sig + n) % arr.length];
+function personProfileParagraphs(langKey, n, name, role, country, fk) {
   if (langKey === 'uk') {
-    const v1 = mix([
-      'швидкість рішень під навантаженням',
-      'прозорі метрики й cadence релізів',
-      'культура code review та архітектурні ревʼю',
-      'узгодженість продукту й операцій',
-      'робота з ризиками постачання',
-      'масштабування команди без втрати якості'
-    ]);
-    const v2 = mix([
-      'міжнародні партнерські контракти',
-      'локальні регуляторні вимоги',
-      'внутрішні OKR і фінансові моделі',
-      'крос-функціональні ритуали',
-      'дані з CRM і BI-дашбордів',
-      'інтеграції з хмарними сервісами'
-    ]);
     return [
-      `${name} — унікальний рядок каталогу Rybezh серії bulk-atlas (№${padId}, ключ ${h}): мандат «${role}», геотег «${country}», фільтр «${fk}». Slug «${slug}» закріплює сторінку в індексі пошуку й не дублює жодного іншого HTML-файлу.`,
-      `Редакційний шар описує, як ${name} зазвичай проявляється в темі «${fk}»: наголос на ${v1}, а також на ${v2}. Це орієнтир для читача каталогу, не офіційна біографія; первинні джерела завжди мають вищий пріоритет.`,
-      `Для навігації екосистемою корисно тримати поруч контекст країни «${country}» і професійний рядок «${role}». У Rybezh кожен такий запис має власний текстовий відбиток (n=${n}, hash=${h}), щоб уникнути шаблонних повторів між сусідніми картками.`,
-      `Якщо ви будуєте шортлист, додайте до перевірки офіційні сторінки, публікації й підтвердження титулів. Цей файл згенеровано скриптом збірки для розширення статичного архіву; зміни вносяться через повторний запуск генератора або ручну правку.`
+      `${name} — орієнтаційна картка в каталозі Rybezh. Вказана роль «${role}» і регіон «${country}» слугують лише для фільтрів і навігації; це не підтверджена біографія й не заміна CV.`,
+      `У списку картку згруповано за темою «${fk}». Порівнюючи записи між собою, перевіряйте титули, роботодавців і проєкти на офіційних сторінках, у пресі та реєстрах.`,
+      `Якщо потрібні факти для рішень — звертайтеся до первинних джерел. Текст тут мінімальний навмисно, щоб не створювати враження «готової біографії» там, де її немає.`
     ];
   }
   if (langKey === 'en') {
-    const v1 = mix([
-      'decision velocity under load',
-      'clear metrics and release cadence',
-      'code review culture and architecture reviews',
-      'product and operations alignment',
-      'supply-chain risk handling',
-      'team scaling without quality loss'
-    ]);
-    const v2 = mix([
-      'international partner agreements',
-      'local regulatory constraints',
-      'internal OKRs and finance models',
-      'cross-functional rituals',
-      'CRM and BI dashboard signals',
-      'cloud integration footprints'
-    ]);
     return [
-      `${name} is a unique Rybezh bulk-atlas catalog row (#${padId}, key ${h}): mandate “${role}”, geography “${country}”, filter “${fk}”. Slug “${slug}” pins this HTML file in the search index and does not duplicate any other dossier.`,
-      `Editorial copy explains how ${name} typically shows up in the “${fk}” lane, stressing ${v1} alongside ${v2}. This is orientation for readers, not an official biography; primary sources always win.`,
-      `For ecosystem navigation, keep both the country context “${country}” and the mandate line “${role}” in view. Each Rybezh entry carries its own textual fingerprint (n=${n}, hash=${h}) to avoid templated repetition across neighbours.`,
-      `When shortlisting, validate titles and employers on official channels. This file is emitted by the build-time generator to widen the static archive; refresh by re-running the generator or manual editorial edits.`
+      `${name} is an orientation card in the Rybezh directory. The role “${role}” and region “${country}” are navigation labels only—not a verified biography or CV.`,
+      `The card is grouped under the “${fk}” theme for browsing. When comparing entries, confirm titles, employers, and projects on official sites, press, and filings.`,
+      `For decisions that require facts, rely on primary sources. The copy here stays short on purpose so the page cannot read like a fabricated profile.`
     ];
   }
   if (langKey === 'es') {
-    const v1 = mix([
-      'velocidad de decisión bajo carga',
-      'métricas claras y cadencia de releases',
-      'cultura de revisión de código',
-      'alineación producto-operaciones',
-      'riesgos de cadena de suministro',
-      'escalar equipos sin perder calidad'
-    ]);
-    const v2 = mix([
-      'acuerdos internacionales',
-      'restricciones regulatorias locales',
-      'OKR internos y modelos financieros',
-      'rituales cross-funcionales',
-      'señales de CRM y BI',
-      'integraciones cloud'
-    ]);
     return [
-      `${name} es una fila única del catálogo bulk-atlas de Rybezh (#${padId}, clave ${h}): mandato «${role}», geografía «${country}», filtro «${fk}». El slug «${slug}» fija este HTML en el índice de búsqueda y no duplica otros expedientes.`,
-      `El texto editorial describe cómo ${name} aparece en el carril «${fk}», con énfasis en ${v1} y también en ${v2}. Es orientación, no biografía oficial; ganan las fuentes primarias.`,
-      `Para navegar el ecosistema, mantén el país «${country}» y el mandato «${role}». Cada entrada tiene huella textual propia (n=${n}, hash=${h}) para evitar repeticiones mecánicas.`,
-      `Al hacer shortlist, valida títulos y empleadores en canales oficiales. El archivo lo emite el generador de build; actualiza re-ejecutando el script o con edición manual.`
+      `${name} es una ficha de orientación en el directorio Rybezh. El rol «${role}» y la región «${country}» sirven solo para filtros y navegación; no es una biografía verificada ni un CV.`,
+      `La ficha se agrupa bajo el tema «${fk}». Al comparar entradas, confirma cargos, empleadores y proyectos en fuentes oficiales, prensa y registros.`,
+      `Si necesitas hechos para decidir, usa fuentes primarias. El texto se mantiene breve a propósito para no simular una biografía donde no la hay.`
     ];
   }
-  const v1 = mix([
-    'скорость решений под нагрузкой',
-    'прозрачные метрики и ритм релизов',
-    'культура ревью кода и архитектуры',
-    'согласование продукта и операций',
-    'риски поставок',
-    'масштабирование команд без потери качества'
-  ]);
-  const v2 = mix([
-    'международные партнёрства',
-    'локальные регуляторные ограничения',
-    'внутренние OKR и финмодели',
-    'кросс-функциональные ритуалы',
-    'сигналы CRM и BI',
-    'облачные интеграции'
-  ]);
   return [
-    `${name} — уникальная строка каталога Rybezh bulk-atlas (№${padId}, ключ ${h}): мандат «${role}», геотег «${country}», фильтр «${fk}». Slug «${slug}» фиксирует HTML в поисковом индексе и не дублирует другие досье.`,
-    `Редакционный слой описывает, как ${name} обычно проявляется в теме «${fk}»: акцент на ${v1} и на ${v2}. Это ориентир, не официальная биография; приоритет у первичных источников.`,
-    `Для навигации по экосистеме держите рядом страну «${country}» и строку мандата «${role}». У каждой записи свой текстовый отпечаток (n=${n}, hash=${h}), чтобы избежать шаблонных повторов.`,
-    `При шортлисте проверяйте титулы и работодателей на официальных каналах. Файл генерируется скриптом сборки; обновление — повторный запуск генератора или ручная правка.`
+    `${name} — ориентировочная карточка в каталоге Rybezh. Роль «${role}» и регион «${country}» нужны только для фильтров и навигации; это не подтверждённая биография и не замена резюме.`,
+    `Карточка сгруппирована по теме «${fk}». Сравнивая записи, проверяйте должности, работодателей и проекты на официальных сайтах, в СМИ и реестрах.`,
+    `Для решений, где важны факты, опирайтесь на первичные источники. Текст намеренно короткий, чтобы страница не выглядела как вымышленный профиль.`
   ];
 }
 
-function startupProfileParagraphs(langKey, n, name, role, country, fk, slug, year) {
-  const padId = String(n).padStart(5, '0');
-  const sig = hash32(`${slug}:${langKey}:s`);
-  const h = (sig >>> 0).toString(16).padStart(8, '0');
-  const mix = (arr) => arr[(sig + n + year) % arr.length];
+function startupProfileParagraphs(langKey, n, name, role, country, fk, year) {
   if (langKey === 'uk') {
-    const v1 = mix(['GTM-ритм', 'unit-економіка', 'партнерська мережа', 'продуктові інтеграції', 'безпека даних', 'операційні SLA']);
-    const v2 = mix(['Series A', 'bootstrap', 'глобальний запуск', 'регуляторний аудит', 'ринок B2B', 'споживчий сегмент']);
     return [
-      `${name} — унікальний стартап-каталог Rybezh bulk-atlas (№${padId}, ключ ${h}): позиція «${role}», сегмент «${fk}», HQ «${country}», рік ${year}. Slug «${slug}» відокремлює цю HTML-сторінку від інших записів.`,
-      `Опис фіксує продуктовий фокус і типові сигнали зростання: ${v1}, контекст фінансування «${v2}». Це не інвестиційний меморандум; перевіряйте факти на домені компанії та в реєстрах.`,
-      `Теги каталогу допомагають порівнювати сусідні компанії з однаковим фільтром «${fk}». Текст згенеровано з урахуванням n=${n} і hash=${h}, щоб кожна сторінка мала неповторний абзацний малюнок.`,
-      `Для due diligence звертайте увагу на рік заснування, географію HQ і відмінності моделі виручки. Файл створюється скриптом збірки; оновлення — повторний прогін або ручна редакція.`
+      `${name} — орієнтаційна картка компанії в каталозі Rybezh. Поля «${role}», сегмент «${fk}», HQ «${country}», рік ${year} — для фільтрів; це не інвестиційний меморандум і не підтверджений профіль компанії.`,
+      `Порівнюючи з іншими картками в тій самій темі, перевіряйте домен, реєстраційні дані, пресрелізи та звітність на первинних джерелах.`,
+      `Текст навмисно короткий: він має допомогти орієнтуватися в каталозі, а не імітувати глибокий аналітичний матеріал без фактів.`
     ];
   }
   if (langKey === 'en') {
-    const v1 = mix(['GTM cadence', 'unit economics', 'partner network', 'product integrations', 'data security', 'operational SLAs']);
-    const v2 = mix(['Series A', 'bootstrap', 'global launch', 'regulatory audit', 'B2B market', 'consumer segment']);
     return [
-      `${name} is a unique Rybezh bulk-atlas startup row (#${padId}, key ${h}): positioning “${role}”, segment “${fk}”, HQ “${country}”, founded ${year}. Slug “${slug}” isolates this HTML page from other entries.`,
-      `The copy anchors product focus and growth signals: ${v1}, plus financing context “${v2}”. This is not an investment memo; verify facts on the corporate domain and filings.`,
-      `Directory tags help compare neighbours under the same “${fk}” filter. Text is generated with n=${n} and hash=${h} so each page has a non-repeating paragraph fingerprint.`,
-      `For diligence, weigh founding year, HQ geography, and revenue model differences. The file is emitted by the build script; refresh by re-running the generator or manual edits.`
+      `${name} is an orientation card for a company in the Rybezh directory. The fields “${role}”, segment “${fk}”, HQ “${country}”, and founding year ${year} are navigation labels—not an investment memo or a verified company profile.`,
+      `When comparing cards in the same theme, check the corporate domain, registry filings, press releases, and primary reporting.`,
+      `The copy stays short on purpose: it should help you browse the catalogue, not mimic deep analysis without underlying facts.`
     ];
   }
   if (langKey === 'es') {
-    const v1 = mix(['ritmo GTM', 'unit economics', 'red de partners', 'integraciones de producto', 'seguridad de datos', 'SLA operativos']);
-    const v2 = mix(['Series A', 'bootstrap', 'lanzamiento global', 'auditoría regulatoria', 'mercado B2B', 'segmento consumer']);
     return [
-      `${name} es una fila única de startups bulk-atlas en Rybezh (#${padId}, clave ${h}): posición «${role}», segmento «${fk}», HQ «${country}», año ${year}. El slug «${slug}» aísla esta página HTML.`,
-      `El texto fija foco de producto y señales de crecimiento: ${v1}, más contexto de financiación «${v2}». No es un memo de inversión; verifica hechos en el dominio corporativo.`,
-      `Las etiquetas ayudan a comparar vecinos bajo el filtro «${fk}». Se genera con n=${n} y hash=${h} para evitar repeticiones literales.`,
-      `Para diligencia, pondera año de fundación, geografía y modelo de ingresos. Archivo emitido por el generador de build; actualiza re-ejecutando o editando a mano.`
+      `${name} es una ficha de orientación de empresa en el directorio Rybezh. Los campos «${role}», segmento «${fk}», HQ «${country}» y el año ${year} son etiquetas de navegación: no es un memo de inversión ni un perfil verificado.`,
+      `Al comparar fichas del mismo tema, revisa el dominio corporativo, registros oficiales, comunicados de prensa e información primaria.`,
+      `El texto es breve a propósito: ayuda a explorar el catálogo sin simular análisis profundo sin hechos.`
     ];
   }
-  const v1 = mix(['GTM-ритм', 'unit-экономика', 'партнёрская сеть', 'продуктовые интеграции', 'безопасность данных', 'операционные SLA']);
-  const v2 = mix(['Series A', 'bootstrap', 'глобальный запуск', 'регуляторный аудит', 'рынок B2B', 'consumer-сегмент']);
   return [
-    `${name} — уникальная строка стартап-каталога Rybezh bulk-atlas (№${padId}, ключ ${h}): позиция «${role}», сегмент «${fk}», HQ «${country}», год ${year}. Slug «${slug}» изолирует эту HTML-страницу.`,
-    `Текст фиксирует продуктовый фокус и сигналы роста: ${v1}, плюс контекст финансирования «${v2}». Это не инвестмеморандум; сверяйте факты на домене компании и в реестрах.`,
-    `Теги каталога помогают сравнивать соседей с фильтром «${fk}». Генерация с n=${n} и hash=${h} убирает дословные повторы между страницами.`,
-    `Для due diligence учитывайте год основания, географию HQ и модель выручки. Файл создаётся скриптом сборки; обновление — повторный прогон или ручная правка.`
+    `${name} — ориентировочная карточка компании в каталоге Rybezh. Поля «${role}», сегмент «${fk}», HQ «${country}», год ${year} — для навигации; это не инвестмеморандум и не проверенный профиль компании.`,
+    `Сравнивая карточки в одной теме, проверяйте корпоративный домен, реестры, пресс-релизы и первичную отчётность.`,
+    `Текст намеренно короткий: он помогает листать каталог, а не подменяет аналитику без фактов.`
   ];
 }
 
@@ -557,7 +469,7 @@ function writePersonFile(langKey, n) {
   const file = path.join(PROFILES, `${slug}${L.suffix}.html`);
   const hrefSpec = L.specialists;
   const title = `${name} — ${role} | Rybezh`;
-  const paras = personProfileParagraphs(langKey, n, name, role, country, fk, slug);
+  const paras = personProfileParagraphs(langKey, n, name, role, country, fk);
   const extLink =
     langKey === 'uk'
       ? `<p><a href="https://www.wikipedia.org/wiki/Open_source" rel="noopener noreferrer">Open source — Wikipedia</a> як зовнішнє джерело загального контексту індустрії.</p>`
@@ -569,15 +481,15 @@ function writePersonFile(langKey, n) {
   const bodyParas = paras.map((t) => `    <p>${esc(t)}</p>`).join('\n');
   const imgAlt =
     langKey === 'uk'
-      ? `Реальне фото з Unsplash (редакційна ілюстрація): ${name}`
+      ? `Стокове фото (Unsplash), ілюстрація без прив’язки до реальної особи: ${name}`
       : langKey === 'en'
-        ? `Real photograph via Unsplash (editorial): ${name}`
+        ? `Stock photo (Unsplash), not tied to a real person: ${name}`
         : langKey === 'es'
-          ? `Fotografía real vía Unsplash (editorial): ${name}`
-          : `Реальная фотография через Unsplash (редакция): ${name}`;
+          ? `Foto de stock (Unsplash), sin vínculo con una persona real: ${name}`
+          : `Стоковое фото (Unsplash), не привязано к реальному человеку: ${name}`;
 
   const body = `<title>${esc(title)}</title>
-<meta name="description" content="${esc(`${L.metaPerson(name, role)} Серія ${slug}.`)}">
+<meta name="description" content="${esc(L.metaPerson(name, role))}">
 
 <article class="content-wrapper profile-page">
   <a class="back-link" href="${hrefSpec}">${esc(L.backPeople)}</a>
@@ -593,7 +505,7 @@ function writePersonFile(langKey, n) {
   <section class="profile-facts">
     <div><strong>${langKey === 'uk' ? 'Країна / регіон' : langKey === 'en' ? 'Country / region' : langKey === 'es' ? 'País / región' : 'Страна / регион'}</strong><span>${esc(country)}</span></div>
     <div><strong>${langKey === 'uk' ? 'Професійний фокус' : langKey === 'en' ? 'Professional focus' : langKey === 'es' ? 'Enfoque profesional' : 'Профессиональный фокус'}</strong><span>${esc(role)}</span></div>
-    <div><strong>${langKey === 'uk' ? 'Тип запису' : langKey === 'en' ? 'Entry type' : langKey === 'es' ? 'Tipo de ficha' : 'Тип записи'}</strong><span>${langKey === 'uk' ? 'Каталожне розширення HTML' : langKey === 'en' ? 'HTML catalog expansion' : langKey === 'es' ? 'Expansión de catálogo HTML' : 'Расширение HTML-каталога'}</span></div>
+    <div><strong>${langKey === 'uk' ? 'Тип запису' : langKey === 'en' ? 'Entry type' : langKey === 'es' ? 'Tipo de ficha' : 'Тип записи'}</strong><span>${langKey === 'uk' ? 'Орієнтаційний запис (не верифіковано)' : langKey === 'en' ? 'Orientation entry (unverified)' : langKey === 'es' ? 'Ficha de orientación (no verificada)' : 'Ориентировочная запись (не проверена)'}</span></div>
   </section>
   <section class="profile-content">
     <h3>${langKey === 'uk' ? 'Професійний огляд' : langKey === 'en' ? 'Professional overview' : langKey === 'es' ? 'Resumen profesional' : 'Профессиональный обзор'}</h3>
@@ -602,7 +514,7 @@ ${bodyParas}
   </section>
   <section class="editorial-note">
     <h3>${langKey === 'uk' ? 'Редакційна примітка' : langKey === 'en' ? 'Editorial note' : langKey === 'es' ? 'Nota editorial' : 'Редакционная заметка'}</h3>
-    <p>${langKey === 'uk' ? 'Каталожні записи з префіксом bulk-atlas генеруються скриптом збірки для масштабування HTML-архіву; зміст — орієнтир, не офіційна біографія.' : langKey === 'en' ? 'Entries prefixed bulk-atlas are emitted by the build script to scale the HTML archive; treat them as orientation, not official biography.' : langKey === 'es' ? 'Las fichas bulk-atlas las emite el script de build para escalar el archivo HTML; son orientación, no biografía oficial.' : 'Записи bulk-atlas создаются скриптом сборки для масштаба HTML-архива; это ориентир, не официальная биография.'}</p>
+    <p>${langKey === 'uk' ? 'Ця картка створюється автоматично під час збірки сайту, щоб наповнити фільтри каталогу. Текст — орієнтир для навігації, а не офіційна біографія чи підтверджений профіль.' : langKey === 'en' ? 'This card is generated automatically during the site build to keep catalogue filters populated. Treat the text as navigation context, not an official biography or verified profile.' : langKey === 'es' ? 'Esta ficha se genera automáticamente en el build para mantener filtros del catálogo. El texto es contexto de navegación, no biografía oficial ni perfil verificado.' : 'Карточка создаётся автоматически при сборке сайта, чтобы работали фильтры каталога. Текст — ориентир для навигации, а не официальная биография или проверенный профиль.'}</p>
   </section>
 </article>
 `;
@@ -622,7 +534,7 @@ function writeStartupFile(langKey, n) {
   const hrefSt = L.startups;
   const title = `${name} - ${role} | Rybezh`;
   const year = 2008 + (n % 18);
-  const paras = startupProfileParagraphs(langKey, n, name, role, country, fk, slug, year);
+  const paras = startupProfileParagraphs(langKey, n, name, role, country, fk, year);
   const extLink =
     langKey === 'uk'
       ? `<p><a href="https://uk.wikipedia.org/wiki/%D0%A1%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF" rel="noopener noreferrer">Стартап — Вікіпедія</a> як загальний орієнтир.</p>`
@@ -634,15 +546,15 @@ function writeStartupFile(langKey, n) {
   const bodyParas = paras.map((t) => `    <p>${esc(t)}</p>`).join('\n');
   const imgAlt =
     langKey === 'uk'
-      ? `Реальне фото офісу / команди з Unsplash (редакційна ілюстрація): ${name}`
+      ? `Стокове фото офісу / команди (Unsplash), ілюстрація без прив’язки до реальної компанії: ${name}`
       : langKey === 'en'
-        ? `Real workplace photo via Unsplash (editorial): ${name}`
+        ? `Stock workplace photo (Unsplash), not tied to a real company: ${name}`
         : langKey === 'es'
-          ? `Fotografía real de entorno laboral vía Unsplash (editorial): ${name}`
-          : `Реальная фотография рабочего окружения через Unsplash (редакция): ${name}`;
+          ? `Foto de stock de entorno laboral (Unsplash), sin vínculo con una empresa real: ${name}`
+          : `Стоковое фото офиса / команды (Unsplash), не привязано к реальной компании: ${name}`;
 
   const body = `<title>${esc(title)}</title>
-<meta name="description" content="${esc(`${L.metaStartup(name, role)} Серія ${slug}.`)}">
+<meta name="description" content="${esc(L.metaStartup(name, role))}">
 
 <article class="content-wrapper startup-page">
   <a class="back-link" href="${hrefSt}">${esc(L.backStartup)}</a>
@@ -658,7 +570,7 @@ function writeStartupFile(langKey, n) {
   <section class="profile-facts startup-facts">
     <div><strong>${langKey === 'uk' ? 'Засновано' : langKey === 'en' ? 'Founded' : langKey === 'es' ? 'Fundación' : 'Основана'}</strong><span>${year}</span></div>
     <div><strong>HQ</strong><span>${esc(country)}</span></div>
-    <div><strong>${langKey === 'uk' ? 'Тип запису' : langKey === 'en' ? 'Entry type' : langKey === 'es' ? 'Tipo de ficha' : 'Тип записи'}</strong><span>${langKey === 'uk' ? 'Каталожне розширення HTML' : langKey === 'en' ? 'HTML catalog expansion' : langKey === 'es' ? 'Expansión de catálogo HTML' : 'Расширение HTML-каталога'}</span></div>
+    <div><strong>${langKey === 'uk' ? 'Тип запису' : langKey === 'en' ? 'Entry type' : langKey === 'es' ? 'Tipo de ficha' : 'Тип записи'}</strong><span>${langKey === 'uk' ? 'Орієнтаційний запис (не верифіковано)' : langKey === 'en' ? 'Orientation entry (unverified)' : langKey === 'es' ? 'Ficha de orientación (no verificada)' : 'Ориентировочная запись (не проверена)'}</span></div>
   </section>
   <section class="profile-content">
     <h3>${langKey === 'uk' ? 'Професійний огляд' : langKey === 'en' ? 'Professional overview' : langKey === 'es' ? 'Resumen profesional' : 'Профессиональный обзор'}</h3>
@@ -667,7 +579,7 @@ ${bodyParas}
   </section>
   <section class="editorial-note">
     <h3>${langKey === 'uk' ? 'Редакційна примітка' : langKey === 'en' ? 'Editorial note' : langKey === 'es' ? 'Nota editorial' : 'Редакционная заметка'}</h3>
-    <p>${langKey === 'uk' ? 'Каталожні стартапи bulk-atlas створюються скриптом збірки для розширення статичного архіву сторінок.' : langKey === 'en' ? 'bulk-atlas catalog startups are emitted by the build script to widen the static page archive.' : langKey === 'es' ? 'Las startups bulk-atlas las genera el script de build para ampliar el archivo estático.' : 'Стартапы bulk-atlas генерируются скриптом сборки для расширения статического архива.'}</p>
+    <p>${langKey === 'uk' ? 'Ця картка створюється автоматично під час збірки сайту для наповнення каталогу компаній. Вона не замінює due diligence і не є підтвердженим описом бізнесу.' : langKey === 'en' ? 'This card is generated automatically during the site build to keep the company catalogue populated. It is not a substitute for diligence or a verified business write-up.' : langKey === 'es' ? 'Esta ficha se genera automáticamente en el build para mantener el catálogo de empresas. No sustituye el due diligence ni es una descripción verificada.' : 'Карточка создаётся автоматически при сборке, чтобы каталог компаний оставался заполненным. Это не замена due diligence и не проверенное описание бизнеса.'}</p>
   </section>
 </article>
 `;
@@ -683,7 +595,7 @@ function personCardHtml(langKey, n, order) {
   const tags = L.tagSets[fk];
   const slug = personSlug(n);
   const href = `${slug}${L.suffix}.html`;
-  const search = `${name} ${role} ${country} ${tags.join(' ')} ${fk} bulk-atlas`
+  const search = `${name} ${role} ${country} ${tags.join(' ')} ${fk}`
     .toLowerCase()
     .replace(/&/g, ' ');
   return `<article class="card profile-card" data-directory-card data-filter-key="${fk}" data-country="${esc(country)}" data-sort-name="${esc(name)}" data-catalog-order="${order}" data-search="${esc(search)}">
@@ -707,7 +619,7 @@ function startupCardHtml(langKey, n, order) {
   const year = 2008 + (n % 18);
   const slug = startupSlug(n);
   const href = `${slug}${L.suffix}.html`;
-  const search = `${name} ${role} ${country} ${year} ${tags.join(' ')} ${fk} bulk-atlas`
+  const search = `${name} ${role} ${country} ${year} ${tags.join(' ')} ${fk}`
     .toLowerCase()
     .replace(/&/g, ' ');
   return `<article class="card startup-card" data-directory-card data-filter-key="${fk}" data-country="${esc(country)}" data-founded="${year}" data-sort-name="${esc(name)}" data-catalog-order="${order}" data-search="${esc(search)}">
