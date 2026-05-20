@@ -530,6 +530,14 @@ function personNameFromTitle(title) {
   return cut || 'Profile';
 }
 
+/** Build-time catalogue stubs (many similar HTML files); keep out of search indexes. */
+function isBulkAtlasCatalogBasename(filename) {
+  const base = filename
+    .replace(/-(en|es|ru)\.html$/i, '.html')
+    .replace(/\.html$/i, '');
+  return /^(person|startup)-bulk-atlas-\d{5}$/i.test(base);
+}
+
 function detectPageKind(relPath, basename) {
   if (/^profiles\/person-/i.test(relPath)) return 'person';
   if (/^startups\/startup-/i.test(relPath)) return 'startup';
@@ -1022,6 +1030,9 @@ function compileHTML(srcFile, destFile) {
   const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
   const filename = path.basename(srcFile);
+  if (isBulkAtlasCatalogBasename(filename)) {
+    robotsBlock = '<meta name="robots" content="noindex,follow">';
+  }
   let lang = 'uk';
   if (filename.endsWith('-en.html')) lang = 'en';
   else if (filename.endsWith('-es.html')) lang = 'es';
@@ -1078,8 +1089,11 @@ function compileHTML(srcFile, destFile) {
 
   const breadcrumbNav = buildBreadcrumbHtml(pageKind, localMerged, urlPack, entityTitle);
 
-  const schemaKind =
+  let schemaKind =
     pageKind === 'person' ? 'person' : pageKind === 'startup' ? 'startup' : pageKind === 'article' ? 'article' : 'none';
+  if (isBulkAtlasCatalogBasename(filename)) {
+    schemaKind = 'none';
+  }
 
   const bcPairs = breadcrumbPairsForJson(pageKind, localMerged, urlPack, canonicalNow, entityTitle);
   const jsonLdHtml = buildJsonLdGraph({
