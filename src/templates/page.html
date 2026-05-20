@@ -376,7 +376,14 @@
             const yearSelect = panel.querySelector('[data-directory-year]');
             let activeFilter = 'all';
 
-            const directorySessionSeed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+            function hashString(str) {
+                let hash = 5381;
+                for (let i = 0; i < str.length; i++) {
+                    hash = (hash * 33) ^ str.charCodeAt(i);
+                }
+                return hash >>> 0;
+            }
+            const directorySessionSeed = hashString(window.location.pathname);
             function mulberry32(a) {
                 return function () {
                     let t = (a += 0x6d2b79f5);
@@ -568,7 +575,14 @@
                     arr[j] = tmp;
                 }
             }
-            const seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+            function hashString(str) {
+                let hash = 5381;
+                for (let i = 0; i < str.length; i++) {
+                    hash = (hash * 33) ^ str.charCodeAt(i);
+                }
+                return hash >>> 0;
+            }
+            const seed = hashString(window.location.pathname);
             document.querySelectorAll('[data-shuffle-grid]').forEach((grid) => {
                 const items = Array.from(grid.querySelectorAll(':scope > article'));
                 if (items.length < 2) return;

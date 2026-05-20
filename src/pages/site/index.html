@@ -508,7 +508,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const sessionSeed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0;
+  function hashString(str) {
+    let hash = 5381;
+    for (let i = 0; i < str.length; i++) {
+      hash = (hash * 33) ^ str.charCodeAt(i);
+    }
+    return hash >>> 0;
+  }
+  const sessionSeed = hashString(window.location.pathname);
   const rngFeatured = mulberry32(sessionSeed * 7919 + 104729);
   const rngRecent = mulberry32(sessionSeed * 104393 + 224737);
   const rngStartups = mulberry32(sessionSeed * 224737 + 577957);
@@ -663,11 +670,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const spotlightSlot = document.getElementById('spotlightCard');
   const spotlightButton = document.getElementById('refreshSpotlight');
+  let spotlightClickCount = 0;
 
   const rotateSpotlight = () => {
     const expertCards = allFeaturedArticles();
     if (!spotlightSlot || !expertCards.length) return;
-    const pick = expertCards[Math.floor(Math.random() * expertCards.length)];
+    spotlightClickCount++;
+    const rng = mulberry32(sessionSeed + spotlightClickCount * 1337);
+    const pick = expertCards[Math.floor(rng() * expertCards.length)];
     const name = pick.querySelector('h3')?.textContent?.trim() || 'Експерт';
     const role = pick.querySelector('.meta')?.textContent?.trim() || '';
     const region = pick.querySelector('.eyebrow')?.textContent?.trim() || '';
