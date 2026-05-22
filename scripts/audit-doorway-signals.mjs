@@ -73,6 +73,7 @@ const bulk = files.filter((f) => /bulk-atlas/.test(path.basename(f)));
 
 const hashCount = new Map();
 const hashSamples = new Map();
+const hashPages = new Map();
 const sizeList = [];
 for (const file of bulk) {
   const html = await readFile(file, 'utf8');
@@ -80,7 +81,10 @@ for (const file of bulk) {
   const hash = createHash('md5').update(normalized).digest('hex');
   hashCount.set(hash, (hashCount.get(hash) ?? 0) + 1);
   if (!hashSamples.has(hash)) hashSamples.set(hash, []);
+  if (!hashPages.has(hash)) hashPages.set(hash, []);
   const current = hashSamples.get(hash);
+  const allPages = hashPages.get(hash);
+  allPages.push(rel(file));
   if (current.length < 5) current.push(rel(file));
   sizeList.push((await stat(file)).size);
 }
@@ -131,12 +135,14 @@ console.log(JSON.stringify(report, null, 2));
 
 if (shouldWriteRemediation) {
   const clustersForActions = report.duplicateClustersTop.map((cluster) => {
-    const [canonicalPage, ...rest] = cluster.samplePages;
+    const allPagesInCluster = hashPages.get(cluster.hash) ?? [];
+    const [canonicalPage, ...rest] = allPagesInCluster;
     return {
       hash: cluster.hash,
       count: cluster.count,
       canonicalPage: canonicalPage ?? null,
       noindexCandidates: rest,
+      clusterPagesTotal: allPagesInCluster.length,
       samplePages: cluster.samplePages,
     };
   });
