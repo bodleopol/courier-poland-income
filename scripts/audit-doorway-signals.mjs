@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { readdir, readFile, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const root = path.resolve('src/pages');
 const thresholdsPath = path.resolve('scripts/doorway-thresholds.json');
-const remediationOutPath = path.resolve('notes/doorway-remediation-candidates.json');
-const shouldWriteRemediation = process.argv.includes('--write-remediation');
 
 async function walk(dir) {
   const out = [];
@@ -73,7 +71,6 @@ const bulk = files.filter((f) => /bulk-atlas/.test(path.basename(f)));
 
 const hashCount = new Map();
 const hashSamples = new Map();
-const hashPages = new Map();
 const sizeList = [];
 for (const file of bulk) {
   const html = await readFile(file, 'utf8');
@@ -81,10 +78,7 @@ for (const file of bulk) {
   const hash = createHash('md5').update(normalized).digest('hex');
   hashCount.set(hash, (hashCount.get(hash) ?? 0) + 1);
   if (!hashSamples.has(hash)) hashSamples.set(hash, []);
-  if (!hashPages.has(hash)) hashPages.set(hash, []);
   const current = hashSamples.get(hash);
-  const allPages = hashPages.get(hash);
-  allPages.push(rel(file));
   if (current.length < 5) current.push(rel(file));
   sizeList.push((await stat(file)).size);
 }
@@ -132,35 +126,6 @@ if (!gate.pass) {
 }
 
 console.log(JSON.stringify(report, null, 2));
-
-if (shouldWriteRemediation) {
-  const clustersForActions = report.duplicateClustersTop.map((cluster) => {
-    const allPagesInCluster = hashPages.get(cluster.hash) ?? [];
-    const [canonicalPage, ...rest] = allPagesInCluster;
-    return {
-      hash: cluster.hash,
-      count: cluster.count,
-      canonicalPage: canonicalPage ?? null,
-      noindexCandidates: rest,
-      clusterPagesTotal: allPagesInCluster.length,
-      samplePages: cluster.samplePages,
-    };
-  });
-
-  await writeFile(
-    remediationOutPath,
-    JSON.stringify(
-      {
-        generatedAt: report.generatedAt,
-        duplicateClustersTop: clustersForActions,
-        recommendations: report.recommendations ?? [],
-      },
-      null,
-      2,
-    ),
-  );
-  console.error(`\nSaved remediation candidates to: ${rel(remediationOutPath)}`);
-}
 
 if (!gate.pass) {
   console.error('\nDoorway quality gate failed. Recommended fixes:');
