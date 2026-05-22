@@ -1,0 +1,6 @@
+{
+  "maxBulkShare": 0.9,
+  "maxDuplicateGroups": 200,
+  "maxExactNormalizedDuplicates": 3,
+  "minMedianBulkHtmlSizeBytes": 4500
+}

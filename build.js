@@ -5,6 +5,54 @@ import { execSync } from 'child_process';
 const SRC_DIR = 'src';
 const DIST_DIR = 'dist';
 const TEMPLATE_FILE = path.join(SRC_DIR, 'templates', 'page.html');
+const DOORWAY_REMEDIATION_FILE = path.join('notes', 'doorway-remediation-candidates.json');
+
+function loadDoorwayRemediationMap() {
+  try {
+    if (!fs.existsSync(DOORWAY_REMEDIATION_FILE)) return new Map();
+    const raw = JSON.parse(fs.readFileSync(DOORWAY_REMEDIATION_FILE, 'utf8'));
+    const map = new Map();
+    for (const cluster of raw.duplicateClustersTop || []) {
+      if (!cluster?.canonicalPage) continue;
+      map.set(cluster.canonicalPage, { page: cluster.canonicalPage, canonicalPage: cluster.canonicalPage, noindex: false });
+      for (const page of cluster.noindexCandidates || []) {
+        map.set(page, { page, canonicalPage: cluster.canonicalPage, noindex: true });
+      }
+    }
+    return map;
+  } catch (error) {
+    console.warn(`[build] Failed to parse ${DOORWAY_REMEDIATION_FILE}: ${error.message}`);
+    return new Map();
+  }
+}
+
+const doorwayRemediationMap = loadDoorwayRemediationMap();
+
+function buildNoindexUrlSetFromRemediation() {
+  const out = new Set();
+  for (const [, directive] of doorwayRemediationMap.entries()) {
+    if (!directive?.noindex) continue;
+    const rel = directive.page?.replace(/^src\/pages\//, '') || '';
+    if (rel) out.add(`https://rybezh.site/${rel}`);
+  }
+  return out;
+}
+
+function filterSitemapWithRemediation(distDir) {
+  const sitemapPath = path.join(distDir, 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) return;
+  const noindexUrls = buildNoindexUrlSetFromRemediation();
+  if (noindexUrls.size === 0) return;
+  const xml = fs.readFileSync(sitemapPath, 'utf8');
+  const urlBlocks = xml.match(/<url>[\s\S]*?<\/url>/g) || [];
+  const kept = urlBlocks.filter((block) => {
+    const loc = block.match(/<loc>(.*?)<\/loc>/i)?.[1]?.trim();
+    return loc ? !noindexUrls.has(loc) : true;
+  });
+  const filtered = xml.replace(/<url>[\s\S]*?<\/url>/g, '').replace('</urlset>', `${kept.join('\n')}\n</urlset>`);
+  fs.writeFileSync(sitemapPath, filtered);
+  console.log(`[build] sitemap filtered via remediation map: kept ${kept.length}/${urlBlocks.length} URLs`);
+}
 
 /** Editorial Unsplash photos — reliable CDN, replaces broken third-party logo APIs in output HTML. */
 const UNSPLASH_STARTUP_POOL = [
@@ -1030,9 +1078,6 @@ function compileHTML(srcFile, destFile) {
   const template = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
   const filename = path.basename(srcFile);
-  if (isBulkAtlasCatalogBasename(filename)) {
-    robotsBlock = '<meta name="robots" content="noindex,follow">';
-  }
   let lang = 'uk';
   if (filename.endsWith('-en.html')) lang = 'en';
   else if (filename.endsWith('-es.html')) lang = 'es';
@@ -1066,6 +1111,11 @@ function compileHTML(srcFile, destFile) {
   const talentUrl = lang === 'uk' ? 'career-talent-atlas.html' : `career-talent-atlas-${lang}.html`;
 
   const relPath = path.relative(path.join(SRC_DIR, 'pages'), srcFile).replace(/\\/g, '/');
+  const relPagePath = `src/pages/${relPath}`;
+  const remediationDirective = doorwayRemediationMap.get(relPagePath);
+  if (isBulkAtlasCatalogBasename(filename) || remediationDirective?.noindex) {
+    robotsBlock = '<meta name="robots" content="noindex,follow">';
+  }
   const pageKind = detectPageKind(relPath, filename);
   const stat = fs.statSync(srcFile);
   const mtimeIso = stat.mtime.toISOString();
@@ -1129,7 +1179,13 @@ function compileHTML(srcFile, destFile) {
                           .replace('{{BODY_CLASS}}', bodyClass)
                           .replace('</head>', `${robotsBlock}\n${styleBlock}\n</head>`);
 
-  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalMap[lang])
+  let canonicalFinal = canonicalMap[lang];
+  if (remediationDirective?.canonicalPage) {
+    const canonicalFile = remediationDirective.canonicalPage.replace(/^src\/pages\//, '');
+    canonicalFinal = `${canonicalBase}${canonicalFile}`;
+  }
+
+  finalHtml = finalHtml.replaceAll('{{CANONICAL}}', canonicalFinal)
                        .replaceAll('{{CANONICAL_ES}}', canonicalMap.es)
                        .replaceAll('{{CANONICAL_RU}}', canonicalMap.ru)
                        .replaceAll('{{CANONICAL_EN}}', canonicalMap.en);
@@ -1215,6 +1271,7 @@ function compileHTML(srcFile, destFile) {
 
 processDirectory(SRC_DIR, DIST_DIR);
 processPages(path.join(SRC_DIR, 'pages'), DIST_DIR);
+filterSitemapWithRemediation(DIST_DIR);
 
 // Temporary build inputs can be very large and should not be bundled into serverless output.
 const GENERATED_TMP_DIR = path.join(SRC_DIR, 'generated');

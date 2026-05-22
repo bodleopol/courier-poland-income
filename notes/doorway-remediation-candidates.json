@@ -1,0 +1,190 @@
+{
+  "generatedAt": "2026-05-22T21:32:48.552Z",
+  "duplicateClustersTop": [
+    {
+      "hash": "6b599dcda6b1cb4dd4ea01e5e31ddee8",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00001-en.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00011-en.html",
+        "src/pages/profiles/person-bulk-atlas-00021-en.html",
+        "src/pages/profiles/person-bulk-atlas-00031-en.html",
+        "src/pages/profiles/person-bulk-atlas-00041-en.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00001-en.html",
+        "src/pages/profiles/person-bulk-atlas-00011-en.html",
+        "src/pages/profiles/person-bulk-atlas-00021-en.html",
+        "src/pages/profiles/person-bulk-atlas-00031-en.html",
+        "src/pages/profiles/person-bulk-atlas-00041-en.html"
+      ]
+    },
+    {
+      "hash": "ab7d901b7bcfadaa472f5ce2da5e96b1",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00001-es.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00011-es.html",
+        "src/pages/profiles/person-bulk-atlas-00021-es.html",
+        "src/pages/profiles/person-bulk-atlas-00031-es.html",
+        "src/pages/profiles/person-bulk-atlas-00041-es.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00001-es.html",
+        "src/pages/profiles/person-bulk-atlas-00011-es.html",
+        "src/pages/profiles/person-bulk-atlas-00021-es.html",
+        "src/pages/profiles/person-bulk-atlas-00031-es.html",
+        "src/pages/profiles/person-bulk-atlas-00041-es.html"
+      ]
+    },
+    {
+      "hash": "e6bf8027b20317b1c94b1225b402f831",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00001-ru.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00011-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00021-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00031-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00041-ru.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00001-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00011-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00021-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00031-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00041-ru.html"
+      ]
+    },
+    {
+      "hash": "e43d13c17576d154aa598bc7b081207d",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00001.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00011.html",
+        "src/pages/profiles/person-bulk-atlas-00021.html",
+        "src/pages/profiles/person-bulk-atlas-00031.html",
+        "src/pages/profiles/person-bulk-atlas-00041.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00001.html",
+        "src/pages/profiles/person-bulk-atlas-00011.html",
+        "src/pages/profiles/person-bulk-atlas-00021.html",
+        "src/pages/profiles/person-bulk-atlas-00031.html",
+        "src/pages/profiles/person-bulk-atlas-00041.html"
+      ]
+    },
+    {
+      "hash": "609320b8c0eb423bdbaf1f6d0b317dd2",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00002-en.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00012-en.html",
+        "src/pages/profiles/person-bulk-atlas-00022-en.html",
+        "src/pages/profiles/person-bulk-atlas-00032-en.html",
+        "src/pages/profiles/person-bulk-atlas-00042-en.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00002-en.html",
+        "src/pages/profiles/person-bulk-atlas-00012-en.html",
+        "src/pages/profiles/person-bulk-atlas-00022-en.html",
+        "src/pages/profiles/person-bulk-atlas-00032-en.html",
+        "src/pages/profiles/person-bulk-atlas-00042-en.html"
+      ]
+    },
+    {
+      "hash": "0630a094888a5369d6ed86d5623fbf22",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00002-es.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00012-es.html",
+        "src/pages/profiles/person-bulk-atlas-00022-es.html",
+        "src/pages/profiles/person-bulk-atlas-00032-es.html",
+        "src/pages/profiles/person-bulk-atlas-00042-es.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00002-es.html",
+        "src/pages/profiles/person-bulk-atlas-00012-es.html",
+        "src/pages/profiles/person-bulk-atlas-00022-es.html",
+        "src/pages/profiles/person-bulk-atlas-00032-es.html",
+        "src/pages/profiles/person-bulk-atlas-00042-es.html"
+      ]
+    },
+    {
+      "hash": "38fbf1eb393262a25813ccb8f4ad0105",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00002-ru.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00012-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00022-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00032-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00042-ru.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00002-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00012-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00022-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00032-ru.html",
+        "src/pages/profiles/person-bulk-atlas-00042-ru.html"
+      ]
+    },
+    {
+      "hash": "f990541233d54ff59f4b12dcf359b734",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00002.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00012.html",
+        "src/pages/profiles/person-bulk-atlas-00022.html",
+        "src/pages/profiles/person-bulk-atlas-00032.html",
+        "src/pages/profiles/person-bulk-atlas-00042.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00002.html",
+        "src/pages/profiles/person-bulk-atlas-00012.html",
+        "src/pages/profiles/person-bulk-atlas-00022.html",
+        "src/pages/profiles/person-bulk-atlas-00032.html",
+        "src/pages/profiles/person-bulk-atlas-00042.html"
+      ]
+    },
+    {
+      "hash": "4d622d4c2e59e8beea69849540772b95",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00003-en.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00013-en.html",
+        "src/pages/profiles/person-bulk-atlas-00023-en.html",
+        "src/pages/profiles/person-bulk-atlas-00033-en.html",
+        "src/pages/profiles/person-bulk-atlas-00043-en.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00003-en.html",
+        "src/pages/profiles/person-bulk-atlas-00013-en.html",
+        "src/pages/profiles/person-bulk-atlas-00023-en.html",
+        "src/pages/profiles/person-bulk-atlas-00033-en.html",
+        "src/pages/profiles/person-bulk-atlas-00043-en.html"
+      ]
+    },
+    {
+      "hash": "7ee3f34e8aa5a1a36ed01392e258cab4",
+      "count": 193,
+      "canonicalPage": "src/pages/profiles/person-bulk-atlas-00003-es.html",
+      "noindexCandidates": [
+        "src/pages/profiles/person-bulk-atlas-00013-es.html",
+        "src/pages/profiles/person-bulk-atlas-00023-es.html",
+        "src/pages/profiles/person-bulk-atlas-00033-es.html",
+        "src/pages/profiles/person-bulk-atlas-00043-es.html"
+      ],
+      "samplePages": [
+        "src/pages/profiles/person-bulk-atlas-00003-es.html",
+        "src/pages/profiles/person-bulk-atlas-00013-es.html",
+        "src/pages/profiles/person-bulk-atlas-00023-es.html",
+        "src/pages/profiles/person-bulk-atlas-00033-es.html",
+        "src/pages/profiles/person-bulk-atlas-00043-es.html"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Enrich pages from top duplicate clusters with unique evidence and localized insights.",
+    "Apply canonical/noindex strategy per cluster until content quality is improved.",
+    "Keep failed pages out of sitemap until quality gate passes."
+  ]
+}
