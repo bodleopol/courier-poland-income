@@ -89,7 +89,7 @@ sizeList.sort((a, b) => a - b);
 const median = sizeList.length ? sizeList[Math.floor(sizeList.length / 2)] : 0;
 const dupGroups = [...hashCount.entries()].filter(([, count]) => count > 1);
 const duplicateClustersTop = dupGroups
-  .sort((a, b) => b[1] - a[1])
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
   .slice(0, 10)
   .map(([hash, count]) => ({
     hash,
@@ -135,7 +135,7 @@ if (shouldWriteRemediation) {
     return {
       hash: cluster.hash,
       count: cluster.count,
-      canonicalPage,
+      canonicalPage: canonicalPage ?? null,
       noindexCandidates: rest,
       samplePages: cluster.samplePages,
     };
