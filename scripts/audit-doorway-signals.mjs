@@ -63,6 +63,12 @@ function evaluateAgainstThresholds(report, thresholds) {
       pass: report.indexable.aiProseExtensionPages <= thresholds.maxAiProseExtensionPages,
       message: `pages with profile-prose-extension should be <= ${thresholds.maxAiProseExtensionPages}`,
     },
+    {
+      key: 'maxBulkMissingNoindex',
+      value: report.bulkAtlas.missingNoindexMeta ?? 0,
+      pass: (report.bulkAtlas.missingNoindexMeta ?? 0) <= thresholds.maxBulkMissingNoindex,
+      message: `bulk pages missing noindex meta should be <= ${thresholds.maxBulkMissingNoindex}`,
+    },
   ];
 
   return {
@@ -71,14 +77,18 @@ function evaluateAgainstThresholds(report, thresholds) {
   };
 }
 
-async function analyzePages(files) {
+async function analyzePages(files, { trackNoindex = false } = {}) {
   const hashCount = new Map();
   const sizeList = [];
   let aiProseExtensionPages = 0;
+  let missingNoindexMeta = 0;
 
   for (const file of files) {
     const html = await readFile(file, 'utf8');
     if (/class="profile-prose-extension"/i.test(html)) aiProseExtensionPages += 1;
+    if (trackNoindex && !/name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html)) {
+      missingNoindexMeta += 1;
+    }
     const normalized = normalize(html);
     const hash = createHash('md5').update(normalized).digest('hex');
     hashCount.set(hash, (hashCount.get(hash) ?? 0) + 1);
@@ -92,6 +102,7 @@ async function analyzePages(files) {
   return {
     pageCount: files.length,
     aiProseExtensionPages,
+    ...(trackNoindex ? { missingNoindexMeta } : {}),
     uniformitySignals: {
       medianHtmlSizeBytes: median,
       minHtmlSizeBytes: sizeList[0] ?? 0,
@@ -116,8 +127,8 @@ const report = {
     bulkShare: files.length ? Number((bulk.length / files.length).toFixed(4)) : 0,
   },
   bulkAtlas: {
-    note: 'Excluded from quality gate; noindex at build + robots.txt Disallow',
-    ...(await analyzePages(bulk)),
+    note: 'Excluded from duplicate-content gate; must carry noindex in source HTML',
+    ...(await analyzePages(bulk, { trackNoindex: true })),
   },
   indexable: await analyzePages(indexable),
   thresholds,
@@ -129,7 +140,7 @@ report.gate = gate;
 console.log(JSON.stringify(report, null, 2));
 
 if (!gate.pass) {
-  console.error('\nDoorway quality gate failed (indexable pages). Recommended fixes:');
+  console.error('\nDoorway quality gate failed. Recommended fixes:');
   for (const check of gate.checks.filter((item) => !item.pass)) {
     console.error(`- [${check.key}] ${check.message}; current=${check.value}`);
   }

@@ -422,6 +422,7 @@ function writePersonFile(langKey, n) {
 
   const body = `<title>${esc(title)}</title>
 <meta name="description" content="${esc(metaDesc)}">
+<meta name="robots" content="noindex,follow">
 
 <article class="content-wrapper profile-page">
   <a class="back-link" href="${hrefSpec}">${esc(L.backPeople)}</a>
@@ -472,7 +473,6 @@ function writeStartupFile(langKey, n) {
 
   const body = `<title>${esc(title)}</title>
 <meta name="description" content="${esc(metaDesc)}">
-<meta name="robots" content="noindex,follow">
 
 <article class="content-wrapper startup-page">
   <a class="back-link" href="${hrefSt}">${esc(L.backStartup)}</a>

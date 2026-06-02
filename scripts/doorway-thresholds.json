@@ -2,5 +2,6 @@
   "maxDuplicateGroups": 25,
   "maxExactNormalizedDuplicates": 3,
   "minMedianIndexableHtmlSizeBytes": 2500,
-  "maxAiProseExtensionPages": 0
+  "maxAiProseExtensionPages": 0,
+  "maxBulkMissingNoindex": 0
 }
