@@ -282,6 +282,8 @@ function build() {
 
   copyDir(path.join(SRC, 'assets'), path.join(DIST, 'assets'));
 
+  fs.writeFileSync(path.join(DIST, 'CNAME'), 'rybezh.site\n', 'utf8');
+
   fs.writeFileSync(
     path.join(DIST, 'robots.txt'),
     `User-agent: *\nAllow: /\n\nSitemap: ${SITE_BASE}/sitemap.xml\n`,
