@@ -1,6 +1,6 @@
 # Богдан Тютенко — особисте портфоліо
 
-Односторінковий сайт-портфоліо: операційне лідерство (COO), досвід у foodtech і last-mile.
+Мінімальний односторінковий сайт-портфоліо Богдана Тютенка: операційне лідерство (COO), foodtech, last-mile, процеси та метрики.
 
 **Сайт:** [rybezh.site](https://rybezh.site)
 
@@ -24,9 +24,8 @@ pnpm run start
 
 ## Структура
 
-- `src/pages/site/index.html` — українська версія
-- `src/pages/site/index-en.html`, `index-es.html`, `index-ru.html` — EN / ES / RU
-- `src/templates/portfolio.html` — HTML-оболонка
+- `src/pages/site/index.html` — єдина сторінка портфоліо Богдана Тютенка
+- `src/templates/portfolio.html` — HTML-оболонка з логотипом, навігацією та SEO-метаданими
 - `src/portfolio.css`, `src/portfolio.js` — стилі та мобільне меню
-- `src/assets/images/` — фото та логотип
-- `build.js` — збірка в `dist/`
+- `src/assets/images/` — фото Богдана та логотип
+- `build.js` — збірка односторінкового сайту в `dist/`
