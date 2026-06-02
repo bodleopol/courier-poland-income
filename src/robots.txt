@@ -1,16 +1,4 @@
 User-agent: *
 Allow: /
 
-# Mass-generated orientation stubs (internal catalogue only; not for search listings)
-Disallow: /person-bulk-atlas-
-Disallow: /startup-bulk-atlas-
-
-# Block technical and service assets that are not page content
-Disallow: /scripts/
-Disallow: /artifacts/
-Disallow: /attached_assets/
-Disallow: /*.js$
-Disallow: /*.mjs$
-Disallow: /*.map$
-
 Sitemap: https://rybezh.site/sitemap.xml
