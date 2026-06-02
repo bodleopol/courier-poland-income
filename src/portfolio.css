@@ -93,6 +93,56 @@ a:hover {
   justify-content: space-between;
   height: var(--header-h);
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.lang-switch a,
+.lang-switch__current {
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lang-switch a:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.lang-switch__current {
+  color: var(--text);
+  font-weight: 600;
+  background: var(--surface);
+}
+
+.site-header__inner > .lang-switch {
+  display: none;
+}
+
+.mobile-nav .lang-switch {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 768px) {
+  .site-header__inner > .lang-switch {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0.5rem;
+  }
+
+  .mobile-nav .lang-switch {
+    display: none;
+  }
 }
 
 .brand img {

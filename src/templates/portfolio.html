@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{HTML_LANG}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,39 @@
   <meta name="description" content="{{DESCRIPTION}}">
   <meta name="theme-color" content="#0f1419">
   <link rel="canonical" href="{{CANONICAL}}">
+{{HREFLANG}}
   <link rel="icon" href="assets/images/bohdan-logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/bohdan-tiutenko-avatar.png">
   <link rel="preload" href="assets/images/bohdan-tiutenko-painting.jpg" as="image">
+{{OG_TAGS}}
+{{JSON_LD}}
   <link rel="stylesheet" href="portfolio.css">
   <script src="portfolio.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">До змісту</a>
+  <a class="skip-link" href="#main">{{SKIP_LINK}}</a>
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="brand" href="#top" aria-label="Богдан Тютенко — на початок">
+      <a class="brand" href="#top" aria-label="{{BRAND_ARIA}}">
         <img src="assets/images/bohdan-logo.svg" alt="" width="120" height="40" decoding="async">
       </a>
-      <nav class="site-nav" aria-label="Розділи">
-        <a href="#about">Про мене</a>
-        <a href="#experience">Досвід</a>
-        <a href="#gallery">Фото</a>
-        <a href="#contact" class="site-nav__cta">Контакт</a>
+      <nav class="site-nav" aria-label="{{NAV_ARIA}}">
+        <a href="#about">{{NAV_ABOUT}}</a>
+        <a href="#experience">{{NAV_EXP}}</a>
+        <a href="#gallery">{{NAV_GALLERY}}</a>
+        <a href="#contact" class="site-nav__cta">{{NAV_CONTACT}}</a>
       </nav>
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+      {{LANG_SWITCH}}
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="{{MENU_ARIA}}">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div id="mobile-nav" class="mobile-nav" hidden>
-      <a href="#about">Про мене</a>
-      <a href="#experience">Досвід</a>
-      <a href="#gallery">Фото</a>
-      <a href="#contact">Контакт</a>
+      {{LANG_SWITCH}}
+      <a href="#about">{{NAV_ABOUT}}</a>
+      <a href="#experience">{{NAV_EXP}}</a>
+      <a href="#gallery">{{NAV_GALLERY}}</a>
+      <a href="#contact">{{NAV_CONTACT}}</a>
     </div>
   </header>
   <main id="main">
@@ -42,7 +47,7 @@
   </main>
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
-      <p>© {{YEAR}} Богдан Тютенко · COO / операційне лідерство</p>
+      <p>© {{YEAR}} {{FOOTER_LINE}}</p>
       <a href="mailto:jobs.r@protonmail.com">jobs.r@protonmail.com</a>
     </div>
   </footer>

@@ -24,7 +24,8 @@ pnpm run start
 
 ## Структура
 
-- `src/pages/site/index.html` — контент головної сторінки
+- `src/pages/site/index.html` — українська версія
+- `src/pages/site/index-en.html`, `index-es.html`, `index-ru.html` — EN / ES / RU
 - `src/templates/portfolio.html` — HTML-оболонка
 - `src/portfolio.css`, `src/portfolio.js` — стилі та мобільне меню
 - `src/assets/images/` — фото та логотип
