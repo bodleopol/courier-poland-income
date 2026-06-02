@@ -5795,7 +5795,8 @@ html {
   background: var(--surface-strong);
 }
 
-.profile-prose-extension {
+.profile-prose-extension,
+.profile-editorial-supplement {
   margin-top: 1.1rem;
   font-family: "Newsreader", Georgia, serif;
   font-size: 1.05rem;
