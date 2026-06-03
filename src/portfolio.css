@@ -173,7 +173,7 @@ button:focus-visible {
   background: var(--text);
 }
 
-.mobile-nav {
+.mobile-nav:not([hidden]) {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
