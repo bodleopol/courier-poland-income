@@ -15,4 +15,12 @@
   panel.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setOpen(false));
   });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+
+  window.matchMedia('(min-width: 760px)').addEventListener('change', (event) => {
+    if (event.matches) setOpen(false);
+  });
 })();
