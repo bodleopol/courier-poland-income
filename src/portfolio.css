@@ -23,6 +23,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+:target {
+  scroll-margin-top: calc(var(--header-h) + 1rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -61,6 +66,12 @@ img {
 
 a {
   color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 3px;
 }
 
 .wrap {
@@ -174,6 +185,12 @@ a {
 .mobile-nav a {
   padding: 0.75rem 0.5rem;
   font-weight: 650;
+}
+
+@media (max-width: 420px) {
+  .hero__actions .btn {
+    width: 100%;
+  }
 }
 
 @media (min-width: 760px) {
