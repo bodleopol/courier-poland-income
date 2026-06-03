@@ -2,14 +2,14 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>{{TITLE}}</title>
   <meta name="description" content="{{DESCRIPTION}}">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="{{CANONICAL}}">
   <link rel="icon" href="assets/images/bohdan-logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/bohdan-tiutenko-avatar.jpg">
-  <link rel="preload" href="assets/images/bohdan-tiutenko-painting.jpg" as="image">
+  <link rel="preload" href="assets/images/bohdan-tiutenko-painting.jpg" as="image" fetchpriority="high">
 {{OG_TAGS}}
 {{JSON_LD}}
   <link rel="stylesheet" href="portfolio.css">
@@ -25,16 +25,18 @@
       <nav class="site-nav" aria-label="Розділи портфоліо">
         <a href="#about">Профіль</a>
         <a href="#work">Досвід</a>
+        <a href="#approach">Підхід</a>
         <a href="#photos">Фото</a>
         <a href="#contact" class="site-nav__cta">Контакт</a>
       </nav>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Відкрити меню">
-        <span></span><span></span><span></span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
     </div>
     <div id="mobile-nav" class="mobile-nav" hidden>
       <a href="#about">Профіль</a>
       <a href="#work">Досвід</a>
+      <a href="#approach">Підхід</a>
       <a href="#photos">Фото</a>
       <a href="#contact">Контакт</a>
     </div>

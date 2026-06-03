@@ -3,8 +3,12 @@
   const panel = document.getElementById('mobile-nav');
   if (!toggle || !panel) return;
 
+  const openLabel = 'Відкрити меню';
+  const closeLabel = 'Закрити меню';
+
   function setOpen(open) {
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? closeLabel : openLabel);
     panel.hidden = !open;
   }
 
@@ -16,11 +20,24 @@
     link.addEventListener('click', () => setOpen(false));
   });
 
+  document.addEventListener('click', (event) => {
+    if (panel.hidden) return;
+    if (panel.contains(event.target) || toggle.contains(event.target)) return;
+    setOpen(false);
+  });
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') setOpen(false);
   });
 
-  window.matchMedia('(min-width: 760px)').addEventListener('change', (event) => {
+  const desktopQuery = window.matchMedia('(min-width: 820px)');
+  const closeOnDesktop = (event) => {
     if (event.matches) setOpen(false);
-  });
+  };
+
+  if (desktopQuery.addEventListener) {
+    desktopQuery.addEventListener('change', closeOnDesktop);
+  } else if (desktopQuery.addListener) {
+    desktopQuery.addListener(closeOnDesktop);
+  }
 })();
