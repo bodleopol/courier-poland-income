@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="{{LANG}}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -7,6 +7,7 @@
   <meta name="description" content="{{DESCRIPTION}}">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="{{CANONICAL}}">
+  {{HREFLANG_TAGS}}
   <link rel="icon" href="assets/images/bohdan-logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/images/bohdan-tiutenko-avatar.jpg">
   <link rel="preload" href="assets/images/bohdan-tiutenko-painting.jpg" as="image" fetchpriority="high">
@@ -22,23 +23,25 @@
       <a class="brand" href="#top" aria-label="Богдан Тютенко — на початок">
         <img src="assets/images/bohdan-logo.svg" alt="Богдан Тютенко" width="120" height="40" decoding="async">
       </a>
-      <nav class="site-nav" aria-label="Розділи портфоліо">
-        <a href="#about">Профіль</a>
-        <a href="#work">Досвід</a>
-        <a href="#approach">Підхід</a>
-        <a href="#photos">Фото</a>
-        <a href="#contact" class="site-nav__cta">Контакт</a>
+      <nav class="site-nav" aria-label="Navigation">
+        <a href="#about">{{NAV_ABOUT}}</a>
+        <a href="#work">{{NAV_WORK}}</a>
+        <a href="#approach">{{NAV_APPROACH}}</a>
+        <a href="#photos">{{NAV_PHOTOS}}</a>
+        <a href="#contact" class="site-nav__cta">{{NAV_CONTACT}}</a>
+        {{LANG_SWITCH}}
       </nav>
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Відкрити меню">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle menu">
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
     </div>
     <div id="mobile-nav" class="mobile-nav" hidden>
-      <a href="#about">Профіль</a>
-      <a href="#work">Досвід</a>
-      <a href="#approach">Підхід</a>
-      <a href="#photos">Фото</a>
-      <a href="#contact">Контакт</a>
+      <a href="#about">{{NAV_ABOUT}}</a>
+      <a href="#work">{{NAV_WORK}}</a>
+      <a href="#approach">{{NAV_APPROACH}}</a>
+      <a href="#photos">{{NAV_PHOTOS}}</a>
+      <a href="#contact">{{NAV_CONTACT}}</a>
+      {{LANG_SWITCH}}
     </div>
   </header>
   <main id="main">
