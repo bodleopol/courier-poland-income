@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Moto Rental Lima"
+version = "1.0.0"
+id = "artifacts/moto-rental"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24670
+
+[services.development]
+run = "pnpm --filter @workspace/moto-rental run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/moto-rental", "run", "build" ]
+publicDir = "artifacts/moto-rental/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24670"
+BASE_PATH = "/"

@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "dfO_49eKbZ8j-DSDfvhX5"
+uri = "file://artifacts/moto-rental/public/hero-bg.png"
+type = "image"
+title = "Lifan X-Trial 150 on Costa Verde"
+
+[[generated]]
+id = "LDID9Pwn_k4VX8LhulWxm"
+uri = "file://artifacts/moto-rental/public/moto-detail.png"
+type = "image"
+title = "Motorcycle wheel close up"
+
+[[generated]]
+id = "ssFzu4TVQTsiGEksQO_wl"
+uri = "file://artifacts/moto-rental/public/lima-streets.png"
+type = "image"
+title = "Lima street riding"
+
+[[generated]]
+id = "444xHXHGASsWkUo3bke-M"
+uri = "file://artifacts/moto-rental/public/mountain-road.png"
+type = "image"
+title = "Mountain road scenery"
