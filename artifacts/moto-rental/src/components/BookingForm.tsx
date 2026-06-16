@@ -100,7 +100,7 @@ export function BookingForm() {
           value={form.phone}
           onChange={handleChange}
           required
-          placeholder="Ej. +51 999 999 999"
+          placeholder="Ej. +51 946 408 628"
           className="rounded-none border-2 border-border h-12 bg-background text-foreground focus-visible:ring-primary"
         />
       </div>
