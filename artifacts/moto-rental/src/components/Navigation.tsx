@@ -57,9 +57,9 @@ export function Navigation() {
           <Button 
             asChild
             className="rounded-none border-2 border-primary shadow-xs font-display tracking-widest text-lg px-6 py-6"
-            data-testid="nav-cta-whatsapp"
+            data-testid="nav-cta-reservar"
           >
-            <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">
+            <a href="#reservar">
               RESERVAR
             </a>
           </Button>
@@ -96,9 +96,9 @@ export function Navigation() {
           <Button 
             asChild
             className="rounded-none border-2 border-primary shadow-xs font-display tracking-widest text-2xl px-8 py-8 mt-8"
-            data-testid="nav-mobile-cta-whatsapp"
+            data-testid="nav-mobile-cta-reservar"
           >
-            <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">
+            <a href="#reservar" onClick={() => setMobileMenuOpen(false)}>
               RESERVAR AHORA
             </a>
           </Button>

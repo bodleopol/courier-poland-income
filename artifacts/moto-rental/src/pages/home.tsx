@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { BookingForm } from "@/components/BookingForm";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,6 @@ import {
   ShieldCheck, 
   Map, 
   Wallet, 
-  ChevronRight, 
   CheckCircle2, 
   Clock, 
   IdCard, 
@@ -97,9 +97,9 @@ export default function Home() {
                   size="lg" 
                   className="rounded-none border-2 border-primary h-16 px-10 text-xl font-display tracking-widest shadow-sm"
                   asChild
-                  data-testid="hero-cta-whatsapp"
+                  data-testid="hero-cta-reservar"
                 >
-                  <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">
+                  <a href="#reservar">
                     RESERVAR AHORA
                   </a>
                 </Button>
@@ -391,6 +391,25 @@ export default function Home() {
                   </Accordion>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BOOKING FORM */}
+        <section className="py-24 bg-background noise-bg" id="reservar">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b-4 border-foreground pb-8">
+                <div>
+                  <h2 className="text-5xl md:text-6xl">
+                    RESERVA <span className="text-primary">ONLINE.</span>
+                  </h2>
+                  <p className="text-muted-foreground text-lg mt-2 font-bold uppercase tracking-wide">
+                    Sin llamadas. Llena el formulario y te confirmamos por WhatsApp.
+                  </p>
+                </div>
+              </div>
+              <BookingForm />
             </div>
           </div>
         </section>
