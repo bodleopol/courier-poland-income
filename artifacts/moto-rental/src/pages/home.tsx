@@ -212,7 +212,7 @@ export default function Home() {
                   asChild
                   data-testid="moto-cta-whatsapp"
                 >
-                  <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/51946408628" target="_blank" rel="noopener noreferrer">
                     QUIERO MANEJARLA
                   </a>
                 </Button>
@@ -278,7 +278,7 @@ export default function Home() {
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> <span>Kilometraje libre (Lima)</span></li>
                 </ul>
                 <Button className="w-full rounded-none border-2 border-black h-14 text-lg font-display tracking-widest" asChild data-testid="btn-rent-day">
-                  <a href="https://wa.me/51999999999?text=Hola,%20quiero%20alquilar%20por%20un%20día" target="_blank" rel="noopener noreferrer">RESERVAR</a>
+                  <a href="https://wa.me/51946408628?text=Hola,%20quiero%20alquilar%20por%20un%20día" target="_blank" rel="noopener noreferrer">RESERVAR</a>
                 </Button>
               </div>
 
@@ -299,7 +299,7 @@ export default function Home() {
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> <span>Soporte 24/7</span></li>
                 </ul>
                 <Button className="w-full bg-primary text-black hover:bg-white hover:text-black rounded-none border-2 border-primary hover:border-white h-14 text-lg font-display tracking-widest" asChild data-testid="btn-rent-week">
-                  <a href="https://wa.me/51999999999?text=Hola,%20quiero%20alquilar%20por%20una%20semana" target="_blank" rel="noopener noreferrer">RESERVAR</a>
+                  <a href="https://wa.me/51946408628?text=Hola,%20quiero%20alquilar%20por%20una%20semana" target="_blank" rel="noopener noreferrer">RESERVAR</a>
                 </Button>
               </div>
 
@@ -316,7 +316,7 @@ export default function Home() {
                   <li className="flex items-center gap-3"><CheckCircle2 className="w-5 h-5 text-primary" /> <span>Moto de reemplazo</span></li>
                 </ul>
                 <Button className="w-full rounded-none border-2 border-black h-14 text-lg font-display tracking-widest" asChild data-testid="btn-rent-month">
-                  <a href="https://wa.me/51999999999?text=Hola,%20quiero%20alquilar%20por%20un%20mes" target="_blank" rel="noopener noreferrer">CONSULTAR</a>
+                  <a href="https://wa.me/51946408628?text=Hola,%20quiero%20alquilar%20por%20un%20mes" target="_blank" rel="noopener noreferrer">CONSULTAR</a>
                 </Button>
               </div>
             </div>
@@ -433,7 +433,7 @@ export default function Home() {
               asChild
               data-testid="final-cta-whatsapp"
             >
-              <a href="https://wa.me/51999999999" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/51946408628" target="_blank" rel="noopener noreferrer">
                 CONTACTAR AHORA
               </a>
             </Button>
